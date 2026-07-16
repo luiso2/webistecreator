@@ -48,6 +48,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/raw/logo.png" />
+  <noscript><style>#preloader{display:none}.reveal,.img-reveal{opacity:1;transform:none;clip-path:none}.img-reveal img{transform:none}</style></noscript>
   <script src="assets/tailwind.js"></script>
   <style>
     :root {
@@ -206,15 +207,142 @@
     .wa-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #12713a, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(46,224,110,0.35); }
     .wa-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #12713a, 0 6px 14px rgba(0,0,0,0.45); }
 
+    /* ===== Motion v2 (nivel $100k) ===== */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 120; background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    .preloader-mono {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.75rem, 8vw, 4.25rem); line-height: 1.15;
+      background: linear-gradient(110deg, #eacda4 0%, #fdf3dd 45%, #c2ab90 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      clip-path: inset(0 0 100% 0);
+      animation: preReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.08s forwards;
+    }
+    .preloader-word {
+      margin-top: 0.7rem; font-size: 0.62rem; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--ink-40); opacity: 0; transform: translateY(8px);
+      animation: preFade 0.7s ease 0.4s forwards;
+    }
+    .preloader-line {
+      display: block; width: 74px; height: 1px; margin: 1.15rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent-deep), transparent);
+      transform: scaleX(0);
+      animation: preLine 0.85s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+    }
+    @keyframes preReveal { to { clip-path: inset(0 0 0% 0); } }
+    @keyframes preFade { to { opacity: 1; transform: translateY(0); } }
+    @keyframes preLine { to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; width: 100%; height: 2px; z-index: 110;
+      background: linear-gradient(90deg, #c2ab90 0%, #eacda4 55%, #fdf3dd 100%);
+      transform: scaleX(0); transform-origin: left center;
+      pointer-events: none; will-change: transform;
+    }
+
+    /* 3. Parallax por capas (JS actualiza la propiedad translate via rAF) */
+    [data-parallax] { will-change: transform, translate; }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala en wrapper */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); will-change: clip-path; }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { transition: filter 0.9s ease, transform 1.25s cubic-bezier(0.22,1,0.36,1); transition-delay: inherit; }
+    .img-reveal:not(.in) img { transform: scale(1.06); }
+
+    /* 6. Marquee infinito */
+    .marquee { overflow: hidden; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-seg { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-item { padding: 0 1.6rem; }
+    .marquee-sep { color: var(--accent-deep); font-size: 0.75em; opacity: 0.85; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+
+    /* 7. Carrusel de opiniones */
+    .carousel-viewport { overflow: hidden; touch-action: pan-y; cursor: grab; }
+    .carousel-viewport:active { cursor: grabbing; }
+    .carousel-track {
+      position: relative; display: flex; gap: 20px;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+      will-change: transform; user-select: none; -webkit-user-select: none;
+    }
+    .carousel-slide { flex: 0 0 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 calc(50% - 10px); } }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(244,234,216,0.22); transition: background 0.3s ease, width 0.3s ease; }
+    .carousel-dot:hover { background: rgba(234,205,164,0.55); }
+    .carousel-dot.active { width: 26px; background: linear-gradient(90deg, #c2ab90, #eacda4); }
+
+    /* 8. Boton magnetico (solo desktop) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition-property: box-shadow; will-change: transform; }
+    }
+
+    /* 9. Tilt 3D sutil + glare (solo desktop) */
+    [data-tilt] { position: relative; }
+    .tilt-glare {
+      position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+      opacity: 0; transition: opacity 0.45s ease;
+      background: radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), rgba(234,205,164,0.12), transparent 65%);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      [data-tilt] { will-change: transform; }
+      [data-tilt].tilting { transition: background 0.35s ease, border-color 0.35s ease, transform 0.16s ease-out, box-shadow 0.35s ease; }
+      [data-tilt]:hover .tilt-glare { opacity: 1; }
+    }
+
+    /* 10. Cursor glow en banda oscura (solo desktop) */
+    .cursor-glow {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      opacity: 0; transition: opacity 0.5s ease;
+      background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 40%), rgba(234,205,164,0.09), transparent 65%);
+    }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de WhatsApp vive abajo-derecha) */
+    .back-to-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-60); opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { color: var(--ink); border-color: rgba(234,205,164,0.5); }
+
     @media (prefers-reduced-motion: reduce) {
-      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .text-shine, .orb, .merktop-dot, .marquee-track, .preloader-mono, .preloader-word, .preloader-line { animation: none !important; }
       .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { transform: none !important; }
       img.blur-up { filter: none !important; transform: none !important; }
+      .carousel-track, .back-to-top, #scroll-progress, #preloader, .tilt-glare, .cursor-glow { transition: none !important; }
+      [data-parallax] { translate: none !important; will-change: auto !important; }
+      .preloader-mono { clip-path: none !important; }
+      .preloader-word { opacity: 1 !important; transform: none !important; }
+      .preloader-line { transform: scaleX(1) !important; }
       html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <div class="text-center px-6">
+      <p class="preloader-mono">Mizū</p>
+      <p class="preloader-word">Head Spa · Miami</p>
+      <span class="preloader-line"></span>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <!-- NAV -->
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
@@ -256,7 +384,7 @@
 
   <!-- HERO -->
   <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
-    <div class="glow-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.08"></div><div class="orb orb-c" data-parallax="0.18"></div></div>
     <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
         <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-6">Hialeah · Miami · Boutique Scalp, Skin &amp; Hair Wellness</p>
@@ -272,7 +400,7 @@
           <span class="text-sm text-[color:var(--ink-60)]">5.0 · 102 reseñas en Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             Reservar por WhatsApp
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -284,7 +412,7 @@
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm mx-auto lg:ml-auto">
-          <div class="frame zoomable aspect-[3/4]">
+          <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:320ms" data-parallax="-0.06">
             <img src="assets/raw/hero-1.jpg" alt="Clienta bajo el waterfall halo dorado del head spa Mizū, con flores de loto" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
@@ -300,21 +428,51 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine">5.0</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">102 reseñas en Google</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="102">102</span> reseñas en Google</p></div>
       <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Se habla<span class="text-shine"> español</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Atención bilingüe</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">90 <span class="text-shine">min</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Ritual Imperial · $189</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span data-count="90">90</span> <span class="text-shine">min</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Ritual Imperial · $189</p></div>
       <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Hialeah</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">429 Hialeah Dr, Ste 7</p></div>
     </div>
   </section>
+
+  <!-- MARQUEE EDITORIAL -->
+  <div class="marquee border-b border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+      </div>
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+      </div>
+    </div>
+  </div>
 
   <!-- LA EXPERIENCIA -->
   <section id="experiencia" class="relative py-24 sm:py-32 grain">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
-        <div class="frame zoomable aspect-[3/4] reveal">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
           <img src="assets/raw/card-photo.jpg" alt="Letrero retroiluminado de Mizū Head Spa Miami con el logo de loto" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
-        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
           <img src="assets/raw/space-3.jpg" alt="Interior del estudio: sillón de spa negro con arco dorado y paneles botánicos retroiluminados" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
@@ -344,22 +502,26 @@
         <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">90 minutos para <span class="text-shine">reiniciarte</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="glass glass-hover rounded-3xl p-7 reveal">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">01</p>
           <h3 class="font-display text-xl mb-3">Diagnóstico capilar</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Comenzamos entendiendo lo que tu cuero cabelludo realmente necesita, para personalizar cada paso del ritual.</p>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">02</p>
           <h3 class="font-display text-xl mb-3">Limpieza profunda</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Detox del cuero cabelludo con vapor terapéutico y el arco de agua del waterfall halo sobre el basin.</p>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">03</p>
           <h3 class="font-display text-xl mb-3">Masaje envolvente</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal extendido con aromaterapia: tú eliges el aceite esencial que acompaña tu sesión.</p>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">04</p>
           <h3 class="font-display text-xl mb-3">Nutrición desde la raíz</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Nutrientes que revitalizan el cabello desde la raíz, con antifaz de jade y toallas calientes para cerrar.</p>
@@ -367,7 +529,8 @@
       </div>
 
       <!-- Card del servicio insignia -->
-      <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal">
+      <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal" data-tilt>
+        <span class="tilt-glare" aria-hidden="true"></span>
         <div class="lg:col-span-2 zoomable relative min-h-[320px]">
           <img src="assets/raw/treatment-5.jpg" alt="Clienta recostada en el basin negro bajo el halo de agua con luz ambiental" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
@@ -405,15 +568,45 @@
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/treatment-5.jpg" alt="Sesión de head spa bajo el halo de agua" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/treatment-4.jpg" alt="Momento del Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/space-2.jpg" alt="Resultado: cabello brillante frente al logo Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/treatment-3.jpg" alt="Detalle del ritual de head spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/testimonial-1.jpg" alt="Clienta durante su experiencia en Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/treatment-1.jpg" alt="Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal"><img src="assets/raw/treatment-5.jpg" alt="Sesión de head spa bajo el halo de agua" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><img src="assets/raw/treatment-4.jpg" alt="Momento del Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><img src="assets/raw/space-2.jpg" alt="Resultado: cabello brillante frente al logo Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><img src="assets/raw/treatment-3.jpg" alt="Detalle del ritual de head spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><img src="assets/raw/testimonial-1.jpg" alt="Clienta durante su experiencia en Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><img src="assets/raw/treatment-1.jpg" alt="Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
+
+  <!-- MARQUEE EDITORIAL -->
+  <div class="marquee border-t border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+      </div>
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+      </div>
+    </div>
+  </div>
 
   <!-- OPINIONES -->
   <section id="opiniones" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
@@ -423,27 +616,32 @@
         <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
         <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 102 reseñas verificadas en Google</p>
       </div>
-      <div class="grid sm:grid-cols-2 gap-5">
-        <figure class="glass glass-hover rounded-3xl p-8 reveal">
-          <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Best mother's day gift ever. Alain was very welcoming and sweet. The massage was extremely relaxing, he knew exactly what he was doing. The spa location is very centric and luxurious. I haven't felt more relaxed. I recommend 10/10."</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Jennifer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
-        </figure>
-        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
-          <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I honestly loved my experience here. The place feels so warm and inviting, and the attention I received was just amazing. And I have to mention the coffee... it was incredible! I'm definitely coming back!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Gabriela</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
-        </figure>
-        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
-          <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"From the moment I walked in, the atmosphere was incredibly relaxing and welcoming. Alain took amazing care of me, and I left feeling completely pampered and refreshed. Highly recommend!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Yadira</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
-        </figure>
-        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:300ms">
-          <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Wow!! I cannot remember the last time I was this relaxed. Alain was amazing. Perfect attention to every detail, and so knowledgeable about caring for your hair."</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Andrea</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
-        </figure>
+      <div id="reviews-carousel" class="reveal" style="transition-delay:120ms">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Best mother's day gift ever. Alain was very welcoming and sweet. The massage was extremely relaxing, he knew exactly what he was doing. The spa location is very centric and luxurious. I haven't felt more relaxed. I recommend 10/10."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jennifer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I honestly loved my experience here. The place feels so warm and inviting, and the attention I received was just amazing. And I have to mention the coffee... it was incredible! I'm definitely coming back!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Gabriela</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"From the moment I walked in, the atmosphere was incredibly relaxing and welcoming. Alain took amazing care of me, and I left feeling completely pampered and refreshed. Highly recommend!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Yadira</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Wow!! I cannot remember the last time I was this relaxed. Alain was amazing. Perfect attention to every detail, and so knowledgeable about caring for your hair."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Andrea</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="carousel-dots flex justify-center gap-2.5 mt-8"></div>
       </div>
       <div class="text-center mt-10 reveal">
         <a href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 102 reseñas en Google</a>
@@ -493,14 +691,15 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section class="relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, var(--bg-2) 0%, #0e0c0a 100%);">
+  <section class="cursor-glow-zone relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, var(--bg-2) 0%, #0e0c0a 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
       <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Desconecta por completo.</p>
       <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu pausa te está <span class="text-shine">esperando</span></h2>
       <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Escríbenos por WhatsApp y asegura tu Ritual Imperial Mizu. Cupos limitados cada semana: la experiencia es uno a uno.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar por WhatsApp</a>
+        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar por WhatsApp</a>
         <a href="tel:+17863887821" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
       </div>
     </div>
@@ -545,12 +744,62 @@
     <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
+  <!-- BACK TO TOP -->
+  <button id="backToTop" type="button" class="back-to-top glass" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
   <script>
-    // Nav scroll state
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    const hidePreloader = () => {
+      if (!preloader || preloader.classList.contains('done')) return;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 700);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      const maxWait = setTimeout(hidePreloader, 1200);
+      const onLoaded = () => {
+        clearTimeout(maxWait);
+        setTimeout(hidePreloader, Math.min(500, Math.max(0, 1200 - performance.now())));
+      };
+      if (document.readyState === 'complete') onLoaded();
+      else window.addEventListener('load', onLoaded, { once: true });
+    }
+
+    // 2, 3, 11: un solo listener de scroll con rAF (nav, progreso, back-to-top, parallax)
     const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    const progressBar = document.getElementById('scroll-progress');
+    const backToTop = document.getElementById('backToTop');
+    const parallaxLayers = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'))
+      .map(el => ({ el, factor: parseFloat(el.dataset.parallax) || 0 }));
+    let viewportH = window.innerHeight;
+    let scrollTicking = false;
+
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - viewportH;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(y / maxScroll, 1).toFixed(4) : 0) + ')';
+      backToTop.classList.toggle('visible', y > viewportH * 2);
+      if (y < viewportH * 1.6) {
+        parallaxLayers.forEach(layer => { layer.el.style.translate = '0 ' + (y * layer.factor).toFixed(1) + 'px'; });
+      }
+    };
+    const requestScrollFrame = () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    };
+    window.addEventListener('scroll', requestScrollFrame, { passive: true });
+    window.addEventListener('resize', () => { viewportH = window.innerHeight; requestScrollFrame(); }, { passive: true });
+    onScrollFrame();
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
 
     // Mobile menu
     const menuBtn = document.getElementById('menuBtn');
@@ -558,17 +807,184 @@
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    // Reveal on scroll
+    // 4. Reveals: texto (.reveal) e imagenes con clip-path (.img-reveal)
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
 
     // Blur-up images
     document.querySelectorAll('img.blur-up').forEach(img => {
       if (img.complete && img.naturalWidth) img.classList.add('loaded');
       else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
     });
+
+    // 5. Contadores animados (respetan decimales: 5.0 anima 0.0 a 5.0)
+    const counters = document.querySelectorAll('[data-count]');
+    if (!reducedMotion && counters.length) {
+      const decimalsOf = el => (el.dataset.count.split('.')[1] || '').length;
+      counters.forEach(el => { el.textContent = (0).toFixed(decimalsOf(el)); });
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          counterIO.unobserve(entry.target);
+          const el = entry.target;
+          const target = parseFloat(el.dataset.count);
+          const decimals = decimalsOf(el);
+          const duration = 1500;
+          const start = performance.now();
+          const tick = now => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = (target * eased).toFixed(decimals);
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de opiniones: drag/swipe + autoplay + dots
+    const carousel = document.getElementById('reviews-carousel');
+    if (carousel) {
+      const viewport = carousel.querySelector('.carousel-viewport');
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = carousel.querySelector('.carousel-dots');
+      const twoUp = window.matchMedia('(min-width: 640px)');
+      let index = 0, offset = 0, dots = [];
+      let autoplayTimer = null, resumeTimer = null;
+
+      const maxIndex = () => slides.length - (twoUp.matches ? 2 : 1);
+      const goTo = (i, instant) => {
+        index = Math.max(0, Math.min(i, maxIndex()));
+        offset = slides[index].offsetLeft;
+        if (instant) track.style.transition = 'none';
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+        if (instant) requestAnimationFrame(() => { track.style.transition = ''; });
+        dots.forEach((dot, di) => dot.classList.toggle('active', di === index));
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        dots = [];
+        for (let i = 0; i <= maxIndex(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la reseña ' + (i + 1));
+          dot.addEventListener('click', () => { stopAutoplay(); goTo(i); scheduleResume(); });
+          dotsWrap.appendChild(dot);
+          dots.push(dot);
+        }
+      };
+      const next = () => goTo(index >= maxIndex() ? 0 : index + 1);
+      const stopAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; } };
+      const startAutoplay = () => { if (reducedMotion) return; stopAutoplay(); autoplayTimer = setInterval(next, 5000); };
+      const scheduleResume = () => { clearTimeout(resumeTimer); resumeTimer = setTimeout(startAutoplay, 9000); };
+
+      let dragging = false, dragStartX = 0, dragDelta = 0, dragBase = 0;
+      viewport.addEventListener('pointerdown', e => {
+        dragging = true; dragStartX = e.clientX; dragDelta = 0; dragBase = offset;
+        stopAutoplay();
+        track.style.transition = 'none';
+        viewport.setPointerCapture(e.pointerId);
+      });
+      viewport.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        dragDelta = e.clientX - dragStartX;
+        let target = dragBase - dragDelta;
+        const maxOffset = slides[maxIndex()].offsetLeft;
+        if (target < 0) target *= 0.35;
+        else if (target > maxOffset) target = maxOffset + (target - maxOffset) * 0.35;
+        track.style.transform = 'translateX(' + (-target) + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        track.style.transition = '';
+        if (Math.abs(dragDelta) > 48) goTo(index + (dragDelta < 0 ? 1 : -1));
+        else goTo(index);
+        scheduleResume();
+      };
+      viewport.addEventListener('pointerup', endDrag);
+      viewport.addEventListener('pointercancel', endDrag);
+      if (finePointer) {
+        viewport.addEventListener('mouseenter', stopAutoplay);
+        viewport.addEventListener('mouseleave', () => { if (!dragging) scheduleResume(); });
+      }
+      twoUp.addEventListener('change', () => { buildDots(); goTo(index, true); });
+      window.addEventListener('resize', () => goTo(index, true), { passive: true });
+
+      buildDots();
+      goTo(0, true);
+      startAutoplay();
+    }
+
+    // 8, 9, 10: efectos de puntero, solo (hover: hover) and (pointer: fine) y sin reduced motion
+    if (finePointer && !reducedMotion) {
+      // 8. Botones magneticos (max 6px, easing y spring back)
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        let targetX = 0, targetY = 0, curX = 0, curY = 0, rafId = null, hovering = false;
+        const animate = () => {
+          curX += (targetX - curX) * 0.18;
+          curY += (targetY - curY) * 0.18;
+          btn.style.transform = 'translate(' + curX.toFixed(2) + 'px, ' + curY.toFixed(2) + 'px)';
+          if (hovering || Math.abs(curX) + Math.abs(curY) > 0.15) rafId = requestAnimationFrame(animate);
+          else { btn.style.transform = ''; curX = curY = 0; rafId = null; }
+        };
+        btn.addEventListener('mousemove', e => {
+          const r = btn.getBoundingClientRect();
+          targetX = Math.max(-6, Math.min(6, (e.clientX - (r.left + r.width / 2)) * 0.12));
+          targetY = Math.max(-6, Math.min(6, (e.clientY - (r.top + r.height / 2)) * 0.3));
+          hovering = true;
+          if (!rafId) rafId = requestAnimationFrame(animate);
+        });
+        btn.addEventListener('mouseleave', () => {
+          targetX = 0; targetY = 0; hovering = false;
+          if (!rafId) rafId = requestAnimationFrame(animate);
+        });
+      });
+
+      // 9. Tilt 3D sutil + glare en cards glass
+      document.querySelectorAll('[data-tilt]').forEach(card => {
+        const glare = card.querySelector('.tilt-glare');
+        let rafId = null, lastEvent = null;
+        card.addEventListener('mouseenter', () => card.classList.add('tilting'));
+        card.addEventListener('mousemove', e => {
+          lastEvent = e;
+          if (rafId) return;
+          rafId = requestAnimationFrame(() => {
+            rafId = null;
+            const r = card.getBoundingClientRect();
+            const px = (lastEvent.clientX - r.left) / r.width;
+            const py = (lastEvent.clientY - r.top) / r.height;
+            card.style.transform = 'perspective(800px) rotateX(' + ((0.5 - py) * 6).toFixed(2) + 'deg) rotateY(' + ((px - 0.5) * 6).toFixed(2) + 'deg) translateY(-4px)';
+            if (glare) {
+              glare.style.setProperty('--tx', (px * 100).toFixed(1) + '%');
+              glare.style.setProperty('--ty', (py * 100).toFixed(1) + '%');
+            }
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('tilting');
+          card.style.transform = '';
+        });
+      });
+
+      // 10. Cursor glow en la banda oscura final
+      document.querySelectorAll('.cursor-glow-zone').forEach(zone => {
+        const glow = zone.querySelector('.cursor-glow');
+        if (!glow) return;
+        zone.addEventListener('mousemove', e => {
+          const r = zone.getBoundingClientRect();
+          glow.style.setProperty('--gx', (e.clientX - r.left).toFixed(0) + 'px');
+          glow.style.setProperty('--gy', (e.clientY - r.top).toFixed(0) + 'px');
+          glow.style.opacity = '1';
+        });
+        zone.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+      });
+    }
   </script>
 </body>
 </html>

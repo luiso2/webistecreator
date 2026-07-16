@@ -1,4 +1,21 @@
-# Design System Compartido: Head Spa Demos Miami (5 sites)
+# Design System Compartido: Siteforge (plantilla universal premium)
+
+## Nivel $100k: sistema de motion obligatorio (v2, 2026-07-16)
+Todo site debe sentirse como un website de seis cifras. Los ejemplares (`templates/dark`, `templates/light`) ya integran este paquete de motion; los builds lo HEREDAN al copiar el ejemplar. Todo en CSS + JS vanilla self-contained (sin librerias externas), con IntersectionObserver + requestAnimationFrame, y TODO desactivado bajo `prefers-reduced-motion` y en dispositivos touch donde aplique:
+1. **Preloader de marca** (max 1.2s): monograma/wordmark con reveal, fade-out al cargar.
+2. **Barra de progreso de scroll** (2px, gradiente del accent, top fijo).
+3. **Parallax en capas del hero**: orbs e imagen a velocidades distintas (factores 0.06-0.2, rAF).
+4. **Reveals editoriales**: texto con fadeInUp escalonado; imagenes con clip-path reveal (inset) + escala 1.06 a 1.
+5. **Contadores animados** en el strip de confianza (rating, reseñas, duracion) al entrar en viewport.
+6. **Marquee infinito** entre secciones: palabras clave del negocio en Playfair italic separadas por ✦, lento, pausa on hover.
+7. **Testimonios en carrusel** con drag/swipe, autoplay suave y dots (no grid estatico).
+8. **Botones magneticos**: el CTA principal sigue el cursor (max 6px, spring back). Solo desktop.
+9. **Tilt 3D sutil en cards** de servicio (rotateX/Y max 3deg + glare). Solo desktop.
+10. **Cursor glow** en secciones de banda oscura (radial que sigue el mouse). Solo desktop.
+11. **Back-to-top** discreto tras 2 viewports de scroll.
+Performance: nada de listeners de scroll sin rAF; will-change solo donde anima; imagenes lazy salvo hero. La pagina debe seguir fluida en movil.
+
+## Historia: origen (Head Spa Demos Miami)
 
 > Derivado del sistema visual de Ava Luxury Head Spa (`~/Desktop/ava-head-spa/index.html`), estilo aprobado en proyectos previos.
 > Regla: MISMO estilo premium en los 5 sites; cambia SOLO la paleta de acento, las fotos reales, el menu de servicios, los reviews y los datos de contacto.
