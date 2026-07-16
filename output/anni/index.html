@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f1f5f0" />
+  <title>Anni Head Spa · Head Spa y Scalp Treatments en Coral Gables | Ritual de bienestar premium</title>
+  <meta name="description" content="Anni Head Spa, boutique de head spa y scalp treatments en Coral Gables. Signature Head Spa, Golden Glow, faciales y mas. 4.9 en Google (271 resenas). Reserva online." />
+  <meta property="og:title" content="Anni Head Spa · Head Spa en Coral Gables" />
+  <meta property="og:description" content="Ritual de bienestar para tu cuero cabelludo y tu piel. Signature Head Spa: 45 min. Reserva online con confirmacion inmediata." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/ig-7.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Anni Head Spa",
+    "description": "Head spa boutique en Coral Gables enfocado en tratamientos de cuero cabelludo, faciales y bienestar holistico.",
+    "telephone": "+1-786-668-7483",
+    "email": "beautyspaanni@gmail.com",
+    "url": "https://headspaanni.com/",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2263 SW 37th Ave, Suite 117B",
+      "addressLocality": "Coral Gables",
+      "addressRegion": "FL",
+      "postalCode": "33145",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.instagram.com/headspaanni/",
+      "https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "271", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Head Spa y Faciales",
+      "itemListElement": [
+        { "@type": "Offer", "price": "125", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Signature Head Spa", "serviceType": "Head Spa" } },
+        { "@type": "Offer", "price": "155", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Head Spa + Mini Facial", "serviceType": "Head Spa" } },
+        { "@type": "Offer", "price": "220", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Golden Glow", "serviceType": "Head Spa" } },
+        { "@type": "Offer", "price": "70", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Gentlemen's Head Spa", "serviceType": "Head Spa" } },
+        { "@type": "Offer", "price": "180", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Deep Detox Facial", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "150", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Korean Glass Glow Facial", "serviceType": "Facial" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/raw/logo-gold.png" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f1f5f0;
+      --bg-2: #e6e9e2;
+      --surface: rgba(250,250,247,0.72);
+      --ink: #1b2216;
+      --ink-60: rgba(27,34,22,0.62);
+      --ink-40: rgba(27,34,22,0.42);
+      --accent-deep: #9b8231;
+      --accent-mid: #c9b359;
+      --accent-soft: #eee8d3;
+      --accent-ghost: rgba(155,130,49,0.16);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(155,130,49,0.18);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,250,247,0.9);
+      border-color: rgba(155,130,49,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(27,34,22,0.14), 0 0 40px rgba(155,130,49,0.1);
+    }
+
+    .text-shine {
+      background: linear-gradient(110deg, #9b8231 0%, #dcc686 30%, #6f5c22 52%, #9b8231 75%, #cbb267 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #eadfb9 0%, transparent 70%); opacity: 0.85; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d8c9a0 0%, transparent 70%); opacity: 0.5; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #ded2a0 0%, transparent 70%); opacity: 0.55; top: 38%; left: 52%; animation-delay: -11s; }
+
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #d9c581 0%, #9b8231 48%, #6f5c22 100%);
+      color: #f7f4ea; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        inset 0 -2px 5px rgba(50,40,15,0.4),
+        0 5px 0 #55461a,
+        0 12px 24px rgba(27,34,22,0.3);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 5px rgba(50,40,15,0.4), 0 7px 0 #55461a, 0 18px 34px rgba(27,34,22,0.34), 0 0 40px rgba(155,130,49,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(50,40,15,0.45), 0 1px 0 #55461a, 0 4px 10px rgba(27,34,22,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    .btn-ghost {
+      border: 1px solid rgba(155,130,49,0.4); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(155,130,49,0.75); background: rgba(155,130,49,0.1); box-shadow: 0 10px 26px rgba(27,34,22,0.14); }
+
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(24,20,12,0.94) 0%, rgba(16,14,9,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(241,245,240,0.86); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(27,34,22,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(27,34,22,0.22); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(155,130,49,0.16), inset 0 -60px 100px rgba(27,34,22,0.14); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #d9c581, #6f5c22);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .stars { color: #9b8231; letter-spacing: 2px; text-shadow: 0 0 14px rgba(155,130,49,0.35); }
+
+    .map-frame iframe { filter: grayscale(0.35) contrast(0.97) brightness(1); }
+
+    .dark-band {
+      --ink: #f4f1e6;
+      --ink-60: rgba(244,241,230,0.65);
+      --ink-40: rgba(244,241,230,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(217,197,129,0.18);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e8d6a0 0%, #f8ecd0 30%, #c9b359 52%, #e8d6a0 75%, #f3e3ba 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(217,197,129,0.18) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(155,130,49,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #f6ecc9 0%, #d9c581 48%, #b19845 100%);
+      color: #1b2216;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -2px 5px rgba(90,72,25,0.35), 0 5px 0 #6f5c22, 0 12px 24px rgba(0,0,0,0.4);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(90,72,25,0.35), 0 7px 0 #6f5c22, 0 18px 34px rgba(0,0,0,0.5), 0 0 40px rgba(217,197,129,0.2); }
+    .dark-band .btn-ghost { border-color: rgba(217,197,129,0.4); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(217,197,129,0.75); background: rgba(217,197,129,0.1); box-shadow: 0 10px 26px rgba(0,0,0,0.35); }
+    .dark-band .stars { color: #e8d6a0; text-shadow: 0 0 14px rgba(232,214,160,0.4); }
+
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c9b359 0%, #9b8231 100%);
+      box-shadow: 0 6px 0 #55461a, 0 14px 30px rgba(27,34,22,0.4);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #55461a, 0 20px 40px rgba(27,34,22,0.45), 0 0 34px rgba(155,130,49,0.4); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #55461a, 0 6px 14px rgba(27,34,22,0.3); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/logo-gold.png" alt="Logo Anni Head Spa" class="h-9 w-auto" />
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia">La Experiencia</a>
+        <a class="nav-link" href="#ritual">El Ritual</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#galeria">Galeria</a>
+        <a class="nav-link" href="#opiniones">Opiniones</a>
+        <a class="nav-link" href="#ubicacion">Ubicacion</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reservar
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Ritual</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galeria</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion">Ubicacion</a>
+        <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Coral Gables · Head Spa &amp; Scalp Treatments</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">Renuevate, elígete.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          Un ritual para <span class="text-shine">amarte</span><br />desde el cuero cabelludo
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
+          Anni Head Spa nacio del deseo de crear un espacio unico para escapar del estres diario y reconectar contigo. Inspirado en tradiciones ancestrales, cada ritual se enfoca en el area del cuero cabelludo, la puerta de entrada a tu bienestar general.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]">4.9 · 271 resenas en Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Reservar cita
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+17866687483" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (786) 668-7483
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4]">
+            <img src="assets/raw/ig-7.jpg" alt="Masaje de cuero cabelludo con arco de agua dorado en Anni Head Spa" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Ritual insignia</p>
+            <p class="font-display text-lg">Signature Head Spa</p>
+            <p class="text-sm text-[color:var(--ink-60)]">45 minutos · $125</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine">4.9</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">271 resenas en Google</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Coral <span class="text-shine">Gables</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Phenix Salon Suites</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">45 <span class="text-shine">min</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Signature Head Spa · $125</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Head Spa <span class="text-shine">+ Facial</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Y tratamientos de unas</p></div>
+    </div>
+  </section>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal">
+          <img src="assets/raw/ig-11.jpg" alt="Aceites de aromaterapia y cuenco tibetano de bronce sobre madera, con el logo de Anni Head Spa" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+          <img src="assets/raw/ig-12.jpg" alt="Cierre de tratamiento facial con mascarilla en Anni Head Spa" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un santuario sereno<br /><span class="text-shine">en Coral Gables</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
+          Anni Head Spa nacio del deseo de crear un espacio unico donde poder escapar del estres diario y reconectar contigo. Inspirada en tradiciones ancestrales y en una pasion por el bienestar holistico, su fundadora, Anni, imagino un spa enfocado especificamente en el area del cuero cabelludo, muchas veces olvidada, como puerta de entrada al bienestar general.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
+          Cada visita esta disenada para calmar tus sentidos y renovar tu espiritu, con productos naturales de la mas alta calidad y tratamientos personalizados. Porque mereces mas que un servicio: mereces <em class="font-script text-[color:var(--accent-deep)]">transformacion</em>.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">4.9</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+7.9K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">25+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Tratamientos</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL RITUAL PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El ritual, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Asi se vive el <span class="text-shine">Signature Head Spa</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3">Evaluacion capilar</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Comenzamos con una evaluacion de tu cuero cabelludo para entender lo que realmente necesita.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3">Productos revitalizantes</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Aplicacion de productos naturales pensados para nutrir y revitalizar desde la raiz.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3">Masaje craneal</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">El ritual cierra con un masaje craneal que libera la tension acumulada y te lleva a la calma.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3">Secado de cierre</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Un secado rapido de 20 minutos deja tu cabello listo para seguir con tu dia, renovada.</p>
+        </div>
+      </div>
+
+      <!-- Card del servicio insignia -->
+      <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal">
+        <div class="lg:col-span-2 zoomable relative min-h-[320px]">
+          <img src="assets/raw/ig-3.jpg" alt="Manos aplicando masaje craneal bajo agua tibia en Anni Head Spa" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="lg:col-span-3 p-8 sm:p-12">
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-4">Servicio insignia</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3">Signature <span class="text-shine">Head Spa</span></h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7">Evaluacion de tu cuero cabelludo, aplicacion de productos revitalizantes y cierre con masaje craneal. Incluye un secado rapido no profesional de 20 minutos.</p>
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
+            <div><p class="font-display text-3xl text-shine">$125</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Precio</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl">45 min</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Duracion</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl">$250</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Version para dos</p></div>
+          </div>
+          <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Reservar mi ritual
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">tratamiento</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Anni Head Spa en su sistema de reservas. Reserva online con confirmacion inmediata.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(155,130,49,0.4); box-shadow: 0 18px 50px rgba(27,34,22,0.12);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa · Insignia</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Signature Head Spa</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Evaluacion del cuero cabelludo, productos revitalizantes y masaje craneal de cierre.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$125</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">45 min</p>
+            </div>
+            <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:90ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Head Spa + Mini Facial</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Evaluacion del cuero cabelludo, productos, masaje facial y mini facial de cierre.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$155</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">50 min</p>
+            </div>
+            <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:150ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa de lujo</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Golden Glow</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Head spa profundo, masaje de brazos, hombros y cuello, facial estilo coreano y masaje de pies.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$220</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">70 min</p>
+            </div>
+            <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:210ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Gentlemen's Head Spa</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Evaluacion, productos revitalizantes y masaje craneal, pensado para ellos.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$70</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">45 min</p>
+            </div>
+            <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:270ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Deep Detox Facial</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Limpieza profunda con vapor, exfoliacion, extracciones, mascarilla y masaje relajante.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$180</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Korean Glass Glow Facial</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Inspirado en rituales coreanos: hidratacion profunda para un efecto de piel luminosa tipo "glass skin".</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$150</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-sm text-[color:var(--ink-60)] font-light mt-10">Tambien ofrecemos PDRN Salmon Therapy, Ultherapy, Dermaplaning, ASMR Sensory Scratching Ritual, Press &amp; Pedi y mas de 25 tratamientos en total.
+        <a class="text-[color:var(--accent-deep)] underline underline-offset-4" href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener">Ver el menu completo al reservar</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galeria</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">spa</span></h2>
+        </div>
+        <a href="https://www.instagram.com/headspaanni/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @headspaanni
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/ig-1.jpg" alt="Sala de tratamientos de Anni Head Spa con luz ambiental azul y plantas colgantes" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/ig-4.jpg" alt="Interior relajante del estudio con velas y decoracion botanica" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/ig-5.jpg" alt="Tratamiento facial en camilla, momento de renovacion en Anni Head Spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/ig-6.jpg" alt="Clienta recibiendo masaje de cuero cabelludo en un ambiente calido" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/ig-8.jpg" alt="Lavado japones de cabello con iluminacion morada sobre la banera del head spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/ig-9.jpg" alt="Detalle de tratamiento facial con luz azul en Anni Head Spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:360ms"><img src="assets/raw/ig-10.jpg" alt="Masaje de manos y cuero cabelludo con iluminacion roja durante un ritual de bienestar" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestras clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.9 de 5 · 271 resenas en Google</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mi pareja y yo tuvimos la experiencia mas relajante en este head spa! El espacio estaba limpio y era hermosamente calmante. La persona que nos atendio fue increiblemente amable, me hizo sentir muy comoda, especialmente porque estoy embarazada. Salimos sintiendonos consentidos y renovados."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Sandy</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Lo mas relajada que me he sentido en mi vida. Realmente todo lo que pense que seria y mas. El masaje de cuero cabelludo fue mi parte favorita. Definitivamente me veo regresando."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Andrea</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Experiencia de head spa increible! El ambiente, los aromas y la sensacion en general fueron muy relajantes. Fue mi primera experiencia de head spa y definitivamente fue genial!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Jane</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Esta fue una experiencia tan relajante!! Hicieron un masaje increible ademas de un analisis completo de mi cuero cabelludo. El precio tambien es genial!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Divya</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Servicio excelente. Personal muy conocedor y amable. La ubicacion es conveniente, con estacionamiento y muy limpia. Muy recomendado."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Filippo</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:300ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Consiganse una cita! Esta fue mi primera experiencia con un head spa y la ame absolutamente, que experiencia tan relajante, voy a volver."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Janet</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.google.com/maps/search/?api=1&query=Anni+Head+Spa+Coral+Gables" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Ver mas resenas en Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visitanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">en Coral Gables</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1">Direccion</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">2263 SW 37th Ave, Suite 117B, Coral Gables, FL 33145</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Dentro de Phenix Salon Suites</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(155,130,49,0.4)]" href="https://www.google.com/maps/search/?api=1&query=2263+SW+37th+Ave+Suite+117B+Coral+Gables+FL+33145" target="_blank" rel="noopener">Como llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener">reserva con Square</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Telefono: <a class="text-[color:var(--accent-deep)]" href="tel:+17866687483">(786) 668-7483</a></p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            <div>
+              <p class="font-medium mb-1">Contacto</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Email: <a class="text-[color:var(--accent-deep)]" href="mailto:beautyspaanni@gmail.com">beautyspaanni@gmail.com</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Instagram: <a class="text-[color:var(--accent-deep)]" href="https://www.instagram.com/headspaanni/" target="_blank" rel="noopener">@headspaanni</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Anni Head Spa, 2263 SW 37th Ave Suite 117B, Coral Gables FL"
+          src="https://www.google.com/maps?q=Anni+Head+Spa,+2263+SW+37th+Ave+Suite+117B,+Coral+Gables,+FL+33145&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #1b2216 0%, #11150e 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Renuevate, eligete, amate.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu ritual te esta <span class="text-shine">esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva tu Signature Head Spa online en segundos y date el permiso de desconectar en Coral Gables.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
+        <a href="tel:+17866687483" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)]" style="background:#14180f;">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/logo-gold.png" alt="Logo Anni Head Spa" class="h-9 w-auto" />
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Head Spa &amp; Scalp Treatments en Coral Gables. Ritual de bienestar holistico para cuero cabelludo y piel.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
+        <p>2263 SW 37th Ave, Suite 117B, Coral Gables, FL 33145</p>
+        <p><a href="tel:+17866687483" class="hover:text-[#e8d6a0]">(786) 668-7483</a></p>
+        <p><a href="mailto:beautyspaanni@gmail.com" class="hover:text-[#e8d6a0]">beautyspaanni@gmail.com</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Siguenos</p>
+        <p><a href="https://www.instagram.com/headspaanni/" target="_blank" rel="noopener" class="hover:text-[#e8d6a0]">Instagram · @headspaanni</a></p>
+        <p><a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="hover:text-[#e8d6a0]">Reservas online · Square</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Anni Head Spa. Todos los derechos reservados.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://book.squareup.com/appointments/o1vrmfozjse2pn/location/L8HWRQR51JRWN/services" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1b2216" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+  </script>
+</body>
+</html>
