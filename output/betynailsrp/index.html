@@ -714,27 +714,35 @@
           @betynailsrp
         </a>
       </div>
+      <style>
+        /* Galeria viva: Ken Burns lento en las fotos (intencional incluso con reduced-motion:
+           el cliente pidio galeria en movimiento; los videos tienen control manual de pausa) */
+        .kb img { animation: kenburnsA 16s ease-in-out infinite alternate; will-change: transform; }
+        .kb-b img { animation-name: kenburnsB; animation-duration: 19s; }
+        @keyframes kenburnsA { from { transform: scale(1.03); } to { transform: scale(1.15) translate(-2.5%, 2%); } }
+        @keyframes kenburnsB { from { transform: scale(1.03); } to { transform: scale(1.15) translate(2.5%, -2%); } }
+      </style>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable aspect-[3/4] img-reveal"><img src="assets/raw/ig-1.jpg" alt="Manicura en rosa y rojo con cerezas y líneas dibujadas a mano, por Bety Nails" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><img src="assets/raw/ig-8.jpg" alt="Francés de puntos en azul, amarillo y negro sobre uñas almendra" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><img src="assets/raw/ig-6.jpg" alt="Uñas en verde oliva con efecto ojo de gato dorado y detalle metálico" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><img src="assets/raw/ig-11.jpg" alt="Francés azul cobalto con diseño abstracto sobre base nude" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><img src="assets/raw/ig-5.jpg" alt="Uñas almendra en gris salvia con acabado pulido de manicura rusa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><img src="assets/raw/ig-12.jpg" alt="Nail art de sol dorado con centro azul brillante, pintado a mano" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame aspect-[3/4] img-reveal" style="transition-delay:120ms">
-          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="metadata" poster="assets/raw/ig-4.jpg" aria-label="Video del estudio Bety Nails: proceso de manicura rusa">
+        <div class="frame aspect-[3/4] img-reveal">
+          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="auto" poster="assets/raw/ig-4.jpg" aria-label="Video del estudio Bety Nails: proceso de manicura rusa">
             <source src="assets/raw/ig-4.mp4" type="video/mp4" />
           </video>
         </div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:200ms"><img src="assets/raw/ig-1-3.jpg" alt="Detalle de manicura rusa con diseño artesanal, del carrusel de Instagram" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:280ms"><img src="assets/raw/ig-1-5.jpg" alt="Acabado pulido de uñas con builder gel, trabajo de Bety Nails" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:160ms"><img src="assets/raw/ig-2-3.jpg" alt="Uñas en tonos verdes con diseño llamativo, del carrusel de Instagram" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:240ms"><img src="assets/raw/ig-2-5.jpg" alt="Detalle de nail art de precision sobre uñas almendra" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:320ms">
-          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="metadata" poster="assets/raw/ig-10.jpg" aria-label="Video de Bety Nails: uñas soft delicadas terminadas">
+        <div class="frame aspect-[3/4] lg:mt-10 img-reveal kb" style="transition-delay:90ms"><img src="assets/raw/ig-1.jpg" alt="Manicura en rosa y rojo con cerezas y líneas dibujadas a mano, por Bety Nails" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] img-reveal kb-b kb" style="transition-delay:180ms"><img src="assets/raw/ig-8.jpg" alt="Francés de puntos en azul, amarillo y negro sobre uñas almendra" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] lg:mt-[-2.5rem] img-reveal kb" style="transition-delay:120ms"><img src="assets/raw/ig-6.jpg" alt="Uñas en verde oliva con efecto ojo de gato dorado y detalle metálico" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] img-reveal" style="transition-delay:210ms">
+          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="auto" poster="assets/raw/ig-10.jpg" aria-label="Video de Bety Nails: uñas soft delicadas terminadas">
             <source src="assets/raw/ig-10.mp4" type="video/mp4" />
           </video>
         </div>
+        <div class="frame aspect-[3/4] lg:mt-10 img-reveal kb-b kb" style="transition-delay:300ms"><img src="assets/raw/ig-11.jpg" alt="Francés azul cobalto con diseño abstracto sobre base nude" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] img-reveal kb" style="transition-delay:120ms"><img src="assets/raw/ig-5.jpg" alt="Uñas almendra en gris salvia con acabado pulido de manicura rusa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] lg:mt-10 img-reveal kb-b kb" style="transition-delay:200ms"><img src="assets/raw/ig-12.jpg" alt="Nail art de sol dorado con centro azul brillante, pintado a mano" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] lg:mt-[-2.5rem] img-reveal kb" style="transition-delay:280ms"><img src="assets/raw/ig-1-3.jpg" alt="Detalle de manicura rusa con diseño artesanal, del carrusel de Instagram" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] img-reveal kb-b kb" style="transition-delay:160ms"><img src="assets/raw/ig-1-5.jpg" alt="Acabado pulido de uñas con builder gel, trabajo de Bety Nails" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] lg:mt-10 img-reveal kb" style="transition-delay:240ms"><img src="assets/raw/ig-2-3.jpg" alt="Uñas en tonos verdes con diseño llamativo, del carrusel de Instagram" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame aspect-[3/4] lg:mt-[-2.5rem] img-reveal kb-b kb" style="transition-delay:320ms"><img src="assets/raw/ig-2-5.jpg" alt="Detalle de nail art de precision sobre uñas almendra" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
