@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f3ece1" />
+  <title>Wink & Ink Mia · Lash & Brow Studio en West Miami | Melissa (Meli)</title>
+  <meta name="description" content="Wink & Ink Mia, estudio boutique de pestañas y cejas en West Miami con Melissa (Meli). Lash Lift, Classic Full Set, Brow Lamination y threading. 5.0 en Booksy. Reserva online." />
+  <meta property="og:title" content="Wink & Ink Mia · Lash & Brow Studio en West Miami" />
+  <meta property="og:description" content="Pestañas y cejas hechas a mano por Melissa desde 2019. Lash Lift, Full Set, Brow Lamination. 5.0 · 11 reseñas en Booksy. Reserva tu cita." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/svc-5.jpeg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Wink & Ink Mia",
+    "description": "Dedicated artist, enhancing natural beauty since 2019, with expert lash, brow, and semi-permanent makeup services.",
+    "image": "assets/raw/svc-5.jpeg",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6256 SW 15 Street",
+      "addressLocality": "West Miami",
+      "addressRegion": "FL",
+      "postalCode": "33144",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.76323550731363,
+      "longitude": -80.30767295657925
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday"], "opens": "11:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "13:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/winkandinkmia/",
+      "https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "11", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de pestañas y cejas",
+      "itemListElement": [
+        { "@type": "Offer", "price": "100", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Lash Lift", "serviceType": "Pestañas" } },
+        { "@type": "Offer", "price": "99", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Classic Full Set (primera cita)", "serviceType": "Pestañas" } },
+        { "@type": "Offer", "price": "117", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Full Set", "serviceType": "Pestañas" } },
+        { "@type": "Offer", "price": "120", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Brow Lamination", "serviceType": "Cejas" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3ece1;
+      --bg-2: #e9dfd0;
+      --surface: rgba(250,246,239,0.7);
+      --ink: #241f1a;
+      --ink-60: rgba(36,31,26,0.62);
+      --ink-40: rgba(36,31,26,0.42);
+      --accent-deep: #a8645a;
+      --accent-mid: #c08e82;
+      --accent-soft: #ecdcd4;
+      --accent-ghost: rgba(168,100,95,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(168,100,95,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,246,239,0.88);
+      border-color: rgba(168,100,95,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(36,31,26,0.14), 0 0 40px rgba(168,100,95,0.08);
+    }
+
+    .text-shine {
+      background: linear-gradient(110deg, #a8645a 0%, #cf9f8f 30%, #6f3f38 52%, #a8645a 75%, #c2836f 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e9cfc4 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d3a89a 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #ddb9ad 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #c08e82 0%, #a8645a 48%, #7a4038 100%);
+      color: #f8f2ea; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(70,35,28,0.4),
+        0 5px 0 #522a24,
+        0 12px 24px rgba(36,31,26,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(70,35,28,0.4), 0 7px 0 #522a24, 0 18px 34px rgba(36,31,26,0.32), 0 0 40px rgba(168,100,95,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(70,35,28,0.45), 0 1px 0 #522a24, 0 4px 10px rgba(36,31,26,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    .btn-ghost {
+      border: 1px solid rgba(168,100,95,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(168,100,95,0.7); background: rgba(168,100,95,0.08); box-shadow: 0 10px 26px rgba(36,31,26,0.14); }
+
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(30,22,18,0.94) 0%, rgba(22,16,13,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(243,236,225,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(36,31,26,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(36,31,26,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(168,100,95,0.14), inset 0 -60px 100px rgba(36,31,26,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #c08e82, #6f3f38);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .stars { color: #a8645a; letter-spacing: 2px; text-shadow: 0 0 14px rgba(168,100,95,0.3); }
+
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    .dark-band {
+      --ink: #f3ece1;
+      --ink-60: rgba(243,236,225,0.65);
+      --ink-40: rgba(243,236,225,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(224,180,163,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e6bfae 0%, #f8e2d6 30%, #c99f8f 52%, #e6bfae 75%, #f0d0c0 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(230,191,174,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(192,142,130,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #f8ece4 0%, #e8cec0 48%, #c99f8f 100%);
+      color: #241f1a;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(110,55,45,0.35),
+        0 5px 0 #8a5e50,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,55,45,0.35), 0 7px 0 #8a5e50, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(230,191,174,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,55,45,0.4), 0 1px 0 #8a5e50, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(230,191,174,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(230,191,174,0.7); background: rgba(230,191,174,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e6bfae; text-shadow: 0 0 14px rgba(230,191,174,0.4); }
+
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c08e82 0%, #a8645a 100%);
+      box-shadow: 0 6px 0 #522a24, 0 14px 30px rgba(36,31,26,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #522a24, 0 20px 40px rgba(36,31,26,0.4), 0 0 34px rgba(168,100,95,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #522a24, 0 6px 14px rgba(36,31,26,0.3); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(168,100,95,0.35)] bg-[rgba(168,100,95,0.1)] text-[color:var(--accent-deep)]">W</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">Wink <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">&amp; Ink Mia</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia">La Experiencia</a>
+        <a class="nav-link" href="#ritual">El Proceso</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#galeria">Galería</a>
+        <a class="nav-link" href="#opiniones">Opiniones</a>
+        <a class="nav-link" href="#ubicacion">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reservar cita
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Proceso</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
+        <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">West Miami · Lash &amp; Brow Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">Tu mirada, hecha a mano.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          Pestañas y cejas que <span class="text-shine">hablan por ti</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
+          Estudio boutique de pestañas, cejas y semi-permanent makeup en West Miami. Melissa (Meli) trabaja cita por cita, mirada por mirada, desde 2019.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]">5.0 · 11 reseñas en Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Reservar cita
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/winkandinkmia/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @winkandinkmia
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4]">
+            <img src="assets/raw/svc-5.jpeg" alt="Resultado de extensiones de pestañas volumen aplicadas en Wink & Ink Mia" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Servicio insignia</p>
+            <p class="font-display text-lg">Lash Lift</p>
+            <p class="text-sm text-[color:var(--ink-60)]">60 minutos · $100</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine">5.0</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">11 reseñas en Booksy</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Melissa <span class="text-shine">(Meli)</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Lash &amp; brow artist</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Desde <span class="text-shine">2019</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Enhancing natural beauty</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">West Miami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">6256 SW 15 Street, 33144</p></div>
+    </div>
+  </section>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal">
+          <img src="assets/raw/insp-6.jpeg" alt="Retrato de clienta con extensiones de pestañas y cejas laminadas, resultado de Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+          <img src="assets/raw/svc-7.jpeg" alt="Detalle de pestañas naturales tras un lash lift en Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un estudio íntimo<br /><span class="text-shine">en West Miami</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
+          Wink & Ink Mia es el proyecto de Melissa (Meli): una artista dedicada a realzar la belleza natural desde 2019, con servicios de pestañas, cejas y maquillaje semi-permanente. Cada cita es uno a uno, sin prisas, pensada para que el resultado se vea impecable y se sienta tuyo.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
+          Trabaja por cita previa, sin walk-ins, para dedicarle a cada mirada el tiempo que merece: desde un Lash Lift exprés hasta un Full Set completo o un laminado de cejas.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">11</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Reseñas</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2019</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Desde</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">Tu artista</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+              <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(168,100,95,0.3)] bg-[rgba(168,100,95,0.12)] text-[color:var(--accent-deep)]">M</span>
+              <span class="text-sm font-light">Melissa (Meli) · Lash &amp; Brow Artist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROCESO PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El proceso, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Así se construye <span class="text-shine">tu mirada</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3">Consulta y diseño de mirada</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Platicamos tu estilo ideal: Classic, Hybrid o Volume, y la curvatura que mejor le queda a la forma de tu ojo.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3">Mapeo y aplicación</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Melissa mapea pestaña por pestaña con precisión, o realiza el laminado/threading según el servicio elegido.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3">Acabado y cuidado</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Sellado, peinado final y recomendaciones de cuidado en casa para que el resultado dure más.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3">Seguimiento</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Tips de mantenimiento y agenda de refill o retoque para conservar tu mirada impecable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">servicio</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios publicados por Wink & Ink Mia en Booksy. Solo con cita previa, sin walk-ins.</p>
+      </div>
+
+      <p class="reveal text-xs tracking-[0.3em] uppercase text-[color:var(--accent-deep)] mb-6">Pestañas</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-14">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(168,100,95,0.4); box-shadow: 0 18px 50px rgba(36,31,26,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Oferta limitada</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Lash Lift</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Realza tus pestañas naturales sin extensiones, con curvatura y efecto despierto.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$100</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Oferta limitada · Primera cita</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Classic Full Set</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Set completo de extensiones clásicas para clientas de primera vez.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$99</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">120 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Pestañas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Full Set</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Set completo de extensiones de pestañas a tu estilo.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$117</p>
+            </div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Pestañas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Refill</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Mantenimiento para conservar tu set de extensiones full y bonito.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$75</p>
+            </div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Pestañas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Lash Removal</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Retiro profesional y seguro de extensiones de pestañas.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$30</p>
+            </div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Pestañas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Henna Tint (lashes)</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Tinte de henna para oscurecer tus pestañas naturales.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$15</p>
+            </div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Pestañas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Content Lash Model (Full Set)</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Full set con tarifa especial para clientas que autorizan uso de contenido.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$80</p>
+            </div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="reveal text-xs tracking-[0.3em] uppercase text-[color:var(--accent-deep)] mb-6">Cejas y depilación</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Cejas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Brow Lamination</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Laminado de cejas para un efecto lleno, peinado y prolijo.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$120</p></div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Cejas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Henna Tint (brows)</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Tinte de henna para definir y oscurecer tus cejas.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$15</p></div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Depilación</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Eyebrow Threading/Waxing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Diseño y limpieza de cejas con hilo o cera.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$15</p></div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Depilación</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Threading/Waxing Full Face</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Depilación de rostro completo con hilo o cera.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$50</p></div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Depilación</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Upper Lip (wax/threading)</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Depilación de labio superior con hilo o cera.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$10</p></div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Depilación</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Chin Threading</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Depilación de mentón con hilo.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$10</p></div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Depilación</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Neck Wax</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Depilación de cuello con cera.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$20</p></div>
+            <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Precios publicados en Booksy. Solo con cita previa; sin walk-ins.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Trabajos <span class="text-shine">reales</span></h2>
+        </div>
+        <a href="https://www.instagram.com/winkandinkmia/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @winkandinkmia
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/biz-1.jpeg" alt="Detalle de extensiones de pestañas clásicas, resultado de Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/insp-1.jpeg" alt="Cejas después de threading y lash lift en Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/insp-2.jpeg" alt="Detalle de ceja natural peinada tras threading en Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/insp-3.jpeg" alt="Retrato de clienta con lash lift, resultado final en Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/insp-4.jpeg" alt="Cejas laminadas y definidas, trabajo de Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/svc-1.jpeg" alt="Antes y después de threading de cejas en Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:150ms"><img src="assets/raw/svc-3.jpeg" alt="Detalle de extensiones de pestañas con acabado natural en Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:240ms"><img src="assets/raw/svc-6.jpeg" alt="Retrato de clienta sonriendo tras servicio de pestañas en Wink & Ink Mia" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestras clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 11 reseñas en Booksy</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great brows, good vibes, and good conversation. Highly recommend :)"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Gaby P.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Melissa is the kindest, sweetest person in the world. My first time waxing my nose, eyebrows and ears and she did an amazing job making me feel comfortable and unintimidated. Highly recommend her services. 10 out of 10."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Arturo Muse M.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This was probably the nicest wax I've ever had. Also loving the lash lift so far can't wait to wake up like this 🤗"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Yvette S.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 11 reseñas en Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu cita queda <span class="text-shine">cerca</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">6256 SW 15 Street, West Miami, FL 33144</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(168,100,95,0.4)]" href="https://www.google.com/maps?q=6256+SW+15+Street,+West+Miami,+FL+33144" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes y Martes: 11:00 AM a 2:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Miércoles a Viernes: 11:00 AM a 1:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Sábado: 10:00 AM a 2:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light mt-1">Solo con cita previa, sin walk-ins.</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Instagram: <a class="text-[color:var(--accent-deep)]" href="https://www.instagram.com/winkandinkmia/" target="_blank" rel="noopener">@winkandinkmia</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Wink & Ink Mia, 6256 SW 15 Street, West Miami FL"
+          src="https://www.google.com/maps?q=6256+SW+15+Street,+West+Miami,+FL+33144&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #211a15 0%, #18120e 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Tu mirada, hecha a mano.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu próxima mirada te está <span class="text-shine">esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva tu cita online en segundos. Elige día, hora y servicio, y deja que Melissa haga el resto.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
+        <a href="https://www.instagram.com/winkandinkmia/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm">Escríbenos por Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#15100c]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(230,191,174,0.35)] bg-[rgba(230,191,174,0.08)] text-[#e6bfae]">W</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Wink &amp; Ink Mia</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Lash &amp; Brow Studio en West Miami. Pestañas, cejas y semi-permanent makeup con Melissa (Meli) desde 2019.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
+        <p>6256 SW 15 Street, West Miami, FL 33144</p>
+        <p>Lun y Mar 11 AM a 2 PM · Mié a Vie 11 AM a 1 PM · Sáb 10 AM a 2 PM</p>
+        <p>Solo con cita previa</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
+        <p><a href="https://www.instagram.com/winkandinkmia/" target="_blank" rel="noopener" class="hover:text-[#e6bfae]">Instagram · @winkandinkmia</a></p>
+        <p><a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="hover:text-[#e6bfae]">Reservas online · Booksy</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Wink & Ink Mia. Todos los derechos reservados.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/927165_wink-ink-mia_brows-lashes_15889_miami" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f8f2ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+  </script>
+</body>
+</html>

@@ -12,7 +12,7 @@
 
 Hola Emely, soy Michael Vargas de Merktop.
 
-Encontre EME Miami en Booksy y me llamo la atencion su calificacion de 5.0 con 14 resenas, asi que les arme un sitio web de muestra con sus servicios, fotos y resenas reales: https://eme-demo.merktop.com (pendiente de publicar, se los activo en cuanto me confirmen).
+Encontre EME Miami en Booksy y me llamo la atencion su calificacion de 5.0 con 14 resenas, asi que les arme un sitio web de muestra con sus servicios, fotos y resenas reales: https://siteforge-demos.odd-forest-9504.workers.dev/eme/
 
 No toca en nada su forma de reservar citas: ustedes siguen usando Booksy exactamente igual, esto es solo la vitrina que sus clientas ven antes de llegar ahi.
 
@@ -27,7 +27,7 @@ Merktop
 
 ## Version corta (SMS, si se prefiere algo mas breve)
 
-Hola Emely, soy Michael de Merktop. Vi que EME Miami tiene 5.0 en Booksy y les hice un sitio web de muestra con sus servicios y fotos reales: https://eme-demo.merktop.com (pendiente de publicar). No cambia nada de como reservan hoy en Booksy. Si les gusta lo dejamos en su dominio, si no lo retiramos sin compromiso. Cualquier pregunta me escribe.
+Hola Emely, soy Michael de Merktop. Vi que EME Miami tiene 5.0 en Booksy y les hice un sitio web de muestra con sus servicios y fotos reales: https://siteforge-demos.odd-forest-9504.workers.dev/eme/. No cambia nada de como reservan hoy en Booksy. Si les gusta lo dejamos en su dominio, si no lo retiramos sin compromiso. Cualquier pregunta me escribe.
 
 Michael Vargas / Merktop
 
