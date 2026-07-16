@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f2ded0" />
+  <title>Altar Beauty Spa · Nail Salon Boutique en Miami | Manicura, Pedicura y Extensiones</title>
+  <meta name="description" content="Altar Beauty Spa, nail salon boutique dentro de Ivania's Beauty, en el corredor Little Haiti / Design District de Miami. Manicura, pedicura, extensiones esculpidas, cejas y depilacion. 4.7 en Booksy con 148 resenas. Reserva online." />
+  <meta property="og:title" content="Altar Beauty Spa · Nail Salon Boutique en Miami" />
+  <meta property="og:description" content="Manicura, pedicura y extensiones esculpidas a tu medida. 4.7 en Booksy · 148 resenas. Reserva online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/inspiration-2.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NailSalon",
+    "name": "Altar Beauty Spa",
+    "description": "Nail salon boutique dentro de Ivania's Beauty, en el corredor Little Haiti / Design District de Miami. Manicura, pedicura, extensiones esculpidas, cejas y depilacion.",
+    "telephone": "+1-305-970-3479",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4502 NW 2nd Ave",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "postalCode": "33127",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 25.8171433, "longitude": -80.1998011 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "10:00", "closes": "19:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "10:00", "closes": "20:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/altar.beauty.spa/",
+      "https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "148", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de manicura, pedicura y extensiones",
+      "itemListElement": [
+        { "@type": "Offer", "price": "30", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Classic Manicure", "serviceType": "Manicura" } },
+        { "@type": "Offer", "price": "40", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Gel Manicure", "serviceType": "Manicura" } },
+        { "@type": "Offer", "price": "40", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Classic Pedicure", "serviceType": "Pedicura" } },
+        { "@type": "Offer", "price": "75", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Acrylic Full Set (Short)", "serviceType": "Extensiones" } },
+        { "@type": "Offer", "price": "80", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Gel Manicura & Spa Gel Pedicure", "serviceType": "Combo" } },
+        { "@type": "Offer", "price": "25", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Eyebrow Wax", "serviceType": "Cejas" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/logo.jpg" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf3ee;
+      --bg-2: #f2e1d5;
+      --surface: rgba(255,250,246,0.72);
+      --ink: #3a2620;
+      --ink-60: rgba(58,38,32,0.62);
+      --ink-40: rgba(58,38,32,0.42);
+      --accent-deep: #a8763f;
+      --accent-mid: #c98a6f;
+      --accent-soft: #f2ded0;
+      --accent-ghost: rgba(168,118,63,0.15);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass blush calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(168,118,63,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(255,250,246,0.9);
+      border-color: rgba(168,118,63,0.34);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(58,38,32,0.14), 0 0 40px rgba(168,118,63,0.08);
+    }
+
+    /* Sheen rosa-dorado sobre texto */
+    .text-shine {
+      background: linear-gradient(110deg, #a8763f 0%, #d9ac86 30%, #7a5230 52%, #c98a6f 75%, #e0b28e 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs blush/dorado sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #edd0b6 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d9a98c 0%, transparent 70%); opacity: 0.55; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e6c2a0 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D rosa-dorado */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #c98a6f 0%, #a8763f 48%, #7a5230 100%);
+      color: #faf3ee; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(70,45,20,0.4),
+        0 5px 0 #5a3c22,
+        0 12px 24px rgba(58,38,32,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(70,45,20,0.4), 0 7px 0 #5a3c22, 0 18px 34px rgba(58,38,32,0.32), 0 0 40px rgba(168,118,63,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(70,45,20,0.45), 0 1px 0 #5a3c22, 0 4px 10px rgba(58,38,32,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(168,118,63,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(168,118,63,0.7); background: rgba(168,118,63,0.08); box-shadow: 0 10px 26px rgba(58,38,32,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,26,20,0.94) 0%, rgba(27,19,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(250,243,238,0.86); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(58,38,32,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(58,38,32,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(168,118,63,0.14), inset 0 -60px 100px rgba(58,38,32,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #d9ac86, #7a5230);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #a8763f; letter-spacing: 2px; text-shadow: 0 0 14px rgba(168,118,63,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Filas de servicio dentro de las cards de categoria */
+    .svc-row { border-bottom: 1px solid rgba(168,118,63,0.14); transition: background 0.2s ease; }
+    .svc-row:last-child { border-bottom: none; }
+    .svc-row:hover { background: rgba(168,118,63,0.06); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f6ece1;
+      --ink-60: rgba(246,236,225,0.65);
+      --ink-40: rgba(246,236,225,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,197,155,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e8c8a4 0%, #f8e6cf 30%, #c99a72 52%, #e8c8a4 75%, #f3ddba 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,200,164,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(201,138,111,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #faf0e2 0%, #e8cfb2 48%, #c9a37e 100%);
+      color: #3a2620;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,80,40,0.35),
+        0 5px 0 #8a6a4a,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,80,40,0.35), 0 7px 0 #8a6a4a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,200,164,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,80,40,0.4), 0 1px 0 #8a6a4a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(232,200,164,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(232,200,164,0.7); background: rgba(232,200,164,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e8c8a4; text-shadow: 0 0 14px rgba(232,200,164,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c98a6f 0%, #a8763f 100%);
+      box-shadow: 0 6px 0 #5a3c22, 0 14px 30px rgba(58,38,32,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5a3c22, 0 20px 40px rgba(58,38,32,0.4), 0 0 34px rgba(168,118,63,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5a3c22, 0 6px 14px rgba(58,38,32,0.3); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(168,118,63,0.35)] bg-[rgba(168,118,63,0.1)] text-[color:var(--accent-deep)]">A</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">Altar <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Beauty Spa</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia">La Experiencia</a>
+        <a class="nav-link" href="#ritual">El Proceso</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#galeria">Galeria</a>
+        <a class="nav-link" href="#opiniones">Opiniones</a>
+        <a class="nav-link" href="#ubicacion">Ubicacion</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reservar en Booksy
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Proceso</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galeria</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion">Ubicacion</a>
+        <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar en Booksy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Little Haiti · Design District · Miami</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">Dentro de Ivania's Beauty.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          Tus uñas, con acabado de <span class="text-shine">salon boutique</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
+          Manicura, pedicura y extensiones esculpidas a mano en 4502 NW 2nd Ave, Miami. Aracellys y su equipo trabajan cada set a tu medida, con tecnica profesional y productos de calidad.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]">4.7 · 148 resenas en Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Reservar en Booksy
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+13059703479" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (305) 970-3479
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4]">
+            <img src="assets/raw/inspiration-2.jpg" alt="Manicura almendrada con esmalte nude glitter, trabajo real de Altar Beauty Spa" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Combo mas pedido</p>
+            <p class="font-display text-lg">Gel Manicura &amp; Spa Gel Pedicure</p>
+            <p class="text-sm text-[color:var(--ink-60)]">1h 40min · $80</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine">4.7</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">148 resenas en Booksy</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Dentro de <span class="text-shine">Ivania's Beauty</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Design District</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Desde <span class="text-shine">$30</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Manicura clasica</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Little Haiti</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">4502 NW 2nd Ave, Miami</p></div>
+    </div>
+  </section>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal">
+          <img src="assets/raw/staff-aracellys.jpg" alt="Aracellys, dueña de Altar Beauty Spa, en el salon" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+          <img src="assets/raw/review-2.jpg" alt="Interior real de Altar Beauty Spa: sillones en terciopelo rosa palo, mesas doradas y pedicura en proceso" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un salon boutique<br /><span class="text-shine">con nombre propio</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
+          Altar Beauty Spa funciona dentro de Ivania's Beauty, en el corredor entre Little Haiti y el Design District de Miami. Aracellys, la dueña, trabaja junto a Marcela, Nataly y Valentina en un espacio de sillones rosa palo, detalles dorados y atencion cercana.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
+          El menu cubre manicura, pedicura, extensiones esculpidas, cejas y depilacion, con opcion de reservar el servicio directamente con Aracellys. Como cuenta una clienta que las sigue desde hace años: <em class="font-script text-[color:var(--accent-deep)]">"amazing as always, even when they changed locations I followed them"</em>.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">4.7</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+5.9K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">50+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Servicios</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">El equipo</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-4 py-2"><span class="text-sm font-light">Aracellys · Dueña</span></div>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-4 py-2"><span class="text-sm font-light">Marcela</span></div>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-4 py-2"><span class="text-sm font-light">Nataly</span></div>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-4 py-2"><span class="text-sm font-light">Valentina</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROCESO PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El proceso, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Asi se hace cada <span class="text-shine">set</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3">Consulta y diseño</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Elegimos juntas la forma, el largo y el acabado que mejor se adapta a tus manos o pies.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3">Preparacion profesional</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Cuidado de cuticula, limado y preparacion de la una con herramientas de salon.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3">Aplicacion y esculpido</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Gel, acrilico, PolyGel o esmaltado clasico, aplicado con tecnica y precision.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3">Acabado y brillo final</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Sellado, hidratacion y el detalle final que hace que tu set luzca impecable por semanas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">El menu <span class="text-shine">completo</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones exactos, publicados por Altar Beauty Spa en su pagina de Booksy.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+
+        <!-- Manicura -->
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <h3 class="font-display text-2xl mb-1">Manicura</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Clasica y gel</p>
+          <div class="flex-1">
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Classic Manicure</p><p class="text-[11px] text-[color:var(--ink-40)]">45 min</p></div><p class="font-display text-lg text-shine">$30</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Classic Russian Manicure</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h</p></div><p class="font-display text-lg text-shine">$50</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Russian Manicure by Aracellys</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h</p></div><p class="font-display text-lg text-shine">$60</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Manicure</p><p class="text-[11px] text-[color:var(--ink-40)]">45 min</p></div><p class="font-display text-lg text-shine">$40</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Manicure by Aracellys</p><p class="text-[11px] text-[color:var(--ink-40)]">45 min</p></div><p class="font-display text-lg text-shine">$50</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Russian Manicure</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h</p></div><p class="font-display text-lg text-shine">$65</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Russian Manicure by Aracellys</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 15 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Luminary Manicure</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h</p></div><p class="font-display text-lg text-shine">$45</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Luminary Manicure (unas naturales cortas)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 15 min</p></div><p class="font-display text-lg text-shine">$45</p></div>
+          </div>
+          <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center mt-6">Reservar manicura</a>
+        </div>
+
+        <!-- Pedicura -->
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:80ms">
+          <h3 class="font-display text-2xl mb-1">Pedicura</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Clasica y gel</p>
+          <div class="flex-1">
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Classic Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">45 min</p></div><p class="font-display text-lg text-shine">$40</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Classic Volcano Detox Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">55 min</p></div><p class="font-display text-lg text-shine">$64.99</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Classic Jelly Spa Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">55 min</p></div><p class="font-display text-lg text-shine">$58</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Classic CBD Volcano Detox Spa Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">55 min</p></div><p class="font-display text-lg text-shine">$88</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">45 min</p></div><p class="font-display text-lg text-shine">$50</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Pedicure with Aracellys</p><p class="text-[11px] text-[color:var(--ink-40)]">45 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Jelly Spa Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">55 min</p></div><p class="font-display text-lg text-shine">$69.99</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Volcano Detox Spa Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">55 min</p></div><p class="font-display text-lg text-shine">$79.99</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel CBD Volcano Detox Spa</p><p class="text-[11px] text-[color:var(--ink-40)]">55 min</p></div><p class="font-display text-lg text-shine">$88</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Summer Volcano Spa Pedicure with Hot Stones</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h</p></div><p class="font-display text-lg text-shine">$50</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Soak Off Service</p><p class="text-[11px] text-[color:var(--ink-40)]">30 min</p></div><p class="font-display text-lg text-shine">$15</p></div>
+          </div>
+          <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center mt-6">Reservar pedicura</a>
+        </div>
+
+        <!-- Extensiones y Esculpido -->
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal lg:col-span-2" style="border-color: rgba(168,118,63,0.4); box-shadow: 0 18px 50px rgba(58,38,32,0.14);">
+          <h3 class="font-display text-2xl mb-1">Extensiones y Esculpido</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Acrilico, Apres Gel X, Hard Gel, Builder Gel, PolyGel</p>
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Acrylic Full Set (Short)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 45 min</p></div><p class="font-display text-lg text-shine">$75</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Acrylic Full Set (Medium)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 45 min</p></div><p class="font-display text-lg text-shine">$80</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Acrylic Full Set (Long)</p><p class="text-[11px] text-[color:var(--ink-40)]">2 h</p></div><p class="font-display text-lg text-shine">$85</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Acrylic Full Set (Long/XLong)</p><p class="text-[11px] text-[color:var(--ink-40)]">2 h 30 min</p></div><p class="font-display text-lg text-shine">$90</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Sculpted Acrylic Set</p><p class="text-[11px] text-[color:var(--ink-40)]">2 h 30 min</p></div><p class="font-display text-lg text-shine">$90</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Acrylic Overlay</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 15 min</p></div><p class="font-display text-lg text-shine">$60</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Acrylic Refill (2+ Weeks)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 15 min</p></div><p class="font-display text-lg text-shine">$65</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Acrylic Refill (3-4+ Weeks)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Apres Gel X</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 15 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Apres Gel X + Soak Off</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$80</p></div>
+            </div>
+            <div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Hard Gel (Full Set)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$98</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Hard Gel (Full Set Sculpted)</p><p class="text-[11px] text-[color:var(--ink-40)]">2 h</p></div><p class="font-display text-lg text-shine">$98</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Hard Gel (Refill 2+ Weeks)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 15 min</p></div><p class="font-display text-lg text-shine">$65</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Hard Gel (Refill 3-4+ Weeks)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Builder Gel (With Tips)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 15 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Builder Gel (Natural Nails)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">PolyGel Full Set (overlay unas cortas)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$65</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">PolyGel Full Set (con tips)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$80</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">PolyGel Refill (2+ Weeks)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$70</p></div>
+              <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">PolyGel Refill (3-4+ Weeks)</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 30 min</p></div><p class="font-display text-lg text-shine">$75</p></div>
+            </div>
+          </div>
+          <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full sm:w-auto justify-center mt-6">Reservar extensiones</a>
+        </div>
+
+        <!-- Cejas, Pestañas y Depilacion -->
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:120ms">
+          <h3 class="font-display text-2xl mb-1">Cejas, Pestañas y Depilacion</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Wax, tinte, laminado, threading</p>
+          <div class="flex-1">
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Eyebrow Wax</p><p class="text-[11px] text-[color:var(--ink-40)]">30 min</p></div><p class="font-display text-lg text-shine">$25</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Eyebrow Shaping Combo</p><p class="text-[11px] text-[color:var(--ink-40)]">45 min</p></div><p class="font-display text-lg text-shine">$45</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Eyebrow Tint</p><p class="text-[11px] text-[color:var(--ink-40)]">30 min</p></div><p class="font-display text-lg text-shine">$25</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Brow Lamination</p><p class="text-[11px] text-[color:var(--ink-40)]">30 min</p></div><p class="font-display text-lg text-shine">$90</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Lash Lifting</p><p class="text-[11px] text-[color:var(--ink-40)]">30 min</p></div><p class="font-display text-lg text-shine">$90</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Lash Tinting</p><p class="text-[11px] text-[color:var(--ink-40)]">15 min</p></div><p class="font-display text-lg text-shine">$25</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Eyebrow Threading</p><p class="text-[11px] text-[color:var(--ink-40)]">30 min</p></div><p class="font-display text-lg text-shine">$30</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Full Face Depilatory</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h</p></div><p class="font-display text-lg text-shine">$65</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Upper Lip Wax or Threading</p><p class="text-[11px] text-[color:var(--ink-40)]">15 min</p></div><p class="font-display text-lg text-shine">$12</p></div>
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Nose Depilation Wax</p><p class="text-[11px] text-[color:var(--ink-40)]">10 min</p></div><p class="font-display text-lg text-shine">$15</p></div>
+          </div>
+          <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center mt-6">Reservar cejas y depilacion</a>
+        </div>
+
+        <!-- Combos -->
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:160ms">
+          <h3 class="font-display text-2xl mb-1">Combos</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Manicura + pedicura en una sola cita</p>
+          <div class="flex-1">
+            <div class="svc-row flex justify-between items-baseline py-2.5"><div><p class="text-sm">Gel Manicura &amp; Spa Gel Pedicure</p><p class="text-[11px] text-[color:var(--ink-40)]">1 h 40 min</p></div><p class="font-display text-lg text-shine">$80</p></div>
+          </div>
+          <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center mt-6">Reservar combo</a>
+        </div>
+
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Menu completo publicado por Altar Beauty Spa en Booksy. Precios en USD, sujetos a cambio segun disenos adicionales.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galeria</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">salon</span></h2>
+        </div>
+        <a href="https://www.instagram.com/altar.beauty.spa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @altar.beauty.spa
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/inspiration-1.jpg" alt="Manicura francesa con moños de strass, trabajo real de Altar Beauty Spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/service-2.jpg" alt="Extension acrilica larga con diseño marmoleado en tonos turquesa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/service-1.jpg" alt="Pedicura con arte floral tridimensional en tonos blanco y naranja" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/service-7.jpg" alt="Unas almendradas en esmalte rojo intenso con acabado brillante" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/service-3.jpg" alt="Proceso de esculpido de unas con moldes, tecnica de extension" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/service-9.jpg" alt="Pedicura spa en gelatina rosa, servicio Jelly Spa Pedicure" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestras clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.7 de 5 · 148 resenas en Booksy</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I'm very please with my Russian Builder gel manicure and gel pedicure. Aracely is very lovely and very detail oriented. Amazing value. Best service I've had in a long time. Thank you!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Amada-Thomas</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Alba did an amazing job with my first ever pedicure! Highly recommend this spa for males that are interested in getting their feet cleaned."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Daniel H.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Amazing as always. Been coming here for years even when they changes locations i followed them whenever they are"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Deniza D.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I love it every time I come here, Aracelys is a doll! and an amazing artist!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Anita G.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This is the best place to get nails done they are perfect I'm happy"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Livia M.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 148 resenas en Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visitanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Te esperamos en <span class="text-shine">Miami</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1">Direccion</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">4502 NW 2nd Ave, Miami, FL 33127</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Dentro de Ivania's Beauty · Design District / Little Haiti</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(168,118,63,0.4)]" href="https://www.google.com/maps?q=Altar+Beauty+Spa,+4502+NW+2nd+Ave,+Miami,+FL+33127" target="_blank" rel="noopener">Como llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Jueves: 10:00 AM a 7:30 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Viernes y Sabado: 10:00 AM a 8:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: cerrado</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Telefono: <a class="text-[color:var(--accent-deep)]" href="tel:+13059703479">(305) 970-3479</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Altar Beauty Spa, 4502 NW 2nd Ave, Miami FL"
+          src="https://www.google.com/maps?q=Altar+Beauty+Spa,+4502+NW+2nd+Ave,+Miami,+FL+33127&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241a12 0%, #1a130d 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Uñas que hablan por ti.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu proximo set te esta <span class="text-shine">esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva online en segundos y elige tu servicio, dia y hora en Booksy. Sin llamadas, sin esperas.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar en Booksy</a>
+        <a href="tel:+13059703479" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#17110c]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,200,164,0.35)] bg-[rgba(232,200,164,0.08)] text-[#e8c8a4]">A</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Altar Beauty Spa</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Nail salon boutique dentro de Ivania's Beauty. Manicura, pedicura, extensiones esculpidas, cejas y depilacion en Miami.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
+        <p>4502 NW 2nd Ave, Miami, FL 33127</p>
+        <p><a href="tel:+13059703479" class="hover:text-[#e8c8a4]">(305) 970-3479</a></p>
+        <p>Lun a Jue 10 AM a 7:30 PM · Vie y Sab 10 AM a 8 PM · Dom cerrado</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Siguenos</p>
+        <p><a href="https://www.instagram.com/altar.beauty.spa/" target="_blank" rel="noopener" class="hover:text-[#e8c8a4]">Instagram · @altar.beauty.spa</a></p>
+        <p><a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="hover:text-[#e8c8a4]">Reservas online · Booksy</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Altar Beauty Spa. Todos los derechos reservados.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/593150_altar-beauty-spa_nail-salon_15889_miami" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online en Booksy">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+  </script>
+</body>
+</html>
