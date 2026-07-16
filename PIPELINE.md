@@ -25,6 +25,7 @@ Recolectar SOLO datos reales, nunca inventar:
 5. Reviews: 3-5 quotes reales de Google con nombre, verbatim, idioma original.
 6. Brand: colores/estetica real (logo, decoracion, feed) para derivar la paleta.
 7. Contacto: email publico (business_email de IG, mailto en booking, dominio propio), telefono, hours.
+8. **Idioma principal** del negocio (captions de IG, reseñas, menu): registrar `language: "es" | "en"` en data.json y en el registro. Define el idioma por defecto del site bilingue y el idioma del dm_message.
 Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 
 ## Fase 2: Build (un agente por negocio)
@@ -56,6 +57,7 @@ Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 - Estructura probada: saludo con nombre si se conoce, 1 linea de como los encontre (su rating real), el link del demo, que no toca su operacion de reservas, oferta de dejarlo en su dominio o retirarlo sin compromiso. Corto, espanol (o el idioma del negocio), sin em-dash, firmado Michael Vargas / Merktop.
 - Idempotency-Key: `siteforge-<slug>-<fecha>`. Verificar `last_event: delivered`.
 - Sin email publico: registrar `outreach: pending_manual` con telefono/IG para WhatsApp o DM manual.
+- **dm_message (SIEMPRE, para todo negocio)**: version corta del outreach para DM/WhatsApp (max ~450 chars), en el IDIOMA PRINCIPAL del negocio, con el link del demo incluido, angulo segun has_own_site. Guardarlo en el registro (`dm_message`) e incluirlo como `dm` en el POST de done al panel. El panel lo usa para el boton "DM" (copia + abre el hilo de Instagram) y "WhatsApp" (texto pre-llenado via wa.me).
 
 ## Fase 6: Registro y reporte
 - Actualizar `data/processed.json`: `{slug, name, city, ig, url_demo, has_own_site, email, outreach: sent|pending_manual|skipped, fecha}`. NUNCA reprocesar un slug ya registrado (idempotencia).

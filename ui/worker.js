@@ -64,6 +64,7 @@ export default {
       if (typeof body.slug === 'string' && /^[a-z0-9-]{1,40}$/.test(body.slug)) result.slug = body.slug;
       if (typeof body.name === 'string' && body.name.length <= 120) result.name = body.name;
       if (typeof body.url_demo === 'string' && DEMO_URL_RE.test(body.url_demo)) result.url_demo = body.url_demo;
+      if (typeof body.dm === 'string' && body.dm.length <= 500) result.dm = body.dm;
       let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
       const exists = queue.some(q => q.id === body.id && (q.status === 'pending' || q.status === 'processing'));
       if (!exists) return json({ error: 'item no pendiente' }, 404);

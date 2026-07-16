@@ -67,6 +67,23 @@ Paletas POR NEGOCIO (derivadas del brand real encontrado en research, campo `bra
 - Si un dato no se encontro (ej. horarios), omitir la fila, no rellenar.
 - Reviews: solo quotes reales encontradas; si hay menos de 3, mostrar las que haya.
 
+## Multilenguaje (OBLIGATORIO en todo demo)
+Cada site se construye BILINGUE (espanol + ingles) en el mismo archivo:
+1. **Idioma principal**: el del negocio (detectado en research: captions de IG, reseñas, menu). Es el idioma por defecto de la pagina y del `lang` del `<html>`.
+2. **Mecanismo**: atributos `data-es` / `data-en` en cada nodo de texto traducible (o un dict JS `I18N = { es: {...}, en: {...} }` con claves por seccion). Toggle "ES | EN" en el nav (pill pequeño junto al CTA). Al cambiar: swap de textos, `document.documentElement.lang`, y persistir en `localStorage('lang')`. Al cargar: usar localStorage, si no `navigator.language`.
+3. **Que NO se traduce**: nombres de servicios EXACTOS como los publica el negocio, precios, nombre del negocio, quotes de reseñas (van en su idioma original siempre).
+4. Meta description y title en el idioma principal.
+Snippet de referencia:
+```html
+<button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs">EN</button>
+<script>
+const applyLang = l => { document.querySelectorAll('[data-es]').forEach(el => el.textContent = el.dataset[l] || el.dataset.es); document.documentElement.lang = l; localStorage.setItem('lang', l); document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES'; };
+let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0,2);
+applyLang(lang === 'en' ? 'en' : 'es');
+document.getElementById('langToggle').onclick = () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es');
+</script>
+```
+
 ## Accesibilidad y detalles
 - Contraste AA sobre crema. `prefers-reduced-motion`: desactivar shimmer/orbs/reveal.
 - `scroll-smooth`, anclas con `scroll-margin-top`.

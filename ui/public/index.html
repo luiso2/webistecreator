@@ -266,18 +266,25 @@
           </div>
           <div class="actions">
             ${b.url_demo ? `<a class="link-btn primary" href="${esc(b.url_demo)}" target="_blank" rel="noopener">Ver demo</a>` : '<span class="link-btn" style="opacity:0.5">Demo pendiente</span>'}
-            ${b.ig ? `<a class="link-btn" href="https://www.instagram.com/${esc((b.ig || '').replace('@', ''))}/" target="_blank" rel="noopener">Instagram</a>` : ''}
+            ${b.ig ? `<button class="link-btn" onclick="sendDM('${esc((b.ig || '').replace('@', ''))}', ${i})">DM ✉</button>` : ''}
+            ${b.phone && b.dm_message ? `<a class="link-btn" href="https://wa.me/${esc(String(b.phone).replace(/[^0-9]/g, '').replace(/^(?!1)/, '1'))}?text=${encodeURIComponent(b.dm_message)}" target="_blank" rel="noopener">WA ✓</a>` : ''}
           </div>
         </div>`).join('');
+      window.__reg = reg.slice().reverse();
 
       const STAGE_LABEL = { research: 'Investigando el negocio', build: 'Construyendo el website', verify: 'Verificando calidad', commit: 'Publicando' };
       const STAGE_PCT = { research: 30, build: 65, verify: 85, commit: 95 };
       const working = queue.filter(q => q.status === 'processing');
       const qItems = queue.filter(q => q.status !== 'processing').slice().reverse().slice(0, 12);
+      window.__queue = {};
       const chips = qItems.map(q => {
+        window.__queue[q.id] = q;
         const demo = q.result && q.result.url_demo && q.result.url_demo.startsWith('https://') && q.result.url_demo.includes('.odd-forest-9504.workers.dev')
           ? ` · <a href="${esc(q.result.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">ver demo</a>` : '';
-        return `<span class="qitem ${q.status === 'done' ? 'done' : ''}">${q.status === 'pending' ? '⏳ ' : '✓ '}${esc(q.input)}${demo}</span>`;
+        const handle = q.input.startsWith('@') ? q.input.slice(1) : '';
+        const dm = q.status === 'done' && q.result && q.result.dm && handle
+          ? ` · <a href="#" onclick="event.preventDefault(); sendQueueDM('${esc(q.id)}', '${esc(handle)}')" style="color:var(--lime)">DM ✉</a>` : '';
+        return `<span class="qitem ${q.status === 'done' ? 'done' : ''}">${q.status === 'pending' ? '⏳ ' : '✓ '}${esc(q.input)}${demo}${dm}</span>`;
       }).join('');
       const progs = working.map(q => `
         <div class="prog">
@@ -290,6 +297,28 @@
         </div>`).join('');
       $('queue').innerHTML = progs + chips;
     }
+
+    // Boton DM: copia el mensaje (en el idioma del site) y abre el hilo de Instagram.
+    // Instagram no soporta pre-llenar el texto por URL, por eso: copiar + pegar.
+    window.sendDM = async (handle, idx) => {
+      const b = (window.__reg || [])[idx] || {};
+      const msg = b.dm_message || (b.url_demo ? `Hola! Soy Michael, de Merktop (Miami). Les construi un website de muestra con sus fotos y datos reales: ${b.url_demo} Si les gusta, lo dejamos en su dominio; si no, lo retiro sin problema.` : '');
+      try { if (msg) await navigator.clipboard.writeText(msg); } catch {}
+      const m = $('msg');
+      m.className = 'msg ok';
+      m.textContent = msg ? 'Mensaje copiado al portapapeles: pegalo en el DM que se abrio.' : 'Sin mensaje guardado para este negocio.';
+      window.open('https://ig.me/m/' + handle, '_blank', 'noopener');
+    };
+
+    window.sendQueueDM = async (id, handle) => {
+      const q = (window.__queue || {})[id] || {};
+      const msg = (q.result && q.result.dm) || '';
+      try { if (msg) await navigator.clipboard.writeText(msg); } catch {}
+      const m = $('msg');
+      m.className = 'msg ok';
+      m.textContent = msg ? 'Mensaje copiado: pegalo en el DM que se abrio.' : 'Sin mensaje guardado.';
+      window.open('https://ig.me/m/' + handle, '_blank', 'noopener');
+    };
 
     async function load() {
       try {
