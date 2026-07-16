@@ -4,13 +4,23 @@ const json = (data, status = 200) =>
     headers: { 'content-type': 'application/json; charset=utf-8' },
   });
 
+// SHA-256 del access key (el key real vive solo en el .env local del usuario)
+const KEY_HASH = 'b1e35fb9b55f29a4272b16173553f5f92b19b0b824ddb3d9789f28332bd4bf06';
+
+async function isAuthorized(req) {
+  const key = req.headers.get('x-sf-key') || '';
+  if (!key) return false;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key));
+  const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  return hex === KEY_HASH;
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
 
     if (url.pathname.startsWith('/api/')) {
-      const key = req.headers.get('x-sf-key') || '';
-      if (!env.UI_KEY || key !== env.UI_KEY) return json({ error: 'unauthorized' }, 401);
+      if (!(await isAuthorized(req))) return json({ error: 'unauthorized' }, 401);
 
       if (url.pathname === '/api/state' && req.method === 'GET') {
         const [registry, queue] = await Promise.all([

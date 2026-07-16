@@ -53,6 +53,11 @@ Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 - Actualizar `data/processed.json`: `{slug, name, city, ig, url_demo, has_own_site, email, outreach: sent|pending_manual|skipped, fecha}`. NUNCA reprocesar un slug ya registrado (idempotencia).
 - Reporte al usuario (email a jose@merktop.com via Resend): negocios procesados, URLs live, emails enviados/entregados, pendientes manuales, errores.
 
+## Panel (siteforge-panel)
+- UI live: https://siteforge-panel.odd-forest-9504.workers.dev (worker `ui/`, KV `SITEFORGE_KV`, auth por hash SHA-256 del access key; el key vive SOLO en `~/Desktop/siteforge/.env` local y en el localStorage del navegador del usuario).
+- API (header `x-sf-key`): GET `/api/state` (registry + queue), POST `/api/queue` {input}, POST `/api/queue/done` {id}, POST `/api/registry` (array completo).
+- Modelo de sincronizacion: el panel encola pedidos; SOLO las sesiones locales (`/siteforge pendientes`) consumen la cola, marcan done y suben el registro actualizado (la key nunca sale de la maquina local; la rutina cloud no guarda credenciales y se limita al descubrimiento automatico + repo).
+
 ## Limites de seguridad
 - Maximo `daily_count` (default 3) negocios nuevos por corrida.
 - Nunca enviar email sin `delivered` check; nunca dos emails al mismo negocio (registry).

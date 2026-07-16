@@ -163,7 +163,7 @@
 
     <section class="card forge reveal" style="animation-delay:0.08s">
       <h2>Forjar un <em>website nuevo</em></h2>
-      <p class="sub">Escribe un Instagram handle, el nombre de un negocio, o un nicho + ciudad. Entra a la cola y la proxima corrida lo investiga, construye su site premium y te manda el borrador de outreach al correo.</p>
+      <p class="sub">Escribe un Instagram handle, el nombre de un negocio, o un nicho + ciudad. Entra a la cola y tu proxima sesion de Claude Code (/siteforge pendientes) lo investiga, construye su site premium, lo deploya y te presenta el outreach para aprobar.</p>
       <div class="forge-row">
         <input id="input" type="text" maxlength="200" placeholder="@mizuheadspamiami · Alea Skincare North Miami · head spas en Orlando" />
         <button class="btn" id="submit">Buscar y crear</button>
@@ -182,7 +182,7 @@
     <div class="grid" id="grid"></div>
 
     <footer>
-      <p>Siteforge v1 · la cola se consume en cada corrida de la rutina o con /siteforge pendientes</p>
+      <p>Siteforge v1 · la rutina diaria descubre negocios; la cola del panel se procesa con /siteforge pendientes</p>
       <a class="merktop" href="https://merktop.com" target="_blank" rel="noopener"><span class="dot"></span>Powered by <b>&nbsp;Merktop</b></a>
     </footer>
   </div>
@@ -271,7 +271,7 @@
         const data = await r.json();
         if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(); return; }
         if (!r.ok) throw new Error(data.error || r.status);
-        msg.className = 'msg ok'; msg.textContent = 'En cola. La proxima corrida (o /siteforge pendientes) lo procesa.';
+        msg.className = 'msg ok'; msg.textContent = 'En cola. Tu proxima sesion /siteforge pendientes lo procesa.';
         $('input').value = '';
         load();
       } catch (e) {
