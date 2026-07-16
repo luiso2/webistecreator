@@ -27,7 +27,11 @@ export default {
     // de la cola; agregar items y escribir el registro siguen requiriendo la key.
     if (url.pathname === '/api/public/queue' && req.method === 'GET') {
       const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-      const pending = queue.filter(q => q.status === 'pending').map(({ id, input, created }) => ({ id, input, created }));
+      const STALE_MS = 90 * 60 * 1000; // procesando sin avance por 90 min = huerfano, vuelve a la cola
+      const now = Date.now();
+      const pending = queue
+        .filter(q => q.status === 'pending' || (q.status === 'processing' && now - Date.parse(q.stage_at || q.created) > STALE_MS))
+        .map(({ id, input, created }) => ({ id, input, created }));
       return json({ pending });
     }
 

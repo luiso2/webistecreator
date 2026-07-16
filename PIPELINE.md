@@ -66,9 +66,11 @@ Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 - API con key (header `x-sf-key`): GET `/api/state` (registry + queue), POST `/api/queue` {input}, POST `/api/queue/done` {id}, POST `/api/registry` (array completo).
 - API publica (autorizada por el usuario 2026-07-16, para que la rutina cloud trabaje sin credenciales): GET `/api/public/queue` (solo items pending: id/input/created) y POST `/api/public/queue/done` {id, slug?, name?, url_demo?} (url_demo se valida server-side contra *.odd-forest-9504.workers.dev).
 
-## Forja horaria (rutina siteforge-queue)
-- Rutina cloud cada hora (minuto 22): lee `/api/public/queue`; si no hay pendientes TERMINA de inmediato (sin email, sin commit).
-- Si hay: procesa hasta 3 items por pasada (los pedidos manuales SI pueden tener website propio: angulo rediseño). Dedupe contra `data/processed.json` y `data/queue_done.json` antes de procesar.
+## Forja de la cola (rutinas siteforge-queue y siteforge-queue-b)
+- DOS rutinas cloud desfasadas (minutos :22 y :52): espera maxima ~30 min. Cada una lee `/api/public/queue`; si no hay pendientes TERMINA de inmediato (sin email, sin commit). Los items "processing" no aparecen como pendientes (asi las dos forjas no chocan); si un item queda en processing sin avance por 90 min, el panel lo devuelve a la cola (auto-rescate).
+- MODO RAPIDO (objetivo ~10 min/negocio): paralelizar con subagentes si estan disponibles; research time-boxed (~8 min): menu con precios publicados, 4-8 imagenes verificadas, 3 reseñas verbatim, check de website propio. Nunca rellenar con datos inventados.
+- Progreso en vivo: reportar etapas research/build/verify/commit a `/api/public/queue/progress` (el panel muestra temporizador y barra).
+- Procesa hasta 3 items por pasada (los pedidos manuales SI pueden tener website propio: angulo rediseño). Dedupe contra `data/processed.json` y `data/queue_done.json` antes de procesar.
 - Al terminar cada item: actualiza registro (url_demo = https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/), agrega el id a `data/queue_done.json`, commit + push, y marca done en `/api/public/queue/done` con slug/name/url_demo.
 - Reporte por email a jose@merktop.com SOLO si proceso algo.
 
