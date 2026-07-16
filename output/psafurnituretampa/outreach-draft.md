@@ -2,7 +2,7 @@
 
 **Estado:** BORRADOR. No enviar sin aprobación explícita del usuario.
 
-**outreach: pending_manual** — No se encontró ningún email público del negocio (el campo `business_email` de su Instagram viene vacío, no hay email visible en su Facebook, y el dominio `psafurniture.com` es un blog de WordPress genérico y sin relación real con el negocio, no su sitio oficial). El único canal de contacto real confirmado es WhatsApp/teléfono: **+1 (656) 203-0251**, o Instagram DM a **@psafurnituretampa**.
+**outreach: pending_manual**: No se encontró ningún email público del negocio (el campo `business_email` de su Instagram viene vacío, no hay email visible en su Facebook, y el dominio `psafurniture.com` es un blog de WordPress genérico y sin relación real con el negocio, no su sitio oficial). El único canal de contacto real confirmado es WhatsApp/teléfono: **+1 (656) 203-0251**, o Instagram DM a **@psafurnituretampa**.
 
 - Ángulo: `has_own_site = false` → "les construí un sitio de muestra" (PSA Furniture Tampa no tiene sitio propio real; solo Instagram y Facebook).
 - Canal recomendado: WhatsApp al +1 (656) 203-0251 (es el canal que ellos mismos promueven en cada post para apartar muebles).
