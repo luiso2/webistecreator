@@ -19,7 +19,7 @@ Hola Sandra,
 
 Los encontre revisando estudios de skincare en North Miami: tienen 5.0 de calificacion con 17 resenas en Booksy, un numero excelente para un estudio boutique.
 
-Vi que hoy reciben citas por Instagram y Booksy pero no tienen un website propio, asi que les construi uno de muestra con sus fotos, sus servicios y sus precios reales, para que vean como se veria: [URL_DEMO_PENDIENTE]
+Vi que hoy reciben citas por Instagram y Booksy pero no tienen un website propio, asi que les construi uno de muestra con sus fotos, sus servicios y sus precios reales, para que vean como se veria: https://siteforge-demos.odd-forest-9504.workers.dev/sandra/
 
 Este sitio no toca ni reemplaza su sistema de reservas actual: el boton de reservar sigue apuntando directo a su Booksy real, tal como esta hoy.
 

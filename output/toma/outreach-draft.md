@@ -18,7 +18,7 @@ Hola equipo de Toma Head Spa,
 
 Los encontre revisando head spas en Coral Gables: tienen 4.9 de calificacion con 170 resenas en Fresha, un numero excelente para la sede de 2 Aragon Avenue.
 
-Ya tienen su propio sitio en tomaheadspa.net, asi que no les escribo para ofrecerles un website desde cero. Les prepare una propuesta alternativa de diseno premium, enfocada solo en la sede de Coral Gables, para que vean otra direccion visual posible: [URL_DEMO_PENDIENTE]
+Ya tienen su propio sitio en tomaheadspa.net, asi que no les escribo para ofrecerles un website desde cero. Les prepare una propuesta alternativa de diseno premium, enfocada solo en la sede de Coral Gables, para que vean otra direccion visual posible: https://siteforge-demos.odd-forest-9504.workers.dev/toma/
 
 Es solo una demo visual. No toca su operacion de reservas: el boton de reservar sigue apuntando directo a su Fresha real, tal como esta hoy.
 
