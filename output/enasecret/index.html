@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#fdf5f8" />
+  <title>Ena's Secret Bake · Dulces Cubanos en Hialeah y Tampa | Cakes Personalizados y Reposteria Tradicional</title>
+  <meta name="description" content="Ena's Secret Bake, reposteria cubana en Hialeah y Tampa, FL. Cakes personalizados, cajitas cubanas, tartaletas, flan y mas, hechos frescos cada dia. Mas de 268 mil seguidores en Instagram. 4.8 en resenas de Google (sede Hialeah)." />
+  <meta property="og:title" content="Ena's Secret Bake · Dulces Cubanos en Hialeah y Tampa" />
+  <meta property="og:description" content="Cakes personalizados y dulces cubanos tradicionales, hechos frescos cada dia. Dos sedes: Hialeah y Tampa, FL." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/hero-storefront.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Ena's Secret Bake",
+    "description": "Reposteria cubana con dos sedes en Florida: Hialeah y Tampa. Cakes personalizados y dulces cubanos tradicionales, hechos frescos cada dia.",
+    "telephone": "+1-786-512-0153",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "104 Hialeah Dr",
+      "addressLocality": "Hialeah",
+      "addressRegion": "FL",
+      "postalCode": "33010",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "11:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "11:00", "closes": "21:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/ena.s.secret.bake/",
+      "https://www.facebook.com/p/Enas-Secret-Bake-100064180805484/"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "1446", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Dulces y cakes",
+      "itemListElement": [
+        { "@type": "Offer", "price": "10.00", "priceCurrency": "USD", "itemOffered": { "@type": "Product", "name": "Cajita Cubana" } },
+        { "@type": "Offer", "price": "57.00", "priceCurrency": "USD", "itemOffered": { "@type": "Product", "name": "Cake completo (Guayaba, Coco o Dulce de Leche)" } },
+        { "@type": "Offer", "price": "20.00", "priceCurrency": "USD", "itemOffered": { "@type": "Product", "name": "Tartaletas, 8 piezas" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fdf5f8;
+      --bg-2: #f8e0ec;
+      --surface: rgba(253,245,248,0.72);
+      --ink: #3a1f2e;
+      --ink-60: rgba(58,31,46,0.62);
+      --ink-40: rgba(58,31,46,0.42);
+      --accent-deep: #d6316f;
+      --accent-mid: #ec6ea0;
+      --accent-soft: #f6c9dc;
+      --accent-ghost: rgba(214,49,111,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass rosa calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(214,49,111,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(253,245,248,0.9);
+      border-color: rgba(214,49,111,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(58,31,46,0.14), 0 0 40px rgba(214,49,111,0.08);
+    }
+
+    /* Sheen fucsia sobre texto */
+    .text-shine {
+      background: linear-gradient(110deg, #d6316f 0%, #f188b3 30%, #a8225a 52%, #d6316f 75%, #f4a9c6 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs rosa/dorado sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f6b8d4 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #f2d9a8 0%, transparent 70%); opacity: 0.55; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #ec9dc0 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D fucsia */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #ec6ea0 0%, #d6316f 48%, #a8225a 100%);
+      color: #fdf5f8; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(90,20,45,0.4),
+        0 5px 0 #7a1a42,
+        0 12px 24px rgba(58,31,46,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(90,20,45,0.4), 0 7px 0 #7a1a42, 0 18px 34px rgba(58,31,46,0.32), 0 0 40px rgba(214,49,111,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(90,20,45,0.45), 0 1px 0 #7a1a42, 0 4px 10px rgba(58,31,46,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(214,49,111,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(214,49,111,0.7); background: rgba(214,49,111,0.08); box-shadow: 0 10px 26px rgba(58,31,46,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,22,28,0.94) 0%, rgba(27,16,21,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(253,245,248,0.88); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(58,31,46,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(58,31,46,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(214,49,111,0.14), inset 0 -60px 100px rgba(58,31,46,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del proceso */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #ec6ea0, #a8225a);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #d6316f; letter-spacing: 2px; text-shadow: 0 0 14px rgba(214,49,111,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(0.3) contrast(0.97) brightness(1); }
+
+    /* Banda oscura (CTA final + footer) */
+    .dark-band {
+      --ink: #fdf0f5;
+      --ink-60: rgba(253,240,245,0.65);
+      --ink-40: rgba(253,240,245,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(236,168,200,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #f2a7c8 0%, #fbdcec 30%, #e6a0c6 52%, #f2a7c8 75%, #fce3d0 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(242,167,200,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(230,160,198,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #fbe6ef 0%, #f2b8d2 48%, #d987ab 100%);
+      color: #3a1f2e;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,50,80,0.35),
+        0 5px 0 #8a3f5e,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,50,80,0.35), 0 7px 0 #8a3f5e, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(242,167,200,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,50,80,0.4), 0 1px 0 #8a3f5e, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(242,167,200,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(242,167,200,0.7); background: rgba(242,167,200,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f2a7c8; text-shadow: 0 0 14px rgba(242,167,200,0.4); }
+
+    /* Boton flotante de contacto (Instagram) */
+    .ig-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #ec6ea0 0%, #d6316f 100%);
+      box-shadow: 0 6px 0 #7a1a42, 0 14px 30px rgba(58,31,46,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .ig-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #7a1a42, 0 20px 40px rgba(58,31,46,0.4), 0 0 34px rgba(214,49,111,0.35); }
+    .ig-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #7a1a42, 0 6px 14px rgba(58,31,46,0.3); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(214,49,111,0.35)] bg-[rgba(214,49,111,0.1)] text-[color:var(--accent-deep)]">E</span>
+        <span class="font-display text-xl tracking-wide">Ena's <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Secret Bake</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#historia">Nuestra Historia</a>
+        <a class="nav-link" href="#proceso">Del Horno a tu Mesa</a>
+        <a class="nav-link" href="#menu">Menu</a>
+        <a class="nav-link" href="#galeria">Galeria</a>
+        <a class="nav-link" href="#opiniones">Opiniones</a>
+        <a class="nav-link" href="#ubicacion">Ubicacion</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Pedir por Instagram
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#historia">Nuestra Historia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#proceso">Del Horno a tu Mesa</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#menu">Menu</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galeria</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion">Ubicacion</a>
+        <a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Pedir por Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Hialeah &amp; Tampa, FL · Reposteria Cubana</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">Dulces cubanos sabrosos, al 100%.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          Cakes y dulces <span class="text-shine">cubanos</span><br />hechos con cariño
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
+          Cakes personalizados, cajitas cubanas, tartaletas y mas, horneados y decorados a mano cada dia en nuestras dos tiendas de Hialeah y Tampa.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]">4.8 en resenas de Google (sede Hialeah) · 268 mil+ seguidores en Instagram</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Pedir por Instagram
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+17865120153" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (786) 512-0153
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4]">
+            <img src="assets/raw/hero-storefront.jpg" alt="Fachada real de Ena's Secret Bake en Hialeah, Florida" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Producto insignia</p>
+            <p class="font-display text-lg">Cake Personalizado</p>
+            <p class="text-sm text-[color:var(--ink-60)]">Desde $57 · decorado a mano</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine">4.8</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Resenas Google · Hialeah</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">268K<span class="text-shine">+</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Seguidores en Instagram</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span class="text-shine">2</span> sedes</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Hialeah y Tampa, FL</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Fresco</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Horneado cada dia</p></div>
+    </div>
+  </section>
+
+  <!-- NUESTRA HISTORIA -->
+  <section id="historia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal">
+          <img src="assets/raw/about-display-logo.jpg" alt="Vitrina de pasteleria de Ena's Secret Bake con su logo circular" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+          <img src="assets/raw/about-display-wide.jpg" alt="Interior de la tienda con vitrina completa de dulces cubanos" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Nuestra historia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Dulces cubanos<br /><span class="text-shine">de toda la vida</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
+          Ena's Secret Bake nacio para llevar el sabor de la reposteria cubana tradicional a cada mesa: cakes decorados a mano, cajitas cubanas, tartaletas, flanes y mas, hechos frescos cada dia en un local pintado de rosa que ya es parte del paisaje de Hialeah, y que hoy tambien tiene sede en Tampa.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
+          Lo que empezo como un secreto de familia hoy lo siguen mas de 268 mil personas en Instagram, que ven cada dia los cakes recien decorados salir de la vitrina.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">4.8</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">268K+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Sedes en FL</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEL HORNO A TU MESA -->
+  <section id="proceso" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Como lo hacemos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Del horno a <span class="text-shine">tu mesa</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3">Receta cubana de siempre</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Dulces cubanos sabrosos al 100%, con las recetas tradicionales que la familia Roque Pando trae desde siempre.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3">Horneado fresco cada dia</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Cakes, tartaletas y cajitas se hornean y decoran a mano en la propia tienda, no en una fabrica lejana.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3">Cakes a tu gusto</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Cada cake se decora segun el pedido: colores, mensaje y tematica, como se ve en nuestra galeria de trabajos reales.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3">Retiro en tienda o camion</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Pasas a recogerlo a la tienda en Hialeah o Tampa, o revisas el horario del camion de dulces por WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Menu</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Nuestros <span class="text-shine">dulces</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios publicados en nuestras plataformas de entrega (Uber Eats, DoorDash y Postmates). Consulta disponibilidad del dia en tienda.</p>
+      </div>
+
+      <!-- Card de producto insignia -->
+      <div class="mb-14 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal">
+        <div class="lg:col-span-2 zoomable relative min-h-[280px]">
+          <img src="assets/raw/featured-pink-rose-cake.jpg" alt="Cake personalizado decorado con rosas de merengue rosa" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="lg:col-span-3 p-8 sm:p-12">
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-4">Producto insignia</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3">Cake Completo <span class="text-shine">Personalizado</span></h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7">Sabor guayaba, coco o dulce de leche, decorado a mano segun el color y tema que pidas. El favorito para cumpleanos y celebraciones.</p>
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
+            <div><p class="font-display text-3xl text-shine">$57</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Precio base</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl">3</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Sabores: guayaba, coco, dulce de leche</p></div>
+          </div>
+          <a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Pedir mi cake
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Cajita</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Cajita Cubana</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Cake humedo con sabor cubano, en su cajita clasica lista para llevar.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$10</p></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:80ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Cuna de cake</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Coco o Guayaba</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Porcion individual de cake, sabor coco o guayaba, ideal para probar.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$7</p></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:160ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Merengue</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Vaso de Merengue</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Merengue cubano clasico, servido en vaso individual.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$6</p></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:240ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Tartaletas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Caja de 8 piezas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Surtido de tartaletas decoradas, perfectas para compartir.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$20</p></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:80ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Postre</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Flan</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El clasico flan cubano, cremoso y con su capa de caramelo.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$5.26</p></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:160ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Merengue</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Senorita de Merengue</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Porcion individual de merengue, ligera y dulce.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$5</p></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:240ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Salado</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Croqueta</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Croquetas cubanas fritas al momento, crujientes por fuera.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$8.75</p></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:320ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Salado</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Pan con Lechon</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Pan cubano relleno de lechon asado, montanas de sabor en cada bocado.</p>
+          <div class="mt-auto"><p class="font-display text-3xl text-shine">$10</p></div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Tambien preparamos Nutella Cake, Cappuccino Cake, Natilla Cake, Montecristo, Miguelito y Rosquita Horneada, entre otros sabores. Consulta precio y disponibilidad por Instagram.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galeria</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro de <span class="text-shine">la tienda</span></h2>
+        </div>
+        <a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @ena.s.secret.bake
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/gallery-rainbow-cake.jpg" alt="Cake decorado con rosas de merengue de colores" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/gallery-tartlets-guava.jpg" alt="Tartaletas con relleno de guayaba y perlas doradas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/gallery-mini-tarts.jpg" alt="Charola de tartaletas surtidas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/gallery-rosquita.jpg" alt="Rosquita horneada azucarada" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/gallery-croquetas.jpg" alt="Croquetas cubanas recien fritas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/gallery-sandwich-plated.jpg" alt="Pan con lechon montado en plato de presentacion" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.8 de 5 · 1,446 resenas en Google, sede Hialeah</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"You will have been to Cuba and back when you visit Ena's Secret Bakery and explore the rich history of true Cuban culture cuisine."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Kelon Waters</span> <span class="text-[color:var(--ink-40)]">· Google, Hialeah</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Latin bakery !! We need more Tampa. Have you ever walked into a place and thought this place was made for instagrammers."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Brian D.</span> <span class="text-[color:var(--ink-40)]">· Reseña, Tampa</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visitanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Dos tiendas, <span class="text-shine">un mismo sabor</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1">Hialeah</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">104 Hialeah Dr, Hialeah, FL 33010</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Lun a Jue y Dom: 11 AM a 8 PM · Vie y Sab: 11 AM a 9 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Tel: <a class="text-[color:var(--accent-deep)]" href="tel:+17865120153">(786) 512-0153</a></p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(214,49,111,0.4)]" href="https://www.google.com/maps?q=Ena%27s+Secret+Bake,+104+Hialeah+Dr,+Hialeah,+FL+33010" target="_blank" rel="noopener">Como llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1">Tampa</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">3412 N Armenia Ave, Tampa, FL 33607</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Lun a Jue y Dom: 10 AM a 8 PM · Vie y Sab: 10 AM a 9 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Tel: <a class="text-[color:var(--accent-deep)]" href="tel:+16562168584">(656) 216-8584</a></p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(214,49,111,0.4)]" href="https://www.google.com/maps?q=Ena%27s+Secret+Bake,+3412+N+Armenia+Ave,+Tampa,+FL+33607" target="_blank" rel="noopener">Como llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1">Pedidos</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Instagram: <a class="text-[color:var(--accent-deep)]" href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener">@ena.s.secret.bake</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Horario del camion de dulces por WhatsApp (Miami y Tampa, grupos separados).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Ena's Secret Bake, 104 Hialeah Dr, Hialeah FL"
+          src="https://www.google.com/maps?q=Ena%27s+Secret+Bake,+104+Hialeah+Dr,+Hialeah,+FL+33010&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2a1620 0%, #1c0f16 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Dulce, fresco y cubano.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu proximo <span class="text-shine">cake</span> nos espera</h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Escribenos por Instagram para tu cake personalizado o pasa por cualquiera de nuestras dos tiendas en Hialeah y Tampa.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Pedir por Instagram</a>
+        <a href="tel:+17865120153" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar a Hialeah</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#190d13]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(242,167,200,0.35)] bg-[rgba(242,167,200,0.08)] text-[#f2a7c8]">E</span>
+          <span class="font-display text-lg tracking-wide">Ena's Secret Bake</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Dulces cubanos sabrosos al 100%. Cakes personalizados y reposteria tradicional en Hialeah y Tampa, FL.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Ubicaciones</p>
+        <p>Hialeah: 104 Hialeah Dr, FL 33010</p>
+        <p><a href="tel:+17865120153" class="hover:text-[#f2a7c8]">(786) 512-0153</a></p>
+        <p>Tampa: 3412 N Armenia Ave, FL 33607</p>
+        <p><a href="tel:+16562168584" class="hover:text-[#f2a7c8]">(656) 216-8584</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Siguenos</p>
+        <p><a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="hover:text-[#f2a7c8]">Instagram · @ena.s.secret.bake</a></p>
+        <p><a href="https://www.facebook.com/p/Enas-Secret-Bake-100064180805484/" target="_blank" rel="noopener" class="hover:text-[#f2a7c8]">Facebook · Ena's Secret Bake</a></p>
+        <p><a href="https://chat.whatsapp.com/GWsxGPcaKLNA17UdjICiXe" target="_blank" rel="noopener" class="hover:text-[#f2a7c8]">WhatsApp · Horario camion Miami</a></p>
+        <p><a href="https://chat.whatsapp.com/IaHntyW0w499bOgZOFYjnx" target="_blank" rel="noopener" class="hover:text-[#f2a7c8]">WhatsApp · Horario camion Tampa</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Ena's Secret Bake. Todos los derechos reservados.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de contacto -->
+  <a href="https://www.instagram.com/ena.s.secret.bake/" target="_blank" rel="noopener" class="ig-float" aria-label="Escribenos por Instagram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fdf5f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+  </script>
+</body>
+</html>
