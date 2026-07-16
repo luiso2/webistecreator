@@ -15,9 +15,37 @@ async function isAuthorized(req) {
   return hex === KEY_HASH;
 }
 
+// Solo se aceptan URLs de demo dentro de la cuenta Cloudflare del usuario
+const DEMO_URL_RE = /^https:\/\/[a-z0-9-]+\.odd-forest-9504\.workers\.dev(\/[a-z0-9-]*\/?)?$/;
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+
+    // Endpoints publicos autorizados por el usuario (2026-07-16): permiten que la
+    // rutina cloud procese la cola sin guardar credenciales. Solo exponen metadata
+    // de la cola; agregar items y escribir el registro siguen requiriendo la key.
+    if (url.pathname === '/api/public/queue' && req.method === 'GET') {
+      const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const pending = queue.filter(q => q.status === 'pending').map(({ id, input, created }) => ({ id, input, created }));
+      return json({ pending });
+    }
+
+    if (url.pathname === '/api/public/queue/done' && req.method === 'POST') {
+      let body;
+      try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+      if (!body.id) return json({ error: 'id requerido' }, 400);
+      const result = {};
+      if (typeof body.slug === 'string' && /^[a-z0-9-]{1,40}$/.test(body.slug)) result.slug = body.slug;
+      if (typeof body.name === 'string' && body.name.length <= 120) result.name = body.name;
+      if (typeof body.url_demo === 'string' && DEMO_URL_RE.test(body.url_demo)) result.url_demo = body.url_demo;
+      let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const exists = queue.some(q => q.id === body.id && q.status === 'pending');
+      if (!exists) return json({ error: 'item no pendiente' }, 404);
+      queue = queue.map(q => (q.id === body.id ? { ...q, status: 'done', done_at: new Date().toISOString(), result } : q));
+      await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+      return json({ ok: true });
+    }
 
     if (url.pathname.startsWith('/api/')) {
       if (!(await isAuthorized(req))) return json({ error: 'unauthorized' }, 401);

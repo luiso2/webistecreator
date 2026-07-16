@@ -163,7 +163,7 @@
 
     <section class="card forge reveal" style="animation-delay:0.08s">
       <h2>Forjar un <em>website nuevo</em></h2>
-      <p class="sub">Escribe un Instagram handle, el nombre de un negocio, o un nicho + ciudad. Entra a la cola y tu proxima sesion de Claude Code (/siteforge pendientes) lo investiga, construye su site premium, lo deploya y te presenta el outreach para aprobar.</p>
+      <p class="sub">Escribe un Instagram handle, el nombre de un negocio, o un nicho + ciudad. La forja pasa cada hora: investiga el negocio, construye su site premium y publica el demo automaticamente. El outreach siempre espera tu aprobacion.</p>
       <div class="forge-row">
         <input id="input" type="text" maxlength="200" placeholder="@mizuheadspamiami · Alea Skincare North Miami · head spas en Orlando" />
         <button class="btn" id="submit">Buscar y crear</button>
@@ -182,7 +182,7 @@
     <div class="grid" id="grid"></div>
 
     <footer>
-      <p>Siteforge v1 · la rutina diaria descubre negocios; la cola del panel se procesa con /siteforge pendientes</p>
+      <p>Siteforge · la rutina diaria descubre negocios (9:07 AM) y la forja horaria procesa la cola del panel (:22)</p>
       <a class="merktop" href="https://merktop.com" target="_blank" rel="noopener"><span class="dot"></span>Powered by <b>&nbsp;Merktop</b></a>
     </footer>
   </div>
@@ -247,8 +247,11 @@
         </div>`).join('');
 
       const qItems = queue.slice().reverse().slice(0, 12);
-      $('queue').innerHTML = qItems.map(q =>
-        `<span class="qitem ${q.status === 'done' ? 'done' : ''}">${q.status === 'pending' ? '⏳ ' : '✓ '}${esc(q.input)}</span>`).join('');
+      $('queue').innerHTML = qItems.map(q => {
+        const demo = q.result && q.result.url_demo && q.result.url_demo.startsWith('https://') && q.result.url_demo.includes('.odd-forest-9504.workers.dev')
+          ? ` · <a href="${esc(q.result.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">ver demo</a>` : '';
+        return `<span class="qitem ${q.status === 'done' ? 'done' : ''}">${q.status === 'pending' ? '⏳ ' : '✓ '}${esc(q.input)}${demo}</span>`;
+      }).join('');
     }
 
     async function load() {
@@ -271,7 +274,7 @@
         const data = await r.json();
         if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(); return; }
         if (!r.ok) throw new Error(data.error || r.status);
-        msg.className = 'msg ok'; msg.textContent = 'En cola. Tu proxima sesion /siteforge pendientes lo procesa.';
+        msg.className = 'msg ok'; msg.textContent = 'En cola. La forja pasa cada hora (minuto 22); el demo aparecera aqui al terminar.';
         $('input').value = '';
         load();
       } catch (e) {

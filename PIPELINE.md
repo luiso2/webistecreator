@@ -63,8 +63,19 @@ Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 
 ## Panel (siteforge-panel)
 - UI live: https://siteforge-panel.odd-forest-9504.workers.dev (worker `ui/`, KV `SITEFORGE_KV`, auth por hash SHA-256 del access key; el key vive SOLO en `~/Desktop/siteforge/.env` local y en el localStorage del navegador del usuario).
-- API (header `x-sf-key`): GET `/api/state` (registry + queue), POST `/api/queue` {input}, POST `/api/queue/done` {id}, POST `/api/registry` (array completo).
-- Modelo de sincronizacion: el panel encola pedidos; SOLO las sesiones locales (`/siteforge pendientes`) consumen la cola, marcan done y suben el registro actualizado (la key nunca sale de la maquina local; la rutina cloud no guarda credenciales y se limita al descubrimiento automatico + repo).
+- API con key (header `x-sf-key`): GET `/api/state` (registry + queue), POST `/api/queue` {input}, POST `/api/queue/done` {id}, POST `/api/registry` (array completo).
+- API publica (autorizada por el usuario 2026-07-16, para que la rutina cloud trabaje sin credenciales): GET `/api/public/queue` (solo items pending: id/input/created) y POST `/api/public/queue/done` {id, slug?, name?, url_demo?} (url_demo se valida server-side contra *.odd-forest-9504.workers.dev).
+
+## Forja horaria (rutina siteforge-queue)
+- Rutina cloud cada hora (minuto 22): lee `/api/public/queue`; si no hay pendientes TERMINA de inmediato (sin email, sin commit).
+- Si hay: procesa hasta 3 items por pasada (los pedidos manuales SI pueden tener website propio: angulo rediseño). Dedupe contra `data/processed.json` y `data/queue_done.json` antes de procesar.
+- Al terminar cada item: actualiza registro (url_demo = https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/), agrega el id a `data/queue_done.json`, commit + push, y marca done en `/api/public/queue/done` con slug/name/url_demo.
+- Reporte por email a jose@merktop.com SOLO si proceso algo.
+
+## Deploy automatico de demos (Workers Builds)
+- El worker `siteforge-demos` (config `demos/wrangler.jsonc`) sirve TODO `output/` como assets: cada site queda en `/<slug>/`.
+- El repo esta conectado a Cloudflare Workers Builds: cada push a main redeploya `siteforge-demos` automaticamente (deploy command: `npx wrangler deploy -c demos/wrangler.jsonc`). Asi la rutina cloud publica demos sin credenciales.
+- Los workers "bonitos" por negocio (`<slug>-demo.*.workers.dev`) se deployan en la sesion local de aprobacion antes del outreach.
 
 ## Limites de seguridad
 - Maximo `daily_count` (default 3) negocios nuevos por corrida.
