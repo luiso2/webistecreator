@@ -1039,20 +1039,28 @@
     }
   </script>
   <script>
-    // Videos de Instagram en la galeria: solo reproducen en viewport y respetan reduced-motion
+    // Videos de Instagram en la galeria: reproducen SIEMPRE en viewport (silenciados, en loop)
+    // y se pausan fuera de pantalla. Un toque/click alterna play/pausa (control manual de accesibilidad).
     (() => {
       const vids = document.querySelectorAll('video.ig-video');
       if (!vids.length) return;
-      const rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (rm) { vids.forEach(v => { v.removeAttribute('autoplay'); v.pause(); }); return; }
       const io = new IntersectionObserver(entries => {
         entries.forEach(e => {
           const v = e.target;
-          if (e.isIntersecting) { v.play().catch(() => {}); }
-          else { v.pause(); }
+          if (e.isIntersecting && !v.dataset.userPaused) { v.muted = true; v.play().catch(() => {}); }
+          else if (!e.isIntersecting) { v.pause(); }
         });
-      }, { threshold: 0.25 });
-      vids.forEach(v => io.observe(v));
+      }, { threshold: 0.2 });
+      vids.forEach(v => {
+        io.observe(v);
+        v.style.cursor = 'pointer';
+        v.addEventListener('click', () => {
+          if (v.paused) { delete v.dataset.userPaused; v.muted = true; v.play().catch(() => {}); }
+          else { v.dataset.userPaused = '1'; v.pause(); }
+        });
+      });
+      // arranque inmediato de los visibles
+      vids.forEach(v => { const r = v.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) { v.muted = true; v.play().catch(() => {}); } });
     })();
   </script>
 </body>
