@@ -1,10 +1,28 @@
 {
   "niche": "head spa",
+  "fallback_niches": [
+    "massage / bodywork studio",
+    "lash & brow studio",
+    "facial / skincare studio",
+    "nail salon boutique",
+    "barberia boutique"
+  ],
   "city": "Miami, FL",
+  "extra_areas": [
+    "Hialeah",
+    "Kendall",
+    "Doral",
+    "Westchester",
+    "Little Havana",
+    "North Miami",
+    "Miami Beach",
+    "Hollywood FL",
+    "Fort Lauderdale"
+  ],
   "daily_count": 3,
   "min_rating": 4.5,
   "min_reviews": 10,
-  "prefer_no_website": true,
+  "require_no_website": true,
   "outreach_mode": "draft_for_approval",
   "outreach": {
     "from": "Michael Vargas <michael@go.merktop.com>",
@@ -15,6 +33,6 @@
   "deploy": {
     "platform": "cloudflare-workers",
     "account": "vargas-mmi",
-    "worker_suffix": "-headspa"
+    "worker_suffix": "-demo"
   }
 }

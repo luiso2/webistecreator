@@ -5,8 +5,16 @@
 
 ## Entrada
 Uno de:
-- **Handle/nombre**: un Instagram handle o nombre de negocio (modo directo).
-- **Descubrimiento**: usar `config.json` (nicho + ciudad) para encontrar `daily_count` negocios NUEVOS que cumplan: rating >= `min_rating`, reseñas >= `min_reviews`, y que NO esten en `data/processed.json`.
+- **Handle/nombre**: un Instagram handle o nombre de negocio (modo directo; aqui SI se aceptan negocios con website propio, con angulo rediseño).
+- **Descubrimiento**: encontrar `daily_count` negocios NUEVOS segun `config.json` que cumplan rating >= `min_rating`, reseñas >= `min_reviews`, NO esten en `data/processed.json` y (con `require_no_website: true`) NO tengan website propio.
+
+## Descubrimiento: como encontrar negocios SIN website
+Buscar "mejor <nicho> en <ciudad>" NO funciona: los que rankean ahi ya tienen SEO y website. Buscar donde viven los que no tienen:
+1. **Directorios de booking**: paginas de categoria/ciudad de Booksy, perfiles `*.glossgenius.com`, `book.squareup.com`, Fresha, Vagaro, Mangomint. Un negocio cuyo UNICO link publico es su plataforma de booking es el candidato ideal.
+2. **Instagram local**: hashtags y geotags del nicho (#headspamiami, #lashesmiami, etc.) y perfiles de negocio con solo linktree/wa.me/booking en la bio, sin dominio propio.
+3. **Google Maps por zonas**: fichas sin campo website (Google muestra "Add website") en las `extra_areas` del config, no solo el centro.
+Verificacion OBLIGATORIA antes de aceptar un candidato: probar `<negocio>.com` y variantes, revisar links de bio de IG y el dominio del email. Si tiene website propio: DESCARTAR sin gastar cupo (solo anotarlo en el reporte como descartado con su URL). Los negocios con website SOLO se procesan si llegan por la cola del panel o por comando directo.
+Si el nicho principal no da candidatos: bajar en orden por `fallback_niches` y ampliar por `extra_areas`. Si aun asi no hay: reportar honestamente "0 nuevos" con la lista de descartados. NUNCA rellenar el cupo con negocios con website.
 
 ## Fase 1: Research (un agente por negocio, en paralelo)
 Recolectar SOLO datos reales, nunca inventar:
