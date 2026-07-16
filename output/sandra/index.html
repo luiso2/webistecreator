@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f8f0e4" />
+  <title>Sandra Montero Beauty & Spa · Facial & Skincare Studio en North Miami | Cuidado avanzado de la piel</title>
+  <meta name="description" content="Sandra Montero Beauty & Spa, estudio boutique de faciales y cuidado de la piel en North Miami. 20+ anos de experiencia, tecnologia avanzada (TECAR, exosomas, HydroGlow) y atencion personalizada de Sandra Montero. 5.0 en Booksy. Reserva online." />
+  <meta property="og:title" content="Sandra Montero Beauty & Spa · Facial & Skincare Studio en North Miami" />
+  <meta property="og:description" content="Faciales avanzados, tratamientos de piel y bienestar en North Miami. Deluxe HydroGlow Facial desde $199. Reserva tu cita online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/gallery-room-gold.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DaySpa",
+    "name": "Sandra Montero Beauty & Spa",
+    "description": "Estudio boutique de faciales y cuidado avanzado de la piel en North Miami, con mas de 20 anos de experiencia. Faciales, tratamientos de estetica avanzada, contorno corporal, masajes y depilacion con cera.",
+    "telephone": "+1-786-362-9814",
+    "email": "sandramontero25@hotmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "14740 Biscayne Blvd, Suite 3",
+      "addressLocality": "North Miami",
+      "addressRegion": "FL",
+      "postalCode": "33181",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "19:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/sandramonteroo/",
+      "https://www.facebook.com/sandramonterobeautyandspa",
+      "https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "17", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Faciales y tratamientos de piel",
+      "itemListElement": [
+        { "@type": "Offer", "price": "119", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "DEEP CLEANSER FACIAL", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "149", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "ACNE CLEAR FACIAL", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "199", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Deluxe HydroGlow Facial - 60 min", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "225", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "TECAR Full Lifting Face, Jawline & Neck", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "150", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Body Contouring", "serviceType": "Body Contouring" } },
+        { "@type": "Offer", "price": "120", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Swedish Massage", "serviceType": "Massage" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f0e4;
+      --bg-2: #efe0c7;
+      --surface: rgba(253,247,238,0.72);
+      --ink: #3b2c20;
+      --ink-60: rgba(59,44,32,0.62);
+      --ink-40: rgba(59,44,32,0.42);
+      --accent-deep: #a3652f;
+      --accent-mid: #c99354;
+      --accent-soft: #eeddc0;
+      --accent-ghost: rgba(163,101,47,0.15);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(163,101,47,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(253,247,238,0.9);
+      border-color: rgba(163,101,47,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(59,44,32,0.14), 0 0 40px rgba(163,101,47,0.08);
+    }
+
+    .text-shine {
+      background: linear-gradient(110deg, #a3652f 0%, #d3a565 30%, #6e4420 52%, #a3652f 75%, #c2903f 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e7cda3 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #c99354 0%, transparent 70%); opacity: 0.55; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #d9b789 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #c99354 0%, #a3652f 48%, #7c4a20 100%);
+      color: #fbf3e6; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,35,10,0.4),
+        0 5px 0 #5a3717,
+        0 12px 24px rgba(59,44,32,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,35,10,0.4), 0 7px 0 #5a3717, 0 18px 34px rgba(59,44,32,0.32), 0 0 40px rgba(163,101,47,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,35,10,0.45), 0 1px 0 #5a3717, 0 4px 10px rgba(59,44,32,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    .btn-ghost {
+      border: 1px solid rgba(163,101,47,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(163,101,47,0.7); background: rgba(163,101,47,0.08); box-shadow: 0 10px 26px rgba(59,44,32,0.14); }
+
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,26,16,0.94) 0%, rgba(24,17,10,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(248,240,228,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(59,44,32,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(59,44,32,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(163,101,47,0.14), inset 0 -60px 100px rgba(59,44,32,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #c99354, #6e4420);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .stars { color: #a3652f; letter-spacing: 2px; text-shadow: 0 0 14px rgba(163,101,47,0.3); }
+
+    .map-frame iframe { filter: grayscale(0.3) contrast(0.97) brightness(1.02); }
+
+    .dark-band {
+      --ink: #f8f0e4;
+      --ink-60: rgba(248,240,228,0.65);
+      --ink-40: rgba(248,240,228,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(233,197,140,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e9c58c 0%, #f8e6c6 30%, #c99354 52%, #e9c58c 75%, #f3dba8 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(233,197,140,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(201,147,84,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #faf0dc 0%, #e9cf9f 48%, #c9a466 100%);
+      color: #3b2c20;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(110,68,32,0.35),
+        0 5px 0 #8a6a3a,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,68,32,0.35), 0 7px 0 #8a6a3a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(233,197,140,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,68,32,0.4), 0 1px 0 #8a6a3a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(233,197,140,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(233,197,140,0.7); background: rgba(233,197,140,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e9c58c; text-shadow: 0 0 14px rgba(233,197,140,0.4); }
+
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c99354 0%, #a3652f 100%);
+      box-shadow: 0 6px 0 #5a3717, 0 14px 30px rgba(59,44,32,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5a3717, 0 20px 40px rgba(59,44,32,0.4), 0 0 34px rgba(163,101,47,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5a3717, 0 6px 14px rgba(59,44,32,0.3); }
+
+    details.menu-cat summary { cursor: pointer; list-style: none; }
+    details.menu-cat summary::-webkit-details-marker { display: none; }
+    details.menu-cat .chev { transition: transform 0.3s cubic-bezier(0.22,1,0.36,1); }
+    details.menu-cat[open] .chev { transform: rotate(180deg); }
+    .menu-row { border-bottom: 1px solid rgba(163,101,47,0.12); }
+    .menu-row:last-child { border-bottom: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(163,101,47,0.35)] bg-[rgba(163,101,47,0.1)] text-[color:var(--accent-deep)]">SM</span>
+        <span class="font-display text-lg sm:text-xl tracking-[0.1em] uppercase">Sandra Montero <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1 hidden sm:inline">Beauty &amp; Spa</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia">Experiencia</a>
+        <a class="nav-link" href="#proceso">El Proceso</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#galeria">Galeria</a>
+        <a class="nav-link" href="#opiniones">Opiniones</a>
+        <a class="nav-link" href="#ubicacion">Ubicacion</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reservar cita
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#proceso">El Proceso</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galeria</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion">Ubicacion</a>
+        <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">North Miami · Facial &amp; Skincare Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">Advanced Skin Care Miami.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          Cuidado de piel <span class="text-shine">avanzado</span>, con manos expertas
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
+          Estudio boutique en North Miami donde Sandra Montero, esteticista con mas de 20 anos de experiencia, disena cada tratamiento a tu piel: faciales, exosomas, PDRN, tecnologia TECAR y mucho mas.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]">5.0 · 17 resenas en Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Reservar cita
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+17863629814" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (786) 362-9814
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4]">
+            <img src="assets/raw/gallery-room-gold.jpg" alt="Sala de tratamientos de Sandra Montero Beauty & Spa: pared de piedra natural, velas y camilla en tonos dorados" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Facial insignia</p>
+            <p class="font-display text-lg">Deluxe HydroGlow Facial</p>
+            <p class="text-sm text-[color:var(--ink-60)]">60 minutos · $199</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine">5.0</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">17 resenas en Booksy</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">20+ <span class="text-shine">anos</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">De experiencia de Sandra</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Deluxe <span class="text-shine">HydroGlow</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Desde $199 · 60 min</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">North Miami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">14740 Biscayne Blvd</p></div>
+    </div>
+  </section>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal">
+          <img src="assets/raw/cover.jpg" alt="Sandra Montero, esteticista y fundadora de Sandra Montero Beauty & Spa" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+          <img src="assets/raw/bizphoto-3.jpg" alt="Sandra Montero en su sala de tratamientos, junto al equipo Hydrafacial y la pared de piedra natural" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un estudio boutique<br /><span class="text-shine">hecho a tu piel</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
+          Sandra Montero es esteticista con mas de 20 anos de experiencia. Su estudio en North Miami combina calidez artesanal (piedra natural, velas, luz calida) con tecnologia avanzada de piel: exosomas, PDRN, TECAR, HydroGlow y mas, siempre en sesiones personalizadas y atendidas por ella misma.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
+          Habla ingles y espanol, y disena cada tratamiento segun lo que tu piel necesita, desde una limpieza esencial hasta protocolos regenerativos de varias sesiones.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+8.1K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">20+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Anos de experiencia</p></div>
+        </div>
+        <div class="reveal flex items-center gap-3 glass glass-hover rounded-full pr-6 pl-1.5 py-1.5 w-fit" style="transition-delay:360ms">
+          <img src="assets/raw/cover.jpg" alt="Sandra Montero" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(163,101,47,0.3)]" loading="lazy" />
+          <span class="text-sm font-light">Sandra Montero · Esteticista &amp; fundadora</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROCESO PASO A PASO -->
+  <section id="proceso" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El proceso, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Asi se vive un <span class="text-shine">tratamiento facial</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3">Analisis de piel</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Sandra evalua tu tipo de piel y tus objetivos antes de cada sesion, para elegir el protocolo y los activos que realmente necesitas.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3">Limpieza profunda</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Doble limpieza, exfoliacion y vapor para preparar la piel y permitir que los tratamientos siguientes penetren mejor.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3">Tratamiento personalizado</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">El protocolo elegido: desde un facial clasico hasta tecnologia avanzada como TECAR, exosomas, PDRN o microneedling, segun tu piel.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3">Hidratacion y cierre</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Mascarilla, serum, hidratante y proteccion SPF para sellar los resultados y que tu piel salga lista para el dia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Faciales <span class="text-shine">destacados</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Sandra Montero Beauty & Spa en Booksy. Reserva online con confirmacion inmediata.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-14">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Skin Care</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">DEEP CLEANSER FACIAL</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Analisis de piel, doble limpieza, exfoliacion, vapor, extracciones suaves, mascarilla personalizada e hidratacion con SPF.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$119</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(163,101,47,0.4); box-shadow: 0 18px 50px rgba(59,44,32,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Skin Care · Mas popular</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Deluxe HydroGlow Facial - 60 min</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial avanzado con serum booster personalizado segun tu necesidad: lineas finas, hiperpigmentacion, acne o piel deshidratada.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$199</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Skin Care</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">ACNE CLEAR FACIAL</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial correctivo para piel con acne: extracciones extensas, alta frecuencia, luz LED azul y mascarilla calmante.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$149</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">80 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Skin Care · Tecnologia</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">TECAR Full Lifting Face, Jawline &amp; Neck</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Diatermia capacitiva y resistiva para lifting no quirurgico de rostro, mandibula y cuello. Recomendado en 6 sesiones.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$225</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU COMPLETO POR CATEGORIA -->
+      <div class="reveal max-w-4xl mx-auto">
+        <p class="text-center text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-8">Menu completo · 50 servicios en 8 categorias</p>
+        <div class="space-y-4" id="menuAccordion">
+
+          <details class="menu-cat glass rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 sm:p-6">
+              <span class="font-display text-lg sm:text-xl">Skin Care <span class="text-xs font-sans font-light text-[color:var(--ink-40)] ml-2">(17)</span></span>
+              <svg class="chev text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-6">
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">DEEP CLEANSER FACIAL <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$119</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">ACNE CLEAR FACIAL <span class="text-[color:var(--ink-40)]">· 80 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$149</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Vitamin C Glow Therapy <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$129</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">TECAR Full Lifting Face, Jawline &amp; Neck <span class="text-[color:var(--ink-40)]">· 90 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$225</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Oxygen Glow Facial <span class="text-[color:var(--ink-40)]">· 75 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$139</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">CARBOXY GLOW FACIAL <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$119</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Essential HydroGlow Facial <span class="text-[color:var(--ink-40)]">· 40 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$139</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Deluxe HydroGlow Facial - 60 min <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$199</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Premium HydroGlow Experience - 80 min <span class="text-[color:var(--ink-40)]">· 80 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$249</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Luminous Lift Facial <span class="text-[color:var(--ink-40)]">· 80 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$175</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Anti-aging hydration &amp; Glow <span class="text-[color:var(--ink-40)]">· 75 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Dermaplaning Glow Facial <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$175</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Microneedeling w/ vitamins <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$150</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Facial Peels <span class="text-[color:var(--ink-40)]">· 45 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$99</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Microdermabrasion <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$95</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Back treatment <span class="text-[color:var(--ink-40)]">· 75 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Recovery post Facialift massage <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+            </div>
+          </details>
+
+          <details class="menu-cat glass rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 sm:p-6">
+              <span class="font-display text-lg sm:text-xl">Estetica Avanzada <span class="text-xs font-sans font-light text-[color:var(--ink-40)] ml-2">(6)</span></span>
+              <svg class="chev text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-6">
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Royal Monaco Cocktail (3-in-1 Skin Regeneration Pr <span class="text-[color:var(--ink-40)]">· 105 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$599</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">NAD+ Night Plus Cellular Renewal Therapy <span class="text-[color:var(--ink-40)]">· 80 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$289</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Microneedeling +SalmonDNA <span class="text-[color:var(--ink-40)]">· 75 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$220</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Microneedeling exosome facial <span class="text-[color:var(--ink-40)]">· 115 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$450</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Regenerative Peptide Facial <span class="text-[color:var(--ink-40)]">· 80 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$220</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">PEPTIDE GLOW FACIAL <span class="text-[color:var(--ink-40)]">· 80 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$189</span></div>
+            </div>
+          </details>
+
+          <details class="menu-cat glass rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 sm:p-6">
+              <span class="font-display text-lg sm:text-xl">Tratamientos Capilares Avanzados <span class="text-xs font-sans font-light text-[color:var(--ink-40)] ml-2">(1)</span></span>
+              <svg class="chev text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-6">
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Exosomas capilar <span class="text-[color:var(--ink-40)]">· 90 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$300</span></div>
+            </div>
+          </details>
+
+          <details class="menu-cat glass rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 sm:p-6">
+              <span class="font-display text-lg sm:text-xl">Contorno Corporal <span class="text-xs font-sans font-light text-[color:var(--ink-40)] ml-2">(8)</span></span>
+              <svg class="chev text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-6">
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Body Contouring <span class="text-[color:var(--ink-40)]">· 105 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$150</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">360 package ( 10 sessions ) <span class="text-[color:var(--ink-40)]">· 105 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$1,299</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">TECAR Body Tightening &amp; Sculpting <span class="text-[color:var(--ink-40)]">· 90 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$225</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Cavitation <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$50</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Body Scrub( women's) <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$50</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Anti-Cellulite Massage <span class="text-[color:var(--ink-40)]">· 55 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$85</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Vacuum therapy <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$75</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Body Microneedeling &amp;RF <span class="text-[color:var(--ink-40)]">· 75 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$150</span></div>
+            </div>
+          </details>
+
+          <details class="menu-cat glass rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 sm:p-6">
+              <span class="font-display text-lg sm:text-xl">Masajes <span class="text-xs font-sans font-light text-[color:var(--ink-40)] ml-2">(6)</span></span>
+              <svg class="chev text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-6">
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Lymphatic Massage <span class="text-[color:var(--ink-40)]">· 70 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$140</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Relaxation Massage <span class="text-[color:var(--ink-40)]">· 90 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$180</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Swedish Massage <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Deep Tissue Massage <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Full Body Massage &amp; hydration ( women's) <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Reflexology massage <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$45</span></div>
+            </div>
+          </details>
+
+          <details class="menu-cat glass rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 sm:p-6">
+              <span class="font-display text-lg sm:text-xl">Rejuvenecimiento Intimo <span class="text-xs font-sans font-light text-[color:var(--ink-40)] ml-2">(1)</span></span>
+              <svg class="chev text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-6">
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Intimidate whitening &amp; Rejuvenation <span class="text-[color:var(--ink-40)]">· 60 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$190</span></div>
+            </div>
+          </details>
+
+          <details class="menu-cat glass rounded-2xl overflow-hidden">
+            <summary class="flex items-center justify-between p-5 sm:p-6">
+              <span class="font-display text-lg sm:text-xl">Depilacion con Cera <span class="text-xs font-sans font-light text-[color:var(--ink-40)] ml-2">(11)</span></span>
+              <svg class="chev text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="px-5 sm:px-6 pb-6">
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Bikini line wax <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$35</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Wax underarms <span class="text-[color:var(--ink-40)]">· 15 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$18</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Upper lip <span class="text-[color:var(--ink-40)]">· 15 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$12</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Arm wax <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$30</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Eyebrow shaping wax <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$25</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Eyebrow cleaning wax <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$20</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Ear wax <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$18</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Half legs wax <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$25</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Full Body Waxing <span class="text-[color:var(--ink-40)]">· 50 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$170</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Bikini Brazilian wax <span class="text-[color:var(--ink-40)]">· 30 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$50</span></div>
+              <div class="menu-row flex justify-between items-baseline gap-4 py-3"><span class="text-sm">Full leg wax <span class="text-[color:var(--ink-40)]">· 40 min</span></span><span class="font-display text-[color:var(--accent-deep)]">$45</span></div>
+            </div>
+          </details>
+
+        </div>
+        <p class="text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Precios y duraciones sujetos a confirmacion en Booksy al momento de reservar. Varios servicios corporales y de depilacion son solo para mujeres, segun lo publica el negocio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galeria</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">estudio</span></h2>
+        </div>
+        <a href="https://www.instagram.com/sandramonteroo/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @sandramonteroo
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/bizphoto-1.jpg" alt="Tratamiento con terapia de luz roja durante una sesion en Sandra Montero Beauty & Spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/bizphoto-2.jpg" alt="Sandra Montero junto al equipo de radiofrecuencia y cavitacion de su estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/insp-1.jpg" alt="Sandra Montero de pie junto a la camilla y el equipo Hydrafacial, con la pared de piedra natural de fondo" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/gallery-room-gold.jpg" alt="Sala de tratamientos con pared de piedra natural, velas y camilla en tonos dorados" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/cover.jpg" alt="Retrato de Sandra Montero, fundadora del estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/bizphoto-3.jpg" alt="Sandra Montero sentada en la camilla de tratamientos de su estudio en North Miami" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestras clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 17 resenas en Booksy</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Sandra es absolutamente espectacular, cada servicio que me realize con ella 10/10. Definitivamente todos los servicios esteticos con ella son 100% recomendados. Graciasss"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Ana G.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Wonderful service, my eyebrows and lashes have never looked better!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Viviana N.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Tyler F.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 17 resenas en Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visitanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu piel te espera <span class="text-shine">en North Miami</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1">Direccion</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">14740 Biscayne Blvd, Suite 3, North Miami, FL 33181</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(163,101,47,0.4)]" href="https://www.google.com/maps/search/?api=1&query=14740+Biscayne+Blvd+Suite+3+North+Miami+FL+33181" target="_blank" rel="noopener">Como llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Sabado: 10:00 AM a 7:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: Cerrado</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1">Reservas y contacto</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Telefono / WhatsApp: <a class="text-[color:var(--accent-deep)]" href="tel:+17863629814">(786) 362-9814</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Sandra Montero Beauty & Spa, 14740 Biscayne Blvd, Suite 3, North Miami FL"
+          src="https://www.google.com/maps?q=14740+Biscayne+Blvd+Suite+3+North+Miami+FL+33181&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2a1e12 0%, #1e150c 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Piel cuidada, confianza renovada.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu proximo facial te esta <span class="text-shine">esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva tu cita online en segundos y deja que Sandra disene el tratamiento que tu piel necesita.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
+        <a href="tel:+17863629814" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#1a130c]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(233,197,140,0.35)] bg-[rgba(233,197,140,0.08)] text-[#e9c58c]">SM</span>
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Sandra Montero Beauty &amp; Spa</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Facial &amp; Skincare Studio en North Miami. Faciales, estetica avanzada, contorno corporal, masajes y depilacion con cera.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
+        <p>14740 Biscayne Blvd, Suite 3, North Miami, FL 33181</p>
+        <p><a href="tel:+17863629814" class="hover:text-[#e9c58c]">(786) 362-9814</a></p>
+        <p><a href="mailto:sandramontero25@hotmail.com" class="hover:text-[#e9c58c]">sandramontero25@hotmail.com</a></p>
+        <p>Lun a Sab 10 AM a 7 PM · Dom cerrado</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Siguenos</p>
+        <p><a href="https://www.instagram.com/sandramonteroo/" target="_blank" rel="noopener" class="hover:text-[#e9c58c]">Instagram · @sandramonteroo</a></p>
+        <p><a href="https://www.facebook.com/sandramonterobeautyandspa" target="_blank" rel="noopener" class="hover:text-[#e9c58c]">Facebook · Sandra Montero Beauty &amp; Spa</a></p>
+        <p><a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="hover:text-[#e9c58c]">Reservas online · Booksy</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Sandra Montero Beauty & Spa. Todos los derechos reservados.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/1357157_sandra-montero-beauty-spa_wellness-day-spa_15889_miami" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online en Booksy">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbf3e6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Only one menu category open at a time
+    const details = document.querySelectorAll('#menuAccordion details.menu-cat');
+    details.forEach(d => {
+      d.addEventListener('toggle', () => {
+        if (d.open) {
+          details.forEach(other => { if (other !== d) other.open = false; });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
