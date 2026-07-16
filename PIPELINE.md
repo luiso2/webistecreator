@@ -37,10 +37,19 @@ Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 - PROHIBIDO: em-dash (verificar `grep -c "—" = 0`), datos inventados, superlativos sin prueba.
 - Footer: "Powered by Merktop" -> https://merktop.com.
 
-## Fase 3: Verificacion (gate, no saltar)
+## Fase 3: Verificacion + PUERTA DE CALIDAD (gate, no saltar NUNCA)
+Chequeos mecanicos:
 - Toda ruta de imagen referenciada existe en disco.
 - HTML completo (`<!DOCTYPE html>` ... `</html>`), em-dash = 0, JSON-LD parsea.
 - Responsive: sin overflow horizontal a 390px (si hay browser disponible; si no, revisar que no haya widths fijos).
+- Marcadores del design system presentes: `text-shine`, `orb`, `glass`, `btn-3d`, `reveal`, `Playfair`, `merktop-badge`, `data-es` (bilingue), `assets/tailwind.js`.
+
+Puerta de calidad (leccion Sandra 2026-07-16: el site salio "con template" pero degradado):
+1. **PROHIBIDO `<details>`/acordeones y cualquier control colapsable** para el menu de servicios. Menus grandes (20+ servicios): seccion de destacados con 3-4 cards glass grandes + "menu completo" agrupado por categoria en bloques glass con grid de filas servicio+precio, todo visible. Se puede resumir una categoria con "y N mas" + CTA al booking, jamas colapsar.
+2. **Curaduria de imagenes**: usar las mejores disponibles (interiores, tratamientos, resultados). Selfies o retratos del dueño NUNCA como tiles de galeria: solo como avatar pequeño en la seccion de experiencia. Fotos borrosas o con clutter se descartan. Si quedan menos de 5 buenas, mejor menos secciones con buenas fotos que rellenar con malas.
+3. **Contraste**: ink oscuro legible sobre base clara (tipo #33261f), text-shine en rangos profundos, banda final oscura como el ejemplar. Nada lavado tono-sobre-tono.
+4. **Fidelidad al ejemplar**: el build EMPIEZA copiando la estructura del template ejemplar y editandola. Escribir el HTML desde cero es una violacion del pipeline aunque el resultado "se parezca".
+5. Si el negocio no encaja en el formato (ecommerce, mayorista, sin servicios reservables), marcarlo failed con motivo en vez de forzar un demo pobre (precedente: @myspabeautysupply).
 
 ## Fase 4: Deploy (Cloudflare Workers static assets)
 - Por negocio: `wrangler.jsonc` = `{"name": "<slug>-<nicho>", "compatibility_date": "<reciente>", "assets": {"directory": ".", "html_handling": "auto-trailing-slash"}}` y `.assetsignore` con `wrangler.jsonc` y `data.json`.
