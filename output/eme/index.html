@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#faf5f2" />
+  <title>EME Miami · Brows, Lashes &amp; Lips en Coral Gables | Estudio boutique de cejas y pestañas</title>
+  <meta name="description" content="EME Miami - Brows Lashes Lips, estudio boutique en Coral Gables. Brow lamination, lash lift, extensiones de pestañas, lip blush y ombré brow con 10 años de experiencia. 5.0 en Booksy. Atención 1:1 con Emely." />
+  <meta property="og:title" content="EME Miami · Brows, Lashes & Lips en Coral Gables" />
+  <meta property="og:description" content="Estudio boutique de cejas, pestañas y PMU. Brow Lamination + Lashlift desde $198. Reserva online por Booksy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/inspiration-3.jpeg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "EME Miami - Brows Lashes Lips",
+    "alternateName": "Miami Brows Lashes",
+    "description": "He dedicado 10 anos a perfeccionar mi tecnica en cejas, pestanas y PMU, cuidando cada detalle y personalizando cada tratamiento segun las necesidades de cada cliente.",
+    "telephone": "+1-786-479-3132",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1430 Madruga Ave, Suite 27",
+      "addressLocality": "Coral Gables",
+      "addressRegion": "FL",
+      "postalCode": "33146",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "13:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "15:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday"], "opens": "12:00", "closes": "15:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/miami.browslashes/",
+      "https://booksy.com/en-us/1508678_miami-brows-lashes_brows-lashes_15889_miami"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "14", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de brows, lashes y PMU",
+      "itemListElement": [
+        { "@type": "Offer", "price": "198", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Brow Lamination + Lashlift", "serviceType": "Brows & Lashes" } },
+        { "@type": "Offer", "price": "99", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Brow Lamination", "serviceType": "Brows" } },
+        { "@type": "Offer", "price": "99", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Lash Lift with Keratin & Tint", "serviceType": "Lashes" } },
+        { "@type": "Offer", "price": "499", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Lip Blush", "serviceType": "Permanent Makeup" } },
+        { "@type": "Offer", "price": "599", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Ombre Brow", "serviceType": "Permanent Makeup" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf5f2;
+      --bg-2: #f1e4dd;
+      --surface: rgba(250,245,242,0.72);
+      --ink: #2b211d;
+      --ink-60: rgba(43,33,29,0.62);
+      --ink-40: rgba(43,33,29,0.42);
+      --accent-deep: #a85a43;
+      --accent-mid: #c98a70;
+      --accent-soft: #f0d9cd;
+      --accent-ghost: rgba(168,90,67,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(168,90,67,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,245,242,0.9);
+      border-color: rgba(168,90,67,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(43,33,29,0.14), 0 0 40px rgba(168,90,67,0.08);
+    }
+
+    /* Sheen terracota sobre texto */
+    .text-shine {
+      background: linear-gradient(110deg, #a85a43 0%, #d69374 30%, #7a3c2a 52%, #a85a43 75%, #c98a70 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs rosa/terracota sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #eccab8 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d6a58c 0%, transparent 70%); opacity: 0.55; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e3bda6 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D terracota */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #c98a70 0%, #a85a43 48%, #813f2d 100%);
+      color: #faf5f2; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,30,20,0.4),
+        0 5px 0 #5c2c1f,
+        0 12px 24px rgba(43,33,29,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,30,20,0.4), 0 7px 0 #5c2c1f, 0 18px 34px rgba(43,33,29,0.32), 0 0 40px rgba(168,90,67,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,30,20,0.45), 0 1px 0 #5c2c1f, 0 4px 10px rgba(43,33,29,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(168,90,67,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(168,90,67,0.7); background: rgba(168,90,67,0.08); box-shadow: 0 10px 26px rgba(43,33,29,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,24,20,0.94) 0%, rgba(27,17,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(250,245,242,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(43,33,29,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(43,33,29,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(168,90,67,0.14), inset 0 -60px 100px rgba(43,33,29,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #c98a70, #7a3c2a);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #a85a43; letter-spacing: 2px; text-shadow: 0 0 14px rgba(168,90,67,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura (CTA final + footer) */
+    .dark-band {
+      --ink: #faf5f2;
+      --ink-60: rgba(250,245,242,0.65);
+      --ink-40: rgba(250,245,242,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(230,183,150,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e6b796 0%, #f6e0cf 30%, #d6a58c 52%, #e6b796 75%, #f0cbab 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(230,183,150,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(200,150,120,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #f8ead9 0%, #e6c1a3 48%, #c99871 100%);
+      color: #2b211d;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,60,40,0.35),
+        0 5px 0 #8a5c3f,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,60,40,0.35), 0 7px 0 #8a5c3f, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(230,183,150,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,60,40,0.4), 0 1px 0 #8a5c3f, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(230,183,150,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(230,183,150,0.7); background: rgba(230,183,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e6b796; text-shadow: 0 0 14px rgba(230,183,150,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c98a70 0%, #a85a43 100%);
+      box-shadow: 0 6px 0 #5c2c1f, 0 14px 30px rgba(43,33,29,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5c2c1f, 0 20px 40px rgba(43,33,29,0.4), 0 0 34px rgba(168,90,67,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5c2c1f, 0 6px 14px rgba(43,33,29,0.3); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(168,90,67,0.35)] bg-[rgba(168,90,67,0.1)] text-[color:var(--accent-deep)]">E</span>
+        <span class="font-display text-xl tracking-[0.1em] uppercase">EME <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Miami</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia">La Experiencia</a>
+        <a class="nav-link" href="#ritual">El Proceso</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#galeria">Galería</a>
+        <a class="nav-link" href="#opiniones">Opiniones</a>
+        <a class="nav-link" href="#ubicacion">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reservar cita
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Proceso</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
+        <a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Coral Gables · Estudio boutique de Brows, Lashes &amp; Lips</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">10 años perfeccionando tu mirada.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          Cejas y pestañas <span class="text-shine">a tu medida</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
+          Brow lamination, lash lift, extensiones y PMU en un estudio boutique de Coral Gables. Emely dedica cada cita a diseñar tu mirada con atención uno a uno, cuidando cada detalle.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]">5.0 · 14 reseñas en Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Reservar cita
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+17864793132" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (786) 479-3132
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4]">
+            <img src="assets/raw/inspiration-3.jpeg" alt="Interior del estudio EME Miami en Coral Gables, con el logo iluminado y la camilla de tratamientos" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Servicio insignia</p>
+            <p class="font-display text-lg">Brow Lamination + Lashlift</p>
+            <p class="text-sm text-[color:var(--ink-60)]">1h 20min · $198</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine">5.0</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">14 reseñas en Booksy</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">10+ <span class="text-shine">años</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">De experiencia</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl text-shine">$198</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Lamination + Lashlift · 1h20</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Coral Gables</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">1430 Madruga Ave, Ste 27</p></div>
+    </div>
+  </section>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal">
+          <img src="assets/raw/biz-photo-2-cover.jpeg" alt="Sala de tratamientos de EME Miami: paredes blancas, camilla y espejo de cuerpo entero" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+          <img src="assets/raw/inspiration-1.jpeg" alt="Detalle de brow lamination, extensiones de pestañas y lip blushing en una clienta de EME Miami" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un estudio boutique<br /><span class="text-shine">en el corazón de Coral Gables</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
+          "He dedicado 10 años a perfeccionar mi técnica en cejas, pestañas y PMU, cuidando cada detalle y personalizando cada tratamiento según las necesidades de cada cliente." Así resume Emely el espíritu de EME: un espacio minimalista, blanco y luminoso, pensado para una sola clienta a la vez.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
+          Cada cita es atendida personalmente por Emely, sin rotación de personal: la misma mano que diseña tu mirada da seguimiento a cada retoque.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1.5K+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Atención personal</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5 w-fit">
+            <img src="assets/raw/logo.jpeg" alt="Logo de EME Miami - Brows Lashes Lips" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(168,90,67,0.3)] bg-white p-1" loading="lazy" />
+            <span class="text-sm font-light">Emely Cieza · fundadora y única artista</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROCESO PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El proceso, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Así se diseña <span class="text-shine">tu mirada</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3">Consulta y diseño</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Analizamos la forma de tu rostro y tu cejas o pestañas naturales para definir el diseño que mejor te favorece, antes de tocar una sola hebra.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3">Mapeo y aplicación</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Mapeo preciso de cejas o pestaña por pestaña para extensiones, lamination o PMU, con productos profesionales y técnica personalizada.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3">Acabado y tinte</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Tinte, keratina o sellado según el tratamiento, revisando simetría y densidad hasta lograr un resultado natural y duradero.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3">Cuidado y seguimiento</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Recomendaciones de cuidado en casa y calendario de retoque o refill, para que el resultado se mantenga entre visita y visita.</p>
+        </div>
+      </div>
+
+      <!-- Card del servicio insignia -->
+      <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal">
+        <div class="lg:col-span-2 zoomable relative min-h-[320px]">
+          <img src="assets/raw/service-lash-lift-1.jpeg" alt="Antes y después de un lash lift con keratina y tinte en EME Miami" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="lg:col-span-3 p-8 sm:p-12">
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-4">Summer Special</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3">Brow Lamination <span class="text-shine">+ Lashlift</span></h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7">La combinación perfecta: cejas laminadas y con forma, más un lash lift con keratina y tinte. El efecto dura de 4 a 6 semanas. Opción de agregar wax o threading por $10 extra.</p>
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
+            <div><p class="font-display text-3xl text-shine">$198</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Precio</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl">1h 20min</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Duración</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Con Emely</p></div>
+          </div>
+          <a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            Reservar este servicio
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Menú <span class="text-shine">completo</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por EME Miami en Booksy. Reserva online con confirmación inmediata.</p>
+      </div>
+
+      <!-- BROWS -->
+      <div class="mb-14">
+        <h3 class="reveal font-display text-2xl mb-6"><span class="text-shine">Brows</span></h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal">
+            <h4 class="font-display text-lg leading-snug mb-3">Brow Sculpting</h4>
+            <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Threading, wax o tweeze</p>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$39</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">30 min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:80ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Brow Lamination</h4>
+            <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Incluye forma, wax o threading</p>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$99</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:160ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Brow Dye + Shaping</h4>
+            <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Wax, threading o tweeze</p>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$69</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:240ms; border-color: rgba(168,90,67,0.4);">
+            <h4 class="font-display text-lg leading-snug mb-3">Brow Lamination Deluxe</h4>
+            <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Forma + tinte + wax</p>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$119</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 30min</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LASHES -->
+      <div class="mb-14">
+        <h3 class="reveal font-display text-2xl mb-6"><span class="text-shine">Lashes</span></h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal">
+            <h4 class="font-display text-lg leading-snug mb-3">Lash Lift + Keratin &amp; Tint</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$99</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:80ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Safe Lash Removal + Keratin</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$45</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">30 min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:160ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Eyelash Extensions · Classic Set</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$189</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:240ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Eyelash Extensions · Hybrid Set</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$199</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:80ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Eyelash Extensions · Volume Set</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$219</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:160ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Classic Refill</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$79.50</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:240ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Hybrid Refill</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$89.50</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 20min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:320ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Volume Refill</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$99.50</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 20min</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERMANENT MAKEUP -->
+      <div class="mb-14">
+        <h3 class="reveal font-display text-2xl mb-6"><span class="text-shine">Permanent Makeup</span></h3>
+        <div class="grid sm:grid-cols-2 gap-5 items-stretch">
+          <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+            <h4 class="font-display text-xl leading-snug mb-3">Lip Blush</h4>
+            <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Pigmentación semipermanente de labios para un color natural y uniforme. Escribe al (786) 479-3132 para agendar tu consulta.</p>
+            <div class="mt-auto flex items-baseline gap-3"><p class="font-display text-3xl text-shine">$499</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+            <h4 class="font-display text-xl leading-snug mb-3">Ombré Brow</h4>
+            <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Cejas en polvo con degradado natural, técnica de microshading. Escribe al (786) 479-3132 para agendar tu consulta.</p>
+            <div class="mt-auto flex items-baseline gap-3"><p class="font-display text-3xl text-shine">$599</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD ONS -->
+      <div>
+        <h3 class="reveal font-display text-2xl mb-6"><span class="text-shine">Add Ons</span></h3>
+        <div class="grid sm:grid-cols-2 gap-5 items-stretch">
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal">
+            <h4 class="font-display text-lg leading-snug mb-3">Clean Up Brows, Chin or Lips</h4>
+            <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-4">Threading o wax</p>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$21</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">20 min</p></div>
+          </div>
+          <div class="glass glass-hover rounded-3xl p-6 flex flex-col reveal" style="transition-delay:80ms">
+            <h4 class="font-display text-lg leading-snug mb-3">Just Lash or Brow Tint</h4>
+            <div class="mt-auto"><p class="font-display text-2xl text-shine mb-1">$29</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">30 min</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">Ver todo y reservar en Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Resultados <span class="text-shine">reales</span></h2>
+        </div>
+        <a href="https://www.instagram.com/miami.browslashes/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @miami.browslashes
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/inspiration-2.jpeg" alt="Cejas después de brow lamination, resultado real de EME Miami" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/inspiration-4.jpeg" alt="Antes y después de lash lift con método botox, pestañas naturales realzadas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/inspiration-6-lamination-deluxe.jpeg" alt="Antes y después de Brow Lamination Deluxe en clienta de EME Miami" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/service-lip-blush-1.jpeg" alt="Antes y después de un lip blush, color labial natural y uniforme" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/service-lash-extensions-1.jpeg" alt="Detalle de extensiones de pestañas antes y después" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/service-brow-sculpting-1.jpeg" alt="Resultado de brow sculpting: cejas definidas y simétricas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:150ms"><img src="assets/raw/service-ombre-brow-1.jpeg" alt="Resultado de ombré brow, técnica de PMU en cejas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:240ms"><img src="assets/raw/service-brow-lamination-1.jpeg" alt="Cejas laminadas con brillo y forma definida" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:330ms"><img src="assets/raw/inspiration-7.jpeg" alt="Resultado de tratamiento de cejas en EME Miami" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestras clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 14 reseñas verificadas en Booksy</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I'm completely in love with my results! 😍 I got powder brows and lip blushing done, and I honestly have no words to describe how happy and grateful I am."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Fiorella G.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:100ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Emely is so sweet and very skilled. I got eyebrow threading and a lash lift and I could not be happier!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Gabrielle M.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:200ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I can't recommend her enough! She's truly great at what she does incredibly talented, detail oriented, and clearly passionate about her job."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Caroly O.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:300ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I have been going to Emely for the past year getting volume lashes. She does the best job! My real lashes are healthy."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Alexis H.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/1508678_miami-brows-lashes_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las reseñas en Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu cita te está <span class="text-shine">esperando</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">1430 Madruga Ave, Suite 27, Coral Gables, FL 33146</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(168,90,67,0.4)]" href="https://www.google.com/maps?q=EME+Miami+Brows+Lashes,+1430+Madruga+Ave+Suite+27,+Coral+Gables,+FL+33146" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Jueves y viernes: 12:00 PM a 3:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Sábado: 10:00 AM a 2:00 PM · Domingo: 10:00 AM a 1:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Miércoles: 3:00 PM a 7:00 PM · Lunes y martes cerrado</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light mt-2">¿Necesitas un horario distinto? Escribe un mensaje de texto al (786) 479-3132.</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener">miamibrowslashes.booksy.com</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Teléfono / texto: <a class="text-[color:var(--accent-deep)]" href="tel:+17864793132">(786) 479-3132</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: EME Miami - Brows Lashes Lips, 1430 Madruga Ave Suite 27, Coral Gables FL"
+          src="https://www.google.com/maps?q=EME+Miami+Brows+Lashes,+1430+Madruga+Ave+Suite+27,+Coral+Gables,+FL+33146&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2b201a 0%, #1c1512 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Diseñada para realzar tu mirada.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu próxima cita con <span class="text-shine">EME</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva online en segundos o escribe un mensaje de texto. Emely te atiende personalmente, cita por cita.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
+        <a href="tel:+17864793132" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#1a1310]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(230,183,150,0.35)] bg-[rgba(230,183,150,0.08)] text-[#e6b796]">E</span>
+          <span class="font-display text-lg tracking-[0.1em] uppercase">EME Miami</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Brows Lashes Lips. Estudio boutique de cejas, pestañas y PMU en Coral Gables, atendido personalmente por Emely Cieza.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
+        <p>1430 Madruga Ave, Suite 27, Coral Gables, FL 33146</p>
+        <p><a href="tel:+17864793132" class="hover:text-[#e6b796]">(786) 479-3132</a></p>
+        <p>Jue-Vie 12-3pm · Sáb 10am-2pm · Dom 10am-1pm · Mié 3-7pm</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
+        <p><a href="https://www.instagram.com/miami.browslashes/" target="_blank" rel="noopener" class="hover:text-[#e6b796]">Instagram · @miami.browslashes</a></p>
+        <p><a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="hover:text-[#e6b796]">Reservas online · Booksy</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 EME Miami - Brows Lashes Lips. Todos los derechos reservados.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://miamibrowslashes.booksy.com/a/" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf5f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+  </script>
+</body>
+</html>
