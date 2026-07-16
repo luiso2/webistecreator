@@ -95,6 +95,30 @@
     }
     .qitem.done { border-color: var(--border); color: var(--ink-40); background: transparent; text-decoration: line-through; }
 
+    /* Card de progreso (item en proceso) */
+    .prog {
+      width: 100%; margin-top: 14px; padding: 16px 18px; border-radius: 16px;
+      border: 1px solid rgba(184,240,77,0.25); background: rgba(184,240,77,0.04);
+    }
+    .prog .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .prog .name { font-size: 14px; font-weight: 600; }
+    .prog .stage { font-size: 12px; color: var(--lime); }
+    .prog .stage::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); margin-right: 7px; box-shadow: 0 0 8px rgba(184,240,77,0.9); animation: pulse 1.4s ease-in-out infinite; }
+    .prog .timer { font-size: 12px; color: var(--ink-60); font-variant-numeric: tabular-nums; }
+    .prog .bar { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.06); overflow: hidden; }
+    .prog .fill {
+      height: 100%; border-radius: 999px; position: relative;
+      background: linear-gradient(90deg, #6f8f3a, var(--lime));
+      transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
+    }
+    .prog .fill::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      animation: sweep 1.8s linear infinite;
+    }
+    @keyframes sweep { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+    @media (prefers-reduced-motion: reduce) { .prog .fill::after, .prog .stage::before { animation: none; } }
+
     .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 26px 0; }
     .stat { text-align: center; padding: 18px 10px; }
     .stat b { display: block; font-size: 30px; font-weight: 700; color: var(--lime); }
@@ -246,12 +270,25 @@
           </div>
         </div>`).join('');
 
-      const qItems = queue.slice().reverse().slice(0, 12);
-      $('queue').innerHTML = qItems.map(q => {
+      const STAGE_LABEL = { research: 'Investigando el negocio', build: 'Construyendo el website', verify: 'Verificando calidad', commit: 'Publicando' };
+      const STAGE_PCT = { research: 30, build: 65, verify: 85, commit: 95 };
+      const working = queue.filter(q => q.status === 'processing');
+      const qItems = queue.filter(q => q.status !== 'processing').slice().reverse().slice(0, 12);
+      const chips = qItems.map(q => {
         const demo = q.result && q.result.url_demo && q.result.url_demo.startsWith('https://') && q.result.url_demo.includes('.odd-forest-9504.workers.dev')
           ? ` · <a href="${esc(q.result.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">ver demo</a>` : '';
         return `<span class="qitem ${q.status === 'done' ? 'done' : ''}">${q.status === 'pending' ? '⏳ ' : '✓ '}${esc(q.input)}${demo}</span>`;
       }).join('');
+      const progs = working.map(q => `
+        <div class="prog">
+          <div class="row">
+            <span class="name">⚒️ ${esc(q.result && q.result.name || q.input)}</span>
+            <span class="stage">${STAGE_LABEL[q.stage] || 'En proceso'}</span>
+            <span class="timer" data-start="${esc(q.started_at || q.created)}">0m 00s</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:${STAGE_PCT[q.stage] || 15}%"></div></div>
+        </div>`).join('');
+      $('queue').innerHTML = progs + chips;
     }
 
     async function load() {
@@ -284,7 +321,17 @@
     $('input').addEventListener('keydown', e => { if (e.key === 'Enter') $('submit').click(); });
 
     if (!localStorage.getItem(KEY_LS)) showGate(); else load();
-    setInterval(load, 60000);
+    setInterval(load, 30000);
+
+    // Temporizador vivo de los items en proceso
+    setInterval(() => {
+      document.querySelectorAll('.timer[data-start]').forEach(el => {
+        const t = Date.parse(el.dataset.start);
+        if (!t) return;
+        const s = Math.max(0, Math.floor((Date.now() - t) / 1000));
+        el.textContent = `${Math.floor(s / 60)}m ${String(s % 60).padStart(2, '0')}s`;
+      });
+    }, 1000);
   </script>
 </body>
 </html>

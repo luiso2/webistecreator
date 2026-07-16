@@ -31,6 +31,27 @@ export default {
       return json({ pending });
     }
 
+    if (url.pathname === '/api/public/queue/progress' && req.method === 'POST') {
+      let body;
+      try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+      const STAGES = ['research', 'build', 'verify', 'commit'];
+      if (!body.id || !STAGES.includes(body.stage)) return json({ error: 'id y stage validos requeridos' }, 400);
+      let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const item = queue.find(q => q.id === body.id && (q.status === 'pending' || q.status === 'processing'));
+      if (!item) return json({ error: 'item no activo' }, 404);
+      const now = new Date().toISOString();
+      queue = queue.map(q => (q.id === body.id ? {
+        ...q,
+        status: 'processing',
+        stage: body.stage,
+        stage_at: now,
+        started_at: q.started_at || now,
+        note: typeof body.note === 'string' ? body.note.slice(0, 140) : q.note,
+      } : q));
+      await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+      return json({ ok: true });
+    }
+
     if (url.pathname === '/api/public/queue/done' && req.method === 'POST') {
       let body;
       try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
@@ -40,7 +61,7 @@ export default {
       if (typeof body.name === 'string' && body.name.length <= 120) result.name = body.name;
       if (typeof body.url_demo === 'string' && DEMO_URL_RE.test(body.url_demo)) result.url_demo = body.url_demo;
       let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-      const exists = queue.some(q => q.id === body.id && q.status === 'pending');
+      const exists = queue.some(q => q.id === body.id && (q.status === 'pending' || q.status === 'processing'));
       if (!exists) return json({ error: 'item no pendiente' }, 404);
       queue = queue.map(q => (q.id === body.id ? { ...q, status: 'done', done_at: new Date().toISOString(), result } : q));
       await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
