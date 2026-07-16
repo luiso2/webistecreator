@@ -1,0 +1,106 @@
+{
+  "slug": "heavenly",
+  "name": "Heavenly Beauty Bar",
+  "name_alt": "Heavenly Beauty Bar by Thalia G",
+  "niche": "lash & brow studio",
+  "city": "Miami, FL (West Miami / Westchester)",
+  "address": {
+    "line1": "6320 SW 8th St",
+    "locality": "Miami",
+    "region": "FL",
+    "postal_code": "33144",
+    "country": "US",
+    "lat": 25.76270529124275,
+    "lng": -80.29844,
+    "source": "JSON-LD embebido en la pagina de Booksy (script application/ld+json, campo address) y confirmado de forma independiente en el objeto SSR window.__NUXT_DATA__ (business.location.address), ambos con el mismo texto exacto '6320 sw 8th st, Miami, 33144'. Coincide con la direccion de partida del research."
+  },
+  "phone": "786-310-9319",
+  "phone_source": "Visto directamente en la ficha de Booksy (booksy.com/en-us/1438206_heavenly-beauty-bar_brows-lashes_15889_miami) como punto de partida verificado. El JSON estructurado (ld+json) y el payload SSR de la pagina NO exponen el campo de telefono publicamente (Booksy suele ocultarlo detras del boton de contacto), por lo que no se pudo re-confirmar por una segunda fuente independiente en esta sesion, pero se mantiene el dato visto en la fuente original.",
+  "email": null,
+  "email_source": "No se encontro email publico. La API web_profile_info de Instagram (@heavenlybeautybarmiami) devuelve business_email: null. La ficha de Booksy tampoco expone un email en su JSON-LD ni en el payload SSR. La bio de IG solo enlaza a Booksy y a un curso en Teachable, sin direccion de correo visible.",
+  "website": null,
+  "has_own_site": false,
+  "has_own_site_check": "1) heavenlybeautybar.com y heavenlybeautybarmiami.com no resuelven por DNS (getent hosts sin resultado, conexion rechazada por curl). 2) El campo 'website' del objeto de negocio de Booksy (window.__NUXT_DATA__, business.website) es null. 3) La bio de Instagram @heavenlybeautybarmiami solo tiene dos links externos: http://heavenlybeautybar11.booksy.com/ (subdominio vanity de Booksy que redirige exactamente a la misma ficha booksy.com/en-us/1438206_heavenly-beauty-bar..., confirmado con curl -L) y un curso de pestañas en heavenly-beauty-academy.teachable.com (no es un sitio propio del negocio). Conclusion: NO tiene website propio.",
+  "disambiguation_note": "Verificado que todos los datos de este archivo corresponden a 'Heavenly Beauty Bar' en 6320 SW 8th St, Miami, FL 33144 (Booksy ID 1438206, IG @heavenlybeautybarmiami, propietaria/lash artist Thalia Gonzalez). Se descartaron activamente negocios homonimos NO relacionados encontrados en la busqueda: 'Heavenly Beauty and Spa' (heavenly-beautyandspa.square.site, Yelp), 'Heavenly Esthetics' (7805 Coral Way, Miami), 'Heavenly Hair Salon' (North Miami), 'Heavenly Organic Spa' / heavenlyorganicspa.com (North Miami), y 'Lash Heaven by Carolina'. Ninguno de esos coincide con la direccion 6320 SW 8th St ni con el handle de Instagram de este negocio.",
+  "instagram": {
+    "handle": "@heavenlybeautybarmiami",
+    "url": "https://www.instagram.com/heavenlybeautybarmiami/",
+    "followers": 3464,
+    "following": 2809,
+    "posts_count": 639,
+    "bio": "Miami Fl / Lash Specialist | Lash Tech | Owner | EST. Since 2019 / DM first for same day appointments / BOOK NOW (escrito con caracteres estilizados en el perfil real)",
+    "bio_links": [
+      { "title": "BOOK NOW", "url": "http://heavenlybeautybar11.booksy.com/", "note": "Redirige (confirmado con curl -L) a la ficha real de Booksy: https://booksy.com/en-us/1438206_heavenly-beauty-bar_brows-lashes_15889_miami" },
+      { "title": "Online Lash Course", "url": "https://heavenly-beauty-academy.teachable.com/l/pdp/pro-mix-heavenly-lash-course" }
+    ],
+    "followers_source": "API publica instagram.com/api/v1/users/web_profile_info/?username=heavenlybeautybarmiami con header x-ig-app-id: 936619743392459, campo edge_followed_by.count. El punto de partida estimaba ~3,200; el numero real y actual confirmado por la API es 3,464."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "url": "https://booksy.com/en-us/1438206_heavenly-beauty-bar_brows-lashes_15889_miami",
+    "vanity_url": "http://heavenlybeautybar11.booksy.com/"
+  },
+  "rating": 4.7,
+  "review_count": 15,
+  "rating_source": "Booksy, NO Google. Confirmado en dos fuentes dentro de la misma pagina de Booksy: (1) JSON-LD aggregateRating: ratingValue 4.733333333333333, reviewCount 15; (2) objeto SSR window.__NUXT_DATA__, business.reviewsCount = 15. Se intento confirmar el numero en Google Maps via busqueda web pero no se encontro una ficha de Google Business Profile publica indexada para esta direccion exacta; un agregador de bajo perfil (atly.com) muestra '5.0' sin conteo de resenas ni fuente clara, por lo que NO se uso. Se confirma que 15 esta justo en el limite minimo (>=10) del criterio de descubrimiento, pero lo cumple.",
+  "hours": {
+    "monday": "1:00 PM - 10:00 PM",
+    "tuesday": "1:00 PM - 10:00 PM",
+    "wednesday": "1:00 PM - 10:00 PM",
+    "thursday": "1:00 PM - 10:00 PM",
+    "friday": "1:00 PM - 10:00 PM",
+    "saturday": "1:00 PM - 3:00 PM",
+    "sunday": "Cerrado"
+  },
+  "hours_note": "Extraidas del JSON-LD (openingHoursSpecification) y confirmadas en el objeto SSR business.openHours de la misma pagina de Booksy; ambas fuentes coinciden exactamente (Lunes a Viernes 13:00-22:00, Sabado 13:00-15:00, sin entrada para Domingo = cerrado).",
+  "services": [
+    { "category": "Lash Extensions", "name": "Classic Full Set", "price_usd": 90, "duration_min": 60, "description": "Extension de pestanas clasica, una extension por pestana natural, para un efecto natural con mas densidad." },
+    { "category": "Lash Extensions", "name": "Classic Refill", "price_usd": 65, "duration_min": 60, "description": "Mantenimiento del set clasico para conservar la densidad y forma del diseno original." },
+    { "category": "Lash Extensions", "name": "Hybrid Full Set", "price_usd": 100, "duration_min": 75, "description": "Mezcla de tecnica clasica y volumen para un efecto texturizado, entre natural y dramatico." },
+    { "category": "Lash Extensions", "name": "Hybrid Refill", "price_usd": 75, "duration_min": 60, "description": "Mantenimiento del set hibrido." },
+    { "category": "Lash Extensions", "name": "Volume Full Set", "price_usd": 110, "duration_min": 90, "description": "Multiples extensiones ultrafinas por pestana natural (tecnica de abanicos) para maximo volumen y densidad." },
+    { "category": "Lash Extensions", "name": "Mega Volume Full Set", "price_usd": 120, "duration_min": 90, "description": "Volumen extremo con abanicos mas densos, para el efecto mas dramatico del menu." },
+    { "category": "Lash Extensions", "name": "Volume Refill", "price_usd": 85, "duration_min": 90, "description": "Mantenimiento del set de volumen." },
+    { "category": "Lash Extensions", "name": "Mega Volume Refill", "price_usd": 95, "duration_min": 90, "description": "Mantenimiento del set de mega volumen." },
+    { "category": "Lash Care", "name": "Lash Removal", "price_usd": 15, "duration_min": 30, "description": "Remocion profesional y segura de extensiones de pestanas." },
+    { "category": "Lash Care", "name": "Lash Lift", "price_usd": 100, "duration_min": 90, "description": "Rizado semipermanente de las pestanas naturales para un efecto de mirada abierta sin extensiones." },
+    { "category": "Lash Care", "name": "Lash Lift + Tint", "price_usd": 120, "duration_min": 90, "description": "Lash lift combinado con tinte de pestanas para mayor definicion." },
+    { "category": "Brows", "name": "Brow Shaping", "price_usd": 20, "duration_min": 30, "description": "Diseno y perfilado de cejas segun la forma del rostro." },
+    { "category": "Brows", "name": "Brow Shaping + Tint", "price_usd": 40, "duration_min": 30, "description": "Perfilado de cejas mas tinte para mayor definicion y densidad visual." }
+  ],
+  "services_source": "Precios: extraidos textualmente del JSON-LD (script application/ld+json, campo makesOffer) embebido en la pagina de Booksy, con priceRange declarado 'USD 15 - 120' que coincide con el rango real de estos 13 servicios. Duraciones: no estaban en el JSON-LD; se resolvieron decodificando el payload SSR de Nuxt (script#__NUXT_DATA__, formato devalue: arreglo indexado donde cada objeto de servicio referencia sus 'variants' con duration/price por indice). Se resolvieron las referencias numericas programaticamente y los precios resultantes coinciden exactamente con los del JSON-LD para los 13 servicios, lo que confirma que la decodificacion de duraciones es correcta. Nombres de servicios exactos como los publica el negocio (en ingles).",
+  "reviews": [
+    { "name": "Angelie G.", "text": "The best experience I've ever had doing my lashes! Thalia was so nice, professional & caring! Her attention to detail is incredible. 10/10!", "rating": 5, "source": "Booksy (ficha de Heavenly Beauty Bar), no se encontro ficha de Google Business Profile publica indexada para confirmar via Google" },
+    { "name": "Maria A.", "text": "I absolutely love my lashes!! Also I always have amazing retention! my lashes last such a long time every single time. I've been going to her for almost three years now, and I honestly wouldn't change her for anyone. She's the best at what she does, and I always leave feeling so happy with my lashes.", "rating": 5, "source": "Booksy (ficha de Heavenly Beauty Bar)" },
+    { "name": "Oneida R.", "text": "Thalía es súper cariñosa, atenta y profesional, se tomó el tiempo de escuchar exactamente lo que yo quería y el resultado quedó más hermoso de lo que esperaba. Las pestañas quedaron perfectas, naturales y súper bien hechas. Sin duda la recomiendo al 100% y volveré sin pensarlo.", "rating": 5, "source": "Booksy (ficha de Heavenly Beauty Bar), review original en espanol" }
+  ],
+  "reviews_source": "Las 3 reseñas se extrajeron verbatim del JSON-LD (campo review) de la pagina de Booksy, y se re-confirmaron cruzando el objeto SSR window.__NUXT_DATA__ (business.reviews), que contiene el mismo texto, autor y fecha (2026-01-09) para las tres. Los apellidos de los autores aparecen truncados con inicial (ej. 'Angelie G…') porque asi los muestra la propia interfaz de Booksy por privacidad; no es un dato omitido por este research. No se logro acceder a una ficha de Google Business Profile publica para esta direccion exacta, por lo que NO hay reseñas de Google disponibles; se uso Booksy como fuente, indicado explicitamente en cada 'source'.",
+  "team": {
+    "owner": "Thalia Gonzalez",
+    "note": "Aparece como unica 'employee' en el JSON-LD de Booksy y coincide con la bio de Instagram ('Lash Specialist | Lash Tech | Owner') y con el logo del negocio ('Heavenly Beauty Bar by Thalia G'). El negocio tambien imparte un curso propio de extensiones de pestañas (Teachable) y forma a otras lash artists (fotos de certificados de finalizacion en Instagram)."
+  },
+  "brand_vibe": "Beauty bar glam e intimo: logotipo con wordmark serif negro 'HEAVENLY' + script en vino/burdeos 'Beauty Bar' sobre fondo blush/rosa palido con halo degradado. Fotografia de servicio en extremo close-up de pestañas y cejas con marca de agua del logo. El interior real (foto de equipo con certificados) muestra pared azul marino, estanteria de madera clara, piso ajedrezado blanco y negro, y detalles dorados: una estetica de salon boutique elegante, no un local generico.",
+  "palette": {
+    "name": "heavenly",
+    "bg": "#fbf4f2",
+    "bg-2": "#f4e1dc",
+    "surface": "rgba(255,248,246,0.72)",
+    "ink": "#2c1a1d",
+    "ink-60": "rgba(44,26,29,0.62)",
+    "ink-40": "rgba(44,26,29,0.42)",
+    "accent-deep": "#7c2d3a",
+    "accent-mid": "#b6717a",
+    "accent-soft": "#f0d9d4",
+    "accent-ghost": "rgba(124,45,58,0.15)",
+    "source": "Derivada directamente del logo real del negocio (booksy-logo.jpg: wordmark negro + script color vino/burdeos sobre fondo blush degradado) y de las fotos de servicio con marca de agua rosa palido/negro. accent-deep replica el tono vino del script 'Beauty Bar' del logo; bg y accent-soft replican el fondo blush del mismo logo y de las tarjetas de marca que aparecen sobrepuestas en varias fotos de Booksy."
+  },
+  "images": {
+    "source": "Galeria de Booksy (biz_photo, inspiration, service_photos, logo, todas en d2zdpiztbgorvt.cloudfront.net/region1/us/1438206/) descargadas con curl y UA de Chrome, mas 2 fotos de Instagram (@heavenlybeautybarmiami) via display_url de la API web_profile_info. Las 18 imagenes descargadas se verificaron con el comando `file` como JPEG validos y todas superan 15KB (rango 42KB-228KB); no se descarto ninguna por archivo roto. Se elimino 1 duplicado exacto (mismo md5) entre las fotos de servicio 'Classic Full Set' y 'Classic Refill' que Booksy sirve con la misma imagen generica.",
+    "hero": "booksy-insp-5.jpg",
+    "about": ["ig-2.jpg", "booksy-insp-1.jpg"],
+    "flagship_service": "booksy-insp-2.jpg",
+    "gallery": ["booksy-biz-1.jpg", "booksy-insp-3.jpg", "booksy-insp-4.jpg", "booksy-svc-classic-fullset.jpg", "booksy-svc-megavolume-fullset.jpg", "booksy-svc-browshaping-tint.jpg", "booksy-svc-extra.jpg"],
+    "logo": "booksy-logo.jpg",
+    "unused": ["ig-1.jpg (promo de curso de pestanas, se considero pero no se uso en el sitio final)", "booksy-svc-hybrid-fullset.jpg, booksy-svc-hybrid-refill.jpg, booksy-svc-volume-fullset.jpg, booksy-svc-volume-refill.jpg, booksy-svc-megavolume-refill.jpg (fotos de servicio adicionales validas, no usadas por espacio en la galeria)"]
+  }
+}
