@@ -1,1 +1,11 @@
-{"name":"siteforge","private":true,"devDependencies":{"wrangler":"^4.111.0"}}
+{
+  "name": "siteforge",
+  "private": true,
+  "devDependencies": {
+    "wrangler": "^4.111.0"
+  },
+  "scripts": {
+    "deploy": "pnpm hugo && wrangler deploy",
+    "preview": "pnpm hugo && wrangler dev"
+  }
+}
