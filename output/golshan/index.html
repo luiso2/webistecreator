@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#faf4ee" />
+  <title>Golshan Luxury Spa · Spa de Lujo en Olympia Heights, Miami | Faciales, Masajes y Rituales de Bienestar</title>
+  <meta name="description" content="Golshan Luxury Spa, santuario de bienestar en Olympia Heights, Miami. Faciales avanzados, masajes terapeuticos, maderoterapia y rituales signature como el Golden Bloom Renewal Ritual. 5.0 con 44 resenas en Booksy. Reserva online." />
+  <meta property="og:title" content="Golshan Luxury Spa · Spa de Lujo en Olympia Heights, Miami" />
+  <meta property="og:description" content="Faciales, masajes y rituales de bienestar con resultados visibles. Golden Bloom Renewal Ritual: 85 min · $199. Reserva online por Booksy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/hero-1.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/logo.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DaySpa",
+    "name": "Golshan Luxury Spa",
+    "description": "Santuario de bienestar en Olympia Heights, Miami: faciales avanzados, masajes terapeuticos, maderoterapia y rituales signature de ayurveda y estetica.",
+    "priceRange": "$$",
+    "image": "assets/raw/logo.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2746 SW 87th Ave, Suite 2",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "postalCode": "33165",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 25.744459644840465, "longitude": -80.33602036535738 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "20:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/golshanluxuryspa/",
+      "https://www.facebook.com/share/16GdFNyaxV/?mibextid=wwXIfr",
+      "https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "44", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Rituales y tratamientos de bienestar",
+      "itemListElement": [
+        { "@type": "Offer", "price": "199", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Golden Bloom Renewal Ritual", "serviceType": "Facial Ritual" } },
+        { "@type": "Offer", "price": "230", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Ayurveda Sculpt & Glow Body Ritual", "serviceType": "Body Ritual" } },
+        { "@type": "Offer", "price": "210", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Divine Golddess Face Lift Ritual", "serviceType": "Facial Ritual" } },
+        { "@type": "Offer", "price": "120", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Swedish Massage Full Body", "serviceType": "Massage" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf4ee;
+      --bg-2: #f1e2d6;
+      --surface: rgba(250,245,239,0.72);
+      --ink: #3a2a22;
+      --ink-60: rgba(58,42,34,0.62);
+      --ink-40: rgba(58,42,34,0.42);
+      --accent-deep: #b17853;
+      --accent-mid: #d3a483;
+      --accent-soft: #f0dcc9;
+      --accent-ghost: rgba(177,120,83,0.16);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(177,120,83,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,245,239,0.9);
+      border-color: rgba(177,120,83,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(58,42,34,0.14), 0 0 40px rgba(177,120,83,0.08);
+    }
+
+    /* Sheen dorado-rosa sobre texto (tonos profundos, legible en crema) */
+    .text-shine {
+      background: linear-gradient(110deg, #b17853 0%, #d9a97e 30%, #6b4a35 52%, #b17853 75%, #c78f60 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs dorado-rosa sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e8c9a8 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #c99b7c 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #dcb695 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D dorado-rosa */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #d3a483 0%, #b17853 48%, #8a5c3d 100%);
+      color: #faf4ee; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,38,22,0.4),
+        0 5px 0 #5c3d29,
+        0 12px 24px rgba(58,42,34,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,38,22,0.4), 0 7px 0 #5c3d29, 0 18px 34px rgba(58,42,34,0.32), 0 0 40px rgba(177,120,83,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,38,22,0.45), 0 1px 0 #5c3d29, 0 4px 10px rgba(58,42,34,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(177,120,83,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(177,120,83,0.7); background: rgba(177,120,83,0.08); box-shadow: 0 10px 26px rgba(58,42,34,0.14); }
+
+    /* Toggle de idioma */
+    .lang-pill { border: 1px solid rgba(177,120,83,0.3); border-radius: 9999px; overflow: hidden; display: inline-flex; }
+    .lang-opt {
+      padding: 0.35rem 0.7rem; font-size: 11px; letter-spacing: 0.12em; font-weight: 500;
+      color: var(--ink-60); background: transparent; transition: background 0.25s ease, color 0.25s ease; cursor: pointer;
+    }
+    .lang-opt.active { background: var(--accent-deep); color: #faf4ee; }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(250,244,238,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(58,42,34,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(58,42,34,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(177,120,83,0.14), inset 0 -60px 100px rgba(58,42,34,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #d3a483, #6b4a35);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Servicios: filas de menu */
+    .svc-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid rgba(177,120,83,0.12); transition: border-color 0.25s ease; }
+    .svc-row:hover { border-color: rgba(177,120,83,0.4); }
+    .svc-price { font-family: 'Playfair Display', serif; color: var(--accent-deep); white-space: nowrap; }
+
+    /* Estrellas */
+    .stars { color: #b17853; letter-spacing: 2px; text-shadow: 0 0 14px rgba(177,120,83,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f7ece0;
+      --ink-60: rgba(247,236,224,0.65);
+      --ink-40: rgba(247,236,224,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(224,178,138,0.18);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e6bd91 0%, #f8e7cd 30%, #c99b7c 52%, #e6bd91 75%, #f2dcb8 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(230,189,145,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(180,140,110,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #faf0e4 0%, #e6cba8 48%, #c2a17e 100%);
+      color: #3a2a22;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,90,50,0.35),
+        0 5px 0 #8a7358,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(230,189,145,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(230,189,145,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(230,189,145,0.7); background: rgba(230,189,145,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e6bd91; text-shadow: 0 0 14px rgba(230,189,145,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #d3a483 0%, #b17853 100%);
+      box-shadow: 0 6px 0 #5c3d29, 0 14px 30px rgba(58,42,34,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5c3d29, 0 20px 40px rgba(58,42,34,0.4), 0 0 34px rgba(177,120,83,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5c3d29, 0 6px 14px rgba(58,42,34,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(177,120,83,0.35); background: rgba(177,120,83,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-mono img { width: 100%; height: 100%; object-fit: cover; }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #8a5c3d 0%, #b17853 45%, #dcb695 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 7. Carrusel de testimonios */
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(58,42,34,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    /* 8. Boton magnetico (offset via translate, spring back) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare (cards de servicios) */
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    /* 10. Cursor glow calido en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(230,189,145,0.14) 0%, rgba(177,120,83,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de reservas vive abajo-derecha) */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(177,120,83,0.5); transform: translateY(-3px); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono"><img src="assets/raw/logo.jpg" alt="" /></span>
+    <span class="pre-word">Golshan</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/logo.jpg" alt="Logo Golshan Luxury Spa" class="w-10 h-10 rounded-full ring-1 ring-[rgba(177,120,83,0.35)] object-cover" />
+        <span class="font-display text-xl tracking-[0.08em] uppercase">Golshan <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Luxury Spa</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#ritual" data-es="El Ritual" data-en="The Ritual">El Ritual</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galeria" data-en="Gallery">Galeria</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicacion" data-en="Location">Ubicacion</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="lang-pill" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-opt active" data-lang="es">ES</button>
+          <button type="button" class="lang-opt" data-lang="en">EN</button>
+        </div>
+        <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual" data-es="El Ritual" data-en="The Ritual">El Ritual</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galeria" data-en="Gallery">Galeria</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicacion" data-en="Location">Ubicacion</a>
+        <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Olympia Heights · Miami · Spa de Lujo" data-en="Olympia Heights · Miami · Luxury Spa">Olympia Heights · Miami · Spa de Lujo</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Un santuario de bienestar te espera." data-en="A wellness sanctuary awaits you.">Un santuario de bienestar te espera.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          <span data-es="Eleva tu cuerpo, mente y " data-en="Elevate your body, mind and ">Eleva tu cuerpo, mente y </span><span class="text-shine" data-es="espiritu" data-en="spirit">espiritu</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Golshan Luxury Spa combina lujo, ayurveda, estetica avanzada y terapias holisticas en Olympia Heights. Faciales, masajes, maderoterapia y rituales signature con resultados visibles desde la primera sesion." data-en="Golshan Luxury Spa blends luxury, ayurveda, advanced esthetics and holistic therapies in Olympia Heights. Facials, massages, wood therapy and signature rituals with visible results from the first session.">Golshan Luxury Spa combina lujo, ayurveda, estetica avanzada y terapias holisticas en Olympia Heights. Faciales, masajes, maderoterapia y rituales signature con resultados visibles desde la primera sesion.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 44 resenas en Booksy" data-en="5.0 · 44 reviews on Booksy">5.0 · 44 resenas en Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/golshanluxuryspa/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <span data-es="Ver en Instagram" data-en="View on Instagram">Ver en Instagram</span>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/hero-1.jpg" alt="Masaje con piedras calientes y velas en Golshan Luxury Spa, ambiente calido y relajante" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Ritual insignia" data-en="Signature ritual">Ritual insignia</p>
+            <p class="font-display text-lg">Golden Bloom Renewal Ritual</p>
+            <p class="text-sm text-[color:var(--ink-60)]">85 min · $199</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="44 resenas en Booksy" data-en="44 reviews on Booksy">44 resenas en Booksy</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span data-es="Se habla " data-en="We speak ">Se habla </span><span class="text-shine" data-es="espanol" data-en="Spanish">espanol</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Atencion bilingue" data-en="Bilingual service">Atencion bilingue</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Golden <span class="text-shine">Bloom</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">$199 · 85 min</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Olympia Heights</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">2746 SW 87th Ave, Miami</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Golden Bloom Ritual</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maderoterapia</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ayurveda Sculpt &amp; Glow</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Divine Golddess Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Olympia Heights, Miami</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Golden Bloom Ritual</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maderoterapia</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ayurveda Sculpt &amp; Glow</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Divine Golddess Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Olympia Heights, Miami</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal">
+          <img src="assets/raw/about-1.jpg" alt="Masaje de espalda con velas y flores en una sala de tratamiento de Golshan Luxury Spa" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 reveal" style="transition-delay:140ms">
+          <img src="assets/raw/about-2.jpg" alt="Sala de tratamiento de Golshan Luxury Spa con camilla y luz ambiental calida" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un santuario de bienestar" data-en="A wellness sanctuary">Un santuario de bienestar</span><br /><span class="text-shine" data-es="en Olympia Heights" data-en="in Olympia Heights">en Olympia Heights</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Golshan Luxury Spa combina lujo, ayurveda, estetica avanzada y terapias holisticas en un espacio pensado para elevar cuerpo, mente y espiritu. Cada visita empieza con una evaluacion personalizada para disenar el tratamiento que tu piel o tu cuerpo necesitan de verdad." data-en="Golshan Luxury Spa blends luxury, ayurveda, advanced esthetics and holistic therapies in a space designed to elevate body, mind and spirit. Every visit starts with a personalized evaluation to design the treatment your skin or body truly needs.">Golshan Luxury Spa combina lujo, ayurveda, estetica avanzada y terapias holisticas en un espacio pensado para elevar cuerpo, mente y espiritu. Cada visita empieza con una evaluacion personalizada para disenar el tratamiento que tu piel o tu cuerpo necesitan de verdad.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="De faciales hidratantes a rituales signature como el Golden Bloom o el Divine Golddess, cada sesion se adapta a ti. La especialista Guyencyys Carballea acompana cada tratamiento con manos expertas." data-en="From hydrating facials to signature rituals like Golden Bloom or Divine Golddess, every session is tailored to you. Specialist Guyencyys Carballea guides every treatment with expert hands.">De faciales hidratantes a rituales signature como el Golden Bloom o el Divine Golddess, cada sesion se adapta a ti. La especialista Guyencyys Carballea acompana cada tratamiento con manos expertas.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+<span data-count="7.4" data-decimals="1">7.4</span>K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">29</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Servicios" data-en="Services">Servicios</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="Atencion personal de" data-en="Personal care by">Atencion personal de</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+              <img src="assets/raw/team-1.jpg" alt="Guyencyys Carballea, especialista de Golshan Luxury Spa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(177,120,83,0.3)]" loading="lazy" />
+              <span class="text-sm font-light">Guyencyys Carballea<span class="block text-xs text-[color:var(--ink-40)]" data-es="Especialista en Body Sculpting &amp; Faciales" data-en="Body Sculpting &amp; Facial Specialist">Especialista en Body Sculpting &amp; Faciales</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL RITUAL PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="El ritual, paso a paso" data-en="The ritual, step by step">El ritual, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Asi se vive tu " data-en="This is your ">Asi se vive tu </span><span class="text-shine" data-es="visita a Golshan" data-en="visit to Golshan">visita a Golshan</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Evaluacion y diagnostico" data-en="Evaluation &amp; diagnosis">Evaluacion y diagnostico</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Empezamos entendiendo tu piel, tu cuerpo y tus objetivos para disenar el tratamiento ideal para ti." data-en="We start by understanding your skin, body and goals to design the ideal treatment for you.">Empezamos entendiendo tu piel, tu cuerpo y tus objetivos para disenar el tratamiento ideal para ti.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Preparacion y limpieza" data-en="Preparation &amp; cleansing">Preparacion y limpieza</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Limpieza profunda o exfoliacion segun el tratamiento, para que tu piel o cuerpo esten listos para el ritual." data-en="Deep cleansing or exfoliation depending on the treatment, so your skin or body are ready for the ritual.">Limpieza profunda o exfoliacion segun el tratamiento, para que tu piel o cuerpo esten listos para el ritual.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tratamiento personalizado" data-en="Personalized treatment">Tratamiento personalizado</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="El corazon de tu ritual: facial, masaje, maderoterapia o el ritual signature que hayas elegido, con tecnica y manos expertas." data-en="The heart of your ritual: facial, massage, wood therapy or the signature ritual you chose, with expert technique and hands.">El corazon de tu ritual: facial, masaje, maderoterapia o el ritual signature que hayas elegido, con tecnica y manos expertas.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cierre y bienestar" data-en="Closing &amp; wellness">Cierre y bienestar</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hidratacion final, recomendaciones de cuidado y ese momento de calma que te llevas contigo al salir." data-en="Final hydration, care recommendations and that moment of calm you take with you when you leave.">Hidratacion final, recomendaciones de cuidado y ese momento de calma que te llevas contigo al salir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine">ritual</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones tal como los publica Golshan Luxury Spa en Booksy. Reserva online con confirmacion inmediata." data-en="Prices and durations as published by Golshan Luxury Spa on Booksy. Book online with instant confirmation.">Precios y duraciones tal como los publica Golshan Luxury Spa en Booksy. Reserva online con confirmacion inmediata.</p>
+      </div>
+
+      <!-- Destacados: Golshan Signature Rituals -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(177,120,83,0.4); box-shadow: 0 18px 50px rgba(58,42,34,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Ritual Signature · El mas pedido" data-en="Signature Ritual · Most requested">Ritual Signature · El mas pedido</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Golden Bloom Renewal Ritual</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Limpieza holistica profunda, microdermoabrasion diamantada, masaje facial con tecnicas ayurvedicas y aceites tibios, radiofrecuencia para activar colageno y cierre con masaje de manos y cabeza." data-en="Deep holistic cleansing, diamond microdermabrasion, ayurvedic facial massage with warm oils, radiofrequency to activate collagen and a closing hand and head massage.">Limpieza holistica profunda, microdermoabrasion diamantada, masaje facial con tecnicas ayurvedicas y aceites tibios, radiofrecuencia para activar colageno y cierre con masaje de manos y cabeza.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$199</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">85 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Ritual Signature · Corporal" data-en="Signature Ritual · Body">Ritual Signature · Corporal</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Ayurveda Sculpt &amp; Glow Body Ritual</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Masaje de espalda con aceites tibios doshas-balancing, maderoterapia para moldear, radiofrecuencia y ultrasonido para reafirmar, y reflexologia de cierre con aroma floral." data-en="Back massage with warm doshas-balancing oils, wood therapy to sculpt, radiofrequency and ultrasound to firm, and closing reflexology with floral aroma.">Masaje de espalda con aceites tibios doshas-balancing, maderoterapia para moldear, radiofrecuencia y ultrasonido para reafirmar, y reflexologia de cierre con aroma floral.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$230+</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Ritual Signature · Lifting facial" data-en="Signature Ritual · Facial lifting">Ritual Signature · Lifting facial</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Divine Golddess Face Lift Ritual</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Ritual inspirado en el logo de Golshan: tecnicas ayurvedicas, drenaje linfatico y radiofrecuencia para un efecto lifting natural, contorno definido y energia equilibrada." data-en="A ritual inspired by the Golshan logo: ayurvedic techniques, lymphatic drainage and radiofrequency for a natural lifting effect, defined contour and balanced energy.">Ritual inspirado en el logo de Golshan: tecnicas ayurvedicas, drenaje linfatico y radiofrecuencia para un efecto lifting natural, contorno definido y energia equilibrada.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$210+</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Ritual Signature · Control de manchas" data-en="Signature Ritual · Dark-spot control">Ritual Signature · Control de manchas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Sacred Melasma Light Therapy Ritual</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Protocolo profesional de control de manchas: limpieza profunda, peeling suave, ultrasonido para penetrar activos despigmentantes, mascarilla calmante y luz fria." data-en="Professional dark-spot control protocol: deep cleansing, gentle peel, ultrasound to penetrate brightening actives, soothing mask and cold light therapy.">Protocolo profesional de control de manchas: limpieza profunda, peeling suave, ultrasonido para penetrar activos despigmentantes, mascarilla calmante y luz fria.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$220+</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">105 min</p>
+            </div>
+            <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU COMPLETO -->
+      <div class="text-center max-w-2xl mx-auto mt-24 mb-14">
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight"><span data-es="Menu " data-en="Full ">Menu </span><span class="text-shine" data-es="completo" data-en="menu">completo</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:120ms" data-es="29 servicios publicados en Booksy, agrupados por categoria. Todos los precios y duraciones estan tal como aparecen publicados." data-en="29 services published on Booksy, grouped by category. All prices and durations appear exactly as listed.">29 servicios publicados en Booksy, agrupados por categoria. Todos los precios y duraciones estan tal como aparecen publicados.</p>
+      </div>
+
+      <!-- Golshan Signature Rituals -->
+      <div class="glass rounded-3xl p-7 sm:p-10 mb-5 reveal">
+        <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Rituales VIP · 6 servicios" data-en="VIP Rituals · 6 services">Rituales VIP · 6 servicios</p>
+        <h3 class="font-display text-3xl mb-6">Golshan Signature <span class="text-[color:var(--accent-deep)]">Rituals</span></h3>
+        <div class="grid md:grid-cols-2 gap-x-12">
+          <div class="svc-row"><p class="text-sm font-light">Golden Bloom Renewal Ritual</p><p class="text-right"><span class="svc-price text-base">$199</span> <span class="text-xs text-[color:var(--ink-40)]">· 85 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Ayurveda Sculpt &amp; Glow Body Ritual</p><p class="text-right"><span class="svc-price text-base">$230+</span> <span class="text-xs text-[color:var(--ink-40)]">· 90 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Divine Golddess Face Lift Ritual</p><p class="text-right"><span class="svc-price text-base">$210+</span> <span class="text-xs text-[color:var(--ink-40)]">· 90 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Moonlight Hydroradiance Facial</p><p class="text-right"><span class="svc-price text-base">$180+</span> <span class="text-xs text-[color:var(--ink-40)]">· 90 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Deep Chakra Back Purification</p><p class="text-right"><span class="svc-price text-base">$140+</span> <span class="text-xs text-[color:var(--ink-40)]">· 90 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Sacred Melasma Light Therapy Ritual</p><p class="text-right"><span class="svc-price text-base">$220+</span> <span class="text-xs text-[color:var(--ink-40)]">· 105 min</span></p></div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-5 mb-5 items-start">
+        <!-- Masajes -->
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Masajes terapeuticos · 6 servicios" data-en="Therapeutic massages · 6 services">Masajes terapeuticos · 6 servicios</p>
+          <h3 class="font-display text-3xl mb-6"><span data-es="Masajes" data-en="Massages">Masajes</span></h3>
+          <div class="svc-row"><p class="text-sm font-light">Swedish Massage Full Body</p><p class="text-right"><span class="svc-price text-base">$120+</span> <span class="text-xs text-[color:var(--ink-40)]">· 60-115 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Deep Tissue Full Body</p><p class="text-right"><span class="svc-price text-base">$125</span> <span class="text-xs text-[color:var(--ink-40)]">· 60-115 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Maderoterapia / Masaje Reductor Basico</p><p class="text-right"><span class="svc-price text-base">$100+</span> <span class="text-xs text-[color:var(--ink-40)]">· 60 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Masaje De Espalda</p><p class="text-right"><span class="svc-price text-base">$95+</span> <span class="text-xs text-[color:var(--ink-40)]">· 45-90 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light" data-es="Reflexologia" data-en="Reflexology">Reflexologia</p><p class="text-right"><span class="svc-price text-base">$130+</span> <span class="text-xs text-[color:var(--ink-40)]">· 50 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Massage Reductor Premium</p><p class="text-right"><span class="svc-price text-base">$145</span> <span class="text-xs text-[color:var(--ink-40)]">· 135 min</span></p></div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4" data-es="Maderoterapia y Massage Reductor Premium tienen paquete de 6 sesiones ($499 y $599)." data-en="Wood therapy and Premium Reductive Massage have a 6-session package ($499 and $599).">Maderoterapia y Massage Reductor Premium tienen paquete de 6 sesiones ($499 y $599).</p>
+        </div>
+        <!-- Tratamientos Faciales -->
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal" style="transition-delay:120ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Cuidado de la piel · 9 servicios" data-en="Skin care · 9 services">Cuidado de la piel · 9 servicios</p>
+          <h3 class="font-display text-3xl mb-6"><span data-es="Tratamientos" data-en="Facial">Tratamientos</span> <span class="text-[color:var(--accent-deep)]" data-es="Faciales" data-en="Treatments">Faciales</span></h3>
+          <div class="svc-row"><p class="text-sm font-light" data-es="Evaluacion" data-en="Evaluation">Evaluacion</p><p class="text-right"><span class="svc-price text-base">$0.10</span> <span class="text-xs text-[color:var(--ink-40)]">· 15 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Hydra Express</p><p class="text-right"><span class="svc-price text-base">$69</span> <span class="text-xs text-[color:var(--ink-40)]">· 50 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Hydra Fresh + Masaje Facial Lifting</p><p class="text-right"><span class="svc-price text-base">$119+</span> <span class="text-xs text-[color:var(--ink-40)]">· 75 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Hydra Fresh Bridal Glow</p><p class="text-right"><span class="svc-price text-base">$150+</span> <span class="text-xs text-[color:var(--ink-40)]">· 105 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Dermaplaning</p><p class="text-right"><span class="svc-price text-base">$135+</span> <span class="text-xs text-[color:var(--ink-40)]">· 90 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light" data-es="Rejuvenecimiento Facial" data-en="Facial Rejuvenation">Rejuvenecimiento Facial</p><p class="text-right"><span class="svc-price text-base">$155+</span> <span class="text-xs text-[color:var(--ink-40)]">· 105 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Melasma Control Pro</p><p class="text-right"><span class="svc-price text-base">$165+</span> <span class="text-xs text-[color:var(--ink-40)]">· 105 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light" data-es="Peeling Quimico Pro" data-en="Chemical Peel Pro">Peeling Quimico Pro</p><p class="text-right"><span class="svc-price text-base">$199</span> <span class="text-xs text-[color:var(--ink-40)]">· 120 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light" data-es="Limpieza de Espalda" data-en="Back Cleansing">Limpieza de Espalda</p><p class="text-right"><span class="svc-price text-base">$135+</span> <span class="text-xs text-[color:var(--ink-40)]">· 95 min</span></p></div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-5 mb-5 items-start">
+        <!-- Labios -->
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Micropigmentacion y labios · 2 servicios" data-en="Micropigmentation and lips · 2 services">Micropigmentacion y labios · 2 servicios</p>
+          <h3 class="font-display text-3xl mb-6"><span data-es="Labios" data-en="Lips">Labios</span></h3>
+          <div class="svc-row"><p class="text-sm font-light">Hydragloss</p><p class="text-right"><span class="svc-price text-base">$75+</span> <span class="text-xs text-[color:var(--ink-40)]">· 45 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light" data-es="Micropigmentacion de Labios (Lip Blush / Retoque / Neutralizacion)" data-en="Lip Micropigmentation (Lip Blush / Touch-up / Neutralization)">Micropigmentacion de Labios (Lip Blush / Retoque / Neutralizacion)</p><p class="text-right"><span class="svc-price text-base">$155+</span> <span class="text-xs text-[color:var(--ink-40)]">· 150 min</span></p></div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4" data-es="El retoque tiene precio preferencial de $155; Lip Blush y Neutralizacion tienen precio de $355." data-en="Touch-ups have a preferential price of $155; Lip Blush and Neutralization are priced at $355.">El retoque tiene precio preferencial de $155; Lip Blush y Neutralizacion tienen precio de $355.</p>
+        </div>
+        <!-- Depilacion & Cejas -->
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal" style="transition-delay:120ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Depilacion con cera y cejas · 6 servicios" data-en="Waxing and eyebrows · 6 services">Depilacion con cera y cejas · 6 servicios</p>
+          <h3 class="font-display text-3xl mb-6"><span data-es="Depilacion" data-en="Waxing">Depilacion</span> <span class="text-[color:var(--accent-deep)]" data-es="&amp; Cejas" data-en="&amp; Brows">&amp; Cejas</span></h3>
+          <div class="svc-row"><p class="text-sm font-light">Upper Lip Wax</p><p class="text-right"><span class="svc-price text-base">$10+</span> <span class="text-xs text-[color:var(--ink-40)]">· 25 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Arms Waxing</p><p class="text-right"><span class="svc-price text-base">$25+</span> <span class="text-xs text-[color:var(--ink-40)]">· 30 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Leg Waxing</p><p class="text-right"><span class="svc-price text-base">$45+</span> <span class="text-xs text-[color:var(--ink-40)]">· 30 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Back Hair Removal</p><p class="text-right"><span class="svc-price text-base">$55+</span> <span class="text-xs text-[color:var(--ink-40)]">· 45 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Eyebrows Waxing</p><p class="text-right"><span class="svc-price text-base">$20+</span> <span class="text-xs text-[color:var(--ink-40)]">· 15 min</span></p></div>
+          <div class="svc-row"><p class="text-sm font-light">Eyebrows Henna</p><p class="text-right"><span class="svc-price text-base">$40+</span> <span class="text-xs text-[color:var(--ink-40)]">· 30 min</span></p></div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <span data-es="Ver menu completo en Booksy" data-en="See full menu on Booksy">Ver menu completo en Booksy</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galeria" data-en="Gallery">Galeria</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Dentro del" data-en="Inside the">Dentro del</span> <span class="text-shine" data-es="spa" data-en="spa">spa</span></h2>
+        </div>
+        <a href="https://www.instagram.com/golshanluxuryspa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @golshanluxuryspa
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/gallery-1.jpg" alt="Masaje relajante con cera de vela caliente sobre la espalda" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/gallery-2.jpg" alt="Masaje de pies con aceite tibio sobre superficie de madera" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:180ms"><img src="assets/raw/gallery-3.jpg" alt="Detalle de masaje de pies con vela aromatica" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] reveal" style="transition-delay:120ms"><img src="assets/raw/gallery-4.jpg" alt="Tratamiento facial Hydra con dispositivo profesional" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal" style="transition-delay:210ms"><img src="assets/raw/gallery-5.jpg" alt="Tratamiento facial con radiofrecuencia en Golshan Luxury Spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:300ms"><img src="assets/raw/gallery-6.jpg" alt="Area de espera de Golshan Luxury Spa con sillones blancos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] reveal"><img src="assets/raw/gallery-7.jpg" alt="Letrero circular retroiluminado con el logo de Golshan Luxury Spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 reveal" style="transition-delay:90ms"><img src="assets/raw/gallery-8.jpg" alt="Sesion de maderoterapia, tratamiento corporal con herramientas de madera" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Golden Bloom Ritual</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maderoterapia</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ayurveda Sculpt &amp; Glow</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Divine Golddess Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Olympia Heights, Miami</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Golden Bloom Ritual</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maderoterapia</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ayurveda Sculpt &amp; Glow</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Divine Golddess Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Olympia Heights, Miami</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">Lo que dicen</span> <span class="text-shine" data-es="nuestras clientas" data-en="clients say">nuestras clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 44 resenas verificadas en Booksy" data-en="5.0 out of 5 · 44 verified reviews on Booksy">5.0 de 5 · 44 resenas verificadas en Booksy</span></p>
+      </div>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Resenas de clientas">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Espectacular la atencion. Desde la entrada hasta la salida. Primera experiencia en lipolaser y mas que satisfecho con el resultado solo en la 1ra sesion. Super recomendado. Especialmente a Physical Therapist Gyuenchi. Mil gracias. Nos vemos pronto"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Abdel Z.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Me hice el tratamiento de bodysculpiting y la verdad quede encantada la atencion, los resultados todo, la super recomiendo"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Maribel C.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Book a deep tissue massage for my mom for Valentine's Day and my mom said she loved it! It was the perfect pressure, nice ambience, and Guyencyys was welcoming and loving. Will go again!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jenetsy G.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Es una de las mejores experiencias q he tenido con los faciales, muy profesional y con manos ligeras y de seda, se las recomiendo. ambiente acojedor, limpio. graciss"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">saray r.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Fui por un facial y termine con un masaje de paso, la verdad qur el lugar esta super acogedor, la muchacha muy atenta y profecional la recomiendo 100%"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Iris A.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">
+          <span data-es="Leer las 44 resenas en Booksy" data-en="Read all 44 reviews on Booksy">Leer las 44 resenas en Booksy</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visitanos" data-en="Visit us">Visitanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu ritual queda" data-en="Your ritual is">Tu ritual queda</span> <span class="text-shine" data-es="cerca" data-en="close by">cerca</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Direccion" data-en="Address">Direccion</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">2746 SW 87th Ave, Suite 2, Miami, FL 33165</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,120,83,0.4)]" href="https://www.google.com/maps?q=2746+SW+87th+Ave,+Suite+2,+Miami,+FL+33165" target="_blank" rel="noopener" data-es="Como llegar" data-en="Get directions">Como llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Lunes, martes, jueves, viernes y sabado: 9:00 AM a 6:00 PM" data-en="Monday, Tuesday, Thursday, Friday &amp; Saturday: 9:00 AM to 6:00 PM">Lunes, martes, jueves, viernes y sabado: 9:00 AM a 6:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Miercoles: 9:00 AM a 8:00 PM" data-en="Wednesday: 9:00 AM to 8:00 PM">Miercoles: 9:00 AM a 8:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Domingo: cerrado" data-en="Sunday: closed">Domingo: cerrado</span></p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Booking">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Online: " data-en="Online: ">Online: </span><a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Instagram: " data-en="Instagram: ">Instagram: </span><a class="text-[color:var(--accent-deep)]" href="https://www.instagram.com/golshanluxuryspa/" target="_blank" rel="noopener">@golshanluxuryspa</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Golshan Luxury Spa, 2746 SW 87th Ave, Suite 2, Miami FL"
+          src="https://www.google.com/maps?q=2746+SW+87th+Ave,+Suite+2,+Miami,+FL+33165&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2b1f16 0%, #1e150e 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Resultados visibles, cuerpo y alma en calma." data-en="Visible results, body and soul at ease.">Resultados visibles, cuerpo y alma en calma.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu ritual te esta " data-en="Your ritual is ">Tu ritual te esta </span><span class="text-shine" data-es="esperando" data-en="waiting for you">esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva tu cita online en segundos por Booksy. Elige el ritual, el dia y la hora, y deja que Golshan haga el resto." data-en="Book your appointment online in seconds through Booksy. Choose your ritual, day and time, and let Golshan do the rest.">Reserva tu cita online en segundos por Booksy. Elige el ritual, el dia y la hora, y deja que Golshan haga el resto.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+        <a href="https://www.instagram.com/golshanluxuryspa/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver en Instagram" data-en="View on Instagram">Ver en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#1c140d]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/logo.jpg" alt="Logo Golshan Luxury Spa" class="w-9 h-9 rounded-full ring-1 ring-[rgba(230,189,145,0.35)] object-cover" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Golshan Luxury Spa</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Santuario de bienestar en Olympia Heights: faciales, masajes y rituales signature con resultados visibles." data-en="Wellness sanctuary in Olympia Heights: facials, massages and signature rituals with visible results.">Santuario de bienestar en Olympia Heights: faciales, masajes y rituales signature con resultados visibles.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>2746 SW 87th Ave, Suite 2, Miami, FL 33165</p>
+        <p><span data-es="Lun, mar, jue, vie y sab · 9 AM a 6 PM" data-en="Mon, Tue, Thu, Fri &amp; Sat · 9 AM to 6 PM">Lun, mar, jue, vie y sab · 9 AM a 6 PM</span></p>
+        <p><span data-es="Miercoles · 9 AM a 8 PM" data-en="Wednesday · 9 AM to 8 PM">Miercoles · 9 AM a 8 PM</span></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Siguenos" data-en="Follow us">Siguenos</p>
+        <p><a href="https://www.instagram.com/golshanluxuryspa/" target="_blank" rel="noopener" class="hover:text-[#e6bd91]">Instagram · @golshanluxuryspa</a></p>
+        <p><a href="https://www.facebook.com/share/16GdFNyaxV/?mibextid=wwXIfr" target="_blank" rel="noopener" class="hover:text-[#e6bd91]">Facebook</a></p>
+        <p><a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="hover:text-[#e6bd91]"><span data-es="Reservas online · Booksy" data-en="Book online · Booksy">Reservas online · Booksy</span></a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Golshan Luxury Spa. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/1318899_golshanluxuryspa_skin-care_15889_miami" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf4ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <!-- Volver arriba (abajo-izquierda) -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + 2. barra de progreso + 3. parallax + 11. back-to-top: UN solo listener de scroll con rAF
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // 4. Reveals editoriales: texto (.reveal) + imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (decimales respetados)
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la resena ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+    // 8. Botones magneticos (max 6px, spring back). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // 9. Tilt 3D sutil en cards de servicios (max 3deg + glare). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // 10. Cursor glow calido en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+
+    // Idioma ES/EN (espanol por defecto)
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => {
+        const t = el.dataset[l];
+        el.textContent = (t !== undefined) ? t : el.dataset.es;
+      });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.querySelectorAll('.lang-opt').forEach(o => o.classList.toggle('active', o.dataset.lang === l));
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'en' ? 'en' : 'es');
+    document.querySelectorAll('.lang-opt').forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
+  </script>
+</body>
+</html>
