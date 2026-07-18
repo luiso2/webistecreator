@@ -309,7 +309,7 @@
       background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 40%), rgba(201,148,106,0.09), transparent 65%);
     }
 
-    /* 11. Back to top (abajo-izquierda; el FAB de WhatsApp vive abajo-derecha) */
+    /* 11. Back to top (abajo-izquierda; el FAB de reserva vive abajo-derecha) */
     .back-to-top {
       position: fixed; left: 18px; bottom: 18px; z-index: 60;
       width: 48px; height: 48px; border-radius: 9999px;
@@ -730,39 +730,34 @@
   <section id="opiniones" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 102 reseñas verificadas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="nuestras clientas" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 14 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 14 verified reviews on Booksy">5.0 out of 5 · 14 verified reviews on Booksy</span></p>
       </div>
       <div id="reviews-carousel" class="reveal" style="transition-delay:120ms">
         <div class="carousel-viewport">
           <div class="carousel-track">
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Best mother's day gift ever. Alain was very welcoming and sweet. The massage was extremely relaxing, he knew exactly what he was doing. The spa location is very centric and luxurious. I haven't felt more relaxed. I recommend 10/10."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Jennifer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"@pinned_byjovie gave me such an amazing head spa experience from start to finish! The entire session was incredibly relaxing, soothing, and exactly what I needed to unwind and de-stress. The scalp massage was absolutely heavenly. I left feeling refreshed, rejuvenated, and so pampered."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Luisa T.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I honestly loved my experience here. The place feels so warm and inviting, and the attention I received was just amazing. And I have to mention the coffee... it was incredible! I'm definitely coming back!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Gabriela</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"If you're looking for a self-care experience, this is it! The head spa treatment was beyond relaxing and so professional. Jovie did an awesome job! I left feeling refreshed, stress-free, and my hair looked amazing afterward. Highly recommend supporting this business!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Zuleyca R.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"From the moment I walked in, the atmosphere was incredibly relaxing and welcoming. Alain took amazing care of me, and I left feeling completely pampered and refreshed. Highly recommend!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Yadira</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
-            </figure>
-            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
-              <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Wow!! I cannot remember the last time I was this relaxed. Alain was amazing. Perfect attention to every detail, and so knowledgeable about caring for your hair."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Andrea</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"What an amazing experience. From the atmosphere to the relaxing service itself. I have never felt as relaxed then when I was with Jovi. This experience was just fantastic from start to finish. I recommend to anyone curious or has been to a head spa."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Megan C.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
         </div>
         <div class="carousel-dots flex justify-center gap-2.5 mt-8"></div>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 102 reseñas en Google</a>
+        <a href="https://booksy.com/en-us/1800781_hialeah-head-spa_hair-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 14 reseñas en Booksy" data-en="Read all 14 reviews on Booksy">Read all 14 reviews on Booksy</a>
       </div>
     </div>
   </section>
@@ -771,38 +766,39 @@
   <section id="ubicacion" class="relative py-24 sm:py-32 grain">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu pausa queda" data-en="Your pause is">Your pause is</span> <span class="text-shine" data-es="cerca" data-en="close by">close by</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(201,148,106,0.4)]" href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">750 W 49th St, Suite 133, Hialeah, FL 33012</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(201,148,106,0.4)]" href="https://www.google.com/maps?q=750+W+49th+St+Suite+133,+Hialeah,+FL+33012" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Sábado: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: cerrado</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Lunes a Viernes" data-en="Monday to Friday">Monday to Friday</span>: 9:00 AM - 7:30 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Sábado" data-en="Saturday">Saturday</span>: 9:00 AM - 6:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Domingo" data-en="Sunday">Sunday</span>: 9:00 AM - 4:00 PM</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">WhatsApp y llamadas: <a class="text-[color:var(--accent-deep)]" href="tel:+17863887821">(786) 388-7821</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Se habla español e inglés.</p>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Bookings</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Booksy o llamada" data-en="Booksy or call">Booksy or call</span>: <a class="text-[color:var(--accent-deep)]" href="tel:+17865755228">(786) 575-5228</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Dentro de Phenix Salon Suites, suite 133." data-en="Inside Phenix Salon Suites, suite 133.">Inside Phenix Salon Suites, suite 133.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Mizū Head Spa Miami, 429 Hialeah Dr Ste 7, Hialeah FL"
-          src="https://www.google.com/maps?q=Mizu+Head+Spa+Miami,+429+Hialeah+Dr+Ste+7,+Hialeah,+FL+33010&output=embed"
+        <iframe title="Map: Hialeah Head Spa, 750 W 49th St Suite 133, Hialeah FL"
+          src="https://www.google.com/maps?q=Hialeah+Head+Spa,+750+W+49th+St+Suite+133,+Hialeah,+FL+33012&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
@@ -813,12 +809,12 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Desconecta por completo.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu pausa te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Escríbenos por WhatsApp y asegura tu Hialeah, FL Mizu. Cupos limitados cada semana: la experiencia es uno a uno.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Desconecta por completo." data-en="Disconnect completely.">Disconnect completely.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu pausa te está" data-en="Your pause is">Your pause is</span> <span class="text-shine" data-es="esperando" data-en="waiting">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva en Booksy y asegura tu cita de Head Spa. Healthy scalp, healthy hair, happier you." data-en="Book on Booksy and secure your Head Spa appointment. Healthy scalp, healthy hair, happier you.">Book on Booksy and secure your Head Spa appointment. Healthy scalp, healthy hair, happier you.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar por WhatsApp</a>
-        <a href="tel:+17863887821" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="https://booksy.com/en-us/1800781_hialeah-head-spa_hair-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span></a>
+        <a href="tel:+17865755228" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
       </div>
     </div>
   </section>
@@ -828,27 +824,27 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.png" alt="Logo Mizū" class="w-9 h-9 rounded-full ring-1 ring-[rgba(201,148,106,0.3)]" />
-          <span class="font-display text-lg">Mizū Head Spa Miami</span>
+          <img src="assets/raw/logo.jpg" alt="Hialeah Head Spa" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(201,148,106,0.3)]" />
+          <span class="font-display text-lg">Hialeah Head Spa</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">A Sensorial Ritual of Elevated Relaxation. Boutique scalp, skin &amp; hair wellness studio.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Healthy scalp. Healthy hair. Happier you. Estudio boutique de bienestar capilar en Hialeah, FL." data-en="Healthy scalp. Healthy hair. Happier you. Boutique scalp and hair wellness studio in Hialeah, FL.">Healthy scalp. Healthy hair. Happier you. Boutique scalp and hair wellness studio in Hialeah, FL.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-        <p><a href="tel:+17863887821" class="hover:text-[color:var(--accent-deep)]">(786) 388-7821</a></p>
-        <p>Lun a Sáb · 10 AM a 7 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>750 W 49th St, Suite 133, Hialeah, FL 33012</p>
+        <p><a href="tel:+17865755228" class="hover:text-[color:var(--accent-deep)]">(786) 575-5228</a></p>
+        <p><span data-es="Lun a Vie" data-en="Mon to Fri">Mon to Fri</span> · 9 AM - 7:30 PM</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @mizuheadspamiami</a></p>
-        <p><a href="https://www.tiktok.com/@mizu.head.spa.mia" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">TikTok · @mizu.head.spa.mia</a></p>
-        <p><a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">WhatsApp directo</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow us">Follow us</p>
+        <p><a href="https://www.instagram.com/hialeah_headspa/" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @hialeah_headspa</a></p>
+        <p><a href="https://booksy.com/en-us/1800781_hialeah-head-spa_hair-salon_15886_hialeah" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a></p>
+        <p><a href="https://hialeahheadspa.com" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">hialeahheadspa.com</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Mizū Head Spa Miami. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]" data-es="© 2026 Hialeah Head Spa. Todos los derechos reservados." data-en="© 2026 Hialeah Head Spa. All rights reserved.">© 2026 Hialeah Head Spa. All rights reserved.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -857,9 +853,9 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- Reserva flotante (Booksy) -->
+  <a href="https://booksy.com/en-us/1800781_hialeah-head-spa_hair-salon_15886_hialeah" target="_blank" rel="noopener" class="book-float" aria-label="Reservar en Booksy / Book on Booksy">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#241c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
   </a>
 
   <!-- BACK TO TOP -->
@@ -870,6 +866,39 @@
   <script>
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Bilingue ES/EN (idioma principal del negocio: en)
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.textContent = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      const toggle = document.getElementById('langToggle');
+      if (toggle) toggle.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    const langToggleBtn = document.getElementById('langToggle');
+    if (langToggleBtn) langToggleBtn.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Video de galeria: reproduce silenciado en viewport, pausa fuera; click/tap alterna play-pausa
+    const igVideos = document.querySelectorAll('video.ig-video');
+    if (igVideos.length) {
+      const videoIO = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const v = entry.target;
+          if (entry.isIntersecting && !v.dataset.userPaused) { v.muted = true; v.play().catch(() => {}); }
+          else if (!entry.isIntersecting) { v.pause(); }
+        });
+      }, { threshold: 0.2 });
+      igVideos.forEach(v => {
+        videoIO.observe(v);
+        v.style.cursor = 'pointer';
+        v.addEventListener('click', () => {
+          if (v.paused) { delete v.dataset.userPaused; v.muted = true; v.play().catch(() => {}); }
+          else { v.dataset.userPaused = '1'; v.pause(); }
+        });
+      });
+    }
 
     // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
     const preloader = document.getElementById('preloader');
