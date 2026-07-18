@@ -83,19 +83,19 @@
       background: var(--surface);
       backdrop-filter: blur(16px) saturate(150%);
       -webkit-backdrop-filter: blur(16px) saturate(150%);
-      border: 1px solid rgba(138,111,77,0.16);
+      border: 1px solid rgba(47,111,104,0.16);
       transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     }
     .glass-hover:hover {
-      background: rgba(250,247,241,0.88);
-      border-color: rgba(138,111,77,0.32);
+      background: rgba(250,248,243,0.9);
+      border-color: rgba(47,111,104,0.32);
       transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(50,40,31,0.14), 0 0 40px rgba(138,111,77,0.08);
+      box-shadow: 0 18px 42px rgba(35,51,48,0.14), 0 0 40px rgba(47,111,104,0.08);
     }
 
-    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
+    /* Sheen teal sobre texto (tonos profundos, legible en crema) */
     .text-shine {
-      background: linear-gradient(110deg, #8a6f4d 0%, #b0916a 30%, #5b473a 52%, #8a6f4d 75%, #a8845a 100%);
+      background: linear-gradient(110deg, #2f6f68 0%, #4f8e86 30%, #1b433f 52%, #2f6f68 75%, #5a9d94 100%);
       background-size: 200% auto;
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -103,16 +103,16 @@
     }
     @keyframes shimmer { to { background-position: 200% center; } }
 
-    /* Orbs taupe/crema sobre base clara */
+    /* Orbs teal/crema sobre base clara */
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
     @keyframes breathe {
       0%, 100% { transform: translate3d(0,0,0) scale(1); }
       50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
     }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e2d4bd 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #c4ad93 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #d3c1a6 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #cfe3df 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #a9cec7 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #bfdcd6 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
 
     /* Grain editorial */
     .grain::after {
@@ -128,20 +128,20 @@
     img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
 
-    /* Boton 3D mocha */
+    /* Boton 3D teal */
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 48%, #6d5539 100%);
-      color: #f5f0e8; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #4f8e86 0%, #2f6f68 48%, #1e4a45 100%);
+      color: #f6f4ee; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.3),
-        inset 0 -2px 5px rgba(60,45,28,0.4),
-        0 5px 0 #4a3a26,
-        0 12px 24px rgba(50,40,31,0.28);
+        inset 0 -2px 5px rgba(15,40,37,0.4),
+        0 5px 0 #16332f,
+        0 12px 24px rgba(20,35,33,0.28);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,45,28,0.4), 0 7px 0 #4a3a26, 0 18px 34px rgba(50,40,31,0.32), 0 0 40px rgba(138,111,77,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,45,28,0.45), 0 1px 0 #4a3a26, 0 4px 10px rgba(50,40,31,0.25); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(15,40,37,0.4), 0 7px 0 #16332f, 0 18px 34px rgba(20,35,33,0.32), 0 0 40px rgba(47,111,104,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(15,40,37,0.45), 0 1px 0 #16332f, 0 4px 10px rgba(20,35,33,0.25); }
     .btn-3d::after {
       content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
@@ -151,10 +151,10 @@
 
     /* Boton ghost */
     .btn-ghost {
-      border: 1px solid rgba(138,111,77,0.35); color: var(--ink);
+      border: 1px solid rgba(47,111,104,0.35); color: var(--ink);
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(138,111,77,0.7); background: rgba(138,111,77,0.08); box-shadow: 0 10px 26px rgba(50,40,31,0.14); }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(47,111,104,0.7); background: rgba(47,111,104,0.08); box-shadow: 0 10px 26px rgba(35,51,48,0.14); }
 
     /* Badge Merktop */
     .merktop-badge {
@@ -171,71 +171,71 @@
 
     /* Nav */
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(50,40,31,0.1); }
+    #nav.scrolled { background: rgba(246,244,238,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(35,51,48,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
 
     /* Marco editorial de imagen */
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(50,40,31,0.2); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(138,111,77,0.14), inset 0 -60px 100px rgba(50,40,31,0.12); }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(35,51,48,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(47,111,104,0.14), inset 0 -60px 100px rgba(35,51,48,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
 
     /* Numeros del ritual */
     .step-num {
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(180deg, #a8907a, #5b473a);
+      background: linear-gradient(180deg, #4f8e86, #1b433f);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     /* Estrellas */
-    .stars { color: #8a6f4d; letter-spacing: 2px; text-shadow: 0 0 14px rgba(138,111,77,0.3); }
+    .stars { color: #2f6f68; letter-spacing: 2px; text-shadow: 0 0 14px rgba(47,111,104,0.3); }
 
     /* Mapa elegante */
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
 
-    /* Banda oscura espresso (CTA final + footer) */
+    /* Banda oscura teal profundo (CTA final + footer) */
     .dark-band {
-      --ink: #f5f0e8;
-      --ink-60: rgba(245,240,232,0.65);
-      --ink-40: rgba(245,240,232,0.45);
+      --ink: #f6f4ee;
+      --ink-60: rgba(246,244,238,0.65);
+      --ink-40: rgba(246,244,238,0.45);
       --surface: rgba(255,255,255,0.05);
-      --accent-ghost: rgba(234,214,183,0.16);
+      --accent-ghost: rgba(158,210,201,0.16);
       color: var(--ink);
     }
     .dark-band .text-shine {
-      background-image: linear-gradient(110deg, #e8cfa6 0%, #f8ecd6 30%, #c4ad93 52%, #e8cfa6 75%, #f3e3c2 100%);
+      background-image: linear-gradient(110deg, #9ed2c9 0%, #e4f4ef 30%, #6fada2 52%, #9ed2c9 75%, #cbe9e1 100%);
     }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,166,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(168,144,122,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(158,210,201,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(111,173,162,0.14) 0%, transparent 70%); opacity: 1; }
     .dark-band .btn-3d {
-      background: linear-gradient(180deg, #faf3e6 0%, #e8d9bf 48%, #c9b393 100%);
-      color: #32281f;
+      background: linear-gradient(180deg, #eaf6f2 0%, #bfe0d8 48%, #8fc2b6 100%);
+      color: #16332f;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.55),
-        inset 0 -2px 5px rgba(120,90,50,0.35),
-        0 5px 0 #8a7358,
+        inset 0 -2px 5px rgba(15,50,45,0.35),
+        0 5px 0 #4a7a70,
         0 12px 24px rgba(0,0,0,0.45);
     }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,166,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,166,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,166,0.7); background: rgba(232,207,166,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e8cfa6; text-shadow: 0 0 14px rgba(232,207,166,0.4); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(15,50,45,0.35), 0 7px 0 #4a7a70, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(158,210,201,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(15,50,45,0.4), 0 1px 0 #4a7a70, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(158,210,201,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(158,210,201,0.7); background: rgba(158,210,201,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #9ed2c9; text-shadow: 0 0 14px rgba(158,210,201,0.4); }
 
     /* Boton flotante de reserva */
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60;
       width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 100%);
-      box-shadow: 0 6px 0 #4a3a26, 0 14px 30px rgba(50,40,31,0.35);
+      background: linear-gradient(180deg, #4f8e86 0%, #2f6f68 100%);
+      box-shadow: 0 6px 0 #16332f, 0 14px 30px rgba(20,35,33,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a3a26, 0 20px 40px rgba(50,40,31,0.4), 0 0 34px rgba(138,111,77,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a3a26, 0 6px 14px rgba(50,40,31,0.3); }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #16332f, 0 20px 40px rgba(20,35,33,0.4), 0 0 34px rgba(47,111,104,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #16332f, 0 6px 14px rgba(20,35,33,0.3); }
 
     /* ============ Motion v2 (nivel $100k) ============ */
 
@@ -253,7 +253,7 @@
       width: 64px; height: 64px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
-      border: 1px solid rgba(138,111,77,0.35); background: rgba(138,111,77,0.08);
+      border: 1px solid rgba(47,111,104,0.35); background: rgba(47,111,104,0.08);
       animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
     }
     .pre-word {
@@ -269,7 +269,7 @@
     /* 2. Barra de progreso de scroll */
     #scroll-progress {
       position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
-      background: linear-gradient(90deg, #6d5539 0%, #8a6f4d 45%, #c9ab7f 100%);
+      background: linear-gradient(90deg, #1b433f 0%, #2f6f68 45%, #7fbcb0 100%);
       transform: scaleX(0); transform-origin: left center; will-change: transform;
       pointer-events: none;
     }
@@ -301,7 +301,7 @@
     @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
     .carousel-dot {
       width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
-      background: rgba(50,40,31,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+      background: rgba(35,51,48,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
     }
     .carousel-dot.active { width: 24px; background: var(--accent-deep); }
 
@@ -325,7 +325,7 @@
     .cursor-glow {
       position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
       border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
-      background: radial-gradient(circle, rgba(232,207,166,0.14) 0%, rgba(138,111,77,0.08) 42%, transparent 70%);
+      background: radial-gradient(circle, rgba(158,210,201,0.14) 0%, rgba(47,111,104,0.08) 42%, transparent 70%);
       transition: opacity 0.5s ease; will-change: transform;
     }
     .cursor-glow.on { opacity: 1; }
@@ -339,7 +339,7 @@
       transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
     }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(138,111,77,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(47,111,104,0.5); transform: translateY(-3px); }
 
     @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
@@ -365,8 +365,8 @@
 
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
-    <span class="pre-mono">A</span>
-    <span class="pre-word">Amani HeadSpa</span>
+    <span class="pre-mono">N</span>
+    <span class="pre-word">New Life</span>
     <span class="pre-line"></span>
   </div>
 
@@ -377,21 +377,22 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(138,111,77,0.35)] bg-[rgba(138,111,77,0.1)] text-[color:var(--accent-deep)]">A</span>
-        <span class="font-display text-xl tracking-[0.14em] uppercase">Amani <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">HeadSpa</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(47,111,104,0.35)] bg-[rgba(47,111,104,0.1)] text-[color:var(--accent-deep)]">N</span>
+        <span class="font-display text-xl tracking-[0.1em] uppercase">New Life <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Physical Care</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia">La Experiencia</a>
-        <a class="nav-link" href="#ritual">El Ritual</a>
-        <a class="nav-link" href="#servicios">Servicios</a>
-        <a class="nav-link" href="#galeria">Galería</a>
-        <a class="nav-link" href="#opiniones">Opiniones</a>
-        <a class="nav-link" href="#ubicacion">Ubicación</a>
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="nav-link" href="#ritual" data-es="El Ritual" data-en="The Ritual">The Ritual</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <button id="langToggle" type="button" class="btn-ghost rounded-full px-3 py-1.5 text-xs font-medium" aria-label="Cambiar idioma / Switch language">ES</button>
+        <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Reservar cita
+          <span data-es="Reservar" data-en="Book Now">Book Now</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -402,13 +403,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Ritual</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
-        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual" data-es="El Ritual" data-en="The Ritual">The Ritual</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
       </nav>
     </div>
   </header>
@@ -418,38 +419,36 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Flagami · Miami's Holistic Head Spa</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">The Unwinding empieza aquí.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Coral Terrace · Miami · Estudio de Masaje y Bienestar" data-en="Coral Terrace · Miami · Massage &amp; Wellness Studio">Coral Terrace · Miami · Massage &amp; Wellness Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Alivio real, cuidado real." data-en="Real relief, real care.">Real relief, real care.</p>
         <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
-          Suelta el estrés,<br /><span class="text-shine">renueva</span> cuerpo y mente
+          <span data-es="Sal sintiéndote" data-en="Feel">Feel</span> <span class="text-shine" data-es="renovado" data-en="renewed">renewed</span><br /><span data-es="por dentro y por fuera" data-en="inside and out">inside and out</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
-          Rituales de bienestar holístico en Flagami: limpieza profunda del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y terapia de piedras calientes. Para ti, o en pareja.
-        </p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Masaje terapéutico, tejido profundo, piedras calientes y masaje en pareja, además de faciales y cuidado de la piel, en un estudio tranquilo en Coral Terrace, Miami." data-en="Therapeutic massage, deep tissue, hot stone and couples massage, plus facials and skin care, in a calm studio in Coral Terrace, Miami.">Therapeutic massage, deep tissue, hot stone and couples massage, plus facials and skin care, in a calm studio in Coral Terrace, Miami.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]">4.9 · 73 reseñas en Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]"><span data-es="5.0 · 32 reseñas en Booksy" data-en="5.0 · 32 reviews on Booksy">5.0 · 32 reviews on Booksy</span></span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar cita
+          <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="tel:+13057906977" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="tel:+17863622152" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (305) 790-6977
+            (786) 362-2152
           </a>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/hero-1.jpg" alt="Aplicación de mascarilla facial con brocha durante un ritual en Amani HeadSpa" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/hero-1.jpg" alt="Treatment room at New Life Physical Care with a calming waterfall mural and massage table" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Ritual insignia</p>
-            <p class="font-display text-lg">The Unwinding | 90min</p>
-            <p class="text-sm text-[color:var(--ink-60)]">90 minutos · $185</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Servicio insignia" data-en="Signature service">Signature service</p>
+            <p class="font-display text-lg">Therapeutic Massage</p>
+            <p class="text-sm text-[color:var(--ink-60)]">60 <span data-es="min" data-en="min">min</span> · $75</p>
           </div>
         </div>
       </div>
@@ -459,10 +458,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="73">73</span> reseñas en Google</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Rituales <span class="text-shine">en pareja</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Sesiones para dos</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">The <span class="text-shine">Unwinding</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Desde $130 · 60 min</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Flagami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">752 Flagami Blvd, Miami</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="32">32</span> <span data-es="reseñas en Booksy" data-en="reviews on Booksy">reviews on Booksy</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span data-es="Se habla" data-en="We speak">We speak</span><span class="text-shine" data-es=" español" data-en=" Spanish"> Spanish</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Atención bilingüe" data-en="Bilingual service">Bilingual service</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span class="text-shine">Therapeutic</span> <span data-es="Masaje" data-en="Massage">Massage</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-es="Desde" data-en="From">From</span> $75 · 60 <span data-es="min" data-en="min">min</span></p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Coral Terrace</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">1180 SW 67th Ave, Miami</p></div>
     </div>
   </section>
 
@@ -470,18 +469,20 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Therapeutic Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Deep Tissue</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hot Stone Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Couples Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials &amp; Skin Care</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Coral Terrace, Miami</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Therapeutic Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Deep Tissue</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hot Stone Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Couples Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials &amp; Skin Care</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Coral Terrace, Miami</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -491,44 +492,32 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/space-1.jpg" alt="Interior de Amani HeadSpa: paredes crema con nichos en arco, repisas de roble y camilla con textil acanalado" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/experience-1.jpg" alt="Real facial treatment being performed at New Life Physical Care" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/space-2.jpg" alt="Logo AMANI en serif dorado sobre pared crema, bajo lámpara escultural de yeso" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/experience-2.jpg" alt="Treatment room at New Life Physical Care with waterfall mural and massage table" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un refugio holístico<br /><span class="text-shine">en pleno Flagami</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
-          Amani es el head spa holístico de Miami: un espacio de calma cálida con paredes crema, arcos suaves, madera clara y luz tenue, pensado para que el tiempo se detenga. Cada ritual combina limpieza del cuero cabelludo, exfoliación, masaje terapéutico y mascarillas personalizadas.
-        </p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
-          Puedes vivirlo en solitario o compartirlo: las sesiones para dos son una de las experiencias más pedidas. Sales como lo promete su propio ritual: <em class="font-script text-[color:var(--accent-deep)]">refreshed, balanced, renewed</em>.
-        </p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Cuidado que se siente" data-en="Care that feels">Care that feels</span> <span class="text-shine" data-es="personal" data-en="personal">personal</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="New Life Physical Care es un estudio de bienestar en Coral Terrace pensado para el alivio real: masaje terapéutico, estiramiento asistido, tratamientos faciales y cuidado avanzado de la piel, todo en un mismo lugar y con atención uno a uno." data-en="New Life Physical Care is a wellness studio in Coral Terrace built around real relief: therapeutic massage, assisted stretch, facial treatments and advanced skin care, all under one roof with one-on-one attention.">New Life Physical Care is a wellness studio in Coral Terrace built around real relief: therapeutic massage, assisted stretch, facial treatments and advanced skin care, all under one roof with one-on-one attention.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Con 32 reseñas y un promedio de 5.0, sus clientes repiten por la misma razón: salen" data-en="With 32 reviews and a 5.0 average, clients come back for the same reason: they leave">With 32 reviews and a 5.0 average, clients come back for the same reason: they leave <em class="font-script text-[color:var(--accent-deep)]" data-es="renovados" data-en="renewed">renewed</em>.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+<span data-count="3.9" data-decimals="1">3.9</span>K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">60-90'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">De ritual</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="32">32</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">7/7</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Días a la semana" data-en="Days a week">Days a week</p></div>
         </div>
         <div class="reveal" style="transition-delay:360ms">
-          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">El equipo</p>
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="El equipo" data-en="The team">The team</p>
           <div class="flex flex-wrap gap-4">
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-1.jpg" alt="Nilda Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nilda Estevez</span>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-2 py-1.5">
+              <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(47,111,104,0.3)] bg-[rgba(47,111,104,0.08)] text-[color:var(--accent-deep)]">L</span>
+              <span class="text-sm font-light">Leonardo Montero</span>
             </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-2.jpg" alt="Mireia Fenoy, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Mireia Fenoy</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-3.jpg" alt="Maria Gutierrez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Maria Gutierrez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-4.jpg" alt="Nildy Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nildy Estevez</span>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-2 py-1.5">
+              <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(47,111,104,0.3)] bg-[rgba(47,111,104,0.08)] text-[color:var(--accent-deep)]">A</span>
+              <span class="text-sm font-light">Alexandra Henot</span>
             </div>
           </div>
         </div>
@@ -540,29 +529,29 @@
   <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Así se vive <span class="text-shine">The Unwinding</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="El ritual, paso a paso" data-en="The ritual, step by step">The ritual, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así se vive cada" data-en="Every">Every</span> <span class="text-shine" data-es="sesión" data-en="session">session</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Limpieza y exfoliación</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">El ritual abre con una limpieza calmante y exfoliación del cuero cabelludo que estimula la circulación y cuida la salud capilar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Consulta breve" data-en="Brief consultation">Brief consultation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Antes de empezar hablamos contigo: zonas de tensión, objetivo de la sesión y la presión que prefieres." data-en="Before we begin we talk with you: areas of tension, your goal for the session, and the pressure you prefer.">Before we begin we talk with you: areas of tension, your goal for the session, and the pressure you prefer.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Masaje terapéutico</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal terapéutico, extendido al escote, que libera la tensión acumulada y te lleva a una relajación profunda.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Preparación" data-en="Warm-up">Warm-up</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Toallas tibias, música relajante y los aceites o herramientas correctas para tu tratamiento, en una sala tranquila." data-en="Warm towels, calming music and the right oils or tools for your treatment, in a quiet room.">Warm towels, calming music and the right oils or tools for your treatment, in a quiet room.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Mascarilla y piedras calientes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Mascarilla capilar personalizada que nutre y restaura, mientras la terapia de piedras calientes relaja brazos y manos.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Técnica dirigida" data-en="Targeted technique">Targeted technique</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Se aplica la técnica de tu servicio (tejido profundo, piedras calientes, drenaje linfático o facial) enfocada en lo que necesitas." data-en="Your service's technique is applied (deep tissue, hot stone, lymphatic drainage or facial) focused on what your body needs.">Your service's technique is applied (deep tissue, hot stone, lymphatic drainage or facial) focused on what your body needs.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Cierre renovador</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Shampoo personalizado, masaje ligero de hombros y desenredado suave. Sales fresca, en equilibrio y renovada.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cierre e hidratación" data-en="Closing &amp; hydration">Closing &amp; hydration</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cerramos con movimientos suaves, hidratación y recomendaciones para que el alivio dure más allá de la cita." data-en="We close with gentle strokes, hydration and aftercare tips so the relief lasts well beyond your visit.">We close with gentle strokes, hydration and aftercare tips so the relief lasts well beyond your visit.</p>
         </div>
       </div>
     </div>
@@ -572,61 +561,104 @@
   <section id="servicios" class="relative py-24 sm:py-32 grain">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">ritual</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Amani HeadSpa. Reserva online con confirmación inmediata.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Menú real, precios" data-en="Real menu, real">Real menu, real</span> <span class="text-shine" data-es="reales" data-en="prices">prices</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por New Life Physical Care en Booksy. Reserva online con confirmación inmediata." data-en="Prices and durations as published by New Life Physical Care on Booksy. Book online with instant confirmation.">Prices and durations as published by New Life Physical Care on Booksy. Book online with instant confirmation.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+
+      <!-- Destacados -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-14">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding | 60 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Limpieza y exfoliación del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y piedras calientes en brazos y manos.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Masaje" data-en="Massage">Massage</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Therapeutic Massage</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El masaje insignia del estudio, enfocado en aliviar tensión muscular y devolver el equilibrio al cuerpo." data-en="The studio's signature massage, focused on relieving muscle tension and restoring balance to your body.">The studio's signature massage, focused on relieving muscle tension and restoring balance to your body.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$130</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-3xl text-shine">$75</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 <span data-es="min" data-en="min">min</span></p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
           </div>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(138,111,77,0.4); box-shadow: 0 18px 50px rgba(50,40,31,0.14);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial · Ritual insignia</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding| 90min</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El ritual completo de head spa más un facial rejuvenecedor: limpieza profunda, mascarilla nutritiva, masaje facial e hidratación con SPF.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(47,111,104,0.4); box-shadow: 0 18px 50px rgba(35,51,48,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Masaje · Más pedido" data-en="Massage · Most requested">Massage · Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Deep Tissue Massage</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Presión firme y sostenida sobre las capas profundas del músculo, ideal para nudos y tensión crónica." data-en="Firm, sustained pressure through the deeper layers of muscle, ideal for knots and chronic tension.">Firm, sustained pressure through the deeper layers of muscle, ideal for knots and chronic tension.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$185</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+              <p class="font-display text-3xl text-shine">$75</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 <span data-es="min" data-en="min">min</span></p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Feet</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding + Feet | 80 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Todos los beneficios del ritual de 60 minutos, más un tratamiento revitalizante de pies con exfoliación y masaje humectante profundo.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Masaje" data-en="Massage">Massage</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Hot Stone Massage</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Piedras volcánicas calientes que relajan el músculo en profundidad y calman el sistema nervioso." data-en="Heated volcanic stones that relax muscle deeply and calm the nervous system.">Heated volcanic stones that relax muscle deeply and calm the nervous system.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$160</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">80 min</p>
+              <p class="font-display text-3xl text-shine">$75</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 <span data-es="min" data-en="min">min</span></p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Signature Facial</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial personalizado según tu tipo de piel y tus necesidades, enfocado en mejorar la salud y apariencia general de tu rostro.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Masaje en pareja" data-en="Couples">Couples</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Couples Massage</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Dos camillas, una sala: la sesión favorita para celebrar un cumpleaños, aniversario o San Valentín." data-en="Two tables, one room: the go-to session for a birthday, anniversary or Valentine's Day.">Two tables, one room: the go-to session for a birthday, anniversary or Valentine's Day.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$140</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-3xl text-shine">$135</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 <span data-es="min" data-en="min">min</span></p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Al reservar se solicita un depósito de $50 a $60 según el servicio.</p>
+
+      <!-- Menu completo agrupado por categoria, sin acordeon -->
+      <div class="reveal">
+        <p class="text-center text-xs tracking-[0.35em] uppercase text-[color:var(--ink-40)] mb-8" data-es="Menú completo" data-en="Full menu">Full menu</p>
+        <div class="grid lg:grid-cols-2 gap-6">
+          <div class="glass rounded-3xl p-7 sm:p-8">
+            <h3 class="font-display text-2xl mb-5"><span data-es="Masajes" data-en="Massages">Massages</span> <span class="text-[color:var(--ink-40)] text-sm font-sans font-light">(15)</span></h3>
+            <div class="divide-y divide-[color:var(--accent-ghost)]">
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Relaxation Massage <span class="text-[color:var(--ink-40)]">· 30 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$39</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Head Massage <span class="text-[color:var(--ink-40)]">· 30 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$25</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Therapeutic Massage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Relaxation Massage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Foot Massage <span class="text-[color:var(--ink-40)]">· 30 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$35</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Deep Tissue Massage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Deep Tissue Massage <span class="text-[color:var(--ink-40)]">· 90 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$95</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Relaxation Massage <span class="text-[color:var(--ink-40)]">· 90 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$95</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Lymphatic Drainage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Hot Stone Massage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Sport Massage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Anti-Cellulite Massage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Wood Therapy <span class="text-[color:var(--ink-40)]">· 45 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Couples Massage <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap"><span class="text-[color:var(--ink-40)] line-through text-sm mr-1">$150</span>$135</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Couple Massage <span class="text-[color:var(--ink-40)]">· 90 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$180</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 sm:p-8">
+            <h3 class="font-display text-2xl mb-5"><span data-es="Faciales" data-en="Facials">Facials</span> <span class="text-[color:var(--ink-40)] text-sm font-sans font-light">(9)</span></h3>
+            <div class="divide-y divide-[color:var(--accent-ghost)]">
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Radio Frequency <span class="text-[color:var(--ink-40)]">· 45 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$75</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Facials <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$80</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Fisiolifting Facial <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$120</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Dermaplaning <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$120</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Wax <span class="text-[color:var(--ink-40)]">· 30 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$60</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Microneedling <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$140</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">ANTI - Edad Tratamiento <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$120</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Peeling Químico Profesional PCA <span class="text-[color:var(--ink-40)]">· 40 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$160</span></div>
+              <div class="flex items-center justify-between gap-4 py-3"><span class="text-sm">Acne treatment <span class="text-[color:var(--ink-40)]">· 60 <span data-es="min" data-en="min">min</span></span></span><span class="font-display text-lg whitespace-nowrap">$100</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Precios y promociones sujetos a los que publica New Life Physical Care en Booksy al momento de reservar." data-en="Prices and promotions subject to what New Life Physical Care publishes on Booksy at the time of booking.">Prices and promotions subject to what New Life Physical Care publishes on Booksy at the time of booking.</p>
     </div>
   </section>
 
@@ -635,21 +667,21 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">spa</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Dentro del" data-en="Inside the">Inside the</span> <span class="text-shine" data-es="estudio" data-en="studio">studio</span></h2>
         </div>
-        <a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.instagram.com/nlphysicalcare/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @amaniheadspa
+          @nlphysicalcare
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable aspect-[3/4] img-reveal"><img src="assets/raw/service-unwinding-90.jpg" alt="Mascarilla facial aplicada durante The Unwinding de 90 minutos, con luz ambiental tenue" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><img src="assets/raw/service-unwinding-feet.jpg" alt="Masaje de pies a la luz de las velas, en tonos ámbar cálidos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><img src="assets/raw/space-2.jpg" alt="Logotipo AMANI en relieve dorado sobre pared crema del estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><img src="assets/raw/service-signature-facial.jpg" alt="Tratamiento con rodillo facial dorado durante el Signature Facial" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><img src="assets/raw/space-1.jpg" alt="Sala de tratamientos con nichos en arco, repisas de madera clara y cortina taupe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><img src="assets/raw/hero-1.jpg" alt="Detalle de un ritual facial en Amani HeadSpa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal"><img src="assets/raw/gallery-1.jpg" alt="Real facial skin care treatment at New Life Physical Care" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><img src="assets/raw/gallery-2.jpg" alt="Treatment room with waterfall mural at New Life Physical Care" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><img src="assets/raw/gallery-3-door.jpg" alt="New Life Physical Care studio entrance with logo and hours" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><img src="assets/raw/gallery-4.jpg" alt="Treatment room ready for a session at New Life Physical Care" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><img src="assets/raw/experience-1.jpg" alt="Facial treatment in progress at New Life Physical Care" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><img src="assets/raw/hero-1.jpg" alt="New Life Physical Care treatment room detail" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -658,18 +690,20 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Therapeutic Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Deep Tissue</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hot Stone Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Couples Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials &amp; Skin Care</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Coral Terrace, Miami</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Therapeutic Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Deep Tissue</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hot Stone Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Couples Massage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials &amp; Skin Care</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Coral Terrace, Miami</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -678,45 +712,52 @@
   <section id="opiniones" class="relative py-24 sm:py-32 grain">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.9 de 5 · 73 reseñas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="nuestros clientes" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 32 reseñas en Booksy" data-en="5.0 of 5 · 32 reviews on Booksy">5.0 of 5 · 32 reviews on Booksy</span></p>
       </div>
       <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
         <div class="carousel-track">
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mireia &amp; Maria were incredible! This was my first head spa experience. I wanted to get my pregnant friend a gift/something we could do together. It was great they offer a service for two. I did a ton of research on head spas all over..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Olivia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I had an incredible experience at New Life Physical Care, truly the best massage I have ever received. I have traveled to several countries and tried many spas, but nothing compares to the care and attention that Alexandra Henot and Leonardo Montero provide. I booked a couples massage for my mom's birthday, and they went out of their way to make it unforgettable."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jennifer R.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This was our first time at a head spa and it was amazing. It was so relaxing. We did a couples 90 minute session and we had a great experience here. Maria and Nildy were very good! Thank you!!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Thalia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I had a booking for a Couples massage on February 14 Valentine's Day, They had it decorated for the Occasion with balloons, wine, water, and candy. The mood, the music, the Lighting, and the vibe was so amazing &amp; relaxing. My massage therapist was LEO, he was soooo Awesome, he did an amazing job."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Tashika B.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I just got home from a scalp and hand massage with Maria and I'm the most relaxed I've been in weeks! The experience felt stress free and relaxing from the moment I walked in; once you're there, you're transported away from the city around..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Ruby</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I love when I get to go here for my therapeutic massage! So grateful I found a place I'm comfortable with and the price is reasonable! Recommend 💯"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Nadia</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 experience, I left feeling completely refreshed and can't wait to go back!"</blockquote>
-              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I absolutely loved the experience. I went in with a lot of neck pain and shoulder tension and came out relieved. Will come back many times more"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Yani M.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Fue el primer masaje profesional que hemos tenido mi pareja y yo y sinceramente tuvimos la mejor experiencia del mundo. Agende un masaje de pareja para mi cumpleanos y hasta me dieron un regalito para que la pasara bien. De verdad fue una experiencia relajante y unica, volvere al 100%, son los mejores!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Mercedes H.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
         </div>
       </div>
       <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 73 reseñas en Google</a>
+        <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-es="Leer las 32 reseñas en Booksy" data-en="Read all 32 reviews on Booksy">Read all 32 reviews on Booksy</span></a>
       </div>
     </div>
   </section>
@@ -725,85 +766,83 @@
   <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu alivio queda" data-en="Relief is">Relief is</span> <span class="text-shine" data-es="cerca" data-en="close by">close by</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">752 Flagami Blvd, Miami, FL 33144</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(138,111,77,0.4)]" href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">1180 SW 67th Ave, Suite #108, Miami, FL 33144</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(47,111,104,0.4)]" href="https://www.google.com/maps/search/?api=1&amp;query=New+Life+Physical+Care+1180+SW+67th+Ave+Miami+FL+33144" target="_blank" rel="noopener"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Viernes: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Sábado: 8:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: 8:00 AM a 5:00 PM</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Todos los días: 10:00 AM a 9:00 PM" data-en="Every day: 10:00 AM to 9:00 PM">Every day: 10:00 AM to 9:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa" data-en="By appointment">By appointment</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener">amaniheadspa.glossgenius.com</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Teléfono: <a class="text-[color:var(--accent-deep)]" href="tel:+13057906977">(305) 790-6977</a></p>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Booking">Booking</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="En línea" data-en="Online">Online</span>: <a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono" data-en="Phone">Phone</span>: <a class="text-[color:var(--accent-deep)]" href="tel:+17863622152">(786) 362-2152</a></p>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Amani HeadSpa, 752 Flagami Blvd, Miami FL"
-          src="https://www.google.com/maps?q=Amani+HeadSpa,+752+Flagami+Blvd,+Miami,+FL+33144&output=embed"
+        <iframe title="Map: New Life Physical Care, 1180 SW 67th Ave, Miami FL"
+          src="https://www.google.com/maps?q=New+Life+Physical+Care,+1180+SW+67th+Ave,+Miami,+FL+33144&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241c14 0%, #1b150e 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #14201e 0%, #0e1715 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Fresca, en equilibrio, renovada.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">The Unwinding te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva tu ritual online en segundos, para ti o en pareja. Elige día, hora y especialista, y deja que Amani haga el resto.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="El alivio empieza hoy." data-en="Relief starts today.">Relief starts today.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu masaje te está" data-en="Your massage is">Your massage is</span> <span class="text-shine" data-es="esperando" data-en="waiting">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos, elige el servicio, el día y la hora, y deja que Leonardo y Alexandra hagan el resto." data-en="Book online in seconds, choose the service, day and time, and let Leonardo and Alexandra take care of the rest.">Book online in seconds, choose the service, day and time, and let Leonardo and Alexandra take care of the rest.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
-        <a href="tel:+13057906977" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span></a>
+        <a href="tel:+17863622152" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#17110b]">
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#0e1715]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,207,166,0.35)] bg-[rgba(232,207,166,0.08)] text-[#e8cfa6]">A</span>
-          <span class="font-display text-lg tracking-[0.12em] uppercase">Amani HeadSpa</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(158,210,201,0.35)] bg-[rgba(158,210,201,0.08)] text-[#9ed2c9]">N</span>
+          <span class="font-display text-lg tracking-[0.1em] uppercase">New Life Physical Care</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Miami's Holistic Head Spa. Wellness rituals para individuales y parejas: head spa + facials.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de masaje y bienestar en Coral Terrace, Miami. Masaje terapéutico, tejido profundo, piedras calientes y faciales." data-en="Massage and wellness studio in Coral Terrace, Miami. Therapeutic massage, deep tissue, hot stone and facials.">Massage and wellness studio in Coral Terrace, Miami. Therapeutic massage, deep tissue, hot stone and facials.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>752 Flagami Blvd, Miami, FL 33144</p>
-        <p><a href="tel:+13057906977" class="hover:text-[#e8cfa6]">(305) 790-6977</a></p>
-        <p><a href="mailto:amaniheadspa@gmail.com" class="hover:text-[#e8cfa6]">amaniheadspa@gmail.com</a></p>
-        <p>Lun a Vie 10 AM a 7 PM · Sáb 8 AM a 7 PM · Dom 8 AM a 5 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>1180 SW 67th Ave, Suite #108, Miami, FL 33144</p>
+        <p><a href="tel:+17863622152" class="hover:text-[#9ed2c9]">(786) 362-2152</a></p>
+        <p><span data-es="Todos los días 10 AM a 9 PM" data-en="Every day 10 AM to 9 PM">Every day 10 AM to 9 PM</span></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Instagram · @amaniheadspa</a></p>
-        <p><a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Reservas online · GlossGenius</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow us">Follow us</p>
+        <p><a href="https://www.instagram.com/nlphysicalcare/" target="_blank" rel="noopener" class="hover:text-[#9ed2c9]">Instagram · @nlphysicalcare</a></p>
+        <p><a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="hover:text-[#9ed2c9]"><span data-es="Reservas en línea · Booksy" data-en="Book online · Booksy">Book online · Booksy</span></a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Amani HeadSpa. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]"><span data-es="© 2026 New Life Physical Care. Todos los derechos reservados." data-en="© 2026 New Life Physical Care. All rights reserved.">© 2026 New Life Physical Care. All rights reserved.</span></p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -813,8 +852,8 @@
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  <a href="https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami" target="_blank" rel="noopener" class="book-float" aria-label="Book online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f6f4ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
   </a>
 
   <!-- Volver arriba (abajo-izquierda) -->
@@ -826,12 +865,26 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+    // Idioma bilingue (EN/ES): toggle en el nav, persistido en localStorage. Idioma principal del negocio: ingles.
+    const langStore = {
+      get: () => { try { return localStorage.getItem('lang'); } catch (e) { return null; } },
+      set: (l) => { try { localStorage.setItem('lang', l); } catch (e) {} }
+    };
+    const langToggle = document.getElementById('langToggle');
+    const applyLang = (l) => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.textContent = el.dataset[l] || el.dataset.en; });
+      document.documentElement.lang = l;
+      langStore.set(l);
+      if (langToggle) langToggle.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    const savedLang = langStore.get() || (navigator.language || 'en').slice(0, 2);
+    applyLang(savedLang === 'es' ? 'es' : 'en');
+    if (langToggle) langToggle.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
     // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
     const preloader = document.getElementById('preloader');
-    let preloaderHidden = false;
     const hidePreloader = () => {
-      if (preloaderHidden || !preloader) return;
-      preloaderHidden = true;
+      if (!preloader) return;
       preloader.classList.add('done');
       setTimeout(() => preloader.remove(), 750);
     };
