@@ -81,7 +81,7 @@ Paletas POR NEGOCIO (derivadas del brand real encontrado en research, campo `bra
 11. **Footer**: contacto, IG real, nota "Sitio de demostracion creado para <negocio>" NO (omitir: es demo de venta, se ve como site real), copyright con nombre del negocio, `.merktop-badge`.
 
 ## SEO/head minimo por site
-- `<title>` = "<Negocio> — Head Spa · <Ciudad> | <tagline corto>"
+- `<title>` = "<Negocio> · Head Spa en <Ciudad> | <tagline corto>"
 - meta description con servicios y barrio, og:title/description/image (imagen local), theme-color = accent-soft.
 - JSON-LD `HealthAndBeautyBusiness` con nombre, direccion, telefono, rating real (aggregateRating con reviewCount real), horarios si existen, sameAs (Instagram real, booking real).
 
