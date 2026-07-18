@@ -8,11 +8,11 @@ Uno de:
 - **Handle/nombre**: un Instagram handle o nombre de negocio (modo directo; aqui SI se aceptan negocios con website propio, con angulo rediseño).
 - **Descubrimiento**: encontrar `daily_count` negocios NUEVOS segun `config.json` que cumplan rating >= `min_rating`, reseñas >= `min_reviews`, NO esten en `data/processed.json` y (con `require_no_website: true`) NO tengan website propio.
 
-## Descubrimiento: como encontrar negocios SIN website
-Buscar "mejor <nicho> en <ciudad>" NO funciona: los que rankean ahi ya tienen SEO y website. Buscar donde viven los que no tienen:
-1. **Directorios de booking**: paginas de categoria/ciudad de Booksy, perfiles `*.glossgenius.com`, `book.squareup.com`, Fresha, Vagaro, Mangomint. Un negocio cuyo UNICO link publico es su plataforma de booking es el candidato ideal.
-2. **Instagram local**: hashtags y geotags del nicho (#headspamiami, #lashesmiami, etc.) y perfiles de negocio con solo linktree/wa.me/booking en la bio, sin dominio propio.
-3. **Google Maps por zonas**: fichas sin campo website (Google muestra "Add website") en las `extra_areas` del config, no solo el centro.
+## Descubrimiento: como encontrar negocios SIN website (GOOGLE PRIMERO)
+Buscar "mejor <nicho> en <ciudad>" NO funciona: los que rankean ahi ya tienen SEO y website. Fuentes en ORDEN DE PRIORIDAD:
+1. **GOOGLE (fuente principal)**: fichas de Google Maps/Google Business por zona (`<nicho> en <area>` en Google, revisando el local pack y maps): buscar fichas SIN campo website (Google muestra "Add website" o el boton de website apunta a booking de terceros). Google es la columna vertebral de la gestion: de ahi salen rating, numero de reseñas, telefono, horarios, fotos del negocio y las reseñas verbatim que van al site y al registro. Barrer las `extra_areas` del config, no solo el centro.
+2. **Directorios de booking**: paginas de categoria/ciudad de Booksy, perfiles `*.glossgenius.com`, `book.squareup.com`, Fresha, Vagaro, Mangomint. Un negocio cuyo UNICO link publico es su plataforma de booking es candidato ideal (verificar su ficha de Google igual: rating/reviews minimos).
+3. **Instagram local**: hashtags y geotags del nicho (#headspamiami, #lashesmiami, etc.) y perfiles de negocio con solo linktree/wa.me/booking en la bio, sin dominio propio (cruzar con su ficha de Google).
 Verificacion OBLIGATORIA antes de aceptar un candidato: probar `<negocio>.com` y variantes, revisar links de bio de IG y el dominio del email. Si tiene website propio: DESCARTAR sin gastar cupo (solo anotarlo en el reporte como descartado con su URL). Los negocios con website SOLO se procesan si llegan por la cola del panel o por comando directo.
 Si el nicho principal no da candidatos: bajar en orden por `fallback_niches` y ampliar por `extra_areas`. Si aun asi no hay: reportar honestamente "0 nuevos" con la lista de descartados. NUNCA rellenar el cupo con negocios con website.
 

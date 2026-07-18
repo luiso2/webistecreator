@@ -247,14 +247,16 @@
       const reg = state.registry || [], queue = state.queue || [];
       const live = reg.filter(b => b.url_demo).length;
       const sent = reg.filter(b => b.outreach === 'sent').length;
-      const pend = reg.filter(b => b.outreach === 'pending_manual' || b.outreach === 'pending_deploy').length
-                 + queue.filter(q => q.status === 'pending').length;
+      const porContactar = reg.filter(b => b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy').length;
+      const enCola = queue.filter(q => q.status === 'pending' || q.status === 'processing').length;
       $('stats').innerHTML = [
-        ['Procesados', reg.length], ['Demos live', live], ['Emails enviados', sent], ['Pendientes', pend]
+        ['Procesados', reg.length], ['Emails enviados', sent], ['Por contactar (DM / WA)', porContactar], ['En cola de forja', enCola]
       ].map(([l, v], i) => `<div class="card stat reveal" style="animation-delay:${0.1 + i * 0.05}s"><b>${v}</b><span>${l}</span></div>`).join('');
 
-      $('count').textContent = reg.length + ' negocios';
-      $('grid').innerHTML = reg.slice().reverse().map((b, i) => `
+      $('count').textContent = reg.length + ' negocios · primero los que esperan tu contacto';
+      const orden = b => (b.outreach === 'sent' ? 1 : 0);
+      const lista = reg.slice().reverse().sort((a, b) => orden(a) - orden(b));
+      $('grid').innerHTML = lista.map((b, i) => `
         <div class="card biz reveal" style="animation-delay:${0.15 + i * 0.04}s">
           <div class="top">
             <div><h4>${esc(b.name)}</h4><p class="city">${esc(b.city || '')} · ${esc(b.fecha || '')}</p></div>
@@ -270,7 +272,7 @@
             ${b.phone && b.dm_message ? `<a class="link-btn" href="https://wa.me/${esc(String(b.phone).replace(/[^0-9]/g, '').replace(/^(?!1)/, '1'))}?text=${encodeURIComponent(b.dm_message)}" target="_blank" rel="noopener">WA ✓</a>` : ''}
           </div>
         </div>`).join('');
-      window.__reg = reg.slice().reverse();
+      window.__reg = lista;
 
       const STAGE_LABEL = { research: 'Investigando el negocio', build: 'Construyendo el website', verify: 'Verificando calidad', commit: 'Publicando' };
       const STAGE_PCT = { research: 30, build: 65, verify: 85, commit: 95 };
