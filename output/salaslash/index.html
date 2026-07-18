@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f5f0e8" />
+  <title>SaLash · Lashes &amp; Brows by Sheyla Salas | Extensiones de pestañas y cejas en Miami</title>
+  <meta name="description" content="SaLash, estudio de pestañas y cejas de Sheyla Salas en Miami, FL. Natural Set, Soft Volumen, Volumen Set, Wet Effect, Lash Lifting y diseño de cejas. Diseños personalizados, resultados naturales. Agenda por WhatsApp." />
+  <meta property="og:title" content="SaLash · Lashes &amp; Brows by Sheyla Salas | Miami" />
+  <meta property="og:description" content="Diseños personalizados, resultados naturales. Extensiones de pestañas, lifting y cejas en Miami. Agenda tu cita por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/ig-11-2.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/profile.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "SaLash · Lashes & Brows by Sheyla Salas",
+    "description": "Estudio de extensiones de pestañas y diseño de cejas en Miami, FL. Diseños personalizados con resultados naturales. Atención con cita previa via WhatsApp o Instagram.",
+    "telephone": "+1-786-815-1439",
+    "areaServed": "Miami, FL",
+    "sameAs": [
+      "https://www.instagram.com/salaslash_/"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de pestañas y cejas",
+      "itemListElement": [
+        { "@type": "Service", "name": "Natural Set", "serviceType": "Extensiones de pestañas" },
+        { "@type": "Service", "name": "Soft Volumen", "serviceType": "Extensiones de pestañas" },
+        { "@type": "Service", "name": "Volumen Set", "serviceType": "Extensiones de pestañas" },
+        { "@type": "Service", "name": "Wet Effect", "serviceType": "Extensiones de pestañas" },
+        { "@type": "Service", "name": "Lash Lifting", "serviceType": "Lifting de pestañas" },
+        { "@type": "Service", "name": "Diseño de cejas con wax y tinte", "serviceType": "Cejas" },
+        { "@type": "Service", "name": "Lash Training", "serviceType": "Curso de pestañas" }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f1ea;
+      --bg-2: #ede4d7;
+      --surface: rgba(250,247,241,0.7);
+      --ink: #33281e;
+      --ink-60: rgba(51,40,30,0.62);
+      --ink-40: rgba(51,40,30,0.42);
+      --accent-deep: #8a674a;
+      --accent-mid: #a98e74;
+      --accent-soft: #ede4d7;
+      --accent-ghost: rgba(138,103,74,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(138,103,74,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,247,241,0.88);
+      border-color: rgba(138,103,74,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(51,40,30,0.14), 0 0 40px rgba(138,103,74,0.08);
+    }
+
+    /* Sheen mocha sobre texto */
+    .text-shine {
+      background: linear-gradient(110deg, #8a674a 0%, #b08d66 30%, #5b4536 52%, #8a674a 75%, #a8815a 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs taupe/crema */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e4d4bc 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #c6ab8e 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #d5c0a2 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D mocha */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #a98e74 0%, #8a674a 48%, #6c5037 100%);
+      color: #f6f1ea; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,44,27,0.4),
+        0 5px 0 #4a3624,
+        0 12px 24px rgba(51,40,30,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,44,27,0.4), 0 7px 0 #4a3624, 0 18px 34px rgba(51,40,30,0.32), 0 0 40px rgba(138,103,74,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,44,27,0.45), 0 1px 0 #4a3624, 0 4px 10px rgba(51,40,30,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(138,103,74,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(138,103,74,0.7); background: rgba(138,103,74,0.08); box-shadow: 0 10px 26px rgba(51,40,30,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(246,241,234,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(51,40,30,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(51,40,30,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(138,103,74,0.14), inset 0 -60px 100px rgba(51,40,30,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del metodo */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #a98e74, #5b4536);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f6f1ea;
+      --ink-60: rgba(246,241,234,0.65);
+      --ink-40: rgba(246,241,234,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,213,181,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e9cfa4 0%, #f8ecd5 30%, #c6ab8e 52%, #e9cfa4 75%, #f3e2bf 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(233,207,164,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(169,142,116,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #faf3e5 0%, #e9d8bd 48%, #cab190 100%);
+      color: #33281e;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,88,48,0.35),
+        0 5px 0 #8a7155,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,88,48,0.35), 0 7px 0 #8a7155, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(233,207,164,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,88,48,0.4), 0 1px 0 #8a7155, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(233,207,164,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(233,207,164,0.7); background: rgba(233,207,164,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+
+    /* Boton flotante de WhatsApp */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #a98e74 0%, #8a674a 100%);
+      box-shadow: 0 6px 0 #4a3624, 0 14px 30px rgba(51,40,30,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a3624, 0 20px 40px rgba(51,40,30,0.4), 0 0 34px rgba(138,103,74,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a3624, 0 6px 14px rgba(51,40,30,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
+      border: 1px solid rgba(138,103,74,0.35); background: rgba(138,103,74,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #6c5037 0%, #8a674a 45%, #caa87c 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 8. Boton magnetico */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare */
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    /* 10. Cursor glow en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(233,207,164,0.14) 0%, rgba(138,103,74,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    /* 11. Back to top */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(138,103,74,0.5); transform: translateY(-3px); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">S</span>
+    <span class="pre-word">SaLash</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/profile.jpg" alt="SaLash" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,103,74,0.35)]" />
+        <span class="font-display text-xl tracking-[0.14em] uppercase">SaLash <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Lashes &amp; Brows</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#reserva" data-es="Reserva" data-en="Book">Reserva</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20agendar%20una%20cita%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <span data-es="Agendar cita" data-en="Book now">Agendar cita</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3" href="#reserva" data-es="Reserva" data-en="Book">Reserva</a>
+        <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20agendar%20una%20cita%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Agendar por WhatsApp" data-en="Book via WhatsApp">Agendar por WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Miami, FL · Lashes &amp; Brows Studio" data-en="Miami, FL · Lashes &amp; Brows Studio">Miami, FL · Lashes &amp; Brows Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Diseños personalizados, resultados naturales." data-en="Custom designs, natural results.">Diseños personalizados, resultados naturales.</p>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" style="transition-delay:160ms">
+          <span data-es="Pestañas y cejas" data-en="Lashes and brows">Pestañas y cejas</span><br /><span data-es="diseñadas " data-en="designed ">diseñadas </span><span class="text-shine" data-es="para ti" data-en="for you">para ti</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="SaLash es el estudio de Sheyla Salas en Miami: extensiones de pestañas Natural Set, Soft Volumen y Volumen Set, lifting y diseño de cejas. Cada set se diseña según la forma de tu ojo, para que se vea tuyo, no puesto." data-en="SaLash is Sheyla Salas' studio in Miami: Natural Set, Soft Volumen and Volumen Set lash extensions, lash lifting and brow design. Every set is designed around your eye shape, so it looks like yours, not glued on.">
+          SaLash es el estudio de Sheyla Salas en Miami: extensiones de pestañas Natural Set, Soft Volumen y Volumen Set, lifting y diseño de cejas. Cada set se diseña según la forma de tu ojo, para que se vea tuyo, no puesto.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <span class="text-sm text-[color:var(--ink-60)]"><a href="https://www.instagram.com/salaslash_/" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">@salaslash_</a> <span data-es="· 1,017 seguidoras en Instagram" data-en="· 1,017 followers on Instagram">· 1,017 seguidoras en Instagram</span></span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20agendar%20una%20cita%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Agendar por WhatsApp" data-en="Book via WhatsApp">Agendar por WhatsApp</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/salaslash_/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <span data-es="Ver trabajos en Instagram" data-en="See work on Instagram">Ver trabajos en Instagram</span>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/ig-11-2.jpg" alt="Clienta de SaLash con extensiones de pestañas y cejas terminadas, resultado natural" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Con cita previa" data-en="By appointment">Con cita previa</p>
+            <p class="font-display text-lg">Natural · Soft · Volumen</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Agenda y cotiza por WhatsApp" data-en="Book and quote via WhatsApp">Agenda y cotiza por WhatsApp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="1017">1,017</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Seguidoras en Instagram" data-en="Instagram followers">Seguidoras en Instagram</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="67">67</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trabajos publicados" data-en="Published works">Trabajos publicados</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Lashes <span class="text-shine">&amp; Brows</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Sets · Lifting · Cejas · Training" data-en="Sets · Lifting · Brows · Training">Sets · Lifting · Cejas · Training</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Miami, FL</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Atención con cita previa" data-en="By appointment only">Atención con cita previa</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Natural Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Soft Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Volumen Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wet Effect</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lifting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brows</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Natural Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Soft Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Volumen Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wet Effect</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lifting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brows</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/ig-7.jpg" alt="La experiencia SaLash: clienta relajada con champagne y revista durante su cita" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/ig-8.jpg" alt="Sheyla Salas trabajando un set de pestañas en su estudio de Miami" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un estudio donde" data-en="A studio where">Un estudio donde</span><br /><span class="text-shine" data-es="cada detalle cuenta" data-en="every detail counts">cada detalle cuenta</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="En palabras de la propia Sheyla: en SaLash cada detalle está pensado para que te sientas cómoda, relajada y aún más bonita. Es un estudio íntimo, de una sola artista, donde tu cita no compite con nadie más." data-en="In Sheyla's own words: at SaLash every detail is designed so you feel comfortable, relaxed and even prettier. It is an intimate, single-artist studio where your appointment never competes with anyone else's.">
+          En palabras de la propia Sheyla: en SaLash cada detalle está pensado para que te sientas cómoda, relajada y aún más bonita. Es un estudio íntimo, de una sola artista, donde tu cita no compite con nadie más.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Sheyla llegó a Estados Unidos en 2022 y construyó SaLash desde cero: práctica, técnica y muchas horas de preparación detrás de cada set. Hoy su trabajo habla por ella en cada mirada que sale del estudio." data-en="Sheyla arrived in the US in 2022 and built SaLash from scratch: practice, technique and many hours of preparation behind every set. Today her work speaks for itself in every look that leaves the studio.">
+          Sheyla llegó a Estados Unidos en 2022 y construyó SaLash desde cero: práctica, técnica y muchas horas de preparación detrás de cada set. Hoy su trabajo habla por ella en cada mirada que sale del estudio.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine" data-es="Desde 2022" data-en="Since 2022">Desde 2022</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="En Miami" data-en="In Miami">En Miami</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Atención personal</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">🦢</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Acabado natural" data-en="Natural finish">Acabado natural</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5 w-fit">
+            <img src="assets/raw/profile.jpg" alt="Sheyla Salas, artista y fundadora de SaLash" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,103,74,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Sheyla Salas · <span class="text-[color:var(--ink-40)]" data-es="Artista y fundadora" data-en="Artist &amp; founder">Artista y fundadora</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO PASO A PASO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="El método, paso a paso" data-en="The method, step by step">El método, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Detrás de cada set hay" data-en="Behind every set there is">Detrás de cada set hay</span> <span class="text-shine" data-es="técnica" data-en="technique">técnica</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Diseño personalizado" data-en="Custom design">Diseño personalizado</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cada cita empieza evaluando la forma de tu ojo, tu pestaña natural y el efecto que buscas: de ahí sale tu diseño, no de una plantilla." data-en="Every appointment starts by evaluating your eye shape, your natural lash and the effect you want: your design comes from there, not from a template.">Cada cita empieza evaluando la forma de tu ojo, tu pestaña natural y el efecto que buscas: de ahí sale tu diseño, no de una plantilla.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Aplicación con técnica" data-en="Skilled application">Aplicación con técnica</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Técnica, práctica, paciencia y horas de preparación detrás de cada set: no es solo poner pestañas, es construir una mirada." data-en="Technique, practice, patience and hours of preparation behind every set: it is not just applying lashes, it is building a look.">Técnica, práctica, paciencia y horas de preparación detrás de cada set: no es solo poner pestañas, es construir una mirada.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Acabado natural" data-en="Natural finish">Acabado natural</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="El sello SaLash: cejas que conservan su forma natural y sets que se ven tuyos. Ese último paso hace toda la diferencia." data-en="The SaLash signature: brows that keep their natural shape and sets that look like your own. That final step makes all the difference.">El sello SaLash: cejas que conservan su forma natural y sets que se ven tuyos. Ese último paso hace toda la diferencia.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cuidado en casa" data-en="Aftercare">Cuidado en casa</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con tu cepillito y las indicaciones para mantener tus pestañas on point entre cita y cita, como insiste Sheyla en su Instagram." data-en="You leave with your spoolie and the aftercare tips to keep your lashes on point between appointments, just like Sheyla insists on her Instagram.">Sales con tu cepillito y las indicaciones para mantener tus pestañas on point entre cita y cita, como insiste Sheyla en su Instagram.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine">look</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Servicios publicados por SaLash en su Instagram. El precio se cotiza por WhatsApp según tu diseño." data-en="Services as published by SaLash on Instagram. Pricing is quoted via WhatsApp based on your design.">Servicios publicados por SaLash en su Instagram. El precio se cotiza por WhatsApp según tu diseño.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Extensiones" data-en="Extensions">Extensiones</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Natural Set</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El efecto limpio y ligero: pestañas clásicas que realzan tu mirada sin que se note que llevas extensiones." data-en="The clean, light effect: classic lashes that enhance your eyes without giving away that you wear extensions.">El efecto limpio y ligero: pestañas clásicas que realzan tu mirada sin que se note que llevas extensiones.</p>
+          <div class="mt-auto">
+            <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20cotizar%20un%20Natural%20Set%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Cotizar por WhatsApp" data-en="Quote via WhatsApp">Cotizar por WhatsApp</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(138,103,74,0.4); box-shadow: 0 18px 50px rgba(51,40,30,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Extensiones · Favorito del estudio" data-en="Extensions · Studio favorite">Extensiones · Favorito del estudio</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Soft Volumen &amp; Volumen Set</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Más densidad sin perder elegancia: abanicos suaves para un volumen esponjoso, o el Volumen Set completo para una mirada de impacto. También en Wet Effect." data-en="More density without losing elegance: soft fans for a fluffy volume, or the full Volumen Set for maximum impact. Also available in Wet Effect.">Más densidad sin perder elegancia: abanicos suaves para un volumen esponjoso, o el Volumen Set completo para una mirada de impacto. También en Wet Effect.</p>
+          <div class="mt-auto">
+            <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20cotizar%20un%20Volumen%20Set%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Cotizar por WhatsApp" data-en="Quote via WhatsApp">Cotizar por WhatsApp</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Lifting &amp; Brows</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Lash Lifting y Cejas" data-en="Lash Lifting &amp; Brows">Lash Lifting y Cejas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Lifting que curva tu pestaña natural, y diseño de cejas con wax y tinte que conserva su forma natural: el acabado que distingue a SaLash." data-en="Lifting that curls your natural lash, plus brow design with wax and tint that keeps their natural shape: the finish SaLash is known for.">Lifting que curva tu pestaña natural, y diseño de cejas con wax y tinte que conserva su forma natural: el acabado que distingue a SaLash.</p>
+          <div class="mt-auto">
+            <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20cotizar%20lifting%20o%20cejas%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Cotizar por WhatsApp" data-en="Quote via WhatsApp">Cotizar por WhatsApp</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Lash Training</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Curso de pestañas" data-en="Lash course">Curso de pestañas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Aprende la técnica directamente de Sheyla: entrenamiento personalizado para quienes quieren iniciar en el mundo de las pestañas." data-en="Learn the technique directly from Sheyla: personalized training for anyone who wants to start their lash career.">Aprende la técnica directamente de Sheyla: entrenamiento personalizado para quienes quieren iniciar en el mundo de las pestañas.</p>
+          <div class="mt-auto">
+            <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20info%20del%20Lash%20Training%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir información" data-en="Ask for info">Pedir información</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Atención con cita previa. Retoques y Wet Effect disponibles: cotiza tu diseño por WhatsApp o DM." data-en="By appointment only. Refills and Wet Effect available: quote your design via WhatsApp or DM.">Atención con cita previa. Retoques y Wet Effect disponibles: cotiza tu diseño por WhatsApp o DM.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Resultados" data-en="Real">Resultados</span> <span class="text-shine" data-es="reales" data-en="results">reales</span></h2>
+        </div>
+        <a href="https://www.instagram.com/salaslash_/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @salaslash_
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal"><img src="assets/raw/ig-2.jpg" alt="Closeup de ceja diseñada en SaLash con acabado natural" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><img src="assets/raw/ig-11-3.jpg" alt="Closeup de ojo con extensiones de pestañas aplicadas en SaLash" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><img src="assets/raw/ig-9.jpg" alt="Clienta sonriendo en su Brow Day en SaLash, Miami" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><img src="assets/raw/ig-2-2.jpg" alt="Clienta feliz con su bolsa de regalo tras su cita en SaLash" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><img src="assets/raw/ig-11.jpg" alt="Cejas terminadas conservando su forma natural, trabajo de SaLash" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><img src="assets/raw/ig-10.jpg" alt="Caja de la nueva coleccion Make it Beauty presentada por SaLash" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+      <figure class="reveal max-w-xl mx-auto text-center mt-14">
+        <blockquote class="font-script text-2xl text-[color:var(--ink-60)] leading-relaxed" data-es="&ldquo;Brow Day in @salaslash_&rdquo; 🤎✨" data-en="&ldquo;Brow Day in @salaslash_&rdquo; 🤎✨">&ldquo;Brow Day in @salaslash_&rdquo; 🤎✨</blockquote>
+        <figcaption class="text-sm text-[color:var(--ink-40)] mt-3">@larialys_castillo · <span data-es="clienta, en Instagram" data-en="client, on Instagram">clienta, en Instagram</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Natural Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Soft Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Volumen Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wet Effect</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lifting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brows</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Natural Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Soft Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Volumen Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wet Effect</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lifting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brows</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESERVA -->
+  <section id="reserva" class="relative py-24 sm:py-32 grain">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Reserva" data-en="Book">Reserva</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu cita empieza con" data-en="Your appointment starts with">Tu cita empieza con</span> <span class="text-shine" data-es="un mensaje" data-en="a message">un mensaje</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <div>
+              <p class="font-medium mb-1">WhatsApp</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida: cuéntale el servicio que buscas y Sheyla te cotiza y agenda." data-en="The fastest way: tell Sheyla the service you want and she will quote and book you in.">La vía más rápida: cuéntale el servicio que buscas y Sheyla te cotiza y agenda.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(138,103,74,0.4)]" href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20agendar%20una%20cita%20%F0%9F%A4%8D" target="_blank" rel="noopener">(786) 815-1439</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira su trabajo reciente y escríbele por DM: ahí publica disponibilidad y novedades." data-en="Check her latest work and send a DM: that is where she posts availability and news.">Mira su trabajo reciente y escríbele por DM: ahí publica disponibilidad y novedades.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(138,103,74,0.4)]" href="https://www.instagram.com/salaslash_/" target="_blank" rel="noopener">@salaslash_</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Estudio en Miami, FL" data-en="Studio in Miami, FL">Estudio en Miami, FL</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Atención con cita previa. La dirección exacta se comparte al confirmar tu cita." data-en="By appointment only. The exact address is shared once your appointment is confirmed.">Atención con cita previa. La dirección exacta se comparte al confirmar tu cita.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame zoomable img-reveal reveal min-h-[380px]" style="transition-delay:180ms">
+        <img src="assets/raw/ig-3.jpg" alt="Ambiente del estudio SaLash: luz calida sobre la camilla de trabajo" class="blur-up w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241c14 0%, #1b150e 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Diseños personalizados, resultados naturales." data-en="Custom designs, natural results.">Diseños personalizados, resultados naturales.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu mirada" data-en="Your look">Tu mirada</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting for you">te está esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Escríbele a Sheyla por WhatsApp, cuéntale el look que buscas y agenda tu cita en Miami. Así de simple." data-en="Message Sheyla on WhatsApp, tell her the look you want and book your appointment in Miami. That simple.">Escríbele a Sheyla por WhatsApp, cuéntale el look que buscas y agenda tu cita en Miami. Así de simple.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20agendar%20una%20cita%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Agendar por WhatsApp" data-en="Book via WhatsApp">Agendar por WhatsApp</a>
+        <a href="https://www.instagram.com/salaslash_/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#17110b]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/profile.jpg" alt="SaLash" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(233,207,164,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.12em] uppercase">SaLash</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Lashes &amp; Brows by Sheyla Salas. Extensiones de pestañas, lifting y diseño de cejas en Miami, FL." data-en="Lashes &amp; Brows by Sheyla Salas. Lash extensions, lifting and brow design in Miami, FL.">Lashes &amp; Brows by Sheyla Salas. Extensiones de pestañas, lifting y diseño de cejas en Miami, FL.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p><a href="https://wa.me/17868151439" target="_blank" rel="noopener" class="hover:text-[#e9cfa4]">WhatsApp · (786) 815-1439</a></p>
+        <p data-es="Miami, FL · Atención con cita previa" data-en="Miami, FL · By appointment only">Miami, FL · Atención con cita previa</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/salaslash_/" target="_blank" rel="noopener" class="hover:text-[#e9cfa4]">Instagram · @salaslash_</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 SaLash · Lashes &amp; Brows by Sheyla Salas.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de WhatsApp -->
+  <a href="https://wa.me/17868151439?text=Hola%20Sheyla!%20Quiero%20agendar%20una%20cita%20%F0%9F%A4%8D" target="_blank" rel="noopener" class="book-float" aria-label="Agendar cita por WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#f6f1ea"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'en' ? 'en' : 'es');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // 1. Preloader de marca (max 1.2s)
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + barra de progreso + parallax + back-to-top: UN listener de scroll con rAF
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals editoriales
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores animados
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D sutil en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
