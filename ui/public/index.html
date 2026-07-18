@@ -250,7 +250,7 @@
       const porContactar = reg.filter(b => b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy').length;
       const enCola = queue.filter(q => q.status === 'pending' || q.status === 'processing').length;
       $('stats').innerHTML = [
-        ['Procesados', reg.length], ['Emails enviados', sent], ['Por contactar (DM / WA)', porContactar], ['En cola de forja', enCola]
+        ['Construidos · meta 500', reg.length], ['Emails enviados', sent], ['Por contactar (DM / WA)', porContactar], ['En cola de forja', enCola]
       ].map(([l, v], i) => `<div class="card stat reveal" style="animation-delay:${0.1 + i * 0.05}s"><b>${v}</b><span>${l}</span></div>`).join('');
 
       $('count').textContent = reg.length + ' negocios · primero los que esperan tu contacto';
