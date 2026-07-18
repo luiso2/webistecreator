@@ -30,7 +30,7 @@ Mientras, el agente principal copia el template ejemplar y prepara el esqueleto.
 3. **Copy de titulares**: adaptados del ejemplar, nunca frases de estado tipo "All 26 services, fully visible" o "Your appointment is close by". Si suena a descripcion de UI, esta mal.
 4. **PROHIBIDO `<details>`/acordeones**: menus grandes = 3-4 destacados en cards glass + categorias completas visibles en bloques glass con grid servicio+precio.
 5. **Contraste**: ink oscuro legible, text-shine en rangos profundos, banda final oscura. Nada lavado.
-6. HTML completo, em-dash = 0 (`grep -c "—"`), JSON-LD parsea, toggle de idioma funcional, marcadores presentes: text-shine, orb, glass, btn-3d, reveal, Playfair, merktop-badge, data-es, assets/tailwind.js, preloader, marquee, carousel, counters.
+6. HTML completo, em-dash = 0 (chequear con `grep -c $'\xe2\x80\x94' index.html`), JSON-LD parsea, toggle de idioma funcional, marcadores presentes: text-shine, orb, glass, btn-3d, reveal, Playfair, merktop-badge, data-es, assets/tailwind.js, preloader, marquee, carousel, counters.
 7. Responsive: sin overflow horizontal a 390px (sin widths fijos).
 8. Si el negocio no encaja en el formato (ecommerce, mayorista, sin servicios reservables): `failed` con motivo, no forzar un demo pobre.
 
