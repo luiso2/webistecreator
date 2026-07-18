@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f8f2e4" />
+  <title>WildChild Beauty Studio · Lash & Brow Studio in West Miami | Book on Booksy</title>
+  <meta name="description" content="WildChild Beauty Studio, West Miami's lash and brow studio with Skin & Lash Artist Mel. Classic, hybrid and volume lash extensions, Korean lash lift, brow styling and glow facials. 4.9 stars, 73 reviews on Booksy. Book online." />
+  <meta property="og:title" content="WildChild Beauty Studio · Lash & Brow Studio in West Miami" />
+  <meta property="og:description" content="Custom lash sets, brow styling and skin facials with Mel. 4.9 stars · 73 reviews on Booksy. Book your appointment online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/hero.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "WildChild Beauty Studio",
+    "description": "West Miami lash and brow studio led by Skin & Lash Artist Mel. Classic, hybrid and volume lash extensions, Korean lash lift, brow styling, facials and waxing.",
+    "telephone": "+1-305-213-1715",
+    "email": "wildchildbeauty.studio@gmail.com",
+    "image": "assets/raw/hero.jpg",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "601 SW 57th Ave, 2nd floor Suite I-35",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "postalCode": "33144",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 25.76231, "longitude": -80.29583 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday"], "opens": "10:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "12:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/wildchild.beauty/",
+      "https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "73", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Lash, brow and skin services",
+      "itemListElement": [
+        { "@type": "Offer", "price": "90", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Classic Set - Natural", "serviceType": "Lash Extensions" } },
+        { "@type": "Offer", "price": "135", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Volume Set - Dark/fluffy look", "serviceType": "Lash Extensions" } },
+        { "@type": "Offer", "price": "113", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Hybrid Set", "serviceType": "Lash Extensions" } },
+        { "@type": "Offer", "price": "108", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Korean Lash Lift", "serviceType": "Lash Lift" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8f2e4;
+      --bg-2: #efe4cd;
+      --surface: rgba(252,247,238,0.72);
+      --ink: #2b2712;
+      --ink-60: rgba(43,39,18,0.62);
+      --ink-40: rgba(43,39,18,0.42);
+      --accent-deep: #5b5823;
+      --accent-mid: #82803f;
+      --accent-soft: #efe4cd;
+      --accent-ghost: rgba(91,88,35,0.16);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(91,88,35,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,247,241,0.88);
+      border-color: rgba(91,88,35,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(43,39,18,0.14), 0 0 40px rgba(91,88,35,0.08);
+    }
+
+    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
+    .text-shine {
+      background: linear-gradient(110deg, #5b5823 0%, #93904a 30%, #3a3712 52%, #5b5823 75%, #a39c52 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs taupe/crema sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #dcd5ab 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #b7ae82 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #c9c093 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D mocha */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #82803f 0%, #5b5823 48%, #454316 100%);
+      color: #f8f2e4; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(51,48,15,0.4),
+        0 5px 0 #33300f,
+        0 12px 24px rgba(43,39,18,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(51,48,15,0.4), 0 7px 0 #33300f, 0 18px 34px rgba(43,39,18,0.32), 0 0 40px rgba(91,88,35,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(51,48,15,0.45), 0 1px 0 #33300f, 0 4px 10px rgba(43,39,18,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(91,88,35,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(91,88,35,0.7); background: rgba(91,88,35,0.08); box-shadow: 0 10px 26px rgba(43,39,18,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(248,242,228,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(43,39,18,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(43,39,18,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(91,88,35,0.14), inset 0 -60px 100px rgba(43,39,18,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #82803f, #3a3712);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #5b5823; letter-spacing: 2px; text-shadow: 0 0 14px rgba(91,88,35,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f8f2e4;
+      --ink-60: rgba(248,242,228,0.65);
+      --ink-40: rgba(248,242,228,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,214,183,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e3d7a0 0%, #f4eeda 30%, #b7ae82 52%, #e3d7a0 75%, #eee0ab 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(227,215,160,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(157,152,90,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #faf6e4 0%, #e8e0b0 48%, #c9c17f 100%);
+      color: #2b2712;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(110,100,40,0.35),
+        0 5px 0 #7d7a3a,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,100,40,0.35), 0 7px 0 #7d7a3a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(227,215,160,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,100,40,0.4), 0 1px 0 #7d7a3a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(227,215,160,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(227,215,160,0.7); background: rgba(227,215,160,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e3d7a0; text-shadow: 0 0 14px rgba(227,215,160,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #82803f 0%, #5b5823 100%);
+      box-shadow: 0 6px 0 #33300f, 0 14px 30px rgba(43,39,18,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #33300f, 0 20px 40px rgba(43,39,18,0.4), 0 0 34px rgba(91,88,35,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #33300f, 0 6px 14px rgba(43,39,18,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
+      border: 1px solid rgba(91,88,35,0.35); background: rgba(91,88,35,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #454316 0%, #5b5823 45%, #c9ab7f 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 7. Carrusel de testimonios */
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(43,39,18,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    /* 8. Boton magnetico (offset via translate, spring back) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare (cards de servicios) */
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    /* 10. Cursor glow calido en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(227,215,160,0.14) 0%, rgba(91,88,35,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de reservas vive abajo-derecha) */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(91,88,35,0.5); transform: translateY(-3px); }
+
+
+    /* ============ Motion v3 (premium+) ============ */
+    /* Split-text del hero: cada palabra sube en cascada */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    /* Numeral editorial gigante por seccion */
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    /* Captions de galeria al hover */
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf6ee;
+      background: linear-gradient(180deg, transparent 0%, rgba(30,22,14,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    /* Cursor custom: anillo que sigue al puntero (solo desktop) */
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    /* Marca de agua tipografica del footer */
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(227,215,160,0.09); pointer-events: none; user-select: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">W</span>
+    <span class="pre-word">WildChild</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(91,88,35,0.35)] bg-[rgba(91,88,35,0.1)] text-[color:var(--accent-deep)]">W</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">WildChild <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Beauty Studio</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="nav-link" href="#ritual" data-es="El Proceso" data-en="The Process">The Process</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full w-10 h-10 sm:w-auto sm:px-4 py-2 text-xs font-semibold flex items-center justify-center" aria-label="Switch language">ES</button>
+        <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book Now">Book Now</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Open menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual" data-es="El Proceso" data-en="The Process">The Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book Now">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="West Miami · Estudio de Pestañas y Cejas" data-en="West Miami · Skin & Lash Studio">West Miami · Skin & Lash Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Deja que tu mirada corra libre." data-en="Let your lashes run wild.">Let your lashes run wild.</p>
+        <h1 id="heroH1" class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" data-h1-es="Pestañas con actitud,<br />belleza <span class=&quot;text-shine&quot;>natural</span>" data-h1-en="Bold lashes,<br /><span class=&quot;text-shine&quot;>natural</span> you">
+          Bold lashes,<br /><span class="text-shine">natural</span> you
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Sets de pestañas a medida, diseño de cejas y facials para la piel, de la mano de Mel, Skin & Lash Artist, en un estudio tranquilo de West Miami." data-en="Custom lash sets, brow shaping and skin facials, hand-crafted by Mel, Skin & Lash Artist, in a calm West Miami studio.">Custom lash sets, brow shaping and skin facials, hand-crafted by Mel, Skin &amp; Lash Artist, in a calm West Miami studio.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]"><span data-es="4.9 · 73 reseñas en Booksy" data-en="4.9 · 73 reviews on Booksy">4.9 · 73 reviews on Booksy</span></span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar cita" data-en="Book Now">Book Now</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+13052131715" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (305) 213-1715
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/hero.jpg" alt="Closeup of full volume lash extensions applied at WildChild Beauty Studio" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Servicio insignia" data-en="Signature service">Signature service</p>
+            <p class="font-display text-lg">Classic Set - Natural</p>
+            <p class="text-sm text-[color:var(--ink-60)]">2h 30min · $90</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="73">73</span> <span data-es="reseñas en Booksy" data-en="reviews on Booksy">reviews on Booksy</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span data-es="Sets de" data-en="Lash">Lash</span> <span class="text-shine" data-es="pestañas" data-en="Extensions">Extensions</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Classic, hybrid y volume" data-en="Classic, hybrid & volume">Classic, hybrid &amp; volume</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Classic Set <span class="text-shine">$90</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Servicio insignia" data-en="Signature service">Signature service</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">West Miami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">601 SW 57th Ave, 33144</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Lash Extensions</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Korean Lash Lift</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brow Styling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Skin Facials</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">West Miami</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Lash Extensions</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Korean Lash Lift</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brow Styling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Skin Facials</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">West Miami</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/about-1.jpg" alt="Closeup of a natural, well-groomed brow shaped at WildChild Beauty Studio" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/about-2.jpg" alt="WildChild neon studio sign with before and after brow and lash results" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un estudio con" data-en="A studio with">A studio with</span><br /><span class="text-shine" data-es="carácter propio" data-en="character">character</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="WildChild Beauty Studio es el estudio de pestañas y cejas de Mel en West Miami: un espacio tranquilo donde cada set de pestañas, diseño de cejas o facial se hace a mano, con precisión y sin prisa." data-en="WildChild Beauty Studio is Mel's lash and brow studio in West Miami: a calm space where every lash set, brow style or facial is done by hand, with precision and without rushing.">WildChild Beauty Studio is Mel's lash and brow studio in West Miami: a calm space where every lash set, brow style or facial is done by hand, with precision and without rushing.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Con 4.9 estrellas y 73 reseñas en Booksy, sus clientas repiten por la misma razón: atención uno a uno y resultados que" data-en="With 4.9 stars and 73 reviews on Booksy, clients come back for the same reason: one-on-one attention and results that">With 4.9 stars and 73 reviews on Booksy, clients come back for the same reason: one-on-one attention and results that <em class="font-script text-[color:var(--accent-deep)]" data-es="se notan." data-en="show.">show.</em></p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="73">73</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal attention">Personal attention</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="Lo que hacemos" data-en="What we do">What we do</p>
+          <div class="flex flex-wrap gap-3">
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light">Lash Extensions</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light">Korean Lash Lift</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Diseño de Cejas" data-en="Brow Styling">Brow Styling</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Facials" data-en="Skin Facials">Skin Facials</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Depilación con cera" data-en="Waxing">Waxing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROCESO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="El proceso, paso a paso" data-en="The process, step by step">The process, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así se vive un" data-en="Inside a">Inside a</span> <span class="text-shine" data-es="lash appointment" data-en="lash appointment">lash appointment</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Consulta y preparación" data-en="Consult & Prep">Consult &amp; Prep</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablamos del look que buscas, revisamos tus pestañas naturales y preparamos el ojo con una limpieza suave antes de empezar." data-en="We talk through the look you want, check your natural lashes, and gently cleanse the eye area before we begin.">We talk through the look you want, check your natural lashes, and gently cleanse the eye area before we begin.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Mapeo a tu medida" data-en="Custom Mapping">Custom Mapping</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Mel mapea el set (classic, hybrid o volume) según la forma de tu ojo, para un resultado que se vea natural en ti." data-en="Mel maps out your set (classic, hybrid or volume) to the shape of your eye, so the result looks natural on you.">Mel maps out your set (classic, hybrid or volume) to the shape of your eye, so the result looks natural on you.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Aplicación con precisión" data-en="Precision Application">Precision Application</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Extensión por extensión, con cuidado de tu comodidad y de la salud de tu pestaña natural, buscando la mejor retención." data-en="Lash by lash, with care for your comfort and your natural lash health, for the best possible retention.">Lash by lash, with care for your comfort and your natural lash health, for the best possible retention.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cuidado y refill" data-en="Aftercare & Refill">Aftercare &amp; Refill</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con indicaciones claras de cuidado en casa y un plan de refill para mantener tu set luciendo impecable." data-en="You leave with clear at-home care tips and a refill plan to keep your set looking fresh.">You leave with clear at-home care tips and a refill plan to keep your set looking fresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lashes and brows, con" data-en="Lashes and brows, with">Lashes and brows, with</span> <span class="text-shine" data-es="precios reales" data-en="real prices">real prices</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por WildChild Beauty Studio en Booksy. Reserva online con confirmación inmediata." data-en="Prices and durations as published by WildChild Beauty Studio on Booksy. Book online with instant confirmation.">Prices and durations as published by WildChild Beauty Studio on Booksy. Book online with instant confirmation.</p>
+      </div>
+
+      <!-- Destacados -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-16">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Extensiones" data-en="Lash Extensions">Lash Extensions</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Classic Set - Natural</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Extensiones clásicas, una a una, para un look natural que realza tu mirada sin recargarla." data-en="Classic one-to-one lash extensions for a natural look that enhances your eyes without overdoing it.">Classic one-to-one lash extensions for a natural look that enhances your eyes without overdoing it.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$90</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p>
+            </div>
+            <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(91,88,35,0.4); box-shadow: 0 18px 50px rgba(43,39,18,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Servicio insignia" data-en="Signature service">Signature service</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Volume Set - Dark/fluffy look</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Multiples extensiones ultra finas por pestaña natural para un efecto denso, oscuro y dramático." data-en="Multiple ultra-fine extensions per natural lash for a full, dark, dramatic effect.">Multiple ultra-fine extensions per natural lash for a full, dark, dramatic effect.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$135</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 25min</p>
+            </div>
+            <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Extensiones" data-en="Lash Extensions">Lash Extensions</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Hybrid Set</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="La mezcla entre classic y volume: textura y densidad, con un resultado suave y personalizado." data-en="The mix between classic and volume: texture and density, for a soft, customized result.">The mix between classic and volume: texture and density, for a soft, customized result.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$113</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p>
+            </div>
+            <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lash Lift" data-en="Lash Lift">Lash Lift</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Korean Lash Lift</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Curva suave hacia arriba en tus propias pestañas, para una mirada más abierta sin extensiones." data-en="A soft upward curl on your own lashes for a more open-eyed look, no extensions needed.">A soft upward curl on your own lashes for a more open-eyed look, no extensions needed.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$108</p>
+            </div>
+            <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu completo agrupado por categoria -->
+      <div class="mb-10">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Menú completo" data-en="Full menu">Full menu</p>
+        <h3 class="reveal font-display text-2xl sm:text-3xl" data-es="Todos los servicios, precios claros" data-en="Every service, transparent pricing">Every service, transparent pricing</h3>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="glass rounded-3xl p-7 reveal">
+          <h4 class="font-display text-xl mb-1">Lash Extensions</h4>
+          <p class="text-[11px] uppercase tracking-wide text-[color:var(--ink-40)] mb-5"><span data-count="16">16</span> <span data-es="servicios" data-en="services">services</span></p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Classic Set - Natural</span><span class="font-display whitespace-nowrap">$90 <span class="text-[10px] text-[color:var(--ink-40)]">· 2h 30min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Classic Refill</span><span class="font-display whitespace-nowrap">$66 <span class="text-[10px] text-[color:var(--ink-40)]">· 1h 15min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Volume Set - Dark/fluffy</span><span class="font-display whitespace-nowrap">$135 <span class="text-[10px] text-[color:var(--ink-40)]">· 2h 25min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Volume Refill</span><span class="font-display whitespace-nowrap">$86 <span class="text-[10px] text-[color:var(--ink-40)]">· 1h 45min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Hybrid Set</span><span class="font-display whitespace-nowrap">$113 <span class="text-[10px] text-[color:var(--ink-40)]">· 2h 30min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Hybrid Refill</span><span class="font-display whitespace-nowrap">$72</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Wispy Set</span><span class="font-display whitespace-nowrap">$117</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">WildChild Hybrid Set</span><span class="font-display whitespace-nowrap">$122</span></div>
+            <div class="flex items-baseline justify-between gap-4"><span class="text-[color:var(--ink-60)] font-light">Wet Set</span><span class="font-display whitespace-nowrap">$110</span></div>
+          </div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4" data-es="+ Volume Set $150 · Soft Cocoa Set $120 · Petite Set $89.99 · Emergency Refill $45 · Lash Removal $20 · Removal $5 · Lash Bath $15" data-en="+ Volume Set $150 · Soft Cocoa Set $120 · Petite Set $89.99 · Emergency Refill $45 · Lash Removal $20 · Removal $5 · Lash Bath $15">+ Volume Set $150 · Soft Cocoa Set $120 · Petite Set $89.99 · Emergency Refill $45 · Lash Removal $20 · Removal $5 · Lash Bath $15</p>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:80ms">
+          <h4 class="font-display text-xl mb-1"><span data-es="Planes de Refill" data-en="Lash Refill Plans">Lash Refill Plans</span></h4>
+          <p class="text-[11px] uppercase tracking-wide text-[color:var(--ink-40)] mb-5"><span data-count="5">5</span> <span data-es="servicios" data-en="services">services</span></p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Gentle Lash Release</span><span class="font-display whitespace-nowrap">$25</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Lash Tint Glow</span><span class="font-display whitespace-nowrap">$20</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Lash SOS Refill</span><span class="font-display whitespace-nowrap">$50</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Fresh Fill (1 Week)</span><span class="font-display whitespace-nowrap">$75.99</span></div>
+            <div class="flex items-baseline justify-between gap-4"><span class="text-[color:var(--ink-60)] font-light">Full Renewal Fill</span><span class="font-display whitespace-nowrap">$90</span></div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:120ms">
+          <h4 class="font-display text-xl mb-1"><span data-es="Lash Lift y Cejas" data-en="Lash Lift &amp; Brow">Lash Lift &amp; Brow</span></h4>
+          <p class="text-[11px] uppercase tracking-wide text-[color:var(--ink-40)] mb-5"><span data-count="5">5</span> <span data-es="servicios" data-en="services">services</span></p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Korean Lash Lift</span><span class="font-display whitespace-nowrap">$108</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Eyebrow Shaping - Wax</span><span class="font-display whitespace-nowrap">$20 <span class="text-[10px] text-[color:var(--ink-40)]">· 15min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Eyebrow Tint</span><span class="font-display whitespace-nowrap">$12</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Eye Brow Wax</span><span class="font-display whitespace-nowrap">$20</span></div>
+            <div class="flex items-baseline justify-between gap-4"><span class="text-[color:var(--ink-60)] font-light"><span data-es="Reflejos de ceja" data-en="Brow color highlights">Brow color highlights</span></span><span class="font-display whitespace-nowrap">$15</span></div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:160ms">
+          <h4 class="font-display text-xl mb-1"><span data-es="Facials y Piel" data-en="Facials &amp; Skincare">Facials &amp; Skincare</span></h4>
+          <p class="text-[11px] uppercase tracking-wide text-[color:var(--ink-40)] mb-5"><span data-count="8">8</span> <span data-es="servicios" data-en="services">services</span></p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">The Glow Goddess Facial</span><span class="font-display whitespace-nowrap">$190</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">WildChild Signature Facial</span><span class="font-display whitespace-nowrap">$110</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Clarifying Detox Facial</span><span class="font-display whitespace-nowrap">$120</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Deep Cleansing Facial</span><span class="font-display whitespace-nowrap">$70 <span class="text-[10px] text-[color:var(--ink-40)]">· 1h 15min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4"><span class="text-[color:var(--ink-60)] font-light">Basic Facial Cleansing</span><span class="font-display whitespace-nowrap">$75 <span class="text-[10px] text-[color:var(--ink-40)]">· 50min</span></span></div>
+          </div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4" data-es="+ Sacred Back Ritual $110 · Luminous Light Therapy $75 · Radiance Refresh Facial $85" data-en="+ Sacred Back Ritual $110 · Luminous Light Therapy $75 · Radiance Refresh Facial $85">+ Sacred Back Ritual $110 · Luminous Light Therapy $75 · Radiance Refresh Facial $85</p>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:200ms">
+          <h4 class="font-display text-xl mb-1"><span data-es="Depilación con cera" data-en="Waxing">Waxing</span></h4>
+          <p class="text-[11px] uppercase tracking-wide text-[color:var(--ink-40)] mb-5"><span data-count="16">16</span> <span data-es="servicios" data-en="services">services</span></p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Complete Facial Wax</span><span class="font-display whitespace-nowrap">$55 <span class="text-[10px] text-[color:var(--ink-40)]">· 30min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Upper Lip - Wax</span><span class="font-display whitespace-nowrap">$10 <span class="text-[10px] text-[color:var(--ink-40)]">· 15min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Under Arms - Wax</span><span class="font-display whitespace-nowrap">$25 <span class="text-[10px] text-[color:var(--ink-40)]">· 25min</span></span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Legs (Full)</span><span class="font-display whitespace-nowrap">$85</span></div>
+            <div class="flex items-baseline justify-between gap-4"><span class="text-[color:var(--ink-60)] font-light">Legs (Half)</span><span class="font-display whitespace-nowrap">$55</span></div>
+          </div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4" data-es="+ Waxing - Lip and Chin $13 · Polished Chin $15 · Soft Side Sweep $20 · Smooth Arms Full/Half $45/$30 · Bare Back $45 · Sleek Chest $60 · Smooth Stomach $40 · Glow Face Wax $40" data-en="+ Waxing - Lip and Chin $13 · Polished Chin $15 · Soft Side Sweep $20 · Smooth Arms Full/Half $45/$30 · Bare Back $45 · Sleek Chest $60 · Smooth Stomach $40 · Glow Face Wax $40">+ Waxing - Lip and Chin $13 · Polished Chin $15 · Soft Side Sweep $20 · Smooth Arms Full/Half $45/$30 · Bare Back $45 · Sleek Chest $60 · Smooth Stomach $40 · Glow Face Wax $40</p>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:240ms">
+          <h4 class="font-display text-xl mb-1"><span data-es="Contorno Corporal" data-en="Body Contouring">Body Contouring</span></h4>
+          <p class="text-[11px] uppercase tracking-wide text-[color:var(--ink-40)] mb-5"><span data-count="8">8</span> <span data-es="servicios" data-en="services">services</span></p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Miami Sleek Body</span><span class="font-display whitespace-nowrap">$130</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Booty Lift</span><span class="font-display whitespace-nowrap">$80</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Core Contour</span><span class="font-display whitespace-nowrap">$80</span></div>
+            <div class="flex items-baseline justify-between gap-4 border-b border-[color:var(--accent-ghost)] pb-3"><span class="text-[color:var(--ink-60)] font-light">Thigh Tone</span><span class="font-display whitespace-nowrap">$75</span></div>
+            <div class="flex items-baseline justify-between gap-4"><span class="text-[color:var(--ink-60)] font-light">Smooth &amp; Sculpt Cellulite Package</span><span class="font-display whitespace-nowrap">$660</span></div>
+          </div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4" data-es="+ Back Define $70 · Leg Smooth $70 · Arm Refine $65" data-en="+ Back Define $70 · Leg Smooth $70 · Arm Refine $65">+ Back Define $70 · Leg Smooth $70 · Arm Refine $65</p>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-10" data-es="Precios publicados en Booksy al momento de la consulta. Tarjetas y efectivo aceptados." data-en="Prices as currently listed on Booksy. Cards and cash accepted.">Prices as currently listed on Booksy. Cards and cash accepted.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Resultados" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="results">results</span></h2>
+        </div>
+        <a href="https://www.instagram.com/wildchild.beauty/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @wildchild.beauty
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">Volume Set</span><img src="assets/raw/gallery-1.jpg" alt="Full volume lash extensions with a soft pink color accent, finished result" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">Classic Set</span><img src="assets/raw/gallery-2.jpg" alt="Dramatic classic lash extensions, finished result closeup" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">Korean Lash Lift</span><img src="assets/raw/gallery-3.jpg" alt="Before and after triptych of a Korean lash lift result" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">Hybrid Set</span><img src="assets/raw/gallery-4.jpg" alt="Hybrid lash extensions on both eyes, moody studio lighting" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">Lash Lift</span><img src="assets/raw/gallery-5.jpg" alt="Before and after lash lift result on a client's eye" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">Volume Set</span><img src="assets/raw/gallery-6.jpg" alt="Full volume lash extensions closeup, finished result" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal" style="transition-delay:240ms"><span class="tile-cap" data-es="Clienta feliz" data-en="Happy client">Happy client</span><img src="assets/raw/gallery-7.jpg" alt="Client smiling with finished lash extensions, natural light" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Classic Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Volume Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hybrid Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Skin & Lash Artist</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">West Miami, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Classic Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Volume Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hybrid Set</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Skin & Lash Artist</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">West Miami, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What">What</span> <span class="text-shine" data-es="nuestras clientas" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.9 de 5 · 73 reseñas en Booksy" data-en="4.9 of 5 · 73 reviews on Booksy">4.9 of 5 · 73 reviews on Booksy</span></p>
+      </div>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Client reviews">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mel is amazing at what she does! She completes her services with careful precision, makes sure you're comfortable (even to speak freely), and knows how to achieve the exact look you ask for. She's amazing, definitely will be returning for more."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Isabel O.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mel L LOVEEEE coming here. Such a peaceful environment and she always does an amazing job. The retention is by far the best."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Caroline S.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I had an amazing experience getting a Korean lash lift! She took the time to thoroughly explain the differences between a Korean lash lift and a traditional lash lift. My lashes came out absolutely amazing, beautifully lifted, natural, and exactly what I was hoping for."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Darcie</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mel was amazing and so sweet from the moment I walked in. My lashes turned out absolutely amazing."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Kaylee</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"An absolute artist and lovely soul."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Leila</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-es="Leer las 73 reseñas en Booksy" data-en="Read all 73 reviews on Booksy">Read all 73 reviews on Booksy</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu cita está" data-en="Your appointment is">Your appointment is</span> <span class="text-shine" data-es="cerca" data-en="close by">close by</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">601 SW 57th Ave, 2nd floor Suite I-35, Miami, FL 33144</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(91,88,35,0.4)]" href="https://www.google.com/maps?q=601+SW+57th+Ave,+Miami,+FL+33144" target="_blank" rel="noopener"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Lunes, Martes, Jueves: 10:00 AM a 8:00 PM" data-en="Mon, Tue, Thu: 10:00 AM to 8:00 PM">Mon, Tue, Thu: 10:00 AM to 8:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Miércoles: 12:00 PM a 8:00 PM" data-en="Wed: 12:00 PM to 8:00 PM">Wed: 12:00 PM to 8:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Viernes: 9:00 AM a 8:00 PM" data-en="Fri: 9:00 AM to 8:00 PM">Fri: 9:00 AM to 8:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Sábado: 9:00 AM a 6:00 PM · Domingo cerrado" data-en="Sat: 9:00 AM to 6:00 PM · Closed Sunday">Sat: 9:00 AM to 6:00 PM · Closed Sunday</span></p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Booking">Booking</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Booksy: <a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener">WildChild Beauty Studio</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono" data-en="Phone">Phone</span>: <a class="text-[color:var(--accent-deep)]" href="tel:+13052131715">(305) 213-1715</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: WildChild Beauty Studio, 601 SW 57th Ave, Miami FL"
+          src="https://www.google.com/maps?q=601+SW+57th+Ave,+Miami,+FL+33144&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #211f0f 0%, #17150a 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Deja que tu mirada corra libre." data-en="Let your lashes run wild.">Let your lashes run wild.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próximo set te está" data-en="Your next set is">Your next set is</span> <span class="text-shine" data-es="esperando" data-en="waiting">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos en Booksy. Elige el set, el día y la hora, y deja que Mel haga el resto." data-en="Book online in seconds on Booksy. Choose your set, pick a day and time, and let Mel take care of the rest.">Book online in seconds on Booksy. Choose your set, pick a day and time, and let Mel take care of the rest.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span></a>
+        <a href="tel:+13052131715" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#15130a]">
+    <span class="foot-mark" aria-hidden="true">WildChild</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(227,215,160,0.35)] bg-[rgba(227,215,160,0.08)] text-[#e3d7a0]">W</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">WildChild Beauty Studio</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de pestañas y cejas en West Miami. Lash extensions, Korean lash lift, diseño de cejas y facials con Mel, Skin & Lash Artist." data-en="Lash and brow studio in West Miami. Lash extensions, Korean lash lift, brow styling and facials with Mel, Skin & Lash Artist.">Lash and brow studio in West Miami. Lash extensions, Korean lash lift, brow styling and facials with Mel, Skin &amp; Lash Artist.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>601 SW 57th Ave, 2nd floor Suite I-35, Miami, FL 33144</p>
+        <p><a href="tel:+13052131715" class="hover:text-[#e3d7a0]">(305) 213-1715</a></p>
+        <p><a href="mailto:wildchildbeauty.studio@gmail.com" class="hover:text-[#e3d7a0]">wildchildbeauty.studio@gmail.com</a></p>
+        <p><span data-es="Cerrado los domingos" data-en="Closed Sundays">Closed Sundays</span></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow us">Follow us</p>
+        <p><a href="https://www.instagram.com/wildchild.beauty/" target="_blank" rel="noopener" class="hover:text-[#e3d7a0]">Instagram · @wildchild.beauty</a></p>
+        <p><a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="hover:text-[#e3d7a0]"><span data-es="Reservas online" data-en="Book online">Book online</span> · Booksy</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]" data-es="© 2026 WildChild Beauty Studio. Todos los derechos reservados." data-en="© 2026 WildChild Beauty Studio. All rights reserved.">© 2026 WildChild Beauty Studio. All rights reserved.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami" target="_blank" rel="noopener" class="book-float" aria-label="Book on Booksy">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f8f2e4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba (abajo-izquierda) -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + 2. barra de progreso + 3. parallax + 11. back-to-top: UN solo listener de scroll con rAF
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // 4. Reveals editoriales: texto (.reveal) + imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (decimales respetados)
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+
+    // v3: split-text del hero (palabra por palabra, respeta spans internos)
+    const splitize = (el) => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+    };
+    document.querySelectorAll('.split').forEach(el => { splitize(el); io.observe(el); });
+
+    // Bilingual toggle (ES|EN): generic data-es/data-en textContent swap + special-case
+    // re-split of the hero h1 (which stores per-language HTML in data-h1-es/data-h1-en).
+    // On a manual toggle (page already visible) the swap is instant; the DOM's default
+    // language content keeps its normal scroll-triggered cascade on first load.
+    const langToggle = document.getElementById('langToggle');
+    const heroH1 = document.getElementById('heroH1');
+    const applyLang = (l, isManualToggle) => {
+      document.querySelectorAll('[data-es]').forEach(el => {
+        const val = el.dataset[l] || el.dataset.es;
+        if (val !== undefined) el.textContent = val;
+      });
+      if (heroH1) {
+        const html = l === 'es' ? heroH1.dataset.h1Es : heroH1.dataset.h1En;
+        if (html) {
+          heroH1.innerHTML = html;
+          splitize(heroH1);
+          if (isManualToggle) { heroH1.classList.add('in'); } else { io.observe(heroH1); }
+        }
+      }
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      if (langToggle) langToggle.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    const savedLang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    const initialLang = savedLang === 'es' ? 'es' : 'en';
+    if (initialLang === 'es') {
+      applyLang('es', false);
+    } else {
+      document.documentElement.lang = 'en';
+      if (langToggle) langToggle.textContent = 'ES';
+    }
+    if (langToggle) langToggle.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es', true));
+
+    // v3: cursor ring (solo desktop, lerp con rAF)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // 8. Botones magneticos (max 6px, spring back). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // 9. Tilt 3D sutil en cards de servicios (max 3deg + glare). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // 10. Cursor glow calido en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>

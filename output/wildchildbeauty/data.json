@@ -1,0 +1,206 @@
+{
+  "slug": "wildchildbeauty",
+  "name": "WildChild Beauty Studio",
+  "owner": "Mel (Meleny Lahera) - Skin & Lash Artist",
+  "niche": "Lash & Brow studio (also facials/skincare, waxing, body contouring)",
+  "city": "Miami, FL (West Miami / near Westchester, 33144)",
+  "address": {
+    "full": "601 SW 57th Ave, 2nd floor Suite I-35, Miami, FL 33144",
+    "street": "601 SW 57th Ave, Second floor Suite I, 35",
+    "locality": "Miami",
+    "region": "FL",
+    "postal_code": "33144",
+    "country": "US",
+    "geo": { "lat": 25.76231, "lng": -80.29583 },
+    "source": "JSON-LD (schema.org HealthAndBeautyBusiness) embebido en la pagina de Booksy (business id 689069), coincide con la direccion provista en la tarea"
+  },
+  "phone": "+1-305-213-1715",
+  "phone_display": "(305) 213-1715",
+  "phone_source": "Confirmado en el HTML de Booksy (tel link) y en WebSearch (Yelp/salonsbyjc listan el mismo numero)",
+  "email": "wildchildbeauty.studio@gmail.com",
+  "email_source": "Provisto en la tarea, confirmado por WebSearch (snippet de salonsbyjc.com lista el mismo email). No aparece en el JSON-LD de Booksy (Booksy no expone email publico para este negocio). No se encontro otro email mas directo.",
+  "instagram": {
+    "primary_handle": "@wildchild.beauty",
+    "primary_url": "https://www.instagram.com/wildchild.beauty/",
+    "full_name_field": "Mel | Skin & Lash Artist",
+    "note": "El endpoint instagram.com/api/v1/users/web_profile_info devolvio un error de backend especifico de esta cuenta en los 2 intentos permitidos (\"Asset asset://laser.provider/ig_business_category_subvertical has been deleted\", HTTP 400), reproducible con multiples headers/UA/app-id; NO es rate limiting (otros usernames de control funcionaron con el mismo endpoint en la misma sesion). Se confirmo que la cuenta existe y su bio via WebSearch (snippet: \"Mel | Skin & Lash Artist (@wildchild.beauty)\"). No se pudo extraer el feed de fotos ni el external_url de la bio por esta via; se uso Booksy como fuente principal de imagenes segun lo permite el pipeline cuando IG bloquea tras 2 intentos."
+  },
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": ["wildchildbeauty.com (no resuelve, proxy 502)", "wildchildbeautystudio.com (no resuelve)", "wildchildbeautystudio.co (no resuelve)", "wildchildlashesbeauty.com (no resuelve)", "wildchildbeautymiami.com (no resuelve)"],
+    "sameAs_domain_found": "El JSON-LD de Booksy lista sameAs: https://wildchild.studio -- se verifico este dominio: redirige a /lander que a su vez redirige (307) a forsale.godaddy.com/forsale/wildchild.studio, es decir es un dominio PARQUEADO EN VENTA en GoDaddy, sin sitio real construido. No cuenta como website propio activo.",
+    "conclusion": "NO tiene website propio activo. has_own_site: false confirmado. Angulo de outreach: 'les construi un website de muestra'."
+  },
+  "booking": {
+    "platform_primary": "Booksy",
+    "booksy_url": "https://booksy.com/en-us/689069_wildchild-beauty-studio_brows-lashes_15889_miami",
+    "booksy_business_id": 689069,
+    "also_on": ["Vagaro", "ClassPass (listado como Wild Child Beauty Studio, Coral Gables)"],
+    "note": "Booksy es el canal de reserva mas activo y con el JSON-LD mas completo (rating, horarios, 59 servicios con precio); se uso como CTA principal del site."
+  },
+  "rating": {
+    "booksy": { "value": 4.9, "value_exact": 4.917808219178082, "count": 73, "source": "JSON-LD schema.org embebido en la pagina de Booksy: aggregateRating ratingValue=4.917808219178082 (redondea a 4.9), reviewCount=73. Confirma exactamente el dato provisto en la tarea." },
+    "yelp_note": "WebSearch encontro un listado de Yelp para una direccion anterior/alterna (2 Aragon Ave, Coral Gables) con 4.6 estrellas y 36 resenas. No se uso como dato principal del site: la direccion activa y el canal de reserva actual (Booksy) corresponden a 601 SW 57th Ave, Miami 33144, que es la direccion que la tarea pidio verificar y la que confirma el JSON-LD de Booksy."
+  },
+  "hours": {
+    "source": "JSON-LD schema.org openingHoursSpecification embebido en la pagina de Booksy",
+    "schedule": [
+      { "days": ["Monday", "Tuesday", "Thursday"], "open": "10:00", "close": "20:00" },
+      { "days": ["Wednesday"], "open": "12:00", "close": "20:00" },
+      { "days": ["Friday"], "open": "09:00", "close": "20:00" },
+      { "days": ["Saturday"], "open": "09:00", "close": "18:00" }
+    ],
+    "closed": ["Sunday"],
+    "note": "Sunday no aparece en el openingHoursSpecification de Booksy, lo que indica cerrado los domingos."
+  },
+  "services": {
+    "source": "JSON-LD makesOffer (59 offers) embebido en la pagina de Booksy, complementado con duraciones visibles en el HTML server-renderizado para el primer bloque de categorias (waxing/facial/lash removal). Duraciones no confirmadas se omitieron (solo se muestra precio).",
+    "price_range_booksy": "USD 5 - 660",
+    "featured_for_site": [
+      { "name": "Classic Set - Natural", "price": 90, "duration_min": 150, "category": "Lash Extensions" },
+      { "name": "Volume Set - Dark/ fluffy look", "price": 135, "duration_min": 145, "category": "Lash Extensions" },
+      { "name": "Hybrid Set", "price": 113, "duration_min": 150, "category": "Lash Extensions" },
+      { "name": "Korean Lash Lift", "price": 108, "category": "Lash Lift" }
+    ],
+    "categories": [
+      {
+        "name": "Lash Extensions",
+        "items": [
+          { "name": "Classic Set - Natural", "price": 90, "duration_min": 150 },
+          { "name": "Classic Refill", "price": 66, "duration_min": 75 },
+          { "name": "Volume Set- Dark/ fluffy look", "price": 135, "duration_min": 145 },
+          { "name": "Volume - Refill", "price": 86, "duration_min": 105 },
+          { "name": "Hybrid Set", "price": 113, "duration_min": 150 },
+          { "name": "Hybrid - Refill", "price": 72 },
+          { "name": "Wispy Set", "price": 117 },
+          { "name": "WildChild Hybrid Set", "price": 122 },
+          { "name": "Wet Set", "price": 110 },
+          { "name": "Volume Set", "price": 150 },
+          { "name": "Soft Cocoa Set", "price": 120 },
+          { "name": "Petite Set", "price": 89.99 },
+          { "name": "Emergency Refill", "price": 45, "duration_min": 40 },
+          { "name": "Lash Removal", "price": 20, "duration_min": 15 },
+          { "name": "Removal", "price": 5 },
+          { "name": "Lash Bath", "price": 15, "duration_min": 10 }
+        ]
+      },
+      {
+        "name": "Lash Refill Plans",
+        "items": [
+          { "name": "Gentle Lash Release", "price": 25 },
+          { "name": "Lash Tint Glow", "price": 20 },
+          { "name": "Lash SOS Refill", "price": 50 },
+          { "name": "Fresh Fill (1 Week)", "price": 75.99 },
+          { "name": "Full Renewal Fill", "price": 90 }
+        ]
+      },
+      {
+        "name": "Lash Lift & Brow",
+        "items": [
+          { "name": "Korean Lash Lift", "price": 108 },
+          { "name": "Eyebrow shaping-wax", "price": 20, "duration_min": 15 },
+          { "name": "Eyebrow Tint", "price": 12 },
+          { "name": "Eye Brow Wax", "price": 20 },
+          { "name": "Brow color highlights", "price": 15 }
+        ]
+      },
+      {
+        "name": "Facials & Skincare",
+        "items": [
+          { "name": "The Glow Goddess Facial", "price": 190 },
+          { "name": "WildChild Signature Facial", "price": 110 },
+          { "name": "Sacred Back Ritual", "price": 110 },
+          { "name": "Clarifying Detox Facial", "price": 120 },
+          { "name": "Luminous Light Therapy", "price": 75 },
+          { "name": "Radiance Refresh Facial", "price": 85 },
+          { "name": "Deep Cleansing Facial", "price": 70, "duration_min": 75 },
+          { "name": "Basic Facial Cleansing", "price": 75, "duration_min": 50 }
+        ]
+      },
+      {
+        "name": "Waxing",
+        "items": [
+          { "name": "Complete Facial Wax", "price": 55, "duration_min": 30 },
+          { "name": "Upper lip-wax", "price": 10, "duration_min": 15 },
+          { "name": "Lip Wax", "price": 10 },
+          { "name": "Waxing - Lip and Chin", "price": 13 },
+          { "name": "Polished Chin", "price": 15 },
+          { "name": "Under Arms-wax", "price": 25, "duration_min": 25 },
+          { "name": "Underarms", "price": 25 },
+          { "name": "Glow Face Wax", "price": 40 },
+          { "name": "Soft Side Sweep", "price": 20 },
+          { "name": "Smooth Arms (Full)", "price": 45 },
+          { "name": "Smooth Arms (Half)", "price": 30 },
+          { "name": "Bare Back", "price": 45 },
+          { "name": "Sleek Chest", "price": 60 },
+          { "name": "Smooth Stomach", "price": 40 },
+          { "name": "Legs (Full)", "price": 85 },
+          { "name": "Legs (Half)", "price": 55 }
+        ],
+        "note_ui": "16 servicios de waxing en total; se muestran todos agrupados en bloque glass, sin acordeon."
+      },
+      {
+        "name": "Body Contouring",
+        "items": [
+          { "name": "Smooth & Sculpt Cellulite Package", "price": 660 },
+          { "name": "Miami Sleek Body", "price": 130 },
+          { "name": "Core Contour", "price": 80 },
+          { "name": "Back Define", "price": 70 },
+          { "name": "Leg Smooth", "price": 70 },
+          { "name": "Thigh Tone", "price": 75 },
+          { "name": "Booty Lift", "price": 80 },
+          { "name": "Arm Refine", "price": 65 }
+        ]
+      }
+    ]
+  },
+  "reviews": [
+    { "name": "Isabel O.", "source": "Booksy / Google", "date": "2026-07-08", "stars": 5, "text": "Mel is amazing at what she does! She completes her services with careful precision, makes sure you're comfortable (even to speak freely), and knows how to achieve the exact look you ask for. She's amazing, definitely will be returning for more." },
+    { "name": "Caroline S.", "source": "Google", "stars": 5, "text": "Mel L LOVEEEE coming here. Such a peaceful environment and she always does an amazing job. The retention is by far the best." },
+    { "name": "Kaylee", "source": "Google", "stars": 5, "text": "Mel was amazing and so sweet from the moment I walked in. My lashes turned out absolutely amazing." },
+    { "name": "Darcie", "source": "Booksy", "date": "2026-06-24", "stars": 5, "text": "I had an amazing experience getting a Korean lash lift! From the start, she provided exceptional customer service by reaching out to let me know about a cancellation, which allowed me to move my appointment up to an earlier time. During the appointment, she took the time to thoroughly explain the differences between a Korean lash lift and a traditional lash lift. My lashes came out absolutely amazing! They look beautifully lifted, natural, and exactly what I was hoping for." },
+    { "name": "Leila", "source": "Booksy", "date": "2026-06-24", "stars": 5, "text": "An absolute artist and lovely soul" }
+  ],
+  "reviews_note": "Isabel, Caroline S. y Kaylee fueron provistas y verificadas en la tarea (Isabel se re-confirmo verbatim casi identico en el JSON-LD de Booksy, con apellido abreviado 'O.' y fecha 2026-07-08). Darcie y Leila son 2 resenas adicionales reales encontradas en el JSON-LD (Review schema) embebido en la pagina de Booksy, no estaban en la lista original.",
+  "brand_vibe": {
+    "description": "Logo oficial de Booksy: wordmark script 'WildChild' en verde oliva oscuro sobre fondo crema calido, con un pequeno icono de hoja/pluma. Fotos del feed muestran estetica limpia, calida, natural (sin neon ni oscuridad dramatica); una foto de negocio ('biz_photo') muestra un letrero de neon dorado 'WildChild' sobre fondo de estudio con motivo de utensilios de lash. Conclusion: marca clara/crema, calida, botanica-editorial, NO oscura.",
+    "base": "clara (light)",
+    "palette_name": "wildchildbeauty (crema calido + oliva profundo, paleta nueva derivada del logo real)",
+    "colors_sampled_from_logo": {
+      "bg_sample": "rgb(248,240,227) = #f8f0e3",
+      "text_sample": "rgb(91,88,35) = #5b5823 (oliva oscuro, muestreado por histograma de color del logo real)"
+    },
+    "colors": {
+      "bg": "#f8f2e4",
+      "bg2": "#efe4cd",
+      "surface": "rgba(252,247,238,0.72)",
+      "ink": "#2b2712",
+      "accent_deep": "#5b5823",
+      "accent_mid": "#82803f",
+      "accent_soft": "#efe4cd",
+      "accent_ghost": "rgba(91,88,35,0.16)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "No se pudo leer el feed/captions de Instagram (endpoint bloqueado, ver nota de instagram arriba). Todas las fuentes verificables (nombres y descripciones de servicios en Booksy, las 5 resenas verbatim, el titulo de categoria de Yelp, snippets de WebSearch) estan en ingles. Mercado West Miami/Westchester/Coral Gables es bilingue pero la presentacion publica del negocio es en ingles. Se uso 'en' como idioma por defecto del site con toggle a ES.",
+  "images_downloaded": {
+    "count": 21,
+    "path": "output/wildchildbeauty/assets/raw/",
+    "source": "Booksy (JSON-LD image/logo + galeria 'inspiration' + 'service_photos' + 1 review_photo, business id 689069). Instagram feed no se pudo usar por el error de backend descrito arriba (2 intentos, luego se paso a Booksy como la fuente principal permitida por el pipeline).",
+    "all_verified": "Las 21 verificadas con `file`: todas JPEG baseline reales, todas 51KB-653KB (todas por encima del umbral de 15KB), ninguna de 0 bytes.",
+    "curation_note": "Se revisaron TODAS visualmente (Read/vision) antes de elegir. Se DESCARTARON de la galeria: fotos con ojos cerrados a medio procedimiento (booksy-insp-1, booksy-svc-4, booksy-svc-7, booksy-svc-8, booksy-svc-10), fotos POV de aplicacion con cinta/herramientas (booksy-insp-5, booksy-svc-2), foto con caption de marketing superpuesto 'SILKY SMOOTH' (booksy-svc-5), infografias before/after con texto superpuesto tipo diagrama (booksy-svc-11, booksy-svc-12), y el collage de 4 fotos (booksy-insp-2, mezcla ojos abiertos/cerrados, demasiado recargado para un tile).",
+    "final_build_filenames": {
+      "assets/raw/hero.jpg": "booksy-svc-6.jpg (resized 1100px) - hero image",
+      "assets/raw/about-1.jpg": "booksy-insp-4.jpg (resized) - experience section, natural brow closeup",
+      "assets/raw/about-2.jpg": "booksy-biz-photo.jpg (resized) - experience section, studio neon sign + before/after collage",
+      "assets/raw/gallery-1.jpg": "booksy-svc-1.jpg (resized) - volume lash with pink accent",
+      "assets/raw/gallery-2.jpg": "booksy-svc-3.jpg (resized) - dramatic classic lash result",
+      "assets/raw/gallery-3.jpg": "booksy-insp-3.jpg (resized) - Korean lash lift before/after triptych",
+      "assets/raw/gallery-4.jpg": "booksy-svc-9.jpg (resized) - hybrid set, both eyes, moody lighting",
+      "assets/raw/gallery-5.jpg": "booksy-insp-6.jpg (resized) - lash lift before/after",
+      "assets/raw/gallery-6.jpg": "booksy-svc-13.jpg (resized) - volume lash closeup",
+      "assets/raw/gallery-7.jpg": "booksy-review-1.jpg (resized) - happy client, both eyes open, natural light",
+      "assets/raw/logo.jpg": "booksy-logo.jpg (resized) - brand logo, used only for palette derivation, not displayed as a tile"
+    }
+  }
+}
