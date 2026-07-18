@@ -285,7 +285,7 @@
 
     /* 8. Boton magnetico (solo desktop) */
     @media (hover: hover) and (pointer: fine) {
-      .magnetic { transition-property: box-shadow; will-change: transform; }
+      .magnetic { transition-property: box-shadow; }
     }
 
     /* 9. Tilt 3D sutil + glare (solo desktop) */
@@ -296,7 +296,6 @@
       background: radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), rgba(207,154,95,0.12), transparent 65%);
     }
     @media (hover: hover) and (pointer: fine) {
-      [data-tilt] { will-change: transform; }
       [data-tilt].tilting { transition: background 0.35s ease, border-color 0.35s ease, transform 0.16s ease-out, box-shadow 0.35s ease; }
       [data-tilt]:hover .tilt-glare { opacity: 1; }
     }
@@ -570,7 +569,7 @@
       <!-- Menu completo agrupado por categoria -->
       <div class="mb-10">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-2" data-es="Menú completo" data-en="Full menu">Menú completo</p>
-        <h3 class="reveal font-display text-2xl sm:text-3xl" data-es="Los 26 servicios, todos a la vista" data-en="All 26 services, fully visible">Los 26 servicios, todos a la vista</h3>
+        <h3 class="reveal font-display text-2xl sm:text-3xl" data-es="El menú completo, precios claros" data-en="The full menu, transparent prices">El menú completo, precios claros</h3>
       </div>
       <div class="grid sm:grid-cols-2 gap-5">
         <div class="glass rounded-3xl p-7 reveal">
@@ -641,14 +640,14 @@
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-        <div class="frame zoomable aspect-[3/4] img-reveal"><img src="assets/raw/ig-1.jpg" alt="Antes y después de Ombre Brows en clienta real de Iconic Beauty Space" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><img src="assets/raw/ig-2-1.jpg" alt="Resultado de Ombre Brows, closeup real" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><img src="assets/raw/ig-2-3.jpg" alt="Detalle de cejas con efecto polvo, resultado real" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><img src="assets/raw/ig-3.jpg" alt="Resultado real de Ombre Brows" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><img src="assets/raw/ig-2-6.jpg" alt="Detalle de pestañas y cejas, resultado real" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><img src="assets/raw/ig-5-2.jpg" alt="Proceso de Ombre Brows en clienta real" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><img src="assets/raw/ig-7.jpg" alt="Antes y después de Ombre Brows y Lip Blush" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-1.5rem] img-reveal" style="transition-delay:240ms"><img src="assets/raw/ig-2-4.jpg" alt="Detalle de resultado Ombre Brows" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal"><img src="assets/raw/ig-2-2.jpg" alt="Closeup de Ombre Brows y extensiones de pestañas, resultado real" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><img src="assets/raw/ig-2-7.jpg" alt="Resultado frontal de cejas y pestañas en clienta real" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><img src="assets/raw/ig-2-4.jpg" alt="Detalle en ángulo de Ombre Brows, resultado real" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><img src="assets/raw/ig-1.jpg" alt="Dos clientas con Ombre Brows terminadas en Iconic Beauty Space" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><img src="assets/raw/ig-2-6.jpg" alt="Perfil elegante con pestañas y cejas terminadas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><img src="assets/raw/ig-3.jpg" alt="Clientas reales tras su cita de cejas en Iconic Beauty Space" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><img src="assets/raw/ig-2-3.jpg" alt="Resultado frontal de Ombre Brows con efecto polvo" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-1.5rem] img-reveal" style="transition-delay:240ms"><img src="assets/raw/ig-2-5.jpg" alt="Retrato suave de clienta con cejas y pestañas terminadas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -734,7 +733,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu cita queda" data-en="Your appointment is">Tu cita queda</span> <span class="text-shine" data-es="cerca" data-en="close by">cerca</span></h2>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine" data-es="Hollywood" data-en="Hollywood">Hollywood</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
