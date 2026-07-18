@@ -1,0 +1,167 @@
+{
+  "slug": "celestespet",
+  "name_legal_booksy": "Celeste's Mobile Pet Spa",
+  "name_brand": "Celeste's Mobile Pet Spa",
+  "owner": "Celeste Gomes",
+  "niche": "Mobile pet grooming (peluqueria canina y felina movil): bath packages, full grooms, deshedding, matted/knot shaves, breed-specific packages for dogs and cats. Business travels to the client's home in a fully equipped grooming trailer.",
+  "city": "Gainesville, FL",
+  "service_area_note": "Mobile-only business, no walk-in storefront. Booksy's public listing intentionally shows only 'Gainesville, 32601' (no street address) because there is no waiting area and no walk-ins are accepted. Third-party directories (Chamber of Commerce, dogdog.org, bdir.in, Yelp aggregators) consistently list a base address (see below) which is used here as the service-area anchor for the map, framed as her home base rather than a public storefront.",
+  "address": {
+    "full": "6250 NW 23rd St #17, Gainesville, FL 32653",
+    "street": "6250 NW 23rd St #17",
+    "locality": "Gainesville",
+    "region": "FL",
+    "postal_code": "32653",
+    "country": "US",
+    "geo": { "lat": 29.643264, "lng": -82.3258544350691 },
+    "source": "Direccion base consistente en multiples directorios independientes (Chamber of Commerce, dogdog.org, bdir.in) y coincide con el dato provisto en la tarea. Booksy (fuente principal de reservas) NO publica calle exacta en su ficha publica, solo 'Gainesville, FL 32601' + geo (29.643264, -82.325854), por ser negocio 100% movil sin local de atencion al publico; el codigo postal varia segun el directorio (32653 / 32605 / 32601/32602): se documenta la variacion, se usa 32653 como principal por ser el mas repetido y el provisto en la tarea, y se enmarca el area de servicio como Gainesville + 32601/32602 tal como pide la tarea."
+  },
+  "service_area_zips_from_task": ["32601", "32602"],
+  "phone": "+1 352-443-2530",
+  "phone_display": "(352) 443-2530",
+  "email": null,
+  "email_note": "Busqueda profunda sin resultado verificable: sin business_email en el endpoint web_profile_info de Instagram (la cuenta @celestespet, ademas, es personal, ver nota de Instagram abajo); sin mailto en la pagina de Booksy (HTML crudo revisado con grep, cero coincidencias); sin campo email expuesto en el JSON-LD del venue de Booksy; sin pagina de Linktree/Beacons en ninguna bio encontrada; Facebook (ambas paginas, Celestespetspa y CelestesMobilePet) solo devolvio el muro de login, sin acceso al About. Una respuesta agregada de busqueda web menciono repetidamente 'Groomingchic@gmail.com' como email del negocio, pero se intento verificar contra el HTML crudo de 5 fuentes citadas (Chamber of Commerce, Giftly, dogdog.org, bdir.in, Nextdoor, local.yahoo.com) y NINGUNA lo contenia literalmente: no se pudo confirmar contra una fuente primaria, asi que NO se incluye (regla: verificar, no confiar ciegamente). Contacto real disponible es telefono y Booksy.",
+  "instagram": {
+    "handle_found": "@celestespet",
+    "url": "https://www.instagram.com/celestespet/",
+    "full_name_field": "Celeste Gomes",
+    "followers": 1641,
+    "is_business_account_flag": true,
+    "category_enum": "PET_GROOMER",
+    "critical_finding": "Esta cuenta NO es una cuenta de marketing del negocio: es la cuenta PERSONAL de la dueña, Celeste Gomes. Su bio actual es 'Battling the biggest fight of my life....Breast Cancer!! #cancersucks #ImGonnaKickBreastCamcersAss' y su feed reciente (12 posts revisados via web_profile_info) es contenido de vida personal: su lucha contra el cancer de mama, el fallecimiento de su padre, el cumpleanos de su hija, publicaciones de 'karma'. CERO fotos de mascotas, del trailer de grooming o del negocio en el feed reciente. external_url es un link acortado de X/Twitter (t.co), no un booking ni linktree. business_email_field: null.",
+    "decision": "NO se uso ninguna foto ni texto de esta cuenta para el sitio (ni bio, ni fotos, ni como fuente de marca): seria una violacion grave de privacidad y de la regla de curaduria (nunca fotos personales/familiares en un site de venta). Toda la imagenes del site vienen de Booksy (fotos de servicio, fotos de resenas de clientes, foto del trailer) segun manda el pipeline cuando IG no es viable.",
+    "sameAs_from_booksy_jsonld": "https://www.instagram.com/explore/locations/1024080391/celestes-mobile-pet-grooming/ (esto es una pagina de UBICACION/geotag de IG, no un perfil de negocio real; confirma que no existe una cuenta de Instagram de marca separada y activa)."
+  },
+  "facebook": {
+    "sameAs_from_booksy_jsonld": "https://www.facebook.com/CelestesMobilePet/",
+    "also_found_in_search": "https://www.facebook.com/Celestespetspa/",
+    "note": "Ambas URLs de Facebook devolvieron el muro de login de Meta al intentar acceder (sin sesion), no se pudo extraer About/email/horario desde ahi. Se listan igualmente como sameAs reales del negocio (una via JSON-LD directo de Booksy, la otra hallada por busqueda)."
+  },
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": ["celestespetspa.com", "celestesmobilepetspa.com", "celestespet.com", "celestesmobilepetgrooming.com"],
+    "method": "curl directo (HTTPS) a cada dominio: los 4 devolvieron fallo de conexion (no resuelven / no hay servidor), a diferencia de dominios reales de control (google.com respondio 200 normalmente en la misma sesion).",
+    "booking_field_on_booksy": "El campo 'website' de la ficha de Booksy no expone ningun dominio propio; el unico canal de reserva es celestespet.booksy.com (subdominio de plataforma, no cuenta como sitio propio).",
+    "conclusion": "NO tiene website propio verificado. Angulo de outreach: has_own_site=false, 'les construimos un sitio de muestra'."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "booking_url_provided": "https://celestespet.booksy.com",
+    "booking_url_resolved": "https://booksy.com/en-us/83577_celestes-mobile-pet-spa_pet-services_15596_gainesville (celestespet.booksy.com redirige via cdl.booksy.com -> app.link -> a la misma ficha)",
+    "business_id": 83577
+  },
+  "rating": {
+    "primary_source": "Booksy",
+    "value": 4.8,
+    "raw_value": 4.841666666666667,
+    "review_count": 360,
+    "source_detail": "JSON-LD schema.org (aggregateRating) embebido en el HTML crudo de la pagina de Booksy, verificado con curl + grep directo sobre el HTML (no solo resumen de herramienta). Es la muestra mas grande y la plataforma real donde reservan los clientes: se usa como rating principal del site, y coincide con el dato ~4.8 provisto en la tarea (confirmado, no corregido).",
+    "cross_check_other_directories": {
+      "yelp": "3.5-3.6 estrellas, 35-36 resenas (multiples fuentes: busqueda web, bestprosintown, local.yahoo.com)",
+      "chamber_of_commerce": "4.1 estrellas, ~80 resenas",
+      "bdir_in": "4.9 estrellas, 96 resenas",
+      "note": "Se documenta la variacion entre agregadores (comun en negocios moviles con reseñas duplicadas/desactualizadas en directorios de terceros). Se usa Booksy como fuente principal por ser la plataforma de reserva real, tener la muestra mas grande (360) y json-ld verificable directamente, consistente con la guia del pipeline de priorizar fuentes estructuradas (JSON-LD) de la plataforma de booking cuando Google Maps no es accesible directamente."
+    },
+    "google_maps_note": "No se logro acceder a un panel de Google Business Profile directo (Google bloqueo el scraping del panel lateral); se documenta el intento y se usa Booksy + directorios cruzados como sustituto, tal como permite el pipeline cuando Google no es accesible."
+  },
+  "hours": {
+    "source": "JSON-LD openingHoursSpecification embebido en el HTML crudo de Booksy + texto de la propia descripcion del negocio en Booksy ('I am closed Sundays, Mondays and Tuesdays'), ambos coinciden.",
+    "schedule": [
+      { "days": ["Miercoles", "Jueves", "Viernes", "Sabado"], "open": "10:00", "close": "21:00" }
+    ],
+    "closed": ["Domingo", "Lunes", "Martes"]
+  },
+  "bio": "I provide Only Mobile Services!! I am based out of Gainesville, Fl. Any appointments for outside my service areas, (Which will be approved accordingly) will be charged a $20 travel fee. Going outside my areas, is time consuming, gas costly and wear and tear on my vehicle. That's why I recommend if you are outside my areas, do not book through the app.",
+  "bio_source": "Descripcion textual exacta (campo 'description') del JSON-LD de la ficha de Booksy.",
+  "experience_note": "Multiples directorios independientes (Yelp, dogdog.org, bdir.in, whodoyou) coinciden en '30+ years of experience' cuidando mascotas y en el enfoque de grooming sin jaulas, de bajo estres, apto para perros ansiosos, agresivos o mayores. Se repite en varias fuentes no vinculadas entre si, por lo que se considera dato razonablemente verificado (no viene de una unica fuente).",
+  "services": {
+    "source": "makesOffer del JSON-LD schema.org embebido en el HTML crudo de Booksy (nombres y precios exactos, 20 ofertas, verificado con grep/json.loads directo sobre el HTML) cruzado con las duraciones visibles en la pagina renderizada de Booksy (data-testid=service-variant-duration, emparejadas 1 a 1 por nombre de servicio).",
+    "price_range_booksy": "USD 65 - 175",
+    "categories": [
+      {
+        "name": "Perros Pequenos",
+        "items": [
+          { "name": "Small Short Haired Dog Bath Package", "price": 50, "duration_min": 60 },
+          { "name": "Small Hairy Dog Bath Package(No Haircut)", "price": 60, "duration_min": 60 },
+          { "name": "Small Dog Full Groom(No Doodles)", "price": 75, "duration_min": 90 },
+          { "name": "Small Matted Knotted Shave", "price": 90, "duration_min": 120 },
+          { "name": "Doodles (Mini/Medium Doodles) 0-25lbs", "price": 100, "duration_min": 105 }
+        ]
+      },
+      {
+        "name": "Perros Medianos",
+        "items": [
+          { "name": "Medium size dog short hair bath pkg", "price": 60, "duration_min": 60 },
+          { "name": "Medium Hairy ( Deshedding not included) Bath Pkg", "price": 70, "duration_min": 90 },
+          { "name": "Medium Deshedding & Sanitary Trim", "price": 88, "duration_min": 105 },
+          { "name": "Medium Size Full Groom 25-50lbs(NO DOODLES)", "price": 90, "duration_min": 105 },
+          { "name": "Medium Matted, Knotted Shave(No Doodles)", "price": 100, "duration_min": 105 }
+        ]
+      },
+      {
+        "name": "Perros Grandes y XL",
+        "items": [
+          { "name": "Large Bath Short Hair", "price": 65, "duration_min": 60 },
+          { "name": "80lbs + Short haired bath package", "price": 75, "duration_min": 75 },
+          { "name": "Large Thick Haired Bath Pkg(No Deshed)", "price": 80, "duration_min": 75 },
+          { "name": "Large Hairy Bath Deshedding & Sanitary", "price": 95, "duration_min": 105, "variant_note": "Variante para razas de doble capa (huskies, etc.): USD 120, 2h, segun la pagina de reserva renderizada." },
+          { "name": "Large full groom( Not for any doodle)", "price": 120, "duration_min": 120 },
+          { "name": "XL bath short haired", "price": 90, "duration_min": 60 },
+          { "name": "Large Doodle, Poodle Full Grooming", "price": 160, "duration_min": 150 },
+          { "name": "XL Hairy Breeds Baths and Brush(No MattedDogs)", "price": 175, "duration_min": 120 }
+        ]
+      },
+      {
+        "name": "Gatos",
+        "items": [
+          { "name": "Cat Bath", "price": 60, "duration_min": 60 },
+          { "name": "Matted Cat Shave", "price": 120, "duration_min": 90 }
+        ]
+      }
+    ],
+    "featured_for_site": ["Small Dog Full Groom(No Doodles)", "Medium Size Full Groom 25-50lbs(NO DOODLES)", "Large Doodle, Poodle Full Grooming", "Cat Bath"],
+    "travel_fee_note": "USD 20 de cargo por traslado fuera del area de servicio principal, segun la descripcion del negocio en Booksy."
+  },
+  "reviews": [
+    { "name": "Al", "source": "Booksy (cliente confirmado)", "service": "Small Dog Full Groom(No Doodles)", "text": "Always excellent service... Jazz enjoys her bath time and the perfect bow to end a great session" },
+    { "name": "Mary", "source": "Booksy (cliente confirmado)", "service": "Cat Bath", "text": "Celeste is the best. My Gracie loves her and she looks so good and is happier without so much hair." },
+    { "name": "Takisha", "source": "Booksy (cliente confirmado)", "service": "Small Dog Full Groom(No Doodles)", "text": "I love Celeste ❤️ she is very gentle and pays attention to details" },
+    { "name": "Loretha", "source": "Booksy (cliente confirmado)", "service": "Small Matted Knotted Shave", "text": "She was so pretty after her appointment thank you so much 🫶🏾" },
+    { "name": "Sonya", "source": "Booksy (cliente confirmado)", "service": "Medium Size Full Groom 25-50lbs(NO DOODLES)", "text": "Lilly looks so good! She has the perfect summer cut." }
+  ],
+  "reviews_extra_found_not_used": [
+    { "name": "Dymeshia", "text": "He loves his haircut" },
+    { "name": "Benjamin", "text": "Quick & good grooming" },
+    { "name": "(anonimo)", "text": "My dogs can be tough but they adore her, she's the best!!" }
+  ],
+  "reviews_note": "Los 5 quotes usados se extrajeron VERBATIM del HTML crudo de la pagina de Booksy (no de un resumen de herramienta): se localizaron los bloques data-testid=review-item y se leyo el texto literal, incluyendo emojis originales. Cada uno tiene respuesta publica de la propia Celeste, lo que confirma que son resenas reales de clientes con cita concretada (badge 'Confirmed client').",
+  "brand_vibe": {
+    "description": "Logo oficial (visto en la ficha de Booksy y en foto real del trailer de grooming): furgoneta rosa chicle con ilustracion de dos perritos asomados por el techo, wordmark 'Celeste's Mobile Pet Spa' en rosa sobre fondo negro/blanco, tipografia juguetona tipo comic/cursiva. El trailer real de grooming (foto de resena, ver assets) confirma el mismo logo pintado en un remolque negro con detalles rosa chicle y el telefono impreso. Estetica: divertida, calida, colorida, pensada para dueños de mascotas (no un spa minimalista); el foco visual real son las mascotas mismas (perros y gatos recien arreglados, con moños y panuelos de colores) sobre fondos hogareños luminosos.",
+    "base": "clara (light)",
+    "palette_name": "celestespet (crema calido + coral-rosa del logo real + verde salvia neutro de apoyo, paleta nueva derivada del logo real, no una de las 5 predefinidas)",
+    "colors": {
+      "bg": "#fbf6f0",
+      "surface": "rgba(255,255,255,0.72)",
+      "ink": "#332621",
+      "accent_deep": "#c8506e",
+      "accent_mid": "#e08aa0",
+      "accent_soft": "#f3d9de",
+      "accent_ghost": "rgba(200,80,110,0.14)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "Toda la comunicacion publica del negocio esta en ingles: la descripcion oficial en Booksy, las 20 fichas de servicios, las 8 resenas verbatim encontradas (clientes y respuestas de la propia Celeste), y todos los directorios de terceros. Gainesville (area de University of Florida) es un mercado predominantemente angloparlante a diferencia de Hialeah/Miami. Se usa 'en' como idioma por defecto del sitio, con toggle ES disponible igual (regla de bilinguismo obligatorio del pipeline).",
+  "images_downloaded": {
+    "count": 26,
+    "path": "output/celestespet/assets/raw/",
+    "source": "100% Booksy CDN (d2zdpiztbgorvt.cloudfront.net): 1 logo, 1 biz_photo (foto principal del negocio), 3 fotos de 'inspiration' (galeria propia de Booksy) y 21 review_photos (fotos subidas por clientes junto a sus resenas). Se descartaron 2 duplicados exactos por hash md5 antes de redimensionar. Todas redimensionadas a max 1000px de ancho, calidad ~82, verificadas con `file` como JPEG real, todas >15KB.",
+    "not_used_reason": "NO se uso ninguna foto de Instagram: la unica cuenta encontrada (@celestespet) es personal de la dueña (ver nota Instagram), sin fotos de mascotas ni del negocio en su feed reciente.",
+    "curation_note": "Se miraron una por una las 26 fotos (Read/visor de imagenes) antes de elegir. Descartadas para galeria: review-02 y review-13 y review-15 (composicion rotada/lateral, dificil de leer), review-03 (perrito dentro de una jaula/reja, poco premium), review-09 (selfie de una persona con un perro, PROHIBIDO selfie/retrato en galeria), review-05, review-18, review-19, review-23 (mascota en brazos de una persona o con mano/rostro humano muy dominante en el encuadre, o iluminacion pobre), inspiration-2 (perro a medio pelar/'antes', no es un resultado terminado), inspiration-1 (perro con la lengua afuera a medio servicio, se reserva para seccion de experiencia/proceso, no para galeria de resultados). El resto (biz-photo, review-01,04,06,07,10,11,12,14,16,21,22) son resultados terminados, ojos abiertos, buena luz, sin texto superpuesto ni claqueta.",
+    "final_selection": {
+      "hero": "review-14.jpeg (perrito recien banado, mirada directa, muy buena luz, sin texto)",
+      "about_experience": ["review-21.jpeg (foto real del trailer/remolque de grooming con el logo y telefono reales, cliente entrando; unica foto que documenta la unidad movil real)", "inspiration-1.jpeg (foto de proceso: perro tipo doodle durante el servicio, usada solo como imagen de ambiente/proceso, no como resultado de galeria)"],
+      "gallery": ["biz-photo.jpeg (tile cinematografico, foto oficial principal de Booksy)", "review-11.jpeg", "review-07.jpeg (gato, muestra que tambien atienden felinos)", "review-12.jpeg (perro senior, coincide con las resenas sobre perros mayores/ansiosos)", "review-16.jpeg", "review-10.jpeg", "review-22.jpeg", "review-04.jpeg"],
+      "logo": "logo.jpeg (usado como monograma pequeno, no como foto de galeria)"
+    }
+  }
+}

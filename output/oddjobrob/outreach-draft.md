@@ -1,4 +1,4 @@
-# Outreach Draft — Odd Job Rob LLC (oddjobrob)
+# Outreach Draft: Odd Job Rob LLC (oddjobrob)
 
 Status: DRAFT ONLY. Not sent. Requires explicit user approval before send, per PIPELINE.md Fase 5.
 
@@ -16,11 +16,11 @@ Status: DRAFT ONLY. Not sent. Requires explicit user approval before send, per P
 
 Hi Rob,
 
-I came across Odd Job Rob LLC while looking at handyman businesses in Fort Myers — 4.9 stars on Google with 59 reviews is a great track record, so I built you a free sample website to show what it could look like with a real site instead of just the Google Business page:
+I came across Odd Job Rob LLC while looking at handyman businesses in Fort Myers. 4.9 stars on Google with 59 reviews is a great track record, so I built you a free sample website to show what it could look like with a real site instead of just the Google Business page:
 
 https://siteforge-demos.odd-forest-9504.workers.dev/oddjobrob/
 
-It's built with your real photos, your real reviews, and your real service list (appliance installs, drywall, flooring, tile, furniture assembly, doors, TV mounting, and more). It doesn't touch how you run things now — your phone number and email still go straight to you.
+It's built with your real photos, your real reviews, and your real service list (appliance installs, drywall, flooring, tile, furniture assembly, doors, TV mounting, and more). It doesn't touch how you run things now, your phone number and email still go straight to you.
 
 If you like it, I can help you put it on your own domain. If it's not for you, no problem at all, just let me know and I'll take it down, no obligation either way.
 
