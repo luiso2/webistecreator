@@ -1,0 +1,145 @@
+{
+  "slug": "newlifephysical",
+  "name_legal_booksy": "New life physical care",
+  "name_brand": "New Life Physical Care",
+  "owner": "Leonardo Montero",
+  "niche": "Massage / bodywork studio (fallback niche del config; incluye tambien faciales/skin care). Se procesa con el formato de head spa/spa boutique adaptado a masaje terapeutico, NO head spa literal.",
+  "city": "Miami, FL (Coral Terrace / Westchester)",
+  "address": {
+    "full_current": "1180 SW 67th Ave, Suite #108, Miami, FL 33144",
+    "street": "1180 SW 67th Ave, Suite #108",
+    "locality": "Miami",
+    "region": "FL",
+    "postal_code": "33144",
+    "country": "US",
+    "geo": { "lat": 25.75964, "lng": -80.30393 },
+    "source": "JSON-LD (schema.org HealthAndBeautyBusiness) Y payload interno __NUXT_DATA__ embebidos en la pagina de Booksy (booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami), ambos coinciden en '1180 SW 67th Ave, Suite #108, Miami, 33144'. Booksy es la fuente de reserva activa/en vivo que los clientes realmente usan, por lo que se toma como direccion actual.",
+    "discrepancy_note": "El registro corporativo de Florida (Sunbiz, via bizprofile.net) para 'New Life Physical Care Center Inc' (doc P20000025977, president Montero Perez Leonardo) lista domicilio registrado en '1076 SW 67th Ave Suite 204, Miami, FL 33144' (cambiado 4/28/2025), y dos fotos reales descargadas del propio negocio (assets/raw/booksy-14.jpg y booksy-24.jpg, decal de la puerta con el logo, horario y telefonos de Leonardo/Alexandra) muestran el numero de puerta '204'. Ambas direcciones estan en el mismo corredor de SW 67th Ave (Coral Terrace/Westchester), a poca distancia. Conclusion mas probable: el negocio se traslado de la Suite 204 (1076 SW 67th Ave) a la Suite 108 (1180 SW 67th Ave) y Booksy (canal de reserva activo) ya refleja la ubicacion actual, mientras la placa de la puerta fotografiada y el registro corporativo no se han actualizado. Se usa 1180 SW 67th Ave Suite #108 como direccion del sitio (mapa y CTA), documentando esta nota para que el negocio la confirme."
+  },
+  "phone": "+1-786-362-2152",
+  "phone_display": "(786) 362-2152",
+  "phone_secondary": "+1-786-499-2439",
+  "phone_secondary_display": "(786) 499-2439",
+  "phone_source": "NO aparece en Booksy (ni JSON-LD ni payload interno tienen campo de telefono). Fuente real: fotos propias del negocio (assets/raw/booksy-14.jpg y booksy-24.jpg), decal de la puerta de entrada que dice 'Leonardo 786-362-2152' y 'Alexandra 786-499-2439'. Se usa el de Leonardo (dueno/President segun Sunbiz) como telefono principal del sitio.",
+  "email": null,
+  "email_note": "Busqueda profunda agotada sin resultado (Fase 1 punto 7 de PIPELINE.md): (1) JSON-LD de Booksy sin campo email; (2) payload interno __NUXT_DATA__ de Booksy resuelto y recorrido completo, sin ningun campo phone/email/contact en el objeto de negocio; (3) Instagram web_profile_info API bloqueada por el proxy en 2 intentos (error 'Asset asset://laser.provider/...' no relacionado con datos reales, y pagina publica de instagram.com/nlphysicalcare devuelve shell vacio sin JSON hidratado); (4) WebFetch a instagram.com devolvio HTTP 429; (5) sin pagina de Facebook propia encontrada (solo negocios 'New Life' no relacionados: New Life Medical Spa, New Life Plastic Surgery, New Life Sanctuary); (6) registro corporativo de Florida (Sunbiz/bizprofile.net) no lista email. Canal de contacto real: Booksy, telefono, o Instagram DM.",
+  "instagram": {
+    "primary_handle": "@nlphysicalcare",
+    "primary_url": "https://www.instagram.com/nlphysicalcare/",
+    "note": "Handle confirmado por la tarea y por resultados de busqueda web (incluye un post geolocalizado 'New Life Physical Care Center in the Coral Terrace...'). El feed no se pudo extraer via web_profile_info (bloqueado, ver email_note) ni via pagina publica (shell vacio sin datos), asi que la galeria del sitio se construyo con las fotos reales de la propia ficha de Booksy en vez de IG, siguiendo la regla de pasar a fuentes alternativas tras 2 intentos fallidos."
+  },
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "New Life Physical Care Center Inc no tiene website propio: Booksy (JSON-LD y payload interno) reporta website=null, facebookLink=null, instagramLink=null, ecommerceLink=null para el negocio. Busqueda web confirma que 'newlifemedicalspa.com' pertenece a un negocio DIFERENTE y no relacionado ('New Life Medical Spa', weight loss clinic en 2621 SW 147th Ave, telefono (305) 487-6196, email newlifemedspa1@gmail.com) que NO se debe confundir con New Life Physical Care.",
+    "conclusion": "NO tiene website propio. Angulo de outreach: has_own_site=false."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/1436303_new-life-physical-care_massage_15889_miami",
+    "business_id": 1436303,
+    "note": "Booksy es el UNICO canal de reserva real verificado (confirmado en discovery y en research)."
+  },
+  "rating": {
+    "booksy": { "value": 5.0, "value_exact": 4.96875, "count": 32, "source": "JSON-LD schema.org embebido en la pagina de Booksy: aggregateRating ratingValue=4.96875 (se muestra como 5.0), reviewCount=32. Confirmado tambien en el payload interno __NUXT_DATA__ (reviewsRank=4.96875, reviewsCount=32)." }
+  },
+  "bio": "Discover the ease of one-stop wellness: therapeutic massage, assisted stretch, facials and advanced skin care - all professional to help you achieve your beauty and wellness goals. / Descubra la facilidad del bienestar en un solo lugar: masajes terapeuticos, estiramientos asistidos, tratamientos faciales y cuidado avanzado de la piel.",
+  "staff": [
+    "Leonardo Montero (dueno / President segun registro de Florida, masajista principal, telefono 786-362-2152)",
+    "Alexandra Henot (esteticista / 'Alexa's Skin Care', tratamientos faciales, telefono 786-499-2439)"
+  ],
+  "hours": {
+    "source": "openHours del payload interno __NUXT_DATA__ de Booksy (mismo horario los 7 dias): 10:00 a 21:00 todos los dias. Nota: una foto real de la puerta del negocio (decal impreso, assets/raw/booksy-14.jpg y booksy-24.jpg) muestra un horario ligeramente distinto impreso fisicamente ('Monday to Sunday 9:00AM - 9:00PM, By appointment'); se usa el horario de Booksy por ser el que rige las reservas activas online.",
+    "schedule": [
+      { "days": ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"], "open": "10:00", "close": "21:00" }
+    ],
+    "note": "Abierto los 7 dias de la semana, 10:00 AM a 9:00 PM, con cita previa."
+  },
+  "services": {
+    "source": "Menu COMPLETO extraido el 2026-07-18 del payload interno __NUXT_DATA__ (Nuxt devalue payload) embebido en la pagina de Booksy del negocio, resuelto y recorrido en Python: 24 servicios en 2 categorias reales de Booksy (Masajes, Facials), con precio y duracion exactos por servicio. Confirma y expande el JSON-LD publico.",
+    "price_range_booksy": "USD 25 - 180",
+    "categories": [
+      {
+        "name": "Masajes",
+        "items": [
+          { "name": "Relaxation Massage", "price": 39, "duration_min": 30 },
+          { "name": "Head Massage", "price": 25, "duration_min": 30 },
+          { "name": "Therapeutic Massage", "price": 75, "duration_min": 60 },
+          { "name": "Relaxation Massage", "price": 75, "duration_min": 60 },
+          { "name": "Foot Massage", "price": 35, "duration_min": 30 },
+          { "name": "Deep Tissue Massage", "price": 75, "duration_min": 60 },
+          { "name": "Deep Tissue Massage", "price": 95, "duration_min": 90 },
+          { "name": "Relaxation Massage", "price": 95, "duration_min": 90 },
+          { "name": "Lymphatic Drainage", "price": 75, "duration_min": 60 },
+          { "name": "Hot Stone Massage", "price": 75, "duration_min": 60 },
+          { "name": "Sport Massage", "price": 75, "duration_min": 60 },
+          { "name": "Anti-Cellulite Massage", "price": 75, "duration_min": 60 },
+          { "name": "Wood Therapy", "price": 75, "duration_min": 45 },
+          { "name": "Couples Massage", "price": 150, "price_promo": 135, "promo_note": "10% de descuento activo en Booksy", "duration_min": 60 },
+          { "name": "Couple Massage", "price": 180, "duration_min": 90 }
+        ]
+      },
+      {
+        "name": "Facials",
+        "items": [
+          { "name": "Radio Frequency", "price": 75, "duration_min": 45 },
+          { "name": "Facials", "price": 80, "duration_min": 60 },
+          { "name": "Fisiolifting Facial", "price": 120, "duration_min": 60 },
+          { "name": "Dermaplaning", "price": 120, "duration_min": 60 },
+          { "name": "Wax", "price": 60, "duration_min": 30 },
+          { "name": "Microneedling", "price": 140, "duration_min": 60 },
+          { "name": "ANTI - Edad Tratamiento", "price": 120, "duration_min": 60 },
+          { "name": "Peeling Quimico Profesional PCA", "price": 160, "duration_min": 40 },
+          { "name": "Acne treatment", "price": 100, "duration_min": 60 }
+        ]
+      }
+    ],
+    "featured_for_site": [
+      "Therapeutic Massage",
+      "Deep Tissue Massage",
+      "Hot Stone Massage",
+      "Couples Massage"
+    ],
+    "amenities": ["Parking space", "Credit cards accepted", "Accessible for people with disabilities", "Wi-Fi", "Loyalty Program"]
+  },
+  "reviews": [
+    { "name": "Jennifer R.", "source": "Booksy", "stars": 5, "date": "2025-10-30", "text": "I had an incredible experience at New Life Physical Care, truly the best massage I have ever received. I have traveled to several countries and tried many spas, but nothing compares to the care and attention that Alexandra Henot and Leonardo Montero provide. I booked a couples massage for my mom's birthday, and they went out of their way to make it unforgettable. When we arrived, they surprised us with a birthday banner and balloons, creating such a warm and thoughtful atmosphere." },
+    { "name": "Tashika B.", "source": "Booksy", "stars": 5, "date": "2026-02-16", "text": "I had a booking for a Couples massage on February 14 Valentine's Day, They had it decorated for the Occasion with balloons, wine, water, and candy. The mood, the music, the Lighting, and the vibe was so amazing & relaxing. My massage therapist was LEO, he was soooo Awesome, he did an amazing job. My Fiance had Alexandra, he is so picky, so to hear him say she did Great was awesome. We will definitely be booking again." },
+    { "name": "Nadia", "source": "Booksy", "stars": 5, "date": "2026-04-17", "text": "I love when I get to go here for my therapeutic massage! So grateful I found a place I'm comfortable with and the price is reasonable! Recommend 💯" },
+    { "name": "Yani M.", "source": "Booksy", "stars": 5, "date": "2026-01-28", "text": "I absolutely loved the experience. I went in with a lot of neck pain and shoulder tension and came out relieved. Will come back many times more" },
+    { "name": "Mercedes H.", "source": "Booksy", "stars": 5, "date": "2025-11-15", "text": "Fue el primer masaje profesional que hemos tenido mi pareja y yo y sinceramente tuvimos la mejor experiencia del mundo. Agende un masaje de pareja para mi cumpleanos y hasta me dieron un regalito para que la pasara bien. De verdad fue una experiencia relajante y unica volvere al 100% son los mejores!" }
+  ],
+  "reviews_note": "Extraidas del payload interno de Booksy (business-reviews:1436303, pagina 1 de 32 resenas totales, todas 5 estrellas). Se muestran 5 quotes verbatim reales (texto exacto, sin parafrasear): 4 en ingles y 1 en espanol, reflejando el mix real de idiomas de las resenas. La cita de Jennifer R. confirma textualmente la frase mencionada en el research inicial ('truly the best massage I have ever received').",
+  "brand_vibe": {
+    "description": "Logo oficial: figura verde estilizada + 'NEW LIFE' en verde + ola azul + 'PHYSICAL CARE' + 5 estrellas doradas, sobre fondo blanco (assets/raw/logo.jpg). Fotos reales de la sala de tratamiento (assets/raw/hero-1.jpg, experience-2.jpg, gallery-2.jpg, gallery-4.jpg) muestran un mural fotografico de cascada azul-verde turquesa, camilla gris con lino blanco, pared blanca lisa: estetica clinica-calmada, limpia, sin recargar, tonos frios azul/verde/gris sobre blanco. El personal viste uniformes medicos azules ('Medical Esthetician', 'Alexa's Skin Care'). Conclusion: base CLARA (no oscura), acento teal/verde-azulado que resuena con el logo y el mural de cascada, en vez de la paleta mocha/dorada tipica de head spa boutique; posicionamiento de bienestar terapeutico-clinico mas que de lujo boho.",
+    "base": "clara (light)",
+    "palette_name": "newlifephysical (teal clinico-calmado sobre crema, paleta nueva, no reutiliza mizu/amani/mare/alea/pausa/eme/iconicbeauty)",
+    "colors": {
+      "bg": "#f6f4ee",
+      "bg2": "#eae6da",
+      "surface": "rgba(250,248,243,0.72)",
+      "ink": "#233330",
+      "accent_deep": "#2f6f68",
+      "accent_mid": "#4f8e86",
+      "accent_soft": "#dbe8e3",
+      "accent_ghost": "rgba(47,111,104,0.14)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "El feed real de Instagram (@nlphysicalcare) no pudo extraerse (ver email_note), asi que el idioma se determino con las fuentes disponibles: (1) la descripcion oficial del negocio en Booksy esta en ingles primero y luego traducida al espanol; (2) de las 10 resenas mas recientes leidas del payload de Booksy, 8 estan escritas en ingles (Nadia, Tashika, Jessica, Yani, Xochitl, Jennifer R., Charlene, Jose Luis) y solo 2 en espanol (Mercedes H., Marbelis Martinez); (3) el propio decal fisico de la puerta del negocio (foto real) esta en ingles ('Monday to Sunday', 'By appointment'). Con esta evidencia mayoritaria se registra ingles como idioma principal del sitio; el espanol sigue disponible completo via el toggle bilingue obligatorio, ya que el barrio (Coral Terrace/Westchester) y buena parte de la clientela son hispanohablantes.",
+  "images_downloaded": {
+    "count": 25,
+    "path": "output/newlifephysical/assets/raw/",
+    "source": "Los 25 archivos booksy-1.jpg a booksy-25.jpg son TODAS las fotos reales publicadas en la ficha de Booksy del negocio (images.bizPhoto x20, images.logo x1, images.cover x1, images.inspiration x3), descargadas via curl con User-Agent de Chrome. Instagram no se pudo usar como fuente de imagenes (API web_profile_info bloqueada en 2 intentos, pagina publica sin datos hidratados; ver email_note), asi que se uso Booksy como fuente principal segun lo previsto por el pipeline ('complementar con galeria del booking').",
+    "curation_note": "Curaduria VISUAL manual foto por foto (Read/vision, no por nombre de archivo). De las 25, MUCHAS son fotografia de stock generica (no del local real: masajes/faciales de banco de imagenes con marcas de agua o overlays de 'stock photo', ej. booksy-2,3,4,5,6,7,8,9,10,11,19,20) y se DESCARTARON del sitio (se conservan en assets/raw como evidencia de research, sin usarse en el HTML). Se identificaron 7 fotos REALES del local/personal (no stock): booksy-1 (Alexandra realizando un facial real a una clienta, uniforme con parche 'Medical Esthetician Alexandra'), booksy-12/15/16/25 (la MISMA sala de tratamiento real, mural de cascada azul-verde y camilla gris, en 4 angulos/momentos distintos), booksy-17 (Alexandra realizando dermaplaning/microneedling real, sin texto superpuesto), booksy-24 (foto real de la puerta de entrada con el logo, horario y telefonos). Se excluyeron del set final: booksy-13/18/22/23 por tener texto o marca de agua superpuesto (collage 'Professional Skin Care by Alexa & Massage Therapy by Leo', marca de TikTok '@alexandrah138'), y booksy-14 por ser esencialmente duplicado de booksy-24 (misma puerta, angulo menos claro). De las 4 fotos de la misma sala solo se usaron 4 en el sitio (hero + 3 en galeria/experiencia) por variedad de angulo, ya que son la unica evidencia fotografica de interior real disponible y de buena calidad; no se relleno con fotos borrosas ni con la baraja completa de 20 stock. Todas las imagenes usadas en el sitio final se redimensionaron a maximo 1000px de ancho, calidad ~82, antes del build (performance).",
+    "used_in_site": [
+      "hero-1.jpg (de booksy-16.jpg): sala de tratamiento real, mural de cascada, camilla gris, mejor iluminacion. HERO.",
+      "experience-1.jpg (de booksy-1.jpg): Alexandra realizando un facial real a una clienta. Seccion Experiencia.",
+      "experience-2.jpg (de booksy-12.jpg): sala de tratamiento real, segundo angulo. Seccion Experiencia.",
+      "gallery-1.jpg (de booksy-17.jpg): tratamiento facial real (dermaplaning/microneedling) por Alexandra, sin texto. Galeria.",
+      "gallery-2.jpg (de booksy-25.jpg): sala de tratamiento real, tercer angulo. Galeria.",
+      "gallery-3-door.jpg (de booksy-24.jpg): puerta de entrada real con logo, horario y telefonos. Galeria/ubicacion.",
+      "gallery-4.jpg (de booksy-15.jpg): sala de tratamiento real, cuarto angulo (con clipboard de intake). Galeria.",
+      "logo.jpg (de booksy-21.jpg): logo oficial del negocio, recortado a 400px. Nav/favicon/footer."
+    ]
+  }
+}

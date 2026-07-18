@@ -1,0 +1,130 @@
+{
+  "slug": "hialeahheadspa",
+  "name_legal_booksy": "Hialeah Head Spa",
+  "name_brand": "Hialeah Head Spa",
+  "niche": "Head Spa (scalp treatments, hair wellness) + hair styling corner (blowouts, cuts, event hair/makeup)",
+  "city": "Hialeah, FL",
+  "address": {
+    "full": "750 W 49th St, Suite 133, Hialeah, FL 33012",
+    "street": "750 W 49th St, Suite 133",
+    "locality": "Hialeah",
+    "region": "FL",
+    "postal_code": "33012",
+    "country": "US",
+    "geo": { "lat": 25.866579, "lng": -80.298189 },
+    "source": "JSON-LD (schema.org HairSalon) embebido en la pagina de Booksy, coincide con footer de hialeahheadspa.com y el dato provisto en la tarea. El negocio opera dentro de un edificio de salon suites (suite 133)."
+  },
+  "phone": "+1 786-575-5228",
+  "phone_display": "(786) 575-5228",
+  "email": null,
+  "email_note": "No se encontro email publico tras busqueda profunda en TODAS las fuentes de la Fase 1 punto 7: business_email de Instagram (web_profile_info) = null; sin mailto en hialeahheadspa.com (su boton 'Online Booking' enlaza directo a hialeahheadspa.booksy.com/a/, no hay formulario con email visible); sin campo email en el JSON-LD de Booksy; bio de Instagram no tiene linktree, solo 2 links directos a Booksy (ya seguidos); no se encontro pagina de Facebook del negocio en busqueda web. Contacto real es via Booksy, telefono o Instagram DM.",
+  "instagram": {
+    "primary_handle": "@hialeah_headspa",
+    "primary_url": "https://www.instagram.com/hialeah_headspa/",
+    "full_name_field": "Hialeah Head Spa",
+    "bio": "Luxury head spa experience ✨\nCuidado del scalp + deep relaxation 💆‍♀️\nHialeah’s hidden gem 💎\nReserva tu momento de paz 📲",
+    "followers": 270,
+    "following": 60,
+    "is_business_account": false,
+    "is_professional_account": false,
+    "external_url": "http://hialeahheadspa.booksy.com/a/ (booking Booksy; segundo link en bio: widget Booksy instant-experiences)",
+    "business_email_field": null,
+    "note": "Cuenta encontrada en busqueda profunda de handle (no fue detectada en el discovery inicial). 12 posts, todos reels (sin fotos estáticas en el feed); se uso el poster/display_url de varios reels como fuente de fotos reales adicional a Booksy."
+  },
+  "has_own_site": true,
+  "own_site_check": {
+    "domain": "hialeahheadspa.com",
+    "status": "VERIFICADO CON DIFERENCIA RESPECTO AL PUNTO DE PARTIDA: el discovery inicial indicaba 'sin website propio', pero hialeahheadspa.com SI resuelve y responde 200 OK (confirmado con curl, redirige www->apex) y es un sitio completo con nav Home/Experiences/Online Booking/Contact, menu de 3 experiencias con precios y descripciones, direccion y telefono en el footer.",
+    "is_platform_subdomain": false,
+    "template_note": "El sitio usa una plantilla generica de 'head spa' (comparte assets con otras ubicaciones: el banner del home es images/haines-city-head-spa-banner.jpg, literalmente nombrado para OTRA ciudad, Haines City, y es una foto stock de utensilios de spa, NO del local real). El logo (hialeah-head-spa-logo.png) y las 3 fotos de servicios (images/services/*.webp) si son especificas y reales de Hialeah Head Spa: coinciden con las fotos de su equipo real (aro de ducha halo rosa-dorado) tambien vistas en Booksy e Instagram.",
+    "conclusion": "SI tiene website propio (dominio propio hialeahheadspa.com, no subdominio de plataforma). Angulo de outreach: has_own_site=true -> 'propuesta alternativa de diseno premium', NUNCA afirmar que no tienen website. Su boton 'Online Booking' en ese sitio enlaza directo a hialeahheadspa.booksy.com/a/ (Booksy), igual que la bio de Instagram."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "booking_widget_url": "http://hialeahheadspa.booksy.com/a/",
+    "business_page_url": "https://booksy.com/en-us/1800781_hialeah-head-spa_hair-salon_15886_hialeah",
+    "business_id": 1800781,
+    "note": "hialeahheadspa.com (su propio dominio) e Instagram enlazan ambos al widget hialeahheadspa.booksy.com/a/, que redirige a Booksy. Se usa la business_page_url como CTA principal por ser la mas estable (el widget es un 301 encadenado). hialeahheadspa.glossgenius.com existe como referencia (GlossGenius es su backend de gestion segun metadatos del sitio) pero la URL redirige a la home corporativa de GlossGenius al accederse directo, sin widget de reserva funcional publico ahi."
+  },
+  "rating": {
+    "booksy": { "value": 5.0, "count": 14, "source": "JSON-LD schema.org embebido en la pagina de Booksy: aggregateRating ratingValue=5, reviewCount=14. Confirma el dato provisto en la tarea." }
+  },
+  "bio": "Hialeah Head Spa is a modern head spa focused on scalp health, hair wellness, and deep relaxation. Our specialized treatments blend thorough scalp cleansing, therapeutic massage, steam therapy, and personalized care to restore balance and encourage healthier hair growth. Healthy scalp. Healthy hair. Happier you.",
+  "staff": ["Jovanique (\"Jovie\", lead head spa therapist, mencionada por nombre en las resenas)", "Leslibeth (equipo)", "Evette (mencionada en captions de Instagram dando tratamientos)"],
+  "hours": {
+    "source": "JSON-LD schema.org openingHoursSpecification embebido en la pagina de Booksy.",
+    "schedule": [
+      { "days": ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"], "open": "09:00", "close": "19:30" },
+      { "days": ["Sabado"], "open": "09:00", "close": "18:00" },
+      { "days": ["Domingo"], "open": "09:00", "close": "16:00" }
+    ]
+  },
+  "services": {
+    "source": "JSON-LD makesOffer de Booksy (precios base + duraciones confirmadas via pagina de listado de Booksy) cruzado con el menu detallado (descripciones e ingredientes de cada experiencia) publicado en hialeahheadspa.com. Los precios de Booksy muestran descuento activo de pago (\"save up to 10%\"): se uso el precio con descuento como precio de reserva real, con el precio de lista (su propio sitio) como list_price.",
+    "price_range_booksy": "USD 75 - 250",
+    "categories": [
+      {
+        "name": "Head Spa Experience",
+        "items": [
+          { "name": "Refresh Head Spa", "price": 89.10, "list_price": 99, "duration_min": 45, "description": "Deep cleansing shampoo, relaxing scalp massage, hydrating mask, neck and shoulder massage, herbal hot towel wrap. Ideal para primera vez o poco tiempo." },
+          { "name": "Signature Head Spa", "price": 157.50, "list_price": 175, "duration_min": 75, "description": "Incluye todo Refresh Head Spa, mas exfoliacion profunda de cuero cabelludo, aceites de aromaterapia personalizados y tratamiento profundo de acondicionamiento capilar." },
+          { "name": "Luxury Head Spa", "price": 193.50, "list_price": 215, "duration_min": 90, "description": "Incluye todo Signature Head Spa, mas ritual de aceites esenciales tibios, masaje facial con jade roller y acabado con serum de seda capilar, blowout incluido." }
+        ]
+      },
+      {
+        "name": "Starlit Corner",
+        "items": [
+          { "name": "Signature Blowout", "price": 75, "duration_min": 60 },
+          { "name": "Dry Cut", "price": 75, "duration_min": 45 },
+          { "name": "Haircut and Blowout", "price": 125, "duration_min": 90 },
+          { "name": "Event Hair and Makeup", "price": 250, "duration_min": 120 }
+        ]
+      }
+    ],
+    "featured_for_site": ["Signature Head Spa", "Luxury Head Spa", "Refresh Head Spa", "Event Hair and Makeup"],
+    "equipment_note": "Su equipo insignia es un aro de ducha tipo 'halo' (halo water therapy) en tonos rosa-dorado con iluminacion ambiental de color, mencionado explicitamente en sus propios captions de Instagram ('halo water therapy flowing'). Aparece consistentemente en las fotos de Booksy e Instagram, confirmando que es real y unico del local (no generico)."
+  },
+  "reviews": [
+    { "name": "Luisa T.", "source": "Booksy", "stars": 5, "date": "2026-06-29", "text": "@pinned_byjovie gave me such an amazing head spa experience from start to finish! The entire session was incredibly relaxing, soothing, and exactly what I needed to unwind and de-stress. She was so professional, attentive, and made sure I felt comfortable the whole time. The atmosphere was peaceful, the products felt amazing, and the scalp massage was absolutely heavenly. I left feeling refreshed, rejuvenated, and so pampered. You can truly tell she puts care and passion into what she does. I would definitely recommend her to anyone looking for a relaxing self-care experience. I can't wait to book again!" },
+    { "name": "Zuleyca R.", "source": "Booksy", "stars": 5, "date": "2026-06-29", "text": "If you're looking for a self-care experience, this is it! The head spa treatment was beyond relaxing and so professional. Jovie did an awesome job! I left feeling refreshed, stress-free, and my hair looked amazing afterward. Highly recommend supporting this business!" },
+    { "name": "Megan C.", "source": "Booksy", "stars": 5, "date": "2026-06-29", "text": "What an amazing experience. From the atmosphere to the relaxing service itself. I have never felt as relaxed then when I was with Jovi. This experience was just fantastic from start to finish. I recommend to anyone curious or has been to a head spa. This is the place to relax and reset yourself." }
+  ],
+  "reviews_note": "Booksy tiene 14 resenas en total, todas 5 estrellas. Se extrajeron 3 verbatim completas del JSON-LD (las unicas 3 que Booksy expone integras en el schema de la pagina publica); el resto solo aparecen truncadas/parafraseadas en el render de la pagina y no se usaron como cita literal para evitar inventar texto.",
+  "brand_vibe": {
+    "description": "Logo real (Booksy 'logo' y hialeahheadspa.com): wordmark 'Hialeah' en script con gradiente teal-azul-violeta-magenta sobre fondo negro, con 'HEAD SPA / HAIR.BODY.SPA' en blanco y un ilustracion lineal de cabello/silueta femenina con una media luna arriba (motivo celestial). Las fotos reales del tratamiento insignia (aro de ducha 'halo') muestran iluminacion ambiental en tonos purpura, azul, verde y rosa con herraje rosa-dorado/champagne. Resultado: estetica nocturna, mistica-celestial y editorial, con acento calido rosa-dorado sobre base oscura casi negra. NO es un spa boho/pastel; es moody y premium.",
+    "base": "oscura (dark)",
+    "palette_name": "hialeahheadspa (negro violaceo celestial + rosa-dorado + violeta suave, paleta nueva)",
+    "colors": {
+      "bg": "#120f16",
+      "bg2": "#1a1520",
+      "surface": "rgba(255,255,255,0.035)",
+      "ink": "#f5eee8",
+      "accent_deep": "#c9946a",
+      "accent_mid": "#9b7fc7",
+      "accent_soft": "#5fb8ac",
+      "accent_ghost": "rgba(201,148,106,0.14)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "hialeahheadspa.com (su propio sitio, la comunicacion mas deliberada del negocio) esta 100% en ingles. La descripcion oficial en Booksy esta en ingles. Las 3 resenas verbatim disponibles estan en ingles. Los captions de Instagram son mayoritariamente en ingles con palabras sueltas en espanol insertadas (\"Relax. Refresh. Respira\", bio con \"Reserva tu momento de paz\"), un patron de Spanglish de marketing tipico de Hialeah, pero no espanol como idioma principal de redaccion. Se usa 'en' como idioma por defecto del sitio, con toggle ES disponible igual (mercado bilingue).",
+  "images_downloaded": {
+    "count": 12,
+    "path": "output/hialeahheadspa/assets/raw/",
+    "list": [
+      "hero.jpg (= booksy-svc-04472a5b.jpeg, foto de servicio oficial de Booksy 'Signature Head Spa': tratamiento real bajo el aro de ducha halo con iluminacion purpura/azul, sin rostro visible)",
+      "logo.jpg (= booksy-logo.jpeg, logo oficial en alta resolucion, fondo negro con wordmark gradiente)",
+      "experience-1.jpg (= ig-poster-3, terapeuta aplicando el aro halo a una clienta, interior real con el letrero de pared 'HEAD SPA' visible, iluminacion purpura/verde)",
+      "staff-jovanique.jpg (= booksy-staff-1.jpeg, retrato de una integrante del equipo frente al letrero de pared del local; USO: avatar pequeno en seccion Experiencia, NUNCA como tile de galeria)",
+      "gallery-1-refresh.jpg (Booksy service photo, Refresh Head Spa, aro halo iluminacion rosa/purpura)",
+      "gallery-2-luxury.jpg (Booksy service photo, Luxury Head Spa, aro halo iluminacion verde)",
+      "gallery-3-blowout-result.jpg (Booksy service photo, Haircut and Blowout, resultado real de blowout ondulado, sin rostro)",
+      "gallery-4-event.jpg (Booksy service photo, Event Hair and Makeup, clienta real con tiara y maquillaje de evento, ojos abiertos, buena luz)",
+      "gallery-5-drycut-result.jpg (Booksy service photo, Dry Cut, resultado real de corte liso, sin rostro)",
+      "gallery-6-steam.jpg (Instagram poster, vaporizador/steamer aplicado al cabello, sin rostro, sin texto superpuesto)",
+      "gallery-7-halo.jpg (Instagram poster, aro de ducha halo con iluminacion verde, sin rostro, sin texto superpuesto)",
+      "gallery-8-video-poster.jpg + gallery-8-video.mp4 (Instagram: video real de masaje de cuero cabelludo bajo luz azul, sin texto superpuesto, verificado como MP4 real con `file`; poster es el display_url del mismo reel)"
+    ],
+    "all_verified": "Todas verificadas con `file`: JPEG real (baseline) o MP4 real (ISO Media). Todas >15KB tras redimension a max 1000px de ancho (calidad ~82-85). Se descargaron 9 posters adicionales de Instagram y 2 fotos de staff (Jovanique, Leslibeth) que se conservan en assets/raw como evidencia de research pero NO se usan en el site: 3 posters tenian texto de caption incrustado (ig-poster-4, 6, 7: PROHIBIDO en galeria), 1 tenia composicion rotada/confusa (ig-poster-5), 1 era retrato de la dueña/terapeuta (ig-poster-2, PROHIBIDO como tile de galeria), y booksy-biz-photo.jpeg es un duplicado de baja resolucion del logo.",
+    "curation_note": "Para el site: hero.jpg (unica foto que muestra el equipo insignia con calidad editorial y buena resolucion), experience-1.jpg + staff-jovanique.jpg para la seccion de Experiencia (interior real + avatar de equipo), y 8 tiles de galeria (7 fotos + 1 video) con variedad de tratamientos y resultados, cero selfies, cero texto superpuesto, cero fotos borrosas."
+  }
+}
