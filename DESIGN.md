@@ -15,6 +15,17 @@ Todo site debe sentirse como un website de seis cifras. Los ejemplares (`templat
 11. **Back-to-top** discreto tras 2 viewports de scroll.
 Performance: nada de listeners de scroll sin rAF; will-change solo donde anima; imagenes lazy salvo hero. La pagina debe seguir fluida en movil.
 
+
+## Nivel $100k+: motion v3 (2026-07-19, en ambos ejemplares)
+Los builds lo HEREDAN al copiar el template. Marcadores: `split-word`, `sec-num`, `tile-cap`, `cursor-ring`, `foot-mark`, `heroInner`.
+1. **Split-text del hero**: el JS envuelve cada palabra del `h1.split` y suben en cascada (90ms de stagger). El h1 usa clase `split` (NO `reveal`).
+2. **Numerales editoriales**: `<span class="sec-num">01</span>` como primer hijo de cada seccion principal (outline gigante, arriba-derecha).
+3. **Galeria cinematografica**: el primer tile va `col-span-2 aspect-[16/9]`; TODOS los tiles llevan `<span class="tile-cap">Nombre del servicio</span>` (caption serif italic que sube al hover; visible fijo en touch).
+4. **Cursor ring**: anillo que sigue el puntero con lerp (solo desktop), crece sobre links/botones. `<div id="cursorRing" class="cursor-ring">`.
+5. **Watermark del footer**: `<span class="foot-mark">NombreMarca</span>` (outline gigante tras el footer; footer necesita `overflow-hidden`).
+6. **Fade del hero al scroll**: `#heroInner` pierde opacidad y baja 46px durante el primer viewport (dentro del rAF de scroll existente).
+Reglas: el bloque JS v3 vive a NIVEL RAIZ del script (nunca dentro de `if (finePointer)`, o el split muere en mobile); todo respeta prefers-reduced-motion; cero animaciones infinitas nuevas sobre imagenes.
+
 ## Historia: origen (Head Spa Demos Miami)
 
 > Derivado del sistema visual de Ava Luxury Head Spa (`~/Desktop/ava-head-spa/index.html`), estilo aprobado en proyectos previos.
