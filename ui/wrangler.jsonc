@@ -1,6 +1,10 @@
 {
   "name": "siteforge-panel",
   "main": "worker.js",
+  "routes": [
+    { "pattern": "siteforge.merktop.com", "custom_domain": true },
+    { "pattern": "siteforce.merktop.com", "custom_domain": true }
+  ],
   "compatibility_date": "2026-07-01",
   "assets": { "directory": "public", "binding": "ASSETS" },
   "kv_namespaces": [
