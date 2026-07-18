@@ -222,8 +222,9 @@
     <div class="card">
       <h2>Siteforge · Acceso</h2>
       <p>Ingresa tu access key (esta en <code>~/Desktop/siteforge/.env</code>).</p>
-      <input id="keyInput" type="password" placeholder="access key" />
+      <input id="keyInput" type="password" placeholder="access key" autocomplete="off" autocapitalize="off" spellcheck="false" />
       <button class="btn" id="keySave">Entrar</button>
+      <p id="gateErr" style="display:none; color:var(--red); font-size:13px; margin:12px 0 0;">Key incorrecta. Revisa que este completa y sin espacios (vive en ~/Desktop/siteforge/.env).</p>
     </div>
   </div>
 
@@ -232,7 +233,10 @@
     const KEY_LS = 'sf_key';
     const headers = () => ({ 'x-sf-key': localStorage.getItem(KEY_LS) || '', 'content-type': 'application/json' });
 
-    function showGate() { $('gate').style.display = 'grid'; }
+    function showGate(conError) {
+      $('gate').style.display = 'grid';
+      $('gateErr').style.display = conError ? 'block' : 'none';
+    }
     function hideGate() { $('gate').style.display = 'none'; }
 
     $('keySave').onclick = () => {
@@ -379,7 +383,7 @@
     async function load() {
       try {
         const r = await fetch('/api/state', { headers: headers() });
-        if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(); return; }
+        if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(true); return; }
         render(await r.json());
       } catch (e) {
         $('msg').className = 'msg err'; $('msg').textContent = 'Error cargando estado: ' + e.message;
@@ -394,7 +398,7 @@
       try {
         const r = await fetch('/api/queue', { method: 'POST', headers: headers(), body: JSON.stringify({ input }) });
         const data = await r.json();
-        if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(); return; }
+        if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(true); return; }
         if (!r.ok) throw new Error(data.error || r.status);
         msg.className = 'msg ok'; msg.textContent = 'En cola. Una forja pasa cada ~7 minutos; veras el progreso aqui mismo.';
         $('input').value = '';
