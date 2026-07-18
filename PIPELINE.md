@@ -28,7 +28,7 @@ Recolectar SOLO datos reales, nunca inventar:
    - Complementar con galeria del booking y fotos de Google Maps (`lh3.googleusercontent.com`). curl con UA de Chrome. Verificar cada archivo con `file` (JPEG/PNG/WebP >15KB, MP4) y borrar los rotos. Si IG bloquea: maximo 2 intentos y pasar a las otras fuentes.
 5. Reviews: 3-5 quotes reales de Google con nombre, verbatim, idioma original.
 6. Brand: colores/estetica real (logo, decoracion, feed) para derivar la paleta.
-7. Contacto: email publico (business_email de IG, mailto en booking, dominio propio), telefono, hours.
+7. Contacto: email publico. PROFUNDIZAR (la mayoria de negocios sin website tampoco publican email, buscar en TODAS estas fuentes antes de rendirse): business_email del endpoint web_profile_info de IG, mailto en la pagina de booking, JSON/payload del venue en Booksy/GlossGenius/Square (a veces expone email), pagina de linktree/poplme/beacons de la bio (abrirla SIEMPRE), seccion About de su pagina de Facebook, y dominio propio si existe. Registrar tambien telefono y hours.
 8. **Idioma principal** del negocio (captions de IG, reseñas, menu): registrar `language: "es" | "en"` en data.json y en el registro. Define el idioma por defecto del site bilingue y el idioma del dm_message.
 Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 
