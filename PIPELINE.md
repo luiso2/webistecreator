@@ -35,6 +35,7 @@ Salida: `output/<slug>/data.json` + `output/<slug>/assets/raw/*`.
 ## Fase 2: Build (un agente por negocio)
 - Leer `DESIGN.md` + el template ejemplar: `templates/dark/index.html` (base oscura, ejemplar Mizu) o `templates/light/index.html` (base clara, ejemplar Amani). Elegir base segun el brand real del negocio.
 - Misma estructura SIEMPRE (nav glass, hero con rating real, strip de confianza, experiencia, ritual 4 pasos, servicios con precios reales, galeria, testimonios, ubicacion con mapa embed, CTA final, footer): solo cambian paleta, fotos, textos y datos.
+- **PERFORMANCE OBLIGATORIA (leccion bety 2026-07-17: el site congelaba el navegador)**: redimensionar TODAS las imagenes de galeria/hero a max 1000px de ancho (sips -Z 1000, calidad ~82) antes del build; NUNCA `will-change` en masa (solo en 2-4 elementos que animan de verdad); videos con `preload="metadata"`; maximo 2-3 animaciones infinitas simultaneas de imagenes grandes.
 - Copiar `templates/assets/tailwind.js` a `output/<slug>/assets/tailwind.js` y referenciarlo LOCAL (`<script src="assets/tailwind.js">`): el CDN de Tailwind no soporta SRI/CORS.
 - CTA de reserva SIEMPRE al canal real del negocio. Boton flotante: WhatsApp si ese es su canal, si no icono de calendario al booking.
 - JSON-LD `HealthAndBeautyBusiness` (o el tipo que aplique) con datos reales.

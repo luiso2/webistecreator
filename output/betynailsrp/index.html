@@ -717,14 +717,14 @@
       <style>
         /* Galeria viva: Ken Burns lento en las fotos (intencional incluso con reduced-motion:
            el cliente pidio galeria en movimiento; los videos tienen control manual de pausa) */
-        .kb img { animation: kenburnsA 16s ease-in-out infinite alternate; will-change: transform; }
+        .kb img { animation: kenburnsA 16s ease-in-out infinite alternate; }
         .kb-b img { animation-name: kenburnsB; animation-duration: 19s; }
         @keyframes kenburnsA { from { transform: scale(1.03); } to { transform: scale(1.15) translate(-2.5%, 2%); } }
         @keyframes kenburnsB { from { transform: scale(1.03); } to { transform: scale(1.15) translate(2.5%, -2%); } }
       </style>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         <div class="frame aspect-[3/4] img-reveal">
-          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="auto" poster="assets/raw/ig-4.jpg" aria-label="Video del estudio Bety Nails: proceso de manicura rusa">
+          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="metadata" poster="assets/raw/ig-4.jpg" aria-label="Video del estudio Bety Nails: proceso de manicura rusa">
             <source src="assets/raw/ig-4.mp4" type="video/mp4" />
           </video>
         </div>
@@ -732,7 +732,7 @@
         <div class="frame aspect-[3/4] img-reveal kb-b kb" style="transition-delay:180ms"><img src="assets/raw/ig-8.jpg" alt="Francés de puntos en azul, amarillo y negro sobre uñas almendra" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
         <div class="frame aspect-[3/4] lg:mt-[-2.5rem] img-reveal kb" style="transition-delay:120ms"><img src="assets/raw/ig-6.jpg" alt="Uñas en verde oliva con efecto ojo de gato dorado y detalle metálico" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
         <div class="frame aspect-[3/4] img-reveal" style="transition-delay:210ms">
-          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="auto" poster="assets/raw/ig-10.jpg" aria-label="Video de Bety Nails: uñas soft delicadas terminadas">
+          <video class="ig-video w-full h-full object-cover" muted loop playsinline autoplay preload="metadata" poster="assets/raw/ig-10.jpg" aria-label="Video de Bety Nails: uñas soft delicadas terminadas">
             <source src="assets/raw/ig-10.mp4" type="video/mp4" />
           </video>
         </div>
