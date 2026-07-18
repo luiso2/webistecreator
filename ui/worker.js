@@ -108,6 +108,79 @@ export default {
         return json({ ok: true });
       }
 
+      // Envio de outreach POR ACCION DIRECTA del usuario autenticado en el panel
+      // (cada envio = un click + confirmacion del dueno del panel; nunca automatico).
+      if (url.pathname === '/api/send' && req.method === 'POST') {
+        if (!env.RESEND_API_KEY) return json({ error: 'RESEND_API_KEY no configurada en el worker' }, 500);
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        const slug = (body.slug || '').toString();
+        if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
+        const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
+        const biz = registry.find(b => b.slug === slug);
+        if (!biz) return json({ error: 'negocio no encontrado' }, 404);
+        if (!biz.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(biz.email)) return json({ error: 'sin email publico valido' }, 400);
+        if (!biz.url_demo || !DEMO_URL_RE.test(biz.url_demo)) return json({ error: 'url_demo invalida' }, 400);
+        // Anti-duplicado: registry (sincronizado desde el repo) + log propio del panel
+        const sentLog = (await env.SITEFORGE_KV.get('sent_log', 'json')) || {};
+        if (biz.outreach === 'sent' || sentLog[slug]) {
+          return json({ error: 'ya se le envio email a este negocio', sent_at: sentLog[slug] || biz.fecha }, 409);
+        }
+
+        const en = (biz.language || 'es') === 'en';
+        const redesign = !!biz.has_own_site;
+        const subject = en
+          ? (redesign ? `A premium redesign concept for ${biz.name}` : `A sample website for ${biz.name}`)
+          : (redesign ? `Una propuesta de rediseño premium para ${biz.name}` : `Un website de muestra para ${biz.name}`);
+        const lines = en
+          ? [
+              `Hi ${biz.name} team!`,
+              redesign
+                ? `I'm Michael, from Merktop (Miami). I found your business on Google and put together an alternative premium design concept for your site, built with your real photos, services and reviews:`
+                : `I'm Michael, from Merktop (Miami). I found your business on Google, saw you don't have your own website yet, and went ahead and built you a sample one with your real photos, services and reviews:`,
+              biz.url_demo,
+              `It doesn't touch your booking flow at all. If you like it, we can put it on your own domain and adjust it together. If not, I'll take it down, no strings attached.`,
+              `Michael Vargas\nMerktop · https://merktop.com`,
+            ]
+          : [
+              `Hola equipo ${biz.name}!`,
+              redesign
+                ? `Soy Michael, de Merktop (Miami). Encontre su negocio en Google y prepare una propuesta alternativa de diseño premium para su sitio, construida con sus fotos, servicios y reseñas reales:`
+                : `Soy Michael, de Merktop (Miami). Encontre su negocio en Google, vi que todavia no tienen website propio y me anime a construirles uno de muestra con sus fotos, servicios y reseñas reales:`,
+              biz.url_demo,
+              `No toca para nada su sistema de reservas. Si les gusta, lo dejamos en su propio dominio y lo ajustamos juntos. Si no, lo retiro sin compromiso.`,
+              `Michael Vargas\nMerktop · https://merktop.com`,
+            ];
+        const text = lines.join('\n\n');
+        const html = lines.map(p => `<p>${p.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(new RegExp(biz.url_demo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `<a href="${biz.url_demo}">${biz.url_demo}</a>`).replace(/\n/g, '<br>')}</p>`).join('');
+
+        const r = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            authorization: `Bearer ${env.RESEND_API_KEY}`,
+            'content-type': 'application/json',
+            'Idempotency-Key': `siteforge-panel-${slug}`,
+          },
+          body: JSON.stringify({
+            from: 'Michael Vargas <michael@go.merktop.com>',
+            to: [biz.email],
+            reply_to: 'jose@merktop.com',
+            subject,
+            text,
+            html,
+            tags: [{ name: 'campaign', value: 'siteforge' }],
+          }),
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) return json({ error: 'Resend fallo', detail: data }, 502);
+
+        sentLog[slug] = new Date().toISOString();
+        await env.SITEFORGE_KV.put('sent_log', JSON.stringify(sentLog));
+        const updated = registry.map(b => (b.slug === slug ? { ...b, outreach: 'sent', resend_id: data.id || b.resend_id } : b));
+        await env.SITEFORGE_KV.put('registry', JSON.stringify(updated));
+        return json({ ok: true, id: data.id, to: biz.email, subject, lang: en ? 'en' : 'es' });
+      }
+
       if (url.pathname === '/api/registry' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
