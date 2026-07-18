@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f7f3ec" />
+  <title>Odd Job Rob LLC · Handyman in Fort Myers, FL | Repairs, Installs & Remodeling</title>
+  <meta name="description" content="Odd Job Rob LLC, trusted handyman in Fort Myers, FL. Appliance install, drywall, flooring, tile, furniture assembly, door repair, TV mounting and more. 4.9 stars, 59 Google reviews. Request a free quote." />
+  <meta property="og:title" content="Odd Job Rob LLC · Handyman in Fort Myers, FL" />
+  <meta property="og:description" content="Repairs, installs and small remodeling jobs done right. 4.9 stars on Google. Request your quote today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/gallery-kitchen-remodel.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Odd Job Rob LLC",
+    "description": "Handyman and property maintenance in Fort Myers, FL: appliance installation, drywall, flooring, tile, furniture assembly, door repair, TV mounting and more.",
+    "telephone": "+1-239-961-0195",
+    "email": "oddjobrobswf@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "321 Broadview Dr",
+      "addressLocality": "Fort Myers",
+      "addressRegion": "FL",
+      "postalCode": "33905",
+      "addressCountry": "US"
+    },
+    "areaServed": "Fort Myers, FL",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "18:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/oddjobrobllc/",
+      "https://www.facebook.com/oddjobrobswf/"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "59", "bestRating": "5" },
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Appliance Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drywall Installation & Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Flooring Installation & Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furniture Assembly & Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tile Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Door Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "TV Mounting" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plumbing Fixture Install & Repair" } }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f3ec;
+      --bg-2: #eee2ca;
+      --surface: rgba(255,250,242,0.7);
+      --ink: #2e2620;
+      --ink-60: rgba(46,38,32,0.62);
+      --ink-40: rgba(46,38,32,0.42);
+      --accent-deep: #b5651d;
+      --accent-mid: #d99a3d;
+      --accent-soft: #eee0c8;
+      --accent-ghost: rgba(181,101,29,0.16);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(181,101,29,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,247,241,0.88);
+      border-color: rgba(181,101,29,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(46,38,32,0.14), 0 0 40px rgba(181,101,29,0.08);
+    }
+
+    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
+    .text-shine {
+      background: linear-gradient(110deg, #b5651d 0%, #e0a857 30%, #7a3e18 52%, #b5651d 75%, #cf8f3f 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs taupe/crema sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f0c98a 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #e0a35a 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #eab766 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D mocha */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #d99a3d 0%, #b5651d 48%, #8a4a15 100%);
+      color: #f7f3ec; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,45,28,0.4),
+        0 5px 0 #6b3610,
+        0 12px 24px rgba(46,38,32,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,45,28,0.4), 0 7px 0 #6b3610, 0 18px 34px rgba(46,38,32,0.32), 0 0 40px rgba(181,101,29,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,45,28,0.45), 0 1px 0 #6b3610, 0 4px 10px rgba(46,38,32,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(181,101,29,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(181,101,29,0.7); background: rgba(181,101,29,0.08); box-shadow: 0 10px 26px rgba(46,38,32,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(247,243,236,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(46,38,32,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(46,38,32,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(181,101,29,0.14), inset 0 -60px 100px rgba(46,38,32,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numerales de pasos */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #d99a3d, #7a3e18);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #b5651d; letter-spacing: 2px; text-shadow: 0 0 14px rgba(181,101,29,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f7f3ec;
+      --ink-60: rgba(247,243,236,0.65);
+      --ink-40: rgba(247,243,236,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,214,183,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #f0c27a 0%, #fbe8c8 30%, #e0a35a 52%, #f0c27a 75%, #f6d9a0 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(240,194,122,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(184,122,58,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #fbead0 0%, #f0c98a 48%, #e0a35a 100%);
+      color: #2e2620;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,90,50,0.35),
+        0 5px 0 #9c5a1e,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #9c5a1e, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(240,194,122,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #9c5a1e, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(240,194,122,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(240,194,122,0.7); background: rgba(240,194,122,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f0c27a; text-shadow: 0 0 14px rgba(240,194,122,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #d99a3d 0%, #b5651d 100%);
+      box-shadow: 0 6px 0 #6b3610, 0 14px 30px rgba(46,38,32,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b3610, 0 20px 40px rgba(46,38,32,0.4), 0 0 34px rgba(181,101,29,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b3610, 0 6px 14px rgba(46,38,32,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
+      border: 1px solid rgba(181,101,29,0.35); background: rgba(181,101,29,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #8a4a15 0%, #b5651d 45%, #e0a35a 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 7. Carrusel de testimonios */
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(46,38,32,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    /* 8. Boton magnetico (offset via translate, spring back) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare (cards de servicios) */
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    /* 10. Cursor glow calido en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(240,194,122,0.14) 0%, rgba(181,101,29,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de reservas vive abajo-derecha) */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(181,101,29,0.5); transform: translateY(-3px); }
+
+
+    /* ============ Motion v3 (premium+) ============ */
+    /* Split-text del hero: cada palabra sube en cascada */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    /* Numeral editorial gigante por seccion */
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    /* Captions de galeria al hover */
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf6ee;
+      background: linear-gradient(180deg, transparent 0%, rgba(30,22,14,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    /* Cursor custom: anillo que sigue al puntero (solo desktop) */
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    /* Marca de agua tipografica del footer */
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(240,194,122,0.09); pointer-events: none; user-select: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">R</span>
+    <span class="pre-word">Odd Job Rob</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(181,101,29,0.35)] bg-[rgba(181,101,29,0.1)] text-[color:var(--accent-deep)]">R</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">Odd Job <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Rob</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#sobre-rob" data-es="Sobre Rob" data-en="About Rob">About Rob</a>
+        <a class="nav-link" href="#como-funciona" data-es="Cómo Funciona" data-en="How It Works">How It Works</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs font-medium" aria-label="Toggle language / Cambiar idioma">ES</button>
+        <a href="tel:+12399610195" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="Pedir Cotización" data-en="Request a Quote">Request a Quote</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#sobre-rob" data-es="Sobre Rob" data-en="About Rob">About Rob</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#como-funciona" data-es="Cómo Funciona" data-en="How It Works">How It Works</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="tel:+12399610195" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Pedir Cotización" data-en="Request a Quote">Request a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Fort Myers, FL · Handyman de Confianza" data-en="Fort Myers, FL · Trusted Handyman">Fort Myers, FL · Trusted Handyman</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajos grandes y chicos, bien hechos." data-en="Odd jobs, big and small, done right.">Odd jobs, big and small, done right.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Tu casa," data-en="Your home,">Your home,</span> <span class="text-shine" data-es="resuelta" data-en="handled">handled</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Instalaciones, reparaciones y remodelaciones pequeñas en Fort Myers: electrodomésticos, drywall, pisos, azulejo, muebles, puertas y más. Un solo handyman confiable para toda la lista de pendientes." data-en="Installs, repairs and small remodeling around Fort Myers: appliances, drywall, flooring, tile, furniture, doors and more. One reliable handyman for the whole to-do list.">Installs, repairs and small remodeling around Fort Myers: appliances, drywall, flooring, tile, furniture, doors and more. One reliable handyman for the whole to-do list.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]"><span data-es="4.9 · 59 reseñas en Google" data-en="4.9 · 59 reviews on Google">4.9 · 59 reviews on Google</span></span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="tel:+12399610195" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Pedir Cotización" data-en="Request a Quote">Request a Quote</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+12399610195" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (239) 961-0195
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/gallery-kitchen-remodel.jpg" alt="Kitchen remodel completed by Odd Job Rob: dark cabinets, quartz counters and new flooring" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Área de servicio" data-en="Service area">Service area</p>
+            <p class="font-display text-lg">Fort Myers, FL</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Descuento del 15% para veteranos" data-en="15% discount for veterans">15% discount for veterans</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="59">59</span> <span data-es="reseñas en Google" data-en="Google reviews">Google reviews</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="15">15</span>%</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Descuento veteranos" data-en="Veterans discount">Veterans discount</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span data-es="Cotización" data-en="Quote">Quote</span> <span class="text-shine" data-es="a Medida" data-en="Based on the Job">Based on the Job</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Sin precios genéricos" data-en="No generic pricing">No generic pricing</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Fort Myers, FL</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="321 Broadview Dr" data-en="321 Broadview Dr">321 Broadview Dr</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Appliance Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flooring &amp; Tile</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Furniture Assembly</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fort Myers, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Appliance Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flooring &amp; Tile</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Furniture Assembly</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fort Myers, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOBRE ROB -->
+  <section id="sobre-rob" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/about-kitchen-work.jpg" alt="Rob reviewing a finished kitchen remodel in Fort Myers" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/gallery-tile-shower.jpg" alt="Marble tile shower installation with black accent trim" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Sobre Rob" data-en="About Rob">About Rob</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un handyman de confianza" data-en="One reliable handyman">One reliable handyman</span><br /><span class="text-shine" data-es="para toda la lista" data-en="for the whole list">for the whole list</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Odd Job Rob LLC es un negocio de handyman con base en Fort Myers que atiende trabajos grandes y chicos: instalaciones, reparaciones y remodelaciones pequeñas de cocina y baño. Sin subcontratistas de más, sin vueltas: Rob llega, evalúa el trabajo y lo termina." data-en="Odd Job Rob LLC is a Fort Myers handyman business that takes on jobs big and small: installs, repairs and small kitchen and bath remodeling. No extra layers of subcontractors, no runaround. Rob shows up, sizes up the job and finishes it.">Odd Job Rob LLC is a Fort Myers handyman business that takes on jobs big and small: installs, repairs and small kitchen and bath remodeling. No extra layers of subcontractors, no runaround. Rob shows up, sizes up the job and finishes it.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms"><span data-es="Sus clientes lo describen igual una y otra vez: rápido, confiable y cuidadoso con la casa." data-en="Clients describe him the same way over and over: fast, dependable and careful with the home.">Clients describe him the same way over and over: fast, dependable and careful with the home.</span> <em class="font-script text-[color:var(--accent-deep)]">"Rob was great. Showed up on time and just did a wonderful job."</em> <span>&#8211; Steve Hurst</span></p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="63">63</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas totales" data-en="Total reviews">Total reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">10+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Especialidades" data-en="Trade categories">Trade categories</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Cómo funciona" data-en="How it works">How it works</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="De la llamada a" data-en="From call to">From call to</span> <span class="text-shine" data-es="trabajo terminado" data-en="finished job">finished job</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cuéntanos el trabajo" data-en="Tell us the job">Tell us the job</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llama o escribe con lo que necesitas: una reparación puntual, una instalación o una remodelación pequeña." data-en="Call or email with what you need done: a quick repair, an install, or a small remodel.">Call or email with what you need done: a quick repair, an install, or a small remodel.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Recibe tu cotización" data-en="Get your quote">Get your quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Rob evalúa el alcance del trabajo y te da una cotización clara antes de empezar. Sin sorpresas." data-en="Rob sizes up the scope and gives you a clear quote before starting. No surprises.">Rob sizes up the scope and gives you a clear quote before starting. No surprises.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Agenda el día" data-en="Schedule the day">Schedule the day</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Coordinamos una fecha que te convenga. Lunes a viernes 9am-8pm, sábados 9am-6pm." data-en="We coordinate a date that works for you. Monday-Friday 9am-8pm, Saturdays 9am-6pm.">We coordinate a date that works for you. Monday-Friday 9am-8pm, Saturdays 9am-6pm.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Disfruta el resultado" data-en="Enjoy the result">Enjoy the result</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Rob termina el trabajo con cuidado por tu casa. Así lo describen sus propios clientes en Google." data-en="Rob finishes the job with care for your home, the same way his own clients describe it on Google.">Rob finishes the job with care for your home, the same way his own clients describe it on Google.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What">What</span> <span class="text-shine" data-es="Rob resuelve" data-en="Rob handles">Rob handles</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo es distinto, así que las cotizaciones son a medida: sin precios genéricos. Cuéntanos qué necesitas y te respondemos con un presupuesto claro." data-en="Every job is different, so quotes are custom, not generic price lists. Tell us what you need and we'll get back to you with a clear estimate.">Every job is different, so quotes are custom, not generic price lists. Tell us what you need and we'll get back to you with a clear estimate.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cocina y electrodomésticos" data-en="Kitchen &amp; appliances">Kitchen &amp; appliances</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Appliance Installation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación de refrigeradores, lavavajillas, estufas y otros electrodomésticos, listos para usar." data-en="Installation of refrigerators, dishwashers, stoves and other appliances, ready to use.">Installation of refrigerators, dishwashers, stoves and other appliances, ready to use.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(181,101,29,0.4); box-shadow: 0 18px 50px rgba(46,38,32,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Paredes" data-en="Walls">Walls</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Drywall Installation &amp; Repair</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Reparación de huecos, parches y instalación de drywall con acabado listo para pintar." data-en="Hole patching, repairs and drywall installation finished ready for paint.">Hole patching, repairs and drywall installation finished ready for paint.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Pisos" data-en="Floors">Floors</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Flooring Installation &amp; Repair</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación y reparación de piso laminado y vinílico, de habitación completa o por secciones." data-en="Laminate and vinyl flooring installation and repair, full rooms or single sections.">Laminate and vinyl flooring installation and repair, full rooms or single sections.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Muebles" data-en="Furniture">Furniture</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Furniture Assembly &amp; Repair</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Ensamblaje de camas, tocadores y muebles de caja, además de reparaciones puntuales." data-en="Assembly of beds, vanities and flat-pack furniture, plus spot repairs.">Assembly of beds, vanities and flat-pack furniture, plus spot repairs.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Baño y cocina" data-en="Bath &amp; kitchen">Bath &amp; kitchen</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Tile Installation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación de azulejo en duchas, pisos y respaldos de cocina, con acabado limpio." data-en="Tile installation for showers, floors and kitchen backsplashes, finished clean.">Tile installation for showers, floors and kitchen backsplashes, finished clean.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Puertas" data-en="Doors">Doors</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Door Repair</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Ajuste, reparación y cambio de cerraduras y bisagras en puertas interiores y exteriores." data-en="Adjustment, repair and lock or hinge replacement on interior and exterior doors.">Adjustment, repair and lock or hinge replacement on interior and exterior doors.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Electrónica" data-en="Electronics">Electronics</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">TV Mounting</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Montaje de TV a pared con cableado ordenado, en el ángulo y altura correctos." data-en="Wall-mounted TV installation with clean cable routing, at the right angle and height.">Wall-mounted TV installation with clean cable routing, at the right angle and height.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Plomería" data-en="Plumbing">Plumbing</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Plumbing Fixture Install &amp; Repair</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación y reparación de fregaderos, grifos y otros accesorios de agua." data-en="Installation and repair of sinks, faucets and other water fixtures.">Installation and repair of sinks, faucets and other water fixtures.</p>
+          <div class="mt-auto"><a href="tel:+12399610195" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Request a quote">Request a quote</a></div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="También: pintura, sellado/calafateo y otros trabajos del hogar. Pregunta por lo que necesites." data-en="Also: painting, caulking and other home projects. Just ask about what you need.">Also: painting, caulking and other home projects. Just ask about what you need.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real, resultados reales" data-en="work, real results">work, real results</span></h2>
+        </div>
+        <a href="https://www.instagram.com/oddjobrobllc/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @oddjobrobllc
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">Kitchen Remodel</span><img src="assets/raw/gallery-kitchen-remodel.jpg" alt="Completed kitchen remodel with dark cabinets, quartz counters and new flooring" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">Pool Cage &amp; Deck</span><img src="assets/raw/gallery-pool-lanai.jpg" alt="Pool and lanai screen enclosure, finished" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">Pool Deck Resurfacing</span><img src="assets/raw/gallery-pool-deck-resurface.jpg" alt="Pool deck resurfacing work in progress" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">Furniture Assembly</span><img src="assets/raw/gallery-furniture-assembly.jpg" alt="Upholstered bed frame assembly in progress" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">Sink &amp; Faucet Install</span><img src="assets/raw/gallery-sink-install-1.jpg" alt="Stainless steel double sink and gooseneck faucet installation" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">Custom Bath Vanity</span><img src="assets/raw/gallery-bathroom-vanity.jpg" alt="Custom live-edge wood bathroom vanity with vessel sinks" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap">Tile Installation</span><img src="assets/raw/gallery-tile-shower.jpg" alt="Marble tile shower installation with black accent trim" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:240ms"><span class="tile-cap">Sink &amp; Faucet Detail</span><img src="assets/raw/gallery-sink-install-2.jpg" alt="Black kitchen sink and matte black faucet installation detail" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Tile Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Door Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">TV Mounting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Plumbing Fixtures</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Odd Job Rob LLC</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Tile Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Door Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">TV Mounting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Plumbing Fixtures</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Odd Job Rob LLC</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What">What</span> <span class="text-shine" data-es="sus clientes" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.9 de 5 · 59 reseñas en Google" data-en="4.9 out of 5 · 59 reviews on Google">4.9 out of 5 · 59 reviews on Google</span></p>
+      </div>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Customer reviews">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Rob gets jobs completed quickly and efficiently. He is reliable and dependable...affordable as well!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Kristyna Overstreet</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Rob has been instrumental in getting this home ready and so beautiful. He is professional, does amazing quality work and looks out for the homeowner."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jan Mahlmann</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Rob has completed several jobs for me large and small and all have been completed in an excellent condition."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Shelley Garcia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Rob was great. Showed up on time and just did a wonderful job. His price is very reasonable and he's very conscientious with his work. I have other projects coming and when I do I'm calling Rob."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Steve Hurst</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"He did a great job for a great price. He was nice and very professional too. I'm glad I called him."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Deborah A Cross</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Rob did a great job. Very professional, great price and cares about your home. I will be using him again and would definitely recommend him to anyone. Thanks Rob!!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Susan Phillips</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.google.com/maps?q=Odd+Job+Rob+LLC,+321+Broadview+Dr,+Fort+Myers,+FL+33905" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-es="Leer las 59 reseñas en Google" data-en="Read the 59 reviews on Google">Read the 59 reviews on Google</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Área de servicio" data-en="Service area">Service area</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Fort Myers y" data-en="Fort Myers,">Fort Myers,</span> <span class="text-shine" data-es="alrededores" data-en="right nearby">right nearby</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">321 Broadview Dr, Fort Myers, FL 33905</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,101,29,0.4)]" href="https://www.google.com/maps?q=Odd+Job+Rob+LLC,+321+Broadview+Dr,+Fort+Myers,+FL+33905" target="_blank" rel="noopener"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Lunes a Viernes: 9:00 AM a 8:00 PM" data-en="Monday-Friday: 9:00 AM - 8:00 PM">Monday-Friday: 9:00 AM - 8:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Sábado: 9:00 AM a 6:00 PM" data-en="Saturday: 9:00 AM - 6:00 PM">Saturday: 9:00 AM - 6:00 PM</span></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Domingo: Cerrado" data-en="Sunday: Closed">Sunday: Closed</span></p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Cotizaciones" data-en="Quotes">Quotes</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono:" data-en="Phone:">Phone:</span> <a class="text-[color:var(--accent-deep)]" href="tel:+12399610195">(239) 961-0195</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Email:" data-en="Email:">Email:</span> <a class="text-[color:var(--accent-deep)]" href="mailto:oddjobrobswf@gmail.com">oddjobrobswf@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: Odd Job Rob LLC, 321 Broadview Dr, Fort Myers FL"
+          src="https://www.google.com/maps?q=Odd+Job+Rob+LLC,+321+Broadview+Dr,+Fort+Myers,+FL+33905&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241a0e 0%, #170f08 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Rápido, confiable, bien hecho." data-en="Fast, dependable, done right.">Fast, dependable, done right.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próximo proyecto" data-en="Your next project">Your next project</span> <span class="text-shine" data-es="empieza aquí" data-en="starts here">starts here</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas reparar, instalar o remodelar. Rob te responde con una cotización clara, sin presión y sin relleno." data-en="Tell us what needs fixing, installing or remodeling. Rob gets back to you with a clear quote, no pressure and no filler.">Tell us what needs fixing, installing or remodeling. Rob gets back to you with a clear quote, no pressure and no filler.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+12399610195" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Pedir Cotización" data-en="Request a Quote">Request a Quote</span></a>
+        <a href="mailto:oddjobrobswf@gmail.com" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Escribir por email" data-en="Email Us">Email Us</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#170f08]">
+    <span class="foot-mark" aria-hidden="true">Odd Job Rob</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(240,194,122,0.35)] bg-[rgba(240,194,122,0.08)] text-[#f0c27a]">R</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Odd Job Rob LLC</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Handyman de confianza en Fort Myers, FL. Instalaciones, reparaciones y remodelaciones pequeñas." data-en="Trusted handyman in Fort Myers, FL. Installs, repairs and small remodeling jobs.">Trusted handyman in Fort Myers, FL. Installs, repairs and small remodeling jobs.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>321 Broadview Dr, Fort Myers, FL 33905</p>
+        <p><a href="tel:+12399610195" class="hover:text-[#f0c27a]">(239) 961-0195</a></p>
+        <p><a href="mailto:oddjobrobswf@gmail.com" class="hover:text-[#f0c27a]">oddjobrobswf@gmail.com</a></p>
+        <p><span data-es="Lun a Vie 9 AM a 8 PM · Sáb 9 AM a 6 PM · Dom cerrado" data-en="Mon-Fri 9 AM-8 PM · Sat 9 AM-6 PM · Sun closed">Mon-Fri 9 AM-8 PM · Sat 9 AM-6 PM · Sun closed</span></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Follow</p>
+        <p><a href="https://www.instagram.com/oddjobrobllc/" target="_blank" rel="noopener" class="hover:text-[#f0c27a]">Instagram · @oddjobrobllc</a></p>
+        <p><a href="https://www.facebook.com/oddjobrobswf/" target="_blank" rel="noopener" class="hover:text-[#f0c27a]">Facebook · Odd Job Rob LLC</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Odd Job Rob LLC. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">All rights reserved.</span></p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de cotizacion -->
+  <a href="tel:+12399610195" class="book-float" aria-label="Call for a quote">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f7f3ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba (abajo-izquierda) -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Bilingue: EN es el idioma principal del negocio; toggle ES|EN persistido en localStorage.
+    // IMPORTANTE: corre ANTES del split-text del hero (mas abajo), para que el h1 ya tenga
+    // el idioma correcto cuando el JS de motion v3 envuelva sus palabras en spans.
+    const applyLang = (l) => {
+      document.querySelectorAll('[data-es]').forEach((el) => { el.textContent = el.dataset[l] || el.dataset.en; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      const toggle = document.getElementById('langToggle');
+      if (toggle) toggle.textContent = l === 'en' ? 'ES' : 'EN';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    const langToggleBtn = document.getElementById('langToggle');
+    if (langToggleBtn) {
+      langToggleBtn.addEventListener('click', () => applyLang(document.documentElement.lang === 'en' ? 'es' : 'en'));
+    }
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + 2. barra de progreso + 3. parallax + 11. back-to-top: UN solo listener de scroll con rAF
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // 4. Reveals editoriales: texto (.reveal) + imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (decimales respetados)
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la reseña ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+
+    // v3: split-text del hero (palabra por palabra, respeta spans internos)
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // v3: cursor ring (solo desktop, lerp con rAF)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // 8. Botones magneticos (max 6px, spring back). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // 9. Tilt 3D sutil en cards de servicios (max 3deg + glare). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // 10. Cursor glow calido en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
