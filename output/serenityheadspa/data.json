@@ -1,0 +1,124 @@
+{
+  "slug": "serenityheadspa",
+  "name_legal_booksy": "Serenity Head Spa FL",
+  "name_brand": "Serenity Head Spa",
+  "niche": "Japanese Head Spa (scalp hydrotherapy, facial yoga, hot stone / jade stone rituals)",
+  "city": "Orlando, FL (Hunters Creek)",
+  "address": {
+    "full": "13550 Village Park Dr, Ste 115/11, Orlando, FL 32837",
+    "street": "13550 Village Park Dr, Ste 115/11",
+    "locality": "Orlando",
+    "region": "FL",
+    "postal_code": "32837",
+    "country": "US",
+    "geo": { "lat": 28.369323792419994, "lng": -81.42819911241531 },
+    "source": "JSON-LD (schema.org HealthAndBeautyBusiness) embebido en la pagina de Booksy: streetAddress '13550 Village Park Dr #115, 11, Orlando, 32837'. Coincide con la direccion provista en la tarea."
+  },
+  "phone": "+1-689-299-9423",
+  "phone_display": "(689) 299-9423",
+  "phone_note": "No aparece en el HTML publico de Booksy (protegido tras el flujo de reserva). Verificado por consistencia cruzada en multiples resultados de busqueda web independientes (WebSearch) que devuelven el mismo numero sin haberlo yo inyectado en el snippet de resultado. Coincide con el dato provisto en la tarea.",
+  "email": "headspaserenity.usa@gmail.com",
+  "email_note": "Verificado por busqueda web cruzada (aparece asociado al negocio en resultados de busqueda independientes). No se encontro mailto en Booksy ni campo business_email accesible (Instagram bloqueo el endpoint web_profile_info con 429 en todos los intentos). Coincide con el dato provisto en la tarea.",
+  "instagram": {
+    "primary_handle": "@serenity.headspa.fl",
+    "primary_url": "https://www.instagram.com/serenity.headspa.fl/",
+    "location_tag": "Hunters Creek, FL (confirmado en snippet de busqueda: 'Orlando (@serenity.headspa.fl) · Hunters Creek, FL')",
+    "sameAs_from_booksy": "https://www.instagram.com/Serenity.Headspa.FL/",
+    "access_note": "El endpoint instagram.com/api/v1/users/web_profile_info devolvio HTTP 400 con un error de esquema no relacionado con IG (probable intercepcion del proxy del entorno) en los primeros 2 intentos; WebFetch directo a instagram.com/serenity.headspa.fl devolvio HTTP 429 (Too Many Requests) en 2 intentos adicionales. Se agoto el limite de reintentos indicado en el brief (maximo 2) y se paso a otras fuentes (Booksy, busqueda web). No se pudo leer bio/external_url/foto de perfil directamente de IG.",
+    "external_url_check": "No se pudo seguir el external_url de la bio por el bloqueo de IG. Se verifico igualmente ausencia de website propio probando dominios directos (ver has_own_site) y confirmando via Booksy y busqueda web que Booksy es el canal de reserva unico mencionado en resultados relacionados con la cuenta."
+  },
+  "facebook": "https://www.facebook.com/p/Serenity-Headspa-61569965113688/ (pagina existe segun busqueda web; el contenido no es accesible sin login, WebFetch devolvio la pantalla de login de Facebook)",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tested": ["serenityheadspa.com (404)", "serenityheadspafl.com (conexion rechazada por el proxy de red, no resuelve)", "serenityheadspa.co (200 OK, pero pertenece a OTRO negocio)"],
+    "serenityheadspa_co_finding": "serenityheadspa.co SI responde 200 pero es la web de 'Serenity Head Spa' en Issaquah y Bothell, Washington (fundadora Kaycie, telefono 425-546-4366, email kaycie@serenityheadspa.co). Verificado con WebFetch + curl directo, sin ninguna mencion a Orlando, Hunters Creek ni al telefono/direccion de este negocio.",
+    "other_similar_domains_from_search": "serenityheadspas.com = negocio en el area DMV (DC/MD/VA). theserenityheadspa.com = Summerville, SC. serenityheadspa-ct.com = Connecticut. serenityheadspaok.com = Oklahoma. Todos son negocios homonimos en OTROS estados, ninguno es Serenity Head Spa FL en Orlando.",
+    "conclusion": "has_own_site = false, confirmado de nuevo en esta corrida. El unico canal de reserva/presencia web propia es Booksy; Instagram y Facebook son sus redes sociales."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/1491624_serenity-head-spa-fl_massage_134763_orlando",
+    "business_id": 1491624,
+    "note": "Booksy es el unico canal de reserva online identificado. No hay boton de reserva alternativo (Square, GlossGenius, Mangomint, Fresha, Vagaro) en ninguna fuente consultada."
+  },
+  "hours": {
+    "source": "JSON-LD schema.org openingHoursSpecification embebido en la pagina de Booksy.",
+    "schedule": [
+      { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "open": "10:00", "close": "19:00" }
+    ],
+    "note": "Booksy no lista horario de domingo (cerrado presumiblemente domingos). No confirmado por segunda fuente independiente."
+  },
+  "rating": {
+    "booksy": {
+      "value": 4.907407407407407,
+      "value_display": "4.9",
+      "count": 54,
+      "source": "JSON-LD schema.org aggregateRating embebido en la pagina de Booksy: ratingValue=4.907407407407407, reviewCount=54. Confirma el dato provisto en la tarea (4.9 estrellas, 54 reviews)."
+    }
+  },
+  "services": {
+    "source": "JSON-LD makesOffer de Booksy (nombres y precios exactos) cruzado con WebFetch del render publico de la pagina de Booksy para las duraciones (mostradas en la tabla de servicios visible, no presentes en el JSON-LD). Los 9 servicios listados son la totalidad del menu publico en Booksy; no hay servicios adicionales ocultos ni paginacion.",
+    "price_range_booksy": "USD 100 - 450",
+    "all_services": [
+      { "name": "Japanese Head Spa Promotion", "name_raw": "🎊Japanese Head Spa Promotion!!!", "price": 100, "duration_min": 60, "category": "Head Spa Individual" },
+      { "name": "Deluxe Head Spa Massage", "price": 195, "duration_min": 90, "category": "Head Spa Individual" },
+      { "name": "Triple Head Spa Promotion", "name_raw": "🥇Triple Head Spa Promotion!🎉", "price": 300, "duration_min": 60, "category": "Head Spa Individual" },
+      { "name": "Full Combination: Facial Yoga & Head Spa", "name_raw": "Full Cobination🎉 Facial Yoga & Head Spa✅", "price": 150, "duration_min": 60, "category": "Head Spa + Facial Yoga" },
+      { "name": "Premium Full Combination", "name_raw": "Premium Full Combination 🎉", "price": 225, "duration_min": 90, "category": "Head Spa + Facial Yoga" },
+      { "name": "Double Head Spa with Jade Stones (60 minutes)", "price": 200, "duration_min": 60, "category": "Double / Couples" },
+      { "name": "Double Deluxe Head Spa (90 min) + Jade Hot Stones", "price": 390, "duration_min": 90, "category": "Double / Couples" },
+      { "name": "Double Full Combination: Yoga Facial & Head Spa", "price": 300, "duration_min": 60, "category": "Double / Couples" },
+      { "name": "Double Premium Full Combination", "name_raw": "🥇Double Premium Full Combination!✅🎉", "price": 450, "duration_min": 90, "category": "Double / Couples" }
+    ],
+    "featured_for_site": ["Deluxe Head Spa Massage", "Double Head Spa with Jade Stones (60 minutes)", "Full Combination: Facial Yoga & Head Spa", "Japanese Head Spa Promotion"],
+    "marketing_copy_source": "Flyer real encontrado en la galeria de Booksy (bilingue ES/EN): 'HIDROMASAJE CAPILAR - Tecnica Japonesa' / 'SCALP HYDROTHERAPY TREATMENT - Japanese Technique', con 4 pilares: Hidromasaje capilar (limpieza profunda), Piedras Jade (equilibrio), Toallas calientes (relajacion/absorcion), Aromaterapia (calma mente y cuerpo). Tagline propio: 'Relajate. Renueva. Renace.' / 'Relax. Renew. Reborn.' Se uso como base real para el copy de la seccion Experiencia y Ritual (parafraseado, no copiado literal)."
+  },
+  "reviews": [
+    { "name": "Vanessa", "source": "Google (provisto en tarea, no re-verificable via API publica sin login)", "text": "From the moment we walked in, the atmosphere felt small, cozy, and calming. It was peaceful in a way I honestly wasn't expecting." },
+    { "name": "Catalina", "source": "Google (provisto en tarea)", "text": "The whole experience was amazing! It was very relaxing, it felt great on our scalp and the facial exfoliation and face massage was unique." },
+    { "name": "Amy M.", "source": "Booksy (JSON-LD verbatim, 2026-06-28)", "text": "Amazing experience! A friend and I did the double head spa with jade stones and both loved it. Our hair is so soft and it was so relaxing!" },
+    { "name": "Mk M.", "source": "Booksy (JSON-LD verbatim, 2026-05-15)", "text": "Wonderful experience of true luxury!" },
+    { "name": "Twila M.", "source": "Booksy (JSON-LD verbatim, 2026-05-11)", "text": "Best head spa experience I have ever had!!" }
+  ],
+  "reviews_note": "Las 3 resenas provistas en la tarea (Vanessa, Catalina, Amy) se mantienen; se ampliaron con 2 mas (Mk M. y Twila M.) extraidas directamente del JSON-LD publico de Booksy, que solo expone 3 resenas verbatim integras en el schema (Amy, Mk M., Twila M., coincidiendo la de Amy con la ya provista). Busqueda web adicional menciono resenas de Google no verbatim (masajistas 'Jessica' y 'Amy' mencionadas por nombre, ambiente limpio y relajante) pero sin texto citable completo verificable en fuente primaria, por lo que NO se usaron como cita literal.",
+  "language": {
+    "primary": "en",
+    "note": "Los 9 nombres de servicio en Booksy estan en ingles; las 5 resenas verbatim disponibles estan en ingles. Sin embargo se encontro evidencia solida de comunicacion bilingue real: el negocio publica material promocional oficial (flyer de Booksy) en DOS versiones paralelas, una en espanol ('Relajate. Renueva. Renace.' / 'Hidromasaje Capilar' / 'Reserva Ahora') y otra en ingles ('Relax. Renew. Reborn.' / 'Scalp Hydrotherapy Treatment' / 'Book Here!'), consistente con la alta poblacion hispana de Hunters Creek. No se pudo confirmar el idioma de los captions de Instagram por el bloqueo del endpoint de IG. Se establece 'en' como idioma principal (default del html) por ser el idioma dominante en las fuentes primarias verificadas (Booksy, resenas), con el sitio construido bilingue ES/EN completo como exige el pipeline."
+  },
+  "brand_vibe": {
+    "description": "Logo real (extraido de Booksy, campo 'logo'): circulo con sol dorado degradado (rayos) elevandose sobre olas turquesa/aguamarina en trazo blanco, sobre fondo crema; wordmark 'SERENITY' en serif dorado y 'HEAD SPA' en gris oscuro debajo, con pequenos circulos y lineas doradas decorativas. El interior real (fotos de Booksy) es un spa de gama alta: paredes de marmol crema/beige, camillas blancas con mantas verde salvia y kaki, sillas de terapeuta color hueso con patas doradas, herraje de aro 'halo' dorado/champagne en las estaciones de hidromasaje capilar, velas encendidas y difusores de aromaterapia. Las tinas de tratamiento tienen iluminacion ambiental LED en tonos joya (azul, purpura, verde, turquesa) que aportan un contraste vibrante sobre el fondo neutro y calido. Personal con uniforme azul marino con el logo bordado. Resultado: quiet luxury calido con acento dorado (del sol del logo) y un guino turquesa/teal (de las olas del logo y las luces LED), NUNCA oscuro ni moody: base clara, aspiracional, spa-boutique editorial.",
+    "base": "clara (light)",
+    "template_choice": "templates/light/index.html (ejemplar Amani) por brand real claramente clara/crema con acento calido, igual que el ejemplar.",
+    "palette_name": "serenityheadspa (crema calido + dorado del sol del logo + guino teal de las olas, paleta nueva)",
+    "colors": {
+      "bg": "#f7f3ec",
+      "bg2": "#eee5d3",
+      "surface": "rgba(255,252,245,0.72)",
+      "ink": "#2f2a22",
+      "accent-deep": "#b8863a",
+      "accent-mid": "#d9a45c",
+      "accent-soft": "#eee5d3",
+      "accent-ghost": "rgba(184,134,58,0.16)",
+      "teal_extra": "#2f7a74 (acento secundario tomado de las olas del logo, uso puntual en iconos/detalles, no reemplaza el sistema de tokens principal)"
+    }
+  },
+  "images": {
+    "sources": ["Booksy: campos logo, biz_photo, inspiration (galeria de fotos subidas por el negocio) y service_photos (uno por cada uno de los 9 servicios del menu)", "Instagram: NO accesible (bloqueo 429 persistente en 4 intentos combinados entre curl directo y WebFetch)", "Google Maps (lh3.googleusercontent.com): no consultado, la cobertura de Booksy fue suficiente y de alta calidad/resolucion"],
+    "curation_notes": "Se descargaron 27 imagenes de Booksy y se inspeccionaron TODAS visualmente (Read/vision) antes de curar. Se descartaron: 2 flyers promocionales con texto superpuesto (prohibido en galeria), 1 foto de pies en primer plano (fuera de tema para un head spa), 3 fotos interiores borrosas/con camara en movimiento, 1 foto de cliente descansando post-tratamiento de baja calidad (grano de camara de telefono, angulo pobre), 1 variante duplicada de mascarilla facial en angulo raro. Se conservaron 13 archivos finales: 1 hero, 2 de experiencia/equipo, 6 de galeria curada, 1 logo, y 3 de respaldo no usadas en el HTML pero validas por si se necesitan.",
+    "final_selection": {
+      "hero": "assets/raw/hero.jpg (tratamiento de hidromasaje capilar bajo el aro dorado, luz calida, rostro en calma)",
+      "experience_1": "assets/raw/experience-1.jpg (foto destacada del propio negocio en Booksy, hidromasaje capilar)",
+      "experience_2": "assets/raw/experience-2.jpg (terapeuta con uniforme de marca atendiendo a una clienta, sala con dos estaciones)",
+      "gallery": [
+        "assets/raw/gallery-1-studio.jpg (interior del estudio, estaciones de hidromasaje con iluminacion LED)",
+        "assets/raw/gallery-2-deluxe.jpg (Deluxe Head Spa Massage, cierre de ojos, luz azul)",
+        "assets/raw/gallery-3-premium.jpg (Premium Full Combination, aro dorado, luz purpura)",
+        "assets/raw/gallery-4-jade.jpg (piedras de jade sobre espalda, Double Head Spa with Jade Stones)",
+        "assets/raw/gallery-5-hotstone.jpg (terapia de piedras calientes a la luz de las velas)",
+        "assets/raw/gallery-6-couples.jpg (experiencia doble/en pareja, dos clientes en camillas)"
+      ],
+      "logo": "assets/raw/logo.jpg (logo real del negocio)"
+    }
+  },
+  "owner_note": "Una busqueda web devolvio 'la propietaria se llama Annette' sin fuente primaria verificable (no confirmado en Booksy, Instagram bloqueado, Facebook tras login). Por precaucion NO se uso ningun nombre propio de dueno/a en el copy del sitio; el JSON-LD de Booksy solo expone nombres de marcador de posicion ('Therapist 1', 'Therapist 2') para el personal, tampoco usados como nombres reales."
+}
