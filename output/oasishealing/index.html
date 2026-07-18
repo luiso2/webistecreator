@@ -85,19 +85,19 @@
       background: var(--surface);
       backdrop-filter: blur(16px) saturate(150%);
       -webkit-backdrop-filter: blur(16px) saturate(150%);
-      border: 1px solid rgba(138,111,77,0.16);
+      border: 1px solid rgba(156,24,86,0.16);
       transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     }
     .glass-hover:hover {
       background: rgba(250,247,241,0.88);
-      border-color: rgba(138,111,77,0.32);
+      border-color: rgba(156,24,86,0.32);
       transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(50,40,31,0.14), 0 0 40px rgba(138,111,77,0.08);
+      box-shadow: 0 18px 42px rgba(58,36,50,0.14), 0 0 40px rgba(156,24,86,0.08);
     }
 
     /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
     .text-shine {
-      background: linear-gradient(110deg, #8a6f4d 0%, #b0916a 30%, #5b473a 52%, #8a6f4d 75%, #a8845a 100%);
+      background: linear-gradient(110deg, #9c1856 0%, #d1749a 30%, #5c1030 52%, #9c1856 75%, #b8447a 100%);
       background-size: 200% auto;
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -112,9 +112,9 @@
       0%, 100% { transform: translate3d(0,0,0) scale(1); }
       50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
     }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e2d4bd 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #c4ad93 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #d3c1a6 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f3c9dc 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #dba0bb 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e8bdd2 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
 
     /* Grain editorial */
     .grain::after {
@@ -133,17 +133,17 @@
     /* Boton 3D mocha */
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 48%, #6d5539 100%);
-      color: #f5f0e8; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #c25d86 0%, #9c1856 48%, #5c1030 100%);
+      color: #faf6f2; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.3),
-        inset 0 -2px 5px rgba(60,45,28,0.4),
-        0 5px 0 #4a3a26,
-        0 12px 24px rgba(50,40,31,0.28);
+        inset 0 -2px 5px rgba(74,14,40,0.4),
+        0 5px 0 #4a0e28,
+        0 12px 24px rgba(58,36,50,0.28);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,45,28,0.4), 0 7px 0 #4a3a26, 0 18px 34px rgba(50,40,31,0.32), 0 0 40px rgba(138,111,77,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,45,28,0.45), 0 1px 0 #4a3a26, 0 4px 10px rgba(50,40,31,0.25); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(74,14,40,0.4), 0 7px 0 #4a0e28, 0 18px 34px rgba(58,36,50,0.32), 0 0 40px rgba(156,24,86,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(74,14,40,0.45), 0 1px 0 #4a0e28, 0 4px 10px rgba(58,36,50,0.25); }
     .btn-3d::after {
       content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
@@ -153,10 +153,10 @@
 
     /* Boton ghost */
     .btn-ghost {
-      border: 1px solid rgba(138,111,77,0.35); color: var(--ink);
+      border: 1px solid rgba(156,24,86,0.35); color: var(--ink);
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(138,111,77,0.7); background: rgba(138,111,77,0.08); box-shadow: 0 10px 26px rgba(50,40,31,0.14); }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(156,24,86,0.7); background: rgba(156,24,86,0.08); box-shadow: 0 10px 26px rgba(58,36,50,0.14); }
 
     /* Badge Merktop */
     .merktop-badge {
@@ -173,34 +173,34 @@
 
     /* Nav */
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(50,40,31,0.1); }
+    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(58,36,50,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
 
     /* Marco editorial de imagen */
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(50,40,31,0.2); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(138,111,77,0.14), inset 0 -60px 100px rgba(50,40,31,0.12); }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(58,36,50,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(156,24,86,0.14), inset 0 -60px 100px rgba(58,36,50,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
 
     /* Numeros del ritual */
     .step-num {
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(180deg, #a8907a, #5b473a);
+      background: linear-gradient(180deg, #c25d86, #5c1030);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     /* Estrellas */
-    .stars { color: #8a6f4d; letter-spacing: 2px; text-shadow: 0 0 14px rgba(138,111,77,0.3); }
+    .stars { color: #9c1856; letter-spacing: 2px; text-shadow: 0 0 14px rgba(156,24,86,0.3); }
 
     /* Mapa elegante */
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
 
     /* Banda oscura espresso (CTA final + footer) */
     .dark-band {
-      --ink: #f5f0e8;
+      --ink: #faf6f2;
       --ink-60: rgba(245,240,232,0.65);
       --ink-40: rgba(245,240,232,0.45);
       --surface: rgba(255,255,255,0.05);
@@ -208,36 +208,36 @@
       color: var(--ink);
     }
     .dark-band .text-shine {
-      background-image: linear-gradient(110deg, #e8cfa6 0%, #f8ecd6 30%, #c4ad93 52%, #e8cfa6 75%, #f3e3c2 100%);
+      background-image: linear-gradient(110deg, #f0a8c8 0%, #f8dce8 30%, #dba0bb 52%, #f0a8c8 75%, #f6d3e2 100%);
     }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,166,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(240,168,200,0.16) 0%, transparent 70%); opacity: 1; }
     .dark-band .orb-b { background: radial-gradient(circle, rgba(168,144,122,0.14) 0%, transparent 70%); opacity: 1; }
     .dark-band .btn-3d {
-      background: linear-gradient(180deg, #faf3e6 0%, #e8d9bf 48%, #c9b393 100%);
-      color: #32281f;
+      background: linear-gradient(180deg, #faf0f4 0%, #f0c9db 48%, #d98cb0 100%);
+      color: #3a2432;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.55),
-        inset 0 -2px 5px rgba(120,90,50,0.35),
-        0 5px 0 #8a7358,
+        inset 0 -2px 5px rgba(122,46,82,0.35),
+        0 5px 0 #7a2e52,
         0 12px 24px rgba(0,0,0,0.45);
     }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,166,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,166,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,166,0.7); background: rgba(232,207,166,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e8cfa6; text-shadow: 0 0 14px rgba(232,207,166,0.4); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(122,46,82,0.35), 0 7px 0 #7a2e52, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(240,168,200,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(122,46,82,0.4), 0 1px 0 #7a2e52, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(240,168,200,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(240,168,200,0.7); background: rgba(240,168,200,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f0a8c8; text-shadow: 0 0 14px rgba(240,168,200,0.4); }
 
     /* Boton flotante de reserva */
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60;
       width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 100%);
-      box-shadow: 0 6px 0 #4a3a26, 0 14px 30px rgba(50,40,31,0.35);
+      background: linear-gradient(180deg, #c25d86 0%, #9c1856 100%);
+      box-shadow: 0 6px 0 #4a0e28, 0 14px 30px rgba(58,36,50,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a3a26, 0 20px 40px rgba(50,40,31,0.4), 0 0 34px rgba(138,111,77,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a3a26, 0 6px 14px rgba(50,40,31,0.3); }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a0e28, 0 20px 40px rgba(58,36,50,0.4), 0 0 34px rgba(156,24,86,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a0e28, 0 6px 14px rgba(58,36,50,0.3); }
 
     /* ============ Motion v2 (nivel $100k) ============ */
 
@@ -255,7 +255,7 @@
       width: 64px; height: 64px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
-      border: 1px solid rgba(138,111,77,0.35); background: rgba(138,111,77,0.08);
+      border: 1px solid rgba(156,24,86,0.35); background: rgba(156,24,86,0.08);
       animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
     }
     .pre-word {
@@ -271,7 +271,7 @@
     /* 2. Barra de progreso de scroll */
     #scroll-progress {
       position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
-      background: linear-gradient(90deg, #6d5539 0%, #8a6f4d 45%, #c9ab7f 100%);
+      background: linear-gradient(90deg, #5c1030 0%, #9c1856 45%, #d98cb0 100%);
       transform: scaleX(0); transform-origin: left center; will-change: transform;
       pointer-events: none;
     }
@@ -303,7 +303,7 @@
     @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
     .carousel-dot {
       width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
-      background: rgba(50,40,31,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+      background: rgba(58,36,50,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
     }
     .carousel-dot.active { width: 24px; background: var(--accent-deep); }
 
@@ -327,7 +327,7 @@
     .cursor-glow {
       position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
       border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
-      background: radial-gradient(circle, rgba(232,207,166,0.14) 0%, rgba(138,111,77,0.08) 42%, transparent 70%);
+      background: radial-gradient(circle, rgba(240,168,200,0.14) 0%, rgba(156,24,86,0.08) 42%, transparent 70%);
       transition: opacity 0.5s ease; will-change: transform;
     }
     .cursor-glow.on { opacity: 1; }
@@ -341,7 +341,7 @@
       transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
     }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(138,111,77,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(156,24,86,0.5); transform: translateY(-3px); }
 
     @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
@@ -379,7 +379,7 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(138,111,77,0.35)] bg-[rgba(138,111,77,0.1)] text-[color:var(--accent-deep)]">A</span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(156,24,86,0.35)] bg-[rgba(156,24,86,0.1)] text-[color:var(--accent-deep)]">A</span>
         <span class="font-display text-xl tracking-[0.14em] uppercase">Amani <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">HeadSpa</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
@@ -517,19 +517,19 @@
           <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">El equipo</p>
           <div class="flex flex-wrap gap-4">
             <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-1.jpg" alt="Nilda Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
+              <img src="assets/raw/team-1.jpg" alt="Nilda Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(156,24,86,0.3)]" loading="lazy" />
               <span class="text-sm font-light">Nilda Estevez</span>
             </div>
             <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-2.jpg" alt="Mireia Fenoy, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
+              <img src="assets/raw/team-2.jpg" alt="Mireia Fenoy, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(156,24,86,0.3)]" loading="lazy" />
               <span class="text-sm font-light">Mireia Fenoy</span>
             </div>
             <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-3.jpg" alt="Maria Gutierrez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
+              <img src="assets/raw/team-3.jpg" alt="Maria Gutierrez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(156,24,86,0.3)]" loading="lazy" />
               <span class="text-sm font-light">Maria Gutierrez</span>
             </div>
             <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-4.jpg" alt="Nildy Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
+              <img src="assets/raw/team-4.jpg" alt="Nildy Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(156,24,86,0.3)]" loading="lazy" />
               <span class="text-sm font-light">Nildy Estevez</span>
             </div>
           </div>
@@ -591,7 +591,7 @@
             <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
           </div>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(138,111,77,0.4); box-shadow: 0 18px 50px rgba(50,40,31,0.14);">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(156,24,86,0.4); box-shadow: 0 18px 50px rgba(58,36,50,0.14);">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial · Ritual insignia</p>
           <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding| 90min</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El ritual completo de head spa más un facial rejuvenecedor: limpieza profunda, mascarilla nutritiva, masaje facial e hidratación con SPF.</p>
@@ -735,7 +735,7 @@
             <div>
               <p class="font-medium mb-1">Dirección</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light">752 Flagami Blvd, Miami, FL 33144</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(138,111,77,0.4)]" href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener">Cómo llegar</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(156,24,86,0.4)]" href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener">Cómo llegar</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
@@ -766,7 +766,7 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241c14 0%, #1b150e 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2a1220 0%, #1c0c16 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
@@ -781,11 +781,11 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#17110b]">
+  <footer class="dark-band relative border-t border-[color:var(--accent-ghost)] bg-[#180a12]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,207,166,0.35)] bg-[rgba(232,207,166,0.08)] text-[#e8cfa6]">A</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(240,168,200,0.35)] bg-[rgba(240,168,200,0.08)] text-[#f0a8c8]">A</span>
           <span class="font-display text-lg tracking-[0.12em] uppercase">Amani HeadSpa</span>
         </div>
         <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Miami's Holistic Head Spa. Wellness rituals para individuales y parejas: head spa + facials.</p>
@@ -793,14 +793,14 @@
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
         <p>752 Flagami Blvd, Miami, FL 33144</p>
-        <p><a href="tel:+13057906977" class="hover:text-[#e8cfa6]">(305) 790-6977</a></p>
-        <p><a href="mailto:amaniheadspa@gmail.com" class="hover:text-[#e8cfa6]">amaniheadspa@gmail.com</a></p>
+        <p><a href="tel:+13057906977" class="hover:text-[#f0a8c8]">(305) 790-6977</a></p>
+        <p><a href="mailto:amaniheadspa@gmail.com" class="hover:text-[#f0a8c8]">amaniheadspa@gmail.com</a></p>
         <p>Lun a Vie 10 AM a 7 PM · Sáb 8 AM a 7 PM · Dom 8 AM a 5 PM</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Instagram · @amaniheadspa</a></p>
-        <p><a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Reservas online · GlossGenius</a></p>
+        <p><a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="hover:text-[#f0a8c8]">Instagram · @amaniheadspa</a></p>
+        <p><a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="hover:text-[#f0a8c8]">Reservas online · GlossGenius</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
@@ -816,7 +816,7 @@
 
   <!-- Boton flotante de reserva -->
   <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf6f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
   </a>
 
   <!-- Volver arriba (abajo-izquierda) -->
