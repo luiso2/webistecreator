@@ -76,7 +76,7 @@ Puerta de calidad (leccion Sandra 2026-07-16: el site salio "con template" pero 
 - **dm_message (SIEMPRE, para todo negocio)**: version corta del outreach para DM/WhatsApp (max ~450 chars), en el IDIOMA PRINCIPAL del negocio, con el link del demo incluido, angulo segun has_own_site. Guardarlo en el registro (`dm_message`) e incluirlo como `dm` en el POST de done al panel. El panel lo usa para el boton "DM" (copia + abre el hilo de Instagram) y "WhatsApp" (texto pre-llenado via wa.me).
 
 ## Fase 6: Registro y reporte
-- Actualizar `data/processed.json`: `{slug, name, city, ig, url_demo, has_own_site, email, outreach: sent|pending_manual|skipped, fecha}`. NUNCA reprocesar un slug ya registrado (idempotencia).
+- Actualizar `data/processed.json`: `{slug, name, city, ig, url_demo, has_own_site, email, outreach: sent|pending_manual|skipped, thumb, fecha}`. `thumb` = URL absoluta de la og:image del site (miniatura de la tarjeta en el panel). NUNCA reprocesar un slug ya registrado (idempotencia).
 - Reporte al usuario (email a jose@merktop.com via Resend): negocios procesados, URLs live, emails enviados/entregados, pendientes manuales, errores.
 
 ## Panel (siteforge-panel)

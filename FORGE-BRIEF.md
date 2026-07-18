@@ -35,7 +35,7 @@ Mientras, el agente principal copia el template ejemplar y prepara el esqueleto.
 8. Si el negocio no encaja en el formato (ecommerce, mayorista, sin servicios reservables): `failed` con motivo, no forzar un demo pobre.
 
 ## 4. Registro, panel y reporte
-- `data/processed.json`: {slug, name, city, ig, url_demo: https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/, has_own_site, email, phone, outreach: pending_manual|draft, status: staging, language, dm_message, fecha}. NUNCA reprocesar un slug registrado.
+- `data/processed.json`: {slug, name, city, ig, url_demo: https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/, has_own_site, email, phone, outreach: pending_manual|draft, status: staging, language, dm_message, thumb, fecha}. `thumb` = URL ABSOLUTA de la og:image del site (url_demo + ruta de la imagen del og:image del index.html): el panel la usa como miniatura de la tarjeta. NUNCA reprocesar un slug registrado.
 - **dm_message** (SIEMPRE): version corta del outreach para DM/WhatsApp, max 450 chars, idioma principal, link del demo, angulo segun has_own_site.
 - Ids procesados -> `data/queue_done.json` (failed: con motivo). Commit + push a main (rechazado: git pull --rebase, reintentar una vez). El push publica los demos solo (Workers Builds).
 - Panel publico: GET /api/public/queue, POST /api/public/queue/progress {id, stage: research|build|verify|commit}, POST /api/public/queue/done {id, slug, name, url_demo, dm}. Item FALLIDO: POST done con {id, failed: true, motivo: "<resumen corto del porque>"} para que el panel lo muestre en rojo con su motivo.
