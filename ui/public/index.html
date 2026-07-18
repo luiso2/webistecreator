@@ -187,7 +187,7 @@
 
     <section class="card forge reveal" style="animation-delay:0.08s">
       <h2>Forjar un <em>website nuevo</em></h2>
-      <p class="sub">Escribe un Instagram handle, el nombre de un negocio, o un nicho + ciudad. La forja pasa cada hora: investiga el negocio, construye su site premium y publica el demo automaticamente. El outreach siempre espera tu aprobacion.</p>
+      <p class="sub">Escribe un Instagram handle, el nombre de un negocio, o un nicho + ciudad. Las forjas pasan cada ~7 minutos: investigan el negocio, construyen su site premium y publican el demo automaticamente. El outreach siempre espera tu aprobacion.</p>
       <div class="forge-row">
         <input id="input" type="text" maxlength="200" placeholder="@mizuheadspamiami · Alea Skincare North Miami · head spas en Orlando" />
         <button class="btn" id="submit">Buscar y crear</button>
@@ -206,7 +206,7 @@
     <div class="grid" id="grid"></div>
 
     <footer>
-      <p>Siteforge · la rutina diaria descubre negocios (9:07 AM) y la forja horaria procesa la cola del panel (:22)</p>
+      <p>Siteforge · la rutina diaria descubre negocios sin website (9:07 AM) y 8 forjas escalonadas procesan la cola cada ~7 min</p>
       <a class="merktop" href="https://merktop.com" target="_blank" rel="noopener"><span class="dot"></span>Powered by <b>&nbsp;Merktop</b></a>
     </footer>
   </div>
@@ -277,7 +277,8 @@
       const STAGE_LABEL = { research: 'Investigando el negocio', build: 'Construyendo el website', verify: 'Verificando calidad', commit: 'Publicando' };
       const STAGE_PCT = { research: 30, build: 65, verify: 85, commit: 95 };
       const working = queue.filter(q => q.status === 'processing');
-      const qItems = queue.filter(q => q.status !== 'processing').slice().reverse().slice(0, 12);
+      const pending = queue.filter(q => q.status === 'pending');
+      const qItems = queue.filter(q => q.status !== 'processing' && q.status !== 'pending').slice().reverse().slice(0, 12);
       window.__queue = {};
       const chips = qItems.map(q => {
         window.__queue[q.id] = q;
@@ -297,7 +298,22 @@
           </div>
           <div class="bar"><div class="fill" style="width:${STAGE_PCT[q.stage] || 15}%"></div></div>
         </div>`).join('');
-      $('queue').innerHTML = progs + chips;
+      // Items recien encolados: temporizador desde el primer segundo + cuenta regresiva a la proxima forja
+      const FORGE_SLOTS = [7, 15, 22, 30, 37, 46, 52, 59];
+      const now = new Date();
+      const min = now.getUTCMinutes() + now.getUTCSeconds() / 60;
+      const nextSlot = FORGE_SLOTS.find(s => s > min);
+      const waitMin = Math.max(1, Math.ceil(nextSlot !== undefined ? nextSlot - min : 60 - min));
+      const pendProgs = pending.map(q => `
+        <div class="prog">
+          <div class="row">
+            <span class="name">⏳ ${esc(q.input)}</span>
+            <span class="stage">En cola · una forja lo toma en ~${waitMin} min</span>
+            <span class="timer" data-start="${esc(q.created)}">0m 00s</span>
+          </div>
+          <div class="bar"><div class="fill" style="width:6%"></div></div>
+        </div>`).join('');
+      $('queue').innerHTML = progs + pendProgs + chips;
     }
 
     // Boton DM: copia el mensaje (en el idioma del site) y abre el hilo de Instagram.
@@ -342,7 +358,7 @@
         const data = await r.json();
         if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(); return; }
         if (!r.ok) throw new Error(data.error || r.status);
-        msg.className = 'msg ok'; msg.textContent = 'En cola. La forja pasa cada hora (minuto 22); el demo aparecera aqui al terminar.';
+        msg.className = 'msg ok'; msg.textContent = 'En cola. Una forja pasa cada ~7 minutos; veras el progreso aqui mismo.';
         $('input').value = '';
         load();
       } catch (e) {
