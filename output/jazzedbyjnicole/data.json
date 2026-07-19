@@ -1,0 +1,215 @@
+{
+  "slug": "jazzedbyjnicole",
+  "name_legal_llc": "Jazzed By JNicole, LLC (Florida LLC, confirmed via city-data.com business entity listing 85-1165596)",
+  "name_brand": "Jazzed By JNicole",
+  "owner": "Nicole Johnson-Cobb",
+  "niche": "Nail salon boutique (custom acrylic nail art, stoned bling fullsets, brows)",
+  "city": "Tallahassee, FL",
+  "address": {
+    "full": "2764 West Tennessee Street Ste. 2, Tallahassee, FL 32304",
+    "street": "2764 West Tennessee Street Ste. 2",
+    "locality": "Tallahassee",
+    "region": "FL",
+    "postal_code": "32304",
+    "country": "US",
+    "geo": { "lat": 30.45573, "lng": -84.34116 },
+    "source": "JSON-LD (schema.org NailSalon) embedded in the business's Booksy page (booksy.com/en-us/187347_jazzed-by-jnicole_nail-salon_15826_tallahassee), cross-checked against the internal __NUXT_DATA__ payload on the same page (both agree) and against the address given in the task discovery input and Google search snippets. This matches the input address exactly.",
+    "discrepancy_note": "A third-party aggregator (maby.us) lists a different address, '1024 N Monroe St, Tallahassee, FL 32303', for a listing with the same phone number. This looks like a stale or unrelated aggregator record; Booksy's structured data (which is the business's own live listing) and the task's own input agree on 2764 West Tennessee Street Ste. 2, so that address is used for the site and map."
+  },
+  "phone": "+1-850-694-6830",
+  "phone_display": "(850) 694-6830",
+  "phone_source": "Matches the task discovery input, confirmed by the og:description meta tag on the business's live GlossGenius booking page (jnicole.glossgenius.com), which reads 'Book online or call 18506946830'.",
+  "email": null,
+  "email_sources_tried": [
+    "Instagram web_profile_info API (x-ig-app-id header) for @jazzedbyjnicole: blocked twice with a proxy-side schema error (HTTP 400, 'Asset asset://laser.provider/... has been deleted'), matching a known infra issue seen on other recent builds. Per pipeline rule, stopped after 2 attempts and moved to other sources.",
+    "WebFetch of instagram.com/jazzedbyjnicole/: returned HTTP 429 (rate limited).",
+    "Booksy business record: resolved the full __NUXT_DATA__ payload for business id 187347 in Python; the business object's 'website', 'facebookLink' and 'instagramLink' fields are all null, and no email field is present anywhere in the payload.",
+    "Booksy JSON-LD (schema.org NailSalon): no email property.",
+    "GlossGenius booking page (jnicole.glossgenius.com) __NEXT_DATA__ payload: resolved in Python; 'business_email' and 'business_phone' fields are both explicitly null (the business has not filled them in on the platform). 'business_address' is a GlossGenius placeholder value ('123 Main Street, New York, NY 10000'), confirming the business never finished configuring its GlossGenius profile fields.",
+    "Facebook page facebook.com/jazzzedbyjnicole/: WebFetch returned Facebook's logged-out login wall, no About/contact info accessible without auth.",
+    "Own domain check: jazzedbyjnicole.com does not resolve (DNS ENOTFOUND), so no domain-based email guess is possible.",
+    "Google web search for the owner's name plus 'email': no public email surfaced."
+  ],
+  "instagram": {
+    "primary_handle": "@jazzedbyjnicole",
+    "primary_url": "https://www.instagram.com/jazzedbyjnicole/",
+    "primary_source": "Google search results consistently resolve this handle to 'Nicole Johnson-Cobb (@jazzedbyjnicole) - Tallahassee, FL', matching the owner name found on Booksy staff records ('Nicole Johnson').",
+    "secondary_handle_note": "@itsmejnicole is listed as the linked Instagram account on Nicole's own GlossGenius provider profile (jnicole.glossgenius.com/about, field instagram_url). This may be her personal/secondary account. The site uses @jazzedbyjnicole as the public business handle since that is the one consistently indexed as the business account.",
+    "facebook_handle": "@jazzzedbyjnicole (facebook.com/jazzzedbyjnicole/), found via web search, not independently verified (Facebook required login to view content).",
+    "feed_extraction_note": "Could not extract the IG feed via the web_profile_info API (blocked twice, see email_sources_tried) or via public page fetch (429 rate limited). Per pipeline rule (2 attempts max), moved to Booksy + GlossGenius for images and copy instead, as both expose real, business-owned photos of finished nail work."
+  },
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "jazzedbyjnicole.com (DNS does not resolve, ENOTFOUND), jazzedbyjnicole.net (does not resolve), jnicolenails.com (does not resolve), jazzedbyjnicolellc.com (does not resolve).",
+    "booking_platform_fields": "Booksy's own record for this business has website=null. GlossGenius's own record has website_url=null.",
+    "conclusion": "No own website found. has_own_site=false. Booking happens exclusively through GlossGenius (jnicole.glossgenius.com), a platform subdomain, which per pipeline rules does not count as an owned website."
+  },
+  "booking": {
+    "primary_platform": "GlossGenius",
+    "primary_url": "https://jnicole.glossgenius.com/",
+    "primary_note": "This is the CURRENT, actively used booking channel: its service menu is dated 2023-2026 (created_at timestamps on individual services), has 33 real services with real prices/deposits, and its business_hours object reflects an active by-appointment schedule (Friday and Saturday only). Deposits are collected via Cash App ($jazzedbyjnicole) or Apple Pay per the provider's own bio text.",
+    "secondary_platform": "Booksy",
+    "secondary_url": "https://booksy.com/en-us/187347_jazzed-by-jnicole_nail-salon_15826_tallahassee",
+    "secondary_note": "This listing appears STALE: all 50 visible reviews are dated 2018 and its 9-item service menu (prices $5-$85) is materially cheaper and shorter than the current GlossGenius menu (33 items, $5-$140). However its aggregateRating (4.96, displayed as 5.0) and reviewCount (50) exactly match the numbers given in the task discovery brief, and Booksy is the only source with a real customer-review corpus, so it is used as the rating/review source for the site while GlossGenius is used as the live services/pricing source and the primary booking CTA link."
+  },
+  "rating": {
+    "booksy": {
+      "value_exact": 4.96,
+      "value_displayed": "5.0",
+      "count": 50,
+      "source": "JSON-LD (schema.org AggregateRating) embedded in the Booksy business page, confirmed independently against the internal __NUXT_DATA__ payload field 'reviewsRank': 4.96, 'reviewsCount': 50. This matches the task discovery input exactly (5.0 / 50 reviews on Booksy)."
+    }
+  },
+  "bio_glossgenius_verbatim": "I am a licensed Nail technician that has specialized in nail care for 9 years..... \nI specialize in my perfection to make sure each client is given the correct desired shape. I make my own acrylic system where I focus on the actual foundation and prepping versus designing first!!! \n\n* When booking with JNicole you must post a nonrefundable deposit... placing your credit card information when booking does now guarantee your deposit, your credit card information is for cancellation and no show purposes. Deposits must be paid at the time of booking via Cash App ($jazzedbyjnicole) or Apple Pay. \n\n* Any appointment cancelled the day of service will be charged a cancellation fee. Canceled appointments 2 hours or less before scheduled appointment or no shows will be charged 30% of scheduled appointment. \n\n*I DO NOT WORK OVER OTHERS WORK!! If wanting services you will have to come with a fresh clean acrylic free nail bed, or we will conduct a soak off before any services are performed. If a soak off is needed please come at least 45 mins before your designated appointment time. \n\n*NO kids or Extra Guests ALLOWED!! If any extras are to accompany on your scheduled appointment you will be asked to reschedule for a later date. \n\n*Any appointments booked or requested before 9am or after 7pm will be charged a $15 after hour fee.\n\n*Any clients 15-20 mins late for appointments will be charged a $15 late fee any clients 30 min or more late will be forced to reschedule.",
+  "hours": {
+    "source": "GlossGenius __NEXT_DATA__ payload, field preferences.business_hours (start/end are decimal hours, e.g. 9.5 = 9:30). Confirmed by WebFetch of jnicole.glossgenius.com/about which independently states the same hours in plain text.",
+    "schedule": [
+      { "day": "Friday", "open": "09:30", "close": "17:30", "working": true },
+      { "day": "Saturday", "open": "09:00", "close": "14:30", "working": true },
+      { "day": "Sunday", "working": false },
+      { "day": "Monday", "working": false },
+      { "day": "Tuesday", "working": false },
+      { "day": "Wednesday", "working": false },
+      { "day": "Thursday", "working": false }
+    ],
+    "note": "By-appointment nail tech schedule: open Friday and Saturday only per her own booking platform; not listed as bookable online Sunday through Thursday."
+  },
+  "services_source": "Full 33-item service menu with exact names, prices and durations extracted 2026-07-19 from the __NEXT_DATA__ (Next.js) payload embedded in the business's live GlossGenius booking page (jnicole.glossgenius.com), field props.serverContext.publicUser.users[0].services, resolved and parsed in Python. This is the current, actively maintained menu (service creation timestamps from 2023 through 2026), and is materially larger/pricier than the older 9-item Booksy menu, confirming GlossGenius as the live pricing source.",
+  "services": {
+    "categories": [
+      {
+        "name": "Overlay",
+        "items": [
+          { "name": "Man Sculpted Gel w/ Nail Art", "price": 75, "duration_min": 45 },
+          { "name": "Men Manicure w/ Nail Art", "price": 45, "duration_min": 30 },
+          { "name": "Short Overlay", "price": 50, "duration_min": 60 },
+          { "name": "Long Overlay", "price": 70, "duration_min": 60 }
+        ]
+      },
+      {
+        "name": "Fullsets Plain",
+        "items": [
+          { "name": "Short", "price": 80, "duration_min": 60 },
+          { "name": "Medium", "price": 90, "duration_min": 60 },
+          { "name": "Long", "price": 100, "duration_min": 60 },
+          { "name": "Extra Long", "price": 120, "duration_min": 60 }
+        ]
+      },
+      {
+        "name": "Fullset w/ Stoned Nails",
+        "items": [
+          { "name": "Short", "price": 100, "duration_min": 60 },
+          { "name": "Medium", "price": 120, "duration_min": 60 },
+          { "name": "Long", "price": 130, "duration_min": 60 },
+          { "name": "Extra Long", "price": 140, "duration_min": 60 }
+        ]
+      },
+      {
+        "name": "Fills Plain",
+        "items": [
+          { "name": "Short", "price": 60, "duration_min": 60 },
+          { "name": "Medium", "price": 70, "duration_min": 60 },
+          { "name": "Long", "price": 80, "duration_min": 60 },
+          { "name": "Extra Long", "price": 100, "duration_min": 60 }
+        ]
+      },
+      {
+        "name": "Fills w/ Stoned Nails",
+        "items": [
+          { "name": "Short", "price": 80, "duration_min": 60 },
+          { "name": "Medium", "price": 90, "duration_min": 60 },
+          { "name": "Long", "price": 100, "duration_min": 60 },
+          { "name": "Extra Long", "price": 120, "duration_min": 60 }
+        ]
+      },
+      {
+        "name": "Add On",
+        "items": [
+          { "name": "Encapusulated Designs (Short)(Each)", "price": 25, "duration_min": 15 },
+          { "name": "Encapsulated Designs (medium)(each)", "price": 35, "duration_min": 15 },
+          { "name": "Encapsulated Designs (long)(each)", "price": 45, "duration_min": 15 },
+          { "name": "Blinged Nails(each)", "price": 30, "duration_min": 15 },
+          { "name": "Repair per nail", "price": 5, "duration_min": 15 }
+        ]
+      },
+      {
+        "name": "Beauty Enhancements",
+        "items": [
+          { "name": "Custom Press On + Kit", "price": "50.00 (varies)", "duration_min": 15, "price_varies": true }
+        ]
+      },
+      {
+        "name": "Pedicures / Treatments",
+        "items": [
+          { "name": "Deluxe Pedi With Gel", "price": 60, "duration_min": 10 },
+          { "name": "Exclusive Pedi With Gel", "price": 80, "duration_min": 10 },
+          { "name": "Exclusive Callus Remover W/ Gel", "price": 95, "duration_min": 75 }
+        ]
+      },
+      {
+        "name": "Brows",
+        "items": [
+          { "name": "Tint", "price": 30, "duration_min": 10 },
+          { "name": "Brow Lamination", "price": 55, "duration_min": 10 },
+          { "name": "Lamination & Tint Combo", "price": 75, "duration_min": 10 },
+          { "name": "Lash & Brow Combo", "price": 75, "duration_min": 10 }
+        ]
+      }
+    ],
+    "count": 33,
+    "featured_for_site": [
+      "Fullsets Plain · Medium ($90/60min)",
+      "Fullset w/ Stoned Nails · Medium ($120/60min, signature)",
+      "Man Sculpted Gel w/ Nail Art ($75/45min)",
+      "Lash & Brow Combo ($75/10min)"
+    ],
+    "duration_note": "Some GlossGenius durations (e.g. pedicures listed as 10 min) look short for the actual service; these are copied exactly as published, since the pipeline prohibits adjusting or inventing data even when it looks like a provider data-entry quirk."
+  },
+  "reviews": [
+    { "name": "Tiffany W.", "source": "Booksy", "stars": 5, "date": "2018-12-21", "text": "I love my nails. Nicole is very fast and professional." },
+    { "name": "Areael O.", "source": "Booksy", "stars": 5, "date": "2018-12-06", "text": "She does a very good job and she moves very quickly ... very good with time management and still being able to give you the best look . I will be visiting again soon ." },
+    { "name": "Twana H.", "source": "Booksy", "stars": 5, "date": "2018-12-02", "text": "Best Nail Technician in Tallahassee." },
+    { "name": "Alexis M.", "source": "Booksy", "stars": 5, "date": "2018-11-11", "text": "I love my nails , they are so pretty ." },
+    { "name": "Shontrece M.", "source": "Booksy", "stars": 5, "date": "2018-11-10", "text": "Her work speaks for itself. I always have a good time when I'm there. My nails always come out the way I want them too." }
+  ],
+  "reviews_note": "All 50 Booksy reviews returned in the resolved payload (business-reviews:187347) are dated 2018 and are all 5-star; these 5 are the most complete verbatim quotes with names available. Text lightly whitespace-normalized only (no wording changed) when quoting on-site.",
+  "brand_vibe": {
+    "description": "Official brand mark (from Booksy's logo image and a Facebook-style cover graphic pulled from GlossGenius): a rose-gold/blush cursive 'Jazzed' wordmark with a gold serif 'By J. NICOLE' line, rose-gold sparkle dots and an illustrated hand with colorful nail art, all on a pure black background. The actual nail-art photography (from both GlossGenius service photos and Booksy inspiration photos) is vivid and maximalist: rhinestone-heavy stiletto and coffin sets, gold leaf, hand painted florals and abstract line art, ombre, in a wide range of bright colors. Conclusion: a DARK base (matching the brand's black backdrop) with a rose-gold/champagne-blush glam accent reads truest to the brand, distinct from the more muted bronze/gold of other dark-base builds in this system.",
+    "base": "dark",
+    "palette_name": "jazzedbyjnicole (rose-gold glam on near-black, new palette, does not reuse mizu/amani/mare/alea/pausa)",
+    "colors": {
+      "bg": "#130e0c",
+      "bg_2": "#1c1512",
+      "surface": "rgba(255,255,255,0.035)",
+      "ink": "#f7ece1",
+      "accent_deep": "#e6bd93",
+      "accent_mid": "#c99872",
+      "accent_soft": "#a8785a",
+      "accent_ghost": "rgba(230,189,147,0.16)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "All 5 Booksy review quotes used are in English. The GlossGenius provider bio (Nicole's own words about her business and policies) is written entirely in English. The og:description on the GlossGenius booking page is in English. No Spanish-language content was found in any source (Booksy, GlossGenius, Facebook listing snippet). Tallahassee, FL is an English-majority market. English is registered as the primary language; the full Spanish translation is still provided via the mandatory bilingual toggle.",
+  "images_downloaded": {
+    "count": 30,
+    "path": "output/jazzedbyjnicole/assets/raw/",
+    "sources": "Two sources, since Instagram's feed API was blocked (see email_sources_tried): (1) Booksy business images object: logo (1), cover (1), inspiration photos (8) - all real client nail-art photos published by the business on its Booksy listing, downloaded via curl with a Chrome user agent. (2) GlossGenius per-service images: 23 distinct non-placeholder image URLs found across the 33 services (a handful of services share a GlossGenius generic stock icon, identified by short numeric IDs like /service/206502/image/image.jpg instead of long hashed IDs, and were skipped as not real photos of this business), of which 18 were downloaded (4 turned out to be phone-screenshot style images with visible app UI, excluded during curation; 1 was an exact duplicate by md5 and removed). Plus the business's GlossGenius cover photo and provider avatar.",
+    "curation_note": "Visual curation performed by looking at every candidate image (not by filename) via a generated contact sheet plus individual full-resolution review. EXCLUDED from the gallery: gg-svc-1/2/3/5/6 (phone screenshots with visible OS status bar, Instagram Explore/Reels UI, or 'Add comment' overlay text burned into the frame), gg-svc-4 (a photo of loose nail polish pens, not a nail result), gg-svc-8 (phone camera-roll screenshot with a visible time/battery status bar), gg-svc-17 (two face closeups for a brow service, too close to a personal selfie to use safely), booksy-insp-1 (features counterfeit Chanel-logo nail art, avoided for brand/IP reasons), booksy-insp-2 and booksy-insp-8 (a glittery card/mat in the frame has the business name and phone number visibly printed/handwritten on it, counts as a caption-in-photo). gg-svc-16 (a personal face selfie of the owner) and the GlossGenius provider avatar were kept ONLY as a small round avatar in the Experience section, never as a gallery tile, per the hard rule against owner portraits in the gallery.",
+    "used_in_site": [
+      "hero-1.jpg (from gg-svc-9.jpg): nude/pink stiletto nails with hand painted marble art and clear rhinestones. HERO image and og:image.",
+      "experience-1.jpg (from gg-cover.jpg): the official rose-gold cursive 'Jazzed By J. Nicole' logo graphic on black. Experience section.",
+      "experience-2.jpg (from booksy-insp-4.jpg): glossy white-to-pink ombre coffin nails with a rhinestone accent nail. Experience section.",
+      "avatar-nicole.jpg (from gg-avatar.jpg): Nicole's provider profile photo from GlossGenius. Small round avatar ONLY, in the 'Your artist' block of the Experience section.",
+      "gallery-1.jpg (from gg-svc-12.jpg): long coffin nails with hand painted daisy flowers, bright and clean. Gallery, large lead tile.",
+      "gallery-2.jpg (from gg-svc-15.jpg): nude stiletto nails, gold rhinestones, hand painted orange/pink marble. Gallery, also reused in the Method section's signature-service card.",
+      "gallery-3.jpg (from gg-svc-7.jpg): dalmatian print with gold leaf and rhinestones on coffin nails. Gallery.",
+      "gallery-4.jpg (from gg-svc-11.jpg): colorful hand drawn abstract line art on coffin nails. Gallery.",
+      "gallery-5.jpg (from booksy-insp-7.jpg): olive green coffin nails with gold glitter accent nails. Gallery.",
+      "gallery-6.jpg (from booksy-insp-3.jpg): yellow-to-nude ombre nails with a rhinestone accent nail on a glittery table. Gallery.",
+      "gallery-7.jpg (from gg-svc-14.jpg): square nails, green french tips, rhinestone flower accent. Gallery.",
+      "gallery-8.jpg (from booksy-insp-6.jpg): pale pink coffin nails with a gold glitter accent nail. Gallery."
+    ],
+    "resize_note": "All 12 images used in the final HTML were resized to a max width of 1200px (most are 717-1000px wide) at JPEG quality 82 using Pillow, per the performance rule in PIPELINE.md/DESIGN.md. Verified every used file with the `file` command: all decode as valid JPEG image data, none are 0 bytes (sizes range from about 48KB to 163KB)."
+  },
+  "research_note": "Research performed 2026-07-19 directly (not via the automated forge routine). Instagram's web_profile_info API was blocked twice by the environment's proxy with a schema error unrelated to the actual data (same failure signature documented in output/newlifephysical/data.json from a prior run), so per pipeline rule the research pivoted to Booksy (for rating/reviews/some photos) and GlossGenius (for the live services menu, hours, bio and most photos), both scraped and parsed as structured JSON payloads rather than guessed from rendered HTML."
+}

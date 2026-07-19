@@ -1,0 +1,705 @@
+{
+  "slug": "slaybytay",
+  "name": "Slay By Tay Experience",
+  "name_legal_note": "Booksy business page title and JSON-LD both read 'Slay By Tay Experience'. Instagram full_name field: 'Slay by Tay Experience(Kashawnte Wade)'. No separate corporate/DBA filing checked (single-operator suite rental, not required for this build).",
+  "niche": "hair salon boutique (specialist in locs, color/blonding, natural hair, extensions) operating from a private suite inside a Phenix Salon Suites building",
+  "owner": "Kashawnte \"Tay\" Wade",
+  "owner_source": "Instagram full_name field 'Slay by Tay Experience(Kashawnte Wade)'; Booksy staff list has a single staffer 'KaShawnte' (id 1464147) tied to every service and every review; IG bio signs off with Matrix Artist/Educator credentials under the same first name.",
+  "city": "Clearwater, FL",
+  "address": {
+    "full": "2569 Countryside Blvd #20, Suite 121, Clearwater, FL 33761",
+    "source": "Cross-verified in two independent places on the live Booksy business page (booksy.com/en-us/1542140_slay-by-tay-experience_hair-salon_15980_clearwater): (1) schema.org JSON-LD PostalAddress streetAddress '2569 Countryside Blvd #20, Suite 121, 121, Clearwater, 33761' postalCode 33761; (2) the embedded Nuxt data payload location.address field, identical string. Matches the address given in the task brief exactly. The building is a Phenix Salon Suites location (private-suite salon model), confirmed via a Phenix Salon Suites 'Clearwater' location page and a Phenix professional profile page for this stylist found via web search (profile page itself blocked by a 403 on direct fetch, but indexed under the business name at that address)."
+  },
+  "geo": {
+    "lat": 28.01373,
+    "lng": -82.73202
+  },
+  "phone": "(727) 279-5225",
+  "phone_source": "NOT present anywhere in Booksy's own data (neither the JSON-LD nor the embedded Nuxt payload expose a phone field for this business, confirmed by direct inspection of the resolved payload). Confirmed instead via web search: multiple independent indexed snippets (including a Phenix Salon Suites professional page snippet) show '(727) 279-5225' tied to this exact business name and address, matching the number given in the task brief. Booking itself happens through Booksy (no phone booking), so this number is presented on the site as a direct-call/text option, not as the booking channel.",
+  "instagram": {
+    "handle": "@slaybytayexperience",
+    "url": "https://www.instagram.com/slaybytayexperience/",
+    "full_name": "Slay by Tay Experience(Kashawnte Wade)",
+    "bio": "Color & Blonding Specialist / @matrix Artist/Educator / Natural Haircare/Silk Press / Extension Specialist / Matrix Salon / Tiktok: Slaybytayy / FL",
+    "category": "Beauty, cosmetic & personal care",
+    "follower_count": 591,
+    "post_count": 248,
+    "is_business_account": false,
+    "external_url": "https://link.booksy.com/jTtdZwLNgVb (resolves to the Booksy Instant Experience widget for business id 1542140, i.e. the Booksy booking page)",
+    "source": "instagram.com/api/v1/users/web_profile_info/?username=slaybytayexperience with header x-ig-app-id: 936619743392459, HTTP 200 on first attempt, full profile + first 12 timeline posts (expanded through edge_sidecar_to_children for carousels) retrieved successfully."
+  },
+  "other_links": {
+    "linktree": "http://linktr.ee/Slaybytayx (secondary IG bio link, 'Connect with me!'; opened and inspected: links out to the Booksy booking page again, the personal Facebook page, and TikTok; also surfaces unrelated affiliate/ad links injected by Linktree itself, e.g. skincare/wellness affiliate offers, not business-specific; no email found on it)",
+    "facebook": "https://www.facebook.com/Kweentayhair/ (confirmed as sameAs on Booksy's JSON-LD and matches the linktree; page itself blocked by Facebook's login wall on both www and mbasic fetch attempts, so no additional data pulled from it)",
+    "tiktok": "@slaybytayy (per IG bio and linktree)"
+  },
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "slaybytayexperience.com, slaybytay.com, slaybytayexperience.net, slaybytayhair.com, slaybytayexperience.co, slaybytay.co: none resolve (confirmed via the environment's outbound proxy, which returns a distinctive 'CONNECT tunnel failed, response 502' specifically for non-existent/non-resolving domains, verified against a known-nonexistent control domain and a known-real control domain (google.com, which returned normal HTTP 301) to confirm this failure mode reliably means 'domain does not resolve', not a generic network fault).",
+    "booksy_field": "The embedded Booksy Nuxt payload's business.website field resolves to null (explicitly checked in the parsed object, key present, value None).",
+    "ig_external_url": "Instagram bio external_url is https://link.booksy.com/jTtdZwLNgVb, a Booksy platform link (Instant Experience widget), not an independent domain. The secondary linktr.ee/Slaybytayx bio link is also a platform aggregator, not an owned domain.",
+    "conclusion": "NO own website. Booking happens exclusively through Booksy (slaybytayexperience.booksy.com/a, canonical page booksy.com/en-us/1542140_slay-by-tay-experience_hair-salon_15980_clearwater). Angle: has_own_site=false, 'built you a sample website'."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/1542140_slay-by-tay-experience_hair-salon_15980_clearwater",
+    "subdomain_url": "https://slaybytayexperience.booksy.com/a",
+    "business_id": 1542140,
+    "note": "Booksy is the sole booking channel, linked directly from the Instagram bio's primary 'Book with me!' link."
+  },
+  "rating": {
+    "value": 5.0,
+    "value_exact": 5,
+    "count": 52,
+    "source": "Live-fetched schema.org JSON-LD embedded in the Booksy business page on 2026-07-19: aggregateRating {ratingValue: 5, reviewCount: 52}. Independently confirmed in the embedded Nuxt data payload (business.reviewsRank = 5, business.reviewsCount = 52), an exact match between both structured-data sources on the same live page. This matches the '5.0 / 52 reviews' figure given in the discovery brief exactly."
+  },
+  "hours": {
+    "source": "Booksy JSON-LD openingHoursSpecification, cross-checked against the raw openHours array (dayOfWeek 0=Sun..6=Sat) in the embedded Nuxt payload; both agree.",
+    "schedule": [
+      {
+        "day": "Sunday",
+        "open": "10:00",
+        "close": "19:00"
+      },
+      {
+        "day": "Monday",
+        "open": "10:00",
+        "close": "20:00"
+      },
+      {
+        "day": "Tuesday",
+        "open": "09:30",
+        "close": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "09:30",
+        "close": "20:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "09:30",
+        "close": "20:00"
+      },
+      {
+        "day": "Friday",
+        "open": "09:30",
+        "close": "20:00"
+      }
+    ],
+    "note": "Closed Saturdays (no dayOfWeek=6 entry in either source). Open Sundays, which is unusual and worth calling out on the site. By appointment via Booksy."
+  },
+  "email": null,
+  "email_note": "Deep search performed per Fase 1 punto 7, no verifiable public email found: (1) Instagram web_profile_info business_email field is null (fetched successfully, field present but empty, account is not flagged as a business account); (2) Booksy JSON-LD and the full embedded Nuxt business payload were grepped for 'email'/'phone' keys, neither exists anywhere in the Booksy data for this business; (3) linktr.ee/Slaybytayx opened and scanned for an email pattern, none found (only booking/social/affiliate links); (4) Facebook About page (facebook.com/Kweentayhair/about) blocked by Facebook's login wall on both desktop and mbasic fetch attempts, could not be read; (5) a general web search surfaced an address 'kweentayhairtm@gmail.com' repeated across multiple AI-generated search-summary answers, but on inspection NONE of the actual underlying indexed pages/snippets returned by that search (Phenix Salon Suites page, Facebook, Booksy, Yelp for an unrelated same-named San Jose business, Instagram) contain that string anywhere in their real content; direct searches for the exact string 'kweentayhairtm' returned zero genuine matching pages (only Gmail-signup and unrelated results), and the Phenix Salon Suites professional page itself returned HTTP 403 on every direct fetch attempt (both curl and WebFetch) and has no Wayback Machine snapshot, so it could not be independently read to confirm or deny. Since this address cannot be traced to any actual retrievable source content, it is treated as UNVERIFIED and deliberately NOT used, per the hard rule against fabricated/unconfirmed data. Real contact channels are Booksy, Instagram DM, and phone/text at (727) 279-5225.",
+  "services": {
+    "source": "Full 93-line-item menu across 13 real Booksy categories, extracted 2026-07-19 from the embedded Nuxt/devalue data payload (script#__NUXT_DATA__) on the live Booksy business page, resolved programmatically in Python (reference-array devalue format) and cross-checked against the 88 simpler {name, price} pairs also present in the page's schema.org JSON-LD makesOffer array (JSON-LD omits duration and the one 'Add Ons' item folded differently; the Nuxt payload is the more complete and authoritative source and is what's used site-wide). All prices/durations exact as published; a few items show price=null with servicePrice 'Varies' (custom-quote services), shown on the site as 'Precio a cotizar / Price varies, ask KaShawnte' rather than inventing a number.",
+    "price_range": "USD 10 - 300 (custom color/extension work quoted individually and marked 'Varies')",
+    "featured_for_site": [
+      "Blonding",
+      "Retwist",
+      "Silk Press",
+      "Balayage/ombre",
+      "Two Strand Twist",
+      "Sew In W/ Closure"
+    ],
+    "categories": [
+      {
+        "category": "Add Ons",
+        "items": [
+          {
+            "name": "Consultation",
+            "price": 20,
+            "duration_min": 30
+          }
+        ]
+      },
+      {
+        "category": "LOCS",
+        "items": [
+          {
+            "name": "Microloc Initial Install Consult",
+            "price": 30,
+            "duration_min": 30,
+            "note": "starting price $700 for up to 5in, per Booksy description"
+          },
+          {
+            "name": "Loc detox",
+            "price": 40,
+            "duration_min": 45
+          },
+          {
+            "name": "Microloc/sisterloc/Small Locs (Over 110) Retie",
+            "price": 160,
+            "duration_min": 240
+          },
+          {
+            "name": "Retwist",
+            "price": 80,
+            "duration_min": 105
+          },
+          {
+            "name": "Interlock",
+            "price": 105,
+            "duration_min": 150
+          },
+          {
+            "name": "Interlock W/Color Service",
+            "price": 90,
+            "duration_min": 90
+          },
+          {
+            "name": "Retwist (W/color Service)",
+            "price": 70,
+            "duration_min": 60
+          },
+          {
+            "name": "Miracle Knots(Curly Hair)",
+            "price": 125,
+            "duration_min": 120
+          },
+          {
+            "name": "Loc BASIC STYLE",
+            "price": 60,
+            "duration_min": 90
+          },
+          {
+            "name": "Starter Locs",
+            "price": 175,
+            "duration_min": 150
+          },
+          {
+            "name": "Starter Locs",
+            "price": 200,
+            "duration_min": 180
+          },
+          {
+            "name": "Loc CURL STYLE",
+            "price": 90,
+            "duration_min": 120
+          }
+        ]
+      },
+      {
+        "category": "TREATMENTS",
+        "items": [
+          {
+            "name": "Rich Hydration Treatment",
+            "price": 20,
+            "duration_min": 15
+          },
+          {
+            "name": "Hot Oil Treatment",
+            "price": 30,
+            "duration_min": 30
+          },
+          {
+            "name": "Apple Cider Vinegar Deep Treatment",
+            "price": 20,
+            "duration_min": 30
+          },
+          {
+            "name": "Olaplex Repair Treatment",
+            "price": 40,
+            "duration_min": 30
+          }
+        ]
+      },
+      {
+        "category": "COLOR",
+        "items": [
+          {
+            "name": "Balayage/ombre",
+            "price": 185,
+            "duration_min": 180
+          },
+          {
+            "name": "Glossing",
+            "price": 35,
+            "duration_min": 45
+          },
+          {
+            "name": "Accent Foil(7 Foils)/Skunk Stripe",
+            "price": 65,
+            "duration_min": 60
+          },
+          {
+            "name": "Face Framing Highlights",
+            "price": 105,
+            "duration_min": 90
+          },
+          {
+            "name": "Corrective Color/Custom Color",
+            "price": null,
+            "duration_min": 300
+          },
+          {
+            "name": "Color Retouch (Up To 1inch)",
+            "price": 80,
+            "duration_min": 90
+          },
+          {
+            "name": "All Over Color",
+            "price": 100,
+            "duration_min": 90
+          },
+          {
+            "name": "Dimensional Color(2 Colors)",
+            "price": 135,
+            "duration_min": 180
+          },
+          {
+            "name": "Blonding Retouch",
+            "price": 110,
+            "duration_min": 135
+          },
+          {
+            "name": "Blonding",
+            "price": 210,
+            "duration_min": 210
+          },
+          {
+            "name": "Full Foil",
+            "price": 185,
+            "duration_min": 240
+          },
+          {
+            "name": "Partial Foil",
+            "price": 120,
+            "duration_min": 180
+          }
+        ]
+      },
+      {
+        "category": "Relaxers/Keratin/Perms",
+        "items": [
+          {
+            "name": "Relaxer retouch",
+            "price": 80,
+            "duration_min": 120
+          },
+          {
+            "name": "Virgin Relaxer",
+            "price": 150,
+            "duration_min": 210
+          },
+          {
+            "name": "Specialty Perm",
+            "price": 100,
+            "duration_min": 120
+          },
+          {
+            "name": "Relaxer & Color",
+            "price": 105,
+            "duration_min": 150
+          },
+          {
+            "name": "Keratin Express BlowOut",
+            "price": 100,
+            "duration_min": 90
+          },
+          {
+            "name": "Keratin Treatment",
+            "price": 300,
+            "duration_min": 210
+          },
+          {
+            "name": "Smoothing Treatment",
+            "price": 140,
+            "duration_min": 150
+          }
+        ]
+      },
+      {
+        "category": "Natural",
+        "items": [
+          {
+            "name": "Two Strand Twist",
+            "price": 80,
+            "duration_min": 180
+          },
+          {
+            "name": "Twist & Braid Combo",
+            "price": 110,
+            "duration_min": 210
+          },
+          {
+            "name": "Mini Twist",
+            "price": 125,
+            "duration_min": 240
+          },
+          {
+            "name": "Wash & Go Cut",
+            "price": 55,
+            "duration_min": 60
+          },
+          {
+            "name": "Silk Press",
+            "price": 80,
+            "duration_min": 150
+          },
+          {
+            "name": "Olaplex Curl ReShape & Repair TREATMENT",
+            "price": 125,
+            "duration_min": 120
+          },
+          {
+            "name": "Rod Set",
+            "price": 105,
+            "duration_min": 150
+          }
+        ]
+      },
+      {
+        "category": "Extensions",
+        "items": [
+          {
+            "name": "Vixen Sew In",
+            "price": 220,
+            "duration_min": 270
+          },
+          {
+            "name": "Half Up Half Down Quickweave",
+            "price": 115,
+            "duration_min": 210
+          },
+          {
+            "name": "Ponytail/Upstyle",
+            "price": 85,
+            "duration_min": 120
+          },
+          {
+            "name": "Shampoo & Style SEW IN",
+            "price": 80,
+            "duration_min": 120
+          },
+          {
+            "name": "Quickweave W/ Closure",
+            "price": 125,
+            "duration_min": 210
+          },
+          {
+            "name": "Quickweave",
+            "price": 100,
+            "duration_min": 120
+          },
+          {
+            "name": "Fulani Sew-in",
+            "price": 170,
+            "duration_min": 240
+          },
+          {
+            "name": "Sew-in(Leave Out)",
+            "price": 150,
+            "duration_min": 240
+          },
+          {
+            "name": "Pixie/short Quickweave",
+            "price": 100,
+            "duration_min": 180
+          },
+          {
+            "name": "Sew In W/ Closure",
+            "price": 175,
+            "duration_min": 270
+          },
+          {
+            "name": "Braid Removal",
+            "price": 50,
+            "duration_min": 60
+          },
+          {
+            "name": "Crotchet(braids/twist/dred)",
+            "price": 135,
+            "duration_min": 150
+          },
+          {
+            "name": "Crotchet(Loose Hair & Style)",
+            "price": 140,
+            "duration_min": 180
+          }
+        ]
+      },
+      {
+        "category": "TWISTS & BRAIDS",
+        "items": [
+          {
+            "name": "2 Strand Twists W/ Added Hair",
+            "price": 200,
+            "duration_min": 360
+          },
+          {
+            "name": "Soft/Butterfly Locs",
+            "price": 225,
+            "duration_min": 360
+          },
+          {
+            "name": "Gypsy Locs",
+            "price": 300,
+            "duration_min": 390
+          },
+          {
+            "name": "Natural Knotless/Plaits",
+            "price": 100,
+            "duration_min": 150
+          },
+          {
+            "name": "Miracle Knots Plaits",
+            "price": 200,
+            "duration_min": 360
+          },
+          {
+            "name": "Miracle Knot BRAID removal",
+            "price": 75,
+            "duration_min": 120
+          },
+          {
+            "name": "Miracle Knot Plaits TOUCH UP",
+            "price": 90,
+            "duration_min": 180
+          },
+          {
+            "name": "Cornrow Braids",
+            "price": 65,
+            "duration_min": 150
+          },
+          {
+            "name": "Feed In Braids (2)",
+            "price": 75,
+            "duration_min": 90
+          }
+        ]
+      },
+      {
+        "category": "Luxury Haircare & Extensions",
+        "items": [
+          {
+            "name": "Tape-In Extensions",
+            "price": 200,
+            "duration_min": 180
+          },
+          {
+            "name": "Soft Loc Removal",
+            "price": 80,
+            "duration_min": 120
+          },
+          {
+            "name": "Invisible Bead Weft Extensions",
+            "price": 150,
+            "duration_min": 155
+          },
+          {
+            "name": "Luxe Silk Press ft. Cecred by Beyonce",
+            "price": 150,
+            "duration_min": 150
+          },
+          {
+            "name": "Ktips/Microlink/iTips Install",
+            "price": null,
+            "duration_min": 390
+          },
+          {
+            "name": "Luxury Blowdry ft. Cecred by Beyonce",
+            "price": 80,
+            "duration_min": 90
+          },
+          {
+            "name": "Luxury Wash N Go ft. Cecred by Beyonce",
+            "price": 80,
+            "duration_min": 60
+          },
+          {
+            "name": "Tape In Reinstall",
+            "price": 275,
+            "duration_min": 210
+          },
+          {
+            "name": "Tape Ins(Partial)",
+            "price": 150,
+            "duration_min": 150
+          },
+          {
+            "name": "Micro Link Maintenance",
+            "price": 200,
+            "duration_min": 150
+          }
+        ]
+      },
+      {
+        "category": "Style",
+        "items": [
+          {
+            "name": "Blowdry",
+            "price": 50,
+            "duration_min": 45
+          },
+          {
+            "name": "Shampoo & Style(RELAXED/straight hair)",
+            "price": 65,
+            "duration_min": 60
+          },
+          {
+            "name": "Wand Curl/Crimp Styling/Specialty Styling",
+            "price": 70,
+            "duration_min": 120
+          },
+          {
+            "name": "Fingerwaves",
+            "price": 80,
+            "duration_min": 60
+          },
+          {
+            "name": "Shampoo Only",
+            "price": 30,
+            "duration_min": 30
+          },
+          {
+            "name": "Roller Set",
+            "price": 50,
+            "duration_min": 85
+          }
+        ]
+      },
+      {
+        "category": "Wax",
+        "items": [
+          {
+            "name": "Brows",
+            "price": 10,
+            "duration_min": 15
+          },
+          {
+            "name": "Full Face Removal(brows/lip/chin)",
+            "price": 30,
+            "duration_min": 30
+          },
+          {
+            "name": "Chin/Lip Removal",
+            "price": 10,
+            "duration_min": 15
+          }
+        ]
+      },
+      {
+        "category": "Makeup",
+        "items": [
+          {
+            "name": "Full SLAY",
+            "price": 50,
+            "duration_min": 75
+          },
+          {
+            "name": "Natural Look",
+            "price": 40,
+            "duration_min": 60
+          },
+          {
+            "name": "Brow Tinting",
+            "price": 20,
+            "duration_min": 30
+          },
+          {
+            "name": "Special Effects Makeup",
+            "price": null,
+            "duration_min": 155
+          },
+          {
+            "name": "Strip Lashes",
+            "price": 15,
+            "duration_min": 15
+          }
+        ]
+      },
+      {
+        "category": "Haircut",
+        "items": [
+          {
+            "name": "Cut & Blowdry(only)",
+            "price": 50,
+            "duration_min": 60
+          },
+          {
+            "name": "Cut & Blowdry(only)",
+            "price": 80,
+            "duration_min": 90
+          },
+          {
+            "name": "Express Cut",
+            "price": 35,
+            "duration_min": 45
+          },
+          {
+            "name": "Clipper Cut",
+            "price": 20,
+            "duration_min": 45
+          }
+        ]
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "name": "Andria F.",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2026-07-03",
+      "service": "Color Retouch (Up To 1inch)",
+      "text": "Everything was perfect, I will definitely be back. Awesome service and I love my hair. Thank you 🥰"
+    },
+    {
+      "name": "Breanna M.",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2026-06-15",
+      "service": "Microloc/sisterloc/Small Locs (Over 110) Retie",
+      "text": "Tens across the board. Tay checked all 4 boxes (Passionate, Knowledgeable, Kind & Clean Suite. She blew my mind when she said she washes your prior to performing services! I will definitely be returning!"
+    },
+    {
+      "name": "Lanise L.",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2026-06-22",
+      "service": "Shampoo & Style (RELAXED/straight hair)",
+      "text": "Great work"
+    }
+  ],
+  "reviews_note": "These are the 3 most recent verbatim reviews returned in the 'reviews' array of the embedded Booksy Nuxt payload for business 1542140 (first page; total reviewsCount=52, all contributing to the 5.0 average). Names shown exactly as Booksy displays them publicly (last names truncated by Booksy itself, e.g. 'Andria F.'). No older/additional review pages were reachable via a public API in the time available (a guessed customer_api reviews endpoint returned 404), so 3 of 52 are shown, matching the pipeline's 3-5 minimum.",
+  "brand_vibe": {
+    "description": "Logo (assets/raw/logo.jpg) is an elegant feminine hair-silhouette line-drawing in a bronze-to-champagne gradient on a soft cream background, with 'SLAY BY TAY' in bold serif-caps and 'EXPERIENCE' in a thin gold tracked subtitle: reads as glam, confident, boutique. The actual suite interior (assets/raw/interior-suite.jpg, a real Booksy business photo) shows a pink/blue neon 'Slay Queen' sign with a heart, a gold-and-marble 'GIRL BOSS' wall panel, a warm camel velvet shell chair, a vintage-style hooded dryer, and a handwritten 'Follow Me' card: a bold, feminine, glam-boutique private-suite vibe (Phenix Salon Suites model), not a soft spa aesthetic. Most of the real finished-result photos are shot against a plain black backdrop or a black smock printed with red roses, giving the work itself a moody, editorial, salon-glam frame; several results are vivid fashion colors (platinum with pink/purple peekaboo, honey-blonde locs) alongside sleek jet-black silk presses. Instagram bio signs the stylist as a 'Matrix Artist/Educator', reinforcing a premium-editorial, color-forward positioning rather than a quiet/minimal one.",
+    "base": "dark (mirrors the black-backdrop photography and glam-boutique night energy; template dark, exemplar Mizu, structure inherited)",
+    "palette_name": "slaybytay (rose-bronze glam on near-black plum, new palette, does not reuse mizu/amani/mare/alea/pausa/eme/iconicbeauty/newlifephysical/aurysalon)",
+    "colors": {
+      "bg": "#170f12",
+      "bg2": "#241419",
+      "surface": "rgba(38,23,27,0.66)",
+      "ink": "#f6e9e1",
+      "accent_deep": "#b8794a",
+      "accent_mid": "#d9a468",
+      "accent_soft": "#ecd0a8",
+      "accent_ghost": "rgba(184,121,74,0.16)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "Instagram bio is entirely in English. All 4 real captions pulled from the feed (Blonde locs / Silk press / Two Strand Twists / From curls to sleek perfection) are in English. All 3 verbatim Booksy reviews are in English. Booksy category and service names are all English ('LOCS', 'COLOR', 'Retwist', etc). Clearwater, FL (Pinellas County) is a majority English-speaking market. Site built fully bilingual (EN default, ES toggle) per pipeline requirement regardless.",
+  "images_downloaded": {
+    "count": 23,
+    "path": "output/slaybytay/assets/raw/",
+    "sources": "11 images (logo, cover, 1 biz_photo, 8 inspiration) came from the Booksy business photo payload (images.logo/cover/bizPhoto/inspiration in the resolved Nuxt data) via cloudfront URLs, curl with Chrome UA. 12 images came from Instagram's own web_profile_info feed for @slaybytayexperience: expanded 4 real GraphSidecar posts actually authored by slaybytayexperience (owner.username filter applied, since edge_owner_to_timeline_media also returned several posts owned by a different tagged/collab account, 'chrispcreationseats', a food-truck business that is clearly NOT part of this hair salon and was excluded entirely) plus 1 non-carousel image that turned out to be a plain text graphic ('fully booked' announcement, not a photo, excluded from gallery use). All 23 files verified with `file` as valid JPEGs >15KB before use.",
+    "curation_note": "Visual curation performed image-by-image with the Read/vision tool, not by filename. Excluded from gallery entirely: the Booksy interior photo was kept for the About/experience section only (real suite ambiance, not a hair result); the IG 'fully booked' graphic (text/marble background, not a photo of hair or the business); one IG 'before' curly-texture shot (real but pre-styling, not a finished result, kept only as research context, not used on site); one full-head front-lean dread photo with a slightly busy background (K-cup rack, wine bottle visible) was also left out of the final gallery selection in favor of the cleaner side/back angles of the same style. Everything used on the live site shows an open-eyed, well-lit, finished styling result, or a genuine ambiance/interior shot used only in the About section; no owner selfies were available or used (no portrait of KaShawnte's own face was found in any source, so the About section uses the interior photo and the salon logo instead of a personal avatar).",
+    "used_in_site": [
+      "featured-collage.jpg (from booksy-cover-1 / Booksy 'cover' photo): real 3-panel Booksy cover photo, sleek dark hair + platinum waves + fresh locs side by side. Used as the wide opening gallery tile.",
+      "interior-suite.jpg (from booksy-bizPhoto-2 / Booksy biz photo): real suite interior, 'Slay Queen' neon sign, 'GIRL BOSS' wall art, velvet chair. Used in the Experience section for real ambiance.",
+      "result-pink-blonde-1.jpg / result-pink-blonde-2.jpg (Booksy inspiration): vivid platinum-blonde hair with pink/purple peekaboo color, back view, finished result. Hero + gallery.",
+      "result-curly-waves.jpg (Booksy inspiration): bouncy curled blowout, back view, finished result. Gallery.",
+      "result-bob-cut.jpg (Booksy inspiration): sleek graduated bob, side profile, finished result. Gallery.",
+      "result-loc-bun.jpg (Booksy inspiration): two-tone loc updo bun, finished result. Gallery.",
+      "result-natural-twists.jpg (Booksy inspiration): defined natural two-strand twist-out, finished result. Gallery.",
+      "result-loc-puffs.jpg (Booksy inspiration): loc puffs with tail, finished result. Gallery.",
+      "result-blonde-locs-side.jpg / result-blonde-locs-back.jpg (Instagram, real slaybytayexperience post): honey-blonde retoned locs, side and back angle, finished result. Gallery.",
+      "result-silk-press-1.jpg / result-silk-press-2.jpg (Instagram, real slaybytayexperience post): sleek jet-black silk press with curled ends, finished result. Gallery.",
+      "result-two-strand-twist-1.jpg / result-two-strand-twist-2.jpg (Instagram, real slaybytayexperience post): clean two-strand twists, back view, finished result. Gallery.",
+      "result-sleek-curled.jpg (Instagram, real slaybytayexperience post): silky wavy curled ends over natural gray-streaked hair, finished result. Gallery.",
+      "logo.jpg (Booksy logo asset): official salon logo, used in nav and favicon reference / footer."
+    ]
+  },
+  "research_note": "Research conducted 2026-07-19. Identity, address, phone, rating/review count, hours, and full service menu cross-verified across two independent structured-data sources on the same live Booksy page (schema.org JSON-LD and the embedded Nuxt payload), which agreed on every overlapping field. Instagram web_profile_info API worked on the first attempt (no blocking encountered). No own domain found (5 domain variants tested, all non-resolving; Booksy's own website field is null). No public email found despite exhausting every source in the pipeline's checklist; a plausible-looking email surfaced repeatedly in web-search summaries could not be traced to any actual retrievable page content and was deliberately rejected as unverified rather than used. All service prices/durations and all 3 review quotes are verbatim from Booksy, nothing invented."
+}

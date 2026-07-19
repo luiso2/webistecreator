@@ -1,0 +1,168 @@
+{
+  "slug": "allaboutdetails",
+  "name_legal_booksy": "All About the Details Barber Beauty Med-Spa",
+  "name_brand": "All About the Details",
+  "niche": "Hybrid barbershop + beauty salon + med-spa. Booking-verified bookable menu is barbering (haircuts, fades, beards, kids, color add-ons); beauty/med-spa services (braiding, color, waxing, threading, makeup, facials, meditation room) are advertised in the business's own Booksy description but are not exposed as individually priced bookable items in the live Booksy payload for the default provider. Site built honoring both identities: full priced barber menu + a descriptive (non-priced) beauty & wellness band sourced from their own copy and supported by real in-shop photos.",
+  "city": "Miramar, FL",
+  "address": {
+    "full": "11611 City Hall Promenade, Miramar, FL 33025",
+    "street": "11611 City Hall Promenade",
+    "locality": "Miramar",
+    "region": "FL",
+    "postal_code": "33025",
+    "country": "US",
+    "geo": { "lat": 25.98579, "lng": -80.29869 },
+    "source": "JSON-LD (schema.org HairSalon) embedded live in the Booksy business page (booksy.com/en-us/204355_all-about-the-details-barber-beauty-med-spa_hair-salon_15645_hollywood), fetched directly 2026-07-19: streetAddress '11611 City Hall Promenade, Miramar, 33025', geo lat 25.98579 / lng -80.29869. Confirmed independently by two separate web searches returning the same address, and by the Yelp listing title 'ALL ABOUT THE DETAILS BARBER BEAUTY MED-SPA ... 11611 City Hall Promenade, Miramar, Florida'.",
+    "discrepancy_note": "Booksy's own JSON-LD sets addressLocality to 'Hollywood, FL' (an artifact of Booksy's internal area/category slug '..._hollywood' used for this metro pocket), while the streetAddress string and every independent source (Yelp, Google search results) place the business in Miramar, FL 33025. Miramar is used throughout the site as the correct city."
+  },
+  "phone": "+1-954-534-9834",
+  "phone_display": "(954) 534-9834",
+  "phone_source": "Matches the phone number given in the task brief. Independently confirmed via two separate web searches returning the same number from Yelp and Google listings for this exact business and address.",
+  "email": null,
+  "email_note": "Deep search per PIPELINE.md Fase 1 punto 7, all exhausted without result: (1) Booksy JSON-LD for the business has no email field (only Booksy's own generic support address help.us@booksy.com appears anywhere on the page, which is Booksy's, not the business's); (2) Booksy internal Nuxt payload (__NUXT_DATA__) resolved and searched, no business email field present; (3) Instagram web_profile_info API (x-ig-app-id header) blocked twice with a proxy/schema error ('Asset asset://laser.provider/ig_business_category_subvertical has been deleted'), tried with two different User-Agent/header combinations, both attempts failed per the 2-attempt limit; (4) WebFetch to instagram.com/barberbeautydetails20 returned HTTP 429; (5) WebFetch to Facebook page (facebook.com/AllAbouttheDetails, the sameAs URL from Booksy JSON-LD) returned HTTP 400 (blocked); (6) targeted web search for '\"All About the Details\" Barber Beauty Med-Spa Miramar email contact' returned no email, only phone/address; (7) no own domain exists to derive an email from (see has_own_site). Contact channels available: phone, Booksy messaging, Instagram DM, Facebook.",
+  "instagram": {
+    "primary_handle": "@barberbeautydetails20",
+    "primary_url": "https://www.instagram.com/barberbeautydetails20/",
+    "note": "Handle confirmed independently via Booksy's own JSON-LD 'sameAs' field (http://www.instagram.com/barberbeautydetails20), matching exactly the handle given in the task brief. IG feed itself could not be scraped: web_profile_info API blocked twice (see email_note), so gallery images were sourced from the Booksy business photo set instead, per pipeline fallback rule (2 failed IG attempts -> move to booking gallery / Google Maps)."
+  },
+  "facebook": "http://www.facebook.com/AllAbouttheDetails",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "allaboutthedetails.com (resolves, but is a HugeDomains parked/for-sale page, title 'AllAboutTheDetails.com is for sale | HugeDomains', not the business); allaboutthedetailsmiramar.com (does not resolve); barberbeautydetails.com (does not resolve); allaboutthedetailsbarberbeauty.com (does not resolve); aadmiramar.com (does not resolve); allaboutthedetails.net (resolves, but belongs to an unrelated company, 'All About the Details Construction, Inc', a North Carolina construction business, completely unconnected). Booksy JSON-LD itself lists no external/own website field for the business. Facebook page (facebook.com/AllAbouttheDetails) and Instagram bio are the only web presence besides Booksy and Yelp.",
+    "conclusion": "NO website of their own. has_own_site: false. Outreach angle: 'les construi un website de muestra' / 'I built you a sample website'."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/204355_all-about-the-details-barber-beauty-med-spa_hair-salon_15645_hollywood",
+    "business_id": 204355,
+    "note": "Booksy is the only verified live booking channel (matches discovery). Booksy is a booking platform subdomain and does not count as an own website."
+  },
+  "rating": {
+    "booksy": {
+      "value": 5.0,
+      "count": 198,
+      "source": "JSON-LD (schema.org AggregateRating) embedded live in the Booksy business page, fetched directly 2026-07-19: ratingValue 5, reviewCount 198. This supersedes the discovery figure (5.0 / 198 reviews matches discovery exactly; an intermediate cached web-search snapshot showed 193 and 735-services-page style summaries, which are simply an older crawl of the same live count -- the live, freshly-fetched JSON-LD (198) is used as authoritative."
+    }
+  },
+  "bio_official": "We are located at 11611 City Hall Promenade, Miramar, Fl 33025. We offer: barber, stylist, natural hair, color, waxing, threading, make-up, yoni steaming, facials, meditation and so much more! \"Get Fresh, Get Scene!\"",
+  "staff": [
+    "Master barber, Booksy staffer account name 'Detail' (Owner), referred to by name as 'Conlan' by multiple reviewers ('Conlan is the best around', 'booking Conlan for all your haircut needs') -- almost certainly the same person, the account display name and the name customers use in reviews differ slightly. Performs the full barbering menu (haircuts, fades, beards, kids cuts, color add-ons).",
+    "A second staffer id appears attached to a handful of service variants (Drop Fade Haircut, Mustache trim, AirBrushColorFinishTouchup) in the Booksy payload but has no resolvable name/photo in the data actually returned.",
+    "Web search snippets (not independently verifiable in the Booksy payload) reference a stylist named 'Dorothy' praised for color work and recommendations, consistent with the beauty side of the business, but no priced service list tied to her name was found in the live booking data."
+  ],
+  "hours": {
+    "source": "Two independent live web searches (against Yelp / Google Business listing data) returned matching hours: Tue 10:00 AM-7:00 PM, Wed 10:00 AM-5:30 PM, Thu 10:00 AM-8:00 PM, Fri 9:00 AM-8:00 PM, Sat 9:00 AM-7:00 PM, Sun 11:00 AM-4:00 PM, closed Monday.",
+    "discrepancy_note": "Booksy's own JSON-LD openingHoursSpecification shows a narrower window (Tue 10-18:00, Wed 10-17:30, Thu 10-19:00, Fri 9-20:00, Sat 10-13:30, no Sunday listed at all) which matches the Yelp/Google hours closely for Wed and Fri but is clearly the individual booking availability of the single default provider ('Detail'/Conlan) rather than the full shop hours, since the shop plainly has more than one working staffer/service (Dorothy, the second unnamed staffer id, and the beauty/med-spa services in the bio). The Yelp/Google full-shop hours are used on the site as the overall business hours; this is flagged for the business to confirm.",
+    "schedule": [
+      { "day": "Monday", "note": "Closed" },
+      { "day": "Tuesday", "open": "10:00", "close": "19:00" },
+      { "day": "Wednesday", "open": "10:00", "close": "17:30" },
+      { "day": "Thursday", "open": "10:00", "close": "20:00" },
+      { "day": "Friday", "open": "09:00", "close": "20:00" },
+      { "day": "Saturday", "open": "09:00", "close": "19:00" },
+      { "day": "Sunday", "open": "11:00", "close": "16:00" }
+    ]
+  },
+  "services": {
+    "source": "Full 20-item barbering menu with exact names, prices and durations resolved directly from Booksy's live internal Nuxt payload (__NUXT_DATA__, devalue-format JSON) embedded in the business page, fetched and parsed in Python 2026-07-19. This matches and is confirmed by the public JSON-LD makesOffer list (20 offers, same names/prices) on the same page. Both sources tie all 20 services to a single Booksy staffer/category ('Detail' / Master Barber, referred to as Conlan in reviews).",
+    "price_range_booksy": "USD 5 - 100",
+    "categories": [
+      {
+        "name": "Haircuts",
+        "items": [
+          { "name": "Basic haircut (NOFADE)( NOFACE)", "price": 30, "duration_min": 25 },
+          { "name": "Basic Fade haircut  (No Face)", "price": 35, "price_note": "from", "duration_min": 30 },
+          { "name": "Basic Haircut/Fade+gotee or moustache", "price": 40, "duration_min": 45 },
+          { "name": "Drop Fade Haircut", "price": 40, "duration_min": 40 },
+          { "name": "Fade Haircut Cut +FULLBeard", "price": 50, "duration_min": 60 },
+          { "name": "Haircut+Beard+Bigen Dye on head+beard", "price": 100, "duration_min": 120 }
+        ]
+      },
+      {
+        "name": "Beard & Line Up",
+        "items": [
+          { "name": "(Beard) groom", "price": 20, "duration_min": 20 },
+          { "name": "Beard line up", "price": 15, "duration_min": 20 },
+          { "name": "Basic Line Up..NO BEARD!", "price": 15, "duration_min": 20 },
+          { "name": "(LINE UP)Full Head And Beard", "price": 25, "price_note": "from", "duration_min": 20 },
+          { "name": "Mustache trim", "price": 5, "duration_min": 30 }
+        ]
+      },
+      {
+        "name": "Kids",
+        "items": [
+          { "name": "Kids Basic Haircut (up to 12yrs)", "price": 15, "price_note": "from", "duration_min": 30 },
+          { "name": "Kids Fade (up to 12yrs)", "price": 20, "duration_min": 30 },
+          { "name": "Kids Haircut(13-18yrs)", "price": 25, "duration_min": 30 },
+          { "name": "Kids line up", "price": 7, "duration_min": 10 }
+        ]
+      },
+      {
+        "name": "Finishing Touches & Color",
+        "items": [
+          { "name": "Eyebrows /w/ (Razor)", "price": 10, "duration_min": 20 },
+          { "name": "Bigen/HairColor add on", "price": 20, "price_note": "from", "duration_min": 20 },
+          { "name": "FIBER ENHANCEMENT", "price": 10, "price_note": "from", "duration_min": 15 },
+          { "name": "AirBrushColorFinishTouchup", "price": 15, "price_note": "from", "duration_min": 10 },
+          { "name": "Designs/Parts", "price": 5, "price_note": "from", "duration_min": 15 }
+        ]
+      }
+    ],
+    "promo": { "name": "$5 OFF First Time Haircut", "note": "New clients only, price varies by cut chosen" },
+    "featured_for_site": [
+      "Basic Fade haircut  (No Face)",
+      "Fade Haircut Cut +FULLBeard",
+      "(LINE UP)Full Head And Beard",
+      "Haircut+Beard+Bigen Dye on head+beard"
+    ],
+    "beauty_medspa_note": "The business's own Booksy description lists additional beauty/med-spa offerings beyond barbering: stylist services, natural hair, color, waxing, threading, make-up, yoni steaming, facials and a meditation room. None of these appear as individually priced bookable line items in the live Booksy payload for the default provider (only the 20 barbering services above have verifiable exact prices/durations). Per the no-fabrication rule, these are presented on the site as a descriptive 'Beauty & Wellness at AAD' list (service names only, no invented prices), backed by real in-shop photos of braiding and color work, with a call-to-action to book on Booksy or call for a quote."
+  },
+  "reviews": [
+    { "name": "Chelsie L.", "source": "Booksy", "stars": 5, "date": "2025-11-08", "text": "My son and my Dad have been coming to Conlan for a while now. They receive an excellent haircut every time. It’s so convenient to set an appointment and be seen on time, all the time! I highly recommend booking Conlan for all your haircut needs." },
+    { "name": "Ericka H.", "source": "Booksy", "stars": 5, "date": "2026-05-26", "text": "He definitely does a great job at cutting my son’s hair and is very patient with him. Highly recommended!" },
+    { "name": "Isaac W.", "source": "Booksy", "stars": 5, "date": "2025-07-06", "text": "See the look on my face, this is the look of somebody who got his head cut by a true professional!" },
+    { "name": "Jarrel K.", "source": "Booksy", "stars": 5, "date": "2025-01-16", "text": "10/10 Service every time for over 10 years!" },
+    { "name": "eleazar f.", "source": "Booksy", "stars": 5, "date": "2026-03-24", "text": "Conlan is the best around" }
+  ],
+  "reviews_note": "Extracted verbatim (exact text, not paraphrased) from Booksy's live internal Nuxt payload for this business (business reviews list embedded on the page, all 5-star), 2026-07-19. All reviews found are in English, consistent with the language finding below. Names shown as Booksy displays them (first name + last-initial).",
+  "brand_vibe": {
+    "description": "Official logo (assets/raw/logo.jpg, from Booksy's logo field): 'AAD' monogram in black serif script over a diagonal split background: bright kelly/grass green wedge (with subtle darker-green gradient banding) and white/off-white wedge, with 'ALL ABOUT THE DETAILS' and 'BARBER BEAUTY MED-SPA' set in black in a circular arc, plus a small comb icon. Real interior photo (assets/raw/gallery-1-interior.jpg / biz_photo-20 raw) shows a bright, energetic shop: white walls with one full accent wall painted the same saturated green as the logo, black barber chairs with diamond-stitch backs, mounted TVs, light tile floor, green squiggle wall decor: clean, modern, unisex barbershop-forward energy rather than a moody spa look. Conclusion: LIGHT base (not dark), built around the real green-and-white brand identity with near-black ink for strong contrast, distinct from the muted botanical sage of the existing 'pausa' palette (this green is far more saturated/vivid, paired with true black rather than warm taupe).",
+    "base": "clara (light)",
+    "palette_name": "allaboutdetails (kelly green + white + near-black, new palette, does not reuse mizu/amani/mare/alea/pausa/eme/iconicbeauty/newlifephysical)",
+    "colors": {
+      "bg": "#f7f8f1",
+      "bg2": "#eaeee0",
+      "surface": "rgba(252,253,248,0.74)",
+      "ink": "#161d14",
+      "accent_deep": "#276b33",
+      "accent_mid": "#4e9f52",
+      "accent_soft": "#dcead6",
+      "accent_ghost": "rgba(39,107,51,0.15)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "All available first-party text is in English: the official Booksy business description/bio ('We are located at... We offer... Get Fresh, Get Scene!'), all 20 service names in the live booking menu, and all 5 verbatim reviews pulled from the Booksy payload (100% English, zero Spanish reviews found in the sample retrieved). No Spanish-language content was found anywhere in the business's own copy. Instagram captions could not be checked directly (API blocked, see email_note), but every other first-party source is unanimously English, so language is registered as 'en'. The bilingual ES|EN toggle is still implemented in full per pipeline requirements, with English as the default.",
+  "images_downloaded": {
+    "count": 30,
+    "path": "output/allaboutdetails assets sourced from Booksy business photo set (logo x1, biz_photo x21, inspiration x8), downloaded via curl with a Chrome User-Agent from Booksy's CDN (d2zdpiztbgorvt.cloudfront.net), verified with `file` (all valid JPEGs >15KB).",
+    "source": "Instagram feed could not be scraped (web_profile_info API blocked twice, see email_note), so per pipeline fallback the Booksy business photo gallery (JSON structure resolved from the page's __NUXT_DATA__ payload: category fields 'logo', 'biz_photo', 'inspiration') was used as the primary image source, downloaded directly (no Google Maps needed, Booksy's own set was sufficient in volume and quality).",
+    "curation_note": "Every one of the 30 downloaded photos was visually reviewed (Read/vision, not by filename) before selecting the 11 used on the site. Excluded: several 'biz_photo' images that are personal/unrelated selfies mislabeled under Booksy's 'inspiration' category (a car selfie, a dark-room selfie, both cropped-face and unrelated to the shop), and one close-up 'biz_photo' of a client's eyes closed mid-eyelash-procedure (explicitly prohibited by the quality gate: 'ojos cerrados a medio procedimiento'). No owner/staff selfies were used as gallery tiles; since no verified staff headshot-to-name photo exists, the 'team' avatar row pattern from the template was omitted entirely rather than mislabeling a client photo as a staff member.",
+    "used_in_site": [
+      "logo.jpg (from Booksy 'logo' field, clean digital AAD monogram artwork): nav, footer, favicon.",
+      "hero-1.jpg (from biz_photo, hash ffe3f53c... which is also Booksy's own official cover 'image' in JSON-LD): real finished client result, sharp fade + full beard, storefront glass visible in background, best-lit and most 'after' shot available. HERO.",
+      "experience-1.jpg (from biz_photo): in-shop photo of the physical AAD logo signage with a comb graphic, editorial brand-detail shot. Experience section.",
+      "experience-2.jpg (from an 'inspiration'-tagged photo that is actually a real in-salon result, not a stock/selfie image): real client, mature woman, purple tapered natural-hair cut, glasses, smiling, well lit, shop entrance visible behind her. Chosen to humanize the beauty side of the business. Experience section.",
+      "ritual-signature.jpg (same wide interior shot as gallery-1, reused per template's own precedent of reusing a strong atmospheric photo across sections): multiple barber chairs, staff actively working, green accent wall, TVs. Signature-service card.",
+      "gallery-1-interior.jpg (from biz_photo): wide interior shot, several barbers and clients, green accent wall, bright and busy. Gallery wide tile.",
+      "gallery-2-braids.jpg (from biz_photo, Booksy's own official cover photo): finished box-braid crown, clean and even, shot inside the shop. Gallery.",
+      "gallery-3-color.jpg (from biz_photo): finished green/teal balayage color result, salon chair visible behind. Gallery.",
+      "gallery-4-braiddesign.jpg (from biz_photo): intricate cornrow/braid pattern with color detailing, finished result. Gallery.",
+      "gallery-5-burgundy.jpg (from an 'inspiration'-tagged photo that is a real in-salon color result, not stock): finished burgundy/red balayage curls, shot in the salon chair. Gallery.",
+      "gallery-6-blonde.jpg (from an 'inspiration'-tagged photo that is a real in-salon result, not stock): finished blonde layered cut, side profile, shop visible in background. Gallery."
+    ],
+    "excluded_examples": [
+      "biz_photo showing a close-up of a client's face with eyes closed mid lash/brow procedure (before/after comparison split): excluded per quality gate rule against 'ojos cerrados a medio procedimiento'.",
+      "two 'inspiration'-tagged images that are personal selfies unrelated to the shop (one taken inside a car, one a dark low-light face-only selfie): excluded as not representative of real client work at the business."
+    ]
+  }
+}
