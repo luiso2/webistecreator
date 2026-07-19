@@ -1,0 +1,147 @@
+{
+  "slug": "nailzbyash",
+  "name": "Nailz By Ash",
+  "niche": "Nail salon boutique: acrylic full sets, gel manicures, luxury pedicures, hand-painted nail art. Solo nail artist (Ashley Hendry), one Booksy staffer account.",
+  "city": "Pompano Beach, FL",
+  "address": {
+    "full": "1 N Ocean Blvd, Suite 101, Loft 16, Pompano Beach, FL 33062",
+    "street": "1 N Ocean Blvd, Suite 101, Loft 16",
+    "locality": "Pompano Beach",
+    "region": "FL",
+    "postal_code": "33062",
+    "country": "US",
+    "geo": { "lat": 26.23217365147308, "lng": -80.09168254712557 },
+    "source": "Live JSON-LD (schema.org NailSalon) embedded in the Booksy business page, fetched 2026-07-19: streetAddress '1 N Ocean Blvd, Suite 101, Loft 16, Pompano Beach, 33062', geo lat 26.23217365147308 / lng -80.09168254712557. Matches task brief exactly."
+  },
+  "phone": "+1-954-637-5176",
+  "phone_display": "(954) 637-5176",
+  "phone_source": "Matches task brief exactly. Confirmed in Booksy JSON-LD as the only contact number for the business.",
+  "email": null,
+  "email_source": null,
+  "email_note": "Deep search per PIPELINE.md Fase 1 punto 7, all exhausted: (1) Instagram web_profile_info API (x-ig-app-id header) for nailz.by_ash returned HTTP 404 on every attempt (2 curl attempts with different UAs plus 1 WebFetch attempt returned HTTP 429) so business_email could not be read from IG directly; (2) Booksy's live JSON-LD for this business has no email field; (3) Booksy's internal __NUXT_DATA__ payload (devalue-format JSON) was fetched and parsed programmatically in Python and searched for '@' across the whole payload: no business email present, only Booksy's own generic help.us@booksy.com; (4) Facebook page (facebook.com/people/Nailz-By-Ash/100093038894382/, found via web search) returned a login-walled page with no accessible About/email; (5) a Linktree at linktr.ee/_nailz_by_ash_ was opened (per task brief hint) but its Instagram link points to a DIFFERENT handle (@_nailz_by_ash_, underscores, not the salon's @nailz.by_ash with a dot) and the page is a generic affiliate-marketing linktree (Fabletics, Headspace, Talkspace, Babbel, etc) plus a link to nailz-by-ash-2001.square.site, an e-commerce shop selling premade/custom press-on nail sets shipped by mail, not the Pompano Beach appointment salon. That square.site page's HTML does contain a contact address, nailzbyash2001@gmail.com, but given the mismatched Instagram handle and the different business model (e-commerce press-on nails vs. in-person Booksy salon), this could not be confirmed as the same 'Ashley' or the same business with the deep search available, so it is recorded here only as an unverified lead and was NOT used anywhere on the live site or in the outreach draft. Bottom line: no confirmed public email for the Booksy salon business itself.",
+  "instagram": {
+    "handle": "@nailz.by_ash",
+    "url": "https://www.instagram.com/nailz.by_ash/",
+    "note": "Confirmed as the business's own Instagram via Booksy's JSON-LD sameAs field. Direct scraping of the profile (web_profile_info endpoint and page fetch) was blocked (404 / 429 responses) after 3 attempts, so IG feed photos could not be pulled; per pipeline fallback (max 2 attempts before moving to other sources), Booksy's own photo set (business photos, service photos and review photos) was used instead for the gallery."
+  },
+  "facebook": "https://www.facebook.com/people/Nailz-By-Ash/100093038894382/",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "nailzbyash.com resolves (HTTP 200) but is a GoDaddy parking/for-sale lander page (window.LANDER_SYSTEM='PW', window._trfd.push({ap:'parking'}), redirects to /lander which serves the GoDaddy generic parking app), not the business's site. nailzbyash.net, nailzbyashpompano.com and nailzbyashfl.com do not resolve. nailzbyash33.booksy.com (from task brief) is a Booksy custom subdomain that 301/307-redirects straight back to the same Booksy business page (982169_nailz-by-ash), confirmed live, so it is just a Booksy deep link, not an independent site. linktr.ee/_nailz_by_ash_ (from task brief) was opened and its links point to a DIFFERENT Instagram handle and to nailz-by-ash-2001.square.site, a Square e-commerce storefront for shipped press-on nail sets; even if related to the same person, a square.site subdomain does not count as an owned domain per pipeline rules, and its different business model (e-commerce vs. appointment salon) means it was not treated as this business's primary site.",
+    "conclusion": "NO independently-owned website for the Pompano Beach Booksy salon. has_own_site: false. Outreach angle: 'les construi un website de muestra' / 'I built you a sample website'."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/982169_nailz-by-ash_nail-salon_15649_pompano-beach",
+    "business_id": 982169,
+    "other_known_links": "nailzbyash33.booksy.com (redirects to the same Booksy page), linktr.ee/_nailz_by_ash_ (leads to an apparently unrelated/unconfirmed IG account and a separate press-on nails e-commerce shop, not used as a booking or contact source for this build)",
+    "note": "Booksy is the only verified live booking channel for the in-person Pompano Beach studio."
+  },
+  "rating": {
+    "booksy": {
+      "value": 5.0,
+      "count": 41,
+      "source": "Live JSON-LD (schema.org AggregateRating) embedded in the Booksy business page, fetched 2026-07-19: ratingValue 5, reviewCount 41. Matches the task brief exactly (5.0 stars, 41 reviews)."
+    }
+  },
+  "rating_source": "Booksy JSON-LD, fetched 2026-07-19: https://booksy.com/en-us/982169_nailz-by-ash_nail-salon_15649_pompano-beach",
+  "hours": {
+    "source": "Live JSON-LD openingHoursSpecification on the Booksy business page, fetched 2026-07-19.",
+    "schedule": [
+      { "day": "Monday", "note": "Closed" },
+      { "day": "Tuesday", "open": "07:00", "close": "20:00" },
+      { "day": "Wednesday", "open": "10:00", "close": "23:00" },
+      { "day": "Thursday", "open": "10:00", "close": "23:00" },
+      { "day": "Friday", "open": "10:00", "close": "23:00" },
+      { "day": "Saturday", "open": "07:00", "close": "18:00" },
+      { "day": "Sunday", "note": "Closed" }
+    ]
+  },
+  "owner": {
+    "name": "Ashley Hendry",
+    "title": "Nail Artist / Owner",
+    "source": "Booksy JSON-LD 'employee' field lists 'Ashley Hendry' as the sole staff member for this business, matching the Booksy staff photo. A separate 'resource_photos' image downloaded from the same Booksy payload turned out to depict an unrelated person (visible facial tattoo, blue hair, no nails shown) and was discarded as a data mismatch; it was NOT used anywhere on the site or as an avatar.",
+    "reviews_evidence": "Client review from Juliana O. explicitly thanks her by name: 'Love them!!! Thank you Ashley', confirming Ashley as the nail artist clients interact with."
+  },
+  "services": {
+    "source": "Full 16-item service menu with exact names, prices and durations resolved directly from Booksy's live internal __NUXT_DATA__ payload (devalue-format JSON) embedded in the business page, fetched and parsed in Python 2026-07-19 (reconstructed the service/variant object graph by resolving devalue index references). Cross-checked and 100% matched against the public JSON-LD makesOffer list (16 offers, same names and prices) on the same page.",
+    "price_range_booksy": "USD 18 - 150",
+    "site_categories": ["Acrylics", "Gel", "Men & Kids", "Extras"],
+    "full_menu": [
+      { "service": "Acrylic Full Set", "variant": "Short", "price": 65, "duration_min": 90 },
+      { "service": "Acrylic Full Set", "variant": "Medium", "price": 75, "duration_min": 90 },
+      { "service": "Acrylic Full Set", "variant": "Long", "price": 85, "duration_min": 120 },
+      { "service": "Acrylic Full Set", "variant": "XL", "price": 95, "duration_min": 130 },
+      { "service": "Acrylic Full Set", "variant": "XXL", "price": 105, "duration_min": 140 },
+      { "service": "Acrylic Fill", "variant": "3-week acrylic fill", "price": 60, "duration_min": 90 },
+      { "service": "Acrylic Fill", "variant": "Rebalance (5-7 week fill)", "price": 70, "duration_min": 105 },
+      { "service": "Acrylic Overlay", "variant": null, "price": 60, "duration_min": 90 },
+      { "service": "Freestyle Acrylic Full Set", "variant": null, "price": 115, "duration_min": 150 },
+      { "service": "Apres Full Set", "variant": null, "price": 65, "duration_min": 75 },
+      { "service": "Bestie Fullset", "variant": "for two", "price": 150, "duration_min": 185 },
+      { "service": "Gel Manicure", "variant": "Short", "price": 60, "duration_min": 60 },
+      { "service": "Gel Manicure", "variant": "Medium (natural nails)", "price": 65, "duration_min": 90 },
+      { "service": "Gel Manicure", "variant": "Long (natural nails)", "price": 75, "duration_min": 105 },
+      { "service": "Gel Manicure", "variant": "with tips", "price": 80, "duration_min": 115 },
+      { "service": "Gel Pedicure", "variant": null, "price": 60, "duration_min": 75 },
+      { "service": "Luxury Pedicure", "variant": null, "price": 70, "duration_min": 90 },
+      { "service": "Luxury Gel Mani And Pedi", "variant": null, "price": 130, "duration_min": 150 },
+      { "service": "Men's Manicure", "variant": null, "price": 25, "duration_min": 30 },
+      { "service": "Men's Pedicure", "variant": null, "price": 60, "duration_min": 65 },
+      { "service": "Kids Mani", "variant": null, "price": 18, "duration_min": 30 },
+      { "service": "Little Luxe Mani & Pedi (Kids)", "variant": null, "price": 50, "duration_min": 105 },
+      { "service": "Soak Off", "variant": null, "price": 20, "duration_min": 30 },
+      { "service": "Polish Change", "variant": null, "price": 30, "duration_min": 40 }
+    ],
+    "highlights_for_site": [
+      "Acrylic Full Set (from $65, 90 min)",
+      "Luxury Gel Mani And Pedi ($130, 150 min, signature combo)",
+      "Bestie Fullset ($150, 185 min, for two)",
+      "Gel Manicure (from $60, 60 min)"
+    ]
+  },
+  "reviews": [
+    { "name": "Krista V.", "source": "Booksy", "stars": 5, "date": "2026-06-26", "text": "I love my nails, Great service, very clean." },
+    { "name": "Nachalis G.", "source": "Booksy", "stars": 5, "date": "2026-05-20", "text": "I dont like too much cuticle work but if you do come here. She was like a soldier performing. Nothing missed!!  My nails came out so great and she did my daughter too and we received so many compliments. Yes we would highly recommend and return. Still trying to get that beautiful color she put on our nails so I can remember for next time.  Lol. Overall great service!" },
+    { "name": "Juliana O.", "source": "Booksy", "stars": 5, "date": "2026-03-29", "text": "Love them!!! Thank you Ashley" }
+  ],
+  "reviews_source": "Extracted verbatim from Booksy's live JSON-LD 'review' array for this business (all 3 reviews shown on the page, all 5-star), fetched 2026-07-19. Names shown as Booksy displays them (first name + last-initial). Only 3 reviews are exposed on the page itself even though reviewCount is 41; these are the 3 real quotes available without an authenticated Booksy session.",
+  "language": "en",
+  "language_evidence": "All first-party text is in English: the full Booksy business description and service names, and all 3 verbatim reviews pulled from the JSON-LD (100% English, zero Spanish found). Bilingual ES|EN toggle implemented in full per pipeline requirements, with English as the default (matches html lang=\"en\").",
+  "brand_vibe": {
+    "description": "No dedicated brand/interior photography exists (no professional studio shoot found; IG scraping was blocked). Real nail photography from Booksy (business photos, service photos and client review photos) shows vibrant, colorful nail art: tie-dye pastels, neon french tips, pink/berry 3D floral charms, gold foil flakes, chrome spirals. A warm, light, editorial base fits best, tinted toward a berry/rose accent (drawn directly from the pink and magenta tones repeated across the real photos) with a soft gold undertone nodding to the gold-foil work, to read as feminine, boutique and beauty-forward without reusing an existing palette (distinct from mizu/amani/mare/alea/pausa/browbabes/betynails).",
+    "base": "clara (light)",
+    "palette_name": "nailzbyash (berry/rose on warm ivory with gold-foil undertone, new palette)",
+    "colors": {
+      "bg": "#fbf5f0",
+      "bg2": "#f6e5e9",
+      "surface": "rgba(255,250,247,0.72)",
+      "ink": "#33231f",
+      "accent_deep": "#a83a5e",
+      "accent_mid": "#c97690",
+      "accent_soft": "#f3d9df",
+      "accent_ghost": "rgba(168,58,94,0.15)"
+    }
+  },
+  "images_downloaded": {
+    "count": 29,
+    "path": "output/nailzbyash/assets/raw",
+    "source": "Instagram feed could not be accessed (web_profile_info returned HTTP 404 on 2 curl attempts, WebFetch on the profile page returned HTTP 429); per pipeline fallback (max 2 IG attempts before moving on), Booksy's own photo set was used instead: 2 business cover photos, 8 'inspiration' gallery photos, 1 service photo, 1 logo/profile image, 18 review photos attached to verified Booksy reviews, and 1 'resource_photos' image (discarded, see owner note). All 29 files verified with `file` as valid JPEGs, all well over 15KB, none corrupt. All images used on the site were resized to a maximum width of 1000px (Pillow, LANCZOS resampling, JPEG quality 82, optimize=True).",
+    "curation_note": "Every downloaded photo was visually reviewed (Read/vision) one by one before selecting the 12 used on the site (1 hero + 2 studio/experience + 9 more in gallery, one image reused as hero/gallery is separate files). Excluded from the site per the visual quality gate: insp-7.jpg (bare/unfinished acrylic tips, no polish or art, not a finished result); review-02.jpg, review-05.jpg, review-10.jpg (cluttered car-interior backgrounds); review-04.jpg and review-17.jpg (Halloween/Pennywise seasonal theme, cluttered background with props, not evergreen for a demo site); review-06.jpg (pedicure spa bowl with feet soaking, no nail art visible, kept in raw only as a possible ambiance shot but not used); review-07.jpg (plain french tip, dim/flat lighting); review-12.jpg (Christmas-themed, seasonal); review-14.jpg (casual knee/couch background); review-16.jpg (barely shows the nail, mostly car interior); review-18.jpg (blurry, low sharpness). The mismatched 'resource_photos' image (a selfie of an unrelated person with a visible face tattoo, no nails shown, clearly a Booksy data mismatch) was deleted from assets/raw entirely and never considered for the owner avatar or gallery.",
+    "used_in_site": [
+      "biz-1.jpg: hero image and studio section (colorful tie-dye acrylic set, Booksy business cover photo).",
+      "biz-2.jpg: studio/experience section second photo (tie-dye acrylic set, alternate angle).",
+      "insp-1.jpg: wide gallery tile (3D pink floral charm nail art on stiletto acrylics).",
+      "insp-2.jpg: studio/experience section (butterfly and floral hand-painted nail art), also referenced as gallery-adjacent.",
+      "insp-3.jpg: gallery tile (chrome spiral nail art, green/silver).",
+      "insp-4.jpg: gallery tile (black and white heart/line nail art).",
+      "insp-8.jpg: gallery tile (neon yellow french tip acrylics with charms).",
+      "review-09.jpg: gallery tile (hand-painted sunflower and ladybug nail art).",
+      "review-11.jpg: gallery tile (pastel ombre acrylics with glitter accent nail).",
+      "review-13.jpg: gallery tile (white french tip acrylics with gold foil flakes).",
+      "review-15.jpg: gallery tile (soft pink almond nails with delicate floral accent).",
+      "service-1.jpg: gallery tile (kids manicure with white heart and flower nail art, matches the Kids Mani service)."
+    ]
+  },
+  "research_note": "Research completed 2026-07-19 for a solo pipeline run covering Fases 1-3 and 5. All data verbatim/sourced from Booksy's live JSON-LD and internal __NUXT_DATA__ payload (both fetched and parsed directly), direct domain checks, and a Linktree page opened per pipeline rule. Instagram scraping was attempted 3 times (2 curl, 1 WebFetch) and blocked each time (404/429); no data was invented to compensate, Booksy's own photo and text sources were used instead throughout. No em-dash used anywhere in this file or in the site."
+}
