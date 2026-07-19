@@ -1,0 +1,179 @@
+{
+  "slug": "browbabes",
+  "name": "Brow Babe's / Face to Face Esthetics",
+  "name_legal_booksy": "Brow Babe's/ Face to Face Esthetics",
+  "niche": "Esthetics studio: brow tinting, lashes, facials, waxing, teeth whitening. Solo esthetician (Starr), one Booksy staffer account.",
+  "city": "St. Petersburg, FL",
+  "address": {
+    "full": "5741 9th Ave N, Suite F, St. Petersburg, FL 33710",
+    "street": "5741 9th Ave N, Suite F",
+    "locality": "St. Petersburg",
+    "region": "FL",
+    "postal_code": "33710",
+    "country": "US",
+    "geo": { "lat": 27.780857859733604, "lng": -82.71222209386487 },
+    "source": "Live JSON-LD (schema.org BeautySalon) embedded in the Booksy business page, fetched 2026-07-19: streetAddress '5741 9th Ave N, Suite F, St Petersburg, 33710', geo lat 27.780857859733604 / lng -82.71222209386487.",
+    "discrepancy_note": "Booksy's own JSON-LD sets addressLocality to 'Treasure Island, FL' (Booksy's internal metro/category slug used for this business, matching the URL's '..._treasure-island' suffix), while the streetAddress string explicitly says 'St Petersburg'. Per the task brief and the street address itself, St. Petersburg, FL is used as the city throughout the site; Treasure Island is used only as a neighborhood reference."
+  },
+  "phone": "+1-727-282-6109",
+  "phone_display": "(727) 282-6109",
+  "phone_source": "Matches task brief exactly. Independently confirmed inside the Booksy business description itself, which lists 'Zelle: 727 282 6109' as a payment method for the same number.",
+  "email": null,
+  "email_source": null,
+  "email_note": "Deep search per PIPELINE.md Fase 1 punto 7, all exhausted without result: (1) Instagram web_profile_info API (x-ig-app-id header) for @starrdashian returned business_email: null (account is not flagged as a business account, is_business_account: false); (2) bio external_url points only to a Booksy deep link (booksy.com/en-us/dl/show-business/533664), no linktree/poplme/beacons page exists to open; (3) Booksy's live JSON-LD for the business has no email field; (4) Booksy's internal __NUXT_DATA__ payload (devalue-format JSON) was fetched and parsed programmatically in Python, searched for 'email' across the whole payload: the only email present anywhere is Booksy's own generic support address (help.us@booksy.com), not the business's; (5) Facebook page (facebook.com/starr.dashian.1, from Booksy's own sameAs field) returned a login-wall page with no accessible About section or email; (6) no own domain exists to derive an email from (see has_own_site below). Contact channels available: phone/Zelle, Booksy messaging, Instagram DM (@starrdashian), Facebook.",
+  "instagram": {
+    "handle": "@starrdashian",
+    "url": "https://www.instagram.com/starrdashian/",
+    "full_name": "Starr Dashian",
+    "followers": 2646,
+    "is_business_account": false,
+    "bio_verbatim": "Book Me For Your Brow Tint, Waxes, Facials, Lash Strips #Licensed #Esthetician #Certified #Melanin #Entrepreneur #BrowBoss #BrowBabe #Brow-Ti-Ful",
+    "external_url": "https://booksy.com/en-us/dl/show-business/533664",
+    "note": "This is Starr's personal Instagram account used for business booking (bio explicitly says 'Book Me For Your Brow Tint...'), not a dedicated business account. Followed external_url per pipeline rule; it only deep-links to Booksy, no linktree. Feed content (12 most recent posts pulled via web_profile_info, including GraphSidecar carousels expanded) is personal/lifestyle photography (graduation, birthday, family, selfies), NOT treatment/result photos, so it was not used as the image source; Booksy's own photo set (business cover photo, service_photos, and review_photos attached to verified Booksy reviews) was used instead, per the pipeline's fallback rule when IG media is unsuitable."
+  },
+  "facebook": "https://www.facebook.com/starr.dashian.1",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "browbabesfl.com (does not resolve); browbabes.com (resolves, but is a HugeDomains parked/for-sale page, title 'BrowBabes.com is for sale | HugeDomains', not the business); facetofaceesthetics.com (resolves, but belongs to a completely different, unrelated business: 'Face To Face Esthetics - Camarillo', California, coincidental name match only, different city/state/owner); facetofacestarr.com, browbabesface.com, starrdashian.com (none resolve). Instagram bio external_url points only to Booksy. No linktree/poplme in bio.",
+    "conclusion": "NO website of their own. has_own_site: false. Outreach angle: 'les construi un website de muestra' / 'I built you a sample website'."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/533664_brow-babe-s-face-to-face-esthetics_skin-care_122669_treasure-island",
+    "business_id": 533664,
+    "note": "Booksy is the only verified live booking channel. Booksy is a booking platform subdomain and does not count as an own website."
+  },
+  "rating": {
+    "booksy": {
+      "value": 5.0,
+      "value_exact": 4.993589743589744,
+      "count": 156,
+      "source": "Live JSON-LD (schema.org AggregateRating) embedded in the Booksy business page, fetched 2026-07-19: ratingValue 4.993589743589744 (rounds to 5.0), reviewCount 156. Matches the task brief exactly (5.0 stars, 156 reviews)."
+    }
+  },
+  "rating_source": "Booksy JSON-LD, fetched 2026-07-19",
+  "hours": {
+    "source": "Live JSON-LD openingHoursSpecification on the Booksy business page: Tuesday-Saturday 09:00-19:30, no Sunday/Monday entry. Independently confirmed by the business's own Booksy description text, which states 'SUNDAYS/MONDAYS MY DAYS OFF $20 ADDITIONAL' (a late-booking surcharge note that confirms those are her days off).",
+    "schedule": [
+      { "day": "Monday", "note": "Closed" },
+      { "day": "Tuesday", "open": "09:00", "close": "19:30" },
+      { "day": "Wednesday", "open": "09:00", "close": "19:30" },
+      { "day": "Thursday", "open": "09:00", "close": "19:30" },
+      { "day": "Friday", "open": "09:00", "close": "19:30" },
+      { "day": "Saturday", "open": "09:00", "close": "19:30" },
+      { "day": "Sunday", "note": "Closed" }
+    ]
+  },
+  "owner": {
+    "name": "Starr Mckinney",
+    "also_known_as": "Starr Dashian (Instagram/Facebook handle name), referred to as 'Brow Babe' by returning clients and in her own review replies",
+    "title": "Licensed Esthetician",
+    "source": "Name and title 'Starr Mckinney, Licensed Aesthetician' visible on her own branded scrub top in a real service photo (assets/raw/experience-1-treatment.jpg, downloaded from Booksy's 'logo' field, which for this business is actually a photo of Starr performing a facial mask application, not a graphic logo). Booksy's sameAs fields independently confirm the same person via facebook.com/starr.dashian.1 and instagram.com/starrdashian.",
+    "tenure_evidence": "In a reply to a 5-star Booksy review from client Darnaja R., Starr (as the business) wrote: 'Awwwww thank you Brow Babe, you've been rocking with me for almost 6 years now. Thanks for being loyal.' This verbatim owner reply is the source for the '6+ years of loyal clients' stat used on the site."
+  },
+  "services": {
+    "source": "Full 52-item service menu with exact names, prices and durations resolved directly from Booksy's live internal __NUXT_DATA__ payload (devalue-format JSON) embedded in the business page, fetched and parsed in Python 2026-07-19 (regex-matched all {id, promotion, type, duration, price} variant objects and resolved each field's index reference against the flat data array). Prices cross-checked and 100% matched against the public JSON-LD makesOffer list (52 offers) on the same page, confirming correct parsing. Durations are not present in JSON-LD and were sourced only from the resolved NUXT payload. 3 near-duplicate entries (a second 'Brow Tint' $40 at a different duration, a second 'Brow Class One On One' $400 at a different duration, and a duplicate-worded brow enhancement service at the same $30 price) were consolidated to their first-listed variant for site display; all 52 raw entries are preserved below for the record.",
+    "price_range_booksy": "USD 5 - 400",
+    "raw_offers_from_booksy_jsonld_with_duration": [
+      { "name": "Brow Tint", "price": 40, "duration_min": 30 },
+      { "name": "Brow Tint & Eyelashes Combo", "price": 60, "duration_min": 45 },
+      { "name": "Eyelashes Strips (25MM Mink is provided)", "price": 25, "duration_min": 25 },
+      { "name": "Eyebrow Clean Up (Plucking/Razor)", "price": 12, "duration_min": 5 },
+      { "name": "Pomade/Pencil Make Up Enhanced Brows (No Tint)", "price": 30, "duration_min": 20 },
+      { "name": "Natural Make Up (Comes with Make Up Brows)", "price": 65, "duration_min": 60 },
+      { "name": "Natural Make Up (With Brow Tint)", "price": 85, "duration_min": 80 },
+      { "name": "Brow Tint Class (One on One)", "price": 400, "duration_min": 180 },
+      { "name": "Brow Tint Touch Up", "price": 30, "duration_min": 15 },
+      { "name": "Ear Lavage", "price": 65, "duration_min": 30 },
+      { "name": "NEW SERVICE MICRO BROW TINT", "price": 50, "duration_min": 15 },
+      { "name": "Brow Wax", "price": 15, "duration_min": 10 },
+      { "name": "Stomach", "price": 30, "duration_min": 25 },
+      { "name": "Back", "price": 60, "duration_min": 30 },
+      { "name": "Full Body Wax", "price": 250, "duration_min": 120 },
+      { "name": "Vajacial Only", "price": 45, "duration_min": 15 },
+      { "name": "Underarms", "price": 40, "duration_min": 25 },
+      { "name": "Legs (Half)", "price": 45, "duration_min": 25 },
+      { "name": "Full Leg Wax", "price": 55, "duration_min": 25 },
+      { "name": "Brazilian Wax", "price": 55, "duration_min": 20 },
+      { "name": "Brazilian w/ Vajacial", "price": 95, "duration_min": 35 },
+      { "name": "Nose", "price": 15, "duration_min": 5 },
+      { "name": "Lips", "price": 10, "duration_min": 10 },
+      { "name": "Chin", "price": 15, "duration_min": 10 },
+      { "name": "Cool, Calm, & Collected - European Facial (1hr)", "price": 75, "duration_min": 60 },
+      { "name": "Cool Mimosa -Express Facial - (30 mins)", "price": 65, "duration_min": 30 },
+      { "name": "The Fiji Facial - Satisfy Your Thirst (45 minutes)", "price": 150, "duration_min": 45 },
+      { "name": "The Fountain of Youth - Anti-aging Facial", "price": 200, "duration_min": 60 },
+      { "name": "Problem Solver - Bye Bye Acne", "price": 95, "duration_min": 60 },
+      { "name": "Mommy & Baby", "price": 65, "duration_min": 30 },
+      { "name": "Exfoliate Brows Under Steamer", "price": 15, "duration_min": 15 },
+      { "name": "Cool Globes", "price": 5, "duration_min": 5 },
+      { "name": "Dermaplane  All Skin Types", "price": 45, "duration_min": 20 },
+      { "name": "High Frequency  Acne & Anti-aging", "price": 20, "duration_min": 5 },
+      { "name": "LED Light All Skin Types", "price": 25, "duration_min": 5 },
+      { "name": "Lip/Eye Rejuvenator", "price": 5, "duration_min": 5 },
+      { "name": "Lymphatic Drainage All Skin Types", "price": 20, "duration_min": 10 },
+      { "name": "Skin Scrubber Congested, Dull Skin", "price": 20, "duration_min": 10 },
+      { "name": "Oxygen Brightening", "price": 40, "duration_min": 15 },
+      { "name": "Oxygen Antibacterial", "price": 40, "duration_min": 15 },
+      { "name": "Oxygen A,C,E Complex", "price": 40, "duration_min": 15 },
+      { "name": "Microdermabrasion Dull, Textured Skin", "price": 20, "duration_min": 30 },
+      { "name": "Mens Beard Treatment", "price": 15, "duration_min": 10 },
+      { "name": "Natural Glam W/Pencil Brows", "price": 75, "duration_min": 60 },
+      { "name": "Natural Glam W/Brow Tint", "price": 95, "duration_min": 75 },
+      { "name": "Pencil/Pomade Brow Enhancement", "price": 30, "duration_min": 20 },
+      { "name": "Brow Tint", "price": 40, "duration_min": 25, "note": "duplicate variant, consolidated into the first Brow Tint entry above for site display" },
+      { "name": "Brow Class One On One", "price": 400, "duration_min": 120, "note": "duplicate variant, consolidated into 'Brow Tint Class (One on One)' above for site display" },
+      { "name": "Mink Lash Strip Application Lash Strips Included", "price": 25, "duration_min": 10 },
+      { "name": "Brow Tint & Strip Lash Application", "price": 60, "duration_min": 30 },
+      { "name": "Teeth Whitening  60 Min (44% zoom whitening)", "price": 300, "duration_min": 60 },
+      { "name": "Teeth Whitening 30 Min 44% Carabamide (Zoom)", "price": 200, "duration_min": 60 }
+    ],
+    "site_categories": ["Brows", "Lashes & Makeup", "Facials & Skin", "Waxing", "Whitening & Extras"],
+    "highlights_for_site": [
+      "Brow Tint & Eyelashes Combo ($60, 45 min)",
+      "Cool, Calm & Collected European Facial ($75, 60 min)",
+      "Full Body Wax ($250, 120 min)",
+      "Teeth Whitening 60 Min ($300, 60 min)"
+    ]
+  },
+  "reviews": [
+    { "name": "Darnaja R.", "source": "Booksy", "stars": 5, "text": "Always professional, very clean and friendly, love it there. Service is always a 1000/10. And the brows are always exactly how I want them.", "owner_reply": "Awwwww thank you Brow Babe, you've been rocking with me for almost 6 years now. Thanks for being loyal." },
+    { "name": "Nyitecka B.", "source": "Booksy", "stars": 5, "text": "Very professional, knowledgeable, clean and timely. Really enjoyed my time being pampered." },
+    { "name": "Kim J.", "source": "Booksy", "stars": 5, "text": "Super professional, timely and does amazing work!", "owner_reply": "Awww thank you doll. I look forward to seeing you again, soon!" },
+    { "name": "Manika G.", "source": "Booksy", "stars": 5, "text": "Always top tier service!!" },
+    { "name": "Vanessa s.", "source": "Booksy", "stars": 5, "text": "Amazing", "note": "Very short one-word review, kept in the record but not used on the site in favor of the 4 fuller quotes above." }
+  ],
+  "reviews_source": "Extracted verbatim from Booksy's live internal __NUXT_DATA__ payload for this business (embedded review objects, all 5-star), fetched and parsed 2026-07-19. Names shown as Booksy displays them (first name + last-initial).",
+  "language": "en",
+  "language_evidence": "All first-party text is in English: the Instagram bio ('Book Me For Your Brow Tint, Waxes, Facials, Lash Strips...'), the full Booksy business description, all 52 service names in the live booking menu, and all 5 verbatim reviews pulled from the Booksy payload (100% English, zero Spanish found). Bilingual ES|EN toggle implemented in full per pipeline requirements, with English as the default (matches html lang=\"en\").",
+  "brand_vibe": {
+    "description": "No dedicated brand/interior photography exists (no professional studio shoot, no vector logo; Booksy's 'logo' field for this business is actually a photo of Starr performing a facial treatment in a branded grey scrub reading 'Starr Mckinney Licensed Aesthetician' with a small hand-drawn 'Face to Face Esthetics' line-art mark of two profiles kissing). Real client photography (Booksy review photos and service photos) shows warm skin tones, bold feminine styling (colorful wigs, glam makeup, jewelry) consistent with the Instagram bio's own hashtags (#Melanin, #BrowBoss, #BrowBabe, #Brow-Ti-Ful). A warm, light, quiet-luxury base in the spirit of the Amani exemplar fits best, tinted toward a terracotta/rosewood accent (rather than Amani's mocha, Alea's gold, or allaboutdetails' kelly green) to read as warm, feminine and beauty-forward without copying an existing palette.",
+    "base": "clara (light)",
+    "palette_name": "browbabes (terracotta/rosewood on warm ivory, new palette, does not reuse mizu/amani/mare/alea/pausa/allaboutdetails/betynails)",
+    "colors": {
+      "bg": "#faf3ee",
+      "bg2": "#f1e1d5",
+      "surface": "rgba(253,247,242,0.72)",
+      "ink": "#33231c",
+      "accent_deep": "#a8563d",
+      "accent_mid": "#c9836a",
+      "accent_soft": "#f1ded2",
+      "accent_ghost": "rgba(168,86,61,0.15)"
+    }
+  },
+  "images_downloaded": {
+    "count": 26,
+    "path": "output/browbabes/assets/raw",
+    "source": "Instagram feed (via web_profile_info, 12 posts + expanded GraphSidecar carousels) was reviewed in full but rejected as the gallery source: all content is Starr's personal/lifestyle photography (graduation, family, birthday selfies), not treatment or result photos, per the pipeline's visual-curation rule. Per pipeline fallback, Booksy's own photo set was used instead: 1 business cover photo, 1 'logo'-field photo (actually a service-in-progress photo), 4 service_photos, and 20 review_photos attached to verified Booksy reviews (fetched at full resolution by dropping the '?size=100x100' query parameter Booksy serves by default). All 26 files verified with `file` as valid JPEGs, all well over 15KB, none corrupt.",
+    "curation_note": "Every downloaded photo was visually reviewed (Read/vision) one by one before selecting the 10 used on the site (1 hero + 2 experience + 7 gallery, with 1 image reused between experience and gallery). Excluded from gallery per the quality gate: 4 photos with visible eyes-closed mid-procedure or under a facial mask (service-4.jpg ear lavage close-up, review-06/09/13/19/20 filter or eyes-closed shots); 5 photos with text/sticker overlays burned into the image (review-02 'Dec.16' heart sticker, review-17/18 camera timestamp overlays, review-19 '#nofilter' sticker); 1 distorted/fisheye funny-face shot (review-06); 1 exact duplicate file (review-14 identical to review-04); the owner's own car selfie (biz-cover.jpg / 'image' field) was kept only as a small avatar in the Experience section, never as a gallery tile, per the rule that owner selfies are avatar-only.",
+    "used_in_site": [
+      "hero-1.jpg (from Booksy service_photos, 4-panel close-up of two brow/lash results, eyes open, sharp focus): HERO image and first (wide) gallery tile.",
+      "experience-1-treatment.jpg (from Booksy's 'logo' field, a real photo of Starr Mckinney applying a facial mask in a branded scrub): Experience section, process/ambiance shot.",
+      "owner-starr.jpg (from Booksy's 'image'/cover field, a car selfie of Starr): small round avatar in the Experience section only, never used as a gallery tile.",
+      "gallery-2-browtint.jpg (from Booksy service_photos, side-by-side before/after brow tint comparison, eyes open): Experience section second photo and gallery tile.",
+      "gallery-3-client.jpg / gallery-4-client.jpg / gallery-5-client.jpg / gallery-6-client.jpg / gallery-7-client.jpg (from Booksy review_photos attached to verified 5-star reviews): real clients showing finished brow tint results, eyes open, smiling, natural lighting, no text overlays: gallery tiles."
+    ],
+    "resize_note": "All images used on the site were resized to a maximum width of 1000px (Pillow, LANCZOS resampling, JPEG quality 82, optimize=True) before use, per the pipeline's mandatory performance rule; portrait images narrower than 1000px were kept at original width and just re-encoded/optimized."
+  },
+  "research_note": "Research completed 2026-07-19 for a solo pipeline run covering Fases 1-3 and part of Fase 5. All data verbatim/sourced from Instagram's web_profile_info API, Booksy's live JSON-LD and internal __NUXT_DATA__ payload (both fetched and parsed directly), and direct domain checks. No data invented."
+}
