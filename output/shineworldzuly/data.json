@@ -1,0 +1,390 @@
+{
+  "slug": "shineworldzuly",
+  "name": "ShineWorld By Zuly Lopez",
+  "name_source": "Booksy business page and JSON-LD both read 'ShineWorld By Zuly López' (with the Spanish accent on Lopez). Instagram full_name field: 'Zuly Lopez' (no accent, with a purple heart emoji). Task brief spells it 'ShineWorld By Zuly Lopez'; site uses that spelling throughout, footer copyright uses the same.",
+  "niche": "hair salon boutique (multi-service: cabello, unas acrilicas, cejas con cera, maquillaje)",
+  "owner": "Zuly Lopez",
+  "owner_source": "Instagram full_name 'Zuly Lopez (purple heart emoji)' for @shineworld.zuly. Booksy's single staff record for business 905766 lists 'Zuleyka Lopez' (id 861325) tied to every service and every review returned, which reads as the same person's fuller/legal first name (Zuleyka vs the nickname Zuly). Both names used consistently across the business page.",
+  "city": "Lakeland, FL",
+  "address": {
+    "full": "1418 N Combee Rd, Lakeland, FL 33801",
+    "source": "Cross-verified in two independent structured-data sources on the live Booksy business page (booksy.com/en-us/905766_shineworld-by-zuly-lopez_hair-salon_16013_lakeland): (1) schema.org JSON-LD PostalAddress streetAddress '1418 N Combee Rd, Lakeland, 33801'; (2) the embedded Nuxt data payload business.location.address field, identical string. Matches the address given in the task brief exactly."
+  },
+  "geo": {
+    "lat": 28.111271584977636,
+    "lng": -81.90574230427838
+  },
+  "phone": null,
+  "phone_note": "No phone field exists anywhere in the Booksy data for this business (checked both the schema.org JSON-LD, which has no telephone property, and the full embedded Nuxt/devalue business payload, which has no phone key at all). Instagram web_profile_info also returned business_phone_number: null. No phone number was found in any source, so the site uses Booksy (booking) and Instagram DM as the only contact channels, with no tel: link anywhere on the site.",
+  "instagram": {
+    "handle": "@shineworld.zuly",
+    "url": "https://www.instagram.com/shineworld.zuly/",
+    "full_name": "Zuly Lopez (purple heart emoji)",
+    "biography": "You Shine World\n✨Hair\n✨Acrylic Nails\n✨Full waxing\n✨Make-up\nAppointment 👇🏾👇🏾",
+    "follower_count": 320,
+    "post_count": 485,
+    "is_business_account": false,
+    "external_url": "http://shineworldbyzulylopez.booksy.com/ (the Booksy Instant Experience booking widget for this exact business, business id 905766)",
+    "business_email": null,
+    "business_phone_number": null,
+    "source": "instagram.com/api/v1/users/web_profile_info/?username=shineworld.zuly with header x-ig-app-id: 936619743392459, HTTP 200 on first attempt. Full profile plus the 12 most recent timeline posts retrieved (6 GraphImage, 6 GraphVideo, no GraphSidecar carousels in the recent window).",
+    "note_on_booksy_sameas": "The Booksy business page's own JSON-LD sameAs field points to a DIFFERENT, older-looking handle: https://www.instagram.com/youshine_world/. That handle was not part of the assigned task brief and was not independently verified as still active; the task's assigned handle @shineworld.zuly was confirmed live via the IG API (320 followers, 485 posts, bio matches the business exactly, includes the Booksy booking link in bio) and is used as the real, current handle throughout the site and this record. This discrepancy (a stale Booksy sameAs vs. a live, verified handle) is noted here rather than silently resolved."
+  },
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "shineworldzuly.com, shineworldbyzulylopez.com, shineworldsalon.com, shineworldlakeland.com, shineworldbyzuly.com: all confirmed non-resolving via the environment's outbound proxy, which returns a distinctive 'CONNECT tunnel failed, response 502' for non-existent/non-resolving domains (verified against a known-real control domain, google.com, which returned a normal 301, and a known-nonexistent control domain, which returned the same 502 failure signature as all 5 tested ShineWorld domain variants).",
+    "ig_external_url": "Instagram bio external_url is http://shineworldbyzulylopez.booksy.com/, a Booksy platform subdomain (Instant Experience widget), not an independent owned domain. No secondary linktree/poplme/beacons link exists in the bio, only this single Booksy link.",
+    "booksy_field": "The embedded Booksy Nuxt payload's business.website field is explicitly null.",
+    "conclusion": "NO own website found. Booking happens exclusively through Booksy. Angle: has_own_site=false, 'built you a sample website'."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/905766_shineworld-by-zuly-lopez_hair-salon_16013_lakeland",
+    "subdomain_url": "http://shineworldbyzulylopez.booksy.com/",
+    "business_id": 905766,
+    "note": "Booksy is the sole booking channel, linked directly from the Instagram bio."
+  },
+  "rating": {
+    "value": 5.0,
+    "value_exact": 5,
+    "count": 39,
+    "source": "Live-fetched schema.org JSON-LD embedded in the Booksy business page: aggregateRating {ratingValue: 5, reviewCount: 39}. Independently confirmed in the embedded Nuxt data payload (business.reviewsRank = 5, business.reviewsCount = 39), an exact match between both structured-data sources. Matches the '5.0 / 39 reviews' figure given in the discovery brief exactly."
+  },
+  "hours": {
+    "source": "Booksy JSON-LD openingHoursSpecification, cross-checked against the raw openHours array (dayOfWeek 0=Sun..6=Sat) in the embedded Nuxt payload; both agree.",
+    "schedule": [
+      {
+        "day": "Tuesday",
+        "open": "10:00",
+        "close": "12:00",
+        "open2": "13:00",
+        "close2": "18:00"
+      },
+      {
+        "day": "Wednesday",
+        "open": "10:00",
+        "close": "12:00",
+        "open2": "13:00",
+        "close2": "18:00"
+      },
+      {
+        "day": "Thursday",
+        "open": "10:00",
+        "close": "12:00",
+        "open2": "13:00",
+        "close2": "17:00"
+      },
+      {
+        "day": "Friday",
+        "open": "10:00",
+        "close": "12:00",
+        "open2": "13:00",
+        "close2": "20:30"
+      },
+      {
+        "day": "Saturday",
+        "open": "10:00",
+        "close": "12:00",
+        "open2": "13:00",
+        "close2": "20:30"
+      }
+    ],
+    "note": "Closed Sunday and Monday. Midday break every open day (12:00 to 13:00). By appointment via Booksy."
+  },
+  "email": null,
+  "email_note": "Deep search performed per Fase 1 punto 6, no verifiable public email found: (1) Instagram web_profile_info business_email field is null (fetched successfully, field present but empty, account is not flagged as a business account); (2) Booksy JSON-LD and the full embedded Nuxt business payload were grepped for 'email' keys, none exist anywhere in the Booksy data for this business; (3) the only bio link (http://shineworldbyzulylopez.booksy.com/) is the Booksy Instant Experience widget itself, not a separate linktree/poplme page, so there was no secondary bio page to open; (4) no Facebook page was found linked from Booksy (facebookLink field is null) or from Instagram, so no Facebook About page could be checked. Real contact channels are Booksy (booking) and Instagram DM (@shineworld.zuly).",
+  "services": {
+    "source": "Full 29-line-item menu across 5 real Booksy categories, extracted from the embedded Nuxt/devalue data payload (script id=__NUXT_DATA__) on the live Booksy business page, resolved programmatically in Python (reference-array devalue format) and cross-checked against the 29 simpler {name, price} pairs also present in the page's schema.org JSON-LD makesOffer array (both sources agree on all 29 items). All prices/durations exact as published.",
+    "price_range": "USD 5 - 200",
+    "count": 29,
+    "featured_for_site": [
+      "Botox Capilar (Cabello, $125+/210min, signature)",
+      "XXL Nails (Unas, $85+/190min)",
+      "Makeup ($65+/75min)",
+      "Sacado de cejas con Wax (Cejas, $15/30min)"
+    ],
+    "categories": [
+      {
+        "category": "Servicios Estrella",
+        "note": "Booksy's own unnamed/id-null first category, the 2 items it surfaces first on the business page.",
+        "items": [
+          {
+            "name": "Pedicura con esmaltado en gel",
+            "price": 55,
+            "duration_min": 60,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Makeup",
+            "price": 65,
+            "duration_min": 75,
+            "price_type": "starting_from"
+          }
+        ]
+      },
+      {
+        "category": "Unas",
+        "items": [
+          {
+            "name": "Manicure",
+            "price": 35,
+            "duration_min": 60,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Small nails size 1",
+            "price": 45,
+            "duration_min": 120,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Medium nails size 2",
+            "price": 55,
+            "duration_min": 150,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Nails size 3",
+            "price": 60,
+            "duration_min": 130,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Long nails",
+            "price": 65,
+            "duration_min": 180,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "XL Nails",
+            "price": 75,
+            "duration_min": 165,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "XXL Nails",
+            "price": 85,
+            "duration_min": 190,
+            "price_type": "starting_from"
+          }
+        ]
+      },
+      {
+        "category": "Hair / cabello",
+        "items": [
+          {
+            "name": "Shots de keratina",
+            "price": 15,
+            "duration_min": 5,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Lavado y secado de cabello corto",
+            "price": 30,
+            "duration_min": 60,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Tratamiento y secado cabello corto",
+            "price": 40,
+            "duration_min": 70,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Lavado y secado cabello mediano",
+            "price": 40,
+            "duration_min": 90,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Tratamiento y secado cabello mediano",
+            "price": 45,
+            "duration_min": 80,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Lavado y secado cabello largo",
+            "price": 50,
+            "duration_min": 100,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Tratamiento y secado cabello largo",
+            "price": 55,
+            "duration_min": 110,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Cirugia capilar",
+            "price": 200,
+            "duration_min": 210,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Botox Capilar",
+            "price": 125,
+            "duration_min": 210,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Aplicacion de color de cabello/ un solo Color",
+            "price": 40,
+            "duration_min": 60,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Corte de puntas",
+            "price": 10,
+            "duration_min": 20,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Cortes",
+            "price": 25,
+            "duration_min": 30,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Prueba de mechon y consulta",
+            "price": 20,
+            "duration_min": 30,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Highlights",
+            "price": 100,
+            "duration_min": 150,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "Peinados",
+            "price": 50,
+            "duration_min": 90,
+            "price_type": "starting_from"
+          }
+        ]
+      },
+      {
+        "category": "Toes",
+        "items": [
+          {
+            "name": "Toe Gel",
+            "price": 25,
+            "duration_min": 45,
+            "price_type": "starting_from"
+          },
+          {
+            "name": "2 Nails Acrylic Toes and Gel",
+            "price": 30,
+            "duration_min": 50,
+            "price_type": "starting_from"
+          }
+        ]
+      },
+      {
+        "category": "Waxing",
+        "items": [
+          {
+            "name": "Sacado de cejas con Wax",
+            "price": 15,
+            "duration_min": 30,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Wax de Bozo",
+            "price": 7,
+            "duration_min": 10,
+            "price_type": "fixed"
+          },
+          {
+            "name": "Waxing de Barbilla",
+            "price": 5,
+            "duration_min": 10,
+            "price_type": "fixed"
+          }
+        ]
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "name": "andrea s.",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2026-05-29",
+      "service": "Cirugia capilar / Cortes",
+      "text": "great service! 100% recommended :)"
+    },
+    {
+      "name": "Erika",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2026-04-09",
+      "service": "Aplicacion de color de cabello / Lavado y secado cabello mediano",
+      "text": "Love it muy buen trabajo y muy amable"
+    },
+    {
+      "name": "Frances A.",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2026-04-04",
+      "text": "tremendas manos! ame su trabajo"
+    },
+    {
+      "name": "Normaileen M.",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2026-02-27",
+      "text": "La mejor!!!🥰🥰🥰"
+    },
+    {
+      "name": "Grisel R.",
+      "source": "Booksy",
+      "stars": 5,
+      "date": "2025-08-29",
+      "text": "Excelente servicio. 100 % recomendada"
+    }
+  ],
+  "reviews_note": "These are 5 of the 10 verbatim reviews returned in the 'reviews' array of the embedded Booksy Nuxt payload for business 905766 (business.reviewsCount = 39 total; only 10 are returned in this page load, no further pages were reachable via a public API in the time available). All 10 available reviews are 5-star; these 5 were chosen for having a visible first name plus last initial. Two other reviews in the same batch had a blank name field and were not used. Text shown exactly as Booksy displays it, no wording changed.",
+  "brand_vibe": {
+    "description": "The business's own consistent photo watermark (present on nearly every Booksy 'inspiration' photo and every recent Instagram post) is a gold/champagne cursive 'SW' monogram with 'SHINE WORLD BY. ZULY LOPEZ' in thin tracked caps underneath, set on a near-black background, sometimes with a faux-fur white backdrop and small gold sparkle/star graphics. This reads as a glam, boutique, night-energy brand identity distinct from a soft daytime aesthetic. The actual nail-art photography spans a very wide, vivid color range (red/gold Valentine hearts, pink rhinestone florals, teal/white 3D beach-theme with pearls and gold shells, yellow/pink glitter florals, burgundy/gold marble abstracts), and the hair-color work shown includes striking fashion colors (vivid magenta-red, silver/gray) alongside sleek natural-black finishes. Conclusion: a DARK base (matching the brand's own black-backdrop watermark and glam energy) with a warm gold/rose-bronze accent reads truest to the brand, distinct from the cooler bronze of mizu or the rose-gold of jazzedbyjnicole.",
+    "base": "dark",
+    "palette_name": "shineworldzuly (warm gold and rose-bronze glam on near-black, new palette, does not reuse mizu/amani/mare/alea/pausa/slaybytay/jazzedbyjnicole)",
+    "colors": {
+      "bg": "#14100d",
+      "bg_2": "#1c1613",
+      "surface": "rgba(255,255,255,0.035)",
+      "ink": "#f6ece0",
+      "accent_deep": "#d9a558",
+      "accent_mid": "#c98a63",
+      "accent_soft": "#e8c9a0",
+      "accent_ghost": "rgba(217,165,88,0.16)"
+    }
+  },
+  "language": "es",
+  "language_evidence": "Instagram bio is in Spanish/Spanglish ('You Shine World', service list in English words but the appointment call-to-action and virtually all 12 recent post captions are written entirely in Spanish: 'Blanco simple & elegante', 'Ella queria Un maquillaje suave', 'El corte del momento', 'Miren esa limpieza de cuticula', 'Un corte necesario', 'Que todo fluya segun su volundad', 'Seguimos confiando en los planes que Dios me tiene', 'Ella las queria cuadradas pero no cuadradas'). Booksy's own service menu and descriptions are overwhelmingly in Spanish (category names 'Unas', service names like 'Cirugia capilar', 'Botox Capilar', 'Aplicacion de color de cabello', 'Corte de puntas', 'Prueba de mechon y consulta', 'Sacado de cejas con Wax', 'Wax de Bozo', 'Waxing de Barbilla', plus Spanish service descriptions like 'Cirugia Capilar, ayuda a restaurar, suavizar las ondas y rizo del cabello'). Of the 10 Booksy reviews returned, most are in Spanish ('Love it muy buen trabajo y muy amable', 'tremendas manos! ame su trabajo', 'Excelente servicio. 100% recomendada') with 2 in English. Lakeland, FL (Polk County) has a large Spanish-speaking population. Spanish registered as the primary language; the site is fully bilingual (ES default, EN toggle) per pipeline requirement.",
+  "images_downloaded": {
+    "count": 43,
+    "path": "output/shineworldzuly/assets/raw/",
+    "sources": "19 images (logo, cover, 9 bizPhoto, 8 inspiration) came from the Booksy business photo payload (images.logo/cover/bizPhoto/inspiration in the resolved Nuxt data) via cloudfront URLs, curl with Chrome UA. 11 service-linked photos came from the per-service 'photos' arrays in the same Booksy payload. 12 images came from Instagram's own web_profile_info feed for @shineworld.zuly (6 GraphImage display_url + 6 GraphVideo poster display_url, no carousels in the recent window; every single one carries the business's own gold/white SW watermark, confirming they are genuinely the business's own posted content). All files verified with `file` as valid JPEGs, none 0 bytes or corrupted.",
+    "curation_note": "Visual curation performed image-by-image with the Read/vision tool, not by filename. EXCLUDED from gallery entirely: a face-closeup before/after makeup collage (booksy cover photo and a matching Instagram post) kept out of the gallery per the hard rule against closeup face photos in gallery tiles, even though both are legitimate finished-makeup demonstrations, not mid-procedure shots; a large logo/galaxy-graphic promotional image with big text overlay (excluded as a caption-over-photo); an Instagram post with a burned-in caption 'Aqui amamos la limpieza de cuticula' (excluded, text superimposed on the photo); a close-up sole-of-foot pedicure photo (excluded as an unappealing/unflattering crop, not a usable marketing image); an Instagram post featuring Disney 'Ariel' mermaid nail decals (excluded for third-party IP/trademark reasons, same precedent as excluding counterfeit-logo nail art in a prior build). The consistent brand watermark seen on nearly all other real photos (a small gold/white 'SW Shine World by Zuly Lopez' corner mark) was treated as the business's own deliberate branding, not a prohibited caption, and photos carrying only that watermark were used freely. No owner selfie or personal portrait was found in any source, so no avatar is used anywhere on the site.",
+    "used_in_site": [
+      "hero-1.jpg (Instagram, real shineworld.zuly post): vivid magenta-red hair color, sleek and glossy, back view, finished result. Hero image and og:image.",
+      "experience-1.jpg (Instagram, real shineworld.zuly post): sleek dark brunette hair, salon ambiance visible in background. Experience section.",
+      "experience-2.jpg (Booksy inspiration photo): teal/white 3D coffin nail art with pearls, gold shells and a starfish, beach theme. Experience section.",
+      "signature-1.jpg (Instagram, real shineworld.zuly post): silver/gray hair color transformation, sleek finish. Signature service card.",
+      "gallery-1.jpg (Booksy bizPhoto): red and white French-tip nails with heart nail art, Valentine theme, sparkly finish. Gallery, wide lead tile.",
+      "gallery-2.jpg (Booksy inspiration photo): teal/white 3D nail art, beach theme with gold seashells and a white flower. Gallery.",
+      "gallery-3.jpg (Instagram, real shineworld.zuly post, video poster): glossy black graduated bob haircut, back view, finished result. Gallery.",
+      "gallery-4.jpg (Booksy bizPhoto): pink and purple 3D floral nail art on a pastel base. Gallery.",
+      "gallery-9.jpg (Instagram, real shineworld.zuly post): simple white/cream French manicure, elegant finish. Gallery.",
+      "gallery-5.jpg (Booksy bizPhoto): real before/after hair collage, wet unstyled hair next to a glossy blown-out finished result. Gallery, wide tile.",
+      "gallery-6.jpg (Booksy inspiration photo): yellow and pink 3D floral nail art with holographic glitter accent. Gallery.",
+      "gallery-7.jpg (Booksy bizPhoto): pink marble nail art with gold foil flakes and a hand-painted bow. Gallery.",
+      "gallery-8.jpg (Instagram, real shineworld.zuly post): burgundy, tortoise and gold-leaf abstract nail art. Gallery.",
+      "logo.png / favicon.png: generated monogram badge ('SW' in the site's gold accent on a dark circle with a thin gold ring), created locally since every real logo asset found was a photo watermark baked into JPEGs (not a clean standalone logo file usable as a nav/favicon image). Used only for nav, footer and browser-tab icon."
+    ],
+    "resize_note": "All images used in the final HTML were resized to a max width of 1000px at JPEG quality 82 using Pillow, per the performance rule in PIPELINE.md/DESIGN.md. Verified every used file with the `file` command: all decode as valid JPEG (or PNG for the generated logo/favicon), none are 0 bytes."
+  },
+  "research_note": "Research performed 2026-07-19. Address, rating/review count, hours and full 29-item service menu cross-verified across two independent structured-data sources on the same live Booksy page (schema.org JSON-LD and the embedded Nuxt payload), which agreed on every overlapping field. Instagram web_profile_info API worked on the first attempt for @shineworld.zuly (the handle given in the task brief), confirmed live and matching the business exactly; note that Booksy's own sameAs field points to a different, unverified handle (youshine_world), which is called out above but not used. No own domain found (5 domain variants tested, all non-resolving; Booksy's own website field is null). No phone number and no public email found despite exhausting every source in the pipeline's checklist. All 29 service prices/durations and all 5 review quotes are verbatim from Booksy, nothing invented."
+}
