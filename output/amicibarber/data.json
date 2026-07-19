@@ -1,0 +1,128 @@
+{
+  "slug": "amicibarber",
+  "name": "Amici Barber Shop",
+  "niche": "barbershop clasica (South Beach). Descripcion propia en Booksy: \"Classic and Modern barbershop\".",
+  "city": "Miami Beach, FL (South Beach)",
+  "established": 2005,
+  "established_note": "Confirmado en 3 fuentes independientes: rotulo real en la pared del local (visible en assets/raw/biz-1.jpg, insp-3.jpg, insp-5.jpg: 'Amici Barber Shop · Since 2005'), bio de Instagram ('Serving South Beach since 2005!', via snapshot de busqueda) y menciones de directorios (Miami New Times: premio Best Of Miami Best Barbershop 2012, coincide con un negocio ya establecido para esa fecha).",
+  "address": {
+    "full": "1431 Alton Rd, Suite B, Miami Beach, FL 33139",
+    "street": "1431 Alton Rd, Suite B",
+    "locality": "Miami Beach",
+    "region": "FL",
+    "postal_code": "33139",
+    "country": "US",
+    "geo": { "lat": 25.78629, "lng": -80.1407 },
+    "source": "JSON-LD schema.org (HairSalon) embebido en la pagina live de Booksy (booksy.com/en-us/530938_amici-barber-shop_barber-shop_15890_miami-beach), campo address y geo. Coincide con el dato del brief. Nota: Miami New Times lista una direccion antigua distinta (1122 15th St) con el MISMO telefono (305-673-6789), lo que sugiere el negocio se mudo con los años a 1431 Alton Rd; se uso la direccion actual verificada en Booksy/Yelp/Birdeye/Yahoo (todas coinciden en 1431 Alton Rd Suite B)."
+  },
+  "phone": "+1-305-673-6789",
+  "phone_display": "(305) 673-6789",
+  "phone_source": "Coincide en 4 fuentes independientes: Booksy (booking real del negocio), Yelp, Birdeye, Yahoo Local y Miami New Times (via WebSearch/WebFetch), ademas del dato del brief inicial.",
+  "email": null,
+  "email_note": "Busqueda profunda agotada: (1) JSON-LD schema.org de Booksy sin campo email; (2) seccion 'Business details / Social Media' del HTML renderizado de la pagina Booksy solo lista Instagram, sin email ni website; (3) Instagram web_profile_info API (x-ig-app-id 936619743392459) intentada 2 veces (handle @amicibarbershop y @amici.barbershop), ambas devolvieron HTTP 400 real de Instagram (bloqueo del endpoint); tras el 2do intento se paso a fuentes alternativas segun regla del pipeline; (4) pagina publica instagram.com/amicibarbershop devolvio HTTP 429 (rate limit), sin poder leer bio/external_url; (5) Facebook facebook.com/amici-barber-shop-102826779776370: WebFetch devolvio el muro de login de Facebook, sin acceso a la seccion About; (6) busqueda web dedicada de linktree/link-in-bio asociado al handle: sin resultados; (7) Miami New Times (directorio con perfil propio del negocio) no publica email; (8) sin dominio propio del que derivar un email (ver has_own_site). Canal de contacto real: telefono/llamada al (305) 673-6789, Booksy o Instagram DM @amicibarbershop.",
+  "instagram": {
+    "primary_handle": "@amicibarbershop",
+    "primary_url": "https://www.instagram.com/amicibarbershop/",
+    "source": "Listado en sameAs del JSON-LD de la pagina Booksy del negocio (fuente primaria del propio negocio). Coincide con el handle mencionado en multiples resultados de busqueda web.",
+    "stats_snapshot": "184 followers, 43 following, 86 posts, bio 'Serving South Beach since 2005!' (snapshot de resultados de busqueda web; el feed no se pudo extraer directamente porque el endpoint API de IG devolvio HTTP 400 en 2 intentos y la pagina publica devolvio HTTP 429).",
+    "other_handles_seen_not_used": "Busquedas web tambien mostraron @amici.barbershop y @amici_barbers como resultados relacionados, pero ninguno aparece en el JSON-LD del negocio (fuente propia); no se usaron como fuente de datos, solo se registra su existencia."
+  },
+  "facebook": "https://www.facebook.com/amici-barber-shop-102826779776370/ (hallado por busqueda web; pagina bloqueada por muro de login de Facebook al intentar leer el About)",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "amicibarbershop.com, amici-barbershop.com, amicibarbershopmiami.com, amicibarbershopmiamibeach.com, amicibarbers.com: todos sin resolucion DNS (connection failed). amicibarber.com SI resuelve (HTTP 200) pero es un negocio DISTINTO y NO relacionado: el sitio es una landing generica ('AMICI Barber Shop | Premium Men's Grooming', copy con texto de relleno tipo lorem ipsum 'Sit amet Venenatis Viverra', boton de telefono con codigo de pais +20 (Egipto), footer '© 2026 Infinity Marketing Solutions'), sin ninguna coincidencia de direccion (1431 Alton Rd / Miami Beach / 33139) ni telefono (305-673-6789) real del negocio de Miami Beach. Se descarto como no afiliado.",
+    "conclusion": "NO tiene website propio verificable. El link de sameAs del JSON-LD de Booksy solo apunta a Instagram. Angulo de outreach: has_own_site=false."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/530938_amici-barber-shop_barber-shop_15890_miami-beach",
+    "subdomain_url": "https://amicibarbershop123.booksy.com/ig/",
+    "business_id": 530938,
+    "note": "El subdominio amicibarbershop123.booksy.com/ig/ (verificado con curl -L) redirige via cdl.booksy.com -> lhkw.app.link -> booksy.com/en-us/530938_amici-barber-shop_barber-shop_15890_miami-beach?do=invite, confirmando que es el MISMO negocio (id 530938). Existe un segundo listado antiguo (booksy.com/en-us/1765126_amici_barber-shop_15890_miami-beach) que redirige a 'showBusinessDeletedModal': listado duplicado/eliminado, no usado."
+  },
+  "rating": {
+    "primary_display": {
+      "value": 4.4,
+      "count": 230,
+      "source": "Birdeye (reviews.birdeye.com/amici-barber-shop-170245509122640), verificado 2026-07-19. La propia pagina de Birdeye desglosa el origen de las reviews por plataforma: 'Google (230)' / 'Birdeye (0)', confirmando que las 230 reseñas y el 4.4 provienen INTEGRAMENTE de Google (el negocio no tiene reviews nativas de Birdeye). Es la mejor aproximacion verificable al rating real de Google Maps del negocio, ya que el acceso directo a Google Maps fue bloqueado (la pagina no devolvio datos via fetch)."
+    },
+    "booksy": {
+      "value": 5.0,
+      "count": 64,
+      "source": "aggregateRating del JSON-LD schema.org (HairSalon) embebido en la pagina LIVE de Booksy, extraido y parseado con Python el 2026-07-19 (ratingValue=5, reviewCount=64). Booksy es tambien la fuente de los 10 quotes verbatim reales usados en la seccion de opiniones del sitio (con nombre y servicio real de cada cliente)."
+    },
+    "yelp": {
+      "value": 4.5,
+      "count": 104,
+      "source": "Yahoo Local (local.yahoo.com/info-169563307-amici-barber-shop-miami-beach), que muestra explicitamente 'Source: Yelp' junto al 4.5/104. El acceso directo a yelp.com devolvio HTTP 403 (bloqueo anti-scraping), por lo que se uso este agregador que cita a Yelp como fuente. Nota: el conteo de reseñas de Yelp fluctuo entre snapshots de busqueda vistos durante el research (100, 104) por ser un contador en vivo; se registro el valor mas reciente confirmado (104)."
+    },
+    "note_brief_vs_live": "El brief inicial citaba 4.6/100 en Yelp y 230 en Birdeye. Al verificar en vivo (2026-07-19) el conteo de Yelp crecio a 104 y su rating a 4.5 (via Yahoo/Yelp), mientras Birdeye se mantuvo en 230 reviews / 4.4, confirmado como 100% proveniente de Google. Se uso el dato de Birdeye/Google (4.4, 230) como rating principal mostrado en el sitio por ser el que mejor aproxima Google Maps (fuente preferida segun el pipeline), y Booksy (5.0, 64) para las reseñas verbatim reales de la seccion de testimonios."
+  },
+  "hours": {
+    "source": "openingHoursSpecification del JSON-LD de Booksy, extraido 2026-07-19.",
+    "schedule": [
+      { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "open": "10:00", "close": "19:00" },
+      { "days": ["Sunday"], "open": "10:00", "close": "16:00" }
+    ],
+    "note": "Lunes a Sabado 10:00 AM a 7:00 PM. Domingo 10:00 AM a 4:00 PM."
+  },
+  "services": {
+    "source": "Menu COMPLETO extraido el 2026-07-19 de dos fuentes coincidentes en la pagina live de Booksy: (1) el array makesOffer del JSON-LD (nombres y precios exactos), (2) el HTML renderizado del widget de reserva embebido (data-testid=service-name / service-variant-duration), que aporta la duracion exacta de cada servicio en el MISMO ORDEN que el JSON-LD. Booksy no declara categorias (lista plana de 5 servicios), asi que el sitio los muestra todos como destacados (menu corto, sin necesidad de agrupar 'y N mas').",
+    "price_range_booksy": "USD 25 - 70",
+    "items": [
+      { "name": "Haircut", "price": 35, "duration_min": 30, "featured": true },
+      { "name": "Haircut and Beard trim (no blade)", "price": 60, "duration_min": 35, "featured": true },
+      { "name": "Hot Towel Shave", "price": 35, "duration_min": 30, "featured": true },
+      { "name": "Beard Trim (no blade)", "price": 25, "duration_min": 20 },
+      { "name": "Combo Hair & Shave", "price": 70, "duration_min": 50, "featured": true }
+    ],
+    "amenities": ["Parking", "Se aceptan tarjetas de credito", "Ambiente familiar / child-friendly", "Se permiten mascotas", "Wi-Fi"],
+    "amenities_source": "Seccion Amenities de la pagina Booksy del negocio (id 530938), extraido 2026-07-19."
+  },
+  "staff": [
+    { "name": "Jose", "note": "Barbero mas mencionado en las reseñas de Booksy (7 de 10 quotes seleccionadas lo nombran); foto real en assets/raw/staff-jose.jpg." },
+    { "name": "Isaac", "note": "30 años de experiencia (dato propio del negocio en Booksy); foto real en assets/raw/staff-isaac.jpg." },
+    { "name": "Valdo", "note": "Listado como employee en el JSON-LD de Booksy; foto real en assets/raw/staff-valdo.jpg." },
+    { "name": "Darien Mesa", "note": "Mencionado en una reseña de Booksy (cliente Alexander) y en foto de equipo (assets/raw/insp-6.jpg, etiquetado 'Darien')." }
+  ],
+  "reviews": [
+    { "name": "Bryan Drew", "source": "Booksy", "stars": 5, "date": "2026-05-19", "service": "Haircut", "staffer": "Jose", "text": "Excellent, always." },
+    { "name": "Jolyon", "source": "Booksy", "stars": 5, "date": "2026-05-19", "service": "Haircut", "staffer": "Jose", "text": "Always on-time, quick and efficient. After 10+ cuts longest wait was maybe 5 minutes (once). Thanks!" },
+    { "name": "Guillaume", "source": "Booksy", "stars": 5, "date": "2026-04-23", "service": "Haircut", "staffer": "Jose", "text": "Been getting my haircuts from Jose for 3 years now he's the best!" },
+    { "name": "Alexander", "source": "Booksy", "stars": 5, "date": null, "service": "Haircut", "staffer": "Darien Mesa", "text": "Darien is an amazing barber, always professional, welcoming, and truly takes pride in his work. His customer service is top-notch and he makes every visit a great experience. The fades are always clean, precise, and honestly the best in town. Highly recommend Darien if you want to look sharp every time!" },
+    { "name": "Scott", "source": "Booksy", "stars": 5, "date": "2026-02-08", "service": "Haircut", "staffer": "Jose", "text": "Jose cuts my hair the best for a very reasonable price! He's incredibly friendly, and I'm always satisfied with the result. Best barber in Miami Beach? I think yes." },
+    { "name": "Susana Otero", "source": "Birdeye/Google", "stars": null, "date": null, "service": null, "staffer": null, "text": "Amici barber shop is a great place to go for haircut. Good services not expensive and profesional!!" },
+    { "name": "H P", "source": "Birdeye/Google", "stars": null, "date": null, "service": null, "staffer": null, "text": "The best! All the barbers are talented and great! Have had haircuts from Jose (my go to), Mise, Isaac, Oliver and Darien." }
+  ],
+  "reviews_note": "10 quotes verbatim extraidos del HTML renderizado de la seccion de resenas de Booksy (data-testid=review-item/author/service/staffer), todos en ingles. Se seleccionaron 5 para el sitio (Bryan Drew, Jolyon, Guillaume, Alexander, Scott) por variedad de barbero mencionado y longitud legible. Se agregaron 2 quotes adicionales de Google (via Birdeye) con nombre completo, verbatim, como respaldo del rating principal 4.4/230. Todas las reseñas encontradas fueron en ingles; ninguna en español.",
+  "brand_vibe": {
+    "description": "Fotos reales (assets/raw/biz-1, insp-2, insp-3, insp-4, insp-5) muestran una barberia clasica de South Beach: pared de madera oscura con el logotipo 'Amici Barber Shop Since 2005' en letras plateadas cursivas con tijeras, ambiente profesional con delantales de cuero negro y mostaza, sillones de barbero negros en fila, piso de madera oscura brillante, luces de techo tipo oficina (no dramaticas). Un logo antiguo (assets/raw/logo.jpg, ventana con vinilo naranja, ya no vigente) confirma que el negocio rebrandeo su señaletica en algun punto tras 2020 (foto con mascarillas). Conclusion: base OSCURA calida tipo Mizu/daspot (madera + negro + plateado/champagne), clasica y masculina, sin el dorado saturado de daspot: mas plateado/champagne discreto, acorde a 'Classic and Modern barbershop', sin restaurante spa vibe.",
+    "base": "oscura (template dark)",
+    "palette_name": "amicibarber (madera oscura + plateado champagne sobre negro calido, distinto del dorado saturado de daspot y del champagne palido de mizu)",
+    "colors": {
+      "bg": "#14120f",
+      "bg2": "#1c1814",
+      "surface": "rgba(255,255,255,0.03)",
+      "ink": "#f2ece0",
+      "accent_deep": "#cfc3ae",
+      "accent_mid": "#a89a80",
+      "accent_soft": "#8b7d66",
+      "accent_ghost": "rgba(207,195,174,0.15)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "South Beach / Miami Beach turistico y anglo en su base de clientes habitual del negocio. Evidencia directa: (1) la descripcion propia del negocio en Booksy esta en ingles ('Classic and Modern barbershop'); (2) de las 10 reseñas verbatim extraidas de Booksy, TODAS (10/10) estan en ingles, ninguna en español; (3) los nombres de los servicios en el menu de Booksy estan en ingles sin ninguna variante en español (a diferencia de daspot o elitebarbershop); (4) la bio de Instagram encontrada ('Serving South Beach since 2005!') esta en ingles. Con esta evidencia unanime se registro ingles como idioma PRINCIPAL/por defecto del sitio (html lang=en, toggle inicia en EN). El sitio es completamente bilingue: el toggle ES/EN cambia todo el contenido, y navigator.language con prefijo es activa español automaticamente para visitantes hispanohablantes.",
+  "images_downloaded": {
+    "count": 11,
+    "path": "output/amicibarber/assets/raw/",
+    "source": "Descargadas via curl (UA Chrome) desde las URLs de CloudFront (d2zdpiztbgorvt.cloudfront.net) listadas en el HTML renderizado de la pagina Booksy del negocio (id 530938): 1 biz_photo, 6 inspiration, 3 resource_photos (staff), 1 logo. Instagram no se pudo usar como fuente de imagenes (API bloqueada 2 intentos, pagina publica con 429; ver email_note), Google Maps no devolvio contenido via fetch, Yelp bloqueo con 403, Foursquare devolvio shell vacio (SPA): Booksy fue la unica fuente de imagenes viable, tal como preve el pipeline ('complementar con galeria del booking').",
+    "curation_note": "Curaduria VISUAL manual foto por foto con la herramienta de lectura de imagenes (no por nombre de archivo). De 11 imagenes descargadas: biz-1.jpg, insp-3.jpg e insp-5.jpg son 3 fotos de equipo casi identicas tomadas la misma sesion frente al rotulo (mismos 6 barberos, mismo orden, solo cambia pose); se uso SOLO insp-3.jpg (mejor exposicion y encuadre del rotulo completo) como la foto de equipo principal, descartando biz-1 e insp-5 del uso final para no repetir la misma escena (insp-5 SI se conservo como segunda composicion de equipo por tener una alineacion de personas visiblemente distinta -incluye a un señor mayor con sueter verde que no aparece en las otras-, asi que se uso como team-2.jpg). insp-1.jpg es un retrato posado (selfie-like) de Jose con los brazos cruzados: descartado de galeria por regla de 'nunca selfies del dueño/staff como tiles', no se uso ni como avatar porque staff-jose.jpg (mismo barbero, mejor encuadre cuadrado) cubre ese rol. insp-6.jpg es un collage con el rotulo ANTIGUO (vinilo naranja) y una foto de equipo con mascarillas de la era covid: descartado por ser señaletica desactualizada y ambiente no representativo del negocio actual. logo.jpg resulto ser el mismo collage desactualizado (rotulo antiguo + equipo con mascarillas), NO un logo limpio utilizable: se descarto como asset de logo: el sitio usa un monograma tipografico 'A' en su lugar (no hay logo limpio descargable del negocio). insp-2.jpg (corte con peine, buena luz, resultado en progreso nitido) e insp-4.jpg (fade de perfil, muy buena definicion y contraste) son las 2 unicas fotos de 'trabajo real en curso' del lote: ambas se usaron ampliamente (hero, experiencia, galeria) siguiendo el mismo patron de reuso de foto fuerte entre secciones que usa el propio template ejemplar (Mizu reusa treatment-5.jpg en el servicio insignia Y en la galeria).",
+    "used_in_site": [
+      "hero-1.jpg (de insp-4.jpg, 1100px): fade de perfil muy nitido, gran contraste, resultado casi terminado, buena luz de ventana. HERO y reutilizada en la card de servicio insignia y en galeria (mismo patron del ejemplar Mizu).",
+      "team-1.jpg (de insp-3.jpg, 1400px): los 6 barberos frente al rotulo 'Amici Barber Shop Since 2005', mejor exposicion de las 3 tomas de equipo disponibles. Seccion Experiencia y tile ancho de galeria.",
+      "action-1.jpg (de insp-2.jpg, 1100px): barbero peinando/definiendo el corte de un cliente con peine, buena profundidad de campo. Seccion Experiencia y galeria.",
+      "team-2.jpg (de insp-5.jpg, 1300px): segunda composicion de equipo, alineacion distinta (7 personas incluyendo a un cliente/socio mayor). Galeria."
+    ],
+    "downloaded_not_used": "biz-1.jpg e insp-5 (near-duplicate del biz shot) fueron reemplazadas por team-1/team-2 procesadas; insp-1.jpg (retrato posado, selfie-like, descartado de galeria); insp-6.jpg (rotulo antiguo + equipo con mascarillas, desactualizado); logo.jpg (mismo contenido que insp-6, sin usar como logo). avatar-jose.jpg, avatar-isaac.jpg y avatar-valdo.jpg (headshots reales de Jose, Isaac y Valdo, procesados a 400px) se prepararon para una posible mini-seccion 'conoce al equipo' pero finalmente NO se referenciaron en el index.html final: el ejemplar Mizu no incluye esa seccion y se prefirio mantener fidelidad estricta a la estructura del template en vez de añadir una seccion nueva; quedan disponibles en assets/raw/ listos para usarse si se decide agregar esa seccion en una iteracion futura. Todas las imagenes originales sin procesar se conservan en assets/raw/ como evidencia de research."
+  }
+}

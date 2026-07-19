@@ -1,0 +1,139 @@
+{
+  "slug": "massagecharisma",
+  "name": "Massage with Charisma",
+  "niche": "mobile massage therapy / bodywork",
+  "city": "Pinellas Park, FL",
+  "address": {
+    "street": "6698 68th Ave N",
+    "locality": "Pinellas Park",
+    "region": "FL",
+    "postal_code": "33781",
+    "country": "US",
+    "full": "6698 68th Ave N, Pinellas Park, FL 33781",
+    "source": "Booksy business page JSON-LD (schema.org/HealthAndBeautyBusiness address field), fetched live from https://booksy.com/en-us/1076411_massage-with-charisma_massage_15989_pinellas-park. Same address also appears verbatim in the business's own Instagram marketing graphic (new studio location flyer).",
+    "note": "Private, appointment-only studio (no walk-ins). The business is primarily MOBILE (therapist travels to client's home/hotel/vacation rental) with this address as the private studio base opened circa August 2026."
+  },
+  "phone": "+1 813-355-9682",
+  "phone_display": "(813) 355-9682",
+  "phone_source": "Matches consistently across Booksy JSON-LD area, IG marketing graphics, and the original task brief.",
+  "email": null,
+  "email_note": "DEEP SEARCH performed, no public email found: (1) Booksy business page HTML/JSON-LD scanned for mailto/email fields, none present (only help.us@booksy.com, which is Booksy's own support address, not the business's). (2) Instagram bio via imginn.com mirror (official web_profile_info API returned 400 'asset deleted' error, used documented fallback) returned no bio text/external_url field populated for this account. (3) Instagram direct page fetch scanned for biography/business_email/external_url fields, none found in returned markup. (4) Facebook page (facebook.com/massagewithcharisma, found via Booksy sameAs) is blocked by Facebook's login wall for unauthenticated fetches, About section not accessible. (5) No linktree/poplme/beacons link found anywhere in bio or booking flow. (6) Web search for name + email/linktree/contact returned no result. Booking and all client communication runs through Booksy; contact is by phone only. Per task rules, outreach will use phone/IG only if this remains null, and no email will be contacted.",
+  "has_own_site": false,
+  "website_check": {
+    "domains_tested": [
+      { "domain": "massagewithcharisma.com", "result": "DNS does not resolve (WebFetch: ENOTFOUND; curl via proxy: 502 Bad Gateway / CONNECT tunnel failed, consistent with no DNS record). Domain not registered/active." },
+      { "domain": "massage-with-charisma.com", "result": "Does not resolve (curl: 000 / connection failure)." },
+      { "domain": "massagewithcharismafl.com", "result": "Does not resolve." },
+      { "domain": "massagewithcharisma.net", "result": "Does not resolve." },
+      { "domain": "charismamobilemassage.com", "result": "Does not resolve." },
+      { "domain": "charismamassagepinellas.com", "result": "Does not resolve." }
+    ],
+    "web_search": "Web searches for 'massagewithcharisma.com' and '\"Massage with Charisma\" Pinellas Park website' returned no owned-domain result: only Booksy, Yelp, Facebook, and unrelated same-named businesses in other cities (Rob's Odd Jobs-style false positives were checked and excluded).",
+    "conclusion": "Confirmed: has_own_site = false. All booking and web presence runs through Booksy + Instagram + Facebook, no owned domain in any variant tested."
+  },
+  "booking_channel": {
+    "primary": "https://booksy.com/en-us/1076411_massage-with-charisma_massage_15989_pinellas-park",
+    "note": "The URL given in the brief (…_15980_clearwater) 301-redirects live to the canonical URL above (…_15989_pinellas-park), confirmed via curl -L. Booksy is the sole booking channel (also linked as 'booksy.com/massagewithcharisma' short link in IG marketing graphics)."
+  },
+  "instagram": {
+    "handle": "@massage_with_charisma",
+    "url": "https://www.instagram.com/massage_with_charisma/",
+    "full_name_on_ig": "Charisma N.",
+    "bio_note": "Official web_profile_info API returned a 400 'asset deleted' schema error (same known failure mode documented in prior runs); imginn.com mirror fallback used per pipeline rule, but the mirror did not expose bio/follower/external_url text for this account (rendered as 'undefined'/blank in the mirror's HTML). Real captions recovered from individual post alt-text confirm the business's own voice/services directly (quoted in images list below).",
+    "api_blocked": true
+  },
+  "facebook": {
+    "url": "https://www.facebook.com/massagewithcharisma",
+    "source": "Found in Booksy JSON-LD 'sameAs' array (authoritative, business-provided link), not merely a search guess.",
+    "note": "Page confirmed to exist per Booksy's own sameAs listing; About section/photos not accessible via automated fetch due to Facebook's login wall for unauthenticated requests."
+  },
+  "owner": {
+    "name": "Charisma Nazario",
+    "title": "Licensed Massage Therapist (LMT)",
+    "license": "Florida LMT License #MA102807",
+    "source": "License number and name shown consistently across multiple IG marketing graphics ('Licensed Massage Therapist, Florida, LMT License MA102807') and matches the 'Charisma Nazario' staff name shown as the service provider on the Booksy booking page and in a client review reply screenshot."
+  },
+  "rating": 5.0,
+  "review_count": 26,
+  "rating_source": "Booksy business page JSON-LD aggregateRating (schema.org), fetched live 2026-07-19: {\"ratingValue\":5,\"reviewCount\":26}. This matches the rating/count given in the task brief exactly.",
+  "hours": {
+    "source": "Booksy JSON-LD openingHoursSpecification, fetched live.",
+    "monday": "11:00 AM - 3:00 PM",
+    "tuesday": "11:00 AM - 8:00 PM",
+    "thursday": "11:00 AM - 8:00 PM",
+    "friday": "11:00 AM - 3:00 PM",
+    "note": "Wednesday, Saturday and Sunday have no listed hours on Booksy (appointment-only practice, no walk-ins per the business's own IG bio; hours reflect Charisma's actual open booking windows, not a storefront schedule)."
+  },
+  "services": {
+    "source": "Booksy JSON-LD 'makesOffer' array (exact names/prices) cross-checked against a live render of the same Booksy booking page, which additionally exposed duration and the discounted/base price pairs shown below. Fetched live 2026-07-19.",
+    "list": [
+      { "name": "Beachside Relaxation & Photo Experience", "price": 275, "duration": "2 hours", "note": "Collaboration with Dynamic Film & Photography (G): massage + professional photo session on the beach." },
+      { "name": "2-Hour Signature Recovery Session", "price": 179, "discount_price": 161.10, "duration": "2 hours", "note": "Swedish or deep tissue, hot stone therapy, premium CBD massage oil, assisted stretching." },
+      { "name": "2-Hour Customized Massage (Single Client)", "price": 150, "price_note": "+", "duration": "2 hours" },
+      { "name": "90-Min Customized Massage", "price": 120, "price_note": "+", "duration": "1.5 hours" },
+      { "name": "60-Min Customized Massage", "price": 85, "price_note": "+", "duration": "1 hour" },
+      { "name": "Massage for Two (Back-to-Back Sessions)", "price": 170, "duration": "2 hours" },
+      { "name": "Prenatal Massage", "price": 85, "price_note": "+", "duration": "60 minutes" }
+    ],
+    "enhancements_offered": "CBD massage oil, hot stones, assisted stretching (mentioned as add-ons/inclusions across service descriptions on Booksy and IG)."
+  },
+  "reviews": [
+    { "name": "Van", "stars": 5, "text": "Great customer service, great massage and very relaxation.. highly recommend", "source": "Booksy" },
+    { "name": "Trevor", "stars": 5, "text": "The session with Charisma was absolutely amazing. She knew exactly how to work out the knots and tightness in my body.", "source": "Booksy" },
+    { "name": "Kaitlyn", "stars": 5, "text": "Great masseuse, she listens to problem areas and is very thorough. Would book again!", "source": "Booksy" },
+    { "name": "Derrick", "stars": 5, "text": "Charisma is professional and her massage technique is effective! You will not be disappointed booking her.", "source": "Booksy" },
+    { "name": "Chancemore", "stars": 5, "text": "My session was excellent and certainly triggered a detox. Charisma's hands are gifted. Highly appreciated.", "source": "Booksy, corroborated verbatim by a review screenshot the business itself posted to Instagram (appointment Apr 9 2026, service: 60-Min Customized Massage, provider: Charisma Nazario)." }
+  ],
+  "language": "en",
+  "language_source": "All Instagram captions, Booksy listing copy, and every review are in English. Business serves the Tampa Bay / Pinellas Park / Clearwater, FL market (English-majority). No Spanish content found anywhere in the business's own materials.",
+  "service_area": ["Pinellas Park", "St. Petersburg", "Clearwater", "Madeira Beach", "Treasure Island", "Indian Rocks Beach", "Redington Beach", "surrounding Gulf beaches"],
+  "service_area_source": "Verbatim from the business's own Booksy description and IG marketing graphics ('Serving the Beaches: Madeira Beach, Treasure Island, St. Pete Beach, Indian Rocks Beach, Redington Beach & surrounding areas').",
+  "images": {
+    "raw_dir": "assets/raw/",
+    "source_summary": "6 verified real photos used: 1 cropped from the business's own Booksy profile photo (studio interior, isolated from a 'new space' announcement flyer), 2 from Booksy 'inspiration' gallery photos (real, non-stock, no text overlay after cropping), 2 from Instagram post photos (fetched via imginn.com mirror fallback after the official IG API returned a 400 error), 1 close-up selfie from Booksy resource photos used as a small therapist avatar. All verified with `file` as valid JPEG >15KB, then resized/cropped to max 1000px width at quality ~82-92 with Python PIL per performance rules.",
+    "selected": [
+      { "file": "hero-studio.jpg", "desc": "Real photo of the private studio room: massage table with cream linens and a deep teal runner, lit candle, small potted plant, a framed beach canvas, and the Massage With Charisma monogram sign on the wall. Source: Booksy business profile photo (biz_photo), which is itself a 'Big News, Visit My New Space' announcement graphic; the left text column and bottom icon row were cropped out with PIL, keeping only the real photographic portion of the room.", "use": "hero + gallery tile" },
+      { "file": "gallery-mall-event.jpg", "desc": "Real action photo of Charisma performing a chair massage on a client at a retail pop-up event (L'Occitane storefront backdrop), in her navy 'Massage With Charisma' embroidered scrub top. Source: Booksy inspiration photo.", "use": "gallery" },
+      { "file": "gallery-mobile-equipment.jpg", "desc": "Real photo of Charisma outdoors next to her car, holding the strapped portable massage table carry case she brings to mobile appointments, smiling, trees and blue sky behind her. Source: Booksy inspiration photo.", "use": "about section (mobile-service context, not a posed portrait)" },
+      { "file": "gallery-stpete-beach.jpg", "desc": "Real photo of Charisma in her teal scrub uniform posing in front of a colorful 'Greetings from St. Pete Beach' painted postcard mural, agave plants in foreground. Source: Instagram post (imginn mirror).", "use": "about section / gallery" },
+      { "file": "about-charisma-beach.jpg", "desc": "Real photo (cropped to remove a burned-in caption box) of Charisma in uniform at the Clearwater Beach entrance sign, palm trees and waterway behind her. Source: Instagram Reel cover, cropped with PIL to remove the text overlay strip at the bottom.", "use": "gallery" },
+      { "file": "avatar-charisma.jpg", "desc": "Real close-up outdoor selfie of Charisma, no text overlay. Source: Booksy resource photo.", "use": "small circular avatar next to her name/title in the About section" }
+    ],
+    "discarded": [
+      "All 7 Booksy 'service_photos' images: AI-generated / stock marketing flyer graphics for each service (candle+towel staged compositions with heavy price/headline text baked in), not real photos of this business's actual rooms.",
+      "Booksy inspiration photo that is a full-page brand flyer collage (stock beach photos + headshot inset + policy text), not a raw photo.",
+      "Booksy inspiration photo that is a 4-panel collage (license badge, stock beach massage stock photo, an unrelated 'Sailport' building sign, and a stock pier sunset), not a raw photo of this business's own space.",
+      "Booksy inspiration photo of the photography collaborator 'Dynamic Film and Photography' business card / portfolio collage, unrelated subject matter (the photographer, not the massage business).",
+      "Instagram Reel cover: 'POV: mobile massage therapist heading to a new client's home' sitting in a car, has burned-in caption text covering the frame, discarded for gallery use.",
+      "Instagram post: brand policy graphic ('Professional Massage Therapy Only') - text/graphic, not a photo.",
+      "Instagram post: 'Message me' booking flyer with embedded headshot - heavy text overlay surrounding the photo, discarded (the cleaner Booksy resource selfie was used instead for the avatar).",
+      "Instagram post: CBD oil product marketing graphic - text/graphic, not a real environment/service photo.",
+      "Instagram post: stock-photo-style hot-stone massage advertisement graphic - AI/stock imagery, not a real photo of this business.",
+      "Instagram post: unrelated hotel lobby and exterior photos (Sailport Waterfront Suites, a hotel where a client was staying, not the business's own space).",
+      "2 Instagram posts that are screenshots of client reviews (used only as text corroboration for the Chancemore review quote, never as gallery images)."
+    ]
+  },
+  "brand_vibe": {
+    "name": "charisma",
+    "base": "light",
+    "description": "Derived from the real studio photo and logo: cream/warm-white walls and linens, deep teal accents (blanket, monogram logo, uniform scrub color), warm candlelight, natural wood tray, small potted greenery. Coastal quiet-luxury: 'Heal. Relax. Restore.' Not neon-spa, not clinical; warm Gulf Coast spa softness.",
+    "tokens": {
+      "bg": "#f6f2ea",
+      "surface": "rgba(250,247,240,0.72)",
+      "ink": "#20302e",
+      "accent-deep": "#1f6e70",
+      "accent-mid": "#4d9497",
+      "accent-soft": "#dcebe8",
+      "accent-ghost": "rgba(31,110,112,0.16)"
+    }
+  },
+  "cta_model": "booking_link",
+  "cta_note": "Primary CTA is Booksy online booking (real-time availability), consistent across nav, hero, service cards, and floating button. Secondary CTA is click-to-call.",
+  "sameAs": [
+    "https://www.instagram.com/massage_with_charisma/",
+    "https://www.facebook.com/massagewithcharisma",
+    "https://booksy.com/en-us/1076411_massage-with-charisma_massage_15989_pinellas-park"
+  ],
+  "build_status": "built",
+  "build_notes": "Base clara (light template, ejemplar Amani) retinted to a custom teal/cream 'charisma' palette derived from the business's real logo and studio photo (not one of the 5 pre-set palettes in DESIGN.md, since none matched this brand's real teal; followed the documented pattern of deriving brand_vibe tokens from research). Bilingual EN(default)/ES implemented with the standard data-es/data-en toggle plus applyLang() running before the hero split-text JS (same pattern as output/oddjobrob). Only 6 real distinct photos were available for a mobile/home-based single-therapist business with no physical storefront to photograph extensively; per pipeline guidance ('fewer sections rather than padding with bad photos'), the gallery uses 5 tiles: gallery-mall-event.jpg as the col-span-2 flagship tile (it is naturally landscape) and hero-studio.jpg reused as a second gallery tile (matching the precedent already established in the light ejemplar template itself, which reuses hero-1.jpg and space-2.jpg across its own hero/about/gallery sections). No <details>/accordion anywhere; all 7 services shown as visible glass cards. Location section adapted to describe the private appointment-only studio address plus the full mobile service area list, since the business has no public walk-in storefront. Verified with Playwright at 390px viewport: no horizontal overflow, 0 console/page errors besides an expected offline Google Fonts network error, EN/ES toggle correctly relabels the split-word h1, JSON-LD parses, em-dash count 0."
+}

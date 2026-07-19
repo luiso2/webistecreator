@@ -1,0 +1,65 @@
+{
+  "slug": "mylashlady",
+  "status": "failed",
+  "failure_reason": "Insufficiente datos verificables en vivo para construir un demo veraz (regla 'nunca inventar' de PIPELINE.md). Ver detalle abajo: el enlace de booking de Square dado como fuente es un merchant muerto/inactivo, no existe ficha de Booksy localizable pese a busqueda exhaustiva, Instagram bloquea tanto el endpoint web_profile_info como la pagina publica (muro de login), y no se encontro telefono, email, fotos ni reseñas verbatim en NINGUNA fuente publica accesible. Sin precios exactos de servicios, sin rating/review_count verificable, sin fotos reales descargables y sin un canal de contacto/reserva funcionando, no se puede cumplir DESIGN.md ('Datos: verdad estricta... si un dato no se encontro, omitir, no rellenar') ni construir un CTA de reserva real. Se marca failed en vez de forzar un demo degradado (precedente @myspabeautysupply, PIPELINE.md Fase 3 regla 5).",
+  "name_brand": "My Lash Lady",
+  "owner_staff": "Yassi (licensed esthetician / certified lash artist, 3+ years, entrenada en Utah). Nombre de owner solo confirmado via texto de marketing indexado por buscadores, nunca via fuente primaria propia accesible.",
+  "niche": "Lash & brow studio (home studio / estudio en casa)",
+  "city": "Homestead, FL",
+  "address": {
+    "full_provided_by_task": "2921 SE 13 Rd, Apt 101, Homestead, FL 33035",
+    "verification": "NO verificada de forma independiente contra una fuente propia del negocio (no hay Google Business, Booksy ni web propia accesibles que la confirmen). Se confirmo unicamente que la direccion EXISTE como edificio residencial real (condominio 'Venetia Gardens South' / SE 13th Rd, Homestead FL 33035, varias unidades en alquiler en Redfin/Trulia/Apartments.com), consistente con un 'home studio', pero sin una fuente del propio negocio que la ate a 'My Lash Lady'."
+  },
+  "phone": null,
+  "phone_note": "No encontrado en ninguna fuente publica tras busqueda por multiples queries (Google/Bing, directorios, redes). El listado de Hudson NH (otro negocio homonimo) SI tiene telefono publico pero no es este negocio.",
+  "email": null,
+  "email_note": "Busqueda profunda intentada y agotada: (1) Instagram web_profile_info via x-ig-app-id devuelve consistentemente error 400 ('Asset asset://laser.provider/ig_business_category_subvertical has been deleted') en 3+ intentos con distintos headers/user-agents, endpoint no utilizable en este momento; (2) pagina publica instagram.com/my_lash.lady/ y la del handle alternativo instagram.com/eyesmilelashes/ devuelven el muro de login de Meta sin datos hidratados, ni via fetch directo ni via proxy lector (jina.ai reader); (3) el booking de Square (square.site/book/LTSDYXR798YHF/my-lash-lady-homestead-fl) devuelve 404 'Had trouble finding that business. Merchant may no longer be accepting appointments online' via curl directo (403 Cloudflare) y via proxy lector (404 confirmado, sin cache real que extraer); (4) linktr.ee/my_lash.lady no existe (404); (5) no se hallo pagina de Facebook del negocio (las paginas 'My Lash Lady' en Facebook halladas son de Hudson NH y Roodepoort Sudafrica, negocios homonimos NO relacionados); (6) no existe dominio propio del que derivar email (ver has_own_site); (7) mylashlady.net es OTRO negocio homonimo (Hudson NH, owner Carolyn, direccion 145 Highland St), descartado explicitamente como fuente."
+  ,
+  "instagram": {
+    "handle_candidate": "@my_lash.lady",
+    "url": "https://www.instagram.com/my_lash.lady/",
+    "source": "Aparece como titulo de resultado de busqueda web ('My Lash Lady (@my_lash.lady)'), consistente con el nombre del negocio. NO se pudo verificar el bio, external_url, foto de perfil ni feed: tanto el endpoint API (web_profile_info, x-ig-app-id) como la pagina publica devuelven bloqueo/login-wall en todos los intentos (directo y via proxy lector). Se intento tambien un handle secundario visto en busqueda, @eyesmilelashes, con el mismo resultado bloqueado; no se pudo confirmar si pertenece a este negocio.",
+    "media_downloaded": false
+  },
+  "facebook": null,
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "mylashlady.com (no resuelto/sin contenido propio confirmado), mylashlady.net (resuelve pero es OTRO negocio homonimo en Hudson NH, owner Carolyn, direccion 145 Highland St Hudson NH 03051, confirmado via fetch y comparacion de owner/direccion), my-lash-lady.square.site (resuelve pero es OTRO negocio homonimo AUSTRALIANO: precios en AUD, marca 'Bondi Sands' para spray tan, 'Bright Bites' para teeth whitening, direccion de mapa por defecto en Spring Farm NSW 2570 Australia -- confirmado via inspeccion del JSON __BOOTSTRAP_STATE__ embebido, currency:'AUD', locale:'en_AU'. NO es el negocio de Yassi en Homestead FL pese a compartir nombre y plataforma Square).",
+    "conclusion": "NO tiene website propio verificable. El unico canal propio real identificado (enlace de booking de Square dado por el usuario, square.site/book/LTSDYXR798YHF/my-lash-lady-homestead-fl) esta MUERTO: devuelve 404 con el mensaje 'Merchant may no longer be accepting appointments online' tanto en fetch directo como via proxy lector (jina.ai), confirmado en multiples intentos con y sin barra final."
+  },
+  "booking": {
+    "platform_provided": "Square Appointments",
+    "url_provided": "https://square.site/book/LTSDYXR798YHF/my-lash-lady-homestead-fl",
+    "status": "DEAD / INACTIVO. Respuesta confirmada: 'Had trouble finding that business. Merchant may no longer be accepting appointments online.' No hay booking funcional identificado en ninguna otra fuente."
+  },
+  "booksy": {
+    "listing_found": false,
+    "search_attempts": [
+      "booksy.com/en-us/s/brows-lashes/15887_homestead (20 negocios listados, sin My Lash Lady ni Yassi)",
+      "booksy.com/en-us/s/eyelash-extensions/15887_homestead (19 negocios listados, sin My Lash Lady ni Yassi, sin negocio con 5.0/101 reviews)",
+      "booksy.com/en-us/s/eyelash-extensions/125733_homestead-meadows-north (20 negocios listados, sin My Lash Lady ni Yassi)",
+      "Busqueda propia del sitio de Booksy (booksy.com/en-us/s/brows-lashes/15887_homestead?query=my+lash+lady): resultado explicito 'No results found. We could not find anything based on your search.'",
+      "Multiples queries de Google/Bing con site:booksy.com y variantes del nombre: sin resultado de ficha individual de Booksy para este negocio",
+      "Intentos de endpoints de API de Booksy (customer_api business search, geo_dictionary search): 404, endpoints incorrectos/no publicos"
+    ],
+    "conclusion": "NO se pudo localizar ninguna ficha de Booksy para este negocio pese a busqueda exhaustiva en 3 zonas geograficas de Booksy cercanas a Homestead y en la busqueda interna del propio sitio de Booksy. El dato 'Booksy Recommended, 5.0 estrellas, 101 reseñas' aportado como contexto NO pudo ser re-verificado de forma independiente."
+  },
+  "rating": {
+    "value": null,
+    "count": null,
+    "source": "NINGUNA fuente primaria accesible (ni Booksy, ni Google, ni Yelp) pudo ser confirmada de forma independiente. No se reporta un rating sin poder verlo en un JSON-LD o pagina viva real, por regla estricta de 'nunca inventar'."
+  },
+  "services": {
+    "items": [],
+    "note": "Se encontraron DESCRIPCIONES GENERICAS de categorias (Classic, Hybrid, Volume, Mega Volume, Lash Lift & Tint) repetidas de forma consistente en snippets de busqueda web, que probablemente provienen del texto indexado por Google de la pagina de booking de Square ANTES de que el merchant se desactivara. NINGUN precio ni duracion exacta pudo ser confirmado desde una fuente viva: el snippet de busqueda no es una fuente primaria valida segun las reglas del pipeline (precios/duraciones deben venir del booking o JSON-LD real, no de un resumen de un motor de busqueda). Por eso el array de servicios se deja vacio en vez de reportar precios no confirmados."
+  },
+  "reviews": [],
+  "reviews_note": "No se encontro NINGUNA reseña verbatim con nombre real en ninguna fuente accesible (Booksy no localizable, Google/Yelp no accesibles con detalle de reseñas para este negocio especifico, Instagram bloqueado).",
+  "images_downloaded": {
+    "count": 0,
+    "note": "0 fotos reales descargadas. Instagram bloqueado (API y web). Booksy no localizable (sin galeria). Square booking muerto (sin galeria accesible). No se probaron fotos de Google Maps (lh3.googleusercontent.com) porque no se pudo confirmar una ficha de Google Business Profile especifica de este negocio en el research realizado; no hay una fuente de imagenes reales disponible en este momento."
+  },
+  "language": "en",
+  "language_evidence": "El unico copy real disponible (snippets de la descripcion de servicios cacheados por buscadores) esta en ingles ('Classic Lashing... isolated natural lash...', 'Hybrid Lashing... 50/50 mix...'). Sin muestras de reseñas o captions propias verificadas para confirmar con mas fuentes.",
+  "research_log_summary": "Busqueda realizada 2026-07-19: WebSearch (12+ queries variando terminos), WebFetch directo a square.site/book/..., my-lash-lady.square.site, mylashlady.net, instagram.com/my_lash.lady, instagram.com/eyesmilelashes, booksy.com (3 paginas de categoria + busqueda interna), linktr.ee, bing.com, google.com/search, archive.org (cdx bloqueado por politica de egress, wayback availability API sin snapshots). Proxy lector r.jina.ai usado para intentar sortear el bloqueo Cloudflare del booking de Square (confirmo el 404 'merchant no longer accepting appointments'). Endpoint API de Instagram (web_profile_info con x-ig-app-id) probado 3 veces con distintos user-agents/headers: error 400 consistente ('Asset asset://laser.provider/ig_business_category_subvertical has been deleted'), no utilizable actualmente."
+}

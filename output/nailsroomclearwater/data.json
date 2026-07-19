@@ -1,0 +1,151 @@
+{
+  "slug": "nailsroomclearwater",
+  "name": "Nails.room.Clearwater",
+  "niche": "Nail salon boutique specialized in Russian manicure (hard gel, rubber base), extensions, pedicures and nail art. Solo nail artist (Viktoria Kravets), suite inside Phenix Salon Suites Countryside Centre.",
+  "city": "Clearwater, FL",
+  "address": {
+    "full": "2569 Countryside Blvd, Bldg 20 Suite 127, Clearwater, FL 33761",
+    "street": "2569 Countryside Blvd, Bldg 20 Suite 127",
+    "locality": "Clearwater",
+    "region": "FL",
+    "postal_code": "33761",
+    "country": "US",
+    "geo": { "lat": 28.01373, "lng": -82.73202 },
+    "source": "Live JSON-LD (schema.org NailSalon) embedded in the Booksy business page, fetched 2026-07-19: streetAddress '2569 Countryside Blvd, Bldg 20 Suite 127, Clearwater, 33761', geo lat 28.01373 / lng -82.73202. Matches task brief exactly. Location is inside Phenix Salon Suites Countryside Centre (confirmed via web search cross-reference with phenixsalonsuites.com listing for the same address)."
+  },
+  "phone": null,
+  "phone_display": null,
+  "phone_source": null,
+  "phone_note": "Task brief states no phone is published (Booksy in-app booking only). Deep search performed: (1) Booksy's live JSON-LD and full page HTML for this business contain zero phone fields; (2) the internal Booksy payload was grepped for phone patterns, none found tied to this business; (3) web search surfaced a candidate 720-612-2882 attributed to 'Viktoria Kravets' by an AI search summary, but this could NOT be verified against any actual fetched page (WebFetch of the Facebook page redirected to a generic login wall, WebFetch of the Phenix Salon Suites professional profile at phenixsalonsuites.com/professionals/85054/ returned HTTP 403, and a direct curl of that same URL was also blocked by the site's WAF with a title of 'Access Denied'); given multiple unrelated people also named Viktoria Kravets appear in search results (a Bratislava-based nail artist, a Ukraine-based one), this number could not be confirmed as belonging to THIS business and was not used anywhere, per pipeline rule against inventing/using unverified data; (4) the only phone number independently confirmed via search snippet was (727) 460-1221, which belongs to Phenix Salon Suites' shared building/leasing front desk, not to this specific tenant business, so it was not used as the business phone either. Conclusion: phone recorded as null. Booking and contact both route through Booksy and Instagram DM.",
+  "email": null,
+  "email_source": null,
+  "email_note": "Deep search per PIPELINE.md Fase 1 punto 7, all exhausted: (1) Instagram web_profile_info API (x-ig-app-id header) for nails.room.clearwater returned HTTP 400 with an internal Instagram schema error on 3 separate curl attempts (different User-Agents), and a direct HTML fetch of instagram.com/nails.room.clearwater/ returned a generic logged-out shell page with no embedded profile JSON (no biography, business_email or external_url found); a WebFetch attempt on the same URL was rate-limited (HTTP 429). This exceeds the pipeline's 2-attempt cap before falling back to other sources. (2) Booksy's live JSON-LD for this business has no email field, only Booksy's own generic help.us@booksy.com found in the raw page HTML (not the business's own). (3) No Facebook About page was accessible: facebook.com/61578139177198 (found via web search, titled 'Nails room Clearwater') redirected to Facebook's generic login wall when fetched, with no About/email visible without an authenticated session. (4) No linktree/poplme found in any bio reference. (5) A web-search AI summary claimed an email 'kravetsviktoria75@gmail.com' tied to 'Viktoria Kravets', but this could not be traced to any actual fetched page or verifiable snippet (same caveat as the phone number: multiple unrelated people share this name, and the claim could not be reproduced or confirmed against a live source), so per pipeline rule against unverified/invented data it was NOT used anywhere on the site or in the outreach draft. Bottom line: no confirmed public email for this business.",
+  "instagram": {
+    "handle": "@nails.room.clearwater",
+    "url": "https://www.instagram.com/nails.room.clearwater/",
+    "note": "Confirmed as the business's own Instagram via Booksy's JSON-LD sameAs field, and the profile bio visible in Google search snippets reads 'RUSSIAN MANICURE'. Direct scraping of the profile (web_profile_info endpoint x3 and a full-page fetch) was blocked/malformed on every attempt (see email_note), so IG feed photos could not be pulled; per pipeline fallback (max 2 IG attempts before moving to other sources), Booksy's own photo set (service photos and review photos, all real client/salon work) was used instead for the gallery, matching the precedent set on output/nailzbyash."
+  },
+  "facebook": "https://www.facebook.com/61578139177198",
+  "facebook_note": "Found via web search as 'Nails room Clearwater'; page requires an authenticated Facebook session to view (redirects to login wall), so its About section could not be read for extra contact info.",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "nailsroomclearwater.com, nailsroom-clearwater.com, nailroomclearwater.com, nailsroomclearwaterfl.com, nailsroomclearwater.net, clearwaternailsroom.com: none resolve (DNS NXDOMAIN, confirmed independently via curl through the outbound proxy AND via a separate WebFetch getaddrinfo ENOTFOUND check on nailsroomclearwater.com). No linktree or bio external_url could be checked since Instagram scraping was blocked (see email_note), but Booksy's JSON-LD sameAs field lists ONLY the Instagram profile, no independent domain.",
+    "conclusion": "NO owned website found. has_own_site: false. Outreach angle: 'I built you a sample website' (has_own_site=false)."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/1533626_nails-room-clearwater_nail-salon_15980_clearwater",
+    "business_id": 1533626,
+    "note": "Booksy in-app booking is the only verified booking/contact channel for this business; no phone or email is published anywhere, so all site CTAs route to Booksy or to Instagram DM."
+  },
+  "rating": {
+    "booksy": {
+      "value": 4.962962962962963,
+      "display_value": 5.0,
+      "count": 27,
+      "source": "Live JSON-LD (schema.org AggregateRating) embedded in the Booksy business page, fetched 2026-07-19: ratingValue 4.962962962962963 (rounds/displays as 5.0 stars on Booksy's own UI), reviewCount 27. Matches the task brief exactly (5.0 stars, 27 reviews)."
+    }
+  },
+  "rating_source": "Booksy JSON-LD, fetched 2026-07-19: https://booksy.com/en-us/1533626_nails-room-clearwater_nail-salon_15980_clearwater",
+  "hours": {
+    "source": "Live JSON-LD openingHoursSpecification on the Booksy business page, fetched 2026-07-19. Saturday is not listed in the specification (closed / not published).",
+    "schedule": [
+      { "day": "Sunday", "open": "10:00", "close": "19:00" },
+      { "day": "Monday", "open": "12:00", "close": "19:00" },
+      { "day": "Tuesday", "open": "10:00", "close": "17:00" },
+      { "day": "Wednesday", "open": "10:00", "close": "17:00" },
+      { "day": "Thursday", "open": "10:00", "close": "12:20" },
+      { "day": "Friday", "open": "10:00", "close": "15:00" },
+      { "day": "Saturday", "note": "Closed / not published" }
+    ]
+  },
+  "owner": {
+    "name": "Viktoria Kravets",
+    "title": "Certified Nail Artist / Owner",
+    "source": "Booksy JSON-LD 'employee' field lists 'Viktoria Kravets' as the sole staff member, with description: 'Certified Nail Artist | 6+ Years Experience (Europe). Elite-trained in advanced techniques. Specializing in sharp precision, long-lasting structure, and extreme designs. Expect flawless results, every time.' (em-dash in the original source text removed/rephrased per pipeline zero em-dash rule when quoted on-site).",
+    "reviews_evidence": "Multiple 5-star reviews on Booksy reference the manicure quality directly tied to this solo-artist studio."
+  },
+  "services": {
+    "source": "Full 25-item service menu with exact names and prices resolved directly from Booksy's live JSON-LD makesOffer array embedded in the business page, fetched 2026-07-19. Durations are not exposed in the JSON-LD for this business (Booksy shows them only inside the live booking widget), so durations are omitted per pipeline rule (omit missing data, never invent).",
+    "price_range_booksy": "USD 5 - 150",
+    "site_categories": ["Russian Manicure", "Extensions", "Pedicure", "Nail Art & Extras"],
+    "full_menu": [
+      { "service": "Russian manicure with hard gel", "price": 85 },
+      { "service": "Russian manicure with rubber base and gel color", "price": 85 },
+      { "service": "Russian manicure with rubber base", "price": 70 },
+      { "service": "Russian manicure with clear rubber base", "price": 60 },
+      { "service": "Classic Russian manicure no polish", "price": 50 },
+      { "service": "Men's classic Russian manicure", "price": 50 },
+      { "service": "Men's Russian manicure with clear rubber base", "price": 60 },
+      { "service": "Japanese manicure", "price": 65 },
+      { "service": "Extension long nails", "price": 150 },
+      { "service": "Extension short/medium nails", "price": 120 },
+      { "service": "Extension one nail with service only", "price": 10 },
+      { "service": "Smart dry pedicure with gel color", "price": 90 },
+      { "service": "Dry pedicure No polish", "price": 75 },
+      { "service": "Men's smart dry pedicure", "price": 75 },
+      { "service": "Smart Dry Pedicure Heels Care Only", "price": 40 },
+      { "service": "Dry pedicure Toes only + gel color", "price": 50 },
+      { "service": "Ombre", "price": 15 },
+      { "service": "Chrome powder", "price": 15 },
+      { "service": "French", "price": 15 },
+      { "service": "Silk cat eyes", "price": 15 },
+      { "service": "Design (other)", "price": 10 },
+      { "service": "Removal acrylic/dip power/hard gel", "price": 20 },
+      { "service": "Nail gel removal (from other salon)", "price": 15 },
+      { "service": "Gel removal (pedicure)", "price": 10 },
+      { "service": "Repair one nail with service only", "price": 5 }
+    ],
+    "highlights_for_site": [
+      "Russian manicure with hard gel ($85, signature)",
+      "Extension long nails ($150)",
+      "Russian manicure with rubber base and gel color ($85)",
+      "Smart dry pedicure with gel color ($90)"
+    ]
+  },
+  "reviews": [
+    { "name": "Anna A.", "source": "Booksy", "stars": 5, "date": "2026-06-26", "text": "great manicure!" },
+    { "name": "Demi R.", "source": "Booksy", "stars": 5, "date": "2026-06-25", "text": "Best manicure I've ever had!" },
+    { "name": "Meghan L.", "source": "Booksy", "stars": 5, "date": "2026-05-24", "text": "great experience!" }
+  ],
+  "reviews_source": "Extracted verbatim from Booksy's live JSON-LD 'review' array for this business (all 3 reviews shown on the page, all 5-star), fetched 2026-07-19. Names shown as Booksy displays them (first name + last-initial, truncated with an ellipsis on the source page, rendered here as 'X.'). Only 3 reviews are exposed on the page itself even though reviewCount is 27; these are the 3 real quotes available without an authenticated Booksy session.",
+  "language": "en",
+  "language_evidence": "All first-party text is in English: the full Booksy service menu, the employee bio ('Certified Nail Artist | 6+ Years Experience (Europe)...'), the Instagram bio snippet ('RUSSIAN MANICURE'), and all 3 verbatim reviews (100% English). Clearwater/Tampa Bay is an English-first market for this listing; 'Viktoria' reflects the owner's own European training background (stated as Europe-trained), not the language of her US client-facing content. Bilingual ES|EN toggle implemented in full per pipeline requirements, with English as the default (matches html lang=\"en\").",
+  "brand_vibe": {
+    "description": "No dedicated brand/interior photography exists (no professional studio shoot found; Instagram scraping was blocked on every attempt). Real nail photography from Booksy (service photos and client review photos) shows refined, precise Russian-manicure work: deep wine/burgundy glossy almond sets, soft blush pink glossy nails, elegant French tips with a thin black or gold outline, silver cat-eye chrome, and one UV-lamp curing process shot. A warm, light, editorial base fits best, tinted toward a deep wine/terracotta accent (drawn directly from the burgundy nail set repeated in the real photos) on a soft blush-ivory background, to read as precise, boutique and feminine without reusing an existing palette (distinct from mizu/amani/mare/alea/pausa/nailzbyash and other prior builds).",
+    "base": "clara (light)",
+    "palette_name": "nailsroomclearwater (wine/terracotta on blush ivory, new palette)",
+    "colors": {
+      "bg": "#fbf2ee",
+      "bg2": "#f2ddd6",
+      "surface": "rgba(255,250,247,0.72)",
+      "ink": "#2f211d",
+      "accent_deep": "#6e2331",
+      "accent_mid": "#a85a4f",
+      "accent_soft": "#ecd5cc",
+      "accent_ghost": "rgba(110,35,49,0.15)"
+    }
+  },
+  "images_downloaded": {
+    "count_raw_candidates": 49,
+    "count_used_on_site": 12,
+    "path": "output/nailsroomclearwater/assets/raw",
+    "source": "Instagram feed could not be accessed (web_profile_info returned HTTP 400 malformed-schema error on 3 curl attempts across 2 User-Agents, full HTML fetch returned a generic logged-out shell with no embedded data, WebFetch was rate-limited HTTP 429); per pipeline fallback (max 2 IG attempts before moving on), Booksy's own photo set was used instead: 17 named service photos matched 1:1 to real service names via the JSON-LD makesOffer array, 18 additional unlabeled service/portfolio photos, 10 verified review photos, 1 business cover photo and 1 misc photo (filename 'logo' on Booksy but visually a UV-lamp curing process shot, not an actual logo mark). All 49 candidate files verified with `file` as valid JPEGs, all well over 15KB, none corrupt or 0-byte.",
+    "curation_note": "All 49 candidates were assembled into 4x labeled contact sheets and visually reviewed image by image before final selection. Excluded from the site per the visual quality gate: review-04.jpg (car dashboard/steering wheel background, cluttered non-salon context), review-05.jpg (hand holding a branded Starbucks cup, third-party logo/text in frame), review-06.jpg (car steering wheel again, cluttered), extra-13.jpg (bare wet feet close-up in water/sand, no clear polish or finished result visible), svc-pedicure-heels.jpg and svc-pedicure-nopolish.jpg and svc-pedicure-toes-gel.jpg (unpolished/textured heel and toenail close-ups, not flattering finished results), svc-mens-classic-russian.jpg (awkward overlapping-fist framing), biz-cover.jpg (has a small 'nails.room.clearwater' text watermark burned into the photo, excluded per the no-text-overlay rule even though it is the business's own branding), and roughly two dozen other service/portfolio photos that were fine but redundant with a better-lit or better-composed shot of a similar nail style already selected. Final 12 chosen are all finished, well-lit, uncluttered nail/pedicure results or one clean in-studio process shot, resized to max 1000px width (Pillow, LANCZOS resampling, JPEG quality 82, optimize=True) directly in assets/raw, matching the output/nailzbyash convention.",
+    "used_in_site": [
+      "hero-1.jpg: hero image (svc-extension-long, source id 2cd628bdb3f540ba9cfaf1cc49f8eca0). Long pale-pink glossy almond/stiletto extension set, dramatic and editorial, matches the 'Extension long nails' $150 service.",
+      "studio-1.jpg: experience section image 1 (Booksy filename 'logo', actually a UV-lamp gel-curing process shot with a phone in frame). Real in-studio process moment.",
+      "studio-2.jpg: experience section image 2 (svc-russian-clear-rubberbase, source id 3042f1986fc646efa4f6f0a2b34a7498). Gloved hand, clean glossy natural-tone manicure, professional in-progress feel.",
+      "gallery-1.jpg: gallery tile, wide (svc-russian-rubberbase-gelcolor, source id 83eb62dd96ee43c3a9d6f3ab06ef3b2f). Deep wine/burgundy glossy almond set, the richest color in the whole set, matches the site accent.",
+      "gallery-2.jpg: gallery tile (extra-03, source id 33408384440e49c1bbc9ae267c30c173). Elegant French tip with a thin black outline.",
+      "gallery-3.jpg: gallery tile (svc-russian-hardgel, source id c6b654300c884771a069837932973a95). French manicure with a fine gold line detail, matches the $85 signature Russian manicure with hard gel.",
+      "gallery-4.jpg: gallery tile (svc-design-other, source id 6b3208df6390488fae491a046e3f2d63). Leopard-print accent nail art on a nude/white base, matches 'Design (other)' service.",
+      "gallery-5.jpg: gallery tile (svc-silk-cateyes, source id b934923426244d70b0a98e07c0001b69). Silver cat-eye chrome effect, matches 'Silk cat eyes' service.",
+      "gallery-6.jpg: gallery tile (extra-06, source id 33408384440e49c1bbc9ae267c30c173 series). Soft pink glossy almond nails, excellent lighting and detail.",
+      "gallery-7.jpg: gallery tile (svc-pedicure-gelcolor, source id 65dfdf98b0334239808128a153d0b644). Vibrant red pedicure, matches 'Smart dry pedicure with gel color' $90 service.",
+      "gallery-8.jpg: gallery tile (extra-04, source id 36415d59fd9143299287c07e0eb6458c series). Teal ombre manicure with a diamond ring, matches 'Ombre' $15 add-on.",
+      "gallery-9.jpg: gallery tile (review-09, a real verified Booksy review photo, source id fcb745b4196c47e79aa87946fdbfb1cc). Soft nude/pink glossy manicure on a real client's hand with an engagement ring."
+    ]
+  },
+  "research_note": "Research completed 2026-07-19 for a solo pipeline run covering Fases 1, 2, 3 and 5 for this single business. All data verbatim/sourced from Booksy's live JSON-LD (fetched directly via curl with a Chrome User-Agent), direct domain DNS checks (curl through the proxy AND an independent WebFetch getaddrinfo check), and web search cross-references (used only to locate candidate source pages, never as a data source on its own; any claim that could not be traced back to an actual fetched page, such as the candidate phone number and email tied to 'Viktoria Kravets', was explicitly excluded per the pipeline's strict-truth rule). Instagram scraping was attempted more than the pipeline's 2-attempt cap (3 curl variants plus 1 WebFetch) and blocked/malformed every time; no data was invented to compensate, Booksy's own photo and text sources were used instead throughout, matching the precedent set by output/nailzbyash. No em-dash used anywhere in this file or in the site."
+}
