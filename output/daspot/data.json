@@ -1,0 +1,122 @@
+{
+  "slug": "daspot",
+  "name_legal_booksy": "Da.spot. barbershop - Little Havana",
+  "name_brand": "Da Spot Barbershop",
+  "owner_staff": ["Lester (barber, listed as sole Booksy \"employee\"; Facebook profile facebook.com/lester.zardivar)"],
+  "niche": "barberia boutique (barbershop). Descripcion propia del negocio en Booksy: \"This barbershop is mix Like barbershop & hair salon, we make all type styles.. we here on the little habana\".",
+  "city": "Miami, FL (Little Havana)",
+  "address": {
+    "full": "45 NW 12th Ave, Miami, FL 33128",
+    "street": "45 NW 12th Ave",
+    "locality": "Miami",
+    "region": "FL",
+    "postal_code": "33128",
+    "country": "US",
+    "geo": { "lat": 25.773917792513, "lng": -80.21451466707686 },
+    "source": "JSON-LD schema.org (HairSalon) embebido en la pagina live de Booksy (booksy.com/en-us/781036_da-spot-barbershop-little-havana_barber-shop_15889_miami), campo address.streetAddress = '45 nw 12th ave, 305-684-4033, Miami, 33128' (el telefono viene concatenado dentro del mismo campo por un error de captura del negocio en Booksy, pero el numero y la direccion son legibles y coinciden con el dato de discovery). geo confirmado por el mismo JSON-LD."
+  },
+  "phone": "+1-305-684-4033",
+  "phone_display": "(305) 684-4033",
+  "phone_source": "Coincide en 3 fuentes independientes: (1) JSON-LD de Booksy (dentro de streetAddress), (2) foto real assets/raw/biz-5.jpg, decal de pared dentro de la barberia que dice literalmente 'LESTER / 305 684 4033', (3) dato de discovery. Confirmado, no solo copiado.",
+  "email": null,
+  "email_note": "Busqueda profunda agotada (Fase 1 punto 7): (1) JSON-LD de Booksy sin campo email (solo aparece 'help.us@booksy.com', que es soporte de Booksy, no del negocio); (2) payload interno __NUXT_DATA__ de Booksy (devalue array de ~2900 entradas) resuelto y recorrido completo en Python buscando cualquier string con '@', unico resultado el mismo help.us@booksy.com; (3) Instagram web_profile_info API con header x-ig-app-id intentada 2 veces contra @lester.barber_service, ambas devolvieron 404 'Page Not Found' (bloqueo del endpoint sin login); tras el 2do intento se paso a fuentes alternativas segun regla del pipeline; (4) pagina publica instagram.com/lester.barber_service y instagram.com/da.spot.barbershop (handle alterno hallado por busqueda web) devuelven el shell de React sin datos hidratados (pantalla de login), sin biografia ni external_url extraibles sin sesion; (5) Facebook facebook.com/lester.zardivar: WebFetch solo devolvio el nombre del perfil, sin seccion About ni contacto accesible sin login; (6) Sunbiz (registro corporativo de Florida) bloqueado por verificacion Cloudflare ('Just a moment...') en el intento por curl; (7) sin dominio propio del negocio (ver has_own_site) del que derivar un email. Canal de contacto real: telefono/texto al (305) 684-4033, Booksy o Instagram DM.",
+  "instagram": {
+    "primary_handle": "@lester.barber_service",
+    "primary_url": "https://www.instagram.com/lester.barber_service/",
+    "source": "Listado en sameAs del JSON-LD de la pagina Booksy del negocio (fuente primaria, confirma el dato de discovery).",
+    "secondary_handle_unverified": "@da.spot.barbershop, hallado por busqueda web (aparece indexado como 'DA Spot Barbershop' en Instagram) pero NO confirmado por ninguna fuente propia del negocio (no aparece en el JSON-LD ni en el payload de Booksy); podria ser una cuenta de marca separada del handle personal de Lester. No se uso como fuente de datos, solo se registra la existencia.",
+    "media_note": "El feed no se pudo extraer via API (web_profile_info bloqueado, 2 intentos, ver email_note) ni via pagina publica (shell sin hidratar). Toda la galeria del sitio se construyo con las fotos reales publicadas en la propia ficha de Booksy del negocio, siguiendo la regla del pipeline de pasar a fuentes alternativas tras 2 intentos fallidos de IG."
+  },
+  "facebook": "https://www.facebook.com/lester.zardivar (listado en sameAs del JSON-LD de Booksy)",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "daspotbarbershop.com -> HTTP 404 (dominio sin sitio activo, re-verificado con curl). Variantes daspotbarbershop.net, dspotbarbershop.com, da-spot-barbershop.com no resolvieron via proxy (sin indicio de sitio real, no hay senal de que existan). El JSON-LD de Booksy no incluye ningun campo 'url' de dominio propio: sameAs solo lista el subdominio de Booksy (daspotbarbershop67.booksy.com, que NO cuenta como sitio propio por ser subdominio de plataforma), Facebook e Instagram.",
+    "conclusion": "NO tiene website propio verificable. Angulo de outreach: has_own_site=false."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/781036_da-spot-barbershop-little-havana_barber-shop_15889_miami",
+    "subdomain_url": "https://daspotbarbershop67.booksy.com",
+    "business_id": 781036,
+    "note": "Booksy es el UNICO canal de reserva publico verificado. El subdominio daspotbarbershop67.booksy.com es la URL corta usada en el nav/CTA del sitio; ambas apuntan al mismo perfil."
+  },
+  "rating": {
+    "booksy": {
+      "value": 5.0,
+      "count": 78,
+      "source": "aggregateRating del JSON-LD schema.org (HairSalon) embebido en la pagina LIVE de Booksy, extraido y parseado directamente con Python (ratingValue=5, reviewCount=78) el 2026-07-19. Coincide exactamente con el dato de discovery (5.0/78), verificado desde la fuente en vivo y no solo copiado."
+    },
+    "google_note": "Se intento confirmar en paralelo con Google/Yelp: una busqueda web devolvio una cifra de '4.8 estrellas / 461 resenas' asociada a la misma direccion, pero al investigar se determino que esa cifra mezcla datos de 'The Spot Barbershop' (cadena de varias sucursales en Miami: Downtown, Design District, South Miami, South Beach, todas con perfiles Yelp propios y distintos), un negocio DISTINTO y no relacionado con 'Da Spot Barbershop' / 'Da.spot. barbershop - Little Havana'. Se descarto esa cifra por contaminacion de fuente y se uso el 5.0/78 de Booksy, verificado directamente en el JSON-LD de la ficha correcta (id 781036, direccion 45 NW 12th Ave coincide exacto). Yelp tiene una ficha propia 'DA SPOT BARBERSHOP, 45 NW 12th Ave' (yelp.com/biz/da-spot-barbershop-miami) pero el acceso directo devolvio 403; no se pudo leer su rating exacto, no se uso."
+  },
+  "hours": {
+    "source": "openingHoursSpecification del JSON-LD de Booksy: mismo horario los 7 dias, 09:30 a 20:00.",
+    "schedule": [
+      { "days": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "open": "09:30", "close": "20:00" }
+    ],
+    "note": "Abierto los 7 dias de la semana, 9:30 AM a 8:00 PM."
+  },
+  "services": {
+    "source": "Menu COMPLETO extraido el 2026-07-19 de dos fuentes coincidentes en la pagina live de Booksy: (1) el array makesOffer del JSON-LD (nombres y precios exactos), (2) el HTML renderizado del widget de reserva embebido (data-testid=service-name / service-variant-duration), que aporta la duracion exacta de cada servicio en el MISMO ORDEN que el JSON-LD (verificado: 11 nombres y 11 duraciones en la misma secuencia). Sin categorias declaradas en Booksy (lista plana de 11 servicios), por lo que el sitio agrupa 4 destacados + 7 en 'mas servicios', sin inventar categorias que el negocio no publico.",
+    "price_range_booksy": "USD 12 - 65",
+    "items": [
+      { "name": "Regular Haircut", "price": 21, "duration_min": 30, "featured": true },
+      { "name": "Styles haircuts", "price": 24, "duration_min": 35, "featured": true },
+      { "name": "Shave & afeitado", "price": 16, "duration_min": 20, "featured": true },
+      { "name": "House call", "price": 65, "duration_min": 30, "featured": true, "note": "Descripcion propia del negocio en Booksy: 'Home service where we bring the barber shop to the comfort of your home'." },
+      { "name": "Beard trim", "price": 12, "duration_min": 15 },
+      { "name": "Beard maintenance", "price": 16, "duration_min": 25 },
+      { "name": "Keratin", "price": 40, "duration_min": 60 },
+      { "name": "Hair color", "price": 49, "duration_min": 40 },
+      { "name": "facial cleansing with scrub and black mask", "price": 32, "duration_min": 20 },
+      { "name": "hot towel", "price": 12, "duration_min": 5 },
+      { "name": "beard tint & tinte de barba", "price": 21, "duration_min": 30 }
+    ],
+    "amenities": ["Accessible for people with disabilities"],
+    "amenities_source": "Seccion amenities del payload interno de Booksy."
+  },
+  "reviews": [
+    { "name": "Christian", "source": "Booksy", "stars": 5, "date": null, "service": "Regular Haircut", "text": "Great barbershop for all types of haircuts and styles. The barbers are professional and always offer solid recommendations. My 10-year-old loved his haircut, which says a lot! Definitely coming back." },
+    { "name": "Hanoi", "source": "Booksy", "stars": 5, "date": "2026-03-22", "service": "Regular Haircut", "text": "Súper muy buen servicio . Ambiente agradable" },
+    { "name": "Andy", "source": "Booksy", "stars": 5, "date": "2026-03-28", "service": "Regular Haircut", "text": "Great barber shop tool care of me and my son" },
+    { "name": "Senjoy", "source": "Booksy", "stars": 5, "date": "2026-07-18", "service": "Styles haircuts", "text": "nice haircut. highly recommend thank you" },
+    { "name": "Jacson", "source": "Booksy", "stars": 5, "date": "2026-03-28", "service": "Regular Haircut", "text": "Excelente servicio" }
+  ],
+  "reviews_note": "5 quotes verbatim reales extraidas directamente del HTML renderizado de la seccion de resenas de la pagina live de Booksy (data-testid=review-item / review-author / review-service), no del JSON-LD (que solo trae 3 resenas truncadas con apellido oculto). Se identificaron 10 resenas visibles en total, todas 5 estrellas, mezcla de ingles (8) y espanol (2); se seleccionaron 5 con nombre, texto y variedad de idioma. La quote de Andy conserva un error tipografico real del autor ('tool care' en vez de 'took care'), se dejo verbatim sin corregir por regla de no alterar citas.",
+  "brand_vibe": {
+    "description": "Fotos reales del interior (assets/raw/biz-5, biz-6, biz-12, biz-16, staff-lester) muestran una barberia de barrio energica: paredes con azulejo negro geometrico con el logo de la casa ('DA SPOT BARBER SHOP', calavera con corona dorada y navajas cruzadas sobre naipes, estilo tattoo urbano), gabinetes rojos y negros, luces de aro (ring lights) en cada estacion, piso de madera oscura, y capas de barbero doradas con motivo Versace-like usadas en casi todas las fotos de trabajo. El logo oficial (assets/raw/logo.jpg, biz-13.jpg) combina dorado, rojo y azul de poste de barberia clasico sobre fondo negro. Conclusion: base OSCURA (negro calido) con acento dorado saturado tipo 'Versace gold', distinto del champagne palido de otros builds del pipeline (mizu/elitebarbershop), mas urbano y con mas contraste.",
+    "base": "oscura (template dark)",
+    "palette_name": "daspot (dorado saturado sobre negro calido, paleta nueva, no reutiliza mizu/amani/mare/alea/pausa/elitebarbershop/scalpbar)",
+    "colors": {
+      "bg": "#120f0c",
+      "bg2": "#1a1512",
+      "surface": "rgba(255,255,255,0.03)",
+      "ink": "#f3e9d8",
+      "accent_deep": "#d9a544",
+      "accent_mid": "#b3812e",
+      "accent_soft": "#8f6a38",
+      "accent_ghost": "rgba(217,165,68,0.16)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "Little Havana es un barrio mayoritariamente hispanohablante, pero el research se hizo sobre el CONTENIDO real del negocio, no sobre el barrio: (1) la descripcion propia del negocio en Booksy esta en ingles ('This barbershop is mix Like barbershop & hair salon...'); (2) de las 10 resenas verbatim extraidas de Booksy, 8 estan en ingles (Senjoy, Kevin, Christian x2, Aminu x2, Andy, Christian-largo) y solo 2 en espanol (Jacson, Hanoi); (3) los nombres de los servicios en el menu de Booksy estan mayormente en ingles, con solo 2 de 11 con texto en espanol añadido ('Shave & afeitado', 'beard tint & tinte de barba'). Con esta evidencia mayoritaria se registro ingles como idioma PRINCIPAL/por defecto del sitio (html lang=en, toggle inicia en EN), pero el sitio es completamente bilingue: el toggle ES/EN cambia todo el contenido, y `navigator.language` con prefijo es activa automaticamente el espanol para visitantes hispanohablantes, cubriendo la realidad bilingue del barrio.",
+  "images_downloaded": {
+    "count": 41,
+    "path": "output/daspot/assets/raw/",
+    "source": "Descargadas via curl (UA Chrome) desde las URLs de CloudFront listadas en el payload interno __NUXT_DATA__ de la pagina Booksy del negocio: 16 biz_photo (galeria principal del negocio en Booksy), 7 inspiration (posts destacados/inspiracion), 15 review_photos (fotos subidas por clientes en sus resenas), 1 logo, 1 resource_photo (foto de perfil del staff 'Lester'). Instagram no se pudo usar como fuente (API bloqueada 2 intentos, paginas publicas sin datos hidratados; ver email_note), asi que se uso Booksy como fuente principal, tal como preve el pipeline ('complementar con galeria del booking').",
+    "curation_note": "Curaduria VISUAL manual foto por foto con la herramienta de lectura de imagenes (no por nombre de archivo). Se descartaron para el sitio: biz-7/biz-11 (mismo retrato posado tipo selfie de un barbero mirando a camara, parado junto a la silla: NO se uso como tile de galeria por la regla de 'nunca selfies del dueno/staff como galeria', tampoco se forzo como avatar por no tener contexto claro de accion); biz-1/biz-3/biz-8/biz-10/biz-12/biz-15 (interiores/accion validos pero redundantes con las fotos ya elegidas, se dejan en assets/raw como evidencia sin usar); insp-1/insp-3/insp-4 (cortes reales pero en escenarios exteriores tipo casa/trailer, ambientacion menos premium, se descartaron de la galeria principal); insp-6 (imagen promocional con TEXTO superpuesto 'We're excited to announce that we've added new services', descartada por la regla de no usar capturas con texto/caption quemado); todas las review_photos salvo review-5 (las demas son ok pero redundantes en angulo/resultado con las imagenes ya seleccionadas de biz/insp, se prefirio variedad de fuente).",
+    "used_in_site": [
+      "hero-1.jpg (de insp-7.jpg, redimensionada a 1300px): primer plano de un fade limpio con lineup preciso, muy buena luz, cliente con ojos abiertos y resultado terminado. HERO.",
+      "brand-logo.jpg (de logo.jpg, redimensionada a 500px): foto real del logo/decal 'DA SPOT BARBER SHOP' (calavera con corona dorada) fotografiado en la pared del local. Nav/footer/favicon.",
+      "experience-1.jpg (de biz-5.jpg, 1200px): interior real, varios barberos trabajando bajo luces de aro, pared con el logo del negocio al fondo. Seccion Experiencia.",
+      "experience-2.jpg (de biz-4.jpg, 1200px): barbero real definiendo el corte de un cliente, interior autentico. Seccion Experiencia.",
+      "insignia-1.jpg (de biz-2.jpg, 1300px): barbero con maquina trabajando el contorno de un cliente, buena composicion horizontal. Card de servicio insignia (Styles Haircuts).",
+      "gallery-1-wide.jpg (de biz-6.jpg, 1300px): plano amplio de la barberia con varios barberos y clientes, capas doradas, gran energia. Galeria, tile ancho.",
+      "gallery-2-results.jpg (de biz-9.jpg, 1100px): collage de 6 fotos de resultados terminados (ninos y adultos, fades limpios, ojos abiertos, buena luz), publicado por el propio negocio en Booksy como muestra de trabajos. Galeria.",
+      "gallery-3-fade.jpg (de insp-2.jpg, 1100px): primer plano de perfil de un fade muy limpio, resultado terminado. Galeria.",
+      "gallery-4-lineup.jpg (de review-5.jpg, 1100px): foto subida por un cliente real en su resena, corte con lineup definido, buena luz. Galeria.",
+      "gallery-5-lester.jpg (de staff-lester.jpg, 1100px): el barbero Lester (unico 'employee' listado en Booksy) trabajando activamente sobre un cliente, foto de accion real, no un retrato posado. Galeria.",
+      "gallery-7-color.jpg (de insp-5.jpg, 1100px): corte con diseño de color morado/purpurina, resultado terminado y llamativo, buena luz. Galeria."
+    ],
+    "downloaded_not_used": "biz-1,3,7,8,10,11,12,14,15,16; insp-1,3,4,6; review-1,2,3,4,6,7,8,9,10,11,12,13,14,15; logo.jpg (original sin redimensionar, se uso su version procesada brand-logo.jpg); gallery-6-shop.jpg (procesada de biz-14.jpg pero finalmente no referenciada en el HTML final, se dejo fuera de la galeria de 6 tiles para igualar el conteo del ejemplar 1 ancho + 5). Todas se conservan en assets/raw/ como evidencia de research."
+  }
+}
