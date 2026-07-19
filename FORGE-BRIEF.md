@@ -5,12 +5,25 @@
 
 ## 0. Arranque paralelo (primer minuto, OBLIGATORIO)
 Si el item de la cola es SOLO un nombre, un handle o "nombre + ciudad": es un encargo directo del usuario; hacer el discovery completo de ESE negocio (encontrar su Booksy/booking, verificar website propio, IG) y construirlo con la maxima prioridad, mismo pipeline.
-Por cada item pendiente, lanzar EN PARALELO subagentes (Task/Agent):
-- (a) Menu y precios: pagina de booking (Booksy/GlossGenius/Square/Fresha/Vagaro/Mangomint; sus payloads JSON-LD/venue son la fuente mas fiable). SEGUIR SIEMPRE el `external_url` de la bio de IG (suele ser el booking o un linktree que hay que abrir). NUNCA declarar "sin menu verificable" sin seguir ese link.
-- (b) Media del feed de IG: `instagram.com/api/v1/users/web_profile_info/?username=X` con header `x-ig-app-id: 936619743392459`. Fotos de `display_url`; expandir carruseles (`edge_sidecar_to_children`, mejor fuente de volumen); 1-3 videos de nodos `is_video` (`video_url` como ig-N.mp4, poster = display_url). Verificar CADA archivo con `file` (JPEG/PNG/WebP >15KB, MP4) y borrar rotos. Si IG bloquea: 2 intentos max, pasar a booking y fotos de Google Maps (lh3.googleusercontent.com, curl con UA de Chrome).
-- (c) Ficha de Google: rating, numero de resenas, telefono, horarios, 3-5 resenas VERBATIM con nombre e idioma original.
-- (d) Email profundo + idioma: business_email de IG, mailto del booking, payload del venue, linktree/beacons de la bio, About de Facebook, dominio propio. Registrar tambien telefono. Idioma principal (captions/resenas/menu) -> `language: es|en`.
-Mientras, el agente principal copia el template ejemplar y prepara el esqueleto. Time-box del research: ~8 min. La velocidad recorta el research, JAMAS la calidad del build.
+**PASO 1 (segundos, SIEMPRE primero)**: `python3 scripts/booksy_dossier.py <booksy_url> <slug>`.
+Un solo comando extrae TODO a `output/<slug>/data.json`: nombre, tipo schema, direccion, geo, rating,
+numero de reseñas, menu COMPLETO con precios y duraciones, horarios, staff, IG, telefono si esta
+publicado, hasta 12 reseñas VERBATIM con autor, idioma (es/en) y candidatos a website propio.
+Ademas descarga las fotos validadas y genera `output/<slug>/_sheet.jpg` para la curacion visual.
+Si el item no trae URL de Booksy: UNA busqueda `site:booksy.com <nombre> <ciudad>` para encontrarla
+(si el negocio usa GlossGenius/Square/Fresha en vez de Booksy, ahi si aplica research manual con
+WebFetch de su booking; seguir SIEMPRE el external_url de la bio de IG).
+PROHIBIDO gastar rondas de WebFetch/subagentes en menu, precios, reseñas o fotos cuando el dossier
+ya los trae: construir DIRECTO desde data.json.
+
+**PASO 2 (en paralelo con la curacion, lo unico que el script no resuelve)**:
+- (a) Website propio: probar con curl los `website_candidates` del dossier + 1-2 busquedas
+  (`"<nombre>" <ciudad> website`). Subdominios de plataforma NO cuentan. Si existe: `has_own_site: true`.
+- (b) Email publico: bio de IG / linktree / About de Facebook. Si no aparece en ~2 min: null y seguir.
+
+**IG media: SOLO como rescate** cuando el _sheet.jpg muestre stock, graficos con texto o menos de
+5 fotos reales utilizables (leccion Paintbox). `web_profile_info` esta ROTO (400): no intentarlo.
+Time-box total del research: ~3 min. La velocidad recorta el research, JAMAS la calidad del build.
 
 ## 1. Checks criticos de research
 - **Website propio** (leccion MaRe): probar `<negocio>.com`, dominio del email, links de bio. Si existe: `has_own_site: true` y el angulo cambia a "propuesta de rediseño" (NUNCA afirmar "no tienen website"). Subdominios de plataforma (square.site, glossgenius.com) NO cuentan como website propio.
@@ -18,7 +31,7 @@ Mientras, el agente principal copia el template ejemplar y prepara el esqueleto.
 
 ## 2. Build (derivacion anclada desde esqueleto v2: el metodo probado en batches 1-3)
 - EMPEZAR COPIANDO `templates/dark-v2/index.html` o `templates/light-v2/index.html` segun el brand real; derivarlo con UN script Python de transformacion anclada. Escribir HTML desde cero o editar a mano esta PROHIBIDO. **La receta completa (orden de operaciones, regexes de secciones, proteccion del badge, cambio de idioma, gotchas) esta en `templates/SKELETONS-V2.md`: leerla ANTES de construir.**
-- Fotos: `python3 scripts/booksy_gallery.py <booksy_url> <slug>` descarga la galeria, valida cada imagen y genera `output/<slug>/_sheet.jpg`. LEER el sheet (curacion VISUAL obligatoria) antes de elegir hero/experiencia/galeria. Si la galeria de Booksy es stock/graficos con texto: rescatar fotos reales de IG (ver seccion 0b) o marcar failed.
+- Fotos: el dossier del paso 1 ya descargo la galeria validada y genero `output/<slug>/_sheet.jpg`. LEER el sheet (curacion VISUAL obligatoria) antes de elegir hero/experiencia/galeria. Si el sheet muestra stock o graficos con texto: rescatar fotos reales de IG (regla de rescate de la seccion 0) o marcar failed.
 - Estructura fija heredada del esqueleto: nav glass, hero con rating real, strip con contadores, experiencia, metodo 4 pasos, servicios en 4 cards (card 2 destacada), galeria 1 ancho + 5 tiles con tile-cap, opiniones VERBATIM, ubicacion con mapa embed, CTA final, footer "Powered by Merktop" -> https://merktop.com.
 - Copiar `templates/assets/tailwind.js` a `output/<slug>/assets/tailwind.js` y `templates/.assetsignore-template` a `output/<slug>/.assetsignore`.
 - **Bilingue obligatorio**: `data-es`/`data-en` en todo texto traducible + toggle ES|EN en nav + localStorage + navigator.language. `lang` del html = idioma principal. NO se traducen: nombres exactos de servicios, precios, nombre del negocio, quotes de resenas.
