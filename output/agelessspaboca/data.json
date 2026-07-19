@@ -1,0 +1,186 @@
+{
+  "slug": "agelessspaboca",
+  "name_legal_booksy": "AgelessSpa",
+  "name_brand": "Ageless Spa by Angelica",
+  "owner": "Angelica Velasquez",
+  "owner_source": "Booksy JSON-LD (schema.org HealthAndBeautyBusiness), field employee: [{\"name\": \"Angelica velasquez\"}]. Business description on Booksy: \"My name is Angelica and I'm a licensed Esthetician in Boca Raton, Florida. I have with many years of waxing experience at European Wax Corp...\"",
+  "niche": "Facial / skincare and waxing studio (esthetician: facials, body waxing, electrolysis, brow/lash tinting, microblading, lash lift), close to a med-spa aesthetic",
+  "city": "Boca Raton, FL",
+  "address": {
+    "full": "2100 N Federal Hwy, Vino Salon Suite #10/5, Boca Raton, FL 33431",
+    "street": "2100 North Federal Highway, Vino Salon Suite #10, 5",
+    "locality": "Boca Raton",
+    "region": "FL",
+    "postal_code": "33431",
+    "country": "US",
+    "geo": { "lat": 26.36751, "lng": -80.0777 },
+    "source": "JSON-LD (schema.org HealthAndBeautyBusiness) embedded in the Booksy business page: streetAddress \"2100 North Federal Highway, Vino Salon suits #10, 5, Boca Raton, 33431\", matches address given in task. Vino Salon Studios is a shared suite-rental salon building at this address (confirmed via web search)."
+  },
+  "phone": "+1-561-769-7333",
+  "phone_display": "(561) 769-7333",
+  "phone_source": "Confirmed directly in the business's own Instagram promotional graphic (post via imginn.com mirror, agelessspa22): a branded card reads 'Book your facial today, 561-769-7333, DM to schedule, Ageless Spa by Angelica'. Cross-referenced with web search results (Yelp listing 'AGELESS SPA BY ANGELICA' at the same address shows the same number). Note: this is also the general number associated with Vino Salon Studios (the shared suite building at 2100 N Federal Hwy), but since Angelica's own marketing material displays this exact number as her booking line, it is registered as her contact number, not just a building line. Task brief stated phone as not publicly listed; this was found via deeper IG/Yelp research.",
+  "email": null,
+  "email_note": "No public email found after exhaustive search: (1) Instagram web_profile_info API for agelessspa22 returned a persistent schema error from Instagram's own backend (\"Asset asset://laser.provider/ig_business_category_subvertical has been deleted\") on every attempt (direct curl with x-ig-app-id header, multiple retries, WebFetch), so business_email/external_url could not be read directly from Instagram's official endpoint; this same call succeeded normally for other unrelated accounts, confirming it is an account-specific API bug, not a blocked tool. (2) Fell back to the imginn.com public mirror of the profile and 12 individual posts/carousels: no bio text or external_url was exposed by the mirror (rendered as 'undefined'), only images and captions. (3) Booksy business page full JSON-LD/HTML: no email field, no mailto link anywhere in the page source. (4) Searched for a Linktree or bio link: none found; IG external_url is not populated per the mirror and no separate link-in-bio service was referenced anywhere. (5) Facebook: no dedicated Facebook page found for this business (only unrelated same-name businesses in other cities). (6) Web search for the business name plus 'email' or 'contact' returned no email address, only Booksy, Yelp and Instagram listings. Real public contact channels are Booksy booking, the phone number above, and Instagram DM.",
+  "instagram": {
+    "handle": "@agelessspa22",
+    "url": "https://www.instagram.com/agelessspa22/",
+    "full_name_field": "Ageless Spa |Electrolysis",
+    "bio_partial": "Certified esthetician with an excellent reputation of providing high quality facials, body waxing, eyebrow shaping, micro blading, skin care. 1956 NE Fifth Ave unit 5, Boca Raton, Florida (per imginn.com mirror screenshot of the live app; note this differs slightly from the Booksy/task address, both refer to Boca Raton suite locations used by the business)",
+    "posts_count": 197,
+    "note": "Official web_profile_info API (instagram.com/api/v1/users/web_profile_info/?username=agelessspa22 with x-ig-app-id: 936619743392459 header) failed consistently with an Instagram-side schema error unrelated to this tool/session (verified reproducible, and verified the same call works fine for other accounts). Used the public mirror imginn.com/agelessspa22/ instead to access real feed images and captions, and opened 12 individual post/carousel pages for additional images (imginn.com/p/<code>/). Feed is dominated by marketing template graphics (quote cards, before/after graphics with baked-in text) and extreme macro clinical photos (many with closed eyes or mid-treatment redness); genuinely clean, text-free, open-eye finished-result photos suitable for a website gallery were scarce. One clean real photo of Angelica (professional portrait, not a selfie) was found in a carousel post and used as the hero/about image."
+  },
+  "facebook": null,
+  "facebook_source": "No dedicated Facebook business page found via web search; only unrelated same-name businesses in other cities/states surfaced.",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": [
+      "agelessspaboca.com: does not resolve (CONNECT rejected by network gateway with 'policy denial or upstream failure', consistent with a non-resolving/non-existent domain, verified via the environment's own proxy status log)",
+      "agelessspa.com: resolves and returns HTTP 200, but the page is a generic domain-parking/lander redirect (\"window.onload=function(){window.location.href='/lander'}\") with no business content whatsoever, i.e. an unrelated parked domain, NOT this business's site"
+    ],
+    "other_similar_domains_excluded_per_task": "agelessspas.com and agelessmedspallc.com are explicitly different, unrelated businesses per task brief and were not re-tested",
+    "instagram_external_url": "Not retrievable via the official API (see instagram note above) due to a persistent Instagram-side schema error on this specific account; the imginn.com mirror does not expose bio/external_url text for this account, and no separate Linktree/link-in-bio was found anywhere in search results or on Booksy",
+    "conclusion": "No evidence of an owned domain/website found after checking the two obvious domain candidates, Instagram bio/external_url (best-effort), and general web search. Angelica's real presence is Instagram + Booksy booking only. has_own_site=false."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/829191_agelessspa_hair-removal_15945_boca-raton",
+    "business_id": 829191
+  },
+  "rating": {
+    "booksy": {
+      "value": 4.9,
+      "review_count": 50,
+      "source": "JSON-LD schema.org embedded in the Booksy business page: aggregateRating ratingValue=4.9, reviewCount=50. Confirms the 4.9/50 given in task."
+    }
+  },
+  "hours": {
+    "source": "JSON-LD schema.org openingHoursSpecification embedded in the Booksy business page",
+    "schedule_raw": [
+      { "days": ["Tuesday"], "open": "10:00", "close": "19:30" },
+      { "days": ["Wednesday"], "open": "09:00", "close": "19:30" },
+      { "days": ["Thursday"], "open": "09:00", "close": "16:00" },
+      { "days": ["Friday"], "open": "09:00", "close": "17:30" },
+      { "days": ["Saturday"], "open": "09:00", "close": "12:55" },
+      { "days": ["Saturday"], "open": "13:15", "close": "16:00" }
+    ],
+    "note": "Sunday and Monday not listed in openingHoursSpecification, treated as closed. Saturday has a split shift (morning block then early afternoon block).",
+    "condensed_for_site": "Tue 10am-7:30pm, Wed 9am-7:30pm, Thu 9am-4pm, Fri 9am-5:30pm, Sat 9am-12:55pm & 1:15-4pm, Sun-Mon closed"
+  },
+  "services": {
+    "source": "JSON-LD makesOffer array embedded in the Booksy business page (fetched 2026-07-19), 62 offers total, price only (no duration field in this JSON-LD).",
+    "price_range_booksy": "USD 9 - 225 (Booksy priceRange field states USD 10 - 599, likely including add-ons/packages not itemized in makesOffer)",
+    "categories": [
+      {
+        "name": "Facials & Skin",
+        "items": [
+          { "name": "Facial signature", "price": 117 },
+          { "name": "Hydrofacial", "price": 162 },
+          { "name": "Diamond Oxygen Glow facial", "price": 161 },
+          { "name": "Hydrodermabrasion facial treatment", "price": 149 },
+          { "name": "Microdermabrasion", "price": 117 },
+          { "name": "Microchanneling", "price": 225 },
+          { "name": "Microneedling", "price": 117 },
+          { "name": "Lifting facial", "price": 135 },
+          { "name": "Dermaplain", "price": 162 },
+          { "name": "Basic Facial (60 min)", "price": 18 },
+          { "name": "Teen Facial", "price": 90 },
+          { "name": "Vajafacial & Hidrodermabration", "price": 72 },
+          { "name": "Vajacial", "price": 36 },
+          { "name": "Men's facial back treatments", "price": 81 }
+        ]
+      },
+      {
+        "name": "Brows & Lashes",
+        "items": [
+          { "name": "Microblading", "price": 180 },
+          { "name": "Eyebrows laminitations", "price": 72 },
+          { "name": "Henna Brows tint", "price": 50 },
+          { "name": "Eyebrows tint", "price": 36 },
+          { "name": "Eyebrow Intensify Tint", "price": 59 },
+          { "name": "Eyelashes intensify tint", "price": 54 },
+          { "name": "Eyelashes tint + shaping", "price": 41 },
+          { "name": "Lash lift", "price": 81 },
+          { "name": "Lash lift + tint", "price": 89 },
+          { "name": "Eyelash strip application", "price": 34 },
+          { "name": "Eyebrows Twicing", "price": 23 },
+          { "name": "Eyebrows shaping for Her", "price": 18 },
+          { "name": "Eyebrows shaping for him", "price": 23 },
+          { "name": "Eyebrows maintenance", "price": 16 }
+        ]
+      },
+      {
+        "name": "Electrolysis",
+        "items": [
+          { "name": "Electrolysis", "price": 41 }
+        ]
+      },
+      {
+        "name": "Body Waxing",
+        "items": [
+          { "name": "Bikini Brazilian", "price": 52 },
+          { "name": "Bikini full", "price": 46 },
+          { "name": "Bikini line", "price": 43 },
+          { "name": "Facial hair removal for women", "price": 52 },
+          { "name": "Legs full", "price": 68 },
+          { "name": "Leg upper", "price": 46 },
+          { "name": "Leg lower", "price": 36 },
+          { "name": "Back full", "price": 69 },
+          { "name": "Back upper", "price": 27 },
+          { "name": "Back lower", "price": 21 },
+          { "name": "Butt full", "price": 43 },
+          { "name": "Butt strip", "price": 16 },
+          { "name": "Arm full", "price": 45 },
+          { "name": "Arm half", "price": 32 },
+          { "name": "Chest full", "price": 36 },
+          { "name": "Chest strip", "price": 21 },
+          { "name": "Stomach full", "price": 36 },
+          { "name": "Stomach strip", "price": 14 },
+          { "name": "Underarm", "price": 17 },
+          { "name": "Inner thighs", "price": 17 },
+          { "name": "Shoulders", "price": 23 },
+          { "name": "Sholders", "price": 25 },
+          { "name": "Neck", "price": 14 },
+          { "name": "Chin", "price": 14 },
+          { "name": "Cheeks", "price": 12 },
+          { "name": "Sideburns", "price": 13 },
+          { "name": "Ears", "price": 14 },
+          { "name": "Nose", "price": 10 },
+          { "name": "Upper lip", "price": 12 },
+          { "name": "Lower lip", "price": 9 },
+          { "name": "Lip & chin combo", "price": 20 },
+          { "name": "Toes (include top of the feet and toes)", "price": 9 }
+        ]
+      }
+    ],
+    "featured_for_site": ["Facial signature", "Hydrofacial", "Microneedling", "Bikini Brazilian", "Eyebrows laminitations", "Lash lift + tint"]
+  },
+  "reviews": [
+    { "name": "Leah P.", "source": "Booksy", "stars": 5, "date": "2026-03-17", "text": "Angelica is perfect at what she does. Her studio is always clean, she's flexible with her clients needs. I go to her every time for hair removal and skincare needs" },
+    { "name": "Sarah S.", "source": "Booksy", "stars": 5, "date": "2025-11-02", "text": "Wondeeful service. Amazing job making my eyebrows beautiful. Every appointment has been consistent since i have been going to Angelica for at leasst 8 yrs now. I have had facials and other services as well. All 100% top notch." },
+    { "name": "Fabiola L.", "source": "Booksy", "stars": 5, "date": "2025-11-04", "text": "Todo muy bien !! Me gustó gracias", "language": "es", "note": "Verbatim as returned by the Booksy JSON-LD payload." }
+  ],
+  "brand_vibe": {
+    "description": "Angelica's own branding (seen consistently across her Instagram marketing graphics, Booksy logo, and a studio wall sign photographed behind her in a professional portrait) uses a soft watercolor mark of sage green + peach/coral brushstrokes behind black cursive script reading 'Ageless Spa by Angelica', on a cream/ivory background. Her professional portrait (in a white lab coat, in front of the wall sign with fresh flowers) confirms a warm, soft, feminine, quiet-luxury spa aesthetic rather than moody or clinical. This is a LIGHT base with sage green and dusty peach/rose accents.",
+    "base": "clara (light)",
+    "palette_name": "agelessspa (new palette: warm ivory + sage green + dusty peach, does not reuse mizu/amani/mare/alea/pausa/eme/iconicbeauty/beautybykaren)",
+    "colors": {
+      "bg": "#faf6ef",
+      "bg2": "#f0e7d8",
+      "surface": "rgba(253,250,244,0.72)",
+      "ink": "#332b22",
+      "accent_deep": "#748a63",
+      "accent_mid": "#c98f74",
+      "accent_soft": "#e7d6c3",
+      "accent_ghost": "rgba(116,138,99,0.16)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "Instagram captions found in the feed are consistently in English ('Have you had a Brazilian', 'Today we celebrate every mom who deserves to feel radiant...Happy Mother's Day', 'Curious about Electrolysis?', 'Beautiful clean Brows... but not just that I treat all the body for a silky and smooth skin', 'Book your facial today... DM to schedule'). The Booksy business description written by Angelica herself is in English. Of the 3 verbatim reviews used, 2 are in English and 1 (Fabiola L.) is in Spanish, consistent with a bilingual South Florida clientele but an English-first business voice. English (en) used as the primary/default site language, Spanish as the secondary toggle.",
+  "images_downloaded": {
+    "primary_source": "Instagram feed of agelessspa22 accessed via the imginn.com public mirror (the official web_profile_info API failed with a persistent Instagram-side schema error specific to this account), covering the main feed grid (13 posts) plus 6 additional individual posts/carousels opened directly (imginn.com/p/<code>/) to check for extra carousel images, one of which (a multi-slide 'why facials matter' educational carousel) yielded 12 slide images. Complemented with Booksy business page assets (logo, biz_photo, service_photos x9, review_photos x2), all fetched via curl with a Chrome user-agent to output/agelessspaboca/assets/raw/.",
+    "path": "output/agelessspaboca/assets/raw/",
+    "all_verified": "All downloaded files verified with `file`: real baseline/progressive JPEGs, all well above 15KB (smallest kept file 24.6KB); the one sub-15KB file (an IG profile avatar thumbnail, 3.3KB) was discarded. No corrupt or 0-byte files.",
+    "curation_note": "This account's real photo pool is unusually thin for gallery use: the vast majority of the ~25 real (non-graphic) images downloaded are either (a) Instagram marketing template graphics with quote text, benefit lists or logos baked directly into the image (e.g. 'Teen Eyebrows', 'The art of waxing', 'Why facials are not a luxury', 'Book your facial today 561-769-7333'), or (b) extreme macro clinical before/after or in-progress photos with closed eyes, visible redness/irritation, or clutter (electrolysis needle close-up, acne extraction close-up, sheet-mask and facial-mask application shots). Per the pipeline's strict gallery curation rule (no text overlays, no closed-eye mid-procedure shots, no clutter, only finished results with good lighting), NONE of these passed the bar for a results gallery grid. Only 3 real, clean, non-graphic photos were found across the entire pool: (1) a professional portrait of Angelica in a white lab coat in her studio, in front of the branded wall sign with fresh flowers, found inside a carousel post (used as hero-angelica.jpg); (2) an in-session shot of Angelica performing a facial/brow treatment on a client, wearing a lab coat with a certification patch, from Booksy service_photos (used as about-treatment.jpg); (3) a client relaxing with a hydrating sheet mask in the treatment room, from Booksy service_photos (used as about-ambiance.jpg, ambiance only, not a gallery result tile). A fourth image, a personal beach selfie of Angelica from a Booksy review photo, was kept ONLY as a small circular avatar next to her name/credentials (never as a gallery tile), per the rule that owner selfies are avatar-only. Per DESIGN.md's explicit fallback ('si quedan menos de 5 buenas fotos, usa menos secciones de galeria en vez de rellenar con malas'), the standalone photo gallery grid section was DROPPED from this build rather than filled with text-overlaid or closed-eye/clutter images; the 3 clean real photos are used instead in the hero and experience/about sections only."
+  },
+  "status": "built"
+}
