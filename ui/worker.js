@@ -77,6 +77,47 @@ export default {
       return json({ ok: true });
     }
 
+    // Upsert publico de UN negocio al registro del panel (autorizado por el usuario 2026-07-19).
+    // Permite que las corridas cloud reflejen sus demos sin credenciales. Defensas:
+    // solo url_demo del dominio de demos, campos con tope, NUNCA pisa outreach 'sent',
+    // y nunca borra: solo agrega o actualiza el slug que registra.
+    if (url.pathname === '/api/public/registry-upsert' && req.method === 'POST') {
+      let body;
+      try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+      const slug = (body.slug || '').toString();
+      if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
+      if (typeof body.url_demo !== 'string' || !DEMO_URL_RE.test(body.url_demo)) return json({ error: 'url_demo invalida' }, 400);
+      const S = (v, max) => (typeof v === 'string' ? v.slice(0, max) : undefined);
+      const limpio = {
+        slug,
+        name: S(body.name, 120) || slug,
+        city: S(body.city, 80),
+        ig: S(body.ig, 60),
+        url_demo: body.url_demo,
+        has_own_site: body.has_own_site === true,
+        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || '') ? S(body.email, 120) : null,
+        phone: S(body.phone, 30),
+        outreach: 'pending_manual',
+        status: 'staging',
+        language: body.language === 'en' ? 'en' : 'es',
+        dm_message: S(body.dm_message, 500),
+        thumb: typeof body.thumb === 'string' && body.thumb.startsWith('https://') && body.thumb.includes('.odd-forest-9504.workers.dev') ? S(body.thumb, 300) : undefined,
+        fecha: S(body.fecha, 12) || new Date().toISOString().slice(0, 10),
+      };
+      const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
+      const idx = registry.findIndex(b => b.slug === slug);
+      if (idx >= 0) {
+        const actual = registry[idx];
+        if (actual.outreach === 'sent') return json({ ok: true, skipped: 'ya contactado' });
+        registry[idx] = { ...actual, ...Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)) };
+      } else {
+        if (registry.length >= 800) return json({ error: 'registro lleno' }, 429);
+        registry.push(Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)));
+      }
+      await env.SITEFORGE_KV.put('registry', JSON.stringify(registry));
+      return json({ ok: true, count: registry.length });
+    }
+
     if (url.pathname.startsWith('/api/')) {
       if (!(await isAuthorized(req))) return json({ error: 'unauthorized' }, 401);
 

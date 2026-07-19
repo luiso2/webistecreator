@@ -77,6 +77,7 @@ Puerta de calidad (leccion Sandra 2026-07-16: el site salio "con template" pero 
 
 ## Fase 6: Registro y reporte
 - Actualizar `data/processed.json`: `{slug, name, city, ig, url_demo, has_own_site, email, outreach: sent|pending_manual|skipped, thumb, fecha}`. `thumb` = URL absoluta de la og:image del site (miniatura de la tarjeta en el panel). NUNCA reprocesar un slug ya registrado (idempotencia).
+- **Reflejar en el panel (obligatorio tras cada negocio construido)**: POST a `https://siteforge-panel.odd-forest-9504.workers.dev/api/public/registry-upsert` con `{slug, name, city, ig, url_demo, has_own_site, email, phone, language, dm_message, thumb, fecha}` (JSON). El endpoint es publico con validacion server-side; asi los demos aparecen en la UI al instante sin credenciales.
 - Reporte al usuario (email a jose@merktop.com via Resend): negocios procesados, URLs live, emails enviados/entregados, pendientes manuales, errores.
 
 ## Panel (siteforge-panel)
