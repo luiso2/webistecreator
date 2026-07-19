@@ -1,0 +1,196 @@
+{
+  "slug": "beautybykaren",
+  "name_legal_booksy": "Beauty by karen studio",
+  "name_brand": "Beauty by Karen Studio",
+  "owner": "Karen Ortiz",
+  "owner_source": "Booksy JSON-LD (schema.org HealthAndBeautyBusiness), field employee: [{\"name\": \"Karen Ortiz\"}]",
+  "niche": "Lash, brow & PMU studio (also waxing, facials, microneedling)",
+  "city": "West Palm Beach, FL",
+  "address": {
+    "full": "2300 Palm Beach Lakes Blvd, #205, West Palm Beach, FL 33409",
+    "street": "2300 Palm Beach Lakes Blvd, #205",
+    "locality": "West Palm Beach",
+    "region": "FL",
+    "postal_code": "33409",
+    "country": "US",
+    "geo": { "lat": 26.70928, "lng": -80.0974 },
+    "source": "JSON-LD (schema.org HealthAndBeautyBusiness) embedded in the Booksy business page, matches address given in task"
+  },
+  "phone": "+1-561-317-8896",
+  "phone_display": "(561) 317-8896",
+  "phone_source": "Matches digits found in Instagram bio (\"...GOOD VIBES ONLY...(561)317-8896\"), confirmed as the number given in task (from a Fresha listing at the same address)",
+  "email": null,
+  "email_note": "No public email found. Checked: (1) Instagram web_profile_info business_email field = null, external_url = null, no linktree in bio; (2) Booksy JSON-LD embedded in the business page (no email field, only telephone-less contact via booking); (3) no Facebook About page accessible without login. Real contact channels are Booksy booking, phone, and Instagram DM.",
+  "instagram": {
+    "handle": "@beauty_by_karen",
+    "url": "https://www.instagram.com/beauty_by_karen",
+    "full_name_field": "Wpb Lashes🌺 PMU Specialist🇨🇴",
+    "bio": "|•FACIALS|•EYELASHES|•PERMANENT MAKEUP|• BODY WAXING|• PRIVATE TRAINING|⚡️GOOD VIBES ONLY⚡️•(561)317-8896",
+    "followers": 2337,
+    "is_business_account": false,
+    "category_name": "Beauty, cosmetic & personal care",
+    "business_email": null,
+    "external_url": null,
+    "note": "web_profile_info fetched via instagram.com/api/v1/users/web_profile_info/?username=beauty_by_karen with x-ig-app-id header. Timeline media (12 posts) were ALL Reels (GraphVideo), no GraphSidecar carousels found. Captions are in English throughout (e.g. \"Hybrid lashes & healed ombre brows\", \"Come see me in wpb, fl\", \"Ombre brows\"), confirming language=en. Video poster frames (display_url) were mostly mid-treatment close-ups or had baked-in caption text/logo overlays from Reels editing (e.g. \"Beauty by Karen / Hybrid lashes / Healed ombre brows\" burned into one poster), so per curation rules these were mostly not used as final gallery tiles; 2 clean poster frames were downloaded for research but only 0 were used in the final clean gallery selection (Booksy portfolio photos were higher quality and cleaner). This is noted as a deviation from 'IG as primary image source' because the account's IG media is 100% short-form video with limited usable clean stills, while Booksy exposed cleaner dedicated before/after portfolio photos (biz_photo, logo, inspiration x6, service_photos, review_photos) that are equally real, verified, business-controlled assets, consistent with pipeline fallback \"complementar con galeria del booking\"."
+  },
+  "facebook": "https://www.facebook.com/Beautybykaren86",
+  "facebook_source": "sameAs field in Booksy JSON-LD",
+  "tiktok": "@beauty_by_karen (per task, not independently re-verified this run)",
+  "has_own_site": false,
+  "own_site_check": {
+    "domain_tried": "beautybykarenstudio.com",
+    "result": "Confirmed DNS failure per task brief (does not resolve)",
+    "instagram_external_url": "null (confirmed via web_profile_info)",
+    "conclusion": "No website propio. Angulo de outreach: has_own_site=false."
+  },
+  "booking": {
+    "platform": "Booksy",
+    "business_page_url": "https://booksy.com/en-us/882766_beauty-by-karen-studio_brows-lashes_15961_west-palm-beach",
+    "business_id": 882766,
+    "also_listed": "Fresha (per task brief; phone number cross-referenced from a Fresha listing at the same address, not independently re-scraped this run)"
+  },
+  "rating": {
+    "booksy": {
+      "value_raw": 4.829787234042553,
+      "value_rounded": 4.8,
+      "review_count": 47,
+      "source": "JSON-LD schema.org embedded in the Booksy business page: aggregateRating ratingValue=4.829787234042553, reviewCount=47. Confirms the 4.8/47 given in task."
+    }
+  },
+  "hours": {
+    "source": "JSON-LD schema.org openingHoursSpecification embedded in the Booksy business page",
+    "schedule_raw": [
+      { "days": ["Monday","Wednesday","Thursday"], "open": "09:30", "close": "14:00" },
+      { "days": ["Monday"], "open": "16:45", "close": "19:00" },
+      { "days": ["Tuesday"], "open": "09:00", "close": "14:00" },
+      { "days": ["Tuesday"], "open": "16:20", "close": "19:00" },
+      { "days": ["Wednesday","Thursday"], "open": "16:40", "close": "19:00" },
+      { "days": ["Friday"], "open": "16:30", "close": "19:00" },
+      { "days": ["Saturday"], "open": "09:30", "close": "19:00" }
+    ],
+    "note": "Sunday not listed in openingHoursSpecification, treated as closed. Split shifts (morning + late afternoon/evening block) Mon-Thu, Friday afternoon-only, Saturday full day.",
+    "condensed_for_site": "Mon 9:30-2 & 4:45-7pm, Tue 9-2 & 4:20-7pm, Wed-Thu 9:30-2 & 4:40-7pm, Fri 4:30-7pm, Sat 9:30am-7pm, Sun closed"
+  },
+  "services": {
+    "source": "JSON-LD makesOffer array embedded in the Booksy business page (fetched 2026-07-19), 44 offers total. No duration field in this JSON-LD; the 7 durations used on the site (Brazilian Wax, Vajacial, Relaxing Facial, Microneedling, Lip Blush, Ombre Brows, Classic Eyelash Set) were provided verified in the task brief and used as-is; other services show price only (duration omitted per DESIGN.md rule: omit unknown fields rather than invent).",
+    "price_range_booksy": "USD 1 - 600",
+    "categories": [
+      {
+        "name": "Lashes",
+        "items": [
+          { "name": "Classic Eyelash Set", "price": 115, "duration_min": 135 },
+          { "name": "Classic Fill 2/3 weeks", "price": 65 },
+          { "name": "Hybrid Eyelash set", "price": 125 },
+          { "name": "Hybrid fill 2/3 weeks", "price": 75 },
+          { "name": "Volume eyelash set", "price": 145 },
+          { "name": "Volume fill 2/3 weeks", "price": 85 },
+          { "name": "Mega Eyelash Set", "price": 155 },
+          { "name": "Mega Fill 2/3 weeks", "price": 95 },
+          { "name": "Bottom eyelashes", "price": 25 },
+          { "name": "Color Lashes", "price": 10 },
+          { "name": "Foreign fill", "price": 15 },
+          { "name": "Mini fill", "price": 50 },
+          { "name": "Lash removal", "price": 20 }
+        ]
+      },
+      {
+        "name": "Brows & PMU",
+        "items": [
+          { "name": "Ombre brows", "price": 260, "duration_min": 150 },
+          { "name": "Ombre brow touch-up", "price": 130 },
+          { "name": "Lip blush", "price": 200, "duration_min": 185 },
+          { "name": "Lip blush touch-up", "price": 130 },
+          { "name": "Eyeliner", "price": 200 }
+        ]
+      },
+      {
+        "name": "Facials & Skin",
+        "items": [
+          { "name": "Relaxing Facial", "price": 85, "duration_min": 60 },
+          { "name": "Acne Facial", "price": 85 },
+          { "name": "Back Facial", "price": 85 },
+          { "name": "Dermaplaning", "price": 85 },
+          { "name": "Microneedling", "price": 150, "duration_min": 55 },
+          { "name": "Bb glow (micro-needling)", "price": 170 },
+          { "name": "Chemical peel", "price": 150 },
+          { "name": "Makeup glam session", "price": 85 }
+        ]
+      },
+      {
+        "name": "Waxing",
+        "items": [
+          { "name": "Brazilian Wax", "price": 50, "duration_min": 30 },
+          { "name": "Brazilian wax & Vajacial", "price": 100 },
+          { "name": "Vajacial", "price": 60, "duration_min": 40 },
+          { "name": "Bikini Wax", "price": 35 },
+          { "name": "Eyebrow wax", "price": 14 },
+          { "name": "Eyebrow wax & tint", "price": 25 },
+          { "name": "Full facial wax", "price": 40 },
+          { "name": "Lip wax", "price": 10 },
+          { "name": "Nose wax", "price": 10 },
+          { "name": "Under arm wax", "price": 14 },
+          { "name": "Full arm wax", "price": 60 },
+          { "name": "Half arm wax", "price": 30 },
+          { "name": "Full leg wax", "price": 70 },
+          { "name": "Half leg wax", "price": 35 },
+          { "name": "Full chest wax", "price": 70 },
+          { "name": "Half chest wax", "price": 35 },
+          { "name": "Full back wax", "price": 70 },
+          { "name": "Half back wax", "price": 35 },
+          { "name": "Any body waxing service ($ varies)", "price": 1 }
+        ]
+      },
+      {
+        "name": "Training / Education (not shown as full cards on site, mentioned as a footnote)",
+        "items": [
+          { "name": "Waxing Class", "price": 450 },
+          { "name": "Classic Lash Class Bootcamp", "price": 600 }
+        ]
+      }
+    ],
+    "featured_for_site": ["Classic Eyelash Set", "Ombre brows", "Lip blush", "Microneedling"]
+  },
+  "reviews": [
+    { "name": "Cece", "source": "Booksy", "stars": 5, "date": "2026-02-05", "text": "Karen was so nice and made me feel comfortable for my first time getting waxed! Great experience highly recommend!!" },
+    { "name": "Amanda", "source": "Booksy", "stars": 5, "text": "Extremely professional, hygienic, and nice! Will be making monthly appointments going forward.", "note": "Verbatim as given in task brief; not independently re-found in the JSON-LD 3-review sample (Booksy exposes only a subset of the 47 reviews in JSON-LD), trusted as pre-verified." },
+    { "name": "Roberta", "source": "Booksy", "stars": 5, "text": "Karen was warm, personable, and professional. She listened to my requests, worked quickly.", "note": "Verbatim as given in task brief; same note as Amanda above." },
+    { "name": "Tina", "source": "Booksy", "stars": 5, "date": "2025-12-01", "text": "New to the area and wanted to remove my lashes I had on, Karen was able to take me in same day with my last minute request. She was very nice and also had great knowledge of recommendations for other services. Shop is cleaned and beautiful." },
+    { "name": "CECI M", "source": "Booksy", "stars": 5, "date": "2025-12-08", "text": "Karen was very kind and professional. She was gentle but efficient. She was on time for the appointment, and her salon was nice.", "used_on_site": false, "note": "Found in JSON-LD but not used on site (4 reviews were enough for the carousel)." }
+  ],
+  "brand_vibe": {
+    "description": "Logo (white background, seen on Booksy 'logo' field and watermarked into most portfolio photos): a black-line eye/lash/brow illustration with pink/rose script 'Beauty by' and a pink lipstick kiss mark, serif 'Karen Studio' wordmark. Real photos are bright, well-lit, warm skin tones, glam finished lash and brow results. This reads as a fresh, feminine, glam beauty studio aesthetic rather than moody/editorial, so a LIGHT base was chosen (Amani exemplar) with a rose/berry accent instead of Amani's mocha.",
+    "base": "clara (light)",
+    "palette_name": "karenstudio (blush cream + deep rose/berry, new palette, does not reuse mizu/amani/mare/alea/pausa/eme/iconicbeauty)",
+    "colors": {
+      "bg": "#fdf6f3",
+      "bg2": "#f7e6e2",
+      "surface": "rgba(255,250,248,0.72)",
+      "ink": "#3a262b",
+      "accent_deep": "#ab3f57",
+      "accent_mid": "#c67587",
+      "accent_soft": "#f3d7dc",
+      "accent_ghost": "rgba(171,63,87,0.14)"
+    }
+  },
+  "language": "en",
+  "language_evidence": "All 12 Instagram Reel captions are in English (\"Hybrid lashes & healed ombre brows\", \"Book all you beauty services\", \"Come see me in wpb, fl\", \"Come do a brow wax w. me\", \"Lip blush\", \"Brow lami\", \"Ombre brows\", \"Aftercare kits\", \"Hybrid\"). IG bio is in English. Booksy JSON-LD reviews are predominantly in English (3 of 3 sampled: Cece, CECI M, Tina), matching the 3 client quotes given in the task (all English). No Spanish captions, hashtags, or reviews found anywhere. English (en) is used as the primary/default site language, with Spanish as the secondary toggle language.",
+  "images_downloaded": {
+    "primary_source": "Booksy business page assets (biz_photo, logo, 6x inspiration, 1x service_photos, 6x review_photos), all fetched via curl with Chrome UA from the Booksy CDN (d2zdpiztbgorvt.cloudfront.net), all verified real JPEGs with `file`. Instagram web_profile_info was also queried (per pipeline requirement) but its 12 timeline posts were all Reels (GraphVideo) with mostly mid-treatment or caption-text-overlaid poster frames not meeting the visual curation bar; 2 IG poster stills were downloaded for research (one lip-blush before/after used in the final about section, one lash post with baked-in caption text discarded).",
+    "path": "output/beautybykaren/assets/raw/",
+    "final_list": [
+      "hero.jpg (433x577, cropped from Booksy inspiration photo: single dramatic eye, full volume lash extensions + ombre brow result, both eyes open, warm lighting, red hair)",
+      "gallery-glam-lashes-brows.jpg (1000x491, wide crop of the same source: both eyes open, full glam ombre brows + volume lashes)",
+      "gallery-ombre-brows.jpg (1000x486, healed ombre brows result, both eyes open, green eyes)",
+      "gallery-lip-blush.jpg (1000x1000, Booksy official service_photos image: lip blush macro result)",
+      "gallery-hybrid-lashes.jpg (588x1012, hybrid lash extensions close up, fresh application with tape, closed eye but clean/no clutter)",
+      "gallery-volume-lashes-topdown.jpg (592x263, cropped from Booksy biz_photo collage: top-down view of both eyes with volume lash fans, no logo)",
+      "about-studio-karen.jpg (1000x1000, Booksy inspiration photo: Karen Ortiz working on a client in the studio, numbing gel applicator, product shelf visible, real studio ambiance)",
+      "about-lip-blush-result.jpg (640x727, cropped from an Instagram post: lip blush before/after)",
+      "avatar-karen.jpg (440x480, small square crop of about-studio-karen.jpg, used as the small owner avatar in the About section per curation rule: owner photo only allowed as small avatar, never as a gallery tile)",
+      "logo.jpg (1000x999, official Booksy 'logo' field: the studio's eye/lash/lips wordmark logo; downloaded for brand reference, not used as an <img> in the final HTML)"
+    ],
+    "all_verified": "All verified with `file`: real baseline JPEG, all >15KB (smallest is avatar-karen.jpg at 33KB). No corrupt or 0-byte files.",
+    "curation_note": "Rejected from gallery: 6 Booksy review_photos (client-submitted phone photos: 2 dark/blurry selfie-angle shots, 2 extreme eyeball macro shots not flattering, 1 Instagram repost screenshot with baked-in '@BEAUTY_BY_KAREN' handle badge and 'Ombre brows' caption text, 1 bad low-light selfie with lens flare) - none met the visual quality bar. Also rejected: 1 Instagram Reels poster with 'Beauty by Karen / Hybrid lashes / Healed ombre brows' caption text baked into the image, and 2 Booksy inspiration photos with closed-eye brow before/afters that were kept in reserve but not used in the final 6-tile gallery in favor of the stronger open-eye and no-clutter shots (final gallery already reached 6 tiles with the better images). Deliberately avoided any photo of Karen's face without a mask/eyes-down angle as a gallery tile; the one studio photo of Karen used (about-studio-karen.jpg / avatar-karen.jpg) shows her masked and focused on work, used only as a small avatar plus one full about-section photo, consistent with the 'no selfies/portraits as gallery tiles' rule."
+  },
+  "status": "built"
+}
