@@ -1,0 +1,114 @@
+{
+  "slug": "lashesdeve",
+  "name": "Lashes D’ Eve",
+  "owner": "Evelin (Eve) Moreno",
+  "niche": "lash & brow studio",
+  "schema_type": "BeautySalon",
+  "city": "Naples, FL",
+  "address": {
+    "locality": "Naples",
+    "region": "FL",
+    "postal_code": "34119",
+    "country": "US",
+    "note": "Private, by-appointment studio. Exact suite street address is not publicly published (common for suite-based lash artists); Booksy listing only exposes city/zip and geo coordinates. Do NOT fabricate a street address.",
+    "geo": { "latitude": 26.25018, "longitude": -81.712, "source": "Booksy listing JSON-LD" }
+  },
+  "phone": null,
+  "email": null,
+  "email_search_notes": "Searched IG bio (blocked/rate-limited via WebFetch, web_profile_info known-broken per FORGE-BRIEF), Booksy dossier payload (no email field returned), general web search for owner/business email, no linktree/beacons found in bio via search. No public email located after exhausting available sources within time-box.",
+  "instagram": {
+    "handle": "@lashes_d_eve_naples_fl",
+    "url": "https://www.instagram.com/lashes_d_eve_naples_fl/",
+    "owner_display_name_on_ig": "Eve Moreno"
+  },
+  "booking": {
+    "platform": "Booksy",
+    "url": "https://booksy.com/en-us/827445_lashes-d-eve_brows-lashes_15685_naples",
+    "booksy_id": "827445"
+  },
+  "rating": 4.9,
+  "review_count": 67,
+  "rating_source": "Booksy listing (booksy_dossier.py extraction, aggregateRating in listing JSON-LD). Matches the number supplied at discovery. Independent Google Business confirmation was attempted (web search for Google Maps rating) but not conclusively found within the research time-box; Yelp listing for a same-address business ('LASHES DEVE', 3825 Beck Blvd) was found via search but could not be fetched (403/blocked) to confirm it is the same business, so it was NOT used as a corroborating source.",
+  "has_own_site": false,
+  "has_own_site_check": {
+    "method": "curl of lashesdeve.com, lashesdeve.net, lashesdeevenaples.com, lashesdeeve.com, lashesdevenaples.com (all non-resolving/502 via proxy = domain not registered); booksy_dossier website_candidates field returned empty; web search for the business name did not surface any owned domain (only Booksy, Yelp, Instagram, and unrelated same-word businesses like lasheve.com and evebeautylab.com which are different businesses).",
+    "result": "No owned domain found. Confirmed has_own_site: false."
+  },
+  "language": "en",
+  "language_notes": "Dossier auto-detected 'en' as primary (menu and majority of reviews in English). A few reviews and 2 service names ('Curso de extensiones de pestañas', 'Mini refill híbrido') are in Spanish, indicating a bilingual clientele in Naples; site built fully bilingual (EN default, ES toggle) per DESIGN.md requirement.",
+  "hours": [
+    "Tuesday: 9:30am-1:00pm, 1:30pm-6:00pm",
+    "Wednesday: 10:30am-2:00pm, 2:30pm-6:00pm",
+    "Thursday: 9:30am-1:00pm, 1:30pm-6:00pm",
+    "Friday: 9:30am-1:00pm, 1:30pm-5:00pm",
+    "Saturday: 9:00am-3:30pm",
+    "Sunday: closed",
+    "Monday: closed"
+  ],
+  "brand_vibe": "Dark, moody, editorial beauty-lounge feel. Business logo (bk-2.jpg) is a gold-script wordmark 'Lashes D'Eve Beauty' on a black circular badge, suggesting an upscale, intimate studio aesthetic. Built on templates/dark-v2 base with a new wine/berry accent (#9c2f56 / #c2688a) not previously used in the palette registry (differentiates from templates/light-v2's lashbloom, which is also a lash studio but light/plum-pink).",
+  "template_base": "templates/dark-v2/index.html (Pure Artistry exemplar)",
+  "palette": {
+    "accent_deep": "#9c2f56",
+    "accent_mid": "#c2688a",
+    "bg": "#130a0d",
+    "bg_2": "#1d1015",
+    "ink": "#f6ece7",
+    "name": "wine/berry (new, unused in prior palette registry)"
+  },
+  "services_full_menu": [
+    { "name": "Classic Eyelash extensions", "price": 120, "duration": "1h 30min", "category": "Lash Extensions" },
+    { "name": "Hybrid Eyelash extensions", "price": 140, "duration": "1h 30min", "category": "Lash Extensions" },
+    { "name": "Volume lashes", "price": 150, "duration": "1h 30min", "category": "Lash Extensions" },
+    { "name": "Wispy lash extensions", "price": 160, "duration": "1h 30min", "category": "Lash Extensions" },
+    { "name": "Mega volume lashes", "price": 180, "duration": "2h", "category": "Lash Extensions" },
+    { "name": "Mini refill classic", "price": 30, "duration": "45min", "category": "Refills" },
+    { "name": "Mini refill híbrido", "price": 40, "duration": "45min", "category": "Refills" },
+    { "name": "Mini refill volume", "price": 50, "duration": "45min", "category": "Refills" },
+    { "name": "Classic refill", "price": 70, "duration": "1h 30min", "category": "Refills" },
+    { "name": "Hybrid refill", "price": 75, "duration": "1h 30min", "category": "Refills" },
+    { "name": "Wispy eye lashes extensions refill", "price": 80, "duration": "1h 30min", "category": "Refills" },
+    { "name": "Volume refill", "price": 90, "duration": "1h 30min", "category": "Refills" },
+    { "name": "Mega volume refill", "price": 100, "duration": "2h", "category": "Refills" },
+    { "name": "Eyebrow waxing and shape", "price": 20, "duration": "25min", "category": "Brows" },
+    { "name": "Henna Eyebrows", "price": 40, "duration": "45min", "category": "Brows" },
+    { "name": "Eyebrow lamination", "price": 40, "duration": "45min", "category": "Brows" },
+    { "name": "Eyebrow lamination and henna", "price": 80, "duration": "1h 30min", "category": "Brows" },
+    { "name": "Natural Makeup", "price": 100, "duration": "2h", "category": "Extras" },
+    { "name": "Eyelash removal", "price": 20, "duration": "25min", "category": "Extras" },
+    { "name": "Curso de extensiones de pestañas", "price": 950, "duration": "5min", "category": "Training (B2B, excluded from client-facing site)" }
+  ],
+  "services_displayed_on_site": "19 of 20 menu items shown (via 4 highlight cards covering every price tier + footnote). 'Curso de extensiones de pestañas' ($950 lash-extension training course for aspiring artists) was intentionally omitted from the consumer-facing menu since it is a B2B training product, not a client beauty service; it is preserved here in services_full_menu for completeness/truth.",
+  "reviews_used_on_site": [
+    { "author": "Elisa D.", "body": "She is very professional, provides clear instructions to help your lashes last as long as possible, and does an excellent job. I highly recommend her to anyone looking for beautiful, long-lasting lashes!", "rating": 5, "source": "Booksy" },
+    { "author": "Adalvis A.", "body": "Best experience ever, it was my first time and my lashes look so natural and beautiful, i love it!!", "rating": 5, "source": "Booksy" },
+    { "author": "Angelica", "body": "Wonder!! They lasted a vacation filled with beach fun and spa treatments! Definitely recommend", "rating": 5, "source": "Booksy" }
+  ],
+  "reviews_other_available_not_used": [
+    { "author": "Maynelis", "body": "first time with Evelin & i loved my set !! she was super sweet and professional. my lash retention has been great so far :))" },
+    { "author": "Caressa", "body": "Excelente trabajo, me encantó cómo dejó mis cejas 🥰" },
+    { "author": null, "body": "Me dejó las pestañas y cejas súper bonitas 😍" },
+    { "author": "Adalvis", "body": "um yeah it was a waste of time and money... [NEGATIVE - excluded from site, kept here for transparency, note this appears to be a different reviewer/experience than 'Adalvis A.' above]" }
+  ],
+  "images": [
+    { "file": "bk-9.jpg", "role": "hero", "source": "Booksy gallery", "description": "Dramatic volume lash extensions, eyes open, striking finished result" },
+    { "file": "bk-6.jpg", "role": "experience", "source": "Booksy gallery", "description": "Finished brow lamination profile shot" },
+    { "file": "bk-16.jpg", "role": "experience", "source": "Booksy gallery", "description": "Soft editorial brow result, client profile" },
+    { "file": "bk-15.jpg", "role": "owner avatar (small, experience section only, never gallery tile)", "source": "Booksy gallery", "description": "Eve Moreno portrait" },
+    { "file": "bk-2.jpg", "role": "logo (nav avatar, favicon, footer logo)", "source": "Booksy gallery", "description": "Official brand roundel: gold script 'Lashes D'Eve Beauty' on black circle" },
+    { "file": "bk-3.jpg", "role": "gallery wide tile (16:9)", "source": "Booksy gallery", "description": "Natural finish lash extensions, eyes open" },
+    { "file": "bk-4.jpg", "role": "gallery tile", "source": "Booksy gallery", "description": "Dramatic winged volume lash set" },
+    { "file": "bk-5.jpg", "role": "gallery tile", "source": "Booksy gallery", "description": "Glossy volume lash extensions close up" },
+    { "file": "bk-7.jpg", "role": "gallery tile", "source": "Booksy gallery", "description": "Soft classic lash set, natural eye color" },
+    { "file": "bk-8.jpg", "role": "gallery tile", "source": "Booksy gallery", "description": "Natural everyday lash extensions" },
+    { "file": "bk-11.jpg", "role": "gallery tile", "source": "Booksy gallery", "description": "Defined eyebrow arch/shape result" }
+  ],
+  "images_excluded_curation_notes": {
+    "bk-1.jpg": "Excluded: appears to be a DIY/tutorial-style selfie applying tweezers to own brow, not a professional finished-result photo from the studio.",
+    "bk-2.jpg_as_gallery": "Used only as logo/avatar (not a client result photo), never used as a gallery tile.",
+    "bk-15.jpg_as_gallery": "Owner portrait/selfie of Eve Moreno; used ONLY as small circular avatar in the Experience section per curation rules, never as a gallery tile.",
+    "bk-10.jpg, bk-12.jpg, bk-13.jpg, bk-14.jpg": "Redundant closed-eye brow/lash close-ups already well represented by bk-6/bk-16/bk-11; excluded to avoid repetition, not because of quality issues."
+  },
+  "images_total_downloaded": 16,
+  "images_used_curated": 11,
+  "notes": "Business language default is EN on-site per dossier auto-detection, fully bilingual with ES toggle. No phone number publicly listed anywhere found. Site built on templates/dark-v2 (Pure Artistry exemplar) with anchored-transformation Python derivation script, new wine/berry palette accent."
+}
