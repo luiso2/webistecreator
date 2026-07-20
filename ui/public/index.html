@@ -145,7 +145,30 @@
     .b-manual { background: rgba(232,196,106,0.1); color: var(--amber); border: 1px solid rgba(232,196,106,0.3); }
     .b-pending { background: rgba(232,122,106,0.1); color: var(--red); border: 1px solid rgba(232,122,106,0.3); }
     .b-site { background: rgba(255,255,255,0.05); color: var(--ink-60); border: 1px solid var(--border); }
+    .b-client { background: rgba(184,240,77,0.18); color: var(--lime); border: 1px solid rgba(184,240,77,0.5); }
+    .b-declined { background: rgba(255,255,255,0.04); color: var(--ink-40); border: 1px solid var(--border); }
+    .biz.is-client { border-color: rgba(184,240,77,0.4); box-shadow: 0 0 0 1px rgba(184,240,77,0.15), 0 14px 40px rgba(0,0,0,0.4); }
+    .biz.is-declined { opacity: 0.55; }
     .biz .actions { display: flex; gap: 8px; margin-top: auto; }
+    .biz .actions:empty { display: none; }
+    .link-btn.wa { color: #d7ffe6; border-color: rgba(37,211,102,0.5); background: rgba(37,211,102,0.12); }
+    .link-btn.wa:hover { border-color: rgba(37,211,102,0.9); background: rgba(37,211,102,0.22); }
+    .crm-row { display: flex; gap: 8px; margin-top: 4px; align-items: center; }
+    .crm-btn {
+      flex: 1; cursor: pointer; font-family: inherit; font-size: 12.5px; font-weight: 600; padding: 9px 10px;
+      border-radius: 11px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); color: var(--ink-60);
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .crm-btn.won { border-color: rgba(184,240,77,0.4); color: var(--lime); }
+    .crm-btn.won:hover { background: rgba(184,240,77,0.14); border-color: rgba(184,240,77,0.7); }
+    .crm-btn.lost { flex: 0 0 auto; padding: 9px 14px; }
+    .crm-btn.lost:hover { border-color: rgba(232,122,106,0.5); color: var(--red); }
+    .crm-btn.undo { flex: 0 0 auto; padding: 8px 14px; font-size: 12px; }
+    .crm-btn.undo:hover { border-color: rgba(184,240,77,0.45); color: var(--ink); }
+    .crm-btn:disabled { opacity: 0.6; cursor: wait; }
+    .crm-tag { flex: 1; font-size: 12.5px; font-weight: 600; }
+    .crm-tag.won { color: var(--lime); }
+    .crm-tag.lost { color: var(--ink-40); }
     .link-btn {
       flex: 1; text-align: center; font-size: 13px; font-weight: 600; text-decoration: none; padding: 10px 12px;
       border-radius: 12px; color: var(--ink); border: 1px solid var(--border); background: rgba(255,255,255,0.03);
@@ -254,35 +277,83 @@
 
     function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
 
+    // Mensaje de outreach de un negocio: el guardado, o uno de respaldo que SIEMPRE
+    // incluye el link del demo (para que WhatsApp/DM abran con el website incluido).
+    function dmText(b) {
+      if (b.dm_message) return b.dm_message;
+      if (!b.url_demo) return '';
+      return (b.language === 'en')
+        ? `Hi! I'm Michael from Merktop (Miami). I built a sample website for ${b.name || 'your business'} with your real photos and info: ${b.url_demo} If you like it, we can put it on your own domain; if not, I'll take it down, no problem.`
+        : `Hola! Soy Michael, de Merktop (Miami). Le construi un website de muestra a ${b.name || 'su negocio'} con sus fotos y datos reales: ${b.url_demo} Si le gusta, lo dejamos en su dominio; si no, lo retiro sin problema.`;
+    }
+
+    // Link de WhatsApp que abre el chat del negocio (movil = app, laptop = WhatsApp Web/Desktop)
+    // con el mensaje + link del website ya escritos. Numero a formato US: 10 digitos -> +1.
+    function waHref(b) {
+      const digits = String(b.phone || '').replace(/[^0-9]/g, '');
+      if (!digits) return '';
+      const num = digits.length === 10 ? '1' + digits : digits;
+      const msg = dmText(b);
+      return 'https://wa.me/' + num + (msg ? '?text=' + encodeURIComponent(msg) : '');
+    }
+
+    // CRM: marcar/desmarcar cliente cerrado o descartado. Solo cambia estado en el panel,
+    // no envia nada. Reversible con "Reabrir".
+    window.markCRM = async (slug, status, btn) => {
+      const prev = btn.textContent;
+      btn.disabled = true; btn.textContent = '...';
+      try {
+        const r = await fetch('/api/mark', { method: 'POST', headers: headers(), body: JSON.stringify({ slug, status }) });
+        const data = await r.json();
+        if (!r.ok) throw new Error(data.error || r.status);
+        const m = $('msg'); m.className = 'msg ok';
+        m.textContent = status === 'client' ? `Marcado como cliente cerrado. Total clientes: ${data.clientes}.`
+          : (status === 'declined' ? 'Marcado como no interesado.' : 'Reabierto: vuelve a la lista de por contactar.');
+        load();
+      } catch (e) {
+        btn.disabled = false; btn.textContent = prev;
+        const m = $('msg'); m.className = 'msg err'; m.textContent = 'Error: ' + e.message;
+      }
+    };
+
     function render(state) {
       const reg = state.registry || [], queue = state.queue || [];
-      const live = reg.filter(b => b.url_demo).length;
-      const sent = reg.filter(b => b.outreach === 'sent').length;
-      const porContactar = reg.filter(b => b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy').length;
+      const clientes = reg.filter(b => b.crm_status === 'client').length;
+      const porContactar = reg.filter(b => !b.crm_status && (b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy' || b.outreach === 'sent')).length;
       const enCola = queue.filter(q => q.status === 'pending' || q.status === 'processing').length;
       $('stats').innerHTML = [
-        ['Construidos · meta 500', reg.length], ['Emails enviados', sent], ['Por contactar (DM / WA)', porContactar], ['En cola de forja', enCola]
+        ['Construidos · meta 500', reg.length], ['Clientes cerrados', clientes], ['Por contactar', porContactar], ['En cola de forja', enCola]
       ].map(([l, v], i) => `<div class="card stat reveal" style="animation-delay:${0.1 + i * 0.05}s"><b>${v}</b><span>${l}</span></div>`).join('');
 
       $('count').textContent = reg.length + ' negocios · primero los que esperan tu contacto';
-      const orden = b => (b.outreach === 'sent' ? 1 : 0);
+      // Orden: pendientes de contactar primero, luego clientes cerrados, al final descartados.
+      const orden = b => (b.crm_status === 'declined' ? 2 : (b.crm_status === 'client' ? 1 : 0));
       const lista = reg.slice().reverse().sort((a, b) => orden(a) - orden(b));
       $('grid').innerHTML = lista.map((b, i) => `
-        <div class="card biz reveal" style="animation-delay:${0.15 + i * 0.04}s">
+        <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" style="animation-delay:${0.15 + i * 0.04}s">
           ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'" /></a>` : ''}
           <div class="top">
             <div><h4>${esc(b.name)}</h4><p class="city">${esc(b.city || '')} · ${esc(b.fecha || '')}</p></div>
           </div>
           <p class="ig">${esc(b.ig || '')}${b.email ? ' · ' + esc(b.email) : ''}${b.phone ? ' · ' + esc(b.phone) : ''}</p>
           <div class="badges">
-            ${badgeOutreach(b)}
+            ${b.crm_status === 'client' ? '<span class="badge b-client">✓ Cliente cerrado</span>' : (b.crm_status === 'declined' ? '<span class="badge b-declined">Descartado</span>' : badgeOutreach(b))}
             ${b.has_own_site ? '<span class="badge b-site">Ya tenia website</span>' : '<span class="badge b-site">Sin website propio</span>'}
           </div>
           <div class="actions">
             ${b.url_demo ? `<a class="link-btn primary" href="${esc(b.url_demo)}" target="_blank" rel="noopener">Ver demo</a>` : '<span class="link-btn" style="opacity:0.5">Demo pendiente</span>'}
-            ${b.email && b.url_demo && b.outreach !== 'sent' ? `<button class="link-btn send-email" id="send-${esc(b.slug)}" onclick="sendEmail('${esc(b.slug)}', this)">Enviar email (${(b.language || 'es').toUpperCase()})</button>` : ''}
+            ${waHref(b) ? `<a class="link-btn wa" href="${waHref(b)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
+          </div>
+          <div class="actions">
+            ${b.email && b.url_demo && b.outreach !== 'sent' ? `<button class="link-btn send-email" id="send-${esc(b.slug)}" onclick="sendEmail('${esc(b.slug)}', this)">Email (${(b.language || 'es').toUpperCase()})</button>` : ''}
             ${b.ig ? `<button class="link-btn" onclick="sendDM('${esc((b.ig || '').replace('@', ''))}', ${i})">DM ✉</button>` : ''}
-            ${b.phone && b.dm_message ? `<a class="link-btn" href="https://wa.me/${esc(String(b.phone).replace(/[^0-9]/g, '').replace(/^(?!1)/, '1'))}?text=${encodeURIComponent(b.dm_message)}" target="_blank" rel="noopener">WA ✓</a>` : ''}
+          </div>
+          <div class="crm-row">
+            ${b.crm_status === 'client'
+              ? `<span class="crm-tag won">✓ Ya es cliente</span><button class="crm-btn undo" onclick="markCRM('${esc(b.slug)}','pending',this)">Reabrir</button>`
+              : (b.crm_status === 'declined'
+                ? `<span class="crm-tag lost">No interesado</span><button class="crm-btn undo" onclick="markCRM('${esc(b.slug)}','pending',this)">Reabrir</button>`
+                : `<button class="crm-btn won" onclick="markCRM('${esc(b.slug)}','client',this)">Cerrar como cliente ✓</button><button class="crm-btn lost" onclick="markCRM('${esc(b.slug)}','declined',this)">No</button>`)}
           </div>
         </div>`).join('');
       window.__reg = lista;
@@ -334,7 +405,7 @@
     // Instagram no soporta pre-llenar el texto por URL, por eso: copiar + pegar.
     window.sendDM = async (handle, idx) => {
       const b = (window.__reg || [])[idx] || {};
-      const msg = b.dm_message || (b.url_demo ? `Hola! Soy Michael, de Merktop (Miami). Les construi un website de muestra con sus fotos y datos reales: ${b.url_demo} Si les gusta, lo dejamos en su dominio; si no, lo retiro sin problema.` : '');
+      const msg = dmText(b);
       try { if (msg) await navigator.clipboard.writeText(msg); } catch {}
       const m = $('msg');
       m.className = 'msg ok';

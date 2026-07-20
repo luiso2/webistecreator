@@ -122,11 +122,38 @@ export default {
       if (!(await isAuthorized(req))) return json({ error: 'unauthorized' }, 401);
 
       if (url.pathname === '/api/state' && req.method === 'GET') {
-        const [registry, queue] = await Promise.all([
+        const [registry, queue, crm] = await Promise.all([
           env.SITEFORGE_KV.get('registry', 'json'),
           env.SITEFORGE_KV.get('queue', 'json'),
+          env.SITEFORGE_KV.get('crm', 'json'),
         ]);
-        return json({ registry: registry || [], queue: queue || [] });
+        // El CRM (cliente cerrado / descartado) vive en su propia llave: ninguna
+        // sincronizacion del registro desde el repo o la forja lo puede pisar.
+        const map = crm || {};
+        const reg = (registry || []).map(b => (map[b.slug]
+          ? { ...b, crm_status: map[b.slug].status, crm_at: map[b.slug].at }
+          : b));
+        return json({ registry: reg, queue: queue || [] });
+      }
+
+      // CRM: marcar un negocio como cliente cerrado / descartado / reabrir.
+      // Accion directa del usuario autenticado; reversible; sin efectos externos.
+      if (url.pathname === '/api/mark' && req.method === 'POST') {
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        const slug = (body.slug || '').toString();
+        if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
+        const status = body.status;
+        if (!['client', 'declined', 'pending'].includes(status)) return json({ error: 'status invalido' }, 400);
+        const crm = (await env.SITEFORGE_KV.get('crm', 'json')) || {};
+        if (status === 'pending') {
+          delete crm[slug];
+        } else {
+          crm[slug] = { status, at: new Date().toISOString() };
+        }
+        await env.SITEFORGE_KV.put('crm', JSON.stringify(crm));
+        const clientes = Object.values(crm).filter(c => c.status === 'client').length;
+        return json({ ok: true, slug, status, clientes });
       }
 
       if (url.pathname === '/api/queue' && req.method === 'POST') {
