@@ -1,0 +1,88 @@
+{
+ "slug": "belezalash",
+ "name": "Beleza Lash and Brow Lounge",
+ "niche": "lash & brow studio (lash extensions, lash lift & tint, brow lamination)",
+ "city": "Boca Raton, FL",
+ "address": "2701 NW 2nd Ave, Suite 212, Boca Raton, FL 33431",
+ "owner": "Livia Rosa",
+ "owner_source": "Booksy JSON-LD employee listing (single staff member, id present in Booksy page) and multiple client reviews addressing her as 'Liv'/'Livia'.",
+ "phone": null,
+ "phone_note": "Discovery flagged (732) 664-3160 as low-confidence (NJ area code, not confirmed in a primary business source). Re-verification attempted: Booksy JSON-LD telephone field is null/absent; Instagram web_profile_info endpoint returned HTTP 400 (blocked, both desktop and mobile UA, with and without x-ig-app-id header) so the IG bio could not be checked directly; no dedicated Facebook business page was found for this exact business (only an unrelated 'Hair, Lash and Brow Boca' page). A third-party aggregator (LashLookup.com) lists (732) 664-3160, and two client-uploaded Booksy review-photo screenshots (iMessage conversations with a contact saved as 'Liv', phone header showing +1 (732) 664-3160) corroborate the same number, but neither of those is a source PUBLISHED BY THE BUSINESS ITSELF (bio/Booksy/Facebook About), so per the hard rule the number is omitted from the site and JSON-LD (recorded here as null with this note for the record, not fabricated).",
+ "website": null,
+ "has_own_site": false,
+ "has_own_site_check": "belezalashandbrow.com, belezalash.com, belezalashbrow.com and belezalashandbrowlounge.com all fail to resolve (curl connect failure on all 4). Booksy sameAs is empty (no website_candidates). No external site found in any search result.",
+ "instagram": {
+  "found": true,
+  "handle": "@belezalashandbrow",
+  "url": "https://www.instagram.com/belezalashandbrow/",
+  "followers_approx": 1517,
+  "followers_source": "Provided by discovery; not independently re-verifiable here because Instagram's web_profile_info API returned HTTP 400 (blocked) on every attempt (desktop UA, mobile UA, with/without x-ig-app-id) and the public profile/post HTML pages return an empty JS shell with no embedded JSON in this environment. Not displayed as a hard stat on the site; used only as sameAs context.",
+  "note": "IG media rescue was attempted per pipeline rule (profile page, individual post page) but blocked both times; photo rescue was instead sourced from Booksy's resource_photos/review_photos endpoints and from Google Maps business photos (see images below)."
+ },
+ "booking": "https://booksy.com/en-us/1014600_beleza-lash-and-brow-lounge_brows-lashes_15945_boca-raton",
+ "booking_source_detail": "python3 scripts/booksy_dossier.py run against the Booksy business page (id 1014600). JSON-LD makesOffer block gave the full 18-service menu with prices and durations; DOM gave 10 verbatim reviews.",
+ "language": "en",
+ "language_source": "All Booksy reviews and business copy in English; page defaults to English (light-v2 template default, unchanged).",
+ "rating": 4.9,
+ "review_count": 63,
+ "rating_source": "Booksy business page (booksy.com/en-us/1014600_beleza-lash-and-brow-lounge_brows-lashes_15945_boca-raton), JSON-LD aggregateRating ratingValue rounds to 4.9, reviewCount 63. Matches the figure already confirmed by discovery (Booksy: 4.9 stars, 63 reviews).",
+ "hours": {
+  "tuesday_to_friday": "10:00 AM - 7:00 PM",
+  "monday_saturday_sunday": "closed",
+  "source": "Booksy JSON-LD openingHoursSpecification (dayOfWeek Tue-Fri, opens 10:00, closes 19:00). A third-party directory (LashLookup) showed a slightly different 9 AM open time; the first-party Booksy booking data was trusted over the aggregator."
+ },
+ "email": "belezalashandbrow@gmail.com",
+ "email_note": "Provided by discovery as confirmed. Re-verification attempted: not present in the static Booksy HTML (grepped for 'gmail'/'mailto', zero hits) and Instagram bio could not be checked (API blocked, see instagram note above). Multiple independent web search results tied specifically to this business consistently surface this exact address with no conflicting email found anywhere. Carried forward as confirmed per discovery brief; used only in the outreach draft, not displayed on the live demo site (the site's contact section, like the template pattern, shows address + Booksy + Instagram only, matching the pattern of not asserting unverified details on the public-facing page).",
+ "services_source": "Full 18-service menu extracted verbatim (name, price, duration) from the Booksy JSON-LD makesOffer block, business id 1014600, fetched 2026-07-20. All 18 appear on the site: 4 featured in cards, remaining 14 grouped by category in the full-menu glass grid (no accordion).",
+ "services": [
+  { "name": "LIFT & TINT + BROW LAMINATION COMBO", "price": 145, "duration": "1h 45min", "featured": true },
+  { "name": "Full set - extensions", "price": 160, "duration": "1h 30min", "featured": true },
+  { "name": "Lash removal + Full set extensions", "price": 170, "duration": "2h" },
+  { "name": "Eyebrow wax", "price": 20, "duration": "20min" },
+  { "name": "1 Hour Fill", "price": 80, "duration": "1h" },
+  { "name": "Touch up/Mini Fill", "price": 45, "duration": "30min" },
+  { "name": "Brow Lamination", "price": 80, "duration": "1h", "featured": true },
+  { "name": "Brow wax & tint", "price": 35, "duration": "30min" },
+  { "name": "Lift & tint", "price": 100, "duration": "1h" },
+  { "name": "Lash lift", "price": 90, "duration": "45min", "featured": true },
+  { "name": "Brow Tint", "price": 15, "duration": "20min" },
+  { "name": "New Client - Full Set Extensions", "price": 128, "duration": "1h 30min" },
+  { "name": "New Client - Lift & Tint", "price": 80, "duration": "1h" },
+  { "name": "New Client - Brow Lamination", "price": 60, "duration": "45min" },
+  { "name": "New Client - 1 Hour Fill", "price": 64, "duration": "1h" },
+  { "name": "Consultation", "price": 1, "duration": "15min" },
+  { "name": "Lash removal", "price": 20, "duration": "20min" },
+  { "name": "Partial removal + 1 hour fill", "price": 100, "duration": "1h" }
+ ],
+ "reviews_used": [
+  { "name": "Samantha M.", "quote": "Liv was amazing! I did a lash lift and tint and my eyelashes never looked better! Highly recommend", "source": "Booksy" },
+  { "name": "Ariadna", "quote": "Beleeza lash and brow lounge is top-notch! Livia did an amazing job on my brows. I highly recommend!!", "source": "Booksy (verbatim, includes the reviewer's own typo 'Beleeza', kept as-is)" },
+  { "name": "Maria C.", "quote": "She is amazing!!! My eyelashes and brows look soooo good. I’ll definitely be coming back!", "source": "Booksy" }
+ ],
+ "reviews_not_used": [
+  "Ginette, Rachel, McKenna and 2 unattributed quotes were left out only to keep the section to 3 cards matching the template pattern; all are consistent in tone/rating with the ones used."
+ ],
+ "brand_vibe": "Warm, minimal, quiet-luxury: cream/beige textured logo card with cursive 'beleza' wordmark, a warm neutral cream-and-white lounge interior (cream armchairs, olive plant, candle), and an elegant black-and-white owner portrait. No pink/floral branding despite the lash-studio niche. Used the light-v2 skeleton (same niche structurally: lash studio) but replaced its plum-pink palette with a warm cream/espresso/mocha-gold palette matching DESIGN.md's 'amani' tokens (bg #f5f0e8 cream, ink #32281f espresso, accent-deep #8a6f4d mocha/gold-olive, accent-mid #a8907a taupe, accent-soft #ece1d0), with near-black espresso gradients (#241c12 to #18120b) for the dark CTA/footer bands instead of the exemplar's wine/plum. Full old-to-new hex/rgba palette mapping applied via global replace in the build script; merktop-badge gold (#D4A84B family) was left untouched.",
+ "images": {
+  "curation_note": "Booksy's own gallery for this business (11 photos initially downloaded) was almost entirely unusable per the visual curation rule: 4 were iPhone screenshots of a client dispute text conversation (rejected: captions/UI chrome + negative content), 1 was a generic purple Booksy staff-avatar placeholder, 1 was a personal bikini/pool photo (not treatment-related), 1 was a personal fashion portrait on stairs (not treatment-related, not usable as gallery), and 1 was a 100x100px thumbnail (too low-res). Per the pipeline's IG-rescue rule (fewer than 5 usable photos), Instagram rescue was attempted (profile page + individual post page) but blocked (HTTP 400 / empty shell). Rescue instead came from Booksy's own resource_photos/review_photos CDN paths (found by re-scanning the raw Booksy HTML for cloudfront URLs beyond the biz_photo pattern) and from Google Maps business photos surfaced via a third-party directory (LashLookup) that exposes lh3.googleusercontent.com URLs for this exact listing. Of those additional finds: 1 close-up (mascara wand mid-application, POV process shot) was rejected as not a finished result; 1 was a broken/placeholder Google image; 1 had a visible photographer watermark ('Julia Sylvester', also not verifiably this salon's own client); 1 showed a surgical mask covering the lower face (rejected per the established precedent). Net result: only 3 genuinely usable real photos were found (1 lounge interior, 2 finished lash+brow close-ups) plus 1 usable owner portrait and 1 logo card. Per PIPELINE.md's explicit rule ('si quedan menos de 5 buenas, mejor menos secciones con buenas fotos que rellenar con malas'), the gallery section was shrunk from the template's default 6 tiles to 1 real photo tile + 1 'follow on Instagram for more' CTA card, and one of the two close-ups (hero-1.jpg) is shown twice at different crops (portrait 3:4 in the hero, wide 4:5 in the gallery) rather than padding with a 4th weak or duplicate-feeling image.",
+  "used": [
+   { "file": "assets/raw/hero-1.jpg", "source": "Google Maps business photo (via LashLookup listing, lh3.googleusercontent.com), cropped to remove an iPhone screenshot status bar from the top ~90px", "role": "hero + reused (different crop) as the single gallery photo tile", "check": "eyes open, no mask, no watermark, no irritation, good light" },
+   { "file": "assets/raw/about-1.jpg", "source": "Booksy resource_photos CDN path", "role": "experience section, interior ambience (cream lounge seating, plant, candle)" },
+   { "file": "assets/raw/about-2.jpg", "source": "Google Maps business photo (via LashLookup listing)", "role": "experience section, second close-up result" },
+   { "file": "assets/raw/avatar-livia.jpg", "source": "Booksy resource_photos CDN path (black-and-white portrait)", "role": "small circular avatar only, next to 'Livia Rosa · Lash & brow artist' in the experience section, per the rule that owner photos are never a gallery tile" },
+   { "file": "assets/raw/logo.jpg", "source": "Booksy logo CDN path", "role": "nav + footer monogram, favicon" }
+  ],
+  "rejected": [
+   "4 Booksy review-photos: iPhone screenshots of a client/Liv text-message dispute (caption/UI chrome over image, and negative content)",
+   "1 Booksy staff avatar: generic purple placeholder with a single letter",
+   "1 Booksy photo: personal bikini/pool photo, not treatment related",
+   "1 Booksy photo: personal fashion portrait on stairs, not treatment related",
+   "1 Booksy review-photo: 100x100px, too low resolution to use",
+   "1 Google Maps photo: mascara wand mid-application (process shot, not a finished result)",
+   "1 Google Maps photo: broken/placeholder image (failed to decode as a real photo)",
+   "1 Google Maps photo: visible 'Julia Sylvester' photographer watermark, also not verifiably this salon's own client work",
+   "1 Google Maps photo: surgical mask covering the lower face"
+  ]
+ },
+ "research_note": "Research completed 2026-07-20. Primary source: python3 scripts/booksy_dossier.py against the Booksy business page (id 1014600), which returned JSON-LD-confirmed name, address, rating (4.9), review count (63), the full 18-service menu with prices/durations, and 10 verbatim reviews, matching every figure already confirmed by discovery. Own-website check: 4 domain variants tried, none resolve. Phone: could not be confirmed in a business-published source (Booksy field is null, IG bio blocked, no dedicated Facebook page); the discovery-flagged (732) 664-3160 is corroborated only by a third-party directory and by customer-uploaded review-photo screenshots, neither of which counts as a primary business source per the hard rule, so it is omitted (null) everywhere on the site and in JSON-LD. Email: carried forward from discovery as already confirmed; could not be independently re-located in the static Booksy HTML or IG bio (both attempts blocked/inconclusive) but is consistently and exclusively tied to this business across every search result, with no conflicting address found; used only in the outreach draft, not surfaced on the public demo page."
+}
