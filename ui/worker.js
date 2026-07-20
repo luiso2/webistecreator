@@ -4,6 +4,10 @@ const json = (data, status = 200) =>
     headers: { 'content-type': 'application/json; charset=utf-8' },
   });
 
+// Quita angle brackets y caracteres de control de texto que entra por endpoints publicos,
+// como defensa en profundidad contra inyeccion (el front igual escapa todo al renderizar).
+const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
+
 // SHA-256 del access key (el key real vive solo en el .env local del usuario)
 const KEY_HASH = 'b1e35fb9b55f29a4272b16173553f5f92b19b0b824ddb3d9789f28332bd4bf06';
 
@@ -62,12 +66,12 @@ export default {
       if (!body.id) return json({ error: 'id requerido' }, 400);
       const result = {};
       if (typeof body.slug === 'string' && /^[a-z0-9-]{1,40}$/.test(body.slug)) result.slug = body.slug;
-      if (typeof body.name === 'string' && body.name.length <= 120) result.name = body.name;
+      if (typeof body.name === 'string' && body.name.length <= 120) result.name = stripUnsafe(body.name);
       if (typeof body.url_demo === 'string' && DEMO_URL_RE.test(body.url_demo)) result.url_demo = body.url_demo;
-      if (typeof body.dm === 'string' && body.dm.length <= 500) result.dm = body.dm;
+      if (typeof body.dm === 'string' && body.dm.length <= 500) result.dm = stripUnsafe(body.dm);
       if (body.failed === true) {
         result.failed = true;
-        if (typeof body.motivo === 'string') result.motivo = body.motivo.slice(0, 240);
+        if (typeof body.motivo === 'string') result.motivo = stripUnsafe(body.motivo.slice(0, 240));
       }
       let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
       const exists = queue.some(q => q.id === body.id && (q.status === 'pending' || q.status === 'processing'));
@@ -87,7 +91,7 @@ export default {
       const slug = (body.slug || '').toString();
       if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
       if (typeof body.url_demo !== 'string' || !DEMO_URL_RE.test(body.url_demo)) return json({ error: 'url_demo invalida' }, 400);
-      const S = (v, max) => (typeof v === 'string' ? v.slice(0, max) : undefined);
+      const S = (v, max) => (typeof v === 'string' ? stripUnsafe(v.slice(0, max)) : undefined);
       const limpio = {
         slug,
         name: S(body.name, 120) || slug,

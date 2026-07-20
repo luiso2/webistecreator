@@ -270,12 +270,18 @@
 
     function badgeOutreach(b) {
       if (b.outreach === 'sent') return '<span class="badge b-sent">Email enviado</span>';
-      if (b.outreach === 'pending_manual') return '<span class="badge b-manual">Contacto manual</span>';
+      if (b.outreach === 'pending_manual' || b.outreach === 'pending_approval') return '<span class="badge b-manual">Contacto manual</span>';
       if (b.outreach === 'pending_deploy') return '<span class="badge b-pending">Por deployar</span>';
       return '<span class="badge b-site">' + (b.outreach || 'nuevo') + '</span>';
     }
 
-    function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+    // Escapa TODO lo insertado en HTML, incluidos " y ' (para contextos de atributo como
+    // onclick="...'${...}'..." o title="..."). Sin escapar comillas habria XSS almacenado
+    // via campos que entran por endpoints publicos (ig, motivo).
+    const ESC_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+    function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ESC_MAP[c]); }
+    // Handle de IG seguro para URL (ig.me) y para incrustar en JS: solo caracteres validos.
+    function igSafe(s) { return String(s || '').replace(/[^A-Za-z0-9_.]/g, ''); }
 
     // Mensaje de outreach de un negocio: el guardado, o uno de respaldo que SIEMPRE
     // incluye el link del demo (para que WhatsApp/DM abran con el website incluido).
@@ -287,12 +293,24 @@
         : `Hola! Soy Michael, de Merktop (Miami). Le construi un website de muestra a ${b.name || 'su negocio'} con sus fotos y datos reales: ${b.url_demo} Si le gusta, lo dejamos en su dominio; si no, lo retiro sin problema.`;
     }
 
+    // Numero de WhatsApp desde el phone scrapeado. Solo devuelve un numero si es plausible:
+    // 10 digitos US (se prefija +1) u 11 digitos que empiezan en 1. Otros formatos (basura,
+    // multiples numeros, nacionales sin country code) -> null, para no abrir un chat a un
+    // numero equivocado. E.164 explicito con + de otro pais se respeta.
+    function waNumber(phone) {
+      const raw = String(phone || '').trim();
+      const plus = raw.startsWith('+');
+      const digits = raw.replace(/[^0-9]/g, '');
+      if (plus && digits.length >= 11 && digits.length <= 15) return digits; // E.164 con country code
+      if (digits.length === 10) return '1' + digits;                          // US sin country code
+      if (digits.length === 11 && digits[0] === '1') return digits;           // US con 1
+      return '';
+    }
     // Link de WhatsApp que abre el chat del negocio (movil = app, laptop = WhatsApp Web/Desktop)
-    // con el mensaje + link del website ya escritos. Numero a formato US: 10 digitos -> +1.
+    // con el mensaje + link del website ya escritos.
     function waHref(b) {
-      const digits = String(b.phone || '').replace(/[^0-9]/g, '');
-      if (!digits) return '';
-      const num = digits.length === 10 ? '1' + digits : digits;
+      const num = waNumber(b.phone);
+      if (!num) return '';
       const msg = dmText(b);
       return 'https://wa.me/' + num + (msg ? '?text=' + encodeURIComponent(msg) : '');
     }
@@ -319,7 +337,7 @@
     function render(state) {
       const reg = state.registry || [], queue = state.queue || [];
       const clientes = reg.filter(b => b.crm_status === 'client').length;
-      const porContactar = reg.filter(b => !b.crm_status && (b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy' || b.outreach === 'sent')).length;
+      const porContactar = reg.filter(b => !b.crm_status && b.outreach !== 'sent' && (b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy')).length;
       const enCola = queue.filter(q => q.status === 'pending' || q.status === 'processing').length;
       $('stats').innerHTML = [
         ['Construidos · meta 500', reg.length], ['Clientes cerrados', clientes], ['Por contactar', porContactar], ['En cola de forja', enCola]
@@ -341,12 +359,12 @@
             ${b.has_own_site ? '<span class="badge b-site">Ya tenia website</span>' : '<span class="badge b-site">Sin website propio</span>'}
           </div>
           <div class="actions">
-            ${b.url_demo ? `<a class="link-btn primary" href="${esc(b.url_demo)}" target="_blank" rel="noopener">Ver demo</a>` : '<span class="link-btn" style="opacity:0.5">Demo pendiente</span>'}
+            ${b.url_demo && String(b.url_demo).startsWith('https://') ? `<a class="link-btn primary" href="${esc(b.url_demo)}" target="_blank" rel="noopener">Ver demo</a>` : '<span class="link-btn" style="opacity:0.5">Demo pendiente</span>'}
             ${waHref(b) ? `<a class="link-btn wa" href="${waHref(b)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
           </div>
           <div class="actions">
             ${b.email && b.url_demo && b.outreach !== 'sent' ? `<button class="link-btn send-email" id="send-${esc(b.slug)}" onclick="sendEmail('${esc(b.slug)}', this)">Email (${(b.language || 'es').toUpperCase()})</button>` : ''}
-            ${b.ig ? `<button class="link-btn" onclick="sendDM('${esc((b.ig || '').replace('@', ''))}', ${i})">DM ✉</button>` : ''}
+            ${b.ig ? `<button class="link-btn" onclick="sendDM('${igSafe(b.ig)}', ${i})">DM ✉</button>` : ''}
           </div>
           <div class="crm-row">
             ${b.crm_status === 'client'
@@ -410,7 +428,7 @@
       const m = $('msg');
       m.className = 'msg ok';
       m.textContent = msg ? 'Mensaje copiado al portapapeles: pegalo en el DM que se abrio.' : 'Sin mensaje guardado para este negocio.';
-      window.open('https://ig.me/m/' + handle, '_blank', 'noopener');
+      window.open('https://ig.me/m/' + igSafe(handle), '_blank', 'noopener');
     };
 
     // Boton de envio de email: DOS pasos (armar + confirmar) para que ningun click
@@ -448,7 +466,7 @@
       const m = $('msg');
       m.className = 'msg ok';
       m.textContent = msg ? 'Mensaje copiado: pegalo en el DM que se abrio.' : 'Sin mensaje guardado.';
-      window.open('https://ig.me/m/' + handle, '_blank', 'noopener');
+      window.open('https://ig.me/m/' + igSafe(handle), '_blank', 'noopener');
     };
 
     async function load() {

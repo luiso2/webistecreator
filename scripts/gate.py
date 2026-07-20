@@ -60,14 +60,14 @@ def main():
             except Exception:
                 fails.append(f'asset no decodifica: {ruta}')
 
-    m = re.search(r'<script type="application/ld\+json">(.*?)</script>', h, flags=re.S)
-    if not m:
+    blocks = re.findall(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', h, flags=re.S)
+    if not blocks:
         fails.append('falta JSON-LD')
-    else:
+    for k, blk in enumerate(blocks):
         try:
-            json.loads(m.group(1))
+            json.loads(blk)
         except Exception as e:
-            fails.append(f'JSON-LD invalido: {e}')
+            fails.append(f'JSON-LD invalido (bloque {k + 1}): {e}')
 
     for mk in MARKERS:
         if mk not in h:
