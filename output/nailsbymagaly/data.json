@@ -1,0 +1,120 @@
+{
+  "slug": "nailsbymagaly",
+  "name": "Nails by Magaly",
+  "niche": "nail salon boutique",
+  "city": "Pembroke Pines, FL",
+  "address": {
+    "streetAddress": "10115 SW 13th St",
+    "addressLocality": "Pembroke Pines",
+    "addressRegion": "FL",
+    "postalCode": "33025",
+    "addressCountry": "US",
+    "note": "Booksy's JSON-LD lists addressLocality as 'Hollywood, FL' (booking-area label / listing category), but the streetAddress and postal code (33025) place it in Pembroke Pines, matching the original lead. Geo: 25.9959782, -80.2811219."
+  },
+  "phone": null,
+  "email": null,
+  "email_search_notes": "Deep search performed per PIPELINE.md fase 1 punto 7: Booksy JSON-LD/venue payload (no email/phone field populated), Instagram web_profile_info endpoint (returns HTTP 400, confirmed broken per FORGE-BRIEF), IG bio via web fetch (blocked, HTTP 429), Facebook page facebook.com/p/Nails-by-Magaly-100079881833363 About section (login-walled, inaccessible), general web search for phone/email (no results). No public email or phone number found. This appears to be a solo, appointment-only home/private studio (limited hours, no Google Business listing found, no published phone).",
+  "instagram": {
+    "handle": "@nails_bymagaly",
+    "url": "https://www.instagram.com/nails_bymagaly/",
+    "display_name_seen_in_search": "Magaly Castrillon"
+  },
+  "booking": {
+    "platform": "Booksy",
+    "url": "https://booksy.com/en-us/762410_nails-by-magaly_nail-salon_15645_hollywood",
+    "booksy_id": "762410"
+  },
+  "other_platforms_checked": {
+    "square_site": "https://nails-by-magaly.square.site/ (exists, appointments page, no menu/contact data extracted beyond booking widget; Booksy used as primary source per its richer JSON-LD dossier)",
+    "facebook": "facebook.com/p/Nails-by-Magaly-100079881833363/ found via search (likely real page, login-walled, could not extract). Note: facebook.com/nailsbymagaly redirects to an UNRELATED business ('Nail Design By Magaly', Pecos TX) - not this business, discarded."
+  },
+  "has_own_site": false,
+  "has_own_site_check": "Tried nailsbymagaly.com, nailsbymagalynails.com, nails-by-magaly.com via curl: all failed DNS resolution (no domain registered). Web search for '\"Nails by Magaly\" Pembroke Pines website nailsbymagaly.com' returned no owned-domain result, only Booksy, Instagram, Facebook and the nails-by-magaly.square.site booking subdomain. Square.site subdomain does NOT count as an own website per pipeline rules. Booksy website_candidates field was empty. Conclusion: no owned website, has_own_site = false.",
+  "rating": 5.0,
+  "review_count": 43,
+  "rating_source": "Booksy listing (booksy_dossier.py extraction from JSON-LD aggregateRating). Independent Google listing not found in web search (business likely has no standalone Google Business Profile, consistent with a solo appointment-only studio); rating NOT independently cross-verified against Google, Booksy is the sole confirmed source.",
+  "language": "es",
+  "language_notes": "Determined by booksy_dossier.py heuristic over the review text (mix of Spanish and English reviews, business owner communicates in Spanish per review content e.g. Julietta L.'s review). Site built with Spanish as default language, English available via toggle.",
+  "hours": [
+    { "days": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "08:00", "closes": "14:00" }
+  ],
+  "staff": [
+    { "name": "Magaly", "role": "Nail artist / owner" }
+  ],
+  "brand_vibe": "Feminine rose-gold blush boutique. Real branding evidence: physical branded photo mat/coaster used in nearly every promotional photo reads 'Nails by Magaly' in rose-gold metallic script over white, with 'TRAZO' beneath it, and a partial slogan fragment visible across multiple photos ('...NCIA EN...' + 'TRAZO') consistent with 'Confianza en cada trazo' (used as the site's tagline, verified by cross-referencing the same fragment across bk-7/bk-8/bk-10 raw photos). Palette chosen: deep rose/berry accent-deep #b5486a + rose-gold copper accent-mid #cf8f68 on a warm blush-cream base #fdf3f0, echoing the real logo's rose-gold color and the salon's frequent hot-pink/magenta gel work.",
+  "services": [
+    { "name": "Uña rota", "price": 5, "duration": "15min" },
+    { "name": "Extra (diseño sencillo)", "price": 10, "duration": "15min" },
+    { "name": "Extra (diseño elaborado)", "price": 15, "duration": "20min" },
+    { "name": "Francés", "price": 10, "duration": "15min" },
+    { "name": "Manicure regular", "price": 30, "duration": "1h" },
+    { "name": "Manicure gel", "price": 40, "duration": "1h 45min" },
+    { "name": "Poly gel full set", "price": 80, "duration": "2h 30min" },
+    { "name": "Rubber base gel", "price": 50, "duration": "2h" },
+    { "name": "Refill acrilyc", "price": 70, "duration": "2h" },
+    { "name": "Full set acrílico", "price": 80, "duration": "2h 30min" },
+    { "name": "Builder", "price": 65, "duration": "2h" },
+    { "name": "Apres", "price": 70, "duration": "2h" },
+    { "name": "Pedicure", "price": 40, "duration": "1h 45min" },
+    { "name": "Pedicure gel", "price": 50, "duration": "2h" }
+  ],
+  "services_source": "output/nailsbymagaly's Booksy JSON-LD via scripts/booksy_dossier.py, all 14 services listed on the site (grouped into 4 featured cards: Manicure, Extensiones/Full Set Acrílico [featured], Pedicure, Diseños & Extras), no service omitted or invented.",
+  "reviews": [
+    {
+      "author": "Julietta L.",
+      "language": "es",
+      "body": "Ustedes no la pueden comparar con ninguna, porque ella es la mejor, pone todo su empeño para dejarte preciosa, cuida y consiente tus uñas, te escucha y te hace reír. Soy una clienta desde que ella empezó y he visto como ha crecido, como aprende todos los días para hacernos ver espectacular. Si van donde ella, difícilmente volverán a otros lugares, porque te casas con Nails by Magaly!!!!",
+      "used_on_site": true
+    },
+    {
+      "author": "Shama D.",
+      "language": "en",
+      "body": "Super affordable. And absolutely more than worth it. She takes her time and makes you look and feel good. Magaly is sweet and attentive. Very professional and caring about her clients. Pats close attention to detail and my nails always last so long! I work a lot with my hands.",
+      "used_on_site": true
+    },
+    {
+      "author": "Roset",
+      "language": "en",
+      "body": "Magali is simply the best!!!! Love her job and love my nails.",
+      "used_on_site": true
+    },
+    {
+      "author": "Ana M.",
+      "language": "en",
+      "body": "She is the best!",
+      "used_on_site": false
+    },
+    {
+      "author": "Ivania",
+      "language": "en",
+      "body": "Love my nails! Exactly what I asked for.",
+      "used_on_site": false
+    },
+    {
+      "author": null,
+      "language": "es",
+      "body": "Me encanto el trabajo de mis uñas la atención y me sentí como en casa mis felicitaciones excelente trabajo quede muy satisfecha Graciassss",
+      "used_on_site": false,
+      "note": "no author name captured by Booksy, not used on site"
+    }
+  ],
+  "images": [
+    { "file": "assets/raw/bk-11.jpg", "role": "hero", "source": "Booksy gallery (dossier download)", "description": "White/pink ombre manicure with chrome accent nail, editorial styling with tulle and Chanel bag backdrop" },
+    { "file": "assets/raw/bk-5.jpg", "role": "experiencia (about photo 1)", "source": "Booksy gallery", "description": "Deep red glossy manicure with nude heart-accent nail" },
+    { "file": "assets/raw/bk-9.jpg", "role": "experiencia (about photo 2)", "source": "Booksy gallery", "description": "Red french manicure with heart plaid nail art, on branded 'Nails by Magaly' coaster" },
+    { "file": "assets/raw/bk-1.jpg", "role": "galeria (wide lead tile)", "source": "Booksy gallery", "description": "Magenta glossy manicure, both hands, on branded coaster" },
+    { "file": "assets/raw/bk-3.jpg", "role": "galeria", "source": "Booksy gallery", "description": "Pink and chrome/foil accent nail design" },
+    { "file": "assets/raw/bk-7.jpg", "role": "galeria", "source": "Booksy gallery", "description": "French manicure with hand-painted floral design" },
+    { "file": "assets/raw/bk-4.jpg", "role": "galeria", "source": "Booksy gallery", "description": "Red manicure with candy-cane seasonal nail art accent" },
+    { "file": "assets/raw/bk-6.jpg", "role": "galeria", "source": "Booksy gallery", "description": "Pink french manicure with heart accent" },
+    { "file": "assets/raw/bk-10.jpg", "role": "galeria", "source": "Booksy gallery", "description": "Pastel blue and peach manicure with hand-painted daisies" },
+    { "file": "assets/raw/logo.jpg", "role": "nav/footer avatar", "source": "Cropped from bk-9.jpg (real branded coaster/logo prop, no faces)", "description": "Close crop of the salon's real rose-gold 'Nails by Magaly' logo mark" }
+  ],
+  "images_excluded": {
+    "low_resolution_unusable": ["bk-2.jpg (150x150)", "bk-12.jpg (100x100)", "bk-13.jpg (100x100)", "bk-14.jpg (100x100)", "bk-15.jpg (100x100)", "bk-16.jpg (100x100)"],
+    "quality_curation_excluded": ["bk-8.jpg (kept on disk as backup, good quality but unused: orange daisy design, redundant with bk-10's pastel daisy theme)"],
+    "note": "bk-15.jpg (a pedicure/toes photo) was also low-resolution (100x100) and additionally showed an inconsistent/partial pedicure (only one toe painted), which would have failed the visual curation gate (half-finished look) even at full resolution; excluded on both grounds."
+  },
+  "outreach_angle": "has_own_site is false, so the outreach angle is 'les construi un sitio de muestra' (built them a sample site) per PIPELINE.md fase 5.",
+  "notes": "Solo-artist, appointment-only nail studio, likely home-based or a small private suite (limited hours Mon-Thu 8am-2pm, no phone published, no standalone Google Business listing found). All data sourced from Booksy JSON-LD via scripts/booksy_dossier.py plus targeted web searches; nothing invented."
+}
