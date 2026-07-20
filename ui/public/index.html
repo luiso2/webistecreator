@@ -147,6 +147,8 @@
     .b-site { background: rgba(255,255,255,0.05); color: var(--ink-60); border: 1px solid var(--border); }
     .b-client { background: rgba(184,240,77,0.18); color: var(--lime); border: 1px solid rgba(184,240,77,0.5); }
     .b-declined { background: rgba(255,255,255,0.04); color: var(--ink-40); border: 1px solid var(--border); }
+    .badge.demo-down { background: rgba(232,122,106,0.14); color: var(--red); border: 1px solid rgba(232,122,106,0.4); }
+    .biz.is-down { border-color: rgba(232,122,106,0.3); }
     .biz.is-client { border-color: rgba(184,240,77,0.4); box-shadow: 0 0 0 1px rgba(184,240,77,0.15), 0 14px 40px rgba(0,0,0,0.4); }
     .biz.is-declined { opacity: 0.55; }
     .biz .actions { display: flex; gap: 8px; margin-top: auto; }
@@ -348,7 +350,7 @@
       const orden = b => (b.crm_status === 'declined' ? 2 : (b.crm_status === 'client' ? 1 : 0));
       const lista = reg.slice().reverse().sort((a, b) => orden(a) - orden(b));
       $('grid').innerHTML = lista.map((b, i) => `
-        <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" style="animation-delay:${0.15 + i * 0.04}s">
+        <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" id="biz-${esc(b.slug)}" style="animation-delay:${0.15 + i * 0.04}s">
           ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'" /></a>` : ''}
           <div class="top">
             <div><h4>${esc(b.name)}</h4><p class="city">${esc(b.city || '')} · ${esc(b.fecha || '')}</p></div>
@@ -375,6 +377,7 @@
           </div>
         </div>`).join('');
       window.__reg = lista;
+      verifyDemos(lista);
 
       const STAGE_LABEL = { research: 'Investigando el negocio', build: 'Construyendo el website', verify: 'Verificando calidad', commit: 'Publicando' };
       const STAGE_PCT = { research: 30, build: 65, verify: 85, commit: 95 };
@@ -468,6 +471,33 @@
       m.textContent = msg ? 'Mensaje copiado: pegalo en el DM que se abrio.' : 'Sin mensaje guardado.';
       window.open('https://ig.me/m/' + igSafe(handle), '_blank', 'noopener');
     };
+
+    // Chequeo client-side (navegador = fetch fiable, a diferencia del Worker-a-Worker):
+    // verifica cada demo y marca el que este caido con un badge, para que ninguna tarjeta
+    // fantasma (demo 404) pase desapercibida. Concurrencia limitada; cachea resultados.
+    const demoChecked = {};
+    async function verifyDemos(lista) {
+      const pend = lista.filter(b => b.url_demo && demoChecked[b.url_demo] === undefined);
+      let idx = 0;
+      const worker = async () => {
+        while (idx < pend.length) {
+          const b = pend[idx++];
+          let ok = true;
+          try { const r = await fetch(b.url_demo, { method: 'HEAD', cache: 'no-store' }); ok = r.ok; }
+          catch { ok = false; }
+          demoChecked[b.url_demo] = ok;
+          if (!ok) {
+            const card = document.getElementById('biz-' + b.slug);
+            if (card && !card.querySelector('.demo-down')) {
+              card.classList.add('is-down');
+              const badges = card.querySelector('.badges');
+              if (badges) badges.insertAdjacentHTML('afterbegin', '<span class="badge demo-down">⚠ Demo caido</span>');
+            }
+          }
+        }
+      };
+      await Promise.all(Array.from({ length: 4 }, worker));
+    }
 
     async function load() {
       try {

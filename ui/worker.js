@@ -91,15 +91,10 @@ export default {
       const slug = (body.slug || '').toString();
       if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
       if (typeof body.url_demo !== 'string' || !DEMO_URL_RE.test(body.url_demo)) return json({ error: 'url_demo invalida' }, 400);
-      // El demo DEBE estar live antes de registrar la tarjeta: sin esto, una forja podia
-      // crear tarjetas fantasma que dan 404 (incidente 2026-07-20). La forja ya espera el
-      // 200 antes de hacer upsert, asi que esto solo rechaza registros de demos inexistentes.
-      try {
-        const probe = await fetch(body.url_demo, { method: 'GET', cf: { cacheTtl: 0 } });
-        if (!probe.ok) return json({ error: `demo no live (HTTP ${probe.status}); no se registra la tarjeta` }, 422);
-      } catch (e) {
-        return json({ error: 'no se pudo verificar el demo; no se registra' }, 422);
-      }
+      // Nota: no se verifica el demo con fetch aqui. Un Worker no puede hacer fetch fiable a
+      // otro Worker de la MISMA cuenta workers.dev (da 404 aunque el demo este live), y el repo
+      // es privado (raw github 404 sin token). La prevencion de tarjetas fantasma vive en la
+      // forja (verifica 200 antes de upsert, ver FORGE-BRIEF) y en el chequeo client-side del panel.
       const S = (v, max) => (typeof v === 'string' ? stripUnsafe(v.slice(0, max)) : undefined);
       const limpio = {
         slug,
