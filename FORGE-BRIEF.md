@@ -10,11 +10,18 @@ Un solo comando extrae TODO a `output/<slug>/data.json`: nombre, tipo schema, di
 numero de reseñas, menu COMPLETO con precios y duraciones, horarios, staff, IG, telefono si esta
 publicado, hasta 12 reseñas VERBATIM con autor, idioma (es/en) y candidatos a website propio.
 Ademas descarga las fotos validadas y genera `output/<slug>/_sheet.jpg` para la curacion visual.
-Si el item no trae URL de Booksy: UNA busqueda `site:booksy.com <nombre> <ciudad>` para encontrarla
-(si el negocio usa GlossGenius/Square/Fresha en vez de Booksy, ahi si aplica research manual con
-WebFetch de su booking; seguir SIEMPRE el external_url de la bio de IG).
+Dossiers por plataforma (todos escriben `data.json` + fotos + `_sheet.jpg` en segundos):
+- Booksy: `scripts/booksy_dossier.py <url> <slug>` (menu+precios+duraciones+staff+IG+telefono+RESEÑAS verbatim+rating). La mejor fuente.
+- GlossGenius (`<slug>.glossgenius.com`): `scripts/glossgenius_dossier.py <url> <slug>` (menu+fotos+TELEFONO+EMAIL+IG+about+flag has_own_site). NO trae reseñas (estan en Google) -> usar variante SIN-testimonios (ver abajo). Fotos suelen ser STOCK: curar fuerte.
+- Fresha (`fresha.com/a/<slug>`): `scripts/fresha_dossier.py <url> <slug>` (rating+reviewsCount+telefono+servicios+RESEÑAS si las hay+galeria). Galeria chica (3-6 fotos): si <5 reales, complementar con IG o failed.
+- Square (`<slug>.square.site`), Setmore, Acuity (`<slug>.as.me`), Vagaro, JaneApp: NO tienen dossier (Square bloquea curl). Research manual: seguir el external_url de la bio de IG y sacar fotos+menu del IG real.
+Si el item no trae URL: UNA busqueda para encontrar su pagina de booking.
 PROHIBIDO gastar rondas de WebFetch/subagentes en menu, precios, reseñas o fotos cuando el dossier
 ya los trae: construir DIRECTO desde data.json.
+
+**Beauty Square / My Suite (salon suites Miami)**: `data/beautysquare_tenants.txt` lista ~43 tenants (negocios independientes, casi todos SIN website propio) con su URL de plataforma. Al procesar uno: usar el dossier de su plataforma; si es Square/Vagaro/Acuity/Setmore/JaneApp, sacar fotos reales del IG del negocio (la plataforma no da fotos buenas).
+
+**Variante SIN-testimonios** (para GlossGenius y cualquier negocio sin reseñas verificables): en vez de la seccion OPINIONES con rating/estrellas/quotes, poner una seccion "Por que <negocio>" con 3 cards de especialidades reales (derivadas del about/servicios), NUNCA inventar reseñas ni rating. Quitar del hero/strip/experiencia todo `data-count` de rating y `★`. Sitio de referencia ya construido: `output/royaltrends/index.html` (GlossGenius, locs) y `output/olguitashairstudio/index.html` (GlossGenius, color). Derivar de esos, no de pureartistry, cuando no haya reseñas.
 
 **PASO 2 (en paralelo con la curacion, lo unico que el script no resuelve)**:
 - (a) Website propio: probar con curl los `website_candidates` del dossier + 1-2 busquedas
