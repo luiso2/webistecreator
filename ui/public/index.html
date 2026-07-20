@@ -351,7 +351,7 @@
       const lista = reg.slice().reverse().sort((a, b) => orden(a) - orden(b));
       $('grid').innerHTML = lista.map((b, i) => `
         <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" id="biz-${esc(b.slug)}" style="animation-delay:${0.15 + i * 0.04}s">
-          ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'" /></a>` : ''}
+          ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'; demoDown('${esc(b.slug)}')" /></a>` : ''}
           <div class="top">
             <div><h4>${esc(b.name)}</h4><p class="city">${esc(b.city || '')} · ${esc(b.fecha || '')}</p></div>
           </div>
@@ -377,7 +377,6 @@
           </div>
         </div>`).join('');
       window.__reg = lista;
-      verifyDemos(lista);
 
       const STAGE_LABEL = { research: 'Investigando el negocio', build: 'Construyendo el website', verify: 'Verificando calidad', commit: 'Publicando' };
       const STAGE_PCT = { research: 30, build: 65, verify: 85, commit: 95 };
@@ -472,32 +471,16 @@
       window.open('https://ig.me/m/' + igSafe(handle), '_blank', 'noopener');
     };
 
-    // Chequeo client-side (navegador = fetch fiable, a diferencia del Worker-a-Worker):
-    // verifica cada demo y marca el que este caido con un badge, para que ninguna tarjeta
-    // fantasma (demo 404) pase desapercibida. Concurrencia limitada; cachea resultados.
-    const demoChecked = {};
-    async function verifyDemos(lista) {
-      const pend = lista.filter(b => b.url_demo && demoChecked[b.url_demo] === undefined);
-      let idx = 0;
-      const worker = async () => {
-        while (idx < pend.length) {
-          const b = pend[idx++];
-          let ok = true;
-          try { const r = await fetch(b.url_demo, { method: 'HEAD', cache: 'no-store' }); ok = r.ok; }
-          catch { ok = false; }
-          demoChecked[b.url_demo] = ok;
-          if (!ok) {
-            const card = document.getElementById('biz-' + b.slug);
-            if (card && !card.querySelector('.demo-down')) {
-              card.classList.add('is-down');
-              const badges = card.querySelector('.badges');
-              if (badges) badges.insertAdjacentHTML('afterbegin', '<span class="badge demo-down">⚠ Demo caido</span>');
-            }
-          }
-        }
-      };
-      await Promise.all(Array.from({ length: 4 }, worker));
-    }
+    // Marca una tarjeta con demo caido. Lo dispara el onerror del thumb (una <img> carga
+    // cross-origin SIN restriccion CORS, a diferencia de fetch: por eso el thumb es la señal
+    // fiable de si el demo esta live; el thumb lo sirve el mismo worker de demos).
+    window.demoDown = (slug) => {
+      const card = document.getElementById('biz-' + slug);
+      if (!card || card.querySelector('.demo-down')) return;
+      card.classList.add('is-down');
+      const badges = card.querySelector('.badges');
+      if (badges) badges.insertAdjacentHTML('afterbegin', '<span class="badge demo-down">⚠ Demo caido</span>');
+    };
 
     async function load() {
       try {
