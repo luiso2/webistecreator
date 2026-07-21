@@ -1,0 +1,58 @@
+{
+  "slug": "anabeautystudio",
+  "name": "Ana Beauty Studio",
+  "owner": "Ana Arcila",
+  "city": "Miami",
+  "neighborhood": "Flagami",
+  "address": "9509 W Flagler St, Suite 03, Miami, FL 33174 (inside Beauty Square / My Suite @ Beauty Square)",
+  "phone": "+17863704640",
+  "phone_display": "(786) 370-4640",
+  "email": "anabeautystudio2020@gmail.com",
+  "instagram": "@anabeautystudiomiami",
+  "instagram_url": "https://www.instagram.com/anabeautystudiomiami/",
+  "booking_platform": "Setmore",
+  "booking_url": "https://anabeautystudio.setmore.com",
+  "language": "es",
+  "language_detection_notes": "Setmore booking page defaults to lang=es and title 'Reserva ahora'; the two organic IG captions recovered ('Sin filtro', 'Cejas y pestañas on point') are both Spanish; owner is Venezuelan. Spanish set as primary language, English toggle included.",
+  "has_own_site": false,
+  "own_domain_note": "anabeautystudio.com is listed on the Setmore page as their website but is now a dead/parked domain for sale via GoDaddy (curl confirms redirect to forsale.godaddy.com). Verified 2026-07-21. The demo site itself does not reference this dead domain; it may be used as an honest outreach angle ('your old domain expired') in outreach copy only, not on the site.",
+  "services": [
+    "Phi-lashes (eyelash extensions: classic, hybrid, volume)",
+    "Ombre powder brows",
+    "Henna brows",
+    "Waxing (depilacion)",
+    "Skin care",
+    "Laser treatments",
+    "Basic and advanced eyelash extension training (lash artist training)"
+  ],
+  "prices_found": false,
+  "prices_note": "No verifiable prices found anywhere (Setmore booking page has no visible menu without login/JS session, Fresha listing explicitly says 'not currently affiliated with Fresha' and shows only a generic Makeup Service placeholder with a different phone number, Yelp blocks scraping (403), IG captions have no prices). Site shows service names only, no invented numbers, per hard rule.",
+  "reviews_variant": "sin-testimonios",
+  "reviews_note": "No independently verifiable star rating or review count. Owner's own IG story screenshot (discarded photo, not used on site) showed a Google listing card reading '5.0 (21)', but this is a single unverified secondary source (a screenshot within their own marketing, not a direct fetch of Google/Yelp). A separate web search aggregation surfaced a contradictory and implausible '358 reviews' figure with no primary source, clearly unreliable. Yelp page (yelp.com/biz/ana-beauty-studio-miami) exists but returned HTTP 403 to both curl and WebFetch, so it could not be verified directly. Given no consistent, independently-checkable number, the hard 'no invented reviews' rule applies: used the sin-testimonios 'Por que Ana Beauty Studio' 3-card variant (derived from real services: phi-lashes fit, ombre/henna brows, lash artist training) instead of any rating/stars/testimonials.",
+  "photos": {
+    "source": "Instagram public profile @anabeautystudiomiami via scripts/ig_photos.py (Railway ig-photo-service, Playwright). 12 posts total on the profile (all dated Sep-Nov 2022; the account appears inactive since then). Ran again with start_index=12 and confirmed no additional posts exist.",
+    "curated_used": 6,
+    "used_files": ["bk-1.jpg", "bk-3.jpg", "bk-4.jpg", "bk-5.jpg", "bk-6.jpg", "bk-10.jpg"],
+    "discarded": {
+      "bk-2.jpg": "screenshot of a Google Maps reviews card with text overlay, not a finished-result photo",
+      "bk-7.jpg": "text overlay caption 'Sin filtro'",
+      "bk-8.jpg": "text overlay caption 'Cejas y pestañas on point'",
+      "bk-9.jpg": "picture-in-picture before/after collage overlay",
+      "bk-11.jpg": "picture-in-picture collage overlay",
+      "bk-12.jpg": "hair braids, not representative of the lash/brow/wax/skin niche; also came back as the only result when paginating past post 12, confirming it was already seen"
+    },
+    "notes": "bk-6.jpg and bk-4.jpg show the real studio interior (embossed 'ANA BEAUTY STUDIO' wall sign) with Ana and a client/trainee holding a lash extension course completion certificate, used for the Experiencia and gallery sections to reflect the real training service. Owner (Ana Arcila) appears only as a small avatar image (bk-10.jpg), never as a gallery tile, per curation rules."
+  },
+  "palette": {
+    "name": "dusty rose / terracotta blush",
+    "accent_deep": "#b5726a",
+    "accent_mid": "#cf9a86",
+    "bg": "#faf3ef",
+    "bg_2": "#f2e1d5",
+    "ink": "#362720",
+    "note": "New palette, not previously used per templates/SKELETONS-V2.md list and distinct from lashbloom's plum-pink (#a04a72/#c47a9c)."
+  },
+  "skeleton_used": "templates/light-v2/index.html (light, feminine, lash/brow niche match)",
+  "gate_forbid_terms_used": "Lash Bloom,Yesi,West Palm Beach,Cresthaven,519855,lash-bloom,_lashbloom,Booksy",
+  "fecha": "2026-07-21"
+}
