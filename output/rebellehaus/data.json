@@ -1,0 +1,33 @@
+{
+  "slug": "rebellehaus",
+  "name": "Rebelle Haus Beauty",
+  "niche": "hair studio + manicure (men only)",
+  "city": "North Miami Beach, FL",
+  "address": "1660 NE Miami Gardens Dr, Suite 4, North Miami Beach, FL 33179",
+  "phone": "+1 786-440-8155",
+  "email": null,
+  "email_source": "no encontrado: contact page de rebellehaus.com solo tiene formulario, sin mailto",
+  "website": "https://www.rebellehaus.com",
+  "has_own_site": true,
+  "has_own_site_check": "rebellehaus.com es un sitio Squarespace propio, verificado HTTP 200 (curl directo). Cambia el angulo de outreach a propuesta de rediseno premium, no 'no tienen website'.",
+  "instagram": { "found": true, "handle": "@rebelle.haus", "url": "https://www.instagram.com/rebelle.haus/", "note": "bio/external_url no verificable (Instagram bloqueo 429/403 en curl y mirrors); enlace bidireccional confirmado desde el propio sitio rebellehaus.com" },
+  "booking": "https://rebellehaus.as.me/schedule/ae002ca1",
+  "language": "en",
+  "owners": "Rebecca (hair, todas las texturas) y Janelle (unas, bilingue ingles/creole haitiano)",
+  "about_verbatim": "What started as a simple appointment quickly turned into a genuine friendship and, eventually, a partnership built on trust, skill, and passion.",
+  "services_source": "JSON embebido de Acuity (var BUSINESS, owner=36926556), extraido 2026-07-21, verbatim con precios y duraciones reales",
+  "reviews": [],
+  "reviews_note": "Sin resenas verificables (no hay ficha propia de Google Maps bajo este nombre; ClassPass menciona 5.0/22 via snippet de busqueda pero sin quotes verbatim ni acceso directo, fetch classpass.com devolvio 403). Variante SIN-testimonios aplicada: seccion 'Por que Rebelle Haus' con especialidades reales en vez de resenas/rating.",
+  "images_source": "sitemap.xml de rebellehaus.com (Squarespace), galeria de portafolio con captions reales; 7 fotos reales descargadas y curadas visualmente una por una antes de usarlas",
+  "images": [
+    { "local_path": "assets/raw/hero-blowout.jpg", "caption": "The Untamed - Blow Out", "role": "hero + gallery tile" },
+    { "local_path": "assets/raw/curly-blowout.jpg", "caption": "sin caption de origen, blow-out con rizos", "role": "experiencia" },
+    { "local_path": "assets/raw/coffin-nails.jpg", "caption": "sin caption de origen, set coffin nude", "role": "experiencia" },
+    { "local_path": "assets/raw/silk-press.jpg", "caption": "The Straight Savage - Silk Press", "role": "gallery" },
+    { "local_path": "assets/raw/french-manicure.jpg", "caption": "The Frenchie - Hand Drawn French", "role": "gallery" },
+    { "local_path": "assets/raw/gold-foil-nailart.jpg", "caption": "Nail Art (laminilla dorada)", "role": "gallery" },
+    { "local_path": "assets/raw/red-nails.jpg", "caption": "sin caption de origen, set rojo mate", "role": "gallery wide" },
+    { "local_path": "assets/raw/logo.jpg", "caption": "logo oficial RH Rebelle Haus Beauty", "role": "nav/footer/avatar, NUNCA galeria" }
+  ],
+  "research_note": "Research manual 2026-07-21 (Acuity + Square no tienen dossier automatico). Descubierto que el negocio SI tiene sitio propio (rebellehaus.com) via curl; galeria de fotos rescatada del sitemap.xml publico de Squarespace tras confirmar que el feed de Instagram estaba bloqueado. Gate OK: python3 scripts/gate.py rebellehaus --lang en."
+}
