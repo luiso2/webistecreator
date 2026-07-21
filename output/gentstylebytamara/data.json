@@ -1,0 +1,97 @@
+{
+  "slug": "gentstylebytamara",
+  "name": "Gent's Style By Tamara",
+  "owner": "Tamara Camps (\"Tamy\")",
+  "legal_entity": "Tamara Camps LLC",
+  "city": "Doral",
+  "niche": "Barbershop / men's grooming studio",
+  "language": "es",
+  "has_own_site": false,
+  "address": "10555 NW 41st St Unit 200-5, Doral, FL 33178",
+  "phone": null,
+  "phone_note": "No public phone number found after checking Birdeye, Bizapedia, Facebook, the Square site config, and web search. Left null rather than fabricated.",
+  "email": "tamycamps@yahoo.com",
+  "email_source": "Found embedded in the Square Online site's own social/contact config (tamara-camps-llc.square.site), listed as the account's contact email.",
+  "instagram": {
+    "handle": "@gentstyle_bytamy",
+    "url": "https://www.instagram.com/gentstyle_bytamy/",
+    "followers": 277,
+    "following": 386,
+    "posts": 91
+  },
+  "booking_url": "https://tamara-camps-llc.square.site",
+  "booking_platform": "Square Online (JS-rendered menu, no prices exposed in static HTML)",
+  "hours": {
+    "source": "Birdeye listing",
+    "mon_fri": "9:00 AM - 6:00 PM",
+    "sat_sun": "Closed"
+  },
+  "rating": {
+    "value": 5.0,
+    "review_count": 109,
+    "source": "Birdeye aggregator (reviews.birdeye.com/gent-s-style-by-tamara-170250471032300), which explicitly attributes every individual review to \"Google\" with real reviewer names and relative dates. Direct Google Maps scraping was attempted twice (WebFetch) but Maps is a JS-rendered SPA and returned no data both times, a known technical limitation. The Birdeye count/rating independently matches the figure known from prior recon (108-109 reviews, 5.0), which corroborates it.",
+    "verification_note": "Not directly confirmed by rendering Google Maps itself, but corroborated by a reputable third-party aggregator with per-review Google source attribution, real full names, and consistent relative dates. Used the standard testimonials variant (not sin-testimonios) on this basis."
+  },
+  "reviews_used": [
+    {
+      "author": "Victor Martinez",
+      "source": "Google (via Birdeye)",
+      "rating": 5,
+      "lang": "es",
+      "quote": "Excelente servicio y un corte de pelo impecable. Muy profesional, atenta a los detalles y el resultado superó mis expectativas. Sin duda volveré. Totalmente recomendado."
+    },
+    {
+      "author": "Gustavo Ortega",
+      "source": "Google (via Birdeye)",
+      "rating": 5,
+      "lang": "en",
+      "quote": "One of the friendliest and most talented hair stylists for men in Miami. Tammy has cut my hair for the last 2 years, and I've loved every cut Tammy has given."
+    },
+    {
+      "author": "Emilio Cordova",
+      "source": "Google (via Birdeye)",
+      "rating": 5,
+      "lang": "es",
+      "quote": "Tuve una excelente experiencia en esta barbería. Tamara fue quien me atendió y sinceramente hizo un trabajo increíble. Muy profesional, amigable y atenta en todo momento. Quedé súper feliz con el resultado."
+    }
+  ],
+  "reviews_seen_not_used": [
+    { "author": "Eduardo", "lang": "en", "quote": "Tamara always gets me right. Clean cuts, good attention to detail, and a chill atmosphere. Definitely recommend." },
+    { "author": "Sebastian Borrero", "lang": "en", "quote": "Great haircut and great service." }
+  ],
+  "services_categories_real": ["Haircut", "Beard & Shave", "Facial & Grooming", "Hands & Feet", "Kid's", "Men's"],
+  "services_note": "No prices found anywhere (Square static HTML is JS-rendered with no exposed prices; Google cache, Yelp and Birdeye did not surface a price list either). Site shows service category NAMES only, no invented numbers. Note: the Square site's internal config also lists theme color-preset names (\"Bold\", \"Custom\", \"Dark bold\", \"Duo\", \"Light Neutral\", \"Light bold\", \"Muted bold\") which are Square Online THEME names, not sub-styles of the Men's category as initially suspected from prior recon; confirmed by inspecting the site's embedded JSON (color profile objects) and excluded from the service list.",
+  "photos": {
+    "source": "Instagram public profile via scripts/ig_photos.py (Railway ig-photo-service, 12 posts captured)",
+    "total_downloaded": 12,
+    "usable_curated": 5,
+    "curated_files": ["bk-3.jpg", "bk-4.jpg", "bk-5.jpg", "bk-7.jpg", "bk-10.jpg"],
+    "discarded": {
+      "bk-0.jpg": "text overlay caption (\"AFTER\") on a hair-system product shot, not a client haircut",
+      "bk-1.jpg": "personal family selfie (Tamara with a child), unrelated to barbershop services",
+      "bk-2.jpg": "heavily motion-blurred video frame",
+      "bk-6.jpg": "CapCut watermark overlay + motion blur",
+      "bk-8.jpg": "long red-toned women's hair color work, off-brand for a men's barbershop positioning",
+      "bk-9.jpg": "\"El look final\" text caption burned into the image",
+      "bk-11.jpg": "CapCut watermark overlay + women's hair, off-brand"
+    },
+    "reuse_note": "Only 5 distinct real usable photos were available publicly. To fill the skeleton's hero + experience + gallery slots without padding with rejected photos, bk-3/bk-4/bk-7/bk-10 are intentionally reused across sections (different crop/caption each time); no images were fabricated or sourced from stock."
+  },
+  "palette": {
+    "name": "Steel blue (acero)",
+    "accent_deep": "#7ea9cc",
+    "accent_mid": "#5c86a8",
+    "bg": "#0d1116",
+    "notes": "Fresh masculine palette not previously used in the queue (avoids gold/original, and avoids already-used coral/caramelo/esmeralda/teal-acero/violeta-dark/rosa-dark). Merktop badge kept gold (#D4A84B) per protected-badge rule."
+  },
+  "jsonld_type": "BarberShop",
+  "sin_testimonios_used": false,
+  "sin_testimonios_reason": "Not used: verbatim Google-sourced reviews (via Birdeye attribution) with real reviewer names were available and judged sufficiently credible.",
+  "verified_via": [
+    "WebSearch (Google Maps rating/reviews reported in search snippet)",
+    "reviews.birdeye.com/gent-s-style-by-tamara-170250471032300 (per-review Google source attribution, names, dates, hours)",
+    "tamara-camps-llc.square.site (curl of static HTML: confirmed email, IG handle, real service category names, confirmed theme-preset names are NOT services)",
+    "Direct Google Maps WebFetch attempts (2x): failed to render, JS SPA limitation, not a data contradiction"
+  ],
+  "footer_powered_by": "https://merktop.com"
+}
