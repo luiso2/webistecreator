@@ -1,0 +1,61 @@
+{
+  "slug": "judithlaguna",
+  "name": "Blossom Therapy and Wellness by Judith Laguna",
+  "owner": "Judith Laguna Castro",
+  "credential": "Licensed massage therapist, Florida license MA97132 (also NPI 1568203644)",
+  "credential_source": "Independently confirmed via WebSearch (Florida DOH-linked license lookup results and NPI registry listing), matches the address and phone found via Fresha and the business's own Square site bootstrap JSON.",
+  "address_raw": "9509 W Flagler St, Suite 18 (My Suite @ Beauty Square), Miami, FL 33174",
+  "neighborhood": "Fountainebleau, Miami, FL",
+  "address_source": "Confirmed independently across 3 sources: Fresha lite listing, Yahoo Local/Yelp-syndicated listing, and the business's own Square site (door-signage photo also shows 'Suite 18').",
+  "phone": "(305) 215-4666",
+  "phone_e164": "+13052154666",
+  "phone_source": "Confirmed 3x independently: Square site bootstrap JSON (contentAreas.header actionButton.link.phone = 3052154666), Fresha listing, and Yahoo Local listing; also visible printed on the real Suite 18 door-signage photo.",
+  "email": "judithmlc1922@gmail.com",
+  "email_source": "Read directly off the real photo of the Suite 18 glass door signage (not from any platform field): the door prints 'Judith Laguna / 305.215.4666 / judithmlc1922@gmail.com'.",
+  "website": "https://judith-laguna.square.site",
+  "has_own_site": false,
+  "has_own_site_note": "Only a Square Online subdomain exists (judith-laguna.square.site), a JS-rendered SPA. Static curl only returns the page shell, but the embedded window.__BOOTSTRAP_STATE__ JSON was extracted directly and yielded real, first-party data (see below).",
+  "instagram": "judithmlc_massage",
+  "instagram_url": "https://www.instagram.com/judithmlc_massage/",
+  "instagram_source": "Read directly from the Square site's own bootstrap JSON: siteData.snapshot.properties.social contains {icon:'instagram', user:'judithmlc_massage'}. This is a first-party, high-confidence source (the business owner's own site settings), not a search-result guess. The task's candidate handles (@laguna_holistic, @judith.beautystudio, @judithbeautystudio) were all checked and ruled out: judith.beautystudio/judithbeautystudio belong to a different, unrelated business in Miami Lakes, FL (confirmed via WebSearch, ~14 miles from this address).",
+  "instagram_photos_note": "The confirmed handle @judithmlc_massage was queried via scripts/ig_photos.py (Railway service, then local Playwright fallback). The service reached Instagram without a login-wall (login_wall:false) but returned only 1 result, a generic Instagram UI/empty-profile placeholder asset (static.cdninstagram.com/rsrc.php/.../....webp, not a real post). The account appears to have no publicly retrievable posts (empty, inactive, or effectively private to logged-out viewers). No IG-sourced photos were used on the site; the IG link is still included as a real, confirmed contact channel.",
+  "facebook_raw_field": "https://www.JudithMLC",
+  "facebook_note": "Also present in the same Square bootstrap social array but as a malformed/incomplete URL fragment (not a real, resolvable link). facebook.com/JudithMLC returns only Facebook's own login wall, so this could not be independently verified. Not used anywhere on the site.",
+  "language": "es",
+  "language_source": "Square site's own bootstrap JSON reports siteData.site.properties.language = 'es_US' (the business owner's own site is configured in Spanish), consistent with the West Flagler St / Fountainebleau, Miami market and the owner's Spanish name. Used as the primary/default site language.",
+  "services_confirmed": {
+    "from_own_square_site_og_description": "Facial, Massage Therapeutic, Lymphatic Drainage, Maderotherapy (siteData.snapshot.properties.seo.template.appointments.description)",
+    "from_suite_door_signage_photo": "Reiki, Faciales, Terapias holisticas, Tratamientos corporales, Masajes terapeuticos - postoperatorio (read directly off the real glass-door signage of Suite 18)",
+    "from_fresha_lite_listing": "Facials & Skincare (Anti-Ageing, Carboxytherapy, Classic, Collagen, Deep Cleansing, Diamond, Express, Eye treatments), Massage (Therapeutic, Herbal Compress, Elderly Clients), Physical Therapy (Craniosacral Therapy, Myofascial Release), Barbering (Black Mask)",
+    "barbering_category_excluded": "The 'Barbering: Black Mask' category from Fresha was NOT used on the site: it does not appear on the business's own Square site description or door signage, doesn't fit a spa/wellness suite, and reads as a Fresha platform data/category error. Omitted per anti-fabrication guidance rather than included on a single unconfirmed source.",
+    "prices": "Not available anywhere. The Square site itself explicitly hides prices (bootstrap JSON: contentAreas.sticky cell properties.cardPrices.hidden = true, a deliberate site setting, not a scraping failure). Fresha lists 'Pricing/Duration: Not listed'. No prices are shown anywhere on the demo; service cards link straight to the real booking site instead."
+  },
+  "services_on_site": [
+    "Facial & Skincare (deep cleansing, anti-aging, diamond, collagen, express, eye treatment)",
+    "Therapeutic Massage (featured/House specialty card: herbal compress, lymphatic drainage, post-surgical/postoperatorio recovery)",
+    "Reiki & Craniosacral (holistic therapies: Reiki, craniosacral therapy, myofascial release)",
+    "Body treatments (maderotherapy, facial carboxytherapy, LED light therapy)"
+  ],
+  "hours_note": "Two independent listings (Fresha-derived WebSearch snippet and the Yahoo Local/Yelp-syndicated listing) gave mutually INCONSISTENT hours for the same business. Rather than pick one and risk publishing wrong hours, the site omits a specific hours table entirely (same pattern as the light-v2 exemplar itself) and only says 'by appointment', which is true regardless.",
+  "sin_testimonios": true,
+  "sin_testimonios_note": "No Google rating/review count exists for this specific business; the only rating in the area belongs to the shared multi-tenant building (My Suite @ Beauty Square) and was correctly NOT attributed to this individual tenant. All star/rating/data-count markup was removed from hero, strip and experience. The opinions section was replaced with a 'Por que Blossom Therapy and Wellness' 3-card section (Licensed therapist / A suite, not a salon floor / Real technology), each grounded in independently-confirmed facts (license MA97132, Suite 18 private location, LED/lymphatic-drainage/maderotherapy equipment).",
+  "photos": {
+    "method": "Given the two prior FAILED attempts on this exact business (ids 4adf379a.../4f98f44c..., 2026-07-21) could not get past a Fresha placeholder image and a login-walled IG handle, a broader source was tried this run: the Yahoo Local business listing (a Yelp-syndicated mirror) for this exact business name/address, which turned out to host ~20 real, business-uploaded photos on s.yimg.com CDN.",
+    "raw_downloaded": 20,
+    "used_on_site": 6,
+    "curation_notes": "Discarded from the 20: 4 pure marketing/promo graphics with text overlays (Jueves 2x1 flyer, Terapias Reductoras flyer, Masaje en Silla flyer, Lymphatic Drainage promo card), 1 duplicate logo graphic, 2 near-duplicates of used photos, and several real-but-clinical/injection-style photos (carboxytherapy/mesotherapy close-ups) judged too medical for the gallery tone. facial-treatment.jpg (client mid-facial) was initially selected but then dropped after visual review: cluttered background (backpack, exposed outlet, mismatched orange wall) fell below the editorial bar of the rest of the set, so it was removed in favor of exterior.jpg for the wide gallery tile.",
+    "used": [
+      {"file": "room-table.jpg", "desc": "clean treatment room, camilla ready, used as hero image and og:image"},
+      {"file": "suite-door.jpg", "desc": "real Suite 18 glass-door signage with logo, name, phone, email and services list; used in experience section and gallery"},
+      {"file": "room-cozy.jpg", "desc": "cozy decorated treatment room with fairy lights and 'namaste'/'LOVE' decor; used in experience section and gallery"},
+      {"file": "led-therapy.jpg", "desc": "real red LED light therapy session on the body; used in gallery"},
+      {"file": "exterior.jpg", "desc": "real storefront of My Suite @ Beauty Square on W Flagler St; used as gallery wide tile"},
+      {"file": "light-mat-therapy.jpg", "desc": "real light-mat/crystal therapy session, framed certificates visible on the wall; used in gallery"}
+    ],
+    "logo": "Judith Laguna's own real logo (cherry-blossom wreath + yoga silhouette + 'Judith Laguna, Licensed skin care and body') downloaded directly from the Square site's own asset host (images.editor.website), used for favicon/nav/footer avatar. This also grounded the lavender/blush palette choice."
+  },
+  "palette": "soft lavender/plum (accent-deep #6d5a94, accent-mid #a08cc9, bg #f8f5fb/#ece3f5), grounded directly in Judith's own real logo color scheme (lavender-to-blush gradient), distinct from dusty-rose/terracotta and coral-peach used earlier in this queue and from the darker/brighter violeta already used on a dark-mode site elsewhere in the queue.",
+  "booking_url": "https://judith-laguna.square.site",
+  "map_query": "9509 W Flagler St Suite 18, Miami, FL 33174",
+  "outreach": "pending_manual"
+}
