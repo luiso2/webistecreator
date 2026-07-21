@@ -42,7 +42,7 @@
       color-scheme: light;
       --bg: #f6f2fb;
       --bg-2: #e9e0f5;
-      --surface: rgba(253,246,250,0.7);
+      --surface: rgba(249,246,255,0.7);
       --ink: #2a2438;
       --ink-60: rgba(42,36,56,0.62);
       --ink-40: rgba(42,36,56,0.42);
@@ -58,7 +58,7 @@
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
     .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(122,107,168,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(253,246,250,0.88); border-color: rgba(122,107,168,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(42,36,56,0.14), 0 0 40px rgba(122,107,168,0.08); }
+    .glass-hover:hover { background: rgba(249,246,255,0.88); border-color: rgba(122,107,168,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(42,36,56,0.14), 0 0 40px rgba(122,107,168,0.08); }
     .text-shine {
       background: linear-gradient(110deg, #7a6ba8 0%, #9c8cc9 30%, #453a68 52%, #7a6ba8 75%, #8f7cb8 100%);
       background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
@@ -103,7 +103,7 @@
     .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
     @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(250,242,246,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(42,36,56,0.1); }
+    #nav.scrolled { background: rgba(246,242,251,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(42,36,56,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
@@ -116,7 +116,7 @@
     .stars { color: #7a6ba8; letter-spacing: 2px; text-shadow: 0 0 14px rgba(122,107,168,0.3); }
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
     .dark-band {
-      --ink: #f6f2fb; --ink-60: rgba(250,242,246,0.65); --ink-40: rgba(250,242,246,0.45);
+      --ink: #f6f2fb; --ink-60: rgba(246,242,251,0.65); --ink-40: rgba(246,242,251,0.45);
       --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(196,181,224,0.16); color: var(--ink);
     }
     .dark-band .text-shine { background-image: linear-gradient(110deg, #d9cbf0 0%, #f0e8fa 30%, #b7a3d9 52%, #d9cbf0 75%, #e2d4f5 100%); }
@@ -420,7 +420,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Piel renovada" data-en="Skin refresh">Skin refresh</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Deep Facial</h3>
+          <h3 class="font-display text-2xl leading-snug mb-3">DEEP FACIAL</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Una limpieza profunda y tratamiento facial rejuvenecedor para un brillo saludable y renovado." data-en="A deep cleanse and rejuvenating facial treatment for a refreshed, healthy glow.">A deep cleanse and rejuvenating facial treatment for a refreshed, healthy glow.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$120</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h</p></div>
@@ -429,7 +429,7 @@
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(122,107,168,0.4); box-shadow: 0 18px 50px rgba(42,36,56,0.14);">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Favorito del estudio" data-en="Studio favorite">Studio favorite</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">HydraFacial</h3>
+          <h3 class="font-display text-2xl leading-snug mb-3">HYDRAFACIAL</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El facial insignia del estudio: hidratación profunda y brillo visible en una sola sesión." data-en="The studio's signature resurfacing facial: deep hydration and visible glow in one session.">The studio's signature resurfacing facial: deep hydration and visible glow in one session.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$190</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 40min</p></div>
@@ -657,7 +657,7 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Miradas" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="lashes">lashes</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Resultados" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="results">results</span></h2>
         </div>
         <a href="https://www.instagram.com/moonbeautystudios/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -665,12 +665,12 @@
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Clienta feliz, set nuevo" data-en="Fresh set, happy client">Fresh set, happy client</span><img src="assets/raw/bk-6.jpg" alt="Clienta sonriendo con su set de pestañas nuevo en Lash Bloom" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Volumen wispy" data-en="Wispy volume">Wispy volume</span><img src="assets/raw/bk-12.jpg" alt="Closeup de pestanas de volumen wispy" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Cejas + pestañas" data-en="Brows + lashes">Brows + lashes</span><img src="assets/raw/gallery-7.jpg" alt="Ceja perfilada con pestanas de volumen" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Resultado natural" data-en="Natural result">Natural result</span><img src="assets/raw/gallery-2.jpg" alt="Clienta con resultado natural de pestanas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Set clásico" data-en="Classic set">Classic set</span><img src="assets/raw/bk-10.jpg" alt="Set clasico de pestanas en camilla rosa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Híbrido con brillo" data-en="Glowy hybrid">Glowy hybrid</span><img src="assets/raw/bk-3.jpg" alt="Clienta con set hibrido de pestanas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Manicura en gel, en proceso" data-en="Gel manicure, wrapped and set">Gel manicure, wrapped and set</span><img src="assets/raw/bk-9.jpg" alt="Gel manicure being wrapped in foil at Moon Beauty Studios" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Diseño en punta azul" data-en="Blue tip nail art">Blue tip nail art</span><img src="assets/raw/bk-11.jpg" alt="Nail art with a blue tip design at Moon Beauty Studios" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Diseño de cejas" data-en="Brow shaping">Brow shaping</span><img src="assets/raw/bk-3.jpg" alt="Closeup of an eyebrow shaping service at Moon Beauty Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Extensión de pestañas" data-en="Lash extensions">Lash extensions</span><img src="assets/raw/bk-6.jpg" alt="Closeup of eyelash extensions at Moon Beauty Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Pedicura terminada" data-en="Fresh pedicure">Fresh pedicure</span><img src="assets/raw/bk-7.jpg" alt="Finished pedicure on bare feet at Moon Beauty Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Detalle de pestañas" data-en="Lash detail">Lash detail</span><img src="assets/raw/bk-4.jpg" alt="Closeup of eyelash extension application at Moon Beauty Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -703,28 +703,28 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What her">What her</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">clients say</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 86 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 86 verified reviews on Booksy">5.0 out of 5 · 86 verified reviews on Booksy</span></p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 62 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 62 verified reviews on Booksy">5.0 out of 5 · 62 verified reviews on Booksy</span></p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 items-stretch">
         <figure class="glass glass-hover rounded-3xl p-8 reveal">
           <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 customer service is awesome and I love my lash set!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Emily</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mi lugar favorito ❣️"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Luisana P…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
         </figure>
         <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
           <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Yesi is very pleasant and professional! She does a beautiful job and I always enjoy her company!!! Highly recommend!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Suzanne</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Demasiado Demasiado Feliz es un increible lugar muy atentos y profesionales me encanto la experiencia"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Darling D…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
         </figure>
         <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
           <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Always professional and a perfectionist. I’ve been with Lash Bloom for over 5 years now and absolutely love her!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Tara</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Obsessed!🤍 highly recommend"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Janet R…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
         </figure>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://booksy.com/en-us/611517_moon-beauty-studios_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 86 reseñas en Booksy" data-en="Read all 86 reviews on Booksy">Read all 86 reviews on Booksy</a>
+        <a href="https://booksy.com/en-us/611517_moon-beauty-studios_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 62 reseñas en Booksy" data-en="Read all 62 reviews on Booksy">Read all 62 reviews on Booksy</a>
       </div>
     </div>
   </section>
@@ -735,14 +735,14 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">West Palm Beach</span></h2>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">West Miami</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
               <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">4580 Cresthaven Blvd (inside Lux Stitch Embroidery), West Palm Beach, FL 33415</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(122,107,168,0.4)]" href="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">6355 SW 8th St floor 3, West Miami, FL 33144</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(122,107,168,0.4)]" href="https://www.google.com/maps?q=6355+SW+8th+St+floor+3,+West+Miami,+FL+33144" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
@@ -757,15 +757,15 @@
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             <div>
               <p class="font-medium mb-1">Instagram</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi's latest sets and DM any questions before your appointment.">See Yesi's latest sets and DM any questions before your appointment.</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los resultados más recientes de Moon Beauty Studios y escribe por DM cualquier duda antes de tu cita." data-en="See Moon Beauty Studios' latest results and DM any questions before your appointment.">See Moon Beauty Studios' latest results and DM any questions before your appointment.</p>
               <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(122,107,168,0.4)]" href="https://www.instagram.com/moonbeautystudios/" target="_blank" rel="noopener">@moonbeautystudios</a>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Lash Bloom, 4580 Cresthaven Blvd, West Palm Beach FL"
-          src="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415&output=embed"
+        <iframe title="Mapa: Moon Beauty Studios, 6355 SW 8th St floor 3, West Miami FL"
+          src="https://www.google.com/maps?q=6355+SW+8th+St+floor+3,+West+Miami,+FL+33144&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
@@ -776,9 +776,9 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Pestañas que florecen contigo." data-en="Lashes that bloom with you.">Lashes that bloom with you.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu mirada nueva" data-en="Your new lashes">Your new lashes</span> <span class="text-shine" data-es="te está esperando" data-en="are waiting">are waiting</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos: tu set clásico, híbrido o de volumen, o el relleno que ya te toca." data-en="Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.">Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Belleza que brilla como la luna." data-en="Beauty that glows like moonlight.">Beauty that glows like moonlight.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu glow-up" data-en="Your glow-up">Your glow-up</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos: tu próximo facial, set de pestañas, manicura o pedicura." data-en="Book online in seconds: your next facial, lash set, manicure or pedicure.">Book online in seconds: your next facial, lash set, manicure or pedicure.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
         <a href="https://booksy.com/en-us/611517_moon-beauty-studios_skin-care_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
         <a href="https://www.instagram.com/moonbeautystudios/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
@@ -788,18 +788,18 @@
 
   <!-- FOOTER -->
   <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#1a1526]">
-    <span class="foot-mark" aria-hidden="true">Lash Bloom</span>
+    <span class="foot-mark" aria-hidden="true">Moon</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(217,203,240,0.35)]" loading="lazy" />
-          <span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>
+          <img src="assets/raw/bk-12.jpg" alt="Moon Beauty Studios" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(217,203,240,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Moon Beauty Studios</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Salón de belleza en West Miami, FL. Atención con cita previa." data-en="Beauty salon in West Miami, FL. By appointment only.">Beauty salon in West Miami, FL. By appointment only.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
-        <p>4580 Cresthaven Blvd, West Palm Beach, FL 33415</p>
+        <p>6355 SW 8th St floor 3, West Miami, FL 33144</p>
         <p><a href="https://booksy.com/en-us/611517_moon-beauty-studios_skin-care_15889_miami" target="_blank" rel="noopener" class="hover:text-[#d9cbf0]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
@@ -809,7 +809,7 @@
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Lash Bloom.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Moon Beauty Studios.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
