@@ -432,5 +432,13 @@
     "result": "discarded",
     "motivo": "tiene website propio activo (musebarbershop.com, Vercel real)",
     "fecha": "2026-07-21"
+  },
+  {
+    "id": "4b6c0227-3d80-4593-9412-c54009b53e20",
+    "input": "https://booksy.com/en-us/693852_kelly-hankins-hair-stylist_hair-salon_15889_miami",
+    "result": "processed",
+    "slug": "kellyhankins",
+    "fecha": "2026-07-21",
+    "nota_correccion": "id previamente marcado discarded en este mismo archivo con motivo 'kellyhankins.com resuelve con 502'; un 502 de CONNECT tunnel del proxy indica que el dominio NO resuelve (verificado contra un dominio de control inexistente, misma firma exacta; ademas WebFetch dio ENOTFOUND y getent hosts vacio). No existe sitio propio real. Se corrige y se procesa: demo construido, gate OK, registrado en processed.json."
   }
 ]
