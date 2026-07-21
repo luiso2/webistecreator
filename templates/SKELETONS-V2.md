@@ -66,3 +66,10 @@ Orden de operaciones (respetarlo evita el 90% de los errores):
   quedo una vez en 4.8 heredado: bug real).
 - Booksy renombra negocios: la URL vieja redirige al listado y el fetch trae OTROS negocios.
   Verificar que el nombre extraido coincida antes de usar datos.
+
+## Motion premium v4 (2026-07-20)
+Upgrade universal aplicado a TODOS los esqueletos y sitios: al revelar (.reveal), los elementos
+entran con blur-in (5px->0) + micro-escala settle (0.985->1) + easing mas fuerte
+cubic-bezier(0.23,1,0.32,1) a 0.9s. Botones ghost/book-float con feedback de press scale(0.97).
+Es color-agnostico y NO toca contenido ni markers: los build scripts siguen funcionando igual.
+prefers-reduced-motion resetea filter/transform. Si se crea un esqueleto nuevo, heredar este .reveal.
