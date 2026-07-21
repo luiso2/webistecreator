@@ -1,0 +1,62 @@
+{
+ "booksy_url": "https://booksy.com/en-us/1391755_debonaire-headspa_wellness-day-spa_15643_fort-lauderdale",
+ "slug": "debonaireskin",
+ "name": "Debonaire Skin",
+ "name_on_booksy": "Debonaire Headspa",
+ "name_note": "Booksy listing still shows the old name 'Debonaire Headspa', but the business's own logo/branding (assets/raw/bk-1.jpg, bk-2.jpg) and Instagram handle clearly say 'Debonaire Skin · Facials & Skin Care'. The full service menu is 100% facial/peeling/skincare, no scalp or head-spa services at all. Site built and named as the real current brand: Debonaire Skin.",
+ "schema_type": "DaySpa",
+ "niche": "Facial / skincare studio (solo esthetician)",
+ "owner": "Lindsay",
+ "owner_source": "Booksy staff list shows a single staff member named 'Debonaire Lindsay' (business name + first name pattern used by solo Booksy providers). No last name published.",
+ "address": {
+  "streetAddress": null,
+  "addressLocality": "Oakland Park",
+  "addressRegion": "FL",
+  "postalCode": "33334",
+  "addressCountry": "US"
+ },
+ "address_note": "No street address published on Booksy (only city + zip, typical of a private/home studio). Reviews mention the esthetician 'set up her equipment in minutes', consistent with a private-suite or mobile setup that shares the exact address only after booking is confirmed. Site copy reflects this honestly instead of inventing a street address.",
+ "geo": { "latitude": 26.1839135, "longitude": -80.134279631812 },
+ "rating": 5.0,
+ "reviews_count": 10,
+ "rating_source": "Booksy JSON-LD aggregateRating (ratingValue 5.0, reviewCount 10) on the business's Booksy listing.",
+ "hours": [
+  { "days": ["Tuesday", "Saturday"], "opens": "10:00", "closes": "19:00" },
+  { "days": ["Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "18:00" }
+ ],
+ "phone": null,
+ "instagram": { "handle": "_debonaireskin", "url": "https://www.instagram.com/_debonaireskin/" },
+ "booking_platform": "Booksy",
+ "language": "en",
+ "language_source": "All Booksy reviews are in English; Booksy dossier language heuristic also returned 'en'.",
+ "has_own_site": false,
+ "has_own_site_check": "debonaireskin.com resolves (HTTP 200) but is a Squarespace 'Coming Soon' parking page with zero real content (3138 bytes, no mailto, no menu, no photos: same pattern as the documented jarelisayala.com precedent). debonaireheadspa.com/.net do not resolve. The only other same_as link on Booksy is https://debonaireskin.etsy.com, an Etsy shop subdomain (third-party marketplace platform, not a self-hosted website, per pipeline rule that platform subdomains do not count). Verdict: no functioning website of their own.",
+ "email": null,
+ "email_source": "Searched: Instagram bio (no email, no linktree/external booking link beyond Booksy widget), Booksy dossier payload (phone/email fields both null), debonaireskin.com Coming Soon page (no mailto, no contact info of any kind), no public Facebook page found under this name in Oakland Park/Fort Lauderdale. No email found after exhausting available sources.",
+ "services_used_on_site": [
+  { "name": "Debonaire's Signature Facial (NEW CLIENTS)", "price": 90, "duration": "1h 20min" },
+  { "name": "Glass Skin Facial", "price": 125, "duration": "1h 20min" },
+  { "name": "Reverse Time Revitalizing Facial", "price": 145, "duration": "1h 20min" },
+  { "name": "Sea Spicule Peel", "price": 230, "duration": "1h" },
+  { "name": "Deep Cleansing Facial", "price": 125, "duration": "1h 20min" },
+  { "name": "Radiant Renewal Facial", "price": 115, "duration": "1h 30min" }
+ ],
+ "services_excluded_note": "Booksy also listed 5 offer entries named after individual clients (Ella B, Ashley B.C, Laurel R, Monica C, Sonia White) with their own prices/durations. Verified in the raw Booksy JSON-LD that these are personalized per-client rebooking slots (custom pricing tied to a specific repeat client), not real generic services offered to new customers, so they were excluded from the site's service menu. Only the 6 genuinely generic, publicly bookable facial services above were used.",
+ "reviews_used_on_site": [
+  { "author": "Asia S.", "body": "debonaire was attentive, knowledgeable, efficient and gentle!", "rating": 5, "source": "Booksy, verified" },
+  { "author": "Janae S.", "body": "Very professional and stayed true to time. GREAT experience", "rating": 5, "source": "Booksy, verified" },
+  { "author": "Laurel R.", "body": "My Facial was amazing. She was gentle and explained step by step what she was doing and using. Thank you so much.", "rating": 5, "source": "Booksy, verified (excerpted verbatim from a longer review; full text kept in booksy_full_reviews below)" }
+ ],
+ "booksy_full_reviews_raw": [
+  "debonaire was attentive, knowledgeable, efficient and gentle!",
+  "Very professional and stayed true to time. GREAT experience",
+  "On July 23rd was my first experience with Debonaire skin.She was punctual and set up her equipment in minutes. I am a big girl but her bench was safe a d comfortable. My Facial was amazing. She was gentle and explained step by step what  she was doing and using. Thank you so much.I have booked my next appointment"
+ ],
+ "photo_curation_notes": "Reviewed output/debonaireskin/_sheet.jpg (16 photos) one by one. Used clean, real treatment photos (no text/graphics/selfies): bk-13, bk-16, bk-3, bk-7, bk-14 (green sea-spicule mask), bk-5 (male client) and bk-15 (extraction closeup) = 7 usable photos, reused bk-13 and bk-16 once each across hero/experience/gallery to fill all site slots (same accepted pattern as the lashbloom/pureartistry exemplars, which also reuse one photo across two sections). DISCARDED as unusable: bk-1/bk-2 (brand logo graphics, used instead as the small nav/footer/favicon avatar, not gallery tiles), bk-10/bk-12/bk-4/bk-6 (before/after composites with large BEFORE/AFTER text and annotation arrows burned into the image, prohibited by the no-text-overlay gallery rule), bk-8 (chemical-peel-vs-spicule-peel comparison infographic, all text), bk-9 (unrelated 'Cherry' financing-app ad graphic). IG rescue (.venv-pw/bin/python scripts/ig_photos.py _debonaireskin) was attempted for extra variety but returned 0 photos (IG served an empty page to the fetch IP), so the build proceeded with the 7 clean Booksy photos.",
+ "palette": "Custom navy + terracotta rose-gold palette derived from the business's own logo (navy background, white wordmark/floral line art, assets/raw/bk-1.jpg): --bg #0b1330 (deep navy, matches the real logo bg), --bg-2 #111c44, --ink #f4ece0 (warm cream), --accent-deep #c9895d (terracotta rose-gold), --accent-mid #a8683f, --accent-soft #1a2452. Not one of the 5 DESIGN.md preset palettes and not a repeat of any palette already used in Fort Lauderdale/Oakland Park builds (etherealeyelashesfl: warm gold/ivory light; adryansbarber: dark teal). Merktop badge kept its original gold per pipeline rule.",
+ "template_base": "templates/dark-v2/index.html (pureartistry exemplar), derived via anchored Python replacements (script kept in scratchpad, not committed).",
+ "dm_message": "Hi! Found Debonaire Skin on Booksy, 5.0 stars across 10 reviews, love the Glass Skin Facial and Sea Spicule Peel menu. Since debonaireskin.com is still just a Coming Soon page, I built you a free sample site with your real photos, services and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/debonaireskin/ Happy to put it on your domain or take it down, zero obligation. Michael Vargas, Merktop.",
+ "og_image_thumb": "assets/raw/bk-13.jpg",
+ "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/debonaireskin/",
+ "gate": "GATE OK (en), python3 scripts/gate.py debonaireskin --lang en --forbid \"Pure Artistry,pure.artistrysk,121705,Orlando,Silk Press,K-Tip,Knotless,celebrity,Loc Retwist\""
+}

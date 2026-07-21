@@ -1,0 +1,85 @@
+{
+  "slug": "beeutifulskinspa",
+  "name": "Beeutiful Skin Spa",
+  "niche": "Med spa / aesthetics: Botox, Dysport, dermal fillers, plasma facials (PRP), chemical peels, microneedling, PDO thread lifts, IV therapy, mesotherapy and HRT pellets. Solo nurse practitioner practice.",
+  "city": "Cutler Bay, FL (metro Homestead / South Miami-Dade)",
+  "address": {
+    "full": "18423 S Dixie Hwy Ste 14, Cutler Bay, FL 33157",
+    "source": "Matches task brief exactly. Confirmed independently via web search (Yelp, CareCredit locator, Alignable, Atly all list the same address inside the 'My Suite! @ Beauty Square' plaza)."
+  },
+  "phone": "+1-305-632-9408",
+  "phone_display": "(305) 632-9408",
+  "phone_source": "Matches task brief exactly, confirmed on CareCredit doctor locator and multiple directory listings.",
+  "email": "beeutifulskinspa@gmail.com",
+  "email_source": "First-party: extracted from the Square Online site's own embedded bootstrap JSON (window.__BOOTSTRAP_STATE__ snapshot.properties.social array, icon:'email', user:'beeutifulskinspa@gmail.com'), fetched directly from https://beeutifulskinspa.square.site/ raw HTML on 2026-07-21.",
+  "instagram": {
+    "handle": "@beeutifulskinspa",
+    "url": "https://www.instagram.com/beeutifulskinspa/",
+    "note": "Confirmed via web search and via the Square site's own social config (same handle listed for instagram and tiktok icons). Direct scraping (curl + Playwright headless, 2 attempts per pipeline limit) only surfaced 1 image: a story-highlight cover icon showing unrelated people, not a usable gallery photo. Discarded, not used anywhere on the site."
+  },
+  "facebook": "https://www.facebook.com/people/Beeutiful-Skin-Spa/100083120893021/",
+  "tiktok": "https://www.tiktok.com/@beeutifulskinspa",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "beeutifulskinspa.com does not resolve to an independent site (no DNS/HTTP response). Web searches for 'beeutifulskinspa.com' and variants only return the square.site booking page, Facebook, TikTok and directory listings. The Square site's own embedded config shows custom_domain: '' (empty) and subdomain: 'beeutifulskinspa.square.site', confirming no custom domain is connected.",
+    "conclusion": "NO independently-owned website. has_own_site: false. Outreach angle: 'les construi un website de muestra' / 'I built you a sample website'."
+  },
+  "booking": {
+    "platform": "Square",
+    "business_page_url": "https://beeutifulskinspa.square.site/",
+    "note": "Square Online (formerly Weebly) site. Square blocks headless/curl rendering of its service catalog (client-side hydrated via Vue/Square Online JS, confirmed: static HTML and Playwright direct navigation both only return the SPA shell without the price/duration data of the services-list block, and Playwright navigation to the domain was reset at the network level in this environment). No public price list could be extracted from any source."
+  },
+  "rating": {
+    "value": 5.0,
+    "count": 22,
+    "source": "Birdeye aggregate page (https://reviews.birdeye.com/beeutiful-skin-spa-168130632886908), which aggregates Google reviews for this business. Verified directly via WebFetch on 2026-07-21: 5.0 average, 22 reviews, matches the discovery brief exactly."
+  },
+  "reviews_verbatim": [
+    { "author": "Angela Soto", "source": "Google (via Birdeye)", "text": "I had such an amazing experience! I got Dysport, a plasma facial, and a chemical peel, and everything was done with so much care and professionalism." },
+    { "author": "Elizabeth Stacey", "source": "Google (via Birdeye)", "text": "I have been coming here for a few years for my Botox and HRT pellets, and this place is amazing. Every visit feels welcoming, professional, and personalized." },
+    { "author": "Raquel Ramirez", "source": "Google (via Birdeye)", "text": "I cannot recommend Ari enough, she has been so kind and professional from the moment I made my first appt to my appt date, she made me feel comfortable and confident." },
+    { "author": "Kelly Keefe", "source": "Google (via Birdeye)", "text": "Beeutiful Skin Spa is the absolute BEST! Ari is so professional and knowledgeable. Her evidence based practices are conservative yet effective." },
+    { "author": "Marbelis Gonzalez", "source": "Google (via Birdeye)", "text": "Para mi la mejor, te explica todo con detalles, muy dulce, muy profesional y te recomienda lo que necesitas no por ganar mas dinero, super Ariadna." }
+  ],
+  "reviews_used_on_site": ["Angela Soto", "Elizabeth Stacey", "Kelly Keefe", "Marbelis Gonzalez"],
+  "owner": {
+    "name": "Ariadna Diaz",
+    "credential": "Nurse Practitioner (referred to as 'Ari' by clients)",
+    "source": "Confirmed across multiple independent sources: Sunbiz Florida corporate filing lists Ariadna Diaz as the authorized manager of Beeutiful Skin Spa LLC; 3 of 5 verbatim Google reviews name her directly ('Ari', 'Ariadna'). No usable owner photo was found (Instagram scraping yielded only 1 unusable highlight-cover image), so the site uses a text monogram avatar instead of a selfie/portrait."
+  },
+  "services_real": [
+    "Botox", "Dysport", "Dermal fillers", "Plasma facial (PRP)", "Chemical peel",
+    "Microneedling", "Mesotherapy", "PDO thread lift", "IV therapy", "HRT pellets"
+  ],
+  "services_source": "Corroborated across multiple independent sources: verbatim Google reviews (Dysport, plasma facial, chemical peel, Botox, HRT pellets), the business's own TikTok captions (plasma facial: 'turning plasma magic into radiant skin', bubble/glo facial), and aggregator summaries (Atly, general web search) listing Botox, fillers, mesotherapy, microneedling, plasma, PDO. NO exact prices or durations were found anywhere after exhaustive search (Square site HTML/bootstrap JSON, Yelp, Atly, CareCredit, Beauty Mall Suites directory, Alignable, targeted price-specific web searches, archive.org has no snapshot of the square.site). This is consistent with common practice for injectable/medical-aesthetic pricing (personalized per patient/units, not published). Per DESIGN.md rule ('si un dato no se encontro, omitir la fila, no rellenar'), the site does NOT display any price or duration figures; the services section presents only verified treatment names and descriptions grounded in reviews/captions, with copy noting pricing is personalized at consultation.",
+  "language": "en",
+  "language_source": "TikTok captions in English; 3 of 5 verbatim Google reviews in English (2 more mixed/Spanish); the Square site's own bootstrap config has language:'en'/locale:'en_US'; CareCredit locator lists 'Languages: Spanish spoken' as a secondary feature, not primary. Cutler Bay/Homestead has a large Hispanic market, so the site is still built fully bilingual (data-es/data-en + ES|EN toggle) with English as the default per the evidence above.",
+  "hours": null,
+  "hours_note": "Not verifiable from a primary source I could directly fetch (CareCredit listing explicitly states hours not listed; Yelp returned HTTP 403 to both WebFetch and curl on every attempt). An AI-generated web-search summary suggested 'Mon-Sat 10am-5pm' but this could not be traced to a specific quoted primary source, so per DESIGN.md ('si un dato no se encontró, omitir la fila') it was NOT used anywhere on the site or in the outreach.",
+  "photos": {
+    "usable_count": 4,
+    "curation_note": "Square/Instagram both yielded almost nothing usable (Square blocks headless rendering of its own gallery; Instagram headless scrape returned only 1 story-highlight icon showing unrelated people, discarded). Two additional candidate TikTok video thumbnails were pulled via the TikTok oEmbed API: one was discarded for a 'Pampering Time' marketing text/sticker overlay (prohibited per gate rules), the other (gloved hands prepping a client's arm for a treatment) was kept. The remaining 3 usable photos are real Google Business photos for this address, sourced via the Atly.com aggregator page which embeds lh3.googleusercontent.com URLs for this specific listing (verified by address match). Visually curated one by one (no selfies, no text overlays, no blurry/awkward frames) before use. Because only 4 usable photos exist, the site uses a REDUCED layout versus the full skeleton: 1 hero photo, 1 experience photo (no 2-photo grid), and a 2-tile gallery (instead of 6), per the 'menos secciones con buenas fotos que rellenar con malas' rule.",
+    "used": [
+      { "file": "assets/raw/hero-treatment-room.jpg", "source": "Google Business photo (via Atly.com aggregator), address-matched", "used_as": "hero" },
+      { "file": "assets/raw/suite-entrance.jpg", "source": "Google Business photo (via Atly.com aggregator), address-matched", "used_as": "experience section" },
+      { "file": "assets/raw/storefront.jpg", "source": "Google Business photo (via Atly.com aggregator), address-matched", "used_as": "gallery tile 1" },
+      { "file": "assets/raw/treatment-prep.jpg", "source": "TikTok video thumbnail (oembed thumbnail_url), video 7425777424283028766 by @beeutifulskinspa", "used_as": "gallery tile 2" }
+    ],
+    "discarded": [
+      { "note": "1 Instagram highlight-cover icon (bk-1/bk-2.jpg via ig_photos.py, ran twice per pipeline limit): shows unrelated people, not a gallery-worthy business photo." },
+      { "note": "1 TikTok thumbnail (video 7344158728863698207): device screen with a 'Pampering Time' marketing text/sticker overlay, prohibited by gate curation rules." }
+    ]
+  },
+  "palette": {
+    "name": "rose-copper (nuevo, no reutilizado)",
+    "accent_deep": "#a15c56",
+    "accent_mid": "#c68a7e",
+    "bg": "#faf4f1",
+    "bg_2": "#f1e0da",
+    "ink": "#362627",
+    "note": "Derivado del brand real observado en las fotos (chandelier + acentos rose-gold en el logo grabado 'BEE-U-TIFUL', paredes blush del treatment room). Verificado contra las 108 paletas ya usadas en output/*/index.html: ningun hex identico; ningun otro med spa/skin/aesthetic ya construido (agelessspaboca, debonaireskin, hialeahheadspa, luxebeautyheadspa, marlebeautyspa, serenityheadspa) usa tonos rosa/vino, todos son verde/marron/azul/dorado."
+  },
+  "base_template": "templates/light-v2/index.html (esqueleto Lash Bloom)",
+  "logo_note": "No se encontro un logo/isotipo limpio y aislado (el unico logo visible en fotos es el grabado 'BEE-U-TIFUL' en el vidrio de la Suite 14, parcialmente cortado por el encuadre de la foto de Google). Se uso un monograma de texto 'BS' (nav/footer) y 'AD' (avatar de la experiencia, iniciales de Ariadna Diaz) en vez de forzar un logo recortado de baja calidad o una foto del dueño.",
+  "gate": "python3 scripts/gate.py beeutifulskinspa --lang en --forbid \"Lash Bloom,Yesi,West Palm,Cresthaven,519855,lash-bloom,_lashbloom,pestañas\" -> GATE OK en el primer intento."
+}
