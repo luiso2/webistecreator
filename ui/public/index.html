@@ -350,7 +350,7 @@
       const orden = b => (b.crm_status === 'declined' ? 2 : (b.crm_status === 'client' ? 1 : 0));
       const lista = reg.slice().reverse().sort((a, b) => orden(a) - orden(b));
       $('grid').innerHTML = lista.map((b, i) => `
-        <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" id="biz-${esc(b.slug)}" style="animation-delay:${0.15 + i * 0.04}s">
+        <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" id="biz-${esc(b.slug)}" style="animation-delay:${(0.12 + Math.min(i, 14) * 0.03).toFixed(2)}s">
           ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'; demoDown('${esc(b.slug)}')" /></a>` : ''}
           <div class="top">
             <div><h4>${esc(b.name)}</h4><p class="city">${esc(b.city || '')} · ${esc(b.fecha || '')}</p></div>
