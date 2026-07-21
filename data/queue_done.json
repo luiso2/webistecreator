@@ -104,5 +104,26 @@
     "result": "processed",
     "slug": "olas",
     "fecha": "2026-07-21"
+  },
+  {
+    "id": "8736303e-15c5-4cac-8830-701d93d914de",
+    "input": "Gretel Nails Art Design, Miami FL - https://gretelnailsartdesign.square.site (tenant Beauty Square, Square nails; menu y fotos del IG)",
+    "result": "failed",
+    "motivo": "Square Appointments (gretelnailsartdesign.square.site) no expone menu/precios ni fotos en el HTML estatico (bootstrap JSON sin catalogo, el booking carga via API cliente-JS que curl no ejecuta) y no hay dossier script para Square. El IG del negocio (@gretelnails_artdesign, confirmado por busqueda web como cuenta real de Gretel Hernandez nail artist Miami) esta detras de login-wall en todos los intentos (curl con UA Chrome y WebFetch devolvieron shell vacio o 429); visores espejo de terceros (imginn, picuki) fallaron con 403/410/500/504 en multiples reintentos. No se encontro ficha propia de Google Maps/Yelp/Booksy bajo el nombre exacto; los negocios homonimos hallados (Nails by Grettell, Nails Studio by Gretell & Yane) son entidades distintas no verificables como el mismo negocio. Sin precios reales, fotos reales ni reseñas verificables de ninguna fuente, construir el demo requeriria inventar datos.",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "edea5ace-566c-44dd-8ebf-a81c28702a57",
+    "input": "Sojay Beauty Skn, Miami FL - https://sojay-beauty-skn.square.site (tenant Beauty Square, Square skincare; menu y fotos del IG)",
+    "result": "failed",
+    "motivo": "Square Appointments (sojay-beauty-skn.square.site) devuelve solo un shell JS vacio via curl con UA de Chrome (HTTP 200 pero sin title, menu, precios, telefono, fotos, JSON-LD ni link de IG en el HTML crudo; no existe dossier script para Square). Se hicieron 9 busquedas web exhaustivas (site:instagram.com, site:facebook.com, 'Sojay Beauty Skn Miami instagram', 'Sojay Skn', direcciones conocidas de Beauty Square Miami, Yelp, Google Maps) sin encontrar ningun Instagram, Facebook, Yelp o ficha de Google Maps real del negocio; todos los resultados correspondian a negocios 'SKN'/'Soja'/'Sojo' no relacionados. Sin ningun dato verificable de menu, precios, fotos reales o resenas, no se puede construir el demo sin inventar contenido.",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "88a1530d-ced2-4744-aea9-b658a8886af0",
+    "input": "Glammed by Ka, Miami FL - https://www.vagaro.com/glammedbyka (tenant Beauty Square, Vagaro; sacar reseñas/menu de Vagaro y fotos del IG)",
+    "result": "failed",
+    "motivo": "Vagaro glammedbyka (Katrina Alvarez, hair/hair extensions, Miramar FL, tel (786) 942-1799, rating 5.0/9 reviews verificado via jina.ai render) no expone menu de servicios ni precios en ningun render alcanzable: curl directo con UA Chrome solo trae el shell SPA; forzando render JS via r.jina.ai la pagina de book-now solo muestra placeholders genericos del widget de Vagaro sin datos reales de este negocio (el listado real de servicios se carga via AJAX autenticado inalcanzable sin navegador headless, no disponible en este entorno). Instagram @glammedbyka (cuenta real confirmada, 1258 seguidores) bloqueado por login-wall en curl directo y via jina.ai: cero acceso a fotos de feed. La foto de perfil en Vagaro es un logo placeholder generico, sin fotos reales subidas a la plataforma. No existe listado independiente de Google Maps/GMB con fotos propias. Cero precios/servicios y cero fotos reales verificables: construir el esqueleto exigiria inventar el menu de 4 cards y la galeria.",
+    "fecha": "2026-07-21"
   }
 ]
