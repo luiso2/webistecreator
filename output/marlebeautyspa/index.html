@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f2f1fa" />
+  <title>Marle Beauty Spa · Spa de Estética en Westchester, Miami | 5.0 en Fresha</title>
+  <meta name="description" content="Marle Beauty Spa LLC en Westchester, Miami: depilación láser, ácido hialurónico, plasma y rejuvenecimiento facial con un 5.0 perfecto en 37 reseñas en Fresha. Reserva online." />
+  <meta property="og:title" content="Marle Beauty Spa · Spa de Estética en Westchester, Miami" />
+  <meta property="og:description" content="Depilación láser, ácido hialurónico y faciales. 5.0 en Fresha. Reserva online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/bk-1.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Marle Beauty Spa",
+    "description": "Spa de estética en Westchester, Miami: depilación láser, ácido hialurónico, plasma y rejuvenecimiento facial y corporal.",
+    "telephone": "+1-786-602-0215",
+    "address": { "@type": "PostalAddress", "streetAddress": "7984 Southwest 8th Street", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33144", "addressCountry": "US" },
+    "sameAs": ["https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl", "https://www.instagram.com/marle_beauty_spa/"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "37", "bestRating": "5" },
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Servicios de estética", "itemListElement": [
+      { "@type": "Offer", "price": "160", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Ácido Hialurónico 1ml" } },
+      { "@type": "Offer", "price": "100", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Láser Full Body" } },
+      { "@type": "Offer", "price": "75", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Masaje moldeador (abdomen y glúteos)" } },
+      { "@type": "Offer", "price": "200", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Cejas" } }
+    ] }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f5fb;
+      --bg-2: #e6e4f4;
+      --surface: rgba(249,249,253,0.7);
+      --ink: #262838;
+      --ink-60: rgba(38,40,56,0.62);
+      --ink-40: rgba(38,40,56,0.42);
+      --accent-deep: #4f5f96;
+      --accent-mid: #7f8fc7;
+      --accent-soft: #e6e4f4;
+      --accent-ghost: rgba(79,95,150,0.14);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(79,95,150,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(249,249,253,0.88); border-color: rgba(79,95,150,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(38,40,56,0.14), 0 0 40px rgba(79,95,150,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #4f5f96 0%, #8b9ad1 30%, #2f3763 52%, #4f5f96 75%, #6673ab 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #dcdcf2 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #b9c0e6 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #d0d2ee 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #7f8fc7 0%, #4f5f96 48%, #333c68 100%);
+      color: #f5f5fb; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(30,34,60,0.4), 0 5px 0 #2a3159, 0 12px 24px rgba(38,40,56,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(30,34,60,0.4), 0 7px 0 #2a3159, 0 18px 34px rgba(38,40,56,0.32), 0 0 40px rgba(79,95,150,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(30,34,60,0.45), 0 1px 0 #2a3159, 0 4px 10px rgba(38,40,56,0.25); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(79,95,150,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(79,95,150,0.7); background: rgba(79,95,150,0.08); box-shadow: 0 10px 26px rgba(38,40,56,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(245,245,251,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(38,40,56,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(38,40,56,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(79,95,150,0.14), inset 0 -60px 100px rgba(38,40,56,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #7f8fc7, #2f3763); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #4f5f96; letter-spacing: 2px; text-shadow: 0 0 14px rgba(79,95,150,0.3); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #f5f5fb; --ink-60: rgba(245,245,251,0.65); --ink-40: rgba(245,245,251,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(190,196,230,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #c3cbec 0%, #e3e6f7 30%, #b9c0e6 52%, #c3cbec 75%, #dadeee 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(195,203,236,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(140,148,190,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #f2f2fb 0%, #dde0f4 48%, #aab4dd 100%); color: #262838; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(51,58,99,0.35), 0 5px 0 #4a5388, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(51,58,99,0.35), 0 7px 0 #4a5388, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(195,203,236,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(51,58,99,0.4), 0 1px 0 #4a5388, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(195,203,236,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(195,203,236,0.7); background: rgba(195,203,236,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #c3cbec; text-shadow: 0 0 14px rgba(195,203,236,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #7f8fc7 0%, #4f5f96 100%);
+      box-shadow: 0 6px 0 #2a3159, 0 14px 30px rgba(38,40,56,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #2a3159, 0 20px 40px rgba(38,40,56,0.4), 0 0 34px rgba(79,95,150,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #2a3159, 0 6px 14px rgba(38,40,56,0.3); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(79,95,150,0.35); background: rgba(79,95,150,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #333c68 0%, #4f5f96 45%, #9aa6d8 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(195,203,236,0.14) 0%, rgba(79,95,150,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(79,95,150,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #f4f4fb;
+      background: linear-gradient(180deg, transparent 0%, rgba(20,22,40,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(195,203,236,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">MB</span>
+    <span class="pre-word">Marle Beauty Spa</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(79,95,150,0.35)] bg-[rgba(79,95,150,0.1)] text-[color:var(--accent-deep)]">MB</span>
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Marle <span class="text-[color:var(--accent-deep)]">Beauty Spa</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#espacio" data-es="Espacio" data-en="Space">Espacio</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#espacio" data-es="Espacio" data-en="Space">Espacio</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Westchester, Miami, FL · Spa de Estética" data-en="Westchester, Miami, FL · Aesthetic Spa">Westchester, Miami, FL · Aesthetic Spa</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tu piel, tu ritual, tu resultado." data-en="Your skin, your ritual, your results.">Your skin, your ritual, your results.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Láser, ácido hialurónico" data-en="Laser, hyaluronic acid">Laser, hyaluronic acid</span><br /><span data-es="y faciales hechos para " data-en="and facials made to ">and facials made to </span><span class="text-shine" data-es="brillar" data-en="glow">glow</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Spa de estética en Westchester, Miami: depilación láser, ácido hialurónico, plasma y rejuvenecimiento facial y corporal con Morpheus8, en un espacio pensado para que salgas viéndote y sintiéndote mejor. Solo con cita." data-en="Aesthetic spa in Westchester, Miami: laser hair removal, hyaluronic acid, plasma and Morpheus8 facial and body rejuvenation, in a space made for you to leave looking and feeling better. By appointment only.">Aesthetic spa in Westchester, Miami: laser hair removal, hyaluronic acid, plasma and Morpheus8 facial and body rejuvenation, in a space made for you to leave looking and feeling better. By appointment only.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 37 reseñas en Fresha" data-en="5.0 · 37 reviews on Fresha">5.0 · 37 reviews on Fresha</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Fresha" data-en="Book on Fresha">Reservar en Fresha</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/marle_beauty_spa/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @marle_beauty_spa
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-1.jpg" alt="Sala de tratamiento de Marle Beauty Spa con camilla y equipo de láser y estética facial" class="blur-up w-full h-full object-cover" style="object-position: 62% 35%" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Tratamiento estrella" data-en="Signature treatment">Tratamiento estrella</p>
+            <p class="font-display text-lg">Ácido Hialurónico</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="$160 · 30 min" data-en="$160 · 30 min">$160 · 30 min</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="37">37</span> <span data-es="reseñas en Fresha" data-en="reviews on Fresha">reseñas en Fresha</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Láser <span class="text-shine">&amp;</span> H. Ácido</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Depilación + rejuvenecimiento" data-en="Hair removal + rejuvenation">Hair removal + rejuvenation</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">18<span class="text-shine">+</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Servicios de rostro y cuerpo" data-en="Face and body services">Face and body services</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Westchester</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">7984 SW 8th Street</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Láser Full Body</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ácido Hialurónico</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Plasma Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Morpheus 8</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Westchester, Miami</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Láser Full Body</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ácido Hialurónico</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Plasma Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Morpheus 8</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Westchester, Miami</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="frame zoomable aspect-[4/5] img-reveal">
+        <img src="assets/raw/bk-1.jpg" alt="Sala de tratamiento de Marle Beauty Spa con camilla, equipo de láser y aparatología facial" class="blur-up w-full h-full object-cover" style="object-position: 38% 45%" loading="lazy" />
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un spa de estética" data-en="An aesthetic spa">An aesthetic spa</span><br /><span class="text-shine" data-es="pensado para resultados reales" data-en="built for real results">built for real results</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Marle Beauty Spa es un spa de estética en Westchester, Miami, especializado en depilación láser, ácido hialurónico, plasma y rejuvenecimiento facial y corporal con Morpheus8. Cada cita empieza con una evaluación gratuita para definir el tratamiento correcto para tu piel." data-en="Marle Beauty Spa is an aesthetic spa in Westchester, Miami, specialized in laser hair removal, hyaluronic acid, plasma and facial and body rejuvenation with Morpheus8. Every visit starts with a free evaluation to find the right treatment for your skin.">Marle Beauty Spa is an aesthetic spa in Westchester, Miami, specialized in laser hair removal, hyaluronic acid, plasma and facial and body rejuvenation with Morpheus8. Every visit starts with a free evaluation to find the right treatment for your skin.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="El resultado: un 5.0 perfecto en 37 reseñas verificadas en Fresha, y clientas que describen la experiencia como " data-en="The result: a perfect 5.0 across 37 verified reviews on Fresha, and clients who describe the experience as ">The result: a perfect 5.0 across 37 verified reviews on Fresha, and clients who describe the experience as <em class="font-script text-[color:var(--accent-deep)]" data-es="profesional, cercana y con resultados que se notan." data-en="professional, warm, and with results that truly show.">professional, warm, and with results that truly show.</em></p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Fresha</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="37">37</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="18">18</span>+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Servicios" data-en="Services">Services</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="Reservas" data-en="Bookings">Reservas</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pl-5 pr-5 py-3">
+              <span class="w-2 h-2 rounded-full bg-[color:var(--accent-deep)]" aria-hidden="true"></span>
+              <span class="text-sm font-light">Marle Beauty Spa <span class="text-[color:var(--ink-40)]" data-es="· Solo con cita previa" data-en="· By appointment only">· By appointment only</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así es tu cita en" data-en="This is your visit at">This is your visit at</span> <span class="text-shine">Marle</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Evaluación gratis" data-en="Free evaluation">Free evaluation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuentas qué buscas y evaluamos tu piel sin costo, para armar el plan de tratamiento adecuado." data-en="Tell us what you're looking for and we assess your skin at no cost, to build the right treatment plan.">Tell us what you're looking for and we assess your skin at no cost, to build the right treatment plan.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Reserva tu cita" data-en="Book your visit">Book your visit</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Eliges servicio y horario por Fresha o por DM en Instagram, con confirmación inmediata." data-en="Choose your service and time on Fresha or by Instagram DM, with instant confirmation.">Choose your service and time on Fresha or by Instagram DM, with instant confirmation.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tu tratamiento" data-en="Your treatment">Your treatment</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Láser, ácido hialurónico, plasma o facial: cada procedimiento se hace a tu ritmo, explicando cada paso." data-en="Laser, hyaluronic acid, plasma or facial: every procedure is done at your pace, with every step explained.">Laser, hyaluronic acid, plasma or facial: every procedure is done at your pace, with every step explained.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Plan de seguimiento" data-en="Aftercare plan">Aftercare plan</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con las indicaciones de cuidado y, si aplica, tu próxima sesión ya agendada." data-en="You leave with aftercare instructions and, if needed, your next session already booked.">You leave with aftercare instructions and, if needed, your next session already booked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine" data-es="tratamiento" data-en="treatment">tratamiento</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por Marle Beauty Spa en Fresha. Reserva online con confirmación inmediata." data-en="Prices and durations as published by Marle Beauty Spa on Fresha. Booking confirms instantly.">Prices and durations as published by Marle Beauty Spa on Fresha. Booking confirms instantly.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Rostro · Labios" data-en="Face · Lips">Face · Lips</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Ácido Hialurónico</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Una jeringa de ácido hialurónico para labios u otras zonas del rostro, con evaluación previa incluida." data-en="One syringe of hyaluronic acid for lips or other areas of the face, with a prior evaluation included.">One syringe of hyaluronic acid for lips or other areas of the face, with a prior evaluation included.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$160</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">30min</p></div>
+            <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(79,95,150,0.4); box-shadow: 0 18px 50px rgba(38,40,56,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Depilación láser · Más pedido" data-en="Laser · Most booked">Laser · Most booked</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Láser Full Body</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Depilación láser de cuerpo completo en una sola sesión, con equipo profesional y atención personalizada." data-en="Full body laser hair removal in a single session, with professional equipment and personalized care.">Full body laser hair removal in a single session, with professional equipment and personalized care.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$100</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">50min</p></div>
+            <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Contorno corporal" data-en="Body contouring">Body contouring</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Masaje Moldeador" data-en="Contouring Massage">Contouring Massage</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Masaje de marcación abdominal y de glúteos para trabajar el contorno corporal, en una sesión de una hora." data-en="Abdominal and glute contouring massage to work on your body shape, in a one-hour session.">Abdominal and glute contouring massage to work on your body shape, in a one-hour session.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$75</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h</p></div>
+            <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cejas" data-en="Brows">Brows</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Cejas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Servicio completo de cejas para definir y perfeccionar tu mirada, con acabado a medida." data-en="A complete brow service to define and perfect your look, with a tailored finish.">A complete brow service to define and perfect your look, with a tailored finish.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$200</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 30min</p></div>
+            <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU COMPLETO, agrupado por categoria, todo visible (sin acordeones) -->
+      <div class="mt-16 grid lg:grid-cols-2 gap-6">
+        <div class="glass rounded-3xl p-7 sm:p-8 reveal">
+          <h3 class="font-display text-xl mb-1" data-es="Rostro y rejuvenecimiento" data-en="Face &amp; Rejuvenation">Face &amp; Rejuvenation</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-5" data-es="8 servicios" data-en="8 services">8 services</p>
+          <div class="grid sm:grid-cols-2 gap-x-6 text-sm">
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Ácido Hialurónico 1 ml</span><span class="text-[color:var(--accent-deep)] font-medium">$160</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Plasma (cara y capilar)</span><span class="text-[color:var(--accent-deep)] font-medium">$100</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Facial</span><span class="text-[color:var(--accent-deep)] font-medium">$100</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Facial + plasma</span><span class="text-[color:var(--accent-deep)] font-medium">$200</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Pigmentación de labios</span><span class="text-[color:var(--accent-deep)] font-medium">$150</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Delineado de ojos</span><span class="text-[color:var(--accent-deep)] font-medium">$100</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Morpheus 8</span><span class="text-[color:var(--accent-deep)] font-medium">$350</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)] sm:border-b-0"><span data-es="Evaluación gratis" data-en="Free evaluation">Evaluación gratis</span><span class="text-[color:var(--accent-deep)] font-medium" data-es="Gratis" data-en="Free">Gratis</span></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-7 sm:p-8 reveal" style="transition-delay:80ms">
+          <h3 class="font-display text-xl mb-1" data-es="Depilación láser" data-en="Laser Hair Removal">Laser Hair Removal</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-5" data-es="2 servicios" data-en="2 services">2 services</p>
+          <div class="grid gap-x-6 text-sm">
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Láser full body</span><span class="text-[color:var(--accent-deep)] font-medium">$100</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)] sm:border-b-0"><span>Láser facial</span><span class="text-[color:var(--accent-deep)] font-medium">$40</span></div>
+          </div>
+          <h3 class="font-display text-xl mb-1 mt-8" data-es="Cejas, pestañas y uñas" data-en="Brows, Lashes &amp; Nails">Brows, Lashes &amp; Nails</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-5" data-es="3 servicios" data-en="3 services">3 services</p>
+          <div class="grid gap-x-6 text-sm">
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Cejas</span><span class="text-[color:var(--accent-deep)] font-medium">$200</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Pestañas</span><span class="text-[color:var(--accent-deep)] font-medium">$80</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)] sm:border-b-0"><span>Uñas</span><span class="text-[color:var(--accent-deep)] font-medium">$60</span></div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-7 sm:p-8 reveal lg:col-span-2" style="transition-delay:140ms">
+          <h3 class="font-display text-xl mb-1" data-es="Cuerpo y contorno" data-en="Body &amp; Contouring">Body &amp; Contouring</h3>
+          <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide mb-5" data-es="5 servicios" data-en="5 services">5 services</p>
+          <div class="grid sm:grid-cols-2 gap-x-6 text-sm">
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Masajes (marcación abdominal, glúteos)</span><span class="text-[color:var(--accent-deep)] font-medium">$75</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span data-es="Corrección de lipo" data-en="Lipo correction">Corrección de lipo</span><span class="text-[color:var(--accent-deep)] font-medium">$85</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span data-es="Quemadores de grasa / vacuoterapia" data-en="Fat burners / vacuum therapy">Quemadores de grasa / vacuoterapia</span><span class="text-[color:var(--accent-deep)] font-medium">$100</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)]"><span>Glúteos</span><span class="text-[color:var(--accent-deep)] font-medium">$500</span></div>
+            <div class="flex justify-between py-2 border-b border-[color:var(--accent-ghost)] sm:border-b-0"><span data-es="Drenaje linfático" data-en="Lymphatic drainage">Drenaje linfático</span><span class="text-[color:var(--accent-deep)] font-medium">$90</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="18 servicios en total, entre rostro, cuerpo y láser. Reserva el tuyo en Fresha." data-en="18 services in total, across face, body and laser treatments. Book yours on Fresha.">18 services in total, across face, body and laser treatments. Book yours on Fresha.</span></p>
+    </div>
+  </section>
+
+  <!-- ESPACIO -->
+  <section id="espacio" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="El espacio" data-en="The space">El espacio</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Conoce tu" data-en="Meet your">Meet your</span> <span class="text-shine" data-es="sala de tratamiento" data-en="treatment room">treatment room</span></h2>
+        </div>
+        <a href="https://www.instagram.com/marle_beauty_spa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @marle_beauty_spa
+        </a>
+      </div>
+      <div class="grid grid-cols-1 gap-4 sm:gap-5">
+        <div class="frame zoomable aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Sala de tratamiento" data-en="Treatment room">Treatment room</span><img src="assets/raw/bk-1.jpg" alt="Sala de tratamiento de Marle Beauty Spa con camilla, equipo de láser y aparatología facial" class="blur-up w-full h-full object-cover" /></div>
+      </div>
+      <p class="reveal text-sm text-[color:var(--ink-60)] font-light mt-8 max-w-2xl" style="transition-delay:200ms" data-es="Más fotos de tratamientos y resultados viven en su Instagram; aquí compartimos la que pudimos verificar como propia del negocio." data-en="More treatment and results photos live on their Instagram; here we're sharing the one we could verify as genuinely theirs.">More treatment and results photos live on their Instagram; here we're sharing the one we could verify as genuinely theirs.</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Láser Full Body</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ácido Hialurónico</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Plasma Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Morpheus 8</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Westchester, Miami</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Láser Full Body</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Ácido Hialurónico</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Plasma Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Morpheus 8</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Westchester, Miami</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What her">Lo que dicen</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">sus clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 37 reseñas verificadas en Fresha" data-en="5.0 out of 5 · 37 verified reviews on Fresha">5.0 out of 5 · 37 verified reviews on Fresha</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Loved the results and very professional"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium" data-es="Cliente verificado" data-en="Verified client">Cliente verificado</span> <span class="text-[color:var(--ink-40)]">· Fresha</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Muy buena atencion muy buen Precio y MIs labios quedaron bellos"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium" data-es="Cliente verificado" data-en="Verified client">Cliente verificado</span> <span class="text-[color:var(--ink-40)]">· Fresha</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Super excelente, tal y como esperaba verdaderamente supero mis expectativas"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium" data-es="Cliente verificado" data-en="Verified client">Cliente verificado</span> <span class="text-[color:var(--ink-40)]">· Fresha</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver todas las reseñas en Fresha" data-en="See all reviews on Fresha">Ver todas las reseñas en Fresha</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine" data-es="Westchester, Miami" data-en="Westchester, Miami">Westchester, Miami</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">7984 Southwest 8th Street, Miami, FL 33144</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(79,95,150,0.4)]" href="https://www.google.com/maps?q=7984+Southwest+8th+Street,+Miami,+FL+33144" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:180ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Teléfono</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Llama o escribe para agendar tu evaluación gratuita." data-en="Call or text to book your free evaluation.">Call or text to book your free evaluation.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(79,95,150,0.4)]" href="tel:+17866020215">(786) 602-0215</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:220ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Fresha: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Fresha: pick the service, day and time, and the confirmation is instant.">By appointment via Fresha: pick the service, day and time, and the confirmation is instant.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(79,95,150,0.4)]" href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" data-es="Reservar en Fresha" data-en="Book on Fresha">Reservar en Fresha</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Escribe por DM para dudas o para reservar directamente." data-en="Send a DM for questions or to book directly.">Send a DM for questions or to book directly.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(79,95,150,0.4)]" href="https://www.instagram.com/marle_beauty_spa/" target="_blank" rel="noopener">@marle_beauty_spa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Marle Beauty Spa, 7984 Southwest 8th Street, Miami FL"
+          src="https://www.google.com/maps?q=7984+Southwest+8th+Street,+Miami,+FL+33144&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #161829 0%, #0f111d 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Tu piel, tu ritual, tu resultado." data-en="Your skin, your ritual, your results.">Tu piel, tu ritual, tu resultado.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próxima cita" data-en="Your next appointment">Tu próxima cita</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">te está esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva en segundos: depilación láser, ácido hialurónico, plasma o el tratamiento facial que necesitas." data-en="Book in seconds: laser hair removal, hyaluronic acid, plasma or the facial treatment you need.">Reserva en segundos: depilación láser, ácido hialurónico, plasma o el tratamiento facial que necesitas.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Fresha" data-en="Book on Fresha">Reservar en Fresha</a>
+        <a href="https://www.instagram.com/marle_beauty_spa/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#12131f]">
+    <span class="foot-mark" aria-hidden="true">Marle Beauty Spa</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(195,203,236,0.35)] bg-[rgba(195,203,236,0.08)] text-[#c3cbec]">MB</span>
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Marle Beauty Spa</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Spa de estética en Westchester, Miami. Atención con cita previa." data-en="Aesthetic spa in Westchester, Miami. By appointment only.">Spa de estética en Westchester, Miami. Atención con cita previa.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>7984 Southwest 8th Street, Miami, FL 33144</p>
+        <p><a href="tel:+17866020215" class="hover:text-[#c3cbec]">(786) 602-0215</a></p>
+        <p><a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="hover:text-[#c3cbec]" data-es="Reservas online · Fresha" data-en="Online booking · Fresha">Reservas online · Fresha</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/marle_beauty_spa/" target="_blank" rel="noopener" class="hover:text-[#c3cbec]">Instagram · @marle_beauty_spa</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Marle Beauty Spa.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://www.fresha.com/a/marle-beauty-spa-miami-ee-uu-7984-southwest-8th-street-c91cjfsl" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita en Fresha">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f5fb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'en' ? 'en' : 'es');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
