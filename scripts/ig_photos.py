@@ -1,37 +1,55 @@
 #!/usr/bin/env python3
 """Descarga las fotos REALES del perfil publico de Instagram de un negocio, via Playwright.
 
-Uso: .venv-pw/bin/python scripts/ig_photos.py <ig_username> <slug> [start_index]
+Uso: python3 scripts/ig_photos.py <ig_username> <slug> [start_index]
+
+AUTO-BOOTSTRAP (clave para la nube): el script se instala Playwright + chromium SOLO si no
+estan, en un venv local `.venv-pw`, y se re-ejecuta con ese interprete. Asi corre igual en tu
+Mac que en la nube de Anthropic (forja) o cualquier maquina, SIN depender de una instalacion
+previa. La primera corrida en un entorno nuevo tarda ~1-2 min (instala chromium); las
+siguientes en el mismo entorno son de segundos.
 
 Por que Playwright y no curl: Instagram carga las fotos con JS (curl vuelve vacio) y la API
 oficial solo da tu propia cuenta. Un navegador real anonimo (headless) SI ve los primeros
-~12 posts del perfil publico, SIN login (no pide pared de login) y SIN riesgo de ban para
-ninguna cuenta (solo mira una pagina publica). Es la solucion al cuello de botella de fotos
-de los tenants que estan en Square/GlossGenius (sus plataformas dan menu pero no fotos).
-
-- Extrae del DOM renderizado las <img> de cdninstagram/fbcdn con naturalWidth>250 (excluye la
-  foto de perfil). Dedupe por id del post.
-- Descarga a output/<slug>/assets/raw/bk-N.jpg (start_index permite complementar fotos ya bajadas).
-- Valida que cada archivo decodifica (PIL) y redimensiona a 1300px.
-- Genera output/<slug>/_sheet.jpg para la curacion visual OBLIGATORIA (algunos posts son covers de
-  reels o graficos con texto: MIRAR el sheet y elegir solo resultados reales).
-NUNCA inventa nada: solo baja lo que el perfil publica.
+~12 posts del perfil publico, SIN login y SIN riesgo de ban para ninguna cuenta.
+NUNCA inventa nada: solo baja lo que el perfil publica. Curar el _sheet.jpg (descartar covers
+de reels y graficos con texto) antes de elegir.
 """
 import os
 import subprocess
 import sys
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '.venv-pw', 'lib'))
-try:
-    from playwright.sync_api import sync_playwright
-except ImportError:
-    print('ERROR: usar el interprete del venv: .venv-pw/bin/python scripts/ig_photos.py ...')
-    sys.exit(2)
-try:
-    from PIL import Image, ImageDraw
-except ImportError:
-    subprocess.run([sys.executable, '-m', 'pip', 'install', '--quiet', 'pillow'], check=False)
-    from PIL import Image, ImageDraw
+VENV = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '.venv-pw')
+VENV = os.path.normpath(VENV)
+VENV_PY = os.path.join(VENV, 'bin', 'python')
+
+
+def ensure_playwright_and_reexec():
+    """Si playwright no importa, crea/usa .venv-pw, instala, y re-ejecuta con su python."""
+    try:
+        import playwright.sync_api  # noqa: F401
+        return  # ya disponible en este interprete
+    except ImportError:
+        pass
+    # ¿ya existe el venv con playwright? re-ejecutar con el
+    if os.path.exists(VENV_PY) and os.path.realpath(sys.executable) != os.path.realpath(VENV_PY):
+        r = subprocess.run([VENV_PY, '-c', 'import playwright.sync_api'], capture_output=True)
+        if r.returncode == 0:
+            os.execv(VENV_PY, [VENV_PY] + sys.argv)
+    # crear venv e instalar (idempotente)
+    print('bootstrap: instalando Playwright + chromium (una sola vez por entorno)...', flush=True)
+    if not os.path.exists(VENV_PY):
+        subprocess.run([sys.executable, '-m', 'venv', VENV], check=True)
+    subprocess.run([VENV_PY, '-m', 'pip', 'install', '--quiet', '--upgrade', 'pip'], check=False)
+    subprocess.run([VENV_PY, '-m', 'pip', 'install', '--quiet', 'playwright', 'pillow'], check=True)
+    subprocess.run([VENV_PY, '-m', 'playwright', 'install', 'chromium'], check=True)
+    os.execv(VENV_PY, [VENV_PY] + sys.argv)
+
+
+ensure_playwright_and_reexec()
+
+from playwright.sync_api import sync_playwright  # noqa: E402
+from PIL import Image, ImageDraw  # noqa: E402
 
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
 
@@ -49,11 +67,10 @@ EXTRACT_JS = """() => {
 def fetch_urls(username):
     url = f'https://www.instagram.com/{username.lstrip("@").strip("/")}/'
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=True, args=['--no-sandbox'])
         page = browser.new_page(user_agent=UA, viewport={'width': 1280, 'height': 2200})
         page.goto(url, wait_until='networkidle', timeout=45000)
         page.wait_for_timeout(2500)
-        # un scroll suave para forzar carga de mas posts
         try:
             page.mouse.wheel(0, 1800)
             page.wait_for_timeout(1800)
@@ -75,7 +92,7 @@ def main():
 
     data = fetch_urls(username)
     if data.get('login_wall'):
-        print('AVISO: Instagram mostro pared de login para este perfil (posible cuenta privada o rate-limit). 0 fotos.')
+        print('AVISO: Instagram mostro pared de login (cuenta privada o rate-limit). 0 fotos.')
         sys.exit(1)
     urls = data.get('urls', [])
     print(f'posts publicos vistos: {len(urls)}')
@@ -114,7 +131,7 @@ def main():
             sheet.paste(im, (xx, yy))
             dr.text((xx, yy + th + 2), f, fill='black')
         sheet.save(f'output/{slug}/_sheet.jpg', quality=80)
-        print(f'contact sheet: output/{slug}/_sheet.jpg (curar VISUALMENTE: descartar covers de reels y graficos con texto)')
+        print(f'contact sheet: output/{slug}/_sheet.jpg (curar VISUALMENTE)')
 
 
 if __name__ == '__main__':
