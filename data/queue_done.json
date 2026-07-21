@@ -125,5 +125,19 @@
     "result": "failed",
     "motivo": "Vagaro glammedbyka (Katrina Alvarez, hair/hair extensions, Miramar FL, tel (786) 942-1799, rating 5.0/9 reviews verificado via jina.ai render) no expone menu de servicios ni precios en ningun render alcanzable: curl directo con UA Chrome solo trae el shell SPA; forzando render JS via r.jina.ai la pagina de book-now solo muestra placeholders genericos del widget de Vagaro sin datos reales de este negocio (el listado real de servicios se carga via AJAX autenticado inalcanzable sin navegador headless, no disponible en este entorno). Instagram @glammedbyka (cuenta real confirmada, 1258 seguidores) bloqueado por login-wall en curl directo y via jina.ai: cero acceso a fotos de feed. La foto de perfil en Vagaro es un logo placeholder generico, sin fotos reales subidas a la plataforma. No existe listado independiente de Google Maps/GMB con fotos propias. Cero precios/servicios y cero fotos reales verificables: construir el esqueleto exigiria inventar el menu de 4 cards y la galeria.",
     "fecha": "2026-07-21"
+  },
+  {
+    "id": "734f8a5b-3899-45a9-9680-071222efb3b9",
+    "input": "Nail Therapy by Bri, Miramar FL - https://nailtherapybybri.glossgenius.com",
+    "result": "processed",
+    "slug": "nailtherapybybri",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "038a6910-f11e-4e79-85dc-e46db1f83448",
+    "input": "Richard Pacheco Salon, Doral FL (Beauty Square, Fresha 5.0x137, IG @richardpachecoficial)",
+    "result": "failed",
+    "motivo": "Richard Pacheco Salon (Doral FL, Fresha 5.0 x 137 resenas, unisex hair salon) tiene menu completo verificado (23 servicios con precio y duracion) pero la galeria publica de Fresha solo expone 3 fotos, y de esas solo 2 son reales del salon (corte de cabello de hombre, cabello largo de mujer); la tercera es un stock de brochas de maquillaje sin relacion con el negocio. Fresha no expone resenas verbatim (reviews_count con autor: 0) pese al rating agregado 5.0. Se intento el rescate de fotos: (1) IG del negocio (@richardpachecoficial) via instagram.com/api/v1/users/web_profile_info devolvio 400 (endpoint roto, confirmado en FORGE-BRIEF), (2) Facebook (facebook.com/Richardpachecoficial) solo muestra el muro de login sin contenido publico via fetch, (3) se encontro un sitio propio real en richardpachecocorp.com (GoDaddy Website Builder, has_own_site: true) pero su HTML solo trae el logo, sin galeria de fotos. Con 2 fotos reales utilizables no alcanza el minimo para hero + galeria (1 ancho + 5 tiles) sin rellenar con fotos irrelevantes o repetidas, lo cual esta prohibido (regla: menos fotos buenas > rellenar con malas). Se descarta sin fabricar datos ni contactar al negocio; el menu y precios verificados quedan disponibles si en una pasada futura aparecen mas fotos reales (nueva sesion de IG, Google Business, o el propio richardpachecocorp.com se actualiza).",
+    "fecha": "2026-07-21"
   }
 ]
