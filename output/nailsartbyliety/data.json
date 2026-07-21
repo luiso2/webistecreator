@@ -1,0 +1,52 @@
+{
+ "source": "manual_research_square_ig",
+ "url": "https://nailsartbyliety.square.site",
+ "slug": "nailsartbyliety",
+ "name": "Nails Art by Liety",
+ "technician": "Liety Bertran",
+ "technician_title": "Lead Nail Technician",
+ "phone": "7865155567",
+ "phone_source": "read from Liety's own business card photographed in an IG post (bk-11.jpg), not from Google/Yelp listing",
+ "email": null,
+ "email_source": "not found in Square site bootstrap state, IG bio (rate-limited on direct fetch), or business card photo",
+ "address_raw": "3600 W 18th Ave (My Suite @ Beauty Square), Hialeah, FL 33012",
+ "address_source": "building address confirmed via data/beautysquare_tenants.txt (this Square URL is listed as a tenant of My Suite @ Beauty Square); exact suite number within the building not confirmed, so only the building address is used, no invented suite number",
+ "language": "es",
+ "language_source": "Square site internal bootstrap JSON reports language:\"es_US\"; IG title is \"Unas en Hialeah | Liety Nails\" (Spanish-forward market copy)",
+ "instagram": "nailartbyliety",
+ "instagram_url": "https://www.instagram.com/nailartbyliety/",
+ "instagram_bio_title": "Unas en Hialeah | Liety Nails",
+ "website": null,
+ "has_own_site": false,
+ "has_own_site_note": "only a Square Online subdomain (nailsartbyliety.square.site) exists; it is a JS-rendered SPA, static curl returns an empty shell with no menu/prices",
+ "rating": null,
+ "review_count": null,
+ "rating_source": "no Google Business listing found under this name in a first pass; a similarly-named but DIFFERENT business (\"Art Nails by Leidys\", 4.9/217) surfaced instead and was explicitly excluded. No Yelp/Facebook rating found either. Sin-testimonios variant used per hard rule against fabricating reviews.",
+ "services_confirmed_categories": [
+  "Acrilico (uñas acrilicas / extensiones, en formas stiletto, coffin, almond, square)",
+  "Nail Art (disenos personalizados, ombre, marmoleado, pintado a mano)",
+  "Manicure",
+  "Pedicure"
+ ],
+ "services_note": "no menu or prices retrievable from the JS-rendered Square site nor from IG post captions (captions only had dates, no service/price text). Categories above are the ones explicitly suggested as safe examples by the task brief and are grounded in: (a) the business's own name/branding (\"Nails Art\", \"Nail's Liety\" on the business card), (b) the one real finished-nail photo obtained (bk-5.jpg, an acrylic ombre/marble stiletto set), and (c) the Square site's own vertical classification (verticalV4: salon-barbershop). NO prices or durations were invented anywhere.",
+ "sin_testimonios": true,
+ "sin_testimonios_note": "no rating/review count could be independently verified for this specific business (not to be confused with \"Art Nails by Leidys\"), so the opinions section was replaced with a 3-card \"Por que Nails Art by Liety\" section, and all rating/star/data-count markup was removed from hero/strip/experience per hard rule.",
+ "photos": {
+  "tool": "scripts/ig_photos.py nailartbyliety nailsartbyliety (Railway ig-photo-service, succeeded on the 2nd attempt with 12 photos after 2 earlier attempts returned 0-1 generic IG stock/marketing graphics)",
+  "raw_downloaded": 12,
+  "used_on_site": 6,
+  "curation_notes": "discarded bk-6/7/9 (real studio/process photos but had IG caption text burned into the image, e.g. \"Tal Vez Un Dia\", \"Un lugar disenado para TI\", \"Solo atiendes tres clientas por dia?\"), bk-10 and bk-12 (pure text/meme graphic cards, no real photo content), and bk-13 (a generic IG marketing stock illustration returned by a stray extra fetch, unrelated to the business).",
+  "used": [
+   {"file": "bk-1.jpg", "desc": "portrait of Liety Bertran at her station, used as nav/footer avatar and gallery tile"},
+   {"file": "bk-2.jpg", "desc": "Liety applying an acrylic extension to a client's hand (real process/technique shot), used in experience section and gallery"},
+   {"file": "bk-3.jpg", "desc": "alternate portrait of Liety against the studio's marble wall, used in gallery"},
+   {"file": "bk-4.jpg", "desc": "studio corner with plants and decor, used in experience section and gallery"},
+   {"file": "bk-5.jpg", "desc": "finished acrylic nail set, marble/ombre stiletto shape (the one genuine finished-nail-art close-up obtained), used as hero image, og:image, and gallery wide tile"},
+   {"file": "bk-8.jpg", "desc": "Liety with clients/team at the studio's manicure stations, used in gallery"}
+  ],
+  "not_used_but_kept_raw": ["bk-6.jpg", "bk-7.jpg", "bk-9.jpg", "bk-10.jpg", "bk-11.jpg (Liety's business card, used only to read phone/name, not as a site photo)", "bk-12.jpg"]
+ },
+ "palette": "coral-peach (light base), fresh for this queue: accent-deep #d1573f, accent-mid #e8916f, bg #fdf5f0/#fbe4d8; distinct from prior lashbloom plum-pink, olguitashairstudio/pureartistry gold, and the banned dusty-rose/terracotta",
+ "booking_url": "https://nailsartbyliety.square.site",
+ "outreach": "pending_manual"
+}
