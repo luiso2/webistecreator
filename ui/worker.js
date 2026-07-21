@@ -22,6 +22,16 @@ async function isAuthorized(req) {
 // Solo se aceptan URLs de demo dentro de la cuenta Cloudflare del usuario
 const DEMO_URL_RE = /^https:\/\/[a-z0-9-]+\.odd-forest-9504\.workers\.dev(\/[a-z0-9-]*\/?)?$/;
 
+// Resuelve el token de Registrar aunque el nombre de la variable venga con espacios o una
+// coma al final (typo comun al pegar el nombre en el dashboard de Cloudflare).
+function cfRegistrarToken(env) {
+  if (env.CF_REGISTRAR_TOKEN) return env.CF_REGISTRAR_TOKEN;
+  for (const [k, v] of Object.entries(env)) {
+    if (typeof v === 'string' && k.replace(/[\s,]+$/g, '') === 'CF_REGISTRAR_TOKEN') return v;
+  }
+  return null;
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -264,7 +274,8 @@ export default {
       // ---- DOMINIOS (Cloudflare Registrar) ----
       // Checar disponibilidad + precio de un nombre en varios TLDs. Gratis, sin riesgo.
       if (url.pathname === '/api/domain/check' && req.method === 'POST') {
-        if (!env.CF_REGISTRAR_TOKEN || !env.CF_ACCOUNT_ID) {
+        const cfTok = cfRegistrarToken(env);
+        if (!cfTok || !env.CF_ACCOUNT_ID) {
           return json({ error: 'Falta CF_REGISTRAR_TOKEN (secret) o CF_ACCOUNT_ID en el worker' }, 500);
         }
         let body;
@@ -276,18 +287,20 @@ export default {
         const domains = tlds.map(t => `${base}.${t}`);
         const r = await fetch(`https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/registrar/domain-check`, {
           method: 'POST',
-          headers: { authorization: `Bearer ${env.CF_REGISTRAR_TOKEN}`, 'content-type': 'application/json' },
+          headers: { authorization: `Bearer ${cfTok}`, 'content-type': 'application/json' },
           body: JSON.stringify({ domains }),
         });
         const data = await r.json().catch(() => ({}));
         if (!r.ok) return json({ error: 'CF domain-check fallo', detail: data }, 502);
-        return json({ ok: true, base, results: data.result || data });
+        const list = (data.result && data.result.domains) || data.result || [];
+        return json({ ok: true, base, results: Array.isArray(list) ? list : [] });
       }
 
       // Comprar un dominio y montar el sitio en el. ACCION DE DINERO: requiere key + confirm:true,
       // tope diario y anti-duplicado. Nunca compra sin confirmacion explicita del precio.
       if (url.pathname === '/api/domain/buy' && req.method === 'POST') {
-        if (!env.CF_REGISTRAR_TOKEN || !env.CF_ACCOUNT_ID) {
+        const cfTok = cfRegistrarToken(env);
+        if (!cfTok || !env.CF_ACCOUNT_ID) {
           return json({ error: 'Falta CF_REGISTRAR_TOKEN (secret) o CF_ACCOUNT_ID en el worker' }, 500);
         }
         let body;
@@ -309,11 +322,12 @@ export default {
         if (buys.some(b => b.domain === domain)) return json({ error: 'ese dominio ya fue comprado' }, 409);
         const cf = (path, opts = {}) => fetch(`https://api.cloudflare.com/client/v4${path}`, {
           ...opts,
-          headers: { authorization: `Bearer ${env.CF_REGISTRAR_TOKEN}`, 'content-type': 'application/json', ...(opts.headers || {}) },
+          headers: { authorization: `Bearer ${cfTok}`, 'content-type': 'application/json', ...(opts.headers || {}) },
         });
         // 1) re-check justo antes de registrar (recomendado por CF)
         const chk = await cf(`/accounts/${env.CF_ACCOUNT_ID}/registrar/domain-check`, { method: 'POST', body: JSON.stringify({ domains: [domain] }) }).then(r => r.json()).catch(() => ({}));
-        const avail = (chk.result || []).find(d => (d.domain || d.name) === domain);
+        const availList = (chk.result && chk.result.domains) || chk.result || [];
+        const avail = (Array.isArray(availList) ? availList : []).find(d => (d.domain || d.name) === domain);
         if (avail && avail.registrable === false) return json({ error: 'el dominio ya no esta disponible', detail: avail }, 409);
         // 2) registrar el dominio (cobra al billing profile de la cuenta CF)
         const reg = await cf(`/accounts/${env.CF_ACCOUNT_ID}/registrar/registrations`, { method: 'POST', body: JSON.stringify({ domain_name: domain }) });
