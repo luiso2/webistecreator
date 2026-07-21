@@ -197,5 +197,47 @@
     "slug": null,
     "motivo": "Duplicado del mismo negocio ya marcado failed hoy bajo id fb1e3ce6 (fecha 2026-07-21). No se reprocesa.",
     "fecha": "2026-07-21"
+  },
+  {
+    "id": "4adf379a-d4e7-4d0e-84e4-c7c432bd2d5f",
+    "input": "Judith Laguna (Square): judith-laguna.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+    "result": "failed",
+    "motivo": "Judith Laguna (Judith Laguna Castro, terapeuta de masaje licenciada MA97132 FL; opera tambien como 'Blossom Therapy and Wellness by Judith Laguna', 9509 W Flagler St Suite 18, Miami FL 33174, tel (305) 215-4666, tenant Beauty Square/My Suite) tiene identidad y direccion verificadas via listado 'lite' (no reclamado) de Fresha, pero ese mismo listado no trae precios ('Pricing/Duration: Not listed') ni fotos reales (solo imagen placeholder generica spa-12.jpg) ni resenas (sin rating/reviewsCount). El sitio Square Appointments (judith-laguna.square.site) es una SPA sin catalogo en el HTML crudo. Se identifico con confianza moderada el Instagram @laguna_holistic (coincidencia de nombre en resultados de busqueda indexados) pero quedo bloqueado por login-wall en TODOS los metodos: curl con UA Chrome, WebFetch (HTTP 429), r.jina.ai (pantalla de login), imginn.com (HTTP 500), picuki.com (HTTP 403 Cloudflare): 0 fotos reales accesibles. Sin ficha de Google Business propia encontrada (la unica reseña disponible en la zona pertenece al edificio My Suite/Beauty Square, no al negocio). Cero precios verificables, cero fotos reales, cero reseñas propias: construir el demo exigiria inventar el menu de servicios y la galeria, prohibido. Se descarta sin fabricar datos ni contactar al negocio.",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "4f98f44c-af1e-4bfa-81c7-628ccea4a28b",
+    "input": "Judith Laguna (Square): judith-laguna.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+    "result": "dedupe",
+    "motivo": "Mismo negocio que el id 4adf379a-d4e7-4d0e-84e4-c7c432bd2d5f (Judith Laguna), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "c16c3d9d-6d53-4f05-9940-138c3c2a6a65",
+    "input": "Mc Studio Lab (Square): mcstudiolab.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+    "result": "failed",
+    "motivo": "Mc Studio Lab (Square Appointments: mcstudiolab.square.site, title 'Appointments | MC STUDIO') es SPA sin catalogo en el HTML crudo. Busqueda exhaustiva de su Instagram (variantes mcstudiolab, mc.studio.lab, mcstudio.lab, mcstudiolabmiami, mcstudio_lab, mc_studio_lab) no logro confirmar ningun handle real: instagram.com sirve el mismo shell de login generico para cuentas existentes/no existentes/privadas, r.jina.ai no logro renderizar el SPA, imginn.com devolvio HTTP 500 (mirror caido) y picuki.com HTTP 403 (bloqueado por Cloudflare) para todos los candidatos. Se confirmo el edificio anfitrion probable (My Suite!@Beauty Square Miami, 3201 N Miami Ave Suite 109) via suitefinder.net, pero 'MC Studio' NO aparece en el listado de tenants de esa sede, y no se pudo confirmar el numero de suite especifico. Sin Instagram confirmado, sin fotos reales, sin menu/precios y sin ficha de Google propia (solo se encontraron resenas de OTROS tenants del mismo edificio, no atribuibles a este negocio): no hay base verificable para construir el demo sin inventar contenido. Se descarta sin fabricar datos ni contactar al negocio.",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "55637649-26ca-4ecd-bafd-aceb1b43873a",
+    "input": "Mc Studio Lab (Square): mcstudiolab.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+    "result": "dedupe",
+    "motivo": "Mismo negocio que el id c16c3d9d-6d53-4f05-9940-138c3c2a6a65 (Mc Studio Lab), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "c755e49b-6921-44de-a0ce-35aaa1eb16c7",
+    "input": "Tamara Camps LLC (Square): tamara-camps-llc.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+    "result": "failed",
+    "motivo": "Tamara Camps LLC (Doc# L20000106391 Sunbiz, registered agent Camps Vidal Tamara) opera como barberia bajo el nombre comercial 'Gent's Style by Tamara' (confirmado via meta apple-mobile-web-app-title del propio sitio Square), tenant de My Suite @ Beauty Square Doral (10555 NW 41 St Unit 200-5, Doral FL 33178; NO la sede de Miami Ave que se asumia en el input original). Se identifico Instagram @gentstyle_bytamy y, via el espejo imginn.com (unico metodo que funciono; curl directo, r.jina.ai y picuki.com quedaron bloqueados por login-wall/Cloudflare), se accedio a ~8-9 fotos reales del feed y rating agregado 5.0 con 108 resenas (fuente Birdeye) con 3 quotes verbatim reales. Pese a tener fotos y resenas reales suficientes, el sitio Square (tamara-camps-llc.square.site) renderiza directo a un checkout de pago sin listar servicios ni precios, y ninguna busqueda (Google, Booksy, Birdeye, Bizapedia, bio de IG) encontro un menu de servicios con precios/duraciones reales de esta barberia especifica. DESIGN.md exige 'menu REAL con precios/duraciones exactos del booking' para la seccion de Servicios: sin ese dato, construir el demo exigiria inventar el menu de 4 cards, prohibido. El menu queda pendiente para una pasada futura si aparece una fuente con precios verificables (ej. si el checkout de Square expone catalogo via otro flujo, o aparece un listado en otra plataforma).",
+    "fecha": "2026-07-21"
+  },
+  {
+    "id": "c2f594b3-ac20-4b26-8775-08074ae12010",
+    "input": "Tamara Camps LLC (Square): tamara-camps-llc.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+    "result": "dedupe",
+    "motivo": "Mismo negocio que el id c755e49b-6921-44de-a0ce-35aaa1eb16c7 (Tamara Camps LLC / Gent's Style by Tamara), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
+    "fecha": "2026-07-21"
   }
 ]
