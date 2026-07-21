@@ -261,6 +261,92 @@ export default {
         return json({ ok: true, id: data.id, to: biz.email, subject, lang: en ? 'en' : 'es' });
       }
 
+      // ---- DOMINIOS (Cloudflare Registrar) ----
+      // Checar disponibilidad + precio de un nombre en varios TLDs. Gratis, sin riesgo.
+      if (url.pathname === '/api/domain/check' && req.method === 'POST') {
+        if (!env.CF_REGISTRAR_TOKEN || !env.CF_ACCOUNT_ID) {
+          return json({ error: 'Falta CF_REGISTRAR_TOKEN (secret) o CF_ACCOUNT_ID en el worker' }, 500);
+        }
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        const base = (body.name || '').toString().toLowerCase().replace(/[^a-z0-9-]/g, '').replace(/^-+|-+$/g, '').slice(0, 50);
+        if (!base) return json({ error: 'nombre invalido' }, 400);
+        const tlds = (Array.isArray(body.tlds) && body.tlds.length ? body.tlds : ['com', 'net', 'co', 'studio'])
+          .map(t => String(t).toLowerCase().replace(/[^a-z]/g, '')).filter(Boolean).slice(0, 6);
+        const domains = tlds.map(t => `${base}.${t}`);
+        const r = await fetch(`https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/registrar/domain-check`, {
+          method: 'POST',
+          headers: { authorization: `Bearer ${env.CF_REGISTRAR_TOKEN}`, 'content-type': 'application/json' },
+          body: JSON.stringify({ domains }),
+        });
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) return json({ error: 'CF domain-check fallo', detail: data }, 502);
+        return json({ ok: true, base, results: data.result || data });
+      }
+
+      // Comprar un dominio y montar el sitio en el. ACCION DE DINERO: requiere key + confirm:true,
+      // tope diario y anti-duplicado. Nunca compra sin confirmacion explicita del precio.
+      if (url.pathname === '/api/domain/buy' && req.method === 'POST') {
+        if (!env.CF_REGISTRAR_TOKEN || !env.CF_ACCOUNT_ID) {
+          return json({ error: 'Falta CF_REGISTRAR_TOKEN (secret) o CF_ACCOUNT_ID en el worker' }, 500);
+        }
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        if (body.confirm !== true) return json({ error: 'la compra requiere confirm:true' }, 400);
+        const slug = (body.slug || '').toString();
+        if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
+        const domain = (body.domain || '').toString().toLowerCase().trim();
+        if (!/^[a-z0-9-]{1,63}\.[a-z]{2,20}$/.test(domain)) return json({ error: 'dominio invalido' }, 400);
+        const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
+        const biz = registry.find(b => b.slug === slug);
+        if (!biz) return json({ error: 'negocio no encontrado en el registro' }, 404);
+        // Guardas de dinero: tope diario + anti-duplicado
+        const buys = (await env.SITEFORGE_KV.get('domain_buys', 'json')) || [];
+        const today = new Date().toISOString().slice(0, 10);
+        if (buys.filter(b => (b.at || '').slice(0, 10) === today).length >= 10) {
+          return json({ error: 'tope diario de compras alcanzado (10). Reintenta manana.' }, 429);
+        }
+        if (buys.some(b => b.domain === domain)) return json({ error: 'ese dominio ya fue comprado' }, 409);
+        const cf = (path, opts = {}) => fetch(`https://api.cloudflare.com/client/v4${path}`, {
+          ...opts,
+          headers: { authorization: `Bearer ${env.CF_REGISTRAR_TOKEN}`, 'content-type': 'application/json', ...(opts.headers || {}) },
+        });
+        // 1) re-check justo antes de registrar (recomendado por CF)
+        const chk = await cf(`/accounts/${env.CF_ACCOUNT_ID}/registrar/domain-check`, { method: 'POST', body: JSON.stringify({ domains: [domain] }) }).then(r => r.json()).catch(() => ({}));
+        const avail = (chk.result || []).find(d => (d.domain || d.name) === domain);
+        if (avail && avail.registrable === false) return json({ error: 'el dominio ya no esta disponible', detail: avail }, 409);
+        // 2) registrar el dominio (cobra al billing profile de la cuenta CF)
+        const reg = await cf(`/accounts/${env.CF_ACCOUNT_ID}/registrar/registrations`, { method: 'POST', body: JSON.stringify({ domain_name: domain }) });
+        const regData = await reg.json().catch(() => ({}));
+        if (!reg.ok) return json({ error: 'registro fallo (revisa: registrant contact configurado, metodo de pago valido, acceso a la beta de Registrar API)', detail: regData }, 502);
+        // 3) zone_id (el registro crea la zona en CF; puede tardar unos segundos)
+        let zoneId = null;
+        for (let i = 0; i < 4 && !zoneId; i++) {
+          const zr = await cf(`/zones?name=${encodeURIComponent(domain)}`).then(r => r.json()).catch(() => ({}));
+          zoneId = (zr.result && zr.result[0] && zr.result[0].id) || null;
+          if (!zoneId) await new Promise(res => setTimeout(res, 1500));
+        }
+        // 4) montar: custom domain del worker de demos + mapa hostname->slug
+        let attached = false;
+        if (zoneId) {
+          const ad = await cf(`/accounts/${env.CF_ACCOUNT_ID}/workers/domains`, {
+            method: 'PUT',
+            body: JSON.stringify({ hostname: domain, service: 'siteforge-demos', environment: 'production', zone_id: zoneId }),
+          });
+          attached = ad.ok;
+        }
+        await env.SITEFORGE_KV.put('domain:' + domain, slug);
+        // 5) log de compra + actualizar el negocio
+        buys.push({ domain, slug, at: new Date().toISOString() });
+        await env.SITEFORGE_KV.put('domain_buys', JSON.stringify(buys));
+        const updated = registry.map(b => (b.slug === slug ? { ...b, custom_domain: domain, live_url: `https://${domain}/` } : b));
+        await env.SITEFORGE_KV.put('registry', JSON.stringify(updated));
+        return json({
+          ok: true, domain, slug, live_url: `https://${domain}/`, worker_attached: attached,
+          note: attached ? 'Sitio montado. SSL puede tardar unos minutos.' : 'Dominio registrado y mapeado; el enlace del worker se completara al propagar la zona.',
+        });
+      }
+
       if (url.pathname === '/api/registry' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }

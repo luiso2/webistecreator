@@ -155,6 +155,15 @@
     .biz .actions:empty { display: none; }
     .link-btn.wa { color: #d7ffe6; border-color: rgba(37,211,102,0.5); background: rgba(37,211,102,0.12); }
     .link-btn.wa:hover { border-color: rgba(37,211,102,0.9); background: rgba(37,211,102,0.22); }
+    .domain-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; align-items: center; }
+    .dom-input { flex: 1; min-width: 120px; font-family: inherit; font-size: 12.5px; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); color: var(--ink); }
+    .dom-btn { cursor: pointer; font-family: inherit; font-size: 12.5px; font-weight: 600; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); color: var(--ink-60); transition: transform 160ms ease-out; }
+    .dom-btn:active { transform: scale(0.97); }
+    .dom-results { flex-basis: 100%; font-size: 12px; color: var(--ink-60); display: grid; gap: 5px; }
+    .dom-hit { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 9px; border-radius: 9px; background: rgba(120,220,150,0.08); border: 1px solid rgba(120,220,150,0.25); }
+    .dom-miss { padding: 5px 9px; opacity: 0.55; }
+    .dom-buy { cursor: pointer; font-family: inherit; font-size: 11.5px; font-weight: 700; padding: 6px 11px; border-radius: 9px; border: none; background: var(--lime, #b7f36a); color: #0a2a10; }
+    .dom-buy:active { transform: scale(0.97); }
     .crm-row { display: flex; gap: 8px; margin-top: 4px; align-items: center; }
     .crm-btn {
       flex: 1; cursor: pointer; font-family: inherit; font-size: 12.5px; font-weight: 600; padding: 9px 10px;
@@ -319,6 +328,38 @@
 
     // CRM: marcar/desmarcar cliente cerrado o descartado. Solo cambia estado en el panel,
     // no envia nada. Reversible con "Reabrir".
+    // Dominios: buscar disponibilidad (gratis) y comprar+montar (confirma precio, es dinero).
+    window.checkDomain = async (slug) => {
+      const inp = $('dom-' + slug), box = $('domres-' + slug);
+      const name = (inp.value || '').trim() || slug;
+      box.innerHTML = 'Buscando...';
+      try {
+        const r = await fetch('/api/domain/check', { method: 'POST', headers: headers(), body: JSON.stringify({ name }) });
+        const d = await r.json();
+        if (!r.ok) { box.innerHTML = 'Error: ' + esc(d.error || r.status); return; }
+        const rows = (d.results || []).map(x => {
+          const dom = x.domain || x.name || '';
+          const ok = x.registrable !== false && x.available !== false;
+          const cost = x.pricing && x.pricing.registration_cost != null ? x.pricing.registration_cost : (x.pricing && x.pricing.registration != null ? x.pricing.registration : null);
+          const price = cost != null ? ('$' + cost + '/año') : '';
+          return ok
+            ? `<div class="dom-hit"><span>${esc(dom)} ${esc(price)}</span><button class="dom-buy" onclick="buyDomain('${esc(slug)}','${esc(dom)}','${esc(price)}')">Comprar y lanzar</button></div>`
+            : `<div class="dom-miss">${esc(dom)} · no disponible</div>`;
+        }).join('');
+        box.innerHTML = rows || 'sin resultados';
+      } catch (e) { box.innerHTML = 'Error: ' + esc(e.message); }
+    };
+    window.buyDomain = async (slug, domain, price) => {
+      if (!confirm(`Comprar ${domain} ${price} y montar el sitio?\nEsto registra el dominio y cobra a tu cuenta Cloudflare.`)) return;
+      const box = $('domres-' + slug);
+      box.innerHTML = 'Comprando y montando ' + esc(domain) + '... (puede tardar)';
+      try {
+        const r = await fetch('/api/domain/buy', { method: 'POST', headers: headers(), body: JSON.stringify({ slug, domain, confirm: true }) });
+        const d = await r.json();
+        if (!r.ok) { box.innerHTML = 'Error: ' + esc(d.error || r.status); return; }
+        box.innerHTML = `<div class="dom-hit"><span>Live: <a href="${esc(d.live_url)}" target="_blank" rel="noopener" style="color:var(--lime)">${esc(d.domain)}</a></span></div><div style="font-size:11px;opacity:0.7">${esc(d.note || '')}</div>`;
+      } catch (e) { box.innerHTML = 'Error: ' + esc(e.message); }
+    };
     window.markCRM = async (slug, status, btn) => {
       const prev = btn.textContent;
       btn.disabled = true; btn.textContent = '...';
@@ -374,6 +415,11 @@
               : (b.crm_status === 'declined'
                 ? `<span class="crm-tag lost">No interesado</span><button class="crm-btn undo" onclick="markCRM('${esc(b.slug)}','pending',this)">Reabrir</button>`
                 : `<button class="crm-btn won" onclick="markCRM('${esc(b.slug)}','client',this)">Cerrar como cliente ✓</button><button class="crm-btn lost" onclick="markCRM('${esc(b.slug)}','declined',this)">No</button>`)}
+          </div>
+          <div class="domain-row">
+            <input class="dom-input" id="dom-${esc(b.slug)}" placeholder="${esc(b.slug)}" />
+            <button class="dom-btn" onclick="checkDomain('${esc(b.slug)}')">Buscar dominio</button>
+            <div class="dom-results" id="domres-${esc(b.slug)}">${b.live_url ? `<div class="dom-hit"><span>Live: <a href="${esc(b.live_url)}" target="_blank" rel="noopener" style="color:var(--lime)">${esc(b.custom_domain || b.live_url)}</a></span></div>` : ''}</div>
           </div>
         </div>`).join('');
       window.__reg = lista;
