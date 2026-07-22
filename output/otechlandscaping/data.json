@@ -1,0 +1,110 @@
+{
+  "slug": "otechlandscaping",
+  "name": "Otech Landscaping",
+  "legal_name": "Otech Landscaping LLC",
+  "niche": "lawn care / landscaping",
+  "city": "Pembroke Pines / Miramar, FL",
+  "address": {
+    "line1": "13630 SW 20th St",
+    "locality": "Pembroke Pines",
+    "region": "FL",
+    "postal_code": "33029",
+    "country": "US",
+    "source": "GreenPal marketplace profile (https://www.yourgreenpal.com/otech-landscaping), fetched directly and cross-checked in the page's JSON-LD (LocalBusiness block: streetAddress 13630 Sw 20th St, Pembroke Pines, FL 33029) and in the visible page text ('Overall rating 4.9/5 ... 13630 Sw 20th St Pembroke Pines, FL, 33029').",
+    "discrepancy_note": "Florida SunBiz corporate registration (OTECHLANDSCAPING LLC, doc L18000147529) lists the LLC's principal/registered address as Miramar, FL 33027 with registered agent The Hernandez Legal Group (11420 N Kendall Dr Suite 108, Miami FL 33176), and a web snippet described the SunBiz status as inactive as of 2022-09-23. This is a common mismatch between an LLC's legal filing address and a small operator's active service/mailing address; the business itself is clearly still active and accumulating verified reviews on GreenPal through at least mid-2023, so the GreenPal-listed Pembroke Pines address was used as primary for the site. Both addresses sit right at the Miramar/Pembroke Pines border as expected."
+  },
+  "phone": "+1 786-325-3581",
+  "phone_display": "(786) 325-3581",
+  "phone_source": "Provided in the task brief; used as the sole real contact channel on the site (no booking platform of their own was found).",
+  "email": null,
+  "email_note": "No public email found after checking: GreenPal profile page (full HTML fetched with curl/Chrome UA, no mailto or business_email exposed anywhere, the platform intentionally hides direct vendor contact behind its own Message/Request-a-Call system), Florida SunBiz corporate filing (lists a registered agent law firm, not the business's own email), a Cortera company profile listing (blocked by a Cloudflare challenge, inaccessible), and general web search for 'Otech Landscaping' + email/gmail (no result). No independently confirmed Facebook or Instagram page was found either (see instagram/facebook notes below), so those bio fields could not be checked. Recorded as null per pipeline rule: do not invent an email.",
+  "has_own_site": false,
+  "website_check": {
+    "domains_tested": [
+      { "domain": "otechlandscaping.com", "result": "DNS lookup fails (Name or service not known / no A record). Domain not registered or not active." },
+      { "domain": "otechlandscapingllc.com", "result": "DNS lookup fails, same as above." },
+      { "domain": "otechlawncare.com", "result": "DNS lookup fails." },
+      { "domain": "otechlandscape.com", "result": "DNS lookup fails." },
+      { "domain": "otechlandscapingfl.com", "result": "DNS lookup fails." }
+    ],
+    "greenpal_sameas": "The GreenPal page's own LocalBusiness JSON-LD includes \"sameAs\": [\"\"] (empty string), confirming GreenPal itself has no owned website on file for this vendor.",
+    "conclusion": "Confirmed: has_own_site = false. No owned domain resolves in any tested variant."
+  },
+  "instagram": null,
+  "instagram_note": "Searched 'Otech Landscaping instagram' and related queries; results returned several unrelated accounts with similar names (@otech.llc, @otech_group, @otechirrigation, @og.landscaping) but none could be independently verified as belonging to this specific Miramar/Pembroke Pines lawn care business, so no handle was used on the site to avoid misattribution.",
+  "facebook": null,
+  "facebook_note": "No Facebook page could be independently verified for this business via web search.",
+  "rating": 4.9,
+  "rating_alt_display": "GreenPal shows both '4.9/5' and '5/5' in different UI spots on the same profile page; the underlying JSON-LD aggregateRating value is 4.95 (122 reviews, bestRating 5). 4.9 was used on the site as the safer, more precise figure.",
+  "review_count": 122,
+  "rating_source": "Fetched the live GreenPal profile page directly (https://www.yourgreenpal.com/otech-landscaping) with curl + Chrome UA (HTTP 200, full HTML saved and parsed). The page's own LocalBusiness JSON-LD block gives aggregateRating {ratingValue: 4.95, reviewCount: 122, bestRating: 5}. Visible page text independently states 'Overall rating 4.9/5 (122 reviews)' and elsewhere 'Overall rating 5 / 5 (122 reviews)', 'Recommended by 98% of Homeowners', 'In Business since Jun, 18', '74% reliability rating', '85% repeat clients'. This is the strongest and only rating source found; no separate/independent Google Business Profile could be located for this specific vendor despite searching.",
+  "in_business_since": "June 2018",
+  "founder_story": "GreenPal profile About text (real, quoted verbatim from the fetched page): \"My cousin Alex and I began mowing lawns as teenagers to make extra money over 30 years ago, primarily for family and friends. In the summer of 2018, we were awarded a large contract and have been growing our business both residential and commercial.\" Profile owner name on GreenPal is Julio Echemendia (legalName on the page's LocalBusiness JSON-LD: Otech Landscaping); Florida SunBiz also lists Julio A. Echemendia as manager of Otech Landscaping LLC.",
+  "services": [
+    { "name": "Lawn Mowing & Edging", "source": "GreenPal profile explicit service list ('Lawn & Yard Services Offered: Landscaping, Lawn Mowing, Yard Clean Up') plus photo captions on the same page describing 'Ideal mowing height and edge trimming shown'." },
+    { "name": "Landscaping & Bed Maintenance", "source": "GreenPal explicit service list ('Landscaping'); confirmed visually in the before/after photos (mulch beds, palm and shrub maintenance around serviced homes)." },
+    { "name": "Yard Clean Up", "source": "GreenPal explicit service list ('Yard Clean Up')." },
+    { "name": "Trimming & Custom Requests", "source": "GreenPal FAQ block on the vendor page: Q 'Can I request extra trimming or edging from Julio Echemendia?' A 'Absolutely. Just include those notes when booking or message them directly.' Customer order notes visible on the page also mention hedge trimming requests (e.g. 'I need the backyard hedges cut!')." }
+  ],
+  "services_note": "No fixed price list is published; lawn care from this vendor is quote-based per property. The site uses 'Request a Free Quote' as the only call to action for services, per pipeline rule (no invented prices). GreenPal's own per-mow order history for this vendor shows a real price range of roughly $35-45 per recurring mow (avg ~$38), but that is a marketplace-brokered price for a specific yard size, not a published rate card, so it was not placed on the site as a stated price.",
+  "reviews": [
+    {
+      "name": "James Ryan",
+      "text": "Thanks for coming out so quickly and doing a fantastic job",
+      "source": "GreenPal, Pembroke Pines FL 33026, verified review dated Sep 15, 2022 (verbatim, one of only two reviews on the profile with review body text; the rest of the 122 reviews on the page are 5-star ratings without published text)."
+    },
+    {
+      "name": "Zoraida Soto",
+      "text": null,
+      "note": "Repeat 5-star reviewer, Miramar FL 33023, with multiple verified GreenPal mowing reviews dated between Aug 2022 and Dec 2022. No review body text published for this reviewer's entries; used on the site as an attributed 5-star repeat-customer fact, not as an invented quote.",
+      "source": "GreenPal"
+    },
+    {
+      "name": "Whitney Tucker",
+      "text": null,
+      "note": "Repeat 5-star reviewer, Miramar FL 33029, with multiple verified GreenPal mowing reviews dated between Feb 2022 and Jul 2022. No review body text published for this reviewer's entries; used on the site as an attributed 5-star repeat-customer fact, not as an invented quote.",
+      "source": "GreenPal"
+    }
+  ],
+  "reviews_note": "GreenPal's server-rendered page exposes 20 reviews via JSON-LD (of 122 total); only 2 of those 20 have non-empty review body text (James Ryan's positive quote above, and a Zoraida Soto note asking for extra weed-spraying which reads as a service request rather than a testimonial and was not used as a quote). Per DESIGN.md rule ('si hay menos de 3 [quotes], mostrar las que haya'), the site shows 1 real verbatim quote plus 2 real, attributed repeat-customer facts (no invented dialogue) rather than padding with fabricated testimonials.",
+  "language": "en",
+  "language_source": "GreenPal profile content, FAQ answers and the one available review quote are all in English; Pembroke Pines/Miramar is a bilingual South Florida market but English is the primary language of the business's own marketplace presence, so <html lang=\"en\"> is the default with a full Spanish data-es translation on every text node per DESIGN.md Multilenguaje section.",
+  "images": {
+    "raw_dir": "assets/raw/",
+    "source": "GreenPal profile page JSON-LD @graph included 48 ImageObject entries explicitly attributed to creator 'Otech Landscaping' (before/after lawn mowing photos hosted on greenpal-production.s3.amazonaws.com), plus one 'image' field (a headshot, likely Julio Echemendia) on the vendor's own LocalBusiness JSON-LD block. All 47 lawn photos plus the headshot were downloaded with curl + Chrome UA and verified with `file` as real JPEG/PNG. Every photo carried a baked-in 'GREENPAL' logo watermark (top ~42px) and a 'Lawn Service by Otech Landscaping' caption band (bottom ~34px); all used photos were cropped with Pillow to remove both text bands before use, per DESIGN.md's prohibition on gallery captures with text overlays. Source photos are natively small (340x255px before crop, 340x179px after), the only resolution GreenPal stores; no larger version or alternate photo source (no verified Instagram/Facebook) was found, so gallery/hero frame aspect ratios were adapted from the template's portrait 3:4 to landscape 4:3 / 16:9 to avoid over-cropping the limited native resolution.",
+    "selected": [
+      { "file": "hero-landscaping-bed.jpg", "desc": "Tropical agave and palm landscaping bed in front of a single-story home.", "use": "hero + about (2nd image, reused)" },
+      { "file": "about-mowed-lawn.jpg", "desc": "Freshly mowed and edged front lawn with a round mulch bed centerpiece.", "use": "about" },
+      { "file": "founder-julio.png", "desc": "Headshot from GreenPal's vendor profile image field, likely Julio Echemendia (co-founder).", "use": "small avatar chip in about section only, never used as a gallery tile per DESIGN.md rule" },
+      { "file": "gallery-clean-edge-lawn.jpg", "desc": "Two-story home, mowed lawn with crisp sidewalk edge.", "use": "gallery (wide tile)" },
+      { "file": "gallery-blue-house-palms.jpg", "desc": "Backyard of a blue single-story home, mowed lawn trimmed around palm trees.", "use": "gallery" },
+      { "file": "gallery-circular-bed.jpg", "desc": "Two-story home with a maintained round mulch bed and clean lawn edge.", "use": "gallery" },
+      { "file": "gallery-circular-driveway.jpg", "desc": "Circular paver driveway landscaping with sharp mowed edges, photographed after rain.", "use": "gallery" },
+      { "file": "gallery-backyard-pavers.jpg", "desc": "Backyard lawn and paver patio, mowed and tidy.", "use": "gallery" },
+      { "file": "gallery-mailbox-palms.jpg", "desc": "Curbside landscaping detail: palms, mulch bed and a white mailbox.", "use": "gallery" },
+      { "file": "gallery-hedge-walkway.jpg", "desc": "Trimmed hedges and palms along a front walkway.", "use": "gallery" }
+    ],
+    "discarded": "37 of the 47 downloaded before/after lawn photos were not used, to keep the gallery curated and non-repetitive (many showed near-duplicate angles of the same handful of recurring GreenPal customer properties). All discarded files were deleted from assets/raw/ rather than left unused on disk."
+  },
+  "curation_note": "All 10 photos used are real, verified work photos or a real founder headshot; none are stock or unrelated. No closed-eyes/mid-task issues apply to lawn photography, but every source photo required watermark cropping (see images.source above) before use, and hero/gallery aspect ratios were adapted from the templates' default portrait 3:4 to landscape 4:3 / 16:9 because the only available real-photo source (GreenPal) stores photos natively small and landscape-oriented (340x255px). This is a deliberate, documented trade-off to keep only real, unaltered (aside from watermark-removal cropping) photography rather than padding with unrelated stock images.",
+  "brand_vibe": "Family-run South Florida lawn care crew, hands-on and unpretentious: started as two teenage cousins mowing lawns for family and friends, grew into a residential/commercial GreenPal-top-rated operation. Fresh forest/moss green palette on a warm ivory base evokes healthy, well-kept lawns and tropical landscaping (palms, agave, mulch beds) without leaning into luxury-spa styling used elsewhere in this template family.",
+  "palette": {
+    "name": "otech-forest",
+    "bg": "#f6f3ea",
+    "bg-2": "#e9e4d1",
+    "surface": "rgba(250,248,240,0.7)",
+    "ink": "#24301d",
+    "accent-deep": "#3d6b2f",
+    "accent-mid": "#7a9c4e",
+    "accent-soft": "#e9e4d1",
+    "accent-ghost": "rgba(61,107,47,0.14)",
+    "note": "New forest/moss green palette, not reused from any other site in output/ (checked against templates/DESIGN.md's listed palettes and templates/SKELETONS-V2.md's 'paletas ya usadas' list: coral fairy, caramelo/oddjobrob amber-terracotta, esmeralda #2f7d5a, teal acero, violeta dark, rosa dark/lashbloom plum-pink, gold dark/pureartistry)."
+  },
+  "cta_model": "quote_based",
+  "cta_note": "Lawn care priced per property via free quote, not fixed pricing or instant online booking. Every CTA on the site (nav, hero, services, CTA final, floating button) points to tel:+17863253581, the only real, verified contact channel found. Secondary links point to the real GreenPal profile (https://www.yourgreenpal.com/otech-landscaping) for social proof / more reviews, never claiming GreenPal as the business's own booking channel.",
+  "sameAs": [
+    "https://www.yourgreenpal.com/otech-landscaping"
+  ],
+  "build_status": "built",
+  "build_notes": "Derived from templates/light-v2/index.html (Lash Bloom skeleton) following templates/SKELETONS-V2.md's anchored-replacement method: global forest/moss green palette swap (all accent-deep/mid/bg/ink hex + rgba triplets replaced, merktop-badge left untouched/gold as required), all copy and data-es/data-en rewritten per section, JSON-LD replaced with LandscapingBusiness type and real address/phone/rating/services, nav+section ids renamed to fit a lawn care business (#nuestra-historia, #como-trabajamos), the 4-step 'El Metodo' section rewritten into a lawn-care 'How We Work' flow (free quote -> first visit -> set your schedule -> ongoing care), services section rebuilt without fixed prices (quote-based CTA throughout), gallery/hero frame aspect ratios adapted from portrait 3:4 to landscape 4:3 / 16:9 to fit the only available real photo source's native resolution and orientation, floating CTA + all booking links repointed from Booksy to tel:. Ran python3 scripts/gate.py otechlandscaping --lang en --forbid \"Lash Bloom,Yesi,West Palm,Cresthaven,519855,lash,Pure Artistry,Orlando,pureartistry,Booksy,booksy\": GATE OK. Zero em-dashes confirmed. No <details>/accordion elements used anywhere."
+}
