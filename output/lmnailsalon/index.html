@@ -167,6 +167,16 @@
     .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
     .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
     .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer; background: rgba(61,43,40,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
     @media (hover: hover) and (pointer: fine) {
       .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
       .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
@@ -379,33 +389,33 @@
   </section>
 
   <!-- EL METODO -->
-  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <section id="proceso" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tu cita, pestaña" data-en="Your visit, lash">Your visit, lash</span> <span class="text-shine" data-es="por pestaña" data-en="by lash">by lash</span></h2>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tu manicura," data-en="Your manicure,">Tu manicura,</span> <span class="text-shine" data-es="paso a paso" data-en="step by step">paso a paso</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3" data-es="Reserva online" data-en="Book online">Book online</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Eliges tu set o tu relleno en Booksy con precio y duración claros, y confirmas al instante." data-en="Pick your set or fill on Booksy with clear price and duration, and confirm instantly.">Pick your set or fill on Booksy with clear price and duration, and confirm instantly.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Reserva por WhatsApp" data-en="Book on WhatsApp">Reserva por WhatsApp</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Escríbele a Leidy por WhatsApp, cuéntale qué buscas y agenda día y hora." data-en="Message Leidy on WhatsApp, tell her what you're after, and lock in your day and time.">Escríbele a Leidy por WhatsApp, cuéntale qué buscas y agenda día y hora.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3" data-es="Mapeo del ojo" data-en="Eye mapping">Eye mapping</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Forma del ojo, pestaña natural y el efecto que buscas: de ahí sale el diseño clásico, híbrido o volumen." data-en="Eye shape, natural lash and the effect you want: that is where the classic, hybrid or volume design comes from.">Eye shape, natural lash and the effect you want: that is where the classic, hybrid or volume design comes from.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Diseño a tu medida" data-en="Your design">Diseño a tu medida</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Eligen juntas forma, largo, color y el sistema ideal: rusa, polygel, acrílico o gel." data-en="Together you choose shape, length, color and the right system: Russian, polygel, acrylic or gel.">Eligen juntas forma, largo, color y el sistema ideal: rusa, polygel, acrílico o gel.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3" data-es="Aplicación zen" data-en="The zen part">The zen part</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te recuestas, cierras los ojos y Yesi hace lo suyo: hasta 1h 50min de aplicación tranquila, pestaña por pestaña." data-en="You lie back, close your eyes and Yesi does her thing: up to 1h 50min of unhurried, lash-by-lash application.">You lie back, close your eyes and Yesi does her thing: up to 1h 50min of unhurried, lash-by-lash application.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Manicura rusa" data-en="Russian manicure">Manicura rusa</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cutícula perfecta y preparación milimétrica antes de cualquier sistema: la base de un acabado que dura." data-en="Flawless cuticle work and precise prep before any system goes on: the base of a finish that lasts.">Cutícula perfecta y preparación milimétrica antes de cualquier sistema: la base de un acabado que dura.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3" data-es="Plan de relleno" data-en="Fill plan">Fill plan</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con tu relleno de 2 o 3 semanas agendado y acumulando puntos del programa de lealtad." data-en="You leave with your 2 or 3 week fill booked and loyalty points adding up.">You leave with your 2 or 3 week fill booked and loyalty points adding up.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Acabado impecable" data-en="Flawless finish">Acabado impecable</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sellado, brillo y nail art si lo pediste. Sales con un trabajo que se sostiene semanas." data-en="Sealing, shine, and nail art if you asked for it. You leave with work that holds up for weeks.">Sellado, brillo y nail art si lo pediste. Sales con un trabajo que se sostiene semanas.</p>
         </div>
       </div>
     </div>
@@ -417,48 +427,94 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine">ritual</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por Lash Bloom en Booksy. Reserva con confirmación inmediata." data-en="Prices and durations as published by Lash Bloom on Booksy. Booking confirms instantly.">Precios y duraciones publicados por Lash Bloom en Booksy. Reserva con confirmación inmediata.</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine">manicura</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios publicados por LM Nail Salon en Booksy. Escribe por WhatsApp para reservar." data-en="Prices as published by LM Nail Salon on Booksy. Message on WhatsApp to book.">Precios publicados por LM Nail Salon en Booksy. Escribe por WhatsApp para reservar.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-16">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Efecto natural" data-en="Natural effect">Natural effect</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Classic Full Set</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Una extensión por pestaña natural: el efecto limpio y elegante de todos los días. Rellenos de 2 semanas $70 y de 3 semanas $80." data-en="One extension per natural lash: the clean, elegant everyday effect. 2-week fills $70 and 3-week fills $80.">One extension per natural lash: the clean, elegant everyday effect. 2-week fills $70 and 3-week fills $80.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Más completo" data-en="Most complete">Más completo</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Técnica Híbrida + Russian Manicure</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El sistema más avanzado de la casa: técnica híbrida sobre manicura rusa, con acabado de larga duración." data-en="The studio's most advanced system: hybrid technique over a Russian manicure, for a long-lasting finish.">El sistema más avanzado de la casa: técnica híbrida sobre manicura rusa, con acabado de larga duración.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$130</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 45min</p></div>
-            <a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$150</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">3h 30min</p></div>
+            <a href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20T%C3%A9cnica%20H%C3%ADbrida%20%2B%20Russian%20Manicure%20en%20LM%20Nail%20Salon" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(183,114,126,0.4); box-shadow: 0 18px 50px rgba(61,43,40,0.14);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Favorito del estudio" data-en="Studio favorite">Studio favorite</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Hybrid Full Set</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="La mezcla perfecta entre clásico y volumen: textura wispy con cuerpo. Rellenos de 2 semanas $80 y de 3 semanas $90." data-en="The perfect mix of classic and volume: wispy texture with body. 2-week fills $80 and 3-week fills $90.">The perfect mix of classic and volume: wispy texture with body. 2-week fills $80 and 3-week fills $90.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Favorito del estudio" data-en="Studio favorite">Favorito del estudio</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Full Set Polygel + Russian Manicure</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Extensión en polygel liviano y resistente, sobre la base impecable de la manicura rusa." data-en="Lightweight, durable polygel extensions, built on the flawless base of a Russian manicure.">Extensión en polygel liviano y resistente, sobre la base impecable de la manicura rusa.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$145</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 50min</p></div>
-            <a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$120</p></div>
+            <a href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20Full%20Set%20Polygel%20%2B%20Russian%20Manicure%20en%20LM%20Nail%20Salon" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Maximo impacto" data-en="Maximum impact">Maximum impact</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Volume &amp; Mega</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Abanicos hechos a mano para densidad total: Volume full set $155 y rellenos volume $90-$105 o mega volume $100." data-en="Handmade fans for full density: Volume full set $155 with volume fills $90-$105 or mega volume fills $100.">Handmade fans for full density: Volume full set $155 with volume fills $90-$105 or mega volume fills $100.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Efecto natural" data-en="Natural effect">Efecto natural</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Soft Gel + Russian Manicure</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Uñas reforzadas en gel suave con la preparación rusa: resistencia con apariencia natural." data-en="Soft gel reinforced nails with Russian prep: strength that still looks natural.">Uñas reforzadas en gel suave con la preparación rusa: resistencia con apariencia natural.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$155</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 50min</p></div>
-            <a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$80</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 30min</p></div>
+            <a href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20Soft%20Gel%20%2B%20Russian%20Manicure%20en%20LM%20Nail%20Salon" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Especiales" data-en="Specials">Specials</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Special &amp; Extras" data-en="Special &amp; Extras">Special &amp; Extras</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El especial classic/hybrid/volume por $120, y bottom lashes por $25 para completar la mirada." data-en="The classic/hybrid/volume special at $120, plus bottom lashes for $25 to complete the look.">The classic/hybrid/volume special at $120, plus bottom lashes for $25 to complete the look.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Para tus pies" data-en="For your feet">Para tus pies</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Pedicure Gel</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Pedicura completa con esmaltado en gel de larga duración, para que tus pies también luzcan impecables." data-en="Full pedicure with long-lasting gel polish, so your feet look just as flawless.">Pedicura completa con esmaltado en gel de larga duración, para que tus pies también luzcan impecables.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$120</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 40min</p></div>
-            <a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$50</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h</p></div>
+            <a href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20Pedicure%20Gel%20en%20LM%20Nail%20Salon" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Programa de lealtad para clientas frecuentes. Menú completo y disponibilidad en Booksy." data-en="Loyalty program for regulars. Full menu and availability on Booksy.">Loyalty program for regulars. Full menu and availability on Booksy.</span></p>
+
+      <div class="reveal mb-8">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-1" data-es="Menú completo" data-en="Full menu">Menú completo</p>
+        <h3 class="font-display text-2xl sm:text-3xl" data-es="Los 17 servicios, todos aquí" data-en="All 17 services, all listed here">Los 17 servicios, todos aquí</h3>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="glass rounded-3xl p-7 reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Manicura rusa y sistemas" data-en="Russian manicure and systems">Manicura rusa y sistemas</p>
+          <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Técnica Híbrida + Russian Manicure</span><span class="font-display text-[color:var(--accent-deep)]">$150</span></div>
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Full Dual + Russian Manicure</span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light" data-es="Russian Manicure + Nivelación de Builder" data-en="Russian Manicure + Builder Leveling">Russian Manicure + Nivelación de Builder</span><span class="font-display text-[color:var(--accent-deep)]">$70</span></div>
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Full Set Polygel + Russian Manicure</span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Fill Polygel + Russian Manicure</span><span class="font-display text-[color:var(--accent-deep)]">$100</span></div>
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Full Set Acrílico + Russian Manicure</span><span class="font-display text-[color:var(--accent-deep)]">$120</span></div>
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light" data-es="Refill Acrílico" data-en="Acrylic Refill">Refill Acrílico</span><span class="font-display text-[color:var(--accent-deep)]">$100</span></div>
+            <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Soft Gel + Russian Manicure</span><span class="font-display text-[color:var(--accent-deep)]">$80</span></div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:90ms">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Pedicura" data-en="Pedicure">Pedicura</p>
+            <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Pedicure Gel</span><span class="font-display text-[color:var(--accent-deep)]">$50</span></div>
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light" data-es="Cambio de Color en Pies" data-en="Toe Color Change">Cambio de Color en Pies</span><span class="font-display text-[color:var(--accent-deep)]">$30</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:150ms">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Nail art y diseño" data-en="Nail art and design">Nail art y diseño</p>
+            <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light" data-es="Nail Art" data-en="Nail Art">Nail Art</span><span class="font-display text-[color:var(--accent-deep)]">$20</span></div>
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light" data-es="Diseño Sencillo" data-en="Simple Design">Diseño Sencillo</span><span class="font-display text-[color:var(--accent-deep)]">$15</span></div>
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">French Manicure</span><span class="font-display text-[color:var(--accent-deep)]">$10</span></div>
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Stamping Design</span><span class="font-display text-[color:var(--accent-deep)]">$10</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:210ms">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Color y mantenimiento" data-en="Color and maintenance">Color y mantenimiento</p>
+            <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light">Fix Nails</span><span class="font-display text-[color:var(--accent-deep)]">$10</span></div>
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light" data-es="Remover Sistemas" data-en="System Removal">Remover Sistemas</span><span class="font-display text-[color:var(--accent-deep)]">$10</span></div>
+              <div class="flex items-baseline justify-between gap-4 py-2.5"><span class="font-light" data-es="Cambio de Color en Manos" data-en="Hand Color Change">Cambio de Color en Manos</span><span class="font-display text-[color:var(--accent-deep)]">$30</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Duración exacta y disponibilidad en Booksy. Escribe por WhatsApp si tu diseño no está en la lista." data-en="Exact duration and availability on Booksy. Message on WhatsApp if your design isn't listed.">Duración exacta y disponibilidad en Booksy. Escribe por WhatsApp si tu diseño no está en la lista.</span></p>
     </div>
   </section>
 
@@ -469,20 +525,22 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Miradas" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="lashes">lashes</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="results">results</span></h2>
         </div>
-        <a href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.instagram.com/lm.nailsalon/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @_lashbloom
+          @lm.nailsalon
         </a>
       </div>
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Clienta feliz, set nuevo" data-en="Fresh set, happy client">Fresh set, happy client</span><img src="assets/raw/bk-6.jpg" alt="Clienta sonriendo con su set de pestañas nuevo en Lash Bloom" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Volumen wispy" data-en="Wispy volume">Wispy volume</span><img src="assets/raw/bk-12.jpg" alt="Closeup de pestanas de volumen wispy" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Cejas + pestañas" data-en="Brows + lashes">Brows + lashes</span><img src="assets/raw/gallery-7.jpg" alt="Ceja perfilada con pestanas de volumen" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Resultado natural" data-en="Natural result">Natural result</span><img src="assets/raw/gallery-2.jpg" alt="Clienta con resultado natural de pestanas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Set clásico" data-en="Classic set">Classic set</span><img src="assets/raw/bk-10.jpg" alt="Set clasico de pestanas en camilla rosa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Híbrido con brillo" data-en="Glowy hybrid">Glowy hybrid</span><img src="assets/raw/bk-3.jpg" alt="Clienta con set hibrido de pestanas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Rojo clásico con puntos" data-en="Classic red with dots">Classic red with dots</span><img src="assets/raw/bk-3.jpg" alt="Manicura roja brillante con puntos blancos y pulsera roja" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Nude con dije dorado" data-en="Nude with gold charm">Nude with gold charm</span><img src="assets/raw/bk-9.jpg" alt="Manicura nude con dije dorado y esmalte vino" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="French clásico" data-en="Classic french">Classic french</span><img src="assets/raw/bk-13.jpg" alt="Manicura francesa clásica con punta blanca" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Vino con flores pintadas" data-en="Burgundy with hand-painted florals">Burgundy with hand-painted florals</span><img src="assets/raw/bk-7.jpg" alt="Manicura color vino con diseño floral pintado a mano" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="3D en azul pastel" data-en="Pastel blue 3D art">Pastel blue 3D art</span><img src="assets/raw/bk-11.jpg" alt="Uñas coffin en azul pastel con moños en relieve 3D" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="French con cerezas" data-en="Cherry french tips">Cherry french tips</span><img src="assets/raw/bk-16.jpg" alt="Manicura francesa con puntos negros y diseño de cerezas" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Línea dorada sobre crema" data-en="Gold linework on cream">Gold linework on cream</span><img src="assets/raw/bk-10.jpg" alt="Manicura crema con linea dorada y pedreria" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:240ms"><span class="tile-cap" data-es="Ombré atardecer con strass" data-en="Sunset ombre with rhinestones">Sunset ombre with rhinestones</span><img src="assets/raw/bk-15.jpg" alt="Uñas coffin en degradado de atardecer con pedreria" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -515,28 +573,51 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What her">What her</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">clients say</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 86 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 86 verified reviews on Booksy">5.0 out of 5 · 86 verified reviews on Booksy</span></p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What her">Lo que dicen</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">sus clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 65 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 65 verified reviews on Booksy">5.0 de 5 · 65 reseñas verificadas en Booksy</span></p>
       </div>
-      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
-        <figure class="glass glass-hover rounded-3xl p-8 reveal">
-          <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 customer service is awesome and I love my lash set!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Emily</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
-        </figure>
-        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
-          <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Yesi is very pleasant and professional! She does a beautiful job and I always enjoy her company!!! Highly recommend!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Suzanne</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
-        </figure>
-        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
-          <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Always professional and a perfectionist. I’ve been with Lash Bloom for over 5 years now and absolutely love her!"</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Tara</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
-        </figure>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientas">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Vengo de Orlando para fort lauderdale hacerme mis uñas con la mejor😍😍😍 se las recomiendo🩷💅"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Carlismar R.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Las ameeee!!!💗"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Isabella B.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I loved them, super beautiful, the service was very very good, I have no complaints, everything was spectacular"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Valeria M.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Leidy was absolutely amazing: so kind and welcoming. She really listened to what I wanted, and my nails came out perfect, exactly how I envisioned them..."</blockquote>
+              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]" data-es="Clienta verificada · Booksy" data-en="Verified client · Booksy">Clienta verificada · Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I love her work and I will definitely be back. She is very attentive to every detail."</blockquote>
+              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]" data-es="Clienta verificada · Booksy" data-en="Verified client · Booksy">Clienta verificada · Booksy</span></figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
       <div class="text-center mt-10 reveal">
-        <a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 86 reseñas en Booksy" data-en="Read all 86 reviews on Booksy">Read all 86 reviews on Booksy</a>
+        <a href="https://booksy.com/en-us/1337752_lm-nailsalon_nail-salon_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 65 reseñas en Booksy" data-en="Read all 65 reviews on Booksy">Leer las 65 reseñas en Booksy</a>
       </div>
     </div>
   </section>
@@ -547,37 +628,39 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">West Palm Beach</span></h2>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine">Fort Lauderdale</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">4580 Cresthaven Blvd (inside Lux Stitch Embroidery), West Palm Beach, FL 33415</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(183,114,126,0.4)]" href="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">381 SW 14th St, Fort Lauderdale, FL 33315</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(183,114,126,0.4)]" href="https://www.google.com/maps?q=381+SW+14th+St,+Fort+Lauderdale,+FL+33315" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
             </div>
           </div>
-          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:180ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a Miércoles: 8:00 AM a 6:40 PM" data-en="Monday to Wednesday: 8:00 AM to 6:40 PM">Lunes a Miércoles: 8:00 AM a 6:40 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Jueves: 8:00 AM a 6:00 PM" data-en="Thursday: 8:00 AM to 6:00 PM">Jueves: 8:00 AM a 6:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Viernes: 8:00 AM a 8:00 PM" data-en="Friday: 8:00 AM to 8:00 PM">Viernes: 8:00 AM a 8:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sábado: 9:00 AM a 6:00 PM · Domingo: Cerrado" data-en="Saturday: 9:00 AM to 6:00 PM · Sunday: Closed">Sábado: 9:00 AM a 6:00 PM · Domingo: Cerrado</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:240ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-4.95A9 9 0 1 1 8 19.5L3 21z"/></svg>
             <div>
               <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">By appointment via Booksy: pick the service, day and time, and the confirmation is instant.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(183,114,126,0.4)]" href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
-            </div>
-          </div>
-          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            <div>
-              <p class="font-medium mb-1">Instagram</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi's latest sets and DM any questions before your appointment.">See Yesi's latest sets and DM any questions before your appointment.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(183,114,126,0.4)]" href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener">@_lashbloom</a>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Por WhatsApp: escríbele a Leidy y agenda tu cita, respuesta rápida." data-en="By WhatsApp: message Leidy and book your appointment, quick reply.">Por WhatsApp: escríbele a Leidy y agenda tu cita, respuesta rápida.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(183,114,126,0.4)]" href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20una%20cita%20en%20LM%20Nail%20Salon%20%F0%9F%92%85" target="_blank" rel="noopener" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Escribir por WhatsApp</a>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Lash Bloom, 4580 Cresthaven Blvd, West Palm Beach FL"
-          src="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415&output=embed"
+        <iframe title="Mapa: LM Nail Salon, 381 SW 14th St, Fort Lauderdale FL"
+          src="https://www.google.com/maps?q=381+SW+14th+St,+Fort+Lauderdale,+FL+33315&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
@@ -588,40 +671,41 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Pestañas que florecen contigo." data-en="Lashes that bloom with you.">Lashes that bloom with you.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu mirada nueva" data-en="Your new lashes">Your new lashes</span> <span class="text-shine" data-es="te está esperando" data-en="are waiting">are waiting</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos: tu set clásico, híbrido o de volumen, o el relleno que ya te toca." data-en="Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.">Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Cada detalle, a tu medida." data-en="Every detail, made for you.">Cada detalle, a tu medida.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu manicura" data-en="Your perfect">Tu manicura</span> <span class="text-shine" data-es="perfecta te espera" data-en="manicure awaits">perfecta te espera</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Escríbele a Leidy por WhatsApp y agenda tu cita: elige el sistema, el diseño y el día que prefieras." data-en="Message Leidy on WhatsApp and book your appointment: choose your system, your design and the day that works for you.">Escríbele a Leidy por WhatsApp y agenda tu cita: elige el sistema, el diseño y el día que prefieras.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
-        <a href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+        <a href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20una%20cita%20en%20LM%20Nail%20Salon%20%F0%9F%92%85" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar por WhatsApp" data-en="Book on WhatsApp">Reservar por WhatsApp</a>
+        <a href="https://www.instagram.com/lm.nailsalon/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#1a100e]">
-    <span class="foot-mark" aria-hidden="true">Lash Bloom</span>
+    <span class="foot-mark" aria-hidden="true">LM Nail Salon</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,208,200,0.35)]" loading="lazy" />
-          <span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>
+          <img src="assets/raw/bk-2.jpg" alt="LM Nail Salon" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,208,200,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">LM Nail Salon</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Nail salon boutique en Fort Lauderdale, FL. Manicura rusa, polygel, acrílico y nail art. Con cita previa." data-en="Boutique nail salon in Fort Lauderdale, FL. Russian manicure, polygel, acrylic and nail art. By appointment only.">Nail salon boutique en Fort Lauderdale, FL. Manicura rusa, polygel, acrílico y nail art. Con cita previa.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
-        <p>4580 Cresthaven Blvd, West Palm Beach, FL 33415</p>
-        <p><a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="hover:text-[#f0d0c8]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>
+        <p>381 SW 14th St, Fort Lauderdale, FL 33315</p>
+        <p><a href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20una%20cita%20en%20LM%20Nail%20Salon%20%F0%9F%92%85" target="_blank" rel="noopener" class="hover:text-[#f0d0c8]">WhatsApp · +1 (786) 865-9531</a></p>
+        <p><a href="https://booksy.com/en-us/1337752_lm-nailsalon_nail-salon_15643_fort-lauderdale" target="_blank" rel="noopener" class="hover:text-[#f0d0c8]" data-es="Reseñas y menú · Booksy" data-en="Reviews and menu · Booksy">Reseñas y menú · Booksy</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener" class="hover:text-[#f0d0c8]">Instagram · @_lashbloom</a></p>
+        <p><a href="https://www.instagram.com/lm.nailsalon/" target="_blank" rel="noopener" class="hover:text-[#f0d0c8]">Instagram · @lm.nailsalon</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Lash Bloom.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 LM Nail Salon.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -631,8 +715,8 @@
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbf4f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  <a href="https://wa.me/17868659531?text=Hola%21%20Quiero%20reservar%20una%20cita%20en%20LM%20Nail%20Salon%20%F0%9F%92%85" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita por WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbf4f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-4.95A9 9 0 1 1 8 19.5L3 21z"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5.5-1 1-2 .5-2.5-.5-.5-2 0-2.5-.5S10.5 10 10 9.5c-.5-.5-1-1-1.5-.5z"/></svg>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
@@ -654,7 +738,7 @@
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
     let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
-    applyLang(lang === 'es' ? 'es' : 'en');
+    applyLang(lang === 'en' ? 'en' : 'es');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // Preloader
@@ -716,6 +800,83 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la reseña ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
 
     // v3: split-text del hero
     document.querySelectorAll('.split').forEach(el => {

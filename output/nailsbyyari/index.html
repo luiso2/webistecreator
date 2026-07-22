@@ -192,12 +192,15 @@
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
 
-    /* Numeros del ritual */
+    /* Numeros del proceso */
     .step-num {
       font-family: 'Playfair Display', serif;
       background: linear-gradient(180deg, #e0983f, #6b330c);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
+
+    /* Fila de precio en el menu completo */
+    .price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
 
     /* Estrellas */
     .stars { color: #b1501c; letter-spacing: 2px; text-shadow: 0 0 14px rgba(177,80,28,0.3); }
@@ -556,7 +559,7 @@
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The studio">The studio</p>
         <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un estudio con" data-en="A studio built on">A studio built on</span><br /><span class="text-shine" data-es="color y precisión" data-en="color and precision">color and precision</span></h2>
         <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="NailsbyYari es el estudio de Yarielis en Naples, Florida: un espacio pensado para manicura y pedicura personalizadas, sets acrilicos y nail art hecho a mano. Cada cita empieza con una consulta real sobre forma, largo y color." data-en="NailsbyYari is Yarielis' studio in Naples, Florida: a space built for custom manicures and pedicures, acrylic sets and hand painted nail art. Every visit starts with a real conversation about shape, length and color.">NailsbyYari is Yarielis' studio in Naples, Florida: a space built for custom manicures and pedicures, acrylic sets and hand painted nail art. Every visit starts with a real conversation about shape, length and color.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Con mas de 13 años de experiencia como tecnica licenciada, Yari se ha ganado un 4.98 de 5 en Booksy set tras set. Sus clientas lo resumen asi:" data-en="With more than 13 years of experience as a licensed technician, Yari has earned a 4.98 out of 5 on Booksy, one set at a time. Her clients put it best:"><span data-es="Con mas de 13 años de experiencia como tecnica licenciada, Yari se ha ganado un 4.98 de 5 en Booksy set tras set. Sus clientas lo resumen asi:" data-en="With more than 13 years of experience as a licensed technician, Yari has earned a 4.98 out of 5 on Booksy, one set at a time. Her clients put it best:">With more than 13 years of experience as a licensed technician, Yari has earned a 4.98 out of 5 on Booksy, one set at a time. Her clients put it best:</span> <em class="font-script text-[color:var(--accent-deep)]" data-es="talentosa, detallista y profesional." data-en="talented, detail oriented and professional.">talented, detail oriented and professional.</em></p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms"><span data-es="Con mas de 13 años de experiencia como tecnica licenciada, Yari se ha ganado un 4.98 de 5 en Booksy set tras set. Sus clientas lo resumen asi:" data-en="With more than 13 years of experience as a licensed technician, Yari has earned a 4.98 out of 5 on Booksy, one set at a time. Her clients put it best:">With more than 13 years of experience as a licensed technician, Yari has earned a 4.98 out of 5 on Booksy, one set at a time. Her clients put it best:</span> <em class="font-script text-[color:var(--accent-deep)]" data-es="talentosa, detallista y profesional." data-en="talented, detail oriented and professional.">talented, detail oriented and professional.</em></p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.98" data-decimals="2">4.98</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Booksy" data-en="Booksy">Booksy</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="54">54</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
@@ -613,61 +616,94 @@
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">ritual</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Amani HeadSpa. Reserva online con confirmación inmediata.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Choose your</span> <span class="text-shine" data-es="set" data-en="set">set</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por NailsbyYari en Booksy. Reserva online con confirmación inmediata." data-en="Prices and durations as published by NailsbyYari on Booksy. Booking confirms instantly.">Prices and durations as published by NailsbyYari on Booksy. Booking confirms instantly.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+
+      <!-- Destacados -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-14">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding | 60 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Limpieza y exfoliación del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y piedras calientes en brazos y manos.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Manicura" data-en="Manicure">Manicure</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Gel manicure</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Manicura con esmaltado en gel, forma y cuidado de cuticula. Color resistente que dura semanas." data-en="Gel polish manicure with cuticle care and shaping. Chip resistant color that lasts for weeks.">Gel polish manicure with cuticle care and shaping. Chip resistant color that lasts for weeks.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$130</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-3xl text-shine">$40</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">40 min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(177,80,28,0.4); box-shadow: 0 18px 50px rgba(58,36,23,0.14);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial · Ritual insignia</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding| 90min</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El ritual completo de head spa más un facial rejuvenecedor: limpieza profunda, mascarilla nutritiva, masaje facial e hidratación con SPF.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Pedicura · Servicio insignia" data-en="Pedicure · Signature">Pedicure · Signature</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Gel Pedicure</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Pedicura completa con esmaltado en gel, remojo de pies y cuidado de cuticula, hecha para durar." data-en="Full pedicure with gel polish, foot soak and cuticle care built to last.">Full pedicure with gel polish, foot soak and cuticle care built to last.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$185</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+              <p class="font-display text-3xl text-shine">$50</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">45 min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Feet</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding + Feet | 80 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Todos los beneficios del ritual de 60 minutos, más un tratamiento revitalizante de pies con exfoliación y masaje humectante profundo.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Acrilico" data-en="Acrylic">Acrylic</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Fullset</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Set completo de acrilico construido desde cero, en el largo y la forma que elijas." data-en="Full acrylic set built from scratch, in the length and shape you choose.">Full acrylic set built from scratch, in the length and shape you choose.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$160</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">80 min</p>
+              <p class="font-display text-3xl text-shine">$75</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Signature Facial</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial personalizado según tu tipo de piel y tus necesidades, enfocado en mejorar la salud y apariencia general de tu rostro.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Acrilico" data-en="Acrylic">Acrylic</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Apres Gel X</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Extensiones de soft gel para un fullset ligero y de apariencia natural." data-en="Soft gel tip extensions for a lightweight, natural looking full set.">Soft gel tip extensions for a lightweight, natural looking full set.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$140</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-3xl text-shine">$65</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Al reservar se solicita un depósito de $50 a $60 según el servicio.</p>
+
+      <!-- Menu completo, agrupado por categoria -->
+      <div class="mb-14">
+        <h3 class="reveal font-display text-2xl sm:text-3xl mb-6" data-es="Manicura" data-en="Manicure">Manicure</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="glass glass-hover rounded-2xl p-5 reveal"><div class="price-row"><span class="text-sm">Gel manicure</span><span class="font-display text-lg text-shine">$40</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">40 min</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:40ms"><div class="price-row"><span class="text-sm">Regular manicure</span><span class="font-display text-lg text-shine">$30</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">&nbsp;</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:80ms"><div class="price-row"><span class="text-sm">Bulder gel</span><span class="font-display text-lg text-shine">$45</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">45 min</p></div>
+        </div>
+      </div>
+
+      <div class="mb-14">
+        <h3 class="reveal font-display text-2xl sm:text-3xl mb-6" data-es="Pedicura" data-en="Pedicure">Pedicure</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="glass glass-hover rounded-2xl p-5 reveal"><div class="price-row"><span class="text-sm">Gel Pedicure</span><span class="font-display text-lg text-shine">$50</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">45 min</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:40ms"><div class="price-row"><span class="text-sm">Regular pedicure</span><span class="font-display text-lg text-shine">$35</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">&nbsp;</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:80ms"><div class="price-row"><span class="text-sm">Toe nail color change</span><span class="font-display text-lg text-shine">$35</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">&nbsp;</p></div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="reveal font-display text-2xl sm:text-3xl mb-6" data-es="Acrilico y extras" data-en="Acrylic &amp; extras">Acrylic &amp; extras</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="glass glass-hover rounded-2xl p-5 reveal"><div class="price-row"><span class="text-sm">Fullset</span><span class="font-display text-lg text-shine">$75</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">1h</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:40ms"><div class="price-row"><span class="text-sm">Fullset</span><span class="font-display text-lg text-shine">$85</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">1h</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:80ms"><div class="price-row"><span class="text-sm">Apres Gel X</span><span class="font-display text-lg text-shine">$65</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">1h</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:120ms"><div class="price-row"><span class="text-sm">Fill/rellenar</span><span class="font-display text-lg text-shine">$55</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">50 min</p></div>
+          <div class="glass glass-hover rounded-2xl p-5 reveal" style="transition-delay:160ms"><div class="price-row"><span class="text-sm">Remover acrylic</span><span class="font-display text-lg text-shine">$30</span></div><p class="text-xs text-[color:var(--ink-40)] mt-1">&nbsp;</p></div>
+        </div>
+      </div>
+
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-10" data-es="Los 11 servicios y precios de arriba son los publicados por NailsbyYari en Booksy." data-en="All 11 services and prices above are exactly as published by NailsbyYari on Booksy.">All 11 services and prices above are exactly as published by NailsbyYari on Booksy.</p>
     </div>
   </section>
 
@@ -677,21 +713,18 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">spa</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Recent">Recent</span> <span class="text-shine" data-es="recientes" data-en="sets">sets</span></h2>
         </div>
-        <a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.instagram.com/nailsby_yarielis/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @amaniheadspa
+          @nailsby_yarielis
         </a>
       </div>
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">The Unwinding · 90 min</span><img src="assets/raw/service-unwinding-90.jpg" alt="Mascarilla facial aplicada durante The Unwinding de 90 minutos, con luz ambiental tenue" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">The Unwinding + Feet</span><img src="assets/raw/service-unwinding-feet.jpg" alt="Masaje de pies a la luz de las velas, en tonos ámbar cálidos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Logotipo AMANI en relieve dorado sobre pared crema del estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">Signature Facial</span><img src="assets/raw/service-signature-facial.jpg" alt="Tratamiento con rodillo facial dorado durante el Signature Facial" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La sala de rituales</span><img src="assets/raw/space-1.jpg" alt="Sala de tratamientos con nichos en arco, repisas de madera clara y cortina taupe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">El ritual</span><img src="assets/raw/hero-1.jpg" alt="Detalle de un ritual facial en Amani HeadSpa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      <div class="grid grid-cols-2 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">Rhinestone Pink Set</span><img src="assets/raw/bk-3.jpg" alt="Vivid pink stiletto nails with gold beads and rhinestone art by Yarielis" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap">Zebra Print Set</span><img src="assets/raw/bk-6.jpg" alt="Black and white zebra print nail art with rhinestone tips by Yarielis" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">Polka Dot Set</span><img src="assets/raw/bk-7.jpg" alt="White nails with black and blue polka dot design by Yarielis" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -721,45 +754,45 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.9 de 5 · 73 reseñas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen sus" data-en="What her">What her</span> <span class="text-shine" data-es="clientas" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.98 de 5 · 54 reseñas en Booksy" data-en="4.98 out of 5 · 54 reviews on Booksy">4.98 out of 5 · 54 reviews on Booksy</span></p>
       </div>
-      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Customer reviews">
         <div class="carousel-track">
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mireia &amp; Maria were incredible! This was my first head spa experience. I wanted to get my pregnant friend a gift/something we could do together. It was great they offer a service for two. I did a ton of research on head spas all over..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Olivia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"¡Yari es increíble! Además de ser súper amable y cordial, tiene muchísimo talento. Me dejó las uñas espectaculares y quedé feliz con el resultado. La recomiendo al 100%."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Milagros C.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This was our first time at a head spa and it was amazing. It was so relaxing. We did a couples 90 minute session and we had a great experience here. Maria and Nildy were very good! Thank you!!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Thalia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I cannot recommend my Yari enough! Every appointment is such a great experience from start to finish. Not only is she incredibly talented and detail-oriented, but she truly takes the time to make sure every set is perfect. My nails always come out beautiful, last for weeks, and get so many compliments."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Brianna P.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I just got home from a scalp and hand massage with Maria and I'm the most relaxed I've been in weeks! The experience felt stress free and relaxing from the moment I walked in; once you're there, you're transported away from the city around..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Ruby</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Yari is awesome, great nails, so quick!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Kathy S.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 experience, I left feeling completely refreshed and can't wait to go back!"</blockquote>
-              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"So pleased with my full set. The length and thickness of the nail was spot on! Her technique is on point, I am so impressed!"</blockquote>
+              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]" data-es="Reseña en Booksy" data-en="Booksy review">Booksy review</span></figcaption>
             </figure>
           </div>
         </div>
       </div>
       <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 73 reseñas en Google</a>
+        <a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 54 reseñas en Booksy" data-en="Read all 54 reviews on Booksy">Read all 54 reviews on Booksy</a>
       </div>
     </div>
   </section>
@@ -769,39 +802,39 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Naples te queda" data-en="Naples is">Naples is</span> <span class="text-shine" data-es="cerca" data-en="close by">close by</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">752 Flagami Blvd, Miami, FL 33144</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,80,28,0.4)]" href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">2800 Davis Blvd, Unit 102, Naples, FL 34104</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,80,28,0.4)]" href="https://www.google.com/maps?q=2800+Davis+Blvd+Unit+102,+Naples,+FL+34104" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Viernes: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Sábado: 8:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: 8:00 AM a 5:00 PM</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Lunes" data-en="Monday">Monday</span>: 9:00 AM &ndash; 4:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Martes a Viernes" data-en="Tuesday to Friday">Tuesday to Friday</span>: 9:00 AM &ndash; 5:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Sábado" data-en="Saturday">Saturday</span>: 8:00 AM &ndash; 3:00 PM</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener">amaniheadspa.glossgenius.com</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Teléfono: <a class="text-[color:var(--accent-deep)]" href="tel:+13057906977">(305) 790-6977</a></p>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Booking">Booking</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono" data-en="Phone">Phone</span>: <a class="text-[color:var(--accent-deep)]" href="tel:+12398395959">(239) 839-5959</a></p>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Amani HeadSpa, 752 Flagami Blvd, Miami FL"
-          src="https://www.google.com/maps?q=Amani+HeadSpa,+752+Flagami+Blvd,+Miami,+FL+33144&output=embed"
+        <iframe title="Map: NailsbyYari, 2800 Davis Blvd Unit 102, Naples FL"
+          src="https://www.google.com/maps?q=2800+Davis+Blvd+Unit+102,+Naples,+FL+34104&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
@@ -812,43 +845,42 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Fresca, en equilibrio, renovada.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">The Unwinding te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva tu ritual online en segundos, para ti o en pareja. Elige día, hora y especialista, y deja que Amani haga el resto.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Color vivo, técnica de verdad." data-en="Vivid color, real technique.">Vivid color, real technique.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próximo set te está" data-en="Your next set is">Your next set is</span> <span class="text-shine" data-es="esperando" data-en="waiting">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos, elige el dia y la hora que te acomoden, y deja que Yari se encargue del resto." data-en="Book online in seconds, pick the day and time that work for you, and let Yari take care of the rest.">Book online in seconds, pick the day and time that work for you, and let Yari take care of the rest.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
-        <a href="tel:+13057906977" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar cita" data-en="Book on Booksy">Book on Booksy</a>
+        <a href="tel:+12398395959" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Llamar ahora" data-en="Call now">Call now</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#20140c]">
-    <span class="foot-mark" aria-hidden="true">Amani</span>
+    <span class="foot-mark" aria-hidden="true">NailsbyYari</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(246,201,143,0.35)] bg-[rgba(246,201,143,0.08)] text-[#f6c98f]">A</span>
-          <span class="font-display text-lg tracking-[0.12em] uppercase">Amani HeadSpa</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(246,201,143,0.35)] bg-[rgba(246,201,143,0.08)] text-[#f6c98f]">Y</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">NailsbyYari</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Miami's Holistic Head Spa. Wellness rituals para individuales y parejas: head spa + facials.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de uñas de Yarielis en Naples, FL. Manicura, pedicura, acrilico y nail art." data-en="Yarielis' nail studio in Naples, FL. Manicures, pedicures, acrylic sets and nail art.">Yarielis' nail studio in Naples, FL. Manicures, pedicures, acrylic sets and nail art.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>752 Flagami Blvd, Miami, FL 33144</p>
-        <p><a href="tel:+13057906977" class="hover:text-[#f6c98f]">(305) 790-6977</a></p>
-        <p><a href="mailto:amaniheadspa@gmail.com" class="hover:text-[#f6c98f]">amaniheadspa@gmail.com</a></p>
-        <p>Lun a Vie 10 AM a 7 PM · Sáb 8 AM a 7 PM · Dom 8 AM a 5 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>2800 Davis Blvd, Unit 102, Naples, FL 34104</p>
+        <p><a href="tel:+12398395959" class="hover:text-[#f6c98f]">(239) 839-5959</a></p>
+        <p><span data-es="Lun 9 AM a 4 PM · Mar a Vie 9 AM a 5 PM · Sáb 8 AM a 3 PM" data-en="Mon 9 AM to 4 PM · Tue to Fri 9 AM to 5 PM · Sat 8 AM to 3 PM">Mon 9 AM to 4 PM · Tue to Fri 9 AM to 5 PM · Sat 8 AM to 3 PM</span></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="hover:text-[#f6c98f]">Instagram · @amaniheadspa</a></p>
-        <p><a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="hover:text-[#f6c98f]">Reservas online · GlossGenius</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow &amp; book">Follow &amp; book</p>
+        <p><a href="https://www.instagram.com/nailsby_yarielis/" target="_blank" rel="noopener" class="hover:text-[#f6c98f]">Instagram · @nailsby_yarielis</a></p>
+        <p><a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="hover:text-[#f6c98f]"><span data-es="Reservas online · Booksy" data-en="Book online · Booksy">Book online · Booksy</span></a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Amani HeadSpa. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]"><span data-es="© 2026 NailsbyYari. Todos los derechos reservados." data-en="© 2026 NailsbyYari. All rights reserved.">© 2026 NailsbyYari. All rights reserved.</span></p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -858,20 +890,31 @@
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+  <a href="https://booksy.com/en-us/411615_nailsbyyari_nail-salon_15685_naples" target="_blank" rel="noopener" class="book-float" aria-label="Book online on Booksy">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fdf4e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
 
   <!-- Volver arriba (abajo-izquierda) -->
-  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+  <button id="backTop" class="back-top glass" type="button" aria-label="Back to top">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
   <script>
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language (default: en)
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
     const preloader = document.getElementById('preloader');
