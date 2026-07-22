@@ -441,5 +441,149 @@ rep(
 
 print("PARTE 3 OK (galeria, opiniones)")
 
+# ---------- 17. UBICACION ----------
+rep(
+    '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">West Palm Beach</span></h2>',
+    '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">Doral, FL</span></h2>',
+)
+
+OLD_LOC_CARDS = (
+    '<p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>\n'
+    '              <p class="text-sm text-[color:var(--ink-60)] font-light">4580 Cresthaven Blvd (inside Lux Stitch Embroidery), West Palm Beach, FL 33415</p>\n'
+    '              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(160,74,114,0.4)]" href="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>'
+)
+NEW_LOC_CARDS = (
+    '<p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>\n'
+    '              <p class="text-sm text-[color:var(--ink-60)] font-light">10580 NW 74th St #103, Doral, Miami, FL 33178</p>\n'
+    '              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(160,74,114,0.4)]" href="https://www.google.com/maps?q=10580+NW+74th+St+%23103,+Doral,+FL+33178" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>'
+)
+rep(OLD_LOC_CARDS, NEW_LOC_CARDS)
+
+rep(
+    'data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">By appointment via Booksy: pick the service, day and time, and the confirmation is instant.</p>',
+    'data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata. Lunes a viernes 10:30am a 6pm, y sábados 8am a 6pm." data-en="By appointment via Booksy: pick the service, day and time, confirmation is instant. Monday to Friday 10:30am to 6pm, and Saturday 8am to 6pm.">Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata. Lunes a viernes 10:30am a 6pm, y sábados 8am a 6pm.</p>',
+)
+
+OLD_LOC_SOCIAL = (
+    '<p class="font-medium mb-1">Instagram</p>\n'
+    '              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi\'s latest sets and DM any questions before your appointment.">See Yesi\'s latest sets and DM any questions before your appointment.</p>\n'
+    '              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(160,74,114,0.4)]" href="' + IG_NEW + '" target="_blank" rel="noopener">@_lashbloom</a>'
+)
+NEW_LOC_SOCIAL = (
+    '<p class="font-medium mb-1">Instagram</p>\n'
+    '              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los trabajos más recientes de Jorgii y escribe por DM cualquier duda antes de tu cita." data-en="See Jorgii\'s latest work and DM any questions before your appointment.">Mira los trabajos más recientes de Jorgii y escribe por DM cualquier duda antes de tu cita.</p>\n'
+    '              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(160,74,114,0.4)]" href="' + IG_NEW + '" target="_blank" rel="noopener">@nailsbyjorgii</a>'
+)
+rep(OLD_LOC_SOCIAL, NEW_LOC_SOCIAL)
+
+rep(
+    '<iframe title="Mapa: Lash Bloom, 4580 Cresthaven Blvd, West Palm Beach FL"\n          src="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415&output=embed"',
+    '<iframe title="Mapa: Nails by jorgii, 10580 NW 74th St #103, Doral FL"\n          src="https://www.google.com/maps?q=25.840184172836846,-80.36917850375175&output=embed"',
+)
+
+# ---------- 18. CTA FINAL ----------
+# (la linea "Uñas con el detalle que mereces." ya se reemplazo en HERO con n=2, cubre hero + cta-final)
+rep(
+    '<h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu mirada nueva" data-en="Your new lashes">Your new lashes</span> <span class="text-shine" data-es="te está esperando" data-en="are waiting">are waiting</span></h2>',
+    '<h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próximo set" data-en="Your next set">Your next set</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">te está esperando</span></h2>',
+)
+rep(
+    'data-es="Reserva online en segundos: tu set clásico, híbrido o de volumen, o el relleno que ya te toca." data-en="Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.">Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.</p>',
+    'data-es="Reserva online en segundos: tu manicure, tu set de polygel o el diseño que ya quieres estrenar con Jorgii en Doral." data-en="Book online in seconds: your manicure, your polygel set, or the design you have been wanting to try with Jorgii in Doral.">Reserva online en segundos: tu manicure, tu set de polygel o el diseño que ya quieres estrenar con Jorgii en Doral.</p>',
+)
+# (el boton "Seguir en Instagram" del CTA final ya apunta a IG_NEW via el repall global)
+
+# ---------- 19. FOOTER ----------
+rep('<span class="foot-mark" aria-hidden="true">Lash Bloom</span>', f'<span class="foot-mark" aria-hidden="true">{NAME}</span>')
+rep(
+    '<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,190,215,0.35)]" loading="lazy" />\n          <span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>',
+    f'<span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-xs tracking-wide ring-1 ring-[rgba(240,190,215,0.35)] bg-[rgba(240,190,215,0.08)] text-[#f0bed7]">NJ</span>\n          <span class="font-display text-lg tracking-[0.1em] uppercase">{NAME}</span>',
+)
+rep(
+    'data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>',
+    'data-es="Salón de uñas en Doral, Miami, FL. Atención con cita previa." data-en="Nail salon in Doral, Miami, FL. By appointment only.">Salón de uñas en Doral, Miami, FL. Atención con cita previa.</p>',
+)
+rep(
+    '<p>4580 Cresthaven Blvd, West Palm Beach, FL 33415</p>',
+    '<p>10580 NW 74th St #103, Doral, FL 33178</p>',
+)
+OLD_FOOT_SOCIAL = (
+    '<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>\n'
+    '        <p><a href="' + IG_NEW + '" target="_blank" rel="noopener" class="hover:text-[#f0bed7]">Instagram · @_lashbloom</a></p>'
+)
+NEW_FOOT_SOCIAL = (
+    '<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>\n'
+    '        <p><a href="' + IG_NEW + '" target="_blank" rel="noopener" class="hover:text-[#f0bed7]">Instagram · @nailsbyjorgii</a></p>'
+)
+rep(OLD_FOOT_SOCIAL, NEW_FOOT_SOCIAL)
+rep('<p class="text-xs text-[color:var(--ink-40)]">© 2026 Lash Bloom.</p>', f'<p class="text-xs text-[color:var(--ink-40)]">© 2026 {NAME}.</p>')
+
+print("PARTE 4 OK (ubicacion, cta-final, footer)")
+
+# ---------- 20. Paleta: plum-pink -> rosa polvo / mauve ----------
+# Proteger badge dorado de Merktop (bloque CSS completo).
+m = re.search(r'\.merktop-badge \{.*?@keyframes mkPulse[^\n]*\n', h, flags=re.S)
+assert m, "no se encontro el bloque merktop-badge"
+badge_block = m.group(0)
+h = h.replace(badge_block, "@@BADGE@@", 1)
+# La unica referencia de color de marca Merktop fuera del bloque CSS protegido es el texto
+# "Powered by Merktop" del footer (#f4eee2, crema neutro): se deja intacta, no forma parte
+# de la paleta rosa del negocio.
+assert '#f4eee2' in h
+
+HEX_MAP = [
+    ("a04a72", "b5657e"),  # accent-deep
+    ("c47a9c", "d69cad"),  # accent-mid
+    ("5c2140", "74304a"),  # boton 3d, "suela" oscura
+    ("f0bed7", "f6cede"),  # dark-band text-shine / stars claro
+    ("faf2f6", "fbf3f4"),  # bg base / ink sobre dark-band
+    ("8a5573", "96617a"),  # dark-band btn-3d sombra solida
+    ("f3e0ea", "f2e1e5"),  # bg-2 / accent-soft
+    ("d9a8c2", "ddb2c0"),  # orb-b / dark-band shine
+    ("7d3457", "6e3a4d"),  # btn-3d gradiente oscuro / scroll-progress
+    ("5f2c48", "5c2f3d"),  # shimmer oscuro / step-num
+    ("33222c", "332830"),  # ink
+    ("fbf3f8", "fdf3f6"),  # tile-cap texto casi blanco
+    ("fbeff5", "fdf1f4"),  # dark-band btn-3d stop claro
+    ("f8dfeb", "fae7ec"),  # dark-band shine stop 2
+    ("f6f1ea", "f8f0f0"),  # theme-color meta
+    ("f2d5e3", "f5dde3"),  # orb-a
+    ("f2cfe0", "f4d6de"),  # dark-band shine stop 3
+    ("efd0e0", "f0d7dd"),  # dark-band btn-3d stop medio
+    ("e5c1d4", "e8c9d3"),  # orb-c
+    ("dc9dbe", "deaab8"),  # scroll-progress stop claro
+    ("d3a2bc", "d5a9b8"),  # dark-band btn-3d stop oscuro
+    ("c9789f", "d0879e"),  # shimmer stop claro-medio
+    ("b25a85", "ab6178"),  # shimmer stop final
+    ("2a1722", "271a1e"),  # cta-final gradiente inicio
+    ("1f0f18", "1c1315"),  # cta-final gradiente fin
+    ("1c0f16", "1a1214"),  # footer bg
+]
+for old, new in HEX_MAP:
+    assert f"#{old}" in h or old.upper() in h, f"hex no encontrado: {old}"
+    h = h.replace(old, new)
+    h = h.replace(old.upper(), new)
+
+RGBA_MAP = [
+    ("160,74,114", "181,101,126"),  # accent-deep rgb
+    ("51,34,44", "51,40,48"),  # ink rgb
+    ("240,190,215", "246,206,222"),  # f0bed7 rgb
+    ("70,25,50", "78,35,52"),  # btn-3d inset oscuro
+    ("250,242,246", "251,243,244"),  # bg rgb (ink-60/40 en dark-band)
+    ("125,52,87", "110,58,77"),  # dark-band btn-3d sombra (7d3457 rgb)
+    ("253,246,250", "253,247,246"),  # surface rgb
+    ("40,16,30", "44,24,32"),  # tile-cap gradiente oscuro
+    ("233,205,186", "226,199,196"),  # dark-band accent-ghost
+    ("185,138,128", "196,148,150"),  # orb-b dark-band
+]
+for old, new in RGBA_MAP:
+    assert old in h, f"rgb no encontrado: {old}"
+    h = h.replace(old, new)
+
+# Restaurar el badge dorado protegido.
+h = h.replace("@@BADGE@@", badge_block, 1)
+
+print("PARTE 5 OK (paleta rosa polvo / mauve, badge dorado protegido)")
+
 open("output/nailsbyjorgii/index.html", "w").write(h)
-print("CHECKPOINT PARTE 3 escrito")
+print("DONE: output/nailsbyjorgii/index.html escrito")
