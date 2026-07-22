@@ -1,7 +1,6 @@
 # Outreach draft: Lia Beauty (Tampa, FL)
 
-Status: pending_manual (NOT sent). Deploy pending Cloudflare credentials this run;
-verify the URL below returns 200 before sending.
+Status: pending_manual (NOT sent). Verify the demo URL below returns 200 before sending.
 
 - Booksy: https://booksy.com/en-us/770997_lia-beauty_nail-salon_15761_tampa
 - Instagram: https://www.instagram.com/lianetnailstudio/
