@@ -17,52 +17,11 @@ def rep(a, b, n=1):
         h = h.replace(a, b, n)
 
 
-# ---------- 1. Proteger el badge Merktop ----------
-m = re.search(r'\.merktop-badge \{.*?@keyframes mkPulse[^\n]*\n', h, flags=re.S)
-assert m
-badge_block = m.group(0)
-h = h.replace(badge_block, '@@BADGE@@', 1)
-
-# ---------- 2. Paleta: rotacion de matiz uniforme ----------
-# base plum-pink #a04a72 (hue ~332) -> HUE_SHIFT 310 -> hue ~282, lavanda-mauve suave (spa/calma)
-HUE_SHIFT = 310.0
-
-
-def shift_hex(hexcode):
-    r = int(hexcode[0:2], 16) / 255.0
-    g = int(hexcode[2:4], 16) / 255.0
-    b = int(hexcode[4:6], 16) / 255.0
-    hh, l, s = colorsys.rgb_to_hls(r, g, b)
-    hh = (hh * 360 + HUE_SHIFT) % 360 / 360
-    r2, g2, b2 = colorsys.hls_to_rgb(hh, l, s)
-    return '%02x%02x%02x' % (round(r2 * 255), round(g2 * 255), round(b2 * 255))
-
-
-def shift_rgb_tuple(rr, gg, bb):
-    r, g, b = rr / 255.0, gg / 255.0, bb / 255.0
-    hh, l, s = colorsys.rgb_to_hls(r, g, b)
-    hh = (hh * 360 + HUE_SHIFT) % 360 / 360
-    r2, g2, b2 = colorsys.hls_to_rgb(hh, l, s)
-    return round(r2 * 255), round(g2 * 255), round(b2 * 255)
-
-
-def repl_hex(mo):
-    return '#' + shift_hex(mo.group(1))
-
-
-def repl_rgba(mo):
-    rr, gg, bb = int(mo.group(1)), int(mo.group(2)), int(mo.group(3))
-    alpha = mo.group(4)
-    nr, ng, nb = shift_rgb_tuple(rr, gg, bb)
-    if alpha is not None:
-        return 'rgba(%d,%d,%d,%s)' % (nr, ng, nb, alpha)
-    return 'rgb(%d,%d,%d)' % (nr, ng, nb)
-
-
-h = re.sub(r'#([0-9a-fA-F]{6})\b', repl_hex, h)
-h = re.sub(r'rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)', repl_rgba, h)
-
-h = h.replace('@@BADGE@@', badge_block, 1)
+# NOTA de orden: el contenido (textos, URLs, imagenes) se reemplaza PRIMERO mientras la
+# paleta original sigue intacta (asi los anchors que incluyen rgba()/hex dentro de una
+# clase larga siguen siendo validos). La rotacion de matiz (proteger badge -> shift ->
+# restaurar badge) se aplica al final, sobre el documento ya completo, y cubre TODOS los
+# hex/rgba del archivo (incluido cualquier literal dentro de las secciones nuevas).
 
 # ---------- 3. Constantes del negocio ----------
 BOOKSY = 'https://booksy.com/en-us/1466319_arbella-beauty-estudio_wellness-day-spa_15761_tampa'
@@ -140,7 +99,7 @@ NEW_JSONLD = '''<script type="application/ld+json">
       { "@type": "Offer", "price": "115", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Deep Facial Cleansing" } },
       { "@type": "Offer", "price": "350", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Lip Blush" } },
       { "@type": "Offer", "price": "280", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Luxury Microblading" } },
-      { "@type": "Offer", "price": "100", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Eyelash Lifting" } }
+      { "@type": "Offer", "price": "100", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Lash Lift" } }
     ] }
   }
   </script>'''
@@ -345,7 +304,7 @@ NEW_EXPERIENCIA = '''<div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-col
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
         <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un estudio boutique" data-en="A boutique studio">Un estudio boutique</span><br /><span class="text-shine" data-es="hecho a tu medida" data-en="made just for you">hecho a tu medida</span></h2>
         <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Arbella Beauty Studio es el espacio de una sola especialista licenciada, Yudyth Arbella, en el oeste de Tampa. Cada cita combina faciales profundos, microagujas y exosomas para la piel con micropigmentación de cejas y labios de alta gama, en un ambiente cuidado y personal." data-en="Arbella Beauty Studio is the space of one licensed specialist, Yudyth Arbella, in west Tampa. Every visit blends deep facials, microneedling and exosomes for the skin with high-end brow and lip micropigmentation, in a warm, personal setting.">Arbella Beauty Studio es el espacio de una sola especialista licenciada, Yudyth Arbella, en el oeste de Tampa. Cada cita combina faciales profundos, microagujas y exosomas para la piel con micropigmentación de cejas y labios de alta gama, en un ambiente cuidado y personal.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="El resultado: 5.0 perfecto en 35 reseñas verificadas y un menú de más de 30 servicios (faciales, cejas, pestañas, labios y depilación) pensado para que encuentres tu tratamiento ideal sin salir del estudio." data-en="The result: a perfect 5.0 across 35 verified reviews and a menu of more than 30 services (facials, brows, lashes, lips and waxing) so you can find your ideal treatment without leaving the studio.">El resultado: 5.0 perfecto en 35 reseñas verificadas y un menú de más de 30 servicios (faciales, cejas, pestañas, labios y depilación) pensado para que encuentres tu tratamiento ideal sin salir del estudio.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="El resultado: 5.0 perfecto en 35 reseñas verificadas y un menú de más de 30 servicios (faciales, cejas, pestañas, labios y depilación) pensado para que encuentres tu tratamiento ideal sin salir del estudio." data-en="The result: a perfect 5.0 across 35 verified reviews and a menu of more than 30 services (facials, brows, lips and waxing) so you can find your ideal treatment without leaving the studio.">El resultado: 5.0 perfecto en 35 reseñas verificadas y un menú de más de 30 servicios (faciales, cejas, pestañas, labios y depilación) pensado para que encuentres tu tratamiento ideal sin salir del estudio.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="35">35</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reseñas</p></div>
@@ -462,7 +421,7 @@ NEW_CARDS = '''<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretc
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Mirada realzada" data-en="Lifted look">Mirada realzada</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Eyelash Lifting</h3>
+          <h3 class="font-display text-2xl leading-snug mb-3">Lash Lift</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Levantamiento de pestañas con tinte incluido para una mirada más abierta y definida sin necesidad de extensiones." data-en="Lash lift with tint included for a more open, defined look without extensions.">Levantamiento de pestañas con tinte incluido para una mirada más abierta y definida sin necesidad de extensiones.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$100</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 30min</p></div>
@@ -518,7 +477,7 @@ BROWS_ITEMS = [
     ('Luxury Brow Lamination / Laminado de Cejas de Lujo', 95, '1h 30min'),
     ('Eyebrow waxing / Depilación de cejas con cera', 25, None),
     ('Henna dye / Tinte henna / waxing', 45, '50min'),
-    ('Eyelash lifting / Levantamiento de pestaña + tinte', 100, '1h 30min'),
+    ('Lash Lift / Levantamiento de Pestaña + Tinte', 100, '1h 30min'),
     ('✨ Lash Removal / Remoción de Extensiones de Pestaña', 25, None),
 ]
 BODY_ITEMS = [
@@ -753,7 +712,7 @@ rep(
     "applyLang(lang === 'en' ? 'en' : 'es');"
 )
 
-# ---------- 21. Verificacion final de residuos de logo.jpg / hero-1 / about-2 ----------
+# ---------- 21. Verificacion de residuos de logo.jpg / hero-1 / about-2 (antes de tocar colores) ----------
 assert 'logo.jpg' not in h, 'quedo una referencia a logo.jpg sin reemplazar'
 assert 'hero-1.jpg' not in h, 'quedo una referencia a hero-1.jpg sin reemplazar'
 assert 'about-2.jpg' not in h, 'quedo una referencia a about-2.jpg sin reemplazar'
@@ -762,6 +721,55 @@ assert 'Yesi' not in h
 assert 'West Palm Beach' not in h
 assert '519855' not in h
 assert 'Cresthaven' not in h
+
+# ---------- 22. Proteger el badge Merktop y aplicar la paleta (rotacion de matiz) ----------
+# Se hace AL FINAL, sobre el documento ya completo: asi cubre todos los hex/rgba del
+# archivo (incluidas las secciones nuevas) sin que los anchors de contenido de arriba
+# se rompan por valores de color ya rotados.
+m = re.search(r'\.merktop-badge \{.*?@keyframes mkPulse[^\n]*\n', h, flags=re.S)
+assert m, 'no se encontro el bloque .merktop-badge'
+badge_block = m.group(0)
+h = h.replace(badge_block, '@@BADGE@@', 1)
+
+# base plum-pink #a04a72 (hue ~332) -> HUE_SHIFT 310 -> hue ~282, lavanda-mauve suave (spa/calma)
+HUE_SHIFT = 310.0
+
+
+def shift_hex(hexcode):
+    r = int(hexcode[0:2], 16) / 255.0
+    g = int(hexcode[2:4], 16) / 255.0
+    b = int(hexcode[4:6], 16) / 255.0
+    hh, l, s = colorsys.rgb_to_hls(r, g, b)
+    hh = (hh * 360 + HUE_SHIFT) % 360 / 360
+    r2, g2, b2 = colorsys.hls_to_rgb(hh, l, s)
+    return '%02x%02x%02x' % (round(r2 * 255), round(g2 * 255), round(b2 * 255))
+
+
+def shift_rgb_tuple(rr, gg, bb):
+    r, g, b = rr / 255.0, gg / 255.0, bb / 255.0
+    hh, l, s = colorsys.rgb_to_hls(r, g, b)
+    hh = (hh * 360 + HUE_SHIFT) % 360 / 360
+    r2, g2, b2 = colorsys.hls_to_rgb(hh, l, s)
+    return round(r2 * 255), round(g2 * 255), round(b2 * 255)
+
+
+def repl_hex(mo):
+    return '#' + shift_hex(mo.group(1))
+
+
+def repl_rgba(mo):
+    rr, gg, bb = int(mo.group(1)), int(mo.group(2)), int(mo.group(3))
+    alpha = mo.group(4)
+    nr, ng, nb = shift_rgb_tuple(rr, gg, bb)
+    if alpha is not None:
+        return 'rgba(%d,%d,%d,%s)' % (nr, ng, nb, alpha)
+    return 'rgb(%d,%d,%d)' % (nr, ng, nb)
+
+
+h = re.sub(r'#([0-9a-fA-F]{6})\b', repl_hex, h)
+h = re.sub(r'rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)', repl_rgba, h)
+
+h = h.replace('@@BADGE@@', badge_block, 1)
 
 open(PATH, 'w', encoding='utf-8').write(h)
 print('build OK:', PATH)
