@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#faf3ec" />
+  <title>Gentle Tresses · Natural Hair Studio in Hialeah, FL</title>
+  <meta name="description" content="Gentle Tresses, Hialeah FL: natural hair care, silk press, color, sew-ins, microlinks and protective styles, focused on the health of your hair. Book online." />
+  <meta property="og:title" content="Gentle Tresses · Hialeah, FL" />
+  <meta property="og:description" content="Natural hair care, silk press, color and sew-ins. The health of your hair first. Book online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/bk-15.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/bk-1.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Gentle Tresses",
+    "description": "Natural hair studio in Hialeah, FL: natural hair care, silk press, color, sew-ins, microlinks, twists and protective styles, focused on the health of your hair.",
+    "telephone": "+17862528163",
+    "email": "gentletresses@yahoo.com",
+    "address": { "@type": "PostalAddress", "streetAddress": "5901 NW 183rd Street, Suite 323", "addressLocality": "Hialeah", "addressRegion": "FL", "postalCode": "33015", "addressCountry": "US" },
+    "sameAs": ["https://www.instagram.com/GentleTresses/"],
+    "url": "https://gentletresses.glossgenius.com",
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Hair services", "itemListElement": [
+      { "@type": "Offer", "price": "160", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Gentle Tress Silk Press" } },
+      { "@type": "Offer", "price": "270", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Versatile Sew In" } },
+      { "@type": "Offer", "price": "175", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Small Twists" } },
+      { "@type": "Offer", "price": "250", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Single Process Color" } }
+    ] }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf3ec;
+      --bg-2: #f5e2d0;
+      --surface: rgba(253,248,241,0.7);
+      --ink: #2f2318;
+      --ink-60: rgba(47,35,24,0.62);
+      --ink-40: rgba(47,35,24,0.42);
+      --accent-deep: #b8633a;
+      --accent-mid: #d99568;
+      --accent-soft: #f5e2d0;
+      --accent-ghost: rgba(184,99,58,0.14);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(184,99,58,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(253,248,241,0.88); border-color: rgba(184,99,58,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(47,35,24,0.14), 0 0 40px rgba(184,99,58,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #b8633a 0%, #c9895a 30%, #5f3418 52%, #b8633a 75%, #b2723a 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f5d9b8 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #dba876 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e8c9a0 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #d99568 0%, #b8633a 48%, #7d3f1a 100%);
+      color: #faf3ec; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(107,48,24,0.4), 0 5px 0 #6b3018, 0 12px 24px rgba(47,35,24,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(107,48,24,0.4), 0 7px 0 #6b3018, 0 18px 34px rgba(47,35,24,0.32), 0 0 40px rgba(184,99,58,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(107,48,24,0.45), 0 1px 0 #6b3018, 0 4px 10px rgba(47,35,24,0.25); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(184,99,58,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(184,99,58,0.7); background: rgba(184,99,58,0.08); box-shadow: 0 10px 26px rgba(47,35,24,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(250,243,236,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(47,35,24,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(47,35,24,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(184,99,58,0.14), inset 0 -60px 100px rgba(47,35,24,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #d99568, #5f3418); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .svc-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid rgba(184,99,58,0.12); transition: border-color 0.25s ease; }
+    .svc-row:hover { border-color: rgba(184,99,58,0.4); }
+    .svc-price { font-family: 'Playfair Display', serif; color: var(--accent-deep); white-space: nowrap; }
+    .stars { color: #b8633a; letter-spacing: 2px; text-shadow: 0 0 14px rgba(184,99,58,0.3); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #faf3ec; --ink-60: rgba(250,243,236,0.65); --ink-40: rgba(250,243,236,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(233,205,186,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #f0c9a0 0%, #f8e6cf 30%, #dba876 52%, #f0c9a0 75%, #f2d9b0 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(240,201,160,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #fbf0e2 0%, #efd2ac 48%, #d3a274 100%); color: #2f2318; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(125,63,26,0.35), 0 5px 0 #a8674a, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(125,63,26,0.35), 0 7px 0 #a8674a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(240,201,160,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(125,63,26,0.4), 0 1px 0 #a8674a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(240,201,160,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(240,201,160,0.7); background: rgba(240,201,160,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f0c9a0; text-shadow: 0 0 14px rgba(240,201,160,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #d99568 0%, #b8633a 100%);
+      box-shadow: 0 6px 0 #6b3018, 0 14px 30px rgba(47,35,24,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b3018, 0 20px 40px rgba(47,35,24,0.4), 0 0 34px rgba(184,99,58,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b3018, 0 6px 14px rgba(47,35,24,0.3); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(184,99,58,0.35); background: rgba(184,99,58,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #7d3f1a 0%, #b8633a 45%, #dc9d6a 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(240,201,160,0.14) 0%, rgba(184,99,58,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(184,99,58,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf4ec;
+      background: linear-gradient(180deg, transparent 0%, rgba(32,18,10,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(240,201,160,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">GT</span>
+    <span class="pre-word">Gentle Tresses</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/bk-1.jpg" alt="Gentle Tresses hair studio in Hialeah, FL" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(184,99,58,0.35)]" />
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Gentle <span class="text-[color:var(--accent-deep)]">Tresses</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Por qué" data-en="Why Us">Why Us</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué" data-en="Why Us">Why Us</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Hialeah, FL · Estudio de Cabello" data-en="Hialeah, FL · Hair Studio">Hialeah, FL · Hair Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Cabello sano, con amor." data-en="Healthy hair, styled with love.">Healthy hair, styled with love.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Silk press, estilos naturales" data-en="Silk press, natural styles">Silk press, natural styles</span><br /><span data-es="y sew-ins, sobre " data-en="and sew-ins, built on ">and sew-ins, built on </span><span class="text-shine" data-es="cabello sano" data-en="healthy hair">healthy hair</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Un estudio de cabello en Hialeah especializado en cuidado natural: silk press, color, sew-ins, microlinks, twists y estilos protectores, cada cita pensada para la salud de tu cabello y reservada online con precio y duración claros." data-en="A Hialeah hair studio specializing in natural hair care: silk press, color, sew-ins, microlinks, twists and protective styles, every visit built around the health of your hair and booked online with a clear price and duration.">A Hialeah hair studio specializing in natural hair care: silk press, color, sew-ins, microlinks, twists and protective styles, every visit built around the health of your hair and booked online with a clear price and duration.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="Silk Press · Estilos Naturales · Sew-Ins · Color" data-en="Silk Press · Natural Styles · Sew-Ins · Color">Silk Press · Natural Styles · Sew-Ins · Color</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar online" data-en="Book online">Book online</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/GentleTresses/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @GentleTresses
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-15.jpg" alt="Long silk press with a sleek, healthy finish at Gentle Tresses" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Reserva online</p>
+            <p class="font-display text-lg">Silk Press</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="$160 · 2h 30min" data-en="$160 · 2h 30min">$160 · 2h 30min</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl">Natural <span class="text-shine" data-es="cabello" data-en="hair">hair</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Silk press, color y estilos" data-en="Silk press, color &amp; styles">Silk press, color &amp; styles</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="30">30</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Servicios · Silk Press · Braids · Sew-Ins" data-en="Services · Silk Press · Braids · Sew-Ins">Services · Silk Press · Braids · Sew-Ins</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">By <span class="text-shine" data-es="cita" data-en="appt">appt</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Atención uno a uno" data-en="One-on-one care">One-on-one care</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Hialeah</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">5901 NW 183rd St</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Silk Press</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Twists</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sew-Ins</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Natural Color</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Protective Styles</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Silk Press</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Twists</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sew-Ins</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Natural Color</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Protective Styles</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/bk-14.jpg" alt="Silk press styling in progress at Gentle Tresses" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/bk-16.jpg" alt="Voluminous twist-out with defined curls at Gentle Tresses" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Cuidado natural," data-en="Natural hair care,">Natural hair care,</span><br /><span class="text-shine" data-es="con la salud primero" data-en="with your health first">with your health first</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Gentle Tresses es un estudio de cabello en Hialeah construido sobre una idea: la salud de tu cabello primero, y luego el silk press, color, sew-in o estilo que buscabas. 30 servicios, desde un tratamiento rápido hasta un sew-in completo." data-en="Gentle Tresses is a Hialeah hair studio built around one idea: the health of your hair first, then the silk press, color, sew-in or style you came in for. 30 services, from a quick treatment to a full sew-in install.">Gentle Tresses is a Hialeah hair studio built around one idea: the health of your hair first, then the silk press, color, sew-in or style you came in for. 30 services, from a quick treatment to a full sew-in install.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Este es un lugar de amor y respeto: cada cita se reserva online con precio y duración claros, y cada servicio recibe el tiempo que necesita, desde un tratamiento de 10 minutos hasta un sew-in versátil de 4 horas." data-en="This is a place of love and respect: every appointment is booked online with a clear price and duration, and every service gets the time it needs, from a 10 minute treatment to a 4 hour versatile sew-in.">This is a place of love and respect: every appointment is booked online with a clear price and duration, and every service gets the time it needs, from a 10 minute treatment to a 4 hour versatile sew-in.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine" data-es="Natural" data-en="Natural">Natural</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Cuidado del cabello" data-en="Hair care">Hair care</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">30</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Servicios" data-en="Services">Services</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">Hialeah</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Ubicación" data-en="Location">Location</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/raw/bk-1.jpg" alt="Inside the Gentle Tresses hair studio in Hialeah" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(184,99,58,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Gentle Tresses · <span class="text-[color:var(--ink-40)]" data-es="Especialista en cabello natural" data-en="Natural hair specialist">Natural hair specialist</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tu cita, paso" data-en="Your visit, step">Your visit, step</span> <span class="text-shine" data-es="a paso" data-en="by step">by step</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Reserva online" data-en="Book online">Book online</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Eliges tu servicio online con precio y duración claros, de un tratamiento rápido a un sew-in completo, y confirmas al instante." data-en="Pick your service online with a clear price and duration, from a quick treatment to a full sew-in, and confirm instantly.">Pick your service online with a clear price and duration, from a quick treatment to a full sew-in, and confirm instantly.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Consulta capilar" data-en="Hair consult">Hair consult</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Tu historial de cabello, la salud de tu cuero cabelludo y el estilo que buscas definen el plan antes de empezar." data-en="Your hair history, scalp health and the style you are after shape the plan before we begin.">Your hair history, scalp health and the style you are after shape the plan before we begin.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="El servicio" data-en="The service">The service</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Del silk press al sew-in completo o al servicio de color, cada cita recibe el tiempo que necesita, hasta 4 horas si hace falta." data-en="From a silk press to a full sew-in or a color service, every visit gets the time it needs, up to 4 hours if that is what it takes.">From a silk press to a full sew-in or a color service, every visit gets the time it needs, up to 4 hours if that is what it takes.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Plan de cuidado" data-en="The finish">The finish</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con tu color o corte terminado, indicaciones para cuidarlo en casa y tu próxima cita ya agendada." data-en="You leave with your color or cut finished, the guidance to care for it at home, and your next appointment already booked.">You leave with your color or cut finished, the guidance to care for it at home, and your next appointment already booked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Choose your</span> <span class="text-shine" data-es="servicio" data-en="service">service</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por Gentle Tresses. Reserva online con confirmación inmediata." data-en="Prices and durations as published by Gentle Tresses. Book online with instant confirmation.">Prices and durations as published by Gentle Tresses. Book online with instant confirmation.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Firma de la casa" data-en="Signature">Signature</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Gentle Tress Silk Press</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un silk press saludable con lavado, tratamiento y un acabado liso y ligero que cuida el cabello natural mientras luce impecable." data-en="A healthy silk press with a wash, treatment and a light, smooth finish that protects natural hair while it looks flawless.">A healthy silk press with a wash, treatment and a light, smooth finish that protects natural hair while it looks flawless.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$160</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p></div>
+            <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(184,99,58,0.4); box-shadow: 0 18px 50px rgba(47,35,24,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Favorito del estudio" data-en="Studio favorite">Studio favorite</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Versatile Sew In</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un sew-in versátil instalado con cuidado para un acabado natural, con caída y movimiento, protegiendo tu cabello natural debajo." data-en="A versatile sew-in installed with care for a natural finish with movement and flow, protecting your natural hair underneath.">A versatile sew-in installed with care for a natural finish with movement and flow, protecting your natural hair underneath.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$270</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">4h</p></div>
+            <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Estilos naturales" data-en="Natural styles">Natural styles</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Small Twists</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Twists pequeños hechos a mano, un estilo protector limpio y duradero que cuida tu cabello mientras crece." data-en="Small, hand-styled twists, a clean, long-lasting protective style that cares for your hair while it grows.">Small, hand-styled twists, a clean, long-lasting protective style that cares for your hair while it grows.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$175</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p></div>
+            <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Color" data-en="Color">Color</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Color de proceso simple" data-en="Single Process Color">Single Process Color</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Color permanente de proceso simple, rico y parejo de raíz a puntas, aplicado cuidando la salud de tu cabello." data-en="A single process permanent color, rich and even from root to ends, applied with the health of your hair in mind.">A single process permanent color, rich and even from root to ends, applied with the health of your hair in mind.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$250</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">3h</p></div>
+            <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="También: twists, braids, instalación de wigs, take-downs y tratamientos. Menú completo de 30 servicios y disponibilidad al reservar online." data-en="Also: twists, braids, wig installs, take-downs and treatments. Full menu of 30 services and availability when you book online.">Also: twists, braids, wig installs, take-downs and treatments. Full menu of 30 services and availability when you book online.</span></p>
+
+      <!-- MENU COMPLETO -->
+      <div class="text-center max-w-2xl mx-auto mt-24 mb-14">
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight"><span data-es="Menú " data-en="Full ">Full </span><span class="text-shine" data-es="completo" data-en="menu">menu</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:120ms" data-es="30 servicios publicados, agrupados por categoría. Todos los precios y duraciones aparecen tal como están publicados." data-en="30 published services, grouped by category. All prices and durations appear exactly as listed.">30 published services, grouped by category. All prices and durations appear exactly as listed.</p>
+      </div>
+
+      <div class="glass rounded-3xl p-7 sm:p-10 mb-5 reveal">
+        <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Silk press y estilos &middot; 8 servicios" data-en="Silk press &amp; styling &middot; 8 services">Silk press &amp; styling &middot; 8 services</p>
+        <h3 class="font-display text-3xl mb-6">Silk Press <span class="text-[color:var(--accent-deep)]">&amp; Styling</span></h3>
+        <div class="grid md:grid-cols-2 gap-x-12">
+          <div><div class="svc-row"><p class="text-sm font-light">NEW CLIENT SERVICE</p><p class="text-right"><span class="svc-price text-base">$220</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Gentle Tress Silk Press</p><p class="text-right"><span class="svc-price text-base">$160</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Silk Press Package</p><p class="text-right"><span class="svc-price text-base">$130</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 5min</span></p></div><div class="svc-row"><p class="text-sm font-light">Quick TLC</p><p class="text-right"><span class="svc-price text-base">$100</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 1h</span></p></div></div>
+          <div><div class="svc-row"><p class="text-sm font-light">Wash &amp; Go</p><p class="text-right"><span class="svc-price text-base">$135</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Perm Rod Set</p><p class="text-right"><span class="svc-price text-base">$160</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Blunt Cut</p><p class="text-right"><span class="svc-price text-base">$30</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 15min</span></p></div><div class="svc-row"><p class="text-sm font-light">Layered Cut (Short/Long Layers)</p><p class="text-right"><span class="svc-price text-base">$45</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 15min</span></p></div></div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-5 mb-5 items-start">
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Estilos naturales y braids &middot; 7 servicios" data-en="Natural styles &amp; braids &middot; 7 services">Natural styles &amp; braids &middot; 7 services</p>
+          <h3 class="font-display text-3xl mb-6">Natural Styles <span class="text-[color:var(--accent-deep)]">&amp; Braids</span></h3>
+          <div class="svc-row"><p class="text-sm font-light">Small Twists</p><p class="text-right"><span class="svc-price text-base">$175</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Medium Twists</p><p class="text-right"><span class="svc-price text-base">$155</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Flat Twists</p><p class="text-right"><span class="svc-price text-base">$145</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Prep &amp; Braid</p><p class="text-right"><span class="svc-price text-base">$155</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h</span></p></div><div class="svc-row"><p class="text-sm font-light">Crochet Install</p><p class="text-right"><span class="svc-price text-base">$215</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Multipurpose Braid Down</p><p class="text-right"><span class="svc-price text-base">$45</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 20min</span></p></div><div class="svc-row"><p class="text-sm font-light">Plaits Take Down Service</p><p class="text-right"><span class="svc-price text-base">$250</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h</span></p></div>
+        </div>
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Extensiones e instalaciones &middot; 7 servicios" data-en="Extensions &amp; installs &middot; 7 services">Extensions &amp; installs &middot; 7 services</p>
+          <h3 class="font-display text-3xl mb-6">Extensions <span class="text-[color:var(--accent-deep)]">&amp; Installs</span></h3>
+          <div class="svc-row"><p class="text-sm font-light">Upart / Half Wig Install</p><p class="text-right"><span class="svc-price text-base">$195</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 40min</span></p></div><div class="svc-row"><p class="text-sm font-light">Clip In Installation</p><p class="text-right"><span class="svc-price text-base">$195</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Traditional Sew-in</p><p class="text-right"><span class="svc-price text-base">$220</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 15min</span></p></div><div class="svc-row"><p class="text-sm font-light">Versatile Sew In</p><p class="text-right"><span class="svc-price text-base">$270</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 4h</span></p></div><div class="svc-row"><p class="text-sm font-light">Flip Over Method Sew In</p><p class="text-right"><span class="svc-price text-base">$300</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 3h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Extensions Maintenance</p><p class="text-right"><span class="svc-price text-base">$175</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h</span></p></div><div class="svc-row"><p class="text-sm font-light">Take Down Services</p><p class="text-right"><span class="svc-price text-base">$85</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 1h</span></p></div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-5 mb-5 items-start">
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Tratamientos &middot; 5 servicios" data-en="Treatments &middot; 5 services">Treatments &middot; 5 services</p>
+          <h3 class="font-display text-3xl mb-6">Treatments</h3>
+          <div class="svc-row"><p class="text-sm font-light">Hair Botox Smoothing Treatment</p><p class="text-right"><span class="svc-price text-base">$245</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 30min</span></p></div><div class="svc-row"><p class="text-sm font-light">Deep Conditioning Steam Treatment</p><p class="text-right"><span class="svc-price text-base">$25</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 10min</span></p></div><div class="svc-row"><p class="text-sm font-light">Bonding Treatment</p><p class="text-right"><span class="svc-price text-base">$20</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 10min</span></p></div><div class="svc-row"><p class="text-sm font-light">Scalp Treatment</p><p class="text-right"><span class="svc-price text-base">$15</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 10min</span></p></div><div class="svc-row"><p class="text-sm font-light">Trim</p><p class="text-right"><span class="svc-price text-base">$25</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 10min</span></p></div>
+        </div>
+        <div class="glass rounded-3xl p-7 sm:p-10 reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-2" data-es="Color &middot; 3 servicios" data-en="Color &middot; 3 services">Color &middot; 3 services</p>
+          <h3 class="font-display text-3xl mb-6">Color</h3>
+          <div class="svc-row"><p class="text-sm font-light">No Lift Color Deposit (Demi)</p><p class="text-right"><span class="svc-price text-base">$200</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h</span></p></div><div class="svc-row"><p class="text-sm font-light">Single Process Color (Permanent)</p><p class="text-right"><span class="svc-price text-base">$250</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 3h</span></p></div><div class="svc-row"><p class="text-sm font-light">Root Touch Up &amp; Color Refresh</p><p class="text-right"><span class="svc-price text-base">$220</span> <span class="text-xs text-[color:var(--ink-40)]">&middot; 2h 15min</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Resultados" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="results">results</span></h2>
+        </div>
+        <a href="https://www.instagram.com/GentleTresses/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @GentleTresses
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Dentro del estudio" data-en="Inside the studio">Inside the studio</span><img src="assets/raw/bk-1.jpg" alt="Inside the Gentle Tresses hair studio in Hialeah, FL" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Color plateado" data-en="Silver ombre color">Silver ombre color</span><img src="assets/raw/bk-12.jpg" alt="Silver ombre color melt on a natural blowout, back view" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Twists en cola" data-en="Twist ponytail">Twist ponytail</span><img src="assets/raw/bk-6.jpg" alt="Flat twists styled into a twisted ponytail, side view" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Moño pulido" data-en="Sleek wrapped bun">Sleek wrapped bun</span><img src="assets/raw/bk-5.jpg" alt="Sleek wrapped bun with a glossy, polished finish, back view" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Silk Press</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Twists</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sew-Ins</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Natural Color</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Protective Styles</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Silk Press</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Twists</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sew-Ins</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Natural Color</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Protective Styles</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- POR QUE -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="El estudio" data-en="The studio">The studio</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Por qué" data-en="Why">Why</span> <span class="text-shine">Gentle Tresses</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="La salud de tu cabello primero, un menú que cubre casi todo, y citas que se ajustan a tu horario." data-en="The health of your hair first, a menu that covers nearly everything, and appointments that run on your schedule.">The health of your hair first, a menu that covers nearly everything, and appointments that run on your schedule.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="font-display text-2xl text-shine mb-3" data-es="Salud capilar primero" data-en="Healthy hair first">Healthy hair first</p>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cada servicio busca cuidar tu cabello, no solo cambiarlo: del acondicionamiento profundo al bonding y los tratamientos de cuero cabelludo entre citas." data-en="Every service is built to care for your hair, not just change it: from deep conditioning to bonding and scalp treatments between visits.">Every service is built to care for your hair, not just change it: from deep conditioning to bonding and scalp treatments between visits.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="font-display text-2xl text-shine mb-3" data-es="Estilos naturales y protectores" data-en="Natural &amp; protective styles">Natural &amp; protective styles</p>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Silk press, twists, flat twists, perm rod sets, wash and go y crochet: estilos naturales y protectores para cada textura, todo en el menú." data-en="Silk press, twists, flat twists, perm rod sets, wash and go and crochet: natural and protective styles for every texture, all on the menu.">Silk press, twists, flat twists, perm rod sets, wash and go and crochet: natural and protective styles for every texture, all on the menu.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="font-display text-2xl text-shine mb-3" data-es="Sew-ins e instalaciones" data-en="Sew-ins &amp; installs">Sew-ins &amp; installs</p>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sew-ins tradicionales y versátiles, instalación de wigs upart, clip-ins, microlinks y mantenimiento, para todo tipo de cabello y meta de largo." data-en="Traditional and versatile sew-ins, upart wig installs, clip-ins, microlinks and maintenance, for every hair type and length goal.">Traditional and versatile sew-ins, upart wig installs, clip-ins, microlinks and maintenance, for every hair type and length goal.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver el menú completo y reservar" data-en="See the full menu and book">See the full menu and book</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">Hialeah</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">5901 NW 183rd Street, Suite 323, Hialeah, FL 33015</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(184,99,58,0.4)]" href="https://www.google.com/maps?q=5901+NW+183rd+Street+Suite+323,+Hialeah,+FL+33015" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa online: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment online: pick the service, day and time, and the confirmation is instant.">By appointment online: pick the service, day and time, and the confirmation is instant.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(184,99,58,0.4)]" href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" data-es="Reservar online" data-en="Book online">Book online</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los últimos trabajos y escribe por DM cualquier duda antes de tu cita." data-en="See the latest styling work and DM any questions before your appointment.">See the latest styling work and DM any questions before your appointment.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(184,99,58,0.4)]" href="https://www.instagram.com/GentleTresses/" target="_blank" rel="noopener">@GentleTresses</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Gentle Tresses, 5901 NW 183rd Street, Hialeah FL"
+          src="https://www.google.com/maps?q=5901+NW+183rd+Street+Suite+323,+Hialeah,+FL+33015&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #201206 0%, #170b04 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Cabello sano, con amor." data-en="Healthy hair, styled with love.">Healthy hair, styled with love.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próxima cita" data-en="Your next appointment">Your next appointment</span> <span class="text-shine" data-es="está a un clic" data-en="is one click away">is one click away</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos: tu silk press, tu estilo protector, o el tratamiento que tu cabello está pidiendo." data-en="Book online in seconds: your silk press, your protective style, or the treatment your hair has been asking for.">Book online in seconds: your silk press, your protective style, or the treatment your hair has been asking for.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar online" data-en="Book online">Book online</a>
+        <a href="https://www.instagram.com/GentleTresses/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#160b05]">
+    <span class="foot-mark" aria-hidden="true">Gentle Tresses</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/bk-1.jpg" alt="Gentle Tresses hair studio" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,201,160,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Gentle Tresses</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de cabello natural en Hialeah, FL. Atención con cita previa." data-en="Natural hair studio in Hialeah, FL. By appointment only.">Natural hair studio in Hialeah, FL. By appointment only.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>5901 NW 183rd Street, Suite 323, Hialeah, FL 33015</p>
+        <p><a href="tel:+17862528163" class="hover:text-[#f0c9a0]">(786) 252-8163</a></p>
+        <p><a href="mailto:gentletresses@yahoo.com" class="hover:text-[#f0c9a0]">gentletresses@yahoo.com</a></p>
+        <p><a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="hover:text-[#f0c9a0]" data-es="Reservas online" data-en="Online booking">Online booking</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/GentleTresses/" target="_blank" rel="noopener" class="hover:text-[#f0c9a0]">Instagram · @GentleTresses</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Gentle Tresses.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://gentletresses.glossgenius.com" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf3ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
