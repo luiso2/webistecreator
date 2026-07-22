@@ -126,8 +126,8 @@ rep('<span class="pre-mono">LB</span>', '<span class="pre-mono">CB</span>')
 rep('<span class="pre-word">Lash Bloom</span>', '<span class="pre-word">Celina Beauty</span>')
 
 # ---------- 7. NAV ----------
-rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,74,114,0.35)]" />',
-    '<img src="assets/raw/bk-2.jpg" alt="Celina Beauty Nails & Studio" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,74,114,0.35)]" />')
+rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,77,74,0.35)]" />',
+    '<img src="assets/raw/bk-2.jpg" alt="Celina Beauty Nails & Studio" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,77,74,0.35)]" />')
 rep('<span class="font-display text-xl tracking-[0.1em] uppercase">Lash <span class="text-[color:var(--accent-deep)]">Bloom</span></span>',
     '<span class="font-display text-xl tracking-[0.1em] uppercase">Celina <span class="text-[color:var(--accent-deep)]">Beauty</span></span>')
 print("NAV done")
@@ -201,8 +201,8 @@ rep('''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p c
     '''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="229">229</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Personal care</p></div>''')
-rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,74,114,0.3)]" loading="lazy" />',
-    '<img src="assets/raw/bk-2.jpg" alt="Celina Beauty Nails & Studio" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,74,114,0.3)]" loading="lazy" />')
+rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,77,74,0.3)]" loading="lazy" />',
+    '<img src="assets/raw/bk-2.jpg" alt="Celina Beauty Nails & Studio" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,77,74,0.3)]" loading="lazy" />')
 rep('<span class="text-sm font-light">Yesi · <span class="text-[color:var(--ink-40)]" data-es="Artista licenciada" data-en="Licensed lash artist">Licensed lash artist</span></span>',
     '<span class="text-sm font-light">Roxana · <span class="text-[color:var(--ink-40)]" data-es="Manicurista" data-en="Nail artist">Nail artist</span></span>')
 print("EXPERIENCIA done")
@@ -247,7 +247,7 @@ NEW_SERVICES = f'''<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-st
             <a href="{BOOKSY}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(160,74,114,0.4); box-shadow: 0 18px 50px rgba(51,34,44,0.14);">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(160,77,74,0.4); box-shadow: 0 18px 50px rgba(51,34,36,0.14);">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Favorito del estudio" data-en="Studio favorite">Favorito del estudio</p>
           <h3 class="font-display text-2xl leading-snug mb-3">Russian pedicura luxury</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Una pedicura rusa de lujo, cutícula y callos tratados a fondo, para pies impecables." data-en="A luxury Russian pedicure, deep cuticle and callus care, for flawless feet.">Una pedicura rusa de lujo, cutícula y callos tratados a fondo, para pies impecables.</p>
@@ -384,7 +384,7 @@ NEW_REVIEWS = '''<div class="grid sm:grid-cols-3 gap-5 items-stretch">
       '''
 h = h[:reviews_grid.start()] + NEW_REVIEWS + h[reviews_grid.end():]
 
-rep('<a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 86 reseñas en Booksy" data-en="Read all 86 reviews on Booksy">Read all 86 reviews on Booksy</a>',
+rep('<a href="' + NEW_BOOKSY + '" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 86 reseñas en Booksy" data-en="Read all 86 reviews on Booksy">Read all 86 reviews on Booksy</a>',
     '<a href="' + NEW_BOOKSY + '" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 229 reseñas en Booksy" data-en="Read all 229 reviews on Booksy">Leer las 229 reseñas en Booksy</a>')
 print("OPINIONES done")
 
@@ -397,8 +397,6 @@ rep('href="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+
     'href="https://www.google.com/maps?q=8019+N+Himes+Ave,+Suite+500,+Tampa,+FL+33614"')
 rep('data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">By appointment via Booksy: pick the service, day and time, and the confirmation is instant.</p>',
     'data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata.</p>')
-rep('<a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(160,74,114,0.4)]" href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>',
-    '<a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(160,74,114,0.4)]" href="' + NEW_BOOKSY + '" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>')
 rep('data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi\'s latest sets and DM any questions before your appointment.">See Yesi\'s latest sets and DM any questions before your appointment.</p>',
     'data-es="Mira los sets más recientes de Roxana y escribe por DM cualquier duda antes de tu cita." data-en="See Roxana\'s latest sets and DM any questions before your appointment.">Mira los sets más recientes de Roxana y escribe por DM cualquier duda antes de tu cita.</p>')
 rep('title="Mapa: Lash Bloom, 4580 Cresthaven Blvd, West Palm Beach FL"',
@@ -418,20 +416,18 @@ print("CTA FINAL done")
 
 # ---------- 18. FOOTER ----------
 rep('<span class="foot-mark" aria-hidden="true">Lash Bloom</span>', '<span class="foot-mark" aria-hidden="true">Celina Beauty</span>')
-rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,190,215,0.35)]" loading="lazy" />',
-    '<img src="assets/raw/bk-2.jpg" alt="Celina Beauty Nails & Studio" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,190,215,0.35)]" loading="lazy" />')
+rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,190,190,0.35)]" loading="lazy" />',
+    '<img src="assets/raw/bk-2.jpg" alt="Celina Beauty Nails & Studio" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,190,190,0.35)]" loading="lazy" />')
 rep('<span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>', '<span class="font-display text-lg tracking-[0.1em] uppercase">Celina Beauty Nails</span>')
 rep('data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>',
     'data-es="Salón de uñas en Tampa, FL. Atención con cita previa." data-en="Nail salon in Tampa, FL. By appointment only.">Salón de uñas en Tampa, FL. Atención con cita previa.</p>')
 rep('<p>4580 Cresthaven Blvd, West Palm Beach, FL 33415</p>', '<p>8019 N Himes Ave, Suite 500, Tampa, FL 33614</p>')
-rep('<a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="hover:text-[#f0bed7]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a>',
-    '<a href="' + NEW_BOOKSY + '" target="_blank" rel="noopener" class="hover:text-[#f0bed7]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a>')
 rep('<p class="text-xs text-[color:var(--ink-40)]">© 2026 Lash Bloom.</p>', '<p class="text-xs text-[color:var(--ink-40)]">© 2026 Celina Beauty Nails &amp; Studio.</p>')
 print("FOOTER done")
 
-# ---------- Boton flotante de reserva ----------
-rep('<a href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">',
-    '<a href="' + NEW_BOOKSY + '" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">')
+# Nota: los href de Booksy en nav/mobile-menu/hero/ubicacion/footer/book-float ya
+# quedaron apuntando a NEW_BOOKSY desde el reemplazo global del paso 3; no hace
+# falta un rep() adicional para ellos (su texto visible no cambia).
 
 print("ALL DONE")
 open(f"output/{OUT_SLUG}/index.html", "w", encoding="utf-8").write(h)
