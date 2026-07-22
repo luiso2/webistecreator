@@ -112,7 +112,7 @@ OLD_JSONLD = '''<script type="application/ld+json">
     "name": "Lash Bloom LLC",
     "description": "Lash studio in West Palm Beach, FL: classic, hybrid, volume and mega volume eyelash extensions and fills.",
     "address": { "@type": "PostalAddress", "streetAddress": "4580 Cresthaven Blvd", "addressLocality": "West Palm Beach", "addressRegion": "FL", "postalCode": "33415", "addressCountry": "US" },
-    "sameAs": ["https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach", "https://www.instagram.com/_lashbloom/"],
+    "sameAs": ["https://booksy.com/en-us/1466319_arbella-beauty-estudio_wellness-day-spa_15761_tampa", "https://instagram.com/Ar_bella_yudyth"],
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "86", "bestRating": "5" },
     "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Lash services", "itemListElement": [
       { "@type": "Offer", "price": "130", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Classic full set" } },
@@ -184,11 +184,6 @@ rep(
 rep(
     '<span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 86 reseñas en Booksy" data-en="5.0 · 86 reviews on Booksy">5.0 · 86 reviews on Booksy</span>',
     '<span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 35 reseñas en Booksy" data-en="5.0 · 35 reviews on Booksy">5.0 · 35 reseñas en Booksy</span>'
-)
-rep(
-    '<span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>',
-    '<span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>',
-    n=6
 )
 rep(
     '''<div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
