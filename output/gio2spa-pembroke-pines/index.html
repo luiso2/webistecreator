@@ -76,19 +76,19 @@
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
 
-    /* Glass crema calido */
+    /* Glass blush calido */
     .glass {
       background: var(--surface);
       backdrop-filter: blur(16px) saturate(150%);
       -webkit-backdrop-filter: blur(16px) saturate(150%);
-      border: 1px solid rgba(138,111,77,0.16);
+      border: 1px solid rgba(172,52,104,0.16);
       transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     }
     .glass-hover:hover {
-      background: rgba(250,247,241,0.88);
-      border-color: rgba(138,111,77,0.32);
+      background: rgba(255,250,252,0.9);
+      border-color: rgba(172,52,104,0.32);
       transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(50,40,31,0.14), 0 0 40px rgba(138,111,77,0.08);
+      box-shadow: 0 18px 42px rgba(58,36,49,0.14), 0 0 40px rgba(172,52,104,0.08);
     }
 
     /* Sheen rosa sobre texto (tonos profundos, legible en blush) */
@@ -176,64 +176,64 @@
     .nav-link:hover::after { width: 100%; }
 
     /* Marco editorial de imagen */
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(50,40,31,0.2); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(138,111,77,0.14), inset 0 -60px 100px rgba(50,40,31,0.12); }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(58,36,49,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(172,52,104,0.14), inset 0 -60px 100px rgba(58,36,49,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
 
-    /* Numeros del ritual */
+    /* Numeros del metodo */
     .step-num {
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(180deg, #a8907a, #5b473a);
+      background: linear-gradient(180deg, #cf6b93, #6e1d40);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     /* Estrellas */
-    .stars { color: #8a6f4d; letter-spacing: 2px; text-shadow: 0 0 14px rgba(138,111,77,0.3); }
+    .stars { color: #ac3468; letter-spacing: 2px; text-shadow: 0 0 14px rgba(172,52,104,0.3); }
 
     /* Mapa elegante */
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
 
-    /* Banda oscura espresso (CTA final + footer) */
+    /* Banda oscura ciruela (CTA final + footer) */
     .dark-band {
-      --ink: #f5f0e8;
-      --ink-60: rgba(245,240,232,0.65);
-      --ink-40: rgba(245,240,232,0.45);
+      --ink: #fdf3f6;
+      --ink-60: rgba(253,243,246,0.65);
+      --ink-40: rgba(253,243,246,0.45);
       --surface: rgba(255,255,255,0.05);
-      --accent-ghost: rgba(234,214,183,0.16);
+      --accent-ghost: rgba(240,177,205,0.16);
       color: var(--ink);
     }
     .dark-band .text-shine {
-      background-image: linear-gradient(110deg, #e8cfa6 0%, #f8ecd6 30%, #c4ad93 52%, #e8cfa6 75%, #f3e3c2 100%);
+      background-image: linear-gradient(110deg, #f2a9c7 0%, #fbe0ec 30%, #e39fbe 52%, #f2a9c7 75%, #f6c6da 100%);
     }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,166,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(168,144,122,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(242,169,199,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(207,107,147,0.14) 0%, transparent 70%); opacity: 1; }
     .dark-band .btn-3d {
-      background: linear-gradient(180deg, #faf3e6 0%, #e8d9bf 48%, #c9b393 100%);
-      color: #32281f;
+      background: linear-gradient(180deg, #fbe4ee 0%, #efc0d5 48%, #d791af 100%);
+      color: #3a2431;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.55),
-        inset 0 -2px 5px rgba(120,90,50,0.35),
-        0 5px 0 #8a7358,
+        inset 0 -2px 5px rgba(120,30,68,0.35),
+        0 5px 0 #8a4a67,
         0 12px 24px rgba(0,0,0,0.45);
     }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,166,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,166,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,166,0.7); background: rgba(232,207,166,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e8cfa6; text-shadow: 0 0 14px rgba(232,207,166,0.4); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,30,68,0.35), 0 7px 0 #8a4a67, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(242,169,199,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,30,68,0.4), 0 1px 0 #8a4a67, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(242,169,199,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(242,169,199,0.7); background: rgba(242,169,199,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f2a9c7; text-shadow: 0 0 14px rgba(242,169,199,0.4); }
 
     /* Boton flotante de reserva */
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60;
       width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 100%);
-      box-shadow: 0 6px 0 #4a3a26, 0 14px 30px rgba(50,40,31,0.35);
+      background: linear-gradient(180deg, #cf6b93 0%, #ac3468 100%);
+      box-shadow: 0 6px 0 #601534, 0 14px 30px rgba(58,36,49,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a3a26, 0 20px 40px rgba(50,40,31,0.4), 0 0 34px rgba(138,111,77,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a3a26, 0 6px 14px rgba(50,40,31,0.3); }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #601534, 0 20px 40px rgba(58,36,49,0.4), 0 0 34px rgba(172,52,104,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #601534, 0 6px 14px rgba(58,36,49,0.3); }
 
     /* ============ Motion v2 (nivel $100k) ============ */
 
@@ -251,7 +251,7 @@
       width: 64px; height: 64px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
-      border: 1px solid rgba(138,111,77,0.35); background: rgba(138,111,77,0.08);
+      border: 1px solid rgba(172,52,104,0.35); background: rgba(172,52,104,0.08);
       animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
     }
     .pre-word {
@@ -267,7 +267,7 @@
     /* 2. Barra de progreso de scroll */
     #scroll-progress {
       position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
-      background: linear-gradient(90deg, #6d5539 0%, #8a6f4d 45%, #c9ab7f 100%);
+      background: linear-gradient(90deg, #7d1f49 0%, #ac3468 45%, #e39fbe 100%);
       transform: scaleX(0); transform-origin: left center; will-change: transform;
       pointer-events: none;
     }
@@ -299,7 +299,7 @@
     @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
     .carousel-dot {
       width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
-      background: rgba(50,40,31,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+      background: rgba(58,36,49,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
     }
     .carousel-dot.active { width: 24px; background: var(--accent-deep); }
 
@@ -323,7 +323,7 @@
     .cursor-glow {
       position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
       border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
-      background: radial-gradient(circle, rgba(232,207,166,0.14) 0%, rgba(138,111,77,0.08) 42%, transparent 70%);
+      background: radial-gradient(circle, rgba(242,169,199,0.14) 0%, rgba(172,52,104,0.08) 42%, transparent 70%);
       transition: opacity 0.5s ease; will-change: transform;
     }
     .cursor-glow.on { opacity: 1; }
@@ -337,7 +337,7 @@
       transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
     }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(138,111,77,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(172,52,104,0.5); transform: translateY(-3px); }
 
 
     /* ============ Motion v3 (premium+) ============ */
@@ -376,7 +376,7 @@
     .foot-mark {
       position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
       font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
-      color: transparent; -webkit-text-stroke: 1px rgba(232,207,166,0.09); pointer-events: none; user-select: none;
+      color: transparent; -webkit-text-stroke: 1px rgba(242,169,199,0.09); pointer-events: none; user-select: none;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -409,8 +409,8 @@
 
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
-    <span class="pre-mono">A</span>
-    <span class="pre-word">Amani HeadSpa</span>
+    <span class="pre-mono">G</span>
+    <span class="pre-word">Gio2Spa</span>
     <span class="pre-line"></span>
   </div>
 
@@ -421,21 +421,22 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(138,111,77,0.35)] bg-[rgba(138,111,77,0.1)] text-[color:var(--accent-deep)]">A</span>
-        <span class="font-display text-xl tracking-[0.14em] uppercase">Amani <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">HeadSpa</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(172,52,104,0.35)] bg-[rgba(172,52,104,0.1)] text-[color:var(--accent-deep)]">G</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">Gio<span class="text-[color:var(--accent-deep)]">2</span>Spa</span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia">La Experiencia</a>
-        <a class="nav-link" href="#ritual">El Ritual</a>
-        <a class="nav-link" href="#servicios">Servicios</a>
-        <a class="nav-link" href="#galeria">Galería</a>
-        <a class="nav-link" href="#opiniones">Opiniones</a>
-        <a class="nav-link" href="#ubicacion">Ubicación</a>
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Reservar cita
+          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -446,13 +447,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Ritual</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
-        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
       </nav>
     </div>
   </header>
@@ -462,38 +463,36 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Flagami · Miami's Holistic Head Spa</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">The Unwinding empieza aquí.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Pembroke Pines, FL · Nail Salon &amp; Beauty Studio" data-en="Pembroke Pines, FL · Nail Salon &amp; Beauty Studio">Pembroke Pines, FL · Nail Salon &amp; Beauty Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Un salon familiar, con cafecito incluido." data-en="A family salon, coffee included.">Un salon familiar, con cafecito incluido.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          Suelta el estrés,<br /><span class="text-shine">renueva</span> cuerpo y mente
+          <span data-es="Uñas, pestañas y cejas," data-en="Nails, lashes and brows,">Uñas, pestañas y cejas,</span><br /><span data-es="con " data-en="with a ">con </span><span class="text-shine" data-es="atención de familia" data-en="family touch">atención de familia</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
-          Rituales de bienestar holístico en Flagami: limpieza profunda del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y terapia de piedras calientes. Para ti, o en pareja.
-        </p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Gio2Spa es el estudio de belleza de Giovannella y su equipo en Pembroke Pines: unas acrilicas y gel, pestanas clasicas y volumen, laminado de cejas y faciales, con la misma calidez de un negocio de familia y mas de 100 clientas en Google." data-en="Gio2Spa is Giovannella's beauty studio in Pembroke Pines: acrylic and gel nails, classic and volume lashes, brow lamination and facials, with the warmth of a family business and over 100 happy clients on Google.">Gio2Spa es el estudio de belleza de Giovannella y su equipo en Pembroke Pines: unas acrilicas y gel, pestanas clasicas y volumen, laminado de cejas y faciales, con la misma calidez de un negocio de familia y mas de 100 clientas en Google.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]">4.9 · 73 reseñas en Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.9 · 115 reseñas en Google" data-en="4.9 · 115 reviews on Google">4.9 · 115 reseñas en Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar cita
+          <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="tel:+13057906977" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="tel:+17863073875" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (305) 790-6977
+            (786) 307-3875
           </a>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/hero-1.jpg" alt="Aplicación de mascarilla facial con brocha durante un ritual en Amani HeadSpa" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/svc-16.jpeg" alt="Set de unas stiletto blancas con acento en glitter plateado, hecho en Gio2Spa" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Ritual insignia</p>
-            <p class="font-display text-lg">The Unwinding | 90min</p>
-            <p class="text-sm text-[color:var(--ink-60)]">90 minutos · $185</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Reserva online</p>
+            <p class="font-display text-lg" data-es="Uñas Acrílicas Juego Completo" data-en="Full Acrylic Nails">Uñas Acrílicas Juego Completo</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="1h 30min · precio a consultar" data-en="1h 30min · price on request">1h 30min · precio a consultar</p>
           </div>
         </div>
       </div>
@@ -503,10 +502,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="73">73</span> reseñas en Google</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Rituales <span class="text-shine">en pareja</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Sesiones para dos</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">The <span class="text-shine">Unwinding</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Desde $130 · 60 min</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Flagami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">752 Flagami Blvd, Miami</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="115">115</span> <span data-es="reseñas en Google" data-en="reviews on Google">reseñas en Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span class="text-shine" data-es="Familia" data-en="Family">Familia</span> Gio2Spa</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Madre e hija" data-en="Mother and daughter">Madre e hija</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span class="text-shine">4</span> <span data-es="especialidades" data-en="specialties">especialidades</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Uñas, pestañas, cejas y facial" data-en="Nails, lashes, brows &amp; facial">Uñas, pestañas, cejas y facial</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Pembroke Pines</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">8200 Pines Blvd, FL</p></div>
     </div>
   </section>
 
@@ -514,18 +513,18 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Uñas Acrílicas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pestañas Clásicas y Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Laminado de Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pembroke Pines, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Uñas Acrílicas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pestañas Clásicas y Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Laminado de Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pembroke Pines, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -536,44 +535,33 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/space-1.jpg" alt="Interior de Amani HeadSpa: paredes crema con nichos en arco, repisas de roble y camilla con textil acanalado" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/biz-1.jpeg" alt="Interior de Gio2Spa: sillas de pedicura en velvet rosa y pared decorativa con corazones" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/space-2.jpg" alt="Logo AMANI en serif dorado sobre pared crema, bajo lámpara escultural de yeso" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/svc-22.jpeg" alt="Manicura francesa elegante con detalle floral hecha en Gio2Spa" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un refugio holístico<br /><span class="text-shine">en pleno Flagami</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
-          Amani es el head spa holístico de Miami: un espacio de calma cálida con paredes crema, arcos suaves, madera clara y luz tenue, pensado para que el tiempo se detenga. Cada ritual combina limpieza del cuero cabelludo, exfoliación, masaje terapéutico y mascarillas personalizadas.
-        </p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
-          Puedes vivirlo en solitario o compartirlo: las sesiones para dos son una de las experiencias más pedidas. Sales como lo promete su propio ritual: <em class="font-script text-[color:var(--accent-deep)]">refreshed, balanced, renewed</em>.
-        </p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un salon de familia" data-en="A family salon">Un salon de familia</span><br /><span class="text-shine" data-es="en el corazon de Pembroke Pines" data-en="in the heart of Pembroke Pines">en el corazon de Pembroke Pines</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Gio2Spa nacio como un proyecto de madre e hija: Giovannella al frente, junto a Johanna y Cindy, atendiendo unas, pestanas, cejas y facial en un espacio calido pensado para sentirse como en casa." data-en="Gio2Spa started as a mother-daughter project: Giovannella leading the studio, together with Johanna and Cindy, offering nails, lashes, brows and facials in a warm space designed to feel like home.">Gio2Spa nacio como un proyecto de madre e hija: Giovannella al frente, junto a Johanna y Cindy, atendiendo unas, pestanas, cejas y facial en un espacio calido pensado para sentirse como en casa.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Sus clientas lo repiten en sus resenas: atencion personalizada, trabajo prolijo y hasta un cafecito de cortesia mientras esperas. Asi se ganaron un 4.9 de calificacion en Google con mas de 100 resenas reales." data-en="Their clients say it again and again in their reviews: personalized attention, careful work and even a complimentary cafecito while you wait. That is how they earned a 4.9 rating on Google with over 100 real reviews.">Sus clientas lo repiten en sus resenas: atencion personalizada, trabajo prolijo y hasta un cafecito de cortesia mientras esperas. Asi se ganaron un 4.9 de calificacion en Google con mas de 100 resenas reales.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+<span data-count="3.9" data-decimals="1">3.9</span>K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">60-90'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">De ritual</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="115">115</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reseñas</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">3</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Especialistas" data-en="Specialists">Especialistas</p></div>
         </div>
         <div class="reveal" style="transition-delay:360ms">
-          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">El equipo</p>
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="El equipo" data-en="The team">El equipo</p>
           <div class="flex flex-wrap gap-4">
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-1.jpg" alt="Nilda Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nilda Estevez</span>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-4 py-2">
+              <span class="text-sm font-light" data-es="Giovannella · fundadora" data-en="Giovannella · founder">Giovannella · fundadora</span>
             </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-2.jpg" alt="Mireia Fenoy, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Mireia Fenoy</span>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-4 py-2">
+              <span class="text-sm font-light">Johanna</span>
             </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-3.jpg" alt="Maria Gutierrez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Maria Gutierrez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-4.jpg" alt="Nildy Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nildy Estevez</span>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-4 py-2">
+              <span class="text-sm font-light">Cindy</span>
             </div>
           </div>
         </div>
@@ -581,34 +569,34 @@
     </div>
   </section>
 
-  <!-- EL RITUAL PASO A PASO -->
-  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Así se vive <span class="text-shine">The Unwinding</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Asi se vive" data-en="This is how you experience">Asi se vive</span> <span class="text-shine">Gio2Spa</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Limpieza y exfoliación</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">El ritual abre con una limpieza calmante y exfoliación del cuero cabelludo que estimula la circulación y cuida la salud capilar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Reserva online" data-en="Book online">Reserva online</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Eliges tu servicio en Booksy, desde una manicura regular hasta un juego completo de unas acrilicas o pestanas de volumen." data-en="Choose your service on Booksy, from a regular manicure to a full acrylic nail set or volume lashes.">Eliges tu servicio en Booksy, desde una manicura regular hasta un juego completo de unas acrilicas o pestanas de volumen.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Masaje terapéutico</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal terapéutico, extendido al escote, que libera la tensión acumulada y te lleva a una relajación profunda.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Bienvenida con cafecito" data-en="Welcome with coffee">Bienvenida con cafecito</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegas y te reciben Giovannella, Johanna o Cindy con un cafecito de cortesia, el detalle que mas repiten sus clientas." data-en="You arrive and Giovannella, Johanna or Cindy welcome you with a complimentary coffee, the detail their clients mention the most.">Llegas y te reciben Giovannella, Johanna o Cindy con un cafecito de cortesia, el detalle que mas repiten sus clientas.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Mascarilla y piedras calientes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Mascarilla capilar personalizada que nutre y restaura, mientras la terapia de piedras calientes relaja brazos y manos.</p>
+          <h3 class="font-display text-xl mb-3" data-es="El servicio" data-en="The service">El servicio</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Trabajo prolijo y personalizado en unas, pestanas, cejas o facial, con el tiempo que cada procedimiento realmente necesita." data-en="Careful, personalized work on nails, lashes, brows or facial, with the time each procedure actually needs.">Trabajo prolijo y personalizado en unas, pestanas, cejas o facial, con el tiempo que cada procedimiento realmente necesita.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Cierre renovador</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Shampoo personalizado, masaje ligero de hombros y desenredado suave. Sales fresca, en equilibrio y renovada.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Acabado y proxima cita" data-en="Finish &amp; next visit">Acabado y proxima cita</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con un resultado impecable y agendas tu retoque o siguiente servicio antes de irte." data-en="You leave with a flawless result and book your touch-up or next service before heading out.">Sales con un resultado impecable y agendas tu retoque o siguiente servicio antes de irte.</p>
         </div>
       </div>
     </div>
@@ -619,61 +607,105 @@
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">ritual</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Amani HeadSpa. Reserva online con confirmación inmediata.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine" data-es="servicio" data-en="service">servicio</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Menu y duraciones publicados por Gio2Spa en Booksy. Los precios se confirman al reservar segun el servicio elegido." data-en="Menu and durations as published by Gio2Spa on Booksy. Prices are confirmed at booking depending on the service.">Menu y duraciones publicados por Gio2Spa en Booksy. Los precios se confirman al reservar segun el servicio elegido.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding | 60 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Limpieza y exfoliación del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y piedras calientes en brazos y manos.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Firma" data-en="Signature">Firma</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Uñas Acrílicas Juego Completo</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El set completo de acrilico mas pedido del estudio, esculpido a tu forma y largo." data-en="The studio's most requested full acrylic set, sculpted to your shape and length.">El set completo de acrilico mas pedido del estudio, esculpido a tu forma y largo.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$130</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-xl text-shine" data-es="Consulta precio" data-en="Price on request">Consulta precio</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 30min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(138,111,77,0.4); box-shadow: 0 18px 50px rgba(50,40,31,0.14);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial · Ritual insignia</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding| 90min</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El ritual completo de head spa más un facial rejuvenecedor: limpieza profunda, mascarilla nutritiva, masaje facial e hidratación con SPF.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(172,52,104,0.4); box-shadow: 0 18px 50px rgba(58,36,49,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Favorito del estudio" data-en="Studio favorite">Favorito del estudio</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Pestañas Volumen Juego Completo</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Juego completo de pestanas de volumen para una mirada intensa y duradera." data-en="A full volume lash set for an intense, long-lasting look.">Juego completo de pestanas de volumen para una mirada intensa y duradera.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$185</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+              <p class="font-display text-xl text-shine" data-es="Consulta precio" data-en="Price on request">Consulta precio</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 45min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Feet</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding + Feet | 80 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Todos los beneficios del ritual de 60 minutos, más un tratamiento revitalizante de pies con exfoliación y masaje humectante profundo.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cejas" data-en="Brows">Cejas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Laminado Cejas con Diseño y Tinte</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Laminado con diseno y tinte para cejas prolijas y definidas por semanas." data-en="Lamination with design and tint for tidy, defined brows that last for weeks.">Laminado con diseno y tinte para cejas prolijas y definidas por semanas.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$160</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">80 min</p>
+              <p class="font-display text-xl text-shine" data-es="Consulta precio" data-en="Price on request">Consulta precio</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Signature Facial</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial personalizado según tu tipo de piel y tus necesidades, enfocado en mejorar la salud y apariencia general de tu rostro.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Piel" data-en="Skin">Piel</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Facial</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Limpieza facial que renueva y equilibra tu piel en 40 minutos." data-en="A facial cleanse that renews and balances your skin in 40 minutes.">Limpieza facial que renueva y equilibra tu piel en 40 minutos.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$140</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-xl text-shine" data-es="Consulta precio" data-en="Price on request">Consulta precio</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">40min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Al reservar se solicita un depósito de $50 a $60 según el servicio.</p>
+      <div class="grid sm:grid-cols-2 gap-5 mt-10">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:120ms">
+          <h3 class="font-display text-lg mb-4" data-es="Uñas" data-en="Nails">Uñas</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Manicura Regular / Regular Manicure</span><span class="font-medium whitespace-nowrap">1h 15min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Pedicura Regular / Regular Pedicure</span><span class="font-medium whitespace-nowrap">45min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Manicura y Pedicura Gel / Gel Manicure &amp; Pedicure</span><span class="font-medium whitespace-nowrap">1h 30min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">ApresX Cortas / Medianas / Largas</span><span class="font-medium whitespace-nowrap">1h 30min - 1h 40min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Gel manicure</span><span class="font-medium whitespace-nowrap">45min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Gel pedicure</span><span class="font-medium whitespace-nowrap">1h</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Acrylic Refill</span><span class="font-medium whitespace-nowrap">1h 15min</span></div>
+            <div class="flex justify-between gap-3 py-2"><span class="text-[color:var(--ink-60)] font-light">Builder Gel</span><span class="font-medium whitespace-nowrap">1h</span></div>
+          </div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4"><span data-es="Y 8 servicios mas de unas: combos, Parafina y Pedicura Jelly Spa. " data-en="And 8 more nail services: combos, Paraffin and Jelly Spa Pedicure. ">Y 8 servicios mas de unas: combos, Parafina y Pedicura Jelly Spa. </span><a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="text-[color:var(--accent-deep)] underline underline-offset-4" data-es="Ver menu completo" data-en="See full menu">Ver menu completo</a></p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:200ms">
+          <h3 class="font-display text-lg mb-4" data-es="Pestañas y cejas" data-en="Lashes &amp; brows">Pestañas y cejas</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Pestañas Clásicas Juego Completo</span><span class="font-medium whitespace-nowrap">1h 30min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Retoque de Pestañas (2-3 Semanas)</span><span class="font-medium whitespace-nowrap">30min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Lifting y Tinte de Pestañas</span><span class="font-medium whitespace-nowrap">1h 15min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Depilación de Cejas / Eyebrow Waxing</span><span class="font-medium whitespace-nowrap">30min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Depilación y Diseño de Cejas</span><span class="font-medium whitespace-nowrap">30min</span></div>
+            <div class="flex justify-between gap-3 py-2"><span class="text-[color:var(--ink-60)] font-light">Depilación de Fosas Nasales</span><span class="font-medium whitespace-nowrap">30min</span></div>
+          </div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-4"><span data-es="Y 3 servicios mas: Mantenimiento de Pestanas. " data-en="And 3 more services: Lash maintenance. ">Y 3 servicios mas: Mantenimiento de Pestanas. </span><a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="text-[color:var(--accent-deep)] underline underline-offset-4" data-es="Ver menu completo" data-en="See full menu">Ver menu completo</a></p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:280ms">
+          <h3 class="font-display text-lg mb-4" data-es="Facial y skincare" data-en="Facial &amp; skincare">Facial y skincare</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Facial</span><span class="font-medium whitespace-nowrap">40min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">3 Sesiones de Microneedling PhiBright (Dermapen)</span><span class="font-medium whitespace-nowrap">1h</span></div>
+            <div class="flex justify-between gap-3 py-2"><span class="text-[color:var(--ink-60)] font-light">Toallas Calientes para la Piel / Hot Towel Service</span><span class="font-medium whitespace-nowrap">5min</span></div>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:340ms">
+          <h3 class="font-display text-lg mb-4" data-es="Para niños" data-en="For kids">Para niños</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Mani y Pedi Gel para Niños</span><span class="font-medium whitespace-nowrap">1h</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">Kids manicure &amp; Pedicure</span><span class="font-medium whitespace-nowrap">30min</span></div>
+            <div class="flex justify-between gap-3 py-2"><span class="text-[color:var(--ink-60)] font-light">Manicura en Gel para Niños</span><span class="font-medium whitespace-nowrap">1h</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Precios sujetos a consulta directa con el salon segun el servicio. Duraciones publicadas por Gio2Spa en Booksy." data-en="Prices are confirmed directly with the salon depending on the service. Durations as published by Gio2Spa on Booksy.">Precios sujetos a consulta directa con el salon segun el servicio. Duraciones publicadas por Gio2Spa en Booksy.</p>
     </div>
   </section>
 
@@ -683,21 +715,23 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">spa</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Trabajo</span> <span class="text-shine" data-es="real" data-en="results">real</span></h2>
         </div>
-        <a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.instagram.com/gio2spa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @amaniheadspa
+          @gio2spa
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">The Unwinding · 90 min</span><img src="assets/raw/service-unwinding-90.jpg" alt="Mascarilla facial aplicada durante The Unwinding de 90 minutos, con luz ambiental tenue" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">The Unwinding + Feet</span><img src="assets/raw/service-unwinding-feet.jpg" alt="Masaje de pies a la luz de las velas, en tonos ámbar cálidos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Logotipo AMANI en relieve dorado sobre pared crema del estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">Signature Facial</span><img src="assets/raw/service-signature-facial.jpg" alt="Tratamiento con rodillo facial dorado durante el Signature Facial" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La sala de rituales</span><img src="assets/raw/space-1.jpg" alt="Sala de tratamientos con nichos en arco, repisas de madera clara y cortina taupe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">El ritual</span><img src="assets/raw/hero-1.jpg" alt="Detalle de un ritual facial en Amani HeadSpa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Nuestro salon" data-en="Our nail lounge">Nuestro salon</span><img src="assets/raw/biz-1.jpeg" alt="Interior de Gio2Spa con sillas de pedicura en velvet rosa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Set escarchado" data-en="Glitter accent set">Set escarchado</span><img src="assets/raw/svc-16.jpeg" alt="Unas stiletto blancas con acento en glitter plateado" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="French de colores" data-en="Colorful French tips">French de colores</span><img src="assets/raw/insp-3.jpeg" alt="Manicura estilo French en colores con brillos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Blanco y negro" data-en="Black &amp; white art">Blanco y negro</span><img src="assets/raw/svc-10.jpeg" alt="Diseño de unas en blanco y negro minimalista" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Colores neon" data-en="Neon colors">Colores neon</span><img src="assets/raw/svc-23.jpeg" alt="Manicura en colores neon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="French borgoña" data-en="Burgundy French">French borgoña</span><img src="assets/raw/svc-21.jpeg" alt="Manicura French en color borgona" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Pedicura francesa" data-en="French pedicure">Pedicura francesa</span><img src="assets/raw/svc-24.jpeg" alt="Pedicura estilo French en pies" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:240ms"><span class="tile-cap" data-es="Diseño de mariposa" data-en="Butterfly nail art">Diseño de mariposa</span><img src="assets/raw/svc-14.jpeg" alt="Diseño de unas con mariposa en colores neon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -706,18 +740,18 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Uñas Acrílicas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pestañas de Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Laminado de Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pembroke Pines, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Uñas Acrílicas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pestañas de Volumen</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Laminado de Cejas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pembroke Pines, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -727,45 +761,45 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.9 de 5 · 73 reseñas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="En sus" data-en="In their">En sus</span> <span class="text-shine" data-es="propias palabras" data-en="own words">propias palabras</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.9 de 5 en Google · 115 reseñas verificadas via Birdeye" data-en="4.9 out of 5 on Google · 115 reviews verified via Birdeye">4.9 de 5 en Google · 115 reseñas verificadas via Birdeye</span></p>
       </div>
       <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
         <div class="carousel-track">
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mireia &amp; Maria were incredible! This was my first head spa experience. I wanted to get my pregnant friend a gift/something we could do together. It was great they offer a service for two. I did a ton of research on head spas all over..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Olivia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Ame el trabajo que me hizo Gaby, yo llegue tarde a mi cita y aun asi ella hizo hasta lo imposible contra el reloj porque ademas yo tenia poco tiempo y pues me fui en tiempo y con mis unas hechas y enamorada volvere."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Yanet Matos</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This was our first time at a head spa and it was amazing. It was so relaxing. We did a couples 90 minute session and we had a great experience here. Maria and Nildy were very good! Thank you!!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Thalia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Como siempre la atencion espectacular y super complacida."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Yuneisy D…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I just got home from a scalp and hand massage with Maria and I'm the most relaxed I've been in weeks! The experience felt stress free and relaxing from the moment I walked in; once you're there, you're transported away from the city around..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Ruby</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Me encanta su trabajo, bien profesional y las unas siempre hermosas."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">María A…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 experience, I left feeling completely refreshed and can't wait to go back!"</blockquote>
-              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Las mejores!!! Me encanta muy buen trabajo."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Tatiana T…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
         </div>
       </div>
       <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 73 reseñas en Google</a>
+        <a href="https://reviews.birdeye.com/gio2spa-170644496454951" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 115 reseñas en Google" data-en="Read all 115 reviews on Google">Leer las 115 reseñas en Google</a>
       </div>
     </div>
   </section>
@@ -775,86 +809,83 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu cita queda" data-en="Your appointment is">Tu cita queda</span> <span class="text-shine" data-es="cerca" data-en="close by">cerca</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">752 Flagami Blvd, Miami, FL 33144</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(138,111,77,0.4)]" href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">8200 Pines Blvd, Pembroke Pines, FL 33024</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(172,52,104,0.4)]" href="https://www.google.com/maps?q=8200+Pines+Blvd,+Pembroke+Pines,+FL+33024" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Viernes: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Sábado: 8:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: 8:00 AM a 5:00 PM</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Horario extendido todos los dias. Confirma disponibilidad exacta al reservar en Booksy." data-en="Extended hours every day. Confirm exact availability when booking on Booksy.">Horario extendido todos los dias. Confirma disponibilidad exacta al reservar en Booksy.</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener">amaniheadspa.glossgenius.com</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Teléfono: <a class="text-[color:var(--accent-deep)]" href="tel:+13057906977">(305) 790-6977</a></p>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa via Booksy: eliges servicio, dia y hora." data-en="By appointment via Booksy: pick the service, day and time.">Con cita previa via Booksy: eliges servicio, dia y hora.</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono: " data-en="Phone: ">Teléfono: </span><a class="text-[color:var(--accent-deep)]" href="tel:+17863073875">(786) 307-3875</a></p>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Amani HeadSpa, 752 Flagami Blvd, Miami FL"
-          src="https://www.google.com/maps?q=Amani+HeadSpa,+752+Flagami+Blvd,+Miami,+FL+33144&output=embed"
+        <iframe title="Mapa: Gio2Spa, 8200 Pines Blvd, Pembroke Pines FL"
+          src="https://www.google.com/maps?q=8200+Pines+Blvd,+Pembroke+Pines,+FL+33024&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241c14 0%, #1b150e 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2b1220 0%, #1e0c17 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Fresca, en equilibrio, renovada.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">The Unwinding te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva tu ritual online en segundos, para ti o en pareja. Elige día, hora y especialista, y deja que Amani haga el resto.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Un salon familiar, con cafecito incluido." data-en="A family salon, coffee included.">Un salon familiar, con cafecito incluido.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proxima cita esta" data-en="Your next appointment is">Tu proxima cita esta</span> <span class="text-shine" data-es="a un toque" data-en="one tap away">a un toque</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva en linea en segundos: tus unas, tus pestanas, tu laminado de cejas o tu facial con el equipo de Gio2Spa." data-en="Book online in seconds: your nails, your lashes, your brow lamination or your facial with the Gio2Spa team.">Reserva en linea en segundos: tus unas, tus pestanas, tu laminado de cejas o tu facial con el equipo de Gio2Spa.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
-        <a href="tel:+13057906977" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+        <a href="tel:+17863073875" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Llamar ahora" data-en="Call now">Llamar ahora</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#17110b]">
-    <span class="foot-mark" aria-hidden="true">Amani</span>
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#1a0b15]">
+    <span class="foot-mark" aria-hidden="true">Gio2Spa</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,207,166,0.35)] bg-[rgba(232,207,166,0.08)] text-[#e8cfa6]">A</span>
-          <span class="font-display text-lg tracking-[0.12em] uppercase">Amani HeadSpa</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(242,169,199,0.35)] bg-[rgba(242,169,199,0.08)] text-[#f2a9c7]">G</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Gio2Spa</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Miami's Holistic Head Spa. Wellness rituals para individuales y parejas: head spa + facials.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Nail salon y beauty studio familiar en Pembroke Pines, FL. Atencion con cita previa." data-en="Family nail salon and beauty studio in Pembroke Pines, FL. By appointment only.">Nail salon y beauty studio familiar en Pembroke Pines, FL. Atencion con cita previa.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>752 Flagami Blvd, Miami, FL 33144</p>
-        <p><a href="tel:+13057906977" class="hover:text-[#e8cfa6]">(305) 790-6977</a></p>
-        <p><a href="mailto:amaniheadspa@gmail.com" class="hover:text-[#e8cfa6]">amaniheadspa@gmail.com</a></p>
-        <p>Lun a Vie 10 AM a 7 PM · Sáb 8 AM a 7 PM · Dom 8 AM a 5 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>8200 Pines Blvd, Pembroke Pines, FL 33024</p>
+        <p><a href="tel:+17863073875" class="hover:text-[#f2a9c7]">(786) 307-3875</a></p>
+        <p><a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="hover:text-[#f2a9c7]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Instagram · @amaniheadspa</a></p>
-        <p><a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Reservas online · GlossGenius</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/gio2spa/" target="_blank" rel="noopener" class="hover:text-[#f2a9c7]">Instagram · @gio2spa</a></p>
+        <p><a href="https://www.facebook.com/p/Gio2spa-100063584711643/" target="_blank" rel="noopener" class="hover:text-[#f2a9c7]">Facebook · Gio2spa</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Amani HeadSpa. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Gio2Spa.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -864,8 +895,8 @@
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  <a href="https://booksy.com/en-us/1479203_gio2spa_nail-salon_15645_hollywood" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fdf3f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
@@ -878,6 +909,19 @@
   <script>
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      const toggle = document.getElementById('langToggle');
+      if (toggle) toggle.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'en' ? 'en' : 'es');
+    const langToggleBtn = document.getElementById('langToggle');
+    if (langToggleBtn) langToggleBtn.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
     const preloader = document.getElementById('preloader');

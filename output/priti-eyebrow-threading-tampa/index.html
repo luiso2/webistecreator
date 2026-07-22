@@ -191,7 +191,7 @@
     /* Numeros del ritual */
     .step-num {
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(180deg, #d9a679, #5b473a);
+      background: linear-gradient(180deg, #d9a679, #7a3f28);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
@@ -274,7 +274,7 @@
     /* 2. Barra de progreso de scroll */
     #scroll-progress {
       position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
-      background: linear-gradient(90deg, #8a4a30 0%, #c17a54 45%, #c9ab7f 100%);
+      background: linear-gradient(90deg, #8a4a30 0%, #c17a54 45%, #dba078 100%);
       transform: scaleX(0); transform-origin: left center; will-change: transform;
       pointer-events: none;
     }
@@ -416,8 +416,8 @@
 
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
-    <span class="pre-mono">A</span>
-    <span class="pre-word">Amani HeadSpa</span>
+    <span class="pre-mono">P</span>
+    <span class="pre-word">Priti Eyebrow</span>
     <span class="pre-line"></span>
   </div>
 
@@ -428,21 +428,22 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(193,122,84,0.35)] bg-[rgba(193,122,84,0.1)] text-[color:var(--accent-deep)]">A</span>
-        <span class="font-display text-xl tracking-[0.14em] uppercase">Amani <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">HeadSpa</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(193,122,84,0.35)] bg-[rgba(193,122,84,0.1)] text-[color:var(--accent-deep)]">P</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">Priti <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Eyebrow</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia">La Experiencia</a>
-        <a class="nav-link" href="#ritual">El Ritual</a>
-        <a class="nav-link" href="#servicios">Servicios</a>
-        <a class="nav-link" href="#galeria">Galería</a>
-        <a class="nav-link" href="#opiniones">Opiniones</a>
-        <a class="nav-link" href="#ubicacion">Ubicación</a>
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">The Method</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Switch language">ES</button>
+        <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Reservar cita
+          <span data-es="Reservar cita" data-en="Book now">Book now</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -453,13 +454,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Ritual</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
-        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">The Method</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Book now</a>
       </nav>
     </div>
   </header>
@@ -469,38 +470,36 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Flagami · Miami's Holistic Head Spa</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">The Unwinding empieza aquí.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="New Tampa · Wesley Chapel · Sola Salon Studios" data-en="New Tampa · Wesley Chapel · Sola Salon Studios">New Tampa · Wesley Chapel · Sola Salon Studios</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="El threading indio, sin dolor." data-en="Painless Indian threading, done right.">Painless Indian threading, done right.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          Suelta el estrés,<br /><span class="text-shine">renueva</span> cuerpo y mente
+          <span data-es="Cejas perfectas," data-en="Perfect brows,">Perfect brows,</span><br /><span class="text-shine" data-es="sin dolor" data-en="without the pain">without the pain</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
-          Rituales de bienestar holístico en Flagami: limpieza profunda del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y terapia de piedras calientes. Para ti, o en pareja.
-        </p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Threading, waxing, faciales y henna en un estudio boutique dentro de Sola Salon Studios. Manos expertas, resultados prolijos, siempre a tiempo." data-en="Threading, waxing, facials and henna in a boutique studio inside Sola Salon Studios. Expert hands, clean results, always on time.">Threading, waxing, facials and henna in a boutique studio inside Sola Salon Studios. Expert hands, clean results, always on time.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]">4.9 · 73 reseñas en Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.9 · 124 reseñas en Google" data-en="4.9 · 124 reviews on Google">4.9 · 124 reviews on Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar cita
+          <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar cita" data-en="Book now">Book now</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="tel:+13057906977" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="tel:+18135850875" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (305) 790-6977
+            (813) 585-0875
           </a>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/hero-1.jpg" alt="Aplicación de mascarilla facial con brocha durante un ritual en Amani HeadSpa" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/booksy-5.jpeg" alt="Henna design on wrist and hand, finished mandala pattern" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Ritual insignia</p>
-            <p class="font-display text-lg">The Unwinding | 90min</p>
-            <p class="text-sm text-[color:var(--ink-60)]">90 minutos · $185</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Servicio insignia" data-en="Signature service">Signature service</p>
+            <p class="font-display text-lg">Eyebrow Threading</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="10 min · desde $14" data-en="10 min · from $14">10 min · from $14</p>
           </div>
         </div>
       </div>
@@ -510,10 +509,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="73">73</span> reseñas en Google</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Rituales <span class="text-shine">en pareja</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Sesiones para dos</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">The <span class="text-shine">Unwinding</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Desde $130 · 60 min</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Flagami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">752 Flagami Blvd, Miami</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="124">124</span> <span data-es="reseñas en Google" data-en="reviews on Google">reviews on Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span data-es="Threading" data-en="Threading">Threading</span> <span class="text-shine" data-es="sin dolor" data-en="painless">painless</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Técnica india de hilo" data-en="Indian thread technique">Indian thread technique</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Eyebrow <span class="text-shine">Threading</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Desde $14 · 10 min" data-en="From $14 · 10 min">From $14 · 10 min</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">New Tampa</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Sola Salon Studios</p></div>
     </div>
   </section>
 
@@ -521,18 +520,18 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Eyebrow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Henna Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">New Tampa, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Eyebrow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Henna Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">New Tampa, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -543,79 +542,62 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/space-1.jpg" alt="Interior de Amani HeadSpa: paredes crema con nichos en arco, repisas de roble y camilla con textil acanalado" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/booksy-4.jpeg" alt="Henna design on hands, finished result with intricate mandala pattern" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/space-2.jpg" alt="Logo AMANI en serif dorado sobre pared crema, bajo lámpara escultural de yeso" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/booksy-9.jpeg" alt="Group of hands showing finished henna designs from the studio" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un refugio holístico<br /><span class="text-shine">en pleno Flagami</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
-          Amani es el head spa holístico de Miami: un espacio de calma cálida con paredes crema, arcos suaves, madera clara y luz tenue, pensado para que el tiempo se detenga. Cada ritual combina limpieza del cuero cabelludo, exfoliación, masaje terapéutico y mascarillas personalizadas.
-        </p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
-          Puedes vivirlo en solitario o compartirlo: las sesiones para dos son una de las experiencias más pedidas. Sales como lo promete su propio ritual: <em class="font-script text-[color:var(--accent-deep)]">refreshed, balanced, renewed</em>.
-        </p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">
+          <span data-es="Un estudio privado," data-en="A private studio,">A private studio,</span><br /><span class="text-shine" data-es="perfeccionado a mano" data-en="perfected by hand">perfected by hand</span>
+        </h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Priti Eyebrow Threading and Waxing vive dentro de Sola Salon Studios, en New Tampa / Wesley Chapel: una suite privada de un solo especialista, no un salon abierto. Ahi es donde Priti practica el threading indio, tecnica de hilo que da forma a la ceja hebra por hebra, sin quimicos ni irritacion." data-en="Priti Eyebrow Threading and Waxing lives inside Sola Salon Studios in New Tampa / Wesley Chapel: a private, single-specialist suite, not an open salon floor. That is where Priti practices Indian eyebrow threading, a cotton-thread technique that shapes the brow hair by hair, with no chemicals and no irritation.">Priti Eyebrow Threading and Waxing lives inside Sola Salon Studios in New Tampa / Wesley Chapel: a private, single-specialist suite, not an open salon floor. That is where Priti practices Indian eyebrow threading, a cotton-thread technique that shapes the brow hair by hair, with no chemicals and no irritation.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Clientas nuevas en la zona la encuentran y se quedan: las reseñas hablan de manos expertas, consistencia visita tras visita y recomendaciones entre amigas. Ademas del threading, el menu suma waxing completo, faciales y diseños de henna." data-en="New clients in the area find her and stay: reviews describe expert hands, consistency visit after visit, and referrals between friends. Beyond threading, the menu adds full body waxing, facials and henna design.">New clients in the area find her and stay: reviews describe expert hands, consistency visit after visit, and referrals between friends. Beyond threading, the menu adds full body waxing, facials and henna design.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+<span data-count="3.9" data-decimals="1">3.9</span>K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">60-90'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">De ritual</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="124">124</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="28">28</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Servicios" data-en="Services">Services</p></div>
         </div>
         <div class="reveal" style="transition-delay:360ms">
-          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">El equipo</p>
-          <div class="flex flex-wrap gap-4">
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-1.jpg" alt="Nilda Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(193,122,84,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nilda Estevez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-2.jpg" alt="Mireia Fenoy, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(193,122,84,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Mireia Fenoy</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-3.jpg" alt="Maria Gutierrez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(193,122,84,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Maria Gutierrez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-4.jpg" alt="Nildy Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(193,122,84,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nildy Estevez</span>
-            </div>
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5 w-fit">
+            <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(193,122,84,0.3)] bg-[rgba(193,122,84,0.12)] text-[color:var(--accent-deep)]">P</span>
+            <span class="text-sm font-light"><span class="font-medium">Priti Valshya</span> <span data-es="· Fundadora, Sola Salon Studios" data-en="· Founder, Sola Salon Studios">· Founder, Sola Salon Studios</span></span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EL RITUAL PASO A PASO -->
-  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <!-- EL METODO PASO A PASO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Así se vive <span class="text-shine">The Unwinding</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="El método, paso a paso" data-en="The method, step by step">The method, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así se vive" data-en="This is how">This is how</span> <span class="text-shine">threading works</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Limpieza y exfoliación</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">El ritual abre con una limpieza calmante y exfoliación del cuero cabelludo que estimula la circulación y cuida la salud capilar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Consulta y mapeo de forma" data-en="Consult &amp; shape mapping">Consult &amp; shape mapping</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Se revisa el crecimiento natural y la simetria antes de tocar un solo vello, para definir la forma que mejor te favorece." data-en="Priti reviews your natural growth pattern and symmetry before touching a single hair, mapping the shape that suits your face.">Priti reviews your natural growth pattern and symmetry before touching a single hair, mapping the shape that suits your face.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Masaje terapéutico</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal terapéutico, extendido al escote, que libera la tensión acumulada y te lleva a una relajación profunda.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Threading de precisión" data-en="Precision threading">Precision threading</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="La técnica india de hilo retira el vello por la raiz, hebra por hebra, sin quimicos ni contacto con la piel que suele irritar." data-en="The Indian cotton-thread technique lifts hair out at the root, strand by strand, with no chemicals and none of the skin contact that usually causes irritation.">The Indian cotton-thread technique lifts hair out at the root, strand by strand, with no chemicals and none of the skin contact that usually causes irritation.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Mascarilla y piedras calientes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Mascarilla capilar personalizada que nutre y restaura, mientras la terapia de piedras calientes relaja brazos y manos.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tinte y acabado" data-en="Tint &amp; finish">Tint &amp; finish</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Si lo pides, tinte de cejas para llenar y definir, mas un repaso fino de vellos sueltos alrededor de la forma final." data-en="On request, eyebrow tinting to fill and define, plus a fine cleanup pass on any stray hairs around the final shape.">On request, eyebrow tinting to fill and define, plus a fine cleanup pass on any stray hairs around the final shape.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Cierre renovador</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Shampoo personalizado, masaje ligero de hombros y desenredado suave. Sales fresca, en equilibrio y renovada.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cuidado y salida" data-en="Aftercare &amp; you're done">Aftercare &amp; you're done</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Consejos rapidos de cuidado post-servicio y listo: sales con la ceja lista, sin enrojecimiento prolongado." data-en="Quick aftercare tips and that's it: you leave with the brow done, without the lingering redness other methods leave behind.">Quick aftercare tips and that's it: you leave with the brow done, without the lingering redness other methods leave behind.</p>
         </div>
       </div>
     </div>
@@ -626,61 +608,111 @@
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">ritual</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Amani HeadSpa. Reserva online con confirmación inmediata.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Choose your</span> <span class="text-shine">service</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por Priti Eyebrow Threading and Waxing en Booksy. Reserva online con confirmacion inmediata." data-en="Prices and durations published by Priti Eyebrow Threading and Waxing on Booksy. Book online with instant confirmation.">Prices and durations published by Priti Eyebrow Threading and Waxing on Booksy. Book online with instant confirmation.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding | 60 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Limpieza y exfoliación del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y piedras calientes en brazos y manos.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-14">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(193,122,84,0.4); box-shadow: 0 18px 50px rgba(51,35,42,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Threading · Insignia" data-en="Threading · Signature">Threading · Signature</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Eyebrow Threading</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El servicio insignia del estudio: hilo indio de precision que da forma a la ceja hebra por hebra, sin quimicos." data-en="The studio's signature service: precise Indian cotton threading that shapes the brow hair by hair, no chemicals involved.">The studio's signature service: precise Indian cotton threading that shapes the brow hair by hair, no chemicals involved.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$130</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-3xl text-shine">$14</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">10 min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(193,122,84,0.4); box-shadow: 0 18px 50px rgba(50,40,31,0.14);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial · Ritual insignia</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding| 90min</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El ritual completo de head spa más un facial rejuvenecedor: limpieza profunda, mascarilla nutritiva, masaje facial e hidratación con SPF.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Threading" data-en="Threading">Threading</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Full Face</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Cejas, labio superior, menton y frente en una sola cita: limpieza facial completa con hilo." data-en="Brows, upper lip, chin and forehead in a single visit: a complete facial threading service.">Brows, upper lip, chin and forehead in a single visit: a complete facial threading service.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$185</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+              <p class="font-display text-3xl text-shine">$45</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">20 min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Feet</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding + Feet | 80 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Todos los beneficios del ritual de 60 minutos, más un tratamiento revitalizante de pies con exfoliación y masaje humectante profundo.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Faciales" data-en="Facials">Facials</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Gold Facial</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Uno de los cuatro faciales del menu (junto a Shahnaaz, Fruit y Diamond), enfocado en luminosidad y firmeza." data-en="One of four facials on the menu (alongside Shahnaaz, Fruit and Diamond), focused on radiance and firmness.">One of four facials on the menu (alongside Shahnaaz, Fruit and Diamond), focused on radiance and firmness.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$160</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">80 min</p>
+              <p class="font-display text-3xl text-shine">$90</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">50 min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Signature Facial</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial personalizado según tu tipo de piel y tus necesidades, enfocado en mejorar la salud y apariencia general de tu rostro.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Henna" data-en="Henna">Henna</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Henna Design</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Disenos de henna tradicional, hechos a mano, para manos y munecas." data-en="Traditional henna designs, hand drawn, for hands and wrists.">Traditional henna designs, hand drawn, for hands and wrists.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$140</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-3xl text-shine">$15</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">10 min</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Al reservar se solicita un depósito de $50 a $60 según el servicio.</p>
+
+      <!-- MENU COMPLETO, AGRUPADO POR CATEGORIA (sin acordeones, todo visible) -->
+      <div class="reveal mb-8">
+        <h3 class="font-display text-2xl sm:text-3xl text-center mb-10"><span data-es="El menú completo" data-en="The full menu">The full menu</span></h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass rounded-3xl p-6 sm:p-7">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Threading &amp; Tinte" data-en="Threading &amp; Tinting">Threading &amp; Tinting</p>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Eyebrow Threading</span><span class="font-medium whitespace-nowrap">$14 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Eyebrow Tinting</span><span class="font-medium whitespace-nowrap">$16 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Upper Lip</span><span class="font-medium whitespace-nowrap">$8 · 5 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Chin</span><span class="font-medium whitespace-nowrap">$8 · 5 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Forehead</span><span class="font-medium whitespace-nowrap">$7 · 5 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Full Face</span><span class="font-medium whitespace-nowrap">$45 · 20 min</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-6 sm:p-7">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Waxing" data-en="Waxing">Waxing</p>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Eyebrows</span><span class="font-medium whitespace-nowrap">$14 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Lip</span><span class="font-medium whitespace-nowrap">$8 · 5 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Chin</span><span class="font-medium whitespace-nowrap">$8 · 5 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Side Burns</span><span class="font-medium whitespace-nowrap">$15 · 5 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Full Face</span><span class="font-medium whitespace-nowrap">$45 · 20 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Underarm</span><span class="font-medium whitespace-nowrap">$20 · 5 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Half Arm</span><span class="font-medium whitespace-nowrap">$30 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Full Arm</span><span class="font-medium whitespace-nowrap">$45 · 20 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Half Leg</span><span class="font-medium whitespace-nowrap">$45 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Full Leg</span><span class="font-medium whitespace-nowrap">$65 · 20 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Bikini</span><span class="font-medium whitespace-nowrap">$30 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Brazilian</span><span class="font-medium whitespace-nowrap">$55 · 20 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Back</span><span class="font-medium whitespace-nowrap">$50 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Chest</span><span class="font-medium whitespace-nowrap">$30 · 10 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Stomach</span><span class="font-medium whitespace-nowrap">$30 · 10 min</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-6 sm:p-7">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Faciales &amp; Henna" data-en="Facials &amp; Henna">Facials &amp; Henna</p>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Mini Facial</span><span class="font-medium whitespace-nowrap">$60 · 30 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Gold Facial</span><span class="font-medium whitespace-nowrap">$90 · 50 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Shahnaaz Facial</span><span class="font-medium whitespace-nowrap">$90 · 50 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Fruit Facial</span><span class="font-medium whitespace-nowrap">$90 · 50 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Diamond Facial</span><span class="font-medium whitespace-nowrap">$90 · 50 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Face Bleach</span><span class="font-medium whitespace-nowrap">$20 · 20 min</span></div>
+              <div class="flex items-baseline justify-between gap-3"><span class="text-[color:var(--ink-60)] font-light">Henna Design</span><span class="font-medium whitespace-nowrap">$15 · 10 min</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="28 servicios, precios y duraciones exactos segun Booksy." data-en="28 services, exact prices and durations as listed on Booksy.">28 services, exact prices and durations as listed on Booksy.</p>
     </div>
   </section>
 
@@ -690,21 +722,19 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">spa</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Dentro del" data-en="Inside the">Inside the</span> <span class="text-shine">studio</span></h2>
         </div>
-        <a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.instagram.com/priti_eyebrow_threading_waxing/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @amaniheadspa
+          @priti_eyebrow_threading_waxing
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">The Unwinding · 90 min</span><img src="assets/raw/service-unwinding-90.jpg" alt="Mascarilla facial aplicada durante The Unwinding de 90 minutos, con luz ambiental tenue" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">The Unwinding + Feet</span><img src="assets/raw/service-unwinding-feet.jpg" alt="Masaje de pies a la luz de las velas, en tonos ámbar cálidos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Logotipo AMANI en relieve dorado sobre pared crema del estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">Signature Facial</span><img src="assets/raw/service-signature-facial.jpg" alt="Tratamiento con rodillo facial dorado durante el Signature Facial" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La sala de rituales</span><img src="assets/raw/space-1.jpg" alt="Sala de tratamientos con nichos en arco, repisas de madera clara y cortina taupe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">El ritual</span><img src="assets/raw/hero-1.jpg" alt="Detalle de un ritual facial en Amani HeadSpa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">Eyebrow Threading · Before &amp; After</span><img src="assets/raw/booksy-3.jpeg" alt="Eyebrow threading before and after, close up comparison" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">Threading Result</span><img src="assets/raw/booksy-6.jpeg" alt="Eyebrow threading before and after, second comparison" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">Henna Design</span><img src="assets/raw/booksy-7.jpeg" alt="Henna mandala design on the back of a hand" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">Henna Detail</span><img src="assets/raw/booksy-10.jpeg" alt="Detail of henna design on hand and fingers" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -713,18 +743,18 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Eyebrow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Henna Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">New Tampa, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Eyebrow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Henna Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Facials</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">New Tampa, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -734,45 +764,52 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.9 de 5 · 73 reseñas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What">What</span> <span class="text-shine" data-es="nuestras clientas" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.9 de 5 · 124 reseñas en Google" data-en="4.9 out of 5 · 124 reviews on Google">4.9 out of 5 · 124 reviews on Google</span></p>
       </div>
-      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Customer reviews">
         <div class="carousel-track">
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mireia &amp; Maria were incredible! This was my first head spa experience. I wanted to get my pregnant friend a gift/something we could do together. It was great they offer a service for two. I did a ton of research on head spas all over..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Olivia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Always a great experience. my eyebrows turned out perfectly. I will return."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Audrey</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This was our first time at a head spa and it was amazing. It was so relaxing. We did a couples 90 minute session and we had a great experience here. Maria and Nildy were very good! Thank you!!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Thalia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"She's always amazing 🥰🥰 always recommend her to my friends!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Seema</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I just got home from a scalp and hand massage with Maria and I'm the most relaxed I've been in weeks! The experience felt stress free and relaxing from the moment I walked in; once you're there, you're transported away from the city around..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Ruby</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"She is great at her job and very friendly."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Sapna</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 experience, I left feeling completely refreshed and can't wait to go back!"</blockquote>
-              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"eyebrow threading service was efficient and terrific! I will absolutely return!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Taia</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Very professional and patient!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jennifer</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
             </figure>
           </div>
         </div>
       </div>
       <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 73 reseñas en Google</a>
+        <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer mas reseñas en Booksy" data-en="Read more reviews on Booksy">Read more reviews on Booksy</a>
       </div>
     </div>
   </section>
@@ -782,86 +819,88 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu cita queda" data-en="Your appointment is">Your appointment is</span> <span class="text-shine" data-es="cerca" data-en="nearby">nearby</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">752 Flagami Blvd, Miami, FL 33144</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(193,122,84,0.4)]" href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">18061 Highwoods Preserve Pkwy, 8A Studio #18, Tampa, FL 33647</p>
+              <p class="text-xs text-[color:var(--ink-40)] font-light mt-0.5" data-es="Dentro de Sola Salon Studios" data-en="Inside Sola Salon Studios">Inside Sola Salon Studios</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(193,122,84,0.4)]" href="https://www.google.com/maps/search/?api=1&query=Priti+Eyebrow+Threading+and+Waxing+18061+Highwoods+Preserve+Pkwy+Tampa+FL+33647" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Viernes: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Sábado: 8:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: 8:00 AM a 5:00 PM</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Martes: 1:30 PM a 6:00 PM" data-en="Tuesday: 1:30 PM to 6:00 PM">Tuesday: 1:30 PM to 6:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Miércoles: 1:00 PM a 6:30 PM" data-en="Wednesday: 1:00 PM to 6:30 PM">Wednesday: 1:00 PM to 6:30 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Jueves y viernes: 1:00 PM a 7:00 PM" data-en="Thursday &amp; Friday: 1:00 PM to 7:00 PM">Thursday &amp; Friday: 1:00 PM to 7:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sábado: 12:30 PM a 6:00 PM" data-en="Saturday: 12:30 PM to 6:00 PM">Saturday: 12:30 PM to 6:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Domingo: 12:00 PM a 5:00 PM · Lunes cerrado" data-en="Sunday: 12:00 PM to 5:00 PM · Closed Mondays">Sunday: 12:00 PM to 5:00 PM · Closed Mondays</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener">amaniheadspa.glossgenius.com</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Teléfono: <a class="text-[color:var(--accent-deep)]" href="tel:+13057906977">(305) 790-6977</a></p>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Booking">Booking</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Online: " data-en="Online: ">Online: </span><a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono: " data-en="Phone: ">Phone: </span><a class="text-[color:var(--accent-deep)]" href="tel:+18135850875">(813) 585-0875</a></p>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Amani HeadSpa, 752 Flagami Blvd, Miami FL"
-          src="https://www.google.com/maps?q=Amani+HeadSpa,+752+Flagami+Blvd,+Miami,+FL+33144&output=embed"
+        <iframe title="Map: Priti Eyebrow Threading and Waxing, 18061 Highwoods Preserve Pkwy, Tampa FL"
+          src="https://www.google.com/maps?q=Priti+Eyebrow+Threading+and+Waxing,+18061+Highwoods+Preserve+Pkwy,+Tampa,+FL+33647&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241c14 0%, #1b150e 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241a15 0%, #1b120e 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Fresca, en equilibrio, renovada.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">The Unwinding te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Reserva tu ritual online en segundos, para ti o en pareja. Elige día, hora y especialista, y deja que Amani haga el resto.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Sin dolor. Sin quimicos. Sin apuro." data-en="No pain. No chemicals. No rush.">No pain. No chemicals. No rush.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proxima ceja perfecta te" data-en="Your next perfect brow is">Your next perfect brow is</span> <span class="text-shine" data-es="espera" data-en="waiting">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva tu cita online en segundos. Elige el servicio, el dia y la hora, y deja que Priti haga el resto." data-en="Book your appointment online in seconds. Pick the service, the day and the time, and let Priti take care of the rest.">Book your appointment online in seconds. Pick the service, the day and the time, and let Priti take care of the rest.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar cita</a>
-        <a href="tel:+13057906977" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar cita" data-en="Book now">Book now</a>
+        <a href="tel:+18135850875" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Llamar ahora" data-en="Call now">Call now</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#17110b]">
-    <span class="foot-mark" aria-hidden="true">Amani</span>
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#171009]">
+    <span class="foot-mark" aria-hidden="true">Priti</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,207,166,0.35)] bg-[rgba(232,207,166,0.08)] text-[#e8cfa6]">A</span>
-          <span class="font-display text-lg tracking-[0.12em] uppercase">Amani HeadSpa</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,207,166,0.35)] bg-[rgba(232,207,166,0.08)] text-[#e8cfa6]">P</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Priti Eyebrow</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">Miami's Holistic Head Spa. Wellness rituals para individuales y parejas: head spa + facials.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Threading, waxing, faciales y henna en New Tampa / Wesley Chapel, dentro de Sola Salon Studios." data-en="Threading, waxing, facials and henna in New Tampa / Wesley Chapel, inside Sola Salon Studios.">Threading, waxing, facials and henna in New Tampa / Wesley Chapel, inside Sola Salon Studios.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>752 Flagami Blvd, Miami, FL 33144</p>
-        <p><a href="tel:+13057906977" class="hover:text-[#e8cfa6]">(305) 790-6977</a></p>
-        <p><a href="mailto:amaniheadspa@gmail.com" class="hover:text-[#e8cfa6]">amaniheadspa@gmail.com</a></p>
-        <p>Lun a Vie 10 AM a 7 PM · Sáb 8 AM a 7 PM · Dom 8 AM a 5 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>18061 Highwoods Preserve Pkwy, 8A Studio #18, Tampa, FL 33647</p>
+        <p><a href="tel:+18135850875" class="hover:text-[#e8cfa6]">(813) 585-0875</a></p>
+        <p data-es="Martes a sábado, cerrado los lunes" data-en="Tuesday through Saturday, closed Mondays">Tuesday through Saturday, closed Mondays</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Instagram · @amaniheadspa</a></p>
-        <p><a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Reservas online · GlossGenius</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Follow</p>
+        <p><a href="https://www.instagram.com/priti_eyebrow_threading_waxing/" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Instagram · @priti_eyebrow_threading_waxing</a></p>
+        <p><a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]" data-es="Reservas online · Booksy" data-en="Book online · Booksy">Book online · Booksy</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Amani HeadSpa. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Priti Eyebrow Threading and Waxing. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">All rights reserved.</span></p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -871,7 +910,7 @@
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+  <a href="https://booksy.com/en-us/797907_priti-eyebrow-threading-and-waxing_brows-lashes_15761_tampa" target="_blank" rel="noopener" class="book-float" aria-label="Book online">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbf3ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
   </a>
 
@@ -902,6 +941,19 @@
       else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
       setTimeout(hidePreloader, 1200);
     }
+
+    // Bilingue ES|EN (idioma principal del negocio: en)
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.textContent = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      const toggle = document.getElementById('langToggle');
+      if (toggle) toggle.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) langToggle.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // Mobile menu
     const menuBtn = document.getElementById('menuBtn');
