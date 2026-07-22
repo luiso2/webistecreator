@@ -1,17 +1,58 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0e0609" />
-  <title>5 Stars Dominican Beauty Salon &amp; Barbershop · Hair Salon &amp; Barbershop in Miami, FL | Hair Botox, Keratin &amp; Cuts | 5.0 on Booksy</title>
-  <meta name="description" content="5 Stars Dominican Beauty Salon & Barbershop, Miami FL: hair botox, keratin treatments, silk-smooth blowouts, curly cuts and men's cuts with stylist Johanne Vital. 5.0 with 74 reviews on Booksy. Book online." />
-  <meta property="og:title" content="5 Stars Dominican Beauty Salon &amp; Barbershop · Hair Salon &amp; Barbershop in Miami, FL" />
-  <meta property="og:description" content="Hair botox, keratin, blowouts and cuts for women and men. 5.0 on Booksy. Book online." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/raw/bk-9.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/bk-2.jpg" />
-  <script type="application/ld+json">
+#!/usr/bin/env python3
+"""Derivacion anclada de CONTENIDO (paleta ya rotada previamente):
+output/fivestarsdominicansalon/index.html (copia paletizada de templates/dark-v2)
+-> output/fivestarsdominicansalon/index.html (contenido real de 5 Stars Dominican
+Beauty Salon & Barbershop, North Miami / Miami FL). NO se toca ningun color/hex/rgba,
+NO se toca el merktop-badge (se reutiliza intacto).
+"""
+import re
+
+SRC = 'output/fivestarsdominicansalon/index.html'
+DST = 'output/fivestarsdominicansalon/index.html'
+
+h = open(SRC, encoding='utf-8').read()
+
+
+def rep(a, b, n=1):
+    global h
+    assert a in h, 'ANCLA ROTA: ' + a[:160]
+    h = h.replace(a, b, n)
+
+
+BK = 'https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami'
+IG = 'https://www.instagram.com/5_stars_dominican_beauty_salon/'
+IG_HANDLE = '@5_stars_dominican_beauty_salon'
+BRAND = '5 Stars Dominican Beauty Salon &amp; Barbershop'
+BRAND_PLAIN = '5 Stars Dominican Beauty Salon & Barbershop'
+
+# ============================================================
+# 1. HEAD: title, meta, og, JSON-LD (paleta/badge NO se tocan)
+# ============================================================
+rep(
+    '<title>Pure Artistry · Hair Studio in Orlando, FL | Silk Press, Locs &amp; K-Tips | 5.0 on Booksy</title>',
+    f'<title>{BRAND} · Hair Salon &amp; Barbershop in Miami, FL | Hair Botox, Keratin &amp; Cuts | 5.0 on Booksy</title>',
+)
+rep(
+    '<meta name="description" content="Pure Artistry, Orlando FL: silk press, loc retwists, knotless braids, K-Tip extensions and keratin treatments. 5.0 with 234 reviews on Booksy. Book online." />',
+    f'<meta name="description" content="{BRAND_PLAIN}, Miami FL: hair botox, keratin treatments, silk-smooth blowouts, curly cuts and men\'s cuts with stylist Johanne Vital. 5.0 with 74 reviews on Booksy. Book online." />',
+)
+rep(
+    '<meta property="og:title" content="Pure Artistry · Hair Studio in Orlando, FL" />',
+    f'<meta property="og:title" content="{BRAND} · Hair Salon &amp; Barbershop in Miami, FL" />',
+)
+rep(
+    '<meta property="og:description" content="Silk press, locs, braids and K-Tip extensions. 5.0 on Booksy. Book online." />',
+    '<meta property="og:description" content="Hair botox, keratin, blowouts and cuts for women and men. 5.0 on Booksy. Book online." />',
+)
+rep(
+    '<meta property="og:image" content="assets/raw/bk-1.jpg" />',
+    '<meta property="og:image" content="assets/raw/bk-9.jpg" />',
+)
+# favicon ya es assets/raw/bk-2.jpg (logo real del negocio): se deja intacto.
+
+m = re.search(r'<script type="application/ld\+json">.*?</script>', h, flags=re.S)
+assert m, 'no se encontro JSON-LD'
+NEW_JSONLD = '''<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HairSalon",
@@ -32,204 +73,67 @@
       { "@type": "Offer", "price": "200", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Keratin Hair Treatment" } }
     ] }
   }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script src="assets/tailwind.js"></script>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0e0609;
-      --bg-2: #160609;
-      --surface: rgba(242,242,242,0.045);
-      --ink: #f0d1d6;
-      --ink-60: rgba(240,209,214,0.62);
-      --ink-40: rgba(240,209,214,0.42);
-      --accent-deep: #d53c55;
-      --accent-mid: #b34257;
-      --accent-soft: #230d11;
-      --accent-ghost: rgba(213,60,85,0.16);
-    }
-    html, body { background: var(--bg); }
-    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
-    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
-    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
-    section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(213,60,85,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(242,242,242,0.08); border-color: rgba(213,60,85,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(213,60,85,0.08); }
-    .text-shine {
-      background: linear-gradient(110deg, #d53c55 0%, #f08a93 30%, #952c42 52%, #d53c55 75%, #e56276 100%);
-      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-      animation: shimmer 12s linear infinite;
-    }
-    @keyframes shimmer { to { background-position: 200% center; } }
-    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
-    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(213,60,85,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(118,26,44,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(174,54,76,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
-    .grain::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
-    }
-    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
-    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
-    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
-    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
-    .btn-3d {
-      position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #e96479 0%, #c93c54 48%, #912739 100%);
-      color: #1b070c; border: none; font-weight: 600;
-      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(242,242,242,0.3), inset 0 -2px 5px rgba(77,16,28,0.4), 0 5px 0 #671f2c, 0 12px 24px rgba(0,0,0,0.5);
-    }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(242,242,242,0.35), inset 0 -2px 5px rgba(77,16,28,0.4), 0 7px 0 #671f2c, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(213,60,85,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(242,242,242,0.25), inset 0 -1px 3px rgba(77,16,28,0.45), 0 1px 0 #671f2c, 0 4px 10px rgba(0,0,0,0.45); }
-    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(242,242,242,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
-    .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(213,60,85,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(213,60,85,0.7); background: rgba(213,60,85,0.08); box-shadow: 0 10px 26px rgba(52,36,45,0.14); }
-    .merktop-badge {
-      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
-      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
-    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
-    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
-    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(14,6,9,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
-    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
-    .nav-link:hover { color: var(--ink); }
-    .nav-link:hover::after { width: 100%; }
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(213,60,85,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
-    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
-    .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e56276, #952c42); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #d53c55; letter-spacing: 2px; text-shadow: 0 0 14px rgba(213,60,85,0.45); }
-    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
-    .dark-band {
-      --ink: #f0d1d6; --ink-60: rgba(240,209,214,0.65); --ink-40: rgba(240,209,214,0.45);
-      --surface: rgba(242,242,242,0.05); --accent-ghost: rgba(230,142,155,0.16); color: var(--ink);
-    }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #e78493 0%, #f6bec4 30%, #bd5365 52%, #e78493 75%, #ef9ba7 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(231,132,147,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(181,116,160,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #f8c6ce 0%, #ea95a0 48%, #c75d6f 100%); color: #1b070c; box-shadow: inset 0 1px 0 rgba(242,242,242,0.55), inset 0 -2px 5px rgba(106,31,45,0.35), 0 5px 0 #854551, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(242,242,242,0.6), inset 0 -2px 5px rgba(106,31,45,0.35), 0 7px 0 #854551, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(231,132,147,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(242,242,242,0.4), inset 0 -1px 3px rgba(106,31,45,0.4), 0 1px 0 #854551, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(231,132,147,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(231,132,147,0.7); background: rgba(231,132,147,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e799bd; text-shadow: 0 0 14px rgba(231,132,147,0.4); }
-    .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #e96479 0%, #c93c54 100%);
-      box-shadow: 0 6px 0 #671f2c, 0 14px 30px rgba(0,0,0,0.5);
-      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
-    }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #671f2c, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(213,60,85,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #671f2c, 0 6px 14px rgba(0,0,0,0.4); }
+  </script>'''
+h = h[:m.start()] + NEW_JSONLD + h[m.end():]
 
-    /* ============ Motion v2 ============ */
-    #preloader {
-      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
-      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
-    }
-    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
-    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(213,60,85,0.35); background: rgba(213,60,85,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
-    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
-    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
-    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
-    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
-    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #912739 0%, #d53c55 45%, #f08a93 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
-    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
-    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
-    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
-    .img-reveal.in img { scale: 1; }
-    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
-    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
-    .marquee-reverse .marquee-track { animation-direction: reverse; }
-    @keyframes marqueeMove { to { transform: translateX(-50%); } }
-    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
-    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
-    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
-    @media (hover: hover) and (pointer: fine) {
-      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
-      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
-      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(242,242,242,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
-      .tilt:hover::before { opacity: 1; }
-    }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(231,132,147,0.14) 0%, rgba(213,60,85,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
-    .cursor-glow.on { opacity: 1; }
-    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
-    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(213,60,85,0.5); transform: translateY(-3px); }
+print('OK: head + JSON-LD')
 
-    /* ============ Motion v3 (premium+) ============ */
-    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
-    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
-    .split.in .split-word > span { transform: translateY(0); }
-    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
-    .frame .tile-cap {
-      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #f8d5da;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
-      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
-    }
-    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
-    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
-    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
-    .cursor-ring.on { opacity: 0.75; }
-    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(231,132,147,0.09); pointer-events: none; user-select: none; }
+# ============================================================
+# 2. IDIOMA: dark-v2 ya es EN default -> sin cambios (solo se verifica)
+# ============================================================
+assert "applyLang(lang === 'es' ? 'es' : 'en')" in h
+assert '<html lang="en"' in h
 
-    @media (prefers-reduced-motion: reduce) {
-      .text-shine, .orb, .merktop-dot { animation: none !important; }
-      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
-      img.blur-up { filter: none !important; transform: none !important; }
-      html { scroll-behavior: auto; }
-      #preloader { display: none !important; }
-      #scroll-progress { display: none !important; }
-      .marquee-track { animation: none !important; }
-      .img-reveal { clip-path: none !important; transition: none !important; }
-      .img-reveal img { scale: none !important; transition: none !important; }
-      .magnetic { translate: none !important; }
-      .tilt { transform: none !important; }
-      .tilt::before { display: none !important; }
-      .cursor-glow { display: none !important; }
-      .back-top { transition: none !important; transform: none !important; }
-      [data-parallax] { translate: none !important; }
-      .split-word > span { transform: none !important; transition: none !important; }
-      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .cursor-ring { display: none !important; }
-      #heroInner { opacity: 1 !important; transform: none !important; }
-    }
-  </style>
-</head>
-<body>
+# ============================================================
+# 3. SEGMENTACION POR MARCADORES DE COMENTARIO
+# ============================================================
+def idx(marker, start=0):
+    i = h.find(marker, start)
+    assert i != -1, 'MARCADOR NO ENCONTRADO: ' + marker
+    return i
 
-  <!-- PRELOADER DE MARCA -->
+
+i_preloader = idx('<!-- PRELOADER DE MARCA -->')
+i_scroll = idx('<!-- BARRA DE PROGRESO DE SCROLL -->')
+i_nav = idx('<!-- NAV -->')
+i_hero = idx('<!-- HERO -->')
+i_strip = idx('<!-- STRIP DE CONFIANZA -->')
+i_marquee1 = idx('<!-- MARQUEE -->')
+i_experiencia = idx('<!-- LA EXPERIENCIA -->')
+i_metodo = idx('<!-- EL METODO -->')
+i_servicios = idx('<!-- SERVICIOS -->')
+i_galeria = idx('<!-- GALERIA -->')
+i_marquee2 = idx('<!-- MARQUEE -->', i_experiencia)
+i_opiniones = idx('<!-- OPINIONES -->')
+i_ubicacion = idx('<!-- UBICACION -->')
+i_cta = idx('<!-- CTA FINAL -->')
+i_footer = idx('<!-- FOOTER -->')
+i_bookfloat = idx('<!-- Boton flotante de reserva -->')
+i_cursorring = idx('<div id="cursorRing"')
+
+seg_head = h[:i_preloader]
+seg_scroll = h[i_scroll:i_nav]
+seg_footer_orig = h[i_footer:i_bookfloat]
+seg_tail = h[i_cursorring:]
+
+print('OK: segmentacion por anclas de comentario')
+
+# ============================================================
+# PRELOADER
+# ============================================================
+NEW_PRELOADER = '''<!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <span class="pre-mono">5S</span>
     <span class="pre-word">5 Stars Dominican</span>
     <span class="pre-line"></span>
   </div>
 
-  <!-- BARRA DE PROGRESO DE SCROLL -->
-  <div id="scroll-progress" aria-hidden="true"></div>
+  '''
 
-  <!-- NAV -->
+# ============================================================
+# NAV
+# ============================================================
+NEW_NAV = f'''<!-- NAV -->
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
@@ -246,7 +150,7 @@
       </nav>
       <div class="flex items-center gap-3">
         <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Change language">EN</button>
-        <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
         </a>
@@ -265,12 +169,19 @@
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
         <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
-        <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+        <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
+  '''
+
+print('OK: preloader + nav definidos')
+
+# ============================================================
+# HERO
+# ============================================================
+NEW_HERO = f'''<!-- HERO -->
   <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
@@ -286,13 +197,13 @@
           <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 74 reseñas en Booksy" data-en="5.0 · 74 reviews on Booksy">5.0 · 74 reviews on Booksy</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.instagram.com/5_stars_dominican_beauty_salon/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="{IG}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            @5_stars_dominican_beauty_salon
+            {IG_HANDLE}
           </a>
         </div>
       </div>
@@ -311,7 +222,12 @@
     </div>
   </section>
 
-  <!-- STRIP DE CONFIANZA -->
+  '''
+
+# ============================================================
+# STRIP DE CONFIANZA
+# ============================================================
+NEW_STRIP = '''<!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
       <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="74">74</span> <span data-es="reseñas en Booksy" data-en="reviews on Booksy">reviews on Booksy</span></p></div>
@@ -321,29 +237,41 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
+  '''
+
+print('OK: hero + strip definidos')
+
+# ============================================================
+# MARQUEE (misma secuencia en los dos marquees)
+# ============================================================
+MARQUEE_SEQ = '''      <div class="marquee-seq">
+        <span class="marquee-word">Hair Botox</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Keratin Treatment</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Silk-Smooth Blowouts</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Curly Cuts</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Men&#8217;s Cuts</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
+      </div>
+'''
+NEW_MARQUEE1 = '''<!-- MARQUEE -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <div class="marquee-seq">
-        <span class="marquee-word">Hair Botox</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Keratin Treatment</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Silk-Smooth Blowouts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Curly Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Men&#8217;s Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
-      </div>
-      <div class="marquee-seq">
-        <span class="marquee-word">Hair Botox</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Keratin Treatment</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Silk-Smooth Blowouts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Curly Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Men&#8217;s Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
-      </div>
-    </div>
+''' + MARQUEE_SEQ + MARQUEE_SEQ + '''    </div>
   </div>
 
-  <!-- LA EXPERIENCIA -->
+  '''
+NEW_MARQUEE2 = '''<!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+''' + MARQUEE_SEQ + MARQUEE_SEQ + '''    </div>
+  </div>
+
+  '''
+
+# ============================================================
+# LA EXPERIENCIA
+# ============================================================
+NEW_EXPERIENCIA = '''<!-- LA EXPERIENCIA -->
   <section id="experiencia" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">01</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
@@ -375,7 +303,14 @@
     </div>
   </section>
 
-  <!-- EL METODO -->
+  '''
+
+print('OK: marquee x2 + experiencia definidos')
+
+# ============================================================
+# EL METODO
+# ============================================================
+NEW_METODO = '''<!-- EL METODO -->
   <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -408,7 +343,12 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  '''
+
+# ============================================================
+# SERVICIOS (4 cards, card 2 = destacada/favorita con btn-3d)
+# ============================================================
+NEW_SERVICIOS = f'''<!-- SERVICIOS -->
   <section id="servicios" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -424,7 +364,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un corte de precisión, lavado y terminado en una sola visita rápida." data-en="A precision haircut, washed and finished in one quick visit.">A precision haircut, washed and finished in one quick visit.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$60</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">40min</p></div>
-            <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(213,60,85,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
@@ -433,7 +373,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El tratamiento insignia que deja el cabello más suave, brillante y manejable, dos horas dedicadas por completo a tu cabello." data-en="The signature treatment that leaves hair smoother, shinier and easier to manage, two hours dedicated entirely to your hair.">The signature treatment that leaves hair smoother, shinier and easier to manage, two hours dedicated entirely to your hair.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$176</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h</p></div>
-            <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
@@ -442,7 +382,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un corte pensado para dar forma y realzar el rizo natural, resaltando su volumen y definición." data-en="A cut designed to shape and enhance your natural curls, bringing out their bounce and definition.">A cut designed to shape and enhance your natural curls, bringing out their bounce and definition.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$72</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h 30min</p></div>
-            <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
@@ -451,7 +391,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un tratamiento completo de keratina para un cabello más liso, sin frizz y con resultados duraderos." data-en="A full keratin treatment for smoother, frizz-free hair with results that last.">A full keratin treatment for smoother, frizz-free hair with results that last.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$200</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p></div>
-            <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
       </div>
@@ -459,7 +399,14 @@
     </div>
   </section>
 
-  <!-- GALERIA -->
+  '''
+
+print('OK: metodo + servicios definidos')
+
+# ============================================================
+# GALERIA (1 tile ancho 16/9 + 5 tiles 3/4)
+# ============================================================
+NEW_GALERIA = f'''<!-- GALERIA -->
   <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">04</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -468,9 +415,9 @@
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
           <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Resultados" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="results">results</span></h2>
         </div>
-        <a href="https://www.instagram.com/5_stars_dominican_beauty_salon/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="{IG}" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @5_stars_dominican_beauty_salon
+          {IG_HANDLE}
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -484,29 +431,12 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee marquee-reverse" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-seq">
-        <span class="marquee-word">Hair Botox</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Keratin Treatment</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Silk-Smooth Blowouts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Curly Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Men&#8217;s Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
-      </div>
-      <div class="marquee-seq">
-        <span class="marquee-word">Hair Botox</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Keratin Treatment</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Silk-Smooth Blowouts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Curly Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Men&#8217;s Cuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
-      </div>
-    </div>
-  </div>
+  '''
 
-  <!-- OPINIONES -->
+# ============================================================
+# OPINIONES (3 resenas reales verbatim, sin em-dash)
+# ============================================================
+NEW_OPINIONES = f'''<!-- OPINIONES -->
   <section id="opiniones" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -533,12 +463,20 @@
         </figure>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 74 reseñas en Booksy" data-en="Read all 74 reviews on Booksy">Read all 74 reviews on Booksy</a>
+        <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 74 reseñas en Booksy" data-en="Read all 74 reviews on Booksy">Read all 74 reviews on Booksy</a>
       </div>
     </div>
   </section>
 
-  <!-- UBICACION -->
+  '''
+
+print('OK: galeria + opiniones definidos')
+
+# ============================================================
+# UBICACION
+# ============================================================
+MAPS_Q = '631+NE+125th+St,+North+Miami,+FL+33161'
+NEW_UBICACION = f'''<!-- UBICACION -->
   <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
@@ -551,7 +489,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light">631 NE 125th St, North Miami, FL 33161</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,85,0.4)]" href="https://www.google.com/maps?q=631+NE+125th+St,+North+Miami,+FL+33161" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,85,0.4)]" href="https://www.google.com/maps?q={MAPS_Q}" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
@@ -559,7 +497,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a viernes, 9:55am a 6:55pm. Sábado, 9:55am a 7:10pm." data-en="Monday to Friday, 9:55am to 6:55pm. Saturday, 9:55am to 7:10pm.">Monday to Friday, 9:55am to 6:55pm. Saturday, 9:55am to 7:10pm.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,85,0.4)]" href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,85,0.4)]" href="{BK}" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
@@ -567,20 +505,25 @@
             <div>
               <p class="font-medium mb-1" data-es="Instagram" data-en="Instagram">Instagram</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los resultados más recientes y escribe por DM cualquier duda antes de tu cita." data-en="See the latest results and DM any questions before your appointment.">See the latest results and DM any questions before your appointment.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,85,0.4)]" href="https://www.instagram.com/5_stars_dominican_beauty_salon/" target="_blank" rel="noopener">@5_stars_dominican_beauty_salon</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,85,0.4)]" href="{IG}" target="_blank" rel="noopener">{IG_HANDLE}</a>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
         <iframe title="Map: 5 Stars Dominican Beauty Salon &amp; Barbershop, 631 NE 125th St, North Miami FL"
-          src="https://www.google.com/maps?q=631+NE+125th+St,+North+Miami,+FL+33161&output=embed"
+          src="https://www.google.com/maps?q={MAPS_Q}&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  '''
+
+# ============================================================
+# CTA FINAL
+# ============================================================
+NEW_CTA = '''<!-- CTA FINAL -->
   <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #180609 0%, #0f0407 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
@@ -589,13 +532,25 @@
       <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próxima cita" data-en="Your next appointment">Your next appointment</span> <span class="text-shine" data-es="empieza aquí" data-en="starts here">starts here</span></h2>
       <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva en línea en segundos: tu botox capilar, tu keratina, o ese corte de rizos que has estado planeando." data-en="Book online in seconds: your hair botox, your keratin treatment, or that curly cut you have been planning.">Book online in seconds: your hair botox, your keratin treatment, or that curly cut you have been planning.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
-        <a href="https://www.instagram.com/5_stars_dominican_beauty_salon/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Follow on Instagram</a>
+'''
+NEW_CTA += f'''        <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+        <a href="{IG}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Follow on Instagram</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  '''
+
+print('OK: ubicacion + cta final definidos')
+
+# ============================================================
+# FOOTER (el merktop-badge original se reutiliza intacto)
+# ============================================================
+m_badge_footer = re.search(r'<a href="https://merktop\.com".*?</a>', seg_footer_orig, flags=re.S)
+assert m_badge_footer, 'no se encontro merktop-badge en footer original'
+MERKTOP_BADGE_HTML = m_badge_footer.group(0)
+
+NEW_FOOTER = f'''<!-- FOOTER -->
   <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0506]">
     <span class="foot-mark" aria-hidden="true">5 Stars Dominican</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
@@ -609,228 +564,75 @@
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
         <p>631 NE 125th St, North Miami, FL 33161</p>
-        <p><a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="hover:text-[#e799bd]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Online booking · Booksy</a></p>
+        <p><a href="{BK}" target="_blank" rel="noopener" class="hover:text-[#e799bd]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Online booking · Booksy</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Follow</p>
-        <p><a href="https://www.instagram.com/5_stars_dominican_beauty_salon/" target="_blank" rel="noopener" class="hover:text-[#e799bd]">Instagram · @5_stars_dominican_beauty_salon</a></p>
+        <p><a href="{IG}" target="_blank" rel="noopener" class="hover:text-[#e799bd]">Instagram · {IG_HANDLE}</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-xs text-[color:var(--ink-40)]">© 2026 5 Stars Dominican Beauty Salon &amp; Barbershop.</p>
-        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
-          <span class="merktop-dot"></span>
-          <span class="text-xs text-[#eed0d6]">Powered by <span class="font-semibold">Merktop</span></span>
-        </a>
+        {MERKTOP_BADGE_HTML}
       </div>
     </div>
   </footer>
 
-  <!-- Boton flotante de reserva -->
-  <a href="https://booksy.com/en-us/443207_5starsdominican-beauty-salon-barbershop_hair-salon_15889_miami" target="_blank" rel="noopener" class="book-float" aria-label="Book appointment online">
+  '''
+
+# ============================================================
+# BOTON FLOTANTE (misma marca, solo booksy url + aria-label EN)
+# ============================================================
+NEW_BOOKFLOAT = f'''<!-- Boton flotante de reserva -->
+  <a href="{BK}" target="_blank" rel="noopener" class="book-float" aria-label="Book appointment online">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1b070c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
   </a>
 
-  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+  '''
 
-  <!-- Volver arriba -->
-  <button id="backTop" class="back-top glass" type="button" aria-label="Back to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
-  </button>
+# ============================================================
+# TAIL: cursorRing + back-top + script (aria-label back-top a EN)
+# ============================================================
+new_seg_tail = seg_tail.replace('aria-label="Volver arriba"', 'aria-label="Back to top"')
+assert new_seg_tail != seg_tail, 'no se pudo traducir aria-label de back-top'
+seg_tail = new_seg_tail
 
-  <script>
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+print('OK: footer + book-float + tail definidos')
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
-    const applyLang = l => {
-      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
-      document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
-      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
-    };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
-    applyLang(lang === 'es' ? 'es' : 'en');
-    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+# ============================================================
+# 4. ENSAMBLADO FINAL
+# ============================================================
+h_final = (
+    seg_head
+    + NEW_PRELOADER
+    + seg_scroll
+    + NEW_NAV
+    + NEW_HERO
+    + NEW_STRIP
+    + NEW_MARQUEE1
+    + NEW_EXPERIENCIA
+    + NEW_METODO
+    + NEW_SERVICIOS
+    + NEW_GALERIA
+    + NEW_MARQUEE2
+    + NEW_OPINIONES
+    + NEW_UBICACION
+    + NEW_CTA
+    + NEW_FOOTER
+    + NEW_BOOKFLOAT
+    + seg_tail
+)
 
-    // Preloader
-    const preloader = document.getElementById('preloader');
-    let preloaderHidden = false;
-    const hidePreloader = () => {
-      if (preloaderHidden || !preloader) return;
-      preloaderHidden = true;
-      preloader.classList.add('done');
-      setTimeout(() => preloader.remove(), 750);
-    };
-    if (reducedMotion) { hidePreloader(); }
-    else {
-      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
-      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
-      setTimeout(hidePreloader, 1200);
-    }
+# sanity: los 6 marquee-word deben aparecer exactamente 4 veces cada uno
+for word in ['Hair Botox', 'Keratin Treatment', 'Silk-Smooth Blowouts', 'Curly Cuts', 'Men&#8217;s Cuts', 'Miami, FL']:
+    c = h_final.count(f'<span class="marquee-word">{word}</span>')
+    assert c == 4, f'marquee-word "{word}" x{c}, esperaba 4'
 
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+assert h_final.count('—') == 0, 'hay em-dash en el HTML final'
 
-    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
-    const nav = document.getElementById('nav');
-    const progressBar = document.getElementById('scroll-progress');
-    const backTop = document.getElementById('backTop');
-    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
-    let scrollTicking = false;
-    const onScrollFrame = () => {
-      scrollTicking = false;
-      const y = window.scrollY;
-      nav.classList.toggle('scrolled', y > 24);
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
-      backTop.classList.toggle('show', y > window.innerHeight * 2);
-      const heroInner = document.getElementById('heroInner');
-      if (heroInner && !reducedMotion && y < window.innerHeight) {
-        const p = y / window.innerHeight;
-        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
-        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
-      }
-      if (parallaxEls.length && y < window.innerHeight * 1.7) {
-        for (const el of parallaxEls) {
-          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
-        }
-      }
-    };
-    window.addEventListener('scroll', () => {
-      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
-    }, { passive: true });
-    onScrollFrame();
-
-    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
-
-    // Reveals
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
-
-    // v3: split-text del hero
-    document.querySelectorAll('.split').forEach(el => {
-      const nodes = Array.from(el.childNodes);
-      el.textContent = '';
-      let idx = 0;
-      const wrapWord = (content, cls) => {
-        const w = document.createElement('span'); w.className = 'split-word';
-        const inner = document.createElement('span');
-        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
-        if (cls) inner.className = cls;
-        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
-        w.appendChild(inner); return w;
-      };
-      nodes.forEach(n => {
-        if (n.nodeType === 3) {
-          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
-        } else if (n.tagName === 'BR') {
-          el.appendChild(n);
-        } else {
-          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
-        }
-      });
-      io.observe(el);
-    });
-
-    // Blur-up
-    document.querySelectorAll('img.blur-up').forEach(img => {
-      if (img.complete && img.naturalWidth) img.classList.add('loaded');
-      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
-    });
-
-    // Contadores
-    if (!reducedMotion) {
-      const animateCount = (el) => {
-        const target = parseFloat(el.dataset.count);
-        const decimals = parseInt(el.dataset.decimals || '0', 10);
-        const duration = 1400;
-        const start = performance.now();
-        const tick = (now) => {
-          const p = Math.min(1, (now - start) / duration);
-          const eased = 1 - Math.pow(1 - p, 3);
-          const v = target * eased;
-          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      };
-      const counterIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
-      }, { threshold: 0.6 });
-      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
-    }
-
-    // v3: cursor ring (solo desktop)
-    const ring = document.getElementById('cursorRing');
-    if (ring && finePointer && !reducedMotion) {
-      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
-      window.addEventListener('pointermove', (e) => {
-        tx = e.clientX; ty = e.clientY;
-        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
-      }, { passive: true });
-      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
-      const lerp = () => {
-        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
-        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
-        requestAnimationFrame(lerp);
-      };
-      requestAnimationFrame(lerp);
-      document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => ring.classList.add('big'));
-        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
-      });
-    }
-
-    // Botones magneticos. Solo desktop.
-    if (finePointer && !reducedMotion) {
-      document.querySelectorAll('.btn-3d').forEach(btn => {
-        btn.classList.add('magnetic');
-        btn.addEventListener('mousemove', (e) => {
-          const r = btn.getBoundingClientRect();
-          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
-          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
-          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
-        });
-        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
-      });
-    }
-
-    // Tilt 3D en cards de servicios. Solo desktop.
-    if (finePointer && !reducedMotion) {
-      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
-        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
-        card.addEventListener('mousemove', (e) => {
-          const r = card.getBoundingClientRect();
-          const px = (e.clientX - r.left) / r.width;
-          const py = (e.clientY - r.top) / r.height;
-          const rx = ((0.5 - py) * 6).toFixed(2);
-          const ry = ((px - 0.5) * 6).toFixed(2);
-          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
-          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
-          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
-        });
-        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-      });
-    }
-
-    // Cursor glow en la banda oscura final. Solo desktop.
-    const ctaBand = document.getElementById('cta-final');
-    const ctaGlow = document.getElementById('ctaGlow');
-    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
-      ctaBand.addEventListener('mousemove', (e) => {
-        const r = ctaBand.getBoundingClientRect();
-        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
-        ctaGlow.classList.add('on');
-      });
-      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
-    }
-  </script>
-</body>
-</html>
+import os
+os.makedirs('output/fivestarsdominicansalon', exist_ok=True)
+with open(DST, 'w', encoding='utf-8') as f:
+    f.write(h_final)
+print('OK: escrito', DST, 'len=', len(h_final))
