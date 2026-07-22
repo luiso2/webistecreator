@@ -357,7 +357,7 @@ old_ig_card = '''<div class="glass glass-hover rounded-2xl p-6 flex items-start 
             <div>
               <p class="font-medium mb-1">Instagram</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi's latest sets and DM any questions before your appointment.">See Yesi's latest sets and DM any questions before your appointment.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(163,93,60,0.4)]" href="''' + IG_URL + '''" target="_blank" rel="noopener">@odicelisnails444</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,103,122,0.4)]" href="''' + IG_URL + '''" target="_blank" rel="noopener">@odicelisnails444</a>
             </div>
           </div>'''
 new_ig_and_hours = '''<div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
@@ -397,15 +397,15 @@ print("CTA FINAL done")
 
 # FOOTER
 rep('<span class="foot-mark" aria-hidden="true">Lash Bloom</span>', '<span class="foot-mark" aria-hidden="true">Odi Nails</span>')
-rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(245,195,175,0.35)]" loading="lazy" />',
+rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(243,205,184,0.35)]" loading="lazy" />',
     '<img src="assets/raw/bk-1.jpg" alt="Odi Nails &amp; Studio" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(243,205,184,0.35)]" loading="lazy" />')
 rep('<span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>', '<span class="font-display text-lg tracking-[0.1em] uppercase">Odi Nails &amp; Studio</span>')
 rep('data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>',
     'data-es="Estudio de uñas en Miami Gardens, FL. Atención con cita previa." data-en="Nail studio in Miami Gardens, FL. By appointment only.">Nail studio in Miami Gardens, FL. By appointment only.</p>')
 rep('<p>4580 Cresthaven Blvd, West Palm Beach, FL 33415</p>', '<p>5433 NW 184th St, Miami Gardens, FL 33055</p>')
-rep('<p><a href="' + BK_URL + '" target="_blank" rel="noopener" class="hover:text-[#f5c3af]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>',
+rep('<p><a href="' + BK_URL + '" target="_blank" rel="noopener" class="hover:text-[#f3cdb8]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>',
     '<p><a href="' + BK_URL + '" target="_blank" rel="noopener" class="hover:text-[#f3cdb8]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>')
-rep('<p><a href="' + IG_URL + '" target="_blank" rel="noopener" class="hover:text-[#f5c3af]">Instagram · @odicelisnails444</a></p>',
+rep('<p><a href="' + IG_URL + '" target="_blank" rel="noopener" class="hover:text-[#f3cdb8]">Instagram · @odicelisnails444</a></p>',
     '<p><a href="' + IG_URL + '" target="_blank" rel="noopener" class="hover:text-[#f3cdb8]">Instagram · @odicelisnails444</a></p>')
 rep('<p class="text-xs text-[color:var(--ink-40)]">© 2026 Lash Bloom.</p>', '<p class="text-xs text-[color:var(--ink-40)]">© 2026 Odi Nails &amp; Studio.</p>')
 print("FOOTER done")

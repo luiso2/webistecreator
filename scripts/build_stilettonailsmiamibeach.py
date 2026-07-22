@@ -98,7 +98,7 @@ rep('<span class="pre-mono">LB</span>', '<span class="pre-mono">SN</span>')
 rep('<span class="pre-word">Lash Bloom</span>', '<span class="pre-word">Stiletto Nails</span>')
 
 # NAV
-rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,74,114,0.35)]" />',
+rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(166,68,147,0.35)]" />',
     '<img src="assets/raw/bk-15.jpg" alt="Stiletto Nails On The Beach" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(166,68,147,0.35)]" />')
 rep('<span class="font-display text-xl tracking-[0.1em] uppercase">Lash <span class="text-[color:var(--accent-deep)]">Bloom</span></span>',
     '<span class="font-display text-xl tracking-[0.1em] uppercase">Stiletto <span class="text-[color:var(--accent-deep)]">Nails</span></span>')
@@ -172,7 +172,7 @@ rep('''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p c
     '''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="46">46</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">3</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Artistas" data-en="Nail artists">Nail artists</p></div>''')
-rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,74,114,0.3)]" loading="lazy" />',
+rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(166,68,147,0.3)]" loading="lazy" />',
     '<img src="assets/raw/bk-14.jpg" alt="Nail artist at Stiletto Nails On The Beach" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(166,68,147,0.3)]" loading="lazy" />')
 rep('<span class="text-sm font-light">Yesi · <span class="text-[color:var(--ink-40)]" data-es="Artista licenciada" data-en="Licensed lash artist">Licensed lash artist</span></span>',
     '<span class="text-sm font-light" data-es="El equipo de Stiletto Nails" data-en="The Stiletto Nails team">The Stiletto Nails team</span>')
@@ -356,7 +356,7 @@ old_ig_card = '''<div class="glass glass-hover rounded-2xl p-6 flex items-start 
             <div>
               <p class="font-medium mb-1">Instagram</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi's latest sets and DM any questions before your appointment.">See Yesi's latest sets and DM any questions before your appointment.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(160,74,114,0.4)]" href="''' + IG_URL + '''" target="_blank" rel="noopener">@stilettonailsonthebeach</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(166,68,147,0.4)]" href="''' + IG_URL + '''" target="_blank" rel="noopener">@stilettonailsonthebeach</a>
             </div>
           </div>'''
 new_ig_and_hours = '''<div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
@@ -396,7 +396,7 @@ print("CTA FINAL done")
 
 # FOOTER
 rep('<span class="foot-mark" aria-hidden="true">Lash Bloom</span>', '<span class="foot-mark" aria-hidden="true">Stiletto Nails</span>')
-rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,190,215,0.35)]" loading="lazy" />',
+rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(244,186,232,0.35)]" loading="lazy" />',
     '<img src="assets/raw/bk-15.jpg" alt="Stiletto Nails On The Beach" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(244,186,232,0.35)]" loading="lazy" />')
 rep('<span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>', '<span class="font-display text-lg tracking-[0.1em] uppercase">Stiletto Nails On The Beach</span>')
 rep('data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>',
