@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f9eee9" />
+  <title>Art Nails Miami · Nail Art Studio in Miami Lakes, FL | 5.0 on Booksy</title>
+  <meta name="description" content="Art Nails Miami, Miami Lakes / Hialeah FL: Apres and gel nail art with hand-painted Level 2 and Level 3 designs, plus skin tightening treatments, with a perfect 5.0 across 14 Booksy reviews. Book online." />
+  <meta property="og:title" content="Art Nails Miami · Nail Art Studio in Miami Lakes, FL" />
+  <meta property="og:description" content="Apres and gel nail art, Level 2 and Level 3 designs. 5.0 on Booksy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/bk-4.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/bk-16.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NailSalon",
+    "name": "Art Nails Miami",
+    "description": "Nail art studio in Miami Lakes / Hialeah, FL: Apres and gel manicures with hand-painted Level 2 and Level 3 designs, plus skin tightening and body contouring treatments.",
+    "address": { "@type": "PostalAddress", "streetAddress": "330, 221, Miami Lakes, 33014", "addressLocality": "Hialeah, FL", "addressRegion": "Florida", "postalCode": "33014", "addressCountry": "US" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 25.912012085050584, "longitude": -80.30943732525509 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "11:00", "closes": "16:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "18:00", "closes": "21:00" }
+    ],
+    "sameAs": ["https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah", "https://www.instagram.com/ARTNAILSMIAMI/"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "14", "bestRating": "5" },
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Nail and body services", "itemListElement": [
+      { "@type": "Offer", "price": "75", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "APRES Plain (1 color)" } },
+      { "@type": "Offer", "price": "100", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "LEVEL 2 nail design" } },
+      { "@type": "Offer", "price": "60", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Gel Manicure Plain (1 color)" } },
+      { "@type": "Offer", "price": "30", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Facial Skin Tightening (new client)" } }
+    ] }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f9eee9;
+      --bg-2: #f3ddd6;
+      --surface: rgba(253,240,236,0.7);
+      --ink: #33222c;
+      --ink-60: rgba(51,34,44,0.62);
+      --ink-40: rgba(51,34,44,0.42);
+      --accent-deep: #a35d3c;
+      --accent-mid: #cb8969;
+      --accent-soft: #f3ddd6;
+      --accent-ghost: rgba(163,93,60,0.14);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(163,93,60,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(253,240,236,0.88); border-color: rgba(163,93,60,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(51,34,44,0.14), 0 0 40px rgba(163,93,60,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #a35d3c 0%, #d18666 30%, #5e3123 52%, #a35d3c 75%, #ba6948 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f4d6c9 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #ddab9a 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e7c2b5 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #cb8969 0%, #a35d3c 48%, #7e4328 100%);
+      color: #f9eee9; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(68,29,17,0.4), 0 5px 0 #5b2918, 0 12px 24px rgba(51,34,44,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(68,29,17,0.4), 0 7px 0 #5b2918, 0 18px 34px rgba(51,34,44,0.32), 0 0 40px rgba(163,93,60,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(68,29,17,0.45), 0 1px 0 #5b2918, 0 4px 10px rgba(51,34,44,0.25); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(163,93,60,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(163,93,60,0.7); background: rgba(163,93,60,0.08); box-shadow: 0 10px 26px rgba(51,34,44,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(249,238,233,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(51,34,44,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(51,34,44,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(163,93,60,0.14), inset 0 -60px 100px rgba(51,34,44,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #cb8969, #5e3123); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #a35d3c; letter-spacing: 2px; text-shadow: 0 0 14px rgba(163,93,60,0.3); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #f9eee9; --ink-60: rgba(249,238,233,0.65); --ink-40: rgba(249,238,233,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(225,237,172,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #f5c3af 0%, #fadfd3 30%, #ddab9a 52%, #f5c3af 75%, #f5d1c2 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(245,195,175,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(189,186,114,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #fbebe5 0%, #f1d0c4 48%, #d6a594 100%); color: #33222c; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(126,67,40,0.35), 0 5px 0 #8a594b, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(126,67,40,0.35), 0 7px 0 #8a594b, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(245,195,175,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(126,67,40,0.4), 0 1px 0 #8a594b, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(245,195,175,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(245,195,175,0.7); background: rgba(245,195,175,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f5c3af; text-shadow: 0 0 14px rgba(245,195,175,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #cb8969 0%, #a35d3c 100%);
+      box-shadow: 0 6px 0 #5b2918, 0 14px 30px rgba(51,34,44,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5b2918, 0 20px 40px rgba(51,34,44,0.4), 0 0 34px rgba(163,93,60,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5b2918, 0 6px 14px rgba(51,34,44,0.3); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(163,93,60,0.35); background: rgba(163,93,60,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #7e4328 0%, #a35d3c 45%, #e2a38d 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(245,195,175,0.14) 0%, rgba(163,93,60,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(163,93,60,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf3f8;
+      background: linear-gradient(180deg, transparent 0%, rgba(35,16,11,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(245,195,175,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">AN</span>
+    <span class="pre-word">Art Nails Miami</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/bk-16.jpg" alt="Art Nails Miami" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(163,93,60,0.35)]" />
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Art Nails <span class="text-[color:var(--accent-deep)]">Miami</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Miami Lakes, FL · Nail Art Studio" data-en="Miami Lakes, FL · Nail Art Studio">Miami Lakes, FL · Nail Art Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Diseno de unas hecho para lucirse." data-en="Nail art, made to turn heads.">Nail art, made to turn heads.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Sets de Apres y gel," data-en="Apres and gel sets,">Apres and gel sets,</span><br /><span data-es="disenados nivel por " data-en="designed level by ">designed level by </span><span class="text-shine" data-es="nivel" data-en="level">level</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Color solido, Level 2 pintado a mano o Level 3 de detalle maximo, todo sobre bases de Apres o gel de larga duracion. Una sola artista, Kaitlyn, y clientas que vuelven por el detalle." data-en="Plain color, hand-painted Level 2 detail, or full Level 3 nail art, all built on long-wearing Apres or gel systems. One nail artist, Kaitlyn, and clients who keep coming back for the detail.">Plain color, hand-painted Level 2 detail, or full Level 3 nail art, all built on long-wearing Apres or gel systems. One nail artist, Kaitlyn, and clients who keep coming back for the detail.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 14 reseñas en Booksy" data-en="5.0 · 14 reviews on Booksy">5.0 · 14 reviews on Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ARTNAILSMIAMI/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @ARTNAILSMIAMI
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-4.jpg" alt="Long stiletto nail art set with rings by Art Nails Miami" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Reserva online</p>
+            <p class="font-display text-lg" data-es="Diseno LEVEL 2" data-en="LEVEL 2 Design">LEVEL 2 Design</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="$100 · 2h 30min" data-en="$100 · 2h 30min">$100 · 2h 30min</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="14">14</span> <span data-es="reseñas en Booksy" data-en="reviews on Booksy">reseñas en Booksy</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Apres <span class="text-shine">&amp;</span> Gel</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Diseno de unas a mano" data-en="Hand-painted nail art">Hand-painted nail art</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl" data-es="Por cita" data-en="By appt">By appt</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Atencion uno a uno" data-en="One-on-one care">One-on-one care</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Miami Lakes</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Hialeah, FL</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Apres Nails</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Gel Manicure</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nail Art</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 2 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 3 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami Lakes, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Apres Nails</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Gel Manicure</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nail Art</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 2 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 3 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami Lakes, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/bk-16.jpg" alt="Engraved Art Nails Miami nameplate" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/bk-11.jpg" alt="French-style nail design with rhinestone accent by Art Nails Miami" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Una artista," data-en="One artist,">One artist,</span><br /><span class="text-shine" data-es="para cada diseno que traigas" data-en="for every design you bring">for every design you bring</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Art Nails Miami es el estudio de Kaitlyn en Miami Lakes / Hialeah, FL. Se especializa en sistemas de Apres y gel con disenos Level 2 y Level 3 pintados a mano, y ademas ofrece reafirmante y contorno corporal en el mismo estudio." data-en="Art Nails Miami is Kaitlyn's studio in Miami Lakes / Hialeah, FL. She specializes in Apres and gel nail systems with hand-painted Level 2 and Level 3 designs, and also offers skin tightening and body contouring treatments in the same studio.">Art Nails Miami is Kaitlyn's studio in Miami Lakes / Hialeah, FL. She specializes in Apres and gel nail systems with hand-painted Level 2 and Level 3 designs, and also offers skin tightening and body contouring treatments in the same studio.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="El resultado: 5.0 perfecto en 14 resenas verificadas en Booksy, con clientas que dicen que es detallista, divertida y siempre confirma que te encante el diseno antes de irte." data-en="The result: a perfect 5.0 across 14 verified Booksy reviews, with clients who say she is detail-oriented, fun, and always makes sure you love your design before you leave.">The result: a perfect 5.0 across 14 verified Booksy reviews, with clients who say she is detail-oriented, fun, and always makes sure you love your design before you leave.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="14">14</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Personal care</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/raw/bk-2.jpg" alt="Kaitlyn" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(163,93,60,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Kaitlyn · <span class="text-[color:var(--ink-40)]" data-es="Artista de unas" data-en="Nail artist">Nail artist</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Your visit, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tu cita, diseno" data-en="Your visit, design">Your visit, design</span> <span class="text-shine" data-es="por diseno" data-en="by design">by design</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Reserva online" data-en="Book online">Book online</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Eliges tu set de Apres o gel en Booksy con precio y duración claros, y confirmas al instante." data-en="Pick your Apres or gel set on Booksy with clear price and duration, and confirm instantly.">Pick your Apres or gel set on Booksy with clear price and duration, and confirm instantly.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tu inspiracion" data-en="Your inspo">Your inspo</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Traes una foto de referencia y Kaitlyn define el nivel de detalle y el plan de color para tu diseno." data-en="Bring a reference photo or idea, and Kaitlyn maps out the level of detail and color plan for your design.">Bring a reference photo or idea, and Kaitlyn maps out the level of detail and color plan for your design.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="La aplicacion" data-en="The application">The application</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Kaitlyn construye tu set con detalle, hasta 2h 30min en los disenos Level 2 y Level 3 mas completos." data-en="Sit back while Kaitlyn builds your set with detail, up to 2h 30min for the most detailed Level 2 and Level 3 designs.">Sit back while Kaitlyn builds your set with detail, up to 2h 30min for the most detailed Level 2 and Level 3 designs.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Acabado final" data-en="Long-lasting finish">Long-lasting finish</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con un set de Apres o gel resistente, o con un resultado suave y contorneado si reservaste reafirmante corporal." data-en="You leave with a chip-resistant Apres or gel set, or a smoothed, contoured result if you booked a skin tightening treatment.">You leave with a chip-resistant Apres or gel set, or a smoothed, contoured result if you booked a skin tightening treatment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Choose your</span> <span class="text-shine" data-es="nivel" data-en="level">level</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por Art Nails Miami en Booksy. Reserva con confirmación inmediata." data-en="Prices and durations as published by Art Nails Miami on Booksy. Booking confirms instantly.">Prices and durations as published by Art Nails Miami on Booksy. Booking confirms instantly.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Apres" data-en="Apres">Apres</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="APRES Plain (1 color)" data-en="APRES Plain (1 color)">APRES Plain (1 color)</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un solo color en Apres de larga duracion, la base para cualquier nivel de diseno." data-en="One solid color in long-wearing Apres, the base finish for any level of nail art.">One solid color in long-wearing Apres, the base finish for any level of nail art.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$75</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Precio fijo" data-en="Flat rate">Flat rate</p></div>
+            <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(163,93,60,0.4); box-shadow: 0 18px 50px rgba(51,34,44,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Favorito del estudio" data-en="Studio favorite">Studio favorite</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">LEVEL 2</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Diseno pintado a mano sobre tu set de Apres, desde acentos simples hasta arte detallado." data-en="Hand-painted design work on top of your Apres set, from simple accents to detailed art.">Hand-painted design work on top of your Apres set, from simple accents to detailed art.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$100</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p></div>
+            <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Detalle maximo" data-en="Maximum detail">Maximum detail</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">LEVEL 3</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El nivel de diseno mas detallado, pintado a mano sobre Apres para un acabado duradero." data-en="The most detailed hand-painted design level, built on Apres for a long-lasting finish.">The most detailed hand-painted design level, built on Apres for a long-lasting finish.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$125</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p></div>
+            <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Diario" data-en="Everyday">Everyday</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Gel Manicure Plain (1 color)" data-en="Gel Manicure Plain (1 color)">Gel Manicure Plain (1 color)</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un solo color en gel, una manicura diaria limpia con la misma resistencia al descascarado." data-en="One solid gel color, a clean everyday manicure with the same chip-resistant wear.">One solid gel color, a clean everyday manicure with the same chip-resistant wear.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$60</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Precio fijo" data-en="Flat rate">Flat rate</p></div>
+            <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5 mt-10">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:120ms">
+          <h3 class="font-display text-lg mb-4" data-es="Mas servicios de unas" data-en="More nail services">More nail services</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">LEVEL 2 (on Gel)</span><span class="font-medium whitespace-nowrap">$80 · 2h 30min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light">LEVEL 3 (on Gel)</span><span class="font-medium whitespace-nowrap">$100 · 2h 30min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="APRES/Gel (retoque de otra artista)" data-en="APRES/Gel (not my work)">APRES/Gel (not my work)</span><span class="font-medium whitespace-nowrap">$10 · 30min</span></div>
+            <div class="flex justify-between gap-3 py-2"><span class="text-[color:var(--ink-60)] font-light" data-es="Acrilico/Dip (retoque de otra artista)" data-en="Acrylic/Dip (not my work)">Acrylic/Dip (not my work)</span><span class="font-medium whitespace-nowrap">$20 · 30min</span></div>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:200ms">
+          <h3 class="font-display text-lg mb-4" data-es="Reafirmante y contorno corporal" data-en="Skin tightening &amp; body contouring">Skin tightening &amp; body contouring</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Contorno de abdomen (cliente nueva)" data-en="Abdomen Contouring (new client)">Abdomen Contouring (new client)</span><span class="font-medium whitespace-nowrap">$60</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Contorno de abdomen (cliente frecuente)" data-en="Abdomen Contouring (repeat client)">Abdomen Contouring (repeat client)</span><span class="font-medium whitespace-nowrap">$75</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Reafirmante facial (cliente nueva)" data-en="Facial Skin Tightening (new client)">Facial Skin Tightening (new client)</span><span class="font-medium whitespace-nowrap">$30 · 45min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Reafirmante facial (cliente frecuente)" data-en="Facial Skin Tightening (repeat client)">Facial Skin Tightening (repeat client)</span><span class="font-medium whitespace-nowrap">$45 · 45min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Reduccion de celulitis (cliente nueva)" data-en="Cellulite Breakdown (new client)">Cellulite Breakdown (new client)</span><span class="font-medium whitespace-nowrap">$60</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Reduccion de celulitis (cliente frecuente)" data-en="Cellulite Breakdown (repeat client)">Cellulite Breakdown (repeat client)</span><span class="font-medium whitespace-nowrap">$75</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Piernas" data-en="Legs">Legs</span><span class="font-medium whitespace-nowrap">$20 · 30min</span></div>
+            <div class="flex justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)]"><span class="text-[color:var(--ink-60)] font-light" data-es="Brazos" data-en="Arms">Arms</span><span class="font-medium whitespace-nowrap">$20 · 30min</span></div>
+            <div class="flex justify-between gap-3 py-2"><span class="text-[color:var(--ink-60)] font-light" data-es="Rostro" data-en="Face">Face</span><span class="font-medium whitespace-nowrap">$15 · 30min</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Tambien: Level 2 y Level 3 sobre gel, retoques rapidos, y tratamientos de reafirmante corporal. Menu completo y disponibilidad en Booksy." data-en="Also available: Level 2 and Level 3 on gel, quick touch-ups, and body skin-tightening treatments. Full menu and availability on Booksy.">Also available: Level 2 and Level 3 on gel, quick touch-ups, and body skin-tightening treatments. Full menu and availability on Booksy.</span></p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Diseno" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="nail art">nail art</span></h2>
+        </div>
+        <a href="https://www.instagram.com/ARTNAILSMIAMI/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @ARTNAILSMIAMI
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Set stiletto editorial" data-en="Editorial stiletto set">Editorial stiletto set</span><img src="assets/raw/bk-5.jpg" alt="Deep burgundy stiletto nail set with hand tattoo, editorial style at Art Nails Miami" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Arte con pedreria" data-en="Jeweled nail art">Jeweled nail art</span><img src="assets/raw/bk-3.jpg" alt="Colorful patterned nail art with rhinestone details" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Explosion de color" data-en="Playful color pop">Playful color pop</span><img src="assets/raw/bk-6.jpg" alt="Playful multicolor dotted nail art at Art Nails Miami" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Diseno floral" data-en="Floral swirl design">Floral swirl design</span><img src="assets/raw/bk-7.jpg" alt="Green and yellow floral swirl nail art" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Acabado cromado rosa" data-en="Pink chrome finish">Pink chrome finish</span><img src="assets/raw/bk-8.jpg" alt="Pink chrome finish nail set by Art Nails Miami" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Mix de disenos" data-en="Mixed design set">Mixed design set</span><img src="assets/raw/bk-1.jpg" alt="Mixed nail art set with abstract, French tip and marble designs on both hands" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Apres Nails</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Gel Manicure</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nail Art</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 2 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 3 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami Lakes, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Apres Nails</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Gel Manicure</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nail Art</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 2 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Level 3 Design</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami Lakes, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="En sus" data-en="In their">In their</span> <span class="text-shine" data-es="propias palabras" data-en="own words">own words</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 14 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 14 verified reviews on Booksy">5.0 out of 5 · 14 verified reviews on Booksy</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Amazing work and excellent hospitality."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Carolina N…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"She's literally the best"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Vanessa L…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Absolutely obsessed with my nails!! Exactly what I wanted, will be booking again!!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Mindy A…</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 14 reseñas en Booksy" data-en="Read all 14 reviews on Booksy">Read all 14 reviews on Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">Miami Lakes</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">330, 221, Miami Lakes, FL 33014</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(163,93,60,0.4)]" href="https://www.google.com/maps?q=25.912012085050584,-80.30943732525509" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">By appointment via Booksy: pick the service, day and time, and the confirmation is instant.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(163,93,60,0.4)]" href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los disenos mas recientes de Kaitlyn y escribe por DM cualquier duda antes de tu cita." data-en="See Kaitlyn's latest designs and DM any questions before your appointment.">See Kaitlyn's latest designs and DM any questions before your appointment.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(163,93,60,0.4)]" href="https://www.instagram.com/ARTNAILSMIAMI/" target="_blank" rel="noopener">@ARTNAILSMIAMI</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:320ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sabado y domingo, 11:00 am a 4:00 pm. Lunes a viernes, 6:00 pm a 9:00 pm." data-en="Saturday and Sunday, 11:00 am to 4:00 pm. Monday to Friday, 6:00 pm to 9:00 pm.">Saturday and Sunday, 11:00 am to 4:00 pm. Monday to Friday, 6:00 pm to 9:00 pm.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Art Nails Miami, Miami Lakes FL"
+          src="https://www.google.com/maps?q=25.912012085050584,-80.30943732525509&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #251511 0%, #1a0e0a 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Diseno de unas hecho para lucirse." data-en="Nail art, made to turn heads.">Nail art, made to turn heads.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proximo diseno" data-en="Your next design">Your next design</span> <span class="text-shine" data-es="esta a un toque" data-en="is one tap away">is one tap away</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva en linea en segundos: tu set de Apres, tu manicure en gel, o el diseno Level 2 / Level 3 que llevas planeando." data-en="Book online in seconds: your Apres set, your gel manicure, or the Level 2 / Level 3 design you have been planning.">Book online in seconds: your Apres set, your gel manicure, or the Level 2 / Level 3 design you have been planning.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+        <a href="https://www.instagram.com/ARTNAILSMIAMI/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#170d0a]">
+    <span class="foot-mark" aria-hidden="true">Art Nails Miami</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/bk-16.jpg" alt="Art Nails Miami" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(245,195,175,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Art Nails Miami</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de arte en unas en Miami Lakes / Hialeah, FL. Atención con cita previa." data-en="Nail art studio in Miami Lakes / Hialeah, FL. By appointment only.">Nail art studio in Miami Lakes / Hialeah, FL. By appointment only.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>330, 221, Miami Lakes, FL 33014</p>
+        <p><a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="hover:text-[#f5c3af]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/ARTNAILSMIAMI/" target="_blank" rel="noopener" class="hover:text-[#f5c3af]">Instagram · @ARTNAILSMIAMI</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Art Nails Miami.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/978409_art-nails-miami_nail-salon_15886_hialeah" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f9eee9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
