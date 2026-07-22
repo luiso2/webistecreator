@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f2e2d0" />
+  <title>Brows by Ruby · Brow &amp; Lash Studio in Fort Lauderdale, FL | 5.0 on Booksy</title>
+  <meta name="description" content="Brows by Ruby, Fort Lauderdale FL: eyebrow threading, tinting, waxing, lash lift and tint at Agua Salon Studio. Perfect 5.0 across 283 Booksy reviews. Book online." />
+  <meta property="og:title" content="Brows by Ruby · Brow &amp; Lash Studio in Fort Lauderdale, FL" />
+  <meta property="og:description" content="Eyebrow threading, tinting and lash lift by Ruby. 5.0 on Booksy across 283 reviews. Book online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/final-hero.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/logo.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Brows by Ruby",
+    "description": "Eyebrow and lash studio in Fort Lauderdale, FL: threading, tinting, waxing, lash lift and tint inside Agua Salon Studio.",
+    "address": { "@type": "PostalAddress", "streetAddress": "1845 Cordova Rd, Suite 210 (Agua Salon Studio)", "addressLocality": "Fort Lauderdale", "addressRegion": "FL", "postalCode": "33316", "addressCountry": "US" },
+    "telephone": "+1-954-612-7251",
+    "sameAs": ["https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale", "https://www.instagram.com/browsbyrubyyy/"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "283", "bestRating": "5" },
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Brow and lash services", "itemListElement": [
+      { "@type": "Offer", "price": "20", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Eyebrow Thread/Wax" } },
+      { "@type": "Offer", "price": "30", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Eyebrow Threading W/ Tinting" } },
+      { "@type": "Offer", "price": "55", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Full Face With Eyebrows & Tinting" } },
+      { "@type": "Offer", "price": "85", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Lash Lift and Tint" } }
+    ] }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf4ec;
+      --bg-2: #f2e2d0;
+      --surface: rgba(253,248,241,0.7);
+      --ink: #362a20;
+      --ink-60: rgba(54,42,32,0.62);
+      --ink-40: rgba(54,42,32,0.42);
+      --accent-deep: #b5563f;
+      --accent-mid: #d9926a;
+      --accent-soft: #f2e2d0;
+      --accent-ghost: rgba(181,86,63,0.14);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(181,86,63,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(253,246,250,0.88); border-color: rgba(181,86,63,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(54,42,32,0.14), 0 0 40px rgba(181,86,63,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #b5563f 0%, #dd9c72 30%, #5c2814 52%, #b5563f 75%, #c06a3f 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f2dcc4 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #dba184 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e8c7a6 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #d9926a 0%, #b5563f 48%, #7a3a22 100%);
+      color: #faf4ec; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(70,25,50,0.4), 0 5px 0 #5c2410, 0 12px 24px rgba(54,42,32,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(70,25,50,0.4), 0 7px 0 #5c2410, 0 18px 34px rgba(54,42,32,0.32), 0 0 40px rgba(181,86,63,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(70,25,50,0.45), 0 1px 0 #5c2410, 0 4px 10px rgba(54,42,32,0.25); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(181,86,63,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(181,86,63,0.7); background: rgba(181,86,63,0.08); box-shadow: 0 10px 26px rgba(54,42,32,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(250,242,246,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(54,42,32,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(54,42,32,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(181,86,63,0.14), inset 0 -60px 100px rgba(54,42,32,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #d9926a, #5c2814); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #b5563f; letter-spacing: 2px; text-shadow: 0 0 14px rgba(181,86,63,0.3); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #faf4ec; --ink-60: rgba(250,242,246,0.65); --ink-40: rgba(250,242,246,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(233,205,186,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #f0c48f 0%, #f8e6c9 30%, #dba184 52%, #f0c48f 75%, #f2cfe0 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(240,196,143,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(198,132,84,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #fbf1e2 0%, #f0d9b8 48%, #d6a172 100%); color: #362a20; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(125,52,87,0.35), 0 5px 0 #8a4f30, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(125,52,87,0.35), 0 7px 0 #8a4f30, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(240,196,143,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(125,52,87,0.4), 0 1px 0 #8a4f30, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(240,196,143,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(240,196,143,0.7); background: rgba(240,196,143,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f0c48f; text-shadow: 0 0 14px rgba(240,196,143,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #d9926a 0%, #b5563f 100%);
+      box-shadow: 0 6px 0 #5c2410, 0 14px 30px rgba(54,42,32,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5c2410, 0 20px 40px rgba(54,42,32,0.4), 0 0 34px rgba(181,86,63,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5c2410, 0 6px 14px rgba(54,42,32,0.3); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(181,86,63,0.35); background: rgba(181,86,63,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #7a3a22 0%, #b5563f 45%, #dc9dbe 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(240,196,143,0.14) 0%, rgba(181,86,63,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(160,74,114,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf3f8;
+      background: linear-gradient(180deg, transparent 0%, rgba(40,16,30,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(240,196,143,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">R</span>
+    <span class="pre-word">Brows by Ruby</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/logo.jpg" alt="Brows by Ruby" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(181,86,63,0.35)]" />
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Brows by <span class="text-[color:var(--accent-deep)]">Ruby</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Fort Lauderdale, FL · Brow &amp; Lash Studio" data-en="Fort Lauderdale, FL · Brow &amp; Lash Studio">Fort Lauderdale, FL &middot; Brow &amp; Lash Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Brows made to fit your face." data-en="Brows made to fit your face.">Brows made to fit your face.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Precision brow threading" data-en="Precision brow threading">Precision brow threading</span><br /><span data-es="in Fort Lauderdale, done" data-en="in Fort Lauderdale, done">in Fort Lauderdale, done</span> <span class="text-shine" data-es="right" data-en="right">right</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Threading, tinting, waxing and lash lift and tint inside Agua Salon Studio. Ruby shapes every brow by hand, one thread at a time, for a clean and precise arch that actually fits your face." data-en="Threading, tinting, waxing and lash lift and tint inside Agua Salon Studio. Ruby shapes every brow by hand, one thread at a time, for a clean and precise arch that actually fits your face.">Threading, tinting, waxing and lash lift and tint inside Agua Salon Studio. Ruby shapes every brow by hand, one thread at a time, for a clean and precise arch that actually fits your face.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 283 reviews on Booksy" data-en="5.0 · 283 reviews on Booksy">5.0 &middot; 283 reviews on Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Book on Booksy" data-en="Book on Booksy">Book on Booksy</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/browsbyrubyyy/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @browsbyrubyyy
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/final-hero.jpg" alt="Brows by Ruby client with a freshly threaded and tinted brow" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Book online" data-en="Book online">Book online</p>
+            <p class="font-display text-lg">Threading + Tint</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="$30 · 30min" data-en="$30 · 30min">$30 &middot; 30min</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="283">283</span> <span data-es="reviews on Booksy" data-en="reviews on Booksy">reviews on Booksy</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Brows <span class="text-shine">&amp;</span> Lashes</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Threading &middot; Tinting &middot; Waxing" data-en="Threading &middot; Tinting &middot; Waxing">Threading &middot; Tinting &middot; Waxing</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">$20 <span class="text-shine" data-es="threading" data-en="threading">threading</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Signature eyebrow service" data-en="Signature eyebrow service">Signature eyebrow service</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Fort Lauderdale</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Agua Salon Studio · Cordova Rd</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Brow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brow Tinting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lift &amp; Tint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Full Face Wax</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nape Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fort Lauderdale, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Brow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brow Tinting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lift &amp; Tint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Full Face Wax</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nape Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fort Lauderdale, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/final-experience.jpg" alt="Ruby threading a client&#39;s eyebrows at Agua Salon Studio" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/final-gallery-4.jpg" alt="Closeup of a freshly threaded and shaped eyebrow" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="The experience" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="One artist," data-en="One artist,">One artist,</span><br /><span class="text-shine" data-es="every thread by hand" data-en="every thread by hand">every thread by hand</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Brows by Ruby is a one on one brow studio inside Agua Salon Studio in Fort Lauderdale. Ruby shapes every eyebrow with thread, not wax alone, mapping the arch to your bone structure before a single hair comes off." data-en="Brows by Ruby is a one on one brow studio inside Agua Salon Studio in Fort Lauderdale. Ruby shapes every eyebrow with thread, not wax alone, mapping the arch to your bone structure before a single hair comes off.">Brows by Ruby is a one on one brow studio inside Agua Salon Studio in Fort Lauderdale. Ruby shapes every eyebrow with thread, not wax alone, mapping the arch to your bone structure before a single hair comes off.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="The result: a perfect 5.0 across 283 verified Booksy reviews, walk-ins welcome, and clients who book their next appointment before they even leave the chair." data-en="The result: a perfect 5.0 across 283 verified Booksy reviews, walk-ins welcome, and clients who book their next appointment before they even leave the chair.">The result: a perfect 5.0 across 283 verified Booksy reviews, walk-ins welcome, and clients who book their next appointment before they even leave the chair.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="283">283</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reviews" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Personal care</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/raw/logo.jpg" alt="Brows by Ruby" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(181,86,63,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Ruby &middot; <span class="text-[color:var(--ink-40)]" data-es="Brow &amp; lash artist" data-en="Brow &amp; lash artist">Brow &amp; lash artist</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Your visit, step by step" data-en="Your visit, step by step">Your visit, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Your visit, thread" data-en="Your visit, thread">Your visit, thread</span> <span class="text-shine" data-es="by thread" data-en="by thread">by thread</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Book online" data-en="Book online">Book online</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Pick your service on Booksy with clear price and duration, or walk in during open hours." data-en="Pick your service on Booksy with clear price and duration, or walk in during open hours.">Pick your service on Booksy with clear price and duration, or walk in during open hours.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Brow mapping" data-en="Brow mapping">Brow mapping</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Ruby maps the shape against your bone structure and natural growth before touching a single hair." data-en="Ruby maps the shape against your bone structure and natural growth before touching a single hair.">Ruby maps the shape against your bone structure and natural growth before touching a single hair.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Threading" data-en="Threading">Threading</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cotton thread removes hair straight from the root for a clean, precise line, plus tint or wax if you add it." data-en="Cotton thread removes hair straight from the root for a clean, precise line, plus tint or wax if you add it.">Cotton thread removes hair straight from the root for a clean, precise line, plus tint or wax if you add it.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Finished look" data-en="Finished look">Finished look</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="You leave with a defined arch and, if you like, your next appointment already on the books." data-en="You leave with a defined arch and, if you like, your next appointment already on the books.">You leave with a defined arch and, if you like, your next appointment already on the books.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Services" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Choose your" data-en="Choose your">Choose your</span> <span class="text-shine">service</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Prices and durations as published by Brows by Ruby on Booksy. Booking confirms instantly." data-en="Prices and durations as published by Brows by Ruby on Booksy. Booking confirms instantly.">Prices and durations as published by Brows by Ruby on Booksy. Booking confirms instantly.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Express" data-en="Express">Express</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Eyebrow Thread/Wax</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Clean, precise shaping with thread or wax, no fuss, in and out on a lunch break." data-en="Clean, precise shaping with thread or wax, no fuss, in and out on a lunch break.">Clean, precise shaping with thread or wax, no fuss, in and out on a lunch break.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$20</p></div>
+            <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Book" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(181,86,63,0.4); box-shadow: 0 18px 50px rgba(54,42,32,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Studio favorite" data-en="Studio favorite">Studio favorite</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Eyebrow Threading W/ Tinting</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Ruby&#39;s most-booked service: precision threading finished with a custom tint for a fuller, defined arch." data-en="Ruby&#39;s most-booked service: precision threading finished with a custom tint for a fuller, defined arch.">Ruby&#39;s most-booked service: precision threading finished with a custom tint for a fuller, defined arch.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$30</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">30min</p></div>
+            <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Book" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Full service" data-en="Full service">Full service</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Full Face With Eyebrows &amp; Tinting</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Full face waxing plus brow shaping and tint in one appointment, smooth skin and a fresh arch together." data-en="Full face waxing plus brow shaping and tint in one appointment, smooth skin and a fresh arch together.">Full face waxing plus brow shaping and tint in one appointment, smooth skin and a fresh arch together.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$55</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">45min</p></div>
+            <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Book" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lashes" data-en="Lashes">Lashes</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Lash Lift and Tint" data-en="Lash Lift and Tint">Lash Lift and Tint</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Your natural lashes lifted and tinted for a wide-eyed, mascara-free look that lasts for weeks." data-en="Your natural lashes lifted and tinted for a wide-eyed, mascara-free look that lasts for weeks.">Your natural lashes lifted and tinted for a wide-eyed, mascara-free look that lasts for weeks.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$85</p></div>
+            <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Book" data-en="Book">Book</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Full menu below, exact prices and durations as published on Booksy." data-en="Full menu below, exact prices and durations as published on Booksy.">Full menu below, exact prices and durations as published on Booksy.</span></p>
+      <div class="reveal mt-14 grid md:grid-cols-3 gap-6" style="transition-delay:120ms">
+        <div class="glass rounded-3xl p-7">
+          <h3 class="font-display text-lg mb-5 text-[color:var(--accent-deep)]" data-es="Eyebrows" data-en="Eyebrows">Eyebrows</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Eyebrow Thread/Wax</span><span class="font-medium">$20</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Eyebrow Tinting</span><span class="font-medium">$20</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Eyebrow Threading W/ Tinting</span><span class="font-medium">$30 &middot; 30min</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Eyebrows &amp; Upper Lips</span><span class="font-medium">$30 &middot; 30min</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Eyebrow, Lips &amp; Chin</span><span class="font-medium">$35 &middot; 40min</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Threading W/ Face &amp; Head Massage</span><span class="font-medium">$70 &middot; 40min</span></div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-7">
+          <h3 class="font-display text-lg mb-5 text-[color:var(--accent-deep)]" data-es="Face &amp; Body Waxing" data-en="Face &amp; Body Waxing">Face &amp; Body Waxing</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Lips</span><span class="font-medium">$10</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Upper Lips</span><span class="font-medium">$10</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Nose Wax</span><span class="font-medium">$10</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Nose Hair Wax</span><span class="font-medium">$10</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Sideburns</span><span class="font-medium">$20</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Neck</span><span class="font-medium">$20</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Nape Waxing</span><span class="font-medium">$15 &middot; 10min</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Underarm</span><span class="font-medium">$20</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Full Face</span><span class="font-medium">$50 &middot; 50min</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Full Face With Eyebrows &amp; Tinting</span><span class="font-medium">$55 &middot; 45min</span></div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-7">
+          <h3 class="font-display text-lg mb-5 text-[color:var(--accent-deep)]" data-es="Lashes &amp; More" data-en="Lashes &amp; More">Lashes &amp; More</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Lash Tint</span><span class="font-medium">$25 &middot; 20min</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Lash Lift and Tint</span><span class="font-medium">$85</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Makeup</span><span class="font-medium">$85</span></div>
+            <div class="flex justify-between gap-3"><span class="font-light text-[color:var(--ink-60)]">Hair</span><span class="font-medium">$85</span></div>
+          </div>
+          <p class="text-xs text-[color:var(--ink-40)] font-light mt-5" data-es="Full availability and booking on Booksy." data-en="Full availability and booking on Booksy.">Full availability and booking on Booksy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Gallery" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Real brows," data-en="Real brows,">Real brows,</span> <span class="text-shine" data-es="real results" data-en="real results">real results</span></h2>
+        </div>
+        <a href="https://www.instagram.com/browsbyrubyyy/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @browsbyrubyyy
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Cejas simetricas, terminadas" data-en="Symmetric brows, finished">Symmetric brows, finished</span><img src="assets/raw/final-gallery-wide.jpg" alt="Symmetric pair of freshly threaded and tinted eyebrows" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Resultado del threading" data-en="Threading result">Threading result</span><img src="assets/raw/final-gallery-2.jpg" alt="Closeup of threaded eyebrows with a clean, defined line" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Arco definido" data-en="Defined arch">Defined arch</span><img src="assets/raw/final-gallery-3.jpg" alt="Defined brow arch after threading and shaping" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Ceja perfilada" data-en="Sculpted brow">Sculpted brow</span><img src="assets/raw/final-gallery-5.jpg" alt="Sculpted, full eyebrow after threading" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Brow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brow Tinting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lift &amp; Tint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Full Face Wax</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nape Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fort Lauderdale, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Brow Threading</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brow Tinting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lash Lift &amp; Tint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Full Face Wax</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Nape Waxing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fort Lauderdale, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Reviews" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="What her" data-en="What her">What her</span> <span class="text-shine" data-es="clients say" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 out of 5 · 283 verified reviews on Booksy" data-en="5.0 out of 5 · 283 verified reviews on Booksy">5.0 out of 5 &middot; 283 verified reviews on Booksy</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Ruby is awesome. Very skilled, thorough and super sweet. I&#39;ve found my new brow lady!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Lisa</span> <span class="text-[color:var(--ink-40)]">&middot; Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Ruby is great, always perfect eyebrows."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Anonymous</span> <span class="text-[color:var(--ink-40)]">&middot; Booksy</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Love Ruby!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Joseph D.</span> <span class="text-[color:var(--ink-40)]">&middot; Booksy</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Read all 283 reviews on Booksy" data-en="Read all 283 reviews on Booksy">Read all 283 reviews on Booksy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visit us" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visit us in" data-en="Visit us in">Visit us in</span> <span class="text-shine">Fort Lauderdale</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Address" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">1845 Cordova Rd, Suite 210 (Agua Salon Studio), Fort Lauderdale, FL 33316</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,86,63,0.4)]" href="https://www.google.com/maps?q=1845%20Cordova%20Rd%2C%20Suite%20210%2C%20Fort%20Lauderdale%2C%20FL%2033316" target="_blank" rel="noopener" data-es="Get directions" data-en="Get directions">Get directions</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Bookings" data-en="Bookings">Bookings</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="By appointment via Booksy, or walk in Tuesday through Saturday. Instant confirmation online." data-en="By appointment via Booksy, or walk in Tuesday through Saturday. Instant confirmation online.">By appointment via Booksy, or walk in Tuesday through Saturday. Instant confirmation online.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,86,63,0.4)]" href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" data-es="Book on Booksy" data-en="Book on Booksy">Book on Booksy</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="See Ruby's latest brow work and DM any questions before your appointment." data-en="See Ruby's latest brow work and DM any questions before your appointment.">See Ruby's latest brow work and DM any questions before your appointment.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,86,63,0.4)]" href="https://www.instagram.com/browsbyrubyyy/" target="_blank" rel="noopener">@browsbyrubyyy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: Brows by Ruby, 1845 Cordova Rd, Fort Lauderdale FL"
+          src="https://www.google.com/maps?q=1845%20Cordova%20Rd%2C%20Suite%20210%2C%20Fort%20Lauderdale%2C%20FL%2033316&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241408 0%, #180b04 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Brows made to fit your face." data-en="Brows made to fit your face.">Brows made to fit your face.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Your next appointment" data-en="Your next appointment">Your next appointment</span> <span class="text-shine" data-es="is one thread away" data-en="is one thread away">is one thread away</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Book online in seconds, or walk in at Agua Salon Studio, Fort Lauderdale." data-en="Book online in seconds, or walk in at Agua Salon Studio, Fort Lauderdale.">Book online in seconds, or walk in at Agua Salon Studio, Fort Lauderdale.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Book on Booksy" data-en="Book on Booksy">Book on Booksy</a>
+        <a href="https://www.instagram.com/browsbyrubyyy/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Follow on Instagram" data-en="Follow on Instagram">Follow on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#170c05]">
+    <span class="foot-mark" aria-hidden="true">Brows by Ruby</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/logo.jpg" alt="Brows by Ruby" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,196,143,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Brows by Ruby</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Brow and lash studio in Fort Lauderdale, FL, inside Agua Salon Studio. By appointment, walk-ins welcome." data-en="Brow and lash studio in Fort Lauderdale, FL, inside Agua Salon Studio. By appointment, walk-ins welcome.">Brow and lash studio in Fort Lauderdale, FL, inside Agua Salon Studio. By appointment, walk-ins welcome.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contact" data-en="Contact">Contact</p>
+        <p>1845 Cordova Rd, Suite 210, Fort Lauderdale, FL 33316</p>
+        <p>(954) 612-7251</p>
+        <p><a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="hover:text-[#f0c48f]" data-es="Online booking &middot; Booksy" data-en="Online booking &middot; Booksy">Online booking &middot; Booksy</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Follow" data-en="Follow">Follow</p>
+        <p><a href="https://www.instagram.com/browsbyrubyyy/" target="_blank" rel="noopener" class="hover:text-[#f0c48f]">Instagram · @browsbyrubyyy</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Brows by Ruby.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/1008931_brows-by-ruby_brows-lashes_15643_fort-lauderdale" target="_blank" rel="noopener" class="book-float" aria-label="Book online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf4ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
