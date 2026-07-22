@@ -6,6 +6,8 @@ import colorsys
 SLUG = "greyhairsalonmiami"
 os.makedirs(f"output/{SLUG}/assets", exist_ok=True)
 shutil.copyfile("templates/dark-v2/index.html", f"output/{SLUG}/index.html")
+if not os.path.exists(f"output/{SLUG}/assets/tailwind.js"):
+    shutil.copyfile("templates/assets/tailwind.js", f"output/{SLUG}/assets/tailwind.js")
 h = open(f"output/{SLUG}/index.html", encoding="utf-8").read()
 
 
@@ -241,7 +243,7 @@ services_grid = re.search(
     h, flags=re.S)
 assert services_grid
 NEW_SERVICES = '''<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(172,141,115,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Tratamiento premium" data-en="Premium treatment">Premium treatment</p>
           <h3 class="font-display text-2xl leading-snug mb-3" data-es="Keratina: Stem Cells por Ivera Paris" data-en="Keratin: Stem Cells by Ivera Paris">Keratin: Stem Cells by Ivera Paris</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El tratamiento de keratina más solicitado de la casa, con células madre de Ivera Paris para un cabello liso, sano y con brillo real." data-en="The salon's most requested keratin treatment, with Ivera Paris stem cells for smooth, healthy hair with real shine.">The salon's most requested keratin treatment, with Ivera Paris stem cells for smooth, healthy hair with real shine.</p>
@@ -307,7 +309,7 @@ h = h[:gallery_grid.start()] + NEW_GALLERY + h[gallery_grid.end():]
 print("GALERIA done")
 
 # ---------- 15. OPINIONES ----------
-rep('<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What her">What her</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">clients say</span></h2>',
+rep('<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What her">Lo que dicen</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">sus clientas</span></h2>',
     '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">clients say</span></h2>')
 rep('<p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 234 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 234 verified reviews on Booksy">5.0 out of 5 · 234 verified reviews on Booksy</span></p>',
     '<p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.9 de 5 · 64 reseñas verificadas en Booksy" data-en="4.9 out of 5 · 64 verified reviews on Booksy">4.9 out of 5 · 64 verified reviews on Booksy</span></p>')
@@ -366,8 +368,8 @@ print("CTA FINAL done")
 
 # ---------- 18. FOOTER ----------
 rep('<span class="foot-mark" aria-hidden="true">Pure Artistry</span>', '<span class="foot-mark" aria-hidden="true">Grey Hair Salon</span>')
-rep('<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />',
-    '<img src="assets/raw/bk-2.jpg" alt="Grey Hair Salon" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />')
+rep('<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(208,190,174,0.35)]" loading="lazy" />',
+    '<img src="assets/raw/bk-2.jpg" alt="Grey Hair Salon" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(208,190,174,0.35)]" loading="lazy" />')
 rep('<span class="font-display text-lg tracking-[0.1em] uppercase">Pure Artistry</span>', '<span class="font-display text-lg tracking-[0.1em] uppercase">Grey Hair Salon</span>')
 rep('data-es="Hair studio en el centro de Orlando, FL. Atención con cita previa." data-en="Hair studio in downtown Orlando, FL. By appointment only.">Hair studio in downtown Orlando, FL. By appointment only.</p>',
     'data-es="Salón de cabello y uñas en Miami, FL. Atención con cita previa." data-en="Hair and nail studio in Miami, FL. By appointment only.">Hair and nail studio in Miami, FL. By appointment only.</p>')
