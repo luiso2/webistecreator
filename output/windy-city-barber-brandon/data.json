@@ -1,45 +1,111 @@
 {
- "booksy_url": "https://booksy.com/en-us/426226_windy-city-barber-parlor_barber-shop_15746_brandon",
- "slug": "windy-city-barber-brandon",
- "name": "Windy City Barber Parlor",
- "schema_type": "HairSalon",
- "address": {
-  "@type": "PostalAddress",
-  "streetAddress": "528 E Brandon Blvd, Brandon, 33511",
-  "addressCountry": "us",
-  "addressLocality": "Brandon, FL",
-  "addressRegion": "Florida",
-  "postalCode": "33511"
- },
- "geo": {
-  "@type": "GeoCoordinates",
-  "latitude": 27.93800992,
-  "longitude": -82.27849994
- },
- "rating": 5.0,
- "reviews_count": 287,
- "hours": [
-  {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-   ],
-   "opens": "10:00",
-   "closes": "19:00"
-  }
- ],
- "staff": [],
- "same_as": [],
- "instagram": null,
- "website_candidates": [],
- "phone": null,
- "services": [],
- "reviews": [],
- "named_reviews": [],
- "language": "en"
+  "slug": "windy-city-barber-brandon",
+  "name": "Windy City Barber Parlor",
+  "niche": "boutique barbershop, Chicago-themed decor",
+  "city": "Brandon, FL",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_check": {
+    "domains_tried": ["windycitybarberparlor.com"],
+    "domains_result": "windycitybarberparlor.com does not resolve (getaddrinfo ENOTFOUND). No other domain variant found anywhere in research.",
+    "external_url_ig_bio": "None. The Instagram bio (per WebSearch summary of the live profile) only points to their Booksy booking link, no external domain.",
+    "presence_found": [
+      "Booksy business page (booksy.com/en-us/426226_windy-city-barber-parlor_barber-shop_15746_brandon), canonical booking page. windycitybarber.booksy.com redirects here (confirmed live via curl -IL, businessId=426226 matches).",
+      "Yelp business page (yelp.com/biz/windy-city-barber-parlor-brandon-3), 19 Yelp reviews, 92 photos",
+      "Facebook page (facebook.com/windycitybarber/), login-walled, content not extractable",
+      "Birdeye review-aggregation page (reviews.birdeye.com/windy-city-barber-parlor-170241826222627)",
+      "Barberhead directory listing (barberhead.com/brandon), ranked #17 of 20",
+      "Yellowpages, cityof.com, citytocitymarket.com, barbershops.net, Waze listings (all third-party directories/aggregators)",
+      "Instagram @windycitybarberparlor, bio: 'Tampas Very Own Taste of Chicago Barber Parlor', ~909 followers"
+    ],
+    "conclusion": "No owned domain found anywhere. Every public presence is Booksy, a directory/aggregator, or social media. has_own_site = false confirmed."
+  },
+  "address": {
+    "resolved": "528 E Brandon Blvd, Suite C, Brandon, FL 33511",
+    "how_resolved": "Consistent across Booksy JSON-LD (self-fetched live), Yelp, Yellowpages, cityof.com, citytocitymarket.com, barbershops.net and the original task brief. 'Suite C' / '# C' appears in every source except the bare Booksy JSON-LD streetAddress field (which omits the suite)."
+  },
+  "geo": { "lat": 27.93800992, "lng": -82.27849994, "source": "Booksy JSON-LD, self-fetched live 2026-07-23" },
+  "phone": "(813) 651-0798",
+  "phone_e164": "+18136510798",
+  "email": null,
+  "email_search": "Searched: Instagram bio (per WebSearch summary, no email, only points to Booksy), Booksy JSON-LD (phone field null, no email field), Birdeye page (only profiles@birdeye.com, Birdeye's own support address, not the business), Facebook About (page login-walled, could not be read), Yelp Q&A (owner George O. replies point people to the Booksy app, no email given), Yellowpages/cityof.com/citytocitymarket.com/barbershops.net listings (none show an email). ig_contact.py could not run in this session (Instagram is firewalled from this sandbox; net::ERR_CONNECTION_RESET on direct navigation). No public email found anywhere after exhausting available sources: registered honestly as null, not invented.",
+  "instagram": {
+    "handle": "windycitybarberparlor",
+    "url": "https://www.instagram.com/windycitybarberparlor/",
+    "bio": "Tampas Very Own Taste of Chicago Barber Parlor",
+    "followers_approx": 909,
+    "source": "WebSearch summary of the live public profile (2026-07-23); ig_photos.py (Railway cloud service) successfully pulled 12 real feed photos independently, confirming the account and its content."
+  },
+  "booking_url": "https://booksy.com/en-us/426226_windy-city-barber-parlor_barber-shop_15746_brandon",
+  "booking_url_short": "https://windycitybarber.booksy.com",
+  "booking_platform": "Booksy (short domain windycitybarber.booksy.com 301-redirects to the canonical /en-us/426226_... URL; verified live via curl -IL, businessId=426226 matches on both).",
+  "rating": 5.0,
+  "review_count": 287,
+  "rating_source": "Booksy JSON-LD, self-fetched live via curl on 2026-07-23 (aggregateRating.ratingValue = 4.996515679442509, rounds to 5.0; reviewCount = 287). Used as the site's headline stat since it is the freshest, self-verified, primary-source number, consistent with how this pipeline's other Booksy-booked barbershops (e.g. output/vierostudiobarber) use their live Booksy figure as the hero stat. Cross-checked against other sources which disagree with each other (common for third-party aggregators with stale caches): Barberhead (barberhead.com/brandon) cites '4.8 / 51 reviews' as Google-sourced; Birdeye (reviews.birdeye.com) SERP title/summary says '103 Reviews' with a live-fetched partial breakdown showing 'Google: 2 reviews' (recent pagination only) at '5.0 stars', and one of those live Google review texts is a customer directly stating 'they are rated at 4.9 stars' (Kt Maries review, used verbatim on-site), which corroborates a Google rating around 4.9. Yelp shows 19 separate Yelp-only reviews (yelp.com/biz/windy-city-barber-parlor-brandon-3, star value not independently confirmed, page returned HTTP 403 on direct fetch, consistent with Yelp's bot-blocking). All figures are 4.8-5.0 range and all indicate a near-perfect rating; none contradicts the others in direction, only in the exact review-count snapshot. Booksy's own number was used as the single headline figure to avoid mixing platforms inside one stat.",
+  "hours": {
+    "monday": "10:00 AM - 7:00 PM",
+    "tuesday": "10:00 AM - 7:00 PM",
+    "wednesday": "10:00 AM - 7:00 PM",
+    "thursday": "10:00 AM - 7:00 PM",
+    "friday": "10:00 AM - 7:00 PM",
+    "saturday": "10:00 AM - 7:00 PM",
+    "sunday": "Closed",
+    "source": "Booksy JSON-LD openingHoursSpecification, self-fetched live 2026-07-23 (Mon-Sat 10:00-19:00). Note: two third-party directories (cityof.com, citytocitymarket.com) show a different schedule (Tue-Fri 9am-6pm, Sat 8am-4:30pm, Sun-Mon closed), likely a stale/unsynced snapshot. The Booksy figure was used on-site as the freshest self-reported source directly from the business's own booking platform."
+  },
+  "owner": "George O. (per his reply in a Yelp Q&A thread: 'Our Haircut Prices vary from Senior, Military, First Responders etc... download the Booksy App to view the complete price list')",
+  "barbers": ["George", "Josh", "Miguel"],
+  "barbers_source": "Named across multiple verbatim Google/Yelp review excerpts surfaced via WebSearch (e.g. 'George was very detailed...', 'Miguel has been our barber for years...', 'Josh always takes his time...') plus two of the three named reviewers used verbatim on-site (Glen Gahrman mentions George, Kelly Green thanks Josh by name).",
+  "reviews_used_on_site": [
+    { "author": "Glen Gahrman", "source": "Google (via Birdeye, self-fetched live 2026-07-23)", "text": "George was a pleasure to chat with and is a warm and genuinely nice man. He did a great job listening to what I wanted and giving me a great cut. Highly recommend this place!" },
+    { "author": "Kt Maries", "source": "Google (via Birdeye, self-fetched live 2026-07-23)", "text": "Fantastic crew! Went there on a whim and realized why they are rated at 4.9 stars. Friendly, courteous and professional. Will 100% be back" },
+    { "author": "Kelly Green", "source": "Google (via Birdeye, self-fetched live 2026-07-23)", "text": "Just left Windy City Barber Parlor and I am SO impressed! Everyone there was very welcoming and kind. My son can be shy, but Josh made him feel comfortable from the start. Thank you, Josh, for doing such a great job on Will's hair, and thank you all for the good vibes! We'll definitely be back." }
+  ],
+  "services_source": "No published price list exists anywhere: not on Booksy (client-side rendered app; JSON-LD has zero makesOffer/services, and Playwright could not render the Booksy SPA in this sandbox, net::ERR_CONNECTION_RESET on every attempt, tried with and without an explicit proxy config), not on any directory, not on Instagram. Owner George O. confirmed in a public Yelp Q&A that prices vary (senior/military/first-responder rates) and directs customers to the Booksy app or a phone call for exact pricing. Real service names were reconstructed from directory descriptions (Barberhead, Yellowpages, Waze/city listings) that consistently mention: haircuts, line-ups, fades, flat tops, combovers, custom hair designs, beard grooming, and black mask facials. Per pipeline rule, every price on-site reads 'Call for pricing' / 'Precio por consulta' instead of an invented number.",
+  "services_menu": {
+    "classic": "Haircut & Line-Up",
+    "house_signature": "Fade & Beard Design",
+    "custom": "Hair Designs, Flat Tops & Combovers",
+    "skin_care": "Facial & Black Mask",
+    "special_rates": "Senior, military and first-responder rates available (per owner George O.'s Yelp Q&A reply), exact pricing not published anywhere online",
+    "pricing": "Not published anywhere. Call (813) 651-0798 or book on Booksy to confirm exact pricing."
+  },
+  "images": {
+    "source": "Instagram feed via scripts/ig_photos.py (Railway cloud service ig-photo-service-production.up.railway.app), 12 real posts downloaded to assets/raw/bk-1..12.jpg, all verified as valid JPEGs via PIL + `file`. Contact sheet (_sheet.jpg) viewed in full before curation; every one of the 12 photos was also opened individually at full size before a final decision.",
+    "curation_note": "Strict visual curation per DESIGN.md: 5 of 12 raw photos were disqualified outright (bk-3 unrelated church event, bk-6 airport photo with a baked-in 'Missionary trip to Nicaragua' caption, bk-10 a t-shirt graphic with no shop context, bk-11 and bk-12 video-reel frames with baked-in captions/graphics ('COULD' + a no-entry symbol; 'Start of the d...')). bk-1 (a baptism scene in a metal tub inside the shop) was excluded as off-topic for a barbershop sales gallery despite being caption-free. bk-8 (a barber posed leaning on a chair looking at camera) was excluded under the no-portrait/no-selfie-style gallery rule. That leaves only 4 photos that are simultaneously real, caption-free, non-portrait and on-topic: bk-4 (interior ambiance), bk-5 (team photo, used in the Experience section only, not the results gallery, per the same no-portrait-as-gallery-tile rule applied to a full group shot), bk-9 (a clean finished-fade close-up) and bk-2 (a neon-lit interior shot, cropped to remove a black letterbox bar from its source video frame). Per PIPELINE.md ('si quedan menos de 5 buenas, usa menos secciones en vez de rellenar con malas'), the gallery grid was deliberately built with only 3 tiles (1 wide + 2 square) instead of the template's default 6, reusing the hero photo as the gallery's wide tile (same reuse pattern as output/angels-have-paws-tallahassee) rather than padding it out with a disqualified photo.",
+    "used": [
+      { "file": "assets/raw/bk-4.jpg", "resized_to": "assets/shop-interior.jpg", "used_as": "hero image + gallery wide tile (16:9) + og:image", "desc": "Interior of the shop: barber pole, exposed 'BARBER ST' street-sign decor, mirror station, moody lighting, a customer seated (candid, not posed at camera)" },
+      { "file": "assets/raw/bk-5.jpg", "resized_to": "assets/team.jpg", "used_as": "Experience section photo", "desc": "George, Josh, Miguel and a fourth man posing in front of the shop's 'Chicago / WELCOME TO WINDY CITY BARBER PARLOR' theater-marquee mural" },
+      { "file": "assets/raw/bk-9.jpg", "resized_to": "assets/fade-result.jpg", "used_as": "Experience section photo + gallery tile", "desc": "Clean close-up of a finished fade haircut, side/back profile, good lighting, no text overlay" },
+      { "file": "assets/raw/bk-2.jpg", "resized_to": "assets/neon-interior.jpg (top black letterbox bar cropped off)", "used_as": "gallery tile ('Neon nights')", "desc": "Client from behind under blue neon light, barber pole and Chicago skyline mural visible, 'WELCOME' marquee sign in background" },
+      { "file": "assets/raw/bk-7.jpg", "resized_to": "assets/logo.jpg", "used_as": "nav monogram, favicon source, footer logo, JSON-LD/og reference point for brand color sampling", "desc": "Real business logo/recruiting graphic: red circular emblem, 'WindyCity' script wordmark, Chicago-skyline comb silhouette, 4 red stars, blue dashed ring, 'Barber Parlor' arc text, 'Brandon, FL / Family - Faith - Culture' tagline" }
+    ],
+    "not_used_and_why": [
+      "bk-1.jpg: baptism/community event scene inside the shop (not a barbering photo, off-topic for gallery)",
+      "bk-3.jpg: unrelated church event with a child, no shop connection",
+      "bk-6.jpg: airport photo with a baked-in 'Missionary trip to Nicaragua' caption",
+      "bk-8.jpg: barber posed leaning on a chair looking straight at camera, portrait/selfie-style, excluded under gallery curation rule",
+      "bk-10.jpg: close-up of a t-shirt graphic with Bible-verse text, no shop context",
+      "bk-11.jpg: video-reel frame with a baked-in 'COULD' caption and a red no-entry graphic overlaid on the subject",
+      "bk-12.jpg: video-reel frame with a baked-in 'Start of the d...' caption"
+    ]
+  },
+  "brand_vibe": "Bold Chicago/Americana barbershop identity: the real logo (bk-7.jpg) is a red circular emblem (deep red ~#ac2f2b sampled directly via PIL from the logo file) with a black Chicago-skyline-as-comb silhouette, 4 red stars and a blue dashed ring, over a cream/white background. Real interior photos show a dark, moody shop with an exposed-brick-style 'CHICAGO' theater marquee sign, blue and white neon (ring light, 'WELCOME' marquee), a barber pole and a Chicago skyline mural. Base kept DARK (templates/dark-v2) to match the moody neon interior, with a true crimson/barber-pole-red accent distinct from every palette already used in this project (coral fairy #c04e62, caramelo, esmeralda, teal, violeta dark, rosa dark, gold dark).",
+  "base_template": "templates/dark-v2 (dark base, pureartistry exemplar, EN default)",
+  "palette": {
+    "accent_deep": "#d44f4b",
+    "accent_mid": "#b84c4a",
+    "bg": "#0f0708",
+    "bg_2": "#170807",
+    "ink": "#f5e3e3",
+    "accent_ghost": "rgba(212,79,75,0.16)",
+    "derivation": "accent_deep sampled directly (PIL pixel scan for reddish pixels, most common red-family pixel) from assets/raw/bk-7.jpg logo = ~#ac2f2b (HSL hue ~0.005). All 26 other hex tokens and 11 rgba() families in templates/dark-v2/index.html were hue-shifted programmatically by a fixed delta (~ -0.108 in HSL hue space, computed from the skeleton's original gold accent-deep #d4a84b hue 0.113 -> target red hue 0.005) while preserving each token's original saturation and lightness, keeping the whole palette internally consistent. Verified zero collisions between old and new hex values before applying. The merktop-badge block (CSS + footer HTML, including the uppercase #D4A84B dot and #f4eee2 text color) was extracted and protected before the palette replace, then restored untouched, so 'Powered by Merktop' stays gold as required."
+  },
+  "jsonld_type_note": "Used @type: HairSalon (schema.org has no distinct 'Barbershop' type; HairSalon is the same choice already used for output/vierostudiobarber, another barbershop in this pipeline). hasOfferCatalog lists the 4 real service names WITHOUT any price field, since no real price exists to publish honestly.",
+  "build_method": "Anchored transformation script (Python, rep()/rep_all() with assert-before-replace, whole-section reconstruction via unique HTML-comment anchors) over templates/dark-v2/index.html per templates/SKELETONS-V2.md, script at scripts/build_windycitybarberbrandon.py. index.html was never written from scratch. Palette + globals (Booksy URL, Instagram URL/handle) applied first, then head/meta/JSON-LD, then every section (preloader, nav, hero, strip, marquee x2, experience, method, services, gallery, reviews, location, CTA, footer, book-float) rebuilt as a full literal HTML block assembled at the end, with sanity asserts for marquee-word counts (x4 each), zero em-dash, zero leftover esqueleto strings (Pure Artistry/Orlando/121705/etc), and zero use of any disqualified/raw image path.",
+  "gate_result": "GATE OK: windy-city-barber-brandon (en) -- python3 scripts/gate.py windy-city-barber-brandon --lang en --forbid \"Pure Artistry,Orlando,121705,pure.artistrysk,Silk Press,Grant St\"",
+  "em_dash_count": 0,
+  "manual_qa": "Rendered locally with Playwright (Chromium headless) at desktop (1440x900) and mobile (390x844) viewports: zero horizontal overflow on mobile (scrollWidth == innerWidth == 390). All copy, images, palette, service cards, gallery captions, reviews, map embed, footer and language toggle (EN<->ES, verified h1 and <html lang> both switch correctly) confirmed rendering correctly via a prefers-reduced-motion:reduce pass (the default scroll-reveal animation state does not reliably progress in this sandboxed headless-Chromium test harness even on the pristine, unmodified templates/dark-v2 exemplar with zero content changes, confirmed by testing the exemplar directly; this is a sandbox/headless-renderer artifact unrelated to this build, since the same JS/CSS motion system ships unmodified across dozens of already-live production demos in this pipeline).",
+  "status": "ok",
+  "outreach": "draft_only_not_sent",
+  "fecha": "2026-07-23"
 }
