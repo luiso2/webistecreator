@@ -1,0 +1,68 @@
+{
+  "slug": "dayi-masajes-linfaticos-spa-homestead",
+  "status": "failed",
+  "failed_reason": "Datos insuficientes tras research exhaustivo: (1) La URL de Fresha provista (/lvp/...) es una pagina 'lead' de marketing sin perfil real reclamado: NO tiene menu de servicios con precios/duraciones (solo 1 categoria generica 'Lymphatic Drainage Massage' sin precio), NO tiene reviews verbatim, y su unica imagen es un placeholder de stock ('lead-images/placeholders/massage-73.jpg', confirmado por URL y por el JSON __NEXT_DATA__). El formato /a/<slug> (perfil real de Fresha) devuelve 404, y el buscador interno de Fresha tampoco expone un perfil reclamado. (2) No se encontro Instagram del negocio: el unico candidato con nombre similar (@spaboddydayi) tiene telefono distinto (304-650-4869 vs 305-340-1137) y bio generica sin mencion de drenaje linfatico ni la direccion: se descarto por no coincidir. (3) No se encontro Facebook, Yelp ni website propio (confirmado con curl: dayimasajeslinfaticos.com y 4 variantes no resuelven, código 000). (4) Unica fuente adicional real: agregador masajes10.com (que scrapea Google Business Profile) confirma rating 5.0 y 'mas de 24 reseñas' y horarios (coincide exacto con Fresha, buena señal de autenticidad) pero SOLO dos fotos de Google: una es una vista de calle tipo Street View de baja resolucion (408x240, usable pero pobre) y la otra es una foto inapropiada (persona en ropa interior, tipo resultado de tratamiento corporal) que se descarto y elimino del disco por sensible/no profesional. Con 1 sola foto real marginal y 0 servicios con precio verificable, no se puede construir el site premium sin inventar menu ni fotos, lo cual esta prohibido por PIPELINE.md/DESIGN.md. Se sigue la regla de Fase 3 punto 5: marcar failed en vez de forzar un demo pobre.",
+  "name": "Dayi masajes linfáticos spa",
+  "address": "451 SE 8th St, Homestead, FL 33030",
+  "phone": "(305) 340-1137",
+  "rating": 5.0,
+  "review_count_approx": "24+",
+  "review_count_source": "masajes10.com (agregador que scrapea Google Business Profile; NO son quotes verbatim, son resumenes parafraseados: no se pueden usar como testimonios textuales)",
+  "hours": {
+    "monday": "9:00-20:00",
+    "tuesday": "9:00-20:00",
+    "wednesday": "9:00-20:00",
+    "thursday": "9:00-20:00",
+    "friday": "9:00-20:00",
+    "saturday": "9:00-20:00",
+    "sunday": "10:00-17:00"
+  },
+  "category": "Terapeuta de drenaje linfatico / Lymphatic Drainage Massage",
+  "language": "es",
+  "has_own_site": false,
+  "own_site_check": "dayimasajeslinfaticos.com, dayimasajeslinfaticosspa.com, dayispa.com, dayilinfatico.com, dayimasajes.com => todos NXDOMAIN (curl code 000)",
+  "instagram": null,
+  "instagram_candidate_ruled_out": {
+    "handle": "spaboddydayi",
+    "reason": "telefono no coincide (3046504869 vs 3053401137) y bio no menciona drenaje linfatico ni la direccion; no se pudo confirmar que sea el mismo negocio"
+  },
+  "facebook": null,
+  "email": null,
+  "email_search_sources_checked": ["Fresha __NEXT_DATA__ (campo email no presente en lvp)", "IG business_email (no aplica, no se confirmo cuenta)", "masajes10.com (no publica email)"],
+  "fresha_url": "https://www.fresha.com/lvp/dayi-masajes-linfaticos-spa-southeast-8th-street-homestead-Z60N30",
+  "fresha_url_type": "lvp (lead/marketing page, NO perfil reclamado; sin booking real, sin precios, sin galeria real)",
+  "fresha_a_url_checked": "https://www.fresha.com/a/dayi-masajes-linfaticos-spa-southeast-8th-street-homestead-Z60N30 => 404",
+  "services_found": [
+    {"name": "Lymphatic Drainage Massage", "price": null, "duration": null, "source": "Fresha offeredCategories.treatments (solo nombre de categoria, sin precio ni duracion)"}
+  ],
+  "photos_real_found": [
+    {
+      "file": "assets/raw/google-photo-2.jpg",
+      "source": "masajes10.com (Google Business Profile cover photo)",
+      "content": "vista de calle / fachada tipo Street View, baja resolucion (408x240)",
+      "usable": "marginal, calidad insuficiente para hero pero podria servir como foto de ubicacion",
+      "kept": true
+    },
+    {
+      "file": "DESCARTADA (borrada del disco)",
+      "source": "masajes10.com (Google Business Profile photo)",
+      "content": "persona en ropa interior, aparente foto de resultado de tratamiento corporal",
+      "usable": false,
+      "reason_discarded": "contenido sensible/inapropiado para galeria profesional, viola curaduria visual del pipeline",
+      "kept": false
+    }
+  ],
+  "photos_count_usable": 1,
+  "reviewers_named_but_no_verbatim_text": ["Dannya Pedraza", "yenisey castillo", "katherine martinez"],
+  "note_on_reviewers": "Estos nombres aparecen en el resumen parafraseado del agregador masajes10.com como personas que dejaron reseñas positivas, pero NO se encontro el texto verbatim de sus reseñas en ninguna fuente accesible. Usarlos como quotes seria inventar texto atribuido a personas reales: PROHIBIDO por el pipeline.",
+  "research_sources_checked": [
+    "Fresha lvp page (__NEXT_DATA__ completo)",
+    "Fresha /a/ URL directa (404)",
+    "Fresha buscador interno /search?q=",
+    "Fresha pagina de categoria Homestead massage (/lp/en/bt/massage/in/us-miami/homestead)",
+    "WebSearch: instagram handle, facebook, yelp, fotos, precios/menu, telefono",
+    "IG web_profile_info para candidato spaboddydayi (descartado)",
+    "masajes10.com/homestead-fl/ (agregador con datos de Google Business, 2 listados duplicados del mismo negocio)",
+    "curl DNS check de 5 variantes de dominio propio"
+  ]
+}
