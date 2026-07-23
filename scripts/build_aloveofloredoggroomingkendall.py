@@ -476,8 +476,6 @@ print("UBICACION done")
 # ---------------------------------------------------------------------------
 # 17. CTA FINAL
 # ---------------------------------------------------------------------------
-rep('style="background: linear-gradient(180deg, #241a10 0%, #1a1109 100%);"',
-    'style="background: linear-gradient(180deg, #241a10 0%, #1a1109 100%);"', n=1)  # ya coincide con la paleta nueva, sin cambios
 rep('data-es="Pestañas que florecen contigo." data-en="Lashes that bloom with you.">Lashes that bloom with you.</p>',
     'data-es="Cada baño y corte, con mucho cariño." data-en="Every groom, a labor of love.">Every groom, a labor of love.</p>')
 rep('<span data-es="Tu mirada nueva" data-en="Your new lashes">Your new lashes</span> <span class="text-shine" data-es="te está esperando" data-en="are waiting">are waiting</span>',
@@ -502,7 +500,7 @@ rep('''<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-fu
 rep('data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>',
     'data-es="Salón de grooming familiar en Kendall, Miami FL. Atención con cita previa." data-en="Family-run dog grooming salon in Kendall, Miami FL. By appointment only.">Family-run dog grooming salon in Kendall, Miami FL. By appointment only.</p>')
 rep('''<p>4580 Cresthaven Blvd, West Palm Beach, FL 33415</p>
-        <p><a href="tel:+17867902025" target="_blank" rel="noopener" class="hover:text-[#f2c98a]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>''',
+        <p><a href="tel:+17867902025" class="hover:text-[#f2c98a]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>''',
     '''<p>10864 SW 104th St, Miami, FL 33176</p>
         <p><a href="tel:+17867902025" class="hover:text-[#f2c98a]">(786) 790-2025</a></p>''')
 rep('''<p><a href="https://www.yelp.com/biz/a-labor-of-love-dog-grooming-salon-miami-3" target="_blank" rel="noopener" class="hover:text-[#f2c98a]">Instagram · @_lashbloom</a></p>''',
@@ -515,7 +513,7 @@ print("FOOTER done")
 # ---------------------------------------------------------------------------
 # 19. BOOK-FLOAT
 # ---------------------------------------------------------------------------
-rep('''<a href="tel:+17867902025" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+rep('''<a href="tel:+17867902025" class="book-float" aria-label="Reservar cita online">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fbf7ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
   </a>''',
     '''<a href="tel:+17867902025" class="book-float" aria-label="Call to book a groom">
