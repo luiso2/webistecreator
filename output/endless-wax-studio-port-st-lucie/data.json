@@ -1,0 +1,101 @@
+{
+  "slug": "endless-wax-studio-port-st-lucie",
+  "name": "Endless Wax Studio & More",
+  "niche": "full body waxing, facials, lash/brow, permanent makeup studio",
+  "city": "Port St. Lucie, FL",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_check": {
+    "domains_tried": ["endlesswax.com", "endlesswaxstudio.com", "endlesswaxstudioandmore.com", "endlesswaxpsl.com", "endlesswaxandmore.com", "irismurraybeauty.com", "endlesswaxstudiomore.com"],
+    "domains_result": "endlesswax.com is a generic GoDaddy domain-parking lander page, unrelated to this business (pre-confirmed before this session). endlesswaxstudio.com returns a TLS handshake failure (certificate has expired, verified via curl -v: 'SSL certificate problem: certificate has expired'), so it cannot be treated as a live, trustworthy site even though a stale search-engine cache shows old content mentioning a 'Spa Services & Treatments' page; an expired-cert domain is not usable as a real owned site. The remaining 5 variants (endlesswaxstudioandmore.com, endlesswaxpsl.com, endlesswaxandmore.com, irismurraybeauty.com, endlesswaxstudiomore.com) all fail to resolve/connect (curl exit 000/could not connect).",
+    "external_url_ig_bio": "None found. IG bio (per WebSearch summary of the live profile) points to texting Iris directly at (561) 667-6390, no external domain link.",
+    "presence_found": [
+      "zoca.com booking microsite (endlesswaxportstlucie.zoca.com), self-fetched live, contains the real service menu, hours, phone, mailto link and social links",
+      "Instagram @endlesswaxstudio (2,260+ followers per WebSearch), bio: '5-Star Rated & Fearlessly Gentle' / 'Brazilian Wax Specialist' / by appointment only",
+      "Facebook facebook.com/EndlessWaxStudioPSL",
+      "Yelp business page (yelp.com/biz/endless-wax-studio-port-st-lucie-3), 53 photos, 23 reviews",
+      "poyst.com Google-review mirror (poyst.com/business/endless-wax-studio-more), 5.0 / 5 reviews shown",
+      "reviewsonmywebsite.com aggregator listing",
+      "Underlying booking calendar is Acuity Scheduling (app.acuityscheduling.com/schedule/33ae60af/), embedded/linked from the zoca.com marketing page; zoca.com itself was used as the site's primary booking link per the task brief and because it is the business's chosen public booking front door"
+    ],
+    "conclusion": "No live, owned domain exists. has_own_site = false confirmed."
+  },
+  "address": {
+    "resolved": "2825 SW Brighton St, Suite C, Port St. Lucie, FL 34953",
+    "how_resolved": "Consistent across zoca.com page content and Yelp. Exact lat/long not confirmed (Google Maps JS-rendered page could not be scraped in this sandbox, and OpenStreetMap Nominatim blocked the request with 403); the Google Maps embed and 'get directions' link use the text address query instead of hardcoded coordinates, and JSON-LD omits a geo field rather than invent one."
+  },
+  "phone": "(772) 877-2191",
+  "phone_e164": "+17728772191",
+  "phone_alt_texting": "(561) 667-6390 (Iris's personal text line, published in the Instagram bio per WebSearch summary; not used as the primary site number, kept only in outreach notes)",
+  "email": "irisc.murray@gmail.com",
+  "email_search": "Found as a literal mailto:irisc.murray@gmail.com link on the zoca.com booking page (verified via curl + grep on the raw HTML, appears 5 times across the page/its embedded data, consistent with the studio owner's real name Iris Murray, not a generic platform address). This satisfies the deep-search requirement without needing Instagram bio/business_email lookups.",
+  "instagram": {
+    "handle": "endlesswaxstudio",
+    "url": "https://www.instagram.com/endlesswaxstudio/",
+    "bio": "5-Star Rated & Fearlessly Gentle / Brazilian Wax Specialist / Port St. Lucie / By appointment only / Text Iris (561) 667-6390",
+    "followers_approx": 2260,
+    "source": "WebSearch summary of the live public profile (2026-07-28). scripts/ig_photos.py was run first (python3 scripts/ig_photos.py endlesswaxstudio endless-wax-studio-port-st-lucie): the Railway IG service and the local Playwright fallback both returned 0 photos (profile served no visible content to the scraping IP). Fell back to real photos from the business's own zoca.com /gallery page instead, per the task's documented fallback order."
+  },
+  "booking_url": "https://endlesswaxportstlucie.zoca.com",
+  "booking_platform": "zoca.com marketing/booking microsite (a zoca.ai-built site with an embedded Acuity Scheduling widget, app.acuityscheduling.com/schedule/33ae60af/). Used as the site's canonical booking link per the task brief.",
+  "rating": 4.9,
+  "review_count": 376,
+  "rating_source": "Self-fetched live from endlesswaxportstlucie.zoca.com (2026-07-28): the page explicitly labels this figure 'Google Reviews / Rating: 4.9 stars | Review Count: 376 reviews', and the raw HTML independently contains the literal strings '4.9' and '376' tied to a rating widget and a '376 Reviews' label, confirming it is not a WebFetch summarization artifact. This is the business's own self-published Google figure on its booking page, not a live GBP API fetch; reported honestly as such. A secondary source (poyst.com, a Google-review mirror) shows 5.0/5 but only over 5 mirrored reviews, a much smaller and clearly non-comprehensive sample, so the 4.9/376 zoca.com figure was used as the site's headline stat.",
+  "hours": {
+    "conflict_note": "Three independent real sources disagree on exact daily hours: (1) zoca.com page text (Mon 10:30am-4:30pm, Tue 10:30am-7pm, Wed 10:30am-5pm, Thu/Fri 8:30am-7pm, Sat 8:30am-5pm, Sun closed), (2) a physical door-sign hours placard visible in a curated storefront photo (Mon 9-3, Tue 11-6, Wed 10-5, Thu 8:30-6, Fri 9-6, Sat 9-5, Sun closed), (3) a WebSearch snippet aggregator (Mon-Tue 10-4, Wed 10-5). All three agree only on: open Monday through Saturday, closed Sunday. Per DESIGN.md's 'si un dato no se encontro, omitir la fila, no rellenar' rule (applied here to conflicting, not missing, data): the site does NOT publish a specific hour grid to avoid stating a wrong time to a visitor. It states 'By appointment, Monday through Saturday, call or text to confirm today's availability' instead, and JSON-LD omits openingHoursSpecification entirely rather than encode any of the three conflicting versions."
+  },
+  "owner": "Iris Murray, owner and licensed esthetician, 25+ years in the spa and medical beauty industry, certified permanent makeup instructor, bilingual (Spanish). Team also includes Llycsela (waxing, named in a verbatim review) and Carol (facials, named in a verbatim review).",
+  "reviews_used_on_site": [
+    { "author": "Juliette Gardner", "source": "Google (mirrored live via poyst.com, self-fetched 2026-07-28)", "text": "I've been coming to Iris for 9 years now and she is Always friendly! Always on time! Studio is beautiful and pristine!" },
+    { "author": "Karen Sanchez", "source": "Google (mirrored live via poyst.com, self-fetched 2026-07-28)", "text": "I've been going to Llycsela for waxing services and she is seriously the best...Every appointment is professional, comfortable, and efficient." },
+    { "author": "Barbara Irwin", "source": "Google (mirrored live via poyst.com, self-fetched 2026-07-28)", "text": "Had a wonderful facial with Carol! Felt like a million bucks. Came back on the weekend to talk to Iris about permanent makeup for brows, and she was so accommodating." }
+  ],
+  "reviews_found_not_used": [
+    { "author": "Falon Timmons", "note": "5 stars, facial review, not used on-site to keep the reviews grid at 3 matching the template pattern; kept here as backup." },
+    { "author": "Alternative Lodging Maintenance & Concierge", "note": "5 stars, business-account name rather than a personal reviewer name, excluded from on-site use for that reason." }
+  ],
+  "services_source": "Full menu with exact names, prices and durations extracted directly from the zoca.com /services page HTML (self-fetched live 2026-07-28, curl + WebFetch structured extraction per category), which lists 10 real service categories: Women's Waxing, Men's Waxing, Additional Waxing Services, Lash Extensions & Brow Shaping, Facials Treatments, Permanent Make Up Services, Skin Tag Treatment, Skin Treatments, Spa & Detox, Consultation. Approximately 67 individual priced line items across those categories. 'Legs Exfoliation Scrub' and 'Consultation' were the only two line items with no published price and were omitted from the on-site menu per the strict-truth rule (never invent a price).",
+  "services_menu_summary": "4 highlight cards (Signature Hydra Facial $75/1hr, Brazilian Waxing $65/30min as house signature, Eyelashes Extensions Classic Natural $119/1h40, Permanent Make-Up Eyeliner or Eyebrows $400/2h) plus a full 'menu completo' grid of 6 category blocks (Women's Waxing, Men's Waxing, Lash Extensions & Brow Shaping, Facials Treatments, Skin Treatments [merged with Skin Tag Treatment], Permanent Makeup & More [merged PMU + Spa & Detox + Additional Waxing + the priced Student Brazilian item]), each showing real service names and prices, truncated with an honest 'plus N more services' note where a category has more real items than fit visibly, never collapsed behind a details/accordion control.",
+  "images": {
+    "source": "endlesswaxportstlucie.zoca.com/gallery page, self-fetched live 2026-07-28: 84 unique real business photos found (ik.imagekit.io CDN URLs), 45 downloaded at 900px width before a curl timeout truncated the batch (all 45 verified valid via PIL). scripts/ig_photos.py returned 0 usable photos (see instagram field above), so this was the working fallback per the task's documented photo-source order.",
+    "curation_note": "Full visual curation via a 45-photo contact sheet (_sheet.jpg) viewed in the harness, then individual full-size review of every borderline candidate before a final decision. DISQUALIFIED categories found and excluded: screenshots of text messages/website-builder admin panels/ad graphics with baked-in text (about 12 files); a stock/ad-style spa image and a stock heart-shaped-rocks beach photo that are not real studio photos; a Valentine's Day promo graphic and a brow-transformation before/after promo graphic (both text-overlay marketing assets, not raw photography); a mirror-selfie leg photo with a visible 'Crop' UI button baked into the image; two close-up neck-waxing photos showing visible post-wax redness; a PMU brow close-up showing one eyebrow finished and one only outlined (asymmetric, not a clean finished result); an eyelash extension macro shot with a closed eye AND visibly irritated/reddened skin next to a mole, disqualified under the 'closed eyes mid-procedure / irritated skin' rule; an ear-hair-waxing close-up (unappealing body-part macro); a two-person portrait posed next to a laser-treatment rollup banner (staff portrait, excluded from gallery per the no-staff-portrait-as-gallery-tile rule); an owner-at-the-door full-body storefront photo (kept out of the gallery for the same portrait reason, even though it usefully cross-verified the phone number, address and hours placard during research); a neighboring barbershop's storefront in the same plaza (wrong business); a neighboring business's 'Grand Opening' storefront (wrong business). Only 7 photos passed every check: no faces mid-procedure, no closed eyes, no irritated skin, no text overlays, no portraits-as-tiles, no wrong-business shots, all genuinely the real studio.",
+    "used": [
+      { "file": "gal-41.jpg (from ik.imagekit.io/vqkmp8kgs/prod/... storefront frame)", "resized_to": "assets/hero-storefront.jpg", "used_as": "hero image + og:image", "desc": "Clean straight-on storefront photo showing 'A FULL BODY WAXING STUDIO', 'BROWS LASHES PMU', 'SKINCARE & FACIALS', unit number 2825 and the OPEN sign" },
+      { "file": "gal-02.jpg", "resized_to": "assets/experience-room.jpg", "used_as": "Experience section photo", "desc": "Treatment room, black/white decor, massage table, wall art" },
+      { "file": "gal-11.jpg", "resized_to": "assets/experience-lounge.jpg", "used_as": "Experience section photo", "desc": "Waiting lounge with chairs, wall-mounted TV and framed licenses" },
+      { "file": "gal-28.jpg", "resized_to": "assets/gallery-sign.jpg", "used_as": "gallery wide tile (16:9)", "desc": "Backlit circular 'Endless Wax Studio & More' logo sign on a bamboo-panel wall" },
+      { "file": "gal-35.jpg", "resized_to": "assets/gallery-hallway.jpg", "used_as": "gallery tile", "desc": "Interior hallway with framed licenses, decor and the logo wall visible" },
+      { "file": "gal-42.jpg", "resized_to": "assets/gallery-reception.jpg", "used_as": "gallery tile", "desc": "Front desk / reception counter detail with retail shelf" },
+      { "file": "gal-09.jpg", "resized_to": "assets/gallery-storefront.jpg", "used_as": "gallery tile", "desc": "Angled storefront view showing signage and the parking lot" },
+      { "file": "gal-28.jpg (cropped tighter)", "resized_to": "assets/logo.jpg", "used_as": "nav/footer/favicon logo mark", "desc": "Tight crop of the real backlit circular logo emblem, used as the small round brand mark" }
+    ],
+    "not_used_examples": [
+      "gal-01.jpg: a stock cozy-cabin-lakeside photo (appears to be a screen/wallpaper capture), not a real studio photo",
+      "gal-43.jpg: eyelash close-up with a closed eye and visibly irritated skin next to a mole, disqualified",
+      "gal-12.jpg: PMU brow close-up with one eyebrow finished and one only outlined, not a clean finished result",
+      "gal-08.jpg: owner Iris at the storefront door (useful to verify hours/phone/address during research, excluded from the gallery as a staff portrait)",
+      "gal-21.jpg / gal-26.jpg: men's neck-waxing close-ups with visible post-wax redness",
+      "gal-40.jpg / gal-14.jpg: neighboring businesses' storefronts in the same plaza, wrong business",
+      "gal-19.png / gal-25.png / gal-49.png / gal-52.png / gal-53.png: marketing graphics with baked-in text/promo copy, not raw photography"
+    ]
+  },
+  "brand_vibe": "Quiet-luxury waxing/skincare studio: real interiors show sage-green accent walls, black-and-white minimalist treatment rooms, bamboo-panel decor and a warm backlit gold circular logo sign. Base kept LIGHT (templates/light-v2) to match the bright, airy real interiors, with a warm brass/champagne-gold accent distinct from every palette already used in this project (coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark original) and tied directly to the studio's real gold signage and sage walls.",
+  "base_template": "templates/light-v2 (light base, lashbloom exemplar, EN default)",
+  "palette": {
+    "accent_deep": "#938b57",
+    "accent_mid": "#b9b285",
+    "bg": "#f9f8f3",
+    "bg_2": "#f0eee3",
+    "ink": "#302d25",
+    "accent_ghost": "rgba(147,139,87,0.14)",
+    "derivation": "Programmatic HSL hue-shift of the light-v2 skeleton's entire plum-pink palette (26 hex tokens + 10 rgba() families), computed with Python colorsys: delta +80deg hue, saturation x0.70, lightness unchanged per token, giving a warm muted brass/champagne-gold family. The merktop-badge block (CSS + footer HTML, including the uppercase #D4A84B dot and #f4eee2 text color) was extracted and protected before the palette replace, then restored untouched, so 'Powered by Merktop' stays gold as required."
+  },
+  "jsonld_type_note": "Used @type: BeautySalon (fits a multi-service waxing/facial/lash/PMU studio better than a narrower type). hasOfferCatalog lists 6 real, priced services spanning waxing, facials and PMU. openingHoursSpecification and geo were both omitted rather than encode unverified/conflicting data (see hours.conflict_note and address.how_resolved above).",
+  "build_method": "Anchored transformation script (Python, rep()/rep_all() with assert-before-replace, whole-section reconstruction via unique HTML-comment anchors) over templates/light-v2/index.html per templates/SKELETONS-V2.md, script at scripts/build_endlesswaxstudioportstlucie.py. index.html was never written from scratch. Palette + globals (booking URL, Instagram URL/handle) applied first, then head/meta/JSON-LD, then the SERVICIOS section (4 highlight cards + a 6-block grouped full menu, via regex block replacement) in place, THEN the file was segmented by HTML-comment anchors (on the already-mutated string, to avoid stale-index bugs) and every remaining section (preloader, nav, hero, strip, marquee x2, experience, method, gallery, reviews, location, CTA, footer, book-float) was rebuilt as a full literal HTML block and assembled at the end, with sanity asserts for marquee-word counts (x4 each), zero em-dash, zero leftover esqueleto strings (Lash Bloom/Yesi/West Palm/Cresthaven/519855/Booksy) and zero use of any disqualified/uncurated raw image path.",
+  "gate_result": "GATE OK: endless-wax-studio-port-st-lucie (en) -- python3 scripts/gate.py endless-wax-studio-port-st-lucie --lang en --forbid \"Lash Bloom,Yesi,West Palm,Cresthaven,519855,Booksy,_lashbloom\"",
+  "em_dash_count": 0,
+  "manual_qa": "Rendered locally with Playwright (Chromium headless) at desktop (1440x900) and mobile (390x844) viewports: zero horizontal overflow on mobile, no <details>/accordion anywhere, all 8 curated real photos load and decode correctly, palette/contrast/copy/service grid/gallery captions/reviews/map embed/footer/badge all confirmed visually correct via a prefers-reduced-motion:reduce pass. Note: the default scroll-reveal (.reveal/.img-reveal + IntersectionObserver) animation state does not reliably progress to its 'revealed' state in this sandboxed headless-Chromium test harness, leaving images blank until reduced-motion is emulated; this was confirmed to be a pre-existing characteristic of the frozen, unmodified templates/light-v2 skeleton itself (reproduced identically on an already-shipped, unrelated site, output/305esthetics, built from the same skeleton family), not something introduced by this build, and out of scope to fix here since it would require editing the shared motion JS used by dozens of already-live production demos.",
+  "status": "ok",
+  "outreach": "draft_only_not_sent",
+  "fecha": "2026-07-28"
+}
