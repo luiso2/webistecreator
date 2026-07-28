@@ -1,0 +1,103 @@
+{
+ "booksy_url": "https://booksy.com/en-us/879004_isa-nails_nail-salon_15645_hollywood",
+ "booksy_url_venue": "https://booksy.com/en-us/879004_isa-nails_nail-salon_15645_hollywood",
+ "slug": "isa-nails-hollywood",
+ "name": "Isa Nails",
+ "brand_line": "Isa Nails",
+ "owner": "Isabel Garcia",
+ "schema_type": "NailSalon",
+ "description": "License Manicurist | Sterile tools. Russian Manicure, Russian Pedicure, Apres, Dual form. No Acrilico.",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "3251 Hollywood Blvd, Suite 447",
+  "addressLocality": "Hollywood",
+  "addressRegion": "FL",
+  "postalCode": "33021",
+  "addressCountry": "US"
+ },
+ "address_note": "El campo location.address del payload de Booksy trae un texto mezclado: '3251 Hollywood Blvd, Suite 447 Hollywood, FL 33021, Suite (emoji)132(emoji) (Next to the Publix Park on the N)'. Una foto real del directorio de suites del edificio (bizphoto-2, no usada en el site por tener texto superpuesto) muestra un letrero fisico que dice 'Salon Suite 132' con las tarjetas de presentacion de iSaNAILS. Se uso Suite 447 como direccion oficial por ser el dato estructurado que Booksy expone como direccion del negocio (y coincide con el numero de suite indicado en el brief), documentando aqui la discrepancia con el letrero fisico (132) por transparencia; podria tratarse de una reubicacion dentro del mismo edificio de salon suites.",
+ "geo": {
+  "@type": "GeoCoordinates",
+  "latitude": 26.01067,
+  "longitude": -80.16025
+ },
+ "rating": 4.9,
+ "reviews_count": 68,
+ "hours": [
+  { "dayOfWeek": 0, "openFrom": "10:00", "openTill": "16:00" },
+  { "dayOfWeek": 1, "openFrom": "08:00", "openTill": "19:00" },
+  { "dayOfWeek": 2, "openFrom": "08:00", "openTill": "19:00" },
+  { "dayOfWeek": 3, "openFrom": "08:00", "openTill": "19:00" },
+  { "dayOfWeek": 4, "openFrom": "08:00", "openTill": "19:00" },
+  { "dayOfWeek": 5, "openFrom": "08:00", "openTill": "19:00" },
+  { "dayOfWeek": 6, "openFrom": "09:00", "openTill": "19:00" }
+ ],
+ "hours_note": "El payload tambien expone openHoursCustomizations con un descanso diario recurrente (aprox. 1:00pm a 1:20pm) dentro del horario de lunes a sabado; se omitio del site por ser un detalle operativo menor, el horario general si es exacto del payload.",
+ "staff": [
+  {
+   "id": 835371,
+   "name": "Isabel Garcia",
+   "type": "S",
+   "description": null,
+   "photoUrl": null,
+   "staffUserExists": true,
+   "bookmarked": false
+  }
+ ],
+ "same_as": [],
+ "instagram": "isanailsig",
+ "instagram_source": "confirmado via el campo instagramLink del payload de Booksy del venue 879004 (https://www.instagram.com/isanailsig/)",
+ "instagram_scrape_status": "bloqueado en este entorno (HTTP 400 / esquema eliminado en la API web_profile_info de Instagram); no se pudieron extraer fotos ni bio adicionales del perfil de IG, solo el handle confirmado por Booksy",
+ "website_candidates": ["isanails.com (pertenece a un salon de unas NO relacionado en Rauenberg/Wiesloch, Alemania: 'Nagel- und Fusspflege in Rauenberg, Wiesloch')", "isanailshollywood.com (no resuelve, HTTP 000)", "isanailsfl.com (no resuelve)", "isanailshollywoodfl.com (no resuelve)", "isanailsig.com (no resuelve)", "isabelgarcianails.com (no resuelve)", "isa-nails.com (no resuelve)", "isanailssalon.com (resuelve pero es un sitio de apuestas/entretenimiento en chino, dominio no relacionado)"],
+ "has_own_site": false,
+ "own_site_check": "isanails.com pertenece a un negocio distinto en Alemania (confirmado via curl + titulo de pagina). isanailssalon.com es un dominio no relacionado (contenido en chino, apuestas deportivas). Las demas variantes (isanailshollywood.com, isanailsfl.com, isanailshollywoodfl.com, isanailsig.com, isabelgarcianails.com, isa-nails.com) no resuelven. Booksy payload website=null.",
+ "phone": null,
+ "phone_source": "No publico. Booksy no expone el telefono real del negocio en el payload (el numero que aparece en el HTML, +1 206-735-3553, es un numero generico de la plataforma Booksy, no del negocio). No se encontro telefono en Google, Fresha ni otros directorios revisados.",
+ "email": null,
+ "email_search_notes": "Sin campo email en el payload de Booksy (business ni contractor). Sin Facebook encontrado para el negocio. Bio de Instagram inaccesible por bloqueo de API en este entorno (handle SI confirmado via Booksy, contenido no). Sin website propio del que extraer dominio de correo. No encontrado tras busqueda profunda.",
+ "amenities": [
+  { "key": "parking", "label": "Parking space" },
+  { "key": "credit_cards", "label": "Credit cards accepted" },
+  { "key": "wheelchair_access", "label": "Accessible for people with disabilities" },
+  { "key": "wifi", "label": "Wi-Fi" }
+ ],
+ "services": [
+  { "category": "General", "name": "French", "variants": [{ "label": "", "price": 15, "duration": 30 }] },
+  { "category": "General", "name": "Product Removal", "variants": [{ "label": "", "price": 10, "duration": 20 }] },
+  { "category": "General", "name": "Simple Nail art", "variants": [{ "label": "", "price": 10, "duration": 20 }] },
+  { "category": "General", "name": "Advanced Nail Art", "variants": [{ "label": "", "price": 20, "duration": 30 }] },
+  { "category": "General", "name": "Chrome", "variants": [{ "label": "", "price": 25, "duration": 30 }] },
+  { "category": "General", "name": "Cat Eye Effect", "variants": [{ "label": "", "price": 20, "duration": 20 }] },
+  { "category": "General", "name": "Ombre Design", "variants": [{ "label": "", "price": 30, "duration": 30 }] },
+  { "category": "Geles", "name": "Dry Russian Manicure+Builder", "variants": [{ "label": "", "price": 80, "duration": 120 }] },
+  { "category": "Geles", "name": "Builder Refill + Dry Russian Manicure", "variants": [{ "label": "", "price": 60, "duration": 105 }] },
+  { "category": "Geles", "name": "Dual Form Extensions", "variants": [{ "label": "", "price": 100, "duration": 130 }] },
+  { "category": "Geles", "name": "Traditional Gel Manicure", "variants": [{ "label": "", "price": 45, "duration": 60 }] },
+  { "category": "Geles", "name": "Dry Russian Pedicure with Gel polish", "variants": [{ "label": "", "price": 60, "duration": 90 }] },
+  { "category": "Traditional Polish", "name": "Traditional Polish Pedicure", "variants": [{ "label": "", "price": 35, "duration": 60 }] },
+  { "category": "Traditional Polish", "name": "Traditional Polish Manicure", "variants": [{ "label": "", "price": 35, "duration": 40 }] },
+  { "category": "Apres", "name": "Apres", "variants": [{ "label": "", "price": 75, "duration": 75 }] },
+  { "category": "For Him", "name": "Russian Manicure for Men (No Gel)", "variants": [{ "label": "", "price": 30, "duration": 40 }] },
+  { "category": "For Him", "name": "He Russian Pedicure", "variants": [{ "label": "", "price": 40, "duration": 60 }] }
+ ],
+ "reviews": [
+  { "author": "Sara B…", "body": "Great work and very nice", "rating": 5 },
+  { "author": "Brianna D…", "body": "Amazing and clean work 🙏🏽", "rating": 5 },
+  { "author": "Natasha N…", "body": "100% Recomendada. Isa es ese espacio donde te sientes como una amiga de toda la vida mientras cuida de tus unas. Es apasionada de su trabajo y cuida de tus unas de manera como ninguna otra!", "rating": 5 },
+  { "author": "Elani S…", "body": "Best pedicure i've ever gotten. Great attention to detail 10/10", "rating": 5 },
+  { "author": "Lourdes m…", "body": "Great job ! This pic is two weeks", "rating": 5 },
+  { "author": "Mari R…", "body": "Me encanta el servicio que ofrece Isa y su profesionalismo. Siempre brinda una atencion increible, es puntual y utiliza equipos actualizados y de excelente calidad. Se nota el cuidado y la dedicacion en cada detalle. Totalmente recomendada!", "rating": 5 },
+  { "author": "", "body": "Firs time with Isa nails and I'll definitely be new loyal customer! I'm particular with my Russian pedicures and not everyone that offers the service does a good job but Isa does an amazing job, shape & gel polish on point!", "rating": 5 },
+  { "author": "Brandy T…", "body": "Love it! She has a new client. Location, hospitality, and skills are amazing!", "rating": 5 },
+  { "author": "Margarita M…", "body": "Isa is wonderful!", "rating": 5 },
+  { "author": "Alexa", "body": "Isa es excelente ! La recomiendo 100%!!!!!", "rating": 5 }
+ ],
+ "named_reviews": [
+  { "author": "Natasha N…", "body": "100% Recomendada. Isa es ese espacio donde te sientes como una amiga de toda la vida mientras cuida de tus unas. Es apasionada de su trabajo y cuida de tus unas de manera como ninguna otra!", "rating": 5 },
+  { "author": "Elani S…", "body": "Best pedicure i've ever gotten. Great attention to detail 10/10", "rating": 5 },
+  { "author": "Mari R…", "body": "Me encanta el servicio que ofrece Isa y su profesionalismo. Siempre brinda una atencion increible, es puntual y utiliza equipos actualizados y de excelente calidad. Se nota el cuidado y la dedicacion en cada detalle. Totalmente recomendada!", "rating": 5 }
+ ],
+ "language": "en",
+ "language_note": "Descripcion oficial del negocio en Booksy esta en ingles ('License Manicurist | Sterile tools...'). De las ultimas 10 reseñas del payload, 7 estan en ingles y 3 en espanol (Natasha N., Mari R., Alexa), reflejando el publico bilingue de Hollywood FL. Idioma principal elegido: en (mayoria de reviews y la descripcion propia del negocio). No se afirma explicitamente 'se habla espanol' en el site por no haber una declaracion oficial del negocio en ese sentido, solo se refleja el hecho verificable de que las reseñas estan en ambos idiomas.",
+ "brand_vibe": "Estudio dentro de un edificio de salon suites en Hollywood Blvd. Manicures reales muestran una paleta calida: verde oliva, amarillo pastel/mantequilla, nude/blush, chrome dorado, cat eye bronce-dorado y acentos en negro. Paleta derivada 'isa': dorado antiguo/cobre (accent) sobre base crema calida, banda oscura en marron-espresso casi negro (NO reutiliza exactamente mizu/amani/mare/alea/pausa ni el azul empolvado de sunny-nails-north-miami-beach, mismo nicho)."
+}
