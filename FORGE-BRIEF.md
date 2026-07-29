@@ -62,6 +62,37 @@ ya los trae: construir DIRECTO desde data.json.
 5 fotos reales utilizables (leccion Paintbox). `web_profile_info` esta ROTO (400): no intentarlo.
 Time-box total del research: ~3 min. La velocidad recorta el research, JAMAS la calidad del build.
 
+## 0.b Variante adaptada: negocios fuera del formato salon/spa (2026-07-29)
+
+El esqueleto nacio para salon/spa, pero el sistema visual sirve para cualquier negocio local.
+Un negocio SIN citas reservables (exportacion de vehiculos, detailing, landscaping, cleaning,
+handyman, food truck, fotografia) NO se descarta por eso: se construye adaptando las secciones
+cuyo dato no existe.
+
+**La linea que no se cruza**: OMITIR una seccion porque el negocio no publica ese dato esta
+BIEN. RELLENARLA con datos plausibles esta PROHIBIDO (regla dura #1). Cada objecion clasica
+tiene su adaptacion ya probada:
+
+| No hay | NO hacer | SI hacer |
+|--------|----------|----------|
+| Resenas verificables | inventar quotes o rating | `social_proof.modo: "razones"`: 3 cards de especialidades reales derivadas del about |
+| Precios publicados | poner precios "desde $X" | cards sin `precio` + nota "cada operacion se cotiza, escribenos" |
+| Direccion publica | mapa de la ciudad como si fuera su local | omitir `contacto.mapa` y poner `contacto.imagen` (foto real) |
+| Booking online | inventar un flujo de reserva | CTA al canal real (WhatsApp, DM, telefono) |
+| Menu por sesion | fabricar servicios | cards = lo que el negocio SI dice que hace, con sus palabras |
+
+**Cuando SI marcar `failed`** (faltan los minimos, no el formato):
+- menos de 5 fotos reales y propias del negocio (stock, graficos con texto o fotos de otras
+  cuentas NO cuentan), o
+- ningun canal de contacto publico, o
+- no se puede describir a que se dedica sin inventarlo (bio vacia y feed ambiguo), o
+- es ecommerce/mayorista puro donde el sitio tendria que ser un catalogo con carrito.
+
+**Precedente**: `output/prestigeautocargo/` (exportacion de vehiculos, Miami). La cola lo habia
+marcado `failed` el 2026-07-25 por "no encaja en el formato", con el argumento de que construirlo
+obligaria a fabricar servicios, precios y resenas. La adaptacion resuelve justo eso: se
+construyo sin fabricar ninguno de los tres. Su `content.json` es la referencia de esta variante.
+
 ## 1. Checks criticos de research
 - **Website propio** (leccion MaRe): probar `<negocio>.com`, dominio del email, links de bio. Si existe: `has_own_site: true` y el angulo cambia a "propuesta de rediseño" (NUNCA afirmar "no tienen website"). Subdominios de plataforma (square.site, glossgenius.com) NO cuentan como website propio.
 - NUNCA inventar servicios, precios, duraciones ni resenas. Si tras busqueda exhaustiva no hay UN dato verificable de precios ni resenas (solo feed de IG y citas por DM): marcar `failed` con motivo detallado (precedente @salaslash_ 2026-07-18), no fabricar.
@@ -69,7 +100,8 @@ Time-box total del research: ~3 min. La velocidad recorta el research, JAMAS la 
 ## 2. Build (derivacion anclada desde esqueleto v2: el metodo probado en batches 1-3)
 - EMPEZAR COPIANDO `templates/dark-v2/index.html` o `templates/light-v2/index.html` segun el brand real; derivarlo con UN script Python de transformacion anclada. Escribir HTML desde cero o editar a mano esta PROHIBIDO. **La receta completa (orden de operaciones, regexes de secciones, proteccion del badge, cambio de idioma, gotchas) esta en `templates/SKELETONS-V2.md`: leerla ANTES de construir.**
 - Fotos: el dossier del paso 1 ya descargo la galeria validada y genero `output/<slug>/_sheet.jpg`. LEER el sheet (curacion VISUAL obligatoria) antes de elegir hero/experiencia/galeria. Si el sheet muestra stock o graficos con texto: rescatar fotos reales de IG (regla de rescate de la seccion 0) o marcar failed.
-- Estructura fija heredada del esqueleto: nav glass, hero con rating real, strip con contadores, experiencia, metodo 4 pasos, servicios en 4 cards (card 2 destacada), galeria 1 ancho + 5 tiles con tile-cap, opiniones VERBATIM, ubicacion con mapa embed, CTA final, footer "Powered by Merktop" -> https://merktop.com.
+- Estructura heredada del esqueleto: nav glass, hero con rating real, strip con contadores, experiencia, metodo 4 pasos, servicios en 4 cards (card 2 destacada), galeria 1 ancho + 5 tiles con tile-cap, opiniones VERBATIM, ubicacion con mapa embed, CTA final, footer "Powered by Merktop" -> https://merktop.com.
+- Lo FIJO es el sistema visual (motion, tipografia, glass, paleta, markers). Las secciones cuyo dato el negocio no publica se ADAPTAN, nunca se rellenan: ver "Variante adaptada".
 - Copiar `templates/assets/tailwind.js` a `output/<slug>/assets/tailwind.js` y `templates/.assetsignore-template` a `output/<slug>/.assetsignore`.
 - **Bilingue obligatorio**: `data-es`/`data-en` en todo texto traducible + toggle ES|EN en nav + localStorage + navigator.language. `lang` del html = idioma principal. NO se traducen: nombres exactos de servicios, precios, nombre del negocio, quotes de resenas.
 - **Performance (leccion bety: congelaba el navegador)**: imagenes de galeria/hero max 1000-1300px (sips -Z), `will-change` SOLO en 2-4 elementos que animan de verdad, videos `preload="metadata"`, max 2-3 animaciones infinitas de imagenes grandes simultaneas.
@@ -84,7 +116,7 @@ Time-box total del research: ~3 min. La velocidad recorta el research, JAMAS la 
 5. **Contraste**: ink oscuro legible, text-shine en rangos profundos, banda final oscura. Nada lavado.
 6. **Correr `python3 scripts/gate.py <slug> --lang <es|en> --forbid "<leftovers del esqueleto>"` y NO avanzar hasta GATE OK.** El script verifica em-dash 0, assets existentes que decodifican, JSON-LD valido, todos los markers v2+v3, applyLang/<html lang> coherentes y leftovers. En --forbid van SIEMPRE: nombre/artista/ciudad/calle/booksy-id del esqueleto y 2-3 palabras del nicho anterior (adaptar tile-caps a los servicios reales y el foot-mark al nombre de la marca).
 7. Responsive: sin overflow horizontal a 390px (sin widths fijos).
-8. Si el negocio no encaja en el formato (ecommerce, mayorista, sin servicios reservables): `failed` con motivo, no forzar un demo pobre.
+8. Si el negocio no encaja en el formato de salon/spa, NO es motivo automatico de `failed`: aplicar la variante adaptada (seccion 0.b). `failed` se reserva para cuando faltan los datos MINIMOS (menos de 5 fotos reales propias, ningun canal de contacto publico, o no poder describir el servicio sin inventarlo).
 
 ## 4. Registro, panel y reporte
 - `data/processed.json`: {slug, name, city, ig, url_demo: https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/, has_own_site, email, phone, outreach: pending_manual|draft, status: staging, language, dm_message, thumb, fecha}. `thumb` = URL ABSOLUTA de la og:image del site (url_demo + ruta de la imagen del og:image del index.html): el panel la usa como miniatura de la tarjeta. NUNCA reprocesar un slug registrado.
