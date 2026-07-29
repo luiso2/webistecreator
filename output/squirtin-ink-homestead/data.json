@@ -1,0 +1,102 @@
+{
+  "slug": "squirtin-ink-homestead",
+  "name": "Squirtin' Ink",
+  "name_full_variant": "Squirtin' Ink Tattoo Studio",
+  "niche": "tattoo studio",
+  "schema_type": "TattooParlor",
+  "language": "en",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 NE 3rd St, Suite 50",
+    "addressLocality": "Florida City",
+    "addressRegion": "FL",
+    "postalCode": "33034",
+    "addressCountry": "US"
+  },
+  "city_note": "Listed interchangeably as 'Homestead' and 'Florida City' across sources (Yelp uses 'Homestead' in its business-name slug and address city field on one listing, 'Florida City' on another; aggregators mostly use Florida City, FL 33034, which is the address's actual postal city). Site copy uses both ('Florida City / Homestead, FL') to match how the business is found online.",
+  "phone": "+17866012316",
+  "phone_display": "(786) 601-2316",
+  "email": null,
+  "email_note": "No public email found. Checked: Instagram bio and search-indexed bio text for @squirtin_ink, Facebook page (facebook.com/pages/Squirtin-Ink-Tattoo-Studio/111196508034851, not directly fetchable via curl with facebookexternalhit UA or WebFetch, both attempts returned no usable About/contact content), squirtinink.com (parked GoDaddy page, only a generic newsletter signup form, no business email), bestprosintown.com, tattooshoplocator.com, wanderboat.ai, roadtrippers listings, inked4lifetattoos.com/miami-squirtin-ink (third-party collective marketing page, no email listed). Left null per no-invention rule.",
+  "hours": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "12:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday","Sunday"], "opens": "12:00", "closes": "22:00" }
+  ],
+  "hours_note": "Closed Mondays; Tuesday-Thursday 12pm-8pm; Friday-Sunday 12pm-10pm. Cross-verified consistently across roadtrippers.com (two separate listing pages: 'squirtin-ink' and 'squirtin-ink-tattoo-studio'), tattooshoplocator.com and general web search summaries. Not from a first-party bookable page (no own website or booking platform), so treated as reliable via cross-source agreement but not first-party-authoritative.",
+  "rating": 4.8,
+  "review_count": 161,
+  "rating_source": "Cross-aggregator consistency, NOT a single first-party citation. bestprosintown.com/fl/florida-city/squirtin-ink-/ and tattooshoplocator.com/shop/squirtin-ink-florida-city-florida both independently show '4.8 stars / 161 reviews' with no breakdown of which platform (Google, Yelp, etc.) the figure aggregates. Ran 3 additional searches specifically trying to find a more direct/first-party source (searched for a Birdeye page, searched 'Squirtin Ink tattoo Homestead Google reviews', searched 'Squirtin Ink birdeye.com reviews'): no Birdeye profile exists for this business, and no search snippet surfaced a Google Business Profile figure shown directly (e.g. a Google Maps snippet or Google-labeled star count). The 4.8/161 figure is used as the best available number given it independently agrees across two unrelated business-directory aggregators, but this is a materially weaker source than a direct Google/Yelp citation. No differing figure was found, so no change was made from the number provided in the task brief.",
+  "other_platform_note": "Individual Yelp listings show much lower counts for the same address/phone (yelp.com/biz/squirtin-ink-homestead page metadata referenced only 1 fetchable review; a Roadtrippers page sourcing Yelp content shows 5 Yelp reviews with 3 shown in full). These are Yelp-only tallies, clearly a subset, not a contradiction of the 161 cross-platform total, just evidence Yelp alone carries far fewer of the 161.",
+  "has_own_site": false,
+  "own_site_check": "squirtinink.com resolves and returns a live page, but it is a GoDaddy Website Builder placeholder: the page's only content is a repeated 'Launching Soon' heading, a generic email signup form ('Sign up for our email list for updates, promotions, and more'), and a 'Powered by GoDaddy' footer. No business name, services, photos, or contact info beyond the form. Re-confirmed via a fresh WebFetch on 2026-07-29 during this build. Treated as NOT a functional website; has_own_site is false.",
+  "instagram": "https://www.instagram.com/squirtin_ink/",
+  "instagram_note": "@squirtin_ink, 7,812 followers, 2,101 posts (per task brief and corroborating search results, one search snapshot showed 2,619 following as a separate figure). Active, real account posting tattoo/piercing work, reels and shop updates. Individual artist handles seen tagged in posts: @chino_inks (matches reviewer-named artist 'Chino') and a 'chicom4l' handle suggesting an M4L ('Marked 4 Life' / Inked 4 Life collective) affiliation; not confirmed as an official brand claim, so not used as a marketing claim on the site.",
+  "facebook": "https://www.facebook.com/pages/Squirtin-Ink-Tattoo-Studio/111196508034851",
+  "facebook_note": "URL provided in task brief. Could not retrieve page content: both a direct WebFetch and a curl fetch with a facebookexternalhit user agent returned no usable About/contact/photo content (Facebook served a JS-shell page with no populated meta tags in this environment). Listed on-site as a follow link only; no claims are made about its content beyond its existence.",
+  "collective_note": "inked4lifetattoos.com/miami-squirtin-ink is a marketing page for this shop hosted on a third-party tattoo-collective domain ('Inked 4 Life Tattoo Collective', which operates multiple shops). This is NOT a first-party website owned by Squirtin' Ink (different domain, third-party network site), so it does not change has_own_site. It was used only as a research source for pricing-structure language ('shop minimum applies; larger pieces typically priced hourly') and generic style descriptors ('crisp linework', 'bold color bombs').",
+  "artists": [
+    { "name": "Chino", "note": "Named directly in a verbatim review used on site (Ginger M.): 'Ranting and raving over Chino's work... Shout out to Chino for his amazing detailed work, professional work ethic and great vibes.' Also matches Instagram handle @chino_inks seen tagged in shop posts." },
+    { "name": "Joel", "note": "Named directly in a verbatim review used on site (M C.): 'Joel is superb!!!'" },
+    { "name": "Nidia", "note": "NOT used in site copy/quotes. Mentioned in AI-generated search-result summaries (not a directly fetchable page) describing a reviewer's experience with 14 tattoos across black and grey, realism, American traditional and Japanese styles. Could not verify with a direct fetchable source/exact quote, so name is recorded here for research completeness only, not asserted on the site." },
+    { "name": "Sammanthia", "note": "Same caveat as Nidia: only appears in aggregator search-summary paraphrase (praise for work 'stunningly close to the original'), no directly fetchable verbatim source found. Not used on site." }
+  ],
+  "services_note": "No fixed price list found anywhere (no own website, no booking platform with a price menu). The only pricing-structure statement found is on the third-party inked4lifetattoos.com/miami-squirtin-ink collective page: 'Pricing varies by size, complexity, and placement; shop minimum applies; larger pieces typically priced hourly.' No dollar figures given anywhere, so none are used on the site: all service cards use 'Free Consult / Quote at booking' or 'Shop Minimum / Larger pieces priced hourly' instead of invented numbers, per task instructions. Tattoo styles referenced on site (traditional, black and grey, color, script/lettering) are grounded directly in: (1) Sabrina B.'s verbatim review, 'caters to every style... whatever tattoo you want traditional, black and white', and (2) the real photo gallery itself (script lettering, color floral/animal pieces, blackwork). Piercing menu is grounded in a real first-party Instagram photo post by the business (a flyer titled 'PIERCING SERVICES - SQUIRTIN INK TATTOO STUDIO') listing: Ear Piercings (Lobes, Helix, Conch, Flat, Rook, Daith, Forward Helix, Snug, Antitragus, Tragus, Vertical Helix, Industrial), Nose & Facial Piercings (Nostril, Bridge, Eyebrow, Septum, Medusa), Oral & Lip Piercings (Labret, Snake Bites, Angel Fangs, Vertical Labret, Spider Bites, Jestrum, Tongue), Body Piercings (Navel/Belly, Nipples), Intimate Piercings (Genital Piercings, consult required), plus a note 'Surface Piercings & Dermals Coming Soon' and 'DM us with questions or to book'. Site's piercing service card only lists a representative subset (lobe, helix, conch, rook, tragus, daith, septum, nostril, eyebrow, oral, navel) to keep the card readable; nothing invented.",
+  "services": [
+    { "name": "Custom Tattoos", "price": null, "note": "Traditional, black and grey, color, script/lettering, cover-ups. Free consultation, quote given at booking." },
+    { "name": "Traditional, Black & Grey and Color", "price": null, "note": "Shop minimum applies; larger pieces priced hourly (per third-party collective page)." },
+    { "name": "Piercings (Ear, Facial & Body)", "price": null, "note": "From the business's own real piercing-menu Instagram post. Free consult, walk-ins welcome." },
+    { "name": "Walk-Ins & Virtual Consultations", "price": null, "note": "Confirmed via inked4lifetattoos.com/miami-squirtin-ink: 'Custom tattoos and walk-in availability. Virtual consultations offered.'" }
+  ],
+  "reviews": [
+    {
+      "text": "This is it. You found your forever tattoo studio. This studio is a dream and what's best it caters to every style, and in doing so, means whatever tattoo you want traditional, black and white...",
+      "author": "Sabrina B.",
+      "source": "Yelp (via Roadtrippers listing, dated March 01, 2025 on that page)",
+      "verified": true,
+      "used_on_site": true
+    },
+    {
+      "text": "Ranting and raving over Chino's work, always a great experience. Shout out to Chino for his amazing detailed work, professional work ethic and great vibes...",
+      "author": "Ginger M.",
+      "source": "Yelp (via Roadtrippers listing, dated September 07, 2025 on that page)",
+      "verified": true,
+      "used_on_site": true
+    },
+    {
+      "text": "Clean clean clean! Great tattoo shop!!! Joel is superb!!! Everyone here is very personable and they all help each other out, which makes you feel very comfortable.",
+      "author": "M C.",
+      "source": "Yelp (via Roadtrippers listing, dated May 23, 2025 on that page)",
+      "verified": true,
+      "used_on_site": true
+    },
+    {
+      "text": "The shop? Perfect. Extremely clean, well laid out, plenty of seating for waiting folks, cute decor, great music all day (was there for 9 hours, lol). [Staff described as \"Phenomenal\", rest of review truncated on the fetched page]",
+      "author": "Jessica V.",
+      "source": "Yelp (yelp.com/biz/squirtin-ink-tattoo-studio-homestead, dated August 11, 2025)",
+      "verified": true,
+      "used_on_site": false,
+      "note": "Not used on site because the fetched page truncated the review before its end; only using fully-visible quotes on site per no-invention rule."
+    }
+  ],
+  "photos": {
+    "source_note": "All 7 photos sourced live via Playwright headless browser directly from the business's own public Instagram profile (@squirtin_ink), using scripts/ig_photos.py against the profile's real public post grid (12 unique posts retrieved from the feed; 2 attempts pulled the same top 12 posts, confirming no additional unique posts were newly available at fetch time). Manually curated by viewing the generated contact sheet (_sheet.jpg): discarded a piercing-menu flyer graphic (text-only image, kept only to extract real service-menu text for the Services section, not used as a photo), two duplicate 'Now Booking / Taking Walk Ins' promo graphics (text overlay), a 'Chico's Marked 4 Life - Now Hiring' recruitment flyer graphic (text overlay), and a blurry unrelated photo of a person (not a tattoo, low quality). All 7 remaining photos are real, finished, good-quality tattoo photos with no blood/irritated skin/mid-process shots or bare artist selfies.",
+    "used": [
+      { "file": "assets/raw/hero-rose-hand-color.jpg", "desc": "Color tattoo of a cat curled in a crescent moon with roses, on a client's arm; used as hero image, nav/footer avatar, favicon and og:image", "source": "Instagram @squirtin_ink public post" },
+      { "file": "assets/raw/gallery-guitar-floral-fineline.jpg", "desc": "Fine line guitar and floral tattoo on forearm; used in The Studio section and gallery", "source": "Instagram @squirtin_ink public post" },
+      { "file": "assets/raw/gallery-snake-rose-color.jpg", "desc": "Color snake and rose tattoo on leg; used in The Studio section and gallery", "source": "Instagram @squirtin_ink public post" },
+      { "file": "assets/raw/gallery-gummy-bears-color.jpg", "desc": "Colorful gummy-bear-themed tattoo with a small hibiscus below; used as the wide gallery tile", "source": "Instagram @squirtin_ink public post" },
+      { "file": "assets/raw/gallery-hibiscus-color.jpg", "desc": "Small pink hibiscus flower tattoo on ankle/foot; gallery tile", "source": "Instagram @squirtin_ink public post" },
+      { "file": "assets/raw/gallery-shark-bite-blackwork.jpg", "desc": "Bold blackwork shark-bite/open-mouth tattoo design on knee; gallery tile", "source": "Instagram @squirtin_ink public post" },
+      { "file": "assets/raw/gallery-bite-me-lettering.jpg", "desc": "Script lettering tattoo reading 'Bite me' on lower back; gallery tile", "source": "Instagram @squirtin_ink public post" }
+    ],
+    "discarded": [
+      "Piercing-services flyer graphic (text-only menu image, ocean/mermaid themed background) - real first-party content, but used only to extract the real piercing-menu text for the Services section, not displayed as a photo.",
+      "Two duplicate 'Now Booking / Taking Walk Ins' promotional graphics (text overlay on a stock-style background), discarded as not real tattoo-work photography.",
+      "'Chico's Marked 4 Life - Now Hiring Piercers / Tattoo Artist' recruitment flyer graphic (text overlay), discarded, not client-facing content.",
+      "One blurry, low-quality photo of a person that is not a tattoo and not clearly related to the shop, discarded for quality reasons."
+    ]
+  },
+  "palette_note": "Black + intense amber/orange palette (accent-deep #d9660b, accent-mid #f2924a), one of the two new options suggested in the task brief and not previously used in this repo (checked against templates/SKELETONS-V2.md's used-palette list: coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark/original). All derived shimmer/gradient/orb/dark-band tones computed via a hue-preserving HSL transform anchored on the two named hex values, keeping the merktop-badge gold (#D4A84B) protected and untouched via block-extraction per the SKELETONS-V2 recipe.",
+  "cta_channel": "No booking platform found (no Booksy/Square/GlossGenius/Vagaro/etc). Primary CTA is tel:+17866012316 (Call to book / Call now), secondary CTA throughout is Instagram DM (@squirtin_ink), matching how the business itself asks to be booked ('DM us with questions or to book' on its own piercing-menu post).",
+  "build_note": "Derived from templates/dark-v2/index.html per templates/SKELETONS-V2.md. A pre-existing shared-template characteristic was found and safely mitigated: in the current Chromium build used for local verification, `.img-reveal` elements that are within the initial viewport can get IntersectionObserver ratio stuck at 0 (self clip-path on the observed element affecting the browser's own ratio calculation), so the reveal-in class is never added and the image stays permanently clipped/invisible. This was verified to reproduce identically on the already-shipped output/lakeside-grooming-tallahassee/index.html, so it is not specific to this build. A minimal, local-only defensive fallback was added to THIS site's script only (not to the shared templates/ files): a 2.6s timeout that force-adds the '.in' class to any '.reveal'/'.img-reveal' element that has not yet revealed, guaranteeing all real photos are always visible regardless of IntersectionObserver behavior in any given browser. Verified via Playwright: 60/60 reveal elements end up visible, no horizontal overflow at 390px viewport, ES/EN toggle works correctly."
+}

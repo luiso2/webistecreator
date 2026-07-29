@@ -1,0 +1,101 @@
+{
+  "source": "nextdoor+pocketsuite+web_search",
+  "url": "https://pocketsuite.io/book/julians-mobile-detailing",
+  "slug": "juliansmobiledetailing",
+  "name": "Julian's Mobile Detailing",
+  "niche": "mobile auto detailing",
+  "city": "Cape Coral, FL",
+  "phone": "+12392847709",
+  "phone_display": "(239) 284-7709",
+  "email": null,
+  "email_note": "Deep search performed per pipeline Fase 1.7: PocketSuite booking page HTML (no mailto, no business email field exposed statically), Instagram profile (official web_profile_info API blocked with a 400 'asset deleted' error on 2 attempts, per-pipeline fallback limit reached; imginn/picnob/pixwox mirrors all blocked by Cloudflare challenge or 403), Nextdoor business page (no email field, only phone/message button), Facebook (the page most commonly linked to this business name, facebook.com/p/Julians-Mobile-Detailing-61560246950705, returned content for what appears to be an UNRELATED business of the same generic name based in Fairhaven, MA with phone 508-525-1962 -- not used, see facebook_note). No email found through any verified channel. Recorded as null.",
+  "address_raw": "806 SW 31st Ter, Cape Coral, FL 33914",
+  "address_source": "Nextdoor business page (nextdoor.com/pages/julians-mobile-detailing-cape-coral-fl/), consistent with prior discovery.",
+  "about": "Julian Curbelo, 18 years old with about 3 years of detailing experience, runs a mobile detailing operation serving Cape Coral and Fort Myers, FL. He sold his own sedan to invest in a truck rig equipped with its own water and electric hookup, so the whole service happens at the customer's home or office. Nextdoor's community summary describes him as punctual, honest, professional and hardworking, with a business neighbors say is set to 'take Cape Coral by storm.' Named a Nextdoor Neighborhood Favorite in 2024.",
+  "instagram": "juliansmobiledetailing_",
+  "instagram_url": "https://www.instagram.com/juliansmobiledetailing_/",
+  "instagram_note": "Handle confirmed via multiple independent web search results and cited directly in the business's own PocketSuite bio text ('View my work on instagram @juliansmobiledetailing_'). Official web_profile_info API and public IG mirrors (imginn, picnob, pixwox) all blocked; could not pull feed photos or bio directly from Instagram, per pipeline max-2-attempts rule moved to other sources (Nextdoor business gallery/post photos, PocketSuite og:image).",
+  "facebook_note": "facebook.com/p/Julians-Mobile-Detailing-61560246950705 is the URL most consistently surfaced by search engines under this business name, but a direct fetch of its page content returned an Intro of 'Fairhaven MA' and phone '508-525-1962', which does NOT match this business (Cape Coral FL, phone 239-284-7709). 'Julian's Mobile Detailing' / 'Julian's Mobile Detail' / 'Julian's Mobile Car Expert' are used by at least 4 unrelated businesses found during research (Cape Coral FL - this one, Tampa Bay/St. Pete FL, Fairhaven MA, Hull MA, San Antonio TX): treated as a name collision. This Facebook page was NOT used as a data source and is NOT linked from the built site.",
+  "website": null,
+  "has_own_site": false,
+  "website_check": {
+    "domains_tested": [
+      { "domain": "juliansmobiledetailing.com", "result": "Resolves (200), but is a DIFFERENT business: 'Julian's Mobile Detailing | Tampa Bay & St. Pete, FL' -- unrelated to the Cape Coral business, confirmed by city mismatch in the page's own title/meta." },
+      { "domain": "juliansmobiledetail.com", "result": "Does not resolve (DNS ENOTFOUND)." },
+      { "domain": "juliansdetailing.com / julianmobiledetailing.com / juliansmobiledetailing.net", "result": "Not reachable during this session (proxy/connect errors); not evidence either way, but no reference to any of these appeared in web search results tied to this business." }
+    ],
+    "other_listings_checked": "townplanner.com/directory/115827/ ('Julian's Mobile Car Expert') is ALSO an unrelated business, based in Hull, MA, phone (781) 208-8348, own domain juliansmobilecarexpert.com.",
+    "conclusion": "Confirmed has_own_site = false for the Cape Coral, FL business at 806 SW 31st Ter / phone (239) 284-7709. No owned website found; its only real web presence is PocketSuite (booking), Instagram, Yelp and Nextdoor."
+  },
+  "services": [
+    { "name": "Full Detail", "description": "Interior and exterior together: foam wash, clay bar treatment, wheel and tire deep clean, interior shampoo, hand dry inside and out.", "price": null },
+    { "name": "Exterior Detail", "description": "Hand foam wash, clay bar decontamination, paint enhancement, wheel and tire deep clean.", "price": null },
+    { "name": "Interior Detail", "description": "Full interior shampoo, stain removal, vacuum and wipe-down.", "price": null },
+    { "name": "Ceramic Coating", "description": "Paint protection and long-lasting gloss, applied by hand.", "price": null },
+    { "name": "Engine Bay Cleaning", "description": "Mentioned as an available add-on service.", "price": null },
+    { "name": "Wax", "description": "Mentioned as an available add-on / protective finish.", "price": null }
+  ],
+  "services_source": "Nextdoor business AI summary ('interior shampoo and stain removal, clay bar treatment, paint enhancement, ceramic coating, deep clean and protect every surface inside and out') cross-referenced with the business's own PocketSuite bio ('premium car detailing, engine cleaning, and wax'). No fixed prices are published anywhere (PocketSuite requires opening the live booking flow, which is not exposed in the static page/JS); pricing is quote-based depending on vehicle size/condition. Never invented a number.",
+  "cta_model": "quote_based_with_online_booking",
+  "cta_note": "Real-time booking exists via PocketSuite (pocketsuite.io/book/julians-mobile-detailing, shows 4.8 stars / 62 reviews on-platform), but no menu prices are published statically, so the site uses 'Book' / quote-style CTAs without dollar amounts, consistent with pipeline rule against inventing prices.",
+  "reviews": [
+    {
+      "name": "A. I.",
+      "location": "Fort Myers, FL",
+      "text": "Shows on time, delivers as promised, fast, efficient and courteous. Great service.",
+      "source": "Nextdoor (nextdoor.com/pages/julians-mobile-detailing-cape-coral-fl/)"
+    },
+    {
+      "name": "M. S.",
+      "location": "Cape Coral, FL",
+      "text": "Julian does our business vehicles for my business. Very reasonable rates. Hardworking kid. Honest punctual and professional. I've got nothing but good things to say about his business. And hes mobile.",
+      "source": "Nextdoor (nextdoor.com/pages/julians-mobile-detailing-cape-coral-fl/)"
+    }
+  ],
+  "reviews_note": "Only 2 named, attributable verbatim quotes were found. Yelp (yelp.com/biz/julians-mobile-detailing-cape-coral, lists 24 photos) returned HTTP 403 / CAPTCHA on every fetch attempt (direct curl, WebFetch, and an r.jina.ai proxy fetch), so its reviews could not be pulled. Nextdoor's own AI-generated community summary paragraph (unattributed, not a verbatim named quote) was used only as background copy in the About section, not presented as a review card, per pipeline verbatim-quote rule.",
+  "language": "en",
+  "language_source": "All source text (Nextdoor bio and reviews, PocketSuite bio, business hashtags) is in English. Cape Coral/Fort Myers FL is an English-language market; no evidence of Spanish-language content or 'se habla espanol' messaging found.",
+  "rating": 5.0,
+  "review_count": 41,
+  "rating_source": "Business itself states 'He has 41 5-star reviews on Google' consistently across its Nextdoor business bio summary and multiple independent web search snippets (matches the figure supplied at task start). Could not independently re-pull the live Google Business Profile page directly (Google Maps/Search results pages did not expose lh3.googleusercontent.com or ratings data to a non-JS fetch in this session), so this is the best-available, multiply-corroborated figure, not a fresh first-party pull. Secondary data point: PocketSuite's own in-platform review widget separately shows 4.8 stars / 62 reviews (a different, PocketSuite-specific review pool) -- not used as the headline stat since the Google figure is the one directly volunteered by the business and echoed everywhere it's mentioned.",
+  "images": {
+    "raw_dir": "assets/raw/",
+    "source": "Instagram feed was inaccessible (official API blocked, all public mirrors blocked by Cloudflare/403). Fallback per pipeline: PocketSuite og:image (business logo) plus Nextdoor's own Business Page, which exposes a 'Photo gallery' (5 curated business photos), a cover photo, a business story highlight, and post photos from the business's own Nextdoor activity posts (announcement posts about specific finished jobs: a C8 Corvette, a Jeep Wrangler ceramic coating job, holiday promo posts). All candidates were visually inspected one by one before selection.",
+    "selected": [
+      { "file": "hero-wheel-wash.jpg", "desc": "Close-up of a wheel/rim being scrubbed with foam during a wash, red rim visible.", "use": "hero + og:image", "origin": "PocketSuite og:image" },
+      { "file": "about-cadillac-interior.jpg", "desc": "Premium interior detail shot of a Cadillac dashboard and steering wheel.", "use": "about section", "origin": "Nextdoor business gallery" },
+      { "file": "about-jeep-black.jpg", "desc": "Black Jeep Wrangler finished after a mobile detail.", "use": "about section", "origin": "Nextdoor business post photo" },
+      { "file": "gallery-mobile-wash-wide.jpg", "desc": "Wide shot of a lifted dually truck being foam washed with the mobile rig visible, palm trees background.", "use": "gallery (wide 16:9 tile)", "origin": "Nextdoor business cover photo" },
+      { "file": "gallery-audi-r8.jpg", "desc": "White Audi R8 finished after a full exterior detail in a residential driveway.", "use": "gallery", "origin": "Nextdoor business gallery" },
+      { "file": "gallery-ferrari-458.jpg", "desc": "Yellow Ferrari 458 detailed in a Cape Coral driveway.", "use": "gallery", "origin": "Nextdoor business post photo" },
+      { "file": "gallery-jeep-wrangler.jpg", "desc": "Gray Jeep Wrangler finished after a mobile detail.", "use": "gallery", "origin": "Nextdoor business gallery" },
+      { "file": "gallery-corvette-wheel.jpg", "desc": "Close-up detail of a black C8 Corvette wheel and red brake caliper.", "use": "gallery", "origin": "Nextdoor business post photo" },
+      { "file": "gallery-truck-wash-action.jpg", "desc": "Red Chevrolet Silverado HD being hand-washed with visible cords/mobile equipment.", "use": "gallery", "origin": "Nextdoor business gallery" },
+      { "file": "logo.jpg", "desc": "Julian's Mobile Detailing brand logo (red spray gun + car silhouette + polisher on black), 'Excellent Detail Service'.", "use": "nav/footer avatar, favicon", "origin": "Nextdoor business logo / matches PocketSuite og:image family" }
+    ],
+    "discarded": [
+      "Business logo graphic was NOT used as a large gallery tile (only as small circular avatar/favicon) to avoid a blown-up low-res vector-style image in the photo gallery.",
+      "A Jeep Wrangler interior shot with plastic seat/wheel protective covers and a visible promo business-card overlay was excluded from the gallery (protective covering + on-image text reads as in-progress/promotional rather than a clean finished-result shot).",
+      "Several near-duplicate crops of the same vehicles (multiple angles of the same Corvette, same Jeep, same blue-camo truck) were downloaded but only the strongest angle of each vehicle was kept to avoid a repetitive gallery."
+    ],
+    "curation_note": "10 real, verified photos used (9 vehicle/detail photos + 1 logo), well above the 6-14 target. All visually inspected: no selfies, no closed-eyes/mid-procedure shots, no text-overlay screenshots. Strong variety across trucks, Jeeps, and exotic cars (Ferrari, Audi R8, Corvette), which reads as authentic proof of real client work rather than stock imagery."
+  },
+  "brand_vibe": "Julian's own logo is red, chrome/silver and black: a spray-gun and car silhouette graphic on a black shield with 'EXCELLENT DETAIL SERVICE'. The real photo set (mobile rig, exotic and lifted-truck clientele in Cape Coral driveways) reads as youth-led, energetic and premium-adjacent without being a luxury storefront. Dark base with a vivid racing-red accent and a chrome/steel secondary tone (used in the footer/CTA band) mirrors the logo's own red+chrome+black identity directly, rather than reusing an unrelated color story.",
+  "palette": {
+    "name": "juliansmobiledetailing",
+    "bg": "#0a0c10",
+    "bg-2": "#12151b",
+    "ink": "#f1f4f7",
+    "accent-deep": "#e0202c",
+    "accent-mid": "#8a1319",
+    "accent-soft": "#190f11",
+    "accent-ghost": "rgba(224,32,44,0.16)",
+    "dark-band-accent": "chrome/steel family (#f4f6f8 / #c7ccd2 / #8b929a) used for the footer + final CTA band, matching the logo's chrome lettering"
+  },
+  "sameAs": [
+    "https://pocketsuite.io/book/julians-mobile-detailing",
+    "https://www.instagram.com/juliansmobiledetailing_/"
+  ],
+  "build_status": "built",
+  "build_notes": "Dark template (templates/dark-v2, ejemplar Pure Artistry) derived via anchored transformation script (python, asserts on every rep()). Palette shifted from gold to a racing-red + graphite/chrome scheme (badge protected/untouched, stays gold per DESIGN.md). Bilingual EN(default)/ES implemented, toggle in nav. 'El Metodo' 4-step section rewritten into the real detailing workflow: book online, mobile setup arrival (own water/electric), wash/decon/correct, protect & finish. Services section adapted to quote-based cards (no invented prices) following the oddjobrob precedent. Reviews section reduced from 3 to 2 cards (grid adjusted to 2 columns) since only 2 named verbatim quotes were verifiable (Yelp blocked). JSON-LD type AutoDetailing with makesOffer (no price field, since none verified). Gate passed clean (0 em-dash, all markers present, no leftover strings from the Pure Artistry skeleton, JSON-LD valid, applyLang default = en matches <html lang=\"en\">)."
+}

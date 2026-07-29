@@ -1,0 +1,66 @@
+{
+ "slug": "copper-penny-hair-studio-lakeland",
+ "name": "Copper Penny Hair Studio",
+ "schema_type": "HairSalon",
+ "language": "en",
+ "brand_vibe": "warm copper/bronze on dark base (dark-v2 skeleton); exposed-brick interior seen consistently in real IG photos, balayage-forward color portfolio",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "1003 S Florida Ave",
+  "addressLocality": "Lakeland",
+  "addressRegion": "FL",
+  "postalCode": "33803",
+  "addressCountry": "US"
+ },
+ "neighborhood": "South Lake Morton Historic District (also referenced as Dixieland district in the IG bio)",
+ "phone": "+18639402161",
+ "phone_display": "(863) 940-2161",
+ "hours": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+   "opens": "10:00",
+   "closes": "19:00"
+  }
+ ],
+ "hours_note": "Closed Sunday and Monday. Consistent across BestProsInTown, Loc8NearMe and HairStylists.com; original discovery brief did not include hours.",
+ "rating": 4.9,
+ "reviews_count": 124,
+ "rating_source": "BestProsInTown aggregator page (title states 'Reviews (124)', rating 4.9), which aggregates Google reviews. Could not fetch google.com/maps or the raw Yelp/BestProsInTown HTML directly (403/blocked from this environment), so this is cross-referenced across multiple secondary directories (Loc8NearMe, ManeReviews, HairStylists.com, Giftly) rather than confirmed first-hand on Google Maps. All independently cite '4.9' as the Google rating; review count of 124 appears on BestProsInTown specifically, one other aggregator (ManeReviews via a search-engine summary) mentioned '4.7 / 139' which looks like a different/stale scrape and was not used. Yelp itself shows a separate, lower figure (4.4 / 15 reviews) which is Yelp's own count, not Google's, and is not used as the headline stat.",
+ "has_own_site": false,
+ "own_site_check": "Tried copperpennyhairstudio.com, www.copperpennyhairstudio.com, thecopperpennyhairstudio.com and copperpennyhairstudiollc.com: none resolve (DNS NXDOMAIN / ENOTFOUND). No website field on Google-derived directory listings (Giftly, map.contact, BestProsInTown all show 'no website'). Confirmed no owned domain.",
+ "instagram": "copperpennyhairstudiollc",
+ "instagram_url": "https://www.instagram.com/copperpennyhairstudiollc/",
+ "instagram_stats": "316 followers, 201 following, 84 posts (per search-engine snippet of the public profile; could not run scripts/ig_contact.py successfully in this environment because outbound requests to instagram.com are firewalled from this sandbox network path, and the profile bio/external_url could therefore not be read directly)",
+ "booking_platform": null,
+ "booking_platform_note": "A StyleSeat profile URL exists (styleseat.com/m/s/copperpennyhairstudio-lakeland-fl) surfaced via web search, but fetching it returned only the generic StyleSeat homepage shell (no business name/services in the HTML, likely because the profile content is client-side rendered or the listing is inactive/unclaimed). Could not verify it is a live, working booking channel, so it was NOT used as the site's booking CTA. No Booksy/Vagaro/GlossGenius/Square profile found. Primary real CTA used on the site: phone (863) 940-2161, with Instagram as secondary.",
+ "email": null,
+ "email_search_note": "Deep search performed per PIPELINE.md step 7: Facebook About page (login-walled, no data retrievable), Giftly listing, map.contact aggregator, ZoomInfo (403 blocked), general web search for @gmail/@yahoo/@outlook combinations, IG bio/external_url (blocked - see instagram_stats note above). No public email found anywhere. Registered honestly as null.",
+ "staff_mentioned": [
+  "Lisa (stylist, cuts/color, mentioned in multiple reviews)",
+  "Kapi Watson (colorist - credited as photographer/source on the great majority of the salon's real IG color-result posts used in the gallery)",
+  "Ashley Grimes (colorist, praised for scheduling flexibility)",
+  "Tina (stylist, one reviewer says has been a client for 20+ years)",
+  "Lacey (stylist)",
+  "Brandy (mentioned for skin/esthetics-adjacent service in one review)"
+ ],
+ "services_source": "No published price list found on any platform (no Booksy/Vagaro/GlossGenius/Square, StyleSeat profile unreachable). Site uses real, verifiable service CATEGORIES only (balayage/highlights, cuts & styling, color & corrections, treatments & texture) with 'Call for pricing' instead of fabricated prices/durations, per PIPELINE.md rule against inventing numbers. One secondary source (Giftly) also mentions the salon now offers gel nail and brow services; referenced briefly in the services note footer, not as a full section.",
+ "reviews_used": [
+  {"name": "Niki Gilbertsen", "quote": "Lisa is so awesome! She is patient with my kids and does an amazing job!", "source": "Google, via BestProsInTown"},
+  {"name": "Louella Taylor", "quote": "Exquisite exquisite hair designs by the staff. The ambiance exudes relaxation.", "source": "Google, via BestProsInTown"},
+  {"name": "Michelle McPherson", "quote": "Feel like a new person after every visit for a very reasonable price.", "source": "Google, via BestProsInTown"},
+  {"name": "Katie Hanrahan", "quote": "Wonderful atmosphere with incredibly friendly stylists.", "source": "Google, via BestProsInTown (not used on final site to keep exactly 3 review cards matching the template grid)"}
+ ],
+ "reviews_note": "Direct HTML fetch of bestprosintown.com and yelp.com both returned HTTP 403 from this environment (bot protection); quotes were extracted via a web-search tool's summarization of the public page, which is the best available approximation of verbatim text given the access constraints. Names and overall sentiment are real and independently consistent across the search result and multiple citing directories.",
+ "photos": {
+  "source": "Instagram feed via scripts/ig_photos.py (Railway ig-photo-service). The lowercase handle 'copperpennyhairstudiollc' was intermittently rate-limited/blocked by Instagram at the service (returned a single generic IG placeholder asset on most attempts); querying the same account with different letter-casing ('CopperPennyHairStudioLLC', case-insensitive on IG) on a retry succeeded and returned 12 real feed photos with captions credited to 'Kapi Watson'.",
+  "downloaded": 12,
+  "used_on_site": 10,
+  "curation_notes": "All 12 downloaded photos were reviewed visually via a contact sheet before selection. All 12 are legitimate, high-quality finished color results (balayage/highlights/ombre/brunette) shot from behind/the side against the salon's exposed-brick interior wall. Zero selfies, zero blurry shots, zero text overlays, zero mid-process/POV shots - this business had unusually clean, on-brand source material once a working profile query was found. 10 of the 12 were used across hero/experience/gallery; bk-2.jpg and bk-6.jpg were left unused (not needed, not because of quality issues)."
+ },
+ "assets_resized": "All downloaded photos already came in at 480-640px wide from Instagram's own CDN transform, under the 1000px max-width requirement, so no additional resize step was needed.",
+ "google_maps_query": "https://www.google.com/maps?q=1003+S+Florida+Ave,+Lakeland,+FL+33803",
+ "template_used": "templates/dark-v2/index.html (Pure Artistry hair-salon skeleton), retinted gold -> copper/bronze via scripts/build_copperpennyhairstudio.py",
+ "build_script": "scripts/build_copperpennyhairstudio.py",
+ "gate_result": "GATE OK: copper-penny-hair-studio-lakeland (en)"
+}

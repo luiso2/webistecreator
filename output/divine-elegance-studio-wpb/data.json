@@ -1,0 +1,157 @@
+{
+  "slug": "divine-elegance-studio-wpb",
+  "name": "Divine Elegance Studio, LLC",
+  "niche": "esthetics / waxing studio",
+  "city": "West Palm Beach, FL",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_check": {
+    "domains_tried": ["divineelegancestudio.com", "divineelegancestudiowpb.com", "divineelegancewpb.com", "divineelegance.com"],
+    "domains_result": "all no DNS / no connection (curl -> 000)",
+    "glossgenius_website_url_field": null,
+    "conclusion": "No owned domain found. Only presence: GlossGenius (booking), Groupon, ClassPass, Yelp, Birdeye (aggregator), Facebook, Instagram. has_own_site = false confirmed."
+  },
+  "address": {
+    "resolved": "2001 Palm Beach Lakes Blvd. Suite 300G, West Palm Beach, FL 33409",
+    "geo": { "lat": 26.7163154, "lng": -80.0929068 },
+    "how_resolved": "DISCREPANCY FOUND AND RESOLVED. Two candidate addresses appeared in discovery: (A) 3233 Commerce Pl Suite A113, West Palm Beach, FL 33407 -- appears on Groupon (live page fetched, title and body both say this), Birdeye/Google-reviews aggregator, and bizprofile.net/Yelp aggregator (3 independent secondary sources). (B) 2001 Palm Beach Lakes Blvd. Suite 300G, West Palm Beach, FL 33409 -- appears ONLY on the business's own live GlossGenius booking site (divineelegancestudio.glossgenius.com), both in the embedded JSON-LD business_address field and in the rendered /about page, which explicitly labels its nav tab '- Current location' next to this exact address. Verification steps: (1) fetched GlossGenius /services page source and extracted the embedded __NEXT_DATA__.props.serverContext.publicUser.business_address field directly from the platform's own backend record (not a scrape/guess): '2001 Palm Beach Lakes Blvd. Suite 300G, West Palm Beach, FL 33409', with matching business_address_latitude/longitude. (2) Reverse-geocoded those exact coordinates via OpenStreetMap Nominatim -> resolved to house_number 2001, Palm Beach Lakes Boulevard, West Palm Beach, FL 33409, confirming internal consistency (the GlossGenius pin was generated from that same address, not a stray/default pin). (3) Fetched GlossGenius /about page separately: it renders the identical address under a 'Business Hours' block, and the page's own breadcrumb tags that section '- Current location'. (4) Checked Sunbiz search results (via web search only, direct fetch blocked 403): found a THIRD address, 1025 7th St, West Palm Beach FL 33401, which is the LLC's registered-agent/principal filing address (a legal/mailing address, not necessarily the treatment studio) -- not used for the site since it does not represent the physical service location and is not corroborated by any consumer-facing source. Decision: used (B), the business's own live, operationally-critical, explicitly-labeled 'current location' record on its own booking platform, over the 3 secondary aggregator listings at 3233 Commerce Pl, which are treated as a likely stale/former address that Groupon/Yelp/Birdeye have not had corrected (common when a business relocates but does not update every third-party directory). No signal of business closure or rename was found; business appears active (Yelp page 'Updated July 2026', Groupon listing live, GlossGenius booking site live and current).",
+    "rejected_address": "3233 Commerce Pl Suite A113, West Palm Beach, FL 33407 (Groupon, Birdeye/Google-aggregator, bizprofile/Yelp -- treated as likely outdated; this is a known salon-suites building 'Luxe Beauty Bar Suites' with matching A1xx suite numbering for other estheticians, so it is a plausible FORMER location, not fabricated, just not used as current)",
+    "registered_agent_address_not_used": "1025 7th St, West Palm Beach, FL 33401 (Sunbiz LLC filing address, legal/mailing only)"
+  },
+  "phone": "(561) 838-3848",
+  "phone_e164": "+15618383848",
+  "email": "divineelegance17@yahoo.com",
+  "email_source": "GlossGenius embedded __NEXT_DATA__.props.serverContext.publicUser.business_email field (platform backend record, not a public bio scrape)",
+  "instagram": {
+    "handle": "@divineelegancestudio",
+    "url": "https://www.instagram.com/divineelegancestudio/",
+    "note": "IG web_profile_info endpoint returned 400 (known broken per pipeline notes). Direct HTML fetch hit login wall, no bio/external_url extractable. ig_photos.py rescue script (Railway + local Playwright fallback) returned only a single generic Instagram-app promo image (not real profile content) on two attempts; discarded, not used."
+  },
+  "booking_url": "https://divineelegancestudio.glossgenius.com/",
+  "booking_platform": "GlossGenius",
+  "rating": 5.0,
+  "review_count": 12,
+  "rating_source": "Google reviews, via Birdeye aggregator page (reviews.birdeye.com/divine-elegance-studio-llc-170028039897922), labeled as Google reviews. Note: Groupon's own page shows a separate, larger review pool (29 reviews, 5.0) which is Groupon's internal review count, not used for the headline stat per task brief (Birdeye/Google explicitly specified as source of truth: 5.0 / 12).",
+  "owner": {
+    "first_name": "Desiree",
+    "last_name": "Pritchard",
+    "role": "Licensed Esthetician, owner/CEO",
+    "source": "GlossGenius backend record (users[0].full_name) + Sunbiz filing (registered agent/manager/CEO) via web search"
+  },
+  "hours": {
+    "monday": "9:30 AM - 4:00 PM",
+    "tuesday": "10:00 AM - 8:00 PM",
+    "wednesday": "12:30 PM - 7:30 PM",
+    "thursday": "10:30 AM - 5:00 PM",
+    "friday": "12:30 PM - 8:00 PM",
+    "saturday": "9:30 AM - 5:30 PM",
+    "sunday": "2:30 PM - 7:30 PM",
+    "source": "GlossGenius /about page, rendered Business Hours block"
+  },
+  "reviews_used_on_site": [
+    {
+      "author": "Rebeka S.",
+      "source": "Google (via Birdeye)",
+      "text": "Desiree is amazing her shop is cozy and welcoming. I received a number of services from her and each time is a wonderful experience. Definitely a place I'd recommend"
+    },
+    {
+      "author": "Ashley Morris",
+      "source": "Google (via Birdeye)",
+      "text": "My experience always been very pleasant from day 1. Desiree is very warm welcoming. Her salon is very cozy and clean. She makes getting a wax very comfortable. She has a very great talent and technique. I also recently got a facial. One of the BEST facial services I ever had. Thank you so much!!"
+    },
+    {
+      "author": "Dawn",
+      "source": "Groupon",
+      "text": "Desiree as very personable and professional. She made me feel comfortable and put me at ease. She had pleasant conversation which also helped distract you from any waxing discomfort. Her shop was also clean and charming. I would definitely recommend and plan to return."
+    }
+  ],
+  "reviews_available_not_used": [
+    { "author": "Clint", "source": "Groupon", "text": "Excellent service. Very patient and professional." },
+    { "author": "Alicia", "source": "Groupon", "text": "Highly recommend. 5 stars." }
+  ],
+  "services_source": "GlossGenius /services page, extracted from rendered HTML text + embedded ItemList JSON-LD (partial, 20 of ~38 services) cross-checked against full rendered text (all services, prices, durations)",
+  "services_menu": {
+    "facials_and_skin": [
+      { "name": "Skin Consultation", "price": "$50", "duration": "45 min" },
+      { "name": "Express Facial", "price": "$40", "duration": "30 min" },
+      { "name": "Regular Cleansing Facial", "price": "$85+", "duration": "60 min" },
+      { "name": "Men's Basic Facial", "price": "$85+", "duration": "75 min" },
+      { "name": "The Boujie Facial", "price": "$155", "duration": "75 min" },
+      { "name": "Back Facial", "price": "$100", "duration": "75 min" },
+      { "name": "Acne Facial", "price": "$100", "duration": "75 min" },
+      { "name": "Divine Glow Facial", "price": "$125", "duration": "90 min" },
+      { "name": "Chemical Peel", "price": "$125+", "duration": "45 min" },
+      { "name": "Body Scrub", "price": "$55", "duration": "45 min" }
+    ],
+    "waxing": [
+      { "name": "Brazilian Wax w/ Butt Strip", "price": "$55", "duration": "60 min" },
+      { "name": "Full Bikini Wax", "price": "$40", "duration": "30 min" },
+      { "name": "Vajacial", "price": "$65+", "duration": "90 min" },
+      { "name": "Lip Wax", "price": "$10", "duration": "15 min" },
+      { "name": "Chin Wax", "price": "$15", "duration": "15 min" },
+      { "name": "Full Face Wax", "price": "$50", "duration": "30 min" },
+      { "name": "Underarm Wax", "price": "$20", "duration": "15 min" },
+      { "name": "Full Chest (with Stomach)", "price": "$65", "duration": "60 min" },
+      { "name": "Half Chest (No Stomach)", "price": "$30", "duration": "30 min" },
+      { "name": "Full Back Wax", "price": "$70", "duration": "60 min" },
+      { "name": "Half Leg Wax", "price": "$35", "duration": "30 min" },
+      { "name": "Full Leg Wax", "price": "$55", "duration": "45 min" },
+      { "name": "Back Wax Package (Buy 2, Get 1 Free)", "price": "$125+", "duration": "40 min" },
+      { "name": "Back Wax Package (Buy 4, Get 2 Free)", "price": "$250", "duration": "30 min" }
+    ],
+    "lash_extensions": [
+      { "name": "Classic Full Set", "price": "$115+", "duration": "180 min" },
+      { "name": "Classic Fill In", "price": "$55+", "duration": "90 min" },
+      { "name": "Hybrid Full Set", "price": "$130", "duration": "180 min" },
+      { "name": "Hybrid Fill In", "price": "$65", "duration": "105 min" },
+      { "name": "Volume Full Set", "price": "$165", "duration": "180 min" },
+      { "name": "Volume Fill In", "price": "$75+", "duration": "120 min" },
+      { "name": "Mega Volume Set", "price": "$180", "duration": null, "note": "published duration on GlossGenius (10 min) looked like a data-entry artifact for a full mega volume set; omitted rather than repeating a likely-wrong number" },
+      { "name": "Color Lashes", "price": "$25+", "duration": "10 min" },
+      { "name": "Bottom Lashes", "price": "$25", "duration": "10 min" },
+      { "name": "Strip Lash Set", "price": "$40", "duration": "30 min" },
+      { "name": "Lash Removal", "price": "$30", "duration": "30 min" }
+    ],
+    "brow_services": [
+      { "name": "Luxe Henna Brow Package", "price": "Price Varies", "duration": "45 min" },
+      { "name": "Eyebrow Tint/Wax", "price": "$25", "duration": "15 min" },
+      { "name": "Eyebrow Wax", "price": "$15", "duration": "15 min" },
+      { "name": "Brow Package (3 Waxes, 1 Free)", "price": "$50", "duration": "10 min" }
+    ],
+    "omitted_from_site": [
+      { "name": "Wax Touch-Up", "price": "$0", "reason": "Free add-on/touch-up, not a sellable listing worth featuring on a sales demo" }
+    ]
+  },
+  "images": {
+    "source": "GlossGenius /services page per-service photo library (static.glossgenius.com/public/service/...), all downloaded and visually reviewed one by one before selection. Additional stock images (bikini-underwear stock photo, a too-explicit bikini-area close-up, a mid-procedure chemical-peel shot with visible skin peeling) were rejected per curation rules. Instagram rescue attempted twice (ig_photos.py), both returned a generic non-business promo image; discarded.",
+    "used": [
+      { "file": "assets/raw/facial-cucumber-eyes.jpg", "used_as": "hero image", "desc": "Client relaxing during a facial treatment, cucumber slices on eyes" },
+      { "file": "assets/raw/facial-relaxed-headwrap.jpg", "used_as": "experience photo + gallery tile", "desc": "Client relaxed after facial, colorful headwrap" },
+      { "file": "assets/raw/body-treatment-steam.jpg", "used_as": "experience photo + gallery wide tile", "desc": "Body/back treatment with warm steam, decorative green wall" },
+      { "file": "assets/raw/brow-wax-result.jpg", "used_as": "gallery tile", "desc": "Finished eyebrow wax result" },
+      { "file": "assets/raw/lash-extensions-set.jpg", "used_as": "gallery tile", "desc": "Finished lash extension set close-up" },
+      { "file": "assets/raw/lash-extensions-result.jpg", "used_as": "gallery tile", "desc": "Finished lash extension close-up (alternate)" },
+      { "file": "assets/raw/logo.png", "used_as": "favicon / og:image source asset (not gallery)", "desc": "Real brand logo card (cream, mauve script, gold trim, butterflies), used to derive the site palette" }
+    ],
+    "rejected_examples": [
+      "bikini-underwear stock photo (clearly stock, not a real client photo)",
+      "bikini-area close-up (too explicit/intimate for a public gallery)",
+      "chemical-peel mid-procedure shot with visible skin peeling (prohibited: irritated skin mid-procedure)",
+      "IG rescue image x2 (generic Instagram app promo graphic, not real business content)"
+    ]
+  },
+  "brand_vibe": "Quiet, feminine elegance: cream/ivory background, deep mauve/burgundy script wordmark, antique gold trim, delicate butterflies. Palette derived by sampling exact pixel colors from the real logo (measured ~#744851 mauve text, ~#a28559 gold border line, ~#eeece9 cream background) and adapted into templates/light-v2 (closest existing skeleton palette family: plum/mauve).",
+  "base_template": "templates/light-v2 (light base, lashbloom exemplar)",
+  "palette": {
+    "accent_deep": "#7c3f54",
+    "accent_mid": "#b06f85",
+    "bg": "#faf6f3",
+    "bg_2": "#f1dee3",
+    "ink": "#2f2226"
+  },
+  "build_method": "Anchored transformation script (Python, rep() with asserts) over templates/light-v2/index.html per templates/SKELETONS-V2.md, in 13 sequential staged scripts (palette, globals, head/meta/JSON-LD, logo/nav monogram, hero, strip+marquee, experience, method, services grid+full category menu via regex, gallery grid via regex, reviews, location, CTA+footer).",
+  "gate_result": "GATE OK: divine-elegance-studio-wpb (en) -- python3 scripts/gate.py divine-elegance-studio-wpb --lang en --forbid \"Lash Bloom,Yesi,Cresthaven,519855,Booksy,Lux Stitch,33415\"",
+  "status": "ok",
+  "outreach": "draft_only_not_sent",
+  "fecha": "2026-07-23"
+}

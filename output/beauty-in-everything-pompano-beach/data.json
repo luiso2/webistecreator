@@ -1,0 +1,77 @@
+{
+  "slug": "beauty-in-everything-pompano-beach",
+  "status": "failed",
+  "reason_failed": "No se encontraron suficientes fotos reales utilizables (minimo 5 exigido por el gate) ni un menu de servicios con precios verificable. El unico canal social real confirmado (@jaeglowskincare, Instagram real de la linea de productos Jae-Glow, verificado via Playwright, dueña 'Jae Mesalien' = Judeline P. Mesalien, coincide con el registro de la LLC en Sunbiz) es una cuenta de marketing de producto retail: las 12 fotos publicas del feed son casi todas graficos promocionales con texto superpuesto, modelos de stock, fotos before/after con texto y una foto personal de la dueña (cumpleaños en un Rolls-Royce). Solo 1 foto (bk-2.jpg) es una foto real del negocio (el logo en pared/espejo del local), muy lejos del minimo de 5 fotos reales curables para galeria (prohibido: capturas con texto/caption encima, selfies/fotos personales de la dueña, antes-despues con texto de marketing). No existe pagina de Facebook publica localizable, ni pagina de booking con menu (jaeglow.com usa Acuity Scheduling pero 'Bookings are paused right now', sin servicios listados). Los directorios agregadores (varios espejos del mismo listado) publican una lista de servicios ('dermal fillers, threading, neck lift, liposuction, skin lightening, lip blushing') que aparece IDENTICA y textualmente en multiples sitios de terceros sin atribucion a una fuente primaria del negocio (ni Google Business posts, ni web propia, ni IG): no se pudo verificar como menu real y ademas incluye procedimientos quirurgicos (liposuccion, lifting de cuello) improbables para una esteticista/med spa boutique de una sola persona en un suite, por lo que se descarto como fuente fiable en vez de arriesgar afirmaciones medicas falsas. Siguiendo la regla de PIPELINE.md fase 3 punto 5 y la instruccion explicita de la tarea ('no forzar un demo pobre / no fabricar'), se marca FAILED en vez de construir un site degradado con fotos de stock o servicios inventados.",
+  "name": "Beauty in Everything Medspa",
+  "owner_public_name": "Jae (Ja'e) Mesalien",
+  "owner_legal_note": "Registro Sunbiz FL: BEAUTY IN EVERYTHING LLC (entity 82-5413709, activa desde 2019-05-16), manager/member: Judeline P. Mesalien. Nombre publico usado en reviews y redes: 'Jae' / 'Ja'e'. Coincide con el alt-text de Instagram ('Photo by Jae Mesalien...') de @jaeglowskincare.",
+  "niche": "medspa / esthetics",
+  "city": "Pompano Beach, FL",
+  "address": "1800 N Federal Hwy, Suite 109, Pompano Beach, FL 33062",
+  "phone_primary": "(954) 899-2445",
+  "phone_primary_source": "buoyhealth.com listing (replica datos de Google Business, direccion exacta coincide)",
+  "phone_alternate_unverified": "(954) 513-5039",
+  "phone_alternate_source": "Nextdoor y varios directorios espejo (misma cadena de texto identica en multiples sitios, posible dato desactualizado o de un agregador). No se pudo confirmar cual es el numero que contesta hoy sin llamar (fuera de alcance: no se permite contactar al negocio).",
+  "hours": "Lunes a sabado 10:00 a 18:00, domingo cerrado (fuente: Birdeye)",
+  "google_rating": 5.0,
+  "google_review_count": 54,
+  "reviews_verbatim": [
+    {"author": "Adriana Ramirez", "text": "I absolutely loved my experience. Ja'e is amazing at what she does, very professional and personable.", "source": "Google (via Birdeye)"},
+    {"author": "Kati Valentin", "text": "My experience with Jae was amazing, she's so sweet, professional, engages in conversation and knows what she's doing.", "source": "Google (via Birdeye)"},
+    {"author": "Guerline Charles", "text": "Jae service and products quality are amazing! She was very knowledgeable and honest. My skin so soft and it glowed.", "source": "Google (dado por el brief; Birdeye trunca la ultima frase)"},
+    {"author": "Shirley Fleurimond", "text": "An amazing Spa experience is definitely at Jae Glow!", "source": "Google (via Birdeye), encontrada en esta investigacion"}
+  ],
+  "instagram": {
+    "handle": "@jaeglowskincare",
+    "url": "https://www.instagram.com/jaeglowskincare/",
+    "verified_real_account": true,
+    "verification_method": "scripts/ig_photos.py via Playwright (servicio Railway), 12 posts publicos vistos, alt-text confirma autora 'Jae Mesalien'",
+    "content_type": "Marketing de producto retail (linea Jae-Glow skincare): graficos promocionales con texto, modelos de stock, before/after con texto de marketing, y 1 foto personal de la dueña. NO es una cuenta de documentacion del negocio/tratamientos.",
+    "usable_for_gallery": false,
+    "note": "No se encontro una cuenta de Instagram separada para el medspa/local fisico distinta de la del producto retail, pese a probar variantes de handle (beautyineverythingmedspa: perfil vacio/privado o bloqueado por IG en el intento de rescate)."
+  },
+  "own_website_check": {
+    "has_own_site": false,
+    "domains_tried": [
+      {"domain": "beautyineverything.com", "result": "Resuelve pero da timeout/503 y TLS reset; busqueda adicional confirma que es un dominio antiguo no relacionado (blog personal de 2013 sobre moda/Calvin Klein), no el negocio"},
+      {"domain": "beautyineverythingllc.com", "result": "responde 200 mismo status generico, no se confirmo contenido relacionado; no usado como fuente por falta de confirmacion"},
+      {"domain": "jaeglow.com", "result": "SI existe y es real: tienda Shopify de la linea de productos Jae-Glow (retail), con boton 'BOOK NOW' que enlaza a Acuity Scheduling (owner=39015862) pero el widget muestra 'Bookings are paused right now' sin servicios ni precios listados. No presenta direccion, telefono ni menu del medspa. Se considera una propiedad de marca de producto, no el 'website propio' del negocio de servicios (no hay pagina de servicios/ubicacion/reservas activa)."
+    ]
+  },
+  "email_public": null,
+  "email_search_effort": "Revisado: pagina de contacto de jaeglow.com (solo formulario, sin direccion visible), pagina Nextdoor, Birdeye, Yelp (bloqueado 403 en fetch directo), Sunbiz (sin email publico en el registro), Instagram (bio no accesible por rate-limit 429 de IG en el intento directo; el research via Playwright no expone email). Ningun email publico verificable encontrado.",
+  "services_signal": {
+    "verified_real_evidence": "Ninguna con precios. Categoria de Yelp: 'Waxing'. Categoria de Google/Birdeye: 'Medical Spa' / 'Wellness'. La linea de producto Jae-Glow (retail, SI verificada en jaeglow.com) se enfoca en hiperpigmentacion/aclarado de piel: Beauty Bar $15, Body Lightening Lotion $75, Face Lightening Cream $85, Lightening Kit $325, Lip Lightening Cream $55, Sunscreen $45, Toner $45 (precios de PRODUCTOS retail, no de servicios/tratamientos en el local).",
+    "unverified_directory_list": "Multiples directorios espejo repiten textualmente 'dermal fillers, threading, neck lift, liposuction, skin lightening, and lip blushing' sin fuente primaria identificable (no aparece en Google Business posts, ni en jaeglow.com, ni en redes). Incluye procedimientos quirurgicos (liposuccion, neck lift) improbables para un med spa boutique de esteticista; se descarta como no confiable, no se uso para construir el site."
+  },
+  "photos": {
+    "usable_count_real": 1,
+    "minimum_required": 5,
+    "source": "@jaeglowskincare via scripts/ig_photos.py (Playwright), 12 posts descargados y revisados visualmente uno por uno",
+    "detail": [
+      {"file": "bk-1.jpg", "desc": "Cartel exterior del plaza comercial (Heritage Plaza) con lista de todos los inquilinos, borroso y no es especifico del negocio", "usable": false},
+      {"file": "bk-2.jpg", "desc": "Logo real 'BEAUTY IN EVERYTHING MEDSPA' en pared/espejo del local", "usable": true},
+      {"file": "bk-3.jpg", "desc": "Foto editada tipo 'caja de muñeca Barbie' con la dueña, promocional/personal", "usable": false},
+      {"file": "bk-4.jpg", "desc": "Foto personal de cumpleaños de la dueña junto a un Rolls-Royce", "usable": false},
+      {"file": "bk-5.jpg", "desc": "Grafico publicitario de producto con texto superpuesto", "usable": false},
+      {"file": "bk-6.jpg", "desc": "Grafico publicitario de producto con texto superpuesto", "usable": false},
+      {"file": "bk-7.jpg", "desc": "Grafico antes/despues de acne con texto de marketing superpuesto", "usable": false},
+      {"file": "bk-8.jpg", "desc": "Video still de la dueña en bata frente a espejo (estilo influencer/producto)", "usable": false},
+      {"file": "bk-9.jpg", "desc": "Foto de marca personal/producto con texto de marca superpuesto", "usable": false},
+      {"file": "bk-10.jpg", "desc": "Modelos de stock sosteniendo productos, fondo floral generico", "usable": false},
+      {"file": "bk-11.jpg", "desc": "Grafico promocional 'Happy Mother's Day 15% off' con texto de venta", "usable": false}
+    ]
+  },
+  "language": "en",
+  "sources_consulted": [
+    "https://www.yelp.com/biz/beauty-in-everything-pompano-beach-2",
+    "https://reviews.birdeye.com/beauty-in-everything-medspa-169817240281985",
+    "https://nextdoor.com/pages/beauty-in-everything-llc-pompano-beach-fl/",
+    "https://www.buoyhealth.com/providers/Medical%20Spa/FL/Pompano%20Beach",
+    "https://www.city-data.com/business-entities/FL/BEAUTY-IN-EVERYTHING-LLC-82-5413709-FL.html",
+    "https://jaeglow.com/ (+ /pages/contact, /pages/our-mission, /pages/book-now)",
+    "https://app.acuityscheduling.com/schedule.php?owner=39015862",
+    "https://www.instagram.com/jaeglowskincare/ (via scripts/ig_photos.py)"
+  ],
+  "research_date": "2026-07-29"
+}

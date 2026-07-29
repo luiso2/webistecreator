@@ -1,0 +1,99 @@
+{
+  "slug": "beauty-tune-up-spa-little-havana",
+  "name": "Beauty Tune Up Spa",
+  "aka": "BeautyTuneUp Spa / Beauty Tune-Up Spa LLC",
+  "legal_name": "Beauty Tune up Spa LLC",
+  "owner": {
+    "name": "Brigida Turi",
+    "also": "Ms. Brigida Turi (BBB), Brigida L. Turi (Sunbiz registered agent search)",
+    "title": "Licensed esthetician, owner/manager",
+    "source": "BBB Business Profile (Beauty Tune up Spa LLC) lists Ms. Brigida Turi as principal. Sunbiz.org (Florida Division of Corporations) officer/registered-agent search independently surfaces 'TURI BRIGIDA' linked to a Florida LLC record matching this business. A Google-Photos portrait of a woman in a white lab coat standing next to the treatment chair inside the storefront (used as about-1.jpg) is presumed to be her based on the consistent professional presentation; not independently name-confirmed against the photo itself."
+  },
+  "staff_mentioned": [
+    {"name": "Eve", "role": "Spray tan / brow specialist", "source": "Instagram post 'Glow with Eve' (spray tan promo) on @beautytuneup_; Groupon review by Lisbeth: 'Eve was very nice and answered all my questions... eyebrows'"},
+    {"name": "Bridget / Brigette", "role": "Lash technician (per discovery brief and a secondary Groupon aggregator listing with reviews mentioning 'Brigette is so very nice and sweet and gentle. My lashes look amazing!')", "source": "Discovery brief + groupon.com/biz/miami/beautytuneup-spa (a second, lower-confidence Groupon directory page for what appears to be the same address/business; not used for the primary rating figure because it could not be fully cross-verified)"}
+  ],
+  "niche": "Lash & brow studio that also offers facials, waxing, spray tan and teeth whitening (broader beauty spa, lash/brow is the strongest pillar per review volume)",
+  "city": "Miami, FL (Little Havana)",
+  "address": {
+    "street": "1940 SW 8th St, Suite 122",
+    "city": "Miami",
+    "region": "FL",
+    "postal_code": "33135",
+    "country": "US",
+    "neighborhood": "Little Havana (Calle Ocho)",
+    "geo": {"lat": 25.7653964, "lng": -80.227677},
+    "source": "Confirmed identically across Groupon's live business API (getMerchantPlace), BBB profile, Yelp listing title, Atly/Waze aggregators. Groupon's own place UUID maps to Google Place ID ChIJo0ukqeW32YgRw5kpBV7PWV0 (used to source photos, see images below)."
+  },
+  "phone": "+13054796151",
+  "phone_display": "(305) 479-6151",
+  "hours": "Tuesday-Saturday 9:00am-7:00pm, closed Sunday and Monday",
+  "hours_source": "Matches discovery brief exactly; independently re-confirmed via Groupon's live getMerchantPlace API openHours array (dayOfWeek 2-6, 09:00-19:00) fetched during this session.",
+  "email": null,
+  "email_search": "Deep search performed: (1) Instagram web_profile_info API for @beautytuneup_ (business_contact_method='CALL', business_email=null, bio_links=[], external_url=null); (2) Groupon business page and __NEXT_DATA__/Apollo cache for the merchant (no email field, only phone +13054796151); (3) BBB profile page (email not publicly listed); (4) Facebook page (facebook.com/p/Beauty-Tune-Up-Spa-100064036153053) could not be read past the login wall via direct fetch or mbasic mirror (redirects to login), so its About section could not be checked; (5) no owned domain exists to derive an email from. IG bio explicitly states 'Book an appointment by texting or calling' confirming phone-only contact preference. No public email found; registered as phone-only contact.",
+  "instagram": {
+    "confirmed_handle": "@beautytuneup_",
+    "url": "https://www.instagram.com/beautytuneup_/",
+    "full_name_on_ig": "Esthetician | Lashes | Miami",
+    "bio": "Lashes, Teeth Whitening, Facials and Brows. Book an appointment by texting or calling (305) 479-6151",
+    "followers": 311,
+    "following": 359,
+    "post_count_seen": 82,
+    "is_business_account": false,
+    "category_name": "Beauty, cosmetic & personal care",
+    "confirmation_basis": "Bio phone number is an EXACT match to the business's real phone (305) 479-6151, and bio services list (Lashes, Teeth Whitening, Facials, Brows) exactly matches the business. This is the account actually used to source gallery photos and captions (all in English).",
+    "other_handles_checked_and_rejected": [
+      "@beautytuneup (referenced as Groupon's own 'website' field for this merchant) -> returns an anomalous stub response ({\"status\":\"ok\"} with no user object) from Instagram's web_profile_info API on repeated attempts, and the profile page itself renders as a generic unhydrated shell; a known-good control username (@instagram) returns full data via the same method, so this indicates the @beautytuneup account is deactivated/suspended/renamed rather than a fetch failure. Not usable.",
+      "@beautytuneupspa -> exists but is essentially dormant: 8 followers, 2 following, 0 posts, empty bio and empty display name. Not a real active brand presence, not used."
+    ]
+  },
+  "facebook": "https://www.facebook.com/p/Beauty-Tune-Up-Spa-100064036153053/ (page exists per search results and Groupon-linked references; content could not be read directly, login wall blocked both the standard and mbasic fetch)",
+  "has_own_site": false,
+  "own_site_check": {
+    "domain_tried": "beautytuneupspa.com -> does NOT resolve (DNS/CONNECT failure verified via direct TLS attempt in this session in addition to the prior discovery pass; outbound proxy logs an explicit 502 connect_rejected for beautytuneupspa.com on two separate attempts)",
+    "conclusion": "No owned website. Only presence is Groupon/Yelp/BBB/aggregator directory listings, Facebook page, and the confirmed Instagram account @beautytuneup_. has_own_site: false."
+  },
+  "booking": {
+    "platform": "None (no GlossGenius/Booksy/Square/etc). Booking is phone call or text only, per the business's own Instagram bio and Groupon's 'business_contact_method: CALL' field.",
+    "channel": "tel:+13054796151"
+  },
+  "rating": 5.0,
+  "review_count": 51,
+  "rating_source": "Groupon live GraphQL data (getDealReviewSummary), fetched directly from groupon.com/biz/miami/beauty-tune-up-spa during this session: {total: 51, rating: '5.0', distribution: 50 five-star (98%) + 1 four-star (2%)}. This is a Groupon-sourced proxy for the business's real-world reputation, consistent with the task brief's '5.0/51'. Independent Yelp confirmation was attempted but blocked (Yelp returns a Cloudflare/PerimeterX JS challenge to automated fetches; the Yelp listing 'BEAUTY TUNE UP SPA... 23 Photos... Eyelash Service' was located via search but its star rating/review count could not be read). Google Maps direct read also blocked (requires JS). Per instructions, the Groupon-sourced figure is used and flagged as a proxy rather than an independently confirmed Google Maps rating.",
+  "reviews": [
+    {"author": "Paulette", "text": "Great products and service.", "lang": "en", "deal_purchased": "Two Customized Airbrush Spray-Tan Sessions", "date": "2025-05-23"},
+    {"author": "Wilma", "text": "Excelente servicio, muy professionales. Y el trabajo impeccable", "lang": "es", "deal_purchased": "One Full set of Classic Lash Extensions", "date": "2025-01-08"},
+    {"author": "Mahwesh", "text": "I love how my eyebrow lamination turned out! Will definitely be back!", "lang": "en", "deal_purchased": "Eyebrow Lamination, Tint and Shaping (Valid only for New Clients)", "date": "2024-11-18"},
+    {"author": "Lisbeth", "text": "Eve was very nice and answered all my questions, she made sure to take her time and see how I wanted my eyebrows to come out.", "lang": "en", "deal_purchased": "Eyebrow Lamination, Tint and Shaping (Valid only for New Clients)", "date": "2024-10-11"}
+  ],
+  "reviews_source": "Verbatim quotes and metadata (rating, title/deal name, ISO date) pulled directly from Groupon's live __NEXT_DATA__/Apollo GraphQL cache (Review objects) for groupon.com/biz/miami/beauty-tune-up-spa, fetched during this session. Matches the 4 quotes already gathered by discovery exactly.",
+  "language": {
+    "value": "en",
+    "reasoning": "Resolved primarily English, with the caveat that one review (Wilma) is in Spanish. Evidence for EN: (1) the business's own confirmed Instagram account @beautytuneup_ has an English-only bio ('Lashes, Teeth Whitening, Facials and Brows... Book an appointment by texting or calling') and all ~10 recent post captions read/sampled in this session are in English (e.g. 'Behind every facial, lash set, brow design, and spray tan...', 'Skincare terms, translated', 'The perfect day doesn't exist... but better to be sure'); (2) Groupon's own deal/business description ('A deep cleansing facial targeting those pesky clogged pores...') is English; (3) 3 of 4 review quotes are English, only 1 of 4 is Spanish. Little Havana's clientele does skew Spanish-speaking, and the business likely serves Spanish-speaking walk-ins day to day (hence Wilma's Spanish review and the choice to keep the site bilingual with an ES toggle), but the business's own outward-facing voice (IG, Groupon copy) is consistently English, so English was set as the site's default language rather than overriding to Spanish on demographic assumption alone."
+  },
+  "services": [
+    {"name": "Eyebrow Lamination, Tint and Shaping", "price": null, "source": "Real Groupon deal title (twice-purchased, referenced in 2 of 4 reviews); no current price available (deal no longer live)"},
+    {"name": "Classic Lash Extensions (Full Set)", "price": null, "source": "Real Groupon deal title from a review; also confirmed by real photo of storefront wall signage reading 'LASH EXTENSIONS ...479-6151 ... TANNING'"},
+    {"name": "Deep Cleansing Facial", "price": null, "source": "Groupon merchant description (live API field 'description'): glycolic acid cleanser, deep exfoliation, up to 15 minutes of extractions, hydrating mask"},
+    {"name": "Airbrush Spray Tan", "price": null, "source": "Real Groupon deal title ('Two Customized Airbrush Spray-Tan Sessions') from a review; also an Instagram post 'Glow with Eve... Flawless spray tans, tailored to you' naming staffer Eve as the spray tan specialist"},
+    {"name": "Teeth Whitening", "price": null, "source": "Confirmed via a real Google Photos interior shot showing a lit 'Teeth Whitening' wall sign and a client mid-treatment with a whitening light/mouth tray; also listed in the @beautytuneup_ Instagram bio"},
+    {"name": "Waxing", "price": null, "source": "Carried over from original discovery brief (broader beauty spa services); not independently re-confirmed with a specific real photo or review this session, kept as a general category only"},
+    {"name": "Brow shaping / hydrating facials / facial extractions / lash fills", "price": null, "source": "Reasonable real-service groupings implied by the confirmed facial and brow services above; listed as general 'also at the studio' categories on the site, no specific pricing claimed"}
+  ],
+  "services_note": "No current/live Groupon deals exist for this merchant (queryDealFeed returned 0 cards), so no verifiable current prices could be sourced. Per DESIGN.md 'verdad estricta', the site lists only real, evidenced service NAMES with no invented prices, and directs visitors to call/text (305) 479-6151 for current pricing.",
+  "brand_vibe": "Light, warm Latin-beauty-spa palette: cream/ivory base (#fbf1ea) with a terracotta/burnt-sienna deep accent (#b6512f) and warm caramel mid accent (#d98a5e). New palette, not reused from any prior build. Chosen to fit a Little Havana / Calle Ocho neighborhood beauty spa: warm skin-tone photography (real facial and lash photos), a genuine storefront on a historic red-tile-roofed block, and a name ('Tune Up') that reads well against a warm, grounded terracotta rather than a cool or pastel-pink palette.",
+  "images": [
+    {"file": "assets/raw/hero-1.jpg", "role": "hero image + og:image + favicon", "source": "Google Photos (via Place ID ChIJo0ukqeW32YgRw5kpBV7PWV0, proxied through an Atly aggregator page), real macro closeup of finished lash extension result, eyes open, no text overlay"},
+    {"file": "assets/raw/about-1.jpg", "role": "experience section photo (real space + staff, small, not a gallery tile)", "source": "Google Photos, same Place ID: a woman in a white lab coat standing beside the treatment chair at the storefront entrance, with the real Little Havana street (red-tile building, stop sign) visible through the glass door"},
+    {"file": "assets/raw/gallery-wide.jpg", "role": "gallery featured 16:9 tile", "source": "Google Photos, same Place ID: real interior shot of the teeth-whitening station with a lit 'Teeth Whitening' wall sign, whitening chair with client, and a framed lash-treatment photo on the wall"},
+    {"file": "assets/raw/gallery-2.jpg", "role": "gallery tile", "source": "Instagram @beautytuneup_ post video poster (no caption text overlay): real interior of a second treatment room with a large Medusa-bust mural and styling/treatment chair"},
+    {"file": "assets/raw/gallery-3.jpg", "role": "gallery tile", "source": "Instagram @beautytuneup_ carousel photo, cropped to remove a caption text band ('Skincare terms, translated'): the remaining image is a clean real flatlay of a skincare product jar, jade roller and raw crystals"},
+    {"file": "assets/raw/gallery-4.jpg", "role": "gallery tile + reused in experience section", "source": "Instagram @beautytuneup_ carousel photo, cropped to remove a top caption text band: real facial treatment in progress beside the storefront window (Little Havana street visible), esthetician in labcoat and mask"},
+    {"file": "assets/raw/gallery-5.jpg", "role": "gallery tile", "source": "Instagram @beautytuneup_ carousel photo, cropped to remove a bottom caption text band: real oxygen-infusion facial treatment in progress, gloved hands and equipment visible"},
+    {"file": "assets/raw/gallery-6.jpg", "role": "gallery tile", "source": "Instagram @beautytuneup_ carousel photo, cropped to remove a mid-frame caption text band: real close macro of a facial/lash treatment application in progress"}
+  ],
+  "images_curation_note": "Instagram feed yielded 19 downloadable real photos/video posters across the 12 most recent posts (pagination beyond that was not attempted; IG's web API returned no further posts without auth). Each was visually opened and inspected one by one. Rejected: several pure text/quote graphics with no photo content ('recharge mode: ON', 'life hack: book a facial'), a posed two-person portrait with no treatment content (personal-style photo, not used anywhere including as a gallery tile, consistent with the 'no selfies/portraits as gallery tiles' rule), 3 educational skincare-terms text-carousel slides, and 3 more procedure photos with a closed-eye subject AND a text caption overlay baked into the image (rejected primarily for the on-image caption text, which the quality gate prohibits in gallery). 4 of the 8 used images required a rectangular crop (via PIL) to physically remove a caption text band before they qualified as clean, real, non-text photos; this is a crop of an unaltered real photo, not a fabrication. 3 further real photos were sourced from Google Photos via the business's confirmed Google Place ID (reached through an Atly aggregator mirror after direct Yelp/Google Maps scraping was blocked). All 8 final images show either a finished/open-eye result, a clean real interior, or a legitimate in-progress treatment with no gore/irritation/clutter, per the visual quality gate.",
+  "images_resized": true,
+  "images_resize_note": "All 8 images resized to max 1000px width via PIL/Pillow, quality 82, before placing in assets/raw/.",
+  "gate_result": "GATE OK: beauty-tune-up-spa-little-havana (en)"
+}

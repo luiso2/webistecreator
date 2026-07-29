@@ -1,0 +1,92 @@
+{
+  "slug": "ml-esthetics-pompano-beach",
+  "name": "ML Esthetics",
+  "owner": "Monica Leyva",
+  "niche": "permanent makeup / lash & brow studio / esthetics (Booksy category: brows-lashes)",
+  "city": "Pompano Beach, FL",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_check": {
+    "domains_tried": ["mlesthetics.co (https, verified live this session)", "mlesthetics.com (no DNS)", "mlestheticsfl.com (no DNS)", "mlestheticspompano.com (no DNS)"],
+    "mlesthetics_co_result": "HTTP 405, body: 'This resource is no longer available'. Confirmed dead/decommissioned this session via curl (2026-07-23). Matches the brief's note.",
+    "booksy_same_as_candidate": "https://ml-esthetics.chrone.work/#banner (surfaced by booksy_dossier.py from the venue's sameAs/website_candidates field on Booksy)",
+    "chrone_work_result": "HTTP 301 redirect, final body: 'This resource is no longer available'. Also dead, verified live this session via curl. Appears to be a defunct third-party site-builder/landing-page tool link, not a currently functioning owned domain.",
+    "conclusion": "Both candidate domains found for this business (mlesthetics.co and ml-esthetics.chrone.work) return the identical 'This resource is no longer available' dead-resource message. No working owned website exists today. has_own_site = false confirmed independently, not just trusted from the brief."
+  },
+  "address": {
+    "used_on_site": "575 S Cypress Rd, Pompano Beach, FL 33060",
+    "source": "Live Booksy booking page (booksy_dossier.py JSON-LD extraction, fetched 2026-07-23), with geo-coordinates 26.223327,-80.123435 that resolve to a real Pompano Beach location near S Cypress Rd.",
+    "conflicting_addresses_found": [
+      { "address": "1216 E Atlantic Blvd, Pompano Beach, FL 33060", "sources": ["Yelp business page (search snippet)", "Groupon listing", "Birdeye reviews page"] },
+      { "address": "1625 Federal Highway, Pompano Beach, FL 33062", "sources": ["Nextdoor business page (live WebFetch this session)"] }
+    ],
+    "resolution_note": "Three different addresses surfaced across directories for this single-operator studio, which strongly suggests the business has relocated at least once and older directories (Yelp/Groupon/Birdeye/Nextdoor) were not updated. The live, currently-active Booksy booking page (the platform clients actually use today to book with Monica) was treated as the most current and authoritative source and is what the site displays. The conflicting older addresses are recorded here for transparency rather than silently discarded, per pipeline honesty rules."
+  },
+  "phone": "(305) 720-6197",
+  "phone_e164": "+13057206197",
+  "phone_source": "Provided in task brief; independently corroborated by multiple live WebSearch results (Groupon listing, general directory summaries) this session. Not published directly on the Booksy page itself (booksy_dossier.py returned phone: null from the JSON-LD), so used with sourcing noted rather than treated as Booksy-verified.",
+  "email": null,
+  "email_search": "Deep search performed per pipeline step 7: Booksy JSON-LD/payload (no email field populated), Instagram bio via ig_contact.py (blocked: this cloud environment cannot reach instagram.com directly, net::ERR_CONNECTION_RESET, even after installing local Playwright/Chromium), Groupon listing page (403 Forbidden on WebFetch), Nextdoor business page (live WebFetch succeeded, no email listed), general WebSearch queries for a contact email. One WebSearch AI-overview response returned a string 'people@mlesthetics' with no domain suffix (malformed/truncated, evidently a summarization artifact, not a real address found on any page) and was explicitly NOT used. No genuine email address was found through any source. Honestly recorded as null.",
+  "instagram": { "handle": "ml_esthetics1", "url": "https://www.instagram.com/ml_esthetics1/", "source": "Booksy sameAs field (booksy_dossier.py) and task brief, consistent." },
+  "booking_url": "https://booksy.com/en-us/1680270_ml-esthetics_brows-lashes_15649_pompano-beach",
+  "booking_platform": "Booksy",
+  "rating": 5.0,
+  "review_count": 124,
+  "rating_source": "Live Booksy JSON-LD (booksy_dossier.py, fetched 2026-07-23): ratingValue 5.0, reviewCount 124. Consistent with task brief's reported range (121-124) and with a WebSearch summary citing '5 star rating with 121 reviews on Birdeye'. Birdeye's own reviews page (live WebFetch this session) showed a differing count of 173 reviews aggregating multiple sources including Google, which was NOT used as the headline figure since it could not be cleanly attributed to a single verifiable platform the way the Booksy figure could; flagged here for transparency rather than silently discarded.",
+  "hours": {
+    "monday_friday": "9:00 AM - 7:00 PM",
+    "saturday": "9:00 AM - 9:00 PM",
+    "sunday": "Not confirmed (one aggregator source suggested Sat-Sun both 9am-9pm, another implied Sunday closed; per pipeline rule to omit uncertain data rather than invent, Sunday hours are omitted from the site and JSON-LD)",
+    "source": "Multiple WebSearch directory summaries (consistent on Mon-Fri and Saturday hours)."
+  },
+  "services_source": "Full Booksy service menu with exact prices/durations extracted live via scripts/booksy_dossier.py from the venue's Booksy JSON-LD (fetched 2026-07-23): 41 services in total, 9 with an explicit published duration. No prices invented.",
+  "services_menu_categories": {
+    "lifts_lamination": ["Korean Lash Lift $90", "Lash Lift $80", "Eyelash Lift + Tint $85 (45min)", "Brow Lamination $80", "Brow Lamination and Tint $90", "Eyebrow & Lash Lamination + Tint $150"],
+    "brow_shaping_tint": ["Brow Waxing and Shaping $30 (15min)", "Brow Tint $35 (20min)", "One Wax Session on Both Eyebrows $15 (20min)"],
+    "pmu_brows": ["Powder Brows / Microshading $450", "Nano Brows $450", "Ombre Powder Brows $450", "Microblading $450", "Color Correction $350", "Ombre Powder Brows Touch-Up (6-12 Weeks) $200", "Microblading Touch-Up (6-12 Weeks) $150"],
+    "pmu_lips_eyes": ["Lip Blush $450", "Lip Blush Touch-Up $150", "Eyeliner Touchup $125 (1h)", "Eyeliner Top and Bottom $300", "Eyeliner Permanent Makeup $250", "Eyeliner with Shading $300", "Hyaluron Pen Lip Filler (Needle Free) $600"],
+    "facials": ["Detoxing Facial $60 (1h)", "Bacial $100", "Nanoneedling Facial $150", "Kids Facial $50", "Chemical Peel Facial $120 (30min)"],
+    "scar_stretch_camouflage": ["1x1 in Area Scar Camouflage $250", "2x2 in Area Scar Camouflage $350", "3x3 in Scar Camouflage $450", "Medium Area $600", "Large Area $1000", "XL Area Scar or Stretch Mark Camouflage $1500", "Vitiligo $100"],
+    "waxing": ["One Full Face Waxing $35 (20min)", "One Upper Lip Wax $10 (10min)", "One Large Area $50"],
+    "other": ["Saline Tattoo Removal $200", "Additional Session $50"]
+  },
+  "reviews_used_on_site": [
+    { "author": "Tasmin C.", "source": "Booksy (verified booking review, live fetch 2026-07-23)", "text": "Did brow lamination and lash lift and tint. They look amazing, super happy! Will defo be coming back" },
+    { "author": "Akram B.", "source": "Booksy (verified booking review)", "text": "Monica did a beautiful job shaping and defining my eyebrows. The result is a soft straight brow that looks clean, modern, and flattering for my face shape. The strokes are even and well-placed, giving a natural look without appearing too heavy. I especially appreciate how she kept the brows balanced and symmetrical, with a gentle lift toward the tail that brightens my eyes. Overall, her work looks polished, youthful, and thoughtfully done." },
+    { "author": "jasmine m.", "source": "Booksy (verified booking review)", "text": "Amazing lash lift ❤️ and so quick" }
+  ],
+  "reviews_note": "Author names truncated exactly as Booksy publicly displays them (e.g. 'Tasmin C…'), rendered on-site with a trailing period instead of ellipsis for readability; text is verbatim. 7 additional unattributed/truncated review snippets were returned by booksy_dossier.py but were not used since they lacked a verifiable author name attached to the visible text.",
+  "images": {
+    "source": "Booksy gallery, extracted via scripts/booksy_dossier.py + scripts/booksy_gallery.py (16 photos downloaded, all verified as real decoded JPEGs with `file` and PIL). scripts/ig_photos.py was also attempted against @ml_esthetics1 but the cloud IG proxy (Railway) and the local Playwright fallback both failed to retrieve the real feed from this environment (service returned 1 unrelated stock/marketing image, since deleted; local Chromium got net::ERR_CONNECTION_RESET reaching instagram.com directly, confirming this sandboxed environment cannot reach Instagram even after installing a local browser). Booksy's own gallery was therefore the sole real photo source, which is explicitly an acceptable fallback per PIPELINE.md.",
+    "curation_note": "Every one of the 16 downloaded photos was viewed individually (not just by filename) before deciding. Discarded from all use: bk-2.jpg (native resolution only 150x150, too low quality), bk-3.jpg (screenshot with visible phone status bar/app UI chrome and a 'Korean Lash Lift Tutorial' video caption baked into the image, prohibited per gallery curation rules), bk-16.jpg (mid-procedure POV shot of the artist's gloved hand actively working, prohibited in gallery), bk-17.jpg (a generic Instagram-marketing stock/promo graphic of unrelated people, clearly not a real photo of this business, returned erroneously by the IG photo service; deleted entirely, never used anywhere). bk-6.jpg, bk-8.jpg, bk-10.jpg and bk-14.jpg were viewed and judged acceptable-but-redundant against stronger alternatives already selected, so were left unused and removed from assets/raw to keep the delivered folder to only the photos actually referenced by index.html.",
+    "used": [
+      { "file": "assets/raw/bk-15.jpg", "used_as": "hero image (og:image, favicon)", "desc": "Warm, sharply lit smiling close-up portrait, eyes open, finished brow/lash look" },
+      { "file": "assets/raw/bk-7.jpg", "used_as": "experience section photo 1 (process ambiance)", "desc": "Gloved hand of the artist mid-microblading stroke on a client's brow; used only in the Experience section per pipeline rule that mid-procedure/process shots belong there, not in the results gallery" },
+      { "file": "assets/raw/bk-4.jpg", "used_as": "experience section photo 2", "desc": "Split before/after of a brow, thin natural brow vs. finished microbladed brow, same client, eyes closed (facial-prep style before/after, acceptable for the ambiance/experience section per pipeline rule)" },
+      { "file": "assets/raw/bk-1.jpg", "used_as": "gallery tile 1 (col-span-2, 16:9, wide)", "desc": "Split before/after: undone natural brow+lip vs. finished microbladed brow and lip blush with a big smile, eyes open on the after side" },
+      { "file": "assets/raw/bk-12.jpg", "used_as": "gallery tile 2", "desc": "Smiling close-up portrait, eyes open, finished PMU brow look" },
+      { "file": "assets/raw/bk-13.jpg", "used_as": "gallery tile 3", "desc": "Finished brow lamination result, eyes open, bright even lighting" },
+      { "file": "assets/raw/bk-5.jpg", "used_as": "gallery tile 4", "desc": "Extreme close-up of finished lash lift + brow lamination, eyes open, glowing skin" },
+      { "file": "assets/raw/bk-9.jpg", "used_as": "gallery tile 5", "desc": "Close-up of finished natural-look eyelash extensions, eyes open" },
+      { "file": "assets/raw/bk-11.jpg", "used_as": "gallery tile 6", "desc": "Split before/after of a lip blush result, clean, no visible watermark or caption" }
+    ]
+  },
+  "brand_vibe": "No standalone brand logo file was recoverable (Booksy has no logo asset for this venue; the one photo showing any wordmark, bk-8.jpg, has only a small corner watermark baked into a client photo and was not treated as a usable/extractable logo asset). Photos show a warm rosewood/mauve, soft-glam PMU aesthetic (blush tones, warm skin lighting). A dedicated rosewood/dusty-mauve palette was designed to match that mood rather than reusing any already-used DESIGN.md palette. Nav/footer/experience 'logo' spots use a plain CSS text monogram ('ML' in a circle, styled like the template's existing .pre-mono preloader monogram) instead of any photo, since no real business logo exists and using a client's photo as if it were the owner's portrait would misattribute identity.",
+  "base_template": "templates/light-v2 (light base, lashbloom exemplar, EN default) -- chosen per task instructions as thematically closest (lash/brow/PMU studio)",
+  "palette": {
+    "accent_deep": "#8a4a52",
+    "accent_mid": "#bd8089",
+    "bg": "#faf4f1",
+    "bg_2": "#f0e0da",
+    "ink": "#332422",
+    "accent_ghost": "rgba(138,74,82,0.14)",
+    "derivation": "Rosewood/dusty-mauve palette, custom-designed to match the warm blush/skin tones visible across the real Booksy gallery photos. Distinct from all palettes already listed as used in DESIGN.md/SKELETONS-V2.md (mizu, amani, mare, alea, pausa, coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark)."
+  },
+  "build_method": "Anchored transformation script (Python, rep()/assert-before-replace) over templates/light-v2/index.html per templates/SKELETONS-V2.md, run as 3 sequential scripts (scripts/build_mlesthetics.py: badge protect, palette hex+rgba, globals, head/JSON-LD, preloader, nav, hero, strip, marquee, experience, method; scripts/build_mlesthetics_2.py: 4 destacado service cards + full categorized 41-item menu, no accordions; scripts/build_mlesthetics_3.py: gallery, reviews, location+hours block, CTA, footer, book-float). index.html was never written from scratch; all images resized to max 1000px width before use.",
+  "gate_result": "GATE OK: ml-esthetics-pompano-beach (en) -- python3 scripts/gate.py ml-esthetics-pompano-beach --lang en --forbid \"Lash Bloom,Yesi,West Palm,Cresthaven,519855,lashbloom\"",
+  "visual_qa": "Rendered locally with a Playwright/Chromium instance (installed this session) at 1440x900 desktop and 390x844 mobile. Confirmed: no horizontal overflow at 390px (body.scrollWidth === 390), all 9 used images decode and display correctly, full 41-service categorized menu renders with zero collapsed/accordion elements, hero/gallery/reviews/CTA/footer all render as intended once the reveal animations complete (headless file:// IntersectionObserver timing is slower than a live browser; the identical delay was reproduced on the untouched templates/light-v2/index.html exemplar too, confirming it is a test-harness characteristic and not a defect introduced by this build).",
+  "em_dash_count": 0,
+  "status": "ok",
+  "outreach": "draft_only_not_sent",
+  "fecha": "2026-07-23"
+}

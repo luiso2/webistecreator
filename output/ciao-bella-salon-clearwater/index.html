@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#faf6f2" />
+  <title>Ciao Bella Salon · Hair, Color &amp; Beauty Salon in Clearwater, FL | 5.0 on Google</title>
+  <meta name="description" content="Ciao Bella Salon, Clearwater FL: haircuts, balayage, color correction, smoothing treatments and bridal styling with owner-stylist Angela McDowell. 5.0 rating across 95 Google reviews. Book online on Booksy." />
+  <meta property="og:title" content="Ciao Bella Salon · Hair, Color &amp; Beauty Salon in Clearwater, FL" />
+  <meta property="og:description" content="Cuts, color, balayage and bridal styling with stylist Angela McDowell. 5.0 rating, 95 Google reviews. Book online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/ig-17.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/ig-17.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Ciao Bella Salon",
+    "description": "Full-service hair, color and beauty salon in Clearwater, FL, led by owner-stylist Angela McDowell. Haircuts, balayage, color correction, smoothing treatments, waxing and bridal styling.",
+    "telephone": "+1-727-333-7520",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "streetAddress": "1521 Sunset Point Rd", "addressLocality": "Clearwater", "addressRegion": "FL", "postalCode": "33755", "addressCountry": "US" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 27.99019, "longitude": -82.7747 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Thursday"], "opens": "10:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Saturday"], "opens": "10:00", "closes": "16:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "17:00" }
+    ],
+    "sameAs": ["https://www.instagram.com/ciaobellasalon_/", "https://www.facebook.com/ciaobella2018/", "https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "95", "bestRating": "5" },
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Hair and beauty services", "itemListElement": [
+      { "@type": "Offer", "price": "55", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Women's Haircut" } },
+      { "@type": "Offer", "price": "220", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Full Balayage" } },
+      { "@type": "Offer", "price": "200", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Full Highlight (includes toner)" } },
+      { "@type": "Offer", "price": "190", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Special Event Hair & Make Up" } }
+    ] }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf6f2;
+      --bg-2: #f3e4e1;
+      --surface: rgba(250,246,242,0.72);
+      --ink: #2b1d1a;
+      --ink-60: rgba(43,29,26,0.62);
+      --ink-40: rgba(43,29,26,0.42);
+      --accent-deep: #7c2335;
+      --accent-mid: #a8465a;
+      --accent-soft: #f3e4e1;
+      --accent-ghost: rgba(124,35,53,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(124,35,53,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,246,242,0.9);
+      border-color: rgba(124,35,53,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(43,29,26,0.14), 0 0 40px rgba(124,35,53,0.08);
+    }
+
+    .text-shine {
+      background: linear-gradient(110deg, #7c2335 0%, #b0596c 30%, #4a1520 52%, #7c2335 75%, #a8465a 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #eccdd0 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d9a3ac 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e3bcc2 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #c97b8a 0%, #7c2335 48%, #4a1520 100%);
+      color: #faf1ec; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,15,25,0.4),
+        0 5px 0 #38101a,
+        0 12px 24px rgba(43,29,26,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,15,25,0.4), 0 7px 0 #38101a, 0 18px 34px rgba(43,29,26,0.32), 0 0 40px rgba(124,35,53,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,15,25,0.45), 0 1px 0 #38101a, 0 4px 10px rgba(43,29,26,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    .btn-ghost {
+      border: 1px solid rgba(124,35,53,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(124,35,53,0.7); background: rgba(124,35,53,0.08); box-shadow: 0 10px 26px rgba(43,29,26,0.14); }
+
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(250,246,242,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(43,29,26,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(43,29,26,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(124,35,53,0.14), inset 0 -60px 100px rgba(43,29,26,0.12); }
+    .zoomable img, .zoomable video { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img, .zoomable:hover video { transform: scale(1.05); }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #c97b8a, #4a1520);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .stars { color: #7c2335; letter-spacing: 2px; text-shadow: 0 0 14px rgba(124,35,53,0.3); }
+
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    .dark-band {
+      --ink: #faf1ec;
+      --ink-60: rgba(250,241,236,0.65);
+      --ink-40: rgba(250,241,236,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(230,175,180,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e8b4bb 0%, #fbe2d9 30%, #c98a95 52%, #e8b4bb 75%, #f3d0d5 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,180,187,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(201,138,149,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #fbe9e6 0%, #e8c3c8 48%, #c98a95 100%);
+      color: #2b1d1a;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(90,20,32,0.35),
+        0 5px 0 #8a4f5a,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(90,20,32,0.35), 0 7px 0 #8a4f5a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,180,187,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(90,20,32,0.4), 0 1px 0 #8a4f5a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(232,180,187,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(232,180,187,0.7); background: rgba(232,180,187,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e8b4bb; text-shadow: 0 0 14px rgba(232,180,187,0.4); }
+
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c97b8a 0%, #7c2335 100%);
+      box-shadow: 0 6px 0 #38101a, 0 14px 30px rgba(43,29,26,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #38101a, 0 20px 40px rgba(43,29,26,0.4), 0 0 34px rgba(124,35,53,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #38101a, 0 6px 14px rgba(43,29,26,0.3); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep);
+      border: 1px solid rgba(124,35,53,0.35); background: rgba(124,35,53,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #4a1520 0%, #7c2335 45%, #c97b8a 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img, .img-reveal video { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img, .img-reveal.in video { scale: 1; }
+
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(43,29,26,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(232,180,187,0.14) 0%, rgba(124,35,53,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(124,35,53,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf6ee;
+      background: linear-gradient(180deg, transparent 0%, rgba(30,10,14,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(232,180,187,0.09); pointer-events: none; user-select: none;
+    }
+
+    .ig-video { cursor: pointer; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img, .img-reveal video { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">CB</span>
+    <span class="pre-word">Ciao Bella Salon</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(124,35,53,0.35)] bg-[rgba(124,35,53,0.1)] text-[color:var(--accent-deep)]">CB</span>
+        <span class="font-display text-xl tracking-[0.12em] uppercase">Ciao <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Bella Salon</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Process">The Process</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Change language">EN</button>
+        <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Book now</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Open menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Process">The Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Clearwater, FL · Salón de Belleza" data-en="Clearwater, FL · Hair &amp; Beauty Salon">Clearwater, FL · Hair &amp; Beauty Salon</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Ciao bella, bienvenida a tu mejor cabello." data-en="Ciao bella, welcome to your best hair.">Ciao bella, welcome to your best hair.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Cortes, color y" data-en="Haircuts, color and">Haircuts, color and</span><br /><span data-es="balayage hechos con " data-en="balayage made ">balayage made </span><span class="text-shine" data-es="amor" data-en="beautiful">beautiful</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Angela McDowell y el equipo de Ciao Bella llevan desde 2018 coloreando, cortando y peinando en Clearwater: color completo, balayage, corrección de color, tratamientos alisadores y belleza nupcial en un estudio luminoso e impecable en Sunset Point Road." data-en="Angela McDowell and the Ciao Bella team have been coloring, cutting and styling Clearwater since 2018: full color, balayage, color correction, smoothing treatments and bridal beauty in a bright, spotless studio on Sunset Point Road.">Angela McDowell and the Ciao Bella team have been coloring, cutting and styling Clearwater since 2018: full color, balayage, color correction, smoothing treatments and bridal beauty in a bright, spotless studio on Sunset Point Road.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 95 reseñas en Google" data-en="5.0 · 95 reviews on Google">5.0 · 95 reviews on Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+17273337520" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (727) 333-7520
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/ig-17.jpg" alt="Glossy balayage waves finished at Ciao Bella Salon, Clearwater" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Book online</p>
+            <p class="font-display text-lg">Full Balayage</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="$220 · 4h 30min" data-en="$220 · 4h 30min">$220 · 4h 30min</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="95">95</span> <span data-es="reseñas en Google" data-en="reviews on Google">reviews on Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Color <span class="text-shine">Correction</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="La especialidad de Angela" data-en="Angela's specialty">Angela's specialty</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl" data-es="Desde 2018" data-en="Est. 2018">Est. 2018</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Salón boutique en Clearwater" data-en="Clearwater boutique salon">Clearwater boutique salon</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Sunset Point Rd</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Clearwater, FL 33755" data-en="Clearwater, FL 33755">Clearwater, FL 33755</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Balayage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Color Correction</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Smoothing Treatments</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bridal Styling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Balayage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Color Correction</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Smoothing Treatments</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bridal Styling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/ig-13.jpg" alt="Smiling client with fresh balayage curls at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/ig-2.jpg" alt="Warm balayage result against the white subway tile wall at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Una estilista," data-en="One stylist,">One stylist,</span><br /><span class="text-shine" data-es="un color infinito" data-en="endless color craft">endless color craft</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Ciao Bella es el estudio de Angela McDowell en Sunset Point Road: un espacio luminoso e impecable construido alrededor de una silla y un objetivo, lograr tu color y corte exactamente como lo imaginas. Color completo, balayage, corrección de color, tratamientos alisadores y belleza nupcial, todo bajo su mano desde 2018." data-en="Ciao Bella is Angela McDowell's studio on Sunset Point Road: a bright, spotless space built around one chair and one goal, getting your color and cut exactly right. Full color, balayage, corrective color, smoothing treatments and bridal beauty, all under her hand since 2018.">Ciao Bella is Angela McDowell's studio on Sunset Point Road: a bright, spotless space built around one chair and one goal, getting your color and cut exactly right. Full color, balayage, corrective color, smoothing treatments and bridal beauty, all under her hand since 2018.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Las clientas describen su salón como extremadamente limpio y absolutamente hermoso, y vuelven siempre por la misma razón: ella escucha, es precisa, y hace ver fácil la corrección de color. Un 5.0 perfecto en 95 reseñas de Google." data-en="Clients describe her salon as extremely clean and absolutely gorgeous, and come back for the same reason every time: she listens, she is precise, and she makes color correction look easy. A perfect 5.0 across 95 Google reviews.">Clients describe her salon as extremely clean and absolutely gorgeous, and come back for the same reason every time: she listens, she is precise, and she makes color correction look easy. A perfect 5.0 across 95 Google reviews.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="95">95</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2018</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Desde" data-en="Since">Since</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(124,35,53,0.3)] bg-[rgba(124,35,53,0.1)] text-[color:var(--accent-deep)]">AM</span>
+            <span class="text-sm font-light">Angela McDowell · <span class="text-[color:var(--ink-40)]" data-es="Dueña y estilista" data-en="Owner &amp; Stylist">Owner &amp; Stylist</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Your visit, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así se trabaja" data-en="How it works">How it works</span> <span class="text-shine" data-es="aquí" data-en="here">here</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Reserva online" data-en="Book online">Book online</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Elige tu servicio en Booksy: corte, color, balayage o belleza nupcial, con precios claros y confirmación instantánea." data-en="Choose your service on Booksy, cut, color, balayage or bridal styling, with clear pricing and instant confirmation.">Choose your service on Booksy, cut, color, balayage or bridal styling, with clear pricing and instant confirmation.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Consulta rápida" data-en="Quick consult">Quick consult</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Angela revisa el historial y los objetivos de tu cabello antes de aplicar cualquier color, sobre todo en trabajos de corrección." data-en="Angela checks your hair's history and goals before any color touches your strands, especially for corrective work.">Angela checks your hair's history and goals before any color touches your strands, especially for corrective work.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="El servicio" data-en="The service">The service</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Desde un corte de hombre de 40 minutos hasta un balayage completo de 4h30, cada servicio recibe su tiempo completo en la silla." data-en="From a 40-minute men's cut to a 4.5-hour full balayage, every service gets its full time in the chair.">From a 40-minute men's cut to a 4.5-hour full balayage, every service gets its full time in the chair.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="El resultado" data-en="The finish">The finish</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con tu corte o color terminado, consejos de mantenimiento, y tu próxima cita agendada antes de irte." data-en="You leave with a finished cut or color, styling tips, and your next visit booked before you go.">You leave with a finished cut or color, styling tips, and your next visit booked before you go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Choose your</span> <span class="text-shine" data-es="servicio" data-en="service">service</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por Ciao Bella Salon en Booksy. La reserva confirma al instante." data-en="Prices and durations as published by Ciao Bella Salon on Booksy. Booking confirms instantly.">Prices and durations as published by Ciao Bella Salon on Booksy. Booking confirms instantly.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Más reservado" data-en="Most booked">Most booked</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Women&#8217;s Haircut</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Un corte de precisión y acabado para cualquier tipo de cabello, la cita con la que empiezan la mayoría de las clientas." data-en="A precision cut and finish for any hair type, the appointment most clients start with.">A precision cut and finish for any hair type, the appointment most clients start with.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$55</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p></div>
+            <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(124,35,53,0.4); box-shadow: 0 18px 50px rgba(43,29,26,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Firma de la casa" data-en="House signature">House signature</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Full Balayage</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Color dimensional pintado a mano, personalizado para tu cabello, con un crecimiento suave y luminoso." data-en="Hand-painted, dimensional color customized to your hair for a soft, sun-kissed grow-out.">Hand-painted, dimensional color customized to your hair for a soft, sun-kissed grow-out.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$220</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">4h 30min</p></div>
+            <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Especialista en color" data-en="Color specialist">Color specialist</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Full Highlight</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Mechas de cabeza completa terminadas con matizador personalizado para un resultado limpio y luminoso." data-en="Full-head highlights finished with a custom toner for a clean, bright result.">Full-head highlights finished with a custom toner for a clean, bright result.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$200</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">4h 30min</p></div>
+            <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Bodas y eventos" data-en="Bridal &amp; events">Bridal &amp; events</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Special Event Hair &amp; Make Up</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Peinado y maquillaje coordinados para tu boda o gran evento." data-en="Hair and makeup styled together for your wedding day or big event.">Hair and makeup styled together for your wedding day or big event.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$190</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">4h</p></div>
+            <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Menú completo: 29 servicios, desde $15 hasta $275. Todo se reserva igual, en Booksy." data-en="Full menu: 29 services, from $15 to $275. Everything below books the same way, on Booksy.">Full menu: 29 services, from $15 to $275. Everything below books the same way, on Booksy.</span></p>
+      <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10" style="transition-delay:120ms">
+        <div class="glass rounded-2xl p-6">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Cortes y estilo" data-en="Haircuts &amp; style">Haircuts &amp; style</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex justify-between gap-3"><span>Consultation <span class="text-[color:var(--ink-40)] text-xs">· 60min</span></span><span class="text-[color:var(--ink)]">$50</span></li>
+            <li class="flex justify-between gap-3"><span>Women&#8217;s Haircut <span class="text-[color:var(--ink-40)] text-xs">· 60min</span></span><span class="text-[color:var(--ink)]">$55</span></li>
+            <li class="flex justify-between gap-3"><span>Women&#8217;s Natural Haircut <span class="text-[color:var(--ink-40)] text-xs">· 2h 30min</span></span><span class="text-[color:var(--ink)]">$70</span></li>
+            <li class="flex justify-between gap-3"><span>Wash &amp; Style <span class="text-[color:var(--ink-40)] text-xs">· 1h 30min</span></span><span class="text-[color:var(--ink)]">$45</span></li>
+            <li class="flex justify-between gap-3"><span>Kids Haircut, 10 &amp; under <span class="text-[color:var(--ink-40)] text-xs">· 30min</span></span><span class="text-[color:var(--ink)]">$25</span></li>
+            <li class="flex justify-between gap-3"><span>Bang Trim <span class="text-[color:var(--ink-40)] text-xs">· 15min</span></span><span class="text-[color:var(--ink)]">$20</span></li>
+            <li class="flex justify-between gap-3"><span>Men&#8217;s Haircut <span class="text-[color:var(--ink-40)] text-xs">· 40min</span></span><span class="text-[color:var(--ink)]">$40</span></li>
+          </ul>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Coloración" data-en="Coloring">Coloring</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex justify-between gap-3"><span>Full Color <span class="text-[color:var(--ink-40)] text-xs">· 2h</span></span><span class="text-[color:var(--ink)]">$85</span></li>
+            <li class="flex justify-between gap-3"><span>Color Retouch <span class="text-[color:var(--ink-40)] text-xs">· 2h</span></span><span class="text-[color:var(--ink)]">$75</span></li>
+            <li class="flex justify-between gap-3"><span>Glaze / Toner <span class="text-[color:var(--ink-40)] text-xs">· 2h 30min</span></span><span class="text-[color:var(--ink)]">$60</span></li>
+            <li class="flex justify-between gap-3"><span>Mini Highlight <span class="text-[color:var(--ink-40)] text-xs">· 2h 30min</span></span><span class="text-[color:var(--ink)]">$60</span></li>
+            <li class="flex justify-between gap-3"><span>Partial Balayage <span class="text-[color:var(--ink-40)] text-xs">· 3h</span></span><span class="text-[color:var(--ink)]">$150</span></li>
+            <li class="flex justify-between gap-3"><span>Partial Highlight <span class="text-[color:var(--ink-40)] text-xs">· 3h 30min</span></span><span class="text-[color:var(--ink)]">$165</span></li>
+            <li class="flex justify-between gap-3"><span>Double Process <span class="text-[color:var(--ink-40)] text-xs">· 4h</span></span><span class="text-[color:var(--ink)]">$180</span></li>
+            <li class="flex justify-between gap-3"><span>Platinum Blending <span class="text-[color:var(--ink-40)] text-xs">· 4h</span></span><span class="text-[color:var(--ink)]">$195</span></li>
+            <li class="flex justify-between gap-3"><span>Full Highlight <span class="text-[color:var(--ink-40)] text-xs">· 4h 30min</span></span><span class="text-[color:var(--ink)]">$200</span></li>
+            <li class="flex justify-between gap-3"><span>Full Balayage <span class="text-[color:var(--ink-40)] text-xs">· 4h 30min</span></span><span class="text-[color:var(--ink)]">$220</span></li>
+            <li class="flex justify-between gap-3"><span>Corrective / Specialty Color <span class="text-[color:var(--ink-40)] text-xs">· 5h</span></span><span class="text-[color:var(--ink)]" data-es="Cotización" data-en="Custom quote">Custom quote</span></li>
+          </ul>
+        </div>
+        <div class="glass rounded-2xl p-6">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Alisados y depilación" data-en="Smoothing &amp; waxing">Smoothing &amp; waxing</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex justify-between gap-3"><span>Styling, curling/flat iron <span class="text-[color:var(--ink-40)] text-xs">· 45min</span></span><span class="text-[color:var(--ink)]">$25</span></li>
+            <li class="flex justify-between gap-3"><span>Brazilian Blowout EXPRESS <span class="text-[color:var(--ink-40)] text-xs">· 3h 30min</span></span><span class="text-[color:var(--ink)]">$125</span></li>
+            <li class="flex justify-between gap-3"><span>Brazilian Blowout <span class="text-[color:var(--ink-40)] text-xs">· 5h 30min</span></span><span class="text-[color:var(--ink)]">$275</span></li>
+            <li class="flex justify-between gap-3"><span>Lip Wax <span class="text-[color:var(--ink-40)] text-xs">· 20min</span></span><span class="text-[color:var(--ink)]">$15</span></li>
+            <li class="flex justify-between gap-3"><span>Eyebrow Wax &amp; Shaping <span class="text-[color:var(--ink-40)] text-xs">· 35min</span></span><span class="text-[color:var(--ink)]">$20</span></li>
+            <li class="flex justify-between gap-3"><span>Temporary Henna Tattoos <span class="text-[color:var(--ink-40)] text-xs">· 1h 30min</span></span><span class="text-[color:var(--ink)]">$50</span></li>
+          </ul>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4 mt-6" data-es="Bodas y eventos" data-en="Bridal &amp; formal">Bridal &amp; formal</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex justify-between gap-3"><span>Half Updo <span class="text-[color:var(--ink-40)] text-xs">· 1h</span></span><span class="text-[color:var(--ink)]">$65</span></li>
+            <li class="flex justify-between gap-3"><span>Formal Style / Updo <span class="text-[color:var(--ink-40)] text-xs">· 1h</span></span><span class="text-[color:var(--ink)]">$90</span></li>
+            <li class="flex justify-between gap-3"><span>Bridal &amp; Event Makeup <span class="text-[color:var(--ink-40)] text-xs">· 1h 45min</span></span><span class="text-[color:var(--ink)]">$100</span></li>
+            <li class="flex justify-between gap-3"><span>Special Event Hair &amp; Make Up <span class="text-[color:var(--ink-40)] text-xs">· 4h</span></span><span class="text-[color:var(--ink)]">$190</span></li>
+            <li class="flex justify-between gap-3"><span>Travel fee <span class="text-[color:var(--ink-40)] text-xs">· 3h</span></span><span class="text-[color:var(--ink)]" data-es="Cotización" data-en="Custom quote">Custom quote</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Color real," data-en="Real color,">Real color,</span> <span class="text-shine" data-es="resultados reales" data-en="real results">real results</span></h2>
+        </div>
+        <a href="https://www.instagram.com/ciaobellasalon_/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @ciaobellasalon_
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal">
+          <span class="tile-cap" data-es="Color de fantasía, mechas gruesas" data-en="Fashion color, chunky highlights">Fashion color, chunky highlights</span>
+          <video class="ig-video blur-up w-full h-full object-cover" muted loop playsinline autoplay preload="metadata" poster="assets/raw/ig-vid-1-poster.jpg" src="assets/raw/ig-vid-1.mp4"></video>
+        </div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Ondas con balayage" data-en="Long balayage waves">Long balayage waves</span><img src="assets/raw/ig-12.jpg" alt="Long wavy balayage result at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Bob con balayage" data-en="Balayage bob">Balayage bob</span><img src="assets/raw/ig-16.jpg" alt="Short balayage bob with soft waves at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Rubio luminoso" data-en="Sunlit blonde">Sunlit blonde</span><img src="assets/raw/ig-18.jpg" alt="Sunlit blonde balayage result at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:270ms"><span class="tile-cap" data-es="Fade platinado para hombre" data-en="Men's platinum fade">Men's platinum fade</span><img src="assets/raw/ig-14.jpg" alt="Men's platinum blonde fade haircut at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:330ms"><span class="tile-cap" data-es="Balayage castaño intenso" data-en="Rich brunette balayage">Rich brunette balayage</span><img src="assets/raw/ig-15.jpg" alt="Rich brunette balayage with soft waves at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:390ms"><span class="tile-cap" data-es="Bob recto" data-en="Sleek blunt bob">Sleek blunt bob</span><img src="assets/raw/ig-19.jpg" alt="Sleek blunt blonde bob at Ciao Bella Salon" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Balayage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Color Correction</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Smoothing Treatments</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bridal Styling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Balayage</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Color Correction</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Smoothing Treatments</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bridal Styling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What clients">What clients</span> <span class="text-shine" data-es="las clientas" data-en="say">say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 95 reseñas en Google" data-en="5.0 out of 5 · 95 reviews on Google">5.0 out of 5 · 95 reviews on Google</span></p>
+      </div>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Customer reviews">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"So good, I want to give 6 Stars! Angela is a rare exception in her industry, obviously very talented and highly skilled, but her sweet disposition is a real plus."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Dimitra E</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Angela is awesome! Her salon is extremely clean and absolutely gorgeous!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Erica Lachance</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I FINALLY found an amazing salon and stylist with reasonable prices!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Samantha Bajnath Singh</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Angela is by far the best stylist I've ever come across."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Katie Sherwin</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver más reseñas" data-en="Read more reviews">Read more reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">Clearwater</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">1521 Sunset Point Rd, Clearwater, FL 33755</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(124,35,53,0.4)]" href="https://www.google.com/maps?q=1521+Sunset+Point+Rd,+Clearwater,+FL+33755" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Martes y jueves: 10am a 7pm" data-en="Tuesday &amp; Thursday: 10am to 7pm">Tuesday &amp; Thursday: 10am to 7pm</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Miércoles y sábado: 10am a 4:30pm" data-en="Wednesday &amp; Saturday: 10am to 4:30pm">Wednesday &amp; Saturday: 10am to 4:30pm</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Viernes: 10am a 5pm · Domingo y lunes cerrado" data-en="Friday: 10am to 5pm · Closed Sunday &amp; Monday">Friday: 10am to 5pm · Closed Sunday &amp; Monday</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Bookings</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy, o llamando al salón." data-en="By appointment via Booksy, or by calling the salon.">By appointment via Booksy, or by calling the salon.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(124,35,53,0.4)]" href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+              <p class="text-sm text-[color:var(--ink-60)] font-light mt-1"><a class="text-[color:var(--accent-deep)]" href="tel:+17273337520">(727) 333-7520</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: Ciao Bella Salon, 1521 Sunset Point Rd, Clearwater FL"
+          src="https://www.google.com/maps?q=1521+Sunset+Point+Rd,+Clearwater,+FL+33755&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2b0f16 0%, #1c0a0e 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Cortes, color, cuidado." data-en="Cuts, color, care.">Cuts, color, care.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu mejor cabello" data-en="Your best hair">Your best hair</span> <span class="text-shine" data-es="empieza aquí" data-en="starts here">starts here</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva en línea en segundos: tu corte, tu color, o ese balayage que has estado viendo en Instagram." data-en="Book online in seconds: your cut, your color, or that balayage you've been eyeing on Instagram.">Book online in seconds: your cut, your color, or that balayage you've been eyeing on Instagram.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+        <a href="https://www.instagram.com/ciaobellasalon_/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Follow on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#1c0a0e]">
+    <span class="foot-mark" aria-hidden="true">Ciao Bella</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,180,187,0.35)] bg-[rgba(232,180,187,0.08)] text-[#e8b4bb]">CB</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Ciao Bella Salon</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Salón de cabello, color y belleza en Clearwater, FL. Con cita previa vía Booksy." data-en="Hair, color and beauty salon in Clearwater, FL. By appointment via Booksy.">Hair, color and beauty salon in Clearwater, FL. By appointment via Booksy.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>1521 Sunset Point Rd, Clearwater, FL 33755</p>
+        <p><a href="tel:+17273337520" class="hover:text-[#e8b4bb]">(727) 333-7520</a></p>
+        <p><a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="hover:text-[#e8b4bb]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Online booking · Booksy</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Follow</p>
+        <p><a href="https://www.instagram.com/ciaobellasalon_/" target="_blank" rel="noopener" class="hover:text-[#e8b4bb]">Instagram · @ciaobellasalon_</a></p>
+        <p><a href="https://www.facebook.com/ciaobella2018/" target="_blank" rel="noopener" class="hover:text-[#e8b4bb]">Facebook · Ciao Bella Salon</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">&copy; 2026 Ciao Bella Salon.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/1334779_ciao-bella-salon_skin-care_15980_clearwater" target="_blank" rel="noopener" class="book-float" aria-label="Book appointment online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf1ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // 1. Preloader de marca
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals editoriales
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // IG video tiles: play only in viewport (siempre, sin reduced-motion), click/tap alterna play-pause
+    const igVideos = document.querySelectorAll('video.ig-video');
+    if (igVideos.length) {
+      igVideos.forEach(v => { if (v.complete !== undefined) v.classList.add('loaded'); else v.classList.add('loaded'); });
+      const vIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          const v = e.target;
+          if (e.isIntersecting) { v.play().catch(() => {}); }
+          else { v.pause(); }
+        });
+      }, { threshold: 0.4 });
+      igVideos.forEach(v => {
+        vIO.observe(v);
+        v.addEventListener('click', () => { if (v.paused) v.play().catch(() => {}); else v.pause(); });
+      });
+    }
+
+    // Contadores animados
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // Carrusel de testimonios: drag/swipe + autoplay + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f7f0e4" />
+  <title>JGM Construction &amp; Remodeling · Kitchen &amp; Bath Remodeling in Kissimmee, FL | 4.9 on Google</title>
+  <meta name="description" content="JGM Construction &amp; Remodeling LLC, Kissimmee FL: kitchen and bathroom remodeling, flooring, drywall repair and painting. 4.9 stars across 41 Google reviews. Call for a free estimate." />
+  <meta property="og:title" content="JGM Construction &amp; Remodeling · Kitchen &amp; Bath Remodeling in Kissimmee, FL" />
+  <meta property="og:description" content="Kitchen and bathroom remodeling, flooring and drywall repair. 4.9 on Google with 41 reviews. Call for a free estimate." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero-bathroom.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/hero-bathroom.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "JGM Construction & Remodeling LLC",
+    "description": "Construction and remodeling company in Kissimmee, FL run by Juan P. Gonzalez Miranda: kitchen and bathroom remodeling, flooring and tile, drywall repair and interior/exterior painting.",
+    "address": { "@type": "PostalAddress", "streetAddress": "3826 Bay Club Cir Unit 204", "addressLocality": "Kissimmee", "addressRegion": "FL", "postalCode": "34741", "addressCountry": "US" },
+    "telephone": "+1-407-747-2700",
+    "email": "jgmconstruction.fl@hotmail.com",
+    "sameAs": ["https://www.instagram.com/jgmconstruction.fl/", "https://www.facebook.com/p/JGM-Construction-Remodeling-Llc-100091245767944/"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "41", "bestRating": "5" },
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Construction & remodeling services", "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodeling" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Remodeling" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Flooring & Tile Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drywall Repair & Painting" } }
+    ] }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf3ea;
+      --bg-2: #f2e4d0;
+      --surface: rgba(247,233,216,0.7);
+      --ink: #2c2118;
+      --ink-60: rgba(44,33,24,0.62);
+      --ink-40: rgba(44,33,24,0.42);
+      --accent-deep: #b5651d;
+      --accent-mid: #d68a4c;
+      --accent-soft: #f2e4d0;
+      --accent-ghost: rgba(181,101,29,0.14);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(181,101,29,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(247,233,216,0.88); border-color: rgba(181,101,29,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(44,33,24,0.14), 0 0 40px rgba(181,101,29,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #b5651d 0%, #c9812f 30%, #5c3012 52%, #b5651d 75%, #96481a 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f0d9b8 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #e0b988 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e8cca0 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #d68a4c 0%, #b5651d 48%, #7a4419 100%);
+      color: #faf3ea; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(107,53,16,0.4), 0 5px 0 #6b3510, 0 12px 24px rgba(44,33,24,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(107,53,16,0.4), 0 7px 0 #6b3510, 0 18px 34px rgba(44,33,24,0.32), 0 0 40px rgba(181,101,29,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(107,53,16,0.45), 0 1px 0 #6b3510, 0 4px 10px rgba(44,33,24,0.25); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(181,101,29,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(181,101,29,0.7); background: rgba(181,101,29,0.08); box-shadow: 0 10px 26px rgba(44,33,24,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(250,243,234,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(44,33,24,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(44,33,24,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(181,101,29,0.14), inset 0 -60px 100px rgba(44,33,24,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #d68a4c, #5c3012); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #b5651d; letter-spacing: 2px; text-shadow: 0 0 14px rgba(181,101,29,0.3); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #faf3ea; --ink-60: rgba(250,243,234,0.65); --ink-40: rgba(250,243,234,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,183,136,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8b788 0%, #ecd3b0 30%, #e0b988 52%, #e8b788 75%, #e8c99a 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,183,136,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(224,185,136,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #f7e9d8 0%, #e6cba0 48%, #d4a06a 100%); color: #2c2118; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(122,68,25,0.35), 0 5px 0 #8a4a1f, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(122,68,25,0.35), 0 7px 0 #8a4a1f, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,183,136,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(122,68,25,0.4), 0 1px 0 #8a4a1f, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(232,183,136,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(232,183,136,0.7); background: rgba(232,183,136,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e8b788; text-shadow: 0 0 14px rgba(232,183,136,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #d68a4c 0%, #b5651d 100%);
+      box-shadow: 0 6px 0 #6b3510, 0 14px 30px rgba(44,33,24,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b3510, 0 20px 40px rgba(44,33,24,0.4), 0 0 34px rgba(181,101,29,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b3510, 0 6px 14px rgba(44,33,24,0.3); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(181,101,29,0.35); background: rgba(181,101,29,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #7a4419 0%, #b5651d 45%, #d99a52 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,183,136,0.14) 0%, rgba(181,101,29,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(181,101,29,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf3ea;
+      background: linear-gradient(180deg, transparent 0%, rgba(35,20,10,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,183,136,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">JGM</span>
+    <span class="pre-word">JGM Construction</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/hero-bathroom.jpg" alt="JGM Construction &amp; Remodeling" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(181,101,29,0.35)]" />
+        <span class="font-display text-xl tracking-[0.1em] uppercase">JGM <span class="text-[color:var(--accent-deep)]">Construction</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="tel:+14077472700" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Llama para cotizar" data-en="Call for a quote">Call for a quote</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="tel:+14077472700" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llama para cotizar" data-en="Call for a quote">Call for a quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Kissimmee, FL · Construcción y Remodelación" data-en="Kissimmee, FL · Construction &amp; Remodeling">Kissimmee, FL · Construction &amp; Remodeling</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tu proyecto es nuestro negocio." data-en="Your project is our business.">Your project is our business.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Cocinas y baños," data-en="Kitchens and baths,">Kitchens and baths,</span><br /><span data-es="built and finished " data-en="built and finished ">built and finished </span><span class="text-shine" data-es="right" data-en="right">right</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Juan Gonzalez Miranda y el equipo de JGM Construction &amp; Remodeling se encargan de remodelaciones de cocina y baño, pisos, reparación de drywall y pintura en Kissimmee y el centro de Florida, con el tipo de trabajo limpio y cuidadoso que ganó una calificación de 4.9 en Google." data-en="Juan Gonzalez Miranda and the JGM Construction &amp; Remodeling team handle kitchen and bathroom remodels, flooring, drywall repair and painting across Kissimmee and Central Florida, with the kind of clean, careful work that earned a 4.9 rating on Google.">Juan Gonzalez Miranda and the JGM Construction &amp; Remodeling team handle kitchen and bathroom remodels, flooring, drywall repair and painting across Kissimmee and Central Florida, with the kind of clean, careful work that earned a 4.9 rating on Google.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.9 · 41 reseñas en Google" data-en="4.9 · 41 reviews on Google">4.9 · 41 reviews on Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="tel:+14077472700" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llama al (407) 747-2700" data-en="Call (407) 747-2700">Call (407) 747-2700</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/jgmconstruction.fl/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @jgmconstruction.fl
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/hero-bathroom.jpg" alt="A finished bathroom remodel by JGM Construction &amp; Remodeling, with a freestanding tub and new vanity" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Presupuesto gratis" data-en="Free estimate">Free estimate</p>
+            <p class="font-display text-lg">Kitchens &amp; Baths</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Flooring · Drywall · Paint" data-en="Flooring · Drywall · Paint">Flooring · Drywall · Paint</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="41">41</span> <span data-es="reseñas en Google" data-en="reviews on Google">reviews on Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Kitchens <span class="text-shine">&amp;</span> Baths</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Flooring · Drywall · Paint" data-en="Flooring · Drywall · Paint">Flooring · Drywall · Paint</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span data-es="Desde" data-en="Since">Since</span> <span class="text-shine">2020</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Juan construyendo en el centro de Florida" data-en="Juan building in Central Florida">Juan building in Central Florida</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Kissimmee</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Bay Club Cir</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flooring &amp; Tile</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flooring &amp; Tile</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/about-jobsite-card.jpg" alt="Juan Gonzalez Miranda on a jobsite in Kissimmee holding a JGM Construction &amp; Remodeling business card" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/about-tile-floor.jpg" alt="Marble-look tile flooring installed by JGM Construction &amp; Remodeling" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un negocio familiar," data-en="Family-run,">Family-run,</span><br /><span class="text-shine" data-es="y detallista" data-en="detail-first">detail-first</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Juan P. Gonzalez Miranda fundó JGM Construction &amp; Remodeling LLC en Kissimmee en 2020, y la ha dirigido desde entonces con un estándar de calidad por pie cuadrado, presente en persona en cada obra. Se aparece personalmente en cada obra, desde una remodelación de cocina o baño hasta una reparación de drywall o un colado de concreto, y se mantiene en contacto con los dueños de casa hasta que el trabajo queda bien hecho." data-en="Juan P. Gonzalez Miranda founded JGM Construction &amp; Remodeling LLC in Kissimmee in 2020, and has run it since as a hands-on, quality by square foot operation. He personally shows up on jobsites, from a kitchen or bathroom remodel to a drywall repair or a concrete walkway, and stays in touch with homeowners until the work is done right.">Juan P. Gonzalez Miranda founded JGM Construction &amp; Remodeling LLC in Kissimmee in 2020, and has run it since as a hands-on, quality by square foot operation. He personally shows up on jobsites, from a kitchen or bathroom remodel to a drywall repair or a concrete walkway, and stays in touch with homeowners until the work is done right.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="El resultado: una calificación de 4.9 estrellas en 41 reseñas de Google, con dueños de casa que destacan lo rápido, honesto y minucioso que es Juan, sin nunca recortar en el trabajo." data-en="The result: a 4.9-star rating across 41 Google reviews, with homeowners specifically praising how fast, honest and thorough Juan is, never cutting corners on the work.">The result: a 4.9-star rating across 41 Google reviews, with homeowners specifically praising how fast, honest and thorough Juan is, never cutting corners on the work.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="41">41</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2020</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Construyendo desde" data-en="Building since">Building since</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/hero-bathroom.jpg" alt="JGM Construction &amp; Remodeling" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(181,101,29,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Juan Gonzalez Miranda · <span class="text-[color:var(--ink-40)]" data-es="Dueño / Gerente" data-en="Owner / Manager">Owner / Manager</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tu proyecto, de inicio" data-en="Your project, start">Your project, start</span> <span class="text-shine" data-es="hasta el final" data-en="to finish">to finish</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Presupuesto gratis" data-en="Free estimate">Free estimate</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llama al (407) 747-2700 o escribe por correo para revisar el proyecto y definir un alcance de trabajo claro y honesto." data-en="Call (407) 747-2700 or email to walk through the project and get a clear, honest scope of work.">Call (407) 747-2700 or email to walk through the project and get a clear, honest scope of work.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Plan y materiales" data-en="Plan &amp; materials">Plan &amp; materials</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Juan plans the job and sources materials suited to your kitchen, bathroom, floor or wall." data-en="Juan plans the job and sources materials suited to your kitchen, bathroom, floor or wall.">Juan plans the job and sources materials suited to your kitchen, bathroom, floor or wall.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Trabajo limpio y cuidadoso" data-en="Clean, careful work">Clean, careful work</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="El equipo trabaja con un estándar de calidad por pie cuadrado, manteniendo tu casa limpia y protegida mientras dura la obra." data-en="The crew works with a quality by square foot standard, keeping your home clean and protected while the job is underway.">The crew works with a quality by square foot standard, keeping your home clean and protected while the job is underway.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Walkthrough &amp; warranty" data-en="Walkthrough &amp; warranty">Walkthrough &amp; warranty</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Una revisión final contigo antes de dar el trabajo por terminado, respaldada por una garantía de mano de obra." data-en="A final walkthrough with you before the job is called done, backed by a workmanship warranty.">A final walkthrough with you before the job is called done, backed by a workmanship warranty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Servicios para" data-en="Services for">Services for</span> <span class="text-shine">your home</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada proyecto se cotiza después de revisar tu casa. Llama o escribe por correo para una cotización gratis, sin compromiso." data-en="Every project is quoted after a walkthrough of your home. Call or email for a free, no-obligation estimate.">Every project is quoted after a walkthrough of your home. Call or email for a free, no-obligation estimate.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo más solicitado" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Kitchen Remodeling" data-en="Kitchen Remodeling">Kitchen Remodeling</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Gabinetes, encimeras, fregaderos y cambios de distribución, planeados según el uso real de tu cocina." data-en="Cabinets, countertops, sinks and layout updates, planned around how your kitchen actually gets used.">Cabinets, countertops, sinks and layout updates, planned around how your kitchen actually gets used.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Presupuesto gratis" data-en="Free estimate">Free estimate</p></div>
+            <a href="tel:+14077472700" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(181,101,29,0.4); box-shadow: 0 18px 50px rgba(44,33,24,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Proyecto insignia" data-en="Signature project">Signature project</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Bathroom Remodeling" data-en="Bathroom Remodeling">Bathroom Remodeling</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Tinas, regaderas, tocadores y azulejo, terminados de principio a fin y respaldados por una garantía de mano de obra." data-en="Tubs, showers, vanities and tile, finished start to finish and backed by a workmanship warranty.">Tubs, showers, vanities and tile, finished start to finish and backed by a workmanship warranty.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Presupuesto gratis" data-en="Free estimate">Free estimate</p></div>
+            <a href="tel:+14077472700" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Pisos que duran" data-en="Floors that last">Floors that last</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Flooring &amp; Tile" data-en="Flooring &amp; Tile">Flooring &amp; Tile</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación de azulejo para entradas, baños y salas, colocado limpio y nivelado." data-en="Tile installation for entryways, bathrooms and living spaces, laid clean and level.">Tile installation for entryways, bathrooms and living spaces, laid clean and level.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Presupuesto gratis" data-en="Free estimate">Free estimate</p></div>
+            <a href="tel:+14077472700" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Arreglar y terminar" data-en="Fix &amp; finish">Fix &amp; finish</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Drywall Repair &amp; Painting" data-en="Drywall Repair &amp; Painting">Drywall Repair &amp; Painting</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Drywall patching, popcorn ceiling removal and interior or exterior painting, cleaned and detailed." data-en="Drywall patching, popcorn ceiling removal and interior or exterior painting, cleaned and detailed.">Drywall patching, popcorn ceiling removal and interior or exterior painting, cleaned and detailed.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Presupuesto gratis" data-en="Free estimate">Free estimate</p></div>
+            <a href="tel:+14077472700" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-14 grid sm:grid-cols-3 gap-5">
+        <div class="glass rounded-3xl p-7 reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Remodeling" data-en="Remodeling">Remodeling</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex items-center gap-2" data-es="Remodelación de cocina" data-en="Kitchen remodeling">Kitchen remodeling</li>
+            <li class="flex items-center gap-2" data-es="Bathroom remodeling" data-en="Bathroom remodeling">Bathroom remodeling</li>
+            <li class="flex items-center gap-2" data-es="Clósets a medida" data-en="Custom closets">Custom closets</li>
+          </ul>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Drywall y Pintura" data-en="Drywall &amp; Paint">Drywall &amp; Paint</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex items-center gap-2" data-es="Reparación de drywall" data-en="Drywall repair">Drywall repair</li>
+            <li class="flex items-center gap-2" data-es="Eliminación de techo popcorn" data-en="Popcorn ceiling removal">Popcorn ceiling removal</li>
+            <li class="flex items-center gap-2" data-es="Pintura interior y exterior" data-en="Interior &amp; exterior painting">Interior &amp; exterior painting</li>
+          </ul>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Acabados y Reparaciones" data-en="Finishing &amp; Repairs">Finishing &amp; Repairs</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex items-center gap-2" data-es="Instalación de piso y azulejo" data-en="Flooring &amp; tile installation">Flooring &amp; tile installation</li>
+            <li class="flex items-center gap-2" data-es="Reemplazo de puertas exteriores" data-en="Exterior door replacement">Exterior door replacement</li>
+            <li class="flex items-center gap-2" data-es="Reemplazo de cercas" data-en="Fence replacement">Fence replacement</li>
+          </ul>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="El precio depende del alcance y los materiales. Llama al (407) 747-2700 o escribe por correo para una cotización exacta." data-en="Pricing depends on scope and materials. Call (407) 747-2700 or email for an exact quote.">Pricing depends on scope and materials. Call (407) 747-2700 or email for an exact quote.</span></p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Real" data-en="Real">Real</span> <span class="text-shine" data-es="jobs" data-en="jobs">jobs</span></h2>
+        </div>
+        <a href="https://www.instagram.com/jgmconstruction.fl/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @jgmconstruction.fl
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[21/9] img-reveal"><span class="tile-cap" data-es="Baño remodelado en Kissimmee" data-en="A finished bathroom remodel in Kissimmee">A finished bathroom remodel in Kissimmee</span><img src="assets/hero-bathroom.jpg" alt="A finished bathroom remodel by JGM Construction &amp; Remodeling, with a freestanding tub and new vanity" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Piso de marmol recien instalado" data-en="Marble-look tile, freshly installed">Marble-look tile, freshly installed</span><img src="assets/about-tile-floor.jpg" alt="Marble-look tile flooring installed by JGM Construction &amp; Remodeling" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="En sitio para un colado de concreto" data-en="On site for a concrete walkway pour">On site for a concrete walkway pour</span><img src="assets/about-jobsite-card.jpg" alt="Juan Gonzalez Miranda on a jobsite in Kissimmee holding a JGM Construction &amp; Remodeling business card" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Esquina de drywall lista para acabado" data-en="Drywall corner bead, ready for finishing">Drywall corner bead, ready for finishing</span><img src="assets/gallery-drywall-corner.jpg" alt="Drywall corner bead repair in progress by JGM Construction &amp; Remodeling" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:270ms"><span class="tile-cap" data-es="Reparacion de junta de drywall" data-en="Drywall seam repair in progress">Drywall seam repair in progress</span><img src="assets/gallery-drywall-seam.jpg" alt="Drywall seam repair in progress by JGM Construction &amp; Remodeling" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flooring &amp; Tile</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flooring &amp; Tile</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="What homeowners" data-en="What homeowners">What homeowners</span> <span class="text-shine" data-es="are saying" data-en="are saying">are saying</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★☆</span> &nbsp;<span data-es="4.9 de 5 · 41 reseñas en Google" data-en="4.9 out of 5 · 41 reviews on Google">4.9 out of 5 · 41 reviews on Google</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Thank you Juan for your great customer service, you were fast, don't cut corners, and very efficient with your work thank you"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Joseph Rodriguez</span> <span class="text-[color:var(--ink-40)]" data-es="· Reseña de Google" data-en="· Google review">· Google review</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Juan was the best he made sure to do an efficient job. Our wall looks completely brand new, he worked in a timely matter and did an amazing job around the house. I highly recommended booking with him."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Clifford St. Fort</span> <span class="text-[color:var(--ink-40)]" data-es="· Reseña de Google" data-en="· Google review">· Google review</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Juan helped me get our water heater fixed by connecting me with a great plumber. He himself came out personally to look at the water heater and kept in touch to make sure I was satisfied. Juan did our two exterior doors too. The outside color was a dark green color which doesn't cover well. He came out several times to get everything right. They look fantastic."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Mammoth Enterprises</span> <span class="text-[color:var(--ink-40)]" data-es="· Reseña de Google" data-en="· Google review">· Google review</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://reviews.birdeye.com/jgm-construction-remodeling-llc-167560209423826" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Lee las 41 reseñas en Google" data-en="Read all 41 reviews on Google">Read all 41 reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Sirviendo a" data-en="Serving">Serving</span> <span class="text-shine">Kissimmee</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">3826 Bay Club Cir Unit 204, Kissimmee, FL 34741</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,101,29,0.4)]" href="https://www.google.com/maps?q=3826+Bay+Club+Cir+Unit+204,+Kissimmee,+FL+34741" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Presupuesto gratis" data-en="Free estimate">Free estimate</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Llama o escribe a Juan directamente para revisar tu proyecto y obtener una cotización gratis, sin compromiso." data-en="Call or email Juan directly to walk through your project and get a free, no-obligation quote.">Call or email Juan directly to walk through your project and get a free, no-obligation quote.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,101,29,0.4)]" href="tel:+14077472700" data-es="Llama al (407) 747-2700" data-en="Call (407) 747-2700">Call (407) 747-2700</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los trabajos mas recientes y escribe por DM cualquier duda antes de tu proyecto." data-en="See the latest jobs and message any questions before your project.">See the latest jobs and message any questions before your project.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(181,101,29,0.4)]" href="https://www.instagram.com/jgmconstruction.fl/" target="_blank" rel="noopener">@jgmconstruction.fl</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: JGM Construction &amp; Remodeling, 3826 Bay Club Cir Unit 204, Kissimmee FL"
+          src="https://www.google.com/maps?q=3826+Bay+Club+Cir+Unit+204,+Kissimmee,+FL+34741&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241708 0%, #180f05 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Tu proyecto es nuestro negocio." data-en="Your project is our business.">Your project is our business.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Empecemos tu" data-en="Let&#39;s start your">Let&#39;s start your</span> <span class="text-shine" data-es="próximo proyecto" data-en="next project">next project</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama al (407) 747-2700 o escribe a jgmconstruction.fl@hotmail.com para una cotización gratis de tu proyecto de cocina, baño, piso o drywall en Kissimmee y el centro de Florida." data-en="Call (407) 747-2700 or email jgmconstruction.fl@hotmail.com for a free estimate on your kitchen, bathroom, flooring or drywall project in Kissimmee and Central Florida.">Call (407) 747-2700 or email jgmconstruction.fl@hotmail.com for a free estimate on your kitchen, bathroom, flooring or drywall project in Kissimmee and Central Florida.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+14077472700" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llama al (407) 747-2700" data-en="Call (407) 747-2700">Call (407) 747-2700</a>
+        <a href="https://www.google.com/maps?q=3826+Bay+Club+Cir+Unit+204,+Kissimmee,+FL+34741" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#170e06]">
+    <span class="foot-mark" aria-hidden="true">JGM</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/hero-bathroom.jpg" alt="JGM Construction &amp; Remodeling" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,183,136,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">JGM Construction</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Construccion y remodelacion en Kissimmee, FL. Presupuestos gratis por telefono o email." data-en="Construction &amp; remodeling in Kissimmee, FL. Free estimates by phone or email.">Construction &amp; remodeling in Kissimmee, FL. Free estimates by phone or email.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>3826 Bay Club Cir Unit 204, Kissimmee, FL 34741</p>
+        <p><a href="tel:+14077472700" class="hover:text-[#e8b788]" data-es="Llama al (407) 747-2700" data-en="Call (407) 747-2700">Call (407) 747-2700</a></p>
+        <p><a href="mailto:jgmconstruction.fl@hotmail.com" class="hover:text-[#e8b788]">jgmconstruction.fl@hotmail.com</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Follow" data-en="Follow">Follow</p>
+        <p><a href="https://www.instagram.com/jgmconstruction.fl/" target="_blank" rel="noopener" class="hover:text-[#e8b788]">Instagram · @jgmconstruction.fl</a></p>
+        <p><a href="https://www.facebook.com/p/JGM-Construction-Remodeling-Llc-100091245767944/" target="_blank" rel="noopener" class="hover:text-[#e8b788]">Facebook · JGM Construction &amp; Remodeling</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 JGM Construction &amp; Remodeling LLC.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="tel:+14077472700" class="book-float" aria-label="Call JGM Construction &amp; Remodeling">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf3ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .img-reveal').forEach(el => io.observe(el));
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>

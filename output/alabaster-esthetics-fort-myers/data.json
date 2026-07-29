@@ -1,0 +1,168 @@
+{
+  "slug": "alabaster-esthetics-fort-myers",
+  "name": "Alabaster Esthetic's",
+  "niche": "facial / skincare studio (also PMU and post-op care)",
+  "city": "Fort Myers, FL",
+  "address": "12734 Kenwood Ln, Suite 63, Fort Myers, FL 33907",
+  "address_note": "Business relocated from a prior address at 9924 Gulf Coast Main St Unit A100 (San Carlos Park), still shown on stale Groupon/some directory listings. The current address (12734 Kenwood Ln, Suite 63) was confirmed directly via the business's own Instagram 'WE HAVE MOVED' post (map screenshot + text) and corroborated by Yelp, Fresha listing title, Yahoo Local, and Facebook search snippets.",
+  "phone": "+12399615497",
+  "phone_display": "(239) 961-5497",
+  "phone_note": "Confirmed via the business's own Instagram post ('For Inquiries Call or Text 239-961-5497') and corroborated by Yelp/Yahoo Local search snippets and the task brief. Birdeye and an old Groupon listing show a different number, (239) 529-0204, which appears to be a legacy/lead-tracking number from before the move and was not used.",
+  "email": "AlabasterEsthetics@gmail.com",
+  "email_source": "Found in the business's own Square Online site JSON config (social/contact block: {\"icon\":\"email\",\"user\":\"AlabasterEsthetics@gmail.com\"}). Instagram bio/profile, Facebook About and linktree could not be fetched directly (IG returned a login wall via curl/WebFetch, Facebook returned 400/login page) but the Square site is a first-party, business-controlled source.",
+  "instagram": "alabaster.esthetics",
+  "instagram_url": "https://www.instagram.com/alabaster.esthetics/",
+  "instagram_bio": "FACIALS • PMU• POST OP CARE & MORE",
+  "booking_url": "https://alabaster-esthetics.square.site/",
+  "has_own_site": false,
+  "has_own_site_check": "Tried alabaster-esthetics.com, www.alabasteresthetics.com, alabasteresthetics.com (all failed to resolve/connect). Web search for the business name plus 'website' surfaces only the Square Online site, Yelp, Facebook, Fresha, Birdeye and Groupon listings, no independent domain.",
+  "owner_name": "Jay / Jaysalee (licensed esthetician, per multiple customer reviews; also referred to as 'Mercedes'-style single-operator studio; LLC per a Yelp review: 'Alabaster Esthetics LLC')",
+  "language": "en",
+  "language_note": "All Instagram captions, the Square site bio, and every review found are in English.",
+  "rating": 5.0,
+  "review_count": 21,
+  "rating_source": "Google (via Birdeye aggregator page reviews.birdeye.com/alabaster-esthetic-s-169819795624376, which explicitly labels each review 'on Google'; JSON-LD aggregateRating on that page also reports 5.0 / 21 reviews)",
+  "hours": {
+    "monday": "closed",
+    "tuesday": "10:00 AM - 6:00 PM",
+    "wednesday": "10:00 AM - 6:00 PM",
+    "thursday": "10:00 AM - 6:00 PM",
+    "friday": "10:00 AM - 4:00 PM",
+    "saturday": "11:00 AM - 3:00 PM",
+    "sunday": "11:00 AM - 2:00 PM",
+    "source": "JSON-LD openingHoursSpecification on the Birdeye reviews page for this business"
+  },
+  "google_place_id": "ChIJQzWr3w4Z24gR_HaxVJD2XPU",
+  "categories_source": "https://alabaster-esthetics.square.site/ (Square Online store, client-rendered; category list extracted from the site's embedded __BOOTSTRAP_STATE__ JSON: commerceLinks.categories)",
+  "categories": ["Body Contouring", "Facials", "Make Up Glow (Semi Permanent)", "Waxing"],
+  "services_known": [
+    {
+      "name": "Decongesting Facial",
+      "price": "100.00",
+      "price_currency": "USD",
+      "category": "Facials",
+      "source": "Real price published on the business's own Instagram promotional post (verified image, downloaded to assets/raw research folder before curation, not included in final gallery due to text overlay)",
+      "description_from_post": "Deep-pore treatment for excess oil, blackheads, whiteheads, breakouts, congested skin and enlarged pores."
+    },
+    {
+      "name": "Non-Invasive Laser Lipo (3-session and 6-session packages)",
+      "price": null,
+      "category": "Body Contouring",
+      "source": "Confirmed as a real, actively sold package via multiple verbatim Groupon reviews titled 'Three Non-Invasive Laser Lipo Treatments' and 'Six Non-Invasive Laser Lipo Treatments' (from the business's own Groupon merchant page Apollo-state review cache). No current price was verifiable (Groupon's active deal feed for this merchant is currently empty); not invented."
+    },
+    {
+      "name": "HydroJelly Body Wrap & Body Scrub",
+      "price": null,
+      "category": "Body Contouring",
+      "source": "Business's own Instagram promotional post naming 'Body Scrub & Body Wrap' and its bio text mentioning 'Hydrojelly By Esthemax'. No price found."
+    },
+    {
+      "name": "Permanent Makeup / PMU Brows (Perm Blend Pigment)",
+      "price": null,
+      "category": "Make Up Glow (Semi Permanent)",
+      "source": "Business's own bio/about text (Groupon merchant description): 'our trusted products like ... Perm Blend Pigment for PMU'. No price found."
+    },
+    {
+      "name": "Face & Body Waxing",
+      "price": null,
+      "category": "Waxing",
+      "source": "Real category confirmed directly from the business's live Square Online store navigation. No individual service prices could be extracted (see build_note on Square site access)."
+    },
+    {
+      "name": "Microdermabrasion, Microneedling, Dermaplaning, LED Light Therapy, Extractions",
+      "price": null,
+      "category": "Facials / General",
+      "source": "Named explicitly in the business's own bio/about text (Groupon merchant description and Instagram captions). No individual prices found."
+    }
+  ],
+  "menu_research_note": "The Square Online storefront (alabaster-esthetics.square.site) is a fully client-side rendered Vue app (React/Vue SPA): curl/WebFetch only returns an empty #app shell, and the product/price API calls could not be replicated (undocumented endpoint, and headless-browser egress to squareup.com/instagram.com is blocked in this environment, confirmed via repeated Playwright net::ERR_CONNECTION_RESET on multiple domains). Per PIPELINE.md's own guidance for Square-tenant businesses ('NO tienen dossier... Research manual: seguir el external_url de la bio de IG y sacar fotos+menu del IG real'), the real menu data used here was sourced from what the business itself has published on Instagram, Groupon and its own site config (categories, one verified price, and named treatments), rather than a complete priced menu. Services in the build without a confirmed price are shown as 'Book to see pricing' or 'By consultation' instead of an invented number, per the no-invented-data rule.",
+  "reviews": [
+    {
+      "author": "Victoria Clarke-Payton",
+      "source": "Google (via Birdeye)",
+      "rating": 5,
+      "text": "I have been going to Jay at Alabaster Esthetic's since June 2024 and she is a true professional and I highly recommend her! She makes the spa experience relaxing, fun and enjoyable as it should be but she is also extremely knowledgeable about her art. She is amazing. Thank you Jay"
+    },
+    {
+      "author": "D Pierce",
+      "source": "Google (via Birdeye)",
+      "rating": 5,
+      "text": "Jaysalee explains her procedure very well while providing a calm, relaxing experience, even with micro-needling using numbing cream. I have noticed much improvement in the lines around my mouth and eyes plus lessened acne scarring. I am grateful I discovered Jaysalee and her professional etiquette."
+    },
+    {
+      "author": "Sonya Ray",
+      "source": "Google (via Birdeye, full text sourced from an identical review the same customer posted on Groupon)",
+      "rating": 5,
+      "text": "I am incredibly pleased with the extensive knowledge and professionalism Jay brings to her practice. Her expertise and specialized techniques, rare to find in the industry, set her apart, ensuring exceptional results. Jay's experience, ambition, and dedication all work together to provide a comprehensive range of services that truly meet her clients' needs. Beyond her skill, Jay is kind, humble, and compassionate."
+    },
+    {
+      "author": "Alyssa Nunez",
+      "source": "Facebook (screenshot reposted on the business's own Instagram)",
+      "rating": 5,
+      "text": "HUGE THANK YOU to Jaysalee! She did a Hydrafacial on my face (I suffer from horrible dry skin esp the nose area that did not go away). She was VERY knowledgeable, informed me on so many things that not even Dermatologists tell you about. I felt super comfy around her esp when asking questions, she was professional and very informative! A few days later and my skin is still hydrated, soft and the complexion looks soo good! It's always a great thing when you find someone who knows what they are doing and what they are talking about, 10/10 recommend! Thank you for helping my skin it sure needed it!"
+    },
+    {
+      "author": "Jason",
+      "source": "Google (screenshot reposted on the business's own Instagram)",
+      "rating": 5,
+      "text": "Highly Recommend!! 6 visits dropped 20 lbs. Of course I had to put in some work with proper diet and exercise but definitely worth it. Jay is the best. Great customer service and cares about her clients."
+    },
+    {
+      "author": "Nan",
+      "source": "Facebook (screenshot reposted on the business's own Instagram)",
+      "rating": 5,
+      "text": "I went in for a facial with Jay and I loved it. She was very professional and would communicate and explain to me what she was going to do. I felt so relaxed and really enjoyed my facial with her. My skin felt great after and I would for sure go back to Alabaster Salon with Jay for another facial!",
+      "used_in_site": false
+    },
+    {
+      "author": "BR C.",
+      "source": "Yelp (screenshot reposted on the business's own Instagram)",
+      "rating": 5,
+      "text": "Jay is phenomenal and deserves way more than 5 stars!! She is the owner at Alabaster Esthetics LLC... Go check her out in the Gulf Coast Center!",
+      "used_in_site": false,
+      "note": "Not used on the live site because it references the old Gulf Coast Center address (pre-move)."
+    },
+    {
+      "author": "Dawn",
+      "source": "Groupon",
+      "rating": 5,
+      "text": "Great service and feedback. Shay does her best to fit you in.",
+      "used_in_site": false
+    },
+    {
+      "author": "Debra",
+      "source": "Groupon",
+      "rating": 5,
+      "text": "Best ever!!! Love, love, love this!",
+      "used_in_site": false
+    }
+  ],
+  "brand_vibe": "Alabaster: pale cream/blush base with a warm dusty terracotta-rose accent (sampled directly from the business's own logo graphics and promotional posts: cream/blush backgrounds around rgb(234,225,220), a blush-tan rgb(214,185,169), and a dark espresso-brown script wordmark). Quiet, feminine, warm-neutral 'alabaster' luxury look, base clara (light-v2).",
+  "template_base": "templates/light-v2",
+  "palette": {
+    "bg": "#f8f2ec",
+    "bg-2": "#ecdcd0",
+    "ink": "#33261f",
+    "accent-deep": "#9c5a4f",
+    "accent-mid": "#c08d7d",
+    "accent-soft": "#ecdcd0"
+  },
+  "photos_used": {
+    "hero": "assets/raw/massage.jpg",
+    "about_1": "assets/raw/scrub.jpg",
+    "about_2": "assets/raw/wrap.jpg",
+    "gallery_wide": "assets/raw/before-after.jpg",
+    "gallery_2": "assets/raw/scrub.jpg (reused)",
+    "gallery_3": "assets/raw/wrap.jpg (reused)",
+    "logo_wordmark": "assets/raw/logo.jpg",
+    "icon_avatar_favicon": "assets/raw/icon.jpg"
+  },
+  "photos_source_note": "All photos are real, downloaded from the business's own public Instagram feed (@alabaster.esthetics) via the pipeline's ig_photos.py -> Railway headless-browser service (12 real feed posts/videos retrieved). The account's recent posts are almost entirely promotional graphics (price cards, Valentine's Day sale, review screenshots) and a couple of unflattering treatment close-ups (extractions, TikTok before/after with visible irritation), which are explicitly prohibited from the gallery per the curation rules. After visual curation (every photo was viewed before selection): only 4 real, presentable images existed across the whole feed (a massage/facial photo, a body-scrub photo and a body-wrap photo pulled out of one composite promo graphic by cropping away the text/logo bands, plus a before/after skin macro from a 'Decongesting Facial' promo, also cropped clean of text). Per PIPELINE.md's own rule ('si quedan menos de 5 buenas, mejor menos secciones con buenas fotos que rellenar con malas'), the gallery was intentionally built with only 3 tiles instead of the usual 6, reusing the scrub/wrap photos from the About section rather than padding with extraction close-ups, review screenshots, or promotional graphics with text overlays. A small logo wordmark crop and a tiny icon-glyph crop (both from the business's own posted graphics) were used for the nav/footer logo and the small circular avatar/favicon.",
+  "photos_rejected": [
+    "ig-2.jpg: Valentine's Day sale graphic, all text, no usable photo",
+    "ig-3.jpg: extraction/blackhead macro close-up, unflattering per curation rules",
+    "ig-6.jpg, ig-7.jpg, ig-11.jpg, ig-12.jpg: review screenshots (text used for testimonials section, not as gallery photos)",
+    "ig-8.jpg: 'We have moved' story graphic (used only as a research source to confirm the new address/phone)",
+    "ig-9.jpg, ig-10.jpg: TikTok before/after and dermaplane close-ups showing visible skin irritation/acne, prohibited in gallery per curation rules"
+  ]
+}
