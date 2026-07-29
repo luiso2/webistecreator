@@ -10,9 +10,13 @@ output/*/ig_profile.json
 output/*/site_check/
 output/*/*.json
 !output/*/data.json
+# content.json es la FUENTE del site con derive.py: tiene que versionarse
+!output/*/content.json
 .venv-pw/
 .playwright-mcp/
 scripts/_ig_local_driver.py
 .claude/worktrees/
 scripts/_booksy_search_driver.py
 scripts/_ig_contact_driver.py
+__pycache__/
+scripts/_ig_research_driver.py

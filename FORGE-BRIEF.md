@@ -3,6 +3,34 @@
 > Condensado operativo de PIPELINE.md + DESIGN.md para que una corrida de forja lea UN solo archivo.
 > Si un caso no esta cubierto aqui, PIPELINE.md y DESIGN.md son la fuente de verdad.
 
+## RUTA RAPIDA: solo con el Instagram (2026-07-29, la via por defecto)
+Cuando el encargo es un handle de IG, estos 3 comandos hacen todo lo mecanico. Lo unico que
+pone el agente es el JUICIO: mirar el contact sheet y escribir el contenido.
+
+```
+.venv-pw/bin/python scripts/research_ig.py <handle> [slug]   # ~7s: fotos+logo+bio+telefono+email+has_own_site+sheet
+#  -> MIRAR output/<slug>/_sheet.jpg y escribir output/<slug>/content.json (solo textos)
+python3 scripts/derive.py <slug>                             # ~0.03s: genera el index.html
+python3 scripts/publish.py <slug> --lang es --forbid "..."   # gate + deploy + verifica 200 + registra
+```
+
+- `research_ig.py` abre Instagram UNA sola vez (antes eran 4 pasadas, ~22s y 4x el riesgo de
+  rate limit) y descarga las fotos en paralelo. Escribe `output/<slug>/data.json`.
+- `content.json` es SOLO contenido: la mecanica de anclas vive en `derive.py`. Los antiguos
+  `build_<slug>.py` (18 KB de media, 75% andamiaje repetido) ya no hacen falta.
+  Ejemplo completo y comentado: `output/prestigeautocargo/content.json`.
+- Si el negocio no tiene resenas verificables: `"social_proof": {"modo": "razones", ...}`.
+  Si no tiene direccion publica: omitir `contacto.mapa` y poner `contacto.imagen` (NUNCA un
+  mapa inventado). Si no tiene precios publicos: omitir `precio` en las cards.
+- `publish.py` NO registra el negocio si el demo no responde 200 (evita tarjetas fantasma) y
+  nunca pisa un registro con outreach `sent` o `skip_duplicate`. No envia ningun mensaje.
+- Antes de aprobar un lote de outreach: `python3 scripts/dedup_check.py` (mismo negocio bajo
+  dos slugs = dos cold emails al mismo dueno, rompe la regla dura #3).
+
+Los scripts de abajo (booksy_dossier, glossgenius_dossier, fresha_dossier) siguen siendo la
+mejor fuente cuando el negocio SI tiene pagina de booking: dan menu, precios y resenas reales,
+que el IG no da. La ruta rapida es para el caso "solo tengo el Instagram".
+
 ## 0. Arranque paralelo (primer minuto, OBLIGATORIO)
 Si el item de la cola es SOLO un nombre, un handle o "nombre + ciudad": es un encargo directo del usuario; hacer el discovery completo de ESE negocio (encontrar su Booksy/booking, verificar website propio, IG) y construirlo con la maxima prioridad, mismo pipeline.
 **PASO 1 (segundos, SIEMPRE primero)**: `python3 scripts/booksy_dossier.py <booksy_url> <slug>`.

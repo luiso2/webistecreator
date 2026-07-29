@@ -1,0 +1,427 @@
+#!/usr/bin/env python3
+"""Genera un site derivando el esqueleto v2 a partir de un content.json.
+
+Uso: python3 scripts/derive.py <slug>          (lee output/<slug>/content.json)
+
+POR QUE: cada negocio traia su propio build_<slug>.py de ~18 KB (el de hoy, 45 KB), y
+medido sobre uno real solo el 25% era contenido: el otro 75% eran las MISMAS anclas del
+esqueleto reescritas a mano una y otra vez. Cada reescritura es una oportunidad de romper
+un ancla y de gastar iteraciones. Aqui la mecanica vive UNA vez y por negocio solo se
+escribe el contenido.
+
+El content.json es 100% texto del negocio: si un dato no existe (precios, resenas,
+direccion), simplemente no se pone y la seccion se adapta. Nunca se inventa.
+Ver output/prestigeautocargo/content.json como ejemplo completo.
+"""
+import json
+import os
+import re
+import sys
+
+ESQUELETOS = {'dark-v2': 'templates/dark-v2/index.html', 'light-v2': 'templates/light-v2/index.html'}
+
+
+class Deriva:
+    def __init__(self, html):
+        self.h = html
+
+    def rep(self, viejo, nuevo, n=1):
+        assert viejo in self.h, 'ANCLA ROTA: ' + viejo[:110]
+        self.h = self.h.replace(viejo, nuevo, n)
+
+    def rep_todos(self, viejo, nuevo):
+        assert viejo in self.h, 'ANCLA ROTA: ' + viejo[:110]
+        self.h = self.h.replace(viejo, nuevo)
+
+    def rx(self, patron, nuevo):
+        assert re.search(patron, self.h, re.S), 'REGEX SIN MATCH: ' + patron[:110]
+        self.h = re.sub(patron, lambda _: nuevo, self.h, count=1, flags=re.S)
+
+
+def t(nodo, lang):
+    """Texto visible: el del idioma principal del site."""
+    return nodo.get(lang) or nodo.get('es') or nodo.get('en') or ''
+
+
+def attrs(nodo):
+    es = (nodo.get('es') or nodo.get('en') or '').replace('"', '&quot;')
+    en = (nodo.get('en') or nodo.get('es') or '').replace('"', '&quot;')
+    return f'data-es="{es}" data-en="{en}"'
+
+
+def span(nodo, lang, clase=''):
+    c = f' class="{clase}"' if clase else ''
+    return f'<span{c} {attrs(nodo)}>{t(nodo, lang)}</span>'
+
+
+# --------------------------------------------------------------- plantillas de bloque
+TARJETA_SERVICIO = """<div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal"{estilo}>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" {tag_attrs}>{tag}</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" {titulo_attrs}>{titulo}</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" {texto_attrs}>{texto}</p>
+          <div class="mt-auto">{precio}
+            <a href="{cta_url}" target="_blank" rel="noopener" class="{boton} rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" {cta_attrs}>{cta}</a>
+          </div>
+        </div>"""
+
+PRECIO = """
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">{precio}</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">{duracion}</p></div>"""
+
+TILE = ('<div class="frame zoomable {clases} img-reveal"{delay}>'
+        '<span class="tile-cap" {cap_attrs}>{cap}</span>'
+        '<img src="assets/raw/{img}" alt="{alt}" class="blur-up w-full h-full object-cover"{lazy} /></div>')
+
+CARD_RAZON = """<div class="glass glass-hover rounded-3xl p-8 reveal"{delay}>
+          {icono}
+          <h3 class="font-display text-xl mb-3" {titulo_attrs}>{titulo}</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" {texto_attrs}>{texto}</p>
+        </div>"""
+
+TESTIMONIO = """<figure class="glass glass-hover rounded-3xl p-8 reveal"{delay}>
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"{quote}"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">{autor}</span> <span class="text-[color:var(--ink-40)]">· {fuente}</span></figcaption>
+        </figure>"""
+
+CARD_CONTACTO = """<div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal"{delay}>
+            {icono}
+            <div>
+              <p class="font-medium mb-1" {titulo_attrs}>{titulo}</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" {texto_attrs}>{texto}</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="{url}"{blank}>{enlace}</a>
+            </div>
+          </div>"""
+
+ICONOS = {
+    'whatsapp': '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/>',
+    'instagram': '<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>',
+    'tiktok': '<path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>',
+    'mapa': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+    'calendario': '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>',
+    'escudo': '<path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/>',
+    'telefono': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/>',
+}
+
+
+def svg(nombre, clases, tam=20, stroke='1.8'):
+    return (f'<svg class="{clases}" width="{tam}" height="{tam}" viewBox="0 0 24 24" fill="none" '
+            f'stroke="currentColor" stroke-width="{stroke}" stroke-linecap="round" '
+            f'stroke-linejoin="round">{ICONOS.get(nombre, ICONOS["instagram"])}</svg>')
+
+
+def construir(slug):
+    ruta_content = f'output/{slug}/content.json'
+    c = json.load(open(ruta_content, encoding='utf-8'))
+    lang = c.get('lang', 'es')
+    base = c.get('base', 'dark-v2')
+    h = open(ESQUELETOS[base], encoding='utf-8').read()
+    d = Deriva(h)
+
+    CTA = c['cta_url']
+    IG = c['ig_url']
+    HANDLE = c['ig_handle']
+    BOOKSY = 'https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando'
+    IG_VIEJO = 'https://www.instagram.com/pure.artistrysk/'
+
+    # 1. globales
+    d.rep_todos(BOOKSY, CTA)
+    d.rep_todos(IG_VIEJO, IG)
+    d.rep_todos('@pure.artistrysk', HANDLE)
+
+    # 2. head
+    hd = c['head']
+    d.rx(r'<title>.*?</title>', f'<title>{hd["title"]}</title>')
+    d.rx(r'<meta name="description" content=".*?" />', f'<meta name="description" content="{hd["description"]}" />')
+    d.rx(r'<meta property="og:title" content=".*?" />', f'<meta property="og:title" content="{hd["og_title"]}" />')
+    d.rx(r'<meta property="og:description" content=".*?" />', f'<meta property="og:description" content="{hd["og_description"]}" />')
+    d.rx(r'<meta property="og:image" content=".*?" />', f'<meta property="og:image" content="{hd["og_image"]}" />')
+    d.rx(r'<link rel="icon" type="image/jpeg" href=".*?" />', f'<link rel="icon" type="image/jpeg" href="{hd["icon"]}" />')
+    d.rx(r'<script type="application/ld\+json">.*?</script>',
+         '<script type="application/ld+json">\n  ' + json.dumps(c['jsonld'], ensure_ascii=False, indent=2) + '\n  </script>')
+
+    # 3. idioma
+    if lang == 'es':
+        d.rep('<html lang="en" class="scroll-smooth">', '<html lang="es" class="scroll-smooth">')
+        d.rep("applyLang(lang === 'es' ? 'es' : 'en');", "applyLang(lang === 'en' ? 'en' : 'es');")
+
+    # 4. marca (preloader, nav, footer)
+    b = c['brand']
+    d.rep('<span class="pre-mono">PA</span>', f'<span class="pre-mono">{b["mono"]}</span>')
+    d.rep('<span class="pre-word">Pure Artistry</span>', f'<span class="pre-word">{b["name"]}</span>')
+    d.rep('<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />',
+          f'<img src="{b["logo"]}" alt="{b["name"]}" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />')
+    d.rep('<span class="font-display text-xl tracking-[0.1em] uppercase">Pure <span class="text-[color:var(--accent-deep)]">Artistry</span></span>',
+          f'<span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">{b["nav_a"]} <span class="text-[color:var(--accent-deep)]">{b["nav_b"]}</span></span>')
+    d.rep('<span class="foot-mark" aria-hidden="true">Pure Artistry</span>',
+          f'<span class="foot-mark" aria-hidden="true">{b["footmark"]}</span>')
+
+    # 5. nav labels
+    for viejo, nuevo in c.get('nav', {}).items():
+        par = {'experiencia': ('La Experiencia', 'The Experience'), 'metodo': ('El Método', 'The Method'),
+               'servicios': ('Servicios', 'Services'), 'galeria': ('Galería', 'Gallery'),
+               'opiniones': ('Opiniones', 'Reviews'), 'ubicacion': ('Ubicación', 'Location')}[viejo]
+        ancla = f'data-es="{par[0]}" data-en="{par[1]}">{par[0]}'
+        d.rep_todos(ancla, f'{attrs(nuevo)}>{t(nuevo, lang)}')
+
+    # 6. CTA del nav
+    cta_nav = c['cta_label']
+    d.rep(f'{ICONOS["calendario"]}</svg>\n          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>',
+          f'{ICONOS[c.get("cta_icono", "whatsapp")]}</svg>\n          <span {attrs(cta_nav)}>{t(cta_nav, lang)}</span>')
+    d.rep('class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>',
+          f'class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" {attrs(cta_nav)}>{t(cta_nav, lang)}</a>')
+
+    # 7. hero
+    hero = c['hero']
+    d.rep('data-es="Orlando, FL · Hair Studio" data-en="Orlando, FL · Hair Studio">Orlando, FL · Hair Studio',
+          f'{attrs(hero["eyebrow"])}>{t(hero["eyebrow"], lang)}')
+    d.rep('data-es="Tu cabello, tratado como arte." data-en="Your hair, treated like art.">Your hair, treated like art.</p>\n        <h1',
+          f'{attrs(hero["script"])}>{t(hero["script"], lang)}</p>\n        <h1')
+    d.rep('<span data-es="Silk press, locs y" data-en="Silk press, locs and">Silk press, locs and</span><br /><span data-es="extensiones nivel " data-en="extensions at a ">extensions at a </span><span class="text-shine" data-es="celebridad" data-en="celebrity level">celebrity level</span>',
+          f'{span(hero["h1_a"], lang)}<br />{span(hero["h1_b"], lang)}{span(hero["h1_shine"], lang, "text-shine")}')
+    d.rx(r'<p class="reveal max-w-xl text-\[color:var\(--ink-60\)\] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es=".*?</p>',
+         f'<p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" {attrs(hero["parrafo"])}>{t(hero["parrafo"], lang)}</p>')
+
+    # linea de prueba social: con rating (hay resenas) o con la senal que haya
+    if hero.get('rating'):
+        d.rep('data-es="5.0 · 234 reseñas en Booksy" data-en="5.0 · 234 reviews on Booksy">5.0 · 234 reviews on Booksy',
+              f'{attrs(hero["rating"])}>{t(hero["rating"], lang)}')
+    else:
+        d.rx(r'<div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">.*?</div>',
+             f'''<div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          {svg(hero.get("senal_icono", "instagram"), "text-[color:var(--accent-deep)]", 18)}
+          <span class="text-sm text-[color:var(--ink-60)]" {attrs(hero["senal"])}>{t(hero["senal"], lang)}</span>
+        </div>''')
+
+    d.rep('<span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>',
+          f'{span(c["cta_label"], lang)}')
+    d.rx(r'<img src="assets/raw/bk-1\.jpg" alt=".*?" class="blur-up w-full h-full object-cover" />',
+         f'<img src="assets/raw/{hero["imagen"]}" alt="{hero["imagen_alt"]}" class="blur-up w-full h-full object-cover" />')
+    tarj = hero['tarjeta']
+    d.rep('''<p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Reserva online</p>
+            <p class="font-display text-lg">Silk Press</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Desde $90 · 2h" data-en="From $90 · 2h">From $90 · 2h</p>''',
+          f'''<p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" {attrs(tarj["tag"])}>{t(tarj["tag"], lang)}</p>
+            <p class="font-display text-lg">{tarj["destacado"]}</p>
+            <p class="text-sm text-[color:var(--ink-60)]" {attrs(tarj["pie"])}>{t(tarj["pie"], lang)}</p>''')
+
+    # 8. strip
+    celdas = []
+    for i, s in enumerate(c['strip']):
+        delay = f' style="transition-delay:{i * 90}ms"' if i else ''
+        val = (f'<span data-count="{s["count"]}">{s["valor"]}</span>' if s.get('count') else s['valor'])
+        clase = 'font-display text-2xl text-shine' if s.get('count') else 'font-display text-2xl'
+        celdas.append(f'<div class="reveal"{delay}><p class="{clase}">{val}</p>'
+                      f'<p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" {attrs(s["etiqueta"])}>{t(s["etiqueta"], lang)}</p></div>')
+    d.rx(r'<div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">.*?</div>\s*</section>',
+         '<div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">\n      '
+         + '\n      '.join(celdas) + '\n    </div>\n  </section>')
+
+    # 9. marquee (4 copias de cada palabra: 2 marquees x 2 secuencias)
+    VIEJAS = ['Silk Press', 'Loc Retwist', 'Knotless Braids', 'K-Tip Extensions', 'Keratin', 'Orlando, FL']
+    for viejo, nuevo in zip(VIEJAS, c['marquee']):
+        a = f'<span class="marquee-word">{viejo}</span>'
+        assert d.h.count(a) == 4, f'se esperaban 4 copias de {viejo}, hay {d.h.count(a)}'
+        d.h = d.h.replace(a, f'<span class="marquee-word">{nuevo}</span>')
+
+    # 10. nosotros
+    n = c['nosotros']
+    d.rx(r'<img src="assets/raw/bk-2\.jpg" alt="Clienta con look terminado.*?loading="lazy" />',
+         f'<img src="assets/raw/{n["imagen_1"]}" alt="{n["imagen_1_alt"]}" class="blur-up w-full h-full object-cover" loading="lazy" />')
+    d.rx(r'<img src="assets/raw/bk-6\.jpg" alt="Twists recien terminados.*?loading="lazy" />',
+         f'<img src="assets/raw/{n["imagen_2"]}" alt="{n["imagen_2_alt"]}" class="blur-up w-full h-full object-cover" loading="lazy" />')
+    d.rep('data-es="La experiencia" data-en="The experience">La experiencia', f'{attrs(n["eyebrow"])}>{t(n["eyebrow"], lang)}')
+    d.rep('<span data-es="Una estilista," data-en="One stylist,">One stylist,</span><br /><span class="text-shine" data-es="manos de celebridad" data-en="celebrity hands">celebrity hands</span>',
+          f'{span(n["h2_a"], lang)}<br />{span(n["h2_shine"], lang, "text-shine")}')
+    d.rx(r'<p class="reveal text-\[color:var\(--ink-60\)\] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es=".*?</p>',
+         f'<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" {attrs(n["parrafo_1"])}>{t(n["parrafo_1"], lang)}</p>')
+    d.rx(r'<p class="reveal text-\[color:var\(--ink-60\)\] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es=".*?</p>',
+         f'<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" {attrs(n["parrafo_2"])}>{t(n["parrafo_2"], lang)}</p>')
+    mini = []
+    for m in n['stats']:
+        mini.append(f'<div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">'
+                    + (f'<span data-count="{m["count"]}">{m["valor"]}</span>' if m.get('count') else m['valor'])
+                    + f'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" {attrs(m["etiqueta"])}>{t(m["etiqueta"], lang)}</p></div>')
+    d.rx(r'<div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">.*?</div>\s*</div>\s*<div class="reveal flex flex-wrap gap-4"',
+         '<div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">\n          '
+         + '\n          '.join(mini) + '\n        </div>\n        <div class="reveal flex flex-wrap gap-4"')
+    d.rx(r'<img src="assets/raw/bk-2\.jpg" alt="Pure Artistry, estilista".*?loading="lazy" />',
+         f'<img src="assets/raw/{n["avatar"]}" alt="{n["avatar_alt"]}" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />')
+    d.rep('<span class="text-sm font-light">Pure Artistry · <span class="text-[color:var(--ink-40)]" data-es="K-Tip Specialist" data-en="K-Tip Specialist">K-Tip Specialist</span></span>',
+          f'<span class="text-sm font-light">{b["name"]} · <span class="text-[color:var(--ink-40)]" {attrs(n["avatar_pie"])}>{t(n["avatar_pie"], lang)}</span></span>')
+
+    # 11. proceso
+    pr = c['proceso']
+    d.rep('data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso',
+          f'{attrs(pr["eyebrow"])}>{t(pr["eyebrow"], lang)}')
+    d.rep('<span data-es="Así se trabaja" data-en="How it works">How it works</span> <span class="text-shine" data-es="aquí" data-en="here">here</span>',
+          f'{span(pr["h2_a"], lang)} {span(pr["h2_shine"], lang, "text-shine")}')
+    # Los patrones de parrafo TIENEN que llegar hasta </p>: el texto visible repite el mismo
+    # texto que data-en, asi que un .*? que corte al final del atributo deja el texto viejo
+    # pegado detras (bug real: "...movemos el papeleo.">From the 2-hour silk press...").
+    VIEJOS_PASOS = [
+        ('data-es="Reserva online" data-en="Book online">Book online</h3>', r'data-es="Eliges tu servicio en Booksy.*?</p>'),
+        ('data-es="Consulta capilar" data-en="Hair consult">Hair consult</h3>', r'data-es="Tu tipo de cabello.*?</p>'),
+        ('data-es="Manos a la obra" data-en="The work">The work</h3>', r'data-es="Del silk press de 2 horas.*?</p>'),
+        ('data-es="El toque final" data-en="The finish">The finish</h3>', r'data-es="Sales con el acabado.*?</p>'),
+    ]
+    for pasoc, (v_tit, v_par) in zip(pr['pasos'], VIEJOS_PASOS):
+        d.rep(v_tit, f'{attrs(pasoc["titulo"])}>{t(pasoc["titulo"], lang)}</h3>')
+        d.rx(v_par, f'{attrs(pasoc["texto"])}>{t(pasoc["texto"], lang)}</p>')
+
+    # 12. servicios
+    sv = c['servicios']
+    d.rep('<span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine">ritual</span>',
+          f'{span(sv["h2_a"], lang)} {span(sv["h2_shine"], lang, "text-shine")}')
+    d.rx(r'<p class="reveal mt-5 text-sm text-\[color:var\(--ink-60\)\] font-light" style="transition-delay:160ms" data-es=".*?</p>',
+         f'<p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" {attrs(sv["nota"])}>{t(sv["nota"], lang)}</p>')
+    cards = []
+    for i, s in enumerate(sv['cards']):
+        estilo = (' style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);"'
+                  if i == 0 else f' style="transition-delay:{i * 110}ms"')
+        precio = PRECIO.format(precio=s['precio'], duracion=s.get('duracion', '')) if s.get('precio') else ''
+        cards.append(TARJETA_SERVICIO.format(
+            estilo=estilo, tag=t(s['tag'], lang), tag_attrs=attrs(s['tag']),
+            titulo=t(s['titulo'], lang), titulo_attrs=attrs(s['titulo']),
+            texto=t(s['texto'], lang), texto_attrs=attrs(s['texto']),
+            precio=precio, cta_url=CTA, boton='btn-3d' if i == 0 else 'btn-ghost',
+            cta=t(sv['cta'], lang), cta_attrs=attrs(sv['cta'])))
+    d.rx(r'<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">.*?</div>\s*(?=<p class="reveal text-center)',
+         '<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">\n        '
+         + '\n        '.join(cards) + '\n      </div>\n      ')
+    d.rx(r'<span data-es="También: virgin relaxers.*?</span>',
+         f'<span {attrs(sv["pie"])}>{t(sv["pie"], lang)}</span>')
+
+    # 13. galeria
+    g = c['galeria']
+    d.rep('<span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="hair">hair</span>',
+          f'{span(g["h2_a"], lang)} {span(g["h2_shine"], lang, "text-shine")}')
+    CLASES = ['col-span-2 aspect-[16/9]', 'aspect-[3/4]', 'aspect-[3/4]',
+              'aspect-[3/4] lg:mt-10', 'aspect-[3/4]', 'aspect-[3/4] lg:mt-10']
+    DELAYS = ['', ' style="transition-delay:90ms"', ' style="transition-delay:150ms"',
+              ' style="transition-delay:120ms"', ' style="transition-delay:210ms"', ' style="transition-delay:300ms"']
+    tiles = [TILE.format(clases=CLASES[i], delay=DELAYS[i], cap=t(x['caption'], lang),
+                         cap_attrs=attrs(x['caption']), img=x['img'], alt=x['alt'],
+                         lazy='' if i == 0 else ' loading="lazy"')
+             for i, x in enumerate(g['tiles'][:6])]
+    d.rx(r'<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">.*?</div>\s*</div>\s*</section>',
+         '<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">\n        '
+         + '\n        '.join(tiles) + '\n      </div>\n    </div>\n  </section>')
+
+    # 14. prueba social: testimonios reales o razones (si no hay resenas verificables)
+    sp = c['social_proof']
+    if sp['modo'] == 'testimonios':
+        bloques = [TESTIMONIO.format(delay='' if i == 0 else f' style="transition-delay:{i * 110}ms"',
+                                     quote=x['quote'], autor=x['autor'], fuente=x['fuente'])
+                   for i, x in enumerate(sp['items'][:3])]
+        sub = (f'<p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms">'
+               f'<span class="stars">★★★★★</span> &nbsp;<span {attrs(sp["subtitulo"])}>{t(sp["subtitulo"], lang)}</span></p>')
+    else:
+        bloques = [CARD_RAZON.format(delay='' if i == 0 else f' style="transition-delay:{i * 110}ms"',
+                                     icono=svg(x.get('icono', 'escudo'), 'text-[color:var(--accent-deep)] mb-5', 26, '1.6'),
+                                     titulo=t(x['titulo'], lang), titulo_attrs=attrs(x['titulo']),
+                                     texto=t(x['texto'], lang), texto_attrs=attrs(x['texto']))
+                   for i, x in enumerate(sp['items'][:3])]
+        sub = (f'<p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" '
+               f'{attrs(sp["subtitulo"])}>{t(sp["subtitulo"], lang)}</p>')
+    d.rx(r'<!-- OPINIONES -->.*?<!-- UBICACION -->', f'''<!-- PRUEBA SOCIAL ({sp['modo']}) -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" {attrs(sp['eyebrow'])}>{t(sp['eyebrow'], lang)}</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">{span(sp['h2_a'], lang)} {span(sp['h2_shine'], lang, 'text-shine')}</h2>
+        {sub}
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        {chr(10).join('        ' + x for x in bloques).strip()}
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="{sp.get('cta_url', IG)}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" {attrs(sp['cta'])}>{t(sp['cta'], lang)}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->''')
+
+    # 15. contacto (con mapa si hay direccion verificada, con foto si no)
+    ct = c['contacto']
+    d.rep('data-es="Visítanos" data-en="Visit us">Visítanos</p>', f'{attrs(ct["eyebrow"])}>{t(ct["eyebrow"], lang)}</p>')
+    d.rep('<span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine">Orlando</span>',
+          f'{span(ct["h2_a"], lang)} <span class="text-shine">{ct["h2_shine"]}</span>')
+    tarjetas = []
+    for i, x in enumerate(ct['cards']):
+        tarjetas.append(CARD_CONTACTO.format(
+            delay=f' style="transition-delay:{140 + i * 60}ms"',
+            icono=svg(x.get('icono', 'instagram'), 'mt-1 shrink-0 text-[color:var(--accent-deep)]'),
+            titulo=t(x['titulo'], lang), titulo_attrs=attrs(x['titulo']),
+            texto=t(x['texto'], lang), texto_attrs=attrs(x['texto']),
+            url=x['url'], enlace=x['enlace'],
+            blank='' if x['url'].startswith('tel:') else ' target="_blank" rel="noopener"'))
+    if ct.get('mapa'):
+        derecha = (f'<div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">\n'
+                   f'        <iframe title="{ct["mapa"]["titulo"]}" src="{ct["mapa"]["src"]}" '
+                   f'class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" '
+                   f'referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>\n      </div>')
+    else:
+        # sin direccion publica NO se pone un mapa inventado: va una foto real
+        derecha = (f'<div class="frame zoomable img-reveal min-h-[380px] h-full max-h-[560px] lg:max-h-none" '
+                   f'style="transition-delay:180ms">\n        <img src="assets/raw/{ct["imagen"]}" '
+                   f'alt="{ct["imagen_alt"]}" class="blur-up w-full h-full object-cover" loading="lazy" />\n      </div>')
+    d.rx(r'<div class="space-y-4">.*?</div>\s*</div>\s*<div class="frame map-frame reveal min-h-\[380px\]" style="transition-delay:180ms">.*?</div>',
+         '<div class="space-y-4">\n          ' + '\n          '.join(tarjetas) + '\n        </div>\n      </div>\n      ' + derecha)
+
+    # 16. CTA final
+    cf = c['cta_final']
+    d.rep('data-es="Tu cabello, tratado como arte." data-en="Your hair, treated like art.">Your hair, treated like art.</p>',
+          f'{attrs(cf["script"])}>{t(cf["script"], lang)}</p>')
+    d.rep('<span data-es="Tu silla" data-en="Your chair">Your chair</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span>',
+          f'{span(cf["h2_a"], lang)} {span(cf["h2_shine"], lang, "text-shine")}')
+    d.rx(r'<p class="reveal text-\[color:var\(--ink-60\)\] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es=".*?</p>',
+         f'<p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" {attrs(cf["parrafo"])}>{t(cf["parrafo"], lang)}</p>')
+    d.rep('class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>',
+          f'class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" {attrs(c["cta_label"])}>{t(c["cta_label"], lang)}</a>')
+
+    # 17. footer
+    ft = c['footer']
+    d.rep('<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />',
+          f'<img src="{b["logo"]}" alt="{b["name"]}" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />')
+    d.rep('<span class="font-display text-lg tracking-[0.1em] uppercase">Pure Artistry</span>',
+          f'<span class="font-display text-lg tracking-[0.1em] uppercase">{b["name"]}</span>')
+    d.rx(r'<p class="text-sm text-\[color:var\(--ink-40\)\] font-light leading-relaxed" data-es=".*?</p>',
+         f'<p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" {attrs(ft["descripcion"])}>{t(ft["descripcion"], lang)}</p>')
+    d.rep('<p>80 W Grant St, Suite 111, Studio 156, Orlando, FL 32806</p>', f'<p>{ft["linea_contacto"]}</p>')
+    d.rx(r'data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy',
+         f'{attrs(ft["enlace_contacto"])}>{t(ft["enlace_contacto"], lang)}')
+    extra = ''.join(f'\n        <p><a href="{x["url"]}" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">{x["texto"]}</a></p>'
+                    for x in ft.get('social_extra', []))
+    d.rep(f'<p><a href="{IG}" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · {HANDLE}</a></p>',
+          f'<p><a href="{IG}" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · {HANDLE}</a></p>{extra}')
+    d.rep('<p class="text-xs text-[color:var(--ink-40)]">© 2026 Pure Artistry.</p>',
+          f'<p class="text-xs text-[color:var(--ink-40)]">© 2026 {b["name"]}.</p>')
+
+    # 18. boton flotante
+    d.rx(r'<a href="[^"]*" target="_blank" rel="noopener" class="book-float" aria-label="[^"]*">\s*<svg.*?</svg>\s*</a>',
+         f'<a href="{CTA}" target="_blank" rel="noopener" class="book-float" aria-label="{t(c["cta_label"], lang)}">\n'
+         f'    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" '
+         f'stroke-linecap="round" stroke-linejoin="round">{ICONOS[c.get("cta_icono", "whatsapp")]}</svg>\n  </a>')
+
+    salida = f'output/{slug}/index.html'
+    open(salida, 'w', encoding='utf-8').write(d.h)
+    return salida
+
+
+def main():
+    if len(sys.argv) < 2:
+        print(__doc__)
+        sys.exit(2)
+    slug = sys.argv[1]
+    if not os.path.exists(f'output/{slug}/content.json'):
+        print(f'FAIL: falta output/{slug}/content.json')
+        sys.exit(1)
+    salida = construir(slug)
+    print(f'{slug}: derivado -> {salida}')
+    print('Siguiente: python3 scripts/publish.py', slug, '--lang <es|en> --forbid "..."')
+
+
+if __name__ == '__main__':
+    main()
