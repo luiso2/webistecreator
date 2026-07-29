@@ -1,0 +1,14 @@
+# Material de TRABAJO: no se publica. El worker siteforge-demos sirve todo output/, asi que
+# sin este archivo el research de cada negocio quedaba accesible desde internet
+# (comprobado 2026-07-29: 94 data.json con email de contacto, 76 con notas internas y
+# 58 con borradores de outreach se servian con HTTP 200 a cualquiera que supiera la URL).
+# El mismo patron ya existia en los .assetsignore por-site; faltaba en el worker global.
+# Ningun index.html referencia estos archivos, asi que excluirlos no afecta a los sites.
+**/data.json
+**/content.json
+**/captions.json
+**/ig_profile.json
+**/_sheet.jpg
+**/wrangler.jsonc
+**/.assetsignore
+**/site_check/

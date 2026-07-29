@@ -200,9 +200,15 @@ def check_websites(handle, links):
     Se prueban los candidatos EN PARALELO (antes era una consulta detras de otra)."""
     base = re.sub(r'[^a-z0-9]', '', handle.lower())
     candidatos = [f'{base}.com', f'{base}.net', f'{base}.us']
-    PLATAFORMAS = ('instagram.com', 'facebook.com', 'tiktok.com', 'threads.net', 'linktr.ee',
+    # Meta mete sus propios dominios DENTRO del header del perfil (el link a Threads con el
+    # mismo @, y about.meta.com), asi que filtrar por header no basta: hay que nombrarlos.
+    # threads.com es el dominio actual, threads.net el viejo: los dos siguen apareciendo.
+    PLATAFORMAS = ('instagram.com', 'facebook.com', 'fb.com', 'tiktok.com', 'threads.net',
+                   'threads.com', 'meta.com', 'linktr.ee', 'beacons.ai', 'linkin.bio',
                    'booksy.com', 'glossgenius.com', 'square.site', 'fresha.com', 'vagaro.com',
-                   'wa.me', 'api.whatsapp', 'youtube.com', 'twitter.com', 'x.com', 'l.instagram.com')
+                   'setmore.com', 'as.me', 'acuityscheduling.com', 'janeapp.com',
+                   'wa.me', 'api.whatsapp', 'whatsapp.com', 'youtube.com', 'youtu.be',
+                   'twitter.com', 'x.com', 'l.instagram.com', 'pinterest.com', 'snapchat.com')
     for l in links:
         host = urllib.parse.urlparse(l).netloc.lower()
         if host and not any(p in host for p in PLATAFORMAS) and host not in candidatos:
