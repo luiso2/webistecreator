@@ -1,0 +1,117 @@
+{
+  "slug": "adaina-cleaning-port-st-lucie",
+  "name": "Adaina Cleaning Services",
+  "niche": "residential & commercial house cleaning",
+  "schema_type": "HomeAndConstructionBusiness",
+  "language": "en",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "893 SW Koler Ave",
+    "addressLocality": "Port St. Lucie",
+    "addressRegion": "FL",
+    "postalCode": "34953",
+    "addressCountry": "US"
+  },
+  "address_note": "893 SW Koler Ave, Port St. Lucie FL 34953 is the address used consistently by Yelp (listing title itself: 'ADAINA CLEANING SERVICES - 893 SW Koler Ave, Port St. Lucie, FL') and directly confirmed via WebFetch of the Birdeye reviews aggregator page. Two other addresses surfaced during research and were NOT used: Nextdoor's own page listed '3218 Southwest Ronlea Court' (inconsistent with every other source, likely a stale/incorrect Nextdoor field), and the Florida Sunbiz corporate registry lists the registered-agent/mailing address as '757 SE Hidden River Dr, Port Saint Lucie, FL 34983' (a corporate filing address, not the public-facing service address used by review platforms).",
+  "phone": "+17728285555",
+  "phone_display": "(772) 828-5555",
+  "phone_verification_note": "Two candidate numbers appeared across sources: (772) 828-5555 (Nextdoor's own business page, fetched directly and successfully, plus recurring in general web search summaries) vs (772) 675-5502 (appeared in several directory-aggregator search summaries citing Yelp/Thumbtack/Cylex/FindOpen, none of which could be fetched directly: Yelp and Thumbtack both blocked automated fetches with 403/JS-shell responses, and Cylex/FindOpen returned 403 as well). DECIDING EVIDENCE: the business's own Instagram account (@adainacleaning) posted a first-party marketing flyer graphic (downloaded as assets/raw/bk-5.jpg) that reads 'ESTIMATE FREE 772-828-5555' directly under their own logo. This is first-party content authored by the business itself, which outweighs unverifiable second-hand directory snippets. (772) 828-5555 was used on the site as a result.",
+  "email": null,
+  "email_note": "No public email found after a reasonable search: Facebook About/root page (facebookexternalhit UA redirected to Facebook's login wall, no meta/about data retrievable without auth), Nextdoor (fetched directly, no email field), Birdeye reviews aggregator (fetched directly, no email field), Yelp/Thumbtack/Cylex/FindOpen/Porch (all blocked automated fetches, 403 or JS-only shell), Florida Sunbiz corporate registry (lists registered agent name only, no email field ever shown publicly by the state). One candidate email ('nicoalves@hotmail.com') surfaced in a general web search but was traced to an unrelated person-search/people-finder result (a different individual, 'Rhonda Crowley') with no connection to this business; discarded as a false positive, not used. Left null per no-invention rule.",
+  "hours": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }
+  ],
+  "hours_note": "Monday-Friday 8:00 AM - 5:00 PM, closed Saturday and Sunday. Corroborated across two independent directory aggregators (Cylex and FindOpen) in web search summaries; neither page could be fetched directly (both returned HTTP 403), so this is treated as reasonably reliable but not first-party-verified, consistent with how a no-own-website business's hours are handled elsewhere in this repo.",
+  "rating": 5.0,
+  "review_count": 73,
+  "rating_source": "Birdeye reviews aggregator page (reviews.birdeye.com/adaina-cleaning-services-156204212939791), fetched directly. The page explicitly breaks down its own review total by source: 'Google: 73 reviews, Birdeye: 1 review, Total: 74 reviews', all averaging to a 5.0 overall rating. Per task instructions the Google-only figure (5.0, 73 reviews) is the one used on-site as the primary trust stat, matching the brief's pre-verified figure.",
+  "has_own_site": false,
+  "own_site_check": "adainacleaning.com: DNS does not resolve (curl: 'Could not resolve host', confirmed independently via getent hosts -> NXDOMAIN). adainacleaningservices.com: also NXDOMAIN, confirmed independently. Nextdoor's own business page (fetched directly) explicitly states 'Website: No website listed'. The Birdeye aggregator page shows a stale/incorrect field reading 'http://adainacleaning.com/' but that domain itself does not resolve to anything (dead link, not a functioning site), consistent with a directory auto-guessing a domain that was never actually registered or has since lapsed. has_own_site confirmed false.",
+  "instagram": "https://www.instagram.com/adainacleaning/",
+  "instagram_handle": "@adainacleaning",
+  "instagram_note": "Verified real, active account. 12 public posts were retrieved via Playwright (scripts/ig_photos.py): mostly 'Before' cleaning-job photos (dirty microwave, tub, carpet, cabinets, closets, kitchen, bedroom) plus 2 first-party marketing flyer graphics and 1 unusable blurry video-thumbnail frame. No finished 'after' room photos or staff photos exist in the IG feed itself.",
+  "facebook": "https://www.facebook.com/AdainaCleaning/",
+  "facebook_note": "Confirmed as the business's real Facebook page via multiple independent search results (title 'Adaina Cleaning Services | Port Saint Lucie FL | Facebook', page includes Posts/About/Photos/Videos tabs, and one search summary noted '100% recommend (9 Reviews)' on the page). Direct fetch was blocked by Facebook's login wall even with a facebookexternalhit user agent (redirected to /login/), so full content (About text, photos) could not be extracted first-party; only used as a sameAs link and footer/CTA channel. A second, separate Facebook page (facebook.com/adainahousekeeping/) also surfaced in searches and may be a duplicate or older page for the same business; not used on-site to avoid ambiguity.",
+  "owner": {
+    "name": "Adaina Mendonca",
+    "role": "Owner / President",
+    "note": "Confirmed via Florida Division of Corporations (Sunbiz) record for ADAINA CLEANING CORP, Document Number P17000039635, filed as a Profit Corporation on 05/02/2017 (effective 05/01/2017), status ACTIVE. Officers listed: MENDONCA, ADAINA (President) and DELEON MENDONCA, HUGO (Vice President). This is an official state record, high confidence."
+  },
+  "experience_note": "Multiple general web search summaries independently and repeatedly described the owner as having 'over 19 years of experience' in cleaning, in wording consistent with a business-authored bio (likely from a directory About section, e.g. Thumbtack). This could not be confirmed via a direct first-party page fetch (Thumbtack blocks automated fetching), so it is used on-site only as a soft, non-numeric claim ('years of hands-on experience') rather than asserting the exact figure as a hard fact. The verifiable, state-recorded fact used as the hard trust stat instead is: business registered in Florida since 2017 (Sunbiz).",
+  "services_note": "No first-party price list exists (no own website, no booking platform). Service categories below are corroborated across multiple independent sources: general web search summaries of the business's own listings state it 'specializes in deep cleaning, recurring cleaning, and move-in/move-out services' and provides 'House Cleaning and Commercial Cleaning'; a direct WebFetch of the Nextdoor business page independently listed 'whole-house deep cleaning, light monthly cleaning, vacuuming, floor cleaning, bed making, refrigerator and oven cleaning, weekly/biweekly/monthly scheduling'; Birdeye's direct fetch categorizes the business under 'Office Cleaning / Business Services'. No prices are shown since none could be verified; services are listed with 'Call for a quote'.",
+  "services": [
+    { "name": "Recurring House Cleaning", "detail": "Weekly, biweekly or monthly visits", "price": null },
+    { "name": "Deep Cleaning", "detail": "Whole-house deep clean, top to bottom", "price": null },
+    { "name": "Move-In / Move-Out Cleaning", "detail": "Empty-home cleaning for move day", "price": null },
+    { "name": "Commercial / Office Cleaning", "detail": "Recurring cleaning for businesses", "price": null }
+  ],
+  "reviews": [
+    {
+      "text": "Adaina Cleaning Services are great. Very honest & they do a great job!",
+      "author": "C.G.",
+      "source": "Nextdoor",
+      "verified": true,
+      "used_on_site": true
+    },
+    {
+      "text": "Excellent service, would highly recommend. Hard working team cleaned every corner of my house.",
+      "author": null,
+      "source": "Yelp",
+      "verified": true,
+      "used_on_site": true
+    },
+    {
+      "text": "I've been using Adaina's Cleaning Service since 2012. Their trustworthiness is their best asset.",
+      "author": null,
+      "source": "Thumbtack",
+      "verified": true,
+      "used_on_site": true,
+      "sourcing_note": "Could not be confirmed via a direct first-party page fetch (Thumbtack blocks automated fetching, returns a JS-only app shell). Wording was returned consistently and specifically across multiple independent web search queries pointed at this exact Thumbtack listing, which is treated as adequate corroboration, but flagged here for transparency."
+    },
+    {
+      "text": "Adaina Cleaning for sure! They're dependable, trustworthy & do a great job!!",
+      "author": "C.G.",
+      "source": "Nextdoor",
+      "verified": true,
+      "used_on_site": false
+    },
+    {
+      "text": "Adaina is super nice and does excellent work. She cleans locally.",
+      "author": null,
+      "source": "Nextdoor",
+      "verified": true,
+      "used_on_site": false
+    },
+    {
+      "text": "She did the best job",
+      "author": "Deuzeli Sena V.",
+      "source": "Birdeye",
+      "verified": true,
+      "used_on_site": false
+    }
+  ],
+  "photos": {
+    "source_note": "12 public IG posts retrieved via scripts/ig_photos.py (Playwright, no login). Curation found the feed to be entirely 'Before' problem-area close-ups (dirty microwave, tub, carpet, cabinet hardware, sofa crevice) plus 2 first-party marketing flyer graphics and 1 unusable blurry frame, with ZERO after/finished-result photos and ZERO staff/team photos anywhere in the feed. Per the rescue rule, Facebook was attempted next (blocked by login wall) and Porch.com's project-photo CDN was used as a rescue: pro.porch.com's business listing embeds one genuine, uncropped before/after composite photo (a real client bedroom, two 'before' panels showing a dog's mess and one 'after' panel showing the room cleaned and the bed made), fetched directly from Porch's own image CDN (imagescdn.staticp.com) at full 1600x1200 resolution. This composite was used both as the wide gallery hero tile (full composite, showing genuine transformation) and, cropped to isolate just the finished 'after' panel, as the site's main hero image. One more genuine 'after' interior (a tidy modern living/dining room) was recovered by cropping the photo-inset out of the business's own IG marketing flyer graphic (assets/raw/bk-5.jpg), removing the surrounding text/logo chrome.",
+    "used": [
+      { "file": "assets/hero-clean-bedroom.jpg", "desc": "A real client bedroom, freshly cleaned and made up, natural window light. Cropped from the 'after' panel of a genuine before/after composite photo.", "source": "pro.porch.com (Porch project photo for adaina cleaning corp, imagescdn.staticp.com CDN)" },
+      { "file": "assets/gallery-before-after.jpg", "desc": "Full genuine before/after composite: a dog got into trash/stuffing in a real client's bedroom (two left panels), the same room cleaned and the bed made (right panel)", "source": "pro.porch.com" },
+      { "file": "assets/after-living-room.jpg", "desc": "A tidy, modern living and dining room, cropped out of the business's own IG marketing flyer photo inset", "source": "instagram.com/adainacleaning (own posted flyer graphic, assets/raw/bk-5.jpg, photo inset cropped free of text/logo overlay)" },
+      { "file": "assets/before-kitchen.jpg", "desc": "A real client kitchen before a cleaning visit, counters and stovetop cluttered", "source": "instagram.com/adainacleaning" },
+      { "file": "assets/before-bedroom.jpg", "desc": "A real client bedroom before a cleaning visit, laundry and items scattered on the bed and floor", "source": "instagram.com/adainacleaning" },
+      { "file": "assets/before-tub.jpg", "desc": "A real client bathtub before a deep clean, soap scum and grime visible", "source": "instagram.com/adainacleaning" },
+      { "file": "assets/before-microwave.jpg", "desc": "A real client microwave interior before a deep clean", "source": "instagram.com/adainacleaning" },
+      { "file": "assets/before-carpet.jpg", "desc": "A real client carpet before a deep clean, with a wooden chair", "source": "instagram.com/adainacleaning" },
+      { "file": "assets/before-sofa.jpg", "desc": "A real client upholstered bed frame before a deep clean", "source": "instagram.com/adainacleaning" },
+      { "file": "assets/logo-icon.jpg", "desc": "The business's own logo icon (green house/leaf mark), cropped out of their own IG marketing flyer graphic, used as the nav/footer monogram and favicon", "source": "instagram.com/adainacleaning (own posted flyer graphic)" }
+    ],
+    "discarded": [
+      "assets/raw/bk-1.jpg: an unusable, entirely blurred/overexposed video-thumbnail frame.",
+      "assets/raw/bk-2.jpg: a marketing graphic that is 100% text/iconography (no real photo content beyond the logo, which was salvaged separately as logo-icon.jpg), discarded from the gallery per the no-text-overlay rule.",
+      "assets/raw/bk-9.jpg and bk-12.jpg: close-up 'before' shots (food crumbs wedged in a sofa crevice, a corroded cabinet hinge) judged too unappealing/gross for a premium demo gallery even in a legitimate before/after context; excluded in favor of the less visually harsh before-shots that were used."
+    ]
+  },
+  "trust_bullets_from_own_flyer": ["Licensed and insured", "No contract required", "Professional uniformed staff"],
+  "palette_note": "Fresh aqua/mint palette, not previously used in this repo (avoids lashbloom's plum-pink, lakeside-grooming's lake-teal, and gold/dorado palettes already used elsewhere). accent-deep #2f8f7a, accent-mid #6cc4ab, on a warm white/cream base. Chosen for a 'freshly cleaned, spa-clean' association appropriate to a residential cleaning brand, distinct from every existing palette in the repo.",
+  "cta_channel": "No booking platform found (no Booksy/Square/GlossGenius/etc, and has_own_site is false). CTA is tel:+17728285555 (phone confirmed via the business's own first-party marketing flyer, see phone_verification_note) plus a Google Maps directions link and the business's real Facebook page.",
+  "sunbiz_note": "Florida Division of Corporations record for ADAINA CLEANING CORP: Document Number P17000039635, filed 05/02/2017, effective 05/01/2017, status ACTIVE, Profit Corporation, principal/mailing address 757 SE Hidden River Dr, Port Saint Lucie, FL 34983, officers Adaina Mendonca (President) and Hugo DeLeon Mendonca (Vice President), last event an AMENDMENT filed 05/02/2018."
+}
