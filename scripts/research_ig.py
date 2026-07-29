@@ -110,7 +110,16 @@ def scrape_local(handle):
 
 
 def scrape_servicio(handle):
-    """Fallback para entornos sin navegador (forja cloud). Solo trae fotos, no bio."""
+    """Fallback para entornos sin navegador (forja cloud).
+
+    OJO: este canal SOLO devuelve URLs de fotos. Nunca bio, seguidores, posts ni links.
+    Por eso marca `degradado`: sin esa marca, un research por esta via produce un data.json
+    con todo en null que es INDISTINGUIBLE de "el negocio no publica nada", y quien lo lea
+    concluira que no hay datos cuando en realidad no hubo vision. Caso real (@beezualstudios,
+    2026-07-29): por aqui llego 1 foto (un flyer no usable) y se descarto el negocio por
+    "research insuficiente"; el mismo perfil por Playwright local daba 12 fotos, 11 de ellas
+    material real, mas 1,095 seguidores y 24 posts.
+    """
     q = urllib.parse.urlencode({'u': handle, 'key': IG_SERVICE_KEY, 'tries': '4'})
     try:
         req = urllib.request.Request(f'{IG_SERVICE_URL}/ig?{q}', headers={'User-Agent': UA})
@@ -119,6 +128,7 @@ def scrape_servicio(handle):
         d.setdefault('bio', '')
         d.setdefault('links', [])
         d.setdefault('profile_pic', '')
+        d['degradado'] = True
         return d
     except Exception as e:
         print('  servicio fallo:', str(e)[:120])
@@ -216,12 +226,18 @@ def check_websites(handle, links):
     procs = [(c, subprocess.Popen(
         ['curl', '-s', '-o', '/dev/null', '-w', '%{http_code}', '--max-time', '8', '-L', f'https://{c}'],
         stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)) for c in candidatos[:6]]
-    vivos = []
+    vivos, rotos = [], []
     for c, p in procs:
         out, _ = p.communicate()
-        if (out or b'').decode().strip() == '200':
+        code = (out or b'').decode().strip()
+        if code == '200':
             vivos.append(f'https://{c}')
-    return vivos
+        elif code and code not in ('000', '404'):
+            # El dominio existe pero no sirve (525 de SSL, 403, 500...). No es "no tienen web":
+            # es "su web esta rota", y eso CAMBIA el angulo del outreach. Caso real:
+            # beezualstudios.com responde 525 y quedaba clasificado igual que no tener nada.
+            rotos.append(f'https://{c} (HTTP {code})')
+    return vivos, rotos
 
 
 def main():
@@ -268,13 +284,17 @@ def main():
     posts = re.search(r'([\d.,]+)\s*(?:posts|publicaciones)', metricas, re.I)
     externos = [desenvolver(l) for l in d.get('links', []) if 'l.instagram.com' in l or
                 (urllib.parse.urlparse(l).netloc and 'instagram.com' not in urllib.parse.urlparse(l).netloc)]
-    sitios = check_websites(handle, externos)
+    sitios, sitios_rotos = check_websites(handle, externos)
+    # Un research por el servicio no ve la bio: sus null significan "no lo pude ver",
+    # no "el negocio no lo publica". Marcarlo evita descartar negocios viables.
+    degradado = bool(d.get('degradado')) or (not bio and len(validas) < 5)
 
     data = {
         'slug': slug,
         'ig': f'@{handle}',
         'ig_url': f'https://www.instagram.com/{handle}/',
         'fuente': via,
+        'research_degradado': degradado,
         'bio_raw': bio,
         'email': emails[0] if emails else None,
         'phone': tels[0].strip() if tels else None,
@@ -282,6 +302,7 @@ def main():
         'posts': posts.group(1) if posts else None,
         'links_externos': externos[:6],
         'website_candidates_vivos': sitios,
+        'website_candidates_rotos': sitios_rotos,
         'has_own_site': bool(sitios),
         'logo': 'assets/raw/logo.jpg' if logo else None,
         'fotos': [os.path.basename(v) for v in validas],
@@ -295,8 +316,23 @@ def main():
     print(f'  fotos validas: {len(validas)} | logo: {"si" if logo else "NO"}')
     print(f'  telefono: {data["phone"]} | email: {data["email"]}')
     print(f'  seguidores: {data["followers"]} | posts: {data["posts"]}')
-    print(f'  website propio: {sitios if sitios else "NO (angulo: no tienen website)"}')
-    print(f'  data.json + {sheet} listos. CURAR EL SHEET VISUALMENTE antes de construir.')
+    if sitios:
+        print(f'  website propio: {sitios}')
+    elif sitios_rotos:
+        print(f'  website propio: EXISTE PERO NO CARGA -> {sitios_rotos}')
+        print('    (angulo: "su web no esta cargando", NO "no tienen website")')
+    else:
+        print('  website propio: NO (angulo: no tienen website)')
+    if degradado:
+        print()
+        print('  *** RESEARCH DEGRADADO ***')
+        print('  Este research salio por un canal que NO ve la bio del perfil (solo fotos), o')
+        print('  trajo menos de 5 fotos. Los campos en null significan "no se pudo ver", NO')
+        print('  "el negocio no lo publica": NO marcar failed por falta de datos con este research.')
+        print('  Reintentar desde una maquina con Playwright e IP residencial antes de descartar.')
+        print('  Precedente: @beezualstudios (2026-07-29), descartado con 1 foto por esta via;')
+        print('  el mismo perfil en local daba 12 fotos, 1,095 seguidores y 24 posts.')
+    print(f'\n  data.json + {sheet} listos. CURAR EL SHEET VISUALMENTE antes de construir.')
 
 
 if __name__ == '__main__':

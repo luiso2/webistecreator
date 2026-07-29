@@ -81,7 +81,21 @@ tiene su adaptacion ya probada:
 | Booking online | inventar un flujo de reserva | CTA al canal real (WhatsApp, DM, telefono) |
 | Menu por sesion | fabricar servicios | cards = lo que el negocio SI dice que hace, con sus palabras |
 
-**Cuando SI marcar `failed`** (faltan los minimos, no el formato):
+**ANTES de marcar failed por falta de datos: comprobar `research_degradado` en data.json.**
+Si es `true`, el research salio por un canal que NO ve la bio (el servicio de Railway solo
+devuelve URLs de fotos) o trajo menos de 5 fotos. Sus null significan "no se pudo ver", NO
+"el negocio no lo publica". Descartar con ese research produce falsos negativos: reintentar
+desde una maquina con Playwright e IP residencial, y si no la hay, dejar el item PENDIENTE
+para la siguiente sesion local en vez de marcarlo failed.
+Precedente (2026-07-29): @beezualstudios se descarto por "research insuficiente" con 1 foto
+(un flyer no usable) obtenida por el servicio. El mismo perfil por Playwright local daba 12
+fotos, 11 de ellas material real de trabajo, 1,095 seguidores y 24 posts: era construible.
+
+**Website propio roto**: si `website_candidates_rotos` trae algo (dominio que responde 525,
+403, 500...), el negocio SI tiene dominio pero no carga. No es "no tienen website": el angulo
+es "su web no esta cargando", que suele ser mejor gancho todavia.
+
+**Cuando SI marcar `failed`** (faltan los minimos, no el formato, y con research NO degradado):
 - menos de 5 fotos reales y propias del negocio (stock, graficos con texto o fotos de otras
   cuentas NO cuentan), o
 - ningun canal de contacto publico, o
