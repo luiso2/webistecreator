@@ -2,7 +2,9 @@ import sys
 
 slug = sys.argv[1]
 path = f'output/{slug}/index.html'
-h = open(path).read()
+# encoding explicito: en la forja cloud el locale puede no ser UTF-8 y los acentos/enes
+# del site se corromperian al reescribir el archivo.
+h = open(path, encoding='utf-8').read()
 
 def rep(a, b, n=1):
     global h
@@ -37,5 +39,5 @@ NEW = """    // Reveals
     setTimeout(checkVisibleFallback, 400);"""
 
 rep(OLD, NEW)
-open(path, 'w').write(h)
+open(path, 'w', encoding='utf-8').write(h)
 print(f'{slug}: fallback de reveal aplicado')

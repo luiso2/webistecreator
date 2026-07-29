@@ -113,7 +113,9 @@ export default {
         ig: S(body.ig, 60),
         url_demo: body.url_demo,
         has_own_site: body.has_own_site === true,
-        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || '') ? S(body.email, 120) : null,
+        // undefined (no null): un upsert que viene sin email NO debe borrar el email que ya
+        // se habia encontrado para ese negocio (el filtro de abajo descarta solo undefined).
+        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || '') ? S(body.email, 120) : undefined,
         phone: S(body.phone, 30),
         outreach: 'pending_manual',
         status: 'staging',
@@ -127,7 +129,12 @@ export default {
       if (idx >= 0) {
         const actual = registry[idx];
         if (actual.outreach === 'sent') return json({ ok: true, skipped: 'ya contactado' });
-        registry[idx] = { ...actual, ...Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)) };
+        if (actual.outreach === 'skip_duplicate') return json({ ok: true, skipped: 'marcado como duplicado' });
+        const nuevo = Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined));
+        // Un re-upsert refresca los datos del demo, pero NUNCA revierte el estado de outreach
+        // que el panel ya haya avanzado (si no, una corrida cloud lo devolveria a contactable).
+        delete nuevo.outreach;
+        registry[idx] = { ...actual, ...nuevo };
       } else {
         if (registry.length >= 800) return json({ error: 'registro lleno' }, 429);
         registry.push(Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)));
@@ -192,7 +199,11 @@ export default {
       if (url.pathname === '/api/queue/done' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        // Sin este guard, un body sin id recorre la cola comparando contra undefined y responde
+        // ok:true sin haber cerrado nada (falso positivo para el que llama).
+        if (!body.id) return json({ error: 'id requerido' }, 400);
         let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+        if (!queue.some(q => q.id === body.id)) return json({ error: 'item no encontrado' }, 404);
         queue = queue.map(q => (q.id === body.id ? { ...q, status: 'done', done_at: new Date().toISOString() } : q));
         await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
         return json({ ok: true });
@@ -211,10 +222,27 @@ export default {
         if (!biz) return json({ error: 'negocio no encontrado' }, 404);
         if (!biz.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(biz.email)) return json({ error: 'sin email publico valido' }, 400);
         if (!biz.url_demo || !DEMO_URL_RE.test(biz.url_demo)) return json({ error: 'url_demo invalida' }, 400);
-        // Anti-duplicado: registry (sincronizado desde el repo) + log propio del panel
+        // Anti-duplicado: registry (sincronizado desde el repo) + log propio del panel.
+        // El slug NO identifica al negocio: una segunda corrida puede derivar otro slug para el
+        // mismo negocio (caso real 305esthetics / threezerofiveesthetics, mismo IG y email), y un
+        // dedup solo por slug deja pasar un segundo email al mismo dueno (rompe la regla dura #3).
+        // Por eso la identidad se chequea tambien por email y por handle de IG.
         const sentLog = (await env.SITEFORGE_KV.get('sent_log', 'json')) || {};
         if (biz.outreach === 'sent' || sentLog[slug]) {
           return json({ error: 'ya se le envio email a este negocio', sent_at: sentLog[slug] || biz.fecha }, 409);
+        }
+        if (biz.outreach === 'skip_duplicate') {
+          return json({ error: 'este registro esta marcado como duplicado', duplicate_of: biz.duplicate_of || null }, 409);
+        }
+        const norm = v => (v || '').toString().trim().toLowerCase().replace(/^@/, '');
+        const gemelo = registry.find(b => b.slug !== slug
+          && (b.outreach === 'sent' || sentLog[b.slug])
+          && ((biz.email && norm(b.email) === norm(biz.email)) || (biz.ig && norm(b.ig) === norm(biz.ig))));
+        if (gemelo) {
+          return json({
+            error: 'ya se le envio email a este negocio bajo otro slug (mismo email o IG)',
+            slug_contactado: gemelo.slug, sent_at: sentLog[gemelo.slug] || gemelo.fecha,
+          }, 409);
         }
 
         const en = (biz.language || 'es') === 'en';

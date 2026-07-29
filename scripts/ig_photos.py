@@ -17,6 +17,7 @@ solo baja lo que el perfil publica. Curar el _sheet.jpg (descartar covers de ree
 """
 import json
 import os
+import re
 import subprocess
 import sys
 import urllib.parse
@@ -91,9 +92,13 @@ def fetch_urls(username):
         d = fetch_via_service(username)
     except Exception as e:
         d = {'urls': [], '_svc_err': str(e)}
-    if len(d.get('urls', [])) >= 5 or d.get('login_wall'):
+    if len(d.get('urls', [])) >= 5:
         return d
-    print(f'  servicio dio {len(d.get("urls", []))} fotos; probando Playwright local...', flush=True)
+    # OJO: un login_wall del servicio NO debe cortar el fallback. El servicio sale por IP de
+    # datacenter, que es justo la que IG gatea con la pared de login; la IP residencial local
+    # suele pasar. Antes se retornaba aqui y se perdian fotos que el local si conseguia.
+    motivo = 'pared de login' if d.get('login_wall') else f'{len(d.get("urls", []))} fotos'
+    print(f'  servicio dio {motivo}; probando Playwright local...', flush=True)
     try:
         dl = fetch_via_local(username)
         if len(dl.get('urls', [])) > len(d.get('urls', [])):
@@ -143,7 +148,13 @@ def main():
     print(f'fotos validas descargadas: {ok} (bk-{start}..)')
     print('alts:', [x.get('alt', '') for x in urls[:6]])
 
-    files = sorted(f for f in os.listdir(d_dir) if f.endswith('.jpg'))
+    # Orden NATURAL (bk-2 antes que bk-10): con sorted() lexicografico el contact sheet quedaba
+    # desordenado y la curacion visual elegia por nombre el archivo equivocado.
+    def orden_natural(f):
+        m = re.search(r'(\d+)', f)
+        return (int(m.group(1)) if m else 0, f)
+
+    files = sorted((f for f in os.listdir(d_dir) if f.endswith('.jpg')), key=orden_natural)
     if files:
         cols, tw, th, label = 7, 150, 190, 16
         rows = (len(files) + cols - 1) // cols
