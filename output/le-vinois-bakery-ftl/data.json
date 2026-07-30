@@ -1,0 +1,25 @@
+{
+ "slug": "le-vinois-bakery-ftl",
+ "ig": "@le_vinois_bakery",
+ "ig_url": "https://www.instagram.com/le_vinois_bakery/",
+ "fuente": "servicio-railway",
+ "research_degradado": true,
+ "bio_raw": "",
+ "email": null,
+ "phone": null,
+ "followers": null,
+ "posts": null,
+ "links_externos": [],
+ "website_candidates_vivos": [],
+ "website_candidates_rotos": [],
+ "website_note": "levinoisbakery.com and le-vinois-bakery.com return HTTP 200/301 but both now redirect to an unrelated squatted/spam domain (jeniustoto.one), NOT to the bakery. Verified 2026-07-30 via curl -sI. The domain does not belong to the business anymore (or was never theirs); their only public link is le-vinois-bakery.square.site (a Square Online storefront, does not count as own website per PIPELINE.md). Treat has_own_site as false.",
+ "has_own_site": false,
+ "logo": null,
+ "fotos": [
+  "bk-1.jpg"
+ ],
+ "captions": [
+  ""
+ ],
+ "note_research_incompleto": "SESSION-LEVEL INFRA LIMIT (2026-07-30, siteforge-daily lane): this sandbox has no browser network egress (Playwright chromium gets net::ERR_CONNECTION_RESET on any external host, confirmed with and without explicit proxy config, even though curl through the same proxy reaches instagram.com fine -- IG's profile content is client-rendered so curl alone returns an empty app shell). Fallback ig-photo-service-production.up.railway.app returned only 1 photo for this handle AND for a known-good previously-successful handle (prestigeautocargo) tested as a sanity check, so the service itself is currently degraded/rate-limited session-wide, not specific to this business. Yelp, Facebook, UberEats, DoorDash, and IG mirrors (imginn/picuki/pixwox) all returned 403/429 to non-browser requests. Business itself DOES qualify (Google 4.8, 154 reviews, no functioning own site, real menu+prices found via web search, real reviews found via web search) but could not clear the 5-real-photo minimum in this session. Per FORGE-BRIEF 0.b 'research_degradado': do not treat as 'business has no photos', retry from a local session with a real Playwright browser / residential IP before deciding definitively."
+}
