@@ -20,6 +20,89 @@ import sys
 
 ESQUELETOS = {'dark-v2': 'templates/dark-v2/index.html', 'light-v2': 'templates/light-v2/index.html'}
 
+# Anclas literales que SI difieren entre esqueletos (texto propio de cada negocio origen:
+# pureartistry en dark-v2, lashbloom en light-v2). Las anclas genericas (nav, servicios "ritual",
+# bloque de opiniones, contacto cards, book-float, etc.) son identicas en ambos esqueletos y
+# viven directo en el cuerpo de construir() sin pasar por este dict.
+BASES = {
+    'dark-v2': {
+        'booksy': 'https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando',
+        'ig': 'https://www.instagram.com/pure.artistrysk/',
+        'handle': '@pure.artistrysk',
+        'pre_mono': 'PA',
+        'pre_word': 'Pure Artistry',
+        'logo_nav': '<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />',
+        'nav_brand': '<span class="font-display text-xl tracking-[0.1em] uppercase">Pure <span class="text-[color:var(--accent-deep)]">Artistry</span></span>',
+        'foot_mark': '<span class="foot-mark" aria-hidden="true">Pure Artistry</span>',
+        'proceso_h2': '<span data-es="Así se trabaja" data-en="How it works">How it works</span> <span class="text-shine" data-es="aquí" data-en="here">here</span>',
+        'hero_eyebrow': 'data-es="Orlando, FL · Hair Studio" data-en="Orlando, FL · Hair Studio">Orlando, FL · Hair Studio',
+        'hero_script': 'data-es="Tu cabello, tratado como arte." data-en="Your hair, treated like art.">Your hair, treated like art.</p>\n        <h1',
+        'hero_h1': '<span data-es="Silk press, locs y" data-en="Silk press, locs and">Silk press, locs and</span><br /><span data-es="extensiones nivel " data-en="extensions at a ">extensions at a </span><span class="text-shine" data-es="celebridad" data-en="celebrity level">celebrity level</span>',
+        'hero_rating': 'data-es="5.0 · 234 reseñas en Booksy" data-en="5.0 · 234 reviews on Booksy">5.0 · 234 reviews on Booksy',
+        'hero_img_re': r'<img src="assets/raw/bk-1\.jpg" alt=".*?" class="blur-up w-full h-full object-cover" />',
+        'hero_tarjeta': '<p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Reserva online</p>\n            <p class="font-display text-lg">Silk Press</p>\n            <p class="text-sm text-[color:var(--ink-60)]" data-es="Desde $90 · 2h" data-en="From $90 · 2h">From $90 · 2h</p>',
+        'marquee_viejas': ['Silk Press', 'Loc Retwist', 'Knotless Braids', 'K-Tip Extensions', 'Keratin', 'Orlando, FL'],
+        'nosotros_img1_re': r'<img src="assets/raw/bk-2\.jpg" alt="Clienta con look terminado.*?loading="lazy" />',
+        'nosotros_img2_re': r'<img src="assets/raw/bk-6\.jpg" alt="Twists recien terminados.*?loading="lazy" />',
+        'nosotros_h2': '<span data-es="Una estilista," data-en="One stylist,">One stylist,</span><br /><span class="text-shine" data-es="manos de celebridad" data-en="celebrity hands">celebrity hands</span>',
+        'nosotros_avatar_re': r'<img src="assets/raw/bk-2\.jpg" alt="Pure Artistry, estilista".*?loading="lazy" />',
+        'nosotros_avatar_pie': '<span class="text-sm font-light">Pure Artistry · <span class="text-[color:var(--ink-40)]" data-es="K-Tip Specialist" data-en="K-Tip Specialist">K-Tip Specialist</span></span>',
+        'proceso_pasos': [
+            ('data-es="Reserva online" data-en="Book online">Book online</h3>', r'data-es="Eliges tu servicio en Booksy.*?</p>'),
+            ('data-es="Consulta capilar" data-en="Hair consult">Hair consult</h3>', r'data-es="Tu tipo de cabello.*?</p>'),
+            ('data-es="Manos a la obra" data-en="The work">The work</h3>', r'data-es="Del silk press de 2 horas.*?</p>'),
+            ('data-es="El toque final" data-en="The finish">The finish</h3>', r'data-es="Sales con el acabado.*?</p>'),
+        ],
+        'galeria_h2': '<span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="hair">hair</span>',
+        'contacto_h2a': '<span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine">Orlando</span>',
+        'cta_final_script': 'data-es="Tu cabello, tratado como arte." data-en="Your hair, treated like art.">Your hair, treated like art.</p>',
+        'cta_final_h2': '<span data-es="Tu silla" data-en="Your chair">Your chair</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span>',
+        'footer_logo': '<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />',
+        'footer_brand': '<span class="font-display text-lg tracking-[0.1em] uppercase">Pure Artistry</span>',
+        'footer_address': '80 W Grant St, Suite 111, Studio 156, Orlando, FL 32806',
+        'footer_ig_hover': 'hover:text-[#e9c3ab]',
+        'book_float_stroke': '#1c1408',
+    },
+    'light-v2': {
+        'booksy': 'https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach',
+        'ig': 'https://www.instagram.com/_lashbloom/',
+        'handle': '@_lashbloom',
+        'pre_mono': 'LB',
+        'pre_word': 'Lash Bloom',
+        'logo_nav': '<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(160,74,114,0.35)]" />',
+        'nav_brand': '<span class="font-display text-xl tracking-[0.1em] uppercase">Lash <span class="text-[color:var(--accent-deep)]">Bloom</span></span>',
+        'foot_mark': '<span class="foot-mark" aria-hidden="true">Lash Bloom</span>',
+        'proceso_h2': '<span data-es="Tu cita, pestaña" data-en="Your visit, lash">Your visit, lash</span> <span class="text-shine" data-es="por pestaña" data-en="by lash">by lash</span>',
+        'hero_eyebrow': 'data-es="West Palm Beach, FL · Lash Studio" data-en="West Palm Beach, FL · Lash Studio">West Palm Beach, FL · Lash Studio',
+        'hero_script': 'data-es="Pestañas que florecen contigo." data-en="Lashes that bloom with you.">Lashes that bloom with you.</p>\n        <h1',
+        'hero_h1': '<span data-es="Pestañas clásicas, híbridas" data-en="Classic, hybrid and volume">Classic, hybrid and volume</span><br /><span data-es="y volumen, hechas para " data-en="lashes, made to ">lashes, made to </span><span class="text-shine" data-es="florecer" data-en="bloom">bloom</span>',
+        'hero_rating': 'data-es="5.0 · 86 reseñas en Booksy" data-en="5.0 · 86 reviews on Booksy">5.0 · 86 reviews on Booksy',
+        'hero_img_re': r'<img src="assets/raw/bk-6\.jpg" alt="Clienta feliz con su set de pestañas terminado en Lash Bloom" class="blur-up w-full h-full object-cover" />',
+        'hero_tarjeta': '<p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Reserva online</p>\n            <p class="font-display text-lg">Volume Full Set</p>\n            <p class="text-sm text-[color:var(--ink-60)]" data-es="$155 · 1h 50min" data-en="$155 · 1h 50min">$155 · 1h 50min</p>',
+        'marquee_viejas': ['Classic Set', 'Hybrid Set', 'Volume Set', 'Mega Volume', 'Bottom Lashes', 'West Palm Beach, FL'],
+        'nosotros_img1_re': r'<img src="assets/raw/hero-1\.jpg" alt="El suite de Lash Bloom.*?loading="lazy" />',
+        'nosotros_img2_re': r'<img src="assets/raw/about-2\.jpg" alt="Rincon del estudio.*?loading="lazy" />',
+        'nosotros_h2': '<span data-es="Un suite zen" data-en="A zen suite">A zen suite</span><br /><span class="text-shine" data-es="hecho para relajarte" data-en="made to unwind in">made to unwind in</span>',
+        'nosotros_avatar_re': r'<img src="assets/raw/logo\.jpg" alt="Lash Bloom" class="blur-up w-10 h-10.*?loading="lazy" />',
+        'nosotros_avatar_pie': '<span class="text-sm font-light">Yesi · <span class="text-[color:var(--ink-40)]" data-es="Artista licenciada" data-en="Licensed lash artist">Licensed lash artist</span></span>',
+        'proceso_pasos': [
+            ('data-es="Reserva online" data-en="Book online">Book online</h3>', r'data-es="Eliges tu set o tu relleno.*?</p>'),
+            ('data-es="Mapeo del ojo" data-en="Eye mapping">Eye mapping</h3>', r'data-es="Forma del ojo.*?</p>'),
+            ('data-es="Aplicación zen" data-en="The zen part">The zen part</h3>', r'data-es="Te recuestas.*?</p>'),
+            ('data-es="Plan de relleno" data-en="Fill plan">Fill plan</h3>', r'data-es="Sales con tu relleno.*?</p>'),
+        ],
+        'galeria_h2': '<span data-es="Miradas" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="lashes">lashes</span>',
+        'contacto_h2a': '<span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">West Palm Beach</span>',
+        'cta_final_script': 'data-es="Pestañas que florecen contigo." data-en="Lashes that bloom with you.">Lashes that bloom with you.</p>',
+        'cta_final_h2': '<span data-es="Tu mirada nueva" data-en="Your new lashes">Your new lashes</span> <span class="text-shine" data-es="te está esperando" data-en="are waiting">are waiting</span>',
+        'footer_logo': '<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(240,190,215,0.35)]" loading="lazy" />',
+        'footer_brand': '<span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>',
+        'footer_address': '4580 Cresthaven Blvd, West Palm Beach, FL 33415',
+        'footer_ig_hover': 'hover:text-[#f0bed7]',
+        'book_float_stroke': '#faf2f6',
+    },
+}
+
 
 class Deriva:
     def __init__(self, html):
@@ -118,17 +201,18 @@ def construir(slug):
     base = c.get('base', 'dark-v2')
     h = open(ESQUELETOS[base], encoding='utf-8').read()
     d = Deriva(h)
+    V = BASES[base]  # anclas literales propias del esqueleto elegido
 
     CTA = c['cta_url']
     IG = c['ig_url']
     HANDLE = c['ig_handle']
-    BOOKSY = 'https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando'
-    IG_VIEJO = 'https://www.instagram.com/pure.artistrysk/'
+    BOOKSY = V['booksy']
+    IG_VIEJO = V['ig']
 
     # 1. globales
     d.rep_todos(BOOKSY, CTA)
     d.rep_todos(IG_VIEJO, IG)
-    d.rep_todos('@pure.artistrysk', HANDLE)
+    d.rep_todos(V['handle'], HANDLE)
 
     # 2. head
     hd = c['head']
@@ -148,13 +232,13 @@ def construir(slug):
 
     # 4. marca (preloader, nav, footer)
     b = c['brand']
-    d.rep('<span class="pre-mono">PA</span>', f'<span class="pre-mono">{b["mono"]}</span>')
-    d.rep('<span class="pre-word">Pure Artistry</span>', f'<span class="pre-word">{b["name"]}</span>')
-    d.rep('<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />',
+    d.rep(f'<span class="pre-mono">{V["pre_mono"]}</span>', f'<span class="pre-mono">{b["mono"]}</span>')
+    d.rep(f'<span class="pre-word">{V["pre_word"]}</span>', f'<span class="pre-word">{b["name"]}</span>')
+    d.rep(V['logo_nav'],
           f'<img src="{b["logo"]}" alt="{b["name"]}" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />')
-    d.rep('<span class="font-display text-xl tracking-[0.1em] uppercase">Pure <span class="text-[color:var(--accent-deep)]">Artistry</span></span>',
+    d.rep(V['nav_brand'],
           f'<span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">{b["nav_a"]} <span class="text-[color:var(--accent-deep)]">{b["nav_b"]}</span></span>')
-    d.rep('<span class="foot-mark" aria-hidden="true">Pure Artistry</span>',
+    d.rep(V['foot_mark'],
           f'<span class="foot-mark" aria-hidden="true">{b["footmark"]}</span>')
 
     # 5. nav labels
@@ -174,18 +258,18 @@ def construir(slug):
 
     # 7. hero
     hero = c['hero']
-    d.rep('data-es="Orlando, FL · Hair Studio" data-en="Orlando, FL · Hair Studio">Orlando, FL · Hair Studio',
+    d.rep(V['hero_eyebrow'],
           f'{attrs(hero["eyebrow"])}>{t(hero["eyebrow"], lang)}')
-    d.rep('data-es="Tu cabello, tratado como arte." data-en="Your hair, treated like art.">Your hair, treated like art.</p>\n        <h1',
+    d.rep(V['hero_script'],
           f'{attrs(hero["script"])}>{t(hero["script"], lang)}</p>\n        <h1')
-    d.rep('<span data-es="Silk press, locs y" data-en="Silk press, locs and">Silk press, locs and</span><br /><span data-es="extensiones nivel " data-en="extensions at a ">extensions at a </span><span class="text-shine" data-es="celebridad" data-en="celebrity level">celebrity level</span>',
+    d.rep(V['hero_h1'],
           f'{span(hero["h1_a"], lang)}<br />{span(hero["h1_b"], lang)}{span(hero["h1_shine"], lang, "text-shine")}')
     d.rx(r'<p class="reveal max-w-xl text-\[color:var\(--ink-60\)\] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es=".*?</p>',
          f'<p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" {attrs(hero["parrafo"])}>{t(hero["parrafo"], lang)}</p>')
 
     # linea de prueba social: con rating (hay resenas) o con la senal que haya
     if hero.get('rating'):
-        d.rep('data-es="5.0 · 234 reseñas en Booksy" data-en="5.0 · 234 reviews on Booksy">5.0 · 234 reviews on Booksy',
+        d.rep(V['hero_rating'],
               f'{attrs(hero["rating"])}>{t(hero["rating"], lang)}')
     else:
         d.rx(r'<div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">.*?</div>',
@@ -196,12 +280,10 @@ def construir(slug):
 
     d.rep('<span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>',
           f'{span(c["cta_label"], lang)}')
-    d.rx(r'<img src="assets/raw/bk-1\.jpg" alt=".*?" class="blur-up w-full h-full object-cover" />',
+    d.rx(V['hero_img_re'],
          f'<img src="assets/raw/{hero["imagen"]}" alt="{hero["imagen_alt"]}" class="blur-up w-full h-full object-cover" />')
     tarj = hero['tarjeta']
-    d.rep('''<p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Reserva online</p>
-            <p class="font-display text-lg">Silk Press</p>
-            <p class="text-sm text-[color:var(--ink-60)]" data-es="Desde $90 · 2h" data-en="From $90 · 2h">From $90 · 2h</p>''',
+    d.rep(V['hero_tarjeta'],
           f'''<p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" {attrs(tarj["tag"])}>{t(tarj["tag"], lang)}</p>
             <p class="font-display text-lg">{tarj["destacado"]}</p>
             <p class="text-sm text-[color:var(--ink-60)]" {attrs(tarj["pie"])}>{t(tarj["pie"], lang)}</p>''')
@@ -219,7 +301,7 @@ def construir(slug):
          + '\n      '.join(celdas) + '\n    </div>\n  </section>')
 
     # 9. marquee (4 copias de cada palabra: 2 marquees x 2 secuencias)
-    VIEJAS = ['Silk Press', 'Loc Retwist', 'Knotless Braids', 'K-Tip Extensions', 'Keratin', 'Orlando, FL']
+    VIEJAS = V['marquee_viejas']
     for viejo, nuevo in zip(VIEJAS, c['marquee']):
         a = f'<span class="marquee-word">{viejo}</span>'
         assert d.h.count(a) == 4, f'se esperaban 4 copias de {viejo}, hay {d.h.count(a)}'
@@ -227,12 +309,12 @@ def construir(slug):
 
     # 10. nosotros
     n = c['nosotros']
-    d.rx(r'<img src="assets/raw/bk-2\.jpg" alt="Clienta con look terminado.*?loading="lazy" />',
+    d.rx(V['nosotros_img1_re'],
          f'<img src="assets/raw/{n["imagen_1"]}" alt="{n["imagen_1_alt"]}" class="blur-up w-full h-full object-cover" loading="lazy" />')
-    d.rx(r'<img src="assets/raw/bk-6\.jpg" alt="Twists recien terminados.*?loading="lazy" />',
+    d.rx(V['nosotros_img2_re'],
          f'<img src="assets/raw/{n["imagen_2"]}" alt="{n["imagen_2_alt"]}" class="blur-up w-full h-full object-cover" loading="lazy" />')
     d.rep('data-es="La experiencia" data-en="The experience">La experiencia', f'{attrs(n["eyebrow"])}>{t(n["eyebrow"], lang)}')
-    d.rep('<span data-es="Una estilista," data-en="One stylist,">One stylist,</span><br /><span class="text-shine" data-es="manos de celebridad" data-en="celebrity hands">celebrity hands</span>',
+    d.rep(V['nosotros_h2'],
           f'{span(n["h2_a"], lang)}<br />{span(n["h2_shine"], lang, "text-shine")}')
     d.rx(r'<p class="reveal text-\[color:var\(--ink-60\)\] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es=".*?</p>',
          f'<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" {attrs(n["parrafo_1"])}>{t(n["parrafo_1"], lang)}</p>')
@@ -246,26 +328,21 @@ def construir(slug):
     d.rx(r'<div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">.*?</div>\s*</div>\s*<div class="reveal flex flex-wrap gap-4"',
          '<div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">\n          '
          + '\n          '.join(mini) + '\n        </div>\n        <div class="reveal flex flex-wrap gap-4"')
-    d.rx(r'<img src="assets/raw/bk-2\.jpg" alt="Pure Artistry, estilista".*?loading="lazy" />',
+    d.rx(V['nosotros_avatar_re'],
          f'<img src="assets/raw/{n["avatar"]}" alt="{n["avatar_alt"]}" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />')
-    d.rep('<span class="text-sm font-light">Pure Artistry · <span class="text-[color:var(--ink-40)]" data-es="K-Tip Specialist" data-en="K-Tip Specialist">K-Tip Specialist</span></span>',
-          f'<span class="text-sm font-light">{b["name"]} · <span class="text-[color:var(--ink-40)]" {attrs(n["avatar_pie"])}>{t(n["avatar_pie"], lang)}</span></span>')
+    d.rep(V['nosotros_avatar_pie'],
+          f'<span class="text-sm font-light">{n.get("avatar_nombre", b["name"])} · <span class="text-[color:var(--ink-40)]" {attrs(n["avatar_pie"])}>{t(n["avatar_pie"], lang)}</span></span>')
 
     # 11. proceso
     pr = c['proceso']
     d.rep('data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso',
           f'{attrs(pr["eyebrow"])}>{t(pr["eyebrow"], lang)}')
-    d.rep('<span data-es="Así se trabaja" data-en="How it works">How it works</span> <span class="text-shine" data-es="aquí" data-en="here">here</span>',
+    d.rep(V['proceso_h2'],
           f'{span(pr["h2_a"], lang)} {span(pr["h2_shine"], lang, "text-shine")}')
     # Los patrones de parrafo TIENEN que llegar hasta </p>: el texto visible repite el mismo
     # texto que data-en, asi que un .*? que corte al final del atributo deja el texto viejo
     # pegado detras (bug real: "...movemos el papeleo.">From the 2-hour silk press...").
-    VIEJOS_PASOS = [
-        ('data-es="Reserva online" data-en="Book online">Book online</h3>', r'data-es="Eliges tu servicio en Booksy.*?</p>'),
-        ('data-es="Consulta capilar" data-en="Hair consult">Hair consult</h3>', r'data-es="Tu tipo de cabello.*?</p>'),
-        ('data-es="Manos a la obra" data-en="The work">The work</h3>', r'data-es="Del silk press de 2 horas.*?</p>'),
-        ('data-es="El toque final" data-en="The finish">The finish</h3>', r'data-es="Sales con el acabado.*?</p>'),
-    ]
+    VIEJOS_PASOS = V['proceso_pasos']
     for pasoc, (v_tit, v_par) in zip(pr['pasos'], VIEJOS_PASOS):
         d.rep(v_tit, f'{attrs(pasoc["titulo"])}>{t(pasoc["titulo"], lang)}</h3>')
         d.rx(v_par, f'{attrs(pasoc["texto"])}>{t(pasoc["texto"], lang)}</p>')
@@ -290,12 +367,12 @@ def construir(slug):
     d.rx(r'<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">.*?</div>\s*(?=<p class="reveal text-center)',
          '<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">\n        '
          + '\n        '.join(cards) + '\n      </div>\n      ')
-    d.rx(r'<span data-es="También: virgin relaxers.*?</span>',
-         f'<span {attrs(sv["pie"])}>{t(sv["pie"], lang)}</span>')
+    d.rx(r'<p class="reveal text-center text-xs text-\[color:var\(--ink-40\)\] font-light mt-8">.*?</p>',
+         f'<p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span {attrs(sv["pie"])}>{t(sv["pie"], lang)}</span></p>')
 
     # 13. galeria
     g = c['galeria']
-    d.rep('<span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="hair">hair</span>',
+    d.rep(V['galeria_h2'],
           f'{span(g["h2_a"], lang)} {span(g["h2_shine"], lang, "text-shine")}')
     CLASES = ['col-span-2 aspect-[16/9]', 'aspect-[3/4]', 'aspect-[3/4]',
               'aspect-[3/4] lg:mt-10', 'aspect-[3/4]', 'aspect-[3/4] lg:mt-10']
@@ -348,7 +425,7 @@ def construir(slug):
     # 15. contacto (con mapa si hay direccion verificada, con foto si no)
     ct = c['contacto']
     d.rep('data-es="Visítanos" data-en="Visit us">Visítanos</p>', f'{attrs(ct["eyebrow"])}>{t(ct["eyebrow"], lang)}</p>')
-    d.rep('<span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine">Orlando</span>',
+    d.rep(V['contacto_h2a'],
           f'{span(ct["h2_a"], lang)} <span class="text-shine">{ct["h2_shine"]}</span>')
     tarjetas = []
     for i, x in enumerate(ct['cards']):
@@ -374,9 +451,9 @@ def construir(slug):
 
     # 16. CTA final
     cf = c['cta_final']
-    d.rep('data-es="Tu cabello, tratado como arte." data-en="Your hair, treated like art.">Your hair, treated like art.</p>',
+    d.rep(V['cta_final_script'],
           f'{attrs(cf["script"])}>{t(cf["script"], lang)}</p>')
-    d.rep('<span data-es="Tu silla" data-en="Your chair">Your chair</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span>',
+    d.rep(V['cta_final_h2'],
           f'{span(cf["h2_a"], lang)} {span(cf["h2_shine"], lang, "text-shine")}')
     d.rx(r'<p class="reveal text-\[color:var\(--ink-60\)\] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es=".*?</p>',
          f'<p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" {attrs(cf["parrafo"])}>{t(cf["parrafo"], lang)}</p>')
@@ -385,26 +462,27 @@ def construir(slug):
 
     # 17. footer
     ft = c['footer']
-    d.rep('<img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />',
+    d.rep(V['footer_logo'],
           f'<img src="{b["logo"]}" alt="{b["name"]}" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />')
-    d.rep('<span class="font-display text-lg tracking-[0.1em] uppercase">Pure Artistry</span>',
+    d.rep(V['footer_brand'],
           f'<span class="font-display text-lg tracking-[0.1em] uppercase">{b["name"]}</span>')
     d.rx(r'<p class="text-sm text-\[color:var\(--ink-40\)\] font-light leading-relaxed" data-es=".*?</p>',
          f'<p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" {attrs(ft["descripcion"])}>{t(ft["descripcion"], lang)}</p>')
-    d.rep('<p>80 W Grant St, Suite 111, Studio 156, Orlando, FL 32806</p>', f'<p>{ft["linea_contacto"]}</p>')
+    d.rep(f'<p>{V["footer_address"]}</p>', f'<p>{ft["linea_contacto"]}</p>')
     d.rx(r'data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy',
          f'{attrs(ft["enlace_contacto"])}>{t(ft["enlace_contacto"], lang)}')
-    extra = ''.join(f'\n        <p><a href="{x["url"]}" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">{x["texto"]}</a></p>'
+    ig_hover = V['footer_ig_hover']
+    extra = ''.join(f'\n        <p><a href="{x["url"]}" target="_blank" rel="noopener" class="{ig_hover}">{x["texto"]}</a></p>'
                     for x in ft.get('social_extra', []))
-    d.rep(f'<p><a href="{IG}" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · {HANDLE}</a></p>',
-          f'<p><a href="{IG}" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · {HANDLE}</a></p>{extra}')
-    d.rep('<p class="text-xs text-[color:var(--ink-40)]">© 2026 Pure Artistry.</p>',
+    d.rep(f'<p><a href="{IG}" target="_blank" rel="noopener" class="{ig_hover}">Instagram · {HANDLE}</a></p>',
+          f'<p><a href="{IG}" target="_blank" rel="noopener" class="{ig_hover}">Instagram · {HANDLE}</a></p>{extra}')
+    d.rep(f'<p class="text-xs text-[color:var(--ink-40)]">© 2026 {V["pre_word"]}.</p>',
           f'<p class="text-xs text-[color:var(--ink-40)]">© 2026 {b["name"]}.</p>')
 
     # 18. boton flotante
     d.rx(r'<a href="[^"]*" target="_blank" rel="noopener" class="book-float" aria-label="[^"]*">\s*<svg.*?</svg>\s*</a>',
          f'<a href="{CTA}" target="_blank" rel="noopener" class="book-float" aria-label="{t(c["cta_label"], lang)}">\n'
-         f'    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" '
+         f'    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{V["book_float_stroke"]}" stroke-width="2" '
          f'stroke-linecap="round" stroke-linejoin="round">{ICONOS[c.get("cta_icono", "whatsapp")]}</svg>\n  </a>')
 
     salida = f'output/{slug}/index.html'
