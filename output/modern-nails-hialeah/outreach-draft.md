@@ -12,7 +12,7 @@ Subject: A sample website for Modern Nails
 Hi Paola,
 
 I came across Modern Nails while looking at nail studios in the Hialeah / Miami Lakes area and
-noticed your Booksy page has a perfect 5.0 rating across 11 reviews. That kind of consistency is
+noticed your Booksy page has a perfect 5.0 rating across 34 reviews. That kind of consistency is
 rare, so I put together a sample website for your business to show what it could look like online.
 
 You can see it here: https://siteforge-demos.odd-forest-9504.workers.dev/modern-nails-hialeah/
@@ -31,4 +31,6 @@ Merktop
 
 ## DM / WhatsApp short version (dm_message, English, 450 char max)
 
-See dm_message field in the structured summary.
+Hi Paola! I found Modern Nails on Booksy, love the perfect 5.0 rating across 34 reviews. I built a free sample website for your business: https://siteforge-demos.odd-forest-9504.workers.dev/modern-nails-hialeah/ Fun fact: modernnails.com is taken by an unrelated blank page, so this is a good look for you. It never touches your Booksy booking. Happy to hand it over on your domain, or take it down, no strings attached. Michael Vargas, Merktop
+
+(Note: corrected from an initial draft that mis-stated 11 reviews; Booksy's aggregateRating.reviewCount is 34, the review array only samples 11 individual quotes.)

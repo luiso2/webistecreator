@@ -11,7 +11,7 @@
 
 Hola equipo de Nails by Yuly Spa,
 
-Los encontre por su pagina de Booksy: 5.0 de calificacion con 11 reseñas es un numero excelente,
+Los encontre por su pagina de Booksy: 5.0 de calificacion con 20 reseñas es un numero excelente,
 y vi que todavia no tienen un sitio web propio. Les construimos un sitio de muestra, gratis y sin
 compromiso, para que vean como se veria:
 
@@ -36,4 +36,6 @@ Merktop
 
 ## dm_message (version corta, para DM/WhatsApp, 397 caracteres)
 
-Hola! Vi su pagina de Booksy: 5.0 con 11 reseñas, buenisimo. Como no tienen sitio web propio les armamos uno de muestra, gratis y sin compromiso: https://siteforge-demos.odd-forest-9504.workers.dev/nails-by-yuly-spa-hialeah/ No toca su Booksy, cada boton de reservar sigue llevando ahi. Si les gusta se los dejamos en su propio dominio, si no simplemente lo retiramos. Saludos, Michael de Merktop.
+Hola! Vi su pagina de Booksy: 5.0 con 20 reseñas, buenisimo. Como no tienen sitio web propio les armamos uno de muestra, gratis y sin compromiso: https://siteforge-demos.odd-forest-9504.workers.dev/nails-by-yuly-spa-hialeah/ No toca su Booksy, cada boton de reservar sigue llevando ahi. Si les gusta se los dejamos en su propio dominio, si no simplemente lo retiramos. Saludos, Michael de Merktop.
+
+(Nota: corregido de un borrador inicial que decia 11 reseñas por error de conteo; el reviewCount real del aggregateRating de Booksy es 20, el arreglo de reseñas individuales solo muestra 11 quotes de muestra.)
