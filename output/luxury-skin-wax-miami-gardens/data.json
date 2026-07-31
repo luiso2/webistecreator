@@ -1,0 +1,42 @@
+{
+ "status": "failed",
+ "fail_reason": "Qualifies on discovery (rating 5.0, reviews 50, not in processed.json, no own website) and has a confirmed real Instagram (@luxuryskinwax, phone printed on its own promo graphics matches the Birdeye/Google listing exactly). BUT its entire public post history is only 12 photos, and full-resolution review of every one of them found only 4 that are real, own, and free of baked-in marketing text or stock imagery (bk-1, bk-9, bk-11, bk-12): bk-2/3/4/5/7/8/10 are promotional graphics or mid-procedure close-ups with text captions burned into the image (one, bk-7, is a stock photo of a model, not the business's own client), and bk-6 (initially miscounted as clean) also has a caption sentence overlaid. 4 real usable photos is below the pipeline's 5-photo minimum for a non-degraded build, and no priced service menu could be found on any platform (no Booksy/GlossGenius/Fresha/Acuity page for this specific business, only a bare Google/Birdeye profile and this thin Instagram). Rather than pad the gallery with ad graphics or force a site with fabricated pricing, marking this FAILED per PIPELINE.md Fase 3 point 5 / FORGE-BRIEF 0.b. Kept here for the record: data.json + all 12 downloaded photos + contact sheet. No index.html/content.json was generated.",
+ "research_method": "Fresha city listing (Miami Gardens) -> Birdeye category listing (spas/miami-gardens-fl, aggregates Google rating+reviews+address) -> Instagram @luxuryskinwax (Railway photo service) for photos. No Booksy/GlossGenius page found for this business.",
+ "slug": "luxury-skin-wax-miami-gardens",
+ "name": "Luxury Skin Wax",
+ "owner": "Nelsy (named by a client review; not independently confirmed as the sole owner)",
+ "schema_type": "BeautySalon",
+ "niche": "facial / skincare studio (waxing/esthetics; med spa candidates in Miami Gardens all either had their own website or under 10 reviews, see discarded list)",
+ "address": {
+  "streetAddress": "3972 NW 167th St",
+  "addressLocality": "Miami Gardens",
+  "addressRegion": "FL",
+  "postalCode": "33054",
+  "addressCountry": "US"
+ },
+ "phone": "(786) 382-6328",
+ "phone_source": "Birdeye aggregated business profile; also printed directly on the business's own Instagram promo graphics (bk-2.jpg, bk-7.jpg), confirming it is the correct business.",
+ "email": null,
+ "email_source": "None found: no email in Instagram bio/photos, no Facebook page located, no booking-platform page with a venue email.",
+ "rating": 5.0,
+ "reviews_count": 50,
+ "reviews_count_source": "Birdeye category listing reviews.birdeye.com/d/spas/miami-gardens-fl/ (aggregateRating pulled from the business's Google profile): ratingValue 5, reviewCount 50, address and geo match the Instagram-confirmed location exactly.",
+ "hours": [
+  { "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "18:00" },
+  { "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "15:00" },
+  { "dayOfWeek": ["Sunday"], "closed": true }
+ ],
+ "instagram": "@luxuryskinwax",
+ "instagram_url": "https://www.instagram.com/luxuryskinwax/",
+ "instagram_note": "Account has exactly 12 public posts (Oct-Dec 2024), fetched via scripts/ig_photos.py (Railway IG photo service). Phone number printed on 2 of the promo graphics matches the Birdeye listing exactly, confirming this is the right account.",
+ "facebook": null,
+ "website_candidates": ["luxuryskinwax.com (does not resolve)", "luxuryskinwaxmiami.com (does not resolve)", "luxuryskinwaxbynelsy.com (does not resolve)"],
+ "has_own_site": false,
+ "has_own_site_check": "No resolving domain under obvious name variants. Fresha's own venue record for this business lists websiteUrl as an empty string. No website link anywhere in the Instagram bio/photos.",
+ "services_note": "No published price list found on any platform (no Booksy/GlossGenius/Fresha/Acuity booking page located for this business, only a Google/Birdeye profile and Instagram). Site uses the adapted variant for services: real service names taken verbatim from the business's own Instagram captions (Brazilian/full body wax, eyebrow wax, nose wax, hard wax), no invented prices, with a 'text us for pricing' note.",
+ "reviews_used": [
+  { "author": "Isabel R.", "body": "From the moment you enter the spa you already feel relaxed, She not only changed the way I look but also how I feel, the changes have been incredible, Nelsy is very professional, thank you very much!!!!", "source": "Birdeye-aggregated Google review, verbatim, English" }
+ ],
+ "photos_source": "Instagram @luxuryskinwax, 12 posts total (the account's entire public post history), downloaded via scripts/ig_photos.py. Full-resolution visual curation of all 12: bk-2, bk-3, bk-4, bk-5, bk-6, bk-8, bk-10 have marketing captions burned into the image; bk-7 is a stock photo of a model's leg being waxed (not this business's own client). Only bk-1 (esthetician at her station), bk-9 (sweater texture with small logo watermark), bk-11 (hard wax bean bags/warmer) and bk-12 (dark interior with equipment) are real, own, and free of overlay text/stock content: 4 photos, one short of the pipeline's 5-photo minimum. This is the reason for the failed status above.",
+ "language": "en"
+}
