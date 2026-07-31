@@ -1,0 +1,104 @@
+{
+  "slug": "mim-the-barber-lakeland",
+  "name": "MIM The Barber",
+  "aka": "MIM'S Fade Room (same operator/business, different Booksy display name; booksy id 388628 resolves under both slugs mim-the-barber and mims-fade-room)",
+  "niche": "boutique barbershop",
+  "city": "Lakeland, FL",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_check": {
+    "domains_tried": ["mimthebarber.com", "mimsfaderoom.com"],
+    "domains_result": "Both confirmed non-resolving per task brief (DNS/host inexistente). Not re-tested live in this session (accepted the pre-verified fact from the task brief).",
+    "external_url_ig_bio": "linktr.ee/MIMTheBarber (fetched live via curl): contains only the Booksy booking link (mimsfaderoom.booksy.com), Facebook page, Instagram profile link, and unrelated third-party affiliate/referral links (razors, supplements, apps). No owned domain.",
+    "presence_found": [
+      "Booksy business page (booksy.com/en-us/388628_mim-the-barber_barber-shop_16013_lakeland), canonical booking page, self-fetched live 2026-07-31",
+      "Same Booksy business id (388628) also resolves under /en-us/388628_mims-fade-room_barber-shop_16013_lakeland (same operator, alternate display name)",
+      "Fresha listing (fresha.com/lvp/mims-fade-room-appaloosa-drive-lakeland-5z49zq), unclaimed profile, self-fetched live",
+      "Facebook pages facebook.com/MIMTheBarber and facebook.com/MIMSFadeRoom (login-walled, content not extractable)",
+      "Instagram @mim_the_barber (bio per WebSearch: 'Lakeland Barber | Michael Meléndez')",
+      "Birdeye unclaimed listing (reviews.birdeye.com/mim-s-fade-room-171731304264653)",
+      "Florida LLC filing for Mim's Fade Room LLC (bizprofile.net, doc L20000129582, EIN 85-1096620, active, filed 2020-05-13)",
+      "Chamber of Commerce directory listing (blocked by 403 on direct fetch, not used as a source)"
+    ],
+    "conclusion": "No owned domain found anywhere. Every public presence is Booksy, Fresha, a directory/aggregator, an LLC filing record, or social media. has_own_site = false confirmed, consistent with task brief."
+  },
+  "address": {
+    "resolved": "6950 Appaloosa Dr, Suite 27, Lakeland, FL 33811",
+    "how_resolved": "Fresha listing (self-fetched live) shows this exact address paired with telephone (863) 660-1188, which matches the already-verified phone number in the task brief exactly. Birdeye's unclaimed listing independently shows the same address. My Posh Suites (a salon-suite rental facility) lists its 'South Lakeland - Shepherd Rd' location's physical address as 6950 Appaloosa Drive, Lakeland, FL 33811, confirming MIM operates a rented private suite inside that facility.",
+    "discrepancy_note": "Booksy's own JSON-LD (self-fetched live) and the Mim's Fade Room LLC filing's principal address both show a DIFFERENT address: 1631 Shepherd Road, Lakeland, FL 33811. That address has no phone attached anywhere and is most likely a stale/legacy Booksy listing address or the LLC's paperwork address rather than the current physical suite. Because the Appaloosa Dr address is the one independently corroborated by the already-verified phone number (task brief) across two sources (Fresha + Birdeye) plus the My Posh Suites facility match, it was used as the site's displayed physical address. This is disclosed here for transparency."
+  },
+  "geo": null,
+  "geo_note": "No precise lat/lng independently confirmed for the Appaloosa Dr suite in this session; JSON-LD ships PostalAddress only (no GeoCoordinates) and the map embed uses an address-string query instead of coordinates, to avoid fabricating geo data.",
+  "phone": "(863) 660-1188",
+  "phone_e164": "+18636601188",
+  "phone_source": "Task brief (pre-verified) + independently corroborated live via Fresha listing self-fetch 2026-07-31.",
+  "email": null,
+  "email_search": "Searched: Booksy page HTML (only mailto found was help.us@booksy.com, Booksy's own support address, not the business), Fresha listing HTML (no email, only a Sentry error-tracking ingest hash that looks like an email but is not one), linktr.ee/MIMTheBarber (fetched live, no mailto/email anywhere in the page, only affiliate links, FB, IG, Booksy), Facebook About pages (login-walled, could not be read via WebFetch, returned generic 'login page' / 'truncated' responses), IG bio via ig_contact.py Playwright (net::ERR_CONNECTION_RESET, Instagram firewalled from this sandbox, same known limitation as prior sessions) and via the direct web_profile_info endpoint (HTTP 400, endpoint appears deprecated/changed), Chamber of Commerce directory (403 Forbidden on direct fetch, could not verify). One WebSearch summary claimed 'Mimthebarber@gmail.com' / 'mims.faderoom@gmail.com' but this could NOT be verified against any directly-fetched primary source (the cited chamberofcommerce.com page returned 403 both via WebFetch and curl); per pipeline rule against inventing data, an unverifiable AI-summarized email is not used. Registered honestly as null.",
+  "instagram": {
+    "handle": "mim_the_barber",
+    "url": "https://www.instagram.com/mim_the_barber/",
+    "bio": "Lakeland Barber | Michael Meléndez (per WebSearch summary of the live public profile; direct fetch blocked by IG rate limiting/firewall in this sandbox)",
+    "source": "WebSearch + ig_photos.py (Railway cloud service) which independently pulled 12 real feed photos, confirming the account and its content."
+  },
+  "booking_url": "https://booksy.com/en-us/388628_mim-the-barber_barber-shop_16013_lakeland",
+  "booking_url_alt": "https://booksy.com/en-us/388628_mims-fade-room_barber-shop_16013_lakeland (same booksy id, alternate display name)",
+  "booking_url_short": "https://mimsfaderoom.booksy.com (redirects via branch.io deep link, confirmed live)",
+  "booking_platform": "Booksy, business id 388628, self-fetched live via booksy_dossier.py 2026-07-31",
+  "rating": 5.0,
+  "review_count": 290,
+  "rating_source": "Booksy JSON-LD, self-fetched live via scripts/booksy_dossier.py 2026-07-31 (ratingValue rounds to 5.0 from 4.986206896551724..., reviewCount = 290). Matches the task brief exactly (5.0, 290 reviews).",
+  "hours": {
+    "monday_friday_am": "9:30 AM - 1:20 PM",
+    "monday_friday_pm": "2:00 PM - 6:00 PM",
+    "saturday": "Closed",
+    "sunday": "Closed",
+    "source": "Booksy JSON-LD openingHoursSpecification, self-fetched live 2026-07-31 (Mon-Fri 09:30-13:20 and 14:00-18:00, lunch break in between, no Saturday/Sunday hours listed)."
+  },
+  "owner": "Michael Melendez",
+  "owner_source": "Booksy JSON-LD staff list (single staff member: 'Michael Melendez') and Instagram bio ('Lakeland Barber | Michael Meléndez'). Solo-operator boutique barbershop.",
+  "reviews_used_on_site": [
+    { "author": "Dunier C.", "source": "Booksy (self-fetched live, verified reviewer)", "text": "Excellent" },
+    { "author": "Yaritza R.", "source": "Booksy (self-fetched live, verified reviewer)", "text": "I had a great experience at this barbershop. The haircut met all of my expectations, and I absolutely love how it turned out. The barber was professional, attentive, and made sure I got exactly what I wanted. I really appreciate the great service and attention to detail. I highly recommend this shop to anyone looking for a quality haircut. Thank you for the excellent experience!" },
+    { "author": "Rafael F.", "source": "Booksy (self-fetched live, verified reviewer)", "text": "El mejor sin duda alguna." }
+  ],
+  "reviews_note": "Booksy truncates reviewer surnames to a first initial in its public display (e.g. 'Dunier C…'); used as displayed, verbatim body text unedited. Additional unauthored short quotes seen on Booksy (not used verbatim with a name since no author was attached): 'My boy don't miss', 'Best barber in Central Florida!', 'Great barber and very friendly', 'Trato y profesionalidad 100%'.",
+  "services_source": "scripts/booksy_dossier.py JSON-LD extraction, self-fetched live 2026-07-31, from https://booksy.com/en-us/388628_mim-the-barber_barber-shop_16013_lakeland. 8 services with real prices; 5 of 8 also had durations in the JSON-LD.",
+  "services_menu": [
+    { "name": "Haircut", "price": 30, "duration": null },
+    { "name": "Haircut & Beard", "price": 40, "duration": "50min" },
+    { "name": "Kids haircut 10 and under", "price": 25, "duration": "30min" },
+    { "name": "Senior citizen haircut 65+", "price": 25, "duration": "30min" },
+    { "name": "Ladies Neck Undercut", "price": 15, "duration": "20min" },
+    { "name": "Hair and Beard Line-up", "price": 30, "duration": null },
+    { "name": "Beard Only Line-up", "price": 20, "duration": "20min" },
+    { "name": "Full Facial", "price": 30, "duration": null }
+  ],
+  "images": {
+    "source": "Booksy gallery (scripts/booksy_dossier.py -> booksy_gallery.py, 16 files, mostly 100x100/150x150 review-attachment thumbnails, only bk-1 and bk-3 large enough to use) + Instagram feed (scripts/ig_photos.py via Railway ig-photo-service, 12 real feed photos bk-20..bk-31).",
+    "curation_note": "Strict visual curation, every one of the 28 downloaded files viewed individually before deciding. Booksy set: bk-1 (1285x722, real, usable: client in shop chair wearing a 'Mim The Barber' branded tee, real interior visible) and bk-3 (1300x1300, real but a heavily stylized/edited promotional studio portrait of the owner in a suit, not authentic gallery material per the no-portrait-in-gallery rule; kept ONLY as a small avatar in the Experience/owner chip, not a gallery tile). bk-2, bk-4 through bk-16 (excluding 1 and 3) are all tiny 100x100/150x150 Booksy review-attachment thumbnails (customer selfies, a kid's haircut, a skin-texture close-up, two SMS screenshots in Spanish): too small and/or off-brand, none used. Instagram set (bk-20..31): 5 of 12 are the owner's personal travel/life photos with zero shop connection (bk-21 Santiago de Compostela selfie, bk-22 hilltop with PR flag, bk-23 restaurant birthday cake, bk-25 horseback riding, bk-28 theme park, bk-31 NYC waterfront, bk-20/bk-27 a client's wedding photos) and were excluded per the 'never fabricate/never use unrelated personal content' curation rule; bk-24 is an excellent finished-fade shop photo but had a baked-in 'MEGA TRANSFORMATION!' caption overlay covering the bottom ~27%, so it was cropped (not retouched/altered otherwise) to remove the text band before use. That leaves 5 real, on-brand, caption-free, non-portrait usable photos: bk-1, bk-24 (cropped), bk-26, bk-29, bk-30, all genuine finished-haircut/shop-interior shots. Per PIPELINE.md ('si quedan menos de 5 buenas, usa menos secciones en vez de rellenar con malas'), the gallery uses exactly these 5 real photos (1 wide hero/gallery reuse + 4 tiles) instead of padding with off-topic personal photos.",
+    "used": [
+      { "file": "assets/raw/bk-1.jpg", "resized_to": "assets/shop-interior.jpg (1000x561)", "used_as": "hero image + gallery wide tile (16:9) + og:image", "desc": "Client seated in the barber chair wearing a real 'Mim The Barber Est. 2016' branded t-shirt, genuine shop interior (mirror station, wood shelf, barber tools) visible behind him" },
+      { "file": "assets/raw/bk-26.jpg", "resized_to": "assets/fade-profile.jpg (640x427)", "used_as": "Experience section photo + gallery tile", "desc": "Clean side-profile close-up of a fresh fade haircut, in-shop background (tool chests, barber chairs)" },
+      { "file": "assets/raw/bk-29.jpg", "resized_to": "assets/fade-result.jpg (640x427)", "used_as": "Experience section photo + gallery tile", "desc": "Finished fade result close-up, side/back angle, in-shop background with a green cape visible" },
+      { "file": "assets/raw/bk-30.jpg", "resized_to": "assets/fade-result-2.jpg (640x427)", "used_as": "gallery tile", "desc": "Another finished fade, back-of-head angle, in-shop background" },
+      { "file": "assets/raw/bk-24.jpg", "resized_to": "assets/mega-transformation.jpg (360x467, cropped to remove a baked-in caption)", "used_as": "gallery tile", "desc": "Finished fade, back-of-head close-up, in-shop background; original had a 'MEGA TRANSFORMATION!' text overlay on the bottom, cropped off" },
+      { "file": "assets/raw/bk-3.jpg", "resized_to": "assets/owner.jpg (400x400)", "used_as": "small circular avatar in the Experience section owner chip only (never a gallery tile, per the no-portrait-as-gallery-tile rule)", "desc": "Stylized studio portrait of Michael Melendez in a suit with a barber clipper prop" }
+    ],
+    "not_used_and_why": [
+      "bk-2, bk-4 to bk-16 (except 1, 3): all 100x100/150x150 Booksy review-attachment thumbnails, too small to use as tiles, several are customer selfies or SMS screenshots",
+      "bk-20, bk-27: a client's wedding ceremony/reception photos, unrelated to the barbershop",
+      "bk-21, bk-22: the owner's personal Puerto Rico travel photos (Santiago de Compostela cathedral, a hilltop with a PR flag)",
+      "bk-23: personal birthday dinner photo",
+      "bk-25: personal horseback riding photo",
+      "bk-28: personal theme park visit photo",
+      "bk-31: personal Brooklyn Bridge waterfront photo"
+    ]
+  },
+  "brand_vibe": "Modern, clean, well-lit boutique barbershop (not a moody/dark theme): white walls, warm wood shelving, black leather chairs, green cape/chair accents visible in the real photos. Base kept DARK (templates/dark-v2) for the premium editorial feel consistent with the rest of the barbershop batch, with a fresh forest-green + brass-gold accent (grounded in the real green capes/chair covers visible in bk-29/bk-30), distinct from every barbershop palette already used in this project (teal steel adryansbarber, navy jaywestside, gold laperlabarber/1-touch, blue rey/viero, wine classabarberstudio, sand amici, coral floridafreshcuts, crimson windycity).",
+  "base_template": "templates/dark-v2 (dark base, pureartistry exemplar, EN default)",
+  "palette": {
+    "accent_deep": "#3f8a5c",
+    "accent_mid": "#5cae7a",
+    "note": "forest green / brass accent, hue-shifted from the dark-v2 gold base"
+  }
+}
