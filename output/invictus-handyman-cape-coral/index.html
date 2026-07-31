@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#0f0b07" />
+  <title>Invictus Handyman LLC · Handyman & Remodeling in Cape Coral, FL | 5.0 on Google</title>
+  <meta name="description" content="Invictus Handyman LLC, Cape Coral FL: framing, drywall, texture, paint, doors and showers. 5.0 rating with 16 reviews on Google. Call (786) 731-8169." />
+  <meta property="og:title" content="Invictus Handyman · Handyman & Remodeling in Cape Coral, FL" />
+  <meta property="og:description" content="Framing, drywall, paint, doors and showers. 5.0 on Google. Call or text to get a quote." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/bk-5.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/bk-1.jpg" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Invictus Handyman LLC",
+  "description": "Handyman and interior renovation company in Cape Coral, FL: framing, drywall, texture, paint, door installation and showers.",
+  "areaServed": {
+    "@type": "City",
+    "name": "Cape Coral"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cape Coral",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-786-731-8169",
+  "email": "invictushandyman@gmail.com",
+  "image": "assets/raw/bk-5.jpg",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "16",
+    "bestRating": "5"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:30",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/invictus_handyman_llc/"
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f0b07;
+      --bg-2: #171207;
+      --surface: rgba(255,255,255,0.045);
+      --ink: #f5efe3;
+      --ink-60: rgba(245,239,227,0.62);
+      --ink-40: rgba(245,239,227,0.42);
+      --accent-deep: #d4a84b;
+      --accent-mid: #b8934a;
+      --accent-soft: #241c0e;
+      --accent-ghost: rgba(212,168,75,0.16);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(212,168,75,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(212,168,75,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,75,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #d4a84b 0%, #f0dc9e 30%, #9a7431 52%, #d4a84b 75%, #e5c374 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,168,75,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(122,90,30,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(180,140,60,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 48%, #96742c 100%);
+      color: #1c1408; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(80,58,18,0.4), 0 5px 0 #6b5222, 0 12px 24px rgba(0,0,0,0.5);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(80,58,18,0.4), 0 7px 0 #6b5222, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,168,75,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(80,58,18,0.45), 0 1px 0 #6b5222, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(212,168,75,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,168,75,0.7); background: rgba(212,168,75,0.08); box-shadow: 0 10px 26px rgba(54,42,38,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,168,75,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5c374, #9a7431); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #d4a84b; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,168,75,0.45); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #f5efe3; --ink-60: rgba(245,239,227,0.65); --ink-40: rgba(245,239,227,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,210,160,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8cf96 0%, #f8eed3 30%, #bfa060 52%, #e8cf96 75%, #f0dcae 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,150,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #faf1dc 0%, #ecd9a8 48%, #c9ab6b 100%); color: #1c1408; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(110,85,35,0.35), 0 5px 0 #8a744a, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,85,35,0.35), 0 7px 0 #8a744a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,150,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,85,35,0.4), 0 1px 0 #8a744a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(232,207,150,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
+      box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(212,168,75,0.35); background: rgba(212,168,75,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #96742c 0%, #d4a84b 45%, #f0dc9e 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,207,150,0.14) 0%, rgba(212,168,75,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(212,168,75,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf6ea;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,207,150,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">IH</span>
+    <span class="pre-word">Invictus Handyman</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/bk-5.jpg" alt="New walk-in shower installed by Invictus Handyman in Cape Coral, FL" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Llamada directa" data-en="Direct call">Direct call</p>
+            <p class="font-display text-lg">(786) 731-8169</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Cape Coral, FL" data-en="Cape Coral, FL">Cape Coral, FL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl">5.0</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Calificación en Google" data-en="Rating on Google">Rating on Google</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="16">16</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas en Google" data-en="Reviews on Google">Reviews on Google</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">100%</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trabajo garantizado" data-en="Guaranteed work">Guaranteed work</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Cape Coral</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Área de servicio" data-en="Service area">Service area</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Framing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture &amp; Paint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Showers &amp; Floors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Framing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture &amp; Paint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Showers &amp; Floors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/bk-4.jpg" alt="New exterior door installed by Invictus Handyman in Cape Coral" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/bk-12.jpg" alt="Invictus Handyman clearing a lot for a new project in Cape Coral" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un dueño," data-en="One owner,">One owner,</span><br /><span class="text-shine" data-es="un trabajo bien hecho" data-en="one job done right">one job done right</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Invictus Handyman LLC es la empresa de Victor Vera Monteagudo en Cape Coral. Framing, drywall, texture, pintura, instalación de puertas y duchas: el trabajo de interiores que una casa necesita, hecho por una sola persona de principio a fin." data-en="Invictus Handyman LLC is Victor Vera Monteagudo's company in Cape Coral. Framing, drywall, texture, paint, door installation and showers: the interior work a home needs, handled start to finish by one person.">Invictus Handyman LLC is Victor Vera Monteagudo's company in Cape Coral. Framing, drywall, texture, paint, door installation and showers: the interior work a home needs, handled start to finish by one person.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Sus clientes lo describen como cortés, honesto y con un acabado excelente. Es la razón por la que Invictus mantiene una calificación perfecta de 5.0 en Google." data-en="His clients describe him as courteous, honest and excellent at his craft. It is why Invictus keeps a perfect 5.0 rating on Google.">His clients describe him as courteous, honest and excellent at his craft. It is why Invictus keeps a perfect 5.0 rating on Google.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Google" data-en="Google">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="16">16</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/raw/bk-1.jpg" alt="Victor, owner of Invictus Handyman LLC" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Victor · <span class="text-[color:var(--ink-40)]" data-es="Dueño y contratista" data-en="Owner & contractor">Owner & contractor</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Cómo trabajamos" data-en="How we work">How we work</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así se hace" data-en="Here's how">Here's how</span> <span class="text-shine" data-es="el trabajo" data-en="it gets done">it gets done</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Nos escribes o llamas" data-en="Call or message us">Call or message us</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Nos cuentas qué necesitas: una puerta, una ducha, una pared. Respondemos directo, sin operadores ni formularios." data-en="Tell us what you need: a door, a shower, a wall. We answer directly, no call centers, no forms.">Tell us what you need: a door, a shower, a wall. We answer directly, no call centers, no forms.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Revisamos el trabajo" data-en="We assess the job">We assess the job</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Vemos el alcance real del proyecto y te damos un presupuesto claro antes de empezar." data-en="We look at the real scope of the project and give you a clear quote before we start.">We look at the real scope of the project and give you a clear quote before we start.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Manos a la obra" data-en="We get to work">We get to work</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Framing, drywall, texture, pintura, puertas o duchas: Victor se encarga del proyecto de principio a fin." data-en="Framing, drywall, texture, paint, doors or showers: Victor handles the project from start to finish.">Framing, drywall, texture, paint, doors or showers: Victor handles the project from start to finish.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Entrega y limpieza" data-en="Handoff and cleanup">Handoff and cleanup</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Terminas con el trabajo hecho, el área limpia y un contacto directo para lo que necesites después." data-en="You end up with the job done, the area clean, and a direct contact for whatever you need after.">You end up with the job done, the area clean, and a direct contact for whatever you need after.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según el alcance del proyecto. Llama o escribe y te damos el detalle sin compromiso." data-en="Every job is quoted based on the scope of the project. Call or message us and we will walk you through it, no obligation.">Every job is quoted based on the scope of the project. Call or message us and we will walk you through it, no obligation.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Nuestra especialidad" data-en="Our specialty">Our specialty</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Renovación de interiores" data-en="Interior renovation">Interior renovation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Framing, drywall, texture y pintura: el trabajo completo de interiores, de la estructura al acabado final." data-en="Framing, drywall, texture and paint: the full interior job, from the structure to the final finish.">Framing, drywall, texture and paint: the full interior job, from the structure to the final finish.</p>
+          <div class="mt-auto">
+            <a href="tel:+17867318169" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Instalación" data-en="Installation">Installation</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Puertas" data-en="Doors">Doors</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación y reparación de puertas interiores y exteriores, con acabado y herrajes incluidos." data-en="Installation and repair of interior and exterior doors, with finish work and hardware included.">Installation and repair of interior and exterior doors, with finish work and hardware included.</p>
+          <div class="mt-auto">
+            <a href="tel:+17867318169" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Baños" data-en="Bathrooms">Bathrooms</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Duchas y pisos" data-en="Showers &amp; flooring">Showers &amp; flooring</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación de duchas nuevas y pisos, con un acabado limpio y funcional para el día a día." data-en="New shower installs and flooring, finished clean and built for everyday use.">New shower installs and flooring, finished clean and built for everyday use.</p>
+          <div class="mt-auto">
+            <a href="tel:+17867318169" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Acabados" data-en="Finish work">Finish work</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Backsplash y detalles" data-en="Backsplash &amp; finishes">Backsplash &amp; finishes</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Backsplash, molduras y esos detalles que dejan un espacio con acabado profesional." data-en="Backsplash, trim and the small details that leave a space with a professional finish.">Backsplash, trim and the small details that leave a space with a professional finish.</p>
+          <div class="mt-auto">
+            <a href="tel:+17867318169" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves tu proyecto en la lista? Escríbenos igual: framing, reparaciones y trabajos a medida también los hacemos." data-en="Do not see your project on the list? Reach out anyway: framing, repairs and custom jobs are things we handle too.">Do not see your project on the list? Reach out anyway: framing, repairs and custom jobs are things we handle too.</span></p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="work">work</span></h2>
+        </div>
+        <a href="https://www.instagram.com/invictus_handyman_llc/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @invictus_handyman_llc
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Preparación de terreno" data-en="Site prep">Site prep</span><img src="assets/raw/bk-12.jpg" alt="Invictus Handyman clearing a lot for a new project in Cape Coral, FL" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Ducha nueva" data-en="New shower">New shower</span><img src="assets/raw/bk-5.jpg" alt="New walk-in shower installed by Invictus Handyman" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Puerta instalada" data-en="Door installed">Door installed</span><img src="assets/raw/bk-4.jpg" alt="New exterior door installed by Invictus Handyman" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Pintura" data-en="Paint work">Paint work</span><img src="assets/raw/bk-2-crop.jpg" alt="Invictus Handyman team painting a newly installed door" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Acabado de pared" data-en="Wall finish">Wall finish</span><img src="assets/raw/bk-3.jpg" alt="Finished accent wall with wood-look texture panels by Invictus Handyman" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Framing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture &amp; Paint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Showers &amp; Floors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Framing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Drywall</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture &amp; Paint</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Showers &amp; Floors</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRUEBA SOCIAL (testimonios) -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Reseñas" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="nuestros clientes" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 en 16 reseñas de Google." data-en="5.0 out of 5 across 16 reviews on Google.">5.0 out of 5 across 16 reviews on Google.</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I was very lucky to find Victor. He is a very courteous and honest person. His craftsmanship is excellent. I am certain that I will be using his service again."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Mike Brittain</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great company, very professional, they always do a great job. Thank you"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">yenifer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Suuper recomendado. Servicio rapido y eficiente"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Susana Vidal</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.google.com/maps/search/?api=1&query=Invictus+Handyman+LLC+Cape+Coral+FL" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver reseñas en Google" data-en="See reviews on Google">See reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Escríbenos desde" data-en="Reach us from">Reach us from</span> <span class="text-shine">Cape Coral</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Llamada y mensaje de texto" data-en="Call or text">Call or text</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida. Cuéntanos qué necesitas y coordinamos una visita." data-en="The fastest way. Tell us what you need and we will set up a visit.">The fastest way. Tell us what you need and we will set up a visit.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="tel:+17867318169">(786) 731-8169</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Correo" data-en="Email">Email</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Para presupuestos más detallados o fotos del proyecto." data-en="For more detailed quotes or photos of the project.">For more detailed quotes or photos of the project.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="mailto:invictushandyman@gmail.com" target="_blank" rel="noopener">invictushandyman@gmail.com</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Instagram" data-en="Instagram">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Ahí publicamos fotos de trabajos recientes en Cape Coral." data-en="That is where we post photos of recent jobs around Cape Coral.">That is where we post photos of recent jobs around Cape Coral.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.instagram.com/invictus_handyman_llc/" target="_blank" rel="noopener">@invictus_handyman_llc</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame zoomable img-reveal min-h-[380px] h-full max-h-[560px] lg:max-h-none" style="transition-delay:180ms">
+        <img src="assets/raw/bk-4.jpg" alt="New exterior door installed by Invictus Handyman in Cape Coral, FL" class="blur-up w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #191307 0%, #100c05 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo honesto, hecho bien." data-en="Honest work, done right.">Honest work, done right.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="está a una llamada" data-en="is one call away">is one call away</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Framing, drywall, pintura, puertas o duchas: llama o escribe y coordinamos una visita sin compromiso." data-en="Framing, drywall, paint, doors or showers: call or message us and we will set up a visit, no obligation.">Framing, drywall, paint, doors or showers: call or message us and we will set up a visit, no obligation.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+17867318169" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a href="https://www.instagram.com/invictus_handyman_llc/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
+    <span class="foot-mark" aria-hidden="true">Invictus</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/bk-1.jpg" alt="Invictus Handyman" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Invictus Handyman</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Handyman y renovación de interiores en Cape Coral, FL. Trabajo honesto, hecho bien." data-en="Handyman and interior renovation in Cape Coral, FL. Honest work, done right.">Handyman and interior renovation in Cape Coral, FL. Honest work, done right.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>Cape Coral, FL, Estados Unidos</p>
+        <p><a href="tel:+17867318169" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Llama o escribe · (786) 731-8169" data-en="Call or text · (786) 731-8169">Call or text · (786) 731-8169</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/invictus_handyman_llc/" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · @invictus_handyman_llc</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Invictus Handyman.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="tel:+17867318169" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
+    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
+    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
+    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
+    // layout, que si existe, asi que rompe el circulo.
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
