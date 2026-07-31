@@ -58,7 +58,12 @@
  ],
  "instagram": "kamelbarber_",
  "website_candidates": [],
+ "has_own_site": false,
+ "website_check_note": "Domains kamelbarber.com, kamelbarbermiramar.com and kamel-barber.com all fail DNS resolution (curl exit 56 / getaddrinfo ENOTFOUND). WebSearch for 'Kamel Barber Miramar website' and 'Kamel Barber Miramar FL phone number' returned only the Booksy listing and unrelated businesses (a plastic surgeon named Dr. George Kamel, other Miramar barbershops at the same plaza). booksy_dossier website_candidates was already empty. Conclusion: no independently-owned website, has_own_site: false confirmed.",
  "phone": null,
+ "phone_note": "No phone published on the Booksy listing (booksy_dossier phone field was already null). WebSearch for the business name plus phone number returned no result specific to Kamel Barber (only a different business, Miramar Barber Shop at a different address, had a listed phone). No Google Business Profile specific to Kamel Barber could be found separately from Booksy.",
+ "email": null,
+ "email_note": "Deep search per PIPELINE.md Fase 1 punto 7: (1) Instagram bio for @kamelbarber_ via WebFetch returned HTTP 429 (rate limited), could not read business_email or bio link; (2) Booksy dossier's JSON-LD/venue payload has no email field (phone and website_candidates were already null/empty from booksy_dossier.py); (3) WebSearch found a Facebook page 'Barber Shop Kamel' (facebook.com/p/Barber-Shop-Kamel-100089751236391/, ~28 likes) that plausibly matches, but both the direct page URL and its numeric-ID URL returned Facebook's login wall with no accessible About section, so no email/phone could be read from it, and it was not linked from the site since it could not be independently confirmed to be the same Kamel Barber (Miramar) rather than a same-named unrelated page; (4) a WebSearch for a similar handle '@barbershopkamel_' surfaced 'Kamel Coiffeur' which is a confirmed-unrelated barbershop in Aubervilliers, France, ruled out; (5) no linktree/poplme/beacons link found anywhere. Bottom line: no confirmed public email found through any available channel.",
  "services": [
   {
    "name": "CUT & SUPREME BEARD RITUAL",
