@@ -1,0 +1,68 @@
+{
+ "slug": "innersense-kneads-brandon",
+ "name": "Innersense & Kneads",
+ "therapist": "Angela F. Lang, LMT",
+ "license_lmt": "MA106899",
+ "license_establishment": "MM47614",
+ "city": "Brandon, FL",
+ "address": "1045 E Brandon Blvd, Brandon, FL 33511",
+ "address_note": "Direccion confirmada via busqueda (Groupon + Facebook). El ZIP 33511 se infiere de otro negocio (SkinMedic Wellness) listado en la MISMA direccion exacta '1045 E Brandon Blvd' en Fresha; el numero y calle del propio negocio si estan confirmados en multiples fuentes independientes (Groupon, Facebook).",
+ "phone": "(813) 480-1016",
+ "phone_source": "Visible en 2 flyers propios publicados en su Instagram (@innersense_and_kneads), coincide en ambos.",
+ "email": null,
+ "email_note": "No se encontro email publico tras revisar bio de IG (vacia via API), flyers de IG, sitio Vagaro y busquedas web. Se dejo null, no inventado.",
+ "ig": "@innersense_and_kneads",
+ "ig_url": "https://www.instagram.com/innersense_and_kneads/",
+ "research_degradado": true,
+ "research_degradado_nota": "El research de fotos via IG salio degradado: el servicio Railway solo trajo URLs de fotos (sin bio/seguidores). El intento de Playwright LOCAL (navegador real, IP del entorno) fallo con net::ERR_CONNECTION_RESET al navegar a instagram.com, pese a que curl SI llega a instagram.com (200) a traves del mismo proxy: Chromium headless es bloqueado especificamente por el proxy/red de este entorno sandbox para ese dominio (2 intentos: research_ig.py con fallback automatico, y una prueba manual directa con --proxy-server). Tambien se probaron imginn.com, picuki.com y picnob.com (espejos publicos de IG) y los 3 devolvieron 403 (Cloudflare). Por regla del pipeline (research_degradado=true), los 12 posts descargados via el servicio NO deben tomarse como 'todo lo que el negocio publica': son solo los ultimos 12 posts visibles a ese canal degradado.",
+ "has_own_site": false,
+ "has_own_site_detalle": "innerkneads.com SI es un dominio propio comprado por el negocio, pero es un simple forward (301 Moved Permanently) hacia https://mysite.vagaro.com/innersenseandkneads (constatado con curl -D-: Location header). No sirve contenido propio independiente, solo redirige a su micrositio de Vagaro (plataforma de terceros). Por la regla del pipeline ('subdominios de plataforma no cuentan como sitio propio'), se marca has_own_site=false, pero se deja constancia: el negocio SI tiene un dominio .com propio apuntando a su Vagaro.",
+ "booking_channel": "Vagaro (sitio de reservas propio construido con Vagaro Website Builder)",
+ "booking_url": "https://mysite.vagaro.com/innersenseandkneads",
+ "booking_url_book_now": "https://mysite.vagaro.com/innersenseandkneads/book-now",
+ "booking_note": "El seed del negocio decia 'sin booking dedicado tipo Booksy/Vagaro'. Esto se corrigio en research: SI usan Vagaro (confirmado via el dominio propio innerkneads.com, que redirige ahi, y via www.vagaro.com que resuelve al mismo micrositio). El sitio de Vagaro es una app cliente (React) que no expone precios via curl/HTML estatico (requiere JS), asi que precios y reviews se tomaron de Groupon, que si los publica.",
+ "rating": 5.0,
+ "review_count": 16,
+ "rating_source": "Groupon (agregado desde Google): confirmado de forma consistente en dos listados independientes de Groupon (groupon.com/deals/innersense-kneads-1 y -2), indexados via busqueda web. La ficha de Google Maps del negocio no se pudo abrir de forma directa desde este entorno (Google Maps es una SPA que requiere JS/API key, y WebFetch no la renderiza), asi que no se pudo verificar el numero exacto de Google Maps de forma independiente; se documenta la fuente exacta (Groupon) tal como pide el research. 16 resenas supera el minimo de 10 requerido.",
+ "language": "en",
+ "language_note": "Todo el material propio del negocio (flyers de IG, copy del sitio Vagaro, listados de Groupon) esta en ingles. Brandon FL tiene poblacion hispana significativa, por eso el site se construye bilingue con EN como idioma principal/por defecto.",
+ "brand_vibe": "Wellness de lujo tranquilo: fondo negro calido, dorado metalico (loto), tipografia serif elegante + sans limpia. Tagline real: 'Inner Healing Begins Here.' Subcategorias reales: Massage, Bodywork, Energy Healing.",
+ "logo_real": "assets/raw/logo.jpg (logo oficial descargado del sitio Vagaro del negocio: loto dorado sobre negro, texto 'Innersense & Kneads' + 'Inner Healing Begins Here.')",
+ "services_real": [
+  {
+   "nombre": "Deep Tissue, Therapeutic, Lomi Lomi o Swedish Massage",
+   "duracion": "60 o 90 minutos",
+   "precio_groupon": "Desde $71.10",
+   "fuente": "Groupon (groupon.com/deals/innersense-kneads-1)"
+  },
+  {
+   "nombre": "Post-Operative Lymphatic Drainage Massage",
+   "duracion": "60 minutos, paquetes de 1, 3 o 5 sesiones",
+   "precio_groupon": "Desde $80.10",
+   "fuente": "Groupon (groupon.com/deals/innersense-kneads-2)",
+   "detalle": "Para puffiness/hinchazon, sensacion de pesadez/retencion de liquidos, recuperacion post-cirugia, inflamacion frecuente (de flyer propio de IG: 'Signs your body could benefit from Manual Lymphatic Drainage')"
+  },
+  {
+   "nombre": "Fourth Trimester Recovery (postparto)",
+   "duracion": "5 sesiones",
+   "precio": "$125",
+   "fuente": "Flyer propio publicado en su Instagram",
+   "detalle": "Masaje personalizado de recuperacion postparto, adaptado a energia/emocion/sanacion de cada etapa."
+  },
+  {
+   "nombre": "Innersense Signature Membership",
+   "precio": "$79/mes",
+   "fuente": "Flyer propio publicado en su Instagram (2 flyers coinciden)",
+   "detalle": "1 masaje de 60 min a eleccion cada mes, 20% de descuento en servicios adicionales, reservas prioritarias."
+  },
+  {
+   "nombre": "Energy Healing",
+   "precio": null,
+   "fuente": "Sitio oficial Vagaro (categoria de servicio con icono propio)",
+   "detalle": "Restaurar el equilibrio, liberar bloqueos, reconexion interior. Sin precio publico: se cotiza."
+  }
+ ],
+ "reviews_note": "Se encontraron referencias a resenas positivas via snippets de busqueda de Groupon (nombre 'Angela', comentarios sobre sentirse comoda y el ambiente relajante), pero el motor de busqueda las devuelve PARAFRASEADAS (la pagina de Groupon en si dio 403 Forbidden en todos los intentos de fetch directo, incluidos WebFetch, curl con distintos UA, proxy de traduccion de Google y r.jina.ai). Como no se pudo confirmar el texto EXACTO verbatim de ninguna resena, se opto por la variante SIN-testimonios (social_proof.modo = 'razones') en vez de arriesgar poner comillas con texto no verificado como cita literal.",
+ "images_note": "Los 12 posts descargados via el research de IG (canal degradado) son TODOS flyers/graficos promocionales con texto superpuesto (membresia, drenaje linfatico, cuarto trimestre, billboards con telefono, agradecimiento a trabajadoras sociales) o frames borrosos de video: CERO fotos utilizables para galeria segun la regla de curaduria (prohibido texto superpuesto, prohibido borroso). Se rescataron imagenes reales del sitio oficial Vagaro del negocio (mismo dominio que administran): 1 fotografia profesional de banner (usada en su propio hero de Vagaro, con su marca y texto reales superpuestos) de la cual se generaron 6 recortes limpios (sin texto) para hero/about/galeria, mas su logotipo oficial en alta resolucion. Se documenta que estas 6 imagenes derivan de UNA sola fotografia fuente (no hay 6 fotos distintas disponibles publicamente de este negocio); es una limitacion real de material fotografico del negocio, no una invencion de contenido.",
+ "website_candidates_probados": ["innerkneads.com (existe, redirige a Vagaro)", "innersenseandkneads.com (no probado por separado, el dominio real que usan es innerkneads.com)"]
+}
