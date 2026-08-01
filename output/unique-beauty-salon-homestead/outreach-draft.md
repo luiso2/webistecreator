@@ -1,4 +1,4 @@
-# Outreach draft — Unique Beauty Salon & Spa (Homestead, FL)
+# Outreach draft: Unique Beauty Salon & Spa (Homestead, FL)
 
 Status: DRAFT ONLY. Not sent. Requires explicit human approval before any send, per pipeline rules.
 
