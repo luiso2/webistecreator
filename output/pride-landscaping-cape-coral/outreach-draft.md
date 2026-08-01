@@ -10,7 +10,7 @@
 - **Idioma**: ingles (idioma principal del negocio, reseñas en ingles)
 - **Demo**: https://siteforge-demos.odd-forest-9504.workers.dev/pride-landscaping-cape-coral/
 - **Canal disponible**: sin telefono ni email publico confirmado (GreenPal oculta el contacto directo hasta que se solicita una cotizacion). Registrado como `outreach: pending_manual`, con su perfil de GreenPal (https://www.yourgreenpal.com/pride-landscaping-1) como unico canal para contactar de forma manual solicitando una cotizacion.
-- **Nota para revision humana**: el sitio usa el esqueleto dark-v2, que trae 2 textos fijos de plantilla ("Follow on Instagram" en el CTA final y "Instagram ·" en el footer) que no se pueden editar solo con content.json. Como el negocio no tiene Instagram, ambos botones se apuntaron a su perfil real de GreenPal en vez de inventar una cuenta de Instagram. Revisar/ajustar esas 2 etiquetas antes de enviar el demo si se quiere mayor precision.
+- **Nota**: el esqueleto dark-v2 traia 2 textos fijos ("Follow on Instagram" en el CTA final y "Instagram ·" en el footer) que content.json no puede editar. Como el negocio no tiene Instagram, ambos se corrigieron a mano a "See on GreenPal" / "GreenPal · Pride Landscaping", apuntando a su perfil real. Corregido y verificado con gate.py antes del registro.
 
 ## Subject (para cuando haya un canal de email)
 A sample website for Pride Landscaping (it's ready)

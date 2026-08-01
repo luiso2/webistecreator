@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0f0b07" />
+  <meta name="theme-color" content="#080e08" />
   <title>Pride Landscaping · Lawn Care in Cape Coral, FL | Jeffrey Bodt</title>
   <meta name="description" content="Pride Landscaping, Cape Coral FL: lawn mowing, edging, bed cleanup and trimming with a 4.9 rating across 633 reviews. Every yard gets a free quote." />
   <meta property="og:title" content="Pride Landscaping · Cape Coral, FL" />
@@ -47,16 +47,16 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0f0b07;
-      --bg-2: #171207;
+      --bg: #080e08;
+      --bg-2: #08160a;
       --surface: rgba(255,255,255,0.045);
-      --ink: #f5efe3;
-      --ink-60: rgba(245,239,227,0.62);
-      --ink-40: rgba(245,239,227,0.42);
-      --accent-deep: #d4a84b;
-      --accent-mid: #b8934a;
-      --accent-soft: #241c0e;
-      --accent-ghost: rgba(212,168,75,0.16);
+      --ink: #e4f4e6;
+      --ink-60: rgba(228,244,230,0.62);
+      --ink-40: rgba(228,244,230,0.42);
+      --accent-deep: #55ca65;
+      --accent-mid: #52b05d;
+      --accent-soft: #102211;
+      --accent-ghost: rgba(85,202,101,0.16);
     }
     html, body { background: var(--bg); }
     body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -64,10 +64,10 @@
     .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(212,168,75,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(212,168,75,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,75,0.08); }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(85,202,101,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(85,202,101,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(85,202,101,0.08); }
     .text-shine {
-      background: linear-gradient(110deg, #d4a84b 0%, #f0dc9e 30%, #9a7431 52%, #d4a84b 75%, #e5c374 100%);
+      background: linear-gradient(110deg, #55ca65 0%, #a4eab3 30%, #399241 52%, #55ca65 75%, #7cdd8b 100%);
       background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
       animation: shimmer 12s linear infinite;
     }
@@ -75,9 +75,9 @@
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
     @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,168,75,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(122,90,30,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(180,140,60,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(85,202,101,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(37,115,45,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(69,171,81,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
     .grain::after {
       content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
@@ -89,17 +89,17 @@
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 48%, #96742c 100%);
-      color: #1c1408; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #7fdf8c 0%, #54bf62 48%, #348e40 100%);
+      color: #091a0a; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(80,58,18,0.4), 0 5px 0 #6b5222, 0 12px 24px rgba(0,0,0,0.5);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(23,75,28,0.4), 0 5px 0 #27662e, 0 12px 24px rgba(0,0,0,0.5);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(80,58,18,0.4), 0 7px 0 #6b5222, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,168,75,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(80,58,18,0.45), 0 1px 0 #6b5222, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(23,75,28,0.4), 0 7px 0 #27662e, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(85,202,101,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(23,75,28,0.45), 0 1px 0 #27662e, 0 4px 10px rgba(0,0,0,0.45); }
     .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
     .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(212,168,75,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,168,75,0.7); background: rgba(212,168,75,0.08); box-shadow: 0 10px 26px rgba(54,42,38,0.14); }
+    .btn-ghost { border: 1px solid rgba(85,202,101,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(85,202,101,0.7); background: rgba(85,202,101,0.08); box-shadow: 0 10px 26px rgba(43,53,39,0.14); }
     .merktop-badge {
       display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
       border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
@@ -110,40 +110,40 @@
     .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
     @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    #nav.scrolled { background: rgba(8,14,8,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
     .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,168,75,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(85,202,101,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5c374, #9a7431); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #d4a84b; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,168,75,0.45); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #7cdd8b, #399241); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #55ca65; letter-spacing: 2px; text-shadow: 0 0 14px rgba(85,202,101,0.45); }
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
     .dark-band {
-      --ink: #f5efe3; --ink-60: rgba(245,239,227,0.65); --ink-40: rgba(245,239,227,0.45);
-      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,210,160,0.16); color: var(--ink);
+      --ink: #e4f4e6; --ink-60: rgba(228,244,230,0.65); --ink-40: rgba(228,244,230,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(165,227,175,0.16); color: var(--ink);
     }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8cf96 0%, #f8eed3 30%, #bfa060 52%, #e8cf96 75%, #f0dcae 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,150,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #faf1dc 0%, #ecd9a8 48%, #c9ab6b 100%); color: #1c1408; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(110,85,35,0.35), 0 5px 0 #8a744a, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,85,35,0.35), 0 7px 0 #8a744a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,150,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,85,35,0.4), 0 1px 0 #8a744a, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,150,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #9ce2a7 0%, #d6f5dc 30%, #67b871 52%, #9ce2a7 75%, #b3ebbb 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(156,226,167,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(150,181,132,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #def8e2 0%, #ade7b7 48%, #72c27d 100%); color: #091a0a; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(41,104,48,0.35), 0 5px 0 #4f8555, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(41,104,48,0.35), 0 7px 0 #4f8555, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(156,226,167,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(41,104,48,0.4), 0 1px 0 #4f8555, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(156,226,167,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(156,226,167,0.7); background: rgba(156,226,167,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #b8e4b0; text-shadow: 0 0 14px rgba(156,226,167,0.4); }
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
-      box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(180deg, #7fdf8c 0%, #54bf62 100%);
+      box-shadow: 0 6px 0 #27662e, 0 14px 30px rgba(0,0,0,0.5);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #27662e, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(85,202,101,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #27662e, 0 6px 14px rgba(0,0,0,0.4); }
 
     /* ============ Motion v2 ============ */
     #preloader {
@@ -152,13 +152,13 @@
     }
     #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
     @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(212,168,75,0.35); background: rgba(212,168,75,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(85,202,101,0.35); background: rgba(85,202,101,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
     .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
     .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
     @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
     @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
     @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #96742c 0%, #d4a84b 45%, #f0dc9e 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #348e40 0%, #55ca65 45%, #a4eab3 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
     .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
     .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
     .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
@@ -177,11 +177,11 @@
       .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
       .tilt:hover::before { opacity: 1; }
     }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,207,150,0.14) 0%, rgba(212,168,75,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(156,226,167,0.14) 0%, rgba(85,202,101,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
     .cursor-glow.on { opacity: 1; }
     .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(212,168,75,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(85,202,101,0.5); transform: translateY(-3px); }
 
     /* ============ Motion v3 (premium+) ============ */
     .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
@@ -190,7 +190,7 @@
     .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
     .frame .tile-cap {
       position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf6ea;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #ebfaee;
       background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
       opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
     }
@@ -199,7 +199,7 @@
     .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
     .cursor-ring.on { opacity: 0.75; }
     .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,207,150,0.09); pointer-events: none; user-select: none; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(156,226,167,0.09); pointer-events: none; user-select: none; }
 
     @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
@@ -240,7 +240,7 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/logo.jpg" alt="Pride Landscaping" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
+        <img src="assets/raw/logo.jpg" alt="Pride Landscaping" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(85,202,101,0.35)]" />
         <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Pride <span class="text-[color:var(--accent-deep)]">Landscaping</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
@@ -374,7 +374,7 @@
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/bk-4.jpg" alt="Lawn mowed by Pride Landscaping in Cape Coral" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
+            <img src="assets/raw/bk-4.jpg" alt="Lawn mowed by Pride Landscaping in Cape Coral" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(85,202,101,0.3)]" loading="lazy" />
             <span class="text-sm font-light">Pride Landscaping · <span class="text-[color:var(--ink-40)]" data-es="Cape Coral, FL" data-en="Cape Coral, FL">Cape Coral, FL</span></span>
           </div>
         </div>
@@ -425,7 +425,7 @@
         <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada patio se cotiza según tamaño y trazado. Pide tu cotización gratis, sin compromiso." data-en="Every yard is quoted based on size and layout. Get a free quote, no obligation.">Every yard is quoted based on size and layout. Get a free quote, no obligation.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(85,202,101,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo más pedido" data-en="Most requested">Most requested</p>
           <h3 class="font-display text-2xl leading-snug mb-3" data-es="Corte y bordes de césped" data-en="Lawn mowing & edging">Lawn mowing & edging</h3>
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Corte a la altura ideal, bordes definidos y soplado de entradas y aceras en cada visita." data-en="Mowing at the ideal height, clean edging, and blowing off driveways and walkways on every visit.">Mowing at the ideal height, clean edging, and blowing off driveways and walkways on every visit.</p>
@@ -554,7 +554,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Cotización gratis" data-en="Free quote">Free quote</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Pide tu cotización por GreenPal, sin compromiso. Suelen responder el mismo día." data-en="Request your quote through GreenPal, no obligation. They usually respond the same day.">Request your quote through GreenPal, no obligation. They usually respond the same day.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener">Pride Landscaping on GreenPal</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(85,202,101,0.4)]" href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener">Pride Landscaping on GreenPal</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
@@ -562,7 +562,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Reseñas verificadas" data-en="Verified reviews">Verified reviews</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="633 reseñas y 4.9 de calificación, además de reseñas en Yelp." data-en="633 reviews and a 4.9 rating, plus reviews on Yelp.">633 reviews and a 4.9 rating, plus reviews on Yelp.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.yelp.com/biz/pride-landscaping-cape-coral" target="_blank" rel="noopener">Pride Landscaping on Yelp</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(85,202,101,0.4)]" href="https://www.yelp.com/biz/pride-landscaping-cape-coral" target="_blank" rel="noopener">Pride Landscaping on Yelp</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
@@ -570,7 +570,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Zona de servicio" data-en="Service area">Service area</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Burnt Store, Trafalgar, Jacarandas, Diplomat, Mariner y el resto de Cape Coral, FL 33909." data-en="Burnt Store, Trafalgar, Jacarandas, Diplomat, Mariner and the rest of Cape Coral, FL 33909.">Burnt Store, Trafalgar, Jacarandas, Diplomat, Mariner and the rest of Cape Coral, FL 33909.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.google.com/maps/place/Cape+Coral,+FL" target="_blank" rel="noopener">Cape Coral, FL</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(85,202,101,0.4)]" href="https://www.google.com/maps/place/Cape+Coral,+FL" target="_blank" rel="noopener">Cape Coral, FL</a>
             </div>
           </div>
         </div>
@@ -582,7 +582,7 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #191307 0%, #100c05 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #08180a 0%, #060f07 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
@@ -591,18 +591,18 @@
       <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Pide tu cotización gratis hoy. Sin mínimos, sin contratos largos, y solo pagas después de aprobar el trabajo con fotos." data-en="Get your free quote today. No minimums, no long contracts, and you only pay after approving the work with photos.">Get your free quote today. No minimums, no long contracts, and you only pay after approving the work with photos.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
         <a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Pedir cotización gratis" data-en="Get a free quote">Get a free quote</a>
-        <a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+        <a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver en GreenPal" data-en="See on GreenPal">See on GreenPal</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#060b06]">
     <span class="foot-mark" aria-hidden="true">Pride</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.jpg" alt="Pride Landscaping" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
+          <img src="assets/raw/logo.jpg" alt="Pride Landscaping" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(156,226,167,0.35)]" loading="lazy" />
           <span class="font-display text-lg tracking-[0.1em] uppercase">Pride Landscaping</span>
         </div>
         <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Cuidado de césped y jardines en Cape Coral, FL. Cotización gratis, trabajo verificado con fotos." data-en="Lawn care and yard maintenance in Cape Coral, FL. Free quotes, photo-verified work.">Lawn care and yard maintenance in Cape Coral, FL. Free quotes, photo-verified work.</p>
@@ -610,12 +610,12 @@
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>Cape Coral, FL, United States</p>
-        <p><a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Cotización gratis en GreenPal" data-en="Free quote on GreenPal">Free quote on GreenPal</a></p>
+        <p><a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="hover:text-[#b8e4b0]" data-es="Cotización gratis en GreenPal" data-en="Free quote on GreenPal">Free quote on GreenPal</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · Pride Landscaping on GreenPal</a></p>
-        <p><a href="https://www.yelp.com/biz/pride-landscaping-cape-coral" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Yelp · Pride Landscaping</a></p>
+        <p><a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="hover:text-[#b8e4b0]">GreenPal · Pride Landscaping</a></p>
+        <p><a href="https://www.yelp.com/biz/pride-landscaping-cape-coral" target="_blank" rel="noopener" class="hover:text-[#b8e4b0]">Yelp · Pride Landscaping</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
@@ -623,7 +623,7 @@
         <p class="text-xs text-[color:var(--ink-40)]">© 2026 Pride Landscaping.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
-          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+          <span class="text-xs text-[#e3f3e5]">Powered by <span class="font-semibold">Merktop</span></span>
         </a>
       </div>
     </div>
@@ -631,7 +631,7 @@
 
   <!-- Boton flotante de reserva -->
   <a href="https://www.yourgreenpal.com/pride-landscaping-1" target="_blank" rel="noopener" class="book-float" aria-label="Get a free quote">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#091a0a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
