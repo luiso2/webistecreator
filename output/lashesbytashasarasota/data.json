@@ -1,23 +1,38 @@
 {
  "slug": "lashesbytashasarasota",
- "ig": "@lashesbytasha1",
+ "status": "pending_blocked",
+ "motivo_bloqueo": "0 fotos reales de trabajo obtenibles en esta sesion: Playwright local no puede alcanzar NINGUN host https (ERR_CONNECTION_RESET en example.com/google.com/instagram.com, no es especifico de IG: sandbox sin salida de red para navegador headless). El servicio Railway ig-photo-service esta devolviendo unicamente un asset estatico de la UI de Instagram (rsrc.php, no cdninstagram post) tanto para @lashesbytasha1 como para un handle de control conocido (@rena_lashbeauty), confirmando que el servicio esta degradado ahora mismo, no es particular de este negocio. Fresha, Birdeye y Facebook Graph API (picture) no exponen galeria. NO marcar failed por insuficiencia del negocio: es research_degradado (ver FORGE-BRIEF 0.b). Reintentar desde sesion con Playwright + IP residencial o Railway service restablecido.",
+ "name": "Lashes By Tasha",
+ "city": "Sarasota, FL",
+ "address": "2537 Bee Ridge Rd, Sarasota, FL 34239",
+ "phone": "(941) 720-8760",
+ "rating": "4.7",
+ "review_count": "23",
+ "rating_fuente": "Google via Birdeye mirror (https://reviews.birdeye.com/lashes-by-tasha-171144283892970)",
+ "hours": {
+  "wed": "8:00 AM - 7:00 PM",
+  "fri": "8:00 AM - 7:00 PM",
+  "sat": "9:00 AM - 7:00 PM",
+  "closed": ["mon", "tue", "thu", "sun"]
+ },
+ "ig_handle_oficial": "@lashesbytasha1",
  "ig_url": "https://www.instagram.com/lashesbytasha1/",
- "fuente": "servicio-railway",
- "research_degradado": true,
- "bio_raw": "",
- "email": null,
- "phone": null,
- "followers": null,
- "posts": null,
- "links_externos": [],
- "website_candidates_vivos": [],
- "website_candidates_rotos": [],
- "has_own_site": false,
- "logo": null,
- "fotos": [
-  "bk-1.jpg"
+ "ig_verificacion": "217 seguidores, 30 posts, especialidad Classic/Hybrid/Russian Eyelash Extensions (via WebSearch snippet, bio no accesible directo: 429 en WebFetch y bloqueado en Playwright). Facebook homonimo https://www.facebook.com/lashesbytasha1/ confirma el nombre. Descartado @Tashas_Lashes (linktr.ee/Tashas_Lashes): su Linktree apunta a 'Tasha's Lashes Ltd', negocio distinto en Burton-on-Trent/Swakopmund, NO Sarasota.",
+ "logo_real": "descargado de graph.facebook.com/lashesbytasha1/picture (no guardado en assets/raw: es el logo con marca de agua rosa/floral 'Lashes by Tasha', NO sirve como foto de galeria)",
+ "fresha_url": "https://www.fresha.com/lvp/lashes-by-tasha-bee-ridge-road-sarasota-9R0KLe",
+ "fresha_estado": "Pagina 'lead vendor page' (lvp) SIN reclamar: el propio HTML dice 'not currently affiliated with or partnered with Fresha'. NO trae menu, precios, duraciones ni galeria real (solo imagen placeholder beauty-salon-76.jpg). Si se construye, usar precio: 'se cotiza, escribenos' y CTA a telefono/booking real que el negocio confirme.",
+ "reviews_verbatim": [
+  {"autor": "Olena Trone", "texto": "Tasha's, more than 8 years of experience in lashes, is showing in her work! 45 min for volume refill! And the quality!", "fuente": "Google via Birdeye mirror", "limpia": true}
  ],
- "captions": [
-  ""
- ]
+ "reviews_descartadas": [
+  {"autor": "Brian Rutig", "texto": "Tasha killed it! Was able to help me with my beard rash problem I've had for 10 years...", "motivo": "cruzada/mal atribuida: habla de 'beard rash', no de pestanas. Confirmado de nuevo en Birdeye en esta sesion, mismo texto exacto. NO USAR."},
+  {"autor": "Meghan J.", "texto": null, "motivo": "sin texto visible en el mirror"}
+ ],
+ "email": null,
+ "email_fuentes_agotadas": ["Fresha (sin email, pagina no reclamada)", "Birdeye (sin email)", "Facebook Graph API /picture (no expone about/contacto sin token de app)", "Instagram bio (bloqueada: 429 en WebFetch, ERR_CONNECTION_RESET en Playwright local, servicio Railway degradado)"],
+ "website_propio": false,
+ "website_candidatos_muertos": ["lashesbytasha.com (502 gateway / no resuelve)", "lashesbytasha1.com (502 gateway / no resuelve)"],
+ "language": "en",
+ "paleta_reservada": { "hue": 20, "sat_mult": 0.92, "light_mult": 1.0, "nota": "coral/terracota calido, distinto a los hues ya usados en output/ (152,175,215,260,330,355)" },
+ "base_sugerida": "light-v2"
 }
