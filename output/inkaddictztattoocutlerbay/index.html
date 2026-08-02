@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#0e0609" />
+  <title>Ink Addictz Tattoo Studio · Tattoos & Piercing in Cutler Bay, FL</title>
+  <meta name="description" content="Ink Addictz Tattoo Studio, Cutler Bay FL: custom tattoos, black and grey realism, cover-ups and piercing. Rated 4.7 on Google with 150 reviews. Message us on Instagram @ink_addictz." />
+  <meta property="og:title" content="Ink Addictz Tattoo Studio · Cutler Bay, FL" />
+  <meta property="og:description" content="Custom tattoos, black and grey realism, cover-ups and piercing. Rated 4.7 on Google, 150 reviews." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/bk-1.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/logo.jpg" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TattooParlor",
+  "name": "Ink Addictz Tattoo Studio LLC",
+  "description": "Tattoo and piercing studio in Cutler Bay, FL specializing in custom tattoos, black and grey realism, cover-ups and piercing.",
+  "image": "assets/raw/bk-1.jpg",
+  "telephone": "+1-305-508-0383",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20808 S Dixie Hwy",
+    "addressLocality": "Cutler Bay",
+    "addressRegion": "FL",
+    "postalCode": "33189",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 25.5734581,
+    "longitude": -80.3749549
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.7,
+    "reviewCount": 150
+  },
+  "sameAs": [
+    "https://www.instagram.com/ink_addictz/",
+    "https://www.facebook.com/106504591411436"
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0e0609;
+      --bg-2: #160607;
+      --surface: rgba(242,242,242,0.045);
+      --ink: #f0d1d4;
+      --ink-60: rgba(240,209,212,0.62);
+      --ink-40: rgba(240,209,212,0.42);
+      --accent-deep: #d53c49;
+      --accent-mid: #b3424d;
+      --accent-soft: #230d10;
+      --accent-ghost: rgba(213,60,73,0.16);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(213,60,73,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(242,242,242,0.08); border-color: rgba(213,60,73,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(213,60,73,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #d53c49 0%, #f08a8b 30%, #952c39 52%, #d53c49 75%, #e5626b 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(213,60,73,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(118,26,36,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(174,54,66,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #e9646e 0%, #c93c48 48%, #912730 100%);
+      color: #1b070a; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(242,242,242,0.3), inset 0 -2px 5px rgba(77,16,23,0.4), 0 5px 0 #671f26, 0 12px 24px rgba(0,0,0,0.5);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(242,242,242,0.35), inset 0 -2px 5px rgba(77,16,23,0.4), 0 7px 0 #671f26, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(213,60,73,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(242,242,242,0.25), inset 0 -1px 3px rgba(77,16,23,0.45), 0 1px 0 #671f26, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(242,242,242,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(213,60,73,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(213,60,73,0.7); background: rgba(213,60,73,0.08); box-shadow: 0 10px 26px rgba(52,36,44,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(14,6,9,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(213,60,73,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5626b, #952c39); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #d53c49; letter-spacing: 2px; text-shadow: 0 0 14px rgba(213,60,73,0.45); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #f0d1d4; --ink-60: rgba(240,209,212,0.65); --ink-40: rgba(240,209,212,0.45);
+      --surface: rgba(242,242,242,0.05); --accent-ghost: rgba(230,142,148,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #e7848b 0%, #f6bec0 30%, #bd535d 52%, #e7848b 75%, #ef9ba0 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(231,132,139,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(181,116,154,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #f8c6c9 0%, #ea9599 48%, #c75d66 100%); color: #1b070a; box-shadow: inset 0 1px 0 rgba(242,242,242,0.55), inset 0 -2px 5px rgba(106,31,39,0.35), 0 5px 0 #85454c, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(242,242,242,0.6), inset 0 -2px 5px rgba(106,31,39,0.35), 0 7px 0 #85454c, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(231,132,139,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(242,242,242,0.4), inset 0 -1px 3px rgba(106,31,39,0.4), 0 1px 0 #85454c, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(231,132,139,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(231,132,139,0.7); background: rgba(231,132,139,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e799b6; text-shadow: 0 0 14px rgba(231,132,139,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #e9646e 0%, #c93c48 100%);
+      box-shadow: 0 6px 0 #671f26, 0 14px 30px rgba(0,0,0,0.5);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #671f26, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(213,60,73,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #671f26, 0 6px 14px rgba(0,0,0,0.4); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(213,60,73,0.35); background: rgba(213,60,73,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #912730 0%, #d53c49 45%, #f08a8b 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(242,242,242,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(231,132,139,0.14) 0%, rgba(213,60,73,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(213,60,73,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #f8d5d7;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(231,132,139,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">IA</span>
+    <span class="pre-word">Ink Addictz Tattoo Studio</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/logo.jpg" alt="Ink Addictz Tattoo Studio" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(213,60,73,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Ink <span class="text-[color:var(--accent-deep)]">Addictz</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="El estudio" data-en="The studio">The studio</a>
+        <a class="nav-link" href="#metodo" data-es="Cómo funciona" data-en="How it works">How it works</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Por qué Ink Addictz" data-en="Why Ink Addictz">Why Ink Addictz</a>
+        <a class="nav-link" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <span data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Message us on Instagram</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="El estudio" data-en="The studio">The studio</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Cómo funciona" data-en="How it works">How it works</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué Ink Addictz" data-en="Why Ink Addictz">Why Ink Addictz</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
+        <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Message us on Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Cutler Bay, FL · Estudio de tatuajes y piercing" data-en="Cutler Bay, FL · Tattoo & piercing studio">Cutler Bay, FL · Tattoo & piercing studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tú lo piensas, nosotros lo tatuamos." data-en="You think it, we'll ink it.">You think it, we'll ink it.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Tú lo piensas," data-en="You think it,">You think it,</span><br /><span data-es="nosotros lo " data-en="we'll ">we'll </span><span class="text-shine" data-es="tatuamos" data-en="ink it">ink it</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Tatuajes personalizados, realismo en blanco y negro, color y cover-ups, además de piercing profesional. Cada pieza sale de nuestras manos en Cutler Bay y queda documentada tal cual, sin retoques de marketing." data-en="Custom tattoos, black and grey realism, color work and cover-ups, plus professional piercing. Every piece comes out of our hands right here in Cutler Bay and gets documented exactly as it is, no marketing gloss.">Custom tattoos, black and grey realism, color work and cover-ups, plus professional piercing. Every piece comes out of our hands right here in Cutler Bay and gets documented exactly as it is, no marketing gloss.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.7 · 150 reseñas en Google" data-en="4.7 · 150 reviews on Google">4.7 · 150 reviews on Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Message us on Instagram</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @ink_addictz
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-1.jpg" alt="Black and grey tiger and lioness forearm sleeve tattoo done at Ink Addictz Tattoo Studio" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva tu cita" data-en="Book your session">Book your session</p>
+            <p class="font-display text-lg">(305) 508-0383</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Cutler Bay, FL" data-en="Cutler Bay, FL">Cutler Bay, FL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl">4.7</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Calificación en Google" data-en="Google rating">Google rating</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="150">150</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas en Google" data-en="Google reviews">Google reviews</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl text-shine"><span data-count="3482">3,482</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Seguidores en Instagram" data-en="Instagram followers">Instagram followers</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Cutler Bay</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Base de operaciones" data-en="Home base">Home base</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Custom Tattoos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cover-Ups</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Black & Grey Realism</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Piercing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fine Line</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cutler Bay, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Custom Tattoos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cover-Ups</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Black & Grey Realism</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Piercing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fine Line</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cutler Bay, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/bk-2.jpg" alt="Realistic black and grey portrait sleeve tattoo by Ink Addictz Tattoo Studio" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/bk-3.jpg" alt="Black and grey cross and rosary leg tattoo by Ink Addictz Tattoo Studio" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nuestro estudio" data-en="Our studio">Our studio</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Tinta con" data-en="Ink with">Ink with</span><br /><span class="text-shine" data-es="propósito" data-en="purpose">purpose</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Ink Addictz Tattoo Studio es un estudio de tatuajes y piercing en Cutler Bay. Trabajamos retratos, realismo en blanco y negro, color y cover-ups complejos: si nos lo puedes describir, lo podemos tatuar." data-en="Ink Addictz Tattoo Studio is a tattoo and piercing studio in Cutler Bay. We work portraits, black and grey realism, color and complex cover-ups: if you can describe it, we can ink it.">Ink Addictz Tattoo Studio is a tattoo and piercing studio in Cutler Bay. We work portraits, black and grey realism, color and complex cover-ups: if you can describe it, we can ink it.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="No usamos fotos de stock: cada pieza de este sitio salió de nuestras manos y quedó documentada en Instagram, donde más de 3,400 personas siguen el trabajo diario del estudio." data-en="No stock photos here: every piece on this site came out of our hands and is documented on Instagram, where more than 3,400 people follow the studio's day to day work.">No stock photos here: every piece on this site came out of our hands and is documented on Instagram, where more than 3,400 people follow the studio's day to day work.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="3482">3,482</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Seguidores" data-en="Followers">Followers</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="1068">1,068</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Publicaciones" data-en="Posts">Posts</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">4.7</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Calificación Google" data-en="Google rating">Google rating</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/raw/logo.jpg" alt="Ink Addictz Tattoo Studio storefront sign" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(213,60,73,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Ink Addictz · <span class="text-[color:var(--ink-40)]" data-es="Estudio de tatuajes y piercing" data-en="Tattoo & piercing studio">Tattoo & piercing studio</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Así se trabaja aquí" data-en="How it works here">How it works here</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="De la idea" data-en="From idea">From idea</span> <span class="text-shine" data-es="a la piel" data-en="to skin">to skin</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Message us">Message us</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Nos cuentas la idea, el tamaño y dónde la quieres. Respondemos por Instagram o teléfono, sin formularios." data-en="Tell us the idea, the size and where you want it. We reply on Instagram or by phone, no forms.">Tell us the idea, the size and where you want it. We reply on Instagram or by phone, no forms.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Diseño personalizado" data-en="Custom design">Custom design</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Preparamos el diseño a tu medida y confirmamos la fecha con un depósito." data-en="We prep a design sized to you and lock in the date with a deposit.">We prep a design sized to you and lock in the date with a deposit.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="La sesión" data-en="The session">The session</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Trabajamos con equipo estéril de un solo uso, en el estudio de Cutler Bay." data-en="We work with single-use sterile equipment, right here in the Cutler Bay studio.">We work with single-use sterile equipment, right here in the Cutler Bay studio.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cuidado posterior" data-en="Aftercare">Aftercare</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con instrucciones claras de cuidado y la puerta abierta para cualquier retoque." data-en="You leave with clear aftercare instructions and an open door for any touch-up.">You leave with clear aftercare instructions and an open door for any touch-up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="tatuamos" data-en="ink">ink</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada tatuaje se cotiza según diseño, tamaño y ubicación. Escríbenos por Instagram y te damos el detalle sin compromiso." data-en="Every tattoo is quoted based on design, size and placement. Message us on Instagram and we will walk you through it, no strings attached.">Every tattoo is quoted based on design, size and placement. Message us on Instagram and we will walk you through it, no strings attached.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(213,60,73,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Nuestra especialidad" data-en="Our specialty">Our specialty</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Tatuajes personalizados" data-en="Custom tattoos">Custom tattoos</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Diseños hechos a tu medida, de la idea al boceto final antes de tocar la piel." data-en="Designs built to your idea, from concept to a final sketch before we ever touch skin.">Designs built to your idea, from concept to a final sketch before we ever touch skin.</p>
+          <div class="mt-auto">
+            <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Reparación" data-en="Rework">Rework</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Cover-ups y retoques" data-en="Cover-ups & reworks">Cover-ups & reworks</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Transformamos tatuajes viejos o que ya no te representan en piezas nuevas." data-en="We turn old tattoos, or ones that no longer feel like you, into new pieces.">We turn old tattoos, or ones that no longer feel like you, into new pieces.</p>
+          <div class="mt-auto">
+            <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Estilo" data-en="Style">Style</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Realismo en blanco y negro" data-en="Black & grey realism">Black & grey realism</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Retratos, animales y escenas con sombreado fino y alto contraste." data-en="Portraits, animals and scenes with fine shading and high contrast.">Portraits, animals and scenes with fine shading and high contrast.</p>
+          <div class="mt-auto">
+            <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Servicio" data-en="Service">Service</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Piercing" data-en="Piercing">Piercing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Piercing profesional con joyería de calidad y las medidas de higiene del estudio." data-en="Professional piercing with quality jewelry and the studio's hygiene standards.">Professional piercing with quality jewelry and the studio's hygiene standards.</p>
+          <div class="mt-auto">
+            <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves el estilo que buscas? Escríbenos igual, seguro lo hemos tatuado antes." data-en="Do not see the style you are after? Message us anyway, chances are we have inked it before.">Do not see the style you are after? Message us anyway, chances are we have inked it before.</span></p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Piel" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="skin">skin</span></h2>
+        </div>
+        <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @ink_addictz
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Manga a color" data-en="Color sleeve">Color sleeve</span><img src="assets/raw/bk-9.jpg" alt="Color rose sleeve tattoo by Ink Addictz Tattoo Studio" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Letras" data-en="Lettering">Lettering</span><img src="assets/raw/bk-4.jpg" alt="Lettering and portrait tattoo sleeve reading Trust No One" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Color" data-en="Color">Color</span><img src="assets/raw/bk-5.jpg" alt="Color rose and memorial date forearm tattoo" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Detalle" data-en="Detail">Detail</span><img src="assets/raw/bk-6.jpg" alt="Close up of a black and grey lion eye tattoo" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Retrato" data-en="Portrait">Portrait</span><img src="assets/raw/bk-7.jpg" alt="Black and grey portrait tattoo of a man wearing a hat" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Espalda" data-en="Back piece">Back piece</span><img src="assets/raw/bk-8.jpg" alt="Script lettering and rose vine tattoo on the upper back" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Custom Tattoos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cover-Ups</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Black & Grey Realism</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Piercing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fine Line</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cutler Bay, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Custom Tattoos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cover-Ups</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Black & Grey Realism</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Piercing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fine Line</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cutler Bay, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRUEBA SOCIAL (razones) -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué Ink Addictz" data-en="Why Ink Addictz">Why Ink Addictz</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">to message us</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Antes de escribirnos puedes ver el trabajo real en nuestro feed de Instagram." data-en="Before you reach out, you can see the real work on our Instagram feed.">Before you reach out, you can see the real work on our Instagram feed.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-8 reveal">
+          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="4.7 estrellas en Google" data-en="4.7 stars on Google">4.7 stars on Google</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="150 reseñas reales respaldan cada sesión. No es una promesa: es lo que dice la gente que ya se tatuó aquí." data-en="150 real reviews back every session. Not a promise: it is what people who already got inked here actually say.">150 real reviews back every session. Not a promise: it is what people who already got inked here actually say.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Trabajo real, sin fotos de stock" data-en="Real work, no stock photos">Real work, no stock photos</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cada pieza que ves en este sitio salió de nuestras manos y quedó publicada en Instagram, donde nos siguen más de 3,400 personas." data-en="Every piece you see on this site came out of our hands and was posted on Instagram, where more than 3,400 people follow the work.">Every piece you see on this site came out of our hands and was posted on Instagram, where more than 3,400 people follow the work.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Especialistas en personalizado y cover-up" data-en="Custom work & cover-up specialists">Custom work & cover-up specialists</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Retratos, realismo en blanco y negro, color y cover-ups complejos: tú lo piensas, nosotros lo tatuamos." data-en="Portraits, black and grey realism, color and complex cover-ups: you think it, we'll ink it.">Portraits, black and grey realism, color and complex cover-ups: you think it, we'll ink it.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver el trabajo en Instagram" data-en="See the work on Instagram">See the work on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">Cutler Bay</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Instagram" data-en="Instagram">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para reservar. Cuéntanos tu idea y te respondemos con el detalle." data-en="The fastest way to book. Tell us your idea and we will come back with the details.">The fastest way to book. Tell us your idea and we will come back with the details.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,73,0.4)]" href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener">@ink_addictz</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Llamada o mensaje de texto" data-en="Call or text">Call or text</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Se requiere depósito para asegurar tu cita." data-en="A deposit is required to secure your appointment.">A deposit is required to secure your appointment.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,73,0.4)]" href="tel:+13055080383">(305) 508-0383</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Estudio en Cutler Bay, sobre S Dixie Hwy." data-en="Studio in Cutler Bay, right on S Dixie Hwy.">Studio in Cutler Bay, right on S Dixie Hwy.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(213,60,73,0.4)]" href="https://maps.google.com/?daddr=20808%20S%20Dixie%20Hwy%2C%20Cutler%20Bay%2C%20FL%2033189" target="_blank" rel="noopener">20808 S Dixie Hwy, Cutler Bay, FL 33189</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Ink Addictz Tattoo Studio, Cutler Bay FL" src="https://www.google.com/maps?q=20808+S+Dixie+Hwy,+Cutler+Bay,+FL+33189&output=embed" class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #180608 0%, #0f0406 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Tú lo piensas, nosotros lo tatuamos." data-en="You think it, we'll ink it.">You think it, we'll ink it.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próximo tatuaje" data-en="Your next tattoo">Your next tattoo</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Escríbenos por Instagram o llama al estudio. Nos cuentas tu idea y te respondemos con el detalle, sin compromiso." data-en="Message us on Instagram or call the studio. Tell us your idea and we will come back with the details, no strings attached.">Message us on Instagram or call the studio. Tell us your idea and we will come back with the details, no strings attached.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Message us on Instagram</a>
+        <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0506]">
+    <span class="foot-mark" aria-hidden="true">Ink Addictz</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/logo.jpg" alt="Ink Addictz Tattoo Studio" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(231,132,139,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Ink Addictz Tattoo Studio</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de tatuajes y piercing en Cutler Bay, FL. Tú lo piensas, nosotros lo tatuamos." data-en="Tattoo and piercing studio in Cutler Bay, FL. You think it, we'll ink it.">Tattoo and piercing studio in Cutler Bay, FL. You think it, we'll ink it.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>20808 S Dixie Hwy, Cutler Bay, FL 33189</p>
+        <p><a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="hover:text-[#e799b6]" data-es="IG · @ink_addictz" data-en="IG · @ink_addictz">IG · @ink_addictz</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="hover:text-[#e799b6]">Instagram · @ink_addictz</a></p>
+        <p><a href="https://www.facebook.com/106504591411436" target="_blank" rel="noopener" class="hover:text-[#e799b6]">Facebook · Ink Addictz Tattoo Studio</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Ink Addictz Tattoo Studio.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#eed0d3]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://www.instagram.com/ink_addictz/" target="_blank" rel="noopener" class="book-float" aria-label="Message us on Instagram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1b070a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
+    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
+    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
+    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
+    // layout, que si existe, asi que rompe el circulo.
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
