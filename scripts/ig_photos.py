@@ -75,7 +75,15 @@ def extract():
     }"""
 u=sys.argv[1]
 with sync_playwright() as p:
-    b=p.chromium.launch(headless=True, args=['--no-sandbox'])
+    import os as _os
+    _exe = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
+    _kw = {'headless': True, 'args': ['--no-sandbox']}
+    if _os.path.exists(_exe):
+        _kw['executable_path'] = _exe
+    _px = _os.environ.get('HTTPS_PROXY') or _os.environ.get('https_proxy')
+    if _px:
+        _kw['proxy'] = {'server': _px}
+    b=p.chromium.launch(**_kw)
     pg=b.new_page(user_agent=UA, viewport={'width':1280,'height':2200})
     pg.goto(f'https://www.instagram.com/{u}/', wait_until='networkidle', timeout=45000)
     pg.wait_for_timeout(2500)

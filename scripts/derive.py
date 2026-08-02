@@ -13,12 +13,64 @@ El content.json es 100% texto del negocio: si un dato no existe (precios, resena
 direccion), simplemente no se pone y la seccion se adapta. Nunca se inventa.
 Ver output/prestigeautocargo/content.json como ejemplo completo.
 """
+import colorsys
 import json
 import os
 import re
 import sys
 
 ESQUELETOS = {'dark-v2': 'templates/dark-v2/index.html', 'light-v2': 'templates/light-v2/index.html'}
+ACCENT_REF = {'light-v2': 'a04a72', 'dark-v2': 'd4a84b'}
+
+
+def _hex_to_rgb(hx):
+    hx = hx.lstrip('#')
+    return tuple(int(hx[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def _rgb_to_hex(rgb):
+    r, g, b = (max(0, min(255, round(c))) for c in rgb)
+    return '%02x%02x%02x' % (r, g, b)
+
+
+def _shift(rgb, hue_delta, sat_mult, light_mult):
+    r, g, b = (c / 255.0 for c in rgb)
+    h, l, s = colorsys.rgb_to_hls(r, g, b)
+    h = (h + hue_delta / 360.0) % 1.0
+    s = max(0.0, min(1.0, s * sat_mult))
+    l = max(0.0, min(1.0, l * light_mult))
+    r2, g2, b2 = colorsys.hls_to_rgb(h, l, s)
+    return (r2 * 255, g2 * 255, b2 * 255)
+
+
+def aplicar_paleta(h, base, paleta):
+    """Rota TODOS los colores del esqueleto (menos el badge Merktop) al hue pedido,
+    ANTES de derivar el contenido (los anchors de derive() son texto, no color: no colisiona)."""
+    target_hue = paleta['hue']
+    sat_mult = paleta.get('sat_mult', 1.0)
+    light_mult = paleta.get('light_mult', 1.0)
+
+    m = re.search(r'\.merktop-badge \{.*?@keyframes mkPulse[^\n]*\n', h, flags=re.S)
+    assert m, 'no se encontro el bloque merktop-badge'
+    badge_block = m.group(0)
+    h = h.replace(badge_block, '@@BADGE@@', 1)
+
+    ref_rgb = _hex_to_rgb(ACCENT_REF[base])
+    ref_h, _, _ = colorsys.rgb_to_hls(*(c / 255.0 for c in ref_rgb))
+    hue_delta = target_hue - ref_h * 360.0
+
+    hexes = sorted(set(re.findall(r'#([0-9a-fA-F]{6})', h)))
+    hex_map = {hx.lower(): _rgb_to_hex(_shift(_hex_to_rgb(hx), hue_delta, sat_mult, light_mult)) for hx in hexes}
+    h = re.sub(r'#([0-9a-fA-F]{6})', lambda mo: '#' + hex_map[mo.group(1).lower()], h)
+
+    def rgba_repl(mo):
+        r, g, b = int(mo.group(1)), int(mo.group(2)), int(mo.group(3))
+        alpha = mo.group(4)
+        nr, ng, nb = (round(c) for c in _shift((r, g, b), hue_delta, sat_mult, light_mult))
+        return f'rgba({nr},{ng},{nb}{alpha})' if alpha is not None else f'rgb({nr},{ng},{nb})'
+
+    h = re.sub(r'rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*[\d.]+\s*)?\)', rgba_repl, h)
+    return h.replace('@@BADGE@@', badge_block, 1)
 
 # Anclas literales que SI difieren entre esqueletos (texto propio de cada negocio origen:
 # pureartistry en dark-v2, lashbloom en light-v2). Las anclas genericas (nav, servicios "ritual",
@@ -485,8 +537,12 @@ def construir(slug):
          f'    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{V["book_float_stroke"]}" stroke-width="2" '
          f'stroke-linecap="round" stroke-linejoin="round">{ICONOS[c.get("cta_icono", "whatsapp")]}</svg>\n  </a>')
 
+    out_h = d.h
+    if c.get('paleta'):
+        out_h = aplicar_paleta(out_h, base, c['paleta'])
+
     salida = f'output/{slug}/index.html'
-    open(salida, 'w', encoding='utf-8').write(d.h)
+    open(salida, 'w', encoding='utf-8').write(out_h)
     return salida
 
 
