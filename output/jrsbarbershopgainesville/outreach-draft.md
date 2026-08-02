@@ -1,4 +1,4 @@
-# Outreach draft — Jr's Barbershop (Gainesville, FL)
+# Outreach draft: Jr's Barbershop (Gainesville, FL)
 
 Language: English (business language = en, confirmed from Booksy verbatim reviews).
 Channel: no public email or phone found; send is `pending_manual` via Instagram DM / WhatsApp using the `dm_message` below.

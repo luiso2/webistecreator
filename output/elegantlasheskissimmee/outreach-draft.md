@@ -1,4 +1,4 @@
-# Outreach draft — Elegant Lashes Extensions (Kissimmee, FL)
+# Outreach draft: Elegant Lashes Extensions (Kissimmee, FL)
 
 Idioma: español (idioma principal confirmado por las reseñas verbatim de Booksy).
 has_own_site: false (elegantlashes.com es una tienda Shopify de venta al por mayor, sin relación con este negocio).
