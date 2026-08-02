@@ -58,8 +58,10 @@
    "description": null
   }
  ],
- "same_as": [],
- "instagram": null,
+ "same_as": [
+  "https://www.instagram.com/lauralashbrow/"
+ ],
+ "instagram": "lauralashbrow",
  "website_candidates": [],
  "phone": null,
  "services": [
@@ -331,5 +333,21 @@
    "author_verified": true
   }
  ],
- "language": "en"
+ "language": "en",
+ "has_own_site": false,
+ "website_checked": [
+  "lauraslashesandbrows.com (no DNS)",
+  "laurabrows.com (resolves but is a different business: Laura Brows, Calgary Canada squarespace site)",
+  "lauras-lashes.com (found via websearch, does NOT resolve / no DNS, dead/parked domain, not a live site for this business)",
+  "lauraslashesbrows.com, lauralashesandbrows.com, lashesandbrowsbylaura.com, laurabellolashes.com (no DNS)"
+ ],
+ "website_candidates_rotos": [],
+ "email": null,
+ "email_note": "No public email found. Checked: Booksy listing page (no mailto/tel), Facebook page facebook.com/lauralashbrow/ (About section blocked by Facebook login wall, could not read), Instagram bio for @lauralashbrow (IG web_profile_info API returns 400/broken; no local Playwright/browser available in this environment to render the bio page, so external_url in bio could not be checked). No linktree/beacons link found in web search results.",
+ "phone_note": "No public phone found on Booksy listing. A phone number for a business of the same name appeared on an aggregator (mybeautyapp.org) but for a different location (New Baltimore, MI) - not used, likely a different/mismatched listing.",
+ "rating_source": "booksy_jsonld",
+ "rating_confirmed_independently": false,
+ "rating_confirm_note": "WebSearch for \"Laura's Lashes & Brows Doral Google reviews\" returned only Booksy-sourced results (5.0/20), no independent Google Business listing snippet with a different count was found; using Booksy JSON-LD (5.0, 20 reviews) per instructions.",
+ "language_note": "Reviews are genuinely mixed: 5 of 10 verbatim reviews in data are Spanish, 5 in English. Doral is a bilingual market. Kept language default = en per the original dossier heuristic (es_hits vs en_hits on review text), site is fully bilingual with ES/EN toggle.",
+ "address_note": "4005 NW 114th Ave is a salon-suites building in Doral with multiple independent lash studios (e.g. Studio2020 is a different, separate business at the same street address). Verified via Booksy JSON-LD that this listing (id 870220) is specifically \"Laura's Lashes & Brows\" / staff \"Laura Bello\", not Studio2020 or another tenant."
 }
