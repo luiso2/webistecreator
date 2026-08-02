@@ -1,0 +1,48 @@
+{
+ "slug": "melinassweetdelights",
+ "status": "research_incomplete_photos",
+ "name": "Melina's Sweet Delights",
+ "owner": "Melina Cepin",
+ "city": "Kissimmee, FL",
+ "niche": "Dominican-style custom cake bakery",
+ "language": "es",
+ "phone": "(321) 624-9925",
+ "phone_e164": "+13216249925",
+ "hours": {
+  "mon_thu": "11:00am-4:30pm",
+  "fri_sat": "10:00am-5:00pm",
+  "sun": "12:00pm-2:00pm"
+ },
+ "address_found": "2007 Hidden Dale Ct, Kissimmee, FL 34741, USA",
+ "address_note": "Direccion aparece en el Google Business Profile (via Wanderlog/CID ChIJ46lDZSWH3YgRzKGzCl-icn4) pero el negocio es solo por encargo (sin local/mostrador): se recomienda NO publicarla en el site (variante adaptada, omitir mapa) para no invitar visitas a lo que probablemente es un domicilio.",
+ "rating": 5.0,
+ "review_count": 626,
+ "rating_source": "Google Business Profile (CID 0x88dd87256543a9e3:0x7e72a25f0ab3a1cc / place_id ChIJ46lDZSWH3YgRzKGzCl-icn4), leido via wanderlog.com/place/details/9071068 el 2026-08-02 (embed window.__MOBX_STATE__.placePage.data.placeMetadata: rating 5, numRatings 626). Nota: yellowpages.com cita 111 reviews (probable cache viejo de Google) y yelp.com 18 reviews (plataforma distinta). El numero de Wanderlog es el mas reciente y esta directamente enlazado a la ficha viva de Google Maps.",
+ "review_quotes_google_confirmed": [
+  {"autor": "Ginna M", "quote": "We ordered a quinceanera cake and it was absolutely perfect! Everyone loved the flavor of both the meringue and the cake, it was delicious.", "confirmado_en": "wanderlog.com"},
+  {"autor": "Ciana P (aprox, citado sin apellido en yellowpages)", "quote": "Her passion for what she does is what makes her cakes so delicious. What's made with love tastes better.", "confirmado_en": "yellowpages.com (cita Google reviews)"},
+  {"autor": "Jocey G (aprox, citado sin apellido en yellowpages)", "quote": "Melina is a cake artist. Not only are her Dominican style cakes beautiful, they are so delicious.", "confirmado_en": "yellowpages.com (cita Google reviews)"},
+  {"autor": "Victor C", "quote": "The cake came out amazing and tastes great...customer service was amazing and she explained everything step by step.", "confirmado_en": "wanderlog.com"},
+  {"autor": "Brionna P", "quote": "Very accommodating, communicative, and overall good customer service. First time having a Dominican Cake. Cake was delicious and exceeded my expectations!", "confirmado_en": "wanderlog.com"}
+ ],
+ "ig_handle": "@melinassweetdelightscakes",
+ "ig_owner_name": "melinacepin",
+ "ig_url": "https://www.instagram.com/melinassweetdelightscakes/",
+ "ig_followers": "2,240 (rango 2,235-2,240 segun fecha del snapshot)",
+ "ig_following": "668",
+ "ig_posts": "3,962 (og:description de IG, leido 2026-08-02 con User-Agent Googlebot)",
+ "email": null,
+ "email_note": "No se encontro email publico. Se reviso: bio de Instagram (vacia de email, solo texto de contacto por llamada/texto/WhatsApp), meta description de IG, pagina de Facebook 'Melina's Sweet Delight (Cakes)' (facebook.com/100068243061289, 2,957 likes, descripcion sin email), Google Business Profile via Wanderlog (campo email no expuesto), Yellow Pages, WeddingWire (0 resenas, sin email listado), Punchbowl. Ningun canal publica una direccion de correo: consistente con un negocio que opera 100% por llamada/texto/WhatsApp segun su propia bio.",
+ "has_own_site": false,
+ "has_own_site_note": "melinassweetdelights.com y melinassweetdelightscakes.com no resuelven conexion (curl: CONNECT tunnel failed / sin DNS). Ademas el campo 'website' del Google Business Profile de este negocio (via Wanderlog) apunta directamente a su Instagram (https://instagram.com/melinassweetdelightscakes), lo que confirma que Google tampoco tiene un dominio propio registrado para este negocio.",
+ "photos_status": "BLOQUEADO: menos de 5 fotos reales utilizables conseguidas.",
+ "photos_found": [
+  "assets/raw/bk-1.jpg - pastel real (detalle floral morado/dorado, estilo quinceanera o boda) - fuente: Google Business Profile via Wanderlog",
+  "assets/raw/bk-2.jpg - pastel real (tema alienigena verde, nombre 'Jehimy', cumpleanos) - fuente: Google Business Profile via Wanderlog",
+  "assets/raw/bk-3.jpg - pastel real (rosetones turquesa, 'Happy Birthday Mom') - fuente: Google Business Profile via Wanderlog",
+  "assets/raw/bk-4-not-a-cake-balloon-decor.jpg - NO es pastel (decoracion de globos de una fiesta), descartada de galeria"
+ ],
+ "photos_research_degradado": true,
+ "photos_research_degradado_note": "El research de fotos vino por un canal que NO pudo ver el feed real de Instagram (donde hay 3,962 posts): esto es research_degradado segun FORGE-BRIEF seccion 0.b, no evidencia de que el negocio no tenga fotos. Intentos hechos: (1) scripts/research_ig.py con Playwright local instalado en este entorno: bloqueado, Chromium recibe net::ERR_CONNECTION_RESET contra CUALQUIER host https a traves del proxy de egress de este sandbox (fallo de bajo nivel en el handshake TLS entre Chromium y el proxy, reproducido tambien con Firefox y con las flags de Chromium para paginacion TLS1.2/deshabilitar Kyber/ECH, y con http vs https puro; diagnosticado con --log-net-log: SSL_HANDSHAKE_ERROR net_error -101 / os_error 104 ECONNRESET justo despues de enviar el ClientHello). curl SI pasa por el mismo proxy sin problema (confirma que el bloqueo es especifico de motores de navegador, no de la red). (2) scripts/ig_photos.py con el servicio Railway: devolvio 0 fotos en dos intentos y 1 en un tercero (un asset grafico generico de Instagram, no una foto real, descartado). (3) endpoint oficial web_profile_info: devuelve 400 (roto, confirmado en FORGE-BRIEF). (4) fetch directo del perfil con User-Agent Googlebot: SI funciona para meta-datos (followers/following/posts, 1 foto de perfil en baja resolucion) pero Instagram NO sirve el grid de posts a bots, solo a JS real. (5) WebFetch directo a instagram.com: 429 Too Many Requests en dos intentos. (6) Espejos de terceros (imginn, picuki, gramho, pixwox, storiesig): todos bloqueados (403/525/muertos). (7) Facebook (pagina 'Melina's Sweet Delight (Cakes)', 2,957 likes): solo expone la foto de perfil via lookaside proxy, sin galeria para no-logueados. (8) Yelp (35 fotos, 18 resenas segun su listado): bloqueado por Cloudflare 403 en todos los intentos. (9) WeddingWire: 1 foto encontrada pero el CDN devuelve 403 al intentar descargarla. Fuente que SI funciono: wanderlog.com, que espeja 4 fotos reales del Google Business Profile del negocio (state JSON window.__MOBX_STATE__.placePage.data.placeMetadata.images) de las cuales 3 son pasteles reales terminados.",
+ "recommendation": "Reintentar el research de fotos desde una maquina con Playwright y una IP residencial real (no el proxy de este sandbox), o pedirle a Melina 5-10 fotos directamente. Con eso el build es directo: todos los demas datos (rating, resenas, telefono, horario, handle de IG, ausencia de website propio) ya estan verificados y listos."
+}
