@@ -1,0 +1,71 @@
+{
+  "slug": "theyankeehandymanocala",
+  "status": "failed",
+  "reason_failed": "Menos de 5 fotos reales curables para galeria (minimo exigido por el gate/FORGE-BRIEF 0.b). Se agotaron todas las fuentes disponibles: Instagram (@the.yankee.handyman.llc, cuenta publica, is_private=false, verificada via i.instagram.com/api/v1/users/web_profile_info con x-ig-app-id, funciono correctamente y sin bloqueo) devolvio los 12 posts mas recientes (de 356 totales; sin paginacion posible sin login, el endpoint GraphQL de continuacion devolvio 400 'Incorrect Query'): 20 fotos + 7 posters de video descargadas y verificadas con file (todas JPEG reales, ninguna rota). De esas 27 imagenes, tras curaduria visual foto a foto, solo 2 son gallery-worthy (ig-3.jpg y ig-4.jpg, antes/despues de un portón de granero de madera): el resto son fotos de un mismo trabajo de baño comercial/institucional tomadas en angulos torcidos, con pies/calzado del propio trabajador visibles en el encuadre, o closets de limpieza con desorden de botellas y suministros, o directamente contenido personal no relacionado con el negocio (una fogata nocturna, un gato con lentes de sol). Facebook: la pagina de negocio (facebook.com/TheYankeeHandymanLLC) y el perfil personal del dueño (facebook.com/ocalaMrFixit, que resulto ser el mismo Anthony Porett citado en la bio de IG) estan detras del muro de login para scraping normal; con UA de facebookexternalhit se logro extraer el og:image de la pagina de negocio, que es una foto de la tarjeta de presentacion (no una foto de trabajo terminado, no cuenta para galeria) y confirma telefono/slogan pero no dio acceso a mas fotos. Yelp (m.yelp.com y www.yelp.com) devolvio 403 en ambos intentos (curl y WebFetch). Birdeye (fuente del rating 4.8/53 reseñas) no aloja fotos reales del negocio, solo imagenes placeholder de categoria. Google Maps es inaccesible sin renderizado JS (WebFetch solo devuelve el shell vacio). No se encontro perfil BBB para este negocio especifico. Un directorio agregador (nears.me) tiene una ficha del negocio pero con imagen generica de stock ('Handyman-service-in-the-USA.png'), no foto real. Existe un canal de YouTube '@theyankeehandyman9827' con videos DIY desde 2018, pero no se pudo confirmar que sea el mismo Anthony Porett/LLC de Ocala (fundada 2022): riesgo de homonimo ya señalado en el brief para theyankeehandyman.com (sitio UENI de otro 'Yankee Handyman' sin domicilio/telefono coincidente), por lo que se descarto como fuente para evitar atribuir contenido de terceros. Siguiendo PIPELINE.md fase 3 punto 5 y FORGE-BRIEF 0.b ('Cuando SI marcar failed: menos de 5 fotos reales y propias del negocio... con research NO degradado'): el research aqui NO esta degradado (IG respondio con datos completos y claros, no hubo bloqueo tecnico que impidiera ver el contenido), simplemente el material disponible es insuficiente en calidad/cantidad. No se fuerza el build con fotos borrosas, con pies/calzado visibles o desordenadas.",
+  "name": "The Yankee Handyman LLC",
+  "owner_public_name": "Anthony Porett",
+  "niche": "handyman / remodelacion menor",
+  "city": "Ocala, FL",
+  "address": "6726 Cherry Rd, Ocala, FL 34472",
+  "phone_primary": "(239) 867-8447",
+  "phone_source": "Coincide exactamente entre Birdeye, Yelp, foto de tarjeta de presentacion (og:image de Facebook) y busqueda web: dato confirmado, no inventado.",
+  "hours": "Lunes a viernes 8:00am-5:00pm, sabado 9:00am-5:00pm, domingo cerrado (fuente: Birdeye/Yelp, coincide con el brief)",
+  "slogan": "Creating Beautiful Spaces and Smiling Faces. No job too big or small, we do it all. Licensed and Insured.",
+  "slogan_source": "Bio de Facebook (og:description via facebookexternalhit) y foto de tarjeta de presentacion (fb-og.jpg), texto identico en ambas fuentes.",
+  "google_rating": 4.8,
+  "google_review_count": 53,
+  "rating_source": "Google via mirror Birdeye (confirmado en el brief, re-verificado en esta investigacion via reviews.birdeye.com/the-yankee-handyman-llc-167619337028070)",
+  "reviews_verbatim": [
+    {"author": "Sherri Gary", "text": "Anthony called me the same day and came over and switched them out.", "source": "Google (via Birdeye)"},
+    {"author": "susan O'Connell", "text": "He was polite, professional and personable.", "source": "Google (via Birdeye)"},
+    {"author": "Diane Bennett", "text": "Anthony built a deck for my pool- I cannot be more pleased- he was so detailed right down to sanding all the edges and I do mean ALL.", "source": "Google (via Birdeye)"}
+  ],
+  "instagram": {
+    "handle": "@the.yankee.handyman.llc",
+    "url": "https://www.instagram.com/the.yankee.handyman.llc/",
+    "verified_real_account": true,
+    "is_private": false,
+    "followers": 42,
+    "following": 20,
+    "full_name": "Anthony Porett",
+    "biography": "",
+    "fb_profile_biolink": "https://www.facebook.com/profile.php?id=100032554363058 (Anthony Porett) = mismo media_id que facebook.com/ocalaMrFixit",
+    "verification_method": "curl directo a i.instagram.com/api/v1/users/web_profile_info con header x-ig-app-id:936619743392459 (200 OK, JSON completo, 356 posts totales, 12 devueltos sin paginacion posible)",
+    "content_type": "Cuenta personal pequeña que mezcla trabajos reales (portón de granero, remodelacion de baño comercial) con contenido personal no relacionado (fogata, mascota). Mayoria de fotos de trabajo tomadas rapido, sin curaduria, angulos torcidos o con el propio calzado/pies del trabajador en cuadro.",
+    "usable_for_gallery": "parcial: solo 2 de 27 imagenes descargadas pasan curaduria visual"
+  },
+  "own_website_check": {
+    "has_own_site": false,
+    "domains_tried": [
+      {"domain": "theyankeehandyman.com", "result": "Existe pero es un sitio generico UENI de OTRO 'Yankee Handyman' homonimo, sin direccion ni telefono coincidente con Anthony Porett/Ocala (dato ya confirmado en el brief, no reinvestigado)"}
+    ]
+  },
+  "email_public": "mrfixitcharlotte@gmail.com",
+  "email_search_effort": "Encontrado via busqueda web (aparece consistentemente asociado a la misma direccion 6726 Cherry Rd y telefono 239-867-8447 en agregadores/directorios). No aparece en bio de IG (vacia), ni en Facebook (bloqueado por login), ni en Birdeye. El prefijo 'charlotte' del email es probablemente un remanente de una marca/ciudad anterior del mismo dueño, no fue inventado por esta investigacion.",
+  "photos": {
+    "usable_count_real": 2,
+    "minimum_required": 5,
+    "sources_tried": [
+      "Instagram (@the.yankee.handyman.llc) via i.instagram.com web_profile_info API: 20 fotos + 7 posters de video descargados, verificados con `file`, todos JPEG validos",
+      "Facebook business page (facebookexternalhit UA): solo 1 imagen accesible (og:image = foto de tarjeta de presentacion, no cuenta como foto de trabajo)",
+      "Facebook personal profile (ocalaMrFixit): bloqueado, solo devolvio foto de perfil generica",
+      "Yelp (m.yelp.com y www.yelp.com): 403 Forbidden en ambos intentos",
+      "Birdeye (reviews.birdeye.com): solo imagenes placeholder de categoria, sin fotos reales del negocio",
+      "Google Maps: inaccesible sin JS renderizado",
+      "BBB: sin perfil encontrado para este negocio",
+      "nears.me (directorio agregador): imagen generica de stock, no foto real",
+      "YouTube (@theyankeehandyman9827): descartado por riesgo de homonimo no confirmado"
+    ],
+    "detail": [
+      {"file": "assets/raw/ig-3.jpg", "desc": "Porton de granero viejo (gris, desgastado) sobre pared de ladrillo, antes del reemplazo", "usable": true},
+      {"file": "assets/raw/ig-4.jpg", "desc": "Porton de granero nuevo de madera sin terminar, misma pared, despues del reemplazo: par antes/despues real y limpio", "usable": true},
+      {"file": "assets/raw/ig-2.jpg", "desc": "Vista interior del mismo garage con el porton entreabierto, sin gente, sin texto: aceptable pero debil como tercera foto de apoyo", "usable": "borderline"},
+      {"file": "assets/raw/ig-1.jpg", "desc": "Preparacion de ducha con cemento board, mucho texto de producto impreso visible (PermaBase, moisture resistant), herramientas DeWalt en la esquina: descartada por desorden visual/texto grande de material", "usable": false},
+      {"file": "assets/raw/ig-5.jpg a ig-20.jpg", "desc": "Serie de fotos de un baño/closet de limpieza comercial: angulos torcidos, pies/calzado del trabajador visibles en varias, desorden de botellas de limpieza y suministros en otras", "usable": false},
+      {"file": "assets/raw/vid-1.jpg a vid-4.jpg", "desc": "Posters de video de una fogata nocturna (contenido personal, no relacionado al negocio)", "usable": false},
+      {"file": "assets/raw/vid-5.jpg, vid-7.jpg", "desc": "Posters de video de trabajo de baño en demolicion/reparacion, mismos problemas de angulo/desorden", "usable": false},
+      {"file": "assets/raw/vid-6.jpg", "desc": "Mascota (gato) con lentes de sol, contenido personal no relacionado", "usable": false},
+      {"file": "assets/raw/fb-og.jpg", "desc": "Foto de la tarjeta de presentacion del negocio (confirma telefono, slogan, logo), no es foto de trabajo terminado", "usable": "no gallery, solo referencia de marca"}
+    ]
+  }
+}
