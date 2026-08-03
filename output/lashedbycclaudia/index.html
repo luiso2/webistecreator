@@ -235,7 +235,73 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/bk-11.jpg" alt="Dramatic volume lash extensions and full brows, real result by lashedbycclaudia" class="blur-up w-full h-full object-cover" />
+        <img src="assets/raw/logo.jpg" alt="lashedbycclaudia" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(75,212,84,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Lashed <span class="text-[color:var(--accent-deep)]">Cclaudia</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://booksy.com/en-us/583888_lashedbycclaudia_brows-lashes_15685_naples" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/583888_lashedbycclaudia_brows-lashes_15685_naples" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Naples, FL · Estudio de Pestañas y Cejas" data-en="Naples, FL · Lash & Brow Studio">Naples, FL · Lash & Brow Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Una mirada que habla por ti." data-en="A look that speaks before you do.">A look that speaks before you do.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Extensiones clásicas, híbridas" data-en="Classic, hybrid and">Classic, hybrid and</span><br /><span data-es="y volumen, hechas para " data-en="volume lashes, made to ">volume lashes, made to </span><span class="text-shine" data-es="tus ojos" data-en="fit your eyes">fit your eyes</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Claudia Silva Inclan atiende en un suite privado en Naples con sets clásicos, híbridos, volumen, wispy y wet set, además de cejas. Reserva por Booksy con 5.0 estrellas y 72 reseñas reales." data-en="Claudia Silva Inclan works out of a private suite in Naples, offering classic, hybrid, volume, wispy and wet-set lashes, plus brow services. Book on Booksy, backed by 5.0 stars and 72 real reviews.">Claudia Silva Inclan works out of a private suite in Naples, offering classic, hybrid, volume, wispy and wet-set lashes, plus brow services. Book on Booksy, backed by 5.0 stars and 72 real reviews.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 72 reseñas en Booksy" data-en="5.0 · 72 reviews on Booksy">5.0 · 72 reviews on Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/583888_lashedbycclaudia_brows-lashes_15685_naples" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/lashedbycclaudia/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @lashedbycclaudia
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-11.jpg" alt="Dramatic volume lash extensions and full brows, real result by lashedbycclaudia" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
             <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Book online</p>
@@ -535,7 +601,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/bk-1.jpg" alt="lashedbycclaudia" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(150,232,157,0.35)]" loading="lazy" />
+          <img src="assets/raw/logo.jpg" alt="lashedbycclaudia" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(150,232,157,0.35)]" loading="lazy" />
           <span class="font-display text-lg tracking-[0.1em] uppercase">lashedbycclaudia</span>
         </div>
         <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de pestañas y cejas en Naples, FL. Clásico, híbrido, volumen y wispy." data-en="Lash & brow studio in Naples, FL. Classic, hybrid, volume and wispy.">Lash & brow studio in Naples, FL. Classic, hybrid, volume and wispy.</p>
