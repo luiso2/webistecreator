@@ -1,4 +1,4 @@
-# Outreach draft — Linda's Hair Salon & Spa (lindashairsalonspajax)
+# Outreach draft: Linda's Hair Salon & Spa (lindashairsalonspajax)
 
 Language: English (business language / Booksy listing language)
 
