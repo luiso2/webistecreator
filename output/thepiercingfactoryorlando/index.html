@@ -10,7 +10,7 @@
   <meta property="og:description" content="Piercings and custom tattoos near Florida Mall in Orlando, FL. 4.7 rating, 207 reviews on Booksy." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/raw/bk-4.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/bk-1.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/avatar.jpg" />
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -260,7 +260,73 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/bk-4.jpg" alt="Detailed spartan helmet forearm tattoo done at The Piercing Factory, Orlando" class="blur-up w-full h-full object-cover" />
+        <img src="assets/raw/avatar.jpg" alt="The Piercing Factory" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(188,56,100,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Piercing <span class="text-[color:var(--accent-deep)]">Factory</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About Us">About Us</a>
+        <a class="nav-link" href="#metodo" data-es="El Proceso" data-en="Our Process">Our Process</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://booksy.com/en-us/1152377_the-piercing-factory_piercing_134763_orlando" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Book now</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About Us">About Us</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Proceso" data-en="Our Process">Our Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/1152377_the-piercing-factory_piercing_134763_orlando" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Orlando, FL · Piercing y Tatuajes" data-en="Orlando, FL · Piercing & Tattoo Studio">Orlando, FL · Piercing & Tattoo Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Piercings y tatuajes, hechos con cuidado." data-en="Piercings and tattoos, done with care.">Piercings and tattoos, done with care.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Piercings de precisión y" data-en="Precision piercings and">Precision piercings and</span><br /><span data-es="tatuajes a la medida, con " data-en="custom tattoos, built on ">custom tattoos, built on </span><span class="text-shine" data-es="cuidado real" data-en="real care">real care</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Sobre S Orange Ave, cerca de Florida Mall, The Piercing Factory reúne a Jenny (piercer y dueña) junto a los tatuadores Stitch_in_ink e Ismael. Ear curation, piercings faciales y corporales, dermales y tatuajes personalizados, todo con material estéril de un solo uso." data-en="Right on S Orange Ave, near Florida Mall, The Piercing Factory brings together Jenny (piercer and owner) alongside tattoo artists Stitch_in_ink and Ismael. Ear curation, facial and body piercings, dermals and custom tattoo work, all with sterile, single-use equipment.">Right on S Orange Ave, near Florida Mall, The Piercing Factory brings together Jenny (piercer and owner) alongside tattoo artists Stitch_in_ink and Ismael. Ear curation, facial and body piercings, dermals and custom tattoo work, all with sterile, single-use equipment.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.7 · 207 reseñas en Booksy" data-en="4.7 · 207 reviews on Booksy">4.7 · 207 reviews on Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/1152377_the-piercing-factory_piercing_134763_orlando" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar cita" data-en="Book now">Book now</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/the_piercing_factory/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @the_piercing_factory
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-4.jpg" alt="Detailed spartan helmet forearm tattoo done at The Piercing Factory, Orlando" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
             <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
@@ -310,7 +376,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/bk-1.jpg" alt="Jenny, owner and lead piercer at The Piercing Factory, holding a Top 3 Business Orange County award" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/avatar.jpg" alt="Jenny, owner and lead piercer at The Piercing Factory, holding a Top 3 Business Orange County award" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
           <img src="assets/raw/bk-6.jpg" alt="Mandala and butterfly forearm tattoo done at The Piercing Factory, Orlando" class="blur-up w-full h-full object-cover" loading="lazy" />
@@ -328,7 +394,7 @@
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/bk-1.jpg" alt="Jenny, owner and lead piercer at The Piercing Factory" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(188,56,100,0.3)]" loading="lazy" />
+            <img src="assets/raw/avatar.jpg" alt="Jenny, owner and lead piercer at The Piercing Factory" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(188,56,100,0.3)]" loading="lazy" />
             <span class="text-sm font-light">Jenny · <span class="text-[color:var(--ink-40)]" data-es="Piercer y dueña" data-en="Owner & lead piercer">Owner & lead piercer</span></span>
           </div>
         </div>
@@ -565,7 +631,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/bk-1.jpg" alt="The Piercing Factory" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(215,110,143,0.35)]" loading="lazy" />
+          <img src="assets/raw/avatar.jpg" alt="The Piercing Factory" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(215,110,143,0.35)]" loading="lazy" />
           <span class="font-display text-lg tracking-[0.1em] uppercase">The Piercing Factory</span>
         </div>
         <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de piercing y tatuajes de barrio en Orlando, FL. Ear curation, piercings, dermales y tatuajes personalizados." data-en="Neighborhood piercing and tattoo studio in Orlando, FL. Ear curation, piercings, dermals and custom tattoos.">Neighborhood piercing and tattoo studio in Orlando, FL. Ear curation, piercings, dermals and custom tattoos.</p>
