@@ -1,0 +1,95 @@
+{
+ "slug": "beautydesignbybecky",
+ "name": "Beauty Design by Becky",
+ "city": "Miami, FL (Kendall / West End)",
+ "niche": "Lash & brow studio / esthetics",
+ "owner": "Rebeca (\"Becky\")",
+ "schema_type": "BeautySalon",
+ "source": "fresha",
+ "booksy_url": null,
+ "fresha_url": "https://www.fresha.com/a/beauty-design-by-becky-miami-13258-sw-eighth-st-dzv4kxkm",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "12771 North Kendall Drive",
+  "addressLocality": "Miami",
+  "addressRegion": "FL",
+  "postalCode": "33186",
+  "addressCountry": "US",
+  "note": "Address discrepancy resolved: the Fresha URL slug reads '13258 SW Eighth St' (stale/former slug) but the page's structured data (__NEXT_DATA__ location.address, directionsUrl and mapsUrl) consistently gives 12771 North Kendall Drive, Miami, FL 33186 (West End / Kendall area). Used the structured-data address as authoritative."
+ },
+ "geo": {
+  "@type": "GeoCoordinates",
+  "latitude": 25.686683654785156,
+  "longitude": -80.40140533447266
+ },
+ "phone": "+1 305-202-0909",
+ "phone_source": "Fresha structured data (location.contactNumber). Not previously found by discovery; resolved in this pass.",
+ "email": null,
+ "email_search_note": "Not found. Checked: Fresha location.email (null), Fresha page HTML for mailto/email patterns (none, only an unrelated Sentry ingest address), Instagram bio/page (curl fetch blocked/no bio text retrievable), web search for Facebook page (none found for this business; only unrelated 'Beauty by Becky' businesses elsewhere). No linktree found.",
+ "rating": 5.0,
+ "reviews_count": 63,
+ "hours": [
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "10:00", "closes": "19:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "17:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "closed": true }
+ ],
+ "hours_note": "Re-verified against Fresha structured data (location.workingTime): matches discovery exactly (Mon-Fri 10am-7pm, Sat 10am-5pm, Sun closed).",
+ "staff": [
+  { "name": "Rebeca", "job_title": null, "employee_id": "2344838", "fresha_rating": 5 }
+ ],
+ "bio": "Hi! I'm Rebeca, a full-time beauty esthetician dedicated to enhancing your natural beauty. I offer a range of services, including lash extensions, lash lifts, facials, and waxing. With a focus on personalized care and attention to detail, I look forward to meeting you and surpassing all your expectations. Let's work together to achieve your beauty goals!",
+ "bio_source": "Fresha location.description (Rebeca's own words), verbatim.",
+ "instagram": "beautydesignbybecky",
+ "instagram_url": "https://www.instagram.com/beautydesignbybecky/",
+ "instagram_note": "429 retried successfully via Playwright with QUIC/ECH disabled (per FORGE-BRIEF 2026-08-02 fix) launching full chrome binary. Retrieved 18 profile images incl. 12 recent post covers; most carried caption text overlays or were mid-procedure/blurry and were excluded from the gallery per curation rules. Could not retrieve IG bio text (no business_email/external_url visible via this method) or scroll further without risking rate-limit; two clean, caption-free results salvaged (1 used in gallery, 1 profile avatar not used since a better Fresha staff avatar was available).",
+ "facebook": null,
+ "has_own_site": false,
+ "has_own_site_check": "Tested beautydesignbybecky.com, .net, beautydesignbybeckymiami.com, beautydesignbecky.com, beckybeautydesign.com via curl: all fail DNS resolution (could not resolve host). Web search for the business name plus 'facebook' or 'contact' returns only Fresha listing pages, category pages, and unrelated same-named businesses in other cities. No own domain found.",
+ "language": "en",
+ "language_note": "Fresha auto-detected language: en. Business's own bio (Rebeca's description) is written in English. Of 20 reviews retrieved with dates/authors, ~16 are in English and ~4 in Spanish; English is the clear majority and the business's self-authored copy is English, so language=en (not the originally guessed es).",
+ "booking": "Fresha",
+ "services": [
+  { "name": "Classic lash set", "price": 120, "duration": "2h", "group": "Brows & Lashes" },
+  { "name": "Hybrid lash set", "price": 140, "duration": "2h", "group": "Brows & Lashes" },
+  { "name": "2 weeks Classic Fill", "price": 85, "duration": "1h 40min", "group": "Brows & Lashes" },
+  { "name": "3 weeks Classic Fill", "price": 100, "duration": "2h", "group": "Brows & Lashes" },
+  { "name": "2 weeks Volume Fill", "price": 115, "duration": "2h 15min", "group": "Featured" },
+  { "name": "Lash Lift & Tint", "price": 115, "duration": "1h", "group": "Brows & Lashes" },
+  { "name": "Eyebrows & tint", "price": 35, "duration": "30min", "group": "Featured" },
+  { "name": "Eyebrows clean up", "price": 20, "duration": "20min", "group": "Featured" },
+  { "name": "Full Facial with Extractions", "price": 130, "duration": "1h", "group": "Face" },
+  { "name": "Regular Facial with no Extraction", "price": 80, "duration": "40min", "group": "Face" },
+  { "name": "Lash removal", "price": 20, "duration": "20min", "group": "Brows & Lashes" },
+  { "name": "House Call Travel Fee", "price": "from 30", "duration": "5min", "group": "Featured" },
+  { "name": "1 week refill classic", "price": 45, "duration": "1h", "group": "Brows & Lashes" },
+  { "name": "Sunday After hours Fee", "price": 60, "duration": "1h", "group": "Brows & Lashes" },
+  { "name": "After hours Fee", "price": 50, "duration": "5min", "group": "Brows & Lashes" }
+ ],
+ "services_note": "18 services total on Fresha (some duplicated across 'Featured' and 'Brows & Lashes' groups, deduped to 15 unique above). Prices re-verified independently against Fresha's __NEXT_DATA__ payload; they differ slightly from the discovery brief's numbers in a few cases (e.g. Lash Lift & Tint is $115 not $120, Full Facial with Extractions is $130 not $150, Regular Facial is $80 not $95): used the freshly scraped values as source of truth.",
+ "reviews": [
+  { "author": "Connie R", "date": "2026-05-08", "rating": 5, "body": "Excellent service and an excellent person. Thank you so much for quality service.. 10 out of 10 highly recommend.", "note": "Full untruncated text confirmed via Fresha __NEXT_DATA__ (the discovery brief had this truncated)." },
+  { "author": "Daimilsis S", "date": "2026-03-18", "rating": 5, "body": "She never misses ✨ my lashes are always full, natural, and last so long. The best in the game!" },
+  { "author": "Maria Fernanda C", "date": "2025-10-10", "rating": 5, "body": "The best in town 🙏" }
+ ],
+ "reviews_note": "Fetched all 20 available named/dated reviews from Fresha's reviews.edges payload; selected the 3 given in the brief since they were independently verified as accurate and are recent/representative. Additional named reviewers available if more are wanted: Zenia, Annamary D, Melissa A, Danay B, Aida G.",
+ "photos": {
+  "kept": [
+   { "file": "assets/raw/bk-1.jpg", "source": "Fresha gallery", "used_in": "hero", "desc": "Extreme close-up of finished lash extension result, eye open, sharp focus, no watermark" },
+   { "file": "assets/raw/bk-2.jpg", "source": "Fresha gallery", "used_in": "experience tile 1", "desc": "Close-up finished lash result, eye open, sharp, small fresha watermark" },
+   { "file": "assets/raw/bk-3.jpg", "source": "Fresha gallery", "used_in": "experience tile 2", "desc": "Close-up finished lash + brow result, eye open, sharp, small fresha watermark" },
+   { "file": "assets/raw/bk-4.jpg", "source": "Fresha gallery", "used_in": "gallery tile 1", "desc": "Close-up finished classic lash result, eye open, sharp, small fresha watermark" },
+   { "file": "assets/raw/ig-12.jpg", "source": "Instagram post cover (Playwright, no caption overlay)", "used_in": "gallery tile 2", "desc": "Clean close-up of finished volume lash result, no text overlay, small CapCut watermark corner" },
+   { "file": "assets/raw/avatar-rebeca.jpg", "source": "Fresha staff avatar (Rebeca)", "used_in": "nav logo, footer logo, experience owner pill", "desc": "Professional headshot of Rebeca; business has no separate graphic logo, so her photo is used as the small circular brand mark, consistent with pipeline rule allowing owner photo as small avatar" }
+  ],
+  "discarded": [
+   "ig-1..ig-4, ig-6, ig-8, ig-9: caption text overlays (POV/LASH LIFT/hashtags) or CapCut watermark banners over the photo, prohibited in gallery tiles",
+   "ig-5: shows Rebeca working in the studio interior (real environment shot, wall shelving + signage visible) but has a caption overlay across the top third; excluded from gallery per no-text-overlay rule, not used elsewhere either since owner-in-action shots are reserved for avatar-only use",
+   "ig-7: mid-procedure, client eyes taped/closed, prohibited",
+   "ig-10: animated spiral graphic, not a real business photo",
+   "ig-11: blurry, unusable",
+   "hl-1..hl-4: Instagram highlight thumbnails, only 150x150px (too low-res for tiles), hl-1 has caption text, hl-2 is a client selfie/portrait"
+  ]
+ },
+ "gate_passed": true,
+ "template": "light-v2 (lash studio exemplar), coral-rose palette (accent-deep #c04e62 / accent-mid #da7f8e) chosen fresh to avoid duplicating the plum-pink #a04a72 already used by several other Miami lash/brow businesses in this pipeline (herbeautylashesbrows, njlashlounge, luxestudiomia, floridabaelashes, lashbloom itself)."
+}

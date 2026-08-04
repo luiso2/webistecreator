@@ -1,0 +1,73 @@
+{
+ "slug": "sandrassweetsavory",
+ "name": "Sandra's Sweet & Savory LLC",
+ "schema_type": "Bakery",
+ "niche": "bakery / pie shop / cafe",
+ "owner": "Sandra Manzoni",
+ "established": 2019,
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "1100 6th Ave S, Ste 11",
+  "addressLocality": "Naples",
+  "addressRegion": "FL",
+  "postalCode": "34102",
+  "addressCountry": "US",
+  "note": "Dockside Boardwalk / Tin City, Old Naples"
+ },
+ "geo": {
+  "@type": "GeoCoordinates",
+  "latitude": 26.1416,
+  "longitude": -81.7908,
+  "note": "approximate, Tin City complex; no exact rooftop geocode confirmed"
+ },
+ "rating": 4.9,
+ "reviews_count": 242,
+ "reviews_count_note": "sources disagreed between 239-262 across Yelp/RestaurantGuru/aggregator mirrors as of 2026-08-04; 4.9/242 was the most consistently repeated figure and is used on-site. Re-verify directly on Google Maps before outreach if possible.",
+ "hours": [
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "10:00", "closes": "16:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "10:00", "closes": "17:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "10:00", "closes": "16:00" }
+ ],
+ "hours_note": "CONFLICTING sources found during research: (1) their own Square site text block says 'Mondays & Tuesdays CLOSED, Wednesday-Sunday 10am-3pm'; (2) a photo from their own Instagram feed (assets/raw/bk-9.jpg, not used on site) shows an in-store window decal reading 'NEW Business Hours: Mon-Thu 10am-4pm, Fri-Sat 10am-5pm, Sun 10am-4pm' (7 days, no closures). The window decal was used on-site as the more recent, physically-photographed source ('NEW' hours), but this should be called out to the human reviewer and re-confirmed by phone before outreach.",
+ "phone": "(239) 331-7784",
+ "phone_e164": "+12393317784",
+ "email": "sandrasweetandsavory@aol.com",
+ "email_confirmation": "Independently confirmed via a real Instagram photo (assets/raw/bk-5.jpg) showing Sandra's own printed pie-box card with 'Email: sandrasweetandsavory@aol.com' printed on it, corroborating a web search snippet that cited the same address. Treated as a confirmed public email.",
+ "instagram": "sandrasweetandsavory",
+ "instagram_url": "https://www.instagram.com/sandrasweetandsavory/",
+ "instagram_followers": 1320,
+ "facebook_url": "https://www.facebook.com/sandrasweetandsavory/",
+ "booking_url": "https://sandras-sweet-and-savory-llc.square.site",
+ "booking_platform": "Square Online (subdomain, not an owned domain). storeInfo JSON on the site shows accepting_orders:false at research time, so the site was used as a menu/info link rather than an active checkout CTA.",
+ "has_own_site": false,
+ "has_own_site_check": "Tried sandrasweetandsavory.com, sandrassweetandsavory.com, sandrasweetsavory.com, sandrasweetandsavorynaples.com via DNS/curl: all failed to resolve (exit 56 / no host). No owned domain found in IG bio, FB about, or search results. Confirmed false.",
+ "language": "en",
+ "menu": [
+  { "name": "Sandra's Famous Key Lime Pie", "description": "Homemade filling with real key lime juice, not too sweet or tart, in a hand-pressed double-thick graham cracker crust. Also available dark chocolate-dipped or as mini pie pops.", "price": null },
+  { "name": "Chocolate Mousse Pie (5in)", "description": "House-made silky chocolate mousse in a hand-pressed graham cracker crust, sprinkled with cocoa powder.", "price": 7.50, "price_source": "Independently confirmed via web search result quoting their own product listing." },
+  { "name": "Blueberry Scone", "description": "Real butter and fresh blueberries, topped with crystal sugar.", "price": null },
+  { "name": "Cranberry-Orange Scone", "description": "Real butter, cranberries, orange zest and an orange drizzle.", "price": null },
+  { "name": "Carrot Oatmeal Bar", "description": "Gluten and dairy-free wellness bar.", "price": null },
+  { "name": "Banana-Chia Oatmeal Bar", "description": null, "price": null },
+  { "name": "Pumpkin-Pecan Oatmeal Bar", "description": null, "price": null },
+  { "name": "Cookies", "description": null, "price": null },
+  { "name": "Mango Smoothie", "description": null, "price": null },
+  { "name": "Chai Tea Latte", "description": null, "price": null },
+  { "name": "Matcha", "description": null, "price": null },
+  { "name": "Iced Coffee", "description": null, "price": null }
+ ],
+ "menu_note": "Full priced online catalog on the Square site is rendered client-side (React/JS) and could not be scraped via curl or WebFetch (returns empty product list server-side). The $7.50 Chocolate Mousse Pie price was found via web search citing their own listing. No other prices could be independently verified, so they are omitted (price: null) rather than fabricated, per pipeline rule.",
+ "reviews": [
+  { "author": "Gianluca", "body": "Hands down the best pies I've ever had. They were exceptional. Everything tasted super fresh.", "source": "Google (as provided in discovery brief; corroborated by search results describing similarly-worded reviews about 'best pies' / 'best key lime pie' for this business)" },
+  { "author": "J P", "body": "The owner is an absolute gem. It's evident how dedicated she is and how much she cares about her business.", "source": "Google (as provided in discovery brief)" },
+  { "author": "Isabel R", "body": "My new favorite place to go for some healthier sweets. The chi tea latte was amazing.", "source": "Google (as provided in discovery brief; 'chi tea latte' and 'healthier sweets' phrasing independently corroborated via web search results referencing this business)" },
+  { "author": "Sheri W", "body": "The dark chocolate-dipped key lime pie was honestly the best I've ever tasted.", "source": "Google (as provided in discovery brief; 'dark chocolate-dipped key lime pie' phrase independently corroborated via web search results referencing this business)" }
+ ],
+ "reviews_note": "Reviewer full names/exact attribution could not be independently re-scraped from Google Maps directly (no Maps API access in this environment). The quotes and their subject matter (key lime pie quality, owner dedication, chi tea latte, dark chocolate-dipped key lime pie) were independently corroborated via web search results describing this specific business's reviews, giving reasonable confidence they are genuine, but a human reviewer should spot-check them on Google Maps before outreach.",
+ "photos_source": "Instagram public profile (@sandrasweetandsavory), fetched via scripts/ig_photos.py (Railway ig-photo-service) which returned 12 real photos/video-posters from the account's recent feed (Oct-Nov 2025). All 12 downloaded to output/sandrassweetsavory/assets/raw/bk-1..bk-12.jpg and visually reviewed one by one with the Read tool before curation.",
+ "photos_curation": "Used 7 of 12 downloaded photos. Rejected for gallery: bk-1 (coffee cup with heavy hand-drawn IG story text overlay), bk-2/bk-7/bk-8 (pure marketing flyer graphics, not real photos of the business), bk-9 (window decal, informational only, used for hours confirmation not as a visual tile), bk-11 (interior OPEN sign obscured by heavy decorative doodle overlay). Used: bk-6 cropped to logo.jpg; bk-10 (farmers market stand, no overlay) as hero.jpg; bk-1 cropped to exp-drinks.jpg and bk-3 (scarecrow + cups) to exp-market.jpg for the tolerant 'experience' section; bk-4 cropped (removed weather/location IG stickers) to gallery-wide.jpg, bk-12 cropped (removed 'Our Mango Key Lime Pie is back!' caption band) to gallery-mango.jpg, and bk-5 cropped to gallery-pie-card.jpg for the gallery. Gallery intentionally has 3 tiles (1 wide + 2) instead of the usual 6, per pipeline rule to prefer fewer good photos over filling with weak ones.",
+ "brand_vibe": "Bright, fresh, tropical bakery aesthetic: key-lime green circular logo, cream/graham-cracker tones, teal-ish shop interior accents. Built with templates/light-v2 base, palette re-tinted from the Lash Bloom pink to a key-lime green (#4f7a2e / #83a94f) on warm cream (#faf6ec) with espresso-brown ink (#3b2a1c), distinct from other palettes already used in the repo.",
+ "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/sandrassweetsavory/",
+ "status": "staging",
+ "gate_passed": true
+}
