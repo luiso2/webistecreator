@@ -2,7 +2,7 @@
 
 **Language:** English (primary language of the business)
 **Email found:** none (searched IG bio, Facebook, Fresha; no public email published)
-**Outreach status:** pending_manual (no email channel; use Instagram DM or a call/text to 561-779-1487)
+**Outreach status:** pending_manual (no email channel; use Instagram DM or a call/text to 561-398-5665)
 **Demo link:** https://siteforge-demos.odd-forest-9504.workers.dev/beachside-barber-studios/
 
 ---
