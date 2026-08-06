@@ -1,0 +1,70 @@
+{
+  "name": "Dominican Cakes & Bridal Shop",
+  "legal_name": "Dominican Cakes & Bridal Shop (by Juan & Eva, LLC)",
+  "city": "Pompano Beach, FL",
+  "niche": "Dominican bakery / custom cakes / bridal accessories, family-owned",
+  "address": "2428 N State Road 7, Pompano Beach, FL 33063",
+  "address_note": "Sits right on the Pompano Beach/Margate border on State Road 7; the primary Wanderlog listing and this build use Pompano Beach, FL as the discovery target city, but a separate smaller Yelp listing (30 reviews) tags the same address as Margate.",
+  "phone": "(954) 970-9669",
+  "phone_e164": "+19549709669",
+  "hours": "Tuesday-Saturday, 10:00 AM - 6:00 PM (closed Sunday-Monday)",
+  "has_own_site": false,
+  "own_site_check": "dominicancakesbridalshop.com returns HTTP 503 Service Unavailable, confirmed independently this session via direct fetch (both curl-style and WebFetch). The domain exists (name matches the business exactly) but does not currently serve a working site: could be parked, abandoned, or mid-migration. Treated as no functioning own site per pipeline rules (has_own_site: false), but flagged as a borderline case rather than a clean 'never had a domain'.",
+  "instagram": {
+    "url": "https://www.instagram.com/dominicancakesandbridalshop/",
+    "handle": "@dominicancakesandbridalshop",
+    "followers": "780 (per search result snippet)",
+    "posts": "278 (per search result snippet)",
+    "note": "Direct profile fetch (web_profile_info with x-ig-app-id header, and plain page fetch via curl/WebFetch) returned HTTP 401/429 this session, so the bio text and business_email field could not be read directly. Photos WERE retrieved successfully via the ig-photo-service microservice (12 posts, 11 usable after curation)."
+  },
+  "facebook": {
+    "url": "https://www.facebook.com/DomincanCakesandBridalShop/",
+    "handle_spelling_note": "Handle is spelled 'DomincanCakesandBridalShop' (missing the second 'a' in Dominican), verified from the actual FB URL found in search results.",
+    "note": "Page is real and public but About section is login-walled: both www.facebook.com and mbasic.facebook.com served login/compatibility walls to WebFetch this session, no About content, email, or hours exposed."
+  },
+  "rating": {
+    "value": "4.7",
+    "review_count": 121,
+    "source": "Wanderlog (wanderlog.com/place/details/10963169/dominican-cakes--bridal-shop), which aggregates Google Places data. Re-fetched and confirmed independently this session: same rating, review count, address, phone, hours, and 5 full verbatim reviews with names.",
+    "discrepancy_note": "A separate, smaller Yelp listing tagged 'Margate' (yelp.com/biz/dominican-cakes-and-bridal-shop-margate) shows only 30 reviews per its page title ('21 Photos & 30 Reviews'); direct Yelp fetch returned HTTP 403 so only the search-result title could be confirmed, not the Yelp star rating itself. Same address and business name, read as a secondary/duplicate platform listing with a smaller sample, not a different business. Google/Wanderlog (4.7/121) used as primary since Google is the pipeline's source of truth and has the larger, more representative sample."
+  },
+  "reviews_verbatim": [
+    {"autor": "Miosotis D.", "fecha": "2025-09-05", "fuente": "Google (via Wanderlog)", "texto": "I needed a cake 2 weeks before my baby shower which was on 03/30/2024. This place made it happen. Dulce de leche on the bottom and Guayaba on top. It was so good and everyone loved the cake. There wasn't any cake left when the party was over. Great customer service and everyone was very nice. Will purchase more cakes in the future."},
+    {"autor": "Mila M.", "fecha": "2025-12-17", "fuente": "Google (via Wanderlog)", "texto": "Dominican Cakes exceeded all my expectations! They made my cake for my 60th birthday, and it was absolutely stunning and incredibly delicious. The cake was moist, full of flavor, and beautifully decorated. Every single guest loved it. People couldn't stop talking about how good it was! It truly made my birthday celebration unforgettable. I will definitely be ordering from them again and highly recommend them to anyone looking for an amazing cake!"},
+    {"autor": "Cindy A.", "fecha": "2025-10-26", "fuente": "Google (via Wanderlog)", "texto": "Ordered a birthday cake for my mother-in-law and I couldn't have asked for a better cake. We chose a rose gold theme and the cake had dulce de leche and pineapple filling. This cake was so delicious!!!!! My mother in law loved it!"},
+    {"autor": "Y N.", "fecha": "2025-10-28", "fuente": "Google (via Wanderlog)", "texto": "The cake was delicious and everyone enjoyed the flavor. The owner was very attentive to details and communicative. If you love guava, that's is the go to flavor for the cake. You will not be wrong!"},
+    {"autor": "Carlos R.", "fecha": "2025-07-28", "fuente": "Google (via Wanderlog)", "texto": "A family owned business. They're very friendly and work with you when it comes to cake designs and pricing. Thank you for making our cakes every year! We always ENJOY THEM!"}
+  ],
+  "reviews_used_on_site": ["Carlos R.", "Cindy A.", "Y N."],
+  "products_real": [
+    "Custom celebration cakes (birthdays, baby showers, quinceaneras, anniversaries), design themes seen in IG photos: jungle/safari, beach/seashell, nautical/fishing, Mickey Mouse, floral/butterfly, Father's Day, national flag/soccer themes",
+    "Wedding cakes",
+    "Traditional Dominican bizcocho (referenced by name in the niche and matches the flavor profile in reviews)",
+    "Real flavors mentioned by reviewers: dulce de leche, guayaba (guava), pineapple",
+    "Bridal accessories (per business name/category; no specific catalog items could be verified from available photos, so the site describes this generically without inventing product names)"
+  ],
+  "pricing_note": "No fixed/published price list found anywhere (IG, FB, Google, own domain dead). Adapted variant used per PIPELINE.md Fase 3 punto 5: no prices shown, copy says every cake is custom quoted ('se cotiza, escribenos' / 'quoted based on size, flavor and design, call or message us'), consistent with the prestigeautocargo precedent.",
+  "photos_verified": {
+    "downloaded": 12,
+    "discarded": 1,
+    "discarded_reason": "bk-7.jpg was not a cake/product photo: a 'Pray for Venezuela' text graphic post, visually inspected and removed before build.",
+    "used_count": 11,
+    "source": "Instagram feed of @dominicancakesandbridalshop, via ig-photo-service (Railway microservice, since direct IG fetch from this environment is egress-blocked/rate-limited)",
+    "all_verified_with_file_cmd": "yes, all remaining 11 are valid JPEG, largest 93997 bytes / smallest 42296 bytes, all well above the 15KB minimum",
+    "curation_note": "All 11 used photos are finished, well-lit, in-focus cake product shots on a plain background; no closed eyes/mid-procedure shots, no artist POV, no screenshots with caption overlays (other than bk-7 which was discarded for exactly that reason), no owner selfies used as gallery tiles."
+  },
+  "language": "en",
+  "language_note": "The 5 verbatim Google reviews collected (the only real customer-voice text available this session) are 100% in English. Direct access to IG captions/bio was blocked by rate limiting (HTTP 429) both via curl and WebFetch, so caption language could not be directly sampled. Given the available evidence (reviews) is English, 'en' is used as the default site language; the site remains fully bilingual EN/ES per DESIGN.md.",
+  "email": null,
+  "email_search": "Deep search performed per PIPELINE.md Fase 1 punto 7: (1) IG web_profile_info with x-ig-app-id header returned HTTP 401 (no session, as expected without login); (2) direct IG profile page fetch returned HTTP 429 both via curl and WebFetch before the bio could be read; (3) Facebook About section login-walled on both www.facebook.com and mbasic.facebook.com; (4) own domain dead (503), no mailto to check; (5) a low-confidence lead 'Cakesbridalshop@aol.com' surfaced twice in AI-summarized WebSearch answers with no citable primary source page (cakes.com's own listing page 404'd, caffecake.com's contact page lists phone/address but explicitly no email). Could not be independently confirmed via any primary source. NOT used in the site or in the outreach draft; recorded only as an unverified lead for a future session.",
+  "sources_checked": [
+    "wanderlog.com/place/details/10963169/dominican-cakes--bridal-shop (accessible, primary rating/review/address/phone source)",
+    "yelp.com/biz/dominican-cakes-and-bridal-shop-margate (403 direct; only page title confirmed via search snippet: 30 reviews)",
+    "cakes.com/us/bakeries/fl/margate/dominican-cakes-bridal (404 on direct fetch)",
+    "caffecake.com/en/5395 (accessible, phone/address confirmed, no email listed)",
+    "instagram.com/dominicancakesandbridalshop (401/429, bio not readable; photos retrieved via ig-photo-service)",
+    "facebook.com/DomincanCakesandBridalShop and mbasic.facebook.com/.../about (login-walled both)",
+    "dominicancakesbridalshop.com (503 Service Unavailable, confirmed independently)",
+    "nextdoor.com/pages/dominican-cakes-bridal-shop (listed in search results, not deep-fetched, no new data needed)"
+  ]
+}
