@@ -110,5 +110,30 @@
   }
  ],
  "named_reviews": [],
- "language": "en"
+ "language": "en",
+ "status": "failed",
+ "failed_reason": "Menos de 5 fotos reales utilizables tras busqueda exhaustiva (minimo requerido: 5). Solo 2 fotos reales verificadas y descargadas: 1 foto de portada en Fresha (assets/raw/bk-1.jpg, unica imagen en TODAS las claves de galeria de Fresha: coverImage/galleryDesktopLarge/Secondary/Small/Mobile/ModalLarge/ModalSmall/venueSnippetImages apuntan al MISMO archivo d1081b40-c5cc-4708-bd31-aa18920db7c8.jpg en distintos tamanos, o sea Fresha solo tiene 1 foto subida) y 1 foto real de cliente (UGC) en la resena de Groupon (assets/raw/gp-1.jpg, cuarto de tratamiento real con guirnalda de rosas rojas iluminada, camilla con sabanas blancas, luz ambiental roja: coincide con el naming del negocio, foto autentica). Canales con mas fotos confirmadas pero INACCESIBLES por bloqueo tecnico: Yelp (listado indica 40 fotos, pero yelp.com devuelve 403 con DataDome tanto en www como m.yelp.com, con curl y con WebFetch), Facebook (facebook.com/p/Red-Rose-Massage-Spa-100076444841313 y mbasic.facebook.com devuelven muro de login sin contenido), Instagram (posible cuenta real @redrosemassagespa: tras esperar el rate-limit y reintentar limpio devuelve 'Profile isn't available'; @the_redrosespa, @redrosemassage954, @redrosemassagefl y variantes devuelven rate-limit 429/401 'Please wait a few minutes' del endpoint web_profile_info incluso con x-ig-app-id; se probo con Playwright local con el fix de TLS de FORGE-BRIEF (chrome completo, QUIC/ECH/PostQuantumKyber deshabilitado) en 10+ intentos espaciados). Groupon deal pages (red-rose-massage-and-spa-1 y -3) devuelven 403. Wayback Machine no tiene snapshots archivados de ninguna de esas URLs. Booking Setmore (redrosemassagespa.setmore.com) y Wix (redrosemassagespa.wix.com/33062) estan AMBOS caidos (404 / ConnectYourDomain), asi que tampoco aportan fotos. Conclusion: el negocio SI tiene fotos reales publicadas (Yelp confirma 40), pero esta sesion no pudo alcanzarlas por bloqueos de bot-protection de las plataformas, no por ausencia de material del negocio. Recomendacion: reintentar desde una maquina con IP residencial (Playwright local) o con acceso de pago a Yelp/Facebook antes de descartar definitivamente.",
+ "rating_sources": {
+  "fresha": {"rating": 4.9, "reviews_count": 46, "note": "extraido directo del __NEXT_DATA__ JSON embebido en la pagina viva de Fresha (props.pageProps.data.location), fuente mas fiable, verificado 2026-08-06"},
+  "groupon": {"rating": 4.7, "reviews_count": 176, "note": "extraido via fetch de la pagina viva groupon.com/biz/pompano-beach-fl/red-rose-massage-and-spa, verificado 2026-08-06"},
+  "google": {"rating": null, "reviews_count": null, "note": "NO se pudo verificar de forma independiente: Google bloquea el scraping directo de Maps/Search desde este entorno, y una respuesta de un resumen de busqueda que afirmaba '4.6 con 82 resenas en Google' no tenia una URL fuente rastreable ni se pudo confirmar contra una pagina real (se descarta por no ser verificable, no se usa en el sitio ni en el registro). No se encontro ficha de Google Business Profile/Maps accesible para este negocio en este entorno."}
+ },
+ "named_reviews_groupon": [
+  {"author": "Sonia", "body": "I felt it was ok", "source": "groupon"},
+  {"author": "Wayne", "body": "We did this as a couple of Massage this is one of the first times that we've had both were very satisfied with our massages would highly recommend", "source": "groupon"},
+  {"author": "soslipadknot", "body": "I went with my partner and scheduled the couples 50 minute aromatherapy and hot stone massage. It was amazing and we felt so much better walking out compared to walking in.", "source": "groupon", "note": "username de Groupon, no nombre real"},
+  {"author": "Lachaka", "body": "Nice settings we had an excellent massage will definitely return again!!!", "source": "groupon"}
+ ],
+ "email": null,
+ "email_search_note": "Busqueda profunda sin resultado verificable: Fresha JSON (campo email=null), Setmore caido, Wix caido, Facebook bloqueado por login, Instagram inaccesible (ver failed_reason), sin linktree/beacons asociado. Una respuesta de busqueda sugirio 'redrosemassage33062@gmail.com' pero no se pudo rastrear a ninguna pagina real que la contenga (no aparece en el HTML de Fresha ni Groupon descargados), y datos acompanantes de esa misma respuesta (horario Mo-Fr 8-5, rating 5.0 con 2 resenas) CONTRADICEN los datos verificados directamente (horario real 10am-9pm 7 dias, rating real 4.9/46 en Fresha): se descarta por no ser confiable, NO se usa.",
+ "has_own_site": false,
+ "has_own_site_check": "redrosemassagespa.com (200 OK) es un negocio DISTINTO y no relacionado: 'Red Rose Massage Spa Center - DHA Karachi' (Pakistan). redrosemassage.com (200 OK) es una pagina parking/lander sin contenido real. redrosespapompano.com, redrosemassageandspa.com, redrosemassagespapompano.com no resuelven (000). Los 2 canales de reserva declarados por el negocio (redrosemassagespa.setmore.com y redrosemassagespa.wix.com/33062) estan AMBOS dados de baja/caidos, asi que el negocio no tiene NINGUN sitio propio activo ahora mismo (ni siquiera de plataforma).",
+ "booking_channels_check": {
+  "fresha": "LIVE y funcional (fuente de este dossier)",
+  "setmore": "CAIDO: https://redrosemassagespa.setmore.com/ y todas sus rutas devuelven 404; header x-middleware-rewrite indica que el slug 'redrosemassagespa' ya no resuelve en el sistema de Setmore",
+  "wix": "CAIDO: https://redrosemassagespa.wix.com/33062 devuelve error 'ConnectYourDomain' de Wix (sitio nunca conectado/publicado o dado de baja)"
+ },
+ "address_verified": "1201 South Ocean Boulevard Suite 4, Pompano Beach, FL 33062 (confirmado via Fresha JSON, coincide con el dato del encargo)",
+ "hours_verified": "Lunes a Domingo 10:00 AM - 9:00 PM (confirmado via Fresha JSON workingTime, los 7 dias identicos)",
+ "phone_verified": "+1 954-955-6907 (confirmado via Fresha JSON contactNumber, coincide con el dato del encargo)"
 }
