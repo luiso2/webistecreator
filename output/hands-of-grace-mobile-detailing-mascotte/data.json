@@ -1,0 +1,78 @@
+{
+  "slug": "hands-of-grace-mobile-detailing-mascotte",
+  "status": "failed",
+  "failed_reason": "Insufficient real curated photos. Only 1 real, verifiable photo of the business could be obtained in this session (a gray Toyota RAV4 parked outside a residence, saved as assets/raw/google-photo-1-rav4.jpg), sourced via a stable Google Business Profile photo reference (https://lh5.googleusercontent.com/p/AF1QipOIbKwGfNnDOzzVazehnBdcKY7bBOfA-3YCcoYA, verified downloadable and a real JPEG with EXIF software=Google) embedded in a directory clone (sswash.com). This appears to be the single 'primary/cover' photo Google exposes to third-party scrapers for this listing; no gallery of additional photos could be reached. All other real-photo channels were tried and blocked in this sandbox: (1) Yelp business page (yelp.com/biz/hands-of-grace-mobile-detailing-mascotte, indexed title shows '28 Photos') returns HTTP 403 from DataDome bot protection on every attempt (WebFetch, curl with Chrome UA + full browser headers, curl via r.jina.ai reader proxy: all blocked, r.jina.ai itself hit a Cloudflare challenge). (2) Facebook page (facebook.com/HandsofGraceMobileDetailing, has a /photos/ and /reels/ path per search index) redirects to the login wall on every fetch method tried (plain curl, curl with facebookexternalhit UA following redirects, mbasic.facebook.com, WebFetch, Facebook's own oEmbed endpoint returned a generic error). (3) lh3.googleusercontent.com/gps-cs-s/... session-bound Google photo URLs surfaced by other aggregators (detailingfinder.com) return HTTP 403 (expired/session-bound token, not fetchable independently of a live Maps session). (4) No Instagram account for this specific business was confirmed (Instagram's web_profile_info API is globally rate-limited/auth-walled in this session for every handle variant tried, and no handle was found associated with this business in search results; unrelated 'Grace' detailing/beauty accounts exist but do not match). (5) BBB profile is Cloudflare-challenge protected via curl (readable only via WebFetch, which returned business/officer data but no photos). (6) Google Maps place page fetched directly (by place_id ChIJj_fz8iIuM4oRrRzNXkzk8vY, decoded from a Google embed URL found on sswash.com) did not resolve to the business without a live browser session (returned a generic USA-centered preview, no photo references). (7) Other directories checked (zaubee.com: Cloudflare-blocked; bestcarwashfinders.com, detailingfinder.com: only generated OG placeholder images, no real photos; wearedetailers.com, mobiledetailing.io, self-servicecarwash.com: no matching listing found / connection blocked). Per PIPELINE.md Fase 1 point 4 and Fase 3 point 5, fewer than 5 verified real photos means the build should not be forced; this matches the precedent of output/alpha-mobile-detail-st-petersburg (same niche, same failure mode: real business confirmed, contact info confirmed, but Yelp/Facebook/Google photo galleries all inaccessible from this sandbox). Build (content.json/index.html), gate.py and outreach-draft.md were NOT created, per instructions to stop at this point rather than force a degraded site.",
+
+  "name": "Hands of Grace Mobile Detailing",
+  "name_legal": "Hands Of Grace Mobile Detailing LLC",
+  "owner": {
+    "name": "Kawanita C. Thornton",
+    "role": "Owner",
+    "other_officers": ["Michael T. Thornton Jr. (Manager)", "Quanesa M. Thornton (Managing Member)", "Mikiaya L. Thornton (Managing Member)"],
+    "source": "BBB Business Profile (fetched via WebFetch, bbb.org profile page)"
+  },
+  "niche": "mobile car detailing",
+  "city": "Mascotte, FL (Lake County, Central FL)",
+  "language": "en",
+  "language_note": "All sources found (BBB, Yelp listing text, directory aggregators, business description) are in English, consistent with a Central Florida (Lake County) market. No Spanish-language material found for this business.",
+
+  "address": "327 Betty Ln, Mascotte, FL 34753",
+  "address_note": "Confirmed consistently across Yelp (search index title), detailingfinder.com, sswash.com, bestcarwashfinders.com, zaubee.com (title). BBB shows only 'Mascotte, FL 34753-9232' (BBB commonly redacts the exact street address of small/home-based LLCs). This is a mobile/service-area business (variant adaptada), so the address would not be used as a mappable storefront location in a build, only as a reference/service-area note.",
+
+  "phone": "(352) 801-4134",
+  "phone_verification": "Confirmed independently and consistently across BBB, Yelp (search index), detailingfinder.com, sswash.com, bestcarwashfinders.com and zaubee.com (search index). High confidence.",
+
+  "email": null,
+  "email_note": "No public email found after an exhaustive search. BBB Business Profile explicitly lists 'Email: Not listed'. No mailto or contact email surfaced in any directory (detailingfinder.com, sswash.com, bestcarwashfinders.com, zaubee.com), in Sunbiz-adjacent search snippets, or in any Facebook/Yelp search-index snippet. Facebook's own About/contact page could not be fetched directly (login wall) so an email hidden there cannot be fully ruled out, but nothing in this session surfaced one. Would be registered as pending_manual if this business proceeded to outreach.",
+
+  "website_check": {
+    "has_own_site": false,
+    "domains_tested": [
+      "handsofgracemobiledetailing.com",
+      "handsofgracemobiledetailingllc.com",
+      "www.handsofgracemobiledetailingllc.com",
+      "handsofgracedetailing.com"
+    ],
+    "result": "All 4 domains fail DNS resolution. Confirmed independently via WebFetch (getaddrinfo ENOTFOUND for both the .com and the llc.com variant, a different network path than the blocked curl/proxy layer, so this is a clean non-existence signal, not a sandbox artifact) AND via the BBB Business Profile, which lists no website field at all (only a Facebook link) for this BBB-accredited (A+, accredited since 11/14/2025) listing.",
+    "caution": "Two directory-clone sites (detailingfinder.com and sswash.com) both display 'Web: http://www.handsofgracemobiledetailingllc.com/' -- but sswash.com's page for this business is a near-verbatim copy of detailingfinder.com's page (identical 'Black-owned and LGBTQ+ friendly' boilerplate phrase, identical claimed website line, identical review-count figure of 34), meaning these are ONE non-independent, unreliable source repeating a claim that fails live DNS verification. Treated as a directory artifact/error, NOT a real website, consistent with the arahis-bakery precedent (never trust an aggregator-claimed domain without independent DNS/HTTP verification)."
+  },
+
+  "rating": 4.9,
+  "review_count": 64,
+  "rating_source": "NOT confirmed via a live Google Maps/Business fetch in this session (Google Maps place pages require a live browser session to resolve reviews; direct place_id fetch returned a generic unresolved preview). The 4.9/64 figure was the initial discovery datum (cited only as 'Google' via a search snippet) and was cross-checked against ONE genuinely independent second source found this session: bestcarwashfinders.com, which explicitly states '4.9 stars' and '64 Google reviews' with matching address/phone, and is not part of the detailingfinder.com/sswash.com clone family (different template, different generated OG image, different copy). That gives two independently-templated sources agreeing on 4.9/64 attributed to Google, which is treated as reasonably corroborated but still NOT equivalent to a live Google Maps read.",
+  "rating_conflicts": "A separate, non-independent source pair (detailingfinder.com and its near-duplicate sswash.com, which mirror each other's boilerplate almost verbatim, see website_check.caution) states 5.0 stars / 34 reviews instead -- a materially different, lower review count from the same underlying Google listing at a different point in time or via a different scrape. Two OTHER platforms show their own distinct, smaller, platform-native counts that are legitimate but not substitutes for the Google figure: Yelp search-index snippet shows 5.0 stars / 2 Yelp-native reviews; a Facebook search-index snippet shows '100% recommendation' from 6 Facebook-native reviews. None of these were used as the primary rating; the report below uses 4.9/64 with the caveats above stated explicitly, per the honesty requirement.",
+
+  "services_research": {
+    "summary_only": "No itemized price list was found published anywhere (expected: this niche group commonly does not publish prices). Aggregator copy consistently describes: interior & exterior detailing, paint protection & waxing, stain & odor removal, flexible scheduling for home/office mobile service. BBB categorizes the business under Mobile Auto Detailing, Auto Detailing, and RV Cleaning Services. Per pipeline variant adaptada rule, prices would have been rendered as 'se cotiza, escribenos' had the build proceeded -- not fabricated."
+  },
+
+  "photos_found": {
+    "verified_real_count": 1,
+    "files": ["assets/raw/google-photo-1-rav4.jpg"],
+    "description": "Gray Toyota RAV4 SUV parked outside a residential building, freshly washed/detailed appearance, shot outdoors in daylight. Sourced from Google Business Profile (stable /p/AF1Qip... photo reference), re-hosted by a directory clone (sswash.com). This is almost certainly the business's own Google listing cover photo (an actual customer vehicle, plausible mobile-detailing 'after' shot), not stock photography.",
+    "minimum_required": 5,
+    "shortfall": true
+  },
+
+  "reviews_found": {
+    "verbatim_quotes": [],
+    "note": "No verbatim review text with reviewer names could be extracted: Yelp and Facebook (the two platforms known to host this business's actual review text) were both fully blocked in this session (see failed_reason). One partial, non-verbatim mention surfaced via WebFetch on the BBB page: 'One recent review states the team were awesome! with their detailing work' -- too thin and non-attributable to use as a verbatim quote with a name."
+  },
+
+  "sources_checked": [
+    "WebSearch (multiple queries: business name + city, reviews, Instagram, Angi/HomeAdvisor/Nextdoor/Thumbtack, directory site: filters, photos before/after)",
+    "https://www.bbb.org/us/fl/mascotte/profile/mobile-auto-detailing/hands-of-grace-mobile-detailing-llc-0733-235977363 (via WebFetch, readable; via curl, Cloudflare-challenge blocked)",
+    "https://www.facebook.com/HandsofGraceMobileDetailing/ (blocked: login wall on every method)",
+    "https://www.yelp.com/biz/hands-of-grace-mobile-detailing-mascotte (blocked: DataDome 403 on every method)",
+    "https://zaubee.com/biz/hands-of-grace-mobile-detailing-evfgzni3 (blocked: Cloudflare challenge)",
+    "https://www.detailingfinder.com/business/hands-of-grace-mobile-detailing-mascotte-fl (readable, low reliability, see caution)",
+    "https://sswash.com/hands-of-grace-mobile-detailing-mascotte-lake-county-florida/ (readable, near-duplicate of detailingfinder.com, yielded the 1 verified photo)",
+    "https://bestcarwashfinders.com/florida/mascotte/hands-of-grace-mobile-detailing-34753/ (readable, independent template, corroborates 4.9/64)",
+    "Sunbiz.org LLC filing search result (blocked: 403)",
+    "Instagram web_profile_info API, several handle guesses (blocked: global rate-limit/auth-wall)",
+    "archive.org / web.archive.org (blocked: 429 rate-limit then tool-level block)",
+    "r.jina.ai reader proxy for Yelp and Facebook (blocked: Cloudflare challenge on the proxy itself)",
+    "Direct Google Maps place fetch by place_id ChIJj_fz8iIuM4oRrRzNXkzk8vY (did not resolve without a live session)",
+    "handsofgracemobiledetailing.com / handsofgracemobiledetailingllc.com / www. variant / handsofgracedetailing.com (all DNS NXDOMAIN, confirmed via WebFetch)"
+  ]
+}
