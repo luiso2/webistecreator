@@ -158,5 +158,18 @@
   }
  ],
  "named_reviews": [],
- "language": "es"
+ "language": "es",
+ "rating_source": "Fresha (payload __NEXT_DATA__ del perfil publico, no atribuido a Google: no se encontro ficha de Google Maps/Business independiente para el negocio en la busqueda)",
+ "reviews_note": "44 resenas en Fresha, rating5Total=44 y rating1-4Total=0 (100% son de 5 estrellas). Los 6 textos verbatim capturados existen pero el campo author de CADA review es literalmente 'Anonymous' en el payload de Fresha; reviewSummary.reviewersRecent trae nombres (Citita M, Havier A, Roxy S) pero NO estan enlazados a un texto especifico, asi que no se puede atribuir un nombre a una quote sin inventar el emparejamiento. Por eso el site usa la variante 'razones' (3 cards de especialidades reales) en vez de testimonios con nombre, y mantiene el rating/conteo real en hero/strip/experiencia.",
+ "hours": {"mon_sat": "10:00 AM - 8:00 PM", "sun": "Closed", "source": "Fresha workingTime"},
+ "instagram": {"handle": "mansotattoo", "url": "https://www.instagram.com/mansotattoo/", "owner": "Ismaray Manso", "note": "Perfil publico confirmado activo con fotos reales de tatuajes (color, black&gray, retratos). Bio/email no accesibles: WebFetch directo dio HTTP 429, y dos intentos de scraping (ig_contact.py via Playwright local, y ig_scrape_fixed.js con el fix de chrome completo del FORGE-BRIEF) fallaron con ERR_CONNECTION_RESET y ERR_HTTP_RESPONSE_CODE_FAILURE respectivamente."},
+ "facebook": {"url": "https://www.facebook.com/mansotatto/", "note": "883 likes segun snippet de busqueda; pagina de login bloquea WebFetch directo, no se pudo leer About."},
+ "owner": {"name": "Ismaray Manso", "role": "Artist - Owner / CEO InkPacto LLC", "source": "Fresha employeeProfiles (jobTitle: Artist - Owner) + foto de perfil de Instagram con caption 'ISMARAY MANSO / CEO INKPACTO LLC'"},
+ "has_own_site": false,
+ "has_own_site_check": "Probados via curl: inkpactotattoo.com, mansotattoo.com, inkpacto.com, inkpactotattoostudio.com, inkpactotattoo.net (los 5 sin DNS/TLS, exit 56/35, no registrados o inalcanzables) e inkpactostudio.com (SI resuelve, 200, pero es una pagina de parking de Sedo, no un site real). Unicos canales propios confirmados: Fresha (perfil+booking), Facebook, Instagram, y square.site (inkpacto-tatto-studio.square.site, HTTP 200, confirmado subdominio de plataforma Square, no dominio propio).",
+ "email": null,
+ "email_search": "Busqueda exhaustiva sin resultado: campo email del payload de Fresha vacio, WebSearch de linktr.ee/beacons.ai sin match, Facebook About no accesible (login wall), Yelp bloqueado (403), agregador wheree.com bloqueado (403), bio de Instagram no accesible (429 en WebFetch, ERR_CONNECTION_RESET/ERR_HTTP_RESPONSE_CODE_FAILURE en dos intentos de scraping local). Registrado como null.",
+ "phone_e164": "+17862239238",
+ "square_booking_url": "https://inkpacto-tatto-studio.square.site",
+ "photos_source": "Instagram @mansotattoo via scripts/ig_photos.py (servicio Railway), 12 fotos publicas descargadas, todas JPEG >15KB verificadas con Pillow. Curadas para el site: 7 fotos de tatuajes reales distintos usadas en hero/experiencia/galeria (bk-4,5,6,7,10,11,12), bk-1 = logo del estudio (nav/footer), bk-2 = retrato de Ismaray Manso (avatar experiencia). Excluidas: bk-3 (selfie/retrato de la artista con su propio tatuaje, regla de no-selfies-en-galeria), bk-8 (mismo diseno que bk-4 en otro angulo/luz, redundante), bk-9 (foto con texto superpuesto 'PASO POR AQUI', regla de no-capturas-con-texto)."
 }
