@@ -5,164 +5,71 @@
  "name": "Érica Lopes Hair and Make",
  "rating": 5.0,
  "reviews_count": 78,
+ "service_count_fresha": 39,
  "phone": "+1 954-493-3221",
  "email": null,
- "address_raw": "Flórida, EUA, 2101 Northwest 33rd Street, Suite 2400A, Pompano Beach, 33069, Florida",
- "biz_type": "Beauty Salon",
+ "email_search_log": [
+  "Fresha __NEXT_DATA__ location.email = null (no email publicado en la ficha de Fresha)",
+  "Instagram web_profile_info API (i.instagram.com y www.instagram.com) devolvio 401 'please wait a few minutes' y luego 404/302 en intentos posteriores: no se pudo leer business_email ni bio completa via API",
+  "ig_photos.py (microservicio Railway) devolvio 0 fotos para ericalopes.hairstylist",
+  "ig_contact.py (Playwright local) fallo por ERR_CERT_AUTHORITY_INVALID del proxy de la sesion contra instagram.com (no relacionado al negocio, limitacion de entorno)",
+  "WebFetch directo a instagram.com/ericalopes.hairstylist/ devolvio 429 Too Many Requests",
+  "Facebook page (facebook.com/p/Erica-Lopes-100091426595799) solo sirvio el muro de login, sin seccion About accesible en modo lectura",
+  "ericalopes.com confirmado parked/for-sale en GoDaddy (redirect a forsale.godaddy.com): no hay dominio propio ni email de dominio propio",
+  "ericalopeshair.com / ericalopeshairandmake.com / ericalopeshairandmakeup.com no resuelven (502 en el proxy, dominios inexistentes)",
+  "Conclusion: sin email publico verificable tras busqueda exhaustiva en las fuentes accesibles. outreach = pending_manual (telefono + Instagram)"
+ ],
+ "address_raw": "2101 Northwest 33rd Street, Suite 2400A, Pompano Beach, FL 33069",
+ "address_investigation": {
+  "candidate_A_fresha": "2101 NW 33rd Street, Suite 2400A, Pompano Beach, FL 33069 (fuente: Fresha, activa, con booking online funcionando, 78 resenas recientes hasta abril 2026)",
+  "candidate_B_yelp": "2301 W Sample Rd, Bldg 2 Ste 3A, Pompano Beach, FL 33073 ('ERICA LOPES BEAUTY SALON', ficha de directorio Yelp)",
+  "resolution": "Mismo negocio, direccion vieja en Yelp. El telefono publicado para la ficha de Yelp de 2301 W Sample Rd, (954) 493-3221, coincide EXACTO con el contactNumber de Fresha (+1 954-493-3221) para 2101 NW 33rd St. Yelp es un directorio estatico que no se actualiza automaticamente al mudarse un negocio; Fresha es la fuente activa con booking en linea, resenas hasta 2026 y el mismo telefono. Se usa la direccion de Fresha (2101 NW 33rd Street, Suite 2400A) como la vigente para el site.",
+  "confidence": "alta (coincidencia exacta de telefono entre ambas fichas)"
+ },
+ "hours_fresha_workingTime": {
+  "monday": "closed",
+  "tuesday": "closed",
+  "wednesday": "closed",
+  "thursday": "10:00 AM - 6:00 PM",
+  "friday": "10:00 AM - 6:00 PM",
+  "saturday": "10:00 AM - 6:00 PM",
+  "sunday": "closed"
+ },
+ "owner_bio_fresha_en": "My name is Erica, I have been working in the beauty industry for over 13 years. I am dedicated, hardworking, responsible and I love what I do and every day I try to evolve more, learn more, to offer excellent service to my clients.",
+ "owner_bio_fresha_pt": "Meu nome e Erica trabalho na area da beleza a mais de 13 anos. Sou dedicada, esforcada, responsavel e amo o que faco e cada dia procuro evoluir mais, aprender mais, para oferecer um atendimento de excelencia as minhas clientes.",
+ "language_decision": "Fresha (fuente primaria y mas confiable) muestra la bio de la dueña primero en ingles y despues traducida al portugues, y la mayoria de las 6 resenas visibles en Fresha estan en ingles (4) vs portugues (2); las 3 quotes con nombre entregadas en el brief tambien reparten 2 en ingles (Frannie N., Aline J.) y 1 en portugues (Ariane R.). El negocio sirve clientela mixta EN/PT-BR (Broward County, comunidad brasileña), no hispanohablante. Se usa 'en' como idioma default del site (mecanismo bilingue ES/EN estandar del pipeline se mantiene, pero el default no es 'es' porque la clientela real no es hispanohablante).",
+ "biz_type": "Beauty Salon (Hair Salon boutique, un solo operador: Erica)",
+ "employees_fresha": ["Erica (dueña, unica profesional listada en el perfil)"],
  "services": [
-  {
-   "name": "Root coloring / Coloração Raíz",
-   "price": "from $70",
-   "duration": "1h 20min",
-   "group": "Featured"
-  },
-  {
-   "name": "Organic straightening / Nanoplastia capilar",
-   "price": "from $220",
-   "duration": "4h",
-   "group": "Featured"
-  },
-  {
-   "name": "Blow Dry /Escova",
-   "price": "from $40",
-   "duration": "1h",
-   "group": "Featured"
-  },
-  {
-   "name": "Eyebrow design / Design de Sobrancelha",
-   "price": "$30",
-   "duration": "30min",
-   "group": "Featured"
-  },
-  {
-   "name": "Make",
-   "price": "from $130",
-   "duration": "1h",
-   "group": "Maquiagem"
-  },
-  {
-   "name": "Corte e escova",
-   "price": "$100",
-   "duration": "1h 20min",
-   "group": "Hair"
-  },
-  {
-   "name": "Redken Acidic",
-   "price": "from $120",
-   "duration": "1h 20min",
-   "group": "Hair"
-  },
-  {
-   "name": "Truss Fast Repair (Cauterização a frio)",
-   "price": "from $60",
-   "duration": "40min",
-   "group": "Hair"
-  },
-  {
-   "name": "Hidratação",
-   "price": "from $40",
-   "duration": "30min",
-   "group": "Hair"
-  },
-  {
-   "name": "Highlights Partial + Toner",
-   "price": "from $180",
-   "duration": "3h",
-   "group": "Hair"
-  },
-  {
-   "name": "Highlights / Blond / Brunette /Balayage",
-   "price": "from $330",
-   "duration": "5h 30min",
-   "group": "Hair"
-  },
-  {
-   "name": "Organic straightening / Nanoplastia capilar",
-   "price": "from $220",
-   "duration": "4h",
-   "group": "Hair"
-  },
-  {
-   "name": "Hair Botox / Botox",
-   "price": "from $150",
-   "duration": "3h",
-   "group": "Hair"
-  },
-  {
-   "name": "Blow Dry /Escova",
-   "price": "from $40",
-   "duration": "1h",
-   "group": "Hair"
-  },
-  {
-   "name": "Gloss",
-   "price": "from $40",
-   "duration": "1h",
-   "group": "Hair"
-  },
-  {
-   "name": "Coloração cabelo todo",
-   "price": "from $100",
-   "duration": "1h 30min",
-   "group": "Hair"
-  },
-  {
-   "name": "Root coloring / Coloração Raíz",
-   "price": "from $70",
-   "duration": "1h 20min",
-   "group": "Hair"
-  },
-  {
-   "name": "Design with henna/  Design com henna",
-   "price": "$40",
-   "duration": "50min",
-   "group": "Face"
-  },
-  {
-   "name": "Eyebrow design / Design de Sobrancelha",
-   "price": "$30",
-   "duration": "30min",
-   "group": "Face"
-  }
+  {"name": "Root coloring / Coloração Raíz", "price": "from $70", "duration": "1h 20min", "group": "Featured"},
+  {"name": "Organic straightening / Nanoplastia capilar", "price": "from $220", "duration": "4h", "group": "Featured"},
+  {"name": "Blow Dry /Escova", "price": "from $40", "duration": "1h", "group": "Featured"},
+  {"name": "Eyebrow design / Design de Sobrancelha", "price": "$30", "duration": "30min", "group": "Featured"},
+  {"name": "Make", "price": "from $130", "duration": "1h", "group": "Maquiagem"},
+  {"name": "Corte e escova", "price": "$100", "duration": "1h 20min", "group": "Hair"},
+  {"name": "Redken Acidic", "price": "from $120", "duration": "1h 20min", "group": "Hair"},
+  {"name": "Truss Fast Repair (Cauterização a frio)", "price": "from $60", "duration": "40min", "group": "Hair"},
+  {"name": "Hidratação", "price": "from $40", "duration": "30min", "group": "Hair"},
+  {"name": "Highlights Partial + Toner", "price": "from $180", "duration": "3h", "group": "Hair"},
+  {"name": "Highlights / Blond / Brunette /Balayage", "price": "from $330", "duration": "5h 30min", "group": "Hair"},
+  {"name": "Organic straightening / Nanoplastia capilar", "price": "from $220", "duration": "4h", "group": "Hair"},
+  {"name": "Hair Botox / Botox", "price": "from $150", "duration": "3h", "group": "Hair"},
+  {"name": "Blow Dry /Escova", "price": "from $40", "duration": "1h", "group": "Hair"},
+  {"name": "Gloss", "price": "from $40", "duration": "1h", "group": "Hair"},
+  {"name": "Coloração cabelo todo", "price": "from $100", "duration": "1h 30min", "group": "Hair"},
+  {"name": "Root coloring / Coloração Raíz", "price": "from $70", "duration": "1h 20min", "group": "Hair"},
+  {"name": "Design with henna/  Design com henna", "price": "$40", "duration": "50min", "group": "Face"},
+  {"name": "Eyebrow design / Design de Sobrancelha", "price": "$30", "duration": "30min", "group": "Face"}
  ],
- "reviews": [
-  {
-   "author": null,
-   "body": "Always wonderful",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Always great",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Muito obrigada, eu amei meu cabelo.",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Erica is awesome!! very detailed and always do the best! Highly recommended",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Erica além de atenciosa é super competent. Amei meu corte de cabelo e a escova, simplesmente perfeita!!! Voltarei com certeza!",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Wonderful service!!! Erica is amazing! 🤩",
-   "rating": 5,
-   "author_verified": false
-  }
+ "named_reviews": [
+  {"author": "Frannie N.", "body": "Always wonderful", "rating": 5, "date": "Apr 2026"},
+  {"author": "Frannie N.", "body": "Always great", "rating": 5, "date": "Apr 2025"},
+  {"author": "Ariane R.", "body": "Muito obrigada, eu amei meu cabelo.", "rating": 5, "date": "Jan 2025"},
+  {"author": "Aline J.", "body": "Erica is awesome!! very detailed and always do the best! Highly recommended", "rating": 5, "date": "Mar 2024"},
+  {"author": "Alessandra M.", "body": "Erica além de atenciosa é super competent. Amei meu corte de cabelo e a escova, simplesmente perfeita!!! Voltarei com certeza!", "rating": 5, "date": "Jan 2024"},
+  {"author": "Aline J.", "body": "Wonderful service!!! Erica is amazing!", "rating": 5, "date": "Dec 2023"}
  ],
- "named_reviews": [],
- "language": "en"
+ "language": "en",
+ "photos_source_notes": "Galeria publica de Fresha (portfolioGallery/gallery*): 5 fotos validas descargadas (bk-1..bk-5), verificadas con PIL. Instagram @ericalopes.hairstylist existe (confirmado via WebSearch) pero bloqueado en modo lectura estatica (API 401/404, microservicio 0 fotos, Playwright local con error de certificado del proxy de sesion). No se pudo ampliar el banco de fotos mas alla de las 5 de Fresha en este research. Las 5 son resultados terminados de cabello con buena luz e iluminacion de estudio, sin selfies ni capturas con texto.",
+ "instagram": {"handle": "@ericalopes.hairstylist", "url": "https://www.instagram.com/ericalopes.hairstylist/", "verified_existence": true, "content_accessible": false}
 }
