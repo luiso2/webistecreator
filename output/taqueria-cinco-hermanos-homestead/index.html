@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#110607" />
+  <title>Taqueria Cinco Hermanos · Tacos y Comida Mexicana en Homestead, FL | 4.3★ en Yelp</title>
+  <meta name="description" content="Taqueria Cinco Hermanos, food truck de comida mexicana en Homestead, FL. Tacos desde $3, burritos y sopes. 4.3 estrellas y 133 reseñas en Yelp. Llama al (786) 339-0698." />
+  <meta property="og:title" content="Taqueria Cinco Hermanos · Tacos autenticos en Homestead, FL" />
+  <meta property="og:description" content="Food truck de comida mexicana en Homestead. Tacos, burritos y sopes desde $3. 4.3 estrellas en Yelp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/bk-1.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/bk-2.jpg" />
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Taqueria Cinco Hermanos",
+  "description": "Food truck de comida mexicana en Homestead, FL: tacos, sopes, burritos, quesadillas y enchiladas preparados al momento.",
+  "servesCuisine": "Mexican",
+  "priceRange": "$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "27200 SW 177th Ave",
+    "addressLocality": "Homestead",
+    "addressRegion": "FL",
+    "postalCode": "33031",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-786-339-0698",
+  "image": "assets/raw/bk-1.jpg",
+  "sameAs": [
+    "https://www.instagram.com/taqueria.5hermanos/",
+    "https://www.yelp.com/biz/taqueria-cinco-hermanos-homestead-2"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.3",
+    "reviewCount": "133",
+    "bestRating": "5"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "22:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "22:00"
+    }
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #110607;
+      --bg-2: #1b0705;
+      --surface: rgba(255,255,255,0.045);
+      --ink: #fcf4f3;
+      --ink-60: rgba(252,244,243,0.62);
+      --ink-40: rgba(252,244,243,0.42);
+      --accent-deep: #ea5443;
+      --accent-mid: #cb4f44;
+      --accent-soft: #290d0b;
+      --accent-ghost: rgba(234,84,67,0.16);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(234,84,67,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(234,84,67,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(234,84,67,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #ea5443 0%, #fdb5a5 30%, #b22b23 52%, #ea5443 75%, #f78373 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(234,84,67,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(143,26,17,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(208,58,44,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #fa8476 0%, #de5243 48%, #ae2c1e 100%);
+      color: #210605; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(94,15,9,0.4), 0 5px 0 #7c2018, 0 12px 24px rgba(0,0,0,0.5);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(94,15,9,0.4), 0 7px 0 #7c2018, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(234,84,67,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(94,15,9,0.45), 0 1px 0 #7c2018, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(234,84,67,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(234,84,67,0.7); background: rgba(234,84,67,0.08); box-shadow: 0 10px 26px rgba(59,37,45,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(17,6,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(234,84,67,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #f78373, #b22b23); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #ea5443; letter-spacing: 2px; text-shadow: 0 0 14px rgba(234,84,67,0.45); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #fcf4f3; --ink-60: rgba(252,244,243,0.65); --ink-40: rgba(252,244,243,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(245,176,167,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #f6a69b 0%, #fee8e4 30%, #d0685d 52%, #f6a69b 75%, #fbc0b8 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(246,166,155,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(198,130,158,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #fff1ef 0%, #f8bab0 48%, #da7569 100%); color: #210605; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(127,34,25,0.35), 0 5px 0 #9b4a44, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(127,34,25,0.35), 0 7px 0 #9b4a44, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(246,166,155,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(127,34,25,0.4), 0 1px 0 #9b4a44, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(246,166,155,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(246,166,155,0.7); background: rgba(246,166,155,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f5b3c0; text-shadow: 0 0 14px rgba(246,166,155,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #fa8476 0%, #de5243 100%);
+      box-shadow: 0 6px 0 #7c2018, 0 14px 30px rgba(0,0,0,0.5);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #7c2018, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(234,84,67,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #7c2018, 0 6px 14px rgba(0,0,0,0.4); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(234,84,67,0.35); background: rgba(234,84,67,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #ae2c1e 0%, #ea5443 45%, #fdb5a5 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(246,166,155,0.14) 0%, rgba(234,84,67,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(234,84,67,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fffefe;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(246,166,155,0.09); pointer-events: none; user-select: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">CH</span>
+    <span class="pre-word">Taqueria Cinco Hermanos</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/bk-2.jpg" alt="Taqueria Cinco Hermanos" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(234,84,67,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Taqueria <span class="text-[color:var(--accent-deep)]">Cinco Hermanos</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">Nosotros</a>
+        <a class="nav-link" href="#metodo" data-es="Cómo pedir" data-en="How to order">Cómo pedir</a>
+        <a class="nav-link" href="#servicios" data-es="Menú" data-en="Menu">Menú</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Reseñas" data-en="Reviews">Reseñas</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span data-es="Llamar ahora" data-en="Call now">Llamar ahora</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">Nosotros</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Cómo pedir" data-en="How to order">Cómo pedir</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Menú" data-en="Menu">Menú</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Reseñas" data-en="Reviews">Reseñas</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Llamar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Homestead, FL · Food Truck Mexicano" data-en="Homestead, FL · Mexican Food Truck">Homestead, FL · Food Truck Mexicano</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tacos de verdad, hechos al momento." data-en="Real tacos, made to order.">Tacos de verdad, hechos al momento.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Sabor auténtico," data-en="Real flavor,">Sabor auténtico,</span><br /><span data-es="directo desde " data-en="straight from ">directo desde </span><span class="text-shine" data-es="el food truck" data-en="the food truck">el food truck</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Tacos, sopes, burritos y quesadillas de asada, al pastor, carnitas y mas, preparados al momento en nuestro food truck de Homestead. Mesas al aire libre bajo la sombra, de martes a domingo." data-en="Tacos, sopes, burritos and quesadillas with asada, al pastor, carnitas and more, made to order at our food truck in Homestead. Outdoor picnic tables in the shade, Tuesday through Sunday.">Tacos, sopes, burritos y quesadillas de asada, al pastor, carnitas y mas, preparados al momento en nuestro food truck de Homestead. Mesas al aire libre bajo la sombra, de martes a domingo.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.3 · 133 reseñas en Yelp" data-en="4.3 · 133 reviews on Yelp">4.3 · 133 reseñas en Yelp</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar ahora" data-en="Call now">Llamar ahora</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/taqueria.5hermanos/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @taqueria.5hermanos
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-1.jpg" alt="Canasta de tacos recien preparados en Taqueria Cinco Hermanos, Homestead FL" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Llámanos" data-en="Call us">Llámanos</p>
+            <p class="font-display text-lg">(786) 339-0698</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Homestead, FL" data-en="Homestead, FL">Homestead, FL</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="133">133</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas en Yelp · 4.3★" data-en="Reviews on Yelp · 4.3★">Reseñas en Yelp · 4.3★</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="1035">1,035</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Seguidores en Instagram" data-en="Followers on Instagram">Seguidores en Instagram</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Tacos $3</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Asada · Pastor · Carnitas" data-en="Asada · Pastor · Carnitas">Asada · Pastor · Carnitas</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Homestead</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="27200 SW 177th Ave" data-en="27200 SW 177th Ave">27200 SW 177th Ave</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Tacos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Burritos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sopes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quesadillas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Comida Mexicana</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Tacos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Burritos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sopes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quesadillas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Comida Mexicana</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/bk-2.jpg" alt="Letrero y logo de Taqueria Cinco Hermanos en el food truck" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/bk-3.jpg" alt="Mesas al aire libre bajo la carpa de Taqueria Cinco Hermanos" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">Nosotros</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Comida mexicana," data-en="Mexican food,">Comida mexicana,</span><br /><span class="text-shine" data-es="hecha al momento" data-en="made to order">hecha al momento</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Taqueria Cinco Hermanos es un food truck familiar en Homestead que prepara tacos, sopes, burritos y quesadillas al momento, con las recetas de siempre: asada, al pastor, carnitas, buche, pollo, lengua y cachete." data-en="Taqueria Cinco Hermanos is a family food truck in Homestead making tacos, sopes, burritos and quesadillas to order, with the same recipes as always: asada, al pastor, carnitas, buche, pollo, lengua and cachete.">Taqueria Cinco Hermanos es un food truck familiar en Homestead que prepara tacos, sopes, burritos y quesadillas al momento, con las recetas de siempre: asada, al pastor, carnitas, buche, pollo, lengua y cachete.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Trabajamos bajo una carpa con mesas al aire libre entre palmeras: la idea es que se sienta como comer en casa, no como una fila de comida rapida. Abierto de martes a domingo, cerrado los lunes." data-en="We work under a tent with outdoor picnic tables among palm trees: the idea is that it feels like eating at home, not standing in a fast food line. Open Tuesday through Sunday, closed Mondays.">Trabajamos bajo una carpa con mesas al aire libre entre palmeras: la idea es que se sienta como comer en casa, no como una fila de comida rapida. Abierto de martes a domingo, cerrado los lunes.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="133">133</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reseñas</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="1035">1,035</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Seguidores" data-en="Followers">Seguidores</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">Mar-Dom</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Dias abiertos" data-en="Days open">Dias abiertos</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/raw/bk-2.jpg" alt="Letrero de Taqueria Cinco Hermanos" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(234,84,67,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Taqueria Cinco Hermanos · <span class="text-[color:var(--ink-40)]" data-es="Food truck · @taqueria.5hermanos" data-en="Food truck · @taqueria.5hermanos">Food truck · @taqueria.5hermanos</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Como pedir" data-en="How to order">Como pedir</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Asi se come" data-en="How to eat">Asi se come</span> <span class="text-shine" data-es="aqui" data-en="here">aqui</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Visitanos o llama" data-en="Visit or call">Visitanos o llama</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Encuentranos en 27200 SW 177th Ave, Homestead, o llama al (786) 339-0698 para preguntar por el menu del dia." data-en="Find us at 27200 SW 177th Ave, Homestead, or call (786) 339-0698 to ask about today's menu.">Encuentranos en 27200 SW 177th Ave, Homestead, o llama al (786) 339-0698 para preguntar por el menu del dia.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Elige tu antojo" data-en="Pick your craving">Elige tu antojo</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Tacos, sopes, gorditas, tostadas, burritos, quesadillas o enchiladas: escoge tu carne, de asada a cachete." data-en="Tacos, sopes, gorditas, tostadas, burritos, quesadillas or enchiladas: choose your meat, from asada to cachete.">Tacos, sopes, gorditas, tostadas, burritos, quesadillas o enchiladas: escoge tu carne, de asada a cachete.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Se prepara al momento" data-en="Made to order">Se prepara al momento</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cada orden se prepara fresca al momento, con cilantro, cebolla, rabano y limon como siempre." data-en="Every order is made fresh on the spot, with cilantro, onion, radish and lime as always.">Cada orden se prepara fresca al momento, con cilantro, cebolla, rabano y limon como siempre.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Come bajo la carpa" data-en="Eat under the tent">Come bajo la carpa</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sientate en las mesas al aire libre entre palmeras, o pide para llevar. Abierto de martes a domingo." data-en="Sit at the outdoor picnic tables among palm trees, or order to go. Open Tuesday through Sunday.">Sientate en las mesas al aire libre entre palmeras, o pide para llevar. Abierto de martes a domingo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Menú" data-en="Menu">Menú</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Nuestro" data-en="Our">Nuestro</span> <span class="text-shine" data-es="Menú" data-en="Menu">Menú</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios publicados en el menu del food truck en Homestead. Impuesto no incluido; los precios pueden variar." data-en="Prices as posted on the food truck menu in Homestead. Tax not included; prices may vary.">Precios publicados en el menu del food truck en Homestead. Impuesto no incluido; los precios pueden variar.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(234,84,67,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo mas pedido" data-en="Most popular">Lo mas pedido</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Tacos" data-en="Tacos">Tacos</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Asada, al pastor, carnitas, buche o pollo en tortilla de maiz, con cilantro, cebolla, rabano y limon. Cachete $4, lengua $5." data-en="Asada, al pastor, carnitas, buche or pollo on a corn tortilla, with cilantro, onion, radish and lime. Cachete $4, lengua $5.">Asada, al pastor, carnitas, buche o pollo en tortilla de maiz, con cilantro, cebolla, rabano y limon. Cachete $4, lengua $5.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$3+</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">/taco</p></div>
+            <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Llamar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Clasicos" data-en="Classics">Clasicos</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Sopes, Gorditas y Tostadas" data-en="Sopes, Gorditas & Tostadas">Sopes, Gorditas y Tostadas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="La misma variedad de carnes sobre masa gruesa de maiz. Version cachete o lengua $5." data-en="The same variety of meats on thick corn masa. Cachete or lengua version $5.">La misma variedad de carnes sobre masa gruesa de maiz. Version cachete o lengua $5.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$4+</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide"></p></div>
+            <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Llamar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Para compartir" data-en="To share">Para compartir</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Burritos" data-en="Burritos">Burritos</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="De asada o cualquier carne a tu gusto, con frijoles, queso, lechuga y tomate. Version cachete o lengua $14." data-en="Asada or any meat of your choice, with beans, cheese, lettuce and tomato. Cachete or lengua version $14.">De asada o cualquier carne a tu gusto, con frijoles, queso, lechuga y tomate. Version cachete o lengua $14.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$13+</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide"></p></div>
+            <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Llamar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Especialidades" data-en="Specialties">Especialidades</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Quesadillas y Enchiladas" data-en="Quesadillas & Enchiladas">Quesadillas y Enchiladas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Quesadilla de harina desde $10, a la plancha desde $4. Enchiladas rojas $14, version cachete o lengua $15." data-en="Flour quesadilla from $10, griddled from $4. Enchiladas rojas $14, cachete or lengua version $15.">Quesadilla de harina desde $10, a la plancha desde $4. Enchiladas rojas $14, version cachete o lengua $15.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$10+</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide"></p></div>
+            <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Llamar</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Tambien: chips con pico $5, arroz o frijoles $1.50, combo de arroz y frijoles $3. Los sabados hay sopa de mariscos, y los domingos, menudo y caldo de res." data-en="Also: chips with pico $5, rice or beans $1.50, rice and beans combo $3. Saturdays bring seafood soup, and Sundays menudo and beef caldo.">Tambien: chips con pico $5, arroz o frijoles $1.50, combo de arroz y frijoles $3. Los sabados hay sopa de mariscos, y los domingos, menudo y caldo de res.</span></p>
+
+      <div class="mt-14">
+        <p class="reveal text-center text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-8" data-es="Menu completo" data-en="Full menu">Menu completo</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="glass rounded-3xl p-6 reveal">
+            <h4 class="font-display text-lg mb-3 text-[color:var(--accent-deep)]" data-es="Tacos" data-en="Tacos">Tacos</h4>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Asada, Pastor, Carnitas, Buche o Pollo" data-en="Asada, Pastor, Carnitas, Buche or Pollo">Asada, Pastor, Carnitas, Buche o Pollo</span><span class="text-sm font-medium whitespace-nowrap pl-3">$3</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Cachete" data-en="Cachete">Cachete</span><span class="text-sm font-medium whitespace-nowrap pl-3">$4</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lengua" data-en="Lengua">Lengua</span><span class="text-sm font-medium whitespace-nowrap pl-3">$5</span></div>
+          </div>
+          <div class="glass rounded-3xl p-6 reveal" style="transition-delay:70ms">
+            <h4 class="font-display text-lg mb-3 text-[color:var(--accent-deep)]" data-es="Sopes / Gorditas / Tostadas" data-en="Sopes / Gorditas / Tostadas">Sopes / Gorditas / Tostadas</h4>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Asada, Pastor, Carnitas, Buche o Pollo" data-en="Asada, Pastor, Carnitas, Buche or Pollo">Asada, Pastor, Carnitas, Buche o Pollo</span><span class="text-sm font-medium whitespace-nowrap pl-3">$4</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Cachete o Lengua" data-en="Cachete or Lengua">Cachete o Lengua</span><span class="text-sm font-medium whitespace-nowrap pl-3">$5</span></div>
+          </div>
+          <div class="glass rounded-3xl p-6 reveal" style="transition-delay:140ms">
+            <h4 class="font-display text-lg mb-3 text-[color:var(--accent-deep)]" data-es="Burritos" data-en="Burritos">Burritos</h4>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Burrito de asada o carne a tu gusto" data-en="Asada burrito or meat of your choice">Burrito de asada o carne a tu gusto</span><span class="text-sm font-medium whitespace-nowrap pl-3">$13</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Burrito Cachete o Lengua" data-en="Cachete or Lengua burrito">Burrito Cachete o Lengua</span><span class="text-sm font-medium whitespace-nowrap pl-3">$14</span></div>
+          </div>
+          <div class="glass rounded-3xl p-6 reveal" style="transition-delay:210ms">
+            <h4 class="font-display text-lg mb-3 text-[color:var(--accent-deep)]" data-es="Quesadillas" data-en="Quesadillas">Quesadillas</h4>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Quesadilla a la Plancha" data-en="Griddled Quesadilla">Quesadilla a la Plancha</span><span class="text-sm font-medium whitespace-nowrap pl-3">$4</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Quesadilla a la Plancha Cachete/Lengua" data-en="Griddled Quesadilla Cachete/Lengua">Quesadilla a la Plancha Cachete/Lengua</span><span class="text-sm font-medium whitespace-nowrap pl-3">$5</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Quesadilla de Harina" data-en="Flour Quesadilla">Quesadilla de Harina</span><span class="text-sm font-medium whitespace-nowrap pl-3">$10</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Quesadilla de Harina Cachete/Lengua" data-en="Flour Quesadilla Cachete/Lengua">Quesadilla de Harina Cachete/Lengua</span><span class="text-sm font-medium whitespace-nowrap pl-3">$11</span></div>
+          </div>
+          <div class="glass rounded-3xl p-6 reveal" style="transition-delay:280ms">
+            <h4 class="font-display text-lg mb-3 text-[color:var(--accent-deep)]" data-es="Enchiladas y Flatus" data-en="Enchiladas & Flatus">Enchiladas y Flatus</h4>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Enchiladas Rojas (Pollo/Carnita)" data-en="Enchiladas Rojas (Pollo/Carnita)">Enchiladas Rojas (Pollo/Carnita)</span><span class="text-sm font-medium whitespace-nowrap pl-3">$14</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Enchiladas Rojas Cachete/Lengua" data-en="Enchiladas Rojas Cachete/Lengua">Enchiladas Rojas Cachete/Lengua</span><span class="text-sm font-medium whitespace-nowrap pl-3">$15</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Flatus Pollo/Carnita" data-en="Flatus Pollo/Carnita">Flatus Pollo/Carnita</span><span class="text-sm font-medium whitespace-nowrap pl-3">$14</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Flatus Cachete/Lengua" data-en="Flatus Cachete/Lengua">Flatus Cachete/Lengua</span><span class="text-sm font-medium whitespace-nowrap pl-3">$15</span></div>
+          </div>
+          <div class="glass rounded-3xl p-6 reveal" style="transition-delay:350ms">
+            <h4 class="font-display text-lg mb-3 text-[color:var(--accent-deep)]" data-es="Extras y Bebidas" data-en="Extras & Drinks">Extras y Bebidas</h4>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Chips + Pico" data-en="Chips + Pico">Chips + Pico</span><span class="text-sm font-medium whitespace-nowrap pl-3">$5</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Arroz o Frijoles" data-en="Rice or Beans">Arroz o Frijoles</span><span class="text-sm font-medium whitespace-nowrap pl-3">$1.50</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Arroz y Frijoles" data-en="Rice and Beans">Arroz y Frijoles</span><span class="text-sm font-medium whitespace-nowrap pl-3">$3</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Tortillas (4 unidades)" data-en="Tortillas (4 pieces)">Tortillas (4 unidades)</span><span class="text-sm font-medium whitespace-nowrap pl-3">$1</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Jarritos" data-en="Jarritos">Jarritos</span><span class="text-sm font-medium whitespace-nowrap pl-3">$3.50</span></div>
+            <div class="flex items-baseline justify-between gap-3 py-2 border-b border-[color:var(--accent-ghost)] last:border-0"><span class="text-sm text-[color:var(--ink-60)] font-light" data-es="Coca-Cola de vidrio" data-en="Glass-bottle Coca-Cola">Coca-Cola de vidrio</span><span class="text-sm font-medium whitespace-nowrap pl-3">$4</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Sabor" data-en="Real">Sabor</span> <span class="text-shine" data-es="real" data-en="flavor">real</span></h2>
+        </div>
+        <a href="https://www.instagram.com/taqueria.5hermanos/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @taqueria.5hermanos
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="El food truck" data-en="The food truck">El food truck</span><img src="assets/raw/bk-5.jpg" alt="Food truck de Taqueria Cinco Hermanos en Homestead, FL" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Recien hecho" data-en="Freshly made">Recien hecho</span><img src="assets/raw/bk-6.jpg" alt="Linea de servicio con tacos recien preparados en Taqueria Cinco Hermanos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Tacos de asada" data-en="Asada tacos">Tacos de asada</span><img src="assets/raw/bk-7.jpg" alt="Tacos de asada con limon y rabano en Taqueria Cinco Hermanos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Para compartir" data-en="To share">Para compartir</span><img src="assets/raw/bk-8.jpg" alt="Tacos surtidos con una Coca-Cola de vidrio en Taqueria Cinco Hermanos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Surtido" data-en="Assorted">Surtido</span><img src="assets/raw/bk-9.jpg" alt="Plato surtido de tacos y tostada en Taqueria Cinco Hermanos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="A la parrilla" data-en="Off the grill">A la parrilla</span><img src="assets/raw/bk-10.jpg" alt="Cebolla y jalapeños asados como guarnicion en Taqueria Cinco Hermanos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Tacos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Burritos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sopes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quesadillas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Comida Mexicana</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Tacos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Burritos</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Sopes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quesadillas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Comida Mexicana</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRUEBA SOCIAL (testimonios) -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Reseñas" data-en="Reviews">Reseñas</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What people">Lo que dicen</span> <span class="text-shine" data-es="en Yelp" data-en="say on Yelp">en Yelp</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.3 de 5 · 133 reseñas verificadas en Yelp" data-en="4.3 out of 5 · 133 verified reviews on Yelp">4.3 de 5 · 133 reseñas verificadas en Yelp</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Hands down the most delicious tacos I've ever eaten. We have lived in the area for 4 years and the taco truck has been a regular the entire time. I've never been disappointed. The Al pastor tacos are seasoned to perfection."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Jessica V.</span> <span class="text-[color:var(--ink-40)]">· Yelp</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Absolutely delicious food! The tacos were a standout, the corn shells looked handmade and the carnitas were so flavorful. Outdoor shaded seating with a cool breeze made the entire vibe very enjoyable."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Heather L.</span> <span class="text-[color:var(--ink-40)]">· Yelp</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This taco truck never fails, always fresh, always clean, and just a great outdoor set up. Hands down the best taco truck in homestead."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Heide P.</span> <span class="text-[color:var(--ink-40)]">· Yelp</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.yelp.com/biz/taqueria-cinco-hermanos-homestead-2" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 133 reseñas en Yelp" data-en="Read all 133 reviews on Yelp">Leer las 133 reseñas en Yelp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine">Homestead</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Estamos en Homestead, cerca de Krome Ave, bajo una carpa con mesas al aire libre." data-en="We're in Homestead, near Krome Ave, under a tent with outdoor picnic tables.">Estamos en Homestead, cerca de Krome Ave, bajo una carpa con mesas al aire libre.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(234,84,67,0.4)]" href="https://www.google.com/maps?q=27200+SW+177th+Ave,+Homestead,+FL+33031" target="_blank" rel="noopener">27200 SW 177th Ave, Homestead, FL 33031</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Martes a jueves 9:00am-9:00pm. Viernes y sabado 9:00am-10:30pm. Domingo 9:00am-10:00pm. Lunes cerrado." data-en="Tuesday to Thursday 9:00am-9:00pm. Friday and Saturday 9:00am-10:30pm. Sunday 9:00am-10:00pm. Closed Mondays.">Martes a jueves 9:00am-9:00pm. Viernes y sabado 9:00am-10:30pm. Domingo 9:00am-10:00pm. Lunes cerrado.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(234,84,67,0.4)]" href="tel:+17863390698">(786) 339-0698</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Instagram" data-en="Instagram">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los platillos del dia y escribenos por DM." data-en="See the daily specials and message us on DM.">Mira los platillos del dia y escribenos por DM.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(234,84,67,0.4)]" href="https://www.instagram.com/taqueria.5hermanos/" target="_blank" rel="noopener">@taqueria.5hermanos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Taqueria Cinco Hermanos, 27200 SW 177th Ave, Homestead FL" src="https://www.google.com/maps?q=27200+SW+177th+Ave,+Homestead,+FL+33031&output=embed" class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #1d0705 0%, #130404 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Ven con hambre." data-en="Come hungry.">Ven con hambre.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Te esperamos" data-en="See you">Te esperamos</span> <span class="text-shine" data-es="en la carpa" data-en="under the tent">en la carpa</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Martes a domingo, comida mexicana autentica servida al momento. Llamanos o visitanos en 27200 SW 177th Ave, Homestead." data-en="Tuesday through Sunday, authentic Mexican food made to order. Call us or visit us at 27200 SW 177th Ave, Homestead.">Martes a domingo, comida mexicana autentica servida al momento. Llamanos o visitanos en 27200 SW 177th Ave, Homestead.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+17863390698" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Llamar ahora</a>
+        <a href="https://www.instagram.com/taqueria.5hermanos/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0e0404]">
+    <span class="foot-mark" aria-hidden="true">Cinco Hermanos</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/bk-2.jpg" alt="Taqueria Cinco Hermanos" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(246,166,155,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Taqueria Cinco Hermanos</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Food truck de comida mexicana autentica en Homestead, FL. Martes a domingo." data-en="Authentic Mexican food truck in Homestead, FL. Tuesday through Sunday.">Food truck de comida mexicana autentica en Homestead, FL. Martes a domingo.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>27200 SW 177th Ave, Homestead, FL 33031</p>
+        <p><a href="tel:+17863390698" target="_blank" rel="noopener" class="hover:text-[#f5b3c0]" data-es="Llamar · (786) 339-0698" data-en="Call · (786) 339-0698">Llamar · (786) 339-0698</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/taqueria.5hermanos/" target="_blank" rel="noopener" class="hover:text-[#f5b3c0]">Instagram · @taqueria.5hermanos</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Taqueria Cinco Hermanos.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#fcf3f2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="tel:+17863390698" target="_blank" rel="noopener" class="book-float" aria-label="Llamar ahora">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#210605" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    applyLang(lang === 'en' ? 'en' : 'es');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
+    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
+    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
+    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
+    // layout, que si existe, asi que rompe el circulo.
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
