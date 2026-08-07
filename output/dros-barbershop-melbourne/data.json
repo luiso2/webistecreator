@@ -1,0 +1,102 @@
+{
+ "slug": "dros-barbershop-melbourne",
+ "name": "Dro's Barbershop",
+ "niche": "barberia boutique (barbershop, fades + beard work)",
+ "schema_type": "Barbershop",
+ "location_note": "IMPORTANT CORRECTION vs the starting brief: this business RELOCATED. The original shop was at 2885 Electronics Dr, Unit C3, Melbourne, FL 32935 (the address the task brief and the slug are based on). Verified via a Facebook video post titled literally 'Dro's barbershop is moving to 3555 bayside lakes blvd. Unit 5' (facebook.com/100008502421963/videos/dros-barbershop-is-moving-to-3555-bayside-lakes-blvd-unit-5/2176764129439893/), plus a customer search-snippet noting 'he's moved to this nice place' from the Electronics Dr address. Direct proof: the Booksy URL for the old Melbourne listing (booksy.com/en-us/239979_dros-barbershop_barber-shop_15626_melbourne) now returns a live HTTP 301 redirect (confirmed via curl -D-) straight to the Palm Bay listing (..._15631_palm-bay), and that Palm Bay listing's own JSON-LD contains ONLY the Palm Bay address, no Melbourne address anywhere, and no second-location data. findbarbershopnearme.com and the current Yelp listing also only carry the Palm Bay address now. Older aggregators that still show the Melbourne address (salondiscover.com, Birdeye's cached snippet) are reading stale/un-refreshed data. CONCLUSION: Palm Bay is not a 'second location', it is now the ONLY active shop; Melbourne is the former address. The slug stays 'dros-barbershop-melbourne' per the task's fixed slug instruction, but all address/contact content on the site reflects the real, current Palm Bay location so the demo is not sending prospects to a closed door.",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "3555 Bayside Lakes Blvd, Unit 5",
+  "addressLocality": "Palm Bay",
+  "addressRegion": "FL",
+  "postalCode": "32909",
+  "addressCountry": "US"
+ },
+ "address_former": "2885 Electronics Dr, Unit C3, Melbourne, FL 32935 (closed / relocated from, per Facebook and the Booksy redirect above)",
+ "address_source": "Live Booksy JSON-LD for the current listing (booksy.com/en-us/239979_dros-barbershop_barber-shop_15631_palm-bay), fetched directly via curl: streetAddress '3555 Bayside Lakes, 5, Palm Bay, 32909', geo 27.94826,-80.65902. findbarbershopnearme.com independently gives the fuller USPS-style form '3555 Bayside Lakes Blvd SE #5, Palm Bay, FL 32909'. Used the fuller form on the site.",
+ "phone": "(321) 215-8447",
+ "phone_source": "Consistent across every source checked: original task brief, salondiscover.com, findbarbershopnearme.com, and multiple independent web search snippets. No Booksy telephone field was exposed in the JSON-LD (Booksy routes contact through its own booking flow), but every third-party aggregator agrees on this number, so treated as reliable.",
+ "rating": 4.9,
+ "review_count": 110,
+ "rating_source": "RECONCILING CONFLICTING NUMBERS (task explicitly asked for this): (1) Booksy's own live JSON-LD, fetched directly via curl on the current Palm Bay listing, shows aggregateRating 4.982758620689655 (rounds to 5.0) with reviewCount 290. This is Booksy's own IN-PLATFORM review count (people who booked and reviewed through Booksy specifically), a large, still-growing number, most recent review dated 2026-07-31. (2) salondiscover.com shows 5.0 / 83 reviews, page structure implies Google as the source but is not explicitly labeled and looks like a stale crawl (still shows the old Melbourne address). (3) Birdeye's aggregate profile, per a web-search snippet (reviews.birdeye.com/dro-s-barbershop-170250200086254), shows 4.9 stars / 110 reviews; a direct WebFetch of the same Birdeye URL returned an odd truncated view (4.8 / only 5 reviews visible), likely a paginated or partially-rendered section rather than the full total. (4) findbarbershopnearme.com, a separate independent aggregator, shows 4.9 / 104 reviews. DECISION: used 4.9 / 110+ for the site's 'reviews online' claim, since two independent third-party aggregators (Birdeye's headline figure and findbarbershopnearme) converge closely (110 vs 104, both far closer to each other than to Booksy's 290 or salondiscover's 83), and this range plausibly represents the actual Google Business Profile tally, which could not be fetched directly (Google blocks automated access). Booksy's larger 290-review, ~5.0 figure is real but is a DIFFERENT metric (in-platform booking reviews, not Google), so it is kept as a separate, clearly-labeled data point ('300+ appointments booked on Booksy') rather than conflated into the headline rating.",
+ "booksy_reviews": 290,
+ "booksy_rating": 4.98,
+ "founded": "2018",
+ "founded_source": "Printed directly on the business's own circular crest logo, downloaded from Booksy's CDN (their own uploaded brand asset): 'DRO'S BARBERSHOP ... SINCE 2018', monogram 'DC', tagline 'DIVERSITY - RELIABILITY - ORIGINALITY'.",
+ "owner": "Dro Cruz",
+ "owner_source": "Listed as the sole 'employee' in Booksy's own JSON-LD (employee[].name = 'Dro Cruz'). Matches the 'DC' monogram on the shop's own logo, and matches how reviewers refer to him by first name ('Dro') across Birdeye and Booksy reviews.",
+ "tagline": "Diversity. Reliability. Originality.",
+ "services_offered": ["Fades", "beard work", "line ups", "shaves", "scissor cuts", "all hair textures and styles"],
+ "services_source": "Booksy's own business description field (directly fetched JSON-LD 'description'): 'We are a full service barbershop specializing in all hair textures and all styles from gentlemen cuts, fades, shaves and scissor cuts.'",
+ "pricing_published": true,
+ "pricing_source": "Live Booksy JSON-LD 'makesOffer' array, fetched directly via curl (not a search snippet), 11 line items with exact prices in USD. Full list: Regular Cut (no fading) $25/30min, Faded Cut $35/1h, Faded Cut & Beard $45/1h, Beard Work Only $20/30min, Line Up (no beard) $20/30min, Regular Cut & Beard (no fading) $35/30min, Line Up & Beard $30/30min, Senior Cut 60+ $18/30min, Senior Cut & Beard $25/30min, Senior Faded Cut 60+ $25/30min, Senior Faded Cut & Beard $30/1h.",
+ "hours": [
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "07:30", "closes": "17:00" }
+ ],
+ "hours_source": "Live Booksy JSON-LD openingHoursSpecification, fetched directly (Mon-Fri 09:00-18:00, Sat 07:30-17:00, closed Sunday). This is pulled straight from the real booking calendar, so treated as the most authoritative hours source; some older aggregator snippets said 'Sat 9am-5pm' or 'Sat 6am-5pm' but those are secondary paraphrases, not the primary calendar data.",
+ "walk_ins": null,
+ "walk_ins_note": "No source with directly-verifiable page content explicitly confirmed walk-in policy (search-summary snippets suggested it but could not be traced to an exact quoted source page, so not asserted as fact). Booksy enforces a $20 no-show/late-cancellation fee on real time-slot bookings, which is the verified, primary booking path used on the site.",
+ "booking_platform": "Booksy (primary, live calendar with real prices, 239979_dros-barbershop_barber-shop_15631_palm-bay)",
+ "booking_url": "https://booksy.com/en-us/239979_dros-barbershop_barber-shop_15631_palm-bay",
+ "booking_url_note": "The Melbourne-slugged Booksy URL (..._15626_melbourne) still resolves but issues a live HTTP 301 redirect straight to this Palm Bay URL, confirmed via curl -D-, so both point to the same current listing.",
+ "instagram": "drosbarbershop",
+ "ig_url": "https://www.instagram.com/drosbarbershop/",
+ "ig_note": "Photos pulled successfully via scripts/ig_photos.py (Railway IG photo microservice), 12 real posts returned. Direct bio-text fetch (web_profile_info endpoint) was rate-limited (HTTP 401/429) on every attempt from this session's egress IP, so bio text, follower count and external_url could not be read directly; not fabricated. Booksy's own sameAs field lists 'instagram.com/drosbarbershop.com' which looks like a data-entry artifact (an extra '.com' appended to the real handle); the real, working handle confirmed by web search results and by the working photo pull is @drosbarbershop.",
+ "facebook": "https://www.facebook.com/drosbarbershop681/",
+ "facebook_note": "Facebook page exists (page id drosbarbershop681, 'Dros Barbershop | Melbourne FL'), still named after the old Melbourne location even though the business has moved (common lag on FB page names/vanity URLs after a physical move). WebFetch of the page and its /about subpage returned an empty shell (Facebook's anti-scraping wall / login redirect), so no About-section text could be read directly.",
+ "has_own_site": false,
+ "website_candidates_checked": ["drosbarbershop.com", "drosbarbershopfl.com", "drosbarber.com", "drosbarbershopmelbourne.com"],
+ "website_candidates_dns_result": "All four return no DNS resolution (curl connect failure / HTTP 000) as of this session, re-verified independently of the original discovery pass.",
+ "mrdrosbarbershop_correction": "IMPORTANT CORRECTION vs the starting brief: mrdrosbarbershop.com does exist and IS a private, unpublished Squarespace placeholder (re-verified via curl: HTTP 401, <title>Private Site</title>, meta robots noindex, body text 'This site is currently private... log in'), BUT further research strongly suggests this domain belongs to a DIFFERENT, unrelated business also using the name 'Mr. Dro's Barbershop' / a similarly-named franchise-style operation with locations found in Beaumont, TX (getsquire.com/discover/barbershop/mr-dros-barbershop-beaumont, 720 Dixie Dr) and Wheeling, IL (a separate Booksy listing, 'Dro's Barber Shop (The Chop Shop)'), and a separate Instagram handle @mr.dros_barbershop, distinct from our business's real, verified handle @drosbarbershop. Our actual business (owner Dro Cruz, Booksy id 239979, Palm Bay FL) shows no sameAs link, bio link, or any other reference to mrdrosbarbershop.com anywhere in its own Booksy data or search footprint. Net effect on the has_own_site determination is the same (false either way, since the Squarespace page has no public content regardless of ownership), but the site itself is very likely not this business's domain at all, so it was NOT cited as a hook in outreach copy to avoid a false claim about 'your old domain'.",
+ "email": null,
+ "email_search_log": [
+  "Instagram web_profile_info endpoint (x-ig-app-id header, two attempts, different UAs): HTTP 401 then 429, rate limited both times, no bio/business_email field obtained",
+  "Booksy live JSON-LD (fetched directly via curl): no email field in the business schema, only sameAs (Instagram) and booking flow",
+  "salondiscover.com listing (fetched directly via curl, grepped full HTML for '@'): no email address present anywhere in the page source",
+  "Birdeye listing (fetched directly via curl, grepped full HTML for '@'): only Birdeye's own 'profiles@birdeye.com' contact address present, nothing belonging to the business",
+  "findbarbershopnearme.com listing (fetched directly via curl, grepped for '@'): no email present",
+  "Facebook page and /about subpage: blocked by Facebook's anti-scraping wall (empty shell / redirect), no content readable",
+  "Domain checks (drosbarbershop.com and variants): no DNS resolution, no mailto to check",
+  "A web-search summary surfaced the string 'drogon688@gmail.com' attributed loosely to this business, but it could NOT be traced to any actual fetched page's source HTML across salondiscover, Birdeye, or findbarbershopnearme (checked all three directly via curl + grep). Since it could not be independently verified against real page content, it is NOT used as the business's email; treating email as not found rather than risk publishing an unverified address."
+ ],
+ "reviews": [
+  {
+   "author": "Ethan R.",
+   "quote": "Dro is precise with his blade/blend/scissor work and takes pride in his art. He can cut any type of hair, listens to his clients, is real personable, and always checks his work multiple times to make sure both the client and himself are satisfied. This is a REAL MASTER at his craft. He is the best barber I've ever had the pleasure of meeting, which you can easily tell by how many recurring clients he has!",
+   "language": "en",
+   "source": "Google (via Booksy's own review sync, fetched directly from Booksy's live JSON-LD 'review' array; the same review, same author name, also appears independently in a Birdeye search snippet, which strongly suggests the original was left on Google Business Profile and syndicated to both places)"
+  },
+  {
+   "author": "Mark Wilson",
+   "quote": "Dro is definitely a cut above the rest and is always smiling and always does a great fade",
+   "language": "en",
+   "source": "Google (via Birdeye aggregation)"
+  },
+  {
+   "author": "Jonah Cryer",
+   "quote": "They both gave me absolutely stunning burst fades and it looks immaculate. It cost like $5 more but its worth it",
+   "language": "en",
+   "source": "Google (via Birdeye aggregation)"
+  },
+  {
+   "author": "Dr. Lizardboy",
+   "quote": "Great at cutting hair very professional if you are switching barbers or need somewhere to go this is the place",
+   "language": "en",
+   "source": "Google (via Birdeye aggregation)",
+   "note": "Additional quote found during research, not used on the site (3 testimonials fit the template layout); unusual display name is the reviewer's own, quoted verbatim."
+  },
+  {
+   "author": "Sebastian E.",
+   "quote": "Great cut",
+   "language": "en",
+   "source": "Booksy (own JSON-LD review array)",
+   "note": "Too short to use as a standalone testimonial; kept in research log for completeness."
+  }
+ ],
+ "brand_vibe": "Classic American barbershop with a real crest logo: black background, gold/champagne eagle-and-shield emblem, five stars, 'Since 2018', tagline 'Diversity, Reliability, Originality'. Built on dark-v2 with a hue shift to deep brick red (not the logo's literal gold, since amber/gold/copper is already the palette family used by a Daytona Beach barbershop in the same batch) to keep a moody, premium barbershop feel distinct from that other demo while still reading as bold and traditional (red pairs naturally with the shield/eagle crest imagery).",
+ "photos_source": "scripts/ig_photos.py against @drosbarbershop via the Railway IG photo service: 12 posts returned, all verified as real JPEGs (300-640px, 25-42KB) with `file`. Visually curated one by one via the generated contact sheet: 9 of 12 kept (bk-1, bk-2, bk-4, bk-6, bk-7, bk-9, bk-10, bk-11, bk-12), all genuine finished-cut or in-progress barbering shots, no blur, no clutter. 3 discarded for heavy text overlay per the mandatory no-text-overlay rule (bk-3: 'Don't take an L this Thanksgiving...' promo caption baked into the image; bk-5: 'If you are LOOKING or are in need of a NEW barber...' promo caption; bk-8: 'LET ME GET U OFF THE BENCH & BACK IN THE GAME...' promo caption). Also downloaded the business's own real circular crest logo directly from Booksy's CDN (region1/us/239979/logo/...), used as brand.logo, footer logo, and the About-section avatar image, since it is the business's own authentic brand mark rather than a stand-in client photo. Final split: hero = bk-12 (clean fade profile, editorial), About = bk-4 + bk-11 (barber mid-clip action, and a genuinely smiling finished client, used as large contextual About photos rather than gallery grid tiles since bk-11 reads as a posed close portrait), gallery = bk-1, bk-2, bk-6, bk-7, bk-9, bk-10 (six distinct finished-result/action shots, including one female client to reflect the business's own claim of serving 'all hair textures').",
+ "language": "en",
+ "outreach": "pending_manual",
+ "status": "staging"
+}

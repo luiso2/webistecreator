@@ -1,0 +1,93 @@
+{
+ "slug": "healthy-smiles-faces-bonita-springs",
+ "name": "Healthy Smiles & Faces",
+ "name_variants_seen": ["Healthy Smiles Faces", "Healthy Smiles & Faces", "Healthy Smiles&Faces"],
+ "name_note": "Birdeye and FineMagazine (SEO directory listings) drop the ampersand for their URL slugs (\"Healthy Smiles Faces\"). Facebook page name and the Instagram display name both use the ampersand (\"Healthy Smiles & Faces\" / \"Healthy Smiles&Faces\"). Site uses the ampersand form as the primary brand display since that is what the business itself uses on its own owned profiles (FB/IG), consistent with using Birdeye only as a data aggregator.",
+ "niche": "med spa / aesthetic specialist (facial treatments, non-dental)",
+ "schema_type": "HealthAndBeautyBusiness",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "8951 Bonita Beach Rd SE, Suite 580",
+  "addressLocality": "Bonita Springs",
+  "addressRegion": "FL",
+  "postalCode": "34135",
+  "addressCountry": "US"
+ },
+ "address_source": "Consistent across Birdeye, FineMagazine directory listing, and Facebook page location, all independently naming the same suite in the same Bonita Beach Rd SE plaza (a small multi-tenant beauty/wellness building that also houses The Beauty Loft, Susan Henderson Hair, LDB Cuts Barbershop).",
+ "phone": "(239) 331-9830",
+ "phone_source": "Confirmed via raw HTML of finemagazine.com's Healthy Smiles Faces directory page (fetched directly with curl, not just AI summary): the tel:239-331-9830 link sits directly inside the same <li> block as the business's own street address, distinguishing it from the magazine's own contact number (239-272-5129, found lower in the page under 'FINE Magazine LLC' / 'Contact Us' widget, a different phone that is NOT the business's). Cross-confirmed by an independent web search snippet giving the same number for the same address.",
+ "rating": 5.0,
+ "review_count": 21,
+ "rating_source": "Birdeye aggregator page (reviews.birdeye.com/healthy-smiles-faces-aesthetic-specialist-176969876914675), fetched directly: business detail block states '5.0 stars (21 reviews)', categories 'Wellness, Medical Spas'. Some cached search-result titles show '19 Reviews' (older crawl snapshot); the live page content used here shows 21, matching the number given in the assignment brief. Could not reach Google Maps/Google Business directly (no stable place ID surfaced in search), so Birdeye is treated as an aggregation of the same underlying Google reviews per PIPELINE guidance, medium-high confidence, not read directly off Google Maps.",
+ "hours": [
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" },
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "09:00", "closes": "13:00" }
+ ],
+ "hours_note": "Monday closed. Confirmed identically on two independent fetches of the Birdeye listing page.",
+ "owner_first_name": "Jenny",
+ "owner_note": "The name 'Jenny' is directly and independently corroborated by at least 3 separate real customer reviews on the business's own Birdeye page, addressing her by name ('I have been going to Jenny...', 'Jenny Super Profesional...', 'ya que Jenny muestra tanto amor...'). A surname could NOT be confirmed from a clean primary source: one AI web-search summary asserted 'Jenny Canarte' but that could not be traced back to any single fetchable page (likely a search-engine synthesis artifact) and clustrmaps.com only shows unrelated public-records matches for that name, not tied to this business, so it was NOT used. A framed professional certificate visible in one of the business's own Instagram photos (assets/raw/bk-1.jpg, not used on the site) appears to read a name close to 'Jenny D[a/e]llis Ladino Ocampo' when cropped and enlarged, which would roughly match a Birdeye reviewer named 'Jenny Ladino' (posted 2 weeks before this research, possibly the owner herself). This is too blurry to state as fact. Site copy uses only 'Jenny' (first name), which is solidly evidenced; no surname is printed anywhere on the site.",
+ "services_observed": [
+  "PDRN skin treatments (photographic evidence: a syringe clearly labeled 'PDRN' / 'ReMedium' brand in a sterile tray, assets/raw/bk-2.jpg)",
+  "PRP-style regenerative treatment prep (blood-draw tubes with gel-separator caps on a treatment cart, assets/raw/bk-9.jpg)",
+  "LED light therapy bed / mask (red full-face LED light therapy bed in use on a client, assets/raw/bk-11.jpg; handheld LED light mask device in use, assets/raw/bk-6.jpg)",
+  "Facial injectable/needling treatments administered by hand (close-up shots of gloved hands performing a facial treatment with a fine applicator, assets/raw/bk-5.jpg and bk-10.jpg)",
+  "An LED whitening-style light used near the mouth during a facial procedure (assets/raw/bk-12.jpg); plausibly a cosmetic teeth-whitening add-on consistent with the 'Smiles' half of the brand name, but not independently confirmed beyond the photo, so worded cautiously on the site"
+ ],
+ "services_note": "No public price list or booking-platform service menu exists (see booking_platform below), so the site follows the adapted 'se cotiza, escribenos' pattern instead of listing prices. IMPORTANT: several AI-generated web search summaries and the FineMagazine directory blurb claim 'cosmetic dentistry', 'veneers', 'teeth whitening', 'dental implants', 'routine dental cleanings and fillings' and describe Jenny as a 'dentist'. This was treated as UNRELIABLE and NOT used: (1) Birdeye's own category tags for this listing are 'Wellness' and 'Medical Spas', not any dental category; (2) none of the 12 real Instagram photos downloaded show dental equipment (chairs, X-ray, drills) -- they show facial/skin aesthetic devices (LED beds, PDRN syringes, blood-draw tubes); (3) the FineMagazine text reads as templated AI-generated directory copy driven off the business's name containing the word 'Smiles' rather than sourced fact. The site describes only what is directly evidenced: facial aesthetic and skin-regeneration treatments.",
+ "pricing_published": false,
+ "booking_platform": null,
+ "booking_platform_note": "Searched Booksy, Fresha, Vagaro, GlossGenius and Mangomint category/city pages for Bonita Springs; no listing under this business name or address surfaced on any of them. No booking link found in any bio or directory listing. Treated as no booking platform in use; primary contact channel is phone.",
+ "instagram": "healthysmilesfaces",
+ "ig_url": "https://www.instagram.com/healthysmilesfaces/",
+ "ig_display_name": "Healthy Smiles&Faces | Aesthetic specialist",
+ "ig_note": "Confirmed working, active public profile: 12 real photos/video-posters successfully downloaded via the IG photo service (scripts/ig_photos.py) from July 2026 back to earlier posts, most recent dated July 27 2026. Bio text and external link could NOT be read: every direct WebFetch attempt to instagram.com/healthysmilesfaces/ returned HTTP 429 (rate limited), tried twice as allowed by pipeline guidance before falling back to other sources.",
+ "facebook": "https://www.facebook.com/people/Healthy-Smiles-Faces/100085857073782/",
+ "facebook_note": "Page exists and is named 'Healthy Smiles & Faces | Bonita Springs FL'. Raw HTML fetch (curl, mobile UA) returned a 45KB page shell with no About/contact fields rendered server-side (Facebook renders that client-side via JS); no email or extra phone found there.",
+ "has_own_site": false,
+ "website_candidates_checked": ["healthysmilesfaces.com", "healthysmilesfacesbonita.com", "healthysmilesandfaces.com"],
+ "website_note": "Re-verified independently with both `curl` (HTTP 000 / connection failure, no DNS) and Python `socket.gethostbyname()` (all three raised socket.gaierror: Name or service not known) on all three candidate domains. None resolve. No working own website found anywhere in any listing. has_own_site: false confirmed.",
+ "email": null,
+ "email_search_log": [
+  "Instagram bio: could not be read directly (429 rate limited on 2 separate WebFetch attempts to instagram.com/healthysmilesfaces/); the IG photo service used for images does not expose bio/link fields",
+  "Facebook About section: page renders client-side via JS, raw HTML fetch showed no email/contact fields",
+  "FineMagazine.com directory listing (fetched full raw HTML directly): no mailto: link for the business anywhere on the page; the only mailto found (brian@finemagazine.com) belongs to the magazine publisher, not the business",
+  "Birdeye aggregator listing: no email field populated on the business detail block",
+  "Sunbiz.org (Florida LLC registry) entity search for HEALTHYSMILESFACES LLC: blocked by a Cloudflare interstitial challenge on every attempt (both WebFetch and curl with a browser user-agent), could not reach the officer/registered-agent record which sometimes carries a contact email",
+  "Booking platforms (Booksy/Fresha/Vagaro/GlossGenius/Mangomint): no listing found for this business on any of them, so no venue-payload email available",
+  "Yelp / BBB / Manta / Chamber of Commerce: no listing found under this business name at this address on any of these directories",
+  "General web search for the business name plus 'email' / 'gmail.com' / '@': no direct business email surfaced"
+ ],
+ "reviews": [
+  {
+   "author": "Kelly Gomez",
+   "quote": "I have been going to Jenny for about a year now and she truly is very good at what she does! Jenny has completely transformed my face and my skin has never been better. She is very knowledgeable and explains in depth on what treatment she is doing. Spa is tidy and clean and super relaxing. Prices are affordable as well. Will definitely keep coming back!",
+   "language": "en",
+   "source": "Google (via Birdeye aggregation)"
+  },
+  {
+   "author": "Adiela Rodriguez",
+   "quote": "Jenny Super Profesional Super Carismática Y sobre Todo Muy Humilde y Honesta Bendiciones Gracias x Cuídar My Cutis Bendiciones",
+   "language": "es",
+   "source": "Google (via Birdeye aggregation)"
+  },
+  {
+   "author": "Maria Sosa",
+   "quote": "Excelente me encanta lo que me iso y muy progecional,y los precios son bajos.su trato así uno muy bueno. Regresaré a mi cita cuidado del mi piel.",
+   "language": "es",
+   "source": "Google (via Birdeye aggregation)"
+  },
+  {
+   "author": "Maria sildana Correa torres",
+   "quote": "Es un total placer llegar a este sitio, ya que Jenny muestra tanto amor y placer en cómo realiza su talento, es una excelente profesional además de una gran persona, sigue así y gracias por prestarnos tus servicios,",
+   "language": "es",
+   "source": "Google (via Birdeye aggregation)",
+   "note": "Additional quote found during research, not used on the site (3 testimonials fit the template layout); kept here as backup evidence of the same pattern (bilingual clientele, all naming Jenny directly, all 5-star)."
+  }
+ ],
+ "language": "en",
+ "language_note": "Business's own branding (Instagram display name, Facebook page name, business name itself) is in English, so English is used as the primary site language. Roughly half of the real reviews found are written in Spanish by clearly Spanish-speaking clients, which is used as evidence for a 'bilingual, English & Spanish' trust strip item, but this is inference from client-language pattern, not a direct bio statement.",
+ "brand_vibe": "Small, bright, clean single-room aesthetic studio inside a Bonita Springs beauty plaza suite. White walls, natural light, soft pastel gloves (pink/lavender), blue-lit skin-analysis device, red LED light-therapy bed. Feminine, calm, clinical-but-warm med spa feel. Built on light-v2 with a hue shift toward soft violet/lavender (hue ~272) to read as med-spa/aesthetic without repeating the sage-green palette used for the Fort Myers skincare business built in parallel, and distinct from other violet/plum palettes already used elsewhere in the registry by pushing the hue further toward true violet and softening saturation.",
+ "photos_source": "scripts/ig_photos.py against @healthysmilesfaces via the Railway IG photo service, 12 photos/video-poster-frames returned, all verified as real, non-empty, valid JPEG (all originally ~360x640, 18-45KB, no resize needed) with `file`. Visually curated one by one (viewed every photo, not chosen by filename): 8 used across hero/about/gallery (bk-2 PDRN product shot, bk-4 treatment room, bk-5 facial treatment close-up, bk-6 LED mask device in use, bk-9 PRP-style blood tubes, bk-10 facial treatment close-up, bk-11 LED light-therapy bed -- used as hero, bk-12 in-treatment shot with whitening-style light). 1 used only as a small avatar/logo per the no-selfies-as-gallery-tiles rule (bk-3, a close face selfie with a flipped-up face shield). 3 discarded entirely: bk-1 (full-body mirror selfie, not needed once bk-3 covered the avatar), bk-7 (a Mother's Day marketing graphic with heavy text overlay), bk-8 (a selfie geotagged 'Estero (Florida)' with another business's watermark visible in the corner, i.e. not this business's own Bonita Springs studio).",
+ "outreach": "pending_manual",
+ "status": "staging"
+}
