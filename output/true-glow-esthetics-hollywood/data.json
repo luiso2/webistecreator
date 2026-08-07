@@ -1,194 +1,119 @@
 {
- "booksy_url": "https://booksy.com/en-us/1810165_true-glow-esthetics_hair-removal_15645_hollywood",
  "slug": "true-glow-esthetics-hollywood",
  "name": "True Glow Esthetics",
- "schema_type": "HealthAndBeautyBusiness",
+ "schema_type": "BeautySalon",
+ "city": "Hollywood, FL",
  "address": {
-  "@type": "PostalAddress",
-  "streetAddress": "3251 hollywood blvd, Local 447  My studio 143, 111, Hollywood, 33021",
-  "addressCountry": "us",
-  "addressLocality": "Hollywood, FL",
-  "addressRegion": "Florida",
-  "postalCode": "33021"
+  "streetAddress": "3251 Hollywood Blvd, Local 447, Suite 111",
+  "addressLocality": "Hollywood",
+  "addressRegion": "FL",
+  "postalCode": "33021",
+  "addressCountry": "US",
+  "notes": "Inside Phenix Salon Suites, behind Target and adjacent to Publix"
  },
- "geo": {
-  "@type": "GeoCoordinates",
-  "latitude": 26.01133,
-  "longitude": -80.17495999999991
- },
+ "geo": { "latitude": 26.01133, "longitude": -80.17495999999991 },
  "rating": 5.0,
  "reviews_count": 40,
+ "hours_source": "booksy_json_ld",
  "hours": [
-  {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday"
-   ],
-   "opens": "11:00",
-   "closes": "16:30"
-  },
-  {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Saturday"
-   ],
-   "opens": "12:00",
-   "closes": "17:00"
-  }
+  { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "16:30" },
+  { "days": ["Saturday"], "opens": "12:00", "closes": "17:00" }
  ],
- "staff": [
-  {
-   "name": ".",
-   "description": null
-  }
+ "hours_note": "Fresha and Best Self Care Florida list slightly different hours (Tue-Fri 11:30-5, Sat closed); Booksy JSON-LD (the business's own booking platform) was used as the primary source.",
+ "phone": "+17862196133",
+ "phone_source": "Fresha listing (fresha.com/lvp/true-glow-esthetics-hollywood-boulevard-hollywood-oo9avM), matches the exact business address; not published on Booksy itself.",
+ "email": null,
+ "email_search_log": [
+  "Booksy business page (raw HTML + decoded RSC payload): no email field, no mailto, no contactName resolvable to an email.",
+  "Fresha listing: email not provided.",
+  "Vagaro (vagaro.com/trueglowesthetics, found via web search): URL returns 404, listing does not exist / was moved.",
+  "bestselfcareflorida.com directory listing: marked unclaimed, phone/email hidden pending owner verification.",
+  "Facebook search for the business name returned only unrelated/unverifiable pages (e.g. 'True Esthetics' at facebook.com/TrueEstheticsR, different name, could not verify as the same business; login wall blocked further check).",
+  "Instagram: no confirmed handle for this specific business. The closest name match, @__trueglowaesthetics__, is a different spelling ('Aesthetics'), different service focus (microneedling, chemical peels, acne treatment) and could not be verified as the same business; not used.",
+  "Own domain: trueglowesthetics.com, true-glow-esthetics.com, trueglowestheticshollywood.com all fail to resolve (DNS/connect failure) -> confirms no owned website.",
+  "Conclusion: no public email found after exhausting all listed sources. Outreach will rely on phone (call/text) as the manual channel."
  ],
- "same_as": [],
  "instagram": null,
- "website_candidates": [],
- "phone": null,
+ "instagram_search_note": "No confirmed Instagram or Facebook account found for this specific business after multiple targeted searches (business name + city, business name + Emily, business name + address/Phenix Salon Suites). Left null rather than guessing.",
+ "has_own_site": false,
+ "own_site_check": "Booksy sameAs/website_candidates empty. Tried trueglowesthetics.com, true-glow-esthetics.com, trueglowestheticshollywood.com via curl: all fail to connect (no DNS). No own website confirmed absent.",
+ "booking_platforms": {
+  "booksy": "https://booksy.com/en-us/1810165_true-glow-esthetics_hair-removal_15645_hollywood",
+  "fresha": "https://www.fresha.com/lvp/true-glow-esthetics-hollywood-boulevard-hollywood-oo9avM",
+  "vagaro_listed_but_404": "https://www.vagaro.com/trueglowesthetics"
+ },
+ "staff": [{ "name": "Emily", "role": "Esthetician" }],
+ "about_source_text": "Get ready to be amazed by Emily, our incredible Esthetician in Hollywood, FL. Emily is dedicated to enhancing your natural beauty and boosting your confidence, offering a range of spa services in a convenient suite. Specializing in facials and sugar waxing, she knows exactly how to make you feel comfortable and rejuvenated. You can find us located behind Target and conveniently adjacent to Publix at Phenix Suites 3251 Hollywood Blvd, Suite 111, Hollywood, FL 33021. (Source: Booksy business bio, paraphrased for site copy.)",
  "services": [
-  {
-   "name": "✨ Signature Custom Glow Facial",
-   "price": 125,
-   "duration": "1h 20min"
-  },
-  {
-   "name": "✨ Custom Back Glow Treatment",
-   "price": 100,
-   "duration": "1h 15min"
-  },
-  {
-   "name": "Brazilian",
-   "price": 60,
-   "duration": "35min"
-  },
-  {
-   "name": "Underarms",
-   "price": 25,
-   "duration": null
-  },
-  {
-   "name": "Bikini",
-   "price": 30,
-   "duration": "20min"
-  },
-  {
-   "name": "Full Stomach",
-   "price": 25,
-   "duration": null
-  },
-  {
-   "name": "Half legs",
-   "price": 40,
-   "duration": "30min"
-  },
-  {
-   "name": "Upper lip",
-   "price": 15,
-   "duration": null
-  },
-  {
-   "name": "Chest",
-   "price": 45,
-   "duration": null
-  },
-  {
-   "name": "Half arms",
-   "price": 30,
-   "duration": "20min"
-  },
-  {
-   "name": "Full arms",
-   "price": 45,
-   "duration": null
-  },
-  {
-   "name": "Lower Back",
-   "price": 25,
-   "duration": null
-  },
-  {
-   "name": "Full back",
-   "price": 40,
-   "duration": "30min"
-  },
-  {
-   "name": "Butt cheeks",
-   "price": 30,
-   "duration": "20min"
-  },
-  {
-   "name": "V Facial",
-   "price": 80,
-   "duration": null
-  },
-  {
-   "name": "Full legs",
-   "price": 80,
-   "duration": null
-  }
+  { "name": "✨ Signature Custom Glow Facial", "price": 125, "duration": "1h 20min" },
+  { "name": "✨ Custom Back Glow Treatment", "price": 100, "duration": "1h 15min" },
+  { "name": "Brazilian", "price": 60, "duration": "35min" },
+  { "name": "Underarms", "price": 25, "duration": null },
+  { "name": "Bikini", "price": 30, "duration": "20min" },
+  { "name": "Full Stomach", "price": 25, "duration": null },
+  { "name": "Half legs", "price": 40, "duration": "30min" },
+  { "name": "Upper lip", "price": 15, "duration": null },
+  { "name": "Chest", "price": 45, "duration": null },
+  { "name": "Half arms", "price": 30, "duration": "20min" },
+  { "name": "Full arms", "price": 45, "duration": null },
+  { "name": "Lower Back", "price": 25, "duration": null },
+  { "name": "Full back", "price": 40, "duration": "30min" },
+  { "name": "Butt cheeks", "price": 30, "duration": "20min" },
+  { "name": "V Facial", "price": 80, "duration": null },
+  { "name": "Full legs", "price": 80, "duration": null }
  ],
- "reviews": [
+ "reviews_verbatim_full": [
   {
-   "author": "Gina C…",
-   "body": ".",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Ana L…",
-   "body": ".",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Stephanie R…",
-   "body": "very great service / very great service",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": null,
+   "author": "Clarissa",
    "body": "Services with Emily are therapeutic for me. I fall asleep on the table and let her do her magic. We're locked in for almost 2 years now.",
-   "rating": null,
-   "author_verified": false
+   "source": "Booksy",
+   "note": "Full text, not truncated (recovered from raw DOM review list)."
   },
   {
-   "author": null,
-   "body": "Waxing with Emily has literally changed my life. I feel so clean and relaxed when I come to do my wax. I was always a person who shaved and didn’t see...",
-   "rating": null,
-   "author_verified": false
+   "author": "Andrea",
+   "body": "Waxing with Emily has literally changed my life. I feel so clean and relaxed when I come to do my wax. I was always a person who shaved and didn't see the need for wax but after my first time, I realized how important it is to wax. It leaves me feeling so much more confident and secure about myself.",
+   "source": "Booksy",
+   "note": "Booksy truncates this review in the visible span with '...'; full text recovered from the hidden 'show more' span in the raw HTML."
   },
   {
-   "author": null,
-   "body": "Emily was great! It was my first ever getting any type of wax so I was very nervous. She was very patient and sweet with me. Definitely recommend goin...",
-   "rating": null,
-   "author_verified": false
-  }
- ],
- "named_reviews": [
-  {
-   "author": "Gina C…",
-   "body": ".",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Ana L…",
-   "body": ".",
-   "rating": 5,
-   "author_verified": true
+   "author": "Jasmin",
+   "body": "Emily was great! It was my first ever getting any type of wax so I was very nervous. She was very patient and sweet with me. Definitely recommend going to her!!",
+   "source": "Booksy",
+   "note": "Booksy truncates this review in the visible span with '...'; full text recovered from the hidden 'show more' span in the raw HTML."
   },
   {
    "author": "Stephanie R…",
-   "body": "very great service / very great service",
-   "rating": 5,
-   "author_verified": true
+   "body": "very great service",
+   "source": "Booksy",
+   "note": "Short review from JSON-LD, author's last name truncated by Booksy itself (privacy), used only in data.json, not on the site."
+  },
+  {
+   "author": "Gina C… / Ana L…",
+   "body": ".",
+   "source": "Booksy",
+   "note": "JSON-LD review entries with empty/placeholder body (rating only, no text). Not usable as quotes."
   }
  ],
- "language": "en"
+ "language": "en",
+ "photos": {
+  "sources_checked": [
+   "Booksy business page: only 1 logo + 1 real biz_photo visible in the rendered gallery UI.",
+   "Booksy raw RSC/JSON payload (decoded \\u002F unicode-escaped URLs manually): revealed 1 additional biz_photo and 7 'inspiration'-tagged uploaded photos not shown in the visible gallery UI, all served from the business's own cloudfront folder (not stock).",
+   "Fresha listing: only a generic category placeholder image (images.fresha.com/lead-images/placeholders/waxing-salon-13.jpg), not a real photo, not used.",
+   "Google Maps: page fetched via curl returns an undecodable client-side bundle, no accessible photo URLs without a real browser/JS.",
+   "Yelp: no listing found for this business.",
+   "Instagram/Facebook: no confirmed account for this business (see instagram_search_note), so no photos sourced from there."
+  ],
+  "downloaded_total": 9,
+  "used_on_site": 5,
+  "curation_notes": "Of 9 real, own images found (1 logo, 2 biz_photo, 7 inspiration-tagged uploads), 4 close-up treatment-result crops (bikini/underarm/elbow skin close-ups) were excluded from the gallery as too clinical/anatomically explicit or too cluttered/low-composition for a premium public gallery per the curation guidelines. The 4 used photographic images (2 interior studio shots, 1 storefront exterior, 1 tasteful smooth-skin result close-up) plus the wordmark logo were kept.",
+  "files": {
+   "logo.jpg": "Business wordmark logo (brand mark, used in nav/footer/avatar).",
+   "interior-warm.jpg": "Real interior photo of the treatment room, warm lighting, neon studio sign, wall art. Used as hero image.",
+   "interior-green.jpg": "Real interior photo of the treatment room from a different angle, teal/green ambient lighting from the neon sign. Used in About section.",
+   "storefront.jpg": "Real exterior photo of the Phenix Salon Suites building where the studio is located. Used in About section.",
+   "glow-result.jpg": "Real close-up of smooth underarm skin after a sugaring treatment, tasteful crop. Used in gallery."
+  }
+ },
+ "notes": "Research redone from scratch beyond the discovery seed data: reviews recovered in FULL verbatim (the seed data only had truncated snippets), phone number found independently (was not in the seed data), own-website absence re-verified via DNS, photo pool expanded from 2 (visible Booksy gallery) to 9 (full RSC payload) then curated down to 5 usable assets."
 }
