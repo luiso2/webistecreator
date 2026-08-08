@@ -65,11 +65,11 @@ rep('background: linear-gradient(180deg, #2a1722 0%, #1f0f18 100%);',
     'background: linear-gradient(180deg, #241408 0%, #180d05 100%);')
 rep('bg-[#1c0f16]', 'bg-[#180d06]')
 # dark-band text-shine: warm amber glow variant (keep a soft cream orb as contrast accent)
-rep(".dark-band .text-shine { background-image: linear-gradient(110deg, #f0bed7 0%, #f8dfeb 30%, #8fcdbf 52%, #f0bed7 75%, #f2cfe0 100%); }",
+rep(".dark-band .text-shine { background-image: linear-gradient(110deg, #f0bed7 0%, #f8dfeb 30%, #e8b98a 52%, #f0bed7 75%, #f2cfe0 100%); }",
     ".dark-band .text-shine { background-image: linear-gradient(110deg, #f3d2a8 0%, #fbe9d3 30%, #e8b98a 52%, #f3d2a8 75%, #f5ddc4 100%); }")
 rep(".dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }",
     ".dark-band .orb-b { background: radial-gradient(circle, rgba(217,138,84,0.16) 0%, transparent 70%); opacity: 1; }")
-rep(".dark-band .btn-3d { background: linear-gradient(180deg, #fbeff5 0%, #efd0e0 48%, #d3a2bc 100%); color: #172a26; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(125,52,87,0.35), 0 5px 0 #8a5573, 0 12px 24px rgba(0,0,0,0.45); }",
+rep(".dark-band .btn-3d { background: linear-gradient(180deg, #fbeff5 0%, #efd0e0 48%, #d3a2bc 100%); color: #2e2015; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(125,52,87,0.35), 0 5px 0 #8a5573, 0 12px 24px rgba(0,0,0,0.45); }",
     ".dark-band .btn-3d { background: linear-gradient(180deg, #fdf3e7 0%, #f0dcbf 48%, #dcae82 100%); color: #2e2015; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(138,68,32,0.35), 0 5px 0 #8a6142, 0 12px 24px rgba(0,0,0,0.45); }")
 rep(".dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(125,52,87,0.35), 0 7px 0 #8a5573, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(240,190,215,0.18); }",
     ".dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(138,68,32,0.35), 0 7px 0 #8a6142, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(243,210,168,0.18); }")
@@ -83,7 +83,7 @@ rep(".dark-band .stars { color: #f0bed7; text-shadow: 0 0 14px rgba(240,190,215,
     ".dark-band .stars { color: #f3d2a8; text-shadow: 0 0 14px rgba(243,210,168,0.4); }")
 rep("--surface: rgba(255,255,255,0.05); --accent-ghost: rgba(233,205,186,0.16); color: var(--ink);",
     "--surface: rgba(255,255,255,0.05); --accent-ghost: rgba(217,138,84,0.2); color: var(--ink);")
-rep("--ink: #f4f8f6; --ink-60: rgba(250,242,246,0.65); --ink-40: rgba(250,242,246,0.45);",
+rep("--ink: #faf5ee; --ink-60: rgba(250,242,246,0.65); --ink-40: rgba(250,242,246,0.45);",
     "--ink: #faf3ea; --ink-60: rgba(250,243,234,0.65); --ink-40: rgba(250,243,234,0.45);")
 rep(".foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(240,190,215,0.09); pointer-events: none; user-select: none; }",
     ".foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(243,210,168,0.09); pointer-events: none; user-select: none; }")
@@ -166,7 +166,7 @@ rep('<span class="pre-word">Lash Bloom</span>', '<span class="pre-word">Imagine 
 # 7. NAV (logo image -> text monogram, no verified brand logo file)
 # ---------------------------------------------------------------------------
 rep(
-    '<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(20,107,96,0.35)]" />\n        <span class="font-display text-xl tracking-[0.1em] uppercase">Lash <span class="text-[color:var(--accent-deep)]">Bloom</span></span>',
+    '<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(177,80,44,0.35)]" />\n        <span class="font-display text-xl tracking-[0.1em] uppercase">Lash <span class="text-[color:var(--accent-deep)]">Bloom</span></span>',
     '<span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(177,80,44,0.35)] bg-[rgba(177,80,44,0.1)] text-[color:var(--accent-deep)]">IIG</span>\n        <span class="font-display text-xl tracking-[0.1em] uppercase">Imagine It <span class="text-[color:var(--accent-deep)]">Gardening</span></span>'
 )
 rep('<a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>',
@@ -317,7 +317,7 @@ rep(
 )
 rep(
     '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un suite zen" data-en="A zen suite">A zen suite</span><br /><span class="text-shine" data-es="hecho para relajarte" data-en="made to unwind in">made to unwind in</span></h2>',
-    '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Passion for landscaping" data-en="A passion for landscaping">A passion for landscaping</span><br /><span class="text-shine" data-es="que se nota" data-en="that shows in every yard">that shows in every yard</span></h2>'
+    '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Pasión por la jardinería" data-en="A passion for landscaping">A passion for landscaping</span><br /><span class="text-shine" data-es="que se nota" data-en="that shows in every yard">that shows in every yard</span></h2>'
 )
 rep(
     '<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Lash Bloom es el estudio de una sola artista licenciada y certificada: Yesi. Cada set se diseña sobre tu ojo, pestaña por pestaña, en un suite que sus clientas describen como zen y relajante, con luz neon rosa y calma de verdad." data-en="Lash Bloom is the studio of one licensed, certified artist: Yesi. Every set is designed around your eye, lash by lash, in a suite her clients describe as zen and relaxing, pink neon glow included.">Lash Bloom is the studio of one licensed, certified artist: Yesi. Every set is designed around your eye, lash by lash, in a suite her clients describe as zen and relaxing, pink neon glow included.</p>',
@@ -332,7 +332,7 @@ rep(
     '<div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.67" data-decimals="2">4.67</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">GreenPal</p></div>\n          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="85">85</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>\n          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2010</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Desde" data-en="Since">Since</p></div>'
 )
 rep(
-    '''<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(20,107,96,0.3)]" loading="lazy" />
+    '''<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(177,80,44,0.3)]" loading="lazy" />
             <span class="text-sm font-light">Yesi · <span class="text-[color:var(--ink-40)]" data-es="Artista licenciada" data-en="Licensed lash artist">Licensed lash artist</span></span>''',
     '''<img src="assets/raw/founder-alejandro.jpg" alt="Alejandro Hurtado, owner of Imagine It Gardening" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(177,80,44,0.3)]" loading="lazy" />
             <span class="text-sm font-light">Alejandro Hurtado · <span class="text-[color:var(--ink-40)]" data-es="Dueño" data-en="Owner">Owner</span></span>'''
@@ -532,7 +532,7 @@ rep(
             <div>
               <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light">4580 Cresthaven Blvd (inside Lux Stitch Embroidery), West Palm Beach, FL 33415</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(20,107,96,0.4)]" href="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,80,44,0.4)]" href="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
             </div>''',
     '''<svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
@@ -545,13 +545,13 @@ rep(
             <div>
               <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">By appointment via Booksy: pick the service, day and time, and the confirmation is instant.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(20,107,96,0.4)]" href="''' + GREENPAL + '''" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,80,44,0.4)]" href="''' + GREENPAL + '''" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
             </div>''',
     '''<svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             <div>
               <p class="font-medium mb-1" data-es="Cotización gratis" data-en="Free quote">Free quote</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Pide tu cotización por GreenPal, sin compromiso. Alejandro responde y disponibilidad todos los días de 7am a 10pm." data-en="Request your quote through GreenPal, no obligation. Alejandro responds and is available every day from 7am to 10pm.">Request your quote through GreenPal, no obligation. Alejandro responds and is available every day from 7am to 10pm.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(20,107,96,0.4)]" href="https://www.yourgreenpal.com/imagine-it-gardening" target="_blank" rel="noopener" data-es="Pedir cotización" data-en="Get a quote">Get a quote</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,80,44,0.4)]" href="https://www.yourgreenpal.com/imagine-it-gardening" target="_blank" rel="noopener" data-es="Pedir cotización" data-en="Get a quote">Get a quote</a>
             </div>'''
 )
 rep(
@@ -559,13 +559,13 @@ rep(
             <div>
               <p class="font-medium mb-1">Instagram</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi's latest sets and DM any questions before your appointment.">See Yesi's latest sets and DM any questions before your appointment.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(20,107,96,0.4)]" href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener">@_lashbloom</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,80,44,0.4)]" href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener">@_lashbloom</a>
             </div>''',
     '''<svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
             <div>
               <p class="font-medium mb-1" data-es="Reseñas verificadas" data-en="Verified reviews">Verified reviews</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="4.67 de calificación con 85 reseñas de clientes reales en GreenPal." data-en="A 4.67 rating from 85 real customer reviews on GreenPal.">A 4.67 rating from 85 real customer reviews on GreenPal.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(20,107,96,0.4)]" href="https://www.yourgreenpal.com/imagine-it-gardening" target="_blank" rel="noopener">Imagine It Gardening on GreenPal</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(177,80,44,0.4)]" href="https://www.yourgreenpal.com/imagine-it-gardening" target="_blank" rel="noopener">Imagine It Gardening on GreenPal</a>
             </div>'''
 )
 # Replace the map iframe block with a real curated photo (variante adaptada: no address-based map)
