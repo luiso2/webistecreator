@@ -1,0 +1,132 @@
+{
+ "slug": "kcs-handwash",
+ "name": "KC's Hand Wash",
+ "schema_type": "AutoWash",
+ "city": "Kendall, Miami, FL",
+ "niche": "detailing de autos / hand car wash",
+ "address": {
+  "streetAddress": "15450 SW 136th St",
+  "addressLocality": "Miami",
+  "addressRegion": "FL",
+  "postalCode": "33196",
+  "addressCountry": "US",
+  "note": "Located behind the Texaco gas station on SW 136th St, in the Country Walk / West Kendall area. Address is consistent across Yelp, Birdeye, Yahoo Local, Giftly and Roadtrippers."
+ },
+ "phone": "+17865972949",
+ "phone_display": "(786) 597-2949",
+ "phone_source": "Consistent across Birdeye, Yelp aggregator listings, Yahoo Local, and Roadtrippers.",
+ "email": null,
+ "email_search_log": [
+  "Instagram (@kchandwash): web_profile_info API and direct WebFetch both blocked (HTTP 429 / redirected to login wall by Instagram from this environment); could not read the bio directly to check for a business_email field or linktree link. Photos were still recoverable via the Railway ig-photo-service (see photos.sources_checked), but that channel does not expose bio/contact text.",
+  "Facebook page (facebook.com/pages/KC's Hand Wash/101283187182109): direct fetch redirects to Facebook login wall, About section not accessible without auth.",
+  "Giftly.com gift-card listing page: fetched directly, no email present, only phone/address/description. Giftly's own support emails (support@giftly.com, merchants@giftly.com) are Giftly's, not the business's, and were not used.",
+  "Birdeye profile (reviews.birdeye.com/kcs-handwash-156057493897188): fetched directly, profile marked 'unclaimed by business owner', no email or website field listed.",
+  "wusaw.com directory listing (kc-s-hand-wash.wusaw.com): fetched directly, business description/hours/phone present, no email.",
+  "Yelp business page: direct fetch returned 403 (Cloudflare-protected); relied on search-engine summaries of the page, which likewise surfaced no email.",
+  "Web search for 'kchandwash OR KC's Hand Wash gmail.com OR outlook.com OR email': no matching result.",
+  "Sunbiz.org corporate registry (entity 'KCS HAND CAR WASH', doc P18000005171) was located via search but the detail page returned 403 on direct fetch, so registered-agent/officer contact info could not be confirmed.",
+  "Conclusion: no public email verifiable from any source whose raw content was directly inspected. Outreach will rely on phone (call) and Instagram DM as the manual channels."
+ ],
+ "instagram": "@kchandwash",
+ "instagram_url": "https://www.instagram.com/kchandwash/",
+ "instagram_note": "Account title/IG display name is 'KCs Hand Wash | MIAMI CAR WASH'. Bio text and follower/post counts could not be read directly (Instagram returned 429 / login-redirect to every direct fetch attempt from this environment, both via WebFetch and via a Playwright browser launch through the sandbox proxy), but the Railway ig-photo-service was able to retrieve 12 real feed-photo URLs (all 'Video by KCs Hand Wash | MIAMI CAR WASH' Reels covers spanning Jan 2026-Jul 2026), which were downloaded and visually curated for the site.",
+ "has_own_site": false,
+ "own_site_check": "Tried kchandwash.com, kcshandwash.com, kcs-handwash.com, kchandwashmiami.com, kcshandwashmiami.com via curl: all return connection failures (no DNS/host), none resolve. Birdeye's profile for the business (unclaimed) lists no website field. Yelp/Giftly/Yahoo Local/Roadtrippers/wusaw.com aggregator listings likewise show no owned-domain website field for this business, only the aggregator's own directory page. The only 'website' Birdeye could show for the business was blank; a related search of the business's Birdeye entry for the owner's other listings did not surface any owned domain either.",
+ "own_site_note": "kc-s-hand-wash.wusaw.com is a third-party local-business directory subdomain (wusaw.com), not an owned domain; it does NOT count as an own website per pipeline rules (platform subdomain).",
+ "booking_platforms": null,
+ "booking_note": "Walk-in hand car wash, no online booking or appointment platform found anywhere. Customers drive up during business hours; per multiple reviews, pricing and service selection happen in person with owner Rudy or staff member Javi.",
+ "rating_sources": {
+  "google_via_birdeye": { "rating": 4.6, "reviews_count": 46, "note": "Birdeye's profile for 'Kc's Handwash' explicitly states 'Total Reviews: 46 (all from Google)', i.e. this is Birdeye mirroring the business's actual Google Business Profile rating, not a Birdeye-native rating. Matches the figure flagged in discovery." },
+  "yelp": { "rating": 4.5, "reviews_count": 14, "note": "Yelp listing title: 'KC'S HAND WASH - 53 Photos & 14 Reviews - Car Wash - 15450 SW 136th St, Miami, FL' (read via search-engine indexed snippet; direct Yelp fetch returns 403). A separate search summary of the wusaw.com aggregator cited a slightly different 'Yelp: 4-star rating (15 reviews)' figure, likely a stale cache; the Yelp business-page title itself (14 reviews) is treated as more current." }
+ },
+ "rating": 4.6,
+ "reviews_count": 46,
+ "rating_primary_source": "Google Business Profile rating/count as mirrored directly by Birdeye (4.6 / 46, sourced 100% from Google per Birdeye's own 'all from Google' label), chosen as primary per PIPELINE.md's Google-first sourcing rule. Yelp (4.5/14) is consistent and close.",
+ "hours_source": "Birdeye lists identical hours for all seven days: 9:00 a.m. - 5:30 p.m. Other aggregators (Yahoo Local, Roadtrippers) show a slightly rounder '9:00 AM - 6:00 PM daily'; a Yelp-sourced review complaint about being turned away at 4:50pm because 'they closed at 5pm' suggests real-world closing can run a bit earlier than posted. Used Birdeye's per-day 9:00-5:30 figure as the most granular source; noted the discrepancy so it is not stated as an ironclad fact on the site (site copy says 'call ahead' rather than asserting exact hours).",
+ "hours": [
+  { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "17:30" }
+ ],
+ "hours_note": "Open all 7 days per every source checked. Exact closing time varies slightly by source (5:30pm vs 6:00pm); site copy avoids stating a precise closing time and instead invites people to call ahead.",
+ "owner_name": "Rudy",
+ "owner_source": "Named directly by multiple independent Google reviewers: Nizar Andres Assad ('supervised by the greatest owner: Rudy'), Alber Tovar ('I've been washing my cars with Rudy and his team for 10 years'), and Yelp reviewers Sandie D. ('Rudy and his staff did an incredible job') and Eddy H. ('Rudy and his team do an excellent job with your vehicle detailing'). A staff member named Javi is also named by reviewer Maria Garcia ('Javi and the team were amazing').",
+ "menu_items_verified": {
+  "source": "Cross-referenced across the wusaw.com directory description ('meticulous, hand-washed car care... exterior cleaning, gentle scrubbing to remove dirt and grime, wheel detailing, and a final towel dry'), the Giftly.com listing description, and multiple independent Google/Yelp reviews naming specific services (Sandie D.: 'Wash, waxed and detailed to perfection'; Eddy H.: 'a simple Hand Wash, Wax or Clay Bar').",
+  "services": [
+   "Hand wash (exterior hand wash, wheel/tire detailing, towel dry)",
+   "Wax",
+   "Clay bar treatment",
+   "Full interior + exterior detailing"
+  ],
+  "prices_note": "No price list is published anywhere (no website, no menu on any aggregator, no pricing mentioned in any review). Site presents services without prices and directs people to call or stop by for a quote, consistent with the walk-in, no-booking-platform nature of the business."
+ },
+ "reviews_verbatim_full": [
+  {
+   "author": "Alber Tovar",
+   "body": "I've been washing my cars with Rudy and his team for 10 years. They're efficient, professional, and always make you feel like family.",
+   "source": "Google, via Birdeye",
+   "used_on_site": true
+  },
+  {
+   "author": "Nizar Andres Assad",
+   "body": "Incredible detailed service supervised by the greatest owner: Rudy. A true neighborhood OG who works his tail off, and treats you so personably, attentive and fair, without any price gauging.",
+   "source": "Google, via Birdeye, 3 days old as of the scrape",
+   "used_on_site": true
+  },
+  {
+   "author": "Sandie D.",
+   "body": "Rudy and his staff did an incredible job on my car. Wash, waxed and detailed to perfection!",
+   "source": "Yelp (via search-engine indexed snippet)",
+   "used_on_site": true
+  },
+  {
+   "author": "Oscar Lanzas",
+   "body": "Lo mejor de Miami en trabajo el propietario es lo mejor tengo 16 Años de Lavar mis Carros",
+   "translation_note": "Roughly: 'The best in Miami for work, the owner is the best, I've been washing my cars there for 16 years.'",
+   "source": "Google, via Birdeye, ~7 months old as of the scrape",
+   "used_on_site": false,
+   "note": "Kept in research as the strongest loyalty data point (16 years) but not placed as an on-site quote to keep the testimonials section to 3 varied voices; its substance (long-time loyal customers) is reflected in the strip stat '10+ years' and the 'about' copy instead."
+  },
+  {
+   "author": "Eddy H.",
+   "body": "Rudy and his team do an excellent job with your vehicle detailing, whether it's a simple Hand Wash, Wax or Clay Bar.",
+   "source": "Yelp (via search-engine indexed snippet)",
+   "used_on_site": false,
+   "note": "Kept in research (confirms the specific service names used in the services section) but not placed as an on-site quote."
+  },
+  {
+   "author": "Maria Garcia",
+   "body": "Javi and the team were amazing, today was my first time here and even tho they were packed...",
+   "source": "Google, via Birdeye, ~8 months old as of the scrape (truncated in the source page)",
+   "used_on_site": false,
+   "note": "Full text was truncated on the Birdeye summary page and could not be recovered in full; not used as an on-site quote since only a partial sentence is verifiable."
+  }
+ ],
+ "language": "en",
+ "language_note": "IG account display title ('KCs Hand Wash | MIAMI CAR WASH') and hashtags (#BMW, #BENTLEY) are in English; of 6 reviews recovered, 5 are in English and 1 in Spanish (Oscar Lanzas). English set as the default site language, with full Spanish translations included via the bilingual toggle since Kendall is a heavily Spanish-speaking market.",
+ "photos": {
+  "sources_checked": [
+   "Instagram (@kchandwash) via the Railway ig-photo-service (https://ig-photo-service-production.up.railway.app/ig): returned 12 real photo URLs (Reels cover images) from cdninstagram.com on the first successful call. Direct Instagram access (both curl and a Playwright browser launch inside this sandbox) was blocked/redirected to a login wall, so this service was the only working photo channel.",
+   "Yelp: 53 photos mentioned on the business listing page, but direct fetch of the Yelp page returns 403 (Cloudflare); not used as a source since the images themselves could not be retrieved.",
+   "Google Maps: no directly linkable lh3.googleusercontent.com photo URLs surfaced through text search without a JS-capable browser reachable from this environment."
+  ],
+  "downloaded_total": 12,
+  "used_on_site": 10,
+  "curation_notes": "All 12 downloaded photos were opened and visually inspected one by one (not chosen by filename). All 12 are real, in-focus, well-lit shots of actual vehicles at the shop or shop signage/action; none show text overlays, blur, clutter or selfies. Used: bk-9.jpg (Lamborghini Sto, black, rear with yellow shop towel draped on the exhaust, dramatic and clearly 'freshly washed' -- used as hero/og:image), bk-1.jpg (clean white BMW X1 rear, simple finished-result shot -- used in about section), bk-12.jpg (classic black car, e.g. Lincoln/Cadillac, with the shop's yellow awning and a beige commercial building visible in the background, the clearest 'real location' shot -- used in about section), bk-5.jpg (Ferrari cavallino wheel-cap macro, clean circular composition -- used as the small owner-avatar graphic since no photo of Rudy himself is available), bk-6.jpg (wide action shot of a staff member hand-washing a white pickup truck under the shop's green/dark tent canopy, the best 'business in action' photo -- used as both the small nav/footer logo image and the wide gallery tile), bk-2.jpg (close macro of an alloy wheel and brake caliper with a gold emblem, sharp detail shot -- gallery), bk-7.jpg (powder-blue Porsche 911 GT3 rear with wing, under the tent -- gallery), bk-8.jpg (Maserati grille and trident badge, clean macro -- gallery), bk-10.jpg (grey Ford Mustang GT500 rear three-quarter, freshly finished -- gallery), bk-11.jpg (Abarth scorpion badge macro on a white car -- gallery). Not placed (kept as spares in assets/raw/): bk-3.jpg (Aston Martin badge macro, technically fine but has a visible faint reflection of the photographer's phone/arm in the glossy paint, borderline distracting for a hero-quality shot) and bk-4.jpg (Lamborghini script sill/carbon-fiber macro, good but redundant with bk-9 and bk-2 which already cover the Lamborghini/exotic angle).",
+  "files": {
+   "bk-9.jpg": "Lamborghini Sto, black, rear with yellow shop towel on the exhaust. Used as hero image / og:image.",
+   "bk-1.jpg": "Clean white BMW X1 rear, finished hand wash. Used in the about/experience section.",
+   "bk-12.jpg": "Classic black car with the shop's yellow awning and building visible behind it. Used in the about/experience section.",
+   "bk-5.jpg": "Ferrari cavallino wheel-cap macro. Used as the small circular avatar next to the owner mention.",
+   "bk-6.jpg": "Staff hand-washing a white pickup truck under the shop's tent canopy. Used as the nav/footer logo thumbnail and as the wide gallery tile.",
+   "bk-2.jpg": "Alloy wheel and brake caliper macro with gold emblem. Gallery tile.",
+   "bk-7.jpg": "Powder-blue Porsche 911 GT3 rear wing. Gallery tile.",
+   "bk-8.jpg": "Maserati grille and trident badge. Gallery tile.",
+   "bk-10.jpg": "Grey Ford Mustang GT500 rear three-quarter. Gallery tile.",
+   "bk-11.jpg": "Abarth scorpion badge macro. Gallery tile.",
+   "bk-3.jpg": "Aston Martin badge macro with a faint reflection visible in the paint. Downloaded, kept as spare, not placed.",
+   "bk-4.jpg": "Lamborghini script sill / carbon-fiber macro. Downloaded, kept as spare, not placed."
+  }
+ },
+ "brand_vibe": "A no-frills neighborhood hand wash behind a Texaco gas station, but with an unmistakable exotic-car following: the Instagram feed and Google reviews are full of Lamborghinis, Porsches, Ferraris, Maseratis and Aston Martins alongside daily-driver BMWs and Mustangs, all under the same yellow/dark tent canopy on a plain asphalt lot. That contrast (humble setting, serious clientele) is the real story, so the site uses a dark, premium automotive palette (near-black charcoal base with a cool steel/chrome blue accent, evoking clean wet paint and chrome trim) rather than a cheerful car-wash blue-and-yellow scheme, letting the vehicle photography itself carry the color.",
+ "notes": "Adapted variant per PIPELINE.md Fase 3 point 5 / FORGE-BRIEF 0.b: walk-in hand car wash with no online booking and no published price list. CTA points to tel:+17865972949 (call) as the primary channel, with Instagram as secondary; the services section states prices are quoted on the spot rather than inventing a price list. Address is public and verified across multiple independent sources, so a real Google Maps embed is used (no placeholder/invented map). No public email was found after an exhaustive search (see email_search_log), so outreach is pending_manual via phone call and Instagram DM. Business name rendered as 'KC's Hand Wash' (matches Yelp/Birdeye/Yahoo Local listing name and the Sunbiz-registered entity 'KCS HAND CAR WASH'); the Instagram handle @kchandwash and its display title use 'KCs Hand Wash' (no apostrophe) purely as an IG username constraint, not a different business name."
+}
