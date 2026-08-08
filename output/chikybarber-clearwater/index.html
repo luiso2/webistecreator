@@ -284,7 +284,73 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/bk-3.jpg" alt="Client at ChikyBarber with a freshly cut fade and fringe" class="blur-up w-full h-full object-cover" />
+        <img src="assets/raw/owner.jpg" alt="ChikyBarber" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(82,205,123,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Chiky <span class="text-[color:var(--accent-deep)]">Barber</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">The Method</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
+        <a href="https://booksy.com/en-us/1137079_chikybarber_barber-shop_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">The Experience</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">The Method</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/1137079_chikybarber_barber-shop_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Clearwater, FL · Barbería" data-en="Clearwater, FL · Barbershop">Clearwater, FL · Barbershop</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Cortes limpios, atención al detalle." data-en="Clean cuts, real attention to detail.">Clean cuts, real attention to detail.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Fades nítidos y" data-en="Sharp fades and">Sharp fades and</span><br /><span data-es="barbas cuidadas, hechas para " data-en="sharp beards, made to ">sharp beards, made to </span><span class="text-shine" data-es="verse bien" data-en="look right">look right</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="ChikyBarber es una barbería en Clearwater especializada en cortes, fades y arreglo de barba. Cada cita se trabaja con calma y atención al detalle, tal como lo describen los clientes en sus reseñas." data-en="ChikyBarber is a Clearwater barbershop specialized in haircuts, fades and beard grooming. Every visit is handled with care and attention to detail, just like clients describe it in their reviews.">ChikyBarber is a Clearwater barbershop specialized in haircuts, fades and beard grooming. Every visit is handled with care and attention to detail, just like clients describe it in their reviews.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 120 reseñas en Booksy" data-en="5.0 · 120 reviews on Booksy">5.0 · 120 reviews on Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/1137079_chikybarber_barber-shop_15980_clearwater" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.instagram.com/chikyybarber/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            @chikyybarber
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/bk-3.jpg" alt="Client at ChikyBarber with a freshly cut fade and fringe" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
             <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Reserva online" data-en="Book online">Book online</p>
@@ -337,7 +403,7 @@
           <img src="assets/raw/bk-14.jpg" alt="Inside ChikyBarber, the barber chair and shop decor" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/bk-2.jpg" alt="Barber giving a client a fresh haircut" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/bk-8.jpg" alt="Barber giving a client a fresh haircut at ChikyBarber" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
@@ -352,7 +418,7 @@
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/bk-1.jpg" alt="Dainier López, barber at ChikyBarber" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(82,205,123,0.3)]" loading="lazy" />
+            <img src="assets/raw/owner.jpg" alt="Dainier López, barber at ChikyBarber" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(82,205,123,0.3)]" loading="lazy" />
             <span class="text-sm font-light">Dainier López · <span class="text-[color:var(--ink-40)]" data-es="Barbero" data-en="Barber">Barber</span></span>
           </div>
         </div>
@@ -461,10 +527,9 @@
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="El local" data-en="The shop">The shop</span><img src="assets/raw/bk-15.jpg" alt="Interior of ChikyBarber with honeycomb ceiling lights" class="blur-up w-full h-full object-cover" /></div>
         <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Fade" data-en="Fade">Fade</span><img src="assets/raw/bk-5.jpg" alt="Client with a fresh tight fade at ChikyBarber" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Perfil" data-en="Profile">Profile</span><img src="assets/raw/bk-6.jpg" alt="Client profile showing a clean beard and fade" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Resultado" data-en="Result">Result</span><img src="assets/raw/bk-10.jpg" alt="Client with a finished haircut at ChikyBarber" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Skin fade" data-en="Skin fade">Skin fade</span><img src="assets/raw/bk-8.jpg" alt="Back view of a clean skin fade at ChikyBarber" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Flequillo" data-en="Fringe cut">Fringe cut</span><img src="assets/raw/bk-3.jpg" alt="Side profile of a fade with a textured fringe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Resultado" data-en="Result">Result</span><img src="assets/raw/bk-10.jpg" alt="Client with a finished haircut at ChikyBarber" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Skin fade" data-en="Skin fade">Skin fade</span><img src="assets/raw/bk-7.jpg" alt="Back and side view of a clean skin fade at ChikyBarber" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Flequillo" data-en="Fringe cut">Fringe cut</span><img src="assets/raw/bk-3.jpg" alt="Side profile of a fade with a textured fringe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -584,7 +649,7 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/bk-1.jpg" alt="ChikyBarber" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(154,228,180,0.35)]" loading="lazy" />
+          <img src="assets/raw/owner.jpg" alt="ChikyBarber" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(154,228,180,0.35)]" loading="lazy" />
           <span class="font-display text-lg tracking-[0.1em] uppercase">ChikyBarber</span>
         </div>
         <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Barbería de cortes, fades y arreglo de barba en Clearwater, FL." data-en="Haircut, fade and beard grooming barbershop in Clearwater, FL.">Haircut, fade and beard grooming barbershop in Clearwater, FL.</p>
