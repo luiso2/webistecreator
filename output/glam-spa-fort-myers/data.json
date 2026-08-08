@@ -1,0 +1,140 @@
+{
+ "slug": "glam-spa-fort-myers",
+ "name": "Glam Spa (Elizabeth Gonzalez)",
+ "schema_type": "BeautySalon",
+ "city": "Fort Myers, FL",
+ "niche": "facial / skincare studio (single esthetician: facials, waxing, tinting, lash extensions)",
+ "address": {
+  "streetAddress": "13601 McGregor Blvd #13",
+  "addressLocality": "Fort Myers",
+  "addressRegion": "FL",
+  "postalCode": "33919",
+  "addressCountry": "US"
+ },
+ "geo": { "latitude": 26.5439607, "longitude": -81.9145105 },
+ "google_maps_place_id_hex": "0x88db3f3d4e99b61d:0xa5655986022e857e",
+ "google_maps_url": "https://www.google.com/maps/place/GLAM+SPA+ELIZABETH+GONZALEZ/@26.5439607,-81.9145105,17z/data=!3m1!4b1!4m6!3m5!1s0x88db3f3d4e99b61d:0xa5655986022e857e!8m2!3d26.5439607!4d-81.9145105!16s%2Fg%2F11qbbfs_4r",
+ "phone": "+12392578886",
+ "phone_display": "(239) 257-8886",
+ "phone_source": "Extracted directly from the SalonMonster booking platform's own backend API (https://api2.salonmonster.com/api/salons/search/glam, salonID 14235), the business's own live operational record, and independently confirmed live on the business's actual Google Business Profile page (fetched via a real Chromium browser session, google.com/maps/place/GLAM+SPA+ELIZABETH+GONZALEZ, phone field '+1 239-257-8886'). Two independent authoritative sources agree exactly.",
+ "email": "elizabethshia07@yahoo.com",
+ "email_source": "Public 'email' field returned directly by the SalonMonster salon-search API (api2.salonmonster.com/api/salons/search/glam and /api/salons/14235), which is the business's own account record on its own booking platform, not a guess or aggregator scrape. Same address also appears as the stylist record's contact email for staff member Elizabeth Gonzalez (id 19777) in the /stylists endpoint. Treated as the authoritative found email.",
+ "email_search_log": [
+  "SalonMonster booking platform backend API (api2.salonmonster.com/api/salons/search/glam and /api/salons/14235): returned the salon's own account email 'elizabethshia07@yahoo.com' directly in the JSON response (not visible in the rendered Angular page itself, which shows only a 'LOADING' shell to plain curl; found by reverse-engineering the app bundle main.*.js to locate API_ROOT=https://api2.salonmonster.com/api and the /salons/search/{subdomain} and /salons/{id} routes). This is the strongest, most authoritative email source available: the business's own platform account.",
+  "Google Business Profile (live Chromium fetch of the actual Maps place page): shows phone and website (glam.salonmonster.com) fields but no separate public email field (Google Business Profiles do not expose owner email).",
+  "reviews.birdeye.com aggregator page: no email field present, only phone-less summary (name/address/rating/reviews).",
+  "Facebook: searched 'site:facebook.com Glam Spa Elizabeth Gonzalez' and 'Glam Spa Elizabeth Gonzalez facebook Fort Myers'. The only Facebook page found under the name 'Glam Spa | Fort Myers FL' (facebook.com/people/Glam-Spa/100065248372232/) turned out on inspection (og:description) to be a different business entirely: 'Glam Spa, Fort Myers. 12 likes. Tanning Salon' -- a tanning salon, not a skincare/facial studio, no address match confirmed, and only 12 likes vs this being a 5.0/18-reviews established business. Discarded as a false match, not used for email or photos.",
+  "Instagram: searched multiple angles (business name, owner name, phone-adjacent handles). Three specific candidate accounts were opened and each confirmed to be a DIFFERENT business: (1) @glamorousskinbyelizabeth -- promotional graphics show phone 281-245-6990 (Houston, TX area code) and booking link visibook.com/glamorousskinbyelizabeth (different booking platform entirely); (2) @elizabeth_beautycenter -- a hair-color/glamour-photography studio account (Spanish-language 'Comunicadora' branding, TV/media studio backdrop photos), not a facial/skincare business, no Fort Myers signal; (3) @glamspa -- stale account (last posts 2019) with promotional graphic showing phone 908-510-1178 (New Jersey area code). None matches the 239 area code, the McGregor Blvd address, or the SalonMonster/BeautySalon service mix of this business. No confirmed real Instagram handle for this business exists in what was found.",
+  "ZoomInfo listing for 'Elizabeth Gonzalez ... Skin Care at Glam Spa' shows a masked email 'e***@glamspa.com'. glamspa.com is documented (per this task's own briefing and independently reconfirmed) to be an unrelated Connecticut business, not this Fort Myers spa; ZoomInfo's aggregator is known to mis-attribute domain-based emails from company-name string matching. Not used.",
+  "LinkedIn profile 'Elizabeth Gonzalez - Skin care at Glam spa': blocked by login wall on direct fetch (HTTP 999), no content recovered.",
+  "Bipper Media and Organic Spa Directory listing pages for this business: both dead/redirecting (301 to unrelated homepage, or empty response), no content recovered.",
+  "Conclusion: elizabethshia07@yahoo.com (from the salon's own SalonMonster account record) is the one verified, authoritative public-adjacent email and is used as the primary contact channel candidate, alongside the phone number."
+ ],
+ "instagram": null,
+ "instagram_search_note": "No confirmed Instagram account for this specific business was found. See email_search_log for the three candidate accounts investigated and ruled out as different businesses (different area-code phone numbers, different booking platforms, unrelated niches/locations). The salon's own SalonMonster account record has all social fields (facebookLink, twitterLink, instagramLink, pinterestLink, tumblrLink, yelpLink) explicitly null, which is a strong first-party signal the business has not linked any social profile to its own platform account.",
+ "has_own_site": false,
+ "own_site_check": "glamspa.com resolves but is a confirmed unrelated Connecticut business (per task briefing, independently consistent with the ZoomInfo email mismatch noted above). The SalonMonster salon record's own 'website' field is blank (\"website\":\"\"). Google Business Profile's website field points only to glam.salonmonster.com (a booking-platform subdomain, not an owned domain). No other domain candidates found. has_own_site: false confirmed from two independent authoritative sources (the salon's own platform record and the live Google Business Profile).",
+ "booking_platform": "SalonMonster",
+ "booking_url": "https://glam.salonmonster.com/",
+ "booking_platform_note": "SalonMonster is an Angular SPA; the rendered page shows only a loading shell to a plain HTTP client. Reverse-engineered the compiled app bundle to find the backend API root (https://api2.salonmonster.com/api) and used its public, unauthenticated endpoints (/salons/search/{subdomain}, /salons/{id}, /stylists, /stylists/{id}/servicedetails... note: servicedetails route that actually worked was /salons/{salonId}/stylists/{stylistId}/servicedetails) to pull the salon's real account record, staff record and full 45-item service menu with real prices and durations directly from the business's own live booking system. salonID=14235, stylistID=19777 (Elizabeth Gonzal,  title 'Skin Care'). Note online booking itself is currently reported as disabled on the account (\"enableOnlineBooking\":0) even though the widget page is live; the booking link is still the business's real, current, published contact channel and is used as the CTA per PIPELINE.md (the widget may simply require a client login step, or booking may currently be phone/DM based while the account exists) -- phone is offered as the primary immediate CTA alongside it.",
+ "rating_sources": {
+  "birdeye_aggregating_google": { "rating": 5.0, "reviews_count": 18, "note": "reviews.birdeye.com/glam-spa-elizabeth-gonzalez-169830473493639, explicitly labeled 'Review Source: Google'. Matches the discovery seed exactly." },
+  "google_maps_live": { "rating": 5.0, "reviews_count": null, "note": "Live Chromium fetch of the actual Google Business Profile page confirmed the business exists at this exact address/phone with a 5.0 rating shown on the place card; review count was not captured in the scripted text extraction but the business card itself displays '5.0' next to 'Spa and health club'." }
+ },
+ "rating": 5.0,
+ "reviews_count": 18,
+ "hours_source": "Two sources conflict slightly: reviews.birdeye.com states 'Monday-Saturday 9:00 a.m. to 5:00 p.m. | Sunday Closed'. The live Google Business Profile page (fetched Saturday 2026-08-08) showed 'Closed - Opens 10 AM' at the time of the fetch, suggesting Google's own hours record may differ (e.g. a later Saturday opening) from what Birdeye has cached. Since this is a single-operator appointment-based studio, hours documented on-site are presented as general guidance with a 'call or book to confirm' note rather than an exact hour-by-hour table, to avoid publishing a stale/conflicting number.",
+ "hours": [
+  { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "17:00" }
+ ],
+ "hours_note": "Closed Sunday, consistent across sources. Saturday opening time conflicts (9am per Birdeye/Google-cached vs 10am shown live on Google Maps at fetch time): site text says 'by appointment' rather than asserting one exact time, per the rule against publishing data that could already be stale.",
+ "owner_name": "Elizabeth Gonzalez",
+ "owner_source": "SalonMonster's own stylist API record (id 19777): firstName 'Elizabeth', lastName 'Gonzalez', title 'Skin Care', owner flag 1 in the salon account, administrator 1. bookingsCount: 6759, clientsCount: 493 (lifetime totals on the platform), consistent with an established, experienced solo esthetician.",
+ "services_source": "Pulled directly and completely from the SalonMonster backend API (api2.salonmonster.com/api/salons/14235/stylists/19777/servicedetails), the business's own live, current price list -- not scraped from rendered HTML. 45 real services across 5 categories, every name/price/duration exactly as stored in the booking system.",
+ "services": {
+  "Facial": [
+   {"name": "Aroma “U” Facial", "price": 115, "duration_min": 75, "description": "This treatment fully delivers your skin the best health."},
+   {"name": "The Realiver", "price": 145, "duration_min": 75, "description": "Power treatment which calms, soothes and replenishes the most aggravated, irritated and inflamed skin."},
+   {"name": "The Rejuvenator", "price": 165, "duration_min": 90, "description": "Your skin will look and feel younger, fresh and more lively."},
+   {"name": "Teen Facial", "price": 100, "duration_min": 60, "description": "Deep pore cleansing for acne skin."},
+   {"name": "Man Facial", "price": 115, "duration_min": 75, "description": ""},
+   {"name": "Dermaplane", "price": 100, "duration_min": 60, "description": "Helps refine the skin's top layer via controlled scraping, softening the skin for a smoother appearance. Add-on mask and peels available for an extra charge."},
+   {"name": "Back Facial", "price": 100, "duration_min": 60, "description": "Clarifies and softens the skin with a deep cleansing and deep-moisturizing treatment."},
+   {"name": "Face Lypossage", "price": 45, "duration_min": 15, "description": "Relieves muscle tension, improves skin tone and texture."},
+   {"name": "Microdermabrasion (face)", "price": 90, "duration_min": 30, "description": "Exfoliates and removes the superficial layer of dry skin cells, acne scars, deep lines and pigmentation."},
+   {"name": "Microdermabrasion (face/neck)", "price": 110, "duration_min": 60, "description": ""},
+   {"name": "Microdermabrasion (face/neck/decollete)", "price": 140, "duration_min": 60, "description": ""},
+   {"name": "Aroma Touch Technique", "price": 120, "duration_min": 75, "description": "A simple yet powerful way to provide an uplifting essential oil experience, performed on the back."},
+   {"name": "Microneedle Treatment", "price": 195, "duration_min": 60, "description": "Cosmetic procedure using tiny sterilized needles; the body responds by making more collagen and elastin."},
+   {"name": "Microcurrent Treatment", "price": 215, "duration_min": 75, "description": ""},
+   {"name": "Sculpting Lymphatic Face Massage", "price": 85, "duration_min": 45, "description": ""},
+   {"name": "Buccal Massage", "price": 85, "duration_min": 30, "description": ""}
+  ],
+  "Special Add On": [
+   {"name": "Microdermabrasion (add-on)", "price": 35, "duration_min": 15},
+   {"name": "Collagen (add-on)", "price": 35, "duration_min": 15},
+   {"name": "LED Treatment Mask", "price": 45, "duration_min": 30},
+   {"name": "Mandelic Acid Alpha Hydroxy Peel", "price": 35, "duration_min": 15}
+  ],
+  "Waxing": [
+   {"name": "Eyebrows", "price": 24, "duration_min": 15},
+   {"name": "Chin", "price": 16, "duration_min": 15},
+   {"name": "Upper Lip or Ears", "price": 16, "duration_min": 15},
+   {"name": "Nose", "price": 13, "duration_min": 15},
+   {"name": "Half Arms", "price": 45, "duration_min": 45},
+   {"name": "Full Arms", "price": 65, "duration_min": 60},
+   {"name": "Shoulders", "price": 40, "duration_min": 45},
+   {"name": "Cheeks", "price": 29, "duration_min": 30},
+   {"name": "Under Arms", "price": 35, "duration_min": 30},
+   {"name": "Chest", "price": 40, "duration_min": 45},
+   {"name": "Stomach", "price": 45, "duration_min": 45},
+   {"name": "Back", "price": 65, "duration_min": 45},
+   {"name": "Bikini", "price": 60, "duration_min": 30},
+   {"name": "Brazilian", "price": 100, "duration_min": 45},
+   {"name": "Half Legs", "price": 55, "duration_min": 60},
+   {"name": "Full Legs", "price": 85, "duration_min": 75},
+   {"name": "Toes and Fingers", "price": 15, "duration_min": 15}
+  ],
+  "Tinting": [
+   {"name": "Eyebrow Shape and Tint", "price": 42, "duration_min": 30},
+   {"name": "Eyelash Tint", "price": 27, "duration_min": 30},
+   {"name": "Brow Tint", "price": 16, "duration_min": 15}
+  ],
+  "Lash Extensions": [
+   {"name": "Lash Removal", "price": 25, "duration_min": 15},
+   {"name": "Eyelash Extension Full Set", "price": 220, "duration_min": 135},
+   {"name": "2 Week Refill", "price": 85, "duration_min": 75},
+   {"name": "3 Week Refill", "price": 110, "duration_min": 90},
+   {"name": "Monthly Refill", "price": 135, "duration_min": 105}
+  ]
+ },
+ "reviews_verbatim_full": [
+  {"author": "Dustie Marquez", "body": "My skin felt instantly refreshed, hydrated, and glowing. She was so knowledgeable, gentle...", "source": "Google, via reviews.birdeye.com aggregator", "used_on_site": true},
+  {"author": "Maria Martinez", "body": "My skin literally feels like it aged backwards. So relaxing, so professional, and my face is glowing.", "source": "Google, via reviews.birdeye.com aggregator", "used_on_site": true},
+  {"author": "Jennifer Ottman", "body": "Elizabeth is incredibly reliable, consistent and so talented at what she does.", "source": "Google, via reviews.birdeye.com aggregator", "used_on_site": true},
+  {"author": "Shai Bermudez", "body": "The facial was relaxing yet effective, and my skin felt smooth, hydrated, and radiant afterward.", "source": "Google, via reviews.birdeye.com aggregator", "used_on_site": true},
+  {"author": "Kimberly Bracher", "body": "Hands down the most precise and perfect wax girl ever! Her work is outstanding.", "source": "Google, via reviews.birdeye.com aggregator", "used_on_site": true}
+ ],
+ "language": "en",
+ "language_note": "All reviews found are in English; Fort Myers, FL market; SalonMonster account language field is 'EN'. English confirmed as default site language.",
+ "photos": {
+  "sources_checked": [
+   "SalonMonster backend API: salon record 'logoUrl' field is empty string (no logo uploaded). Stylist record 'photoUrl' is 'mlhffvlnldpyepidtsdl.jpg' but fetching it from the documented userfiles host (salonmonster.com/userfiles/profile_pics/) returned an HTTP 301 redirect to a Cloudinary URL (res.cloudinary.com/salonmonster/image/upload/.../staff/mlhffvlnldpyepidtsdl.jpg) which itself 404s / is not retrievable -- the stylist's own profile photo is broken/removed on the platform.",
+   "SalonMonster custom_css.php (the salon's branding stylesheet loaded by the booking widget): contains only plain black/white color rules, no background-image or photo URL referenced anywhere.",
+   "Google Business Profile: verified LIVE via an actual headless-Chromium browser session against the real google.com/maps/place/ URL for this exact business (place id 0x88db3f3d4e99b61d:0xa5655986022e857e, confirmed name/address/phone match). The place card explicitly showed 'Photos / Add photos & videos' (the standard Google Maps UI state for a listing with ZERO uploaded photos), and a second pass that clicked directly into the Photos viewer returned 0 images. This is a first-party, real-time confirmation, not a degraded/limited-view research artifact.",
+   "Instagram: 3 distinct candidate handles located via search and inspected in full (contact sheets pulled and visually reviewed) -- @glamorousskinbyelizabeth, @elizabeth_beautycenter, @glamspa. All three were confirmed to be OTHER businesses (different area-code phone numbers printed on their own promotional graphics: 281 Houston TX, 908 New Jersey; one is a Spanish-language hair/media-personality account with no skincare focus). None belongs to this Fort Myers business, so none of their photos were used (using them would misattribute another business's real work/photos to this one).",
+   "Facebook: the only 'Glam Spa | Fort Myers FL' page found (facebook.com/people/Glam-Spa/100065248372232/) is a different business -- a tanning salon with 12 likes, confirmed via its own og:description meta tag. Not used.",
+   "Yelp: no business listing found under this name/address after a dedicated search (yelp.com/biz/ candidates all resolved to unrelated Glam-named businesses at different addresses in Fort Myers -- Glam Girl Salon, Glam R Us, Glamour Nails and Spa -- none matching 13601 McGregor Blvd).",
+   "reviews.birdeye.com: page itself uses only generic stock/default imagery (a generic 'wellness.png' cover banner and default-profile.png reviewer avatars) -- confirmed by inspecting the raw page HTML directly, no real business photos embedded.",
+   "Bipper Media and Organic Spa Directory listing pages for this business: both dead (301 redirect to unrelated homepage / empty 308 response), no photos recoverable.",
+   "Google Street View auto-capture (googleapis.com streetviewpixels, panoid tied to this exact place card, not a business upload): a single generic exterior shot of the strip-mall plaza parking lot at this address. No 'Glam Spa' signage legible, another tenant's promotional flag ('Home Cleaning') is the most visible sign in frame, and it shows no interior/treatment content at all. Downloaded and visually inspected, then discarded: one generic parking-lot photo does not move the needle toward the 5-6 minimum and would misrepresent a facial studio demo with a car-park exterior."
+  ],
+  "downloaded_total": 0,
+  "used_on_site": 0,
+  "curation_notes": "Zero real, verifiably-this-business photos were found after exhausting every channel in PIPELINE.md Fase 1 point 4 (Google Business Profile photos, SalonMonster booking gallery, Instagram, Yelp) plus Facebook, Birdeye, and general directory aggregators. Three IG accounts were downloaded and visually inspected via contact sheets specifically to rule them out (not to use them) once their promotional graphics revealed phone numbers/booking links belonging to other cities/businesses; those downloads were deleted from assets/raw after being disqualified, per the rule that photos of other businesses must never be used for this one."
+ },
+ "brand_vibe": "Unknown / not derivable: no real photos, logo, or branded materials of this specific business were recoverable from any public source, so no brand palette or aesthetic could be derived without guessing. (Not used: this field exists only to document that the brand_vibe research step was attempted and returned nothing verifiable.)",
+ "status": "failed",
+ "failed_reason": "Minimum of 5-6 real, verifiably-this-business photos not met (0 found). Exhaustive research across the business's own booking platform backend (SalonMonster API: broken/removed stylist photo, no logo, no gallery endpoint), a live real-time Chromium fetch of the actual Google Business Profile (place explicitly confirmed to have 0 uploaded photos via the Photos viewer), three distinct Instagram account candidates (each individually verified via visual inspection of downloaded contact sheets to be a DIFFERENT business in a different city, based on phone numbers and booking links printed on their own promotional graphics), Facebook (the only matching-name page found is a different business, a tanning salon), Yelp (no listing exists for this address), and Birdeye (only default/stock placeholder imagery). This research was NOT degraded -- the Google Maps photo check was a first-party, real-time, JS-rendered browser session against the business's own verified listing (name/address/phone all matched exactly), not a limited API proxy; the SalonMonster data came directly from the business's own live backend API, and every discarded IG account was opened and visually confirmed as a mismatch, not assumed. Per PIPELINE.md Fase 3 point 5 / FORGE-BRIEF section 0.b hard threshold ('menos de 5 fotos reales y propias del negocio... failed'), and the explicit task instruction not to fabricate imagery, this business is marked failed rather than built with stock/placeholder or misattributed photos. All other research (real full 45-item service menu with prices/durations, real phone, real email, real 5.0/18-review rating, 5 verbatim Google reviews) was completed and is preserved here in case usable photos surface later (e.g. if the owner uploads Google Business Profile photos or opens a real Instagram) and this can be revisited as a direct-command rebuild.",
+ "notes": "Confirmed via two independent authoritative sources (SalonMonster's own account API and a live Google Business Profile browser fetch) that this is a real, currently operating, well-reviewed (5.0/18) single-esthetician facial and waxing studio with a genuine, detailed, currently-priced 45-item service menu. The blocker is purely visual assets: this business simply has not published photos anywhere publicly indexable at this time. Recommend flagging for a future retry if/when the owner adds Google Business Profile photos or opens a real, verifiable Instagram account."
+}
