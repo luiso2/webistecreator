@@ -1,0 +1,143 @@
+{
+  "slug": "head-to-toes-salon-miamibeach",
+  "name": "Head to Toes Salon",
+  "niche": "hair salon boutique",
+  "city": "Miami Beach, FL",
+  "address": {
+    "street": "7403 Collins Ave Suite 203",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33141",
+    "full": "7403 Collins Ave Suite 203, Miami Beach, FL 33141"
+  },
+  "phone": "(305) 673-2813",
+  "phone_e164": "+13056732813",
+  "email": "305headtotoes@att.net",
+  "email_confidence": "medium - surfaced consistently across multiple independent search-engine summaries of aggregator/directory pages that mirror the Vagaro listing (search engine appears to have indexed a JS-rendered version of vagaro.com/headtotoessalon/about with the email field populated); could not be independently confirmed by direct fetch because Vagaro's About page renders contact fields client-side (server HTML returns Email:\"\" in the initial JSON payload) and Facebook/Yelp blocked scraping (403/429). No mailto link found on Birdeye. Used because it appeared verbatim and consistently (same string, same domain pattern matching the business's phone area code) across 4+ independent search queries with no contradicting email ever surfacing.",
+  "has_own_site": false,
+  "own_site_check": "headtotoessalon.com does not resolve (DNS/connection failure). headtotoeshairsalon.com (the URL value stored in Vagaro's own business record) also fails to resolve (proxy CONNECT tunnel 502 / no upstream). No other domain variant found. Vagaro (vagaro.com/us03/headtotoessalon) is the only public 'website' and is a third-party booking platform, not owned by the business.",
+  "instagram": {
+    "handle": "@headtotoeshairsalon",
+    "url": "https://www.instagram.com/headtotoeshairsalon/",
+    "confidence": "high",
+    "confidence_note": "Confirmed via a screenshot the business itself uploaded to its own Vagaro photo gallery (Original/1431595_4509$2026_... filename), showing the Instagram app UI with header 'HEADTOTOESHAIRSALON', handle 'headtotoeshairsalon', location tag 'Miami Beach, Florida', and 'Liked by solasalonsmiami' (Sola Salon Studios, where Frank Martinez rents his chair). This matches the Facebook handle exactly (facebook.com/headtotoeshairsalon). NOTE: instagram.com/headtotoessalon (no 'hair') and instagram.com/headtotoe.salon are DIFFERENT businesses (Minneapolis salon and an unrelated small account) found in early search results and correctly ruled out.",
+    "bio_text": null,
+    "external_url": null,
+    "bio_check_note": "Instagram's web_profile_info endpoint returned HTTP 401 'please wait a few minutes' on every attempt (6 attempts across the session, both via curl with x-ig-app-id header and via WebFetch on instagram.com/headtotoeshairsalon/), a persistent rate limit on this network egress. Direct HTML fetch also 429'd. Handle identity is confirmed via the Vagaro-hosted screenshot above; bio text/external link could not be retrieved despite exceeding the pipeline's 2-attempt cap trying."
+  },
+  "facebook": "https://www.facebook.com/headtotoeshairsalon/",
+  "yelp": "https://www.yelp.com/biz/head-to-toes-salon-miami-beach",
+  "booking": {
+    "platform": "Vagaro",
+    "url": "https://www.vagaro.com/headtotoessalon",
+    "about_url": "https://www.vagaro.com/headtotoessalon/about",
+    "styles_url": "https://www.vagaro.com/headtotoessalon/styles",
+    "staff_url": "https://www.vagaro.com/headtotoessalon/staff"
+  },
+  "rating": {
+    "value": 4.8,
+    "count": 19,
+    "source": "Google (via reviews.birdeye.com/head-to-toes-salon-170110777971080, schema.org AggregateRating embedded on page: ratingValue 4.8, reviewCount 19)"
+  },
+  "place_id": "ChIJRZUXm3Cz2YgRFTD4rGC_BNU",
+  "hours": {
+    "source": "Birdeye schema.org OpeningHoursSpecification, pulled from the business's Google listing",
+    "note": "Independent web searches also repeatedly surfaced a conflicting hours string ('Tuesday-Saturday 11:00 am - 8:00 pm, closed Monday and Sunday') from unlabeled aggregator/directory sources. Publishing the Birdeye/Google structured-data version below as the more authoritative, schema.org-tagged source synced directly from Google.",
+    "wednesday": "11:00-17:00",
+    "thursday": "11:00-17:00",
+    "friday": "11:00-17:00",
+    "saturday": "11:00-17:00",
+    "closed": ["Sunday", "Monday", "Tuesday"]
+  },
+  "owners": [
+    { "name": "Frank Alexis Martinez", "role": "Co-owner, principal stylist ('Frankie'). Goldwell Master Color Specialist. Color, cutting and styling; career started in 1991. Also works out of Sola Salon Studios, Collins Avenue, Miami Beach." },
+    { "name": "Shawn Stevens", "role": "Co-owner. Started in the nail industry in 1990, over 20 years perfecting nails." }
+  ],
+  "staff_note": "A stylist named Laura (color specialist) is mentioned in one third-party review aggregator (ManeReviews) but could not be independently corroborated on Vagaro's client-rendered staff page (JS-only, not present in server HTML), so she is not featured by name on the site.",
+  "description": "Head to Toes is a full service salon. We offer the best in hair color, precision cutting, and styling. We also offer nail services, Keratin treatments and hair extensions are also available. The staff at Head to Toes is highly dedicated to client satisfaction and customer service.",
+  "description_source": "Verbatim from the business's own Vagaro listing (Description field, vagaro.com/headtotoessalon/about server payload).",
+  "services": {
+    "pricing_published": false,
+    "pricing_note": "No prices are published anywhere publicly findable (Vagaro's Styles/menu tab is rendered client-side via JS and returned no service/price data server-side after repeated attempts; no price list on Yelp, Facebook, Birdeye, ManeReviews, or Sola Salon Studios). Using the pipeline's adapted fallback: services shown by real name, pricing framed as 'book to get your quote' with a direct link to the real Vagaro booking flow where actual pricing is selected live.",
+    "categories": [
+      { "name": "Hair Color", "items": ["Color correction", "Balayage", "Ombré", "Goldwell Master Color work", "Japanese straightening"] },
+      { "name": "Cutting & Styling", "items": ["Precision cutting", "Styling"] },
+      { "name": "Treatments", "items": ["Keratin treatments"] },
+      { "name": "Extensions", "items": ["Hair extensions"] },
+      { "name": "Nails", "items": ["Manicure", "Pedicure", "Nail services"] }
+    ],
+    "source": "Vagaro business description + Description/MetaKeywords fields + corroborating web search results referencing the salon's Vagaro styles page."
+  },
+  "reviews": [
+    {
+      "name": "Sean DE PALMA",
+      "text": "Frankie was great with my teenage daughter and her hair came out wonderfully! Clean and trendy salon that is perfectly located in Miami Beach.",
+      "source": "Google (via Birdeye)",
+      "rating": 5
+    },
+    {
+      "name": "Becky Budhoo",
+      "text": "Frank recently cut my hair, and it looked like I stepped out of a Vogue magazine photoshoot. The layers were cut to perfection, and he even gave me tips on how to care for my kind of naturally curly hair. His attention to detail is superb, and his personality is awesome. He knew exactly how to give me the layers I wanted. I highly recommend that you visit Frank for all of your hair needs. You won't regret it.",
+      "source": "Google (via Birdeye)",
+      "rating": 5
+    },
+    {
+      "name": "Tessa Trlaja",
+      "text": "Frank is an amazing hair stylist and color expert. He did a kaps filler smoothing treatment and ash blonde high lights. He is very knowledgeable! Perfect results. Never had such smooth hair! Highly recommend him to everybody. Go see Frank at head to toes!!!",
+      "source": "Google (via Birdeye)",
+      "rating": 5
+    },
+    {
+      "name": "Edwin Meza",
+      "text": "By far, the best haircut I have ever had! I am really happy with the service and professionalism from this salon. Thank you guys!",
+      "source": "Google (via Birdeye)",
+      "rating": 5
+    },
+    {
+      "name": "Stephanie Simao",
+      "text": "If you've been disheartened with the hair care industry, look no further! This is the salon I have been looking for here in Miami! Since my arrival here to South Florida, I had been so disappointed with the level of professionalism, knowledge and customer service within the beauty industry. Finally after 7 years, I found Frankie at Head to Toe Salon! He's so adorable, so kind, so professional and so smart when it comes to coloring and styling of hair!",
+      "source": "Google (via Birdeye)",
+      "rating": 5,
+      "note": "Original review continues past this point on Birdeye but is cut off mid-sentence behind a 'read more' control; trimmed here at the last complete sentence, verbatim up to that point, nothing added."
+    }
+  ],
+  "language": "en",
+  "language_evidence": "All 5 verbatim Google reviews are in English; the business's own Vagaro description and meta keywords are in English; Miami Beach's Collins Ave tourist-and-local clientele is heavily English-first. Site is bilingual (EN default, ES toggle) per DESIGN.md requirement.",
+  "brand": {
+    "vibe": "editorial noir: black wordmark logo on white, with a single deep-red accent bar. Fashion-forward Miami Beach hair studio look.",
+    "logo_source": "Business's own logo image found in its Vagaro photo gallery: 'MIAMI BEACH / HEAD TO TOES' wordmark, black type, red accent bar through the crossbar of both 'E's.",
+    "tokens": {
+      "bg": "#faf7f3",
+      "bg-2": "#f0e9e2",
+      "surface": "rgba(255,252,248,0.72)",
+      "ink": "#1c1917",
+      "accent-deep": "#8c1620",
+      "accent-mid": "#b23a3a",
+      "accent-soft": "#f3e0df",
+      "accent-ghost": "rgba(140,22,32,0.15)"
+    }
+  },
+  "images": {
+    "source": "Business's own photo gallery hosted on Vagaro (vagaro.com/headtotoessalon/about), 95 images total, downloaded at full 'Original' CDN resolution from the business's Rackspace CDN bucket. Manually reviewed via contact sheets; selected for real finished results, open eyes, no captions/screenshots/selfies in the public gallery.",
+    "selected": [
+      { "file": "assets/raw/hero-1.jpg", "role": "hero", "desc": "Glossy platinum silver-blonde hair, back view, salon mirror" },
+      { "file": "assets/raw/about-1.jpg", "role": "experience", "desc": "Stylist (Frank) cutting a client's hair, hands in motion" },
+      { "file": "assets/raw/about-2.jpg", "role": "experience", "desc": "Smiling client portrait in-salon, warm highlights" },
+      { "file": "assets/raw/gallery-1.jpg", "role": "gallery-cinematic", "desc": "Long blonde wavy hair, full back view, in-salon" },
+      { "file": "assets/raw/gallery-2.jpg", "role": "gallery", "desc": "Editorial pixie cut, pink and silver color, side profile with florals" },
+      { "file": "assets/raw/gallery-3.jpg", "role": "gallery", "desc": "Copper balayage, long wavy hair, back view" },
+      { "file": "assets/raw/gallery-4.jpg", "role": "gallery", "desc": "Sleek dark straight hair, back view, in-salon" },
+      { "file": "assets/raw/gallery-5.jpg", "role": "gallery", "desc": "Copper curly texture, back view, arms raised" },
+      { "file": "assets/raw/gallery-6.jpg", "role": "gallery", "desc": "Bridal-style updo, side profile, smiling" },
+      { "file": "assets/raw/gallery-7.jpg", "role": "gallery", "desc": "Sleek copper-red straight hair, back view" },
+      { "file": "assets/raw/gallery-8.jpg", "role": "gallery", "desc": "Copper shag cut, side profile" },
+      { "file": "assets/raw/gallery-9.jpg", "role": "gallery", "desc": "Long blonde wavy hair, back view, salon chair" },
+      { "file": "assets/raw/gallery-10.jpg", "role": "gallery", "desc": "Smiling client, long blonde hair, in-salon" }
+    ]
+  },
+  "gate_minimums_check": {
+    "photos_real_own": 13,
+    "contact_channels_public": ["Facebook", "Instagram", "Vagaro booking", "phone", "email (medium confidence)"],
+    "verdict": "PASS - well above minimum (5 photos), multiple public contact channels."
+  }
+}
