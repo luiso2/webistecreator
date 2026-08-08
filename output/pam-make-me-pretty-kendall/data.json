@@ -1,0 +1,156 @@
+{
+  "slug": "pam-make-me-pretty-kendall",
+  "status": "failed",
+  "failed_reason": "Menos de 5 fotos reales verificables del negocio (minimo del pipeline). Solo se lograron descargar y verificar 3 fotos autenticas (Google Business Profile, via proxy de Atly). El feed de Instagram (@pammakemepretty, fuente prioritaria segun PIPELINE.md), la pagina de Facebook (login wall) y el listado de Yelp (86 fotos publicadas, pero pagina bloqueada por CAPTCHA/403 en todos los intentos) no fueron accesibles en esta sesion pese a >20 intentos con tecnicas distintas (endpoint oficial de IG con x-ig-app-id x5, mirrors de terceros picuki/imginn/gramho, Facebook con UA de crawler, Yelp directo/AMP/movil/jina-reader, Google Maps directo/jina, Bing Maps/Images, MapQuest, Chamber of Commerce, wheree.com, archive.org bloqueado por politica de egress). No se debe forzar un build degradado con solo 3 fotos: se documenta toda la investigacion para que una sesion con acceso a IG/Yelp pueda completar el build sin repetir el research.",
+  "name": "Pam Make Me Pretty",
+  "owner_note": "Estilista independiente 'Pam' / 'Pammy'. Nombre de owner citado por agregadores (salonsbyjc, atly derivados) como 'Pamelha Moralejo', pero NO se pudo verificar este nombre en ninguna fuente primaria (no aparece en el HTML crudo de salonsbyjc.com ni en ningun JSON-LD); tratar como no confirmado.",
+  "city": "Kendall, FL",
+  "address": {
+    "street": "8208 Mills Dr, Suite #6",
+    "city": "Kendall",
+    "region": "FL",
+    "postal_code": "33183",
+    "country": "US",
+    "verified_via": ["atly.com JSON-LD (BeautySalon, geo coords 25.6913343,-80.3865242, telephone +17869257551)", "salonsbyjc.com/salons/pam-make-me-pretty/ (Salons by JC Kendall Palms, Suite #6)", "reviews.birdeye.com/pam-make-me-pretty-170212995114907 (misma direccion exacta)"],
+    "note_direccion_alterna": "Multiples fuentes (Yelp, Green Circle Salons, un post de Facebook de 2019 de PartyMix Catering, un resultado de Zillow) muestran una direccion DISTINTA: 13755 SW 42nd St, Miami, FL 33175, con el MISMO telefono (786-925-7551) y el mismo nombre exacto de negocio. Es casi seguro la misma operadora en una ubicacion anterior (esa direccion la describe como 'all service salon' con hair+lashes+nails+wax+teeth whitening+makeup, mientras que en la direccion actual confirmada de Salons by JC ella opera un suite individual SOLO de hair). Se uso la direccion de Salons by JC (8208 Mills Dr) por ser la mas reciente y la que coincide con el research brief del negocio. Los datos de precios/marcas de producto de Green Circle Salons (fechados, ligados a la direccion vieja) se usaron solo como contexto de marca, no como oferta actual confirmada."
+  },
+  "phone": "+17869257551",
+  "phone_display": "(786) 925-7551",
+  "email": "pmmpsalon@gmail.com",
+  "email_verification": "Confirmado en el HTML crudo (no solo resumen de IA) de https://greencirclesalons.com/directory/pam-make-me-pretty/ , que tambien confirma telefono identico 786-925-7551 (blindando que es el mismo negocio). NOTA IMPORTANTE: multiples resultados de busqueda (WebSearch) insistieron repetidamente en el email 'pammakemepretty@gmail.com' y hasta en una URL de Vagaro 'vagaro.com/pammakemepretty/services' -- NINGUNO de los dos se pudo verificar en HTML crudo (el email no aparece en ningun documento fuente descargado con curl, y la URL de Vagaro devuelve 404 'Page not found' real de Vagaro). Se tratan como NO confirmados / probable alucinacion del resumen de IA y NO se deben usar.",
+  "website_check": {
+    "has_own_site": false,
+    "domain_checked": "pammakemepretty.com",
+    "result": "Redirige via JS (window.location) a /lander, que sirve una pagina de parking estandar (GoDaddy/wsimg parking-lander, LANDER_SYSTEM=PW). Confirmado con curl directo, no es un sitio funcional del negocio. www.pammakemepretty.com misma cosa. salonsbyjc.com lista este mismo dominio parqueado como 'Book Now' link, lo cual confirma que el negocio nunca tuvo un sitio propio real o lo dejo caducar."
+  },
+  "instagram": {
+    "handle": "@pammakemepretty",
+    "url": "https://www.instagram.com/pammakemepretty/",
+    "display_name": "Pam | Miami Hair Stylist",
+    "bio_summary_unverified_raw": "Segun resumenes de busqueda (no verificado en JSON crudo por bloqueo de IG): 'Miami hair stylist, 12+ years experience, haircuts, custom color, blonding, honest consultations with a plan'",
+    "external_url": "NO SE PUDO VERIFICAR. El endpoint oficial web_profile_info (x-ig-app-id 936619743392459) devolvio 401 'Please wait a few minutes' en 5 intentos distintos (distintos User-Agent, con y sin espera entre intentos). Mirrors de terceros (picuki.com, imginn.com/imginn.org, gramho.com) devolvieron 403/000. El feed no se pudo confirmar como accesible en esta sesion."
+  },
+  "facebook": {
+    "url": "https://www.facebook.com/pammakemeprettysalon/",
+    "note": "Pagina completamente detras de login wall incluso con User-Agent de crawler (facebookexternalhit) para la pagina principal; solo un post individual antiguo (2019, evento de catering PartyMix en la direccion vieja 13755 SW 42nd St) expuso una imagen via og:image, pero esa foto muestra a un chef de catering en un parqueo de gasolinera, NO el salon, por lo que se descarto."
+  },
+  "yelp": {
+    "url": "https://www.yelp.com/biz/pam-make-me-pretty-miami-4",
+    "listed_address": "13755 SW 42nd St, Miami, FL 33175 (direccion vieja, ver note_direccion_alterna)",
+    "photos_reported": 86,
+    "reviews_reported": 31,
+    "access": "Bloqueado (403/CAPTCHA) en acceso directo, movil, AMP y via r.jina.ai. No se pudieron extraer fotos ni reviews de esta fuente pese a que el listado indica 86 fotos disponibles."
+  },
+  "booking_platform": null,
+  "booking_platform_note": "No se encontro plataforma de booking real. El unico 'Book Now' publicado (en salonsbyjc.com) apunta al dominio parqueado pammakemepretty.com. Una URL de Vagaro citada por un resumen de busqueda (vagaro.com/pammakemepretty/services) se verifico como 404 real (no existe). Se recomienda a la proxima sesion re-intentar busqueda de Booksy/GlossGenius/Square/StyleSeat especificamente, y revisar el bio de Instagram (external_url) en cuanto el rate-limit de IG lo permita.",
+  "rating": {
+    "value": 4.8,
+    "review_count": 109,
+    "source": "Google (100% de las 109 resenas via Birdeye, que agrega Google como unica fuente: 'Google: 109 reviews')",
+    "verified_via": "https://reviews.birdeye.com/pam-make-me-pretty-170212995114907 (HTML crudo parseado, no solo resumen de IA: avgRating 4.8, mismo businessId/alias/direccion)"
+  },
+  "reviews": [
+    {
+      "name": "Kaitlyn Hendry",
+      "rating": 5,
+      "source": "Google",
+      "date": "Jul 28, 2026",
+      "text": "PAMMY IS THE BEST!!! Since I met her in 2019 I haven't looked back. She is the best in all aspects, personality, atmosphere, vibes, service, and most importantly educating her clients in the process before I met Pam I had hairdressers frying my hair until It fell off because no one cared to take a moment and explain and guide me in the right direction to achieve my hair goals in a healthy way. Pam cares about her clients and the integrity of their hair and that's so hard to find!!! She delivers amazing results and my hair is the healthiest it's ever been all thanks to her. Thank you for always making me feel so beautiful on the inside and out at every visit. A beautiful and talented soul in this industry"
+    },
+    {
+      "name": "Luna Chimerakis",
+      "rating": 5,
+      "source": "Google",
+      "date": "Jul 28, 2026",
+      "text": "I've been going to Pam for 5+ years, I absolutely adore her! Whether it's blonde, a new fun color, correcting my at home mistakes, etc, She sets realistic expectations on your hair journey all while getting the results perfect every time. She's also like my therapist, every appointment she's there to listen to my hair and/or life crash outs. I will never forget in the first years of seeing her I decided to go to a different hair girl for highlights. Big mistake, It looked horrific. I called Pam crying in a panic to help because I've never had my hair look so bad. She immediately fit me into her schedule and made my hair look perfectly blonde like it never happened. That's when I knew I would never go to anyone else."
+    },
+    {
+      "name": "Mari C",
+      "rating": 5,
+      "source": "Google",
+      "date": "Jul 27, 2026",
+      "text": "Pam is the best! Always reliable and always great vibes. She really takes the time to understand your goal and educate you. Great service and attention to detail. Highly recommended!"
+    },
+    {
+      "name": "Illy Perez",
+      "rating": 5,
+      "source": "Google",
+      "date": "Jul 27, 2026",
+      "text": "being a military brat, I've lived in and traveled to a lot of different places. no matter where i am, i'll always make the drive, plan the trip, or wait until i'm back in town just to have my hair done by her. she's the ONLY person i trust with my hair. i've had every opportunity to find someone closer, but i never do because nobody compares. i always leave loving my hair, and if i'm willing to travel just to sit in her chair, i think that says everything you need to know. she's truly the best in the game!!!"
+    },
+    {
+      "name": "Megan Perdomo",
+      "rating": 5,
+      "source": "Google",
+      "date": "Jul 27, 2026",
+      "text": "I've been going to Pam for years, and I truly can't imagine trusting anyone else with my hair. Every single appointment, she somehow manages to exceed my expectations. Whether it's a fresh cut, color, or style, I always leave feeling more confident than when I walked in. What makes Pam so special isn't just her incredible talent, it's the experience she creates. Sitting in her chair feels like catching up with your best friend. She's so easy to talk to, genuinely cares about her clients, and makes every appointment something I actually look forward to. If you're looking for someone who is not only amazingly skilled but also kind, welcoming, and passionate about what she does, Pam is the one. I can't recommend her enough!"
+    }
+  ],
+  "services_research": {
+    "note": "NO se encontraron precios publicados en ninguna fuente (ni booking, ni Google, ni Yelp accesible, ni Facebook accesible). Nombres de servicio abajo confirmados por fuentes cruzadas reales (no inventados); de haberse construido el site, se habria usado el patron 'se cotiza, escribenos' en vez de precios.",
+    "confirmed_service_categories": [
+      "Hair Stylist / Haircuts (incl. textured cuts)",
+      "Custom Hair Color",
+      "Blonding",
+      "Color Correction",
+      "Natural Hair",
+      "Cosmetology / Specialty Hair Services",
+      "Hair Treatment (paquete de 3 tratamientos enfocado en hidratacion y salud del cabello, con masaje de pies durante el lavado, citas de menos de 2 horas)"
+    ],
+    "source": "salonsbyjc.com/salons/pam-make-me-pretty/ (categorias de servicio, coincide con direccion actual) + atly.com JSON-LD description (tratamiento de hidratacion, masaje de pies, duracion de cita) + resumen de bio de IG (custom color, blonding) citado de forma consistente en 2 busquedas independientes",
+    "product_brands_used": ["Redken", "Matrix", "Sunlights Balayage", "Pravana", "Paul Mitchell", "Kenra", "Olaplex"],
+    "product_brands_source": "greencirclesalons.com/directory/pam-make-me-pretty/ (HTML crudo verificado), ligado a la direccion vieja / posible epoca de salon completo, se mantiene como contexto de marca real"
+  },
+  "hours": {
+    "note": "Fuentes en conflicto. Se prioriza la que coincide con la direccion CONFIRMADA (Salons by JC, 8208 Mills Dr).",
+    "salonsbyjc_direccion_actual": "Jueves y Viernes 9:00am-5:00pm (Lunes-Miercoles y Sabado-Domingo cerrado)",
+    "greencircle_direccion_vieja": "Martes-Sabado 9:00am-5:00pm",
+    "otro_agregador_direccion_vieja": "Martes-Jueves 11am-6pm, Viernes-Sabado 9am-8pm, Domingo 10am-4pm"
+  },
+  "images_downloaded": {
+    "count_real_verified": 3,
+    "minimum_required": 5,
+    "files": [
+      {
+        "path": "assets/raw/salon-interior-suite.jpg",
+        "description": "Interior real del suite de Pam en Salons by JC Kendall: sillon de estilista, lavacabezas, estanteria hexagonal con productos, decor rosa/boho.",
+        "source": "Google Business Profile photo, proxy via atly.com (place_id ChIJMxb2toa_2YgRkwhOfGtZsfg), verificado con EXIF software=Google"
+      },
+      {
+        "path": "assets/raw/finished-bob-color-result.png",
+        "description": "Resultado terminado: corte bob con color negro-azulado, perfil, buena luz, cliente favorecida.",
+        "source": "Google Business Profile photo, proxy via atly.com, mismo place_id"
+      },
+      {
+        "path": "assets/raw/color-root-touchup-before-after.jpg",
+        "description": "Collage antes/despues de retoque de raiz (documentacion de trabajo de color, no apto para hero pero si para contexto de servicio).",
+        "source": "Google Business Profile photo, proxy via atly.com, mismo place_id"
+      }
+    ],
+    "sources_intentadas_sin_exito": [
+      "instagram.com/api/v1/users/web_profile_info (x5 intentos, distintos UA/headers): 401 rate-limit persistente",
+      "instagram.com HTML directo y location pages: solo shell JS, sin datos",
+      "mirrors picuki.com / imginn.com / imginn.org / gramho.com: 403/000",
+      "facebook.com/pammakemeprettysalon (directo, movil, con UA de crawler facebookexternalhit): login wall en todas",
+      "yelp.com/biz/pam-make-me-pretty-miami-4 (directo, movil m.yelp.com, AMP, via r.jina.ai): 403/CAPTCHA en todas",
+      "google.com/maps (directo y via r.jina.ai): SPA sin contenido servidor, r.jina.ai bloqueado por abuso previo del dominio",
+      "bing.com/maps y bing images: sin datos utiles",
+      "mapquest.com, chamberofcommerce.com, wheree.com, n49.com, yellow.place: sin listado accesible o 403",
+      "archive.org (Wayback Machine para pammakemepretty.com historico): bloqueado por politica de egress de esta sesion"
+    ]
+  },
+  "language": {
+    "value": "en",
+    "evidence": "Las 5 reviews verbatim de Google son 100% en ingles; la bio de Instagram citada es en ingles ('Miami hair stylist'); hashtags de posts en ingles (#miamistylist #miamisalon). Mercado de Kendall es bilingue pero el negocio se presenta y comunica en ingles."
+  },
+  "brand_vibe": {
+    "note": "Sin acceso al feed de IG no se pudo derivar paleta de marca con certeza a partir de fotos propias mas alla del suite (rosa vibrante / boho playful, ver salon-interior-suite.jpg: mesa rosa, sillon fucsia, toalla fucsia, acentos dorados/blancos). Recomendacion para la proxima sesion: base clara/warm con acento rosa-fucsia + dorado si se confirma con mas fotos del feed."
+  },
+  "research_timestamp": "2026-08-08",
+  "next_steps_for_retry": [
+    "Reintentar el endpoint de Instagram web_profile_info en una sesion/IP distinta (el rate-limit parece estar atado a la IP compartida del proxy de este entorno, no al negocio).",
+    "Reintentar Yelp (86 fotos ya confirmadas que existen) con una sesion que pueda pasar el CAPTCHA/Cloudflare.",
+    "Confirmar si 13755 SW 42nd St es efectivamente una direccion anterior (llamando o revisando el registro corporativo 'PAM MAKE ME PRETTY CORP' en Sunbiz.org, que no se pudo consultar por bloqueo de rocketreach.co).",
+    "Una vez con >=5 fotos reales, proceder a Fase 2 (build) usando este data.json como base: nombre, direccion, telefono, email pmmpsalon@gmail.com, rating 4.8/109, reviews arriba, servicios listados (con 'se cotiza, escribenos'), idioma en."
+  ]
+}
