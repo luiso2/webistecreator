@@ -1,0 +1,99 @@
+{
+ "slug": "alejandro-tattoo-orlando",
+ "name": "Alejandro Tattoo & Body Piercing",
+ "schema_type": "TattooParlor",
+ "city": "Orlando, FL",
+ "neighborhood": "Dr. Phillips",
+ "address": {
+  "streetAddress": "7335 W Sand Lake Rd, Salon Lofts, Suite 120 #11",
+  "addressLocality": "Orlando",
+  "addressRegion": "FL",
+  "postalCode": "32819",
+  "addressCountry": "US"
+ },
+ "geo": { "latitude": 28.451245153392247, "longitude": -81.47949003829224 },
+ "rating": 4.9,
+ "reviews_count": 41,
+ "rating_source": "Booksy JSON-LD (aggregateRating), scripts/booksy_dossier.py against https://booksy.com/en-us/1075726_alejandro-tattoo-body-piercing_tattoo-shop_134763_orlando. Used as primary per task brief: higher review volume than Yelp (5.0 / 4 reviews, not used as primary).",
+ "hours_source": "booksy_json_ld",
+ "hours": [
+  { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "11:00", "closes": "18:00" },
+  { "days": ["Sunday"], "opens": "12:00", "closes": "17:00" }
+ ],
+ "hours_note": "A web search summary (aggregated from third-party listings, not independently verified) suggested Sun 12-6pm instead of 12-5pm; the Booksy JSON-LD (the business's own booking platform) was used as the primary, more reliable source and is what is published on the site.",
+ "phone": "+13523503713",
+ "phone_display": "(352) 350-3713",
+ "phone_source": "Not present in Booksy JSON-LD (telephone field empty) or raw Booksy HTML. Independently confirmed via orlandosbest.com directory listing (locations[].phone \"(352) 350-3713\", exact address match: 7335 W Sand Lake Rd #Salon120 Loft 11, Orlando FL 32819) and cross-confirmed via local.yahoo.com listing (same number, 5x). This matches the phone number already known from discovery seed data.",
+ "email": null,
+ "email_search_log": [
+  "Instagram web_profile_info API for @alejandrotattoousa: business_email field is null, business_phone_number is null. external_url is http://alejandrotattoobodypiercing.booksy.com/ (Booksy subdomain, not an owned domain, followed per pipeline rule; it is just the booking widget, no additional contact info or linktree behind it).",
+  "Booksy business page (raw HTML): no mailto: link found, no 'email' field in JSON-LD or page source.",
+  "orlandosbest.com directory listing: mailto: link present in markup but empty (no address after mailto:, appears to be a placeholder/JS-driven contact form, not a real email).",
+  "local.yahoo.com listing: phone repeated 5x, no email field found via regex scan of full page source.",
+  "Facebook page facebook.com/alejandrotattoousa/about: page returned a near-empty response (1542 bytes), consistent with Facebook's login wall blocking unauthenticated scraping; could not verify an About/Contact email this way.",
+  "A WebSearch AI-generated summary claimed the Facebook page lists 'alejandrotattoousa@gmail.com', but this could not be independently verified in any fetched page source (raw HTML, Booksy, directory listings). Per pipeline rule against inventing data, this unverified claim was NOT used; email is recorded as null rather than trusting an unconfirmed secondary summary.",
+  "Domain checks: alejandrotattoousa.com, alejandrotattoo.com, alejandrotattoobodypiercing.com, alejandrotattooandbodypiercing.com all return connection failures (curl exit/HTTP 000), confirming no owned domain and therefore no domain-based email guess is safe either.",
+  "Conclusion: no public, independently-verifiable email found after exhausting all listed sources. Outreach relies on phone (call/text) and Instagram DM as the manual channels."
+ ],
+ "instagram": "alejandrotattoousa",
+ "instagram_followers": 7907,
+ "instagram_bio": "Boutique Tattoo & Piercing Studio\nCustom tattoos - Luxury piercing\nPremium jewelry | Since 1998\nDr. Phillips - Orlando\nAppointments below",
+ "facebook": "https://www.facebook.com/alejandrotattoousa/",
+ "has_own_site": false,
+ "own_site_check": "Booksy sameAs/website_candidates: empty (only Instagram + Facebook, both social, no external domain). Instagram external_url is a Booksy subdomain booking widget (http://alejandrotattoobodypiercing.booksy.com/), not an owned domain. Directly curled alejandrotattoousa.com, alejandrotattoo.com, alejandrotattoobodypiercing.com and alejandrotattooandbodypiercing.com: all return HTTP 000 / connection failure (no DNS/host). No own website confirmed absent, independently re-verified beyond the discovery seed.",
+ "booking_platforms": {
+  "booksy": "https://booksy.com/en-us/1075726_alejandro-tattoo-body-piercing_tattoo-shop_134763_orlando"
+ },
+ "staff": [{ "name": "Alejandro", "role": "Owner / Tattoo Artist & Piercer", "since": 1998 }],
+ "about_source_text": "Instagram bio: 'Boutique Tattoo & Piercing Studio. Custom tattoos, Luxury piercing. Premium jewelry. Since 1998. Dr. Phillips, Orlando.' Studio's own promotional graphics (downloaded from Booksy gallery) repeat taglines 'More than ink. It's art. Luxury in every detail.' and 'Your style is what makes you.' Owner name Alejandro confirmed via Booksy JSON-LD employee field and repeated review mentions.",
+ "services": [
+  { "name": "Custom Tattoo Session", "price": 120, "duration": "40min", "note": "Base rate published on Booksy; larger custom pieces are quoted after a design consult, price is not fixed per-tattoo." },
+  { "name": "Ear & Body Piercing", "price": 55, "duration": "20min" },
+  { "name": "Dermal anchor/Surface", "price": 85, "duration": "20min" },
+  { "name": "Jewelry Change & Upgrade", "price": 25, "duration": "20min" },
+  { "name": "Piercing Removal / Adjustment", "price": 25, "duration": "20min" },
+  { "name": "Dermal removal or adjustment", "price": 45, "duration": "30min" }
+ ],
+ "services_note": "All 6 services and prices are exactly as published in the Booksy JSON-LD makesOffer/service catalog. As expected for a tattoo/piercing shop, the tattoo entry is a base session rate, not a fixed per-design price; the site copy is honest about this (quoted after consult) rather than inventing per-tattoo prices.",
+ "reviews_verbatim_full": [
+  { "author": "Alessandra O…", "body": "Estuvo genial , son muy amables los recomiendo . Me hice un piercing espero me cicatrice bien 🙌🏻🙌🏻", "rating": 5, "source": "Booksy", "language": "es", "note": "Used verbatim on site, untranslated per DESIGN.md rule (reviews stay in original language)." },
+  { "author": "Sebastian", "body": "Alejandro was very informative with aftercare and with the process of my snake bite piercings, it was very easy and a calming experience, highly recommend coming here for a piercing. 👍", "rating": 5, "source": "Booksy" },
+  { "author": "James S…", "body": "Friendly, helpful and very efficient.", "rating": 5, "source": "Booksy" },
+  { "author": null, "body": "Alejandro was very informative with aftercare and with the process of my snake bite piercings, it was very easy and a calming experience, highly recom...", "rating": null, "source": "Booksy", "note": "Duplicate/truncated DOM entry of the Sebastian review, not used separately." },
+  { "author": null, "body": "Everything was great. I got a piercing and finger tattoo", "rating": null, "source": "Booksy", "note": "No author name recovered, not used as an on-site quote." },
+  { "author": null, "body": "10/10,I got a anti eyebrow piercing and it went wonderfully, I felt absolutely no pain, and he helped explain everything perfectly I highly recommend ...", "rating": null, "source": "Booksy", "note": "No author name recovered, not used as an on-site quote." },
+  { "author": null, "body": "Amazing", "rating": null, "source": "Booksy", "note": "No author name recovered, too short to use." },
+  { "author": null, "body": "Mr Alejandro is always nice when we come in", "rating": null, "source": "Booksy", "note": "No author name recovered, not used as an on-site quote." },
+  { "author": null, "body": "Very professional, very quick I didn’t even feel a thing, I highly recommend", "rating": null, "source": "Booksy", "note": "No author name recovered, not used as an on-site quote." },
+  { "author": null, "body": "I had an excellent experience getting my dermal piercing! Alejandro was very professional and took the time to give me clear, sound advice about place...", "rating": null, "source": "Booksy", "note": "No author name recovered, not used as an on-site quote." },
+  { "author": null, "body": "My snake eyes came out so perfect. Alejandro was great!", "rating": null, "source": "Booksy", "note": "No author name recovered, not used as an on-site quote." }
+ ],
+ "reviews_used_on_site": ["Alessandra O.", "Sebastian", "James S."],
+ "language": "en",
+ "language_detection": "Instagram bio and captions are in English (e.g. 'More than ink. It's art.'). Of 3 named Booksy reviews with authors, 2 are in English and 1 (Alessandra O.) is in Spanish, reflecting Orlando's bilingual market; page defaults to English with a working ES/EN toggle covering both audiences.",
+ "brand_vibe": "Black background with gold/champagne serif wordmark ('ALEJANDRO' in Playfair-style gold caps), luxury positioning language ('Luxury in every detail', 'More than ink, it's art', 'Luxury Piercings - Premium Jewelry - Since 1998') consistent across every one of the business's own promotional graphics found in the Booksy gallery. This matches templates/dark-v2's existing black/gold palette almost exactly, so the palette was kept as-is rather than re-derived, since it is already true to the real brand.",
+ "photos": {
+  "sources_checked": [
+   "scripts/booksy_dossier.py + booksy_gallery.py: downloaded 16 images (bk-1..bk-16) from the Booksy business gallery.",
+   "Instagram web_profile_info for @alejandrotattoousa: first 12 timeline posts are ALL GraphVideo (Reels) with heavy permanent text/logo overlays baked into the video poster frames (aftercare tips, booking CTAs, before/after slides); none of the 12 poster thumbnails were clean enough to use without significant crop loss, except one (dragon shoulder tattoo) which was cropped as a trial but ultimately dropped for still showing partial text at every crop tested.",
+   "Facebook: page fetch blocked by login wall (1542 byte response), no photos retrievable without authentication."
+  ],
+  "downloaded_total": 16,
+  "gallery_appropriate_after_curation": 9,
+  "used_on_site": 9,
+  "curation_notes": "Every downloaded photo was visually reviewed via the contact sheet (_sheet.jpg) and individually before selection. Excluded from gallery entirely: bk-6 (face piercing close-up with visibly red/irritated skin and a closed eye, prohibited per quality gate), bk-4 and bk-5 (pure marketing/product graphic cards with no real finished-work photo, tongue-out close-up portrait), bk-8 (cluttered marketing collage with a mid-session insert photo and comparison markup lines), bk-11 (cluttered two-panel collage with logo overlay and a second inset close-up, no clean crop possible), bk-2 (small circular logo badge, used only as the small nav/footer/favicon avatar, never as a gallery tile), bk-1 (real interior/piercing-in-progress photo but partially exposed midriff composition and heavy text overlay, dropped rather than risk an inappropriate crop), and all 12 Instagram Reel posters (permanent branded text baked into every frame, no clean crop available). The remaining 9 finished, healed, well-lit tattoo photos (bk-3, bk-7, bk-9, bk-10, bk-12, bk-13, bk-14, bk-15, bk-16) all had promotional text/logo overlays cropped out with PIL (kept only the real tattoo/skin region, verified visually after cropping) and were resized to max 1000px wide at quality 82.",
+  "files": {
+   "logo.jpg": "Small circular brand badge/logo (from bk-2), used as nav icon, footer icon and favicon only, never as a gallery tile.",
+   "lion-back.jpg": "Full back piece: black and grey lion portrait with floral crown and dagger, on a smiling client. From bk-3, used uncropped as hero image and og:image.",
+   "medusa-side.jpg": "Detailed black and grey Medusa/snake tattoo on ribs/torso. Cropped from bk-12 to remove a text banner at top. Used in About section.",
+   "portrait-sleeve.jpg": "Black and grey Native American-style portrait and rose upper-arm sleeve. Cropped from bk-9 to remove a logo badge overlay. Used in About section.",
+   "butterfly-shoulder.jpg": "Colorful watercolor-style butterfly tattoo on shoulder. Cropped from bk-10 to remove a top text banner. Used as the large first gallery tile.",
+   "shark-forearm.jpg": "Color realism hammerhead shark tattoo on forearm. Cropped from bk-7 to remove a logo/address overlay column. Used in gallery.",
+   "ship-forearm.jpg": "Fine line sketch-style ship and compass tattoo on forearm. Cropped from bk-13 to remove top/left/right text overlays. Used in gallery.",
+   "butterflies-back.jpg": "Colorful butterfly and flower vine tattoo running down the spine. Cropped from bk-14 to remove a left-side testimonial text overlay. Used in gallery.",
+   "script-thigh.jpg": "Fine line cursive script lettering tattoo on thigh. Cropped from bk-15 to remove a top text banner. Used in gallery.",
+   "crying-hand.jpg": "Bold black and grey portrait tattoo on the back of a hand. Cropped from bk-16 to remove a left-side review card and top banner. Used in gallery."
+  }
+ },
+ "notes": "Discovery seed data (phone, IG handle, Facebook, address, Booksy URL, rating ballpark, no-own-website) was independently re-verified and confirmed correct via a fresh booksy_dossier.py run plus fresh IG API pull and web searches. Rating/review count refined to the exact Booksy JSON-LD values (4.9 rounded from 4.926829..., 41 reviews). Photo pool required heavy visual curation: of 16 Booksy photos + 12 Instagram Reel posters (28 total), only 9 were clean, appropriate, finished-work photos after cropping out this business's habit of overlaying every marketing photo with logo/text banners; none were blood/mid-procedure except one excluded piercing close-up."
+}

@@ -1,275 +1,124 @@
 {
- "booksy_url": "https://booksy.com/en-us/581816_nappy-hair-planet_braids-locs_15826_tallahassee",
  "slug": "nappy-hair-planet-tallahassee",
  "name": "NAPPY HAIR PLANET",
- "schema_type": "LocalBusiness",
+ "schema_type": "HairSalon",
+ "city": "Tallahassee, FL",
+ "niche": "hair salon boutique (natural hair, locs, braids)",
  "address": {
-  "@type": "PostalAddress",
-  "streetAddress": "1373 E. TENNESSEE STREET, Tallahassee, 32304",
-  "addressCountry": "us",
-  "addressLocality": "Tallahassee, FL",
-  "addressRegion": "Florida",
-  "postalCode": "32304"
+  "streetAddress": "1373 E Tennessee St",
+  "addressLocality": "Tallahassee",
+  "addressRegion": "FL",
+  "postalCode": "32308",
+  "addressCountry": "US",
+  "notes": "Confirmed current address via BOTH live booking platforms (Booksy JSON-LD and Fresha JSON-LD, same street address, scraped same session). Booksy's own JSON-LD has a zip typo (32304); Fresha and an independent LoopNet listing for the same street address confirm 32308, used here. A 2026-07 Booksy review ('New location was welcoming & easy to get to') confirms the business relocated at some point. The business's Florida LLC filing on Sunbiz/bizprofile still lists the OLD principal address, 1732 Thomasville Rd, Tallahassee, FL 32303 (the address given in the initial task brief) — that appears to be a stale filing address, not the current operating location. Both live booking platforms agree on 1373 E Tennessee St, so that is used as the real, current address on the site."
  },
- "geo": {
-  "@type": "GeoCoordinates",
-  "latitude": 30.44825,
-  "longitude": -84.26005
- },
+ "geo": { "latitude": 30.4482128, "longitude": -84.2600996 },
  "rating": 5.0,
  "reviews_count": 91,
+ "reviews_count_source": "Booksy JSON-LD (581816_nappy-hair-planet_braids-locs), scraped live via booksy_dossier.py. A separate/older Booksy listing id (573282) surfaced in search with 84 reviews; treated as a stale duplicate, not used.",
+ "hours_source": "booksy_json_ld",
  "hours": [
-  {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Tuesday"
-   ],
-   "opens": "10:00",
-   "closes": "14:00"
-  },
-  {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Wednesday"
-   ],
-   "opens": "13:00",
-   "closes": "18:00"
-  },
-  {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Friday"
-   ],
-   "opens": "07:30",
-   "closes": "15:00"
-  },
-  {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Saturday"
-   ],
-   "opens": "07:00",
-   "closes": "12:00"
-  }
+  { "days": ["Tuesday"], "opens": "10:00", "closes": "14:00" },
+  { "days": ["Wednesday"], "opens": "13:00", "closes": "18:00" },
+  { "days": ["Friday"], "opens": "07:30", "closes": "15:00" },
+  { "days": ["Saturday"], "opens": "07:00", "closes": "12:00" }
  ],
- "staff": [
-  {
-   "name": "AISHA",
-   "description": null
-  }
- ],
- "same_as": [
-  "https://www.facebook.com/nappyhairplanet/",
-  "https://www.instagram.com/nappy_hair_planet/"
+ "hours_note": "Booksy's own JSON-LD (the business's real booking calendar) lists specific, limited appointment windows Tue/Wed/Fri/Sat only, typical of a single-stylist studio. Fresha separately lists generic 'Mon-Fri 9-7, Sat 9-5, Sun closed' storefront hours, which looks like an unedited platform default rather than Aisha's real appointment availability. Booksy's specific per-day windows were used on the site as the more trustworthy source (same reasoning as the true-glow-esthetics-hollywood precedent).",
+ "phone": "+18502996160",
+ "phone_display": "(850) 299-6160",
+ "phone_source": "Fresha JSON-LD (fresha.com/lvp/nappy-hair-planet-thomasville-road-tallahassee-7xRX5z), scraped live: telephone field tied to the exact current address (1373 E Tennessee St). Booksy's own page publishes NO phone number at all (common Booksy behavior, forces booking through the app). The number '850-445-0474' mentioned in the initial task brief and repeated in several AI web-search summaries could NOT be independently verified against any live, direct source (not on Booksy, not on Fresha, no working reverse-lookup match) and may be a stale number tied to the old Thomasville Rd location; NOT used on the site to avoid publishing an unverified contact.",
+ "email": null,
+ "email_search_log": [
+  "Booksy business page (raw HTML, JSON-LD + DOM): no email field, no mailto link, only Booksy's own support address (help.us@booksy.com), not the business's.",
+  "Fresha listing JSON-LD: no email field.",
+  "Facebook page (facebook.com/nappyhairplanet) and /about: WebFetch blocked by Facebook's login wall both times, no content retrieved.",
+  "Instagram (@nappy_hair_planet): web_profile_info API blocked (400/401/429 rate-limited across 4 attempts with rotated User-Agents), direct profile page HTML returned a 302 login redirect, third-party viewer picuki.com returned 403. Could not reach business_email or external_url via any IG-side channel this session.",
+  "Sunbiz / bizprofile.net LLC filing (Nappy Hair Planet, LLC, registered agent Aisha E. Reeves): no email listed in the public filing summary.",
+  "Own domain check: nappyhairplanet.com, nappyhairplanettallahassee.com, nappy-hair-planet.com, thenappyhairplanet.com all fail to resolve (curl exit 56 / no connect) -> confirms no owned website and no domain-based email.",
+  "Conclusion: no public email found after exhausting all listed sources. Outreach will rely on Instagram DM and/or phone (call/text) as the manual channel."
  ],
  "instagram": "nappy_hair_planet",
- "website_candidates": [],
- "phone": null,
+ "instagram_url": "https://www.instagram.com/nappy_hair_planet/",
+ "instagram_search_note": "Confirmed handle from Booksy JSON-LD sameAs and web search (matches Facebook page name and business branding). Could not pull bio/external_url/media via the API endpoint this session: blocked with 400 'schema deleted' errors, then 401 login-required, then 429 rate-limited on retries, exceeding the pipeline's 2-attempt limit before falling back to Booksy's own gallery + review photos for all images.",
+ "facebook_url": "https://www.facebook.com/nappyhairplanet/",
+ "has_own_site": false,
+ "own_site_check": "Booksy website_candidates: empty array. Fresha sameAs: only http://nappyhair.booksy.com/ (a Booksy-hosted booking subdomain, not an independent site; resolves through cdl.booksy.com short-link redirector, confirmed a Booksy platform URL, not owned infrastructure). Direct domain guesses (nappyhairplanet.com and 3 variants) all fail to connect (DNS/connect failure via curl). No owned website found.",
+ "booking_platforms": {
+  "booksy": "https://booksy.com/en-us/581816_nappy-hair-planet_braids-locs_15826_tallahassee",
+  "booksy_subdomain": "http://nappyhair.booksy.com/ (redirects into the same Booksy listing)",
+  "fresha": "https://www.fresha.com/lvp/nappy-hair-planet-thomasville-road-tallahassee-7xRX5z"
+ },
+ "staff": [{ "name": "Aisha Reeves", "role": "Loctician / Owner", "source": "Booksy staff card ('AISHA'); full name and 'Owner/Manager' role confirmed via Sunbiz LLC filing (registered agent Aisha E. Reeves) and Booksy resource photo filename ('nappy-hair-planet-aisha-reeves...')." }],
+ "about_source_text": "No published bio/about paragraph found on Booksy or Fresha (neither platform has an About field filled in for this listing). Site copy below is built only from verified facts: single-stylist studio in Tallahassee run by loctician Aisha Reeves, specializing in locs (retwist, interlocking, Sisterlocks, color), braids/twists, silk press and natural hair care, 5.0 rating across 91 Booksy reviews, logo tagline 'One Love'.",
  "services": [
-  {
-   "name": "LOC RETWIST &STYLE",
-   "price": 120,
-   "duration": "2h"
-  },
-  {
-   "name": "LOC RETWIST",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "INTERLOCKING",
-   "price": 150,
-   "duration": null
-  },
-  {
-   "name": "COLOR LOC TIPS/END",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "SISTERLOCKS ® Retightening",
-   "price": 200,
-   "duration": "6h"
-  },
-  {
-   "name": "Sew-In is a protective style that provides versati",
-   "price": 150,
-   "duration": null
-  },
-  {
-   "name": "SHAMPOO AND BLOWOUT",
-   "price": 50,
-   "duration": null
-  },
-  {
-   "name": "BRAID DOWN",
-   "price": 50,
-   "duration": null
-  },
-  {
-   "name": "SILK PRESS",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "CROCHET",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "TWO STRAND TWISTS",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "COMB TWIST",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "WASH & GO",
-   "price": 50,
-   "duration": null
-  },
-  {
-   "name": "SHAPE-UP / TAPER CUT",
-   "price": 30,
-   "duration": "1h"
-  },
-  {
-   "name": "RELAXER (TOUCH-UP)",
-   "price": 70,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "SHAMPOO N STYLE FOR RELAXED HAIR",
-   "price": 45,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "VIRGIN RELAXER",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "TEXTURIZER",
-   "price": 50,
-   "duration": null
-  },
-  {
-   "name": "PERMENANT COLOR",
-   "price": 85,
-   "duration": null
-  },
-  {
-   "name": "PARTIAL HIGHLIGHTS",
-   "price": 85,
-   "duration": null
-  },
-  {
-   "name": "HIGHLIGHTS",
-   "price": 100,
-   "duration": null
-  },
-  {
-   "name": "DEMI COLOR",
-   "price": 40,
-   "duration": "45min"
-  }
+  { "name": "LOC RETWIST & STYLE", "price": 120, "duration": "2h" },
+  { "name": "LOC RETWIST", "price": 100, "duration": null },
+  { "name": "INTERLOCKING", "price": 150, "duration": null },
+  { "name": "COLOR LOC TIPS/END", "price": 100, "duration": null },
+  { "name": "SISTERLOCKS ® RETIGHTENING", "price": 200, "duration": "6h" },
+  { "name": "SEW-IN", "price": 150, "duration": null, "note": "Booksy's own service title field is truncated to a run-on description ('Sew-In is a protective style that provides versati...'); category on Booksy is 'Sew In Weave' and the full description reads: 'Sew-In is a protective style that provides versatility, fullness, and length while keeping your natural hair tucked away.' Displayed on the site as SEW-IN (its Booksy category name) with that description, not the truncated string." },
+  { "name": "SHAMPOO AND BLOWOUT", "price": 50, "duration": null },
+  { "name": "BRAID DOWN", "price": 50, "duration": null },
+  { "name": "SILK PRESS", "price": 100, "duration": null },
+  { "name": "CROCHET", "price": 100, "duration": null },
+  { "name": "TWO STRAND TWISTS", "price": 100, "duration": null },
+  { "name": "COMB TWIST", "price": 100, "duration": null },
+  { "name": "WASH & GO", "price": 50, "duration": null },
+  { "name": "SHAPE-UP / TAPER CUT", "price": 30, "duration": "1h" },
+  { "name": "RELAXER (TOUCH-UP)", "price": 70, "duration": "1h 30min" },
+  { "name": "SHAMPOO N STYLE FOR RELAXED HAIR", "price": 45, "duration": "1h 30min" },
+  { "name": "VIRGIN RELAXER", "price": 100, "duration": null },
+  { "name": "TEXTURIZER", "price": 50, "duration": null },
+  { "name": "PERMANENT COLOR", "price": 85, "duration": null },
+  { "name": "PARTIAL HIGHLIGHTS", "price": 85, "duration": null },
+  { "name": "HIGHLIGHTS", "price": 100, "duration": null },
+  { "name": "DEMI COLOR", "price": 40, "duration": "45min" }
  ],
- "reviews": [
-  {
-   "author": "Jalencya R…",
-   "body": "Aisha is fantastic! She’s friendly, skilled and empathetic. She listened to my concerns and tailored her service to what I needed. I can’t wait to return.",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Robyn B…",
-   "body": "My girl got me right Aisha",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Grace L…",
-   "body": "Aisha is amazing! New location was welcoming & easy to get to. My appointment was on-time & I was able to ask questions and show styles of interest. Aisha did a wonderful job of listening & suggesting styles for me. Looking forward to next visit.",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": null,
-   "body": "Aisha is fantastic! She’s friendly, skilled and empathetic. She listened to my concerns and tailored her service to what I needed. I can’t wait to ret...",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Aisha is amazing! New location was welcoming & easy to get to. My appointment was on-time & I was able to ask questions and show styles of interest. A...",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Love Aisha so much. Great vibes and cute hair. She has really helped me embrace my hair and natural styles. Would recommend 10/10!!",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "An amazing job as always! You never miss",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Another loc retwist jobwell done by Aisha.   I can always trust to have a great experience when I make my appointment for a redo.",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Good people, great skill",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Great service and my hair looks good. I always get compliments.",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Love it!",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Had a great experience getting my locs done. The conversation was great, the service was quick, and very professional. In and out with no issues. Will...",
-   "rating": null,
-   "author_verified": false
-  }
+ "services_source": "Booksy JSON-LD hasOfferCatalog, 22 offers, scraped live via booksy_dossier.py. All names/prices verbatim from Booksy except the SEW-IN truncation fix noted above (PERMENANT -> PERMANENT is Booksy's own typo, corrected for the site).",
+ "reviews_verbatim_full": [
+  { "author": "Jalencya R.", "body": "Aisha is fantastic! She’s friendly, skilled and empathetic. She listened to my concerns and tailored her service to what I needed. I can’t wait to return.", "rating": 5, "source": "Booksy" },
+  { "author": "Robyn B.", "body": "My girl got me right Aisha", "rating": 5, "source": "Booksy" },
+  { "author": "Grace L.", "body": "Aisha is amazing! New location was welcoming & easy to get to. My appointment was on-time & I was able to ask questions and show styles of interest. Aisha did a wonderful job of listening & suggesting styles for me. Looking forward to next visit.", "rating": 5, "source": "Booksy", "note": "This review is the one that confirms the business moved to a new location; supports using the Booksy/Fresha current address over the Sunbiz filing address." },
+  { "author": null, "body": "Love Aisha so much. Great vibes and cute hair. She has really helped me embrace my hair and natural styles. Would recommend 10/10!!", "source": "Booksy", "note": "Author name not shown on the anonymized review list; rating star only, no name in the DOM." },
+  { "author": null, "body": "An amazing job as always! You never miss", "source": "Booksy" },
+  { "author": null, "body": "Another loc retwist job well done by Aisha. I can always trust to have a great experience when I make my appointment for a redo.", "source": "Booksy" },
+  { "author": null, "body": "Good people, great skill", "source": "Booksy" },
+  { "author": null, "body": "Great service and my hair looks good. I always get compliments.", "source": "Booksy" },
+  { "author": null, "body": "Love it!", "source": "Booksy" },
+  { "author": null, "body": "Had a great experience getting my locs done. The conversation was great, the service was quick, and very professional. In and out with no issues. Will...", "source": "Booksy", "note": "Truncated with '...' in Booksy's own review list; full text not recoverable from the static HTML fetch." }
  ],
- "named_reviews": [
-  {
-   "author": "Jalencya R…",
-   "body": "Aisha is fantastic! She’s friendly, skilled and empathetic. She listened to my concerns and tailored her service to what I needed. I can’t wait to return.",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Robyn B…",
-   "body": "My girl got me right Aisha",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Grace L…",
-   "body": "Aisha is amazing! New location was welcoming & easy to get to. My appointment was on-time & I was able to ask questions and show styles of interest. Aisha did a wonderful job of listening & suggesting styles for me. Looking forward to next visit.",
-   "rating": 5,
-   "author_verified": true
-  }
+ "reviews_used_on_site": [
+  "Jalencya R.",
+  "Robyn B.",
+  "Grace L."
  ],
- "language": "en"
+ "language": "en",
+ "language_note": "All 12 review texts recovered are in English; Instagram bio/captions could not be checked (IG blocked), but Booksy/Fresha (the two live, verifiable sources) are both English. English used as the site's default language.",
+ "photos": {
+  "sources_checked": [
+   "Booksy business page (booksy_dossier.py + booksy_gallery.py): full cloudfront URL sweep of the raw HTML found 1 logo, 1 biz_photo (low-res, same as logo crop), 1 staff/resource photo (Aisha Reeves), 6 service_photos (highest resolution available, up to 2340x1559) and ~10 review_photos (customer-uploaded, capped by Booksy at 250x250 max public size).",
+   "Fresha listing: only a generic stock placeholder image (images.fresha.com/lead-images/placeholders/hair-salon-136.jpg), not a real photo of the business, not used.",
+   "Instagram: blocked this session (see instagram_search_note), no photos sourced from there despite being the normal priority source for this niche.",
+   "Google Maps: WebFetch on the Maps place URL returned only the client-side app shell (no JS execution available), no photo URLs recoverable without an API key.",
+   "Facebook: photos page (facebook.com/nappyhairplanet/photos) returned HTTP 400, blocked."
+  ],
+  "downloaded_total": 25,
+  "used_on_site": 9,
+  "curation_notes": "All photos were opened and visually inspected one by one (contact sheets + individual reads) before selection, per the mandatory visual curation step. Discarded: 1 extreme scalp/part close-up (too clinical/anatomical for a public gallery), 1 duplicate of the silk-press photo with a red 'SILK PRESS' caption burned into the image (used the clean duplicate without on-image text instead), 4-5 near-duplicate crops of the same customer's gray twists from review photos (kept only the single best crop), 1 unrelated review photo (a customer at a Lion King theater poster, not a hair result), and the staff photo of Aisha Reeves (used only as a small avatar candidate for the About section per the pipeline rule against stylist portraits in the gallery, not used as a gallery tile in the final build). The staff photo is 918x918, plenty sharp; not used in the final gallery grid to keep the guideline strict, but kept in assets/raw for potential 'meet Aisha' use.",
+  "files": {
+   "logo.jpg": "Business wordmark logo, black background, yellow/green/red globe mark with 'ONE LOVE'. Used in nav, footer and favicon crop.",
+   "gallery-locs-cape.jpg": "Finished, freshly retwisted locs hanging over a black and gold cape at the styling chair, salon interior visible (pink chair lining). High-res Booksy service photo. Used as the large hero-style gallery tile.",
+   "gallery-locs-detail.jpg": "Close detail of finished loc ends against a magenta towel, texture/length showcase. High-res Booksy service photo.",
+   "gallery-box-braids.jpg": "Finished box braids with gold cuffs, side profile of a smiling client wearing glasses. High-res Booksy service photo.",
+   "gallery-silk-press.jpg": "Finished silk press with a warm balayage/ombre, client smiling outdoors. High-res Booksy service photo (clean version without the on-image caption).",
+   "gallery-locs-profile-m.jpg": "Finished twisted locs on a male client, side profile. Booksy review photo (250x250, displayed at a smaller tile size).",
+   "gallery-twists-wall.jpg": "Finished long twists/locs, outdoor wall backdrop with cool light. Booksy review photo (250x250).",
+   "gallery-silk-press-detail.jpg": "Close detail of straight silk-press hair over the shoulder, no on-image text. Booksy review photo (250x250).",
+   "gallery-clients-duo.jpg": "Two smiling clients side by side showing off their finished styles. Booksy review photo (250x250).",
+   "gallery-twists-gray.jpg": "Finished salt-and-pepper twists on a male client, close ear-level detail, well lit. Booksy review photo (250x250), best of several near-duplicate crops of the same result.",
+   "stylist-aisha.jpg": "Portrait of Aisha Reeves, owner/loctician. Kept in assets/raw but NOT used as a gallery tile (stylist-portrait rule); available for a small avatar if the About section needs one."
+  }
+ },
+ "brand_vibe": "Bold, warm, Afrocentric pop identity: black-background logo in yellow/green/red with a globe and 'One Love' heart mark. Real interior/result photos lean warm and rich: black styling chairs with gold-trimmed capes, deep brown and reddish-brown loc tones, magenta/pink towels and chair linings, warm golden studio light. Built on the dark template with a warm black background and a terracotta-gold accent (distinct hex from other locs-niche builds) rather than the literal red/yellow/green of the logo, which would read as unprofessional at full saturation on a premium site.",
+ "notes": "Sunbiz filing confirms the owner is Aisha E. Reeves (LLC formerly 'E.SHE, LLC' then 'ESHE-LOCS, LLC', renamed to 'Nappy Hair Planet, LLC', active, EIN 88-3506565). The filed principal address (1732 Thomasville Rd) is outdated versus the two live booking platforms (1373 E Tennessee St), which agree with each other and are corroborated by a recent Booksy review mentioning a location move; the current address was used on the site. Phone number given in the initial task brief (850-445-0474) could not be verified this session and was replaced with the Fresha-verified (850) 299-6160. Instagram research (photos, bio, business_email) was blocked across repeated attempts this session; Booksy's own service/review photo pool (25 downloaded, visually curated to 9 real, well-lit, finished-result gallery photos) was used instead, meeting the 6-14 photo minimum."
 }

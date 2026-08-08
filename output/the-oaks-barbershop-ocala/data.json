@@ -1,139 +1,131 @@
 {
- "booksy_url": "https://booksy.com/en-us/98370_bravo-theoaksbarbershop_barber-shop_15870_ocala",
  "slug": "the-oaks-barbershop-ocala",
- "name": "Bravo.theoaksbarbershop",
- "schema_type": "HairSalon",
+ "name": "The Oaks Barbershop",
+ "schema_type": "Barbershop",
+ "city": "Ocala, FL",
+ "niche": "barberia boutique (barbershop)",
  "address": {
-  "@type": "PostalAddress",
-  "streetAddress": "289 Marion oaks Ln, Ocala, 34473",
-  "addressCountry": "us",
-  "addressLocality": "Ocala, FL",
-  "addressRegion": "Florida",
-  "postalCode": "34473"
+  "streetAddress": "289 Marion Oaks Ln",
+  "addressLocality": "Ocala",
+  "addressRegion": "FL",
+  "postalCode": "34473",
+  "addressCountry": "US"
  },
- "geo": {
-  "@type": "GeoCoordinates",
-  "latitude": 28.98028999999998,
-  "longitude": -82.16746999999995
- },
- "rating": 4.9,
- "reviews_count": 70,
- "hours": null,
- "staff": [
-  {
-   "name": "BravoBarber22 Fuentes",
-   "description": null
-  }
+ "geo": { "latitude": 28.98029, "longitude": -82.16747 },
+ "rating": 4.7,
+ "reviews_count": 68,
+ "rating_source": "Birdeye aggregate page (reviews.birdeye.com/the-oaks-barbershop-170241229023404), cross-verified against two independent WebSearch snippets (both showed 4.7 stars / 68 reviews, same address/phone/hours). Used as the primary displayed rating because it matches the shop's public identity across Google/Yelp/FB, not just one barber's booking chair.",
+ "rating_note_booksy": "The shop's Booksy booking page is registered under one barber's individual profile, 'Bravo.theoaksbarbershop' (booksy.com/en-us/98370_bravo-theoaksbarbershop_barber-shop_15870_ocala), which shows 4.9 stars / 70 reviews via its own JSON-LD. Same exact address (289 Marion Oaks Ln, Ocala 34473) confirms it is the same physical shop, just a narrower review pool (only that barber's Booksy clients). Not used as the headline number to avoid overstating vs. the broader public rating.",
+ "hours": [
+  { "days": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "19:00" },
+  { "days": ["Friday","Saturday"], "opens": "09:00", "closes": "21:00" },
+  { "days": ["Sunday"], "closed": true }
  ],
- "same_as": [
-  "https://www.instagram.com/bravo.hairhustler787/"
+ "hours_source": "Consistent across Birdeye, Yahoo Local and two independent WebSearch results (all identical: Mon-Thu 9-7, Fri-Sat 9-9, Sun closed).",
+ "phone": "+13526934118",
+ "phone_display": "(352) 693-4118",
+ "phone_source": "Given as known data, re-verified independently via Birdeye, Yahoo Local and WebSearch (all match). Not published on Booksy or the Square site itself.",
+ "email": null,
+ "email_search_log": [
+  "Booksy business page (raw HTML curl): no email field, no mailto link found; only the generic help.us@booksy.com (Booksy's own support address, not the business's).",
+  "Instagram web_profile_info for @bravo.hairhustler787 (the barber's real, active IG linked from Booksy sameAs): business_email null, external_url null, is_business_account false.",
+  "Instagram web_profile_info for @theoaksbarbershop (the handle guessed from discovery): resolved to an unrelated, inactive personal account ('O2k_notit', 87 followers, empty bio, 0 posts) -- NOT the business. Ruled out and not used anywhere on the site or in outreach.",
+  "Facebook (facebook.com/theoaksbarbershop and mbasic.facebook.com/theoaksbarbershop/about): both blocked by Facebook's login wall for automated fetches, About section not accessible.",
+  "Yelp business page (yelp.com/biz/the-oaks-barbershop-no-title): returned HTTP 403, blocked.",
+  "Own domain theoaksbarbershop.com (found live, see has_own_site below): checked meta tags, embedded Square Online __BOOTSTRAP_STATE__ JSON and sitemap.xml for a contact email; none published. Site only exposes a 'Book' nav link (Square Appointments), no visible contact/about page with an email.",
+  "RDAP/WHOIS for theoaksbarbershop.com via rdap.verisign.com: registrant contact fully redacted (standard post-2018 privacy), no email exposed.",
+  "Sunbiz.org LLC filing (THE OAKS BARBERSHOP LLC, L22000080449): page blocked automated fetch (403); WebSearch snippet surfaced the registered agent's name (Jonathan G. Fuentes Ortiz) but no email.",
+  "Conclusion: no public email found after exhausting all listed sources. Outreach relies on phone call/text and Instagram DM to the barber's real account, @bravo.hairhustler787."
  ],
  "instagram": "bravo.hairhustler787",
- "website_candidates": [],
- "phone": null,
- "services": [
-  {
-   "name": "The Haircut",
-   "price": 40,
-   "duration": "40min"
-  },
-  {
-   "name": "The Haircut & beard",
-   "price": 50,
-   "duration": "40min"
-  },
-  {
-   "name": "The Haircut hot shave",
-   "price": 60,
-   "duration": "40min"
-  },
-  {
-   "name": "Kids 12- under",
-   "price": 25,
-   "duration": "30min"
-  }
+ "instagram_display": "@bravo.hairhustler787",
+ "instagram_note": "This is the real, active account linked directly from the Booksy business's own sameAs field (161 posts, 791 followers, bio: 'Florida barber... Professional barber since 2008'). It belongs to barber Jonathan 'Bravo' Fuentes, who a customer review explicitly identifies as working at 'Oaks Barbershop'. The handle originally guessed from discovery, @theoaksbarbershop, was checked and is a different, unrelated, inactive personal account (0 posts) -- NOT used anywhere.",
+ "has_own_site": true,
+ "own_site_check": "CORRECTION to discovery assumption: theoaksbarbershop.com IS live and resolves (301 -> www.theoaksbarbershop.com, HTTP 200). It is a Square Online site (meta generator='Square Online', vertical 'salon-barbershop') on the business's own custom domain (not a *.square.site subdomain). It carries a genuine custom logo reading 'THE OAKS BARBERSHOP - EST. 2026' in navy/gold (confirms real ownership, not a generic template squat). However the site is extremely minimal: sitemap.xml lists only 4 generic product pages (haircut, haircut-beard-trim, kids-cut, waxing), zero configured brick-and-mortar/pickup locations in Square's own location data, and the page's configured site title / og:site_name is 'Jeremy Munson' (a personal name, not the shop name) with no address, phone, photos, reviews or about copy anywhere in the rendered/embedded JSON. Effectively a bare logo + 'Book' button. Per pipeline rules this counts as has_own_site: true, so the outreach angle is a premium redesign proposal, not 'you have no website'.",
+ "own_domain": "https://www.theoaksbarbershop.com/",
+ "booking_platforms": {
+  "booksy": "https://booksy.com/en-us/98370_bravo-theoaksbarbershop_barber-shop_15870_ocala",
+  "own_site_square_booking": "https://www.theoaksbarbershop.com/ (Book nav link, Square Appointments backend, no address/hours published on the page itself)"
+ },
+ "staff": [
+  { "name": "Jonathan \"Bravo\" Fuentes", "role": "Barber / Owner", "source": "Booksy staff field ('BravoBarber22 Fuentes'), Sunbiz LLC filing (Jonathan G. Fuentes Ortiz, authorized person of THE OAKS BARBERSHOP LLC), and a customer review naming him directly: 'Jonathan Bravo at Oaks Barbershop is hands down the best barber I've ever been to.'" }
  ],
- "reviews": [
+ "services": [
+  { "name": "The Haircut", "price": 40, "duration": "40min" },
+  { "name": "The Haircut & beard", "price": 50, "duration": "40min" },
+  { "name": "The Haircut hot shave", "price": 60, "duration": "40min" },
+  { "name": "Kids 12- under", "price": 25, "duration": "30min" }
+ ],
+ "services_source": "Booksy JSON-LD (makesOffer) for booksy.com/en-us/98370_bravo-theoaksbarbershop_barber-shop_15870_ocala, exact names, prices and durations as published.",
+ "reviews_verbatim_full": [
   {
-   "author": "Andres M…",
+   "author": "Andres M.",
    "body": "Awesome experience!",
    "rating": 5,
-   "author_verified": true
+   "source": "Booksy JSON-LD (named review)"
   },
   {
-   "author": "Jessica s…",
+   "author": "Jessica S.",
    "body": "1000% recommend!",
    "rating": 5,
-   "author_verified": true
+   "source": "Booksy JSON-LD (named review)"
   },
   {
-   "author": "Christopher C…",
+   "author": "Christopher C.",
    "body": "Best everytime!!!",
    "rating": 5,
-   "author_verified": true
+   "source": "Booksy JSON-LD (named review)"
+  },
+  {
+   "author": null,
+   "body": "Jonathan Bravo at Oaks Barbershop is hands down the best barber I've ever been to. From the moment I sat in his chair, he was incredibly gentle, professional, and had such a calm, balanced energy that immediately put me at ease. He's genuinely friendly and a true master of his craft. I came in with a specific vision, and he executed my request flawlessly. Every detail was perfect, and I walked out with the crispest haircut I've ever had. As a woman walking into a male-dominated barbershop, I wasn't sure what to expect, but Jonathan made me feel completely comfortable and welcomed from start to finish. That kind of professionalism and respect goes a long way. Honestly, he's so good that I'd take a plane from Rhode Island just to have him cut my hair again. If you're looking for a barber who combines incredible skill with amazing customer service, Jonathan Bravo is the one. Highly recommend!",
+   "rating": null,
+   "source": "Booksy DOM, recovered full text from the hidden 'show more' span (visible span was truncated mid-word: '...he was incredibly gentle, profe...'). This review has an attached customer photo (used on site as shop-interior-detail.jpg / shop-interior-cut.jpg, same session)."
   },
   {
    "author": null,
    "body": "Excellent service. Very professional and thorough with his haircuts! No need to look for a new barber, you found the guy.",
    "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Jonathan Bravo at Oaks Barbershop is hands down the best barber I’ve ever been to. From the moment I sat in his chair, he was incredibly gentle, profe...",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Very good haircut nice and fresh!",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Great barber only thing he did wrong was think the knicks would not beat the spurs in game 6",
-   "rating": null,
-   "author_verified": false
+   "source": "Booksy DOM review list, no author name shown"
   },
   {
    "author": null,
    "body": "Always a pleasure with my boy never disappointed.",
    "rating": null,
-   "author_verified": false
+   "source": "Booksy DOM review list, no author name shown"
   },
   {
    "author": null,
-   "body": "Great",
+   "body": "Very good haircut nice and fresh!",
    "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Always the best cut !",
-   "rating": null,
-   "author_verified": false
+   "source": "Booksy DOM review list, no author name shown"
   }
  ],
- "named_reviews": [
-  {
-   "author": "Andres M…",
-   "body": "Awesome experience!",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Jessica s…",
-   "body": "1000% recommend!",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Christopher C…",
-   "body": "Best everytime!!!",
-   "rating": 5,
-   "author_verified": true
+ "language": "en",
+ "language_note": "English is the primary language: all Booksy reviews are in English, the barber's Instagram captions/bio are in English ('Florida barber... Professional barber since 2008'). Default site language set to en, with es toggle available.",
+ "photos": {
+  "sources_checked": [
+   "Booksy business page (booksy_gallery.py): pulled 16 image URLs from the gallery UI, but only 1 (a barber portrait selfie) was a real, useful-size photo -- the other 15 were 100x100/512x512 review-avatar thumbnails (including two generated letter-avatar placeholders), not usable for a gallery.",
+   "Booksy raw HTML: found 9 full-resolution (810x1080 to 2340x1755) customer-submitted REVIEW photos attached to individual reviews, not shown in the visible gallery UI. Downloaded and visually curated all 9.",
+   "Instagram @bravo.hairhustler787 (the barber's real, active account, 161 posts): pulled the latest 12 timeline media (display_url for photos and video posters). Mix of finished-haircut results, shop interior shots, and personal selfies/unrelated event photos.",
+   "theoaksbarbershop.com (own site): found and downloaded the business's own custom wordmark logo image (navy/gold, 'THE OAKS BARBERSHOP EST. 2026'), used for palette + nav/footer branding."
+  ],
+  "downloaded_total": 21,
+  "used_on_site": 10,
+  "curation_notes": "Visually reviewed every photo (contact sheet for the Booksy gallery pull, individually for IG and review photos) before selecting. Discarded: all 5 Booksy-gallery tiny avatars/placeholders (100x100/512x512, not real photos), 5 Instagram posts that were selfie-closeups, an unrelated group photo, an unrelated nighttime event photo, a corrupted black frame and a text-overlaid 'Before and after' video-poster frame, and 4 Booksy review photos that were plain customer selfies (car/bathroom mirror, no haircut visible). Kept only finished, well-lit, uncluttered shots: 2 real shop-interior action photos (barber cutting a client's hair, ring-light setup), 1 storefront exterior, 3 distinct finished-cut style photos (clean skin fade, curly fade, twists/locs updo), 2 kids' fade results (Batman design, mullet fade), 1 barber portrait (used small, as an about-section avatar only, never as a gallery tile), and the business's own logo.",
+  "files": {
+   "logo-full.jpg": "The business's real wordmark logo from theoaksbarbershop.com, navy/gold, 'THE OAKS BARBERSHOP EST. 2026'. Source for the site's color palette. Used in nav/footer.",
+   "shop-batman-fade.jpg": "IG @bravo.hairhustler787: kid with a Batman-logo design shaved into a fade, shot inside the shop showing the distinctive geometric ceiling lighting. Used as hero image.",
+   "storefront-entrance.jpg": "IG @bravo.hairhustler787: real photo of the shop's glass-door entrance, barber pole and 'WELCOME' sign visible inside. Used in About section.",
+   "shop-interior-cut.jpg": "Booksy customer review photo: barber (Jonathan Bravo) cutting a client's hair with scissors, ring light and shop interior visible. Used in About section.",
+   "shop-interior-detail.jpg": "Booksy customer review photo (attached to the 'woman walking into a male-dominated barbershop' review): same session, different angle. Used in gallery, paired conceptually with that testimonial.",
+   "barber-portrait.jpg": "Booksy gallery: portrait of the barber. Used small, as an about-section avatar only (never as a gallery tile, per curation rules).",
+   "clean-fade-lineup.jpg": "IG @bravo.hairhustler787: clean skin fade with sharp lineup, side profile. Gallery.",
+   "curly-fade-result.jpg": "IG @bravo.hairhustler787: curly-top fade, side profile. Gallery.",
+   "twists-updo-result.jpg": "IG @bravo.hairhustler787: twists/locs styled into an updo, side profile. Gallery.",
+   "kids-mullet-fade.jpg": "Booksy customer review photo: kid's mullet-fade combo, outdoor natural light. Gallery."
   }
- ],
- "language": "en"
+ },
+ "palette_source": "Sampled directly from the business's own real logo (theoaksbarbershop.com): navy background rgb(44,63,96) / #2C3F60, gold rgb(186,166,93) / #BAA65D, cream rgb(237,233,224) / #EDE9E0. Site palette (dark base) built around these exact brand colors rather than an invented one.",
+ "notes": "Major correction vs. the discovery seed: has_own_site is TRUE (theoaksbarbershop.com is live), not false as assumed. The site is minimal (logo + booking button only, no content, misconfigured site title showing a personal name instead of the business name), which supports a 'premium redesign' outreach angle rather than a 'you have no website' angle. Also corrected the Instagram handle: @theoaksbarbershop (the guessed handle) is NOT the business; the real, active account is @bravo.hairhustler787, linked directly from Booksy's own sameAs field and confirmed by a customer review naming the barber. Rating displayed (4.7/68) uses the broader public/Birdeye aggregate rather than the narrower Booksy booking-chair number (4.9/70) to avoid overstating; both are real and cited."
 }
