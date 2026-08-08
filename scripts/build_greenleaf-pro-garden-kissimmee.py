@@ -171,9 +171,9 @@ rep('<a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="T
     '<a class="nav-link" href="#experiencia" data-es="Nuestra Historia" data-en="Our Story">Our Story</a>')
 rep('<a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>',
     '<a class="nav-link" href="#metodo" data-es="Cómo Trabajamos" data-en="How It Works">How It Works</a>')
-rep('<a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>', '<a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>', n=2)
-rep('<a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>', '<a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>', n=2)
-rep('<a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>', '<a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>', n=2)
+rep('<a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>', '<a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>', n=1)
+rep('<a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>', '<a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>', n=1)
+rep('<a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>', '<a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>', n=1)
 rep('<a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>',
     '<a class="nav-link" href="#ubicacion" data-es="Zona de Servicio" data-en="Service Area">Service Area</a>')
 rep('<a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>',
@@ -646,7 +646,7 @@ rep(
 rep(
     f'''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>80 W Grant St, Suite 111, Studio 156, Orlando, FL 32806</p>
-        <p><a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>''',
+        <p><a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="hover:text-[#cce9ab]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>''',
     f'''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
         <p>2611 Hawthorne Lane, Kissimmee, FL 34743</p>
         <p><a href="tel:{TEL}" class="hover:text-[#cce9ab]">{TEL_DISPLAY}</a></p>
@@ -654,7 +654,7 @@ rep(
 )
 rep(
     f'''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.instagram.com/pure.artistrysk/" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · @pure.artistrysk</a></p>''',
+        <p><a href="https://www.instagram.com/pure.artistrysk/" target="_blank" rel="noopener" class="hover:text-[#cce9ab]">Instagram · @pure.artistrysk</a></p>''',
     f'''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Encuéntranos" data-en="Find us">Find us</p>
         <p><a href="{GREENPAL}" target="_blank" rel="noopener" class="hover:text-[#cce9ab]">GreenPal · Greenleaf Pro Garden</a></p>
         <p><a href="{NEXTDOOR}" target="_blank" rel="noopener" class="hover:text-[#cce9ab]">Nextdoor · Greenleaf Pro Garden</a></p>'''
@@ -666,7 +666,7 @@ rep('<p class="text-xs text-[color:var(--ink-40)]">© 2026 Pure Artistry.</p>',
 # STEP 18: Floating booking button -> GreenPal
 # ============================================================
 rep(
-    '<a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">\n    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>\n  </a>',
+    '<a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">\n    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#131c08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>\n  </a>',
     f'<a href="{GREENPAL}" target="_blank" rel="noopener" class="book-float" aria-label="Get a free quote on GreenPal">\n    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#131c08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>\n  </a>'
 )
 
