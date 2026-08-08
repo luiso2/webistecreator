@@ -1,17 +1,148 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#070e0f" />
-  <title>Yoel40 Barber · Barbershop in Homestead, FL | Fades, Beard Lineups &amp; Hot Towel Shaves | 5.0 on Booksy</title>
-  <meta name="description" content="Yoel40 Barber, Homestead FL: haircuts, fades, beard lineups, hot towel shaves and hair designs with barber Yoel Hernandez. 5.0 rating across 124 reviews on Booksy. Book online." />
-  <meta property="og:title" content="Yoel40 Barber · Barbershop in Homestead, FL" />
-  <meta property="og:description" content="Haircuts, fades, beard lineups and hot towel shaves. 5.0 on Booksy. Book online." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/raw/bk-10.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/bk-1.jpg" />
-  <script type="application/ld+json">
+#!/usr/bin/env python3
+"""Derivacion anclada: templates/dark-v2/index.html -> output/yoel40-barber-homestead/index.html
+Yoel40 Barber, owner/barber Yoel Hernandez, Homestead FL (32 SE 4th Rd, 33030). Boutique
+single-barber shop. 5.0 / 124 reviews on Booksy (self-verified via live JSON-LD dossier,
+2026-08-08: aggregateRating ratingValue 4.9677.../reviewCount 124, rounds to the 5.0 Booksy
+displays). 10 real services with real prices from Booksy. No phone, no email, no confirmed
+Instagram published anywhere (Booksy's own sameAs points to instagram.com/yoel_ariel01, but
+that profile's visible content is personal/lifestyle -- soccer field, friends, a dog, a camera
+selfie -- with zero barbershop content, so it could NOT be confirmed as the business account;
+per the verification rule, IG is left null rather than guessed). CTAs go only to Booksy, plus a
+directions link to the real address, since no other real channel exists.
+Palette: warm gold hue-shifted to steel teal/cyan (hue ~190deg) via colorsys, distinct from every
+previously used barbershop palette in this repo (copper 14/15, amber 35, green 152, blue 205/210,
+magenta 300).
+"""
+import re
+import os
+import colorsys
+
+SRC = 'templates/dark-v2/index.html'
+DST = 'output/yoel40-barber-homestead/index.html'
+
+h = open(SRC, encoding='utf-8').read()
+
+
+def rep(a, b, n=1):
+    global h
+    assert a in h, 'ANCLA ROTA: ' + a[:120]
+    h = h.replace(a, b, n)
+
+
+def rep_all(a, b, expect=None):
+    global h
+    c = h.count(a)
+    assert c > 0, 'ANCLA ROTA (0 matches): ' + a[:120]
+    if expect is not None:
+        assert c == expect, f'ANCLA "{a[:60]}" x{c}, esperaba {expect}'
+    h = h.replace(a, b)
+
+
+# ============================================================
+# 1. PROTEGER EL BADGE MERKTOP (dorado, no debe cambiar NUNCA)
+# ============================================================
+m_css = re.search(r'\.merktop-badge \{.*?@keyframes mkPulse[^\n]*\n', h, flags=re.S)
+assert m_css, 'no se encontro el bloque merktop-badge/mkPulse'
+badge_css = m_css.group(0)
+h = h.replace(badge_css, '@@BADGE_CSS@@', 1)
+
+m_html = re.search(r'<a href="https://merktop\.com".*?</a>', h, flags=re.S)
+assert m_html, 'no se encontro el <a> merktop del footer'
+badge_html = m_html.group(0)
+h = h.replace(badge_html, '@@BADGE_HTML@@', 1)
+
+# ============================================================
+# 2. PALETA: dorado -> teal/steel-cyan (hue-shift a ~190deg, sat x1.0,
+#    computado con colorsys desde los hex reales del esqueleto)
+# ============================================================
+_HEXES = ["#0c0905", "#0f0b07", "#100c05", "#171207", "#191307", "#1c1408", "#241c0e", "#6b5222",
+          "#8a744a", "#96742c", "#9a7431", "#b8934a", "#bfa060", "#c9a04a", "#c9ab6b", "#d4a84b",
+          "#e5c374", "#e8c476", "#e8cf96", "#e9c3ab", "#ecd9a8", "#f0dc9e", "#f0dcae", "#f5efe3",
+          "#f8eed3", "#faf1dc", "#fbf6ea"]
+_RGBAS = [(212, 168, 75), (232, 207, 150), (185, 138, 128), (180, 140, 60), (122, 90, 30),
+          (110, 85, 35), (232, 210, 160), (245, 239, 227), (54, 42, 38), (80, 58, 18)]
+# nota: (27,21,14) y (36,28,20) solo aparecen dentro del bloque .merktop-badge (protegido arriba).
+TARGET_HUE = 190 / 360.0
+SAT_MUL = 1.0
+
+
+def _shift_hex(hx):
+    hx = hx.lstrip('#')
+    r, g, b = int(hx[0:2], 16) / 255, int(hx[2:4], 16) / 255, int(hx[4:6], 16) / 255
+    _, l, s = colorsys.rgb_to_hls(r, g, b)
+    r2, g2, b2 = colorsys.hls_to_rgb(TARGET_HUE, l, min(1.0, s * SAT_MUL))
+    return '#%02x%02x%02x' % (round(r2 * 255), round(g2 * 255), round(b2 * 255))
+
+
+def _shift_rgb(rgb):
+    r, g, b = rgb[0] / 255, rgb[1] / 255, rgb[2] / 255
+    _, l, s = colorsys.rgb_to_hls(r, g, b)
+    r2, g2, b2 = colorsys.hls_to_rgb(TARGET_HUE, l, min(1.0, s * SAT_MUL))
+    return (round(r2 * 255), round(g2 * 255), round(b2 * 255))
+
+
+PALETTE = [(hx, _shift_hex(hx)) for hx in _HEXES]
+for old, new in PALETTE:
+    rep_all(old, new)
+
+RGBA_FAMILIES = [(rgb, _shift_rgb(rgb)) for rgb in _RGBAS]
+for (r1, g1, b1), (r2, g2, b2) in RGBA_FAMILIES:
+    pattern = re.compile(r'rgba\(' + f'{r1},{g1},{b1}' + r',([0-9.]+)\)')
+    n = len(pattern.findall(h))
+    assert n > 0, f'sin matches para rgba({r1},{g1},{b1},*)'
+    h = pattern.sub(lambda mm: f'rgba({r2},{g2},{b2},{mm.group(1)})', h)
+
+# restaurar los dos bloques del badge, intactos
+assert '@@BADGE_CSS@@' in h
+h = h.replace('@@BADGE_CSS@@', badge_css, 1)
+assert '@@BADGE_HTML@@' in h
+h = h.replace('@@BADGE_HTML@@', badge_html, 1)
+
+print('OK: badge + paleta')
+
+# ============================================================
+# 3. GLOBALES: Booksy (Instagram del esqueleto se retira: no hay IG confirmado)
+# ============================================================
+OLD_BOOKSY = 'https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando'
+BK = 'https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead'
+rep_all(OLD_BOOKSY, BK)
+
+MAPS_Q = '32+SE+4th+Rd,+Homestead,+FL+33030'
+DIRECTIONS = f'https://www.google.com/maps?q={MAPS_Q}'
+
+print('OK: globales (booksy + directions, sin IG)')
+
+# ============================================================
+# 4. HEAD: title, meta, og, favicon, JSON-LD
+# ============================================================
+rep(
+    '<title>Pure Artistry · Hair Studio in Orlando, FL | Silk Press, Locs &amp; K-Tips | 5.0 on Booksy</title>',
+    '<title>Yoel40 Barber · Barbershop in Homestead, FL | Fades, Beard Lineups &amp; Hot Towel Shaves | 5.0 on Booksy</title>',
+)
+rep(
+    '<meta name="description" content="Pure Artistry, Orlando FL: silk press, loc retwists, knotless braids, K-Tip extensions and keratin treatments. 5.0 with 234 reviews on Booksy. Book online." />',
+    '<meta name="description" content="Yoel40 Barber, Homestead FL: haircuts, fades, beard lineups, hot towel shaves and hair designs with barber Yoel Hernandez. 5.0 rating across 124 reviews on Booksy. Book online." />',
+)
+rep(
+    '<meta property="og:title" content="Pure Artistry · Hair Studio in Orlando, FL" />',
+    '<meta property="og:title" content="Yoel40 Barber · Barbershop in Homestead, FL" />',
+)
+rep(
+    '<meta property="og:description" content="Silk press, locs, braids and K-Tip extensions. 5.0 on Booksy. Book online." />',
+    '<meta property="og:description" content="Haircuts, fades, beard lineups and hot towel shaves. 5.0 on Booksy. Book online." />',
+)
+rep(
+    '<meta property="og:image" content="assets/raw/bk-1.jpg" />',
+    '<meta property="og:image" content="assets/raw/bk-10.jpg" />',
+)
+rep(
+    '<link rel="icon" type="image/jpeg" href="assets/raw/bk-2.jpg" />',
+    '<link rel="icon" type="image/jpeg" href="assets/raw/bk-1.jpg" />',
+)
+
+m = re.search(r'<script type="application/ld\+json">.*?</script>', h, flags=re.S)
+assert m, 'no se encontro JSON-LD'
+NEW_JSONLD = '''<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Barbershop",
@@ -35,204 +166,66 @@
       { "@type": "Offer", "price": "14", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Beard Lineup" } }
     ] }
   }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script src="assets/tailwind.js"></script>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #070e0f;
-      --bg-2: #071417;
-      --surface: rgba(255,255,255,0.045);
-      --ink: #e3f2f5;
-      --ink-60: rgba(227,242,245,0.62);
-      --ink-40: rgba(227,242,245,0.42);
-      --accent-deep: #4bbdd4;
-      --accent-mid: #4aa6b8;
-      --accent-soft: #0e2024;
-      --accent-ghost: rgba(75,189,212,0.16);
-    }
-    html, body { background: var(--bg); }
-    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
-    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
-    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
-    section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(75,189,212,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(75,189,212,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(75,189,212,0.08); }
-    .text-shine {
-      background: linear-gradient(110deg, #4bbdd4 0%, #9ee2f0 30%, #31889a 52%, #4bbdd4 75%, #74d2e5 100%);
-      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-      animation: shimmer 12s linear infinite;
-    }
-    @keyframes shimmer { to { background-position: 200% center; } }
-    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
-    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(75,189,212,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(30,107,122,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(60,160,180,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
-    .grain::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
-    }
-    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
-    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
-    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
-    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
-    .btn-3d {
-      position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #76d5e8 0%, #4ab4c9 48%, #2c8496 100%);
-      color: #08191c; border: none; font-weight: 600;
-      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(18,70,80,0.4), 0 5px 0 #225f6b, 0 12px 24px rgba(0,0,0,0.5);
-    }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(18,70,80,0.4), 0 7px 0 #225f6b, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(75,189,212,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(18,70,80,0.45), 0 1px 0 #225f6b, 0 4px 10px rgba(0,0,0,0.45); }
-    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
-    .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(75,189,212,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(75,189,212,0.7); background: rgba(75,189,212,0.08); box-shadow: 0 10px 26px rgba(38,51,54,0.14); }
-    .merktop-badge {
-      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
-      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
-    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
-    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
-    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
-    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
-    .nav-link:hover { color: var(--ink); }
-    .nav-link:hover::after { width: 100%; }
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(75,189,212,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
-    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
-    .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #74d2e5, #31889a); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #4bbdd4; letter-spacing: 2px; text-shadow: 0 0 14px rgba(75,189,212,0.45); }
-    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
-    .dark-band {
-      --ink: #e3f2f5; --ink-60: rgba(227,242,245,0.65); --ink-40: rgba(227,242,245,0.45);
-      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(160,220,232,0.16); color: var(--ink);
-    }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #96dae8 0%, #d3f2f8 30%, #60afbf 52%, #96dae8 75%, #aee5f0 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(150,218,232,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(128,176,185,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #dcf5fa 0%, #a8e1ec 48%, #6bb9c9 100%); color: #08191c; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(35,97,110,0.35), 0 5px 0 #4a7f8a, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(35,97,110,0.35), 0 7px 0 #4a7f8a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(150,218,232,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(35,97,110,0.4), 0 1px 0 #4a7f8a, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(150,218,232,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(150,218,232,0.7); background: rgba(150,218,232,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #abdfe9; text-shadow: 0 0 14px rgba(150,218,232,0.4); }
-    .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #76d5e8 0%, #4ab4c9 100%);
-      box-shadow: 0 6px 0 #225f6b, 0 14px 30px rgba(0,0,0,0.5);
-      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
-    }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #225f6b, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(75,189,212,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #225f6b, 0 6px 14px rgba(0,0,0,0.4); }
+  </script>'''
+h = h[:m.start()] + NEW_JSONLD + h[m.end():]
 
-    /* ============ Motion v2 ============ */
-    #preloader {
-      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
-      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
-    }
-    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
-    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(75,189,212,0.35); background: rgba(75,189,212,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
-    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
-    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
-    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
-    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
-    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #2c8496 0%, #4bbdd4 45%, #9ee2f0 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
-    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
-    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
-    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
-    .img-reveal.in img { scale: 1; }
-    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
-    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
-    .marquee:hover .marquee-track { animation-play-state: paused; }
-    .marquee-reverse .marquee-track { animation-direction: reverse; }
-    @keyframes marqueeMove { to { transform: translateX(-50%); } }
-    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
-    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
-    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
-    @media (hover: hover) and (pointer: fine) {
-      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
-      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
-      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
-      .tilt:hover::before { opacity: 1; }
-    }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(150,218,232,0.14) 0%, rgba(75,189,212,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
-    .cursor-glow.on { opacity: 1; }
-    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
-    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(75,189,212,0.5); transform: translateY(-3px); }
+print('OK: head/JSON-LD')
 
-    /* ============ Motion v3 (premium+) ============ */
-    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
-    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
-    .split.in .split-word > span { transform: translateY(0); }
-    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
-    .frame .tile-cap {
-      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #eaf8fb;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
-      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
-    }
-    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
-    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
-    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
-    .cursor-ring.on { opacity: 0.75; }
-    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(150,218,232,0.09); pointer-events: none; user-select: none; }
+# ============================================================
+# 5. IDIOMA: negocio EN (default del esqueleto ya es EN) -> sin cambios
+# ============================================================
+assert "applyLang(lang === 'es' ? 'es' : 'en')" in h
+assert '<html lang="en"' in h
 
-    @media (prefers-reduced-motion: reduce) {
-      .text-shine, .orb, .merktop-dot { animation: none !important; }
-      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
-      img.blur-up { filter: none !important; transform: none !important; }
-      html { scroll-behavior: auto; }
-      #preloader { display: none !important; }
-      #scroll-progress { display: none !important; }
-      .marquee-track { animation: none !important; }
-      .img-reveal { clip-path: none !important; transition: none !important; }
-      .img-reveal img { scale: none !important; transition: none !important; }
-      .magnetic { translate: none !important; }
-      .tilt { transform: none !important; }
-      .tilt::before { display: none !important; }
-      .cursor-glow { display: none !important; }
-      .back-top { transition: none !important; transform: none !important; }
-      [data-parallax] { translate: none !important; }
-      .split-word > span { transform: none !important; transition: none !important; }
-      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .cursor-ring { display: none !important; }
-      #heroInner { opacity: 1 !important; transform: none !important; }
-    }
-  </style>
-</head>
-<body>
+# ============================================================
+# 6. RECONSTRUCCION DE SECCIONES POR ANCLAS (comentarios HTML unicos)
+# ============================================================
+def idx(marker, start=0):
+    i = h.find(marker, start)
+    assert i != -1, 'MARCADOR NO ENCONTRADO: ' + marker
+    return i
 
-  <!-- PRELOADER DE MARCA -->
+
+i_preloader = idx('<!-- PRELOADER DE MARCA -->')
+i_scroll = idx('<!-- BARRA DE PROGRESO DE SCROLL -->')
+i_nav = idx('<!-- NAV -->')
+i_hero = idx('<!-- HERO -->')
+i_strip = idx('<!-- STRIP DE CONFIANZA -->')
+i_marquee1 = idx('<!-- MARQUEE -->')
+i_experiencia = idx('<!-- LA EXPERIENCIA -->')
+i_metodo = idx('<!-- EL METODO -->')
+i_servicios = idx('<!-- SERVICIOS -->')
+i_galeria = idx('<!-- GALERIA -->')
+i_marquee2 = idx('<!-- MARQUEE -->', i_experiencia)
+i_opiniones = idx('<!-- OPINIONES -->')
+i_ubicacion = idx('<!-- UBICACION -->')
+i_cta = idx('<!-- CTA FINAL -->')
+i_footer = idx('<!-- FOOTER -->')
+i_bookfloat = idx('<!-- Boton flotante de reserva -->')
+i_cursorring = idx('<div id="cursorRing"')
+
+seg_head = h[:i_preloader]
+seg_scroll = h[i_scroll:i_nav]
+seg_tail = h[i_cursorring:]
+
+print('OK: segmentacion por anclas de comentario')
+
+# ============================================================
+# PRELOADER
+# ============================================================
+NEW_PRELOADER = '''<!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <span class="pre-mono">Y40</span>
     <span class="pre-word">Yoel40 Barber</span>
     <span class="pre-line"></span>
   </div>
 
-  <!-- BARRA DE PROGRESO DE SCROLL -->
-  <div id="scroll-progress" aria-hidden="true"></div>
+  '''
 
-  <!-- NAV -->
+# ============================================================
+# NAV
+# ============================================================
+NEW_NAV = f'''<!-- NAV -->
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
@@ -249,7 +242,7 @@
       </nav>
       <div class="flex items-center gap-3">
         <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Change language">EN</button>
-        <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
         </a>
@@ -268,12 +261,17 @@
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
         <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
-        <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+        <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
+  '''
+
+# ============================================================
+# HERO
+# ============================================================
+NEW_HERO = f'''<!-- HERO -->
   <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
@@ -289,11 +287,11 @@
           <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 124 reseñas en Booksy" data-en="5.0 · 124 reviews on Booksy">5.0 · 124 reviews on Booksy</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <span data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.google.com/maps?q=32+SE+4th+Rd,+Homestead,+FL+33030" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="{DIRECTIONS}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <span data-es="Cómo llegar" data-en="Get directions">Get directions</span>
           </a>
@@ -314,7 +312,12 @@
     </div>
   </section>
 
-  <!-- STRIP DE CONFIANZA -->
+  '''
+
+# ============================================================
+# STRIP DE CONFIANZA
+# ============================================================
+NEW_STRIP = '''<!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
       <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="124">124</span> <span data-es="reseñas en Booksy" data-en="reviews on Booksy">reviews on Booksy</span></p></div>
@@ -324,29 +327,41 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
+  '''
+
+print('OK: preloader + nav + hero + strip definidos')
+
+# ============================================================
+# MARQUEE (misma lista de palabras en los dos marquees)
+# ============================================================
+MARQUEE_SEQ = '''      <div class="marquee-seq">
+        <span class="marquee-word">Haircuts</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Fades</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Beard Lineups</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hot Towel Shaves</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Booksy Online</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
+      </div>
+'''
+NEW_MARQUEE1 = '''<!-- MARQUEE -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <div class="marquee-seq">
-        <span class="marquee-word">Haircuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Fades</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Beard Lineups</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Hot Towel Shaves</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Booksy Online</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
-      </div>
-      <div class="marquee-seq">
-        <span class="marquee-word">Haircuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Fades</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Beard Lineups</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Hot Towel Shaves</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Booksy Online</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
-      </div>
-    </div>
+''' + MARQUEE_SEQ + MARQUEE_SEQ + '''    </div>
   </div>
 
-  <!-- LA EXPERIENCIA -->
+  '''
+NEW_MARQUEE2 = '''<!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+''' + MARQUEE_SEQ + MARQUEE_SEQ + '''    </div>
+  </div>
+
+  '''
+
+# ============================================================
+# LA EXPERIENCIA
+# ============================================================
+NEW_EXPERIENCIA = '''<!-- LA EXPERIENCIA -->
   <section id="experiencia" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">01</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
@@ -378,7 +393,14 @@
     </div>
   </section>
 
-  <!-- EL METODO -->
+  '''
+
+print('OK: marquee x2 + experiencia definidos')
+
+# ============================================================
+# EL METODO
+# ============================================================
+NEW_METODO = f'''<!-- EL METODO -->
   <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -411,7 +433,12 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
+  '''
+
+# ============================================================
+# SERVICIOS (10 servicios reales de Booksy: 4 cards destacadas + precios completos)
+# ============================================================
+NEW_SERVICIOS = f'''<!-- SERVICIOS -->
   <section id="servicios" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -427,7 +454,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="La combinación más reservada: corte completo con línea de barba, terminado con precisión." data-en="The most booked combo: a full haircut paired with a beard lineup, finished with precision.">The most booked combo: a full haircut paired with a beard lineup, finished with precision.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$36</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">50min</p></div>
-            <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
@@ -436,7 +463,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El corte clásico de la casa: fade o tijera, con línea incluida." data-en="The house classic: fade or scissor work, line-up included.">The house classic: fade or scissor work, line-up included.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$27</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">40min</p></div>
-            <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
@@ -445,7 +472,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El servicio más completo: corte de cabello junto al afeitado clásico en toalla caliente." data-en="The full treatment: a complete haircut paired with the classic hot towel shave.">The full treatment: a complete haircut paired with the classic hot towel shave.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$45</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">1h</p></div>
-            <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
@@ -454,7 +481,7 @@
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Corte completo con un diseño trazado a mano en la línea o la nuca." data-en="A full haircut with a hand-cut design worked into the line-up or the back.">A full haircut with a hand-cut design worked into the line-up or the back.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$27</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">40min</p></div>
-            <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
+            <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Book</a>
           </div>
         </div>
       </div>
@@ -473,7 +500,14 @@
     </div>
   </section>
 
-  <!-- GALERIA -->
+  '''
+
+print('OK: metodo + servicios definidos')
+
+# ============================================================
+# GALERIA (1 tile 16/9 + 5 tiles 3/4: 6 fotos reales curadas)
+# ============================================================
+NEW_GALERIA = f'''<!-- GALERIA -->
   <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">04</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -482,7 +516,7 @@
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
           <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Cortes" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="cuts">cuts</span></h2>
         </div>
-        <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="{BK}" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           <span data-es="Ver en Booksy" data-en="See more on Booksy">See more on Booksy</span>
         </a>
@@ -498,29 +532,14 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee marquee-reverse" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-seq">
-        <span class="marquee-word">Haircuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Fades</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Beard Lineups</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Hot Towel Shaves</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Booksy Online</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
-      </div>
-      <div class="marquee-seq">
-        <span class="marquee-word">Haircuts</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Fades</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Beard Lineups</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Hot Towel Shaves</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Booksy Online</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Homestead, FL</span><span class="marquee-star">✦</span>
-      </div>
-    </div>
-  </div>
+  '''
 
-  <!-- OPINIONES -->
+print('OK: galeria definida')
+
+# ============================================================
+# OPINIONES (3 reseñas reales verbatim de Booksy, sin em-dash)
+# ============================================================
+NEW_OPINIONES = f'''<!-- OPINIONES -->
   <section id="opiniones" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -547,12 +566,19 @@
         </figure>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las reseñas en Booksy" data-en="Read reviews on Booksy">Read reviews on Booksy</a>
+        <a href="{BK}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las reseñas en Booksy" data-en="Read reviews on Booksy">Read reviews on Booksy</a>
       </div>
     </div>
   </section>
 
-  <!-- UBICACION -->
+  '''
+
+print('OK: opiniones definida')
+
+# ============================================================
+# UBICACION (Direccion, Horario, Reservas)
+# ============================================================
+NEW_UBICACION = f'''<!-- UBICACION -->
   <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
@@ -565,7 +591,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light">32 SE 4th Rd, Homestead, FL 33030</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,189,212,0.4)]" href="https://www.google.com/maps?q=32+SE+4th+Rd,+Homestead,+FL+33030" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,189,212,0.4)]" href="{DIRECTIONS}" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:180ms">
@@ -580,20 +606,25 @@
             <div>
               <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Bookings</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy. Reserva en línea y confirma al instante." data-en="By appointment via Booksy. Book online and the confirmation is instant.">By appointment via Booksy. Book online and the confirmation is instant.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,189,212,0.4)]" href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,189,212,0.4)]" href="{BK}" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
         <iframe title="Map: Yoel40 Barber, 32 SE 4th Rd, Homestead FL"
-          src="https://www.google.com/maps?q=32+SE+4th+Rd,+Homestead,+FL+33030&output=embed"
+          src="{DIRECTIONS}&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  '''
+
+# ============================================================
+# CTA FINAL
+# ============================================================
+NEW_CTA = f'''<!-- CTA FINAL -->
   <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #071a1e 0%, #050f11 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
@@ -602,13 +633,20 @@
       <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu silla" data-en="Your chair">Your chair</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span></h2>
       <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos: tu fade, tu barba o ese diseño que llevas planeando." data-en="Book online in seconds: your fade, your beard lineup, or that design you have been planning.">Book online in seconds: your fade, your beard lineup, or that design you have been planning.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
-        <a href="https://www.google.com/maps?q=32+SE+4th+Rd,+Homestead,+FL+33030" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+        <a href="{BK}" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+        <a href="{DIRECTIONS}" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  '''
+
+print('OK: ubicacion + cta final definidos')
+
+# ============================================================
+# FOOTER (el merktop-badge original se mantiene intacto: badge_html)
+# ============================================================
+NEW_FOOTER = f'''<!-- FOOTER -->
   <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#050e10]">
     <span class="foot-mark" aria-hidden="true">Yoel40 Barber</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
@@ -622,7 +660,7 @@
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
         <p>32 SE 4th Rd, Homestead, FL 33030</p>
-        <p><a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="hover:text-[#9be6f2]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Online booking · Booksy</a></p>
+        <p><a href="{BK}" target="_blank" rel="noopener" class="hover:text-[#9be6f2]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Online booking · Booksy</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Horario" data-en="Hours">Hours</p>
@@ -634,236 +672,70 @@
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-xs text-[color:var(--ink-40)]">© 2026 Yoel40 Barber.</p>
-        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
-          <span class="merktop-dot"></span>
-          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
-        </a>
+        {badge_html}
       </div>
     </div>
   </footer>
 
-  <!-- Boton flotante de reserva -->
-  <a href="https://booksy.com/en-us/940665_yoel40-barber_barber-shop_15887_homestead" target="_blank" rel="noopener" class="book-float" aria-label="Book appointment online">
+  '''
+
+# ============================================================
+# BOTON FLOTANTE (mismo markup, solo booksy url + aria-label EN)
+# ============================================================
+NEW_BOOKFLOAT = f'''<!-- Boton flotante de reserva -->
+  <a href="{BK}" target="_blank" rel="noopener" class="book-float" aria-label="Book appointment online">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a1f22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
   </a>
 
-  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+  '''
 
-  <!-- Volver arriba -->
-  <button id="backTop" class="back-top glass" type="button" aria-label="Back to top">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
-  </button>
+# ============================================================
+# TAIL: cursorRing + back-top + script (aria-label back-top a EN)
+# ============================================================
+new_seg_tail = seg_tail.replace('aria-label="Volver arriba"', 'aria-label="Back to top"')
+assert new_seg_tail != seg_tail, 'no se pudo traducir aria-label de back-top'
+seg_tail = new_seg_tail
 
-  <script>
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+print('OK: footer + book-float + tail definidos')
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
-    const applyLang = l => {
-      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
-      document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
-      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
-    };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
-    applyLang(lang === 'es' ? 'es' : 'en');
-    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+# ============================================================
+# 7. ENSAMBLADO FINAL
+# ============================================================
+h_final = (
+    seg_head
+    + NEW_PRELOADER
+    + seg_scroll
+    + NEW_NAV
+    + NEW_HERO
+    + NEW_STRIP
+    + NEW_MARQUEE1
+    + NEW_EXPERIENCIA
+    + NEW_METODO
+    + NEW_SERVICIOS
+    + NEW_GALERIA
+    + NEW_MARQUEE2
+    + NEW_OPINIONES
+    + NEW_UBICACION
+    + NEW_CTA
+    + NEW_FOOTER
+    + NEW_BOOKFLOAT
+    + seg_tail
+)
 
-    // Preloader
-    const preloader = document.getElementById('preloader');
-    let preloaderHidden = false;
-    const hidePreloader = () => {
-      if (preloaderHidden || !preloader) return;
-      preloaderHidden = true;
-      preloader.classList.add('done');
-      setTimeout(() => preloader.remove(), 750);
-    };
-    if (reducedMotion) { hidePreloader(); }
-    else {
-      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
-      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
-      setTimeout(hidePreloader, 1200);
-    }
+# sanity: los 6 marquee-word deben aparecer exactamente 4 veces cada uno
+for word in ['Haircuts', 'Fades', 'Beard Lineups', 'Hot Towel Shaves', 'Booksy Online', 'Homestead, FL']:
+    c = h_final.count(f'<span class="marquee-word">{word}</span>')
+    assert c == 4, f'marquee-word "{word}" x{c}, esperaba 4'
 
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+assert h_final.count('—') == 0, 'hay em-dash en el HTML final'
+assert 'instagram.com' not in h_final.lower(), 'quedo una referencia a instagram sin confirmar'
 
-    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
-    const nav = document.getElementById('nav');
-    const progressBar = document.getElementById('scroll-progress');
-    const backTop = document.getElementById('backTop');
-    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
-    let scrollTicking = false;
-    const onScrollFrame = () => {
-      scrollTicking = false;
-      const y = window.scrollY;
-      nav.classList.toggle('scrolled', y > 24);
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
-      backTop.classList.toggle('show', y > window.innerHeight * 2);
-      const heroInner = document.getElementById('heroInner');
-      if (heroInner && !reducedMotion && y < window.innerHeight) {
-        const p = y / window.innerHeight;
-        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
-        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
-      }
-      if (parallaxEls.length && y < window.innerHeight * 1.7) {
-        for (const el of parallaxEls) {
-          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
-        }
-      }
-    };
-    window.addEventListener('scroll', () => {
-      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
-    }, { passive: true });
-    onScrollFrame();
+# sanity: leftovers del esqueleto/negocio anterior ausentes
+for leftover in ['Pure Artistry', 'Orlando', '121705', 'Grant St', 'pure.artistrysk',
+                 'silk press', 'Silk Press', 'K-Tip', 'knotless', 'K-Tips', 'celebridad']:
+    assert leftover not in h_final, f'LEFTOVER presente: {leftover}'
 
-    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
-
-    // Reveals
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
-    revealEls.forEach(el => io.observe(el));
-    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
-    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
-    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
-    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
-    // layout, que si existe, asi que rompe el circulo.
-    const checkVisibleFallback = () => {
-      revealEls.forEach(el => {
-        if (el.classList.contains('in')) return;
-        const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
-      });
-    };
-    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
-    window.addEventListener('resize', checkVisibleFallback, { passive: true });
-    window.addEventListener('load', checkVisibleFallback);
-    checkVisibleFallback();
-    setTimeout(checkVisibleFallback, 400);
-
-    // v3: split-text del hero
-    document.querySelectorAll('.split').forEach(el => {
-      const nodes = Array.from(el.childNodes);
-      el.textContent = '';
-      let idx = 0;
-      const wrapWord = (content, cls) => {
-        const w = document.createElement('span'); w.className = 'split-word';
-        const inner = document.createElement('span');
-        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
-        if (cls) inner.className = cls;
-        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
-        w.appendChild(inner); return w;
-      };
-      nodes.forEach(n => {
-        if (n.nodeType === 3) {
-          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
-        } else if (n.tagName === 'BR') {
-          el.appendChild(n);
-        } else {
-          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
-        }
-      });
-      io.observe(el);
-    });
-
-    // Blur-up
-    document.querySelectorAll('img.blur-up').forEach(img => {
-      if (img.complete && img.naturalWidth) img.classList.add('loaded');
-      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
-    });
-
-    // Contadores
-    if (!reducedMotion) {
-      const animateCount = (el) => {
-        const target = parseFloat(el.dataset.count);
-        const decimals = parseInt(el.dataset.decimals || '0', 10);
-        const duration = 1400;
-        const start = performance.now();
-        const tick = (now) => {
-          const p = Math.min(1, (now - start) / duration);
-          const eased = 1 - Math.pow(1 - p, 3);
-          const v = target * eased;
-          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      };
-      const counterIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
-      }, { threshold: 0.6 });
-      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
-    }
-
-    // v3: cursor ring (solo desktop)
-    const ring = document.getElementById('cursorRing');
-    if (ring && finePointer && !reducedMotion) {
-      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
-      window.addEventListener('pointermove', (e) => {
-        tx = e.clientX; ty = e.clientY;
-        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
-      }, { passive: true });
-      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
-      const lerp = () => {
-        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
-        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
-        requestAnimationFrame(lerp);
-      };
-      requestAnimationFrame(lerp);
-      document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => ring.classList.add('big'));
-        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
-      });
-    }
-
-    // Botones magneticos. Solo desktop.
-    if (finePointer && !reducedMotion) {
-      document.querySelectorAll('.btn-3d').forEach(btn => {
-        btn.classList.add('magnetic');
-        btn.addEventListener('mousemove', (e) => {
-          const r = btn.getBoundingClientRect();
-          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
-          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
-          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
-        });
-        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
-      });
-    }
-
-    // Tilt 3D en cards de servicios. Solo desktop.
-    if (finePointer && !reducedMotion) {
-      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
-        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
-        card.addEventListener('mousemove', (e) => {
-          const r = card.getBoundingClientRect();
-          const px = (e.clientX - r.left) / r.width;
-          const py = (e.clientY - r.top) / r.height;
-          const rx = ((0.5 - py) * 6).toFixed(2);
-          const ry = ((px - 0.5) * 6).toFixed(2);
-          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
-          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
-          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
-        });
-        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-      });
-    }
-
-    // Cursor glow en la banda oscura final. Solo desktop.
-    const ctaBand = document.getElementById('cta-final');
-    const ctaGlow = document.getElementById('ctaGlow');
-    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
-      ctaBand.addEventListener('mousemove', (e) => {
-        const r = ctaBand.getBoundingClientRect();
-        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
-        ctaGlow.classList.add('on');
-      });
-      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
-    }
-  </script>
-</body>
-</html>
+os.makedirs('output/yoel40-barber-homestead', exist_ok=True)
+with open(DST, 'w', encoding='utf-8') as f:
+    f.write(h_final)
+print('OK: escrito', DST, 'len=', len(h_final))
