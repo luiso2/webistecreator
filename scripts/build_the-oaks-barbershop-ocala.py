@@ -665,10 +665,7 @@ rep(
     '<p>80 W Grant St, Suite 111, Studio 156, Orlando, FL 32806</p>\n        <p><a href="https://booksy.com/en-us/98370_bravo-theoaksbarbershop_barber-shop_15870_ocala" target="_blank" rel="noopener" class="hover:text-[#ded0a0]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>',
     '<p>289 Marion Oaks Ln, Ocala, FL 34473</p>\n        <p><a href="https://booksy.com/en-us/98370_bravo-theoaksbarbershop_barber-shop_15870_ocala" target="_blank" rel="noopener" class="hover:text-[#ded0a0]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Online booking · Booksy</a></p>',
 )
-rep(
-    '<p><a href="https://www.instagram.com/bravo.hairhustler787/" target="_blank" rel="noopener" class="hover:text-[#ded0a0]">Instagram · @bravo.hairhustler787</a></p>',
-    '<p><a href="https://www.instagram.com/bravo.hairhustler787/" target="_blank" rel="noopener" class="hover:text-[#ded0a0]">Instagram · @bravo.hairhustler787</a></p>',
-)
+assert '<p><a href="https://www.instagram.com/bravo.hairhustler787/" target="_blank" rel="noopener" class="hover:text-[#ded0a0]">Instagram · @bravo.hairhustler787</a></p>' in h, 'footer IG link ancla rota'
 rep(
     '<p class="text-xs text-[color:var(--ink-40)]">© 2026 Pure Artistry.</p>',
     '<p class="text-xs text-[color:var(--ink-40)]">© 2026 The Oaks Barbershop.</p>',
