@@ -1,0 +1,144 @@
+{
+  "slug": "nail-capitol-sarasota",
+  "name": "Nail Capitol",
+  "schema_type": "NailSalon",
+  "city": "Sarasota, FL",
+  "status": "failed",
+  "failed_reason": "Fewer than 5 verified real photos of this specific business could be sourced after exhausting every reasonable channel (see photos.sources_checked). Only 1 real, usable photo was recovered (a storefront/sign shot from Nextdoor). This is below the pipeline minimum of 5 real own photos (PIPELINE.md Fase 3, criterio de 'failed'), so no site was built.",
+  "duplicate_listing_check": {
+    "note": "There are TWO distinct, currently-active Nail Capitol locations in Sarasota, NOT a duplicate listing of the same venue. They have different addresses, different phone numbers, and separate Fresha/Yelp/review profiles.",
+    "location_a_TARGET": {
+      "address": "1900 Main St #106, Sarasota, FL 34236",
+      "phone": "(941) 953-9015",
+      "fresha_url": "https://www.fresha.com/lvp/nail-capitol-main-street-sarasota-oo9yMg",
+      "geo": { "latitude": 27.3363743, "longitude": -82.5324013 },
+      "yelp_url": "https://www.yelp.com/biz/nail-capitol-sarasota-3 (34 photos, 13 reviews per Yelp listing title; page itself is bot-blocked, could not be fetched)",
+      "confirmed_as_target_via": "Birdeye aggregation page (reviews.birdeye.com/nail-capitol-170644841703732) uses this exact address/phone in its embedded JSON-LD and shows ratingValue 4.7 / reviewCount 41, matching the seed discovery data. Nextdoor business page (nextdoor.com/pages/nail-capital-sarasota-fl/) also resolves to this same address (\"1900 Main St\") and telephone (+19419539015)."
+    },
+    "location_b_DIFFERENT_BUSINESS_NOT_USED": {
+      "address": "563 N Washington Dr, Sarasota, FL 34236",
+      "phone": "(941) 388-0154",
+      "fresha_url": "https://www.fresha.com/lvp/nail-capitol-north-washington-drive-sarasota-bL1R0D",
+      "yelp_url": "https://www.yelp.com/biz/nail-capitol-sarasota",
+      "note": "Same brand name, same city, but a separate physical location with its own phone number, own Fresha listing, own Yelp reviews and lower aggregate rating (4.1/15 on one directory). Reviews and data for this location were explicitly excluded from this research to avoid mixing the two businesses."
+    }
+  },
+  "address": {
+    "streetAddress": "1900 Main St #106",
+    "addressLocality": "Sarasota",
+    "addressRegion": "FL",
+    "postalCode": "34236",
+    "addressCountry": "US"
+  },
+  "geo": { "latitude": 27.3363743, "longitude": -82.5324013 },
+  "rating": 4.7,
+  "reviews_count": 41,
+  "rating_source": "Birdeye aggregation page (reviews.birdeye.com/nail-capitol-170644841703732), embedded JSON-LD: aggregateRating ratingValue 4.7, reviewCount 41, address matches 1900 Main St #106 exactly. Matches the seed discovery number.",
+  "hours_source": "merchantcircle.com/Nail.Capital.941-953-9015 and superpages.com/sarasota-fl/bpp/nail-capital-2706089, both independently list the same hours for this address.",
+  "hours": [
+    { "days": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+    { "days": ["Saturday"], "opens": "09:00", "closes": "17:00" },
+    { "days": ["Sunday"], "closed": true }
+  ],
+  "hours_note": "Birdeye's own schema block lists 9-6 all 7 days including Sunday, which looks like an unedited/default template rather than real hours (contradicted by two independent directories that both say Sunday closed). Used merchantcircle/superpages as the more credible source.",
+  "phone": "(941) 953-9015",
+  "phone_e164": "+19419539015",
+  "phone_source": "Matches the original discovery seed; independently confirmed on the Fresha listing, Birdeye aggregation, superpages.com, merchantcircle.com and Nextdoor's business page JSON-LD, all tied to the 1900 Main St #106 address.",
+  "email": null,
+  "email_search_log": [
+    "Fresha listing (fresha.com/lvp/nail-capitol-main-street-sarasota-oo9yMg): raw HTML + __NEXT_DATA__ JSON inspected directly, no email field, no mailto link, providersProps.basicProfile is null (this 'lvp' landing-page format does not expose full venue contact data, only address/phone/JSON-LD service names).",
+    "Yelp (yelp.com/biz/nail-capitol-sarasota-3): blocked by DataDome bot protection on every attempt (plain curl, Googlebot UA, WebFetch, r.jina.ai reader proxy all returned 403 or a CAPTCHA wall). No email typically published there anyway, but could not verify.",
+    "Google Maps: page requires JS to render, curl/reader-proxy fetches return an empty client shell or are blocked outright (r.jina.ai returned an anonymous-access-blocked error for google.com). No accessible email.",
+    "Facebook (facebook.com/61551850952980/, both desktop and mbasic.facebook.com): both require login, no About section accessible without an authenticated session.",
+    "Instagram: no confirmed Instagram account found for this business after multiple targeted searches ('Nail Capitol Sarasota instagram', name + city). See instagram_search_note.",
+    "Directory listings checked individually (all state no email, or expose only unrelated/placeholder fields): yellowpages.com/sarasota-fl/mip/nail-capitol-10497091 (this entry is actually for the OTHER 563 N Washington Dr location and lists a bogus 'website' link to an unrelated jewelry blog, not used), superpages.com/sarasota-fl/bpp/nail-capital-2706089 (website field points to their own localsearch.com directory subpage, not a real domain, no email), merchantcircle.com/Nail.Capital.941-953-9015 (explicitly 'Email: Not listed'), salondiscover.com listing found in search is also for the Washington Dr location, not this one.",
+    "Own domain search: tried nailcapitol.com, nailcapitolsarasota.com, nailcapital.com, nail-capitol.com, nailcapitolmainst.com via curl/DNS. Only nailcapital.com resolves, and it is an unrelated parked/lander domain (redirects to /lander with no content), not owned by this business.",
+    "Conclusion: no public email found after exhausting all listed sources. Outreach would rely on phone (call/text) as the manual channel."
+  ],
+  "instagram": null,
+  "instagram_search_note": "No confirmed Instagram account found for 'Nail Capitol' in Sarasota. Multiple targeted web searches ('Nail Capitol Sarasota instagram') returned only other, unrelated Sarasota nail salons (Noire The Nail Bar, My Nail Boutique, PinkPetals, Nailology, Nail Addict). Left null rather than guessing.",
+  "has_own_site": false,
+  "own_site_check": "No sameAs/external website field on either Fresha listing. Domains tried: nailcapitol.com (does not resolve), nailcapitolsarasota.com (does not resolve), nailcapital.com (resolves but is an unrelated parked/lander page, not this business), nail-capitol.com (does not resolve), nailcapitolmainst.com (does not resolve). Directory 'website' fields point only to directory sub-pages (e.g. localsearch.com) or, in one case, to an unrelated jewelry blog (bad data on that specific directory, ignored). No owned domain found; confirms has_own_site: false.",
+  "booking_platforms": {
+    "fresha": "https://www.fresha.com/lvp/nail-capitol-main-street-sarasota-oo9yMg"
+  },
+  "services_from_fresha_jsonld": [
+    "Manicure",
+    "Manicure and Pedicure",
+    "Men's Manicure",
+    "Pedicure",
+    "Spa Pedicure"
+  ],
+  "services_note": "The Fresha 'lvp' (local venue landing page) format only exposes a short category service-name list via JSON-LD (hasOfferCatalog), with NO prices or durations, and no deep-link to a bookable service menu with a numeric venue ID was found in the page's SSR payload (props.pageProps.providersProps.fallback is empty, basicProfile is null). Other directories add a broader but price-less service list: 'manicure, fish pedicure, pedicure, manicure and pedicure, men's manicure, spa pedicure' (Birdeye search snippet) and elsewhere 'manicure, pedicure, acrylic, gel polish, SNS, eyebrow and lip waxing' (merchantcircle/beautihost snippets). No exact prices could be verified for any service at this location from any source found.",
+  "about_source_text": "Merchantcircle.com lists the business as '29 Years in Business' at this address; other aggregated sources describe it as a small, family-run, walk-in-friendly nail salon (walk-ins welcome, appointments preferred). A Nextdoor storefront photo confirms the salon's own signage reads 'NAIL CAPITOL, an Oriental Technique'.",
+  "reviews_verbatim_full": [
+    {
+      "author": "Debi Prince",
+      "body": "Clean, and fabulous owners. I highly recommend this nail place. VERY CLEAN, professional, fair pricing. My new nail place.",
+      "source": "Google (via florida.beautihost.com review roundup, attributed explicitly to the 1900 Main St #106 location, distinct from the Washington Dr location covered separately on the same page)",
+      "rating": 5
+    },
+    {
+      "author": "Katie K",
+      "body": "So clean, so cozy and so good customer service.",
+      "source": "Google (via florida.beautihost.com review roundup, 1900 Main St #106 location)",
+      "rating": 5
+    },
+    {
+      "author": "Cecilia B",
+      "body": "The absolute worst nail experience I have ever had. Made an appointment and still waited 30 minutes. Total time in salon was 3 and half hours...",
+      "source": "Google (via florida.beautihost.com review roundup, 1900 Main St #106 location)",
+      "rating": 1,
+      "note": "Negative review, truncated by the source aggregator itself. Included here for completeness of research, NOT a candidate testimonial quote."
+    },
+    {
+      "author": "anonymous (via Superpages, aggregated by Birdeye)",
+      "body": "The Best Nail Salon I've ever been to. It has great service and is very clean. I recommend it to anyone who loves pedicures, manicures, full sets, or even facial waxing! Absolutely fabulous!",
+      "source": "Superpages, aggregated on reviews.birdeye.com/nail-capitol-170644841703732",
+      "rating": 5,
+      "date": "Thu, Dec 22, 2011"
+    },
+    {
+      "author": "anonymous (via Superpages, aggregated by Birdeye)",
+      "body": "I have been coming here for years and they make me very happy happy happy always clean friendly and pleasant",
+      "source": "Superpages, aggregated on reviews.birdeye.com/nail-capitol-170644841703732",
+      "rating": 5,
+      "date": "Mon, Oct 27, 2014"
+    },
+    {
+      "author": "anonymous (via Superpages, aggregated by Birdeye)",
+      "body": "Wonderful caring owners, great manis and pedis, a super clean shop. Highly recommended.",
+      "source": "Superpages, aggregated on reviews.birdeye.com/nail-capitol-170644841703732",
+      "rating": 5,
+      "date": "Tue, Jun 16, 2015"
+    },
+    {
+      "author": "someone found searching Yelp snippets (name not fully captured by search engine)",
+      "body": "Have bee my Nail Salon for 19 years, Dawn and David are professionals and offer the latest for Nails and Pedicures.",
+      "source": "Yelp (yelp.com/biz/nail-capitol-sarasota-3), only available as a search-engine snippet, the Yelp page itself is bot-blocked (DataDome) and could not be fetched directly to confirm the full review or reviewer name.",
+      "rating": null
+    }
+  ],
+  "language": "en",
+  "photos": {
+    "sources_checked": [
+      "Fresha listing (fresha.com/lvp/nail-capitol-main-street-sarasota-oo9yMg): raw HTML and JSON-LD inspected directly. Only image present is a generic stock placeholder (images.fresha.com/lead-images/placeholders/nail-salon-15.jpg), used because the business has never uploaded real photos to Fresha. Confirmed by comparing to neighboring competitor listings on the same page, which DO have real images.fresha.com/locations/location-profile-images/... URLs, Nail Capitol has none.",
+      "Instagram: no confirmed account found for this business (see instagram_search_note), so no photos sourced from there.",
+      "Yelp (yelp.com/biz/nail-capitol-sarasota-3): listing explicitly advertises '34 Photos' in its page title, this is the single best likely photo source, but every fetch attempt (plain curl with Chrome UA, curl with Googlebot UA, WebFetch tool, r.jina.ai reader proxy) was blocked by Yelp's DataDome bot protection (403 / CAPTCHA wall) with no workaround available in this environment (no headless browser/JS execution tool present).",
+      "Google Maps: searched for a maps.google.com/place link for this business, none surfaced in web search results. Direct curl fetch of a Maps search URL returns a JS-only shell with no image URLs. r.jina.ai reader proxy fetch of google.com was blocked outright ('AbuseAlleviationError').",
+      "Facebook (facebook.com/61551850952980/ 'Nail Capitol Sarasota'): both the desktop URL and the mbasic.facebook.com mobile URL require login, no photos or About info accessible without an authenticated session.",
+      "Birdeye aggregation page (reviews.birdeye.com/nail-capitol-170644841703732): only a generic 'beauty' category cover stock image (cloudfront.net/.../cover-image/beauty.png), not a real photo of this business.",
+      "Bing Images (bing.com/images/search, both a plain query and a site:yelp.com-scoped query): returned entirely irrelevant results (generic Florida beach sunset stock photos, unrelated blog images), no real photos of this business surfaced.",
+      "archive.org Wayback Machine: checked for cached snapshots of the Yelp listing and of nailcapitol.com, no snapshots exist for either.",
+      "Nextdoor business page (nextdoor.com/pages/nail-capital-sarasota-fl/ and its /photos/ subpage): confirmed to be this same location via matching address ('1900 Main St') and telephone (+19419539015) in its embedded JSON-LD. Found exactly ONE real, downloadable photo: a storefront/signage shot showing the salon's own sign ('NAIL CAPITOL, an Oriental Technique').",
+      "Directory sites checked for photos with no results: yellowpages.com, superpages.com, merchantcircle.com, salondiscover.com (the salondiscover.com listing found is actually for the OTHER 563 N Washington Dr location, not used)."
+    ],
+    "downloaded_total": 1,
+    "used_on_site": 0,
+    "curation_notes": "Only 1 real, verifiable photo of this specific business (1900 Main St #106) could be found and downloaded after checking 9 distinct sources/methods: a storefront sign photo from Nextdoor (us1-photo.nextdoor.com/business_gallery/6b/55/6b55c104177cb156a63eb17042de6c1f.jpg, verified as a real 540x960 JPEG). This is well below the pipeline's minimum of 5 real, curated own photos, so no site was built. Saved to assets/raw/storefront-sign-nextdoor.jpg for the record.",
+    "files": {
+      "storefront-sign-nextdoor.jpg": "Real storefront/signage photo from Nextdoor showing the salon's own sign, 'NAIL CAPITOL, an Oriental Technique'. Confirms the business's physical location and branding but is the ONLY real photo found; not sufficient on its own for a gallery-driven demo site."
+    }
+  },
+  "notes": "Research was thorough and multi-source (Fresha, Birdeye, Yelp via search snippets, Nextdoor, Superpages, Merchantcircle, Yellowpages, Bing, archive.org, direct domain checks), and confirmed this is a real, established, well-reviewed business (4.7/41 rating, in business ~29 years) at 1900 Main St #106, Sarasota, correctly distinguished from a second same-brand location at 563 N Washington Dr with its own separate phone/reviews. However, the business's actual photo footprint is concentrated almost entirely on Yelp (34 photos), which is protected by DataDome bot-blocking that could not be bypassed with any tool available in this environment (no headless browser/JS execution capability). No Instagram, no owned website, Facebook is login-walled, and Google Maps requires JS. Per PIPELINE.md Fase 3, fewer than 5 real own photos is an explicit minimum-bar failure, so build was not attempted rather than shipping a site with fabricated or borrowed imagery."
+}
