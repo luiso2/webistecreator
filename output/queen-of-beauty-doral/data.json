@@ -1,0 +1,119 @@
+{
+  "slug": "queen-of-beauty-doral",
+  "status": "failed",
+  "reason_failed": "No se pudo obtener ni una sola foto real y descargable del negocio (minimo exigido por el gate: 5) pese a busqueda exhaustiva en TODOS los canales aplicables. El negocio es 100% legitimo y de alta calidad (5.0 estrellas, 55 resenas verificadas en Google via Birdeye, direccion y telefono confirmados, esteticista Ana Lucia mencionada con nombre en multiples resenas reales), pero: (1) Instagram @thequeenofbeauty_miami existe y coincide con el negocio (confirmado solo por snippet indexado: 232 seguidores, 404 siguiendo, 41 posts) pero el endpoint oficial web_profile_info bloqueo el acceso en 5+ intentos con distintos user-agents (desktop Chrome, iPhone Safari, Android app UA) y con y sin header x-ig-app-id, devolviendo primero 401 'Please wait a few minutes before you try again' y luego 400 con un error interno de esquema ('Asset asset://laser.provider/ig_business_category_subvertical has been deleted'); WebFetch directo al mismo endpoint devolvio 401; la pagina web normal de IG esta login-walled incluso via lector (r.jina.ai); 3 visores espejo de IG sin login (picuki.com, imginn.com, picnob.com) devolvieron 403/404. (2) Yelp (que SI tiene fotos del negocio segun su listado) bloqueo todo acceso con proteccion DataDome/CAPTCHA en curl directo, en version movil (m.yelp.com) y via lector jina, en los 3 intentos. (3) Google Maps requiere renderizado JS: ni curl directo, ni WebFetch, ni Google Search clasico (incluyendo tbm=lcl y tbm=isch con cookie de consentimiento) devolvieron ningun enlace lh3.googleusercontent.com para este negocio especifico. (4) Facebook (facebook.com/61562112241378, encontrado via busqueda) esta completamente login-walled, tanto en www como en mbasic. (5) Birdeye (fuente usada para resenas/rating) solo tiene una imagen de portada generica de stock (beauty.png) y avatares por defecto para los resenadores, cero fotos reales del local. (6) El agregador Atly.com, que SI indexa fotos reales de Google Business para negocios vecinos en la misma zona de Doral (ej. Uni K Wax Studio, Bellas Cejas, otros salones a menos de 1 milla), NO tiene indexado este negocio especifico bajo ningun nombre o URL probada. (7) Sin pagina de booking (Booksy/GlossGenius/Square/Mangomint/Fresha/Vagaro/StyleSeat buscados exhaustivamente, cero resultados para este negocio) que pudiera aportar fotos de galeria. (8) Sin presencia en TikTok, doral.guide, ni snapshots en Wayback Machine para Yelp/IG/Facebook de este negocio. Ademas, tampoco se encontro un menu de servicios con precios/duraciones exactos publicado en ningun canal (solo categorias generales de servicio via tags de Yelp y sintesis de busqueda, sin verificacion primaria), lo cual por si solo hubiera sido manejable con la variante 'se cotiza, escribenos', pero combinado con cero fotos reales incumple el minimo duro de PIPELINE.md Fase 3 punto 5 ('menos de 5 fotos reales propias' = failed). Siguiendo la instruccion explicita de la tarea de NO forzar un build degradado, se marca FAILED y NO se construye index.html ni se redacta outreach (el dm_message requiere un link de demo que no existe).",
+  "name": "The Queen of Beauty Salon",
+  "niche": "facial / skincare studio (esteticista): depilacion laser, cejas, faciales, maderoterapia, servicios de manicure/pedicure y cabello",
+  "city": "Doral, FL",
+  "address": {
+    "full": "3655 NW 107th Ave, Ste 101, Doral, FL 33178",
+    "source": "Direccion base (sin numero de suite) confirmada via fetch directo de reviews.birdeye.com/the-queen-of-beauty-salon-170644891801630 (r.jina.ai reader, 2026-08-08): '3655 NW 107th Ave, Doral, FL, 33178, United States'. El numero de suite 101 viene del brief de la tarea y de titulos de Yelp indexados via WebSearch ('3655 NW 107th Ave, Suite 101, Doral, FL 33178'), no se pudo abrir Yelp directamente (bloqueado, ver abajo) para reverificarlo con fetch propio.",
+    "geo": {
+      "lat": 25.8078776,
+      "lng": -80.3687793,
+      "source": "Link 'Get directions' de Birdeye: maps.google.com/?q=25.8078776,-80.3687793"
+    }
+  },
+  "phone": "+1-786-313-3799",
+  "phone_display": "(786) 313-3799",
+  "phone_source": "No se pudo abrir directamente una pagina con JSON-LD del negocio (Yelp bloqueado, Google Maps requiere JS), por lo que este numero proviene de sintesis de WebSearch sobre snippets indexados de Yelp/otros directorios, consistente en 3 busquedas independientes. Coincide ademas con el numero ya provisto en el brief de la tarea. Tratar como probable pero no verificado con fetch directo de una fuente estructurada propia.",
+  "email": null,
+  "email_source": null,
+  "email_note": "Busqueda profunda sin resultado: (1) endpoint business_email de Instagram (web_profile_info) inaccesible por bloqueo del API en 5+ intentos (ver reason_failed); (2) no existe pagina de booking propia (Booksy/GlossGenius/Square/Mangomint/Fresha/Vagaro/StyleSeat buscados, ninguno tiene listado para este negocio) de donde sacar mailto o payload JSON; (3) no se encontro Linktree/poplme/beacons enlazado desde ningun lado; (4) seccion About de Facebook inaccesible (login wall total, incluso via mbasic.facebook.com y lector jina); (5) sin dominio propio del negocio (ver has_own_site). Ningun email publico encontrado.",
+  "instagram": {
+    "handle": "@thequeenofbeauty_miami",
+    "url": "https://www.instagram.com/thequeenofbeauty_miami/",
+    "status": "Handle EXISTE y coincide con el negocio (titulo indexado por buscador: 'The Queen of Beauty Salon (@thequeenofbeauty_miami) - Fotos y videos de Instagram', con snippet de 232 seguidores / 404 siguiendo / 41 publicaciones), pero el contenido (bio completa, external_url/link de biografia, fotos, business_email) NO pudo verificarse de forma directa: el endpoint oficial instagram.com/api/v1/users/web_profile_info/?username=thequeenofbeauty_miami (con header x-ig-app-id: 936619743392459) devolvio HTTP 401 'Please wait a few minutes before you try again' en el primer intento (UA desktop Chrome), HTTP 400 con un error interno no estandar ('Asset asset://laser.provider/ig_business_category_subvertical has been deleted. You cannot use this schema') en los 3 intentos siguientes (UA desktop, UA movil Instagram Android, UA iPhone Safari), y WebFetch directo al mismo endpoint devolvio 401. La pagina web normal (instagram.com/thequeenofbeauty_miami) esta login-walled incluso pasada por r.jina.ai. Tres visores espejo sin login (picuki.com, imginn.com, picnob.com) fueron probados: picuki devolvio 404 'content does not exist', imginn y picnob devolvieron 403 (bloqueo Cloudflare)."
+  },
+  "facebook": "https://www.facebook.com/61562112241378",
+  "facebook_note": "Encontrado via WebSearch como 'The Queen of Beauty Salon'. Pagina totalmente login-walled (probado en www.facebook.com y mbasic.facebook.com, ambos redirigen a pantalla de login sin contenido publico accesible).",
+  "has_own_site": false,
+  "own_site_check": {
+    "domains_tried": "thequeenofbeautysalon.com (HTTP 200, PERO es un negocio DISTINTO: 'The Queen Of Beauty', 124 Wilson Ave, Newark, NJ 07105, telefono (973) 344-3790, booking via Square, 9 servicios sin precios visibles; confirmado independientemente via WebFetch de /services/ y /contact-us/, coincide con lo ya señalado en el brief de la tarea). thequeenofbeautysalondoral.com, thequeenofbeautymiami.com, thequeenofbeautydoral.com: no resuelven (connect fail). thequeenofbeauty.com: resuelve (HTTP 200 a la raiz via curl -I mostro 404 Not Found, servidor Kestrel), pagina generica sin relacion con el negocio de Doral.",
+    "conclusion": "NO tiene website propio confirmado independientemente. has_own_site: false."
+  },
+  "booking": {
+    "platform": null,
+    "note": "Busqueda exhaustiva en Booksy, GlossGenius, Square, Mangomint, Fresha, Vagaro y StyleSeat (WebSearch dirigido a cada plataforma + nombre/direccion del negocio, y busqueda de 'Ana Lucia esthetician Doral' en cada una): CERO resultados en cualquiera de las 7. El negocio no parece tener presencia en ninguna plataforma de reservas online publica; probablemente opera por telefono/whatsapp/instagram DM unicamente."
+  },
+  "rating": {
+    "google_via_birdeye": {
+      "value": 5.0,
+      "count": 55,
+      "source": "Fetch directo (r.jina.ai) de reviews.birdeye.com/the-queen-of-beauty-salon-170644891801630, 2026-08-08: desglose explicito 'Google (55)' / 'Birdeye (0)', distribucion 5 estrellas x55, 4-3-2-1 estrellas x0. Coincide exactamente con el brief de la tarea."
+    }
+  },
+  "hours": {
+    "source_birdeye_table": {
+      "Mon": "9:00 a.m. to 6:00 p.m.",
+      "Tue": "9:00 a.m. to 6:00 p.m.",
+      "Wed": "9:00 a.m. to 6:00 p.m.",
+      "Thu": "9:00 a.m. to 6:00 p.m.",
+      "Fri": "9:00 a.m. to 6:00 p.m.",
+      "Sat": "Closed",
+      "Sun": "Closed"
+    },
+    "conflicting_secondary_claim": "Multiples sintesis de WebSearch (no verificadas con fetch directo propio) afirman 'Lunes a Sabado, 8:00am - 8:00pm', citando aparentemente datos de Yelp/Google que no se pudo abrir directamente (Yelp bloqueado). Se deja documentada la discrepancia sin resolver: la tabla de Birdeye es la unica fuente con fetch directo verificado por este agente."
+  },
+  "reviews": [
+    {
+      "author": "Neydeen Doval",
+      "source": "Google (via Birdeye)",
+      "when": "9 months ago (relativo a la fecha de scraping de Birdeye)",
+      "text": "Idamis es la mejor!! Me encanta este salon!"
+    },
+    {
+      "author": "jael martinez",
+      "source": "Google (via Birdeye)",
+      "when": "a year ago",
+      "text": "I've been doing my eyebrows with Ana Lucia for many, many years and let me say I won't ever stop! She is the best esthetician you could ask for!!"
+    },
+    {
+      "author": "Maria Alejandra Mavares",
+      "source": "Google (via Birdeye)",
+      "when": "a year ago",
+      "text": "Ana Lucia es la mejor en todo lo que es tratamientos, wax de cejas y cuerpo. Llevo años con ella y siempre ha sido un excelente servicio. 100% recomendada."
+    },
+    {
+      "author": "mendoza cavero maria concepcion",
+      "source": "Google (via Birdeye)",
+      "when": "a year ago",
+      "text": null,
+      "note": "Resena de 5 estrellas sin texto visible en la pagina de Birdeye."
+    },
+    {
+      "author": "Viviana Pires",
+      "source": "Google (via Birdeye)",
+      "when": "a year ago",
+      "text": "Ana Lucia is simply the best… She is my esthetician for the last 5 years, she does everything with kindness and professionalism. Great facial treatments, waxing and more. 100% recommended."
+    }
+  ],
+  "services_partial_unverified": {
+    "note": "NO se encontro un menu con precios/duraciones exactos en ningun canal primario (sin booking, sin website propio, IG bloqueado, Yelp bloqueado). Las siguientes categorias aparecen repetidas en snippets de busqueda (tags de categoria Yelp: 'Laser Hair Removal'; sintesis de bio de IG no verificada de forma primaria) pero se documentan aqui SOLO como referencia, NO como dato verificado apto para publicar en un site: laser hair removal / depilacion laser, depilacion cera, faciales, maderoterapia, cortes, blow-dry, tinte, manicure, pedicure, nail fill-ins.",
+    "verified_status": "NO VERIFICADO - no usar para build."
+  },
+  "brand": {
+    "note": "No se pudo derivar paleta real (logo/decoracion/feed) porque ninguna fuente con imagenes reales fue accesible. Sin brand_vibe determinable."
+  },
+  "language": {
+    "value": "es",
+    "source": "3 de 5 resenas encontradas estan en español (Neydeen Doval, Maria Alejandra Mavares, y el nombre 'mendoza cavero maria concepcion' sugiere hispanohablante); Doral es zona mayoritariamente hispanohablante. Sin embargo 2 de 5 resenas estan en ingles (jael martinez, Viviana Pires), y no se pudo confirmar el idioma de los captions de Instagram (bio inaccesible). Confianza: media, basada solo en resenas, no en biografia/captions propios del negocio."
+  },
+  "photos": {
+    "usable_count": 0,
+    "attempts": [
+      "Instagram web_profile_info API: 5+ intentos, headers x-ig-app-id, UAs desktop/movil/iOS, con y sin Referer -> 401 rate-limit luego 400 error de esquema interno en todos los reintentos.",
+      "Instagram via WebFetch directo al mismo endpoint -> 401.",
+      "Instagram pagina web normal via r.jina.ai -> login wall completo.",
+      "3 visores espejo de IG sin login (picuki.com, imginn.com, picnob.com) -> 404 / 403 (Cloudflare) en los 3.",
+      "Yelp (biz page, que segun su titulo indexado SI tiene fotos): curl directo -> 403 bloqueo DataDome; m.yelp.com -> mismo bloqueo via jina; r.jina.ai sobre www.yelp.com -> advertencia CAPTCHA, contenido vacio. 3 intentos, 3 fallos.",
+      "Google Maps: WebFetch directo -> solo devuelve el titulo 'Google Maps', requiere JS. curl+jina sobre /maps/place/... -> 403 AbuseAlleviationError (bloqueo anti-bot de terceros). curl directo con cookie de consentimiento sobre google.com/search?tbm=lcl y tbm=isch -> 200 pero sin ningun enlace lh3.googleusercontent.com en el HTML (resultados no renderizados sin JS).",
+      "Facebook (www y mbasic): login wall total, cero contenido publico accesible.",
+      "Birdeye: unica imagen es una portada de stock generica (beauty.png) + avatares default para cada resenador, no fotos reales del negocio.",
+      "Atly.com (aggregador que SI expone fotos Google Business para negocios vecinos de Doral): busqueda dirigida por nombre, telefono y direccion -> este negocio especifico no esta indexado ahi (se encontraron negocios vecinos como Uni K Wax Studio, Bellas Cejas, 107 Beauty Bar & Spa, pero no este).",
+      "TikTok, StyleSeat, Fresha, doral.guide: sin listado para este negocio.",
+      "Wayback Machine (archive.org/wayback/available) para las URLs de Yelp, Instagram y Facebook de este negocio: 'archived_snapshots': {} (sin snapshots) en los 3 casos."
+    ]
+  },
+  "research_timestamp": "2026-08-08"
+}
