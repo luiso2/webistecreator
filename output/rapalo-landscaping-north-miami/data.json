@@ -1,0 +1,121 @@
+{
+  "slug": "rapalo-landscaping-north-miami",
+  "name": "Rapalo Landscaping",
+  "legal_name": "Rapalo Landscaping LLC",
+  "niche": "landscaping / lawn care / jardineria",
+  "city": "North Miami / North Miami Beach, FL",
+  "owner": "Breylin Rapalo",
+  "owner_source": "GreenPal profile LocalBusiness JSON-LD: \"name\": \"Breylin Rapalo\", \"legalName\": \"Rapalo Landscaping\". Florida Sunbiz filing for Rapalo Landscaping LLC (doc L24000258165) lists registered agent / manager as Breylin Y Rapalo at the same address, corroborating the same person.",
+  "address": {
+    "line1": "3546 NW 99th St",
+    "locality": "Miami",
+    "region": "FL",
+    "postal_code": "33147",
+    "country": "US",
+    "source": "Matches on two independent sources fetched directly: (1) Florida Sunbiz corporate filing for RAPALO LANDSCAPING LLC, document number L24000258165, principal address '3546 NW 99TH ST MIAMI, FL 33147'; (2) the live GreenPal profile page (https://www.yourgreenpal.com/rapalo-landscaping), fetched with curl + Chrome UA (HTTP 200), whose own LocalBusiness JSON-LD gives streetAddress 'Northwest 99th Street' number 3546, Miami, FL 33147. Also corroborated by a Yahoo Local business listing.",
+    "note": "This is the LLC's registered/mailing address, not a public storefront customers visit (Rapalo Landscaping is a mobile lawn care crew that services customers' yards). Per FORGE-BRIEF 0.b, no map/directions were placed on the site for this reason; a real work photo was used in the location/contact section instead."
+  },
+  "service_area": ["North Miami, FL", "North Miami Beach, FL", "Miami, FL (general)", "Pembroke Pines, FL (occasional, per GreenPal photo geotags)"],
+  "service_area_source": "GreenPal's ImageObject JSON-LD entries for this vendor's before/after photos are geotagged with contentLocation names 'North Miami Beach, FL', 'Miami, FL' and one 'Pembroke Pines, FL'; the task brief specifies North Miami / North Miami Beach as the primary service area, used as the site's areaServed.",
+  "phone": "+17866419360",
+  "phone_display": "(786) 641-9360",
+  "phone_source": "NOT exposed by GreenPal itself (GreenPal intentionally hides vendor phone/email behind its own in-platform messaging until a job is booked, same limitation noted for the otechlandscaping and pride-landscaping-cape-coral precedents). Found instead via two independent public directory listings fetched during this research pass: (1) a Yahoo Local business listing for 'Rapalo Landscaping' at 3546 NW 99th St, Miami FL 33147, phone (786) 641-9360, owner 'Breylin', matching every other verified detail (address, owner name, service description); (2) Angi/HomeAdvisor company listings for 'Rapalo Landscaping' at the same address showing the same phone number and a 5.0 rating, '4 years of experience'. Both are third-party aggregator/directory listings rather than a number published directly by the business on GreenPal or its own site, so confidence is good-but-not-first-party; used on the site as the secondary contact channel alongside the primary GreenPal CTA.",
+  "email": null,
+  "email_search_log": [
+    { "source": "GreenPal profile page (https://www.yourgreenpal.com/rapalo-landscaping)", "method": "Fetched full HTML directly with curl + Chrome UA (HTTP 200, 380KB saved). Searched for mailto: links and business_email fields in the page HTML and in all 3 embedded JSON-LD blocks (ImageObject gallery, FAQPage, LocalBusiness with 20 reviews).", "result": "No email found. GreenPal intentionally routes all contact through its own in-app messaging/request-a-call system; the LocalBusiness JSON-LD's sameAs field is empty (no owned website or social profile listed by the vendor)." },
+    { "source": "Florida Sunbiz corporate filing (RAPALO LANDSCAPING LLC, doc L24000258165)", "method": "Searched via web search and attempted direct fetch of search.sunbiz.org (blocked by a Cloudflare bot-challenge, could not load the full filing detail page).", "result": "Web-search summary of the filing surfaced a registered agent name (Breylin Y Rapalo, same business address) but no email address. Sunbiz filings for small LLCs registering their own manager as agent typically do not publish a contact email publicly." },
+    { "source": "rapalolandscaping.com and rapalolandscapingllc.com", "method": "curl fetched both domains directly (HTTP 200 on both).", "result": "Both are empty Squarespace placeholder pages ('Coming Soon' / 'Proximamente', under construction), zero content, no contact form, no mailto link, no menu. Confirms has_own_site = false; no email available from either domain." },
+    { "source": "Facebook", "method": "Web search for 'Rapalo Landscaping' + Facebook, and for the domain-style handle.", "result": "No verifiable official Facebook page found for this specific business (search results were dominated by GreenPal, Yelp, HomeAdvisor, Angi, Nextdoor and Sunbiz listings, not a Facebook Page)." },
+    { "source": "Instagram", "method": "Web search for 'rapalolandscaping' instagram/facebook and variants.", "result": "No verifiable Instagram account found. Results returned unrelated accounts (Rapala fishing brand, other landscaping companies with similar names) but nothing confirmable as this business's own handle, so none was used on the site to avoid misattribution." },
+    { "source": "Yelp / HomeAdvisor / Angi listing pages", "method": "Attempted direct curl fetch of yelp.com and homeadvisor.com listing pages; both returned HTTP 403 (bot protection). Relied on Yahoo Local (200 OK, fetched directly) and web-search-engine summaries of the Angi/HomeAdvisor pages for corroboration instead.", "result": "No email surfaced in any available snippet; these directories typically gate contact info behind a lead-generation form rather than publishing an email." }
+  ],
+  "email_note": "No public email found after an exhaustive search across GreenPal (the business's only real online presence), the Sunbiz LLC filing, both placeholder domains, and Facebook/Instagram. Recorded as null per pipeline rule: do not invent an email. See email_search_log for the full trail.",
+  "has_own_site": false,
+  "website_check": {
+    "domains_tested": [
+      { "domain": "rapalolandscaping.com", "result": "Resolves and returns HTTP 200, but is an EMPTY Squarespace 'Coming Soon' placeholder page (English): 'We're under construction. Please check back for an update soon.' No menu, no content, no contact form, no links." },
+      { "domain": "rapalolandscapingllc.com", "result": "Resolves and returns HTTP 200, same Squarespace placeholder template in Spanish: 'Proximamente / En construccion. Regresa pronto para ver las novedades.' No menu, no content, no contact form, no links." }
+    ],
+    "greenpal_sameas": "The GreenPal page's own LocalBusiness JSON-LD includes \"sameAs\": [\"\"] (empty string), confirming GreenPal itself has no owned website on file for this vendor either.",
+    "conclusion": "has_own_site = false. Both plausible domains are registered by the business (they match the business name exactly and both use the same Squarespace 'coming soon' template, strongly suggesting the owner reserved them but never published content) but carry zero real content, no menu, and no way to contact the business through them. Treated as NOT a functioning website per pipeline precedent (matches the otechlandscaping/pride-landscaping-cape-coral handling of unbuilt/placeholder domains), and documented clearly here rather than silently ignored."
+  },
+  "instagram": null,
+  "instagram_note": "No verifiable Instagram handle found for this specific business after web search (see email_search_log). Not used anywhere on the site to avoid misattributing another account.",
+  "facebook": null,
+  "facebook_note": "No verifiable Facebook Page found for this specific business after web search (see email_search_log).",
+  "rating": 4.76,
+  "rating_alt_display": "GreenPal's own page UI rounds this to a displayed 'Overall rating 4.7/5' in one spot, but the page's own LocalBusiness JSON-LD gives the precise aggregateRating {ratingValue: 4.76, reviewCount: 238, ratingCount: 238, bestRating: 5}. 4.76 (the JSON-LD figure, matching the task brief) was used on the site as the more precise number, same approach as the otechlandscaping precedent (4.9 UI vs 4.95 JSON-LD, used the more precise one).",
+  "review_count": 238,
+  "rating_source": "Fetched the live GreenPal profile page directly (https://www.yourgreenpal.com/rapalo-landscaping) with curl + Chrome UA (HTTP 200, full HTML saved and parsed with Python regex/JSON). The page's own LocalBusiness JSON-LD block gives aggregateRating {ratingValue: 4.76, reviewCount: 238, bestRating: 5}, matching the task brief exactly. Corroborated by web-search summaries of Angi and HomeAdvisor listings for 'Rapalo Landscaping' at the same address showing a 5.0 rating on those platforms ('4 years of experience', 'free project estimates'). No separate/independent Google Business Profile could be located for this vendor.",
+  "reliability_stats": {
+    "reliability_rating": "65%",
+    "repeat_clients": "70%",
+    "price_range_greenpal": "$20-45",
+    "source": "GreenPal profile page vendor-info stats, fetched directly. price_range_greenpal is GreenPal's own displayed priceRange field on the LocalBusiness JSON-LD; it reflects marketplace-brokered per-visit pricing for specific yards, not a published rate card, so it was NOT placed on the site as a stated price (site uses quote-based CTAs only, per FORGE-BRIEF 0.b). repeat_clients (70%) was used in the trust strip and About section as a real, sourced stat."
+  },
+  "bio_verbatim": "Hi there! We're your local gardening team, here to transform your outdoor space into a place you'll love coming home to. We handle everything from lawn mowing and trimming to planting, weeding, and seasonal cleanups. Our goal is simple: a healthy, beautiful garden without the hassle for you. What we offer: Lawn Care - Mowing, edging, and fertilizing for a fresh, even look. Planting & Design - Flowers, shrubs, and greenery tailored to your space and sunlight. Maintenance - Weeding, pruning, and debris removal to keep it tidy year-round. Consultation - We assess your garden and suggest the best options for your budget. Budget Policy: If your quoted budget is $37 and we find the garden needs extra work to meet our quality standard, we'll pause and leave it as-is. We won't add costs or continue without your approval first. That way you're always in control. Ready to get started? Contact us for a free on-site estimate.",
+  "bio_source": "GreenPal profile page 'bio-inner' block, fetched directly and quoted verbatim above. This is the primary source for the site's About section copy, the services list, and the free-consultation/budget-policy copy (all paraphrased, not copied verbatim, into the site's own headline/paragraph voice, but grounded in this exact real text).",
+  "services": [
+    { "name": "Lawn Care", "detail": "Mowing, edging and fertilizing for a fresh, even cut", "source": "GreenPal bio, verbatim service line: 'Lawn Care - Mowing, edging, and fertilizing for a fresh, even look.'" },
+    { "name": "Planting & Design", "detail": "Flowers, shrubs and greenery chosen for the yard's space and sunlight", "source": "GreenPal bio, verbatim: 'Planting & Design - Flowers, shrubs, and greenery tailored to your space and sunlight.'" },
+    { "name": "Yard Maintenance", "detail": "Weeding, pruning and debris removal to keep things tidy year round", "source": "GreenPal bio, verbatim: 'Maintenance - Weeding, pruning, and debris removal to keep it tidy year-round.'" },
+    { "name": "Free Consultation", "detail": "An on-site visit to assess the yard and find options that fit the customer's budget", "source": "GreenPal bio, verbatim: 'Consultation - We assess your garden and suggest the best options for your budget.' plus the closing line 'Contact us for a free on-site estimate.'" }
+  ],
+  "services_note": "No fixed price list is published; GreenPal shows a marketplace priceRange of $20-45 for brokered mowing visits but that is not a rate card for the 4 real service categories above (which include planting/design and maintenance work priced very differently per job). Per FORGE-BRIEF 0.b's variante adaptada, the site uses a quote-based pattern throughout ('Get a quote' CTA on every service card, no prices shown), grounded in the business's own stated budget/consultation policy above.",
+  "reviews": [
+    { "name": "Jannette Rodriguez", "text": "Used Rapalo Landscaping and they came in and did a great job", "date": "May 29, 2026", "source": "GreenPal LocalBusiness JSON-LD review array, fetched and parsed directly from the live profile page, verbatim (matches task brief exactly)." },
+    { "name": "Mercedes Cordero", "text": "Thank you, Breylin! You always do great work and leave a beautiful yard behind :-)", "date": "May 27, 2026", "source": "GreenPal LocalBusiness JSON-LD review array, verbatim (matches task brief exactly)." },
+    { "name": "Rene Ferretti", "text": "Great communication as always and excellent work.", "date": "May 19, 2026", "source": "GreenPal LocalBusiness JSON-LD review array, verbatim (matches task brief exactly)." },
+    { "name": "Mercedes Cordero", "text": "Nice work & yard looks good!", "date": "April 21, 2026", "source": "GreenPal LocalBusiness JSON-LD review array, verbatim (matches task brief exactly). Not used on the site itself (3-quote grid already covers this reviewer with a more evocative quote) but recorded here for completeness / corroboration." }
+  ],
+  "reviews_note": "GreenPal's server-rendered page exposes 20 of the 238 total reviews via JSON-LD; of those 20, 6 have non-empty review body text. The 4 with the clearest, most on-topic quotes are all listed above and match the task brief's provided quotes exactly, confirming the brief's research. The site's Opiniones section uses 3 of the 4 (Jannette Rodriguez, Mercedes Cordero's 'beautiful yard behind' quote, and Rene Ferretti) per the template's 3-card grid layout.",
+  "language": "en",
+  "language_source": "All 6 real review quotes found, the GreenPal bio text, and the business's Angi/HomeAdvisor/Yahoo Local listings are entirely in English. North Miami/North Miami Beach is a bilingual South Florida market, but English is the primary language of the business's own marketplace presence and every piece of real copy sourced from it, so <html lang=\"en\"> is the default with a full Spanish data-es translation on every text node per DESIGN.md's Multilenguaje section.",
+  "images": {
+    "raw_dir": "assets/raw/",
+    "source": "6 GreenPal before/after lawn-care photo URLs supplied in the task brief (greenpal-production.s3.amazonaws.com), each corroborated live in the GreenPal page's own ImageObject JSON-LD gallery (creator: 'Rapalo Landscaping', contentLocation North Miami Beach / Pembroke Pines / Miami FL). All 6 downloaded with curl + Chrome UA and verified with `file` as real baseline JPEGs, 340x255px (GreenPal's native small resolution, same as the otechlandscaping precedent's photo source). Every photo carried a baked-in 'GREENPAL' logo watermark (top ~42px band) and a 'Lawn Service by Rapalo Landscaping' caption band (bottom ~34px); all 6 were visually inspected one by one and then cropped with Pillow (Python) to remove both bands before use (340x179px after crop), per DESIGN.md's prohibition on gallery captures with text overlays. All 6 were usable after cropping (well-lit, no people, no clutter, no watermark remnants); none were discarded.",
+    "selected": [
+      { "file": "hero-white-house-purple-door.jpg", "desc": "White single-story home with a purple front door, two manicured palms and a freshly mowed, edged lawn.", "use": "hero image, reused as the first About-section image (different aspect crop)" },
+      { "file": "about-yard-cleanup.jpg", "desc": "Yard cleanup / irrigation area mid-restoration: patchy lawn with a working sprinkler head, illustrating maintenance work in progress rather than a finished glossy result.", "use": "About section, second image (illustrates the maintenance/cleanup side of the business)" },
+      { "file": "gallery-carport-driveway-strips.jpg", "desc": "Carport home with two parallel mowed driveway strips and a tidy front lawn.", "use": "gallery, wide 16:9 tile" },
+      { "file": "gallery-white-house-palm.jpg", "desc": "White single-story home with a fan palm and freshly mowed, edged lawn (companion angle to the hero photo, different property detail).", "use": "gallery tile; reused as the Contact section image (in place of a map, per FORGE-BRIEF 0.b)" },
+      { "file": "gallery-driveway-minivan.jpg", "desc": "Driveway with a parked minivan, palm trees and a freshly mowed lawn.", "use": "gallery tile" },
+      { "file": "gallery-carport-hedge.jpg", "desc": "Carport home with a trimmed flowering hedge and a freshly mowed, edged lawn.", "use": "gallery tile" }
+    ],
+    "discarded": "None. All 6 supplied photos were real, watermark-cropped and usable; no stock or unrelated images were used anywhere on the site."
+  },
+  "curation_note": "All 6 photos used are real GreenPal before/after work photos of properties serviced by Rapalo Landscaping, individually visually inspected (Read tool) before and after watermark cropping. No selfies or portraits of the owner were available or used (no founder photo exists for this business, unlike otechlandscaping's founder-julio.png); the nav/footer/about-avatar logo slots use a plain text monogram ('R') instead of a photo, consistent with the otechlandscaping precedent's handling of a missing founder photo. Hero/gallery frame aspect ratios were kept landscape (16:9 wide tile, 3:4 tiles) to fit GreenPal's native small landscape-oriented photos, same adaptation as the otechlandscaping precedent.",
+  "brand_vibe": "Small, hands-on residential lawn care crew in North Miami / North Miami Beach led by Breylin Rapalo: mowing, edging, planting and yard cleanup with a stated 'no surprise costs' budget policy and a near-perfect GreenPal track record (4.76/238). Tropical South Florida palms, white block homes and manicured St. Augustine-style lawns. A fresh jade/emerald green on a deep near-black base was chosen to feel current and premium without duplicating any other landscaping site already built in this project.",
+  "palette": {
+    "name": "rapalo-jade",
+    "bg": "#070f0b",
+    "bg-2": "#07170f",
+    "surface": "rgba(255,255,255,0.045)",
+    "ink": "#e3f5ec",
+    "accent-deep": "#4bd490",
+    "accent-mid": "#4ab881",
+    "accent-soft": "#0e2419",
+    "accent-ghost": "rgba(75,212,144,0.16)",
+    "note": "Derived from templates/dark-v2 (Pure Artistry's gold #d4a84b/#b8934a skeleton) via a systematic HSL hue-rotation (hue -> 150deg, jade/emerald green) applied in Python to every hex and rgba color literal in the template, preserving each color's original lightness/saturation so every gradient, shadow and glass-border relationship stays intact. Checked against templates/DESIGN.md and templates/SKELETONS-V2.md's 'paletas ya usadas' list plus the other 4 landscaping sites already in output/: otechlandscaping's forest #3d6b2f (light base), pride-landscaping-cape-coral's bright grass #55ca65 (dark base, hue ~128), bonzailandscapingportstlucie's blue #48a7d7 (dark base), garden-now-landscaping-orlando's olive #45703a. #4bd490 (hue ~151) is a distinct, more teal-leaning jade green, not a repeat of any of those hex values."
+  },
+  "cta_model": "quote_based",
+  "cta_note": "Landscaping/lawn care priced per yard via free on-site quote, never a fixed rate card. Per the task brief, the PRIMARY CTA everywhere on the site (nav, hero, services cards x4, floating button, CTA final) points to the real GreenPal profile (https://www.yourgreenpal.com/rapalo-landscaping), always labeled clearly as GreenPal (never mislabeled as Instagram or any other channel). The verified phone (786) 641-9360 is offered as a secondary/direct contact channel (hero secondary button, CTA final secondary button, footer, and the first Contact-section card), since it was found and corroborated during this research pass even though GreenPal itself does not expose it.",
+  "sameAs": [
+    "https://www.yourgreenpal.com/rapalo-landscaping",
+    "https://www.homeadvisor.com/rated.rapalolandscaping.145086278.html",
+    "https://www.angi.com/companylist/us/fl/miami/rapalo-landscaping-reviews-1.htm"
+  ],
+  "llc_filing": {
+    "entity_name": "RAPALO LANDSCAPING LLC",
+    "document_number": "L24000258165",
+    "fei_ein": "33-1662516",
+    "filed_date": "2024-06-06",
+    "effective_date": "2024-06-04",
+    "status": "ACTIVE",
+    "principal_address": "3546 NW 99TH ST, MIAMI, FL 33147",
+    "registered_agent": "Breylin Y Rapalo (same address; owner serves as their own registered agent, common for a small single-member LLC)",
+    "source": "Florida Division of Corporations (Sunbiz) filing, found via web search summary; direct fetch of search.sunbiz.org was blocked by a Cloudflare bot-challenge (JS-based 'Just a moment...' interstitial), so this was corroborated through the search engine's own indexed summary of the filing detail page rather than a raw HTML fetch. Not used for the site's on-page copy (which relies on the GreenPal profile as the primary real-world source) but used to confirm the business's legal name, active status and address for data.json and the JSON-LD legalName field."
+  },
+  "build_status": "built",
+  "build_notes": "Derived from templates/dark-v2/index.html (Pure Artistry skeleton) following templates/SKELETONS-V2.md's anchored-replacement method via scripts/build_rapalo-landscaping-north-miami.py: (1) systematic HSL hue-rotation palette swap (hue->150deg jade green) covering every hex/rgba literal in the template, with the .merktop-badge/.merktop-dot/@keyframes mkPulse block protected via regex extraction so it stays gold as required; (2) full head block replaced (title/meta/og/icon/JSON-LD, type LandscapingBusiness with real address/phone/rating/areaServed/makesOffer); (3) nav logo image replaced with a text monogram ('R') since no founder/logo photo exists (same adaptation as otechlandscaping); (4) every section's copy rewritten in both data-es/data-en per DESIGN.md bilingual rules, grounded in the real GreenPal bio, reviews and stats (no invented services, prices or reviews); (5) VARIANTE ADAPTADA per FORGE-BRIEF 0.b: services grid rebuilt via regex block-replace with 4 real service cards and NO fixed prices (quote-based 'Get a quote' CTA throughout instead), gallery grid rebuilt via regex block-replace down to 4 curated real photos (1 wide + 3 tiles, avoiding same-grid photo reuse) instead of the template's 6, and the Ubicacion/map iframe replaced with a real photo since the business has no public storefront to visit (mobile lawn care); (6) every Booksy/Instagram link repointed to the real GreenPal profile as primary CTA (explicitly labeled 'GreenPal', never mislabeled) with the verified phone (786) 641-9360 as a secondary channel; (7) footer 'social' column repointed to HomeAdvisor/Angi (both 5.0) since no Instagram was found, mirroring the pride-landscaping-cape-coral precedent's Yelp fallback pattern. Ran python3 scripts/gate.py rapalo-landscaping-north-miami --lang en --forbid \"Pure Artistry,Yesi,Orlando,pureartistry,Booksy,booksy,121705,silk press,K-Tip,celebrity\": GATE OK. Zero em-dashes confirmed. No <details>/accordion elements anywhere. All 6 referenced images exist on disk, decode as valid JPEGs, and were visually inspected before and after watermark cropping. html lang=\"en\" and applyLang default both coherent."
+}

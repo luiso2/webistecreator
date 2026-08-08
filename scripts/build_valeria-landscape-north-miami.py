@@ -503,7 +503,7 @@ assert reviews_grid, 'reviews grid anchor not found'
 NEW_REVIEWS = '''<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
         <figure class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="stars text-sm mb-4">★★★★☆</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5 text-sm">"Overall very good service did a nice job. Happy with the job."</blockquote>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5 text-sm">"Overall very good service did a nice job I would have liked to have seen the leaves in my back yard removed but other than that very happy with the job."</blockquote>
           <figcaption class="text-sm"><span class="font-medium">James Tejada</span> <span class="text-[color:var(--ink-40)]">· North Miami, FL · GreenPal</span></figcaption>
         </figure>
         <figure class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
@@ -559,7 +559,7 @@ rep(
             <div>
               <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">By appointment via Booksy: pick the service, day and time, and the confirmation is instant.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(20,107,96,0.4)]" href="https://booksy.com/en-us/519855_lash-bloom-llc_brows-lashes_15961_west-palm-beach" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(20,107,96,0.4)]" href="https://www.yourgreenpal.com/valeria-landscape-se" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
             </div>''',
     '''<svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             <div>
@@ -614,7 +614,7 @@ rep(
     '<a href="https://www.yourgreenpal.com/valeria-landscape-se" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Cotización Gratis" data-en="Request a Free Quote">Request a Free Quote</a>'
 )
 rep(
-    '<a href="https://www.yourgreenpal.com/valeria-landscape-se" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>',
+    '<a href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>',
     '<a href="https://www.yourgreenpal.com/valeria-landscape-se" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver Reseñas en GreenPal" data-en="See Reviews on GreenPal">See Reviews on GreenPal</a>'
 )
 
@@ -641,7 +641,7 @@ rep(
 )
 rep(
     '''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.yourgreenpal.com/valeria-landscape-se" target="_blank" rel="noopener" class="hover:text-[#f0bed7]">Instagram · @_lashbloom</a></p>''',
+        <p><a href="https://www.instagram.com/_lashbloom/" target="_blank" rel="noopener" class="hover:text-[#f0bed7]">Instagram · @_lashbloom</a></p>''',
     '''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Reseñas" data-en="Reviews">Reviews</p>
         <p><a href="https://www.yourgreenpal.com/valeria-landscape-se" target="_blank" rel="noopener" class="hover:text-[#bdeadd]">GreenPal · 4.8 · 98 reviews</a></p>'''
 )

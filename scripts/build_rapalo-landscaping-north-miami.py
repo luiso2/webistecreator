@@ -315,5 +315,391 @@ for old, new in MARQUEE_WORDS:
 
 print("Marquee OK")
 
+# ============================================================
+# STEP 9: LA EXPERIENCIA (About Us)
+# ============================================================
+rep(
+'''        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/bk-2.jpg" alt="Clienta con look terminado en el sofa amarillo del estudio Pure Artistry" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/bk-6.jpg" alt="Twists recien terminados en Pure Artistry" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>''',
+'''        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/hero-white-house-purple-door.jpg" alt="Manicured lawn and trimmed palms at a home serviced by Rapalo Landscaping" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/about-yard-cleanup.jpg" alt="Yard cleanup in progress by Rapalo Landscaping, patchy lawn area being restored" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>'''
+)
+rep(
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>',
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>'
+)
+rep(
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Una estilista," data-en="One stylist,">One stylist,</span><br /><span class="text-shine" data-es="manos de celebridad" data-en="celebrity hands">celebrity hands</span></h2>',
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo local," data-en="A local crew,">A local crew,</span><br /><span class="text-shine" data-es="cuidado de verdad" data-en="care you can trust">care you can trust</span></h2>'
+)
+rep(
+'<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Pure Artistry es el estudio privado de una estilista K-Tip specialist que ha peinado a atletas de la NBA y la MLB. Silk press, locs, trenzas y extensiones, todo en un suite uno-a-uno en el centro de Orlando." data-en="Pure Artistry is the private studio of a K-Tip specialist who has styled NBA and MLB athletes. Silk press, locs, braids and extensions, all in a one-on-one suite in downtown Orlando.">Pure Artistry is the private studio of a K-Tip specialist who has styled NBA and MLB athletes. Silk press, locs, braids and extensions, all in a one-on-one suite in downtown Orlando.</p>',
+'<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Rapalo Landscaping es un equipo de jardineria local liderado por Breylin, sirviendo North Miami y North Miami Beach. Se encargan de todo: corte y bordes de cesped, siembra de plantas, deshierbe, poda y limpiezas de temporada, con un objetivo simple: un jardin sano y bonito sin complicaciones para ti." data-en="Rapalo Landscaping is a local gardening team led by Breylin, serving North Miami and North Miami Beach. They handle everything from lawn mowing and edging to planting, weeding, pruning and seasonal cleanups, all built around one simple goal: a healthy, beautiful yard without the hassle for you.">Rapalo Landscaping is a local gardening team led by Breylin, serving North Miami and North Miami Beach. They handle everything from lawn mowing and edging to planting, weeding, pruning and seasonal cleanups, all built around one simple goal: a healthy, beautiful yard without the hassle for you.</p>'
+)
+rep(
+'<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Sus clientas lo confirman: un silk press que dura dos semanas completas en el calor de Orlando. 5.0 perfecto en 234 reseñas verificadas de Booksy." data-en="Her clients confirm it: silk presses that last a full two weeks in the Orlando heat. A perfect 5.0 across 234 verified Booksy reviews.">Her clients confirm it: silk presses that last a full two weeks in the Orlando heat. A perfect 5.0 across 234 verified Booksy reviews.</p>',
+'<p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Su politica es simple: si tu presupuesto cotizado no alcanza para el trabajo extra que encuentran, se detienen y lo dejan tal cual en vez de sumar costos sin avisarte primero. Tu sigues en control de cada trabajo. 4.76 de calificacion en 238 reseñas verificadas de GreenPal lo confirman." data-en="Their policy is simple: if your quoted budget does not cover extra work they find on-site, they pause and leave it as-is instead of adding costs without asking first. You stay in control of every job. A 4.76 rating across 238 verified GreenPal reviews backs it up.">Their policy is simple: if your quoted budget does not cover extra work they find on-site, they pause and leave it as-is instead of adding costs without asking first. You stay in control of every job. A 4.76 rating across 238 verified GreenPal reviews backs it up.</p>'
+)
+rep(
+'''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="234">234</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Personal care</p></div>''',
+'''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.76" data-decimals="2">4.76</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">GreenPal</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="238">238</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="70">70</span>%</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Repiten" data-en="Repeat">Repeat</p></div>'''
+)
+rep(
+'''            <img src="assets/raw/bk-2.jpg" alt="Pure Artistry, estilista" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(75,212,144,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Pure Artistry · <span class="text-[color:var(--ink-40)]" data-es="K-Tip Specialist" data-en="K-Tip Specialist">K-Tip Specialist</span></span>''',
+'''            <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(75,212,144,0.3)] bg-[rgba(75,212,144,0.1)] text-[color:var(--accent-deep)]">R</span>
+            <span class="text-sm font-light">Rapalo Landscaping · <span class="text-[color:var(--ink-40)]" data-es="North Miami, FL" data-en="North Miami, FL">North Miami, FL</span></span>'''
+)
+
+print("Experiencia OK")
+
+# ============================================================
+# STEP 10: EL METODO (How It Works)
+# ============================================================
+rep(
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>',
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Asi trabajamos" data-en="How it works">How it works</p>'
+)
+rep(
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así se trabaja" data-en="How it works">How it works</span> <span class="text-shine" data-es="aquí" data-en="here">here</span></h2>',
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Simple, de principio" data-en="Simple, start">Simple, start</span> <span class="text-shine" data-es="a fin" data-en="to finish">to finish</span></h2>'
+)
+rep(
+'''          <h3 class="font-display text-xl mb-3" data-es="Reserva online" data-en="Book online">Book online</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Eliges tu servicio en Booksy con precio y duración claros: silk press, retwist, braids o extensiones, y confirmas al instante." data-en="Pick your service on Booksy with clear price and duration: silk press, retwist, braids or extensions, and confirm instantly.">Pick your service on Booksy with clear price and duration: silk press, retwist, braids or extensions, and confirm instantly.</p>''',
+'''          <h3 class="font-display text-xl mb-3" data-es="Pides tu cotizacion" data-en="Request your quote">Request your quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Escribes por GreenPal o llamas al (786) 641-9360 y cuentas el tamaño de tu patio y que necesitas." data-en="Message them on GreenPal or call (786) 641-9360 and tell them your yard size and what you need.">Message them on GreenPal or call (786) 641-9360 and tell them your yard size and what you need.</p>'''
+)
+rep(
+'''          <h3 class="font-display text-xl mb-3" data-es="Consulta capilar" data-en="Hair consult">Hair consult</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Tu tipo de cabello, su salud y el estilo que buscas definen la técnica: proteger tu cabello natural es la prioridad." data-en="Your hair type, its health and the style you want define the technique: protecting your natural hair comes first.">Your hair type, its health and the style you want define the technique: protecting your natural hair comes first.</p>''',
+'''          <h3 class="font-display text-xl mb-3" data-es="Estimado en el sitio" data-en="On-site estimate">On-site estimate</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Breylin visita tu patio y te da opciones segun tu presupuesto: nunca suman costos sin tu aprobacion primero." data-en="Breylin visits your yard and offers options that fit your budget: they never add costs without your approval first.">Breylin visits your yard and offers options that fit your budget: they never add costs without your approval first.</p>'''
+)
+rep(
+'''          <h3 class="font-display text-xl mb-3" data-es="Manos a la obra" data-en="The work">The work</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Del silk press de 2 horas a las knotless de 7: cada servicio recibe su tiempo completo, sin citas dobles ni apuros." data-en="From the 2-hour silk press to 7-hour knotless braids: every service gets its full time, no double booking, no rushing.">From the 2-hour silk press to 7-hour knotless braids: every service gets its full time, no double booking, no rushing.</p>''',
+'''          <h3 class="font-display text-xl mb-3" data-es="Hacen el trabajo" data-en="They do the work">They do the work</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Corte, bordes, siembra, deshierbe o limpieza, con su propio equipo, en North Miami y North Miami Beach." data-en="Mowing, edging, planting, weeding or cleanup, with their own equipment, across North Miami and North Miami Beach.">Mowing, edging, planting, weeding or cleanup, with their own equipment, across North Miami and North Miami Beach.</p>'''
+)
+rep(
+'''          <h3 class="font-display text-xl mb-3" data-es="El toque final" data-en="The finish">The finish</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con el acabado que aguanta semanas y las indicaciones para cuidarlo en casa. Tu próxima cita queda agendada." data-en="You leave with a finish that lasts for weeks and the guidance to keep it that way at home. Next visit booked before you go.">You leave with a finish that lasts for weeks and the guidance to keep it that way at home. Next visit booked before you go.</p>''',
+'''          <h3 class="font-display text-xl mb-3" data-es="Cuidado continuo" data-en="Ongoing care">Ongoing care</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Reservas visitas puntuales o recurrentes, y puedes pausar o reprogramar cuando quieras, sin complicaciones." data-en="Book one-time or recurring visits, and skip or reschedule anytime, no hassle.">Book one-time or recurring visits, and skip or reschedule anytime, no hassle.</p>'''
+)
+
+print("Metodo OK")
+
+# ============================================================
+# STEP 11: SERVICIOS (VARIANTE ADAPTADA: no fixed prices, quote-based)
+# ============================================================
+rep(
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>',
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>'
+)
+rep(
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine">ritual</span></h2>',
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What they">What they</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>'
+)
+rep(
+'<p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por Pure Artistry en Booksy. Reserva con confirmación inmediata." data-en="Prices and durations as published by Pure Artistry on Booksy. Booking confirms instantly.">Precios y duraciones publicados por Pure Artistry en Booksy. Reserva con confirmación inmediata.</p>',
+'<p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada patio se cotiza segun tamaño y lo que necesite. Escribenos y pide tu cotizacion gratis." data-en="Every yard is quoted based on size and what it needs. Get in touch for a free quote.">Every yard is quoted based on size and what it needs. Get in touch for a free quote.</p>'
+)
+
+SERVICES_RE = r'<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">.*?</div>\s*(?=<p class="reveal text-center)'
+SERVICES_NEW = '''<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(75,212,144,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo mas pedido" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Corte &amp; Bordes" data-en="Lawn Care">Lawn Care</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Corte, bordes y fertilizacion para un cesped parejo y fresco en cada visita." data-en="Mowing, edging and fertilizing for a fresh, even cut on every visit.">Mowing, edging and fertilizing for a fresh, even cut on every visit.</p>
+          <div class="mt-auto">
+            <a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotizacion" data-en="Get a quote">Get a quote</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Diseño" data-en="Design">Design</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Siembra &amp; Diseño" data-en="Planting &amp; Design">Planting &amp; Design</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Flores, arbustos y plantas elegidas segun el espacio y la luz de tu jardin." data-en="Flowers, shrubs and greenery chosen for your yard's space and sunlight.">Flowers, shrubs and greenery chosen for your yard's space and sunlight.</p>
+          <div class="mt-auto">
+            <a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotizacion" data-en="Get a quote">Get a quote</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Mantenimiento" data-en="Maintenance">Maintenance</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Cuidado del Jardin" data-en="Yard Maintenance">Yard Maintenance</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Deshierbe, poda y retiro de escombros para mantener todo prolijo durante el año." data-en="Weeding, pruning and debris removal to keep things tidy year round.">Weeding, pruning and debris removal to keep things tidy year round.</p>
+          <div class="mt-auto">
+            <a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotizacion" data-en="Get a quote">Get a quote</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Sin costo" data-en="No cost">No cost</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Consulta Gratis" data-en="Free Consultation">Free Consultation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Una visita al sitio para evaluar tu jardin y encontrar opciones segun tu presupuesto." data-en="An on-site visit to assess your yard and find options that fit your budget.">An on-site visit to assess your yard and find options that fit your budget.</p>
+          <div class="mt-auto">
+            <a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotizacion" data-en="Get a quote">Get a quote</a>
+          </div>
+        </div>
+      </div>
+      '''
+rep_re(SERVICES_RE, SERVICES_NEW, n=1)
+
+rep(
+'<p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="También: virgin relaxers desde $150 y quick weave desde $140. Menú completo y disponibilidad en Booksy." data-en="Also: virgin relaxers from $150 and quick weaves from $140. Full menu and availability on Booksy.">Also: virgin relaxers from $150 and quick weaves from $140. Full menu and availability on Booksy.</span></p>',
+'<p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿Necesitas algo que no esta en la lista? Preguntanos igual: cotizan segun lo que tu patio necesite." data-en="Need something not on this list? Ask anyway: they quote based on what your yard actually needs.">Need something not on this list? Ask anyway: they quote based on what your yard actually needs.</span></p>'
+)
+
+print("Servicios OK")
+
+# ============================================================
+# STEP 12: GALERIA (4 real curated photos: 1 wide + 3 tiles, no reuse
+# within the grid; DESIGN.md prefers fewer real tiles over padding)
+# ============================================================
+rep(
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>',
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galeria" data-en="Gallery">Gallery</p>'
+)
+rep(
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="hair">hair</span></h2>',
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Cespedes" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="lawns">lawns</span></h2>'
+)
+rep(
+'''        <a href="https://www.instagram.com/pure.artistrysk/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @pure.artistrysk
+        </a>''',
+'''        <a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Rapalo Landscaping on GreenPal
+        </a>'''
+)
+
+GALLERY_RE = r'<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">.*?</div>\s*</div>\s*</section>'
+GALLERY_NEW = '''<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Entrada y carport" data-en="Driveway &amp; carport">Driveway &amp; carport</span><img src="assets/raw/gallery-carport-driveway-strips.jpg" alt="Mowed lawn with clean driveway edging at a carport home serviced by Rapalo Landscaping" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Cesped y palmeras" data-en="Lawn &amp; palms">Lawn &amp; palms</span><img src="assets/raw/gallery-white-house-palm.jpg" alt="Freshly mowed lawn with palm trees in front of a white house" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Trabajo terminado" data-en="Finished job">Finished job</span><img src="assets/raw/gallery-driveway-minivan.jpg" alt="Mowed lawn and driveway at a North Miami home after a Rapalo Landscaping visit" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Bordes y seto" data-en="Edging &amp; hedge">Edging &amp; hedge</span><img src="assets/raw/gallery-carport-hedge.jpg" alt="Trimmed hedge and mowed lawn next to a carport" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>'''
+rep_re(GALLERY_RE, GALLERY_NEW, n=1)
+
+print("Galeria OK")
+
+# ============================================================
+# STEP 13: OPINIONES (real verbatim quotes from GreenPal)
+# ============================================================
+rep(
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>',
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Reseñas" data-en="Reviews">Reviews</p>'
+)
+rep(
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What her">Lo que dicen</span> <span class="text-shine" data-es="sus clientas" data-en="clients say">sus clientas</span></h2>',
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What North Miami">Lo que dicen</span> <span class="text-shine" data-es="en North Miami" data-en="says">says</span></h2>'
+)
+rep(
+'<p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 234 reseñas verificadas en Booksy" data-en="5.0 out of 5 · 234 verified reviews on Booksy">5.0 out of 5 · 234 verified reviews on Booksy</span></p>',
+'<p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.76 de 5 · 238 reseñas verificadas en GreenPal" data-en="4.76 out of 5 · 238 verified reviews on GreenPal">4.76 out of 5 · 238 verified reviews on GreenPal</span></p>'
+)
+rep(
+'''        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I absolutely love my hair! What impressed me most was how well it held up in the Orlando heat: my silk press lasted a full TWO WEEKS, which is almost unheard of for me!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Chianita</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>''',
+'''        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Used Rapalo Landscaping and they came in and did a great job"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Jannette Rodriguez</span> <span class="text-[color:var(--ink-40)]">· GreenPal</span></figcaption>
+        </figure>'''
+)
+rep(
+'''        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Very pleasant, great job energy, good communication"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Rue</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>''',
+'''        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Thank you, Breylin! You always do great work and leave a beautiful yard behind :-)"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Mercedes Cordero</span> <span class="text-[color:var(--ink-40)]">· GreenPal</span></figcaption>
+        </figure>'''
+)
+rep(
+'''        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Always does a great job."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Joel</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+        </figure>''',
+'''        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great communication as always and excellent work."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Rene Ferretti</span> <span class="text-[color:var(--ink-40)]">· GreenPal</span></figcaption>
+        </figure>'''
+)
+rep(
+'<a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 234 reseñas en Booksy" data-en="Read all 234 reviews on Booksy">Read all 234 reviews on Booksy</a>',
+'<a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 238 reseñas en GreenPal" data-en="Read all 238 reviews on GreenPal">Read all 238 reviews on GreenPal</a>'
+)
+
+print("Opiniones OK")
+
+# ============================================================
+# STEP 14: UBICACION -> CONTACTO (VARIANTE ADAPTADA: no public storefront
+# address to visit, so no map; real photo instead, per FORGE-BRIEF 0.b)
+# ============================================================
+rep(
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>',
+'<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>'
+)
+rep(
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine">Orlando</span></h2>',
+'<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Trabajamos en" data-en="Serving">Serving</span> <span class="text-shine" data-es="North Miami" data-en="North Miami, FL">North Miami, FL</span></h2>'
+)
+rep(
+'''            <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">80 W Grant St, Suite 111, Studio 156, Orlando, FL 32806</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,212,144,0.4)]" href="https://www.google.com/maps?q=80+W+Grant+St,+Orlando,+FL+32806" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>''',
+'''            <p class="font-medium mb-1" data-es="Cotizacion gratis" data-en="Free quote">Free quote</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Pide tu cotizacion gratis por GreenPal o llama al (786) 641-9360. Suelen responder rapido." data-en="Request your free quote through GreenPal or call (786) 641-9360. They usually respond quickly.">Request your free quote through GreenPal or call (786) 641-9360. They usually respond quickly.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,212,144,0.4)]" href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener">Rapalo Landscaping on GreenPal</a>'''
+)
+rep(
+'''            <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,212,144,0.4)]" href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>''',
+'''            <p class="font-medium mb-1" data-es="Reseñas verificadas" data-en="Verified reviews">Verified reviews</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="4.76 de calificacion en 238 reseñas de GreenPal, ademas de 5.0 en Angi y HomeAdvisor." data-en="4.76 rating from 238 reviews on GreenPal, plus a 5.0 rating on Angi and HomeAdvisor.">4.76 rating from 238 reviews on GreenPal, plus a 5.0 rating on Angi and HomeAdvisor.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,212,144,0.4)]" href="https://www.homeadvisor.com/rated.rapalolandscaping.145086278.html" target="_blank" rel="noopener">Rapalo Landscaping on HomeAdvisor</a>'''
+)
+rep(
+'''            <p class="font-medium mb-1" data-es="Instagram" data-en="Instagram">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los estilos más recientes y escribe por DM cualquier duda antes de tu cita." data-en="See the latest styles and DM any questions before your appointment.">See the latest styles and DM any questions before your appointment.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,212,144,0.4)]" href="https://www.instagram.com/pure.artistrysk/" target="_blank" rel="noopener">@pure.artistrysk</a>''',
+'''            <p class="font-medium mb-1" data-es="Zona de servicio" data-en="Service area">Service area</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="North Miami, North Miami Beach y alrededores." data-en="North Miami, North Miami Beach and the surrounding area.">North Miami, North Miami Beach and the surrounding area.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,212,144,0.4)]" href="https://www.google.com/maps/place/North+Miami,+FL" target="_blank" rel="noopener" data-es="Ver zona" data-en="See area">See area</a>'''
+)
+# Icon for the "Verified reviews" card: swap the map-pin icon for a shield icon
+rep(
+'''            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reseñas verificadas" data-en="Verified reviews">Verified reviews</p>''',
+'''            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reseñas verificadas" data-en="Verified reviews">Verified reviews</p>'''
+)
+# Map iframe -> real photo (no public storefront address to visit; FORGE-BRIEF 0.b)
+rep(
+'''      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Pure Artistry, 80 W Grant St, Orlando FL"
+          src="https://www.google.com/maps?q=80+W+Grant+St,+Orlando,+FL+32806&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>''',
+'''      <div class="frame zoomable img-reveal reveal min-h-[380px]" style="transition-delay:180ms">
+        <img src="assets/raw/gallery-white-house-palm.jpg" alt="Freshly mowed lawn with palm trees at a home in North Miami serviced by Rapalo Landscaping" class="blur-up w-full h-full object-cover" loading="lazy" />
+      </div>'''
+)
+
+print("Ubicacion OK")
+
+# ============================================================
+# STEP 15: CTA FINAL
+# ============================================================
+rep(
+'<p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Tu cabello, tratado como arte." data-en="Your hair, treated like art.">Your hair, treated like art.</p>',
+'<p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Un jardin sano, sin complicaciones." data-en="A healthy yard, without the hassle.">A healthy yard, without the hassle.</p>'
+)
+rep(
+'<h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu silla" data-en="Your chair">Your chair</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span></h2>',
+'<h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu jardin" data-en="Your yard">Your yard</span> <span class="text-shine" data-es="te está esperando" data-en="is waiting">is waiting</span></h2>'
+)
+rep(
+'<p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva online en segundos: tu silk press, tu retwist o esas knotless que llevas planeando." data-en="Book online in seconds: your silk press, your retwist, or those knotless braids you have been planning.">Book online in seconds: your silk press, your retwist, or those knotless braids you have been planning.</p>',
+'<p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Pide tu cotizacion gratis hoy por GreenPal. Sin costos ocultos sin tu aprobacion, solo un jardin bien cuidado." data-en="Get your free quote today through GreenPal. No hidden costs added without your approval, just a well kept yard.">Get your free quote today through GreenPal. No hidden costs added without your approval, just a well kept yard.</p>'
+)
+rep(
+'''        <a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+        <a href="https://www.instagram.com/pure.artistrysk/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>''',
+'''        <a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Pedir cotizacion en GreenPal" data-en="Get a quote on GreenPal">Get a quote on GreenPal</a>
+        <a href="tel:+17866419360" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm">(786) 641-9360</a>'''
+)
+
+print("CTA final OK")
+
+# ============================================================
+# STEP 16: FOOTER
+# ============================================================
+rep('<span class="foot-mark" aria-hidden="true">Pure Artistry</span>', '<span class="foot-mark" aria-hidden="true">Rapalo</span>')
+rep(
+'''        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/bk-2.jpg" alt="Pure Artistry" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(150,232,191,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Pure Artistry</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Hair studio en el centro de Orlando, FL. Atención con cita previa." data-en="Hair studio in downtown Orlando, FL. By appointment only.">Hair studio in downtown Orlando, FL. By appointment only.</p>''',
+'''        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(150,232,191,0.35)] bg-[rgba(75,212,144,0.1)] text-[color:var(--accent-deep)]">R</span>
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Rapalo Landscaping</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Cuidado de cesped y jardines en North Miami y North Miami Beach, FL. Cotizacion gratis." data-en="Lawn care and yard maintenance in North Miami and North Miami Beach, FL. Free quotes.">Lawn care and yard maintenance in North Miami and North Miami Beach, FL. Free quotes.</p>'''
+)
+rep(
+'''        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>80 W Grant St, Suite 111, Studio 156, Orlando, FL 32806</p>
+        <p><a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="hover:text-[#abe9ca]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>''',
+'''        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>North Miami, FL, United States</p>
+        <p><a href="tel:+17866419360" class="hover:text-[#abe9ca]">(786) 641-9360</a></p>
+        <p><a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="hover:text-[#abe9ca]" data-es="Cotizacion gratis en GreenPal" data-en="Free quote on GreenPal">Free quote on GreenPal</a></p>'''
+)
+rep(
+'''        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/pure.artistrysk/" target="_blank" rel="noopener" class="hover:text-[#abe9ca]">Instagram · @pure.artistrysk</a></p>''',
+'''        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Tambien verificados en" data-en="Also verified on">Also verified on</p>
+        <p><a href="https://www.homeadvisor.com/rated.rapalolandscaping.145086278.html" target="_blank" rel="noopener" class="hover:text-[#abe9ca]">HomeAdvisor · 5.0</a></p>
+        <p><a href="https://www.angi.com/companylist/us/fl/miami/rapalo-landscaping-reviews-1.htm" target="_blank" rel="noopener" class="hover:text-[#abe9ca]">Angi · 5.0</a></p>'''
+)
+rep(
+'<p class="text-xs text-[color:var(--ink-40)]">© 2026 Pure Artistry.</p>',
+'<p class="text-xs text-[color:var(--ink-40)]">© 2026 Rapalo Landscaping.</p>'
+)
+
+print("Footer OK")
+
+# ============================================================
+# STEP 17: Floating book button + icon color (uses accent-deep-on-dark hex)
+# ============================================================
+rep(
+'''  <a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#081c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>''',
+'''  <a href="https://www.yourgreenpal.com/rapalo-landscaping" target="_blank" rel="noopener" class="book-float" aria-label="Get a free quote on GreenPal">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#081c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>'''
+)
+
+print("Floating button OK")
+
+# ============================================================
+# STEP 18: Any leftover Booksy/Pure Artistry/Orlando/Instagram references
+# (safety net; should be zero after the above, asserted for certainty)
+# ============================================================
+for leftover in ["Pure Artistry", "pure.artistrysk", "booksy.com", "Booksy", "Orlando", "silk press", "Silk Press", "K-Tip"]:
+    assert leftover not in h, f"LEFTOVER FOUND: {leftover!r}"
+
 open(PATH, "w", encoding="utf-8").write(h)
-print("Checkpoint 3 written (+marquee)")
+print("BUILD COMPLETE:", PATH)
