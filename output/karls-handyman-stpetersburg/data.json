@@ -1,0 +1,57 @@
+{
+ "slug": "karls-handyman-stpetersburg",
+ "status": "failed",
+ "failed_reason": "insufficient real photos",
+ "name": "Karl with a \"K\" Handyman & Tree Service LLC",
+ "owner": "Karl W. Recine (Karl Recine)",
+ "city": "St. Petersburg, FL",
+ "niche": "handyman / tree service (adapted variant per FORGE-BRIEF 0.b: no bookable appointments, no published prices)",
+ "address": "5630 10th Ave N, St. Petersburg, FL 33710",
+ "phone": "(727) 430-1382",
+ "email": "Karlrecine@gmail.com",
+ "email_verification_note": "Repeated consistently across the original discovery pass and multiple business-directory sources (Manta.com contact record, D&B business directory listing snippet) and matches the owner's real name (Karl W. Recine) found independently via Sunbiz/bizprofile.net Florida LLC filing (registered agent 'Recine, Karl W', manager 'Recine, Karl'). Could NOT be independently confirmed on the Facebook About tab because Facebook fully login-walls this page (see photos section below) even via a real headless Chromium browser with no auth. Treat as probably-real but not Facebook-cross-checked.",
+ "phone_note": "Confirmed identical across Birdeye JSON-LD (telephone field), Manta.com listing, and the original discovery pass. One Google review on Birdeye (Tony S, 3 stars, dated 2025-05-27, 'a year ago' relative to Birdeye's snapshot) states 'Phone number is out of service. No way to contact them.' This is the only negative signal found; it is more than a year old and contradicted by the number still being listed as current on every directory checked. Not independently re-verified by calling (outreach/contact channels are prohibited during research).",
+ "website_check": {
+  "karlwithak.com": "GoDaddy 'domain for sale' parked page (forsale.godaddy.com redirect). Not a real business site.",
+  "www.karlwithak.com": "Same GoDaddy parked/for-sale redirect.",
+  "karlwithak.net": "Domain parking lander (img1.wsimg.com parking-lander script, GoDaddy/WSIMG). Not a real business site.",
+  "karlwithak.biz": "This IS the business's original domain (appears as 'url' in Birdeye's JSON-LD and as the 'Visit Website' link on Manta, including a cached search-engine reference to a /schedule-appointment page). It no longer resolves/connects: repeated attempts (curl direct, curl via the session's egress proxy, DNS lookup) all failed or were rejected at the proxy's CONNECT step, consistent across many retries. Domain is dead/expired, not a live redesign target.",
+  "conclusion": "has_own_site: false. No live website found under any variant tried."
+ },
+ "rating": 4.9,
+ "review_count": 28,
+ "rating_source": "JSON-LD LocalBusiness aggregateRating embedded in reviews.birdeye.com/karl-with-a-k-handymantree-service-166333598016324 (Birdeye aggregates the business's real Google reviews). ratingValue 4.9, reviewCount 28, matches the figures given at task start.",
+ "hours": "Monday-Friday 9:00am-5:00pm, closed Saturday-Sunday (from Birdeye JSON-LD openingHoursSpecification)",
+ "google_place_id": "ChIJf1N7igLjwogRrVHCLoXVz8A",
+ "description_source": "Handling all of Pinellas County's handyman and Tree Service needs. Honest, reliable, and we take Pride in our work. Give us a call today! (Birdeye JSON-LD description, presumably pulled from the business's own Google Business Profile description). Additional services cited by search-aggregated sources: carpet and vinyl installation, debris hauling, pressure washing, landscaping, tree trimming/cutting/removal, garage door rebuilds, bathroom remodeling, crawl space covering, property maintenance for owners who travel.",
+ "reviews_found": [
+  { "author": "West Coast Tropical Painting, Inc.", "rating": 5, "date": "2025-03-17", "quote": "Karel and his Company has done many projects for us and he does a fantastic job every time we highly recommend Karel’s Services for all your home improvements!!!!!!!", "source": "Google (via Birdeye aggregation)" },
+  { "author": "Patrick Sotomayor", "rating": 5, "date": "2023-04-07", "quote": "Great 👍 Job! Would hire again!!", "source": "Google (via Birdeye aggregation)" },
+  { "author": "Kent Ulrich", "rating": 5, "date": "2022-06-04", "quote": "We see Karl's truck a lot as he does work for our neighbor on a regular basis. We used Karl to rebuild our carriage style garage doors. He used Trex composite decking material instead of wood, as the rain pouring down from our roof had caused our wood garage doors to rot in about five years. Probably due to the weight difference between the composite material and wood, the doors didn't close properly after he connected the doors to our automatic door opener. Karl had no experience with our brand of opener, so he went home and studied YouTube videos on how to adjust the opener. Karl came back the next morning and correctly adjusted the opener, so that the garage doors now open and close even better than they did before we replaced the old doors. I would definitely use Karl again.", "source": "Google (via Birdeye aggregation)" },
+  { "author": "Natasha Krause", "rating": 5, "date": "2022-07-03", "quote": null, "source": "Google (via Birdeye aggregation), rating only, no text" },
+  { "author": "Tony S (Tony)", "rating": 3, "date": "2025-05-27", "quote": "Phone number is out of service. No way to contact them.", "source": "Google (via Birdeye aggregation), NOT used as testimonial (negative, unrepresentative, more than a year old)" }
+ ],
+ "reviews_note": "Extracted from the Next.js data payload embedded in reviews.birdeye.com's server-rendered HTML (self.__next_f.push chunks), which mirrors Birdeye's aggregation of this business's real Google reviews. 3 usable positive verbatim quotes with attributed names (West Coast Tropical Painting Inc., Patrick Sotomayor, Kent Ulrich), meeting the pipeline's 3-5 minimum.",
+ "photos_search": {
+  "sources_checked": [
+   "Facebook page facebook.com/karlwithakhandyman (About/photos): fully login-walled. Verified with plain curl, WebFetch, mbasic.facebook.com, m.facebook.com, and a real headless Chromium browser (Playwright, full 'chrome' binary with QUIC/ECH disabled per known proxy workaround) loading both the page URL and the facebook.com/plugins/page.php embeddable widget: all paths redirect to the 'Log into Facebook' wall with zero business content or post images exposed.",
+   "graph.facebook.com/karlwithakhandyman/picture (legacy unauthenticated Graph API picture edge): WORKS without login. Returned exactly ONE real photo, the Page's profile picture, verified as a real 949x960 JPEG (169KB). No equivalent unauthenticated edge exists for cover photo or post photos (those require an OAuth app token).",
+   "Google Maps place page (place_id ChIJf1N7igLjwogRrVHCLoXVz8A), loaded with the same real-browser method: the DOM explicitly renders 'result-no-thumbnail-1x.png' as the listing's photo placeholder, i.e. this Google Business Profile currently has NO photos uploaded.",
+   "Birdeye (reviews.birdeye.com/karl-with-a-k-handymantree-service-166333598016324): the only 'image' field in its JSON-LD/page data is a generic category stock cover (cover-image/home-services.png), explicitly a shared Birdeye stock asset for the Home Services category, not tied to this business. Searched the full embedded review payload for photos/images/media/photoUrl fields tied to reviews: none present (reviewer avatars are all Birdeye's shared default-profile.png placeholder).",
+   "Manta.com listing: unclaimed, 0 photos (page explicitly invites the owner to 'Claim it for free to... Add business hours, photos').",
+   "Yelp: no discoverable Yelp business page for this business (searched directly and via site:yelp.com; only unrelated Yelp handyman listings for other companies came up).",
+   "BBB: no BBB profile found for this business under any name variant.",
+   "Nextdoor: no Nextdoor business page found (search surfaced only unrelated handymen also named Karl in other cities).",
+   "Thumbtack, Angi, HomeAdvisor: checked (search + direct category page fetch for Thumbtack's St. Petersburg handyman list); business not listed on any of them.",
+   "Instagram: no Instagram account found for this business under any handle variant; the closest name match (@karlwithak_1) is an unrelated personal account (Karl Dragosz, 587 followers) with no connection to this business.",
+   "Wayback Machine (web.archive.org), to check for archived photos from the now-dead karlwithak.biz domain: blocked by this session's egress policy ('Blocked by egress policy' on both http and https), could not be checked."
+  ],
+  "usable_real_photos_found": 1,
+  "photo_file": "assets/raw/fb-logo.jpg",
+  "photo_description": "Business's real Facebook Page profile picture, retrieved via the unauthenticated graph.facebook.com/<page>/picture endpoint. Verified real JPEG, 949x960px, 169KB. This is a company logo/branding image, not a project or truck photo.",
+  "conclusion": "Only 1 real, usable, business-specific photo could be obtained after checking every source listed in the task brief plus additional channels (Graph API picture edge, Facebook page-plugin embed, Google Maps via real headless browser, Wayback Machine attempt). This is below the hard minimum of 5 real photos required by PIPELINE.md fase 3 / HARD RULES. No stock or fabricated imagery was substituted."
+ },
+ "language": "en",
+ "research_degradado": false,
+ "research_degradado_note": "Not a degraded-research case per FORGE-BRIEF 0.b (that clause covers IG research via a Railway relay service that only returns photo URLs, masking the real bio/about). Here every channel was reached directly (Graph API, Google Maps DOM, Birdeye JSON payload, Manta HTML) and each one affirmatively shows zero or near-zero photos (Google Maps explicit no-thumbnail placeholder, Manta explicit 'add photos' unclaimed state, Birdeye only generic stock), not an inability to see the data."
+}
