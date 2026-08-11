@@ -1,496 +1,143 @@
 {
- "booksy_url": "https://booksy.com/en-us/611517_moon-beauty-studios_skin-care_15889_miami",
  "slug": "moon-beauty-studios-westchester",
  "name": "Moon Beauty Studios",
- "schema_type": "BeautySalon",
- "address": {
-  "@type": "PostalAddress",
-  "streetAddress": "6355 SW 8th St floor 3, West Miami, 33144",
-  "addressCountry": "us",
-  "addressLocality": "Miami, FL",
-  "addressRegion": "Florida",
-  "postalCode": "33144"
- },
- "geo": {
-  "@type": "GeoCoordinates",
-  "latitude": 25.763468212110606,
-  "longitude": -80.29846306890249
- },
+ "also_known_as": "Moon Beauty Studios V&Z",
+ "niche": "nail salon boutique / beauty studio (nails, lash, brows, facials)",
+ "schema_type": "NailSalon",
+ "city": "Miami (Westchester), FL",
+ "address_raw": "6355 SW 8th St, Floor 3, Miami, FL 33144 (inside Sola Salon Studios, Westchester)",
+ "location_note": "Private suite inside a shared salon-suites building (Sola Salon Studios Westchester), not a standalone storefront. No public exterior facade photo available; gallery and hero use real interior/service photos instead.",
+ "geo": { "latitude": 25.763468212110606, "longitude": -80.29846306890249 },
+ "phone": "+17863086198",
+ "phone_display": "(786) 308-6198",
+ "phone_source": "pro.makeup business directory (https://pro.makeup/salon/united-states/west-miami/moon-beauty-studios-vz), corroborated by exact address match and exact staff names (Zarahy Carrera, Valentina Moreno) against the Booksy listing. NOT found on Booksy itself (Booksy telephone field was null) or on the Instagram profile (IG blocked automated fetch, see research_notes).",
+ "email": null,
+ "email_note": "No public email found after deep search: Booksy payload (telephone/email fields), Instagram bio (blocked, see research_notes), Facebook (no dedicated page found for this business), pro.makeup directory listing. Outreach will be pending_manual via Instagram DM or phone.",
+ "instagram": "moonbeautystudios",
+ "instagram_url": "https://www.instagram.com/moonbeautystudios/",
+ "booking_url": "https://booksy.com/en-us/611517_moon-beauty-studios_skin-care_15889_miami",
+ "booking_platform": "Booksy",
+ "has_own_site": false,
+ "has_own_site_check": "Verified independently (in addition to the discovery-phase check): moonbeautystudios.com, moonbeautystudio.com, moonbeautystudiosmiami.com, moon-beauty-studios.com, moonbeautystudios.net and moonbeautystudios.co all fail DNS resolution (NXDOMAIN via python socket.gethostbyname). Booksy's own sameAs/website_candidates field is empty (no external domain listed). No domain found in the Instagram bio or Facebook.",
  "rating": 5.0,
  "reviews_count": 65,
- "hours": [
+ "reviews_count_source": "Booksy JSON-LD aggregateRating (also independently confirmed by user's discovery research). Note: a third-party directory (pro.makeup) shows 36 reviews for the same business, likely a stale snapshot; Booksy is the primary source of truth and is used on the site.",
+ "hours": {
+  "monday_tuesday": "7:00 AM - 8:00 PM",
+  "wednesday_to_saturday": "8:00 AM - 3:00 PM",
+  "sunday": "closed (not listed in Booksy hours)"
+ },
+ "staff": ["Zarahy Carrera", "Valentina Moreno"],
+ "staff_note": "The 'V&Z' in some listings (e.g. pro.makeup) stands for these two names. Reviews repeatedly name both as the specialists performing services.",
+ "language": "es",
+ "language_note": "Reviews and menu show a genuine bilingual (Spanish/English) clientele typical of Westchester, Miami. Decided Spanish as the default site language based on: (1) several full-Spanish verbatim reviews (Genesis, and others), (2) the business's own menu on Booksy uses native Spanish service names not translated to English (e.g. 'Quiropedia Maintenance', 'Linea del Ombligo', 'Axilas', 'Bozo', 'Nasal'), indicating Spanish is used internally, not just by some customers, (3) the neighborhood (Westchester, Miami-Dade) is overwhelmingly Hispanic. Automated Booksy heuristic leaned 'en' but that counted duplicate review text; qualitative reading of the unique reviews plus the menu evidence supports Spanish as primary. Site is fully bilingual (ES default / EN toggle).",
+ "brand_vibe": "Warm, feminine boutique nail studio. Minimalist crescent-moon monogram logo in warm taupe/mocha on cream. Photos show soft nude/blush manicures, elegant navy-blue nail art with rhinestones, natural-effect lash extensions, and a friendly, detail-oriented atmosphere (reviews mention coffee service). Site built on the light-v2 skeleton with a new deep plum/mauve palette (accent-deep #6b3f5e, accent-mid #a06a8c) not reused from prior builds.",
+ "reviews_verbatim": [
   {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Monday",
-    "Tuesday"
-   ],
-   "opens": "07:00",
-   "closes": "20:00"
+   "author": "Ivette A.",
+   "quote": "I absolutely loved the service. Everyone was super friendly and I Loved my nails. She did such an amazing job preparing and cleaning my nails.",
+   "quote_full_bilingual": "I absolutely loved the service. Everyone was super friendly and I Loved my nails.She did such an amazing job preparing and cleaning my nails.\nMe encanto el servicio todos fueron muy amables y ame mis unas. Ella hizo un gran trabajo preparando y limpiando mis unas la super recomiendo.",
+   "rating": 5,
+   "source": "Booksy",
+   "language": "en/es (bilingual review)"
   },
   {
-   "@type": "OpeningHoursSpecification",
-   "dayOfWeek": [
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-   ],
-   "opens": "08:00",
-   "closes": "15:00"
+   "author": "Genesis S.",
+   "quote": "Me encanta este lugar las chicas son super amables preparan un cafe divino y las unas me las an hecho crecer muchisimo super detallistas",
+   "rating": 5,
+   "source": "Booksy",
+   "language": "es"
+  },
+  {
+   "author": "Monica A.",
+   "quote": "I came to Zarahy needing a manicure correction after getting botched at another place. She was extremely detailed, and made sure to check in with me throughout to make sure I was liking the process. Great attention to detail! The space is also comfortable and cute.",
+   "rating": 5,
+   "source": "Booksy",
+   "language": "en"
+  },
+  {
+   "author": null,
+   "quote": "Best nail lady out there. Not only is the service, and work good, but what a great atmosphere too. So happy i found Zarahy!",
+   "rating": null,
+   "source": "Booksy",
+   "language": "en",
+   "note": "Verbatim from Booksy review list, author name not exposed by the platform for this entry (unverified author, not used as a named quote on the site)."
+  },
+  {
+   "author": null,
+   "quote": "The most amazing and friendly atmosphere! Zarahy and Valentina are gentle, attentive and very detailed! Their work is incredible and precise.",
+   "rating": null,
+   "source": "Booksy",
+   "language": "en",
+   "note": "Verbatim from Booksy review list, author name not exposed by the platform for this entry (unverified author, not used as a named quote on the site)."
   }
  ],
- "staff": [
-  {
-   "name": "ZarahyCarrera",
-   "description": null
-  },
-  {
-   "name": "Valentina Moreno",
-   "description": null
-  }
+ "reviews_used_on_site": ["Ivette A.", "Genesis S.", "Monica A."],
+ "services_full_menu_source": "Booksy booking page (booksy_dossier.py), 68 total service line items extracted from JSON-LD makesOffer array with prices; ~23 also had exact durations.",
+ "services_featured_on_site": [
+  { "name": "Mani + Pedi", "price": "$65", "duration": "1h 30min" },
+  { "name": "Full Set Wispy", "price": "$140", "duration": "2h 30min" },
+  { "name": "Hydrafacial", "price": "$190", "duration": "1h 40min" },
+  { "name": "Brow Lamination + Wax + Tint", "price": "$115", "duration": "1h 25min" }
  ],
- "same_as": [
-  "https://www.instagram.com/moonbeautystudios/"
- ],
- "instagram": "moonbeautystudios",
- "website_candidates": [],
- "phone": null,
- "services": [
-  {
-   "name": "Pedicure Girls",
-   "price": 15,
-   "duration": "30min"
-  },
-  {
-   "name": "Pedicure",
-   "price": 40,
-   "duration": null
-  },
-  {
-   "name": "Full Pedi",
-   "price": 65,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "Pedicure Gel",
-   "price": 45,
-   "duration": null
-  },
-  {
-   "name": "QuiropediaCombinada",
-   "price": 99,
-   "duration": null
-  },
-  {
-   "name": "Quiropedia Maintenance",
-   "price": 75,
-   "duration": null
-  },
-  {
-   "name": "Remove",
-   "price": 30,
-   "duration": null
-  },
-  {
-   "name": "Lash lifting",
-   "price": 90,
-   "duration": null
-  },
-  {
-   "name": "Lash lifting + tint",
-   "price": 95,
-   "duration": "1h 10min"
-  },
-  {
-   "name": "Full set wispy",
-   "price": 140,
-   "duration": "2h 30min"
-  },
-  {
-   "name": "Hybrid Full set",
-   "price": 130,
-   "duration": "2h 30min"
-  },
-  {
-   "name": "Classic Full Set",
-   "price": 110,
-   "duration": null
-  },
-  {
-   "name": "Volumen full Set",
-   "price": 150,
-   "duration": "2h 30min"
-  },
-  {
-   "name": "Wispy Refill - 3 Week",
-   "price": 110,
-   "duration": null
-  },
-  {
-   "name": "Classic Refill - 3 Week",
-   "price": 90,
-   "duration": null
-  },
-  {
-   "name": "Volume Refill - 3 Week",
-   "price": 110,
-   "duration": null
-  },
-  {
-   "name": "Wispy Refill - 2 Week",
-   "price": 80,
-   "duration": null
-  },
-  {
-   "name": "Classic Refill - 2 Week",
-   "price": 65,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "Hybrid Refill - 3 Week",
-   "price": 99,
-   "duration": null
-  },
-  {
-   "name": "Hybrid Refill - 2 Week",
-   "price": 75,
-   "duration": null
-  },
-  {
-   "name": "Volume Refill - 2 Week",
-   "price": 85,
-   "duration": null
-  },
-  {
-   "name": "DERMAPLANING",
-   "price": 160,
-   "duration": "1h 10min"
-  },
-  {
-   "name": "DEEP FACIAL",
-   "price": 120,
-   "duration": "1h"
-  },
-  {
-   "name": "DERMAPEN/ MICRONEEDLING",
-   "price": 180,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "HYDRAFACIAL",
-   "price": 190,
-   "duration": "1h 40min"
-  },
-  {
-   "name": "RUBBER + Pedi GEL",
-   "price": 110,
-   "duration": null
-  },
-  {
-   "name": "RUBBER + Pedi Regular",
-   "price": 105,
-   "duration": "3h 30min"
-  },
-  {
-   "name": "Mani + Pedi",
-   "price": 65,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "Gel - Mani + Pedi",
-   "price": 80,
-   "duration": null
-  },
-  {
-   "name": "Mani+Pedi Girls",
-   "price": 30,
-   "duration": null
-  },
-  {
-   "name": "Brow lamination +Wax+ Tint",
-   "price": 115,
-   "duration": "1h 25min"
-  },
-  {
-   "name": "Detox ionic  👣",
-   "price": 50,
-   "duration": null
-  },
-  {
-   "name": "Ear Candling👂🏼",
-   "price": 40,
-   "duration": null
-  },
-  {
-   "name": "HAND 🤚🏼",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "FEET 👣",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "✋🏼 Hand and Pedi🦶🏼",
-   "price": 30,
-   "duration": null
-  },
-  {
-   "name": "GEL",
-   "price": 10,
-   "duration": null
-  },
-  {
-   "name": "Stronger Gel",
-   "price": 15,
-   "duration": "30min"
-  },
-  {
-   "name": "Russian manicure",
-   "price": 85,
-   "duration": null
-  },
-  {
-   "name": "Apress Gel-X",
-   "price": 75,
-   "duration": null
-  },
-  {
-   "name": "Rubber Base",
-   "price": 70,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "Luminary",
-   "price": 70,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "Fix nails ❤️‍🩹",
-   "price": 5,
-   "duration": null
-  },
-  {
-   "name": "Light Rubber Application",
-   "price": 15,
-   "duration": "30min"
-  },
-  {
-   "name": "Manicure",
-   "price": 35,
-   "duration": null
-  },
-  {
-   "name": "Manicure gel",
-   "price": 45,
-   "duration": null
-  },
-  {
-   "name": "Manicure Girls",
-   "price": 15,
-   "duration": "30min"
-  },
-  {
-   "name": "Design simple",
-   "price": 5,
-   "duration": null
-  },
-  {
-   "name": "Design or French",
-   "price": 10,
-   "duration": null
-  },
-  {
-   "name": "Full design 3D",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "French + design",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "Design cat eye",
-   "price": 5,
-   "duration": null
-  },
-  {
-   "name": "French with crome design",
-   "price": 15,
-   "duration": "30min"
-  },
-  {
-   "name": "Design ombré aerógrafo",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "MANICURE",
-   "price": 40,
-   "duration": null
-  },
-  {
-   "name": "PEDICURE",
-   "price": 45,
-   "duration": null
-  },
-  {
-   "name": "Manicure Gel",
-   "price": 50,
-   "duration": null
-  },
-  {
-   "name": "Pedicure Gel",
-   "price": 55,
-   "duration": "1h 30min"
-  },
-  {
-   "name": "Henna",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "Wax + Henna",
-   "price": 50,
-   "duration": null
-  },
-  {
-   "name": "BOZO",
-   "price": 10,
-   "duration": null
-  },
-  {
-   "name": "NASAL",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "Waxing",
-   "price": 20,
-   "duration": null
-  },
-  {
-   "name": "Waxing Eyebrow",
-   "price": 30,
-   "duration": null
-  },
-  {
-   "name": "LINEA DEL OMBLIGO",
-   "price": 25,
-   "duration": "30min"
-  },
-  {
-   "name": "Brow Lamination",
-   "price": 90,
-   "duration": null
-  },
-  {
-   "name": "AXILAS",
-   "price": 35,
-   "duration": null
-  },
-  {
-   "name": "Social Makeup",
-   "price": 100,
-   "duration": "1h 10min"
-  }
- ],
- "reviews": [
-  {
-   "author": "Ivette A…",
-   "body": "I absolutely loved the service. Everyone was super friendly  and I Loved my nails.She did such an amazing job preparing and cleaning my nails.\nMe encanto el servicio todos fueron muy amables y amé mis uñas. Ella hizo un gran trabajo preparando y limpiando mis uñas la super recomiendo.",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Génesis S…",
-   "body": "Me encanta este lugar las chicas son súper amables preparan un café divino y las uñas me las an hecho crecer muchísimo súper detallistas 😍😍",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Monica A…",
-   "body": "I came to Zarahy needing a manicure correction after getting botched at another place. She was extremely detailed, and made sure to check in with me throughout to make sure I was liking the process. Great attention to detail! The space is also comfortable and cute.",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": null,
-   "body": "I absolutely loved the service. Everyone was super friendly  and I Loved my nails.She did such an amazing job preparing and cleaning my nails.\nMe enca...",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "I came to Zarahy needing a manicure correction after getting botched at another place. She was extremely detailed, and made sure to check in with me t...",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Mi lugar favorito ❣️",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Demasiado Demasiado Feliz es un increible lugar muy atentos y profesionales me encanto la experiencia",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Obsessed!🤍 highly recommend",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "If you want an amazing pedicure and manicure, Zarahi is that girl! My nails are literal perfection! 10/10 recommend!",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Best nail lady out there. Not only is the service, and work good, but what a great atmosphere too. So happy i found Zarahy!",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Encantada con el servicio, mis uñas quedaron justo como quería algo suave que se viera muy natural💜",
-   "rating": null,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "The most amazing and friendly atmosphere! Zarahy and Valentina are gentle, attentive and very detailed! Their work is incredible and precise. Nails ar...",
-   "rating": null,
-   "author_verified": false
-  }
- ],
- "named_reviews": [
-  {
-   "author": "Ivette A…",
-   "body": "I absolutely loved the service. Everyone was super friendly  and I Loved my nails.She did such an amazing job preparing and cleaning my nails.\nMe encanto el servicio todos fueron muy amables y amé mis uñas. Ella hizo un gran trabajo preparando y limpiando mis uñas la super recomiendo.",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Génesis S…",
-   "body": "Me encanta este lugar las chicas son súper amables preparan un café divino y las uñas me las an hecho crecer muchísimo súper detallistas 😍😍",
-   "rating": 5,
-   "author_verified": true
-  },
-  {
-   "author": "Monica A…",
-   "body": "I came to Zarahy needing a manicure correction after getting botched at another place. She was extremely detailed, and made sure to check in with me throughout to make sure I was liking the process. Great attention to detail! The space is also comfortable and cute.",
-   "rating": 5,
-   "author_verified": true
-  }
- ],
- "language": "en"
+ "services_menu_categories": {
+  "Manicure": [
+   { "name": "Manicure", "price": "$35" },
+   { "name": "Manicure Gel", "price": "$45" },
+   { "name": "Rubber Base", "price": "$70", "duration": "1h 30min" },
+   { "name": "Russian manicure", "price": "$85" },
+   { "name": "Apress Gel-X", "price": "$75" }
+  ],
+  "Pedicure": [
+   { "name": "Pedicure", "price": "$40" },
+   { "name": "Pedicure Gel", "price": "$45" },
+   { "name": "Full Pedi", "price": "$65", "duration": "1h 30min" },
+   { "name": "Quiropedia Maintenance", "price": "$75" }
+  ],
+  "Lashes": [
+   { "name": "Classic Full Set", "price": "$110" },
+   { "name": "Hybrid Full set", "price": "$130", "duration": "2h 30min" },
+   { "name": "Volumen full Set", "price": "$150", "duration": "2h 30min" },
+   { "name": "Lash lifting + tint", "price": "$95", "duration": "1h 10min" }
+  ],
+  "Brows & Waxing": [
+   { "name": "Brow Lamination", "price": "$90" },
+   { "name": "Waxing Eyebrow", "price": "$30" },
+   { "name": "Waxing", "price": "$20" },
+   { "name": "AXILAS (underarms)", "price": "$35" }
+  ],
+  "Facials & Skin": [
+   { "name": "DERMAPLANING", "price": "$160", "duration": "1h 10min" },
+   { "name": "DEEP FACIAL", "price": "$120", "duration": "1h" },
+   { "name": "DERMAPEN/ MICRONEEDLING", "price": "$180", "duration": "1h 30min" },
+   { "name": "HYDRAFACIAL", "price": "$190", "duration": "1h 40min" }
+  ],
+  "Nail Art & Extras": [
+   { "name": "Design or French", "price": "$10" },
+   { "name": "Full design 3D", "price": "$20" },
+   { "name": "French + design", "price": "$20" },
+   { "name": "Social Makeup", "price": "$100", "duration": "1h 10min" }
+  ]
+ },
+ "photos": {
+  "source": "Booksy gallery (booksy_gallery.py), downloaded via curl with Chrome user-agent, 16 valid images verified with `file`. All resized to max 1200px wide before use.",
+  "visual_curation_notes": "Manually reviewed every photo (Read tool) before selecting. Excluded from gallery: bk-1.jpg (banner graphic with text overlay), bk-8.jpg (facial/ear-candling treatment with eyes closed mid-procedure), bk-13.jpg and bk-14.jpg (staff selfies/portraits, per rule only usable as small avatar, bk-14 used as avatar in About section), bk-5.jpg and bk-12.jpg (redundant duplicates of used shots).",
+  "used_in_site": {
+   "logo/favicon": "bk-2.jpg (crescent moon monogram)",
+   "hero": "bk-11.jpg (navy blue French manicure with rhinestones)",
+   "about_1": "bk-10.jpg (nude manicure)",
+   "about_2": "bk-3.jpg (brow/lash close-up)",
+   "about_avatar": "bk-14.jpg (professional studio portrait, captioned generically as 'Moon Beauty Studios' team, not attributed to a specific unverified name)",
+   "gallery_wide": "bk-4.jpg (lash extensions close-up)",
+   "gallery_tiles": ["bk-9.jpg (foil-wrapped gel manicure)", "bk-15.jpg (red pedicure)", "bk-6.jpg (volume lash close-up)", "bk-16.jpg (nude ombre manicure)", "bk-7.jpg (ionic foot detox)"]
+  },
+  "downloaded_not_used": ["bk-1.jpg", "bk-5.jpg", "bk-8.jpg", "bk-12.jpg", "bk-13.jpg"]
+ },
+ "build": {
+  "base_template": "templates/light-v2/index.html",
+  "palette": { "accent_deep": "#6b3f5e", "accent_mid": "#a06a8c", "bg": "#faf3f6", "bg2": "#ecdde6", "ink": "#2f2230", "note": "New plum/mauve palette, not reused from previously built demos (coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark)." },
+  "gate_status": "GATE OK (es)"
+ },
+ "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/moon-beauty-studios-westchester/",
+ "research_notes": "Automated Instagram profile fetch (web_profile_info endpoint and Playwright driver) was blocked (401 rate-limit / net::ERR_CONNECTION_RESET) in this sandbox, so IG bio/captions could not be read directly. Business identity, services, prices, reviews, staff names, rating and photos all come from Booksy (the business's own booking platform), which is a stronger primary source per PIPELINE.md. Phone number sourced from a third-party directory (pro.makeup) and corroborated by exact address and staff-name match; treated as reasonably verified but flagged with its source for transparency."
 }
