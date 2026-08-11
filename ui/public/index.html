@@ -88,13 +88,31 @@
     .msg.ok { color: var(--lime); display: block; }
     .msg.err { color: var(--red); display: block; }
 
-    .queue { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    /* Historial de la cola: una fila por item, legible. Antes eran chips con la URL de
+       Booksy entera y el motivo del fallo escondido en un tooltip de 300 caracteres. */
+    .queue { display: grid; gap: 6px; margin-top: 16px; }
     .qitem {
-      font-size: 12px; padding: 7px 13px; border-radius: 999px; border: 1px solid rgba(232,196,106,0.35);
-      color: var(--amber); background: rgba(232,196,106,0.06);
+      display: flex; align-items: baseline; gap: 9px; font-size: 12.5px;
+      padding: 8px 12px; border-radius: 11px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02); color: var(--ink-60);
     }
-    .qitem.done { border-color: var(--border); color: var(--ink-40); background: transparent; text-decoration: line-through; }
-    .qitem.fail { border-color: rgba(232,122,106,0.4); color: var(--red); background: rgba(232,122,106,0.06); cursor: help; }
+    .qitem .qmark { flex: 0 0 auto; font-size: 12px; }
+    .qitem .qname { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink); }
+    .qitem .qsrc { flex: 0 0 auto; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.4; }
+    .qitem.done .qmark { color: var(--lime); }
+    .qitem.fail { border-color: rgba(232,122,106,0.28); background: rgba(232,122,106,0.05); }
+    .qitem.fail .qmark { color: var(--red); }
+    .qitem.fail .qname { color: var(--ink-60); }
+    .qwhy {
+      grid-column: 1 / -1; margin: -2px 0 4px 34px; font-size: 11.5px; line-height: 1.5;
+      color: var(--ink-40); max-width: 70ch;
+    }
+    .qwhy[hidden] { display: none; }
+    .qmore {
+      cursor: pointer; font-family: inherit; font-size: 11px; padding: 3px 9px; border-radius: 999px;
+      border: 1px solid var(--border); background: transparent; color: var(--ink-40); flex: 0 0 auto;
+    }
+    .qmore:hover { color: var(--ink); border-color: rgba(255,255,255,0.28); }
 
     /* Card de progreso (item en proceso) */
     .prog {
@@ -178,6 +196,28 @@
     .crm-btn.undo:hover { border-color: rgba(184,240,77,0.45); color: var(--ink); }
     .crm-btn:disabled { opacity: 0.6; cursor: wait; }
     .crm-tag { flex: 1; font-size: 12.5px; font-weight: 600; }
+    /* Selector de color del sitio: los swatches se pintan con el color real que aplican */
+    .color-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px; }
+    .color-lbl { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.45; margin-right: 2px; }
+    .sw {
+      width: 22px; height: 22px; border-radius: 50%; cursor: pointer; padding: 0;
+      border: 2px solid transparent; box-shadow: 0 0 0 1px rgba(255,255,255,0.14) inset;
+      transition: transform 140ms ease-out, border-color 140ms ease-out;
+    }
+    .sw:hover { transform: scale(1.18); }
+    .sw.on { border-color: var(--ink); transform: scale(1.12); }
+    .sw.reset {
+      background: transparent; box-shadow: none; border: 1px dashed rgba(255,255,255,0.3);
+      width: auto; height: 22px; border-radius: 999px; padding: 0 9px; font-family: inherit;
+      font-size: 11px; color: var(--ink-40);
+    }
+    .sw.reset:hover { color: var(--ink); border-color: rgba(255,255,255,0.55); transform: none; }
+
+    .crm-tag.hecho { color: var(--amber); }
+    .crm-btn.precio { flex: 0 0 auto; border-color: rgba(184,240,77,0.35); color: var(--lime); }
+    .crm-btn.precio:hover { background: rgba(184,240,77,0.12); border-color: rgba(184,240,77,0.6); }
+    .crm-btn.hecho { border-color: rgba(232,196,106,0.4); color: var(--amber); }
+    .crm-btn.hecho:hover { background: rgba(232,196,106,0.13); border-color: rgba(232,196,106,0.7); }
     .crm-tag.won { color: var(--lime); }
     .crm-tag.lost { color: var(--ink-40); }
     .link-btn {
@@ -291,18 +331,175 @@
     // via campos que entran por endpoints publicos (ig, motivo).
     const ESC_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ESC_MAP[c]); }
+
+    const titulo = s => s.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim()
+      .replace(/\b\w/g, c => c.toUpperCase());
+
+    // "hace 3 dias" es mas util que una fecha ISO cuando lo que importa es si ya paso tiempo
+    // suficiente desde el ultimo contacto.
+    function hace(iso) {
+      const t = Date.parse(iso);
+      if (!t) return '';
+      const min = Math.floor((Date.now() - t) / 60000);
+      if (min < 1) return 'ahora';
+      if (min < 60) return `hace ${min} min`;
+      const h = Math.floor(min / 60);
+      if (h < 24) return `hace ${h} h`;
+      const d = Math.floor(h / 24);
+      return d === 1 ? 'ayer' : `hace ${d} días`;
+    }
+
+    // Nombre legible de un item de la cola. El input suele ser una URL de Booksy larguisima
+    // (".../1479751_nails-by-sheila_nail-salon_15886_hialeah"), que llenaba la lista de ruido.
+    // Si la forja ya devolvio el nombre real, ese manda.
+    function nombreItem(q) {
+      const real = q.result && q.result.name;
+      if (real) return { nombre: real, fuente: '' };
+      const inp = String(q.input || '');
+      if (inp.startsWith('@')) return { nombre: inp, fuente: 'instagram' };
+      const b = inp.match(/booksy\.com\/[a-z-]+\/(\d+)_([^_/?]+)_[^_/?]+_(\d+)_([^_/?]+)/i);
+      if (b) return { nombre: `${titulo(b[2])} · ${titulo(b[4])}`, fuente: 'booksy' };
+      try {
+        const u = new URL(inp);
+        return { nombre: u.hostname.replace(/^www\./, '') + u.pathname.replace(/\/$/, ''), fuente: '' };
+      } catch { return { nombre: inp, fuente: '' }; }
+    }
+
+    window.toggleWhy = (id) => {
+      const el = document.getElementById('why-' + id);
+      if (el) el.hidden = !el.hidden;
+    };
     // Handle de IG seguro para URL (ig.me) y para incrustar en JS: solo caracteres validos.
     function igSafe(s) { return String(s || '').replace(/[^A-Za-z0-9_.]/g, ''); }
 
     // Mensaje de outreach de un negocio: el guardado, o uno de respaldo que SIEMPRE
     // incluye el link del demo (para que WhatsApp/DM abran con el website incluido).
+    // Mensaje de primer contacto. Estructura: ELLOS -> prueba -> sin riesgo -> pregunta.
+    // El anterior fallaba en cuatro cosas medibles al leerlo:
+    //  1) no terminaba en pregunta, asi que nada obligaba a responder;
+    //  2) gastaba los primeros 40 caracteres (lo unico que se ve en la notificacion sin abrir
+    //     el chat) presentando al remitente en vez de hablar del negocio;
+    //  3) decia "website de muestra", que lee como plantilla o borrador, justo lo contrario
+    //     de lo que es: un sitio con SUS fotos y SUS servicios;
+    //  4) callaba el precio, y ese silencio hace que el dueno asuma que le van a vender algo
+    //     y no conteste.
+    // Se conserva lo que ya funcionaba: brevedad, prueba verificable y salida sin coste.
     function dmText(b) {
       if (b.dm_message) return b.dm_message;
       if (!b.url_demo) return '';
-      return (b.language === 'en')
-        ? `Hi! I'm Michael from Merktop (Miami). I built a sample website for ${b.name || 'your business'} with your real photos and info: ${b.url_demo} If you like it, we can put it on your own domain; if not, I'll take it down, no problem.`
-        : `Hola! Soy Michael, de Merktop (Miami). Le construi un website de muestra a ${b.name || 'su negocio'} con sus fotos y datos reales: ${b.url_demo} Si le gusta, lo dejamos en su dominio; si no, lo retiro sin problema.`;
+      const nom = b.name || (b.language === 'en' ? 'your business' : 'su negocio');
+      const rediseno = !!b.has_own_site;
+      if (b.language === 'en') {
+        return rediseno
+          ? `Hi ${nom}! I redesigned your website using your own photos and services, so the people who find you on Google actually book.\n\n${b.url_demo}\n\nIt's already built and costs you nothing to look at. If you don't like it, I take it down today.\n\nWant me to walk you through it?`
+          : `Hi ${nom}! I built you a website with your real photos and services, so the people searching for you on Google can find you and book.\n\n${b.url_demo}\n\nIt's already built and costs you nothing to look at. If you don't like it, I take it down today.\n\nWant me to leave it up?`;
+      }
+      return rediseno
+        ? `Hola ${nom}! Rediseñé su página usando sus propias fotos y servicios, para que quien los encuentre en Google termine reservando.\n\n${b.url_demo}\n\nYa está armada y no les cuesta nada verla. Si no les gusta, la bajo hoy mismo.\n\n¿Se la muestro?`
+        : `Hola ${nom}! Les armé un website con sus fotos y sus servicios reales, para que quien los busque en Google los encuentre y reserve.\n\n${b.url_demo}\n\nYa está listo y no les cuesta nada verlo. Si no les gusta, lo bajo hoy mismo.\n\n¿Se los dejo activo?`;
     }
+
+    // ---- COLOR DEL SITIO ----
+    // Acentos disponibles. El sitio solo usa 4 tokens de acento, asi que los otros tres se
+    // derivan del principal y basta con elegir un color: mid es el mismo mas oscuro (hovers y
+    // subrayados), soft es la version casi negra (orbes y fondos) y ghost es el mismo al 16%
+    // (bordes de glass). Cambiar esto NO reconstruye el sitio: el worker de demos lee el color
+    // del KV y lo inyecta al servir, asi que se ve al instante.
+    const ACENTOS = [
+      { nombre: 'Oro', hex: '#d4a84b' },
+      { nombre: 'Bronce', hex: '#b8875a' },
+      { nombre: 'Rosa oro', hex: '#e0a899' },
+      { nombre: 'Coral', hex: '#e8836a' },
+      { nombre: 'Vino', hex: '#b8555f' },
+      { nombre: 'Magenta', hex: '#d16a9a' },
+      { nombre: 'Violeta', hex: '#a87ac8' },
+      { nombre: 'Indigo', hex: '#7c7ce0' },
+      { nombre: 'Azul', hex: '#5a8fc7' },
+      { nombre: 'Turquesa', hex: '#46a6a6' },
+      { nombre: 'Esmeralda', hex: '#4ea882' },
+      { nombre: 'Salvia', hex: '#8aa88a' },
+      { nombre: 'Lima', hex: '#9dc45a' },
+      { nombre: 'Plata', hex: '#a8b0b8' },
+    ];
+
+    const hex2rgb = h => {
+      const s = h.replace('#', '');
+      const n = s.length === 3 ? s.split('').map(c => c + c).join('') : s;
+      return [0, 2, 4].map(i => parseInt(n.slice(i, i + 2), 16));
+    };
+    const mezcla = (rgb, f) => rgb.map(v => Math.max(0, Math.min(255, Math.round(v * f))));
+    const toHex = rgb => '#' + rgb.map(v => v.toString(16).padStart(2, '0')).join('');
+
+    // Deriva los 4 tokens desde un solo acento, con las mismas proporciones que usan los
+    // esqueletos (mid ~0.86 del deep, soft casi negro, ghost al 16%).
+    function paletaDe(hex) {
+      const rgb = hex2rgb(hex);
+      return {
+        deep: hex,
+        mid: toHex(mezcla(rgb, 0.86)),
+        soft: toHex(mezcla(rgb, 0.17)),
+        ghost: `rgba(${rgb[0]},${rgb[1]},${rgb[2]},0.16)`,
+      };
+    }
+
+    window.aplicarColor = async (slug, hex, nombre) => {
+      const b = (window.__reg || []).find(x => x.slug === slug);
+      const cuerpo = hex ? { slug, palette: paletaDe(hex), nombre } : { slug };
+      try {
+        const r = await fetch('/api/color', { method: 'POST', headers: headers(), body: JSON.stringify(cuerpo) });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || r.status);
+        if (b) b.color = d.palette || null;
+        // Repintar solo los swatches de esta tarjeta, sin recargar toda la lista
+        const fila = document.getElementById('col-' + slug);
+        if (fila) fila.innerHTML = swatchesHTML(b || { slug });
+        const m = $('msg'); m.className = 'msg ok';
+        m.textContent = hex ? `Color ${nombre} aplicado. Recarga el demo para verlo.` : 'Color original restaurado.';
+        setTimeout(() => { m.className = 'msg'; }, 3500);
+      } catch (e) {
+        const m = $('msg'); m.className = 'msg err'; m.textContent = 'Error: ' + e.message;
+      }
+    };
+
+    function swatchesHTML(b) {
+      const act = (b.color && b.color.deep || '').toLowerCase();
+      const sw = ACENTOS.map(c =>
+        `<button class="sw${act === c.hex.toLowerCase() ? ' on' : ''}" style="background:${c.hex}"
+           title="${esc(c.nombre)}" onclick="aplicarColor('${esc(b.slug)}','${c.hex}','${esc(c.nombre)}')"></button>`).join('');
+      const reset = act ? `<button class="sw reset" onclick="aplicarColor('${esc(b.slug)}',null,null)">original</button>` : '';
+      return `<span class="color-lbl">Color</span>${sw}${reset}`;
+    }
+
+    // ---- OFERTA ----
+    // Cambia estos dos numeros y cambia en todo el panel.
+    // Por que mensual y no pago unico: el mercado de Miami cobra 499-1499 de entrada por una
+    // one-page de negocio local, y ese desembolso es justo la barrera que frena a un salon
+    // pequeno. Estos negocios YA pagan mensualidades de software (Booksy ronda los 30/mes),
+    // asi que una cuota tiene precedente mental y se decide sin consultarlo con nadie.
+    // El coste real cubierto: dominio 10.46 USD/año (Cloudflare Registrar) + hosting ~0.
+    const PRECIO_MES = 49;
+    const PRECIO_SETUP = 0;
+
+    // Mensaje 2: se manda cuando YA respondieron y les gusto. El precio va AQUI, no en el
+    // primer contacto: antes de que vean el sitio, un precio convierte el mensaje en
+    // publicidad y da un motivo para no abrir el link.
+    function dmPrecio(b) {
+      const dom = (b.custom_domain) || ((b.slug || 'sunegocio').replace(/[^a-z0-9]/g, '') + '.com');
+      if (b.language === 'en') {
+        return `Glad you like it!\n\nI can leave it live for $${PRECIO_MES}/month, domain included (${dom}), hosting and any changes you need. No contract: cancel whenever and it comes down.\n\nSetup is $${PRECIO_SETUP} because the site is already built.\n\nWant me to grab the domain today before someone else does?`;
+      }
+      return `Me alegra que les guste!\n\nSe los dejo activo por $${PRECIO_MES} al mes, con el dominio incluido (${dom}), el hosting y los cambios que necesiten. Sin contrato: si en algun momento no lo quieren, lo cancelan y ya.\n\nLa instalacion es $${PRECIO_SETUP} porque el sitio ya esta hecho.\n\n¿Les reservo el dominio hoy?`;
+    }
+
+    window.copiarPrecio = async (slug) => {
+      const b = (window.__reg || []).find(x => x.slug === slug);
+      if (!b) return;
+      const t = dmPrecio(b);
+      try { await navigator.clipboard.writeText(t); } catch { }
+      const m = $('msg'); m.className = 'msg ok';
+      m.textContent = 'Mensaje con precio copiado. Pegalo cuando te respondan que les gusta.';
+      setTimeout(() => { m.className = 'msg'; }, 4000);
+    };
 
     // Numero de WhatsApp desde el phone scrapeado. Solo devuelve un numero si es plausible:
     // 10 digitos US (se prefija +1) u 11 digitos que empiezan en 1. Otros formatos (basura,
@@ -346,7 +543,12 @@
             ? `<div class="dom-hit"><span>${esc(dom)} ${esc(price)}</span><button class="dom-buy" onclick="buyDomain('${esc(slug)}','${esc(dom)}','${esc(price)}')">Comprar y lanzar</button></div>`
             : `<div class="dom-miss">${esc(dom)} · no disponible</div>`;
         }).join('');
-        box.innerHTML = rows || 'sin resultados';
+        // Si el texto se normalizo (espacios, mayusculas, "www.", una URL entera), decirlo:
+        // antes se buscaba otra cosa en silencio y parecia que el buscador no hacia caso.
+        const escrito = (inp.value || '').trim();
+        const aviso = escrito && d.base && escrito.toLowerCase().replace(/^(https?:\/\/)?(www\.)?/, '').split(/[./]/)[0] !== d.base
+          ? `<div style="font-size:11px;opacity:0.6">se buscó como <b>${esc(d.base)}</b></div>` : '';
+        box.innerHTML = aviso + (rows || 'sin resultados');
       } catch (e) { box.innerHTML = 'Error: ' + esc(e.message); }
     };
     window.buyDomain = async (slug, domain, price) => {
@@ -414,10 +616,18 @@
               ? `<span class="crm-tag won">✓ Ya es cliente</span><button class="crm-btn undo" onclick="markCRM('${esc(b.slug)}','pending',this)">Reabrir</button>`
               : (b.crm_status === 'declined'
                 ? `<span class="crm-tag lost">No interesado</span><button class="crm-btn undo" onclick="markCRM('${esc(b.slug)}','pending',this)">Reabrir</button>`
-                : `<button class="crm-btn won" onclick="markCRM('${esc(b.slug)}','client',this)">Cerrar como cliente ✓</button><button class="crm-btn lost" onclick="markCRM('${esc(b.slug)}','declined',this)">No</button>`)}
+                : (b.crm_status === 'contacted'
+                  // Ya se le hablo: el estado se ve de un vistazo para no volver a contactarlo,
+                  // y desde aqui se cierra o se descarta sin perder la fecha del primer contacto.
+                  // Ya contactado: lo que toca ahora es el mensaje con el precio, asi que ese
+                  // boton vive aqui y no antes.
+                  ? `<span class="crm-tag hecho">✓ Contactado${b.contacted_via ? ' por ' + esc(b.contacted_via) : ''}${b.contacted_at ? ' · ' + esc(hace(b.contacted_at)) : ''}</span><button class="crm-btn precio" onclick="copiarPrecio('${esc(b.slug)}')">Copiar precio 💲</button><button class="crm-btn won" onclick="markCRM('${esc(b.slug)}','client',this)">Cerró ✓</button><button class="crm-btn lost" onclick="markCRM('${esc(b.slug)}','declined',this)">No</button><button class="crm-btn undo" onclick="markCRM('${esc(b.slug)}','pending',this)">Deshacer</button>`
+                  : `<button class="crm-btn hecho" onclick="markCRM('${esc(b.slug)}','contacted',this)">Ya lo contacté</button><button class="crm-btn won" onclick="markCRM('${esc(b.slug)}','client',this)">Cerró ✓</button><button class="crm-btn lost" onclick="markCRM('${esc(b.slug)}','declined',this)">No</button>`))}
           </div>
+          <div class="color-row" id="col-${esc(b.slug)}">${swatchesHTML(b)}</div>
           <div class="domain-row">
-            <input class="dom-input" id="dom-${esc(b.slug)}" placeholder="${esc(b.slug)}" />
+            <input class="dom-input" id="dom-${esc(b.slug)}" placeholder="${esc(b.slug)}.com o el nombre que quieras"
+                   onkeydown="if(event.key==='Enter'){event.preventDefault();checkDomain('${esc(b.slug)}')}" />
             <button class="dom-btn" onclick="checkDomain('${esc(b.slug)}')">Buscar dominio</button>
             <div class="dom-results" id="domres-${esc(b.slug)}">${b.live_url ? `<div class="dom-hit"><span>Live: <a href="${esc(b.live_url)}" target="_blank" rel="noopener" style="color:var(--lime)">${esc(b.custom_domain || b.live_url)}</a></span></div>` : ''}</div>
           </div>
@@ -433,12 +643,28 @@
       const chips = qItems.map(q => {
         window.__queue[q.id] = q;
         const demo = q.result && q.result.url_demo && q.result.url_demo.startsWith('https://') && q.result.url_demo.includes('.odd-forest-9504.workers.dev')
-          ? ` · <a href="${esc(q.result.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">ver demo</a>` : '';
+          ? `<a href="${esc(q.result.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">ver demo</a>` : '';
         const handle = q.input.startsWith('@') ? q.input.slice(1) : '';
         const dm = q.status === 'done' && q.result && q.result.dm && handle
-          ? ` · <a href="#" onclick="event.preventDefault(); sendQueueDM('${esc(q.id)}', '${esc(handle)}')" style="color:var(--lime)">DM ✉</a>` : '';
+          ? `<a href="#" onclick="event.preventDefault(); sendQueueDM('${esc(q.id)}', '${esc(handle)}')" style="color:var(--lime)">DM ✉</a>` : '';
         const failed = q.status === 'done' && q.result && q.result.failed;
-        return `<span class="qitem ${failed ? 'fail' : (q.status === 'done' ? 'done' : '')}"${q.result && q.result.motivo ? ` title="${esc(q.result.motivo)}"` : ''}>${q.status === 'pending' ? '⏳ ' : (failed ? '✗ ' : '✓ ')}${esc(q.input)}${failed ? ' · fallido' : ''}${demo}${dm}</span>`;
+        const nom = nombreItem(q);
+        const motivo = q.result && q.result.motivo ? String(q.result.motivo) : '';
+        // El motivo se lee, no se adivina en un tooltip: resumen en una linea y el resto
+        // detras de "por que", que se despliega en el sitio.
+        const corto = motivo.length > 120 ? motivo.slice(0, 120).replace(/\S*$/, '') + '...' : motivo;
+        const why = motivo
+          ? `<button class="qmore" onclick="toggleWhy('${esc(q.id)}')">por qué</button>`
+          : '';
+        const whyBox = motivo
+          ? `<div class="qwhy" id="why-${esc(q.id)}" hidden>${esc(motivo)}</div>`
+          : '';
+        return `<div class="qitem ${failed ? 'fail' : (q.status === 'done' ? 'done' : '')}">
+          <span class="qmark">${q.status === 'pending' ? '⏳' : (failed ? '✗' : '✓')}</span>
+          <span class="qname" title="${esc(q.input)}">${esc(nom.nombre)}${failed && corto ? ` <span style="opacity:0.6">· ${esc(corto)}</span>` : ''}</span>
+          ${nom.fuente ? `<span class="qsrc">${esc(nom.fuente)}</span>` : ''}
+          ${demo}${dm}${why}
+        </div>${whyBox}`;
       }).join('');
       const progs = working.map(q => `
         <div class="prog">
