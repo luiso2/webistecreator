@@ -1,162 +1,96 @@
 {
- "source": "fresha",
- "url": "https://www.fresha.com/a/beauty-by-zeneyda-miami-8315-west-flagler-street-sd0pyijf",
- "slug": "beauty-by-zeneyda-westchester",
+ "status": "failed",
+ "failed_reason": "Menos de 5 fotos reales y usables del negocio. La fuente de fotos verificada (portafolio de Fresha del proveedor 839115, confirmado que SI es Beauty By Zeneyda por telefono/direccion/logo) solo trae 8 imagenes y las 8 son artes publicitarios (stock photography de modelos genericas + texto/CTA superpuesto: \"ABDOMEN MARCADO\", \"Tonifica tus Gluteos\", \"Luxury Glute Sculpt\", etc.) mas 1 logo. Ninguna es foto real de su suite, de ella trabajando o de clientas/resultados reales, y todas caen en el PROHIBIDO explicito de DESIGN.md/FORGE-BRIEF ('capturas con texto/caption encima'). Su fuente principal de fotos reales (Instagram @zeneydaskin_body) file inalcanzable en este entorno: bloqueada de forma consistente en 5 metodos distintos (ver research_degradado). No se fabrico ningun dato ni se uso ninguna de las 8 imagenes promocionales para rellenar la galeria.",
+ "research_degradado": true,
+ "research_degradado_nota": "El bloqueo es de red/entorno (IP de este sandbox), NO evidencia de que el negocio carezca de fotos reales: es un negocio activo con 200 reseñas 5.0 y campañas publicitarias corriendo, muy probablemente con fotos reales en su feed de Instagram. Recomendado: reintentar el research de fotos (paso 4 de PIPELINE.md fase 1) desde una sesion/IP que si tenga acceso normal a Instagram antes de reabrir este slug.",
+ "intentos_fotos": [
+  "curl directo a i.instagram.com/api/v1/users/web_profile_info con x-ig-app-id 936619743392459: bloqueado 4 veces en ~20 min, mensaje constante 'Please wait a few minutes before you try again' (HTTP 401)",
+  "scripts/ig_photos.py (servicio Railway ig-photo-service): 0 fotos en 2 intentos",
+  "Playwright local con binario chrome completo + flags anti-deteccion (--disable-quic/ECH/PostQuantumKyber, --ssl-version-max=tls1.2) via scripts/ig_scrape_fixed.js adaptado: 3 intentos, alterna 'Profile isn't available' y net::ERR_HTTP_RESPONSE_CODE_FAILURE",
+  "WebFetch de instagram.com/zeneydaskin_body: HTTP 429",
+  "3 espejos publicos de Instagram (imginn.com, picuki.com, pixwox.com): los 3 devuelven HTTP 403",
+  "web.archive.org/wayback/available: HTTP 429 (confirma que el bloqueo no es exclusivo de dominios de Instagram, sino de la IP compartida de este sandbox para servicios anti-scraping en general; el acceso general a internet SI funciona: example.com, fresha.com, wikipedia.org todos 200 durante las mismas pruebas)"
+ ],
+
+ "fuente_principal": "fresha",
+ "fresha_url": "https://www.fresha.com/a/beauty-by-zeneyda-miami-8315-west-flagler-street-sd0pyijf",
+ "verificado_multiples_fetches": "Se re-fetcheo la pagina de Fresha 4 veces de forma independiente (mas la corrida inicial del dossier) para confirmar consistencia: nombre, direccion, telefono, rating y reviewsCount coincidieron en 4 de 5 fetches. UN fetch aislado devolvio datos de OTRO negocio del mismo edificio de suites ('Sérénité Esthetics Inc.', Rosalie Chauvet, 8659 SW 124th Ave Suite 21, tel 786-672-4501): se detecto por inconsistencia de nombre/direccion/telefono/logo en las fotos del portfolio (aparecia el letrero 'Suite 21' y el nombre 'Sérénité' en las imagenes) y se DESCARTO por completo (fotos borradas, ningun dato de ese fetch se uso). El resto de datos de este archivo proviene de los 4 fetches consistentes.",
+
  "name": "Beauty By Zeneyda",
+ "owner_name": "Zeneyda Valle",
+ "niche": "Facial / skincare + tratamientos corporales (dermaplaning, microdermoabrasion, moldeo corporal)",
+ "biz_type_fresha": "Beauty Salon",
+ "city": "Miami (Westchester / Flagami), FL",
+ "address_raw": "8315 West Flagler Street, Suite 29, Miami, FL 33144",
+ "address_context": "Suite dentro de un edificio de suites de salon compartido (Salon Lofts / Salonz Beauty Suites, 'Flagler Park Plaza'). Zeneyda es profesional independiente en un local compartido, no un negocio standalone con fachada propia: la ficha de Salon Lofts la lista como 'Zeneyda Valle - Massage Therapist, Flagler Park Plaza - Miami, Florida' (https://salonlofts.com/zeneyda_valle, no se pudo fetchear el contenido completo, HTTP 403, pero el snippet de busqueda confirma nombre/direccion/telefono/email).",
+ "phone": "+1 786-672-8167",
+ "phone_formatted": "(786) 672-8167",
+ "email": "zeneyda.valle@salonlofts.com",
+ "email_nota": "Dominio de la plataforma de suites (salonlofts.com), no un dominio propio del negocio, pero es un email de contacto real y publicado (encontrado via snippet de busqueda de salonlofts.com/zeneyda_valle).",
+ "instagram_handle": "@zeneydaskin_body",
+ "instagram_url": "https://www.instagram.com/zeneydaskin_body/",
+ "instagram_nota": "Handle confirmado real via Fresha owner.onlineLinks.instagramUrl y via Google/Bing (WebSearch): 'BEAUTY BY ZENEYDA (@zeneydaskin_body) Miami, FL'. Contenido no accesible en este entorno, ver research_degradado.",
+ "facebook_url": "https://www.facebook.com/zeneydavalle",
+ "facebook_nota": "Confirmado via Fresha owner.onlineLinks.facebookUrl. Requiere login para ver contenido (no se pudo usar como fuente de fotos).",
+ "booking_url": "https://www.fresha.com/a/beauty-by-zeneyda-miami-8315-west-flagler-street-sd0pyijf",
+ "has_own_site": false,
+ "website_candidates_probados": [
+  {"url": "https://beautybyzeneyda.com", "resultado": "no resuelve (DNS ENOTFOUND / proxy 502)"},
+  {"url": "https://www.zeneydabeautystudio.com", "resultado": "no resuelve (DNS ENOTFOUND). Encontrado como owner.onlineLinks.websiteUrl en el perfil de Fresha, aparenta ser un dominio que planeo registrar pero nunca publico o que vencio."}
+ ],
+
  "rating": 5.0,
  "reviews_count": 200,
- "phone": "+1 786-672-8167",
- "email": null,
- "address_raw": "8315 West Flagler Street, Suite 29, Miami, 33144, Florida",
- "biz_type": "Beauty Salon",
+ "reviews_count_nota": "200 confirmado en 4 fetches independientes y consistentes de Fresha el 2026-08-11 (props.pageProps.data.location.reviewsCount). Snapshots previos de terceros (WebSearch) mencionan 161-183, consistente con crecimiento organico de reseñas entre snapshots; se uso el numero mas reciente fetcheado directamente como instruye el research.",
+ "language": "es",
+ "language_evidencia": "4 de 6 reseñas verbatim recuperadas estan en español ('Súper buena en sus masajes...', 'Excelente como siempre recordando', 'Bendecida eternamente con mi resultado', 'Excelente'), la zona (Westchester/Flagami, Miami) es predominantemente hispanohablante, y el propio negocio nombra TODOS sus servicios en español ('Reducion cintura', 'Moldeo Corporal', 'Drenaje Linfatico', 'Gluteos Up', etc.) incluso en una plataforma en ingles (Fresha). No se pudo confirmar con captions de Instagram (research_degradado) pero la evidencia de reseñas + nomenclatura de servicios es suficiente para determinar es como idioma principal.",
+
+ "hours_fresha_snapshot": {
+  "lun_sab": "7:00am - 7:00pm",
+  "dom": "7:00am - 12:00pm",
+  "nota": "Del snapshot de descubrimiento inicial; no se pudo re-confirmar working_time en el JSON de Fresha en esta pasada (el campo 'workingTime' existe en el payload pero no se parseo en esta corrida por foco en fotos/servicios/resenas)."
+ },
+
  "services": [
-  {
-   "name": "Reducion cintura",
-   "price": "$70",
-   "duration": "1h",
-   "group": "Featured"
-  },
-  {
-   "name": "Cellulitis",
-   "price": "$80",
-   "duration": "1h",
-   "group": "Featured"
-  },
-  {
-   "name": "Moldeo Corporal /full body",
-   "price": "$100",
-   "duration": "1h",
-   "group": "Featured"
-  },
-  {
-   "name": "Facial lifting  + Corporal Moldeo",
-   "price": "$160",
-   "duration": "2h",
-   "group": "Featured"
-  },
-  {
-   "name": "Facial lifting  + Corporal Moldeo",
-   "price": "$160",
-   "duration": "2h",
-   "group": "Face"
-  },
-  {
-   "name": "Limpieza profunda",
-   "price": "$100",
-   "duration": "1h",
-   "group": "Face"
-  },
-  {
-   "name": "Reduccion / papada",
-   "price": "$80",
-   "duration": "15min",
-   "group": "Face"
-  },
-  {
-   "name": "Facial/ Men",
-   "price": "$83",
-   "duration": "1h",
-   "group": "Face"
-  },
-  {
-   "name": "Facial Rejuvenate / Lifting Facial",
-   "price": "$150",
-   "duration": "1h",
-   "group": "Face"
-  },
-  {
-   "name": "Reductor Tratamiento ( Cuerpo Completo ) + Gluteos de Acero",
-   "price": "$160",
-   "duration": "1h 30min",
-   "group": "Corporal"
-  },
-  {
-   "name": "Cellulitis",
-   "price": "$80",
-   "duration": "1h",
-   "group": "Corporal"
-  },
-  {
-   "name": "Reducion cintura",
-   "price": "$70",
-   "duration": "1h",
-   "group": "Corporal"
-  },
-  {
-   "name": "Drenaje Linfatico (Papada)",
-   "price": "$30",
-   "duration": "20min",
-   "group": "Masaje"
-  },
-  {
-   "name": "Paquete de 10 .(Masaje) Drenaje Linfatico Post Operatorio",
-   "price": "$700",
-   "duration": "1h",
-   "group": "Masaje"
-  },
-  {
-   "name": "Tonificacion . BRAZOS Y PIERNAS",
-   "price": "$83",
-   "duration": "1h",
-   "group": "Masaje"
-  },
-  {
-   "name": "Moldeo Corporal /full body",
-   "price": "$100",
-   "duration": "1h",
-   "group": "Masaje"
-  },
-  {
-   "name": "Post operatorio / Drainage",
-   "price": "$80",
-   "duration": "40min",
-   "group": "Masaje"
-  },
-  {
-   "name": "Gluteos Up",
-   "price": "$80",
-   "duration": "1h",
-   "group": "Masaje"
-  }
+  { "name": "Reducion cintura", "price": "$70", "duration": "1h", "group": "Featured" },
+  { "name": "Cellulitis", "price": "$80", "duration": "1h", "group": "Featured" },
+  { "name": "Moldeo Corporal /full body", "price": "$100", "duration": "1h", "group": "Featured" },
+  { "name": "Facial lifting  + Corporal Moldeo", "price": "$160", "duration": "2h", "group": "Featured" },
+  { "name": "Facial lifting  + Corporal Moldeo", "price": "$160", "duration": "2h", "group": "Face" },
+  { "name": "Limpieza profunda", "price": "$100", "duration": "1h", "group": "Face" },
+  { "name": "Reduccion / papada", "price": "$80", "duration": "15min", "group": "Face" },
+  { "name": "Facial/ Men", "price": "$83", "duration": "1h", "group": "Face" },
+  { "name": "Facial Rejuvenate / Lifting Facial", "price": "$150", "duration": "1h", "group": "Face" },
+  { "name": "Reductor Tratamiento ( Cuerpo Completo ) + Gluteos de Acero", "price": "$160", "duration": "1h 30min", "group": "Corporal" },
+  { "name": "Cellulitis", "price": "$80", "duration": "1h", "group": "Corporal" },
+  { "name": "Reducion cintura", "price": "$70", "duration": "1h", "group": "Corporal" },
+  { "name": "Drenaje Linfatico (Papada)", "price": "$30", "duration": "20min", "group": "Masaje" },
+  { "name": "Paquete de 10 .(Masaje) Drenaje Linfatico Post Operatorio", "price": "$700", "duration": "1h", "group": "Masaje" },
+  { "name": "Tonificacion . BRAZOS Y PIERNAS", "price": "$83", "duration": "1h", "group": "Masaje" },
+  { "name": "Moldeo Corporal /full body", "price": "$100", "duration": "1h", "group": "Masaje" },
+  { "name": "Post operatorio / Drainage", "price": "$80", "duration": "40min", "group": "Masaje" },
+  { "name": "Gluteos Up", "price": "$80", "duration": "1h", "group": "Masaje" }
  ],
+
  "reviews": [
-  {
-   "author": null,
-   "body": "Súper buena en sus masajes cómo persona ayuda en todo lo que necesites , la mejor de la mejor la recomiendo 200%",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Excelente como siempre recordando 💯💯💯💯",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "🥰🥰🥰",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Bendecida eternamente con mi resultado",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "I absolutely love visiting Zeneyda! She is not only highly professional and knowledgeable, but also genuinely passionate about what she does. From the moment I walk in, I always feel welcomed, cared for, and completely at ease Her attention to detail, expertise, and personalized approach make every appointment a wonderful experience. She takes the time to understand my needs and ensures I receive the very best care. I always leave feeling refreshed, rejuvenated, and glowing, and the results consistently exceed my expectations. Thank you Zeneyda por you dedicacion.",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Excelente",
-   "rating": 5,
-   "author_verified": false
-  }
+  { "author": "Yanay P", "body": "Bendecida eternamente con mi resultado", "rating": 5, "lang": "es", "date": "2026-06-19" },
+  { "author": "Yanay P", "body": "Excelente", "rating": 5, "lang": "es", "date": null },
+  { "author": "Maria M", "body": "I absolutely love visiting Zeneyda! She is not only highly professional and knowledgeable, but also genuinely passionate about what she does. From the moment I walk in, I always feel welcomed, cared for, and completely at ease Her attention to detail, expertise, and personalized approach make every appointment a wonderful experience. She takes the time to understand my needs and ensures I receive the very best care. I always leave feeling refreshed, rejuvenated, and glowing, and the results consistently exceed my expectations. Thank you Zeneyda por you dedicacion.", "rating": 5, "lang": "en", "date": "2026-06-11", "owner_reply": "Thank you, Maria! Your beautiful words truly touched my heart. It is always a pleasure to care for you, and I am so grateful for your trust and support. Knowing that you leave feeling refreshed and happy means everything to me. I look forward to seeing you again soon! ✨💕" },
+  { "author": null, "body": "Súper buena en sus masajes cómo persona ayuda en todo lo que necesites , la mejor de la mejor la recomiendo 200%", "rating": 5, "lang": "es", "date": null },
+  { "author": null, "body": "Excelente como siempre recordando 💯💯💯💯", "rating": 5, "lang": "es", "date": "2026-07-18" },
+  { "author": null, "body": "🥰🥰🥰", "rating": 5, "lang": "es", "date": "2026-07-10", "owner_reply": "Muchas gracias ." }
  ],
- "named_reviews": [],
- "language": "en"
+
+ "brand_vibe": "Rosa empolvado / mauve con acentos dorados. Su logo (visto en el portafolio publicitario de Fresha) es un wordmark manuscrito 'Zeneyda' en rosa sobre blanco con flores acuareladas, y sus artes publicitarios usan la linea 'Luxury Med Spa' en dorado sobre fondo claro: encaja con una base clara (light-v2), paleta rosa-mauve calida con dorado, feminine/quiet-luxury, consistente con el nicho facial/body sculpting.",
+
+ "fotos_descartadas": {
+  "fresha_portfolio_provider_839115": [
+   "zv-1.jpg: logo/wordmark 'Zeneyda' sobre fondo floral (arte, no foto del local; unica pieza reutilizable como marca pequeña, NO como foto de galeria)",
+   "zv-2.jpg a zv-8.jpg: 7 artes publicitarios con stock photography de modelos genericas + texto superpuesto (\"ABDOMEN MARCADO\", \"Tonifica tus Gluteos\", \"Luxury Glute Sculpt\", \"Radiofrecuencia\", \"Facial Premium\", etc.). PROHIBIDOS para galeria por DESIGN.md/FORGE-BRIEF (capturas con texto/caption encima). Se conservan en assets/raw/ solo como evidencia de research, NO se referencian en ningun HTML."
+  ],
+  "fresha_location_gallery_contaminada": "El primer fetch de galeria devolvio 3 fotos + 7 imagenes de portfolio que en realidad pertenecen a 'Sérénité Esthetics Inc.' (otro negocio del mismo edificio de suites, ver verificado_multiples_fetches). Esas 10 imagenes fueron borradas por completo y NO se usaron para nada."
+ },
+
+ "gate_status": "no aplica: no se construyo index.html (fase de build no iniciada por falta de fotos minimas verificadas)",
+ "siguiente_paso_recomendado": "Reabrir este slug desde una sesion/maquina con acceso residencial normal a Instagram y correr scripts/ig_photos.py zeneydaskin_body beauty-by-zeneyda-westchester (o el equivalente Playwright local) para conseguir 6-14 fotos reales; con eso completar fase 2 (build con templates/light-v2, paleta rosa-mauve/dorado derivada de brand_vibo) y fase 3 (gate) normalmente. Todos los demas datos de este archivo (servicios, precios, resenas, contacto, rating) ya estan verificados y listos para usarse sin research adicional."
 }

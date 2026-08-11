@@ -1,282 +1,164 @@
 {
- "source": "fresha",
- "url": "https://www.fresha.com/a/serenite-esthetics-inc-miami-8659-southwest-124th-avenue-n4trtj9h",
  "slug": "serenite-esthetics-kendall",
  "name": "Sérénité Esthetics Inc.",
+ "specialist": "Rosalie Chauvet",
+ "city": "Miami (Kendall / West Kendall)",
+ "niche": "Facial & skin care studio (also waxing, laser hair removal)",
+ "source": "fresha",
+ "url": "https://www.fresha.com/a/serenite-esthetics-inc-miami-8659-southwest-124th-avenue-n4trtj9h",
+
  "rating": 5.0,
  "reviews_count": 163,
+ "rating_source_note": "Sourced from Fresha's own embedded location data (rating + reviewsCount, cross-checked against the individual verbatim review edges, all 5-star). Independent confirmation via a live Google Business/Maps card was attempted (direct Google Maps fetch, Google search, WebFetch) but no renderable Google listing surfaced through available tools (Google Maps requires client-side JS the sandbox fetch tools cannot execute). Site copy therefore cites Fresha explicitly as the rating source instead of claiming Google.",
+
  "phone": "+1 786-672-4501",
+ "phone_source": "Fresha location.contactNumber, matches the studio's own printed signage photographed in the gallery (assets/raw/se-signage.jpg, se-plaque-wide.jpg)",
  "email": null,
- "address_raw": "8659 Southwest 124th Avenue, Suite 21 , Miami, 33183, Florida",
+ "email_search_evidence": [
+  "Fresha location.email field: null",
+  "Fresha owner.onlineLinks: {facebookUrl: null, instagramUrl: 'https://www.instagram.com/sereniteesthetics', websiteUrl: 'https://www.tiktok.com/@serenite.esthetics'} - no email, no Facebook page",
+  "Instagram web_profile_info endpoint (x-ig-app-id 936619743392459): returned HTTP 400 (endpoint broken, matches known issue documented in FORGE-BRIEF.md)",
+  "Direct Instagram profile page fetch (curl + WebFetch): returned login-wall / 429 rate limit on every attempt, no bio/business_email visible",
+  "TikTok bio (@serenite.esthetics): bio text is just 'Make Your Day', no external link, no email",
+  "Search surfaced a Linktree for 'SerenityEsthetics' (similar name) - checked directly and confirmed it belongs to an unrelated esthetician (Kasmira Joseph), not this business. Discarded as a false match.",
+  "Florida Sunbiz corporate filing (registered agent Rosalie Chauvet, Pinecrest FL address): fetch blocked with HTTP 403 (WAF), and Sunbiz does not publish officer emails publicly in any case",
+  "Conclusion: no public email found after exhaustive search. Registered honestly as null, not fabricated. Outreach channel: phone or Instagram DM."
+ ],
+
+ "instagram": "@sereniteesthetics",
+ "instagram_url": "https://www.instagram.com/sereniteesthetics/",
+ "tiktok_url": "https://www.tiktok.com/@serenite.esthetics",
+
+ "address_raw": "8659 SW 124th Avenue, Suite 21, Miami, FL 33183",
+ "address_full": {
+  "streetAddress": "8659 SW 124th Avenue, Suite 21",
+  "addressLocality": "Miami",
+  "addressRegion": "FL",
+  "postalCode": "33183",
+  "addressCountry": "US",
+  "neighborhood_note": "Fresha lists this as 'West End, Miami' / 'Calusa Area' / nearby 'The Hammocks'; commonly referred to as (West) Kendall.",
+  "latitude": 25.68365478515625,
+  "longitude": -80.39158630371094
+ },
+
+ "hours": {
+  "monday": "9:30 AM - 5:00 PM",
+  "tuesday": "9:30 AM - 5:00 PM",
+  "wednesday": "9:30 AM - 5:00 PM",
+  "thursday": "9:30 AM - 5:00 PM",
+  "friday": "9:30 AM - 5:00 PM",
+  "saturday": "10:00 AM - 4:00 PM",
+  "sunday": "Closed",
+  "source": "Fresha location.workingTime, matches the hours pre-verified from discovery research"
+ },
+
+ "language": "en",
+ "language_note": "Reviews, Fresha description and social captions are all in English. Business name is French ('Sérénité' = serenity) but used as a proper noun/brand only.",
+
+ "brand_vibe": "Warm, quiet-luxury spa aesthetic: cream and white treatment rooms, soft warm lighting, a gold script logo/wordmark on the studio signage, neutral wood and rattan decor accents, fresh flowers in the hallway. Site built on the light-v2 base with a warm gold/champagne accent palette (hue ~40) derived directly from the business's own gold logo color, not invented.",
+
+ "has_own_site": false,
+ "has_own_site_evidence": [
+  "sereniteesthetics.com: DNS ENOTFOUND (does not resolve) - confirmed at discovery stage",
+  "Fresha owner.onlineLinks.websiteUrl points to a TikTok profile, not a real domain, which Fresha uses as a fallback when no website is set",
+  "No Facebook page found (onlineLinks.facebookUrl is null)",
+  "Web search for the business name + address surfaces only Fresha, Sunbiz and directory listings, no independent business website",
+  "Conclusion: no website of their own. Sole online booking channel is Fresha."
+ ],
+
+ "booking_url": "https://www.fresha.com/a/serenite-esthetics-inc-miami-8659-southwest-124th-avenue-n4trtj9h",
+
+ "features": ["Pet-friendly", "Kid-friendly", "Wheelchair accessible", "Parking available", "Near public transport", "Environmentally friendly", "Black-owned", "Woman-owned"],
+
+ "about_source_text": "Sérénité Esthetics Inc. offers a unique fusion of beauty and wellness, ensuring a transformative experience that leaves clients feeling refreshed and invigorated. With a focus on specialized skin care treatments, laser hair removal and full body waxing, this spa is dedicated to excellence and sustainability, making it a standout choice in Miami.",
+
  "biz_type": "Spa & sauna",
+
+ "services_count": 38,
  "services": [
-  {
-   "name": "LED Light Therapy add on",
-   "price": "$20",
-   "duration": "10min",
-   "group": "Featured"
-  },
-  {
-   "name": "Signature Facial",
-   "price": "$120",
-   "duration": "1h 15min",
-   "group": "Featured"
-  },
-  {
-   "name": "Deep Pore Cleaning Facial",
-   "price": "$150",
-   "duration": "1h 30min",
-   "group": "Featured"
-  },
-  {
-   "name": "Eyebrow Cleaning",
-   "price": "$20",
-   "duration": "15min",
-   "group": "Featured"
-  },
-  {
-   "name": "Laser Full Arms",
-   "price": "$110",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser upper leg",
-   "price": "$150",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Bikini",
-   "price": "$80",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Lower Leg",
-   "price": "$130",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Full Back",
-   "price": "$150",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "laser Brazilian",
-   "price": "$90",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Bikini / Armpit",
-   "price": "$100",
-   "duration": "20min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Areola (women nipple)",
-   "price": "$40",
-   "duration": "10min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Back Thighs",
-   "price": "$65",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Full Legs",
-   "price": "$250",
-   "duration": "20min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Brazilian / Armpit Combo",
-   "price": "$110",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Laser Armpits",
-   "price": "$70",
-   "duration": "15min",
-   "group": "Laser Hair Removal"
-  },
-  {
-   "name": "Lower legs",
-   "price": "$35",
-   "duration": "15min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Bikini 3 sides",
-   "price": "$40",
-   "duration": "15min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Chin",
-   "price": "$10",
-   "duration": "10min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Upperlip",
-   "price": "$10",
-   "duration": "15min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Nose",
-   "price": "$20",
-   "duration": "15min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Armpit",
-   "price": "$25",
-   "duration": "15min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Brazilian including Inner Cheeks",
-   "price": "$60",
-   "duration": "30min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Full Legs",
-   "price": "$65",
-   "duration": "30min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Eyebrow cleaning & Upperlip",
-   "price": "$30",
-   "duration": "15min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Eyebrow Cleaning",
-   "price": "$20",
-   "duration": "15min",
-   "group": "Waxing"
-  },
-  {
-   "name": "Hydrating facial with deep extraction",
-   "price": "$160",
-   "duration": "1h 15min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Radio Frequency treatment",
-   "price": "$100",
-   "duration": "40min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Oxygen Infusion add on",
-   "price": "$70",
-   "duration": "10min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Hydrodermabraison & Oxygen Infusion Facial",
-   "price": "$210",
-   "duration": "1h 15min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Microneedling",
-   "price": "$80",
-   "duration": "30min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Deep Pore Cleaning Facial",
-   "price": "$150",
-   "duration": "1h 30min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Back Cleaning",
-   "price": "$160",
-   "duration": "1h 15min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Anti Aging Facial with Radio Frequency",
-   "price": "$150",
-   "duration": "1h 15min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Express Facial",
-   "price": "$90",
-   "duration": "45min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Microdermabrasion + Mask treatment + Massage",
-   "price": "$115",
-   "duration": "40min",
-   "group": "Skin care"
-  },
-  {
-   "name": "LED Light Therapy add on",
-   "price": "$20",
-   "duration": "10min",
-   "group": "Skin care"
-  },
-  {
-   "name": "Gentleman's Facial",
-   "price": "$120",
-   "duration": "1h 15min",
-   "group": "Skin care"
-  }
+  { "name": "LED Light Therapy add on", "price": "$20", "duration": "10min", "group": "Featured" },
+  { "name": "Signature Facial", "price": "$120", "duration": "1h 15min", "group": "Featured" },
+  { "name": "Deep Pore Cleaning Facial", "price": "$150", "duration": "1h 30min", "group": "Featured" },
+  { "name": "Eyebrow Cleaning", "price": "$20", "duration": "15min", "group": "Featured" },
+  { "name": "Laser Full Arms", "price": "$110", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Laser upper leg", "price": "$150", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Laser Bikini", "price": "$80", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Laser Lower Leg", "price": "$130", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Laser Full Back", "price": "$150", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "laser Brazilian", "price": "$90", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Laser Bikini / Armpit", "price": "$100", "duration": "20min", "group": "Laser Hair Removal" },
+  { "name": "Laser Areola (women nipple)", "price": "$40", "duration": "10min", "group": "Laser Hair Removal" },
+  { "name": "Laser Back Thighs", "price": "$65", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Laser Full Legs", "price": "$250", "duration": "20min", "group": "Laser Hair Removal" },
+  { "name": "Laser Brazilian / Armpit Combo", "price": "$110", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Laser Armpits", "price": "$70", "duration": "15min", "group": "Laser Hair Removal" },
+  { "name": "Lower legs", "price": "$35", "duration": "15min", "group": "Waxing" },
+  { "name": "Bikini 3 sides", "price": "$40", "duration": "15min", "group": "Waxing" },
+  { "name": "Chin", "price": "$10", "duration": "10min", "group": "Waxing" },
+  { "name": "Upperlip", "price": "$10", "duration": "15min", "group": "Waxing" },
+  { "name": "Nose", "price": "$20", "duration": "15min", "group": "Waxing" },
+  { "name": "Armpit", "price": "$25", "duration": "15min", "group": "Waxing" },
+  { "name": "Brazilian including Inner Cheeks", "price": "$60", "duration": "30min", "group": "Waxing" },
+  { "name": "Full Legs", "price": "$65", "duration": "30min", "group": "Waxing" },
+  { "name": "Eyebrow cleaning & Upperlip", "price": "$30", "duration": "15min", "group": "Waxing" },
+  { "name": "Eyebrow Cleaning", "price": "$20", "duration": "15min", "group": "Waxing" },
+  { "name": "Hydrating facial with deep extraction", "price": "$160", "duration": "1h 15min", "group": "Skin care" },
+  { "name": "Radio Frequency treatment", "price": "$100", "duration": "40min", "group": "Skin care" },
+  { "name": "Oxygen Infusion add on", "price": "$70", "duration": "10min", "group": "Skin care" },
+  { "name": "Hydrodermabraison & Oxygen Infusion Facial", "price": "$210", "duration": "1h 15min", "group": "Skin care" },
+  { "name": "Microneedling", "price": "$80", "duration": "30min", "group": "Skin care" },
+  { "name": "Deep Pore Cleaning Facial", "price": "$150", "duration": "1h 30min", "group": "Skin care" },
+  { "name": "Back Cleaning", "price": "$160", "duration": "1h 15min", "group": "Skin care" },
+  { "name": "Anti Aging Facial with Radio Frequency", "price": "$150", "duration": "1h 15min", "group": "Skin care" },
+  { "name": "Express Facial", "price": "$90", "duration": "45min", "group": "Skin care" },
+  { "name": "Microdermabrasion + Mask treatment + Massage", "price": "$115", "duration": "40min", "group": "Skin care" },
+  { "name": "LED Light Therapy add on", "price": "$20", "duration": "10min", "group": "Skin care" },
+  { "name": "Gentleman's Facial", "price": "$120", "duration": "1h 15min", "group": "Skin care" }
  ],
- "reviews": [
-  {
-   "author": null,
-   "body": "Always a great experience ! Great service and best massages",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "The best!!",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "As always, my experience with Rosalie was excellent. She is consistently professional, kind, and reliable. I truly appreciate her outstanding service every time!\nGenevieve",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Rosalie is the very best esthetician!",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "Superb!",
-   "rating": 5,
-   "author_verified": false
-  },
-  {
-   "author": null,
-   "body": "I always have an outstanding experience every time I get a facial here. I actually fly in from Tampa just to see her: that’s how much I trust and value Rosalie work. \nThe environment is clean, relaxing, and welcoming, and she is professional, kind, and attentive to my skin’s needs. I truly appreciate the care and attention to detail during each visit. Highly recommended!",
-   "rating": 5,
-   "author_verified": false
-  }
+
+ "reviews_used_on_site": [
+  { "author": "Geneviève A.", "body": "I always have an outstanding experience every time I get a facial here. I actually fly in from Tampa just to see her, that's how much I trust and value Rosalie work. The environment is clean, relaxing, and welcoming, and she is professional, kind, and attentive to my skin's needs. I truly appreciate the care and attention to detail during each visit. Highly recommended!", "rating": 5, "date": "2025-05-08", "source": "Fresha", "note": "Original quote used an em-dash after 'see her'; normalized to a comma for site-copy compliance (no em-dash rule). No words changed or added." },
+  { "author": "Sandra C.", "body": "Always a great experience! Great service and best massages.", "rating": 5, "date": "2025-12-11", "source": "Fresha" },
+  { "author": "Chloe R.", "body": "Rosalie is the very best esthetician!", "rating": 5, "date": "2025-07-03", "source": "Fresha" }
  ],
- "named_reviews": [],
- "language": "en"
+
+ "reviews_all_fetched": [
+  { "author": "Sandra C", "body": "Always a great experience ! Great service and best massages", "rating": 5, "date": "2025-12-11" },
+  { "author": "Anonymous", "body": "The best!!", "rating": 5, "date": "2025-11-03" },
+  { "author": "Geneviève A", "body": "As always, my experience with Rosalie was excellent. She is consistently professional, kind, and reliable. I truly appreciate her outstanding service every time!\nGenevieve", "rating": 5, "date": "2025-07-24" },
+  { "author": "Chloe R", "body": "Rosalie is the very best esthetician!", "rating": 5, "date": "2025-07-03" },
+  { "author": "Madeline B", "body": "Superb!", "rating": 5, "date": "2025-05-21" },
+  { "author": "Geneviève A", "body": "I always have an outstanding experience every time I get a facial here. I actually fly in from Tampa just to see her, that's how much I trust and value Rosalie work. The environment is clean, relaxing, and welcoming, and she is professional, kind, and attentive to my skin's needs. I truly appreciate the care and attention to detail during each visit. Highly recommended!", "rating": 5, "date": "2025-05-08" }
+ ],
+
+ "photos_used": {
+  "count": 8,
+  "source": "Fresha location gallery (venueSnippetImages / portfolioGallery / professional-profiles), full-resolution xlarge/venue-gallery-large variants pulled directly from the __NEXT_DATA__ payload (the public gallery widget only exposed 3 of these at first; the rest were recovered by reading every image field in the raw JSON payload)",
+  "files": {
+   "se-hero.jpg": "Empty treatment room, establishing shot (hero + reused as brand logo/og-image)",
+   "se-equipment.jpg": "Treatment room with facial steamer, product cart and certifications on the wall (About section)",
+   "se-hallway.jpg": "Studio hallway with the Suite 21 signage, a 'spa session in progress' door sign and fresh flowers (About section)",
+   "se-facial.jpg": "Rosalie performing a facial treatment on a client (About avatar)",
+   "se-corner.jpg": "Cozy entry corner with an armchair, mirror and framed art (Gallery)",
+   "se-signage.jpg": "Close-up of the Suite 21 / Sérénité Esthetics Inc. plaque with the studio phone number (Gallery)",
+   "se-treatment2.jpg": "Alternate angle of a facial treatment in progress (Gallery)",
+   "se-plaque-wide.jpg": "Wider crop of the studio's gold logo and signage (Gallery)"
+  },
+  "excluded": {
+   "count": 3,
+   "reason": "Curation rule: no marketing graphics with text overlay, no close-up shots of irritated/congested skin, no cartoon/caricature graphics",
+   "files": [
+    "A promotional graphic ('Did you know Sérénité means serenity in French') with large overlaid text",
+    "A before/after skin close-up with visible redness/irritation and a logo watermark",
+    "An Instagram marketing graphic with a caricature illustration"
+   ]
+  },
+  "instagram_photos_note": "12 Instagram posts were also fetched via the ig_photos.py Railway service. Nearly all were promotional graphics with text overlays, gift-card ads, before/after close-ups of congested skin, or a caricature illustration, none met the gallery curation bar (no text overlays, no irritated skin, no graphics). None were used on the site; the Fresha venue/portfolio photos were higher quality and fully real (unstaged studio + treatment photos)."
+ },
+
+ "reviewers_recent_avatars_seen_on_fresha": ["Marodie P", "Bianca M", "S D"],
+
+ "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/serenite-esthetics-kendall/",
+ "status": "staging",
+ "outreach": "pending_manual"
 }
