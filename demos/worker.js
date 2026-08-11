@@ -11,6 +11,45 @@
 const COLOR_OK = /^(#[0-9a-f]{3,8}|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*(?:0|1|0?\.\d+)\s*)?\))$/i;
 const TOKENS = ['deep', 'mid', 'soft', 'ghost'];
 
+// Los esqueletos NO usan var(--accent-*) en todas partes: el gradiente de .text-shine, el
+// relieve de .btn-3d, .step-num, .stars, .book-float y la barra de progreso llevan el dorado
+// escrito a mano. Cambiar solo las variables dejaba el titular y los botones dorados sobre un
+// sitio ya recoloreado. Por eso se derivan los tonos y se reescriben tambien esas reglas.
+const hexRGB = h => {
+  const s = h.replace('#', '');
+  const n = s.length === 3 ? s.split('').map(c => c + c).join('') : s.slice(0, 6);
+  const v = [0, 2, 4].map(i => parseInt(n.slice(i, i + 2), 16));
+  return v.some(Number.isNaN) ? null : v;
+};
+const aHex = v => '#' + v.map(x => Math.max(0, Math.min(255, Math.round(x))).toString(16).padStart(2, '0')).join('');
+const claro = (rgb, t) => aHex(rgb.map(v => v + (255 - v) * t));   // mezcla con blanco
+const oscuro = (rgb, f) => aHex(rgb.map(v => v * f));              // multiplica
+
+function reglasExtra(deep) {
+  const rgb = hexRGB(deep);
+  if (!rgb) return '';
+  const c = rgb.join(',');
+  const luz = claro(rgb, 0.55);     // brillo del gradiente (era #f0dc9e)
+  const medio = claro(rgb, 0.28);   // (era #e5c374)
+  const hondo = oscuro(rgb, 0.72);  // (era #9a7431)
+  const sombra = oscuro(rgb, 0.5);  // relieve del boton (era #6b5222)
+  const tinta = oscuro(rgb, 0.13);  // texto sobre el boton (era #1c1408)
+  return [
+    `.text-shine{background:linear-gradient(110deg,${deep} 0%,${luz} 30%,${hondo} 52%,${deep} 75%,${medio} 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}`,
+    `.step-num{background:linear-gradient(180deg,${medio},${hondo});-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}`,
+    `.stars{color:${deep};text-shadow:0 0 14px rgba(${c},0.45)}`,
+    `.btn-3d{background:linear-gradient(180deg,${luz} 0%,${medio} 48%,${hondo} 100%);color:${tinta};box-shadow:inset 0 1px 0 rgba(255,255,255,0.3),inset 0 -2px 5px rgba(0,0,0,0.25),0 5px 0 ${sombra},0 12px 24px rgba(0,0,0,0.5)}`,
+    `.btn-3d:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,0.35),inset 0 -2px 5px rgba(0,0,0,0.25),0 7px 0 ${sombra},0 18px 34px rgba(0,0,0,0.55),0 0 40px rgba(${c},0.25)}`,
+    `.btn-3d:active{box-shadow:inset 0 1px 0 rgba(255,255,255,0.25),inset 0 -1px 3px rgba(0,0,0,0.3),0 1px 0 ${sombra},0 4px 10px rgba(0,0,0,0.45)}`,
+    `.dark-band .btn-3d{background:linear-gradient(180deg,${claro(rgb, 0.8)} 0%,${luz} 48%,${medio} 100%);color:${tinta};box-shadow:inset 0 1px 0 rgba(255,255,255,0.55),inset 0 -2px 5px rgba(0,0,0,0.2),0 5px 0 ${oscuro(rgb, 0.65)},0 12px 24px rgba(0,0,0,0.45)}`,
+    `.book-float{background:linear-gradient(180deg,${luz} 0%,${medio} 48%,${hondo} 100%);box-shadow:0 6px 0 ${sombra},0 14px 30px rgba(0,0,0,0.5)}`,
+    `.book-float:hover{box-shadow:0 8px 0 ${sombra},0 20px 40px rgba(0,0,0,0.55),0 0 34px rgba(${c},0.35)}`,
+    `.book-float svg{stroke:${tinta}}`,
+    `#scroll-progress{background:linear-gradient(90deg,${hondo} 0%,${deep} 45%,${luz} 100%)}`,
+    `.merktop-dot{background:${deep}}`,
+  ].join('');
+}
+
 async function estiloDe(env, slug) {
   if (!slug || !/^[a-z0-9-]{1,40}$/.test(slug)) return null;
   let p;
@@ -22,8 +61,9 @@ async function estiloDe(env, slug) {
     .filter(t => typeof p[t] === 'string' && COLOR_OK.test(p[t].trim()))
     .map(t => `--accent-${t}:${p[t].trim()}`);
   if (!reglas.length) return null;
-  // Un solo :root al final del head gana por orden de cascada sin tocar el resto del CSS.
-  return `<style id="sf-color">:root{${reglas.join(';')}}</style>`;
+  const deep = typeof p.deep === 'string' && /^#[0-9a-f]{3,8}$/i.test(p.deep.trim()) ? p.deep.trim() : null;
+  // Un solo bloque al final del head gana por orden de cascada sin tocar el resto del CSS.
+  return `<style id="sf-color">:root{${reglas.join(';')}}${deep ? reglasExtra(deep) : ''}</style>`;
 }
 
 class InyectarColor {
