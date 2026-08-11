@@ -1,5 +1,28 @@
 {
+  // CONFIG DE LA RAIZ: es la que usa el build automatico (Workers Builds corre `wrangler deploy`
+  // sin -c, y sin -c wrangler toma este archivo). Tiene que ser EQUIVALENTE a demos/wrangler.jsonc,
+  // que apunta al mismo worker `siteforge-demos`.
+  //
+  // Que pasaba antes (2026-08-11): este archivo no traia `main` ni bindings, asi que cada build
+  // automatico publicaba el worker SOLO como assets estaticos, tirando el codigo y el KV. En
+  // produccion quedaba `"bindings": []` y `serve_directly: true`, o sea que NO corria ni la
+  // inyeccion de color ni el mapeo de dominios propios comprados desde el panel.
+  //
+  // Si se cambia algo aqui, cambiarlo tambien en demos/wrangler.jsonc (las rutas son relativas
+  // a la ubicacion de cada archivo).
   "name": "siteforge-demos",
+  "main": "demos/worker.js",
   "compatibility_date": "2026-07-01",
-  "assets": { "directory": "output", "html_handling": "auto-trailing-slash" }
+  "assets": {
+    "directory": "output",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    // Por defecto es false: si la peticion coincide con un asset existente, Cloudflare lo sirve
+    // directo del CDN y el Worker NO se ejecuta. Se pide worker-first para el HTML (una lectura
+    // de KV, ~ms) y se dejan fuera los assets, que son el grueso del trafico.
+    "run_worker_first": ["/*", "!/*/assets/*"]
+  },
+  "kv_namespaces": [
+    { "binding": "DOMAIN_MAP", "id": "3a40823222b6421fafe3969982345792" }
+  ]
 }
