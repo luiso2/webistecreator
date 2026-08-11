@@ -147,17 +147,30 @@ export default {
       if (!(await isAuthorized(req))) return json({ error: 'unauthorized' }, 401);
 
       if (url.pathname === '/api/state' && req.method === 'GET') {
-        const [registry, queue, crm] = await Promise.all([
+        const [registry, queue, crm, colores] = await Promise.all([
           env.SITEFORGE_KV.get('registry', 'json'),
           env.SITEFORGE_KV.get('queue', 'json'),
           env.SITEFORGE_KV.get('crm', 'json'),
+          // Colores personalizados: se listan las llaves y se leen solo las que existen, para
+          // que el panel marque el color activo de cada sitio sin una lectura por negocio.
+          env.SITEFORGE_KV.list({ prefix: 'color:' })
+            .then(l => Promise.all(l.keys.map(k =>
+              env.SITEFORGE_KV.get(k.name, 'json').then(v => [k.name.slice(6), v]))))
+            .then(pares => Object.fromEntries(pares.filter(([, v]) => v)))
+            .catch(() => ({})),
         ]);
         // El CRM (cliente cerrado / descartado) vive en su propia llave: ninguna
         // sincronizacion del registro desde el repo o la forja lo puede pisar.
         const map = crm || {};
         const reg = (registry || []).map(b => (map[b.slug]
-          ? { ...b, crm_status: map[b.slug].status, crm_at: map[b.slug].at }
-          : b));
+          ? {
+              ...b,
+              crm_status: map[b.slug].status,
+              crm_at: map[b.slug].at,
+              contacted_at: map[b.slug].contacted_at || null,
+              contacted_via: map[b.slug].via || null,
+            }
+          : b)).map(b => (colores[b.slug] ? { ...b, color: colores[b.slug] } : b));
         return json({ registry: reg, queue: queue || [] });
       }
 
@@ -169,16 +182,56 @@ export default {
         const slug = (body.slug || '').toString();
         if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
         const status = body.status;
-        if (!['client', 'declined', 'pending'].includes(status)) return json({ error: 'status invalido' }, 400);
+        // 'contacted' = ya le escribi o lo llame, para no repetir el contacto. Es distinto de
+        // 'client' (cerro) y de 'declined' (dijo que no): es el paso intermedio que faltaba.
+        if (!['client', 'declined', 'contacted', 'pending'].includes(status)) return json({ error: 'status invalido' }, 400);
         const crm = (await env.SITEFORGE_KV.get('crm', 'json')) || {};
         if (status === 'pending') {
           delete crm[slug];
         } else {
-          crm[slug] = { status, at: new Date().toISOString() };
+          const via = ['llamada', 'whatsapp', 'dm', 'email', 'visita'].includes(body.via) ? body.via : null;
+          crm[slug] = {
+            status,
+            at: new Date().toISOString(),
+            ...(via ? { via } : {}),
+            // conservar cuando se contacto por primera vez aunque luego cierre o descarte
+            ...(crm[slug] && crm[slug].contacted_at ? { contacted_at: crm[slug].contacted_at }
+                : (status === 'contacted' ? { contacted_at: new Date().toISOString() } : {})),
+          };
         }
         await env.SITEFORGE_KV.put('crm', JSON.stringify(crm));
-        const clientes = Object.values(crm).filter(c => c.status === 'client').length;
-        return json({ ok: true, slug, status, clientes });
+        const vals = Object.values(crm);
+        return json({
+          ok: true, slug, status,
+          clientes: vals.filter(c => c.status === 'client').length,
+          contactados: vals.filter(c => c.status === 'contacted').length,
+        });
+      }
+
+      // Color del sitio: se guarda en el MISMO KV que lee el worker de demos, que lo inyecta
+      // como <style> al servir. Por eso el cambio se ve al instante y no hace falta
+      // reconstruir el sitio ni redeployar. Enviar sin `palette` lo devuelve a su color original.
+      if (url.pathname === '/api/color' && req.method === 'POST') {
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        const slug = (body.slug || '').toString();
+        if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
+        if (!body.palette) {
+          await env.SITEFORGE_KV.delete('color:' + slug);
+          return json({ ok: true, slug, palette: null });
+        }
+        // Mismo filtro que aplica el worker de demos: estos valores acaban dentro de un
+        // <style>, asi que solo pasan formas de color conocidas.
+        const OK = /^(#[0-9a-f]{3,8}|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*(?:0|1|0?\.\d+)\s*)?\))$/i;
+        const limpia = {};
+        for (const t of ['deep', 'mid', 'soft', 'ghost']) {
+          const v = (body.palette[t] || '').toString().trim();
+          if (!OK.test(v)) return json({ error: `color invalido en "${t}"`, valor: v.slice(0, 40) }, 400);
+          limpia[t] = v;
+        }
+        if (typeof body.nombre === 'string') limpia.nombre = stripUnsafe(body.nombre.slice(0, 40));
+        await env.SITEFORGE_KV.put('color:' + slug, JSON.stringify(limpia));
+        return json({ ok: true, slug, palette: limpia });
       }
 
       if (url.pathname === '/api/queue' && req.method === 'POST') {
@@ -247,26 +300,33 @@ export default {
 
         const en = (biz.language || 'es') === 'en';
         const redesign = !!biz.has_own_site;
+        // El asunto decide si se abre: va el nombre del negocio y un hecho concreto, no una
+        // etiqueta de producto. "de muestra" se cayo a proposito: lee como plantilla o
+        // borrador, y lo que se construyo lleva SUS fotos y SUS servicios.
         const subject = en
-          ? (redesign ? `A premium redesign concept for ${biz.name}` : `A sample website for ${biz.name}`)
-          : (redesign ? `Una propuesta de rediseño premium para ${biz.name}` : `Un website de muestra para ${biz.name}`);
+          ? (redesign ? `${biz.name}: a new version of your website` : `${biz.name}: your website is ready to look at`)
+          : (redesign ? `${biz.name}: una version nueva de su pagina` : `${biz.name}: su website ya esta listo para verlo`);
+        // Cierra en PREGUNTA: sin ella nada obliga a contestar. Y dice explicitamente que
+        // verlo no cuesta, que es el freno que hace que no respondan.
         const lines = en
           ? [
               `Hi ${biz.name} team!`,
               redesign
-                ? `I'm Michael, from Merktop (Miami). I found your business on Google and put together an alternative premium design concept for your site, built with your real photos, services and reviews:`
-                : `I'm Michael, from Merktop (Miami). I found your business on Google, saw you don't have your own website yet, and went ahead and built you a sample one with your real photos, services and reviews:`,
+                ? `I'm Michael, from Merktop (Miami). I found you on Google and rebuilt your site using your own photos, services and reviews, so the people who land on it actually book:`
+                : `I'm Michael, from Merktop (Miami). I found you on Google, saw you didn't have your own website, and built you one with your real photos, services and reviews, so the people searching for you can find you and book:`,
               biz.url_demo,
-              `It doesn't touch your booking flow at all. If you like it, we can put it on your own domain and adjust it together. If not, I'll take it down, no strings attached.`,
+              `It's already built and it costs you nothing to look at. It doesn't touch your booking flow at all, and if you don't like it I take it down today.`,
+              en && redesign ? `Want me to walk you through it?` : `Want me to leave it up?`,
               `Michael Vargas\nMerktop · https://merktop.com`,
             ]
           : [
               `Hola equipo ${biz.name}!`,
               redesign
-                ? `Soy Michael, de Merktop (Miami). Encontre su negocio en Google y prepare una propuesta alternativa de diseño premium para su sitio, construida con sus fotos, servicios y reseñas reales:`
-                : `Soy Michael, de Merktop (Miami). Encontre su negocio en Google, vi que todavia no tienen website propio y me anime a construirles uno de muestra con sus fotos, servicios y reseñas reales:`,
+                ? `Soy Michael, de Merktop (Miami). Los encontre en Google y rearme su pagina con sus propias fotos, servicios y reseñas, para que quien llegue termine reservando:`
+                : `Soy Michael, de Merktop (Miami). Los encontre en Google, vi que no tenian website propio y les arme uno con sus fotos, servicios y reseñas reales, para que quien los busque los encuentre y reserve:`,
               biz.url_demo,
-              `No toca para nada su sistema de reservas. Si les gusta, lo dejamos en su propio dominio y lo ajustamos juntos. Si no, lo retiro sin compromiso.`,
+              `Ya esta listo y no les cuesta nada verlo. No toca para nada su sistema de reservas, y si no les gusta lo bajo hoy mismo.`,
+              redesign ? `¿Se la muestro?` : `¿Se los dejo activo?`,
               `Michael Vargas\nMerktop · https://merktop.com`,
             ];
         const text = lines.join('\n\n');
@@ -304,14 +364,31 @@ export default {
       if (url.pathname === '/api/domain/check' && req.method === 'POST') {
         const cfTok = cfRegistrarToken(env);
         if (!cfTok || !env.CF_ACCOUNT_ID) {
-          return json({ error: 'Falta CF_REGISTRAR_TOKEN (secret) o CF_ACCOUNT_ID en el worker' }, 500);
+          return json({
+            error: 'Falta CF_REGISTRAR_TOKEN en el worker',
+            como_arreglarlo: 'npx wrangler secret put CF_REGISTRAR_TOKEN -c ui/wrangler.jsonc',
+            nota: 'Ponerlo como SECRET, no como variable del dashboard: un deploy reemplaza las vars y la borra.',
+          }, 500);
         }
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
-        const base = (body.name || '').toString().toLowerCase().replace(/[^a-z0-9-]/g, '').replace(/^-+|-+$/g, '').slice(0, 50);
+        // El punto que separa nombre y TLD es DATO, no suciedad: sanear a lo bruto con
+        // replace(/[^a-z0-9-]/g,'') convertia "mibarberia.com" en "mibarberiacom" y buscaba
+        // "mibarberiacom.com". Hay que parsear primero y limpiar despues.
+        const crudo = (body.name || '').toString().toLowerCase().trim()
+          .replace(/^https?:\/\//, '')   // pegar la URL entera tambien vale
+          .replace(/^www\./, '')
+          .replace(/[/?#].*$/, '')       // quitar path/query
+          .replace(/\s+/g, '');          // "mi barberia" -> "mibarberia"
+        const conTld = crudo.match(/^([a-z0-9][a-z0-9-]*)\.([a-z]{2,24}(?:\.[a-z]{2,24})?)$/);
+        const base = (conTld ? conTld[1] : crudo).replace(/[^a-z0-9-]/g, '').replace(/^-+|-+$/g, '').slice(0, 50);
         if (!base) return json({ error: 'nombre invalido' }, 400);
-        const tlds = (Array.isArray(body.tlds) && body.tlds.length ? body.tlds : ['com', 'net', 'co', 'studio'])
-          .map(t => String(t).toLowerCase().replace(/[^a-z]/g, '')).filter(Boolean).slice(0, 6);
+        const pedido = conTld ? conTld[2] : null;
+        // Si el usuario escribio un TLD concreto, ese va PRIMERO y siempre se consulta.
+        const porDefecto = ['com', 'net', 'co', 'studio'];
+        const listaTlds = Array.isArray(body.tlds) && body.tlds.length ? body.tlds : porDefecto;
+        const tlds = [...new Set([...(pedido ? [pedido] : []), ...listaTlds])]
+          .map(t => String(t).toLowerCase().replace(/[^a-z.]/g, '')).filter(Boolean).slice(0, 6);
         const domains = tlds.map(t => `${base}.${t}`);
         const r = await fetch(`https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/registrar/domain-check`, {
           method: 'POST',
@@ -321,7 +398,9 @@ export default {
         const data = await r.json().catch(() => ({}));
         if (!r.ok) return json({ error: 'CF domain-check fallo', detail: data }, 502);
         const list = (data.result && data.result.domains) || data.result || [];
-        return json({ ok: true, base, results: Array.isArray(list) ? list : [] });
+        // `base` y `buscados` vuelven al panel para que se vea QUE se busco de verdad:
+        // si el texto se normaliza, el usuario tiene que poder notarlo.
+        return json({ ok: true, base, buscados: domains, results: Array.isArray(list) ? list : [] });
       }
 
       // Comprar un dominio y montar el sitio en el. ACCION DE DINERO: requiere key + confirm:true,
@@ -329,7 +408,11 @@ export default {
       if (url.pathname === '/api/domain/buy' && req.method === 'POST') {
         const cfTok = cfRegistrarToken(env);
         if (!cfTok || !env.CF_ACCOUNT_ID) {
-          return json({ error: 'Falta CF_REGISTRAR_TOKEN (secret) o CF_ACCOUNT_ID en el worker' }, 500);
+          return json({
+            error: 'Falta CF_REGISTRAR_TOKEN en el worker',
+            como_arreglarlo: 'npx wrangler secret put CF_REGISTRAR_TOKEN -c ui/wrangler.jsonc',
+            nota: 'Ponerlo como SECRET, no como variable del dashboard: un deploy reemplaza las vars y la borra.',
+          }, 500);
         }
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
