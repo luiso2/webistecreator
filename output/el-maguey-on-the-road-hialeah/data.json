@@ -1,0 +1,51 @@
+{
+ "slug": "el-maguey-on-the-road-hialeah",
+ "name": "El Maguey on the Road",
+ "schema_type": "FoodEstablishment",
+ "niche": "food truck / Mexican and Tex-Mex cuisine",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "11390 NW 87th Ct",
+  "addressLocality": "Hialeah",
+  "addressRegion": "FL",
+  "postalCode": "33018",
+  "addressCountry": "US",
+  "note": "Food truck; this is its regular parking location per Yelp/Yahoo Local/Restaurantji listings."
+ },
+ "phone": "+1-786-286-6951",
+ "hours": {
+  "monday": "closed",
+  "tuesday_to_sunday": "18:30-23:00"
+ },
+ "rating_sources": [
+  { "source": "Yahoo Local", "rating": 5.0, "review_count": 64, "verified_by": "direct WebFetch of local.yahoo.com listing" },
+  { "source": "Restaurantji", "rating": 4.9, "review_count": 119, "verified_by": "WebSearch result snippet, not independently fetched (403 on direct fetch)" },
+  { "source": "Yelp", "rating_note": "listing exists (61-64 reviews range seen across sources), exact current star value not independently re-fetched (403 on direct fetch)" }
+ ],
+ "reviews_verbatim": [
+  { "author": "Diana A.", "source": "Yelp", "text": "I've been at this spot three times already and every time I love it even more! I've tried their guac, chicken quesadilla, carne asada burrito, al pastor tacos, chicken tacos, everything is amazing." },
+  { "author": "Nathalie R.", "source": "Yelp", "text": "The food portions are big. The al pastor tacos and horchata is so good. The food doesn't take long to make and service is great!" },
+  { "author": "Daph R.", "source": "Yelp", "text": "10/10 service super fast tacos r a great size and it comes with chips and salsa. flan is also so good would recommend!!!" },
+  { "author": "Johanna D.", "source": "Yahoo Local", "text": "This truck is amazing! The food is amazing. The portions are huge." },
+  { "author": "Jennifer L.", "source": "Yahoo Local", "text": "They are beyond nice, good prices for the portion, a taste of delicious authentic Mexican food." }
+ ],
+ "instagram": "elmagueyontheroad",
+ "instagram_url": "https://www.instagram.com/elmagueyontheroad/",
+ "instagram_bio_note": "Could not read the live IG bio/external_url directly: web_profile_info endpoint returned HTTP 401 rate-limit twice, and the Playwright-based scrape (scripts/ig_scrape_fixed.js) also hit a rate-limited response. Photos were still obtained successfully via the Railway ig-photo-service (12 photos, login_wall:false).",
+ "website_candidates_checked": ["elmagueyontheroad.com", "elmagueyontheroad.co", "elmagueytruck.com", "elmagueyontheroad.net"],
+ "website_candidates_result": "all ENOTFOUND (no DNS resolution) via python socket.gethostbyname, confirmed independently in this session",
+ "has_own_site": false,
+ "email": null,
+ "email_search_note": "Deep search performed per PIPELINE Fase 1.7: IG business_email (endpoint rate-limited), Facebook About page (login wall blocked direct read, only an AI search-summary claimed elmagueyontheroad@gmail.com with no literal source page confirmed), catering mention says 'email us for catering info' but no address shown, DoorDash/zmenu/restaurantji/roaminghunger all returned 403 on direct fetch. No email could be independently verified, so it is recorded as null per the no-invented-data rule.",
+ "language": "en",
+ "photos_source": "Railway ig-photo-service (https://ig-photo-service-production.up.railway.app/ig), 12 photos returned, login_wall:false",
+ "photos_curation": {
+  "used_hero": "hero-tacos.jpg (source: ig photo #1, birria/al pastor style taco plate with consomme and lime)",
+  "used_experiencia": ["exp-team.jpg (source: ig photo #6, full crew in front of the truck)", "gallery-tray.jpg (source: ig photo #3, tray of tacos)"],
+  "used_menu_flagship": "gallery-tacos.jpg (source: ig photo #2, close-up tacos with onion/cilantro/lime)",
+  "used_gallery": ["gallery-churros.jpg (ig photo #11)", "gallery-quesadilla.jpg (ig photo #9)", "gallery-flautas.jpg (ig photo #8)"],
+  "discarded_as_graphics_not_photos": ["ig photo #4 (4th of July event flyer)", "ig photo #7 (Cinco de Mayo event flyer)", "ig photo #10 (screenshot of a DoorDash review, text overlay)"],
+  "discarded_as_owner_portrait_not_gallery_material": ["ig photo #5 (staff member posing with thumbs up in front of the truck), ig photo #0 (staff member posing with a promo sign) per pipeline rule: no owner/staff portraits as gallery tiles, only allowed as small imagery in the About section"]
+ },
+ "logo_note": "No dedicated logo/wordmark photo was found in the IG feed (only food and event photos). A simple 'EM' monogram was generated locally (PIL) for the nav/footer/favicon instead of fabricating or guessing a logo image."
+}

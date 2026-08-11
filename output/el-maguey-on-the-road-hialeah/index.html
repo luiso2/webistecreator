@@ -188,17 +188,17 @@
     /* Mapa elegante */
     .map-frame iframe { filter: grayscale(1) contrast(0.92) brightness(0.9); }
 
-    /* WhatsApp flotante */
+    /* Llamada flotante */
     .wa-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60;
       width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #2ee06e 0%, #1fb457 100%);
-      box-shadow: 0 6px 0 #12713a, 0 14px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(180deg, #f0b25e 0%, #c85a34 100%);
+      box-shadow: 0 6px 0 #7a3d22, 0 14px 30px rgba(0,0,0,0.5);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .wa-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #12713a, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(46,224,110,0.35); }
-    .wa-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #12713a, 0 6px 14px rgba(0,0,0,0.45); }
+    .wa-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #7a3d22, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(240,178,94,0.35); }
+    .wa-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #7a3d22, 0 6px 14px rgba(0,0,0,0.45); }
 
     /* ===== Motion v2 (nivel $100k) ===== */
 
@@ -530,60 +530,60 @@
     </div>
   </section>
 
-  <!-- EL RITUAL PASO A PASO -->
+  <!-- COMO PEDIR -->
   <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">90 minutos para <span class="text-shine">reiniciarte</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Cómo pedir" data-en="How to order">How to order</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="De la ventanilla a tu" data-en="From the window to your">From the window to your</span> <span class="text-shine" data-es="mesa" data-en="table">table</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Diagnóstico capilar</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Comenzamos entendiendo lo que tu cuero cabelludo realmente necesita, para personalizar cada paso del ritual.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Encuéntranos" data-en="Find us">Find us</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="El truck está en 11390 NW 87th Ct, Hialeah, de martes a domingo, de 6:30pm a 11pm." data-en="Our truck is parked at 11390 NW 87th Ct, Hialeah, Tuesday through Sunday, 6:30pm to 11pm.">Our truck is parked at 11390 NW 87th Ct, Hialeah, Tuesday through Sunday, 6:30pm to 11pm.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Limpieza profunda</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Detox del cuero cabelludo con vapor terapéutico y el arco de agua del waterfall halo sobre el basin.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Ordena en la ventanilla" data-en="Order at the window">Order at the window</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Tacos, quesadillas, burritos o flautas: dinos qué se te antoja y lo preparamos frente a ti." data-en="Tacos, quesadillas, burritos or flautas: tell us what you are craving and we cook it right in front of you.">Tacos, quesadillas, burritos or flautas: tell us what you are craving and we cook it right in front of you.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Masaje envolvente</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal extendido con aromaterapia: tú eliges el aceite esencial que acompaña tu sesión.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Espera pocos minutos" data-en="A short wait">A short wait</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="El servicio es rápido: nuestros clientes lo mencionan en casi todas las reseñas." data-en="Service is fast: our customers mention it in almost every review.">Service is fast: our customers mention it in almost every review.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Nutrición desde la raíz</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Nutrientes que revitalizan el cabello desde la raíz, con antifaz de jade y toallas calientes para cerrar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Disfruta" data-en="Enjoy">Enjoy</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cada orden de tacos llega con chips y salsa. Prueba el flan o los churros para cerrar la noche." data-en="Every taco order comes with chips and salsa. Try the flan or the churros to close out the night.">Every taco order comes with chips and salsa. Try the flan or the churros to close out the night.</p>
         </div>
       </div>
 
-      <!-- Card del servicio insignia -->
+      <!-- Card del plato insignia -->
       <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal" data-tilt>
         <span class="tilt-glare" aria-hidden="true"></span>
         <div class="lg:col-span-2 zoomable relative min-h-[320px]">
-          <img src="assets/raw/treatment-5.jpg" alt="Clienta recostada en el basin negro bajo el halo de agua con luz ambiental" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gallery-tacos.jpg" alt="Close-up of tacos with cilantro, onion and a lime wedge, El Maguey on the Road" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="lg:col-span-3 p-8 sm:p-12">
-          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-4">Servicio insignia</p>
-          <h3 class="font-display text-3xl sm:text-4xl mb-3">Ritual Imperial <span class="text-shine">Mizu</span></h3>
-          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7">La experiencia completa de head spa japonés: diagnóstico, limpieza profunda, masaje envolvente, aromaterapia, vapor terapéutico y nutrición desde la raíz.</p>
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-4" data-es="El plato favorito" data-en="Customer favorite">Customer favorite</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3"><span data-es="Tacos al" data-en="Tacos al">Tacos al</span> <span class="text-shine">Pastor</span></h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7" data-es="El plato que más se repite en las reseñas. Cebolla y cilantro frescos, con la porción generosa que caracteriza al truck. También disponibles: carne asada, pollo y birria." data-en="The dish that comes up most in reviews. Fresh onion and cilantro, in the generous portion the truck is known for. Also available: carne asada, chicken and birria.">The dish that comes up most in reviews. Fresh onion and cilantro, in the generous portion the truck is known for. Also available: carne asada, chicken and birria.</p>
           <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
-            <div><p class="font-display text-3xl text-shine">$189</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Precio</p></div>
+            <div><p class="font-display text-3xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Calificación" data-en="Rating">Rating</p></div>
             <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
-            <div><p class="font-display text-3xl">90 min</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Duración</p></div>
+            <div><p class="font-display text-3xl" data-es="Grandes" data-en="Big">Big</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Porciones" data-en="Portions">Portions</p></div>
             <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
-            <div><p class="font-display text-3xl">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Atención personal</p></div>
+            <div><p class="font-display text-3xl" data-es="A la orden" data-en="Made to order">Made to order</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Preparación" data-en="Cooking">Cooking</p></div>
           </div>
-          <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar mi ritual
+          <a href="tel:+17862866951" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar para preguntar" data-en="Call to ask">Call to ask</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
@@ -591,27 +591,63 @@
     </div>
   </section>
 
+  <!-- MENU -->
+  <section id="menu" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Nuestro menú" data-en="Our menu">Our menu</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Cocina mexicana" data-en="Mexican cooking">Mexican cooking</span>, <span class="text-shine" data-es="hecha en el momento" data-en="made to order">made to order</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 reveal flex flex-col" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-[color:var(--accent-mid)] mb-3" data-es="Lo más pedido" data-en="Most ordered">Most ordered</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tacos" data-en="Tacos">Tacos</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed flex-1" data-es="Al pastor, carne asada, pollo y birria. Con cebolla y cilantro fresco, chips y salsa incluidos." data-en="Al pastor, carne asada, chicken and birria. With fresh onion and cilantro, chips and salsa included.">Al pastor, carne asada, chicken and birria. With fresh onion and cilantro, chips and salsa included.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal border-[color:rgba(240,178,94,0.4)] flex flex-col" style="transition-delay:110ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-[color:var(--accent-mid)] mb-3" data-es="Favorito de la casa" data-en="House favorite">House favorite</p>
+          <h3 class="font-display text-xl mb-3" data-es="Quesadillas y burritos" data-en="Quesadillas & burritos">Quesadillas & burritos</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6 flex-1" data-es="Quesadilla de pollo o carne asada, y burrito al pastor. Porciones grandes, servidas al momento." data-en="Chicken or carne asada quesadilla, and al pastor burrito. Big portions, served hot off the grill.">Chicken or carne asada quesadilla, and al pastor burrito. Big portions, served hot off the grill.</p>
+          <a href="tel:+17862866951" class="btn-3d rounded-full px-5 py-2.5 text-xs inline-flex items-center gap-2 self-start"><span data-es="Preguntar" data-en="Ask about it">Ask about it</span></a>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal flex flex-col" style="transition-delay:220ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-[color:var(--accent-mid)] mb-3" data-es="Para compartir" data-en="For sharing">For sharing</p>
+          <h3 class="font-display text-xl mb-3" data-es="Flautas y guacamole" data-en="Flautas & guacamole">Flautas & guacamole</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed flex-1" data-es="Flautas crujientes con repollo y crema, y guacamole fresco preparado en el truck." data-en="Crispy flautas with cabbage and sour cream, and fresh guacamole made right on the truck.">Crispy flautas with cabbage and sour cream, and fresh guacamole made right on the truck.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal flex flex-col" style="transition-delay:330ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="text-[11px] tracking-[0.3em] uppercase text-[color:var(--accent-mid)] mb-3" data-es="Para cerrar la noche" data-en="To close the night">To close the night</p>
+          <h3 class="font-display text-xl mb-3" data-es="Churros, flan y horchata" data-en="Churros, flan & horchata">Churros, flan & horchata</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed flex-1" data-es="Churros con chocolate, flan casero y horchata bien fría para acompañar." data-en="Churros with chocolate, homemade flan and horchata to wash it all down.">Churros with chocolate, homemade flan and horchata to wash it all down.</p>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" style="transition-delay:380ms" data-es="El menú completo cambia según el día. Llámanos o escríbenos por Instagram para saber qué hay en el truck esta noche." data-en="The full menu changes day to day. Call us or message us on Instagram to see what is on the truck tonight.">The full menu changes day to day. Call us or message us on Instagram to see what is on the truck tonight.</p>
+    </div>
+  </section>
+
   <!-- GALERIA -->
   <section id="galeria" class="relative py-24 sm:py-32 grain">
-    <span class="sec-num" aria-hidden="true">03</span>
+    <span class="sec-num" aria-hidden="true">04</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">estudio</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Dentro del" data-en="Inside the">Inside the</span> <span class="text-shine" data-es="truck" data-en="truck">truck</span></h2>
         </div>
-        <a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.instagram.com/elmagueyontheroad/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @mizuheadspamiami
+          @elmagueyontheroad
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">El halo de agua</span><img src="assets/raw/treatment-5.jpg" alt="Sesión de head spa bajo el halo de agua" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">Ritual Imperial</span><img src="assets/raw/treatment-4.jpg" alt="Momento del Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Resultado: cabello brillante frente al logo Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">El ritual</span><img src="assets/raw/treatment-3.jpg" alt="Detalle del ritual de head spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La experiencia</span><img src="assets/raw/testimonial-1.jpg" alt="Clienta durante su experiencia en Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">Ritual Imperial Mizu</span><img src="assets/raw/treatment-1.jpg" alt="Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Churros para cerrar" data-en="Churros for dessert">Churros for dessert</span><img src="assets/raw/gallery-churros.jpg" alt="Churros with two dipping sauces, El Maguey on the Road" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Quesadilla" data-en="Quesadilla">Quesadilla</span><img src="assets/raw/gallery-quesadilla.jpg" alt="Quesadilla cut into wedges with sour cream, El Maguey on the Road" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Flautas" data-en="Flautas">Flautas</span><img src="assets/raw/gallery-flautas.jpg" alt="Crispy flautas with cabbage and sour cream, El Maguey on the Road" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -620,158 +656,157 @@
   <div class="marquee border-t border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Tacos al Pastor</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Carne Asada</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Quesadillas</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Burritos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Horchata</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Tacos al Pastor</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Carne Asada</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Quesadillas</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Burritos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Horchata</span><span class="marquee-sep">✦</span>
       </div>
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Tacos al Pastor</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Carne Asada</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Quesadillas</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Burritos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Horchata</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Tacos al Pastor</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Carne Asada</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Quesadillas</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Burritos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Horchata</span><span class="marquee-sep">✦</span>
       </div>
     </div>
   </div>
 
   <!-- OPINIONES -->
   <section id="opiniones" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
-    <span class="sec-num" aria-hidden="true">04</span>
+    <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 102 reseñas verificadas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="nuestros clientes" data-en="customers say">customers say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 64 reseñas verificadas en Yahoo Local (4.9 en Restaurantji, 119 reseñas)" data-en="5.0 out of 5 · 64 verified reviews on Yahoo Local (4.9 on Restaurantji, 119 reviews)">5.0 out of 5 · 64 verified reviews on Yahoo Local (4.9 on Restaurantji, 119 reviews)</span></p>
       </div>
       <div id="reviews-carousel" class="reveal" style="transition-delay:120ms">
         <div class="carousel-viewport">
           <div class="carousel-track">
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Best mother's day gift ever. Alain was very welcoming and sweet. The massage was extremely relaxing, he knew exactly what he was doing. The spa location is very centric and luxurious. I haven't felt more relaxed. I recommend 10/10."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Jennifer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I've been at this spot three times already and every time I love it even more! I've tried their guac, chicken quesadilla, carne asada burrito, al pastor tacos, chicken tacos, everything is amazing."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Diana A.</span> <span class="text-[color:var(--ink-40)]">· Yelp</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I honestly loved my experience here. The place feels so warm and inviting, and the attention I received was just amazing. And I have to mention the coffee... it was incredible! I'm definitely coming back!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Gabriela</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"The food portions are big. The al pastor tacos and horchata is so good. The food doesn't take long to make and service is great!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Nathalie R.</span> <span class="text-[color:var(--ink-40)]">· Yelp</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"From the moment I walked in, the atmosphere was incredibly relaxing and welcoming. Alain took amazing care of me, and I left feeling completely pampered and refreshed. Highly recommend!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Yadira</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 service super fast tacos r a great size and it comes with chips and salsa. flan is also so good would recommend!!!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Daph R.</span> <span class="text-[color:var(--ink-40)]">· Yelp</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Wow!! I cannot remember the last time I was this relaxed. Alain was amazing. Perfect attention to every detail, and so knowledgeable about caring for your hair."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Andrea</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This truck is amazing! The food is amazing. The portions are huge."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Johanna D.</span> <span class="text-[color:var(--ink-40)]">· Yahoo Local</span></figcaption>
             </figure>
           </div>
         </div>
         <div class="carousel-dots flex justify-center gap-2.5 mt-8"></div>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 102 reseñas en Google</a>
+        <a href="https://local.yahoo.com/info-214478701-el-maguey-on-the-road-hialeah/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-es="Leer las 64 reseñas en Yahoo Local" data-en="Read all 64 reviews on Yahoo Local">Read all 64 reviews on Yahoo Local</span></a>
       </div>
     </div>
   </section>
 
   <!-- UBICACION -->
   <section id="ubicacion" class="relative py-24 sm:py-32 grain">
-    <span class="sec-num" aria-hidden="true">05</span>
+    <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Visítanos" data-en="Find us">Find us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="El truck queda" data-en="The truck is">The truck is</span> <span class="text-shine" data-es="cerca" data-en="close by">close by</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(240,178,94,0.4)]" href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Ubicación" data-en="Location">Location</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">11390 NW 87th Ct, Hialeah, FL 33018</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(240,178,94,0.4)]" href="https://www.google.com/maps/search/?api=1&query=11390+NW+87th+Ct,+Hialeah,+FL+33018" target="_blank" rel="noopener"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Sábado: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: cerrado</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Martes a domingo: 6:30pm a 11:00pm" data-en="Tuesday to Sunday: 6:30pm to 11:00pm">Tuesday to Sunday: 6:30pm to 11:00pm</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes: cerrado" data-en="Monday: closed">Monday: closed</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">WhatsApp y llamadas: <a class="text-[color:var(--accent-deep)]" href="tel:+17863887821">(786) 388-7821</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Se habla español e inglés.</p>
+              <p class="font-medium mb-1" data-es="Contacto" data-en="Contact">Contact</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Llamadas:" data-en="Calls:">Calls:</span> <a class="text-[color:var(--accent-deep)]" href="tel:+17862866951">(786) 286-6951</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="También por Instagram: @elmagueyontheroad" data-en="Also on Instagram: @elmagueyontheroad">Also on Instagram: @elmagueyontheroad</p>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Mizū Head Spa Miami, 429 Hialeah Dr Ste 7, Hialeah FL"
-          src="https://www.google.com/maps?q=Mizu+Head+Spa+Miami,+429+Hialeah+Dr+Ste+7,+Hialeah,+FL+33010&output=embed"
+        <iframe title="Map: El Maguey on the Road, 11390 NW 87th Ct, Hialeah FL"
+          src="https://www.google.com/maps?q=11390+NW+87th+Ct,+Hialeah,+FL+33018&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section class="cursor-glow-zone relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, var(--bg-2) 0%, #0e0c0a 100%);">
+  <section class="cursor-glow-zone relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, var(--bg-2) 0%, #120c07 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Desconecta por completo.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu pausa te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Escríbenos por WhatsApp y asegura tu Ritual Imperial Mizu. Cupos limitados cada semana: la experiencia es uno a uno.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Se te antoja, ¿verdad?" data-en="Getting hungry, right?">Getting hungry, right?</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="El truck te está" data-en="The truck is">The truck is</span> <span class="text-shine" data-es="esperando" data-en="waiting for you">waiting for you</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llámanos o escríbenos por Instagram y te decimos qué hay en el menú esta noche. De martes a domingo, de 6:30pm a 11pm." data-en="Call us or message us on Instagram and we will tell you what is on the menu tonight. Tuesday through Sunday, 6:30pm to 11pm.">Call us or message us on Instagram and we will tell you what is on the menu tonight. Tuesday through Sunday, 6:30pm to 11pm.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar por WhatsApp</a>
-        <a href="tel:+17863887821" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="tel:+17862866951" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
+        <a href="https://www.instagram.com/elmagueyontheroad/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Escribir por Instagram" data-en="Message us on Instagram">Message us on Instagram</span></a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0e0c0a]">
-    <span class="foot-mark" aria-hidden="true">Mizū</span>
+  <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#120c07]">
+    <span class="foot-mark" aria-hidden="true">El Maguey</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.png" alt="Logo Mizū" class="w-9 h-9 rounded-full ring-1 ring-[rgba(240,178,94,0.3)]" />
-          <span class="font-display text-lg">Mizū Head Spa Miami</span>
+          <img src="assets/raw/logo.png" alt="El Maguey on the Road logo" class="w-9 h-9 rounded-full ring-1 ring-[rgba(240,178,94,0.3)]" />
+          <span class="font-display text-lg">El Maguey on the Road</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">A Sensorial Ritual of Elevated Relaxation. Boutique scalp, skin &amp; hair wellness studio.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Food truck familiar de cocina mexicana y Tex-Mex en Hialeah, FL." data-en="Family-run Mexican and Tex-Mex food truck in Hialeah, FL.">Family-run Mexican and Tex-Mex food truck in Hialeah, FL.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-        <p><a href="tel:+17863887821" class="hover:text-[color:var(--accent-deep)]">(786) 388-7821</a></p>
-        <p>Lun a Sáb · 10 AM a 7 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>11390 NW 87th Ct, Hialeah, FL 33018</p>
+        <p><a href="tel:+17862866951" class="hover:text-[color:var(--accent-deep)]">(786) 286-6951</a></p>
+        <p data-es="Mar a Dom · 6:30pm a 11pm" data-en="Tue to Sun · 6:30pm to 11pm">Tue to Sun · 6:30pm to 11pm</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @mizuheadspamiami</a></p>
-        <p><a href="https://www.tiktok.com/@mizu.head.spa.mia" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">TikTok · @mizu.head.spa.mia</a></p>
-        <p><a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">WhatsApp directo</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow us">Follow us</p>
+        <p><a href="https://www.instagram.com/elmagueyontheroad/" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @elmagueyontheroad</a></p>
+        <p><a href="tel:+17862866951" class="hover:text-[color:var(--accent-deep)]"><span data-es="Llamar directo" data-en="Call directly">Call directly</span></a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Mizū Head Spa Miami. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 El Maguey on the Road. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">All rights reserved.</span></p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f7ece0]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -780,9 +815,9 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- Llamada flotante -->
+  <a href="tel:+17862866951" class="wa-float" aria-label="Call El Maguey on the Road">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 
   <!-- BACK TO TOP -->
@@ -855,6 +890,19 @@
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Bilingual toggle (ES | EN)
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.textContent = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      const toggle = document.getElementById('langToggle');
+      if (toggle) toggle.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) langToggle.addEventListener('click', () => applyLang(document.documentElement.lang === 'en' ? 'es' : 'en'));
 
     // 4. Reveals: texto (.reveal) e imagenes con clip-path (.img-reveal)
     const io = new IntersectionObserver((entries) => {
