@@ -31,6 +31,42 @@ Los scripts de abajo (booksy_dossier, glossgenius_dossier, fresha_dossier) sigue
 mejor fuente cuando el negocio SI tiene pagina de booking: dan menu, precios y resenas reales,
 que el IG no da. La ruta rapida es para el caso "solo tengo el Instagram".
 
+## 0.a A QUIEN buscar: priorizar por NECESIDAD de website (2026-08-12)
+
+El liston para elegir un negocio no es "que facil es sacarle el research", es **cuanto le
+cambia la vida tener un website**. Entre una manicurista y un carpintero, el carpintero lo
+necesita mucho mas, y hasta ahora se estaba construyendo justo al reves.
+
+**Por que** (dos razones, las dos comprobables):
+1. **Los de belleza YA tienen un sustituto de website**: su perfil de Booksy, Vagaro o
+   GlossGenius es una pagina publica con fotos, servicios, precios, resenas y reserva online.
+   Un demo les aporta poco por encima de eso. Un carpintero, un plomero o un handyman no
+   tienen nada equivalente: su unica presencia suele ser un Facebook viejo o nada.
+2. **El cliente los busca en sitios distintos**: los servicios del hogar se buscan en Google
+   con intencion de contratar ya (de cada 4 personas que buscan un contratista desde el movil,
+   3 contactan un negocio ese mismo dia), mientras que belleza se descubre dentro de las
+   plataformas de booking. Sin website, el contratista no existe en la busqueda que importa.
+
+**Dato del propio registro (2026-08-12, 642 negocios)**: los oficios del hogar publican
+telefono el 82% de las veces (14 de 17) y las unas solo el 29% (49 de 168). O sea que ademas
+de necesitarlo mas, son mas faciles de contactar por SMS y WhatsApp, que es el canal que de
+verdad tenemos (solo 128 de 642 tienen email).
+
+**Estado a corregir**: el registro esta 77% en belleza (unas 26%, spa 22%, pelo 21%, lash 8%)
+y solo 3% en oficios del hogar. `config.json` ya invierte la prioridad.
+
+| Prioridad | Nichos | Por que |
+|-----------|--------|---------|
+| ALTA | handyman, carpinteria, plomeria, electricista, HVAC, roofing, pintura, pressure washing, pisos, cerrajeria, pest control, landscaping, cleaning, mudanzas | Sin plataforma sustituta, se buscan en Google, ticket alto, el cliente necesita ver trabajos y credenciales antes de dejarlos entrar en su casa |
+| MEDIA | detailing y taller mecanico, pet grooming, food truck, reposteria, catering, fotografia, tattoo | Presencia en redes pero sin pagina propia; ticket medio y la decision se piensa |
+| BAJA (saturado) | nail salon, lash & brow, barberia, hair salon, facial/skincare | Ya cubiertos de sobra y su Booksy/GlossGenius hace de website. Solo si el usuario lo pide por nombre |
+
+**Research de los nichos de ALTA**: no tienen Booksy ni GlossGenius, asi que los dossiers de
+plataforma no sirven. Las fuentes son Google Maps (nombre, telefono, rating, resenas, fotos),
+Facebook Business e Instagram. Para las fotos, `research_ig.py` sigue valiendo si tienen IG;
+si no, las fotos de Google Maps del propio negocio. Si no hay 5 fotos reales de SU trabajo:
+`failed`, igual que siempre (no valen fotos de stock de herramientas).
+
 ## 0. Arranque paralelo (primer minuto, OBLIGATORIO)
 Si el item de la cola es SOLO un nombre, un handle o "nombre + ciudad": es un encargo directo del usuario; hacer el discovery completo de ESE negocio (encontrar su Booksy/booking, verificar website propio, IG) y construirlo con la maxima prioridad, mismo pipeline.
 **PASO 1 (segundos, SIEMPRE primero)**: `python3 scripts/booksy_dossier.py <booksy_url> <slug>`.
