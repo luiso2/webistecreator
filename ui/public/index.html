@@ -171,6 +171,19 @@
     .biz.is-declined { opacity: 0.55; }
     .biz .actions { display: flex; gap: 8px; margin-top: auto; }
     .biz .actions:empty { display: none; }
+    /* SMS: para negocios cuyo numero no tiene WhatsApp. Abre la app de mensajes con el texto. */
+    .link-btn.sms { color: #d9e8ff; border-color: rgba(90,143,199,0.5); background: rgba(90,143,199,0.12); }
+    .link-btn.sms:hover { border-color: rgba(90,143,199,0.9); background: rgba(90,143,199,0.22); }
+    /* Editor del mensaje: el DM de Instagram hay que pegarlo a mano, asi que se ajusta aqui */
+    .msg-editor { display: grid; gap: 8px; margin-top: 6px; }
+    .msg-ta {
+      width: 100%; box-sizing: border-box; font-family: inherit; font-size: 12.5px; line-height: 1.55;
+      padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03); color: var(--ink); resize: vertical;
+    }
+    .msg-ta:focus { outline: none; border-color: rgba(255,255,255,0.35); }
+    .msg-acts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .msg-chars { font-size: 11px; opacity: 0.45; margin-left: auto; }
     .link-btn.wa { color: #d7ffe6; border-color: rgba(37,211,102,0.5); background: rgba(37,211,102,0.12); }
     .link-btn.wa:hover { border-color: rgba(37,211,102,0.9); background: rgba(37,211,102,0.22); }
     .domain-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; align-items: center; }
@@ -385,6 +398,9 @@
     //     y no conteste.
     // Se conserva lo que ya funcionaba: brevedad, prueba verificable y salida sin coste.
     function dmText(b) {
+      // Lo que se edito a mano manda sobre todo lo demas: es la version que el usuario ya
+      // adapto a ese negocio, y es la que tiene que salir en WhatsApp, en el SMS y al copiar.
+      if (b.msg_editado) return b.msg_editado;
       if (b.dm_message) return b.dm_message;
       if (!b.url_demo) return '';
       const nom = b.name || (b.language === 'en' ? 'your business' : 'su negocio');
@@ -523,6 +539,17 @@
       return 'https://wa.me/' + num + (msg ? '?text=' + encodeURIComponent(msg) : '');
     }
 
+    // Link de SMS: abre la app de mensajes del telefono con el destinatario y el texto ya
+    // escritos. La forma "?&body=" es la que funciona en iOS y en Android a la vez: iOS
+    // espera el separador como "&" y Android como "?", y este formato satisface a los dos.
+    // Util para los negocios cuyo numero no tiene WhatsApp.
+    function smsHref(b) {
+      const num = waNumber(b.phone);
+      if (!num) return '';
+      const msg = dmText(b);
+      return 'sms:+' + num + (msg ? '?&body=' + encodeURIComponent(msg) : '');
+    }
+
     // CRM: marcar/desmarcar cliente cerrado o descartado. Solo cambia estado en el panel,
     // no envia nada. Reversible con "Reabrir".
     // Dominios: buscar disponibilidad (gratis) y comprar+montar (confirma precio, es dinero).
@@ -580,6 +607,10 @@
     };
 
     function render(state) {
+      // Se recuerda el ultimo estado para poder repintar sin volver a pedirlo al servidor
+      // (por ejemplo al guardar un mensaje, que solo cambia datos que ya tenemos aqui).
+      if (state) window.__state = state;
+      else state = window.__state || { registry: [], queue: [] };
       const reg = state.registry || [], queue = state.queue || [];
       const clientes = reg.filter(b => b.crm_status === 'client').length;
       const porContactar = reg.filter(b => !b.crm_status && b.outreach !== 'sent' && (b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy')).length;
@@ -606,10 +637,23 @@
           <div class="actions">
             ${b.url_demo && String(b.url_demo).startsWith('https://') ? `<a class="link-btn primary" href="${esc(b.url_demo)}" target="_blank" rel="noopener">Ver demo</a>` : '<span class="link-btn" style="opacity:0.5">Demo pendiente</span>'}
             ${waHref(b) ? `<a class="link-btn wa" href="${waHref(b)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
+            ${smsHref(b) ? `<a class="link-btn sms" href="${smsHref(b)}">SMS 💬</a>` : ''}
           </div>
           <div class="actions">
             ${b.email && b.url_demo && b.outreach !== 'sent' ? `<button class="link-btn send-email" id="send-${esc(b.slug)}" onclick="sendEmail('${esc(b.slug)}', this)">Email (${(b.language || 'es').toUpperCase()})</button>` : ''}
             ${b.ig ? `<button class="link-btn" onclick="sendDM('${igSafe(b.ig)}', ${i})">DM ✉</button>` : ''}
+            <button class="link-btn" onclick="editarMsg('${esc(b.slug)}')">✎ Mensaje${b.msg_editado ? ' ·' : ''}</button>
+          </div>
+          <div class="msg-editor" id="ed-${esc(b.slug)}" hidden>
+            <textarea id="ta-${esc(b.slug)}" class="msg-ta" rows="7" spellcheck="true"
+              oninput="contarMsg('${esc(b.slug)}')">${esc(dmText(b))}</textarea>
+            <div class="msg-acts">
+              <button class="link-btn primary" onclick="guardarMsg('${esc(b.slug)}')">Guardar</button>
+              <button class="link-btn" onclick="copiarMsg('${esc(b.slug)}')">Copiar para el DM</button>
+              ${b.ig ? `<button class="link-btn" onclick="copiarYAbrirIG('${esc(b.slug)}','${igSafe(b.ig)}')">Copiar y abrir IG</button>` : ''}
+              <button class="link-btn" onclick="restaurarMsg('${esc(b.slug)}')">Volver al original</button>
+              <span class="msg-chars" id="ch-${esc(b.slug)}"></span>
+            </div>
           </div>
           <div class="crm-row">
             ${b.crm_status === 'client'
@@ -692,6 +736,70 @@
         </div>`).join('');
       $('queue').innerHTML = progs + pendProgs + chips;
     }
+
+    // ---- EDITOR DEL MENSAJE ----
+    // Instagram no deja pre-llenar el DM por URL (WhatsApp y SMS si), asi que para el DM el
+    // flujo real es copiar y pegar. Poder ajustar el texto aqui antes de copiarlo evita
+    // reescribirlo a mano en cada negocio, y lo que se guarda se reutiliza en WhatsApp y SMS.
+    const negocio = slug => (window.__reg || []).find(x => x.slug === slug) || {};
+    const aviso = (txt, ok = true) => {
+      const m = $('msg'); m.className = 'msg ' + (ok ? 'ok' : 'err'); m.textContent = txt;
+      setTimeout(() => { m.className = 'msg'; }, 4000);
+    };
+
+    window.editarMsg = (slug) => {
+      const ed = $('ed-' + slug);
+      if (!ed) return;
+      ed.hidden = !ed.hidden;
+      if (!ed.hidden) { contarMsg(slug); $('ta-' + slug).focus(); }
+    };
+
+    window.contarMsg = (slug) => {
+      const ta = $('ta-' + slug), ch = $('ch-' + slug);
+      if (ta && ch) ch.textContent = `${ta.value.length} caracteres`;
+    };
+
+    window.guardarMsg = async (slug) => {
+      const ta = $('ta-' + slug);
+      if (!ta) return;
+      try {
+        const r = await fetch('/api/mensaje', {
+          method: 'POST', headers: headers(), body: JSON.stringify({ slug, texto: ta.value }),
+        });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || r.status);
+        const b = negocio(slug);
+        b.msg_editado = ta.value.trim() ? ta.value : undefined;
+        // Se repinta la lista para que WhatsApp y SMS salgan ya con el texto nuevo.
+        render();
+        aviso('Mensaje guardado. WhatsApp y SMS ya lo usan.');
+      } catch (e) { aviso('Error: ' + e.message, false); }
+    };
+
+    window.copiarMsg = async (slug) => {
+      const ta = $('ta-' + slug);
+      if (!ta) return;
+      try { await navigator.clipboard.writeText(ta.value); aviso('Copiado. Pegalo en el DM.'); }
+      catch { ta.select(); aviso('Selecciona y copia con Cmd+C.', false); }
+    };
+
+    window.copiarYAbrirIG = async (slug, handle) => {
+      const ta = $('ta-' + slug);
+      try { if (ta) await navigator.clipboard.writeText(ta.value); } catch {}
+      aviso('Copiado: pegalo en el DM que se abrio.');
+      window.open('https://ig.me/m/' + handle, '_blank', 'noopener');
+    };
+
+    window.restaurarMsg = async (slug) => {
+      const b = negocio(slug);
+      const ta = $('ta-' + slug);
+      try {
+        await fetch('/api/mensaje', { method: 'POST', headers: headers(), body: JSON.stringify({ slug, texto: '' }) });
+      } catch {}
+      delete b.msg_editado;
+      if (ta) { ta.value = dmText(b); contarMsg(slug); }
+      aviso('Se restauro el mensaje original.');
+    };
 
     // Boton DM: copia el mensaje (en el idioma del site) y abre el hilo de Instagram.
     // Instagram no soporta pre-llenar el texto por URL, por eso: copiar + pegar.
