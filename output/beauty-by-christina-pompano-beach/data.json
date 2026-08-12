@@ -1,0 +1,92 @@
+{
+ "booksy_url": "https://booksy.com/en-us/823357_beauty-by-christina_hair-salon_15649_pompano-beach",
+ "slug": "beauty-by-christina-pompano-beach",
+ "name": "Beauty by Christina",
+ "schema_type": "HairSalon",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "1 N Ocean Blvd, Suite 101 (Studio 1), Salon Lofts",
+  "addressCountry": "us",
+  "addressLocality": "Pompano Beach, FL",
+  "addressRegion": "Florida",
+  "postalCode": "33062",
+  "note_zip": "Booksy's own listing shows postal code 33069, but Salon Lofts' own stylist profile (the authoritative source for this address, since Salon Lofts is the property/tenant record) lists 33062, which also matches the Ocean Blvd / oceanfront location implied by the geo coordinates below. Used 33062."
+ },
+ "geo": {
+  "@type": "GeoCoordinates",
+  "latitude": 26.23211602744589,
+  "longitude": -80.09172937967014
+ },
+ "rating": 5.0,
+ "reviews_count": 17,
+ "hours": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+   "opens": "10:00",
+   "closes": "14:00"
+  }
+ ],
+ "hours_note": "Only hours published on Booksy's booking calendar (openHours in Booksy's Nuxt payload, dayOfWeek 2-6 = Tue-Sat). Closed Sunday and Monday. No additional walk-in hours found published anywhere.",
+ "staff": [
+  {
+   "name": "Christina Hughes",
+   "title": "Master Stylist",
+   "description": "Sole stylist, private suite inside Salon Lofts Pompano Beach"
+  }
+ ],
+ "same_as": [
+  "https://www.instagram.com/beauty_by.christina/",
+  "https://booksy.com/en-us/823357_beauty-by-christina_hair-salon_15649_pompano-beach",
+  "https://salonlofts.com/christina_hughes"
+ ],
+ "instagram": "beauty_by.christina",
+ "instagram_note": "Two different real, verified Instagram handles were found: (1) 'beauty_by.christina', confirmed by matching account-name overlays visible on multiple of her own posts (both Instagram-style and TikTok-tagged) that she uploaded herself into Booksy's 'inspiration' photo gallery for this business (files bk-insp-1/2/4/6 in assets/raw before curation removed the ones with visible overlay text) -- this is the business-branded account, matching the business name exactly, and is the one used in the site and outreach. (2) '@c_wittexo' (plus Facebook 'cwh1013'), listed as her personal sameAs on her official Salon Lofts stylist profile (salonlofts.com/christina_hughes, JSON-LD employee.sameAs). Could not verify either handle live via the Instagram web_profile_info API (rate-limited/blocked from this environment), so confidence rests on the first-party self-uploaded content match rather than a live profile fetch.",
+ "website_candidates": [],
+ "has_own_site": false,
+ "website_check_note": "beautybychristina.com returns 404 (verified in prior discovery). No website field on Booksy (website: null in Booksy's business payload) or Salon Lofts profile. Only presence is Booksy, Salon Lofts stylist directory, and Instagram/TikTok.",
+ "phone": "(561) 707-1090",
+ "phone_e164": "+15617071090",
+ "email": "christina.hughes@salonlofts.com",
+ "email_note": "Reconfirmed live on 2026-08-12 by fetching salonlofts.com/christina_hughes directly (curl with browser UA); email appears both in visible page text and in the page's embedded JSON-LD (employee.email). Not present anywhere in Booksy's own data.",
+ "services": [
+  { "name": "Men's Haircut", "price": 45, "duration": "40min" },
+  { "name": "Kids Cut", "price": 25, "duration": "30min" },
+  { "name": "Haircut (No Blowdry)", "price": 55, "duration": "30min" },
+  { "name": "Haircut and Blowdry", "price": 70, "duration": "45min" },
+  { "name": "Blowdry", "price": 45, "duration": "30min" },
+  { "name": "Root Touch Up", "price": 65, "duration": "30min" },
+  { "name": "Accent Foils", "price": 55, "duration": "30min" },
+  { "name": "Partial Highlights", "price": 145, "duration": "60min" },
+  { "name": "Full Head of Highlights", "price": 195, "duration": "90min" },
+  { "name": "All Over Color", "price": "225+", "duration": "30min" },
+  { "name": "Balayage", "price": 220, "duration": "90min" },
+  { "name": "Toner", "price": 70, "duration": "10min" },
+  { "name": "Keratin Treatment", "price": 350, "duration": "120min" },
+  { "name": "Protein Treatment", "price": 45, "duration": "10min" },
+  { "name": "New Extension Placement", "price": 200, "duration": "30min" },
+  { "name": "Existing Extension Replacement", "price": 100, "duration": "40min" },
+  { "name": "Trial Wedding", "price": 60, "duration": "60min" },
+  { "name": "Prom Updo", "price": 80, "duration": "75min" },
+  { "name": "Prom Blow Out with Curls", "price": 65, "duration": "30min" }
+ ],
+ "services_source": "Extracted directly from Booksy's server-rendered Nuxt payload (window.__NUXT_DATA__ devalue-serialized state) for business id 823357, resolving each service's variants[0].price and variants[0].duration. Cross-checked against the JSON-LD makesOffer prices on the same page (identical prices for all 19 services).",
+ "reviews": [
+  { "author": "Kim", "body": "Christina took her time to help me get my very fussy hair to a natural color that suits me. She is a true artist and very professional.", "rating": 5, "source": "Booksy" },
+  { "author": "Lori", "body": "Excellent haircut. Best haircut I have ever had.", "rating": 5, "source": "Booksy" },
+  { "author": "Denisse", "body": "Love her and her spot is so cute great experience", "rating": 5, "source": "Booksy" },
+  { "author": "Rebecca", "body": "The absolute best and most considerate stylist I have ever worked with.", "rating": 5, "source": "Booksy" },
+  { "author": "Phyllis", "body": "Christina is fabulous! So glad we connected again.", "rating": 5, "source": "Booksy" }
+ ],
+ "named_reviews": [
+  { "author": "Kim", "body": "Christina took her time to help me get my very fussy hair to a natural color that suits me. She is a true artist and very professional.", "rating": 5, "source": "Booksy" },
+  { "author": "Lori", "body": "Excellent haircut. Best haircut I have ever had.", "rating": 5, "source": "Booksy" },
+  { "author": "Denisse", "body": "Love her and her spot is so cute great experience", "rating": 5, "source": "Booksy" },
+  { "author": "Rebecca", "body": "The absolute best and most considerate stylist I have ever worked with.", "rating": 5, "source": "Booksy" },
+  { "author": "Phyllis", "body": "Christina is fabulous! So glad we connected again.", "rating": 5, "source": "Booksy" }
+ ],
+ "reviews_source": "Kim, Lori and Denisse reviews were re-verified directly in Booksy's JSON-LD review array and Nuxt payload for business 823357. Rebecca and Phyllis were provided as already-verified in the discovery brief and used as given (not re-fetchable from the 3-review page currently exposed in Booksy's payload, which may only show a recent subset).",
+ "brand_vibe": "christina-plum: cream/blush base (#faf3ef) with deep wine/burgundy accent (#7a2f45) and dusty rose mid-tone (#a9647a), derived directly from the business's own logo (wordmark 'BEAUTY BY CHRISTINA' in deep plum serif type with a fine-line botanical branch illustration, cream background) found on both Booksy and Salon Lofts.",
+ "images_source": "13 real photos downloaded: 8 from Christina's own portfolio gallery on her Salon Lofts stylist profile (salonlofts.com/christina_hughes, s3.amazonaws.com/images.salonlofts.com/system/images/), and 5 from Booksy's 'inspiration' photo set for business 823357 (cloudfront-hosted). All resized to max 1000px width. Excluded: photos with visible face masks (dated/COVID-era), photos with heavy Instagram/TikTok caption overlays or store signage text across the subject, and two near-duplicate logo-only files. One casual selfie (sl-profile.jpg) is used only as a small circular stylist avatar in the About section, never as a gallery tile, per pipeline rules.",
+ "language": "en"
+}
