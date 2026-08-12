@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f2e0da" />
+  <title>Mocha Reign Studios · Natural Hair Studio in Tallahassee, FL | 5.0 on Booksy</title>
+  <meta name="description" content="Mocha Reign Studios, a natural hair and body art studio in Tallahassee, FL on South Monroe St. Starter locs, loc maintenance, micro locs, wicks, protective braids and hair paint. 5.0 rating, 651 reviews on Booksy. Free consultation, book online." />
+  <meta property="og:title" content="Mocha Reign Studios · Natural Hair Studio in Tallahassee, FL" />
+  <meta property="og:description" content="Locs, twists, braids and wicks styled by Tia MochaReign Simmons and Jasmine Jazz Williams. 5.0 on Booksy, 651 reviews. Free consultation, book online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/hero-locs.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Mocha Reign Studios",
+    "description": "Natural hair and body art studio in Tallahassee, FL specializing in starter locs, loc maintenance, micro locs, wicks, protective braids and hair paint. Free consultations Tuesday and Wednesday.",
+    "telephone": "+1-850-666-0791",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1533-4 South Monroe Street",
+      "addressLocality": "Tallahassee",
+      "addressRegion": "FL",
+      "postalCode": "32301",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 30.428, "longitude": -84.28029 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "21:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:30", "closes": "13:30" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/MochaReign/",
+      "https://www.facebook.com/1mochareign/",
+      "https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "651", "bestRating": "5" },
+    "employee": [
+      { "@type": "Person", "name": "Tia MochaReign Simmons", "jobTitle": "Owner / Natural Hair Stylist" },
+      { "@type": "Person", "name": "Jasmine “Jazz” Williams", "jobTitle": "Natural Hair Stylist" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Natural hair services",
+      "itemListElement": [
+        { "@type": "Offer", "price": "175", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Starter Locs (traditional)", "serviceType": "Loc Install" } },
+        { "@type": "Offer", "price": "110", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Loc Maintenance with simple style", "serviceType": "Loc Maintenance" } },
+        { "@type": "Offer", "price": "180", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Micro Loc maintenance (interlocking)", "serviceType": "Loc Maintenance" } },
+        { "@type": "Offer", "price": "650", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Micro Loc install", "serviceType": "Loc Install" } },
+        { "@type": "Offer", "price": "165", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Crocheted braids with hair included", "serviceType": "Protective Style" } },
+        { "@type": "Offer", "price": "150", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Wick Loc Maintenance", "serviceType": "Wicks" } },
+        { "@type": "Offer", "price": "65", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Hair paint (temp color wax)", "serviceType": "Color" } },
+        { "@type": "Offer", "price": "0", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Consultation (Tuesday & Wednesday only)", "serviceType": "Consultation" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #faf3ef;
+      --bg-2: #f2e0da;
+      --surface: rgba(250,247,241,0.7);
+      --ink: #3a231d;
+      --ink-60: rgba(58,35,29,0.62);
+      --ink-40: rgba(58,35,29,0.42);
+      --accent-deep: #8c3f5e;
+      --accent-mid: #c96a90;
+      --accent-soft: #f2e0da;
+      --accent-ghost: rgba(140,63,94,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(140,63,94,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,247,241,0.88);
+      border-color: rgba(140,63,94,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(58,35,29,0.14), 0 0 40px rgba(140,63,94,0.08);
+    }
+
+    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
+    .text-shine {
+      background: linear-gradient(110deg, #8c3f5e 0%, #cf7fa3 30%, #6b2a45 52%, #8c3f5e 75%, #c96a90 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs taupe/crema sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f0c9d6 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d998b3 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e6b8cb 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D mocha */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #c96a90 0%, #8c3f5e 48%, #5c2138 100%);
+      color: #faf3ef; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,45,28,0.4),
+        0 5px 0 #4a1a2c,
+        0 12px 24px rgba(58,35,29,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,45,28,0.4), 0 7px 0 #4a1a2c, 0 18px 34px rgba(58,35,29,0.32), 0 0 40px rgba(140,63,94,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,45,28,0.45), 0 1px 0 #4a1a2c, 0 4px 10px rgba(58,35,29,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(140,63,94,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(140,63,94,0.7); background: rgba(140,63,94,0.08); box-shadow: 0 10px 26px rgba(58,35,29,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(58,35,29,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(58,35,29,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(140,63,94,0.14), inset 0 -60px 100px rgba(58,35,29,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #c96a90, #6b2a45);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #8c3f5e; letter-spacing: 2px; text-shadow: 0 0 14px rgba(140,63,94,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #faf3ef;
+      --ink-60: rgba(245,240,232,0.65);
+      --ink-40: rgba(245,240,232,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,214,183,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e8a8c0 0%, #f8ecd6 30%, #d998b3 52%, #e8a8c0 75%, #f3c2d6 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,168,192,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(217,152,179,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #fbeaf1 0%, #f0cfe0 48%, #d9a8bd 100%);
+      color: #3a231d;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,90,50,0.35),
+        0 5px 0 #a8748a,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #a8748a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,168,192,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #a8748a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(232,168,192,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(232,168,192,0.7); background: rgba(232,168,192,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e8a8c0; text-shadow: 0 0 14px rgba(232,168,192,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c96a90 0%, #8c3f5e 100%);
+      box-shadow: 0 6px 0 #4a1a2c, 0 14px 30px rgba(58,35,29,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a1a2c, 0 20px 40px rgba(58,35,29,0.4), 0 0 34px rgba(140,63,94,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a1a2c, 0 6px 14px rgba(58,35,29,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
+      border: 1px solid rgba(140,63,94,0.35); background: rgba(140,63,94,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #5c2138 0%, #8c3f5e 45%, #d98bab 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 7. Carrusel de testimonios */
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(58,35,29,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    /* 8. Boton magnetico (offset via translate, spring back) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare (cards de servicios) */
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    /* 10. Cursor glow calido en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(232,168,192,0.14) 0%, rgba(140,63,94,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de reservas vive abajo-derecha) */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(140,63,94,0.5); transform: translateY(-3px); }
+
+
+    /* ============ Motion v3 (premium+) ============ */
+    /* Split-text del hero: cada palabra sube en cascada */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    /* Numeral editorial gigante por seccion */
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    /* Captions de galeria al hover */
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fdf3f6;
+      background: linear-gradient(180deg, transparent 0%, rgba(30,22,14,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    /* Cursor custom: anillo que sigue al puntero (solo desktop) */
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    /* Marca de agua tipografica del footer */
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(232,168,192,0.09); pointer-events: none; user-select: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">M</span>
+    <span class="pre-word">Mocha Reign Studios</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(140,63,94,0.35)] bg-[rgba(140,63,94,0.1)] text-[color:var(--accent-deep)]">M</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">Mocha <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Reign Studios</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="nav-link" href="#ritual" data-es="El Proceso" data-en="Your Visit">Your Visit</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma / Switch language">ES</button>
+        <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual" data-es="El Proceso" data-en="Your Visit">Your Visit</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Tallahassee, FL · Estudio de Cabello Natural" data-en="Tallahassee, FL · Natural Hair Studio">Tallahassee, FL · Natural Hair Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tu corona empieza aquí." data-en="Your crown starts here.">Your crown starts here.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          Locs, twists and braids,<br />styled with <span class="text-shine">reign</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Mocha Reign Studios es un estudio de cabello natural y body art en South Monroe St, Tallahassee. Tia MochaReign Simmons y Jasmine Jazz Williams trabajan starter locs, mantenimiento de locs, micro locs, wicks y trenzas protectoras, con consulta gratuita antes de cada nuevo proceso." data-en="Mocha Reign Studios is a natural hair and body art studio on South Monroe St in Tallahassee. Tia MochaReign Simmons and Jasmine Jazz Williams work starter locs, loc maintenance, micro locs, wicks and protective braids, with a free consultation before every new process.">Mocha Reign Studios is a natural hair and body art studio on South Monroe St in Tallahassee. Tia MochaReign Simmons and Jasmine Jazz Williams work starter locs, loc maintenance, micro locs, wicks and protective braids, with a free consultation before every new process.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 651 reseñas en Booksy" data-en="5.0 · 651 reviews on Booksy">5.0 · 651 reviews on Booksy</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+18506660791" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (850) 666-0791
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/hero-locs.jpg" alt="Finished bronde curly loc style at Mocha Reign Studios, Tallahassee" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Servicio insignia" data-en="Signature service">Signature service</p>
+            <p class="font-display text-lg">Starter Locs</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="4h 30min · $175" data-en="4h 30min · $175">4h 30min · $175</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="651">651</span> <span data-es="reseñas en Booksy" data-en="reviews on Booksy">reviews on Booksy</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl" data-es="Estudio de <span class='text-shine'>Cabello Natural</span>" data-en="Natural <span class='text-shine'>Hair Studio</span>">Natural <span class="text-shine">Hair Studio</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Locs, twists y trenzas" data-en="Locs, twists & braids">Locs, twists &amp; braids</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span class="text-shine">34</span> <span data-es="servicios" data-en="services">services</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Menú completo en Booksy" data-en="Full menu on Booksy">Full menu on Booksy</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Tallahassee, FL</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="South Monroe St." data-en="South Monroe St.">South Monroe St.</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Starter Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Loc Maintenance</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Micro Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wicks</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Tallahassee, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Starter Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Loc Maintenance</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Micro Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wicks</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Tallahassee, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/about-1.jpg" alt="Fresh loc retwist detail with gold cuffs at Mocha Reign Studios" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/about-2.jpg" alt="Close detail of freshly parted box braids at Mocha Reign Studios" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms" data-es="Cabello natural,<br /><span class='text-shine'>tratado como corona</span>" data-en="Natural hair,<br /><span class='text-shine'>treated like a crown</span>">Natural hair,<br /><span class="text-shine">treated like a crown</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Mocha Reign Studios es el estudio de cabello natural y body art de Tia MochaReign Simmons en South Monroe St, Tallahassee. El menú va de starter locs a mantenimiento de locs, micro locs, wicks, trenzas protectoras y hair paint, siempre con una consulta gratuita antes de empezar un proceso nuevo." data-en="Mocha Reign Studios is Tia MochaReign Simmons' natural hair and body art studio on South Monroe St in Tallahassee. The menu runs from starter locs to loc maintenance, micro locs, wicks, protective braids and hair paint, always with a free consultation before starting a new process.">Mocha Reign Studios is Tia MochaReign Simmons' natural hair and body art studio on South Monroe St in Tallahassee. The menu runs from starter locs to loc maintenance, micro locs, wicks, protective braids and hair paint, always with a free consultation before starting a new process.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Los clientes lo repiten en cada reseña: conocimiento, paciencia y buena energía. Con 5.0 de calificación y 651 reseñas en Booksy, la silla habla por sí sola." data-en="Clients say it review after review: knowledgeable, patient and good energy. With a 5.0 rating and 651 reviews on Booksy, the chair speaks for itself.">Clients say it review after review: knowledgeable, patient and good energy. With a 5.0 rating and 651 reviews on Booksy, the chair speaks for itself.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="651">651</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="34">34</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Servicios" data-en="Services">Services</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="El equipo" data-en="The team">The team</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+              <img src="assets/raw/avatar-tia.jpg" alt="Tia MochaReign Simmons, owner of Mocha Reign Studios" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(140,63,94,0.3)]" loading="lazy" />
+              <span class="text-sm font-light" data-es="Tia MochaReign Simmons · Dueña" data-en="Tia MochaReign Simmons · Owner">Tia MochaReign Simmons · Owner</span>
+            </div>
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+              <img src="assets/raw/avatar-jazz.jpg" alt="Jasmine Jazz Williams, stylist at Mocha Reign Studios" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(140,63,94,0.3)]" loading="lazy" />
+              <span class="text-sm font-light" data-es="Jasmine “Jazz” Williams · Estilista" data-en="Jasmine “Jazz” Williams · Stylist">Jasmine “Jazz” Williams · Stylist</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL RITUAL PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Your visit, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Así se trabaja <span class='text-shine'>aquí</span>" data-en="How a visit <span class='text-shine'>works</span>">How a visit <span class="text-shine">works</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Consulta gratuita" data-en="Free consultation">Free consultation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Martes y miércoles, se revisa el estado de tu cabello y se define el proceso antes de reservar cualquier servicio nuevo." data-en="Tuesday and Wednesday, your hair's condition is reviewed and the process is mapped out before booking any new service.">Tuesday and Wednesday, your hair's condition is reviewed and the process is mapped out before booking any new service.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Lavado y tratamiento" data-en="Wash & treatment">Wash &amp; treatment</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Shampoo, acondicionador y, si tu cabello lo pide, un detox de locs para dejar el cuero cabelludo listo para el proceso." data-en="Shampoo, conditioner and, when your hair calls for it, a loc detox to get the scalp ready for the process.">Shampoo, conditioner and, when your hair calls for it, a loc detox to get the scalp ready for the process.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Técnica a tu manera" data-en="Technique, your way">Technique, your way</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Starter locs, mantenimiento de micro locs, wicks o trenzas protectoras, cada técnica trabajada con tiempo real para el detalle." data-en="Starter locs, micro loc maintenance, wicks or protective braids, each technique worked with real time for the detail.">Starter locs, micro loc maintenance, wicks or protective braids, each technique worked with real time for the detail.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Estilo y acabado" data-en="Style & finish">Style &amp; finish</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sales con tu estilo terminado, ya sea un updo, un knot o el look sencillo que elegiste, listo para lucirse." data-en="You leave with your style finished, whether that's an updo, a knot style or the simple look you chose, ready to show off.">You leave with your style finished, whether that's an updo, a knot style or the simple look you chose, ready to show off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Elige tu <span class='text-shine'>estilo</span>" data-en="Choose your <span class='text-shine'>style</span>">Choose your <span class="text-shine">style</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones exactos, tal como se publican en Booksy. Consulta gratuita martes y miércoles antes de cualquier servicio nuevo." data-en="Exact prices and durations, as published on Booksy. Free consultation Tuesday and Wednesday before any new service.">Exact prices and durations, as published on Booksy. Free consultation Tuesday and Wednesday before any new service.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-14">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Firma" data-en="Signature">Signature</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Starter Locs</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación tradicional de starter locs. Consulta requerida antes de reservar." data-en="Traditional starter loc install. Consultation required before booking.">Traditional starter loc install. Consultation required before booking.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$175</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">4h 30min</p>
+            </div>
+            <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Instalación completa" data-en="Full install">Full install</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Micro Loc Install</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación completa de micro locs, una sesión larga para un resultado detallado hebra por hebra." data-en="A full micro loc installation, a long session for a detailed, strand-by-strand result.">A full micro loc installation, a long session for a detailed, strand-by-strand result.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$650</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">8h</p>
+            </div>
+            <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Más pedido" data-en="Most booked">Most booked</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Loc Maintenance w/ simple style</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Retoque de locs tradicionales con un estilo sencillo incluido, el mantenimiento de rutina más reservado." data-en="Traditional loc retwist with a simple style included, the most booked routine maintenance.">Traditional loc retwist with a simple style included, the most booked routine maintenance.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$110</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h</p>
+            </div>
+            <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Protectora" data-en="Protective">Protective</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Crocheted braids</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Trenzas crochet con cabello incluido, una opción protectora completa en una sola cita." data-en="Crocheted braids with hair included, a complete protective option in a single visit.">Crocheted braids with hair included, a complete protective option in a single visit.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$165</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">2h 30min</p>
+            </div>
+            <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-es="Reservar" data-en="Book">Book</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU COMPLETO AGRUPADO POR CATEGORIA -->
+      <div class="reveal mb-8">
+        <h3 class="font-display text-2xl sm:text-3xl mb-2" data-es="Menú completo" data-en="Full menu">Full menu</h3>
+        <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Las 34 técnicas del menú de Booksy, agrupadas tal como las publica el estudio." data-en="All 34 techniques on the Booksy menu, grouped the way the studio publishes them.">All 34 techniques on the Booksy menu, grouped the way the studio publishes them.</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-6">
+
+        <div class="glass rounded-3xl p-7 reveal">
+          <h4 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="Servicios de cabello natural" data-en="Natural hair services">Natural hair services</h4>
+          <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+            <div class="flex justify-between gap-4 py-2.5"><span>Take Down (locs &amp; braids)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$35/hr</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Trim &amp; Treatment</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$40+ · 1h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Big chop</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$35+ · 1h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Loc maintenance (interlocking) w/o style</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$110+ · 3h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Loc Maintenance (interlocking) with style</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$125 · 3h 30min</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Braid styles (without extensions)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$85+ · 2h 30min</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Kids starter locs (consultation required)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$95+ · 2h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Kids loc maintenance (style not included)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$60+ · 1h 30min</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Kids loc maintenance w/ style</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$75 · 1h 30min</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Loc Reattachment (consult. &amp; deposit required)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$350+ · 5h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Micro Loc install</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$650+ · 8h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Micro Loc maintenance (interlocking)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$180+ · 3h 30min</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Micro loc maintenance w/ style</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$200+ · 4h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Loc illusion / micros (wash &amp; style only)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$90+ · 2h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Loc Detox</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$35+ · 1h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Wash / shampoo &amp; conditioner w/ blow dry</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$35 · 1h</span></div>
+            <div class="flex justify-between gap-4 py-2.5"><span>Micro mini install</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$2,500+ · 13h</span></div>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:80ms">
+            <h4 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="Locs con laterales rapados" data-en="Locs, shaved sides &amp; back">Locs, shaved sides &amp; back</h4>
+            <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+              <div class="flex justify-between gap-4 py-2.5"><span>Loc maintenance, shaved sides &amp; back only</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$85+ · 1h 30min</span></div>
+              <div class="flex justify-between gap-4 py-2.5"><span>Shaved sides &amp; back w/ simple style</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$100+ · 2h</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:140ms">
+            <h4 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="Wicks" data-en="Wicks">Wicks</h4>
+            <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+              <div class="flex justify-between gap-4 py-2.5"><span>Wick Loc Maintenance</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$150+ · 3h 30min</span></div>
+              <div class="flex justify-between gap-4 py-2.5"><span>Wick install (loc combining)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$550+ · 5h 30min</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:200ms">
+            <h4 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="Trenzas protectoras" data-en="Protective styling">Protective styling</h4>
+            <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+              <div class="flex justify-between gap-4 py-2.5"><span>Crocheted braids (with hair included)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$165 · 2h 30min</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:260ms">
+            <h4 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="Hair Paint" data-en="Hair Paint">Hair Paint</h4>
+            <div class="divide-y divide-[color:var(--accent-ghost)] text-sm">
+              <div class="flex justify-between gap-4 py-2.5"><span>Hair paint (temp color wax)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$65+ · 1h 30min</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-7 reveal lg:col-span-2" style="transition-delay:320ms">
+          <h4 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="Locs tradicionales" data-en="Traditional locs">Traditional locs</h4>
+          <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 divide-[color:var(--accent-ghost)] text-sm">
+            <div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pr-4"><span>Loc style only (no maintenance or wash)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$35+ · 30min</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pr-4"><span>Loc Illusion (wash &amp; style only)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$65+ · 1h</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pr-4"><span>Loc Maintenance with simple style</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$110+ · 2h</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pr-4"><span>Loc Maintenance (style not included)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$95+ · 2h</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pr-4"><span>Loc Maintenance w/ Rope Twist</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$120+ · 2h 30min</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pr-4"><span>Loc Maintenance w/ 2-strand twist</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$135+ · 3h</span></div>
+            </div>
+            <div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pl-4"><span>Loc maintenance w/ Krinkles (plaits)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$135+ · 3h</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pl-4"><span>Loc Maintenance w/ “pipe cleaners”</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$135+ · 2h 30min</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pl-4"><span>Loc Maintenance w/ Loc Petals</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$135+ · 2h 30min</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pl-4"><span>Starter Locs, traditional (consultation required)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$175+ · 4h 30min</span></div>
+              <div class="flex justify-between gap-4 py-2.5 sm:pl-4"><span>Loc Knots (style only)</span><span class="text-[color:var(--ink-40)] whitespace-nowrap">$55+ · 1h 30min</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Consulta gratuita de 15 min, solo martes y miércoles. No se aceptan walk-ins." data-en="Free 15-minute consultation, Tuesday and Wednesday only. No walk-ins.">Free 15-minute consultation, Tuesday and Wednesday only. No walk-ins.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Trabajo <span class='text-shine'>real</span>" data-en="Real <span class='text-shine'>results</span>">Real <span class="text-shine">results</span></h2>
+        </div>
+        <a href="https://www.instagram.com/MochaReign/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @MochaReign
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Locs con color bronde" data-en="Bronde loc color">Bronde loc color</span><img src="assets/raw/gallery-2.jpg" alt="Braid detail with amber and clear beads at Mocha Reign Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Retoque de locs" data-en="Loc retwist">Loc retwist</span><img src="assets/raw/gallery-1.jpg" alt="Close detail of freshly parted knotless braids at Mocha Reign Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Micro locs con cuentas" data-en="Micro locs with beads">Micro locs with beads</span><img src="assets/raw/gallery-3.jpg" alt="Fresh micro loc retwist with clean parts at Mocha Reign Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Bun de locs multicolor" data-en="Colorful loc bun">Colorful loc bun</span><img src="assets/raw/gallery-6.jpg" alt="Colorful yarn loc bun with shaved side design at Mocha Reign Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Trenzas con cuentas" data-en="Beaded braids">Beaded braids</span><img src="assets/raw/gallery-4.jpg" alt="Beaded box braids finished at Mocha Reign Studios" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Locs frente a la tienda" data-en="Loc updo, storefront">Loc updo, storefront</span><img src="assets/raw/gallery-5.jpg" alt="Finished loc updo photographed outside the Mocha Reign Studios storefront" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Starter Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Loc Maintenance</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Micro Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wicks</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Tallahassee, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Starter Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Loc Maintenance</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Micro Locs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Wicks</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Tallahassee, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Lo que dicen <span class='text-shine'>los clientes</span>" data-en="What clients <span class='text-shine'>are saying</span>">What clients <span class="text-shine">are saying</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 651 reseñas en Booksy" data-en="5.0 of 5 · 651 reviews on Booksy">5.0 of 5 · 651 reviews on Booksy</span></p>
+      </div>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Client reviews">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"She was very knowledgeable and patient was answering questions about the starter lock process forward to booking with her in the future!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Nina F.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Pleasant and professional. I always leave satisfied."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Beverly</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Love the energy and positivity."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Shadrina</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Very helpful and nice."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Bryce</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Loved the service."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Tee</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"She's great and friendly."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Lay S.</span> <span class="text-[color:var(--ink-40)]">· Booksy</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-es="Leer las 651 reseñas en Booksy" data-en="Read the 651 reviews on Booksy">Read the 651 reviews on Booksy</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms" data-es="South Monroe St, <span class='text-shine'>Tallahassee</span>" data-en="South Monroe St, <span class='text-shine'>Tallahassee</span>">South Monroe St, <span class="text-shine">Tallahassee</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">1533-4 South Monroe Street, Tallahassee, FL 32301</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(140,63,94,0.4)]" href="https://www.google.com/maps?q=1533+South+Monroe+St,+Tallahassee,+FL+32301" target="_blank" rel="noopener"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Martes a viernes: 7:30 AM a 9:30 PM" data-en="Tuesday to Friday: 7:30 AM to 9:30 PM">Tuesday to Friday: 7:30 AM to 9:30 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sábado: 7:30 AM a 1:30 PM" data-en="Saturday: 7:30 AM to 1:30 PM">Saturday: 7:30 AM to 1:30 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Domingo y lunes: cerrado" data-en="Sunday & Monday: closed">Sunday &amp; Monday: closed</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Bookings</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener">Booksy</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono" data-en="Phone">Phone</span>: <a class="text-[color:var(--accent-deep)]" href="tel:+18506660791">(850) 666-0791</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: Mocha Reign Studios, 1533-4 South Monroe St, Tallahassee FL"
+          src="https://www.google.com/maps?q=1533+South+Monroe+St,+Tallahassee,+FL+32301&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2a1620 0%, #1c0f16 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Tu corona te está esperando." data-en="Your crown is waiting.">Your crown is waiting.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms" data-es="Tu próxima cita <span class='text-shine'>te espera</span>" data-en="Your next appointment <span class='text-shine'>is waiting</span>">Your next appointment <span class="text-shine">is waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva en Booksy en segundos: elige el servicio, el día y la hora. La consulta gratuita es martes y miércoles, antes de cualquier proceso nuevo." data-en="Book on Booksy in seconds: pick the service, the day and the time. Free consultation is Tuesday and Wednesday, before any new process.">Book on Booksy in seconds: pick the service, the day and the time. Free consultation is Tuesday and Wednesday, before any new process.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Reservar en Booksy" data-en="Book on Booksy">Book on Booksy</span></a>
+        <a href="tel:+18506660791" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#180d13]">
+    <span class="foot-mark" aria-hidden="true">Mocha Reign</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,168,192,0.35)] bg-[rgba(232,168,192,0.08)] text-[#e8a8c0]">M</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Mocha Reign Studios</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de cabello natural y body art en Tallahassee, FL. Locs, twists, wicks y trenzas protectoras, con cita previa." data-en="Natural hair and body art studio in Tallahassee, FL. Locs, twists, wicks and protective braids, by appointment.">Natural hair and body art studio in Tallahassee, FL. Locs, twists, wicks and protective braids, by appointment.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>1533-4 South Monroe St, Tallahassee, FL 32301</p>
+        <p><a href="tel:+18506660791" class="hover:text-[#e8a8c0]">(850) 666-0791</a></p>
+        <p data-es="Martes a viernes 7:30 AM a 9:30 PM · Sáb 7:30 AM a 1:30 PM" data-en="Tue to Fri 7:30 AM to 9:30 PM · Sat 7:30 AM to 1:30 PM">Tue to Fri 7:30 AM to 9:30 PM &middot; Sat 7:30 AM to 1:30 PM</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Follow</p>
+        <p><a href="https://www.instagram.com/MochaReign/" target="_blank" rel="noopener" class="hover:text-[#e8a8c0]">Instagram · @MochaReign</a></p>
+        <p><a href="https://www.facebook.com/1mochareign/" target="_blank" rel="noopener" class="hover:text-[#e8a8c0]">Facebook · 1mochareign</a></p>
+        <p><a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="hover:text-[#e8a8c0]"><span data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Online booking · Booksy</span></a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">&copy; 2026 Mocha Reign Studios. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">All rights reserved.</span></p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://booksy.com/en-us/86539_mocha-reign-studios_hair-salon_15826_tallahassee" target="_blank" rel="noopener" class="book-float" aria-label="Book online on Booksy">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#faf3ef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba (abajo-izquierda) -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + 2. barra de progreso + 3. parallax + 11. back-to-top: UN solo listener de scroll con rAF
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // 4. Reveals editoriales: texto (.reveal) + imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
+    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
+    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
+    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
+    // layout, que si existe, asi que rompe el circulo.
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (decimales respetados)
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la reseña ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+
+    // v3: split-text del hero (palabra por palabra, respeta spans internos)
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // v3: cursor ring (solo desktop, lerp con rAF)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // 8. Botones magneticos (max 6px, spring back). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // 9. Tilt 3D sutil en cards de servicios (max 3deg + glare). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // 10. Cursor glow calido en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
