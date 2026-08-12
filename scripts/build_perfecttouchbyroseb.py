@@ -62,7 +62,6 @@ assert h.count(OLD_IG_HANDLE) >= 1
 h = h.replace(OLD_IG_HANDLE, IG_HANDLE)
 
 rep('<html lang="en" class="scroll-smooth">', '<html lang="es" class="scroll-smooth">')
-rep('<meta name="theme-color" content="#f6f1ea" />', '<meta name="theme-color" content="#eae6de" />')
 
 rep('<title>Lash Bloom · Lash Studio in West Palm Beach, FL | 5.0 on Booksy</title>',
     '<title>Perfect Touch By Rose · Cejas y Pestañas en Belleview, FL | 5.0 en Booksy</title>')
@@ -118,7 +117,7 @@ rep('data-es="Pestañas que florecen contigo." data-en="Lashes that bloom with y
 rep('<span data-es="Pestañas clásicas, híbridas" data-en="Classic, hybrid and volume">Classic, hybrid and volume</span><br /><span data-es="y volumen, hechas para " data-en="lashes, made to ">lashes, made to </span><span class="text-shine" data-es="florecer" data-en="bloom">bloom</span>',
     '<span data-es="Cejas y pestañas" data-en="Brows and lashes">Cejas y pestañas</span><br /><span data-es="que se notan, hechas " data-en="that show, made ">que se notan, hechas </span><span class="text-shine" data-es="con cuidado" data-en="with care">con cuidado</span>')
 rep('data-es="Sets completos clásicos, híbridos, volumen y mega volumen, con rellenos de 2 y 3 semanas para mantener la mirada perfecta. Una artista licenciada, un suite zen y clientas que llevan más de 5 años con ella." data-en="Full classic, hybrid, volume and mega volume sets, with 2 and 3 week fills to keep the look perfect. One licensed artist, a zen suite, and clients who have stayed with her for over 5 years.">Full classic, hybrid, volume and mega volume sets, with 2 and 3 week fills to keep the look perfect. One licensed artist, a zen suite, and clients who have stayed with her for over 5 years.</p>',
-    'data-es="Powder brows, microblading, lip blush y sets completos de pestañas, hechos a mano por Rose Tirado, con casi 19 años de experiencia en micropigmentación. Un estudio en Belleview, cerca de Ocala, con clientas que confían en ella desde hace años." data-en="Powder brows, microblading, lip blush and full lash sets, hand done by Rose Tirado, with close to 19 years of experience in permanent makeup. A studio in Belleview, near Ocala, with clients who have trusted her for years.">Powder brows, microblading, lip blush and full lash sets, hand done by Rose Tirado, with close to 19 years of experience in permanent makeup. A studio in Belleview, near Ocala, with clients who have trusted her for years.</p>')
+    'data-es="Powder brows, microblading, lip blush y sets completos de pestañas, hechos a mano por Rose Tirado, con casi 19 años de experiencia en micropigmentación. Un estudio en Belleview, cerca de Ocala, con clientas que confían en ella desde hace años." data-en="Powder brows, microblading, lip blush and full lash sets, hand done by Rose Tirado, with close to 19 years of experience in permanent makeup. A studio in Belleview, near Ocala, with clients who have trusted her for years.">Powder brows, microblading, lip blush y sets completos de pestañas, hechos a mano por Rose Tirado, con casi 19 años de experiencia en micropigmentación. Un estudio en Belleview, cerca de Ocala, con clientas que confían en ella desde hace años.</p>')
 rep('''        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
           <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 86 reseñas en Booksy" data-en="5.0 · 86 reviews on Booksy">5.0 · 86 reviews on Booksy</span>
@@ -141,7 +140,7 @@ rep('<div class="reveal"><p class="font-display text-2xl text-shine"><span data-
 rep('<div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Classic <span class="text-shine">&amp;</span> Volume</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Sets completos · Rellenos" data-en="Full sets · Fills">Full sets · Fills</p></div>',
     '<div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Cejas <span class="text-shine">&amp;</span> Pestañas</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Powder brows · Microblading" data-en="Powder brows · Microblading">Powder brows · Microblading</p></div>')
 rep('<div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">+5 <span class="text-shine" data-es="años" data-en="years">years</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Clientas fieles por años" data-en="Clients who stay for years">Clients who stay for years</p></div>',
-    '<div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">19 <span class="text-shine" data-es="años" data-en="years">years</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Experiencia de Rose" data-en="Rose experience">Rose experience</p></div>')
+    '<div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">19 <span class="text-shine" data-es="años" data-en="years">años</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Experiencia de Rose" data-en="Rose experience">Experiencia de Rose</p></div>')
 rep('<div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">West Palm Beach</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">4580 Cresthaven Blvd</p></div>',
     '<div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Belleview</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">SE Hwy 441</p></div>')
 
@@ -170,19 +169,19 @@ rep('data-es="La experiencia" data-en="The experience">La experiencia</p>', 'dat
 rep('<span data-es="Un suite zen" data-en="A zen suite">A zen suite</span><br /><span class="text-shine" data-es="hecho para relajarte" data-en="made to unwind in">made to unwind in</span>',
     '<span data-es="Un espacio" data-en="A space">Un espacio</span><br /><span class="text-shine" data-es="pensado para ti" data-en="made just for you">pensado para ti</span>')
 rep('data-es="Lash Bloom es el estudio de una sola artista licenciada y certificada: Yesi. Cada set se diseña sobre tu ojo, pestaña por pestaña, en un suite que sus clientas describen como zen y relajante, con luz neon rosa y calma de verdad." data-en="Lash Bloom is the studio of one licensed, certified artist: Yesi. Every set is designed around your eye, lash by lash, in a suite her clients describe as zen and relaxing, pink neon glow included.">Lash Bloom is the studio of one licensed, certified artist: Yesi. Every set is designed around your eye, lash by lash, in a suite her clients describe as zen and relaxing, pink neon glow included.</p>',
-    'data-es="Perfect Touch By Rose es el estudio de micropigmentación y pestañas de Rose Tirado en Belleview, cerca de Ocala. Cada ceja y cada set de pestañas se diseña a mano, según la forma de tu rostro y lo que buscas, en un ambiente limpio y relajado." data-en="Perfect Touch By Rose is the permanent makeup and lash studio of Rose Tirado in Belleview, near Ocala. Every brow and every lash set is designed by hand around your face shape and what you are looking for, in a clean, relaxed space.">Perfect Touch By Rose is the permanent makeup and lash studio of Rose Tirado in Belleview, near Ocala. Every brow and every lash set is designed by hand around your face shape and what you are looking for, in a clean, relaxed space.</p>')
+    'data-es="Perfect Touch By Rose es el estudio de micropigmentación y pestañas de Rose Tirado en Belleview, cerca de Ocala. Cada ceja y cada set de pestañas se diseña a mano, según la forma de tu rostro y lo que buscas, en un ambiente limpio y relajado." data-en="Perfect Touch By Rose is the permanent makeup and lash studio of Rose Tirado in Belleview, near Ocala. Every brow and every lash set is designed by hand around your face shape and what you are looking for, in a clean, relaxed space.">Perfect Touch By Rose es el estudio de micropigmentación y pestañas de Rose Tirado en Belleview, cerca de Ocala. Cada ceja y cada set de pestañas se diseña a mano, según la forma de tu rostro y lo que buscas, en un ambiente limpio y relajado.</p>')
 rep('data-es="El resultado: 5.0 perfecto en 86 reseñas verificadas, un programa de lealtad para clientas frecuentes, y mujeres que llevan más de cinco años sin dejarse pestañas con nadie más." data-en="The result: a perfect 5.0 across 86 verified reviews, a loyalty program for regulars, and women who have not trusted their lashes to anyone else in over five years.">The result: a perfect 5.0 across 86 verified reviews, a loyalty program for regulars, and women who have not trusted their lashes to anyone else in over five years.</p>',
-    'data-es="El resultado: 5.0 perfecto en 133 reseñas verificadas en Booksy, y clientas que solo confían en Rose para sus cejas, pestañas y labios." data-en="The result: a perfect 5.0 across 133 verified Booksy reviews, and clients who trust no one but Rose with their brows, lashes and lips.">The result: a perfect 5.0 across 133 verified Booksy reviews, and clients who trust no one but Rose with their brows, lashes and lips.</p>')
+    'data-es="El resultado: 5.0 perfecto en 133 reseñas verificadas en Booksy, y clientas que solo confían en Rose para sus cejas, pestañas y labios." data-en="The result: a perfect 5.0 across 133 verified Booksy reviews, and clients who trust no one but Rose with their brows, lashes and lips.">El resultado: 5.0 perfecto en 133 reseñas verificadas en Booksy, y clientas que solo confían en Rose para sus cejas, pestañas y labios.</p>')
 rep('''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="86">86</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Personal care</p></div>''',
     '''          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Booksy</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="133">133</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Personal care</p></div>''')
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="133">133</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reseñas</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Atención personal</p></div>''')
 rep('<img src="assets/raw/logo.jpg" alt="Lash Bloom" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(136,87,105,0.3)]" loading="lazy" />',
     '<img src="assets/raw/bk-1.jpg" alt="Rose Tirado" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(136,87,105,0.3)]" loading="lazy" />')
 rep('<span class="text-sm font-light">Yesi · <span class="text-[color:var(--ink-40)]" data-es="Artista licenciada" data-en="Licensed lash artist">Licensed lash artist</span></span>',
-    '<span class="text-sm font-light">Rose · <span class="text-[color:var(--ink-40)]" data-es="Esteticista y artista de micropigmentación" data-en="Esthetician &amp; permanent makeup artist">Esthetician &amp; permanent makeup artist</span></span>')
+    '<span class="text-sm font-light">Rose · <span class="text-[color:var(--ink-40)]" data-es="Esteticista y artista de micropigmentación" data-en="Esthetician &amp; permanent makeup artist">Esteticista y artista de micropigmentación</span></span>')
 print("EXPERIENCIA done")
 
 # ---- METODO ----
@@ -355,7 +354,7 @@ print("MENU COMPLETO done")
 
 # ---- GALERIA ----
 rep('<span data-es="Miradas" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="lashes">lashes</span>',
-    '<span data-es="Resultados" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="results">results</span>')
+    '<span data-es="Resultados" data-en="Real">Resultados</span> <span class="text-shine" data-es="reales" data-en="results">reales</span>')
 
 gallery_grid = re.search(
     r'<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">.*?</div>\s*</div>\s*</section>',
@@ -409,7 +408,6 @@ rep('<a href="__BOOKSY_OPINIONES__" target="_blank" rel="noopener" class="btn-gh
 print("OPINIONES done")
 
 # ---- UBICACION ----
-rep('<span data-es="Visítanos" data-en="Visit us">Visítanos</p>', 'data-es="Visítanos" data-en="Visit us">Visítanos</p>')
 rep('<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">West Palm Beach</span></h2>',
     '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visítanos en</span> <span class="text-shine">Belleview</span></h2>')
 rep('<p class="text-sm text-[color:var(--ink-60)] font-light">4580 Cresthaven Blvd (inside Lux Stitch Embroidery), West Palm Beach, FL 33415</p>',
@@ -446,6 +444,8 @@ rep('''            <div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">''')
+rep('<p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>',
+    '<p class="font-medium mb-1" data-es="Dirección" data-en="Address">Dirección</p>')
 rep('title="Mapa: Lash Bloom, 4580 Cresthaven Blvd, West Palm Beach FL"',
     'title="Mapa: Perfect Touch By Rose, 10117 SE Hwy 441, Belleview FL"')
 rep('src="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415&output=embed"',
