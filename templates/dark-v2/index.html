@@ -211,6 +211,64 @@
       #heroInner { opacity: 1 !important; transform: none !important; }
     }
   </style>
+  <style id="ultra">
+    /* ==== CAPA ULTRA: premium + ultraresponsive (2026-08-12) ====
+       Bloque APARTE a proposito: derive.py ancla sobre el <style> principal y el body, asi
+       que esta capa se puede evolucionar sin romper la derivacion. Todo es color-agnostico
+       (lee las variables de la marca) y los builds la heredan al copiar el esqueleto. */
+
+    /* Tipografia FLUIDA: el titular escala con el viewport en vez de saltar entre
+       breakpoints. En un iPhone SE ya no desborda y en un monitor grande llena sin pixelar. */
+    html { -webkit-text-size-adjust: 100%; }
+    h1.split { font-size: clamp(2.55rem, 1.15rem + 6.6vw, 4.7rem) !important; line-height: 1.05 !important; }
+    section h2.font-display { font-size: clamp(1.95rem, 1.05rem + 3.6vw, 3.1rem) !important; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+
+    /* 100svh: en movil el hero media contra la barra del navegador y saltaba al hacer
+       scroll cuando esta se oculta. svh usa el viewport chico estable. */
+    .min-h-screen { min-height: 100svh; }
+
+    /* Safe areas (iPhone con notch/isla): nada queda pegado ni cortado por el borde fisico */
+    .book-float { bottom: max(1.4rem, env(safe-area-inset-bottom)); right: max(1.4rem, env(safe-area-inset-right)); }
+    .back-top { bottom: max(1.4rem, env(safe-area-inset-bottom)); left: max(1.4rem, env(safe-area-inset-left)); }
+
+    /* Touch: objetivos de 44px minimo (guia de Apple) y sin flash azul al tocar */
+    a, button { -webkit-tap-highlight-color: transparent; }
+    @media (hover: none) {
+      .btn-3d, .btn-ghost { min-height: 44px; }
+      #langToggle { min-height: 38px; min-width: 44px; }
+    }
+
+    /* Respiro movil: en pantallas chicas las secciones pierden aire muerto sin apretarse */
+    @media (max-width: 640px) {
+      .py-24 { padding-top: 4.4rem !important; padding-bottom: 4.4rem !important; }
+      .py-28 { padding-top: 5.2rem !important; padding-bottom: 5.2rem !important; }
+      .mb-16 { margin-bottom: 2.6rem !important; }
+      .gap-12 { gap: 2rem !important; }
+    }
+    @media (max-width: 380px) {
+      .gap-4 { gap: 0.65rem !important; }
+      .px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
+    }
+    /* Telefono en horizontal: el hero no se aplasta intentando caber en 400px de alto */
+    @media (max-height: 520px) {
+      .min-h-screen { min-height: auto; }
+    }
+
+    /* Acabados premium color-agnosticos: seleccion de texto con la marca, focus visible
+       para teclado, scrollbar discreta del color del acento */
+    ::selection { background: var(--accent-deep); color: var(--bg); }
+    :focus-visible { outline: 2px solid var(--accent-mid); outline-offset: 3px; border-radius: 4px; }
+    @supports (scrollbar-width: thin) {
+      html { scrollbar-width: thin; scrollbar-color: var(--accent-ghost) transparent; }
+    }
+    .font-display { font-feature-settings: "liga", "kern"; }
+    body { overscroll-behavior-x: none; }
+
+    /* Las imagenes nunca provocan scroll horizontal aunque una venga con tamano raro */
+    img, video, iframe { max-width: 100%; }
+  </style>
 </head>
 <body>
 
