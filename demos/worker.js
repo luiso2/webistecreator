@@ -71,38 +71,13 @@ class InyectarColor {
   element(el) { el.append(this.css, { html: true }); }
 }
 
-// Huella corta y estable del CSS inyectado, para meterla en el ETag.
-function huella(s) {
-  let h = 5381;
-  for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
-  return h.toString(36);
-}
-
 async function servir(env, req, slug) {
-  const css = await estiloDe(env, slug);
-  // Sin color no se toca nada: el asset se sirve tal cual, con su 304 y su cache normal.
-  if (!css) return env.ASSETS.fetch(req);
-
-  // EL BUG QUE ESTO ARREGLA (2026-08-12): el HTMLRewriter cambia el BODY pero conservaba los
-  // headers del asset, incluido su ETag. Al recargar, el navegador mandaba If-None-Match con
-  // el ETag del HTML SIN color, el asset no habia cambiado y Cloudflare respondia 304: el
-  // navegador se quedaba con su copia vieja. El color solo se veia en la primera visita, y
-  // al volver a abrir el sitio parecia que el cambio no habia hecho nada.
-  // Solucion: pedir el asset sin cabeceras condicionales (para tener siempre body que
-  // transformar) y devolverlo con un ETag propio que incluye la huella del color, de modo que
-  // el navegador siga cacheando pero revalide en cuanto el color cambie.
-  const h = new Headers(req.headers);
-  h.delete('if-none-match');
-  h.delete('if-modified-since');
-  const res = await env.ASSETS.fetch(new Request(req.url, { method: req.method, headers: h }));
+  const res = await env.ASSETS.fetch(req);
   const tipo = res.headers.get('content-type') || '';
   if (!tipo.includes('text/html')) return res;
-
-  const salida = new Headers(res.headers);
-  const base = (salida.get('etag') || 'sf').replace(/[^A-Za-z0-9._-]/g, '');
-  salida.set('etag', `"${base}-c${huella(css)}"`);
-  return new HTMLRewriter().on('head', new InyectarColor(css)).transform(
-    new Response(res.body, { status: res.status, statusText: res.statusText, headers: salida }));
+  const css = await estiloDe(env, slug);
+  if (!css) return res;
+  return new HTMLRewriter().on('head', new InyectarColor(css)).transform(res);
 }
 
 export default {
