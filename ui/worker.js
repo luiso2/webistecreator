@@ -147,7 +147,7 @@ export default {
       if (!(await isAuthorized(req))) return json({ error: 'unauthorized' }, 401);
 
       if (url.pathname === '/api/state' && req.method === 'GET') {
-        const [registry, queue, crm, colores] = await Promise.all([
+        const [registry, queue, crm, colores, mensajes] = await Promise.all([
           env.SITEFORGE_KV.get('registry', 'json'),
           env.SITEFORGE_KV.get('queue', 'json'),
           env.SITEFORGE_KV.get('crm', 'json'),
@@ -156,6 +156,12 @@ export default {
           env.SITEFORGE_KV.list({ prefix: 'color:' })
             .then(l => Promise.all(l.keys.map(k =>
               env.SITEFORGE_KV.get(k.name, 'json').then(v => [k.name.slice(6), v]))))
+            .then(pares => Object.fromEntries(pares.filter(([, v]) => v)))
+            .catch(() => ({})),
+          // Mensajes editados a mano, igual que los colores: una lista y luego solo los que hay.
+          env.SITEFORGE_KV.list({ prefix: 'msg:' })
+            .then(l => Promise.all(l.keys.map(k =>
+              env.SITEFORGE_KV.get(k.name).then(v => [k.name.slice(4), v]))))
             .then(pares => Object.fromEntries(pares.filter(([, v]) => v)))
             .catch(() => ({})),
         ]);
@@ -170,7 +176,9 @@ export default {
               contacted_at: map[b.slug].contacted_at || null,
               contacted_via: map[b.slug].via || null,
             }
-          : b)).map(b => (colores[b.slug] ? { ...b, color: colores[b.slug] } : b));
+          : b))
+          .map(b => (colores[b.slug] ? { ...b, color: colores[b.slug] } : b))
+          .map(b => (mensajes[b.slug] ? { ...b, msg_editado: mensajes[b.slug] } : b));
         return json({ registry: reg, queue: queue || [] });
       }
 
@@ -232,6 +240,24 @@ export default {
         if (typeof body.nombre === 'string') limpia.nombre = stripUnsafe(body.nombre.slice(0, 40));
         await env.SITEFORGE_KV.put('color:' + slug, JSON.stringify(limpia));
         return json({ ok: true, slug, palette: limpia });
+      }
+
+      // Mensaje de outreach editado a mano para un negocio. Se guarda para que el texto que
+      // se ajusto no se pierda al recargar el panel ni al cambiar de dispositivo: el DM de
+      // Instagram hay que pegarlo a mano, asi que conviene tenerlo tal cual se dejo.
+      if (url.pathname === '/api/mensaje' && req.method === 'POST') {
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        const slug = (body.slug || '').toString();
+        if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
+        if (typeof body.texto !== 'string' || !body.texto.trim()) {
+          await env.SITEFORGE_KV.delete('msg:' + slug);
+          return json({ ok: true, slug, texto: null });
+        }
+        // Tope generoso: un DM largo cabe de sobra y evita que una escritura rara llene el KV.
+        const texto = body.texto.slice(0, 1200);
+        await env.SITEFORGE_KV.put('msg:' + slug, texto);
+        return json({ ok: true, slug, largo: texto.length });
       }
 
       if (url.pathname === '/api/queue' && req.method === 'POST') {
