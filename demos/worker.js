@@ -96,14 +96,14 @@ function huella(s) {
 
 async function servir(env, req, slug) {
   const css = await estiloDe(env, slug);
-  const base = slug ? `https://siteforge-demos.odd-forest-9504.workers.dev/${slug}/` : null;
+  const origen = slug ? `https://siteforge-demos.odd-forest-9504.workers.dev/${slug}/` : null;
   // Sin color, el HTML igual pasa por el rewriter para absolutizar og:image (el preview de
   // WhatsApp/iMessage no funciona con rutas relativas); lo no-HTML no se toca.
   if (!css) {
     const res0 = await env.ASSETS.fetch(req);
     const tipo0 = res0.headers.get('content-type') || '';
-    if (!tipo0.includes('text/html') || !base) return res0;
-    return new HTMLRewriter().on('meta[property^="og:"]', new OgAbsoluta(base)).transform(res0);
+    if (!tipo0.includes('text/html') || !origen) return res0;
+    return new HTMLRewriter().on('meta[property^="og:"]', new OgAbsoluta(origen)).transform(res0);
   }
 
   // EL BUG QUE ESTO ARREGLA (2026-08-12): el HTMLRewriter cambia el BODY pero conservaba los
@@ -125,7 +125,7 @@ async function servir(env, req, slug) {
   const base = (salida.get('etag') || 'sf').replace(/[^A-Za-z0-9._-]/g, '');
   salida.set('etag', `"${base}-c${huella(css)}"`);
   let rw = new HTMLRewriter().on('head', new InyectarColor(css));
-  if (base) rw = rw.on('meta[property^="og:"]', new OgAbsoluta(base));
+  if (origen) rw = rw.on('meta[property^="og:"]', new OgAbsoluta(origen));
   return rw.transform(
     new Response(res.body, { status: res.status, statusText: res.statusText, headers: salida }));
 }
