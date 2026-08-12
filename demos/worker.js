@@ -71,13 +71,63 @@ class InyectarColor {
   element(el) { el.append(this.css, { html: true }); }
 }
 
+// og:image ABSOLUTA: WhatsApp, iMessage y SMS solo muestran la tarjeta con foto del link si
+// og:image es una URL absoluta, y los sites la llevan relativa ("assets/raw/bk-8.jpg"), asi
+// que el preview salia sin imagen en TODOS. Se corrige al servir, sin reconstruir ninguno.
+class OgAbsoluta {
+  constructor(base) { this.base = base; }
+  element(el) {
+    const prop = el.getAttribute('property');
+    if (prop === 'og:image') {
+      const v = el.getAttribute('content') || '';
+      if (v && !/^https?:\/\//i.test(v)) el.setAttribute('content', this.base + v.replace(/^\.?\//, ''));
+    } else if (prop === 'og:url') {
+      el.setAttribute('content', this.base);
+    }
+  }
+}
+
+// Huella corta y estable del CSS inyectado, para meterla en el ETag.
+function huella(s) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
+  return h.toString(36);
+}
+
 async function servir(env, req, slug) {
-  const res = await env.ASSETS.fetch(req);
+  const css = await estiloDe(env, slug);
+  const base = slug ? `https://siteforge-demos.odd-forest-9504.workers.dev/${slug}/` : null;
+  // Sin color, el HTML igual pasa por el rewriter para absolutizar og:image (el preview de
+  // WhatsApp/iMessage no funciona con rutas relativas); lo no-HTML no se toca.
+  if (!css) {
+    const res0 = await env.ASSETS.fetch(req);
+    const tipo0 = res0.headers.get('content-type') || '';
+    if (!tipo0.includes('text/html') || !base) return res0;
+    return new HTMLRewriter().on('meta[property^="og:"]', new OgAbsoluta(base)).transform(res0);
+  }
+
+  // EL BUG QUE ESTO ARREGLA (2026-08-12): el HTMLRewriter cambia el BODY pero conservaba los
+  // headers del asset, incluido su ETag. Al recargar, el navegador mandaba If-None-Match con
+  // el ETag del HTML SIN color, el asset no habia cambiado y Cloudflare respondia 304: el
+  // navegador se quedaba con su copia vieja. El color solo se veia en la primera visita, y
+  // al volver a abrir el sitio parecia que el cambio no habia hecho nada.
+  // Solucion: pedir el asset sin cabeceras condicionales (para tener siempre body que
+  // transformar) y devolverlo con un ETag propio que incluye la huella del color, de modo que
+  // el navegador siga cacheando pero revalide en cuanto el color cambie.
+  const h = new Headers(req.headers);
+  h.delete('if-none-match');
+  h.delete('if-modified-since');
+  const res = await env.ASSETS.fetch(new Request(req.url, { method: req.method, headers: h }));
   const tipo = res.headers.get('content-type') || '';
   if (!tipo.includes('text/html')) return res;
-  const css = await estiloDe(env, slug);
-  if (!css) return res;
-  return new HTMLRewriter().on('head', new InyectarColor(css)).transform(res);
+
+  const salida = new Headers(res.headers);
+  const base = (salida.get('etag') || 'sf').replace(/[^A-Za-z0-9._-]/g, '');
+  salida.set('etag', `"${base}-c${huella(css)}"`);
+  let rw = new HTMLRewriter().on('head', new InyectarColor(css));
+  if (base) rw = rw.on('meta[property^="og:"]', new OgAbsoluta(base));
+  return rw.transform(
+    new Response(res.body, { status: res.status, statusText: res.statusText, headers: salida }));
 }
 
 export default {
