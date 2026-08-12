@@ -1,0 +1,108 @@
+{
+  "slug": "new-beginnings-bodywork-cape-coral",
+  "status": "failed",
+  "failed_reason": "Menos de 5 fotos reales/curadas del negocio disponibles (minimo del pipeline). Busqueda exhaustiva en MassageBook (fotos de negocio + miniaturas de servicio 100x100, genericas de stock), el sitio propio actual rootedtowardwellness.com (home + about, Squarespace), y el microsite legado swfl.massagetherapy.com (home, about-the-practitioner, testimonials) solo arrojo 3 fotos reales aptas para galeria (2 tomas de masaje + 1 interior de sala de tratamiento) mas 1 selfie de la terapeuta (solo apta como avatar pequeno, nunca como tile de galeria) y 1 logotipo/marca grafica (arbol-mujer, no es una foto). Yelp, Facebook, Instagram y ClassPass bloquearon el scraping (403/429) en multiples intentos con headers de navegador real; Google Maps no expone fotos sin renderizado JS/API key. Regla del pipeline (Fase 3): 'menos de 5 fotos reales -> marca FAILED y detente, no fuerces un build degradado'.",
+  "important_discovery": "HALLAZGO CRITICO en profundizacion de Fase 1: el negocio indicado en el discovery original (\"New Beginnings Bodywork & Wellness Studio\", 1617 Santa Barbara Blvd Suite 9, Cape Coral FL 33991) esta DESACTUALIZADO. La misma terapeuta (Sarah Rodriguez, LMT, mismo telefono (239) 314-8569) re-marco su negocio como \"Rooted Toward Wellness, LLC\" (entidad nueva en Sunbiz: L24000184551, registrada 2024) y se MUDO a 1515 Cape Coral Pkwy E, Suite 6 (dentro de \"Perfect 10 Aesthetics\"), Cape Coral, FL 33904. Ademas ahora reparte su tiempo entre Cape Coral, FL y Kennesaw, GA (3450 Acworth Due West, Lake Point Wellness). Y lo mas importante: AHORA SI TIENE WEBSITE PROPIO -> https://www.rootedtowardwellness.com/ (Squarespace, resuelve DNS, HTTP 200, confirmado por curl). Esto contradice el dato de discovery \"WEBSITE PROPIO: NO\". Si se reintenta este negocio en el futuro (con mas fotos), el angulo de outreach debe ser 'propuesta de rediseno premium' (has_own_site:true), nunca 'les construimos un sitio de muestra porque no tienen'.",
+  "name_current": "Rooted Toward Wellness, LLC",
+  "name_discovery_original_STALE": "New Beginnings Bodywork & Wellness Studio (nombre y direccion antiguos, ya no vigentes)",
+  "owner": "Sarah Rodriguez, LMT (Licensed Massage Therapist, FL license MA52387, establishment MM39995; tambien licenciada en GA MT014157; 15+ anos de experiencia)",
+  "schema_type": "DaySpa",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1515 Cape Coral Pkwy E, Suite 6 (located within Perfect 10 Aesthetics)",
+    "addressLocality": "Cape Coral",
+    "addressRegion": "FL",
+    "postalCode": "33904",
+    "addressCountry": "US"
+  },
+  "address_secondary_GA": "3450 Acworth Due West, Lake Point Wellness (1st floor), Kennesaw, GA 30144 (una semana cada 2.5 meses aprox.)",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 26.5628885,
+    "longitude": -81.9449462
+  },
+  "phone": "(239) 314-8569",
+  "email": null,
+  "email_search_note": "Busqueda profunda sin exito: sin mailto en rootedtowardwellness.com (Squarespace) ni en swfl.massagetherapy.com, sin campo de email publico en el perfil de MassageBook (should_show_contact_form:false), sin email visible en Facebook/Instagram (paginas bloqueadas para scraping). Registrado como null explicitamente, no inventado.",
+  "website_own": "https://www.rootedtowardwellness.com/",
+  "website_own_verified": "DNS resuelve (squarespace), HTTP 200 via curl con User-Agent de Chrome. Sitio Squarespace activo con paginas Home y About.",
+  "has_own_site": true,
+  "booking_url": "https://www.massagebook.com/therapists/SWFLBestMassage/staff",
+  "rating": 4.99,
+  "reviews_count": 113,
+  "rating_source": "MassageBook (perfil SWFLBestMassage), consultado 2026-08-12. Mas reciente/fiable que el dato de discovery (5.0/14 resenas). ambiance_rating 4.97, professionalism_rating 4.99.",
+  "hours": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday"], "opens": "10:00", "closes": "20:30", "note": "by appointment only" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday"], "opens": "10:00", "closes": "20:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "10:00", "closes": "15:00", "note": "by appointment only" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "note": "cerrado / closed (sin horas publicadas en MassageBook)" }
+  ],
+  "same_as": [
+    "https://www.instagram.com/rootedtowardwellness/",
+    "https://www.facebook.com/BestMassageNWAtlanta/",
+    "https://twitter.com/MassageSWFL",
+    "https://www.linkedin.com/in/sarah-rodriguez-lmt-massage-therapy-1354bbb3/",
+    "https://www.massagebook.com/therapists/SWFLBestMassage/staff",
+    "https://www.yelp.com/biz/rooted-toward-wellness-cape-coral"
+  ],
+  "instagram": "rootedtowardwellness",
+  "instagram_note": "Handle verificado via el campo 'instagram' del perfil de MassageBook y el sitio propio (ambos apuntan a @rootedtowardwellness). No se pudo scrapear el feed: instagram.com devolvio 429 (rate limited) en 2 intentos con distintos User-Agent, tal como anticipa el limite del pipeline (max 2 intentos).",
+  "website_candidates_checked": [
+    "newbeginningsbodywork.com (no resuelve, confirmado en discovery previo)",
+    "newbeginningsbodyworkcapecoral.com (no resuelve, confirmado en discovery previo)",
+    "rootedtowardwellness.com (SI resuelve, sitio propio activo -> hallazgo nuevo de esta sesion)"
+  ],
+  "services": [
+    { "name": "Your FIRST Massage, with me, starts HERE!! (60 minutes)", "price": 135, "duration": "60min", "note": "Precio de introduccion, primera sesion" },
+    { "name": "Your FIRST massage, with me, starts HERE! (90 MINUTES)", "price": 180, "duration": "90min", "note": "Precio de introduccion, primera sesion" },
+    { "name": "Your FIRST Massage with Me!!!! 120 min", "price": 230, "duration": "120min", "note": "Precio de introduccion, primera sesion" },
+    { "name": "FOLLOW UP Signature Body Mapping Massage", "price": 150, "duration": "60min" },
+    { "name": "FOLLOW UP Signature Body Mapping Massage", "price": 200, "duration": "90min" },
+    { "name": "FOLLOW UP Signature Body Mapping Massage", "price": 250, "duration": "120min" },
+    { "name": "Deep Tissue Massage", "price": 115, "duration": "60min" },
+    { "name": "Deep Tissue Massage", "price": 150, "duration": "90min" },
+    { "name": "60 Minute Swedish Massage", "price": 80, "duration": "60min" },
+    { "name": "60 Minute Swedish Massage (opcion 90min)", "price": 120, "duration": "90min" },
+    { "name": "30 minute table Massage (Back, Neck, Head, Face or Arm Area)", "price": 55, "duration": "30min" },
+    { "name": "Liver/Thyroid Detox, Cupping & Stretch Session", "price": 65, "duration": "60min" },
+    { "name": "Ionic Detox Foot Bath/Foot Massage", "price": 65, "duration": "60min" },
+    { "name": "Pre or Post Natal Massage (referral required)", "price": 130, "duration": "60min" },
+    { "name": "Pre or Post Natal Massage (referral required)", "price": 160, "duration": "90min" },
+    { "name": "THE ULTIMATE DETOX PACKAGE", "price": 300, "duration": "140min" }
+  ],
+  "services_source": "Decodificados del payload __NUXT__ (JSON embebido server-side) de https://www.massagebook.com/therapists/SWFLBestMassage/services, ejecutado con Node para reconstruir el objeto de estado. Precios exactos, verificados, no inventados.",
+  "signature_technique": "Body Mapping Massage: tecnica propia de Sarah Rodriguez que combina trigger point therapy, tecnicas neuromusculares, liberacion miofascial, conciencia somatica y guia intuitiva. Incluye sin costo extra: cupping, stretching, aromaterapia y piedras calientes segun necesidad.",
+  "reviews": [
+    { "author": "Josh Buzard", "body": "The only thing I can say is it's the best massage of my life. You honestly just have to experience her talent.", "rating": 5, "source": "Google (dado en discovery, confirmado consistente con reseña MassageBook de Josh B.: \"Best massage of my life\")" },
+    { "author": "Silvia Samarelli", "body": "Her body mapping technique is one of a kind. This was my first visit and it felt as if I have known her for years.", "rating": 5, "source": "Google (dado en discovery)" },
+    { "author": "Lorna List", "body": "She is warm and engaging and extremely knowledgeable in her craft...I haven't felt this good after a massage in YEARS.", "rating": 5, "source": "Google (dado en discovery)" },
+    { "author": "Kimberly Coe", "body": "Sarah is AMAZING! Her prices are more than reasonable and her bodymapping is a huge blessing to me!!!", "rating": 5, "source": "Google (dado en discovery)" },
+    { "author": "Robert M.", "body": "I have chronic injuries and constantly search for a provider that is knowledgeable and skilled enough to work with my particular issues. Locally I have seen 4 other providers until I found my way here.", "rating": 5, "source": "MassageBook, 2021-10-06" },
+    { "author": "Jennifer P.", "body": "Every massage I have ever had I have walked away from feeling like I didn't get what I needed from the experience. My appt with Sarah was the exact opposite of that. She was truly incredible.", "rating": 5, "source": "MassageBook, 2021-10-14" },
+    { "author": "Michele C.", "body": "I have chronic pain so I was looking for someone who could help me. Sarah absolutely has a gift! I felt lighter, like I was standing straighter, and just on cloud 9.", "rating": 5, "source": "MassageBook, 2024-06-13" }
+  ],
+  "language": "en",
+  "assets_downloaded": [
+    { "file": "assets/raw/massage-session-1.jpg", "desc": "Masaje de espalda, tecnica de manos, foto real del sitio propio (rootedtowardwellness.com)", "usable_as": "gallery/hero" },
+    { "file": "assets/raw/massage-session-2.jpg", "desc": "Masaje de espalda, segundo angulo, foto real del sitio propio", "usable_as": "gallery" },
+    { "file": "assets/raw/treatment-room.jpg", "desc": "Interior real de la sala de tratamiento (decor boho, camilla, lampara de sal), foto real del sitio propio", "usable_as": "gallery/about" },
+    { "file": "assets/raw/therapist-portrait.jpg", "desc": "Selfie/retrato real de Sarah Rodriguez (fuente: sitio propio y MassageBook, misma foto en ambos)", "usable_as": "avatar pequeno SOLO, prohibido como tile de galeria (regla de curacion)" },
+    { "file": "assets/raw/logo-mark.png", "desc": "Isotipo de marca real (silueta arbol-mujer con raices), usado por Rooted Toward Wellness en su Instagram/branding", "usable_as": "grafico de marca/monograma, no es foto" }
+  ],
+  "sources": [
+    "https://www.massagebook.com/therapists/SWFLBestMassage/staff (perfil, __NUXT__ payload decodificado con Node)",
+    "https://www.massagebook.com/therapists/SWFLBestMassage/services (menu de servicios, __NUXT__ payload decodificado con Node)",
+    "https://www.rootedtowardwellness.com/ (sitio propio, Squarespace)",
+    "https://www.rootedtowardwellness.com/about",
+    "https://swfl.massagetherapy.com (microsite legado, confirma direccion antigua 1617 Santa Barbara Blvd como historica)",
+    "https://search.sunbiz.org (Division of Corporations FL: NEW BEGINNINGS BODYWORK WELLNESS L21000089949 vs ROOTED TOWARD WELLNESS L24000184551)",
+    "WebSearch: LinkedIn Sarah Rodriguez, listados de directorios (fortmyersdirections, local.yahoo, nextdoor)"
+  ],
+  "blocked_sources_attempted": [
+    "Yelp (403 Cloudflare bot-check, 3 intentos con headers distintos)",
+    "Facebook (login wall / pagina vacia, 2 intentos incl. mbasic.facebook.com)",
+    "Instagram (429 rate limited, 2 intentos: API web_profile_info y HTML directo)",
+    "ClassPass (403 directo, redirige a listado generico via lector alterno)",
+    "Google Maps (sin API key no expone fotos en el HTML estatico, requiere JS)"
+  ]
+}
