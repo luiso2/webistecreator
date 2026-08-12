@@ -90,7 +90,17 @@
 
     /* Historial de la cola: una fila por item, legible. Antes eran chips con la URL de
        Booksy entera y el motivo del fallo escondido en un tooltip de 300 caracteres. */
-    .queue { display: grid; gap: 6px; margin-top: 16px; }
+    /* minmax(0,1fr): la columna implicita de un grid tiene min-width:auto, asi que un
+       nombre largo de la cola forzaba la pista mas ancha que el viewport (231px de
+       overflow medidos a 768px). Con 0 la pista puede encoger y el ellipsis actua. */
+    .queue { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; margin-top: 16px; }
+    .qwhy { overflow-wrap: anywhere; }
+    /* El mismo problema un nivel mas adentro: las tarjetas son items del grid principal, y
+       una fila CRM sin flex-wrap (etiqueta "Contactado..." + 4 botones) las forzaba mas
+       anchas que su pista. min-width:0 deja encoger; flex-wrap parte la fila en dos. */
+    .grid > * { min-width: 0; }
+    .actions, .crm-row, .domain-row, .msg-acts, .color-row { flex-wrap: wrap; }
+    .crm-tag { min-width: 0; overflow-wrap: anywhere; }
     .qitem {
       display: flex; align-items: baseline; gap: 9px; font-size: 12.5px;
       padding: 8px 12px; border-radius: 11px; border: 1px solid var(--border);
@@ -260,6 +270,38 @@
     .reveal { opacity: 0; transform: translateY(16px); animation: rise 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
     @keyframes rise { to { opacity: 1; transform: none; } }
     @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } .chip .dot { animation: none; } }
+
+    /* ==== CAPA RESPONSIVE + PREMIUM del panel (2026-08-12) ====
+       El panel se usa desde el telefono al salir de visitar negocios: tiene que operarse
+       con el pulgar. Hasta ahora no habia NINGUNA media query de layout. */
+    html { -webkit-text-size-adjust: 100%; }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 2px solid var(--lime, #b7f36a); outline-offset: 2px; border-radius: 6px; }
+    ::selection { background: var(--lime, #b7f36a); color: #0a2a10; }
+    input, textarea, select { font-size: max(16px, 1em); } /* <16px dispara auto-zoom en iOS al enfocar */
+    .wrap { padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); padding-bottom: max(80px, env(safe-area-inset-bottom)); }
+
+    @media (max-width: 720px) {
+      .wrap { padding-top: 22px; }
+      h1 { font-size: clamp(1.35rem, 5.5vw, 1.8rem); }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 9px; margin: 18px 0; }
+      .grid { grid-template-columns: 1fr; gap: 12px; }
+      /* filas de acciones: los botones crecen para el pulgar y llenan el ancho */
+      .actions, .crm-row, .msg-acts { flex-wrap: wrap; }
+      .link-btn, .crm-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; flex: 1 1 auto; }
+      .crm-tag { flex-basis: 100%; }
+      .dom-input { min-height: 44px; }
+      .dom-btn { min-height: 44px; flex: 1 1 auto; }
+      .sw { width: 30px; height: 30px; } /* swatches de color tocables con el dedo */
+      .qitem { flex-wrap: wrap; }
+      .qitem .qname { white-space: normal; }         /* el nombre del negocio no se corta */
+      .qwhy { margin-left: 12px; }
+      .msg-chars { flex-basis: 100%; margin-left: 0; text-align: right; }
+    }
+    @media (max-width: 400px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .card { padding: 14px; }
+    }
   </style>
 </head>
 <body>
