@@ -1,0 +1,131 @@
+{
+  "slug": "instanthandymanpompano",
+  "name": "Instant Handyman",
+  "legal_name": "Instant Handyman LLC",
+  "niche": "handyman / home repairs",
+  "city": "Pompano Beach, FL",
+  "note_on_city": "Google Maps ficha displays the business as Pompano Beach, FL (coords 26.2054655,-80.2157984). The Florida Division of Corporations (Sunbiz, via bisprofiles.com mirror) lists the registered LLC address as a UPS-Store-style suite in Oakland Park (3350 NE 12th Ave, #23213, Oakland Park, FL 33307), and Yelp/search-engine listings show a service address at 300 E Oakland Park Blvd, Ste 167, Wilton Manors, FL 33334. This is consistent with a home-based/mobile handyman operating across the Pompano Beach / Wilton Manors / Oakland Park metro area (no public storefront), matching the task brief's note. No single 'real' street address could be independently verified as a place customers visit, so no address/map section is used anywhere.",
+  "address": null,
+  "address_note": "Not shown on the Google Maps ficha itself (no address field visible in the rendered listing, only pin coordinates). Third-party mirrors (Yelp, bisprofiles) show two different suite addresses (see note_on_city). Not used as a verified 'business address' anywhere in outreach material; omitted rather than guessed.",
+  "phone": "(267) 752-9639",
+  "phone_e164": "+12677529639",
+  "phone_source": "Task brief (pre-verified live against Google Maps). Independently corroborated in this session via: Google Maps ficha itself (Playwright screenshot, phone shown directly under the rating: '+1 267-752-9639'), and via web search snippets of the Yelp listing (yelp.com/biz/instant-handyman-wilton-manors) and Thumbtack/HomeAdvisor aggregator snippets, all showing the identical number for the identical business name and near-identical address block. Confirms Yelp's 'Instant Handyman' in Wilton Manors and the Google Maps 'Instant handyman' in Pompano Beach are the SAME business (same phone number).",
+  "email": null,
+  "email_search_log": [
+    { "source": "Google Maps ficha (live Playwright render + screenshot)", "method": "Loaded the full place URL from the brief with a real headless Chrome (TLS-fix launch flags per FORGE-BRIEF), screenshotted the info panel and dumped page body text.", "result": "No email field. Panel shows name, 5.0 rating, category 'Handyman/Handywoman/Handyperson', hours ('Open - Closes 8 PM'), phone, and two 'Add missing information' prompts: 'Add website' and 'Add a photo' (both proactively confirming no website AND that Google has essentially no photos on file beyond the one given in the brief)." },
+    { "source": "bisprofiles.com mirror of the Sunbiz LLC filing (instant-handyman-l22000064039)", "method": "WebFetch of the full filing detail page.", "result": "No email field in the filing. Formation date 2022-02-07, status Active, FEI 92-1550294, registered agent 'Amine Zayi' at the Oakland Park suite address, one officer/manager listed. No phone field in the filing either (confirms the phone comes from the live listing/directories, not the LLC filing)." },
+    { "source": "Yelp listing (yelp.com/biz/instant-handyman-wilton-manors, confirmed via search snippets to show '40 Photos')", "method": "curl with a Chrome user-agent header (HTTP 403), curl with additional Accept/Accept-Language/Referer headers (HTTP 403), and a real headless Chrome via Playwright with the FORGE-BRIEF TLS-fix launch flags (screenshot confirms an explicit PerimeterX 'You have been blocked' interstitial, ID logged in the page). Per task instructions, did not insist further beyond these 3 distinct methods.", "result": "Blocked on every attempt; zero content (no email, no photos, no review text) recoverable from Yelp in this environment today." },
+    { "source": "Thumbtack", "method": "Web search for an Instant Handyman profile specifically in Pompano Beach / Wilton Manors, and a WebFetch of thumbtack.com/fl/pompano-beach/handyman.", "result": "No matching Thumbtack profile found under this business name in either city. The category page fetched empty (client-rendered, no server HTML with listings)." },
+    { "source": "Web search (multiple queries: business name + phone, + Zayi/owner name, + 'email')", "method": "5 distinct WebSearch queries combining name, phone, city, and the registered-agent name found on the LLC filing.", "result": "No public email surfaced anywhere. No personal/company email associated with 'Amine Zayi' or 'Instant Handyman LLC' appeared in any indexed result." }
+  ],
+  "has_own_site": false,
+  "website_check": {
+    "domains_tested": [
+      "instanthandyman.com (curl -I): HTTP 302 to hugedomains.com/domain_profile.cfm - a parked/for-sale domain, unrelated to this business, not a real site",
+      "instanthandymanpompano.com: does not resolve",
+      "instanthandymanflorida.com: does not resolve",
+      "instanthandymanfl.com: does not resolve",
+      "instant-handyman.com: does not resolve",
+      "theinstanthandyman.com: does not resolve",
+      "instanthandymanllc.com: does not resolve",
+      "instanthandymanwiltonmanors.com: does not resolve"
+    ],
+    "google_maps_own_confirmation": "The live Google Maps ficha itself shows an 'Add website' prompt under 'Add missing information', which is Google's own way of saying no website URL is on file for this Business Profile.",
+    "conclusion": "has_own_site = false. No real website found under any tested domain variant; the one live hit (instanthandyman.com) is a parked domain for sale, not this business."
+  },
+  "instagram": null,
+  "instagram_note": "No account found matching name + city + phone after web search. Did not guess/verify unconfirmed handles per task instructions (accept only with a solid match).",
+  "facebook": null,
+  "facebook_note": "No account found matching name + city + phone after web search. A generic 'FL Handyman | Pompano Beach FL' Facebook page surfaced in search but is a different, unrelated business (different name, no phone match found), so it was dropped rather than guessed.",
+  "yelp_listing": "https://www.yelp.com/biz/instant-handyman-wilton-manors",
+  "yelp_note": "Same phone number ((267) 752-9639) and same business name as the Google Maps ficha for Instant Handyman in Pompano Beach, and a nearly identical service address (300 E Oakland Park Blvd, Wilton Manors) as third-party directory mirrors of this business, confirming this is the same business operating across the Pompano Beach / Wilton Manors metro area. Search snippets show it as '40 Photos', 'Updated May 2026', category Handyman. The live page itself is blocked by PerimeterX bot protection in this environment (see email_search_log); its photos could not be retrieved.",
+  "llc_filing": {
+    "source": "https://bisprofiles.com/fl/instant-handyman-l22000064039 (public mirror of the Florida Division of Corporations / Sunbiz record)",
+    "registration_number": "L22000064039",
+    "fei_number": "92-1550294",
+    "formation_date": "2022-02-07",
+    "status": "Active",
+    "principal_address": "3350 NE 12th Ave, #23213, Oakland Park, FL 33307",
+    "registered_agent": "Amine Zayi, Oakland Park, FL 33307"
+  },
+  "rating": 5.0,
+  "review_count": 22,
+  "review_source": "Google Maps ficha (task brief, corroborated live via Playwright screenshot of the same ficha: '5.0' with 5 filled stars shown directly under the business name).",
+  "review_themes_from_brief": [
+    "bathroom remodel (2 mentions)",
+    "fair pricing (5 mentions)",
+    "electric outlets (2 mentions)",
+    "timely manner (2 mentions)",
+    "handyman repairs (3 mentions)",
+    "friendliness (3 mentions)",
+    "punctuality (3 mentions)",
+    "reliability (3 mentions)",
+    "quality work (2 mentions)",
+    "shower (2 mentions)"
+  ],
+  "review_themes_note": "These themes were supplied pre-verified in the task brief (live-checked against the Google Maps ficha in a prior pass). This session could not re-read individual verbatim review text: Google Maps requires sign-in for the full reviews list beyond the 'limited view' info panel (confirmed via Playwright screenshot showing 'You're seeing a limited view of Google Maps... Sign in' for more), and Yelp (which would also carry reviews) is blocked (see email_search_log). No new review quotes were fabricated; only the theme list from the brief is used, framed as themes rather than as direct quotes anywhere the site content references them.",
+  "hours": {
+    "mon": "8:00 AM - 8:00 PM",
+    "tue": "8:00 AM - 8:00 PM",
+    "wed": "8:00 AM - 8:00 PM",
+    "thu": "8:00 AM - 8:00 PM",
+    "fri": "8:00 AM - 8:00 PM",
+    "sat": "8:00 AM - 8:00 PM",
+    "sun": "Closed",
+    "source": "Task brief, corroborated live via Playwright screenshot of the Google Maps ficha ('Open - Closes 8 PM' shown at the time of the check)."
+  },
+  "services_public": [
+    "Door installation",
+    "Drywall installation & repair",
+    "Drapery installation",
+    "Bathroom exhaust fan installation",
+    "Sliding door repair",
+    "Dishwasher installation"
+  ],
+  "services_source": "Yelp/directory search snippets (services list attached to the Yelp business listing, read via web search snippet since the live page is blocked). Consistent with the review themes (bathroom remodel, electric outlets, shower) from the brief.",
+  "photos": {
+    "count_usable": 1,
+    "minimum_required": 5,
+    "files": ["assets/raw/gmaps-1.jpg"],
+    "source_attempts": [
+      {
+        "source": "Google Maps ficha photo given in the task brief (lh3.googleusercontent.com/gps-cs-s/...)",
+        "method": "curl with Chrome UA, direct download.",
+        "result": "SUCCESS. Downloaded as assets/raw/gmaps-1.jpg (JPEG, 900x1200, 260KB). Shows a newly-installed ceiling fan with recessed lighting in what looks like a residential living room, ladder visible in frame: real, on-the-job work photo. Curated visually (Read tool): sharp, well-lit, no text overlay, no people, clearly a finished/near-finished installation. KEPT."
+      },
+      {
+        "source": "Google Maps ficha, full interactive gallery",
+        "method": "Playwright with the FORGE-BRIEF TLS-fix launch flags (disable QUIC/ECH/PostQuantumKyber, TLS max 1.2, proxy passthrough): loaded the exact place URL from the brief, clicked the hero photo / 'See more photos' candidates, scrolled the panel repeatedly, and re-scanned all <img> tags for lh3.googleusercontent.com sources.",
+        "result": "Only the same single photo (in multiple requested sizes/thumbnails) was ever found. A full-page screenshot confirms the info panel shows a 'Add missing information -> Add a photo' prompt, i.e. Google's own UI confirms this Business Profile has essentially only the one photo on file. The panel also states 'You're seeing a limited view of Google Maps... Sign in' for more, but full reviews/photos behind a Google account login are not accessible without credentials."
+      },
+      {
+        "source": "Yelp (yelp.com/biz/instant-handyman-wilton-manors, confirmed via search snippet to show '40 Photos')",
+        "method": "curl with Chrome UA (HTTP 403), curl with additional realistic headers (HTTP 403), curl via m.yelp.com mobile UA (HTTP 403), and a real headless Chrome via Playwright with TLS-fix flags (screenshot shows an explicit PerimeterX 'You have been blocked' interstitial with a logged block ID). Per task instructions, did not insist beyond these attempts.",
+        "result": "Blocked on every attempt. The 40 photos Yelp confirms exist for this business were never reachable from this environment."
+      },
+      {
+        "source": "Thumbtack",
+        "method": "Web search for an 'Instant Handyman' profile in Pompano Beach / Wilton Manors specifically, plus a direct WebFetch of the Pompano Beach handyman category page.",
+        "result": "No matching Thumbtack profile found for this business under this name in either city."
+      },
+      {
+        "source": "Instagram / Facebook",
+        "method": "Web search for name + city + phone combinations.",
+        "result": "No account found with a solid match (name + city + phone) per task instructions; nothing to pull photos from."
+      },
+      {
+        "source": "Google Images / Google Search knowledge panel (non-Maps)",
+        "method": "curl direct fetch (returned a JS-required noscript stub, no image URLs in static HTML) and a real headless Chrome via Playwright.",
+        "result": "Playwright hit Google's own automated-traffic reCAPTCHA interstitial ('Our systems have detected unusual traffic from your computer network'), screenshotted for the record. No further images retrievable this way without solving a CAPTCHA."
+      },
+      {
+        "source": "Wayback Machine (web.archive.org) for the Yelp listing URL",
+        "method": "curl to the archive.org/wayback/available API (this call succeeded, unlike some other sessions where this host is blocked by egress policy).",
+        "result": "No archived snapshot exists for this Yelp URL (archived_snapshots: {})."
+      }
+    ],
+    "conclusion": "1 real, verified, usable photo of this specific business's own work. Below the 5-photo minimum required by PIPELINE.md Fase 1 punto 4 / FORGE-BRIEF section 0.b. This is the reason this item is marked FAILED (see FAILED.md)."
+  },
+  "language": "en",
+  "language_note": "No Spanish-language evidence found anywhere (Google Maps ficha, Yelp snippet, LLC filing are all English). Defaulted to English per task instructions."
+}
