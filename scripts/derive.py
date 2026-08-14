@@ -511,6 +511,11 @@ def construir(slug):
          f'<p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" {attrs(cf["parrafo"])}>{t(cf["parrafo"], lang)}</p>')
     d.rep('class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>',
           f'class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" {attrs(c["cta_label"])}>{t(c["cta_label"], lang)}</a>')
+    # boton secundario "Seguir en Instagram": texto configurable via social_cta para negocios sin
+    # Instagram real (ig_url reusado para Google/Facebook/etc), default identico al de siempre.
+    social_cta = c.get('social_cta', {'es': 'Seguir en Instagram', 'en': 'Follow on Instagram'})
+    d.rep('class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>',
+          f'class="btn-ghost rounded-full px-10 py-4 text-sm" {attrs(social_cta)}>{t(social_cta, lang)}</a>')
 
     # 17. footer
     ft = c['footer']
@@ -524,10 +529,15 @@ def construir(slug):
     d.rx(r'data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy',
          f'{attrs(ft["enlace_contacto"])}>{t(ft["enlace_contacto"], lang)}')
     ig_hover = V['footer_ig_hover']
+    # etiqueta de la red social en el footer: "Instagram" por defecto (compat con todo content.json
+    # existente, que siempre trae ig_url de instagram.com), pero configurable via social_label para
+    # negocios sin Instagram real donde ig_url/ig_handle se reusan para Facebook, tel:, etc.
+    # (nunca se relabela un enlace de Facebook como "Instagram": seria un dato falso en la pagina).
+    social_label = c.get('social_label', 'Instagram')
     extra = ''.join(f'\n        <p><a href="{x["url"]}" target="_blank" rel="noopener" class="{ig_hover}">{x["texto"]}</a></p>'
                     for x in ft.get('social_extra', []))
     d.rep(f'<p><a href="{IG}" target="_blank" rel="noopener" class="{ig_hover}">Instagram · {HANDLE}</a></p>',
-          f'<p><a href="{IG}" target="_blank" rel="noopener" class="{ig_hover}">Instagram · {HANDLE}</a></p>{extra}')
+          f'<p><a href="{IG}" target="_blank" rel="noopener" class="{ig_hover}">{social_label} · {HANDLE}</a></p>{extra}')
     d.rep(f'<p class="text-xs text-[color:var(--ink-40)]">© 2026 {V["pre_word"]}.</p>',
           f'<p class="text-xs text-[color:var(--ink-40)]">© 2026 {b["name"]}.</p>')
 
