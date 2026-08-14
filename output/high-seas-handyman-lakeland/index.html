@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f5f3ee" />
+  <title>High Seas Handyman &amp; Services · Handyman &amp; Home Repair in Polk County, FL | 5.0 on Google</title>
+  <meta name="description" content="High Seas Handyman &amp; Services, Polk County FL: bathroom and kitchen remodels, painting, pressure washing, electrical and plumbing repairs. 5.0 rating on Google (37 reviews). Call or text Gustavo for a quote." />
+  <meta property="og:title" content="High Seas Handyman &amp; Services · Handyman &amp; Home Repair in Polk County, FL" />
+  <meta property="og:description" content="Bathroom &amp; kitchen remodels, painting, pressure washing, electrical and plumbing repairs. 5.0 on Google, 37 reviews. Call or text for a quote." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/shower-remodel-2.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "High Seas Handyman & Services",
+    "description": "Handyman company serving Polk County and Central Florida: bathroom and kitchen remodels, painting, pressure washing, electrical and plumbing repairs, flooring, garage door service and general home repairs. Owned and operated by Gustavo Altamar since 2012.",
+    "address": { "@type": "PostalAddress", "addressRegion": "FL", "addressCountry": "US" },
+    "areaServed": [
+      { "@type": "City", "name": "Lakeland, FL" },
+      { "@type": "City", "name": "Davenport, FL" },
+      { "@type": "City", "name": "Clermont, FL" },
+      { "@type": "City", "name": "Windermere, FL" },
+      { "@type": "City", "name": "Apopka, FL" },
+      { "@type": "AdministrativeArea", "name": "Polk County, FL" }
+    ],
+    "telephone": "+1-321-277-8932",
+    "image": "assets/raw/shower-remodel-2.jpg",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "37", "bestRating": "5" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "14:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/highseashandyman/",
+      "https://www.facebook.com/highseashandyman/"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Handyman services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom & Kitchen Remodels" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Painting & Pressure Washing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electrical & Plumbing Repairs" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "General Handyman Repairs" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f3ee;
+      --bg-2: #e8edef;
+      --surface: rgba(245,243,238,0.7);
+      --ink: #14273c;
+      --ink-60: rgba(20,39,60,0.62);
+      --ink-40: rgba(20,39,60,0.42);
+      --accent-deep: #123a5e;
+      --accent-mid: #3f7398;
+      --accent-soft: #dde8ee;
+      --accent-ghost: rgba(18,58,94,0.14);
+    }
+    html, body { background: var(--bg); }
+    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(18,58,94,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(245,243,238,0.88); border-color: rgba(18,58,94,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(20,39,60,0.14), 0 0 40px rgba(18,58,94,0.08); }
+    .text-shine {
+      background: linear-gradient(110deg, #123a5e 0%, #3f7398 30%, #0a1f33 52%, #123a5e 75%, #2c5a80 100%);
+      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #cddce6 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #9fbdd4 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #b8cfdd 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
+    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #3f7398 0%, #123a5e 48%, #081b2c 100%);
+      color: #f5f3ee; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(6,20,32,0.4), 0 5px 0 #061422, 0 12px 24px rgba(20,39,60,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(6,20,32,0.4), 0 7px 0 #061422, 0 18px 34px rgba(20,39,60,0.32), 0 0 40px rgba(18,58,94,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(6,20,32,0.45), 0 1px 0 #061422, 0 4px 10px rgba(20,39,60,0.25); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover::after { left: 150%; }
+    .btn-ghost { border: 1px solid rgba(18,58,94,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(18,58,94,0.7); background: rgba(18,58,94,0.08); box-shadow: 0 10px 26px rgba(20,39,60,0.14); }
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(245,243,238,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(20,39,60,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(20,39,60,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(18,58,94,0.14), inset 0 -60px 100px rgba(20,39,60,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #3f7398, #0a1f33); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #123a5e; letter-spacing: 2px; text-shadow: 0 0 14px rgba(18,58,94,0.3); }
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+    .dark-band {
+      --ink: #f3f0e6; --ink-60: rgba(243,240,230,0.65); --ink-40: rgba(243,240,230,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(216,184,114,0.16); color: var(--ink);
+    }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #d8b872 0%, #f2e2b8 30%, #b9954f 52%, #d8b872 75%, #eccf8e 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(216,184,114,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(63,115,152,0.22) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #faf3e6 0%, #ecd9ae 48%, #cfa96e 100%); color: #14273c; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(90,60,20,0.35), 0 5px 0 #8a6b30, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(90,60,20,0.35), 0 7px 0 #8a6b30, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(216,184,114,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(90,60,20,0.4), 0 1px 0 #8a6b30, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(216,184,114,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(216,184,114,0.7); background: rgba(216,184,114,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #d8b872; text-shadow: 0 0 14px rgba(216,184,114,0.4); }
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #3f7398 0%, #123a5e 100%);
+      box-shadow: 0 6px 0 #061422, 0 14px 30px rgba(20,39,60,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #061422, 0 20px 40px rgba(20,39,60,0.4), 0 0 34px rgba(18,58,94,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #061422, 0 6px 14px rgba(20,39,60,0.3); }
+
+    /* ============ Motion v2 ============ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--accent-deep); border: 1px solid rgba(18,58,94,0.35); background: rgba(18,58,94,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.4em; text-indent: 0.4em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #061422 0%, #123a5e 45%, #6b9bc0 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt:hover::before { opacity: 1; }
+    }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(216,184,114,0.14) 0%, rgba(63,115,152,0.1) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow.on { opacity: 1; }
+    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(18,58,94,0.5); transform: translateY(-3px); }
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf6ee;
+      background: linear-gradient(180deg, transparent 0%, rgba(8,20,32,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(3.2rem, 12vw, 9rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(216,184,114,0.09); pointer-events: none; user-select: none; }
+    .logo-bg { position: absolute; inset: 0; background-image: url('assets/raw/logo-banner.jpg'); background-size: cover; background-position: center; opacity: 0.14; z-index: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">HS</span>
+    <span class="pre-word">High Seas</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(18,58,94,0.35)] bg-[rgba(18,58,94,0.1)] text-[color:var(--accent-deep)]">HS</span>
+        <span class="font-display text-xl tracking-[0.08em] uppercase">High Seas <span class="text-[color:var(--accent-deep)] text-sm font-sans font-light tracking-[0.18em] uppercase ml-1">Handyman &amp; Services</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="nav-link" href="#metodo" data-es="Cómo Trabajamos" data-en="How We Work">How We Work</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Área de Servicio" data-en="Service Area">Service Area</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma / Change language">ES</button>
+        <a href="tel:+13212778932" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="Llamar para cotizar" data-en="Call for a quote">Call for a quote</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Cómo Trabajamos" data-en="How We Work">How We Work</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Área de Servicio" data-en="Service Area">Service Area</a>
+        <a href="tel:+13212778932" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar para cotizar" data-en="Call for a quote">Call for a quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Polk County, FL · Manitas y Reparaciones del Hogar" data-en="Polk County, FL · Handyman &amp; Home Repair">Polk County, FL · Handyman &amp; Home Repair</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Que tu próximo proyecto vaya viento en popa." data-en="Smooth sailing for your next home project.">Smooth sailing for your next home project.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Reparaciones, remodelaciones" data-en="Home repairs, remodels">Home repairs, remodels</span><br /><span data-es="e instalaciones, " data-en="and installs, ">and installs, </span><span class="text-shine" data-es="hechas bien" data-en="done right">done right</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="High Seas Handyman &amp; Services es el negocio de Gustavo Altamar en Polk County, con más de 20 años de experiencia en construcción desde 2012: remodelaciones de baño y cocina, pintura, lavado a presión, y reparaciones eléctricas y de plomería. Las reseñas destacan su conocimiento y el cuidado en cada detalle." data-en="High Seas Handyman &amp; Services is Gustavo Altamar&#39;s handyman business serving Polk County, built on 20+ years of construction experience since 2012: bathroom and kitchen remodels, painting, pressure washing, and electrical and plumbing repairs. Reviewers keep pointing to his know-how and attention to detail.">High Seas Handyman &amp; Services is Gustavo Altamar&#39;s handyman business serving Polk County, built on 20+ years of construction experience since 2012: bathroom and kitchen remodels, painting, pressure washing, and electrical and plumbing repairs. Reviewers keep pointing to his know-how and attention to detail.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 37 reseñas en Google" data-en="5.0 · 37 reviews on Google">5.0 · 37 reviews on Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="tel:+13212778932" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llama al (321) 277-8932" data-en="Call (321) 277-8932">Call (321) 277-8932</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="sms:+13212778932" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-es="Enviar mensaje de texto" data-en="Send a text">Send a text</span>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/shower-remodel-2.jpg" alt="Custom tile walk-in shower remodel with black fixtures by High Seas Handyman & Services" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Horario" data-en="Hours">Hours</p>
+            <p class="font-display text-lg">8:30am - 5pm</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Lun-Vie · Sáb hasta las 2pm" data-en="Mon-Fri · Sat until 2pm">Mon-Fri · Sat until 2pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="37">37</span> <span data-es="reseñas en Google" data-en="reviews on Google">reviews on Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span class="text-shine" data-es="20+ años" data-en="20+ years">20+ years</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Experiencia en construcción" data-en="Construction experience">Construction experience</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span class="text-shine">Gustavo</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Dueño y manitas" data-en="Owner &amp; handyman">Owner &amp; handyman</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Polk County</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Centro de Florida" data-en="Central Florida">Central Florida</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Bathroom Remodels</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Pressure Washing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Electrical &amp; Plumbing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Handyman Repairs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Polk County, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Bathroom Remodels</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Pressure Washing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Electrical &amp; Plumbing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Handyman Repairs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Polk County, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-1 gap-5">
+        <div class="frame zoomable aspect-[4/3] img-reveal">
+          <img src="assets/raw/shower-remodel-1.jpg" alt="Walk-in shower remodel with dual shower heads and tile bench, completed by High Seas Handyman & Services" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un dueño," data-en="One owner,">One owner,</span> <span class="text-shine" data-es="manos con experiencia" data-en="hands you can trust">hands you can trust</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="High Seas Handyman &amp; Services es el negocio de Gustavo Altamar, con más de 20 años de experiencia en construcción y atención al cliente. Sirviendo Polk County y el centro de Florida desde 2012, el equipo se ocupa de remodelaciones de baño y cocina, pintura, lavado a presión, y reparaciones eléctricas y de plomería." data-en="High Seas Handyman &amp; Services is Gustavo Altamar&#39;s business, built on more than 20 years of construction and customer service experience. Serving Polk County and Central Florida since 2012, the team handles bathroom and kitchen remodels, painting, pressure washing, and electrical and plumbing repairs.">High Seas Handyman &amp; Services is Gustavo Altamar&#39;s business, built on more than 20 years of construction and customer service experience. Serving Polk County and Central Florida since 2012, the team handles bathroom and kitchen remodels, painting, pressure washing, and electrical and plumbing repairs.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="El resultado: una calificación perfecta de 5.0 en 37 reseñas de Google, con clientes que destacan el conocimiento del equipo, el trato respetuoso y la atención al detalle en cada trabajo." data-en="The result: a perfect 5.0 rating across 37 Google reviews, with customers highlighting the team&#39;s knowledge, respectful work and attention to detail on every job.">The result: a perfect 5.0 rating across 37 Google reviews, with customers highlighting the team&#39;s knowledge, respectful work and attention to detail on every job.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="37">37</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2012</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Desde" data-en="Since">Since</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-2 py-1.5">
+            <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(18,58,94,0.3)] bg-[rgba(18,58,94,0.1)] text-[color:var(--accent-deep)]">GA</span>
+            <span class="text-sm font-light">Gustavo Altamar · <span class="text-[color:var(--ink-40)]" data-es="Dueño" data-en="Owner">Owner</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO TRABAJAMOS -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="De la llamada" data-en="From the call">From the call</span> <span class="text-shine" data-es="al trabajo terminado" data-en="to the finished job">to the finished job</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Llama o escribe" data-en="Call or text">Call or text</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llama o escribe al (321) 277-8932 con lo que necesitas reparar, remodelar o instalar, y Gustavo hablará contigo sobre el trabajo." data-en="Call or text (321) 277-8932 with what needs fixing, remodeling or installing, and Gustavo will talk through the job with you.">Call or text (321) 277-8932 with what needs fixing, remodeling or installing, and Gustavo will talk through the job with you.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cotización clara" data-en="Clear quote">Clear quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Recibes un precio claro para el trabajo, según el alcance del proyecto, antes de que comience nada." data-en="You get a clear price for the work, based on the scope of the project, before anything gets started.">You get a clear price for the work, based on the scope of the project, before anything gets started.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="El trabajo se hace bien" data-en="The work gets done right">The work gets done right</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Desde una reparación rápida hasta una remodelación completa, cada trabajo recibe el mismo cuidado y atención al detalle que las reseñas destacan." data-en="From a quick repair to a full remodel, every job gets the same craftsmanship and attention to detail reviewers keep mentioning.">From a quick repair to a full remodel, every job gets the same craftsmanship and attention to detail reviewers keep mentioning.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Revisión final juntos" data-en="Walk it through together">Walk it through together</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Antes de irse, revisan juntos el trabajo terminado, para que sepas que quedó tal como lo esperabas." data-en="Before wrapping up, you walk through the finished work together, so you know it was done the way you expected.">Before wrapping up, you walk through the finished work together, so you know it was done the way you expected.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Servicios para" data-en="Services for">Services for</span> <span class="text-shine">every home</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Ningún proyecto es igual a otro, así que cada trabajo recibe su propia cotización por teléfono, antes de comenzar." data-en="No two projects are the same, so every job gets its own quote by phone, before any work begins.">No two projects are the same, so every job gets its own quote by phone, before any work begins.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(18,58,94,0.4); box-shadow: 0 18px 50px rgba(20,39,60,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo más solicitado" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Bathroom &amp; Kitchen Remodels" data-en="Bathroom &amp; Kitchen Remodels">Bathroom &amp; Kitchen Remodels</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Duchas y remodelaciones de baño con azulejo, vanidades, y reparación de grifos de cocina: el trabajo más mencionado en las reseñas." data-en="Tiled shower and bathroom remodels, vanities, and kitchen faucet repair: the most mentioned work in customer reviews.">Tiled shower and bathroom remodels, vanities, and kitchen faucet repair: the most mentioned work in customer reviews.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Llama para cotizar" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+13212778932" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Exteriores" data-en="Exterior &amp; curb appeal">Exterior &amp; curb appeal</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Painting &amp; Pressure Washing" data-en="Painting &amp; Pressure Washing">Painting &amp; Pressure Washing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Pintura de casas y lavado a presión de entradas y exteriores, dos de los trabajos más pedidos por los clientes." data-en="House painting and pressure washing for driveways and exteriors, two of the most requested jobs from customers.">House painting and pressure washing for driveways and exteriors, two of the most requested jobs from customers.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Llama para cotizar" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+13212778932" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Arreglos cotidianos" data-en="Everyday fixes">Everyday fixes</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Electrical &amp; Plumbing" data-en="Electrical &amp; Plumbing">Electrical &amp; Plumbing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación de accesorios de baño, iluminación y ventiladores de techo, además de reparación de grifos y plomería general." data-en="Bathroom hardware and lighting fixture installs, ceiling fans, plus faucet repair and general plumbing.">Bathroom hardware and lighting fixture installs, ceiling fans, plus faucet repair and general plumbing.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Llama para cotizar" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+13212778932" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Mantenimiento" data-en="Keep it running">Keep it running</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="General Handyman Repairs" data-en="General Handyman Repairs">General Handyman Repairs</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Servicio de puertas de garaje, reparación de drywall y estuco, y los arreglos generales que toda casa necesita." data-en="Garage door service, drywall and stucco repair, and the general fixes every home eventually needs.">Garage door service, drywall and stucco repair, and the general fixes every home eventually needs.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Llama para cotizar" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+13212778932" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-14 grid sm:grid-cols-3 gap-5">
+        <div class="glass rounded-3xl p-7 reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Remodelación y Carpintería" data-en="Remodeling &amp; Carpentry">Remodeling &amp; Carpentry</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex items-center gap-2" data-es="Remodelación de baños" data-en="Bathroom remodels">Bathroom remodels</li>
+            <li class="flex items-center gap-2" data-es="Remodelación de cocinas" data-en="Kitchen remodels">Kitchen remodels</li>
+            <li class="flex items-center gap-2" data-es="Instalación de pisos" data-en="Flooring installation">Flooring installation</li>
+            <li class="flex items-center gap-2" data-es="Reparación de drywall y estuco" data-en="Drywall &amp; stucco repair">Drywall &amp; stucco repair</li>
+          </ul>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Reparaciones e Instalaciones" data-en="Repairs &amp; Installs">Repairs &amp; Installs</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex items-center gap-2" data-es="Trabajo eléctrico" data-en="Electrical work">Electrical work</li>
+            <li class="flex items-center gap-2" data-es="Plomería y reparación de grifos" data-en="Plumbing &amp; faucet repair">Plumbing &amp; faucet repair</li>
+            <li class="flex items-center gap-2" data-es="Servicio de puertas de garaje" data-en="Garage door service">Garage door service</li>
+            <li class="flex items-center gap-2" data-es="Ventiladores de techo e iluminación" data-en="Ceiling fans &amp; lighting fixtures">Ceiling fans &amp; lighting fixtures</li>
+          </ul>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Exteriores y Terreno" data-en="Exterior &amp; Grounds">Exterior &amp; Grounds</p>
+          <ul class="space-y-3 text-sm text-[color:var(--ink-60)] font-light">
+            <li class="flex items-center gap-2" data-es="Pintura interior y exterior" data-en="Interior &amp; exterior painting">Interior &amp; exterior painting</li>
+            <li class="flex items-center gap-2" data-es="Lavado a presión" data-en="Pressure washing">Pressure washing</li>
+            <li class="flex items-center gap-2" data-es="Riego / irrigación" data-en="Irrigation">Irrigation</li>
+            <li class="flex items-center gap-2" data-es="Servicio de jardín y árboles" data-en="Lawn &amp; tree service">Lawn &amp; tree service</li>
+          </ul>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Cada trabajo se cotiza según el alcance del proyecto. Llama o escribe al (321) 277-8932 para tu cotización." data-en="Every job is quoted based on the scope of the project. Call or text (321) 277-8932 for your quote.">Every job is quoted based on the scope of the project. Call or text (321) 277-8932 for your quote.</span></p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="work">work</span></h2>
+        </div>
+        <a href="tel:+13212778932" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="Llamar" data-en="Call">Call</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-2 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Remodelación de habitación e instalación de TV" data-en="Bedroom remodel &amp; TV mount">Bedroom remodel &amp; TV mount</span><img src="assets/raw/bedroom-remodel.jpg" alt="Bedroom remodel with wall-mounted TV, completed by High Seas Handyman & Services" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Vanidad y ducha de baño remodeladas" data-en="Bathroom vanity &amp; shower remodel">Bathroom vanity &amp; shower remodel</span><img src="assets/raw/bathroom-remodel-1.jpg" alt="Marble bathroom vanity and shower remodel by High Seas Handyman & Services" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Instalación de ventilador de techo" data-en="Ceiling fan installation">Ceiling fan installation</span><img src="assets/raw/ceiling-fan-install.jpg" alt="Ceiling fan installed by High Seas Handyman & Services" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Bathroom Remodels</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Pressure Washing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Electrical &amp; Plumbing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Handyman Repairs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Polk County, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Bathroom Remodels</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Pressure Washing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Electrical &amp; Plumbing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Handyman Repairs</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Polk County, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Por qué elegir" data-en="Why choose">Why choose</span> <span class="text-shine">High Seas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 37 reseñas en Google" data-en="5.0 out of 5 · 37 reviews on Google">5.0 out of 5 · 37 reviews on Google</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch mb-10">
+        <div class="glass glass-hover rounded-3xl p-8 reveal">
+          <svg class="mb-4 text-[color:var(--accent-deep)]" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Conocimiento y experiencia" data-en="Knowledgeable &amp; experienced">Knowledgeable &amp; experienced</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Con más de 20 años de construcción, el conocimiento del equipo es lo más mencionado en las reseñas de Google." data-en="With 20+ years in construction, the team&#39;s know-how is the single most mentioned trait across Google reviews.">With 20+ years in construction, the team&#39;s know-how is the single most mentioned trait across Google reviews.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <svg class="mb-4 text-[color:var(--accent-deep)]" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Respetuosos y de confianza" data-en="Respectful &amp; dependable">Respectful &amp; dependable</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Clientes de Google describen al equipo como respetuoso y confiable, trabajo tras trabajo." data-en="Customers on Google describe the team as respectful and dependable, job after job.">Customers on Google describe the team as respectful and dependable, job after job.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <svg class="mb-4 text-[color:var(--accent-deep)]" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Atención al detalle" data-en="Real attention to detail">Real attention to detail</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Desde la pintura hasta la remodelación de baños, la calidad del trabajo terminado es lo que hace que los clientes vuelvan a llamar." data-en="From painting to bathroom remodels, the quality of the finished work is what keeps clients calling back.">From painting to bathroom remodels, the quality of the finished work is what keeps clients calling back.</p>
+        </div>
+      </div>
+      <div class="max-w-2xl mx-auto reveal" style="transition-delay:280ms">
+        <figure class="glass glass-hover rounded-3xl p-8 text-center">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">&quot;Gus and Carlos did an amazing job installing my new bathroom shower hardware and lighting fixtures! They were very professional and the pride they take in their work is unbelievable! I will definitely be calling on them to help me with other projects in the near future!&quot;</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Mark Burnett</span> <span class="text-[color:var(--ink-40)]" data-es="Reseña de Google" data-en="Google review">Google review</span></figcaption>
+        </figure>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.google.com/search?q=High+Seas+Handyman+%26+Services+reviews" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Lee las 37 reseñas en Google" data-en="Read all 37 reviews on Google">Read all 37 reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA DE SERVICIO -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Área de servicio" data-en="Service area">Service area</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Sirviendo a" data-en="Serving">Serving</span> <span class="text-shine">Polk County, FL</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Zona de trabajo" data-en="Area we cover">Area we cover</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="High Seas Handyman &amp; Services trabaja con cita previa en Polk County y el centro de Florida, incluyendo Lakeland, Davenport, Clermont, Windermere y Apopka." data-en="High Seas Handyman &amp; Services works by appointment across Polk County and Central Florida, including Lakeland, Davenport, Clermont, Windermere and Apopka.">High Seas Handyman &amp; Services works by appointment across Polk County and Central Florida, including Lakeland, Davenport, Clermont, Windermere and Apopka.</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a viernes, de 8:30 AM a 5:00 PM. Sábado de 8:30 AM a 2:00 PM. Cerrado domingo." data-en="Monday to Friday, 8:30 AM to 5:00 PM. Saturday 8:30 AM to 2:00 PM. Closed Sunday.">Monday to Friday, 8:30 AM to 5:00 PM. Saturday 8:30 AM to 2:00 PM. Closed Sunday.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(18,58,94,0.4)]" href="tel:+13212778932" data-es="Llama al (321) 277-8932" data-en="Call (321) 277-8932">Call (321) 277-8932</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Contacto directo" data-en="Direct contact">Direct contact</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Llama o escribe a Gustavo directamente, sin operadores ni formularios." data-en="Reach Gustavo directly, no call centers, no booking apps.">Reach Gustavo directly, no call centers, no booking apps.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(18,58,94,0.4)]" href="sms:+13212778932" data-es="Enviar mensaje de texto" data-en="Send a text">Send a text</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame zoomable img-reveal reveal min-h-[380px]" style="transition-delay:180ms">
+        <img src="assets/raw/shower-remodel-2.jpg" alt="Custom tile walk-in shower remodel with black fixtures by High Seas Handyman & Services" class="blur-up w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #0d1c2c 0%, #081420 100%);">
+    <div class="logo-bg" aria-hidden="true"></div>
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Que tu próximo proyecto vaya viento en popa." data-en="Smooth sailing for your next home project.">Smooth sailing for your next home project.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Una llamada arregla" data-en="One call fixes">One call fixes</span> <span class="text-shine" data-es="todo" data-en="it all">it all</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama o escribe al (321) 277-8932 para tu cotización de remodelación, reparación o instalación. Lunes a viernes de 8:30 AM a 5 PM, sábados hasta las 2 PM." data-en="Call or text (321) 277-8932 for a quote on your remodel, repair or install. Monday to Friday 8:30 AM to 5 PM, Saturdays until 2 PM.">Call or text (321) 277-8932 for a quote on your remodel, repair or install. Monday to Friday 8:30 AM to 5 PM, Saturdays until 2 PM.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+13212778932" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llama al (321) 277-8932" data-en="Call (321) 277-8932">Call (321) 277-8932</a>
+        <a href="sms:+13212778932" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Enviar mensaje de texto" data-en="Send a text">Send a text</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0a1723]">
+    <span class="foot-mark" aria-hidden="true">HighSeas</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(216,184,114,0.35)] bg-[rgba(216,184,114,0.08)] text-[#d8b872]">HS</span>
+          <span class="font-display text-lg tracking-[0.08em] uppercase">High Seas Handyman &amp; Services</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Reparaciones, remodelaciones y mantenimiento del hogar en Polk County y el centro de Florida. Con cita previa." data-en="Handyman repairs, remodels and home maintenance serving Polk County and Central Florida. By appointment.">Handyman repairs, remodels and home maintenance serving Polk County and Central Florida. By appointment.</p>
+        <div class="flex items-center gap-3 mt-5">
+          <a href="https://www.instagram.com/highseashandyman/" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full flex items-center justify-center border border-[color:var(--accent-ghost)] hover:border-[#d8b872] transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.facebook.com/highseashandyman/" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-full flex items-center justify-center border border-[color:var(--accent-ghost)] hover:border-[#d8b872] transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p data-es="Polk County, FL y Centro de Florida" data-en="Polk County, FL &amp; Central Florida">Polk County, FL &amp; Central Florida</p>
+        <p><a href="tel:+13212778932" class="hover:text-[#d8b872]" data-es="Llama al (321) 277-8932" data-en="Call (321) 277-8932">Call (321) 277-8932</a></p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Horario" data-en="Hours">Hours</p>
+        <p data-es="Lunes a viernes, 8:30 AM a 5 PM" data-en="Monday to Friday, 8:30 AM to 5 PM">Monday to Friday, 8:30 AM to 5 PM</p>
+        <p data-es="Sábado hasta las 2 PM" data-en="Saturday until 2 PM">Saturday until 2 PM</p>
+        <p><a href="sms:+13212778932" class="hover:text-[#d8b872]" data-es="Enviar mensaje de texto" data-en="Send a text">Send a text</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 High Seas Handyman &amp; Services.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante -->
+  <a href="tel:+13212778932" class="book-float" aria-label="Call High Seas Handyman & Services">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f5f3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // Preloader
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) { hidePreloader(); }
+    else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Reveals
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
+    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
+    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
+    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
+    // layout, que si existe, asi que rompe el circulo.
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // Blur-up
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // Contadores
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const v = target * eased;
+          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // Botones magneticos. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // Tilt 3D en cards de servicios. Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Cursor glow en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
