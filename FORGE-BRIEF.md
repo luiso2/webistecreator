@@ -67,6 +67,18 @@ Facebook Business e Instagram. Para las fotos, `research_ig.py` sigue valiendo s
 si no, las fotos de Google Maps del propio negocio. Si no hay 5 fotos reales de SU trabajo:
 `failed`, igual que siempre (no valen fotos de stock de herramientas).
 
+## 0.c Reclamar de UNO en uno (2026-08-14, obligatorio)
+
+PROHIBIDO marcar varios items de la cola como `processing` al arrancar. El caso real: una
+corrida reclamo 5 items a las 14:59, construyo 2 y murio al cumplir su hora; los otros 3
+quedaron "en proceso" fantasma hora y media, invisibles para las forjas siguientes.
+
+Regla: se reporta `research` de UN item SOLO al empezar a trabajar ESE item. Los demas se
+quedan `pending`, visibles para cualquier otra forja concurrente. Al terminar un item (done
+o failed), recien entonces se toma el siguiente. Ademas, reportar progress al cambiar de
+etapa (research -> build -> verify -> commit): el panel rescata como huerfano todo item sin
+senales por 40 minutos, y un item que trabaja de verdad cambia de etapa mas seguido que eso.
+
 ## 0. Arranque paralelo (primer minuto, OBLIGATORIO)
 Si el item de la cola es SOLO un nombre, un handle o "nombre + ciudad": es un encargo directo del usuario; hacer el discovery completo de ESE negocio (encontrar su Booksy/booking, verificar website propio, IG) y construirlo con la maxima prioridad, mismo pipeline.
 **PASO 1 (segundos, SIEMPRE primero)**: `python3 scripts/booksy_dossier.py <booksy_url> <slug>`.
