@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f5f0e8" />
+  <title>Can Do Home Improvements · Drywall Repair &amp; Painting in Cape Coral, FL | Veteran-Owned</title>
+  <meta name="description" content="Can Do Home Improvements, LLC: drywall repair, texture matching and painting in Cape Coral, FL. Veteran-owned, serving Lee County since 2012. 4.7 rating on Google. Call for a free estimate." />
+  <meta property="og:title" content="Can Do Home Improvements · Drywall Repair &amp; Painting in Cape Coral, FL" />
+  <meta property="og:description" content="Veteran-owned drywall repair, texture matching and painting contractor serving Cape Coral and Lee County since 2012." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/hero-drywall-finish.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Can Do Home Improvements, LLC",
+    "description": "Veteran-owned drywall repair, texture matching and painting contractor serving Cape Coral and Lee County, FL since 2012.",
+    "telephone": "+1-239-244-7415",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2118 SW 25th St",
+      "addressLocality": "Cape Coral",
+      "addressRegion": "FL",
+      "postalCode": "33914",
+      "addressCountry": "US"
+    },
+    "areaServed": { "@type": "City", "name": "Cape Coral" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "17:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00" }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/candoimp/"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "15", "bestRating": "5" },
+    "image": "assets/raw/hero-drywall-finish.jpg"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f0e8;
+      --bg-2: #ece3d4;
+      --surface: rgba(250,247,241,0.7);
+      --ink: #32281f;
+      --ink-60: rgba(50,40,31,0.62);
+      --ink-40: rgba(50,40,31,0.42);
+      --accent-deep: #1e3a5c;
+      --accent-mid: #4d7196;
+      --accent-soft: #e3e8ee;
+      --accent-ghost: rgba(30,58,92,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(30,58,92,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,247,241,0.88);
+      border-color: rgba(30,58,92,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(50,40,31,0.14), 0 0 40px rgba(30,58,92,0.08);
+    }
+
+    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
+    .text-shine {
+      background: linear-gradient(110deg, #1e3a5c 0%, #4f7aa8 30%, #16314f 52%, #1e3a5c 75%, #6f93b8 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs taupe/crema sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #d7e0e8 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #b9c8d6 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #c7d3dd 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D mocha */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #4d7196 0%, #1e3a5c 48%, #16314f 100%);
+      color: #f5f0e8; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,45,28,0.4),
+        0 5px 0 #142943,
+        0 12px 24px rgba(50,40,31,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,45,28,0.4), 0 7px 0 #142943, 0 18px 34px rgba(50,40,31,0.32), 0 0 40px rgba(30,58,92,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,45,28,0.45), 0 1px 0 #142943, 0 4px 10px rgba(50,40,31,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(30,58,92,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(30,58,92,0.7); background: rgba(30,58,92,0.08); box-shadow: 0 10px 26px rgba(50,40,31,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(50,40,31,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(50,40,31,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(30,58,92,0.14), inset 0 -60px 100px rgba(50,40,31,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #4d7196, #16314f);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #1e3a5c; letter-spacing: 2px; text-shadow: 0 0 14px rgba(30,58,92,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f5f0e8;
+      --ink-60: rgba(245,240,232,0.65);
+      --ink-40: rgba(245,240,232,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,214,183,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e8cfa6 0%, #f8ecd6 30%, #c4ad93 52%, #e8cfa6 75%, #f3e3c2 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,166,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(168,144,122,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #faf3e6 0%, #e8d9bf 48%, #c9b393 100%);
+      color: #32281f;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,90,50,0.35),
+        0 5px 0 #8a7358,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,166,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(232,207,166,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(232,207,166,0.7); background: rgba(232,207,166,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e8cfa6; text-shadow: 0 0 14px rgba(232,207,166,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #4d7196 0%, #1e3a5c 100%);
+      box-shadow: 0 6px 0 #142943, 0 14px 30px rgba(50,40,31,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #142943, 0 20px 40px rgba(50,40,31,0.4), 0 0 34px rgba(30,58,92,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #142943, 0 6px 14px rgba(50,40,31,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
+      border: 1px solid rgba(30,58,92,0.35); background: rgba(30,58,92,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #16314f 0%, #1e3a5c 45%, #6f93b8 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 7. Carrusel de testimonios */
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(50,40,31,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    /* 8. Boton magnetico (offset via translate, spring back) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare (cards de servicios) */
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    /* 10. Cursor glow calido en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(232,207,166,0.14) 0%, rgba(30,58,92,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de reservas vive abajo-derecha) */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(30,58,92,0.5); transform: translateY(-3px); }
+
+
+    /* ============ Motion v3 (premium+) ============ */
+    /* Split-text del hero: cada palabra sube en cascada */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    /* Numeral editorial gigante por seccion */
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    /* Captions de galeria al hover */
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf6ee;
+      background: linear-gradient(180deg, transparent 0%, rgba(30,22,14,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    /* Cursor custom: anillo que sigue al puntero (solo desktop) */
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    /* Marca de agua tipografica del footer */
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(232,207,166,0.09); pointer-events: none; user-select: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">CD</span>
+    <span class="pre-word">Can Do Home Improvements</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(30,58,92,0.35)] bg-[rgba(30,58,92,0.1)] text-[color:var(--accent-deep)]">CD</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">Can Do <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Home Improvements</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" data-en="About" data-es="Nosotros" href="#experiencia">About</a>
+        <a class="nav-link" data-en="How We Work" data-es="Cómo Trabajamos" href="#ritual">How We Work</a>
+        <a class="nav-link" data-en="Services" data-es="Servicios" href="#servicios">Services</a>
+        <a class="nav-link" data-en="Our Work" data-es="Nuestros Trabajos" href="#galeria">Our Work</a>
+        <a class="nav-link" data-en="Reviews" data-es="Reseñas" href="#opiniones">Reviews</a>
+        <a class="nav-link" data-en="Location" data-es="Ubicación" href="#ubicacion">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" type="button" class="btn-ghost rounded-full w-9 h-9 text-xs font-semibold hidden sm:inline-flex items-center justify-center" aria-label="Switch language">ES</button>
+        <a href="tel:+12392447415" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-en="Call Now" data-es="Llamar">Call Now</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Open menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-en="About" data-es="Nosotros" href="#experiencia">About</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-en="How We Work" data-es="Cómo Trabajamos" href="#ritual">How We Work</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-en="Services" data-es="Servicios" href="#servicios">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-en="Our Work" data-es="Nuestros Trabajos" href="#galeria">Our Work</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-en="Reviews" data-es="Reseñas" href="#opiniones">Reviews</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-en="Location" data-es="Ubicación" href="#ubicacion">Location</a>
+        <button id="langToggleMobile" type="button" class="py-3 px-3 text-left">Español</button>
+        <a href="tel:+12392447415" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2"><span data-en="Call Now" data-es="Llamar">Call Now</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-en="Cape Coral, FL · Veteran-Owned" data-es="Cape Coral, FL · Negocio de Veterano">Cape Coral, FL · Veteran-Owned</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-en="Drywall done right, the first time." data-es="Drywall bien hecho, a la primera.">Drywall done right, the first time.</p>
+        <h1 id="heroH1" class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" data-en-html='Walls and ceilings,<br /><span class="text-shine">repaired right</span>' data-es-html='Paredes y techos,<br /><span class="text-shine">reparados bien</span>'>
+          Walls and ceilings,<br /><span class="text-shine">repaired right</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-en="Drywall repair, texture matching and painting for Cape Coral homeowners. Led by Paul Auger, a drywall expert since 1976, we patch it, match the texture, and leave it ready for paint." data-es="Reparación de drywall, texturizado y pintura para hogares en Cape Coral. Dirigido por Paul Auger, experto en drywall desde 1976: reparamos, igualamos la textura y dejamos la pared lista para pintar.">
+          Drywall repair, texture matching and painting for Cape Coral homeowners. Led by Paul Auger, a drywall expert since 1976, we patch it, match the texture, and leave it ready for paint.
+        </p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-en="4.7 · 15 reviews on Google" data-es="4.7 · 15 reseñas en Google">4.7 · 15 reviews on Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="tel:+12392447415" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-en="Call for a Free Estimate" data-es="Llama para tu Estimado Gratis">Call for a Free Estimate</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="sms:+12392447415" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            (239) 244-7415
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/gallery-attic-repair.jpg" alt="Drywall ceiling access repair with attic framing exposed, Can Do Home Improvements" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-en="Serving" data-es="Sirviendo a">Serving</p>
+            <p class="font-display text-lg">Cape Coral &amp; Lee County</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-en="Since 2012" data-es="Desde 2012">Since 2012</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.7" data-decimals="1">4.7</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="15">15</span> <span data-en="Google reviews" data-es="reseñas en Google">Google reviews</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span class="text-shine" data-en="Veteran" data-es="Veterano">Veteran</span>-Owned</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-en="Identified on Google" data-es="Identificado en Google">Identified on Google</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span data-en="Since" data-es="Desde">Since</span> <span class="text-shine">1976</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-en="Paul Auger, drywall expert" data-es="Paul Auger, experto en drywall">Paul Auger, drywall expert</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Cape Coral</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">2118 SW 25th St</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture Matching</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Veteran-Owned</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture Matching</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Veteran-Owned</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/about-smooth-patch.jpg" alt="Finished drywall patch, sanded smooth and ready for paint" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/about-skylight-finish.jpg" alt="Skylight surround drywall finish, smooth and seamless" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-en="About Us" data-es="Nosotros">About Us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-en="Drywall repair," data-es="Reparación de drywall,">Drywall repair,</span><br /><span class="text-shine" data-en="done right the first time" data-es="bien hecha a la primera">done right the first time</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-en="Can Do Home Improvements is a Cape Coral, FL contractor specializing in drywall repair, texture matching and painting. Led by Paul Auger, a drywall expert since 1976, the crew handles everything from small ceiling patches to full-room repairs after plumbing or storm damage." data-es="Can Do Home Improvements es un contratista de Cape Coral, FL especializado en reparación de drywall, texturizado y pintura. Dirigido por Paul Auger, experto en drywall desde 1976, el equipo se encarga de todo: desde parches pequeños en el techo hasta reparaciones completas de una habitación tras daños de plomería o tormenta.">
+          Can Do Home Improvements is a Cape Coral, FL contractor specializing in drywall repair, texture matching and painting. Led by Paul Auger, a drywall expert since 1976, the crew handles everything from small ceiling patches to full-room repairs after plumbing or storm damage.
+        </p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-en="The business is veteran-owned and has served Lee County since 2012. On Google and HomeAdvisor, customers point to the same things again and again: fair pricing, careful work, and jobs finished on schedule." data-es="El negocio es propiedad de un veterano y sirve al condado de Lee desde 2012. En Google y HomeAdvisor, los clientes mencionan siempre lo mismo: precios justos, trabajo cuidadoso y trabajos terminados a tiempo.">
+          The business is veteran-owned and has served Lee County since 2012. On Google and HomeAdvisor, customers point to the same things again and again: fair pricing, careful work, and jobs finished on schedule.
+        </p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.7" data-decimals="1">4.7</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">HomeAdvisor</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2012</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-en="Founded" data-es="Fundado">Founded</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-en="Why homeowners call Can Do" data-es="Por qué los clientes llaman a Can Do">Why homeowners call Can Do</p>
+          <div class="flex flex-wrap gap-3">
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-en="Veteran-owned" data-es="Propiedad de un veterano">Veteran-owned</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-en="Drywall expert since 1976" data-es="Experto en drywall desde 1976">Drywall expert since 1976</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-en="Serving Lee County since 2012" data-es="Sirviendo al condado de Lee desde 2012">Serving Lee County since 2012</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-en="Free on-site estimates" data-es="Estimados gratis en el sitio">Free on-site estimates</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL RITUAL PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-en="From first call to" data-es="Desde la llamada hasta">From first call to</span> <span class="text-shine" data-en="finished wall" data-es="la pared terminada">finished wall</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-en="Call or Text" data-es="Llama o Envía un SMS">Call or Text</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-en="Tell us what's damaged: a ceiling stain, a hole in the wall, a room that needs texture matched. A few quick questions and we'll know what to bring." data-es="Cuéntanos qué está dañado: una mancha en el techo, un hueco en la pared, una habitación que necesita textura igualada. Con unas preguntas rápidas sabremos qué llevar.">Tell us what's damaged: a ceiling stain, a hole in the wall, a room that needs texture matched. A few quick questions and we'll know what to bring.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-en="Free On-Site Estimate" data-es="Estimado Gratis en el Sitio">Free On-Site Estimate</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-en="We come out, look at the damage in person, and give you a straightforward price before any work starts. No surprises." data-es="Vamos al lugar, revisamos el daño en persona y te damos un precio claro antes de empezar. Sin sorpresas.">We come out, look at the damage in person, and give you a straightforward price before any work starts. No surprises.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-en="Repair &amp; Texture Match" data-es="Reparación y Textura Igualada">Repair &amp; Texture Match</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-en="We cut out and replace the damaged drywall, then match the existing texture so the repair blends into the wall or ceiling around it." data-es="Cortamos y reemplazamos el drywall dañado, luego igualamos la textura existente para que la reparación se mezcle con la pared o el techo alrededor.">We cut out and replace the damaged drywall, then match the existing texture so the repair blends into the wall or ceiling around it.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-en="Clean Finish &amp; Walkthrough" data-es="Acabado Limpio y Revisión">Clean Finish &amp; Walkthrough</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-en="We sand, prime and leave the area ready for paint, or paint it if that's part of the job, and clean up before we go." data-es="Lijamos, aplicamos sellador y dejamos el área lista para pintar, o la pintamos si es parte del trabajo, y limpiamos antes de irnos.">We sand, prime and leave the area ready for paint, or paint it if that's part of the job, and clean up before we go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-en="Services" data-es="Servicios">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-en="What we" data-es="Lo que">What we</span> <span class="text-shine" data-en="fix" data-es="reparamos">fix</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-en="No published price list: every job is different. Call or text for a free on-site estimate." data-es="Sin lista de precios publicada: cada trabajo es diferente. Llama o envía un mensaje para un estimado gratis en el sitio.">No published price list: every job is different. Call or text for a free on-site estimate.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-en="Most Requested" data-es="Más Solicitado">Most Requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-en="Drywall Repair &amp; Patching" data-es="Reparación y Parcheo de Drywall">Drywall Repair &amp; Patching</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-en="Holes, cracks, water damage and ceiling repairs. Damaged sections are cut out, replaced, taped and finished to blend with the surrounding wall." data-es="Huecos, grietas, daños de agua y reparaciones de techo. Las secciones dañadas se cortan, reemplazan, se les aplica cinta y se terminan para mezclarse con la pared existente.">Holes, cracks, water damage and ceiling repairs. Damaged sections are cut out, replaced, taped and finished to blend with the surrounding wall.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-2xl text-shine" data-en="Free Estimate" data-es="Estimado Gratis">Free Estimate</p>
+            </div>
+            <a href="tel:+12392447415" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-en="Call" data-es="Llamar">Call</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(30,58,92,0.4); box-shadow: 0 18px 50px rgba(50,40,31,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-en="Signature Skill" data-es="Especialidad">Signature Skill</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-en="Texture Matching &amp; Finishing" data-es="Texturizado y Acabado">Texture Matching &amp; Finishing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-en="Orange peel, knockdown and smooth finishes matched to your existing texture, so the repair disappears into the wall or ceiling." data-es="Acabados tipo orange peel, knockdown y liso, igualados a tu textura existente para que la reparación desaparezca en la pared o el techo.">Orange peel, knockdown and smooth finishes matched to your existing texture, so the repair disappears into the wall or ceiling.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-2xl text-shine" data-en="Free Estimate" data-es="Estimado Gratis">Free Estimate</p>
+            </div>
+            <a href="tel:+12392447415" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-en="Call" data-es="Llamar">Call</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-en="Interior" data-es="Interior">Interior</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-en="Interior Painting" data-es="Pintura de Interiores">Interior Painting</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-en="Touch-up painting after a drywall repair, or a full room, on its own." data-es="Pintura de retoque después de una reparación de drywall, o una habitación completa, por su cuenta.">Touch-up painting after a drywall repair, or a full room, on its own.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-2xl text-shine" data-en="Free Estimate" data-es="Estimado Gratis">Free Estimate</p>
+            </div>
+            <a href="tel:+12392447415" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-en="Call" data-es="Llamar">Call</span></a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-en="Handyman" data-es="Reparaciones Generales">Handyman</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-en="General Home Repairs" data-es="Reparaciones Generales del Hogar">General Home Repairs</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-en="Handyman-style repairs around the house, from garage walls and ceilings to smaller fixes that come up along the way." data-es="Reparaciones estilo handyman en toda la casa, desde paredes y techos de garaje hasta arreglos menores que van surgiendo.">Handyman-style repairs around the house, from garage walls and ceilings to smaller fixes that come up along the way.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-2xl text-shine" data-en="Free Estimate" data-es="Estimado Gratis">Free Estimate</p>
+            </div>
+            <a href="tel:+12392447415" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center"><span data-en="Call" data-es="Llamar">Call</span></a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-en="Pricing is quoted after a free on-site estimate. Every drywall job is different." data-es="Los precios se cotizan después de un estimado gratis en el sitio. Cada trabajo de drywall es diferente.">Pricing is quoted after a free on-site estimate. Every drywall job is different.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-en="Our Work" data-es="Nuestros Trabajos">Our Work</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-en="Repairs you can't" data-es="Reparaciones que no se">Repairs you can't</span> <span class="text-shine" data-en="see afterward" data-es="notan después">see afterward</span></h2>
+        </div>
+        <a href="https://www.facebook.com/candoimp/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span data-en="Find us on Facebook" data-es="Síguenos en Facebook">Find us on Facebook</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-en="Attic access repair" data-es="Reparación de acceso al ático">Attic access repair</span><img src="assets/raw/hero-drywall-finish.jpg" alt="Hand skim-coating a drywall repair with a taping knife, close detail" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-en="Multi-wall patch, ready for paint" data-es="Parche en varias paredes, listo para pintar">Multi-wall patch, ready for paint</span><img src="assets/raw/gallery-room-patch.jpg" alt="Multiple drywall patches on room walls, taped and ready for texture, with a ladder in place" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-en="Wall repair, corner to corner" data-es="Reparación de pared, de esquina a esquina">Wall repair, corner to corner</span><img src="assets/raw/gallery-wall-repair.jpg" alt="Drywall corner repair in progress, patched and taped, protective tarp on the floor" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[4/3] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-en="Ceiling patch, ready for texture" data-es="Parche de techo, listo para textura">Ceiling patch, ready for texture</span><img src="assets/raw/gallery-ceiling-patch.jpg" alt="Drywall ceiling patch around a light fixture, ready for texture" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[4/3] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-en="Texture matched to blend" data-es="Textura igualada para mezclarse">Texture matched to blend</span><img src="assets/raw/gallery-texture-match.jpg" alt="Close-up of a textured wall finish matched to the surrounding surface" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-en="Real conditions, real repairs" data-es="Condiciones reales, reparaciones reales">Real conditions, real repairs</span><img src="assets/raw/gallery-attic-repair.jpg" alt="Drywall ceiling access repair with attic framing and skylight exposed" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee marquee-reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture Matching</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Veteran-Owned</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Drywall Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Texture Matching</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Interior Painting</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Veteran-Owned</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-en="Reviews" data-es="Reseñas">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-en="What" data-es="Lo que dicen">What</span> <span class="text-shine" data-en="customers say" data-es="nuestros clientes">customers say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-en="4.7 out of 5 · 15 reviews on Google · 4.9 on HomeAdvisor (255 reviews)" data-es="4.7 de 5 · 15 reseñas en Google · 4.9 en HomeAdvisor (255 reseñas)">4.7 out of 5 · 15 reviews on Google · 4.9 on HomeAdvisor (255 reviews)</span></p>
+      </div>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Customer reviews">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Paul Auger is a very experienced drywaller. He arrived promptly, worked quickly, and did an excellent job replacing all the drywall pieces that had been removed from the re-piping job I had done on my home. His fee for the job was very reasonable, too. I am very pleased with the finished work."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Sally K.</span> <span class="text-[color:var(--ink-40)]">· North Fort Myers, FL · HomeAdvisor</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Excellent. Communication was good. Service was good. Quality and fair pricing too. Thank you Paul."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Paul B.</span> <span class="text-[color:var(--ink-40)]">· Cape Coral, FL · HomeAdvisor</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great guy, Paul is. Fantastic job, prompt."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">David Z.</span> <span class="text-[color:var(--ink-40)]">· Cape Coral, FL · HomeAdvisor</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Attention to detail, great job."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">David G.</span> <span class="text-[color:var(--ink-40)]">· Cape Coral, FL · HomeAdvisor</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.google.com/maps/place/Can+Do+Home+Improvements/data=!4m7!3m6!1s0x88db47b866baaaab:0xfd1209311d2f3133!8m2!3d26.60!4d-81.94!16s%2Fg%2F11f3z4y8qk!19sChIJq6q2ZrhH24gRM_XSHTEJEv0" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-en="Read the reviews on Google" data-es="Lee las reseñas en Google">Read the reviews on Google</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-en="Find Us" data-es="Encuéntranos">Find Us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-en="Serving Cape Coral" data-es="Sirviendo a Cape Coral">Serving Cape Coral</span> <span class="text-shine" data-en="and Lee County" data-es="y el condado de Lee">and Lee County</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-en="Address" data-es="Dirección">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">2118 SW 25th St, Cape Coral, FL 33914</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(30,58,92,0.4)]" href="https://www.google.com/maps/place/Can+Do+Home+Improvements/data=!4m7!3m6!1s0x88db47b866baaaab:0xfd1209311d2f3133!8m2!3d26.60!4d-81.94!16s%2Fg%2F11f3z4y8qk!19sChIJq6q2ZrhH24gRM_XSHTEJEv0" target="_blank" rel="noopener"><span data-en="Get Directions" data-es="Cómo Llegar">Get Directions</span></a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-en="Hours" data-es="Horario">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-en="Mon to Fri: 7:00 AM to 7:00 PM" data-es="Lun a Vie: 7:00 AM a 7:00 PM">Mon to Fri: 7:00 AM to 7:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-en="Sat: 8:00 AM to 5:30 PM" data-es="Sáb: 8:00 AM a 5:30 PM">Sat: 8:00 AM to 5:30 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-en="Sun: 9:00 AM to 5:00 PM" data-es="Dom: 9:00 AM a 5:00 PM">Sun: 9:00 AM to 5:00 PM</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-en="Contact" data-es="Contacto">Contact</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-en="Call or text:" data-es="Llama o escribe:">Call or text:</span> <a class="text-[color:var(--accent-deep)]" href="tel:+12392447415">(239) 244-7415</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-en="No public email listed. Call or text for the fastest response." data-es="Sin correo público. Llama o envía un mensaje para respuesta más rápida.">No public email listed. Call or text for the fastest response.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: Can Do Home Improvements, 2118 SW 25th St, Cape Coral FL"
+          src="https://www.google.com/maps?q=2118+SW+25th+St,+Cape+Coral,+FL+33914&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241c14 0%, #1b150e 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-en="Fair pricing. Careful work." data-es="Precios justos. Trabajo cuidadoso.">Fair pricing. Careful work.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-en="Ready to get your walls" data-es="Listo para reparar tus paredes">Ready to get your walls</span> <span class="text-shine" data-en="fixed right?" data-es="bien?">fixed right?</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-en="Call or text Can Do Home Improvements for a free on-site estimate. Veteran-owned, serving Cape Coral and Lee County since 2012." data-es="Llama o envía un mensaje a Can Do Home Improvements para un estimado gratis en el sitio. Propiedad de un veterano, sirviendo a Cape Coral y el condado de Lee desde 2012.">Call or text Can Do Home Improvements for a free on-site estimate. Veteran-owned, serving Cape Coral and Lee County since 2012.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+12392447415" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-en="Call Now" data-es="Llamar Ahora">Call Now</span></a>
+        <a href="sms:+12392447415" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-en="Send a Text" data-es="Enviar un Mensaje">Send a Text</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#17110b]">
+    <span class="foot-mark" aria-hidden="true">Can Do</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(232,207,166,0.35)] bg-[rgba(232,207,166,0.08)] text-[#e8cfa6]">CD</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">Can Do Home Improvements</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-en="Drywall repair, texture matching and painting in Cape Coral, FL. Veteran-owned, serving Lee County since 2012." data-es="Reparación de drywall, texturizado y pintura en Cape Coral, FL. Propiedad de un veterano, sirviendo al condado de Lee desde 2012.">Drywall repair, texture matching and painting in Cape Coral, FL. Veteran-owned, serving Lee County since 2012.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-en="Contact" data-es="Contacto">Contact</p>
+        <p>2118 SW 25th St, Cape Coral, FL 33914</p>
+        <p><a href="tel:+12392447415" class="hover:text-[#e8cfa6]">(239) 244-7415</a></p>
+        <p data-en="Mon-Fri 7 AM-7 PM · Sat 8 AM-5:30 PM · Sun 9 AM-5 PM" data-es="Lun-Vie 7 AM-7 PM · Sáb 8 AM-5:30 PM · Dom 9 AM-5 PM">Mon-Fri 7 AM-7 PM · Sat 8 AM-5:30 PM · Sun 9 AM-5 PM</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-en="Follow" data-es="Síguenos">Follow</p>
+        <p><a href="https://www.facebook.com/candoimp/" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]">Facebook · Can Do Home Improvements</a></p>
+        <p><a href="https://www.google.com/maps/place/Can+Do+Home+Improvements/data=!4m7!3m6!1s0x88db47b866baaaab:0xfd1209311d2f3133!8m2!3d26.60!4d-81.94!16s%2Fg%2F11f3z4y8qk!19sChIJq6q2ZrhH24gRM_XSHTEJEv0" target="_blank" rel="noopener" class="hover:text-[#e8cfa6]"><span data-en="Reviews on Google" data-es="Reseñas en Google">Reviews on Google</span></a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]" data-en="© 2026 Can Do Home Improvements, LLC. All rights reserved." data-es="© 2026 Can Do Home Improvements, LLC. Todos los derechos reservados.">© 2026 Can Do Home Improvements, LLC. All rights reserved.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de llamada -->
+  <a href="tel:+12392447415" class="book-float" aria-label="Call Can Do Home Improvements">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba (abajo-izquierda) -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Bilingual toggle (default language: English). Elements carry data-en/data-es;
+    // [data-en-html]/[data-es-html] pairs use innerHTML (for markup like the hero h1 shine span).
+    const langToggleBtn = document.getElementById('langToggle');
+    const langToggleMobileBtn = document.getElementById('langToggleMobile');
+    const applyLang = (l) => {
+      document.querySelectorAll('[data-en]').forEach(el => { el.textContent = el.dataset[l] || el.dataset.en; });
+      document.querySelectorAll('[data-en-html]').forEach(el => { el.innerHTML = (l === 'es' ? el.dataset.esHtml : el.dataset.enHtml) || el.dataset.enHtml; });
+      document.documentElement.lang = l;
+      localStorage.setItem('lang', l);
+      if (langToggleBtn) langToggleBtn.textContent = l === 'en' ? 'ES' : 'EN';
+      if (langToggleMobileBtn) langToggleMobileBtn.textContent = l === 'en' ? 'Español' : 'English';
+    };
+    let lang = localStorage.getItem('lang') || 'en';
+    applyLang(lang === 'es' ? 'es' : 'en');
+    const toggleLang = () => applyLang(document.documentElement.lang === 'en' ? 'es' : 'en');
+    if (langToggleBtn) langToggleBtn.addEventListener('click', toggleLang);
+    if (langToggleMobileBtn) langToggleMobileBtn.addEventListener('click', toggleLang);
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + 2. barra de progreso + 3. parallax + 11. back-to-top: UN solo listener de scroll con rAF
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // 4. Reveals editoriales: texto (.reveal) + imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
+    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
+    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
+    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
+    // layout, que si existe, asi que rompe el circulo.
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (decimales respetados)
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la reseña ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+
+    // v3: split-text del hero (palabra por palabra, respeta spans internos)
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // v3: cursor ring (solo desktop, lerp con rAF)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // 8. Botones magneticos (max 6px, spring back). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // 9. Tilt 3D sutil en cards de servicios (max 3deg + glare). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // 10. Cursor glow calido en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>

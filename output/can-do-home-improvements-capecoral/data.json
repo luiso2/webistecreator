@@ -1,0 +1,99 @@
+{
+  "slug": "can-do-home-improvements-capecoral",
+  "name": "Can Do Home Improvements",
+  "name_full_legal": "Can Do Home Improvements, LLC",
+  "niche": "drywall repair / painting / handyman",
+  "schema_type": "HomeAndConstructionBusiness",
+  "language": "en",
+  "city": "Cape Coral, FL",
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/can-do-home-improvements-capecoral/",
+  "dm_message": "Hi, this is Michael from Merktop. Saw Can Do Home Improvements' 4.7 rating on Google and noticed there's no website yet, so I built a free sample one: https://siteforge-demos.odd-forest-9504.workers.dev/can-do-home-improvements-capecoral/ It doesn't touch your business in any way. Like it? We can move it to your own domain. Not for you? We'll take it down, no obligation.",
+  "outreach": "pending_manual",
+  "status": "built",
+
+  "owner": {
+    "name": "Paul Auger",
+    "role": "Drywall contractor",
+    "note": "Name confirmed across multiple real HomeAdvisor reviews (screenshot the business itself uploaded to its Google Maps photo listing): 'Paul Auger is a very experienced drywaller' (Sally K.), 'Thank you Paul' (Paul B.), 'Great guy, Paul is' (David Z.). A separate live Google Maps review snippet independently states \"He's been a drywall expert since 1976, and that experience is very evident.\" BBB lists the registered CEO as Tammy Auger Esquire (likely family/legal officer of the LLC); Paul Auger appears to be the field operator per customer reviews."
+  },
+  "founded_year": 2012,
+  "founded_note": "Business start date 11/13/2012 per BBB profile and WebSearch summary (13 years in business as of 2023 BBB listing). Not independently re-verified beyond the BBB/search snippet, kept as-is (no other source contradicts it).",
+
+  "phone": "+12392447415",
+  "phone_display": "(239) 244-7415",
+  "phone_source": "Google Maps live listing (gmaps_detail.js), field 'Phone: +1 239-244-7415', confirmed across 5 separate live fetches on 2026-08-14. Matches the phone listed on BBB.",
+
+  "email": null,
+  "email_note": "No public email found anywhere: not on the Google Maps listing, not on BBB, not accessible via Facebook (login-walled), not on Yelp/HomeAdvisor (blocked to automated fetch). Left null per no-invention rule.",
+
+  "instagram": null,
+  "instagram_note": "No Instagram account found under this business name via WebSearch. Not used on site.",
+
+  "facebook": "https://www.facebook.com/candoimp/",
+  "facebook_note": "Real business Facebook page confirmed to exist via WebSearch result title 'Can Do Home Improvements | Cape Coral FL' at facebook.com/candoimp/. Page content itself is inaccessible to automated fetch (Facebook login wall via both curl and headless browser), so no claims were made about its content; only linked as a real, existing channel.",
+
+  "address": "2118 SW 25th St, Cape Coral, FL 33914",
+  "address_source": "Google Maps live listing (gmaps_detail.js), confirmed across 5 live fetches on 2026-08-14. Matches BBB profile.",
+
+  "hours_note": "Google Maps live listing returned per-day hours with two inconsistencies likely caused by scrape/timezone artifacts (Monday shown as opening at '12 AM', Sunday shown with a second overnight block '6 PM to 12 AM'). The clean, consistent pattern across Tue/Wed/Thu/Fri (7 AM-7 PM) was used for the full Mon-Fri range; Sat (8 AM-5:30 PM) and the daytime Sun block (9 AM-5 PM) were used as-is. This is a good-faith normalization of real retrieved data, not an invention of new facts.",
+  "hours": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "17:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "17:00" }
+  ],
+
+  "rating": 4.7,
+  "review_count": 15,
+  "rating_source": "Google Maps live listing, confirmed across 5 separate live fetches (gmaps_detail.js) on 2026-08-14: rating 4.7, review summary block explicitly states '15 reviews'. Matches the rating/count given in the discovery brief.",
+  "secondary_rating": { "platform": "HomeAdvisor", "rating": 4.9, "review_count": 255 },
+  "secondary_rating_source": "Sourced from a real screenshot of the business's own HomeAdvisor reviews page, which the business itself uploaded as a photo on its Google Maps listing (downloaded via Playwright gallery scrape, file identified as a HomeAdvisor UI screenshot, not used as a gallery image, only as a data source for the rating figure and the 4 named review quotes below). HomeAdvisor listing also independently found via WebSearch at homeadvisor.com/rated.CanDoHomeImprovements.58782940.html (page itself blocked by Cloudflare to automated fetch, but the URL is a real, working listing).",
+
+  "has_own_site": false,
+  "own_site_check": "gmaps_detail.js confirmed website: null across 5 live fetches (Maps panel shows 'Add website'). WebSearch surfaced two domain candidates: (1) candohomeimprovementsllc.com, appearing in search results with title 'Drywall Repair & Painting | Can Do Home Improvements LLC' -- tested via curl (direct and through the proxy) and the domain does NOT resolve (DNS failure / connection refused), so it is not a live, functional website. (2) candoimp.com, listed as the business's website on its BBB profile -- tested via curl: resolves and returns HTTP 200, but the page is a bare client-side redirect to '/lander', which serves a GoDaddy/Wix 'parking-lander' placeholder page (confirmed via page source: 'window.LANDER_SYSTEM=\"PW\"', 'ap:\"parking\"', wsimg.com parking-lander assets) with zero business content, no logo, no contact info, no text. This is a parked domain, not a functioning website. Conclusion: has_own_site remains false.",
+  "domain_note": "candoimp.com is registered and matches the business phone/BBB record but currently serves only a generic domain-parking placeholder page (no real content). candohomeimprovementsllc.com does not resolve at all. Neither disqualifies the lead per pipeline rules (parked/dead domains do not count as a functional own site).",
+
+  "services_note": "No booking platform and no published price list. Services below are derived from: (1) Google Maps category ('Dry wall contractor'), (2) Google Maps 'service mentions' aggregation from real review text (aria-label tags: 'drywall repair, mentioned in 6 reviews', 'painting, mentioned in 2 reviews', 'garage, mentioned in 2 reviews', 'quality work, mentioned in 2 reviews', 'pricing, mentioned in 3 reviews', 'punctuality, mentioned in 3 reviews', 'friendly staff, mentioned in 2 reviews'), (3) WebSearch summary of the business ('specializes in drywall and painting needs... also have handyman services and do repairs on almost anything'), and (4) the business's own uploaded Google Maps photos, which show real completed/in-progress jobs: attic ceiling access repair, multi-wall room patch and texture, wall corner patch, ceiling patch around a light fixture, and a close-up texture-matched finish. No prices shown anywhere; the site uses 'Free Estimate / Call' throughout.",
+  "services": [
+    { "name": "Drywall Repair & Patching", "detail": "Holes, cracks, water damage and ceiling repairs; damaged sections cut out, replaced, taped and finished", "price": null, "source": "Google Maps category 'Dry wall contractor', service mention 'drywall repair, mentioned in 6 reviews', Google Maps photos (attic repair, room patch, wall repair, ceiling patch)" },
+    { "name": "Texture Matching & Finishing", "detail": "Orange peel, knockdown and smooth finishes matched to existing texture", "price": null, "source": "Google Maps photo of a close-up textured wall finish; service mention 'quality work, mentioned in 2 reviews'" },
+    { "name": "Interior Painting", "detail": "Touch-up painting after a repair, or a full room", "price": null, "source": "Google Maps service mention 'painting, mentioned in 2 reviews'; WebSearch summary ('drywall and painting services')" },
+    { "name": "General Home Repairs (Handyman)", "detail": "Handyman-style repairs including garage walls/ceilings and smaller fixes", "price": null, "source": "Google Maps service mention 'garage, mentioned in 2 reviews'; business name 'Home Improvements'; WebSearch summary ('handyman services... repairs on almost anything')" }
+  ],
+
+  "reviews": [
+    { "text": "Paul Auger is a very experienced drywaller. He arrived promptly, worked quickly, and did an excellent job replacing all the drywall pieces that had been removed from the re-piping job I had done on my home. His fee for the job was very reasonable, too. I am very pleased with the finished work.", "author": "Sally K.", "location": "North Fort Myers, FL", "date": "10/4/2021", "stars": 5, "source": "HomeAdvisor", "verified": true, "used_on_site": true, "provenance": "Real screenshot of the business's own HomeAdvisor reviews page, uploaded by the business as a photo on its Google Maps listing." },
+    { "text": "Attention to detail, great job", "author": "David G.", "location": "Cape Coral, FL", "date": "8/26/2021", "stars": 5, "source": "HomeAdvisor", "verified": true, "used_on_site": true, "provenance": "Same HomeAdvisor screenshot as above." },
+    { "text": "Very good Job", "author": "Zaritma R.", "location": "Cape Coral, FL", "date": "8/25/2021", "stars": 5, "source": "HomeAdvisor", "verified": true, "used_on_site": false, "provenance": "Same HomeAdvisor screenshot as above; not used on site (too short to stand alone as a card)." },
+    { "text": "Excellent. Communication was good. Service was good. Quality and fair pricing too. Thank you Paul", "author": "Paul B.", "location": "Cape Coral, FL", "date": "8/11/2021", "stars": 5, "source": "HomeAdvisor", "verified": true, "used_on_site": true, "provenance": "Same HomeAdvisor screenshot as above." },
+    { "text": "Great guy, Paul is. Fantastic job, prompt.", "author": "David Z.", "location": "Cape Coral, FL", "date": "7/28/2021", "stars": 5, "source": "HomeAdvisor", "verified": true, "used_on_site": true, "provenance": "Same HomeAdvisor screenshot as above." },
+    { "text": "The quality of work was perfect as was the price.", "author": null, "source": "Google", "verified": true, "used_on_site": false, "provenance": "Verbatim quote surfaced in the Google Maps review summary panel (gmaps_detail.js live fetch); no author name exposed by the scrape, so not used as an attributed testimonial card." },
+    { "text": "He's been a drywall expert since 1976, and that experience is very evident.", "author": null, "source": "Google", "verified": true, "used_on_site": false, "provenance": "Same Google Maps review summary panel; used as a factual detail (Paul Auger's drywall experience since 1976) in the About section copy, not as a quoted testimonial." },
+    { "text": "Excellent work, reasonably priced!", "author": null, "source": "Google", "verified": true, "used_on_site": false, "provenance": "Same Google Maps review summary panel." }
+  ],
+  "reviews_note": "4 verbatim quotes WITH real author name and city are used as testimonial cards, sourced from a real HomeAdvisor reviews screenshot that the business itself uploaded to its Google Maps photo gallery (downloaded and read directly, not fabricated). 3 additional anonymous verbatim quotes surfaced by Google Maps' own review-summary panel were not used as attributed cards (no author name available) but one factual detail from them ('drywall expert since 1976') is reflected in the About section copy. There is also 1 known negative 1-star Yelp review (July 2023, reviewer 'Abigail Z.', surfaced via Yahoo Local aggregator) which was not used or referenced anywhere on the site, consistent with only showcasing real positive reviews.",
+
+  "photos": {
+    "source_note": "All 8 photos pulled directly from the business's own Google Maps photo gallery via a custom Playwright scrape (clicking through the 'Next' photo control to force lazy-loaded images to render, then extracting unique lh3.googleusercontent.com photo IDs from the DOM), downloaded at full resolution and verified with `file` as valid JPEG/PNG before resizing to max 1000px width at quality 82. No stock imagery, no other business's photos. A 9th photo (a HomeAdvisor reviews screenshot the business itself uploaded to Google Maps) and a 10th photo (a designed marketing graphic combining a stock-style worker photo with the business's real logo, text overlaid) were both downloaded but deliberately excluded from the site: the first is a UI screenshot (prohibited in gallery per pipeline rules), the second has text overlaid on the image (also prohibited as a gallery tile).",
+    "used": [
+      { "file": "assets/raw/hero-drywall-finish.jpg", "desc": "Black and white close-up of a hand skim-coating a drywall repair with a taping knife. Used as the gallery lead tile (16:9)." },
+      { "file": "assets/raw/gallery-attic-repair.jpg", "desc": "Drywall ceiling access repair with attic framing and a skylight opening exposed. Used as the hero portrait image and reused as a gallery tile." },
+      { "file": "assets/raw/about-smooth-patch.jpg", "desc": "A finished drywall patch, sanded smooth and ready for paint. Used in the About section." },
+      { "file": "assets/raw/about-skylight-finish.jpg", "desc": "A skylight surround drywall finish, smooth and seamless. Used in the About section." },
+      { "file": "assets/raw/gallery-room-patch.jpg", "desc": "Multiple drywall patches across room walls, taped and ready for texture, with a ladder in place. Gallery tile." },
+      { "file": "assets/raw/gallery-wall-repair.jpg", "desc": "Drywall corner repair in progress with a protective tarp on the floor. Gallery tile." },
+      { "file": "assets/raw/gallery-ceiling-patch.jpg", "desc": "Drywall ceiling patch around a light fixture, ready for texture. Gallery tile." },
+      { "file": "assets/raw/gallery-texture-match.jpg", "desc": "Close-up of a textured wall finish matched to the surrounding surface. Gallery tile." }
+    ],
+    "discarded": [
+      { "desc": "HomeAdvisor reviews screenshot (UI screenshot with text, used only as a data source for reviews, not as a gallery image, per pipeline rule against screenshots with text/caption overlays in the gallery)." },
+      { "desc": "Designed marketing graphic: stock-style photo of a worker composited with the business's real logo/wordmark, text overlaid ('CAN DO - Home Improvement Drywall Repair'). Excluded per pipeline rule against text-over-photo gallery tiles." },
+      { "desc": "One plain wall patch photo with a single outlet, low visual interest, dropped in favor of more distinctive real project photos." }
+    ]
+  },
+
+  "palette_note": "Navy/slate-blue accent (accent-deep #1e3a5c, accent-mid #4d7196) on a warm ivory base (unchanged from the light template's cream tones), derived from the business's real logo colors (red/white/blue patriotic drywall-repair badge, 'veteran-owned' Google Maps attribute) while keeping the look premium and trustworthy rather than literally flag-colored. Dark CTA/footer band keeps the template's original warm champagne-gold accent (unchanged) for contrast against the navy light-mode palette (navy + gold is a classic, elegant pairing, and avoids an overly literal red/white/blue treatment).",
+
+  "cta_channel": "No booking platform, no verified public email. Primary CTA is tel:+12392447415 throughout (nav, hero, service cards, floating button, CTA final); secondary CTA is sms:+12392447415 ('Send a Text'), since SMS is a real, always-valid channel for this phone number.",
+
+  "build_note": "Built from templates/light/index.html (light base, warm ivory) via targeted Edit-tool passes: head/meta/JSON-LD, preloader, nav (with new ES/EN toggle), hero, trust strip, about/experience (team avatar row removed since no real staff photos exist; replaced with a text-only badge row), 'ritual' section reframed as a 4-step 'How We Work' process, services (4 cards, no prices, 'Free Estimate' CTA), gallery (6 real photos), reviews (real named HomeAdvisor quotes), location (real address + real Google Maps embed, since a full street address was available), CTA final, footer. Palette re-tinted from the template's mocha tones to navy/slate-blue via targeted hex swaps (left the dark-band champagne accent untouched). Bilingual mechanism (default English) implemented as data-en/data-es text-swap pairs plus a data-en-html/data-es-html pair for the hero h1 (which needs an inner <span> for the text-shine effect and is also processed by the template's word-split animation script). GATE OK: python3 scripts/gate.py can-do-home-improvements-capecoral --lang en --forbid \"Mizu,Hialeah,Amani,Miami\". Verified with a local headless Playwright pass at 1440px and 390px viewports: zero horizontal overflow at either width, ES/EN toggle verified working (html lang swaps, hero h1 swaps via innerHTML, all data-en/data-es pairs render correctly), zero em-dashes, JSON-LD parses."
+}
