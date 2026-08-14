@@ -16,9 +16,27 @@
  * grid (feed photos are typically ~640px, highlight/profile-pic thumbnails ~150px).
  * Download each url with: curl -A "<chrome UA>" -H "Referer: https://www.instagram.com/" -o file.jpg "<url>"
  */
+const fs = require('fs');
+const path = require('path');
 const { chromium } = require('playwright');
 
-const CHROME_PATH = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1234/chrome-linux64/chrome';
+function findChrome() {
+  if (process.env.CHROME_PATH && fs.existsSync(process.env.CHROME_PATH)) return process.env.CHROME_PATH;
+  if (fs.existsSync('/opt/pw-browsers/chromium')) return '/opt/pw-browsers/chromium';
+  const root = '/opt/pw-browsers';
+  if (fs.existsSync(root)) {
+    for (const dir of fs.readdirSync(root)) {
+      if (!dir.startsWith('chromium-')) continue;
+      for (const sub of ['chrome-linux/chrome', 'chrome-linux64/chrome']) {
+        const p = path.join(root, dir, sub);
+        if (fs.existsSync(p)) return p;
+      }
+    }
+  }
+  throw new Error('No se encontro el binario de chrome (fijar CHROME_PATH)');
+}
+
+const CHROME_PATH = findChrome();
 const PROXY = process.env.HTTPS_PROXY || process.env.https_proxy || '';
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36';
 
