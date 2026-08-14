@@ -79,6 +79,7 @@ async function main() {
       await firstResult.click();
       await page.waitForTimeout(3000);
     }
+    out.resolvedUrl = page.url();
     out.title = await page.title();
     const bodyText = await page.evaluate(() => document.body.innerText);
     out.rawSnippet = bodyText.slice(0, 700);
