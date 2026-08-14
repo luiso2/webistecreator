@@ -1,0 +1,46 @@
+{
+  "slug": "anibal-son-homestead",
+  "name": "Anibal & Son",
+  "niche": "handyman / home repair",
+  "schema_type": "HomeAndConstructionBusiness",
+  "input_note": "El input de la tarea traia ciudad 'Homestead, FL'. La ficha de Google Maps EN VIVO (mismo Place ID exacto dado en el input: 1s0x88d9c1468ce4bca7:0x534f82132390186f) da direccion '11295 SW 88th St, Miami, FL 33173, United States' (zona Kendall/Sunset, Miami-Dade no incorporado), NO Homestead. Confirmado independientemente por Yelp ('ANIBAL AND SON - 11295 SW 88th St, Miami, Florida') via WebSearch. Esa misma direccion corresponde a un complejo de apartamentos residencial (unidades tipo 'M109' listadas en Rent.com, ApartmentGuide, RE/MAX, Zillow, Corcoran, Homes.com), consistente con un handyman movil que opera desde su domicilio, sin local comercial. Precedente identico ya documentado en este repo: output/miami-handyman-homestead/FAILED.md (otro negocio con el mismo patron input-Homestead / direccion-real-Miami).",
+  "google_maps": {
+    "url_input": "https://www.google.com/maps/place/Anibal+%26+Son/data=!4m7!3m6!1s0x88d9c1468ce4bca7:0x534f82132390186f!8m2!3d25.6885675!4d-80.4425!16s%2Fg%2F11q0y2nh7j!19sChIJp8xOSEbBnYgRbxiQI4L4T1M?authuser=0&hl=en&rclk=1",
+    "name": "Anibal & Son",
+    "rating": "4.7",
+    "review_count_task_input": 33,
+    "review_count_live_verified": null,
+    "review_count_note": "El input de la tarea reporta 33 resenas (de una fase de discovery previa). En esta corrida se corrio gmaps_detail.js CINCO veces y gmaps_verify.js UNA vez contra la misma ficha (mismo Place ID exacto): en las cinco corridas la ficha aparece en 'vista limitada de Google Maps' (banner 'You're seeing a limited view of Google Maps... Sign in') y en NINGUNA se renderiza un numero de resenas visible en el DOM (ni en aria-label, ni en el texto plano del panel, que muestra literalmente 'Anibal & Son\\n4.7\\nHandyman/Handywoman/Handyperson' sin '(NN)' a continuacion, algo inusual: normalmente Google muestra el conteo incluso sin sesion). No se pudo re-verificar el numero exacto de resenas de forma independiente con las herramientas disponibles en este entorno; el rating 4.7 SI se corroboro de forma consistente (5/5 corridas) y coincide con el input.",
+    "category": "Handyman/Handywoman/Handyperson",
+    "address": "11295 SW 88th St, Miami, FL 33173, United States",
+    "phone": "+1 786-343-4622",
+    "phone_alt_note": "WebSearch (via snippet de Yelp indexado) muestra un telefono ligeramente distinto: (786) 343-4706. El telefono de la ficha de Google Maps EN VIVO (786-343-4622) se trata como la fuente primaria por ser first-party y verificado en vivo repetidas veces; la discrepancia con Yelp no se pudo resolver porque Yelp bloqueo el scraping directo (ver yelp_check abajo).",
+    "hours": ["Friday, 7 AM to 7 PM (unico dia mostrado en la vista limitada; horario completo no disponible sin iniciar sesion)"],
+    "website": null,
+    "photos_found": 0,
+    "photos_note": "Confirmado exhaustivamente: la ficha muestra 'Add a photo' (el negocio no subio ninguna foto), y el unico <img> de contenido real en el DOM tras 5 corridas de gmaps_detail.js + 1 de gmaps_verify.js + 1 script de diagnostico propio (scroll profundo del panel lateral, 10 iteraciones) es 'https://maps.gstatic.com/tactile/pane/result-no-thumbnail-1x.png', el placeholder generico de Google para fichas SIN foto de portada. Cero fotos de resenas de clientes tampoco aparecen (no hay tab de resenas en el DOM de la vista limitada).",
+    "reviews_tab_note": "No aparecio boton/tab de resenas en el DOM en ninguna de las 5 corridas (selector 'button[role=\"tab\"][aria-label*=\"Reviews\" i]' nunca encontrado), consistente con la vista limitada sin sesion iniciada de este entorno.",
+    "no_own_site_confirmed": true,
+    "no_own_site_evidence": "Campo website de la ficha = null en las 5 corridas. Ademas se probaron y NO resuelven via DNS: anibalandson.com, www.anibalandsonllc.com (curl exit 56 / connection reset via el proxy de salida, igual patron que el precedente jacksonville-handyman-llc). El dominio handymananibal.com (encontrado en una busqueda por 'Anibal' + BBB) tampoco resuelve (getaddrinfo ENOTFOUND) y por su copy generico ('trusted since 2013... nationwide') es evidentemente un sitio de contenido/afiliado no relacionado con este negocio especifico, no su website. Se probaron 4 variantes de microsite gratuito de Google (anibalandson.business.site, anibal-and-son.business.site, anibalson.business.site, anibalsonhandyman.business.site): las 4 responden HTTP 404."
+  },
+  "yelp_check": {
+    "url": "https://www.yelp.com/biz/anibal-and-son-miami",
+    "found_via": "WebSearch (titulo indexado: 'ANIBAL AND SON - Updated July 2026 - 11295 SW 88th St, Miami, Florida - Handyman - Phone Number - Yelp')",
+    "direct_access_result": "BLOQUEADO en todos los intentos: WebFetch (403 Forbidden) en yelp.com y m.yelp.com; curl con UA de Chrome (403) y UA de iPhone Safari (403); scripts/yelp_scrape_fixed.js con Playwright + flags anti-deteccion (2 corridas): la pagina carga con title/body vacios ('yelp.com', 0 caracteres), consistente con un bloqueo tipo challenge/PerimeterX antes del render. Wayback Machine (archive.org) no tiene snapshot guardado de esta URL.",
+    "info_recovered_only_via_search_snippets": "Categorias/servicios mencionados en el snippet indexado por el buscador: cabinet painting and staining, handy man work, handyman contractors, handyman plumber services, sheds & outdoor storage, art installation. Resenas: solo resumenes parafraseados de terceros ('customers describe Anibal and his crew as timely, communicative, efficient... great value... great job in their kitchen... team Gabriel and Kenneth are amazing to work with'), SIN cita verbatim exacta ni nombre de autor verificable (no se pudo confirmar el texto literal ni el autor real accediendo a la fuente). Estos resumenes NO son utilizables como testimonios citables (regla: nunca inventar citas ni usar parafraseo de terceros como si fuera verbatim)."
+  },
+  "other_channels_checked": {
+    "facebook": "Sin pagina de negocio confirmada. Busquedas ('Anibal & Son Facebook handyman', site:facebook.com variants) solo devuelven perfiles personales no relacionados o negocios de handyman homonimos/distintos (BEST Handyman Miami LLC, Ace Handyman Miami, Mr. Handyman, Handyman 24/7, etc.). Ninguno coincide en telefono/direccion.",
+    "instagram": "Sin cuenta confirmada. Busquedas devuelven solo cuentas personales de otras personas llamadas Anibal o negocios de handyman no relacionados (@mrhandymanmiami, @handyman_carlos, @miami_handyman).",
+    "bbb": "Busqueda directa en bbb.org (find_text=Anibal %26 Son, find_loc=Miami, FL) devuelve explicitamente 'No results for \"Anibal & Son\" in \"Miami, FL\"'. Sin perfil.",
+    "nextdoor": "Sin pagina de negocio confirmada para este nombre exacto (resultados devuelven paginas de handyman genericas de Miami no relacionadas).",
+    "homeadvisor_angi_houzz_thumbtack": "Sin listado encontrado en ninguna de las 4 plataformas para este negocio especifico."
+  },
+  "language": "es",
+  "language_note": "No verificable de forma independiente: no hay resenas verbatim, captions de IG, ni copy propio del negocio accesible en ningun canal (Yelp bloqueado, sin FB/IG confirmados). El nombre del dueno 'Anibal' es hispanohablante y el area de Kendall/Sunset (33173) tiene alta poblacion hispana, por lo que 'es' es la hipotesis mas razonable, pero NO se pudo confirmar con evidencia directa (ningun texto propio del negocio fue accesible). Se registra como hipotesis, no como dato verificado.",
+  "email": null,
+  "email_note": "No se encontro email publico en ninguna fuente accesible (Google Maps no lo expone en la vista limitada; Yelp bloqueado; sin FB/IG/BBB confirmados).",
+  "has_own_site": false,
+  "build_status": "failed",
+  "build_notes": "NO se llego a copiar ningun template ni a escribir HTML: el research se detuvo en fase 1 porque el minimo de 5 fotos reales no se pudo alcanzar (0 encontradas), que es motivo de FAIL segun PIPELINE.md fase 3 punto 5 y el precedente identico output/jacksonville-handyman-llc/. El resto de datos duros (nombre, rating 4.7, categoria, telefono, no-website) SI quedaron verificados en vivo con margen para una futura sesion con mejor acceso a Google Maps (fotos de clientes) o Yelp, o si el dueno provee fotos directamente."
+}
