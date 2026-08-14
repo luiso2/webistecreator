@@ -1,551 +1,579 @@
 [
-  {
-    "id": "0a9864fa-4713-4714-886d-9adad61ea136",
-    "input": "@tomaheadspa",
-    "result": "dedupe",
-    "slug": "toma",
-    "fecha": "2026-07-16"
-  },
-  {
-    "id": "95389224-9256-42e1-b003-6b7fd5ecd3a6",
-    "input": "psafurnituretampa",
-    "result": "processed",
-    "slug": "psafurnituretampa",
-    "fecha": "2026-07-16"
-  },
-  {
-    "id": "9f0e2d64-4ce3-4839-a1d7-3bc7541bd3d6",
-    "input": "@Ena.s.Secret",
-    "result": "processed",
-    "slug": "enasecret",
-    "fecha": "2026-07-16"
-  },
-  {
-    "id": "9ec47b6e-cea3-4886-a361-c5e1841f7d15",
-    "input": "@myspabeautysupply",
-    "result": "failed",
-    "motivo": "My Spa Beauty Supply / MY SPA DORAL BEAUTY SUPPLY CORP (Doral, FL) es una tienda mayorista/minorista de equipos, mobiliario y productos de spa (laser, cera, etc.), no un negocio de tratamientos con reservas. Bio de IG: 'We specialize in the sale of state-of-the-art spa equipment & furniture, as well as products for beauty treatments.' Ya tiene ecommerce propio funcional en myspabeauty.com (catalogo, carrito, checkout, cientos de SKUs, facturas mayoristas de $6,000-$15,000). No encaja en el sistema de diseno head spa (ritual de tratamiento, menu de servicios con precio por sesion, booking de citas): construir ese demo habria requerido inventar servicios de spa que el negocio no ofrece. Se omite sin fabricar datos, no se creo site ni se envio nada.",
-    "fecha": "2026-07-16"
-  },
-  {
-    "id": "056560aa-472a-42a1-a18f-dba6c0481fdd",
-    "input": "@betynailsrp",
-    "result": "failed",
-    "motivo": "Beatriz Rodriguez (@betynailsrp, cuenta de Instagram verificada, categoria Nail Salon, Miami FL, Russian Manicure Artist, especialidad builder gel) es un negocio real pero sin datos verificables suficientes para el gate de calidad. No tiene listado en Google Maps, Yelp ni Booksy bajo este handle ni nombre. Su unico canal de reserva es un sitio Square Appointments (betynailsrp.square.site) renderizado enteramente en cliente: sin menu de precios, servicios ni reseñas accesibles via fetch estatico (se confirmo con curl con user agent de navegador, el HTML no trae catalogo ni precios embebidos). El unico listado externo parecido (book.heygoldie.com/Bettynails, negocio 'Nailsbybeatriz', 6653 SW 8th St Miami) tiene una inconsistencia real sin resolver: una de sus reseñas nombra explicitamente a otra tecnica, 'Barbara', no a Beatriz, y el perfil de Instagram no expone direccion, telefono ni email de negocio (business_address_json, business_phone_number y business_email vacios) que confirmen que es el mismo local. Sin menu de precios verificado ni al menos 3 reseñas verbatim confirmadas para esta cuenta especifica, construir el demo habria requerido usar datos de un negocio posiblemente distinto o inventar precios y testimonios, ambos prohibidos por el pipeline (regla dura 1: nunca datos inventados). Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-16"
-  },
-  {
-    "id": "4e608e37-e31c-40c8-8c63-610b022a8b69",
-    "input": "@salaslash_",
-    "result": "failed",
-    "motivo": "Lashes & Brows by Sheyla Salas (@salaslash_, IG 'SaLash'), lash extensions y laminado/tinte de cejas en Miami/Hialeah FL, es una cuenta real y activa (posts recientes verificados via mirror de imagenes, idioma espanol) pero sin ningun dato de negocio verificable fuera del propio feed de IG. Busqueda exhaustiva sin resultado: sin ficha de Google Maps/Google Business bajo 'SaLash' ni 'Sheyla Salas', sin listado en Yelp, sin perfil en Booksy/Fresha/GlossGenius/Square/Mangomint/Vagaro, sin pagina de Facebook, sin website propio ni link externo en bio (bio no accesible via mirror, sin external_url detectado). Las citas se agendan solo por DM ('DM para citas' en varias captions), sin pagina de booking con menu de precios. Sin rating ni numero de reseñas de Google, sin una sola reseña verbatim verificable en ninguna fuente, y sin un solo precio publicado en ningun canal. Construir el demo habria requerido inventar precios, duraciones y testimonios (prohibido por regla dura 1) para las secciones de Servicios y Testimonios que exige DESIGN.md. Precedente identico: betynailsrp (2026-07-16). Se descarta sin fabricar datos, no se creo site, no se contacto al negocio por ningun canal.",
-    "fecha": "2026-07-18"
-  },
-  {
-    "id": "93efebca-37f7-46f3-86a1-38d4636a325f",
-    "input": "CUTSBYJOHAN, Melbourne FL - barberia en Booksy 5.0 x 170, 1520 Highland Ave (buscar perfil Booksy y verificar website propio)",
-    "result": "processed",
-    "slug": "cutsbyjohan",
-    "fecha": "2026-07-19"
-  },
-  {
-    "id": "de741e17-3916-49fc-a891-c6320f362fba",
-    "input": "Kdrip Nails & Bling, Port St Lucie FL",
-    "result": "processed",
-    "slug": "kdripnails",
-    "fecha": "2026-07-19"
-  },
-  {
-    "id": "56f0a4a0-b458-4636-a36b-b41952bec2ed",
-    "input": "Aloha Hair & Color Studio, Daytona Beach FL",
-    "result": "processed",
-    "slug": "alohahaircolorstudio",
-    "fecha": "2026-07-19"
-  },
-  {
-    "id": "540e0ed4-39a7-4aa4-82fc-4ed245554de1",
-    "input": "POPulair Hair Studio, Orlando FL",
-    "result": "processed",
-    "slug": "populairhairstudio",
-    "fecha": "2026-07-19"
-  },
-  {
-    "id": "91293d78-c32c-439d-8d66-7e64e1a350d9",
-    "input": "@Ena s Secret Bake",
-    "result": "dedupe",
-    "slug": "enasecret",
-    "fecha": "2026-07-20"
-  },
-  {
-    "id": "7e74c3fa-30e1-4ed4-a170-1f6f83f1cabc",
-    "input": "Miami Brows Lashes booksy 1508678",
-    "result": "dedupe",
-    "slug": "eme",
-    "motivo": "Mismo negocio que eme (EME Miami - Brows Lashes Lips): direccion 1430 Madruga Ave (misma torre Beauty Square), rating identico 5.0 x 14 resenas, y las fotos del Booksy muestran el logo/rotulo EME Brows Lashes Lips. Booksy parece ser un listado nuevo/renombrado del mismo negocio ya procesado el 2026-07-16.",
-    "fecha": "2026-07-20"
-  },
-  {
-    "id": "c78f9e8f-dc98-4b6f-8092-eca864cf697b",
-    "input": "Gemproimage, Miami FL - fresha j4nhmmp3",
-    "result": "processed",
-    "slug": "gemproimage",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "f8a2b74a-72d2-4590-a8e9-5a9340448f80",
-    "input": "Diana's Hair Rhythm Studio, Coral Gables FL - fresha f4hd9xjt",
-    "result": "processed",
-    "slug": "dianashairrhythm",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "d580bf80-4f74-4776-af62-83aa51677023",
-    "input": "Olas Beauty Room, Coral Gables FL - fresha loankzs5",
-    "result": "processed",
-    "slug": "olas",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "8736303e-15c5-4cac-8830-701d93d914de",
-    "input": "Gretel Nails Art Design, Miami FL - https://gretelnailsartdesign.square.site (tenant Beauty Square, Square nails; menu y fotos del IG)",
-    "result": "failed",
-    "motivo": "Square Appointments (gretelnailsartdesign.square.site) no expone menu/precios ni fotos en el HTML estatico (bootstrap JSON sin catalogo, el booking carga via API cliente-JS que curl no ejecuta) y no hay dossier script para Square. El IG del negocio (@gretelnails_artdesign, confirmado por busqueda web como cuenta real de Gretel Hernandez nail artist Miami) esta detras de login-wall en todos los intentos (curl con UA Chrome y WebFetch devolvieron shell vacio o 429); visores espejo de terceros (imginn, picuki) fallaron con 403/410/500/504 en multiples reintentos. No se encontro ficha propia de Google Maps/Yelp/Booksy bajo el nombre exacto; los negocios homonimos hallados (Nails by Grettell, Nails Studio by Gretell & Yane) son entidades distintas no verificables como el mismo negocio. Sin precios reales, fotos reales ni reseñas verificables de ninguna fuente, construir el demo requeriria inventar datos.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "edea5ace-566c-44dd-8ebf-a81c28702a57",
-    "input": "Sojay Beauty Skn, Miami FL - https://sojay-beauty-skn.square.site (tenant Beauty Square, Square skincare; menu y fotos del IG)",
-    "result": "failed",
-    "motivo": "Square Appointments (sojay-beauty-skn.square.site) devuelve solo un shell JS vacio via curl con UA de Chrome (HTTP 200 pero sin title, menu, precios, telefono, fotos, JSON-LD ni link de IG en el HTML crudo; no existe dossier script para Square). Se hicieron 9 busquedas web exhaustivas (site:instagram.com, site:facebook.com, 'Sojay Beauty Skn Miami instagram', 'Sojay Skn', direcciones conocidas de Beauty Square Miami, Yelp, Google Maps) sin encontrar ningun Instagram, Facebook, Yelp o ficha de Google Maps real del negocio; todos los resultados correspondian a negocios 'SKN'/'Soja'/'Sojo' no relacionados. Sin ningun dato verificable de menu, precios, fotos reales o resenas, no se puede construir el demo sin inventar contenido.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "88a1530d-ced2-4744-aea9-b658a8886af0",
-    "input": "Glammed by Ka, Miami FL - https://www.vagaro.com/glammedbyka (tenant Beauty Square, Vagaro; sacar reseñas/menu de Vagaro y fotos del IG)",
-    "result": "failed",
-    "motivo": "Vagaro glammedbyka (Katrina Alvarez, hair/hair extensions, Miramar FL, tel (786) 942-1799, rating 5.0/9 reviews verificado via jina.ai render) no expone menu de servicios ni precios en ningun render alcanzable: curl directo con UA Chrome solo trae el shell SPA; forzando render JS via r.jina.ai la pagina de book-now solo muestra placeholders genericos del widget de Vagaro sin datos reales de este negocio (el listado real de servicios se carga via AJAX autenticado inalcanzable sin navegador headless, no disponible en este entorno). Instagram @glammedbyka (cuenta real confirmada, 1258 seguidores) bloqueado por login-wall en curl directo y via jina.ai: cero acceso a fotos de feed. La foto de perfil en Vagaro es un logo placeholder generico, sin fotos reales subidas a la plataforma. No existe listado independiente de Google Maps/GMB con fotos propias. Cero precios/servicios y cero fotos reales verificables: construir el esqueleto exigiria inventar el menu de 4 cards y la galeria.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "734f8a5b-3899-45a9-9680-071222efb3b9",
-    "input": "Nail Therapy by Bri, Miramar FL - https://nailtherapybybri.glossgenius.com",
-    "result": "processed",
-    "slug": "nailtherapybybri",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "038a6910-f11e-4e79-85dc-e46db1f83448",
-    "input": "Richard Pacheco Salon, Doral FL (Beauty Square, Fresha 5.0x137, IG @richardpachecoficial)",
-    "result": "failed",
-    "motivo": "Richard Pacheco Salon (Doral FL, Fresha 5.0 x 137 resenas, unisex hair salon) tiene menu completo verificado (23 servicios con precio y duracion) pero la galeria publica de Fresha solo expone 3 fotos, y de esas solo 2 son reales del salon (corte de cabello de hombre, cabello largo de mujer); la tercera es un stock de brochas de maquillaje sin relacion con el negocio. Fresha no expone resenas verbatim (reviews_count con autor: 0) pese al rating agregado 5.0. Se intento el rescate de fotos: (1) IG del negocio (@richardpachecoficial) via instagram.com/api/v1/users/web_profile_info devolvio 400 (endpoint roto, confirmado en FORGE-BRIEF), (2) Facebook (facebook.com/Richardpachecoficial) solo muestra el muro de login sin contenido publico via fetch, (3) se encontro un sitio propio real en richardpachecocorp.com (GoDaddy Website Builder, has_own_site: true) pero su HTML solo trae el logo, sin galeria de fotos. Con 2 fotos reales utilizables no alcanza el minimo para hero + galeria (1 ancho + 5 tiles) sin rellenar con fotos irrelevantes o repetidas, lo cual esta prohibido (regla: menos fotos buenas > rellenar con malas). Se descarta sin fabricar datos ni contactar al negocio; el menu y precios verificados quedan disponibles si en una pasada futura aparecen mas fotos reales (nueva sesion de IG, Google Business, o el propio richardpachecocorp.com se actualiza).",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "1de2f70a-7d08-4654-a995-58ea2a9b67df",
-    "input": "His and Hers Hair Studio Miami, Miami FL - https://hisandhershairstudiomiami.as.me (tenant Beauty Square, Acuity hair; menu y fotos del IG)",
-    "result": "failed",
-    "motivo": "His & Hers Hair Studio (Cutler Bay/Palmetto Bay FL, estilistas Ashleigh Munoz y Carlos Munoz) tiene menu COMPLETO y verificado en vivo: 42 servicios activos con precio y duracion extraidos directo del JSON embebido en la pagina de Acuity (hisandhershairstudiomiami.as.me/schedule/8dcd0829), direccion exacta de ambas sedes (My Suite @ Beauty Square, 18423 South Dixie Hwy Suite 3, Cutler Bay FL 33157; The Cut Stop, 9853 E Fern St, Palmetto Bay FL 33157) y telefono/texto 786-815-1153. Pese a esto, CERO fotos reales accesibles de ningun canal: (1) Instagram @hisandhershairstudiomia (712 seguidores, 70 posts, cuenta real confirmada por busqueda web) bloqueado por login-wall en TODOS los metodos intentados: curl directo con UA Chrome, WebFetch, r.jina.ai como proxy de render; los tres devuelven solo el shell de login sin JSON ni imagenes embebidas. (2) Landing propia en hisandhershairstudiomia.square.site (en realidad Weebly/editmysite) es una SPA con body vacio via curl, sin fotos server-renderizadas. (3) Dominio hisandhershairstudio.com resuelve pero es un parking page en venta no relacionado. (4) Listado de Birdeye en la misma direccion (18423 S Dixie Hwy) mezcla reseñas de un negocio DISTINTO en el mismo edificio de salon suites (menciona a una estilista 'Isa' via IG/TikTok y a 'Kristina', ninguna coincide con Ashleigh o Carlos): se descartan por contaminacion cruzada de tenants, precedente identico a eme/Miami Brows Lashes. Sin ninguna foto real verificable para hero + galeria (1 ancho + 5 tiles), construir el demo exigiria usar fotos irrelevantes o inventadas, prohibido. El menu de 42 servicios con precios reales queda disponible para una pasada futura si aparece una fuente de fotos accesible.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "52f0e6a2-b345-4fc1-b6e9-c5827509647c",
-    "input": "Ana Beauty Studio (Setmore): anabeautystudio.setmore.com (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "failed",
-    "motivo": "Ana Beauty Studio (Ana Arcila, Phi-lashes Artist, 9509 W Flagler St suite 03, Miami FL 33174) tiene identidad y contacto verificados de forma cruzada en 3+ fuentes independientes (Setmore JSON-LD, Nextdoor, directorio oficial Beauty Mall Suites): telefono (786) 370-4640, y menu de 18 servicios con precio y duracion reales extraidos directo del __NEXT_DATA__ de anabeautystudio.setmore.com (eyelash extensions 2D-8D, diseno de cejas wax+henna, ombre powder brow touch up, $35-$120). El dominio anabeautystudio.com que el negocio enlaza en su propio Linktree resulto ser un dominio parqueado/en venta en GoDaddy (has_own_site: false confirmado). CERO fotos reales accesibles: (1) Instagram @anabeautystudiomiami (1308 seguidores, 262 posts, cuenta real confirmada) bloqueado por HTTP 429 / login-wall en TODOS los metodos: curl directo, WebFetch (3 intentos), r.jina.ai como proxy de render. (2) Las imagenes de servicio embebidas en el propio Setmore (googleusercontent) son fotos de stock genericas (close-up de pestañas postizas sin relacion identificable con el negocio, tipo stock photography), no fotos reales de trabajos terminados de esta artista. (3) Listado alterno en Fresha (fresha.com/lvp/ana-beauty-studio-west-flagler-street-miami-854K93, telefono distinto (786) 475-2313, marcado como no afiliado/no reclamado) solo trae 1 imagen y es un placeholder generico de stock ('beauty-salon-6.jpg'), no foto real. (4) Reseñas: 0 en Setmore (reviewsMeta reviewCount:0), ninguna reseña de Google verificable via busqueda. Sin ninguna foto real verificable para hero + galeria, construir el demo exigiria usar stock, prohibido. El menu con precios reales queda disponible para una pasada futura si aparece acceso a Instagram.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "fb1e3ce6-9342-4f22-b2e1-b24b0ece0d7c",
-    "input": "Liz Mariana Vila (Setmore): lizmarianavila.setmore.com (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "failed",
-    "motivo": "El nombre real segun el propio JSON de Setmore es 'Liz Marian Avila' (no 'Liz Mariana Vila'). La cuenta de Setmore (lizmarianavila.setmore.com) esta practicamente sin configurar: un unico servicio generico '60 Minutes Meeting' (video-llamada) a precio $0, sin nombre de servicio real, sin categoria de negocio (businessType: 'Other'), sin direccion, sin telefono, sin email, sin logo, sin galeria, sin reseñas (reviews: []), y sin ningun enlace de red social (socialMediaLinks completamente null). Busqueda exhaustiva por multiples variantes del handle (lizmarianavila, liz.marianavila, lizmarian.avila, liz_marianavila) y busquedas web ('Liz Marian Avila' Miami + maquillaje/pestañas/cejas/cabello) no encontraron ninguna cuenta de Instagram, ficha de Google Business/Maps, ni pagina de Facebook que corresponda de forma confiable a este negocio; los resultados eran personas u negocios homonimos no relacionados. No hay UN solo dato verificable de precio real, servicio real, foto real ni resena para este negocio: no encaja en el minimo para construir el demo sin inventar contenido. Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "7b10b094-202a-499d-9a2f-c4af22ba2402",
-    "input": "Lenis Barrera Beauty, Miami FL - https://www.vagaro.com/lenisbarrerabeauty (tenant Beauty Square, Vagaro; reseñas/menu + fotos del IG)",
-    "result": "done",
-    "slug": "lenisbarrerabeauty",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "970a038b-6783-4b54-af52-af2dca11c125",
-    "input": "Innovo Beauty Salon, Miami FL - https://www.vagaro.com/us03/innovobeautysalon (tenant Beauty Square, Vagaro; reseñas/menu + fotos del IG)",
-    "result": "failed",
-    "motivo": "Innovo Beauty Salon (Miami FL, Vagaro, Beauty Square) no tiene ningun dato verificable de precios ni de reseñas: el menu de servicios de Vagaro carga via API/JS no accesible con curl simple (todas las rutas de API probadas devolvieron 404), y Google/Yelp/Facebook bloquearon el scraping de rating y reseñas (403/soft-block). Solo se pudo verificar direccion, telefono y 8 fotos reales del feed de IG @innovobeautysalon. Sin un solo precio ni una sola reseña verificable, se descarta sin fabricar datos (precedente @salaslash_ 2026-07-18), no se contacta al negocio.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "176726ad-4ddb-42b3-b830-487f105953e8",
-    "input": "Bare Beauty and Co, Miami FL - https://barebeautyandco.as.me (tenant Beauty Square, Acuity; menu y fotos reales del IG)",
-    "result": "done",
-    "slug": "barebeautyandco",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "65801e1f-d2b2-4ecd-9aed-d5e2deaf0a6c",
-    "input": "Ana Beauty Studio (Setmore): anabeautystudio.setmore.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "slug": null,
-    "motivo": "Duplicado del mismo negocio ya marcado failed hoy bajo id 52f0e6a2 (fecha 2026-07-21). No se reprocesa.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "f063fcb5-a8ae-4223-8933-5976b04a0657",
-    "input": "Liz Mariana Vila (Setmore): lizmarianavila.setmore.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "slug": null,
-    "motivo": "Duplicado del mismo negocio ya marcado failed hoy bajo id fb1e3ce6 (fecha 2026-07-21). No se reprocesa.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "4adf379a-d4e7-4d0e-84e4-c7c432bd2d5f",
-    "input": "Judith Laguna (Square): judith-laguna.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "failed",
-    "motivo": "Judith Laguna (Judith Laguna Castro, terapeuta de masaje licenciada MA97132 FL; opera tambien como 'Blossom Therapy and Wellness by Judith Laguna', 9509 W Flagler St Suite 18, Miami FL 33174, tel (305) 215-4666, tenant Beauty Square/My Suite) tiene identidad y direccion verificadas via listado 'lite' (no reclamado) de Fresha, pero ese mismo listado no trae precios ('Pricing/Duration: Not listed') ni fotos reales (solo imagen placeholder generica spa-12.jpg) ni resenas (sin rating/reviewsCount). El sitio Square Appointments (judith-laguna.square.site) es una SPA sin catalogo en el HTML crudo. Se identifico con confianza moderada el Instagram @laguna_holistic (coincidencia de nombre en resultados de busqueda indexados) pero quedo bloqueado por login-wall en TODOS los metodos: curl con UA Chrome, WebFetch (HTTP 429), r.jina.ai (pantalla de login), imginn.com (HTTP 500), picuki.com (HTTP 403 Cloudflare): 0 fotos reales accesibles. Sin ficha de Google Business propia encontrada (la unica reseña disponible en la zona pertenece al edificio My Suite/Beauty Square, no al negocio). Cero precios verificables, cero fotos reales, cero reseñas propias: construir el demo exigiria inventar el menu de servicios y la galeria, prohibido. Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "4f98f44c-af1e-4bfa-81c7-628ccea4a28b",
-    "input": "Judith Laguna (Square): judith-laguna.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "motivo": "Mismo negocio que el id 4adf379a-d4e7-4d0e-84e4-c7c432bd2d5f (Judith Laguna), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "c16c3d9d-6d53-4f05-9940-138c3c2a6a65",
-    "input": "Mc Studio Lab (Square): mcstudiolab.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "failed",
-    "motivo": "Mc Studio Lab (Square Appointments: mcstudiolab.square.site, title 'Appointments | MC STUDIO') es SPA sin catalogo en el HTML crudo. Busqueda exhaustiva de su Instagram (variantes mcstudiolab, mc.studio.lab, mcstudio.lab, mcstudiolabmiami, mcstudio_lab, mc_studio_lab) no logro confirmar ningun handle real: instagram.com sirve el mismo shell de login generico para cuentas existentes/no existentes/privadas, r.jina.ai no logro renderizar el SPA, imginn.com devolvio HTTP 500 (mirror caido) y picuki.com HTTP 403 (bloqueado por Cloudflare) para todos los candidatos. Se confirmo el edificio anfitrion probable (My Suite!@Beauty Square Miami, 3201 N Miami Ave Suite 109) via suitefinder.net, pero 'MC Studio' NO aparece en el listado de tenants de esa sede, y no se pudo confirmar el numero de suite especifico. Sin Instagram confirmado, sin fotos reales, sin menu/precios y sin ficha de Google propia (solo se encontraron resenas de OTROS tenants del mismo edificio, no atribuibles a este negocio): no hay base verificable para construir el demo sin inventar contenido. Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "55637649-26ca-4ecd-bafd-aceb1b43873a",
-    "input": "Mc Studio Lab (Square): mcstudiolab.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "motivo": "Mismo negocio que el id c16c3d9d-6d53-4f05-9940-138c3c2a6a65 (Mc Studio Lab), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "c755e49b-6921-44de-a0ce-35aaa1eb16c7",
-    "input": "Tamara Camps LLC (Square): tamara-camps-llc.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "failed",
-    "motivo": "Tamara Camps LLC (Doc# L20000106391 Sunbiz, registered agent Camps Vidal Tamara) opera como barberia bajo el nombre comercial 'Gent's Style by Tamara' (confirmado via meta apple-mobile-web-app-title del propio sitio Square), tenant de My Suite @ Beauty Square Doral (10555 NW 41 St Unit 200-5, Doral FL 33178; NO la sede de Miami Ave que se asumia en el input original). Se identifico Instagram @gentstyle_bytamy y, via el espejo imginn.com (unico metodo que funciono; curl directo, r.jina.ai y picuki.com quedaron bloqueados por login-wall/Cloudflare), se accedio a ~8-9 fotos reales del feed y rating agregado 5.0 con 108 resenas (fuente Birdeye) con 3 quotes verbatim reales. Pese a tener fotos y resenas reales suficientes, el sitio Square (tamara-camps-llc.square.site) renderiza directo a un checkout de pago sin listar servicios ni precios, y ninguna busqueda (Google, Booksy, Birdeye, Bizapedia, bio de IG) encontro un menu de servicios con precios/duraciones reales de esta barberia especifica. DESIGN.md exige 'menu REAL con precios/duraciones exactos del booking' para la seccion de Servicios: sin ese dato, construir el demo exigiria inventar el menu de 4 cards, prohibido. El menu queda pendiente para una pasada futura si aparece una fuente con precios verificables (ej. si el checkout de Square expone catalogo via otro flujo, o aparece un listado en otra plataforma).",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "c2f594b3-ac20-4b26-8775-08074ae12010",
-    "input": "Tamara Camps LLC (Square): tamara-camps-llc.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "motivo": "Mismo negocio que el id c755e49b-6921-44de-a0ce-35aaa1eb16c7 (Tamara Camps LLC / Gent's Style by Tamara), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "988368a1-f338-409a-ba2a-eb08596d00b7",
-    "input": "Boss Slay (Acuity): bossslay.as.me (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "failed",
-    "motivo": "Boss Slayy LLC (nombre real, no 'Boss Slay') resulto ser un med-spa de lip fillers/lip lightening/teeth whitening en Hialeah/Miami (no un tenant de Beauty Square/Madruga Ave; direccion real via Acuity: 429 Hialeah Dr Suite 24, Hialeah FL 33010), con menu completo y precios reales (7 categorias, Acuity owner=16051401) y resenas verbatim reales (4.8/43 via Birdeye, agregando Google+Facebook). Sin embargo, cero fotos reales utilizables: las 4 imagenes subidas a la descripcion de Acuity son banners graficos promocionales (tips de cita, reglas de booking, banner 'About Me', collage hero con texto superpuesto sobre las fotos), todas con texto/caption encima (prohibido por el gate de calidad); la foto de perfil del calendario 'MR. BOSS' es un stock generico de blanqueamiento dental, no una foto real del negocio; el banner de thebossslayystore.com (GoDaddy) es una plantilla de Canva con modelos de cabello genericas, sin relacion con el negocio. Instagram @bossslayy completamente bloqueado (login-wall en curl y en picuki/imginn, solo se filtro un avatar de 100x100 via og:image). Sin ninguna foto real de resultados o del local, construir el demo violaria la regla de curaduria visual (prohibido capturas con texto, prohibido stock, menos fotos buenas > rellenar con malas). Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "9515677c-3931-476f-930d-fd5431feeec6",
-    "input": "Rebelle Haus (Acuity): rebellehaus.as.me (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "processed",
-    "slug": "rebellehaus",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "49663bc0-5407-4ce4-b82a-71cef5f25e32",
-    "input": "Glam Square Hair Studio (Square): glam-square-hair-studio.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "failed",
-    "motivo": "Glam Square Hair Studio (IG real @glamsquare1, 1660 NE Miami Gardens Dr Suite 6/14, North Miami Beach FL, tel (786) 508-6152 confirmado por Fresha lvp y flyer real del feed de IG) tiene identidad, direccion, telefono, email de contacto (Elena9011@gmail.com, de un flyer 'Now Hiring' del feed) y 11 fotos reales verificadas (curadas de 12 posts publicos via web_profile_info de IG, se descarto 1 flyer de texto). Pese a eso, CERO precios verificables: el Square site (glam-square-hair-studio.square.site) es un shell SPA sin catalogo en HTML crudo ni en window.__BOOTSTRAP_STATE__, y el link de booking que reporta Fresha redirige al mismo shell vacio; el listado de Fresha es un 'lvp' no reclamado sin location.services. CERO resenas verificables: Google Maps y busqueda de Google bloquean fetch estatico, Facebook bloquea WebFetch/curl con redirect a login (solo un snippet de busqueda no verificado de forma independiente menciona '100% recommendation, 9 reviews', descartado por no poder confirmarse contra la fuente real). Sin un solo precio ni una sola resena verificable, se descarta sin fabricar datos (precedente @salaslash_ 2026-07-18, Innovo Beauty Salon 2026-07-21), no se contacta al negocio. Fotos reales quedan en output/glam-square-hair-studio/ para una pasada futura si aparece un menu verificable.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "06ed38f2-0fe4-4b53-8c62-41d3c943420d",
-    "input": "Glam Square Hair Studio (Square): glam-square-hair-studio.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "dedupe",
-    "slug": null,
-    "motivo": "Mismo negocio (misma URL exacta glam-square-hair-studio.square.site) ya procesado y marcado failed hoy bajo id 49663bc0-5407-4ce4-b82a-71cef5f25e32: sin precios verificables (Square SPA sin catalogo en HTML crudo, listado Fresha lvp sin location.services) ni resenas verificables (Google/Facebook bloquean fetch estatico). Se reverifico el sitio Square al recibir este item: sigue siendo shell SPA sin catalogo, sin cambios desde el intento anterior. No se reprocesa.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "09076b0f-4634-47df-82ba-aa8584747155",
-    "input": "Paparazzi Allure (Square): paparazziallure-101500.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "failed",
-    "motivo": "El sitio Square (paparazziallure-101500.square.site) es una SPA sin catalogo en el HTML crudo. Se identifico con confianza el Instagram @paparazziallure (Hair Studio, dueña Nadine St. Louis, confirmado porque paparazziallure.com enlaza exactamente a esa misma URL de Square) pero el input de la cola describe el tenant como 'Beauty Square/My Suite Miami' y ninguna fuente verificable ubica el negocio ahi: las dos direcciones reales encontradas son 12204 Miramar Pkwy Ste 31 Miramar FL (edificio 'Beauty Mall Miramar') y 176 S Flamingo Rd Ste 22 Pembroke Pines FL (registro Sunbiz de la LLC), ninguna coincide con Beauty Square. Instagram bloqueo el acceso al perfil completo en todos los intentos (login-wall directo, HTTP 429 x2 via r.jina.ai), Facebook igual (login-wall). Sin telefono verificable en ninguna fuente (web oficial, Square, Facebook, Atly, ZoomInfo bloqueado 403, YouTube). Email paparazziallure@yahoo.com solo aparece en un snippet de busqueda no confirmado en pagina fuente directa (contact.html de paparazziallure.com da 404): confianza baja, no usable. Rating 7.7 en Atly sin fuente de reviewCount; las 'reseñas' listadas en Atly son contenido de plantilla generico no relacionado con un salon de cabello (hablan de restaurantes/viajes), no reseñas reales. Cero precios de menu encontrados en ninguna fuente (oficial, Square, Google, Yelp, IG). Sin un solo dato verificable de precios ni de reseñas reales, construir el demo exigiria inventar el menu de servicios y los testimonios, prohibido por regla dura 1. Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "192d51ac-7980-47dc-a0d0-f4595aaaa9b3",
-    "input": "Nails Art by Liety (Square): nailsartbyliety.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "failed",
-    "motivo": "El sitio Square (nailsartbyliety.square.site, html lang es_US) es una SPA sin catalogo en el HTML crudo. Se identifico con alta confianza el Instagram @nailartbyliety ('Uñas en Hialeah | Liety Nails', handle casi identico al subdominio Square) con actividad reciente (post de diciembre 2025 geoetiquetado Miami), telefono/WhatsApp expuesto en la bio (786-515-5567) y bio en español mencionando categorias de servicio (acrilicas, gel, pedicura, rubber base, soft gel, disenos) pero SIN precios. El acceso directo al perfil de Instagram quedo bloqueado en todos los intentos (login-wall y HTTP 429 repetido); espejos de terceros picuki.com e imginn.com devolvieron HTTP 403. El unico link de la bio (lietynailslink.my.canva.site, en 3 variantes de ruta) devuelve HTTP 404 (pagina eliminada o movida). No se encontro ficha de Google Business ni Yelp especifica para el negocio (Yelp y Wheree.com bloquearon 403 el acceso a la pagina del edificio 'My Suite at Beauty Square West Flagler' donde probablemente opera, sin poder confirmar menciones a Liety en resenas). La unica ficha con rating (Booksy, 5.0 x 47 resenas) corresponde al edificio/suite completo 'Beauty Square', no al negocio individual: no es atribuible a Liety especificamente. Sin email publico encontrado. Cero precios de servicios y cero reseñas verbatim con autor atribuibles a este negocio especifico: construir el demo exigiria inventar el menu de 4 cards y los testimonios, prohibido por regla dura 1 (precedente identico: salaslash_ 2026-07-18, Judith Laguna 2026-07-21). Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "ddbb6b04-489b-49a6-9b35-c88ded279baa",
-    "input": "Rebelle Haus (Acuity): rebellehaus.as.me (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "slug": "rebellehaus",
-    "motivo": "Mismo negocio ya procesado en esta misma pasada (concurrente) bajo id 9515677c. No se reprocesa.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "0fd64219-2d4d-4bbb-8062-32736197c2cc",
-    "input": "Boss Slay (Acuity): bossslay.as.me (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "slug": null,
-    "motivo": "Mismo negocio ya marcado failed en esta misma pasada (concurrente) bajo id 988368a1. No se reprocesa.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "c147c5f4-441d-4311-becd-6eaf4627dd20",
-    "input": "Jenn's Beautique (GlossGenius): jennsbeautique.glossgenius.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "processed",
-    "slug": "jennsbeautique",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "c9d174a2-32b7-40ec-8153-8a495a1a66df",
-    "input": "Caitlin Oakley Hair (GlossGenius): caitlinoakleyhair.glossgenius.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "processed",
-    "slug": "caitlinoakleyhair",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "de94f615-9367-4454-ba66-dc2290cc72f6",
-    "input": "The Tania Touch (Square): thetaniatouch.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
-    "result": "processed",
-    "slug": "thetaniatouch",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "24e846f6-9c41-406c-b498-6a510ff8d551",
-    "input": "The Tania Touch (Square): thetaniatouch.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
-    "result": "dedupe",
-    "slug": "thetaniatouch",
-    "motivo": "Mismo negocio que el id de94f615-9367-4454-ba66-dc2290cc72f6 (The Tania Touch), procesado en esta misma pasada. Ver slug thetaniatouch en processed.json.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "9f1aa5fe-7d4f-4ca5-9116-e5bae51a495f",
-    "input": "Naild It Miami, Miami FL - https://naild-it-miami.square.site (tenant Beauty Square, Square nails; sacar menu y fotos reales del IG)",
-    "result": "failed",
-    "motivo": "Nail'd It Miami (nail salon, Miami/North Miami Beach FL, IG @naild.itmiami, tel (786) 896-5966 confirmado por 2+ fuentes independientes) no tiene datos verificables suficientes para el gate de calidad tras research paralelo exhaustivo (4 vias). (1) Precios: naild-it-miami.square.site redirige (302) al dominio propio del negocio nailditmiami.com (has_own_site: true), pero es una SPA sin catalogo en el HTML estatico; solo lista NOMBRES de categorias de servicio (Acrylic, Dip Powder, Gel Extensions, Manicure, Pedicure, Nail Art, Russian Manicure, etc) sin un solo precio ni duracion; rutas /shop y /book devuelven 404. Fresha (listado lvp no reclamado) y Belliata confirman explicitamente 'no services/prices added yet'. (2) Resenas y rating: sin rating de Google Business verificable (Yelp bloqueado 403 en todos los intentos vía WebFetch, Belliata muestra explicitamente 0.0/5 - 0 reviews, Fresha sin rating ni conteo). Solo se hallaron 3 fragmentos de cita en Atly.com atribuidos a 'community member' generico, SIN nombre de autor real ni fuente primaria verificable: no califican como resenas verbatim con autor. (3) Direccion: tres fuentes en conflicto sin resolver (1660 NE Miami Gardens Dr Unit 6 Suite 25 Miami FL 33179 vía Fresha/Atly; 1016 N Miami Beach Blvd North Miami Beach FL 33162 vía Yelp; 37 NW 166th St STE 6 Miami FL 33169 vía Belliata/slug de URL de Fresha), no se pudo confirmar cual es la actual. (4) Fotos: CERO fotos reales accesibles. El perfil de IG @naild.itmiami es publico (5,123 seguidores) pero solo tiene 5 posts totales en el feed (catalogo minimo incluso si fuera accesible); bloqueado por rate-limit 429 de Instagram en WebFetch y en la API interna web_profile_info, mirrors picuki.com/imginn.com con 403, y scripts/ig_photos.py (Playwright) fallo por bloqueo de egress HTTPS especifico a navegadores automatizados en este entorno (curl/urllib si completan HTTPS via el mismo proxy, Chromium headless no en ningun sitio HTTPS probado). (5) Email: no se encontro ningun email publico en fuente oficial; el widget 'Location & Hours' del sitio propio expone el placeholder por defecto de Square 'hi@mystore.com' (plantilla generica, no personalizada por el dueno), descartado explicitamente por no ser real. Sin un solo precio, sin resenas verbatim con autor verificable, y sin fotos reales, construir el demo exigiria inventar el menu de 4 cards, la galeria y los testimonios: prohibido por regla dura 1. Se descarta sin fabricar datos ni contactar al negocio. Precedentes identicos: salaslash_ (2026-07-18), Innovo Beauty Salon (2026-07-21).",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "e4b54d64-784d-4447-9fda-abde90d645a8",
-    "input": "https://booksy.com/en-us/418314_the-nail-studio-miami_nail-salon_15889_miami",
-    "result": "processed",
-    "slug": "nailstudiomiami",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "113c7495-3dc0-41a7-9ea6-b7ef74fc0395",
-    "input": "https://booksy.com/en-us/941017_viviana-tales-lash-studio_brows-lashes_15889_miami",
-    "result": "processed",
-    "slug": "vivianatales",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "45635603-c1d5-410e-b08d-93fbb0cab76d",
-    "input": "https://booksy.com/en-us/1113303_mia-salon-suite_nail-salon_15889_miami",
-    "result": "failed",
-    "motivo": "Booksy sin datos verificables: 0 servicios con precio, 0 resenas verbatim, sin telefono, sin instagram, direccion en Beauty Square suites. Solo 1 foto valida en la galeria del listado. Insuficiente para armar demo sin inventar servicios, precios o testimonios.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "a94e18ea-2aa1-41ce-b137-f107537e75d2",
-    "input": "https://booksy.com/en-us/992196_the-hair-lounge-miami_hair-salon_15890_miami-beach",
-    "result": "failed",
-    "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal. El negocio ya no tiene pagina de reservas activa en Booksy en ese enlace.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "f6aca075-140f-429f-a367-7bcd5ba0ca94",
-    "input": "https://booksy.com/en-us/925758_nail-lounge_nail-salon_15889_miami",
-    "result": "failed",
-    "motivo": "Nail Lounge (Booksy 925758, Miami) tiene su listado marcado publicly unavailable: la URL redirige (meta refresh) a showBusinessPubliclyUnavailableModal, confirmado en 3 intentos con curl y UA de navegador real. El negocio no tiene pagina de booking activa ni datos accesibles (menu, fotos, resenas).",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "c694297d-3dad-4c5f-aba1-e3c5e598bd11",
-    "input": "https://booksy.com/en-us/1514679_ana-de-ana-liu-nails-studio_nail-salon_15889_miami",
-    "result": "processed",
-    "slug": "analiu",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "38ef107b-6a80-4233-b327-96f0ab62bdd5",
-    "input": "https://booksy.com/en-us/195304_epoch-nail-bar-beauty-lounge_nail-salon_15889_miami",
-    "result": "processed",
-    "slug": "epochnailbar",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "f3761a53-4913-4598-bf84-f4614037726e",
-    "input": "https://booksy.com/en-us/670421_yn-nails-beauty-salon_nail-salon_15889_miami",
-    "result": "processed",
-    "slug": "ynnails",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "fedb82c5-0955-477b-9ba9-8ff9d8234246",
-    "input": "https://booksy.com/en-us/98000_n1c4-barber-studio-barber-shop-barberia-midtown-miami_barber-shop_15889_miami",
-    "result": "processed",
-    "slug": "n1c4barberstudio",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "ed494b43-238a-4b1a-bc1c-e6d6dc2982d5",
-    "input": "https://booksy.com/en-us/206537_nailbox-miami_nail-salon_15889_miami",
-    "result": "discarded",
-    "motivo": "tiene website propio activo (nailboxmiami.com, WordPress real)",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "1ae7c8d5-7527-478c-9ca1-f5e3834fedec",
-    "input": "https://booksy.com/en-us/828023_vanity-nails-beauty-salon_nail-salon_15889_miami",
-    "result": "discarded",
-    "motivo": "Tiene website propio activo: vanitynailsalon.com (una sola ese en \"nails\"), confirmado real y activo (direccion identica 2200 SW 16th St Suite 118 Miami FL 33145, horarios, email vanitynailssalon@gmail.com, reserva via Booksy). El dominio vanitynailssalon.com (doble ese) que se probo primero no existe/no resuelve, de ahi la confusion inicial.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "4b6c0227-3d80-4593-9412-c54009b53e20",
-    "input": "https://booksy.com/en-us/693852_kelly-hankins-hair-stylist_hair-salon_15889_miami",
-    "result": "discarded",
-    "motivo": "posible website propio (kellyhankins.com resuelve con 502, dominio activo no subdominio de plataforma)",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "53aab941-6c20-4c05-b502-898fa02f2c3a",
-    "input": "https://booksy.com/en-us/617024_barberia-el-estilo_barber-shop_15889_miami",
-    "result": "discarded",
-    "motivo": "tiene website propio activo (barberiaelestilo.com, Squarespace real)",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "6e7521d3-b9e8-42f1-8255-895a8be40fdc",
-    "input": "https://booksy.com/en-us/785538_muse-barber-shop_barber-shop_15890_miami-beach",
-    "result": "discarded",
-    "motivo": "tiene website propio activo (musebarbershop.com, Vercel real)",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "4b6c0227-3d80-4593-9412-c54009b53e20",
-    "input": "https://booksy.com/en-us/693852_kelly-hankins-hair-stylist_hair-salon_15889_miami",
-    "result": "processed",
-    "slug": "kellyhankins",
-    "fecha": "2026-07-21",
-    "nota_correccion": "id previamente marcado discarded en este mismo archivo con motivo 'kellyhankins.com resuelve con 502'; un 502 de CONNECT tunnel del proxy indica que el dominio NO resuelve (verificado contra un dominio de control inexistente, misma firma exacta; ademas WebFetch dio ENOTFOUND y getent hosts vacio). No existe sitio propio real. Se corrige y se procesa: demo construido, gate OK, registrado en processed.json."
-  },
-  {
-    "id": "2e8b0601-8e18-4b0f-9327-7521057c38d5",
-    "input": "https://booksy.com/en-us/470001_amore-body-spa_skin-care_15889_miami",
-    "result": "failed",
-    "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal (HTTP 301 a /en-us/s/skin-care/15889_miami?do=showBusinessDeletedModal). El negocio ya no tiene pagina de reservas activa en ese enlace.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "7f955942-1ed2-47de-b695-624a4239b23a",
-    "input": "https://booksy.com/en-us/771735_you-glam-beauty-bar_wellness-day-spa_15889_miami",
-    "result": "failed",
-    "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal (HTTP 301 a /en-us/s/wellness-day-spa/15889_miami?do=showBusinessDeletedModal). El negocio ya no tiene pagina de reservas activa en ese enlace.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "19c78f90-ac97-4e97-9e2f-e5ba9a5e9db4",
-    "input": "https://booksy.com/en-us/1480743_magic-in-your-nails_nail-salon_15886_hialeah",
-    "result": "processed",
-    "slug": "magicinyournails",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "17feb0e0-2773-4926-b858-2965d2851962",
-    "input": "https://booksy.com/en-us/139883_the-shop_barber-shop_15889_miami",
-    "result": "processed",
-    "slug": "theshopbarber",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "f8d2231b-26cf-41bd-bec3-c681bc0f4147",
-    "input": "https://booksy.com/en-us/787487_the-classic-way-barbershop_barber-shop_15890_miami-beach",
-    "result": "processed",
-    "slug": "classicwaybarbershop",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "a30aca4f-ee3c-4c91-9121-0fffaf268e5e",
-    "input": "https://booksy.com/en-us/608679_nails-by-marelys_nail-salon_15886_hialeah",
-    "result": "processed",
-    "slug": "nailsbymarelys",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "bfdfaee2-5aa7-4d3e-a71e-a40f45b09712",
-    "input": "https://booksy.com/en-us/421799_nails-by-nicky_nail-salon_15886_hialeah",
-    "result": "processed",
-    "slug": "nailsbynicky",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "cffcb686-409c-462d-a336-eadae1a1f2f3",
-    "input": "https://booksy.com/en-us/1483370_the-beautiful-nail_nail-salon_15886_hialeah",
-    "result": "failed",
-    "motivo": "Listado de Booksy eliminado: la URL redirige (301 + meta refresh) a showBusinessDeletedModal, confirmado en 2 intentos (booksy_dossier.py y curl directo con UA de navegador). Sin pagina de reservas activa ni datos accesibles.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "685d400e-79b9-45e8-9676-961468628bf3",
-    "input": "https://booksy.com/en-us/1763821_nail-by-yanelis-qm_nail-salon_15886_hialeah",
-    "result": "failed",
-    "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal. El negocio ya no tiene pagina de reservas activa en Booksy en ese enlace.",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "6da70f58-fcf5-4667-96ea-9126d27dc538",
-    "input": "https://booksy.com/en-us/731728_nailedbynaoo_nail-salon_15886_hialeah",
-    "result": "processed",
-    "slug": "nailedbynaoo",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "96e32b1f-3bde-47b2-a390-7d5c48490a29",
-    "input": "https://booksy.com/en-us/1479751_nails-by-sheila_nail-salon_15886_hialeah",
-    "result": "processed",
-    "slug": "nailsbysheila",
-    "fecha": "2026-07-21"
-  },
-  {
-    "id": "9fd1034d-6f5e-4701-8251-91ec38a67eeb",
-    "input": "prestigeautocargo",
-    "result": "failed",
-    "motivo": "Prestige Auto Cargo (@prestigeautocargo, IG bio \"Cumplimos Tu Sueno\", Miami FL) es una empresa de transporte y envio de vehiculos (auto shipping/logistics), no un negocio de belleza/bienestar con servicios reservables por sesion. No encaja en el formato del sistema Siteforge: no hay menu de tratamientos con precio por sesion, no hay booking de citas (Booksy/Fresha/Square/GlossGenius/Acuity/Vagaro/Setmore), y no aplica una galeria de resultados de tratamiento tipo salon/spa. Construir el demo exigiria forzar el esqueleto de salon/spa sobre un negocio de logistica vehicular, lo cual fabricaria una estructura de contenido (servicios, precios por sesion, resenas de tratamiento) que no corresponde a como opera este negocio. Precedente identico: My Spa Beauty Supply (@myspabeautysupply, 2026-07-16), ecommerce/mayorista descartado por el mismo motivo de formato. Se descarta sin fabricar datos, no se creo site ni se contacto al negocio.",
-    "fecha": "2026-07-25"
-  },
-  {
-    "id": "3a73cb76-20e5-4d17-9db0-6ec629072501",
-    "input": "prestigeautocargo",
-    "result": "dedupe",
-    "slug": null,
-    "motivo": "Duplicado exacto del mismo input ya procesado y marcado failed bajo id 9fd1034d-6f5e-4701-8251-91ec38a67eeb (2026-07-25): Prestige Auto Cargo es una empresa de transporte/envio de vehiculos (auto shipping), no un negocio de belleza/bienestar con servicios reservables. No se reprocesa.",
-    "fecha": "2026-07-29"
-  },
-  {
-    "id": "90bcb1ed-bf2f-4ba9-a9d6-1e00ee2a110c",
-    "input": "@beezualstudios",
-    "result": "failed",
-    "motivo": "Beezual Studios LLC (video recording / audiovisual, 734 Jefferson Ave 8, Miami Beach FL 33139, tel (786) 810-1914, managing member Jose Hernandez, confirmado via BBB, file abierto 2024-07-29) es un negocio real pero sin datos verificables suficientes para el gate de calidad. IG @beezualstudios: research_ig.py (via servicio Railway) y el rescate local con Playwright (ig_photos.py) coinciden en el mismo resultado, solo 1 post publico visible, sin bio, sin email, sin telefono, sin seguidores/posts contables y sin links externos en la bio; la unica foto obtenida es un flyer/collage promocional con iconos y texto superpuesto (prohibido por curaduria visual), no una foto real de trabajo del estudio. Sitio propio beezualstudios.com existe (has_own_site: true) pero no esta operativo: curl devuelve error 525 de Cloudflare (fallo de handshake SSL con el origen) y WebFetch devuelve 403; no se pudo extraer ningun texto, foto, menu de servicios ni contacto desde el sitio. Busqueda web no encontro YouTube, Vimeo ni portfolio con muestras de trabajo, ni reseñas o rating en ninguna plataforma. Con menos de 5 fotos reales y propias del negocio (1, y ademas no utilizable por el gate) y sin poder construir el hero, la galeria ni la seccion de servicios sin inventar contenido, se descarta sin fabricar datos. Se descarta sin fabricar datos ni contactar al negocio.",
-    "fecha": "2026-07-29"
-  },
-  {
-    "id": "99910d5d-f178-40fb-8c7b-3b8e6f257caa",
-    "input": "Lux beuty Head Spa",
-    "result": "dedupe",
-    "slug": "luxebeautyheadspa",
-    "motivo": "Mismo negocio que Luxe Beauty Head Spa (Lutz FL, Tampa Bay), ya presente en data/processed.json y procesado el 2026-07-19. Marcado done apuntando al demo existente, no reprocesado.",
-    "fecha": "2026-08-11"
-  }
+ {
+  "id": "0a9864fa-4713-4714-886d-9adad61ea136",
+  "input": "@tomaheadspa",
+  "result": "dedupe",
+  "slug": "toma",
+  "fecha": "2026-07-16"
+ },
+ {
+  "id": "95389224-9256-42e1-b003-6b7fd5ecd3a6",
+  "input": "psafurnituretampa",
+  "result": "processed",
+  "slug": "psafurnituretampa",
+  "fecha": "2026-07-16"
+ },
+ {
+  "id": "9f0e2d64-4ce3-4839-a1d7-3bc7541bd3d6",
+  "input": "@Ena.s.Secret",
+  "result": "processed",
+  "slug": "enasecret",
+  "fecha": "2026-07-16"
+ },
+ {
+  "id": "9ec47b6e-cea3-4886-a361-c5e1841f7d15",
+  "input": "@myspabeautysupply",
+  "result": "failed",
+  "motivo": "My Spa Beauty Supply / MY SPA DORAL BEAUTY SUPPLY CORP (Doral, FL) es una tienda mayorista/minorista de equipos, mobiliario y productos de spa (laser, cera, etc.), no un negocio de tratamientos con reservas. Bio de IG: 'We specialize in the sale of state-of-the-art spa equipment & furniture, as well as products for beauty treatments.' Ya tiene ecommerce propio funcional en myspabeauty.com (catalogo, carrito, checkout, cientos de SKUs, facturas mayoristas de $6,000-$15,000). No encaja en el sistema de diseno head spa (ritual de tratamiento, menu de servicios con precio por sesion, booking de citas): construir ese demo habria requerido inventar servicios de spa que el negocio no ofrece. Se omite sin fabricar datos, no se creo site ni se envio nada.",
+  "fecha": "2026-07-16"
+ },
+ {
+  "id": "056560aa-472a-42a1-a18f-dba6c0481fdd",
+  "input": "@betynailsrp",
+  "result": "failed",
+  "motivo": "Beatriz Rodriguez (@betynailsrp, cuenta de Instagram verificada, categoria Nail Salon, Miami FL, Russian Manicure Artist, especialidad builder gel) es un negocio real pero sin datos verificables suficientes para el gate de calidad. No tiene listado en Google Maps, Yelp ni Booksy bajo este handle ni nombre. Su unico canal de reserva es un sitio Square Appointments (betynailsrp.square.site) renderizado enteramente en cliente: sin menu de precios, servicios ni reseñas accesibles via fetch estatico (se confirmo con curl con user agent de navegador, el HTML no trae catalogo ni precios embebidos). El unico listado externo parecido (book.heygoldie.com/Bettynails, negocio 'Nailsbybeatriz', 6653 SW 8th St Miami) tiene una inconsistencia real sin resolver: una de sus reseñas nombra explicitamente a otra tecnica, 'Barbara', no a Beatriz, y el perfil de Instagram no expone direccion, telefono ni email de negocio (business_address_json, business_phone_number y business_email vacios) que confirmen que es el mismo local. Sin menu de precios verificado ni al menos 3 reseñas verbatim confirmadas para esta cuenta especifica, construir el demo habria requerido usar datos de un negocio posiblemente distinto o inventar precios y testimonios, ambos prohibidos por el pipeline (regla dura 1: nunca datos inventados). Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-16"
+ },
+ {
+  "id": "4e608e37-e31c-40c8-8c63-610b022a8b69",
+  "input": "@salaslash_",
+  "result": "failed",
+  "motivo": "Lashes & Brows by Sheyla Salas (@salaslash_, IG 'SaLash'), lash extensions y laminado/tinte de cejas en Miami/Hialeah FL, es una cuenta real y activa (posts recientes verificados via mirror de imagenes, idioma espanol) pero sin ningun dato de negocio verificable fuera del propio feed de IG. Busqueda exhaustiva sin resultado: sin ficha de Google Maps/Google Business bajo 'SaLash' ni 'Sheyla Salas', sin listado en Yelp, sin perfil en Booksy/Fresha/GlossGenius/Square/Mangomint/Vagaro, sin pagina de Facebook, sin website propio ni link externo en bio (bio no accesible via mirror, sin external_url detectado). Las citas se agendan solo por DM ('DM para citas' en varias captions), sin pagina de booking con menu de precios. Sin rating ni numero de reseñas de Google, sin una sola reseña verbatim verificable en ninguna fuente, y sin un solo precio publicado en ningun canal. Construir el demo habria requerido inventar precios, duraciones y testimonios (prohibido por regla dura 1) para las secciones de Servicios y Testimonios que exige DESIGN.md. Precedente identico: betynailsrp (2026-07-16). Se descarta sin fabricar datos, no se creo site, no se contacto al negocio por ningun canal.",
+  "fecha": "2026-07-18"
+ },
+ {
+  "id": "93efebca-37f7-46f3-86a1-38d4636a325f",
+  "input": "CUTSBYJOHAN, Melbourne FL - barberia en Booksy 5.0 x 170, 1520 Highland Ave (buscar perfil Booksy y verificar website propio)",
+  "result": "processed",
+  "slug": "cutsbyjohan",
+  "fecha": "2026-07-19"
+ },
+ {
+  "id": "de741e17-3916-49fc-a891-c6320f362fba",
+  "input": "Kdrip Nails & Bling, Port St Lucie FL",
+  "result": "processed",
+  "slug": "kdripnails",
+  "fecha": "2026-07-19"
+ },
+ {
+  "id": "56f0a4a0-b458-4636-a36b-b41952bec2ed",
+  "input": "Aloha Hair & Color Studio, Daytona Beach FL",
+  "result": "processed",
+  "slug": "alohahaircolorstudio",
+  "fecha": "2026-07-19"
+ },
+ {
+  "id": "540e0ed4-39a7-4aa4-82fc-4ed245554de1",
+  "input": "POPulair Hair Studio, Orlando FL",
+  "result": "processed",
+  "slug": "populairhairstudio",
+  "fecha": "2026-07-19"
+ },
+ {
+  "id": "91293d78-c32c-439d-8d66-7e64e1a350d9",
+  "input": "@Ena s Secret Bake",
+  "result": "dedupe",
+  "slug": "enasecret",
+  "fecha": "2026-07-20"
+ },
+ {
+  "id": "7e74c3fa-30e1-4ed4-a170-1f6f83f1cabc",
+  "input": "Miami Brows Lashes booksy 1508678",
+  "result": "dedupe",
+  "slug": "eme",
+  "motivo": "Mismo negocio que eme (EME Miami - Brows Lashes Lips): direccion 1430 Madruga Ave (misma torre Beauty Square), rating identico 5.0 x 14 resenas, y las fotos del Booksy muestran el logo/rotulo EME Brows Lashes Lips. Booksy parece ser un listado nuevo/renombrado del mismo negocio ya procesado el 2026-07-16.",
+  "fecha": "2026-07-20"
+ },
+ {
+  "id": "c78f9e8f-dc98-4b6f-8092-eca864cf697b",
+  "input": "Gemproimage, Miami FL - fresha j4nhmmp3",
+  "result": "processed",
+  "slug": "gemproimage",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "f8a2b74a-72d2-4590-a8e9-5a9340448f80",
+  "input": "Diana's Hair Rhythm Studio, Coral Gables FL - fresha f4hd9xjt",
+  "result": "processed",
+  "slug": "dianashairrhythm",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "d580bf80-4f74-4776-af62-83aa51677023",
+  "input": "Olas Beauty Room, Coral Gables FL - fresha loankzs5",
+  "result": "processed",
+  "slug": "olas",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "8736303e-15c5-4cac-8830-701d93d914de",
+  "input": "Gretel Nails Art Design, Miami FL - https://gretelnailsartdesign.square.site (tenant Beauty Square, Square nails; menu y fotos del IG)",
+  "result": "failed",
+  "motivo": "Square Appointments (gretelnailsartdesign.square.site) no expone menu/precios ni fotos en el HTML estatico (bootstrap JSON sin catalogo, el booking carga via API cliente-JS que curl no ejecuta) y no hay dossier script para Square. El IG del negocio (@gretelnails_artdesign, confirmado por busqueda web como cuenta real de Gretel Hernandez nail artist Miami) esta detras de login-wall en todos los intentos (curl con UA Chrome y WebFetch devolvieron shell vacio o 429); visores espejo de terceros (imginn, picuki) fallaron con 403/410/500/504 en multiples reintentos. No se encontro ficha propia de Google Maps/Yelp/Booksy bajo el nombre exacto; los negocios homonimos hallados (Nails by Grettell, Nails Studio by Gretell & Yane) son entidades distintas no verificables como el mismo negocio. Sin precios reales, fotos reales ni reseñas verificables de ninguna fuente, construir el demo requeriria inventar datos.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "edea5ace-566c-44dd-8ebf-a81c28702a57",
+  "input": "Sojay Beauty Skn, Miami FL - https://sojay-beauty-skn.square.site (tenant Beauty Square, Square skincare; menu y fotos del IG)",
+  "result": "failed",
+  "motivo": "Square Appointments (sojay-beauty-skn.square.site) devuelve solo un shell JS vacio via curl con UA de Chrome (HTTP 200 pero sin title, menu, precios, telefono, fotos, JSON-LD ni link de IG en el HTML crudo; no existe dossier script para Square). Se hicieron 9 busquedas web exhaustivas (site:instagram.com, site:facebook.com, 'Sojay Beauty Skn Miami instagram', 'Sojay Skn', direcciones conocidas de Beauty Square Miami, Yelp, Google Maps) sin encontrar ningun Instagram, Facebook, Yelp o ficha de Google Maps real del negocio; todos los resultados correspondian a negocios 'SKN'/'Soja'/'Sojo' no relacionados. Sin ningun dato verificable de menu, precios, fotos reales o resenas, no se puede construir el demo sin inventar contenido.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "88a1530d-ced2-4744-aea9-b658a8886af0",
+  "input": "Glammed by Ka, Miami FL - https://www.vagaro.com/glammedbyka (tenant Beauty Square, Vagaro; sacar reseñas/menu de Vagaro y fotos del IG)",
+  "result": "failed",
+  "motivo": "Vagaro glammedbyka (Katrina Alvarez, hair/hair extensions, Miramar FL, tel (786) 942-1799, rating 5.0/9 reviews verificado via jina.ai render) no expone menu de servicios ni precios en ningun render alcanzable: curl directo con UA Chrome solo trae el shell SPA; forzando render JS via r.jina.ai la pagina de book-now solo muestra placeholders genericos del widget de Vagaro sin datos reales de este negocio (el listado real de servicios se carga via AJAX autenticado inalcanzable sin navegador headless, no disponible en este entorno). Instagram @glammedbyka (cuenta real confirmada, 1258 seguidores) bloqueado por login-wall en curl directo y via jina.ai: cero acceso a fotos de feed. La foto de perfil en Vagaro es un logo placeholder generico, sin fotos reales subidas a la plataforma. No existe listado independiente de Google Maps/GMB con fotos propias. Cero precios/servicios y cero fotos reales verificables: construir el esqueleto exigiria inventar el menu de 4 cards y la galeria.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "734f8a5b-3899-45a9-9680-071222efb3b9",
+  "input": "Nail Therapy by Bri, Miramar FL - https://nailtherapybybri.glossgenius.com",
+  "result": "processed",
+  "slug": "nailtherapybybri",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "038a6910-f11e-4e79-85dc-e46db1f83448",
+  "input": "Richard Pacheco Salon, Doral FL (Beauty Square, Fresha 5.0x137, IG @richardpachecoficial)",
+  "result": "failed",
+  "motivo": "Richard Pacheco Salon (Doral FL, Fresha 5.0 x 137 resenas, unisex hair salon) tiene menu completo verificado (23 servicios con precio y duracion) pero la galeria publica de Fresha solo expone 3 fotos, y de esas solo 2 son reales del salon (corte de cabello de hombre, cabello largo de mujer); la tercera es un stock de brochas de maquillaje sin relacion con el negocio. Fresha no expone resenas verbatim (reviews_count con autor: 0) pese al rating agregado 5.0. Se intento el rescate de fotos: (1) IG del negocio (@richardpachecoficial) via instagram.com/api/v1/users/web_profile_info devolvio 400 (endpoint roto, confirmado en FORGE-BRIEF), (2) Facebook (facebook.com/Richardpachecoficial) solo muestra el muro de login sin contenido publico via fetch, (3) se encontro un sitio propio real en richardpachecocorp.com (GoDaddy Website Builder, has_own_site: true) pero su HTML solo trae el logo, sin galeria de fotos. Con 2 fotos reales utilizables no alcanza el minimo para hero + galeria (1 ancho + 5 tiles) sin rellenar con fotos irrelevantes o repetidas, lo cual esta prohibido (regla: menos fotos buenas > rellenar con malas). Se descarta sin fabricar datos ni contactar al negocio; el menu y precios verificados quedan disponibles si en una pasada futura aparecen mas fotos reales (nueva sesion de IG, Google Business, o el propio richardpachecocorp.com se actualiza).",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "1de2f70a-7d08-4654-a995-58ea2a9b67df",
+  "input": "His and Hers Hair Studio Miami, Miami FL - https://hisandhershairstudiomiami.as.me (tenant Beauty Square, Acuity hair; menu y fotos del IG)",
+  "result": "failed",
+  "motivo": "His & Hers Hair Studio (Cutler Bay/Palmetto Bay FL, estilistas Ashleigh Munoz y Carlos Munoz) tiene menu COMPLETO y verificado en vivo: 42 servicios activos con precio y duracion extraidos directo del JSON embebido en la pagina de Acuity (hisandhershairstudiomiami.as.me/schedule/8dcd0829), direccion exacta de ambas sedes (My Suite @ Beauty Square, 18423 South Dixie Hwy Suite 3, Cutler Bay FL 33157; The Cut Stop, 9853 E Fern St, Palmetto Bay FL 33157) y telefono/texto 786-815-1153. Pese a esto, CERO fotos reales accesibles de ningun canal: (1) Instagram @hisandhershairstudiomia (712 seguidores, 70 posts, cuenta real confirmada por busqueda web) bloqueado por login-wall en TODOS los metodos intentados: curl directo con UA Chrome, WebFetch, r.jina.ai como proxy de render; los tres devuelven solo el shell de login sin JSON ni imagenes embebidas. (2) Landing propia en hisandhershairstudiomia.square.site (en realidad Weebly/editmysite) es una SPA con body vacio via curl, sin fotos server-renderizadas. (3) Dominio hisandhershairstudio.com resuelve pero es un parking page en venta no relacionado. (4) Listado de Birdeye en la misma direccion (18423 S Dixie Hwy) mezcla reseñas de un negocio DISTINTO en el mismo edificio de salon suites (menciona a una estilista 'Isa' via IG/TikTok y a 'Kristina', ninguna coincide con Ashleigh o Carlos): se descartan por contaminacion cruzada de tenants, precedente identico a eme/Miami Brows Lashes. Sin ninguna foto real verificable para hero + galeria (1 ancho + 5 tiles), construir el demo exigiria usar fotos irrelevantes o inventadas, prohibido. El menu de 42 servicios con precios reales queda disponible para una pasada futura si aparece una fuente de fotos accesible.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "52f0e6a2-b345-4fc1-b6e9-c5827509647c",
+  "input": "Ana Beauty Studio (Setmore): anabeautystudio.setmore.com (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "failed",
+  "motivo": "Ana Beauty Studio (Ana Arcila, Phi-lashes Artist, 9509 W Flagler St suite 03, Miami FL 33174) tiene identidad y contacto verificados de forma cruzada en 3+ fuentes independientes (Setmore JSON-LD, Nextdoor, directorio oficial Beauty Mall Suites): telefono (786) 370-4640, y menu de 18 servicios con precio y duracion reales extraidos directo del __NEXT_DATA__ de anabeautystudio.setmore.com (eyelash extensions 2D-8D, diseno de cejas wax+henna, ombre powder brow touch up, $35-$120). El dominio anabeautystudio.com que el negocio enlaza en su propio Linktree resulto ser un dominio parqueado/en venta en GoDaddy (has_own_site: false confirmado). CERO fotos reales accesibles: (1) Instagram @anabeautystudiomiami (1308 seguidores, 262 posts, cuenta real confirmada) bloqueado por HTTP 429 / login-wall en TODOS los metodos: curl directo, WebFetch (3 intentos), r.jina.ai como proxy de render. (2) Las imagenes de servicio embebidas en el propio Setmore (googleusercontent) son fotos de stock genericas (close-up de pestañas postizas sin relacion identificable con el negocio, tipo stock photography), no fotos reales de trabajos terminados de esta artista. (3) Listado alterno en Fresha (fresha.com/lvp/ana-beauty-studio-west-flagler-street-miami-854K93, telefono distinto (786) 475-2313, marcado como no afiliado/no reclamado) solo trae 1 imagen y es un placeholder generico de stock ('beauty-salon-6.jpg'), no foto real. (4) Reseñas: 0 en Setmore (reviewsMeta reviewCount:0), ninguna reseña de Google verificable via busqueda. Sin ninguna foto real verificable para hero + galeria, construir el demo exigiria usar stock, prohibido. El menu con precios reales queda disponible para una pasada futura si aparece acceso a Instagram.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "fb1e3ce6-9342-4f22-b2e1-b24b0ece0d7c",
+  "input": "Liz Mariana Vila (Setmore): lizmarianavila.setmore.com (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "failed",
+  "motivo": "El nombre real segun el propio JSON de Setmore es 'Liz Marian Avila' (no 'Liz Mariana Vila'). La cuenta de Setmore (lizmarianavila.setmore.com) esta practicamente sin configurar: un unico servicio generico '60 Minutes Meeting' (video-llamada) a precio $0, sin nombre de servicio real, sin categoria de negocio (businessType: 'Other'), sin direccion, sin telefono, sin email, sin logo, sin galeria, sin reseñas (reviews: []), y sin ningun enlace de red social (socialMediaLinks completamente null). Busqueda exhaustiva por multiples variantes del handle (lizmarianavila, liz.marianavila, lizmarian.avila, liz_marianavila) y busquedas web ('Liz Marian Avila' Miami + maquillaje/pestañas/cejas/cabello) no encontraron ninguna cuenta de Instagram, ficha de Google Business/Maps, ni pagina de Facebook que corresponda de forma confiable a este negocio; los resultados eran personas u negocios homonimos no relacionados. No hay UN solo dato verificable de precio real, servicio real, foto real ni resena para este negocio: no encaja en el minimo para construir el demo sin inventar contenido. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "7b10b094-202a-499d-9a2f-c4af22ba2402",
+  "input": "Lenis Barrera Beauty, Miami FL - https://www.vagaro.com/lenisbarrerabeauty (tenant Beauty Square, Vagaro; reseñas/menu + fotos del IG)",
+  "result": "done",
+  "slug": "lenisbarrerabeauty",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "970a038b-6783-4b54-af52-af2dca11c125",
+  "input": "Innovo Beauty Salon, Miami FL - https://www.vagaro.com/us03/innovobeautysalon (tenant Beauty Square, Vagaro; reseñas/menu + fotos del IG)",
+  "result": "failed",
+  "motivo": "Innovo Beauty Salon (Miami FL, Vagaro, Beauty Square) no tiene ningun dato verificable de precios ni de reseñas: el menu de servicios de Vagaro carga via API/JS no accesible con curl simple (todas las rutas de API probadas devolvieron 404), y Google/Yelp/Facebook bloquearon el scraping de rating y reseñas (403/soft-block). Solo se pudo verificar direccion, telefono y 8 fotos reales del feed de IG @innovobeautysalon. Sin un solo precio ni una sola reseña verificable, se descarta sin fabricar datos (precedente @salaslash_ 2026-07-18), no se contacta al negocio.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "176726ad-4ddb-42b3-b830-487f105953e8",
+  "input": "Bare Beauty and Co, Miami FL - https://barebeautyandco.as.me (tenant Beauty Square, Acuity; menu y fotos reales del IG)",
+  "result": "done",
+  "slug": "barebeautyandco",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "65801e1f-d2b2-4ecd-9aed-d5e2deaf0a6c",
+  "input": "Ana Beauty Studio (Setmore): anabeautystudio.setmore.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "slug": null,
+  "motivo": "Duplicado del mismo negocio ya marcado failed hoy bajo id 52f0e6a2 (fecha 2026-07-21). No se reprocesa.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "f063fcb5-a8ae-4223-8933-5976b04a0657",
+  "input": "Liz Mariana Vila (Setmore): lizmarianavila.setmore.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "slug": null,
+  "motivo": "Duplicado del mismo negocio ya marcado failed hoy bajo id fb1e3ce6 (fecha 2026-07-21). No se reprocesa.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "4adf379a-d4e7-4d0e-84e4-c7c432bd2d5f",
+  "input": "Judith Laguna (Square): judith-laguna.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "failed",
+  "motivo": "Judith Laguna (Judith Laguna Castro, terapeuta de masaje licenciada MA97132 FL; opera tambien como 'Blossom Therapy and Wellness by Judith Laguna', 9509 W Flagler St Suite 18, Miami FL 33174, tel (305) 215-4666, tenant Beauty Square/My Suite) tiene identidad y direccion verificadas via listado 'lite' (no reclamado) de Fresha, pero ese mismo listado no trae precios ('Pricing/Duration: Not listed') ni fotos reales (solo imagen placeholder generica spa-12.jpg) ni resenas (sin rating/reviewsCount). El sitio Square Appointments (judith-laguna.square.site) es una SPA sin catalogo en el HTML crudo. Se identifico con confianza moderada el Instagram @laguna_holistic (coincidencia de nombre en resultados de busqueda indexados) pero quedo bloqueado por login-wall en TODOS los metodos: curl con UA Chrome, WebFetch (HTTP 429), r.jina.ai (pantalla de login), imginn.com (HTTP 500), picuki.com (HTTP 403 Cloudflare): 0 fotos reales accesibles. Sin ficha de Google Business propia encontrada (la unica reseña disponible en la zona pertenece al edificio My Suite/Beauty Square, no al negocio). Cero precios verificables, cero fotos reales, cero reseñas propias: construir el demo exigiria inventar el menu de servicios y la galeria, prohibido. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "4f98f44c-af1e-4bfa-81c7-628ccea4a28b",
+  "input": "Judith Laguna (Square): judith-laguna.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "motivo": "Mismo negocio que el id 4adf379a-d4e7-4d0e-84e4-c7c432bd2d5f (Judith Laguna), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "c16c3d9d-6d53-4f05-9940-138c3c2a6a65",
+  "input": "Mc Studio Lab (Square): mcstudiolab.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "failed",
+  "motivo": "Mc Studio Lab (Square Appointments: mcstudiolab.square.site, title 'Appointments | MC STUDIO') es SPA sin catalogo en el HTML crudo. Busqueda exhaustiva de su Instagram (variantes mcstudiolab, mc.studio.lab, mcstudio.lab, mcstudiolabmiami, mcstudio_lab, mc_studio_lab) no logro confirmar ningun handle real: instagram.com sirve el mismo shell de login generico para cuentas existentes/no existentes/privadas, r.jina.ai no logro renderizar el SPA, imginn.com devolvio HTTP 500 (mirror caido) y picuki.com HTTP 403 (bloqueado por Cloudflare) para todos los candidatos. Se confirmo el edificio anfitrion probable (My Suite!@Beauty Square Miami, 3201 N Miami Ave Suite 109) via suitefinder.net, pero 'MC Studio' NO aparece en el listado de tenants de esa sede, y no se pudo confirmar el numero de suite especifico. Sin Instagram confirmado, sin fotos reales, sin menu/precios y sin ficha de Google propia (solo se encontraron resenas de OTROS tenants del mismo edificio, no atribuibles a este negocio): no hay base verificable para construir el demo sin inventar contenido. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "55637649-26ca-4ecd-bafd-aceb1b43873a",
+  "input": "Mc Studio Lab (Square): mcstudiolab.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "motivo": "Mismo negocio que el id c16c3d9d-6d53-4f05-9940-138c3c2a6a65 (Mc Studio Lab), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "c755e49b-6921-44de-a0ce-35aaa1eb16c7",
+  "input": "Tamara Camps LLC (Square): tamara-camps-llc.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "failed",
+  "motivo": "Tamara Camps LLC (Doc# L20000106391 Sunbiz, registered agent Camps Vidal Tamara) opera como barberia bajo el nombre comercial 'Gent's Style by Tamara' (confirmado via meta apple-mobile-web-app-title del propio sitio Square), tenant de My Suite @ Beauty Square Doral (10555 NW 41 St Unit 200-5, Doral FL 33178; NO la sede de Miami Ave que se asumia en el input original). Se identifico Instagram @gentstyle_bytamy y, via el espejo imginn.com (unico metodo que funciono; curl directo, r.jina.ai y picuki.com quedaron bloqueados por login-wall/Cloudflare), se accedio a ~8-9 fotos reales del feed y rating agregado 5.0 con 108 resenas (fuente Birdeye) con 3 quotes verbatim reales. Pese a tener fotos y resenas reales suficientes, el sitio Square (tamara-camps-llc.square.site) renderiza directo a un checkout de pago sin listar servicios ni precios, y ninguna busqueda (Google, Booksy, Birdeye, Bizapedia, bio de IG) encontro un menu de servicios con precios/duraciones reales de esta barberia especifica. DESIGN.md exige 'menu REAL con precios/duraciones exactos del booking' para la seccion de Servicios: sin ese dato, construir el demo exigiria inventar el menu de 4 cards, prohibido. El menu queda pendiente para una pasada futura si aparece una fuente con precios verificables (ej. si el checkout de Square expone catalogo via otro flujo, o aparece un listado en otra plataforma).",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "c2f594b3-ac20-4b26-8775-08074ae12010",
+  "input": "Tamara Camps LLC (Square): tamara-camps-llc.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "motivo": "Mismo negocio que el id c755e49b-6921-44de-a0ce-35aaa1eb16c7 (Tamara Camps LLC / Gent's Style by Tamara), procesado y marcado failed en esta misma pasada. Ver motivo en ese id.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "988368a1-f338-409a-ba2a-eb08596d00b7",
+  "input": "Boss Slay (Acuity): bossslay.as.me (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "failed",
+  "motivo": "Boss Slayy LLC (nombre real, no 'Boss Slay') resulto ser un med-spa de lip fillers/lip lightening/teeth whitening en Hialeah/Miami (no un tenant de Beauty Square/Madruga Ave; direccion real via Acuity: 429 Hialeah Dr Suite 24, Hialeah FL 33010), con menu completo y precios reales (7 categorias, Acuity owner=16051401) y resenas verbatim reales (4.8/43 via Birdeye, agregando Google+Facebook). Sin embargo, cero fotos reales utilizables: las 4 imagenes subidas a la descripcion de Acuity son banners graficos promocionales (tips de cita, reglas de booking, banner 'About Me', collage hero con texto superpuesto sobre las fotos), todas con texto/caption encima (prohibido por el gate de calidad); la foto de perfil del calendario 'MR. BOSS' es un stock generico de blanqueamiento dental, no una foto real del negocio; el banner de thebossslayystore.com (GoDaddy) es una plantilla de Canva con modelos de cabello genericas, sin relacion con el negocio. Instagram @bossslayy completamente bloqueado (login-wall en curl y en picuki/imginn, solo se filtro un avatar de 100x100 via og:image). Sin ninguna foto real de resultados o del local, construir el demo violaria la regla de curaduria visual (prohibido capturas con texto, prohibido stock, menos fotos buenas > rellenar con malas). Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "9515677c-3931-476f-930d-fd5431feeec6",
+  "input": "Rebelle Haus (Acuity): rebellehaus.as.me (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "processed",
+  "slug": "rebellehaus",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "49663bc0-5407-4ce4-b82a-71cef5f25e32",
+  "input": "Glam Square Hair Studio (Square): glam-square-hair-studio.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "failed",
+  "motivo": "Glam Square Hair Studio (IG real @glamsquare1, 1660 NE Miami Gardens Dr Suite 6/14, North Miami Beach FL, tel (786) 508-6152 confirmado por Fresha lvp y flyer real del feed de IG) tiene identidad, direccion, telefono, email de contacto (Elena9011@gmail.com, de un flyer 'Now Hiring' del feed) y 11 fotos reales verificadas (curadas de 12 posts publicos via web_profile_info de IG, se descarto 1 flyer de texto). Pese a eso, CERO precios verificables: el Square site (glam-square-hair-studio.square.site) es un shell SPA sin catalogo en HTML crudo ni en window.__BOOTSTRAP_STATE__, y el link de booking que reporta Fresha redirige al mismo shell vacio; el listado de Fresha es un 'lvp' no reclamado sin location.services. CERO resenas verificables: Google Maps y busqueda de Google bloquean fetch estatico, Facebook bloquea WebFetch/curl con redirect a login (solo un snippet de busqueda no verificado de forma independiente menciona '100% recommendation, 9 reviews', descartado por no poder confirmarse contra la fuente real). Sin un solo precio ni una sola resena verificable, se descarta sin fabricar datos (precedente @salaslash_ 2026-07-18, Innovo Beauty Salon 2026-07-21), no se contacta al negocio. Fotos reales quedan en output/glam-square-hair-studio/ para una pasada futura si aparece un menu verificable.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "06ed38f2-0fe4-4b53-8c62-41d3c943420d",
+  "input": "Glam Square Hair Studio (Square): glam-square-hair-studio.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "dedupe",
+  "slug": null,
+  "motivo": "Mismo negocio (misma URL exacta glam-square-hair-studio.square.site) ya procesado y marcado failed hoy bajo id 49663bc0-5407-4ce4-b82a-71cef5f25e32: sin precios verificables (Square SPA sin catalogo en HTML crudo, listado Fresha lvp sin location.services) ni resenas verificables (Google/Facebook bloquean fetch estatico). Se reverifico el sitio Square al recibir este item: sigue siendo shell SPA sin catalogo, sin cambios desde el intento anterior. No se reprocesa.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "09076b0f-4634-47df-82ba-aa8584747155",
+  "input": "Paparazzi Allure (Square): paparazziallure-101500.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "failed",
+  "motivo": "El sitio Square (paparazziallure-101500.square.site) es una SPA sin catalogo en el HTML crudo. Se identifico con confianza el Instagram @paparazziallure (Hair Studio, dueña Nadine St. Louis, confirmado porque paparazziallure.com enlaza exactamente a esa misma URL de Square) pero el input de la cola describe el tenant como 'Beauty Square/My Suite Miami' y ninguna fuente verificable ubica el negocio ahi: las dos direcciones reales encontradas son 12204 Miramar Pkwy Ste 31 Miramar FL (edificio 'Beauty Mall Miramar') y 176 S Flamingo Rd Ste 22 Pembroke Pines FL (registro Sunbiz de la LLC), ninguna coincide con Beauty Square. Instagram bloqueo el acceso al perfil completo en todos los intentos (login-wall directo, HTTP 429 x2 via r.jina.ai), Facebook igual (login-wall). Sin telefono verificable en ninguna fuente (web oficial, Square, Facebook, Atly, ZoomInfo bloqueado 403, YouTube). Email paparazziallure@yahoo.com solo aparece en un snippet de busqueda no confirmado en pagina fuente directa (contact.html de paparazziallure.com da 404): confianza baja, no usable. Rating 7.7 en Atly sin fuente de reviewCount; las 'reseñas' listadas en Atly son contenido de plantilla generico no relacionado con un salon de cabello (hablan de restaurantes/viajes), no reseñas reales. Cero precios de menu encontrados en ninguna fuente (oficial, Square, Google, Yelp, IG). Sin un solo dato verificable de precios ni de reseñas reales, construir el demo exigiria inventar el menu de servicios y los testimonios, prohibido por regla dura 1. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "192d51ac-7980-47dc-a0d0-f4595aaaa9b3",
+  "input": "Nails Art by Liety (Square): nailsartbyliety.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "failed",
+  "motivo": "El sitio Square (nailsartbyliety.square.site, html lang es_US) es una SPA sin catalogo en el HTML crudo. Se identifico con alta confianza el Instagram @nailartbyliety ('Uñas en Hialeah | Liety Nails', handle casi identico al subdominio Square) con actividad reciente (post de diciembre 2025 geoetiquetado Miami), telefono/WhatsApp expuesto en la bio (786-515-5567) y bio en español mencionando categorias de servicio (acrilicas, gel, pedicura, rubber base, soft gel, disenos) pero SIN precios. El acceso directo al perfil de Instagram quedo bloqueado en todos los intentos (login-wall y HTTP 429 repetido); espejos de terceros picuki.com e imginn.com devolvieron HTTP 403. El unico link de la bio (lietynailslink.my.canva.site, en 3 variantes de ruta) devuelve HTTP 404 (pagina eliminada o movida). No se encontro ficha de Google Business ni Yelp especifica para el negocio (Yelp y Wheree.com bloquearon 403 el acceso a la pagina del edificio 'My Suite at Beauty Square West Flagler' donde probablemente opera, sin poder confirmar menciones a Liety en resenas). La unica ficha con rating (Booksy, 5.0 x 47 resenas) corresponde al edificio/suite completo 'Beauty Square', no al negocio individual: no es atribuible a Liety especificamente. Sin email publico encontrado. Cero precios de servicios y cero reseñas verbatim con autor atribuibles a este negocio especifico: construir el demo exigiria inventar el menu de 4 cards y los testimonios, prohibido por regla dura 1 (precedente identico: salaslash_ 2026-07-18, Judith Laguna 2026-07-21). Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "ddbb6b04-489b-49a6-9b35-c88ded279baa",
+  "input": "Rebelle Haus (Acuity): rebellehaus.as.me (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "slug": "rebellehaus",
+  "motivo": "Mismo negocio ya procesado en esta misma pasada (concurrente) bajo id 9515677c. No se reprocesa.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "0fd64219-2d4d-4bbb-8062-32736197c2cc",
+  "input": "Boss Slay (Acuity): bossslay.as.me (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "slug": null,
+  "motivo": "Mismo negocio ya marcado failed en esta misma pasada (concurrente) bajo id 988368a1. No se reprocesa.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "c147c5f4-441d-4311-becd-6eaf4627dd20",
+  "input": "Jenn's Beautique (GlossGenius): jennsbeautique.glossgenius.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "processed",
+  "slug": "jennsbeautique",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "c9d174a2-32b7-40ec-8153-8a495a1a66df",
+  "input": "Caitlin Oakley Hair (GlossGenius): caitlinoakleyhair.glossgenius.com (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "processed",
+  "slug": "caitlinoakleyhair",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "de94f615-9367-4454-ba66-dc2290cc72f6",
+  "input": "The Tania Touch (Square): thetaniatouch.square.site (tenant Beauty Square/My Suite salon suites Miami, SIN website propio; sacar menu y fotos reales del Instagram del negocio)",
+  "result": "processed",
+  "slug": "thetaniatouch",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "24e846f6-9c41-406c-b498-6a510ff8d551",
+  "input": "The Tania Touch (Square): thetaniatouch.square.site (tenant Beauty Square/My Suite Miami, SIN website propio; menu y fotos reales del Instagram)",
+  "result": "dedupe",
+  "slug": "thetaniatouch",
+  "motivo": "Mismo negocio que el id de94f615-9367-4454-ba66-dc2290cc72f6 (The Tania Touch), procesado en esta misma pasada. Ver slug thetaniatouch en processed.json.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "9f1aa5fe-7d4f-4ca5-9116-e5bae51a495f",
+  "input": "Naild It Miami, Miami FL - https://naild-it-miami.square.site (tenant Beauty Square, Square nails; sacar menu y fotos reales del IG)",
+  "result": "failed",
+  "motivo": "Nail'd It Miami (nail salon, Miami/North Miami Beach FL, IG @naild.itmiami, tel (786) 896-5966 confirmado por 2+ fuentes independientes) no tiene datos verificables suficientes para el gate de calidad tras research paralelo exhaustivo (4 vias). (1) Precios: naild-it-miami.square.site redirige (302) al dominio propio del negocio nailditmiami.com (has_own_site: true), pero es una SPA sin catalogo en el HTML estatico; solo lista NOMBRES de categorias de servicio (Acrylic, Dip Powder, Gel Extensions, Manicure, Pedicure, Nail Art, Russian Manicure, etc) sin un solo precio ni duracion; rutas /shop y /book devuelven 404. Fresha (listado lvp no reclamado) y Belliata confirman explicitamente 'no services/prices added yet'. (2) Resenas y rating: sin rating de Google Business verificable (Yelp bloqueado 403 en todos los intentos vía WebFetch, Belliata muestra explicitamente 0.0/5 - 0 reviews, Fresha sin rating ni conteo). Solo se hallaron 3 fragmentos de cita en Atly.com atribuidos a 'community member' generico, SIN nombre de autor real ni fuente primaria verificable: no califican como resenas verbatim con autor. (3) Direccion: tres fuentes en conflicto sin resolver (1660 NE Miami Gardens Dr Unit 6 Suite 25 Miami FL 33179 vía Fresha/Atly; 1016 N Miami Beach Blvd North Miami Beach FL 33162 vía Yelp; 37 NW 166th St STE 6 Miami FL 33169 vía Belliata/slug de URL de Fresha), no se pudo confirmar cual es la actual. (4) Fotos: CERO fotos reales accesibles. El perfil de IG @naild.itmiami es publico (5,123 seguidores) pero solo tiene 5 posts totales en el feed (catalogo minimo incluso si fuera accesible); bloqueado por rate-limit 429 de Instagram en WebFetch y en la API interna web_profile_info, mirrors picuki.com/imginn.com con 403, y scripts/ig_photos.py (Playwright) fallo por bloqueo de egress HTTPS especifico a navegadores automatizados en este entorno (curl/urllib si completan HTTPS via el mismo proxy, Chromium headless no en ningun sitio HTTPS probado). (5) Email: no se encontro ningun email publico en fuente oficial; el widget 'Location & Hours' del sitio propio expone el placeholder por defecto de Square 'hi@mystore.com' (plantilla generica, no personalizada por el dueno), descartado explicitamente por no ser real. Sin un solo precio, sin resenas verbatim con autor verificable, y sin fotos reales, construir el demo exigiria inventar el menu de 4 cards, la galeria y los testimonios: prohibido por regla dura 1. Se descarta sin fabricar datos ni contactar al negocio. Precedentes identicos: salaslash_ (2026-07-18), Innovo Beauty Salon (2026-07-21).",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "e4b54d64-784d-4447-9fda-abde90d645a8",
+  "input": "https://booksy.com/en-us/418314_the-nail-studio-miami_nail-salon_15889_miami",
+  "result": "processed",
+  "slug": "nailstudiomiami",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "113c7495-3dc0-41a7-9ea6-b7ef74fc0395",
+  "input": "https://booksy.com/en-us/941017_viviana-tales-lash-studio_brows-lashes_15889_miami",
+  "result": "processed",
+  "slug": "vivianatales",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "45635603-c1d5-410e-b08d-93fbb0cab76d",
+  "input": "https://booksy.com/en-us/1113303_mia-salon-suite_nail-salon_15889_miami",
+  "result": "failed",
+  "motivo": "Booksy sin datos verificables: 0 servicios con precio, 0 resenas verbatim, sin telefono, sin instagram, direccion en Beauty Square suites. Solo 1 foto valida en la galeria del listado. Insuficiente para armar demo sin inventar servicios, precios o testimonios.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "a94e18ea-2aa1-41ce-b137-f107537e75d2",
+  "input": "https://booksy.com/en-us/992196_the-hair-lounge-miami_hair-salon_15890_miami-beach",
+  "result": "failed",
+  "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal. El negocio ya no tiene pagina de reservas activa en Booksy en ese enlace.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "f6aca075-140f-429f-a367-7bcd5ba0ca94",
+  "input": "https://booksy.com/en-us/925758_nail-lounge_nail-salon_15889_miami",
+  "result": "failed",
+  "motivo": "Nail Lounge (Booksy 925758, Miami) tiene su listado marcado publicly unavailable: la URL redirige (meta refresh) a showBusinessPubliclyUnavailableModal, confirmado en 3 intentos con curl y UA de navegador real. El negocio no tiene pagina de booking activa ni datos accesibles (menu, fotos, resenas).",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "c694297d-3dad-4c5f-aba1-e3c5e598bd11",
+  "input": "https://booksy.com/en-us/1514679_ana-de-ana-liu-nails-studio_nail-salon_15889_miami",
+  "result": "processed",
+  "slug": "analiu",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "38ef107b-6a80-4233-b327-96f0ab62bdd5",
+  "input": "https://booksy.com/en-us/195304_epoch-nail-bar-beauty-lounge_nail-salon_15889_miami",
+  "result": "processed",
+  "slug": "epochnailbar",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "f3761a53-4913-4598-bf84-f4614037726e",
+  "input": "https://booksy.com/en-us/670421_yn-nails-beauty-salon_nail-salon_15889_miami",
+  "result": "processed",
+  "slug": "ynnails",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "fedb82c5-0955-477b-9ba9-8ff9d8234246",
+  "input": "https://booksy.com/en-us/98000_n1c4-barber-studio-barber-shop-barberia-midtown-miami_barber-shop_15889_miami",
+  "result": "processed",
+  "slug": "n1c4barberstudio",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "ed494b43-238a-4b1a-bc1c-e6d6dc2982d5",
+  "input": "https://booksy.com/en-us/206537_nailbox-miami_nail-salon_15889_miami",
+  "result": "discarded",
+  "motivo": "tiene website propio activo (nailboxmiami.com, WordPress real)",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "1ae7c8d5-7527-478c-9ca1-f5e3834fedec",
+  "input": "https://booksy.com/en-us/828023_vanity-nails-beauty-salon_nail-salon_15889_miami",
+  "result": "discarded",
+  "motivo": "Tiene website propio activo: vanitynailsalon.com (una sola ese en \"nails\"), confirmado real y activo (direccion identica 2200 SW 16th St Suite 118 Miami FL 33145, horarios, email vanitynailssalon@gmail.com, reserva via Booksy). El dominio vanitynailssalon.com (doble ese) que se probo primero no existe/no resuelve, de ahi la confusion inicial.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "4b6c0227-3d80-4593-9412-c54009b53e20",
+  "input": "https://booksy.com/en-us/693852_kelly-hankins-hair-stylist_hair-salon_15889_miami",
+  "result": "discarded",
+  "motivo": "posible website propio (kellyhankins.com resuelve con 502, dominio activo no subdominio de plataforma)",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "53aab941-6c20-4c05-b502-898fa02f2c3a",
+  "input": "https://booksy.com/en-us/617024_barberia-el-estilo_barber-shop_15889_miami",
+  "result": "discarded",
+  "motivo": "tiene website propio activo (barberiaelestilo.com, Squarespace real)",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "6e7521d3-b9e8-42f1-8255-895a8be40fdc",
+  "input": "https://booksy.com/en-us/785538_muse-barber-shop_barber-shop_15890_miami-beach",
+  "result": "discarded",
+  "motivo": "tiene website propio activo (musebarbershop.com, Vercel real)",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "4b6c0227-3d80-4593-9412-c54009b53e20",
+  "input": "https://booksy.com/en-us/693852_kelly-hankins-hair-stylist_hair-salon_15889_miami",
+  "result": "processed",
+  "slug": "kellyhankins",
+  "fecha": "2026-07-21",
+  "nota_correccion": "id previamente marcado discarded en este mismo archivo con motivo 'kellyhankins.com resuelve con 502'; un 502 de CONNECT tunnel del proxy indica que el dominio NO resuelve (verificado contra un dominio de control inexistente, misma firma exacta; ademas WebFetch dio ENOTFOUND y getent hosts vacio). No existe sitio propio real. Se corrige y se procesa: demo construido, gate OK, registrado en processed.json."
+ },
+ {
+  "id": "2e8b0601-8e18-4b0f-9327-7521057c38d5",
+  "input": "https://booksy.com/en-us/470001_amore-body-spa_skin-care_15889_miami",
+  "result": "failed",
+  "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal (HTTP 301 a /en-us/s/skin-care/15889_miami?do=showBusinessDeletedModal). El negocio ya no tiene pagina de reservas activa en ese enlace.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "7f955942-1ed2-47de-b695-624a4239b23a",
+  "input": "https://booksy.com/en-us/771735_you-glam-beauty-bar_wellness-day-spa_15889_miami",
+  "result": "failed",
+  "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal (HTTP 301 a /en-us/s/wellness-day-spa/15889_miami?do=showBusinessDeletedModal). El negocio ya no tiene pagina de reservas activa en ese enlace.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "19c78f90-ac97-4e97-9e2f-e5ba9a5e9db4",
+  "input": "https://booksy.com/en-us/1480743_magic-in-your-nails_nail-salon_15886_hialeah",
+  "result": "processed",
+  "slug": "magicinyournails",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "17feb0e0-2773-4926-b858-2965d2851962",
+  "input": "https://booksy.com/en-us/139883_the-shop_barber-shop_15889_miami",
+  "result": "processed",
+  "slug": "theshopbarber",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "f8d2231b-26cf-41bd-bec3-c681bc0f4147",
+  "input": "https://booksy.com/en-us/787487_the-classic-way-barbershop_barber-shop_15890_miami-beach",
+  "result": "processed",
+  "slug": "classicwaybarbershop",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "a30aca4f-ee3c-4c91-9121-0fffaf268e5e",
+  "input": "https://booksy.com/en-us/608679_nails-by-marelys_nail-salon_15886_hialeah",
+  "result": "processed",
+  "slug": "nailsbymarelys",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "bfdfaee2-5aa7-4d3e-a71e-a40f45b09712",
+  "input": "https://booksy.com/en-us/421799_nails-by-nicky_nail-salon_15886_hialeah",
+  "result": "processed",
+  "slug": "nailsbynicky",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "cffcb686-409c-462d-a336-eadae1a1f2f3",
+  "input": "https://booksy.com/en-us/1483370_the-beautiful-nail_nail-salon_15886_hialeah",
+  "result": "failed",
+  "motivo": "Listado de Booksy eliminado: la URL redirige (301 + meta refresh) a showBusinessDeletedModal, confirmado en 2 intentos (booksy_dossier.py y curl directo con UA de navegador). Sin pagina de reservas activa ni datos accesibles.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "685d400e-79b9-45e8-9676-961468628bf3",
+  "input": "https://booksy.com/en-us/1763821_nail-by-yanelis-qm_nail-salon_15886_hialeah",
+  "result": "failed",
+  "motivo": "El listado de Booksy fue eliminado: la URL redirige a showBusinessDeletedModal. El negocio ya no tiene pagina de reservas activa en Booksy en ese enlace.",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "6da70f58-fcf5-4667-96ea-9126d27dc538",
+  "input": "https://booksy.com/en-us/731728_nailedbynaoo_nail-salon_15886_hialeah",
+  "result": "processed",
+  "slug": "nailedbynaoo",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "96e32b1f-3bde-47b2-a390-7d5c48490a29",
+  "input": "https://booksy.com/en-us/1479751_nails-by-sheila_nail-salon_15886_hialeah",
+  "result": "processed",
+  "slug": "nailsbysheila",
+  "fecha": "2026-07-21"
+ },
+ {
+  "id": "9fd1034d-6f5e-4701-8251-91ec38a67eeb",
+  "input": "prestigeautocargo",
+  "result": "failed",
+  "motivo": "Prestige Auto Cargo (@prestigeautocargo, IG bio \"Cumplimos Tu Sueno\", Miami FL) es una empresa de transporte y envio de vehiculos (auto shipping/logistics), no un negocio de belleza/bienestar con servicios reservables por sesion. No encaja en el formato del sistema Siteforge: no hay menu de tratamientos con precio por sesion, no hay booking de citas (Booksy/Fresha/Square/GlossGenius/Acuity/Vagaro/Setmore), y no aplica una galeria de resultados de tratamiento tipo salon/spa. Construir el demo exigiria forzar el esqueleto de salon/spa sobre un negocio de logistica vehicular, lo cual fabricaria una estructura de contenido (servicios, precios por sesion, resenas de tratamiento) que no corresponde a como opera este negocio. Precedente identico: My Spa Beauty Supply (@myspabeautysupply, 2026-07-16), ecommerce/mayorista descartado por el mismo motivo de formato. Se descarta sin fabricar datos, no se creo site ni se contacto al negocio.",
+  "fecha": "2026-07-25"
+ },
+ {
+  "id": "3a73cb76-20e5-4d17-9db0-6ec629072501",
+  "input": "prestigeautocargo",
+  "result": "dedupe",
+  "slug": null,
+  "motivo": "Duplicado exacto del mismo input ya procesado y marcado failed bajo id 9fd1034d-6f5e-4701-8251-91ec38a67eeb (2026-07-25): Prestige Auto Cargo es una empresa de transporte/envio de vehiculos (auto shipping), no un negocio de belleza/bienestar con servicios reservables. No se reprocesa.",
+  "fecha": "2026-07-29"
+ },
+ {
+  "id": "90bcb1ed-bf2f-4ba9-a9d6-1e00ee2a110c",
+  "input": "@beezualstudios",
+  "result": "failed",
+  "motivo": "Beezual Studios LLC (video recording / audiovisual, 734 Jefferson Ave 8, Miami Beach FL 33139, tel (786) 810-1914, managing member Jose Hernandez, confirmado via BBB, file abierto 2024-07-29) es un negocio real pero sin datos verificables suficientes para el gate de calidad. IG @beezualstudios: research_ig.py (via servicio Railway) y el rescate local con Playwright (ig_photos.py) coinciden en el mismo resultado, solo 1 post publico visible, sin bio, sin email, sin telefono, sin seguidores/posts contables y sin links externos en la bio; la unica foto obtenida es un flyer/collage promocional con iconos y texto superpuesto (prohibido por curaduria visual), no una foto real de trabajo del estudio. Sitio propio beezualstudios.com existe (has_own_site: true) pero no esta operativo: curl devuelve error 525 de Cloudflare (fallo de handshake SSL con el origen) y WebFetch devuelve 403; no se pudo extraer ningun texto, foto, menu de servicios ni contacto desde el sitio. Busqueda web no encontro YouTube, Vimeo ni portfolio con muestras de trabajo, ni reseñas o rating en ninguna plataforma. Con menos de 5 fotos reales y propias del negocio (1, y ademas no utilizable por el gate) y sin poder construir el hero, la galeria ni la seccion de servicios sin inventar contenido, se descarta sin fabricar datos. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-07-29"
+ },
+ {
+  "id": "99910d5d-f178-40fb-8c7b-3b8e6f257caa",
+  "input": "Lux beuty Head Spa",
+  "result": "dedupe",
+  "slug": "luxebeautyheadspa",
+  "motivo": "Mismo negocio que Luxe Beauty Head Spa (Lutz FL, Tampa Bay), ya presente en data/processed.json y procesado el 2026-07-19. Marcado done apuntando al demo existente, no reprocesado.",
+  "fecha": "2026-08-11"
+ },
+ {
+  "id": "d8cddf58-6890-439f-8ed3-382080037e61",
+  "input": "Academic Allliance in Dermatology",
+  "result": "failed",
+  "motivo": "Academic Alliance in Dermatology (academicallderm.com) es una cadena medica grande con 20 locations en la costa oeste de Florida, 40+ proveedores, laboratorio propio y mas de 30 anos operando. Ya tiene un sitio web corporativo robusto y profesional (booking online, portal de pacientes, blog, paginas por location) y presencia activa en Instagram (@academicallderm, ~3450 seguidores) y Facebook. El gancho de 'no tienes website' no aplica en absoluto, y por su escala (cadena medica multi-location, no un negocio local operado por su dueno) tampoco encaja en el formato salon/spa/oficios del sistema. Ninguna location individual tiene identidad web separada. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-08-14"
+ },
+ {
+  "id": "d0fb4505-e447-4ef8-967b-e1066ef3884d",
+  "input": "Brandon Dental Care",
+  "result": "failed",
+  "motivo": "Brandon Dental Care (brandondentalcare.com, Brandon y Riverview FL) ya tiene un sitio web propio robusto y funcional: paginas de servicios, equipo de dentistas, testimonios, blog y formularios de cita separados por sede, con rating agregado ~5.0 y miles de resenas via Birdeye. El gancho de 'no tienes website' no aplica. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-08-14"
+ },
+ {
+  "id": "5a44b71e-ebbb-47be-a193-d119083cec9b",
+  "input": "Suothern Aluminum Installations, Inc.",
+  "result": "failed",
+  "motivo": "Southern Aluminum Installation, Inc. (Tampa FL, pool enclosures/screen rooms/patios, tel (813) 264-7477) ya tiene sitio propio funcional (southernaluminuminc.com) con galeria y seccion de resenas, pero ambas cargan via JS/plugin (WP google-reviews plugin y galeria dinamica) sin contenido accesible en el HTML estatico: 0 fotos reales descargables y 0 resenas verbatim verificables tras research exhaustivo (Yelp/HomeAdvisor bloquean fetch con 403, Instagram @southern_aluminum no accesible). Sin el minimo de 5 fotos reales propias del negocio, no se puede construir la galeria sin usar fotos irrelevantes o inventadas. Se descarta sin fabricar datos ni contactar al negocio.",
+  "fecha": "2026-08-14"
+ },
+ {
+  "id": "0f16fb54-b0df-4513-9a48-ca9c2e71e081",
+  "input": "OnsiteConstructionTampa",
+  "result": "processed",
+  "slug": "onsiteconstructiontampa",
+  "fecha": "2026-08-14"
+ }
 ]
