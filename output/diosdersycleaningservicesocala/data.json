@@ -1,0 +1,80 @@
+{
+ "slug": "diosdersycleaningservicesocala",
+ "name": "Diosdersy Cleaning Services, LLC",
+ "owner_name": "Diosdersy Hernandez (per WebSearch aggregation of directory listings; Sunbiz lists authorized person as AMBR HERNANDEZ at the same business address, likely a family member/co-owner, not independently cross-verified beyond the search snippet)",
+ "category": "House cleaning service (Google Maps category)",
+ "niche": "cleaning service (residential deep cleaning, move-in/move-out, post-construction cleanup, commercial/office cleaning)",
+ "niche_note": "The queue item labeled this 'cleaning service residencial', but research shows a broader real scope: Bark's own service list for this business is House Cleaning, Commercial & Office Cleaning, Deep Cleaning, End of Tenancy (move-out) Cleaning, Post Construction Property Cleanup and Pressure Washing. All 5 verbatim Google reviews found describe RESIDENTIAL jobs (realtors prepping homes for sale, a homeowner's carpets/bathrooms, an HVAC company recommending it for home cleaning), and the Google Maps photo set is almost entirely finished homes (bedrooms, bathrooms, kitchens) plus one empty new-construction-style room being vacuumed/mopped (post-construction) and one RV interior. One WebSearch synthesis claimed the business 'does not offer residential services' and is commercial-only; this contradicts every primary source (Google Maps category 'House cleaning service', the photos, and every real review found) and reads like a mismatched/templated directory blurb, so it was NOT used. The site describes both residential and commercial scope, matching Bark's own listing and the review evidence.",
+ "address": "14265 SW 43rd Ct Rd, Ocala, FL 34473",
+ "city": "Ocala, FL",
+ "phone": "+13526539291",
+ "phone_display": "(352) 653-9291",
+ "phone_note": "Confirmed as the ONLY phone shown on the live Google Maps listing (verified via scripts/gmaps_detail.js and scripts/gmaps_verify.js, aria-label 'Phone: +1 352-653-9291'). A second number, (352) 454-0628, surfaced in a WebSearch aggregation (attributed to a directory listing, not independently opened/confirmed) but does NOT appear on Google Maps itself; per task instructions the Google Maps primary number is used consistently across the whole site.",
+ "email": null,
+ "email_search_note": "Deep search performed per FORGE-BRIEF/PIPELINE fase 1 punto 7: BBB profile page (fetched directly, 'Email Business' is a contact-form action, no address exposed), HomeAdvisor profile (blocked 403 on both WebFetch and curl with a Chrome UA), Bark profile (fetched successfully via curl, 200 OK, full HTML scanned with a regex for any '@' email pattern: none found, contact is gated behind Bark's own messaging system), Facebook About page (facebook.com and m.facebook.com both return a login wall / 400 to unauthenticated fetches, could not read About section), Yelp (blocked 403), Sunbiz FL Division of Corporations entity record (no email field, only registered address and an authorized person name). One WebSearch call's AI-generated summary asserted an email 'diosdersyr@gmail.com', but a follow-up exact-phrase WebSearch for that literal string returned zero matching results anywhere on the web, meaning it was not actually found in any indexed source and could be a model-generated guess rather than a verified fact; per the hard rule against inventing data it was NOT used and email is left null.",
+ "hours": "Listed on Google Maps as 'Open 24 hours' (Saturday); full weekly hours not otherwise published. Not prominently used as a claim on the site beyond the CTA.",
+ "rating": 5.0,
+ "reviews_count": 26,
+ "reviews_count_note": "Google Maps shows only '5.0' with no visible count in the standard signed-out detail panel (scripts/gmaps_detail.js returned reviews: null in most passes). Ran scripts/gmaps_verify.js against the exact business+address query, which on a successful render captured the literal in-page text '5.0 (26)' and 'Review summary ... 5.0 26 reviews'. Re-ran a custom review-scrape (based on the same script, saved at the session scratchpad) 3 times; 1 of 3 attempts rendered the full enriched panel (with Reviews tab and 5-star review nodes matching the same 26-review business), 2 of 3 attempts rendered a stripped 'limited view / sign in' panel with no count element at all (Google Maps intermittently serves this to signed-out/automated sessions). The 26 figure is corroborated by Bark's separate rating widget showing 12 reviews at 5/5 on Bark's own platform (a different, smaller count on a different platform, not used for the Google figure) and no contradicting count was ever seen. 26 is used as the verified Google reviews count.",
+ "reviews_verbatim": [
+  { "author": "Shawn Kelly", "stars": 5, "text": "If you are looking for a cleaning  company that will truly do what you hired them to do,  this is the company. I'm a Realtor, and sometimes we have to help clients get their homes ready to sell, and a good cleaning is one of those things.  You will be impressed, not only by the spotless job that they do, but their professionalism!!!!", "source": "Google Maps" },
+  { "author": "emily Otero", "stars": 5, "text": "Diorsdery cleaning service has been providing me with exceptional cleaning for my home. From deep cleaning carpets and bathrooms, they are very thorough , they have exceeded my expectations. I highly recommend if you’re looking for reliable and high-quality cleaning!", "source": "Google Maps" },
+  { "author": "Annabelle Corzo", "stars": 5, "text": "Would highly recommend this cleaning service. I myself am a realtor and they offer a referral programs for us realtors and this was just amazing. She did so good and I will definitely use her again.", "source": "Google Maps" }
+ ],
+ "reviews_verbatim_note": "5 review nodes were captured live from Google Maps (author + stars + text) via a Playwright script; 2 of the 5 (CoolFLO HVAC, Anita Harvey) were truncated mid-sentence by Google's own UI with a trailing ellipsis and were deliberately NOT used as testimonials to avoid presenting altered/incomplete text as a verbatim quote. The 3 used above are complete, unedited sentences exactly as rendered by Google. Note 'emily Otero' review contains the reviewer's own typo ('Diorsdery' instead of 'Diosdersy'); kept verbatim per the no-editing-of-quotes rule.",
+ "ig_url": null,
+ "ig_handle": null,
+ "facebook_url": "https://www.facebook.com/Diosdersycleaningservices/",
+ "has_own_site": false,
+ "website_check": {
+  "candidates_tried": [
+   "https://diosdersycleaningservices.com and https://www.diosdersycleaningservices.com (does NOT resolve: confirmed NXDOMAIN via Google's public DNS-over-HTTPS resolver dns.google, Status:3; also ENOTFOUND when fetched directly; the local curl proxy returns 502 Bad Gateway on the CONNECT tunnel, consistent with the domain not existing at all, not a sandbox network issue)",
+   "https://diosdersycleaning.com (no DNS)",
+   "https://diosdersyservices.com (no DNS)",
+   "https://diosdersyllc.com (no DNS)",
+   "https://diosdersycleaningservicesllc.com (no DNS)"
+  ],
+  "google_maps_website_button": "none ('Add website' shown on the live Google Maps listing, confirmed via scripts/gmaps_detail.js and scripts/gmaps_verify.js -> websiteOnMaps: null)",
+  "directory_claimed_domain": "A WebFetch of the business's own HomeAdvisor/Angi profile summary reported a listed website 'https://www.diosdersycleaningservices.com/', but that exact domain does not resolve at the DNS level (see above): this is a stale or auto-generated link on the directory's side, not a real live site. Treated the same as the tullohspestcontrol precedent (domain reference in a directory that does not actually resolve): NOT counted as has_own_site.",
+  "directories_found_not_own_site": [
+   "https://www.facebook.com/Diosdersycleaningservices/",
+   "https://www.bbb.org/us/fl/ocala/profile/cleaning-services/diosdersy-cleaning-services-llc-0733-235960804",
+   "https://www.homeadvisor.com/rated.3DLDCleaningServicesLLC.110055410.html",
+   "https://www.bark.com/en/us/b/diosdersy-cleaning-services-llc/3MgMn/",
+   "https://m.yelp.com/biz/diosdersy-cleaning-services-ocala",
+   "https://local.yahoo.com/info-236016864-diosdersy-cleaning-services-ocala/"
+  ],
+  "conclusion": "No real functioning own website confirmed. has_own_site: false."
+ },
+ "services_research": {
+  "source": "Bark.com profile (fetched live, 200 OK), cross-checked against Google Maps photos and verbatim review content",
+  "services": [
+   "House Cleaning (residential)",
+   "Deep Cleaning Services (carpets, bathrooms, kitchens per emily Otero review)",
+   "End of Tenancy / Move-In-Move-Out Cleaning (realtor turnover, per Shawn Kelly and Annabelle Corzo reviews)",
+   "Post Construction Property Cleanup (per Bark listing and a Google Maps photo of an empty new-construction-style room being vacuumed/mopped)",
+   "Commercial & Office Cleaning",
+   "Pressure Washing"
+  ],
+  "note": "No prices published anywhere found: none invented, services cards on the site omit a precio field and note that jobs are quoted after a call."
+ },
+ "language_signal": "English. Real, verifiable signals used: (1) all 5 verbatim Google reviews captured live are written in English; (2) a Facebook post caption visible on one of the downloaded Google Maps photos ('Another successful job has been completed by o...') is in English; (3) a before/after photo carries English labels ('Before' / 'After'). Despite the business being described across directories as 'Latina women-owned' and Google Maps tagging it 'Identifies as Latino-owned' / 'Identifies as women-owned', that is an ownership-identity attribute, not a language signal, and every piece of actual customer-facing text found (reviews, captions, labels) is in English. Site is built fully bilingual (ES/EN toggle) with English as the default per this signal.",
+ "google_maps_url": "https://www.google.com/maps/place/Diosdersy+Cleaning+Services,+LLC/data=!4m7!3m6!1s0x861ba568692a9d6b:0xfc8e8f93460ad7b3!8m2!3d29.0631944!4d-81.916588!16s%2Fg%2F11tjn459_w!19sChIJa50qaWilG4YRs9cKRpOPjvw?authuser=0&hl=en&rclk=1",
+ "photos_source": "scripts/gmaps_photocycle.js against the exact Google Maps URL returned 18 distinct high-resolution photo URLs (output/diosdersycleaningservicesocala/assets/raw, downloaded via curl with a Chrome user-agent). All 18 downloaded successfully and were verified with `file` as real decodable JPEG/PNG (one, gmaps-1, is actually a PNG despite the .jpg extension used by the source URL; renamed to gmaps-1.png). Every photo was viewed individually for curation. 3 of the 18 (gmaps-1, gmaps-3, gmaps-7) are before/after collages with baked-in text captions ('Before'/'After' labels, and one has the business's own logo watermark) and were EXCLUDED from the site per the quality-gate rule against captures with text overlays in the gallery, even though they show real completed jobs (a shower stall, a bedroom carpet, and a stove). 1 (gmaps-17, a cluttered dated RV kitchen with an open drawer) was excluded as unflattering/not curated. The remaining 14 are clean, real, unedited photos of finished (and one in-progress) residential rooms with no text overlays; 10 of those 14 were used across hero, about, avatar and the 6-tile gallery (gmaps-2, 4, 5, 6, 8, 9, 12, 13, 15, 16), all resized to a max width of 1000px and recompressed to JPEG quality 82 for performance per PIPELINE.md. No stock photography, no selfies/portraits used as gallery tiles.",
+ "sources": [
+  "scripts/gmaps_detail.js against the exact Google Maps place URL (name, rating 5.0, category 'House cleaning service', phone +1 352-653-9291, hours, 'Add website' confirming no site, ownership-identity tags, 1 photo)",
+  "scripts/gmaps_photocycle.js against the same URL (18 photo URLs)",
+  "scripts/gmaps_verify.js against 'Diosdersy Cleaning Services, LLC, 14265 SW 43rd Ct Rd, Ocala FL' (live rating/review count '5.0 (26)', websiteOnMaps: null)",
+  "Custom Playwright review-scrape (same TLS/proxy fix pattern as scripts/gmaps_verify.js) run 3x against the live Google Maps listing, capturing 5 review nodes with author/stars/text on the 1 run that rendered the enriched panel",
+  "WebSearch: \"Diosdersy Cleaning Services\" Ocala website",
+  "WebSearch: \"Diosdersy Cleaning Services\" email contact",
+  "WebSearch: \"Diosdersy\" cleaning Ocala gmail.com OR outlook.com OR \"@\" email (produced an unverifiable AI-synthesized email that a literal-string follow-up search could not confirm; not used)",
+  "WebSearch: Diosdersy Cleaning Services Hernandez Ocala Thumbtack OR Angi OR Nextdoor",
+  "WebSearch: Diosdersy Cleaning Services LLC sunbiz.org registered agent",
+  "WebFetch https://www.bbb.org/us/fl/ocala/profile/cleaning-services/diosdersy-cleaning-services-llc-0733-235960804 (phone numbers, 4 years in business per BBB since 1/24/2022, no email exposed)",
+  "curl (Chrome UA) https://www.bark.com/en/us/b/diosdersy-cleaning-services-llc/3MgMn/ (200 OK, full service list, no email found in raw HTML)",
+  "WebFetch/curl attempts on HomeAdvisor, Yelp, Facebook, m.facebook.com, Sunbiz search results (all blocked with 403/400 or a login wall)",
+  "dns.google DoH lookup confirming NXDOMAIN for diosdersycleaningservices.com"
+ ],
+ "notes": "Latina women-owned, family cleaning business in Ocala, FL (Marion Oaks area), per Google Maps ownership-identity tags ('Identifies as women-owned', 'Identifies as Latino-owned') and consistent 'Latina women-owned... over 10 years of dedicated service' framing repeated across BBB/Bark/directory summaries. The Sunbiz LLC itself appears to have been registered more recently (BBB lists 4 years in business, since 1/24/2022) while the '10+ years' claim likely refers to the owner's personal cleaning experience predating the LLC; the site uses the general 'over 10 years of experience' framing (widely and consistently repeated across independent sources) without claiming a specific company founding year. 5.0 rating with 26 reviews on Google, verified live. 3 complete verbatim reviews with author names were recovered, so the site uses social_proof.modo = testimonios (real quotes), not the no-testimonials 'razones' variant. No public email found after an exhaustive search across BBB, HomeAdvisor, Bark, Yelp, Facebook and Sunbiz: left null, outreach channel is phone/SMS only."
+}
