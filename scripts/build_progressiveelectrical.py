@@ -308,5 +308,240 @@ rep('''<h3 class="font-display text-xl mb-3" data-es="Plan de relleno" data-en="
           <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Clientes residenciales, comerciales e industriales pueden contactar al equipo a cualquier hora cuando un problema eléctrico no puede esperar al horario regular." data-en="Residential, commercial and industrial clients can reach the team around the clock when an electrical issue cannot wait for regular hours.">Residential, commercial and industrial clients can reach the team around the clock when an electrical issue cannot wait for regular hours.</p>''')
 print("METODO done")
 
+# ---------------------------------------------------------------------------
+# 12. SERVICIOS (header + grid completo por regex; sin precios inventados)
+# ---------------------------------------------------------------------------
+rep('<span data-es="Elige tu" data-en="Choose your">Elige tu</span> <span class="text-shine">ritual</span>',
+    '<span data-es="Trabajo eléctrico" data-en="Electrical work">Electrical work</span> <span class="text-shine" data-es="bien hecho" data-en="done right">done right</span>')
+rep('data-es="Precios y duraciones publicados por Lash Bloom en Booksy. Reserva con confirmación inmediata." data-en="Prices and durations as published by Lash Bloom on Booksy. Booking confirms instantly.">Precios y duraciones publicados por Lash Bloom en Booksy. Reserva con confirmación inmediata.</p>',
+    'data-es="Cada trabajo se cotiza según el alcance y los materiales. Llama al (727) 939-9473 para un presupuesto gratis." data-en="Every job is quoted based on scope and materials. Call (727) 939-9473 for a free estimate.">Every job is quoted based on scope and materials. Call (727) 939-9473 for a free estimate.</p>')
+
+services_grid_re = re.compile(r'<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">.*?</div>\s*(?=<p class="reveal text-center)', flags=re.S)
+m = services_grid_re.search(h)
+assert m, "services grid not found"
+
+NEW_SERVICES_GRID = '''<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Comercial e industrial" data-en="Commercial &amp; Industrial">Commercial &amp; Industrial</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Electricidad comercial e industrial" data-en="Commercial &amp; Industrial Electrical">Commercial &amp; Industrial Electrical</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Paneles de servicio, switchgear, medidores e instalaciones de generadores para propiedades comerciales e industriales en toda el área de Tampa Bay." data-en="Service panels, switchgear, meters and generator installations for commercial and industrial properties across the Tampa Bay area.">Service panels, switchgear, meters and generator installations for commercial and industrial properties across the Tampa Bay area.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Se cotiza, escríbenos" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="''' + TEL + '''" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(31,78,140,0.4); box-shadow: 0 18px 50px rgba(28,35,43,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Servicio 24 horas" data-en="24-Hour Service">24-Hour Service</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Electricidad residencial y emergencias" data-en="Residential Electrical &amp; Emergency Calls">Residential Electrical &amp; Emergency Calls</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Cableado, actualizaciones de panel y diagnóstico para el hogar, con servicio de emergencia las 24 horas cuando algo no puede esperar." data-en="Wiring, panel upgrades and troubleshooting for homes, with 24-hour emergency service when something cannot wait.">Wiring, panel upgrades and troubleshooting for homes, with 24-hour emergency service when something cannot wait.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Se cotiza, escríbenos" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="''' + TEL + '''" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Diseño y ambiente" data-en="Design &amp; Ambiance">Design &amp; Ambiance</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Iluminación arquitectónica y de paisaje" data-en="Architectural &amp; Landscape Lighting">Architectural &amp; Landscape Lighting</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Diseño de iluminación exterior y de paisaje que transforma cómo se ve una casa o propiedad de noche, más iluminación arquitectónica interior para espacios comerciales." data-en="Outdoor and landscape lighting design that reshapes how a home or property looks after dark, plus interior architectural lighting for commercial spaces.">Outdoor and landscape lighting design that reshapes how a home or property looks after dark, plus interior architectural lighting for commercial spaces.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Se cotiza, escríbenos" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="''' + TEL + '''" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Construcción nueva" data-en="New Construction">New Construction</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Construcción nueva e instalaciones" data-en="New Construction &amp; Installations">New Construction &amp; Installations</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación eléctrica para construcciones nuevas y remodelaciones comerciales, desde espacios de retail y hostelería hasta muelles y marinas." data-en="Electrical installation for new builds and commercial buildouts, from retail and hospitality spaces to docks and marinas.">Electrical installation for new builds and commercial buildouts, from retail and hospitality spaces to docks and marinas.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Se cotiza, escríbenos" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="''' + TEL + '''" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
+          </div>
+        </div>
+      </div>
+      '''
+h = h[:m.start()] + NEW_SERVICES_GRID + h[m.end():]
+
+rep('<p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Programa de lealtad para clientas frecuentes. Menú completo y disponibilidad en Booksy." data-en="Loyalty program for regulars. Full menu and availability on Booksy.">Loyalty program for regulars. Full menu and availability on Booksy.</span></p>',
+    '<p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No sabes qué servicio necesitas? Llama y describe el trabajo, te orientamos." data-en="Not sure which service applies? Call and describe the job, we will point you in the right direction.">Not sure which service applies? Call and describe the job, we will point you in the right direction.</span></p>')
+print("SERVICIOS done")
+
+# ---------------------------------------------------------------------------
+# 13. GALERIA (header + grid completo por regex; 6 fotos reales curadas)
+# ---------------------------------------------------------------------------
+rep('<span data-es="Miradas" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="lashes">lashes</span>',
+    '<span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="work">work</span>')
+rep('''<a href="''' + FB_URL + '''" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @_lashbloom
+        </a>''',
+    '''<a href="''' + FB_URL + '''" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span data-es="Facebook" data-en="Facebook">Facebook</span>
+        </a>''')
+
+gallery_grid_re = re.compile(r'<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">.*?</div>\s*</div>\s*</section>', flags=re.S)
+gm = gallery_grid_re.search(h)
+assert gm, "gallery grid not found"
+
+NEW_GALLERY_GRID = '''<div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Instalación comercial" data-en="Commercial rough-in">Commercial rough-in</span><img src="assets/raw/gmaps-2.jpg" alt="Conduit and panel rough-in installed by Progressive Electrical Services in a commercial building" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Trabajo de panel" data-en="Panel work">Panel work</span><img src="assets/raw/gmaps-4.jpg" alt="Electrical panel and breakers wired by Progressive Electrical Services" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Iluminación arquitectónica" data-en="Architectural lighting">Architectural lighting</span><img src="assets/raw/gmaps-6.jpg" alt="Architectural recessed lighting design installed by Progressive Electrical Services in a commercial lobby" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Iluminación de hostelería" data-en="Hospitality lighting">Hospitality lighting</span><img src="assets/raw/gmaps-5.jpg" alt="Interior lighting installed by Progressive Electrical Services in a hotel bar and dining area" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Iluminación de retail" data-en="Retail lighting">Retail lighting</span><img src="assets/raw/gmaps-9.jpg" alt="Track lighting installed by Progressive Electrical Services in a retail store" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Proyecto comercial" data-en="Commercial project">Commercial project</span><img src="assets/raw/gmaps-3.jpg" alt="Exterior of a completed commercial waterfront project wired by Progressive Electrical Services" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>'''
+h = h[:gm.start()] + NEW_GALLERY_GRID + h[gm.end():]
+print("GALERIA done")
+
+# ---------------------------------------------------------------------------
+# 14. OPINIONES -> "Why Progressive" (variante SIN-testimonios: no hay quotes
+#     verbatim verificables). El rating/reseñas reales SI se mantienen en
+#     hero/strip/experiencia (cifra agregada real, no una resena fabricada).
+# ---------------------------------------------------------------------------
+opiniones_re = re.compile(r'<!-- OPINIONES -->.*?</section>', flags=re.S)
+om = opiniones_re.search(h)
+assert om, "opiniones section not found"
+
+NEW_OPINIONES = '''<!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por Qué Progressive" data-en="Why Progressive">Why Progressive</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para llamarnos primero" data-en="to call us first">to call us first</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 40 reseñas en Google" data-en="5.0 out of 5 · 40 reviews on Google">5.0 out of 5 · 40 reviews on Google</span></p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-8 reveal">
+          <svg class="mb-5 text-[color:var(--accent-deep)]" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Con licencia desde 1987" data-en="Licensed since 1987">Licensed since 1987</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Contratista Eléctrico Certificado de Florida EC0001666, con casi cuatro décadas de trabajo residencial, comercial e industrial en Tampa Bay." data-en="Florida Certified Electrical Contractor EC0001666, with almost four decades of residential, commercial and industrial work across Tampa Bay.">Florida Certified Electrical Contractor EC0001666, with almost four decades of residential, commercial and industrial work across Tampa Bay.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms; border-color: rgba(31,78,140,0.4); box-shadow: 0 18px 50px rgba(28,35,43,0.14);">
+          <svg class="mb-5 text-[color:var(--accent-deep)]" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Servicio de emergencia 24 horas" data-en="24-hour emergency service">24-hour emergency service</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Los problemas eléctricos no esperan al horario de oficina. Progressive Electrical responde a toda hora para clientes residenciales, comerciales e industriales." data-en="Electrical problems do not wait for business hours. Progressive Electrical answers around the clock for residential, commercial and industrial clients.">Electrical problems do not wait for business hours. Progressive Electrical answers around the clock for residential, commercial and industrial clients.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <svg class="mb-5 text-[color:var(--accent-deep)]" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9.5 17 14.5 18.5 22 12 18 5.5 22 7 14.5 2 9.5 9 9 12 2"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="5.0 en Google" data-en="5.0 on Google">5.0 on Google</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="40 reseñas y una calificación perfecta en Google, además de un perfil A+ con el Better Business Bureau." data-en="40 reviews and a perfect rating on Google, plus an A+ profile with the Better Business Bureau.">40 reviews and a perfect rating on Google, plus an A+ profile with the Better Business Bureau.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="''' + TEL + '''" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Llamar (727) 939-9473" data-en="Call (727) 939-9473">Call (727) 939-9473</a>
+      </div>
+    </div>
+  </section>'''
+h = h[:om.start()] + NEW_OPINIONES + h[om.end():]
+print("OPINIONES done")
+
+# ---------------------------------------------------------------------------
+# 15. UBICACION
+# ---------------------------------------------------------------------------
+rep('<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">West Palm Beach</span></h2>',
+    '<h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Al servicio de" data-en="Serving">Serving</span> <span class="text-shine">Tampa Bay, FL</span></h2>')
+rep('<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>',
+    '<p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>')
+rep('''<div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">4580 Cresthaven Blvd (inside Lux Stitch Embroidery), West Palm Beach, FL 33415</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(31,78,140,0.4)]" href="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+            </div>''',
+    '''<div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">40351 US Hwy 19 N #304 (Tarpon Lake Center), Tarpon Springs, FL 34689</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(31,78,140,0.4)]" href="''' + MAPS_Q + '''" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
+            </div>''')
+rep('''<div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Con cita previa vía Booksy: eliges servicio, día y hora, y la confirmación es inmediata." data-en="By appointment via Booksy: pick the service, day and time, and the confirmation is instant.">By appointment via Booksy: pick the service, day and time, and the confirmation is instant.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(31,78,140,0.4)]" href="''' + TEL + '''" target="_blank" rel="noopener" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+            </div>''',
+    '''<div>
+              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Servicio de emergencia disponible las 24 horas. Llama en cualquier momento." data-en="24-hour emergency service is available. Call anytime.">24-hour emergency service is available. Call anytime.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(31,78,140,0.4)]" href="''' + TEL + '''" data-es="Llamar (727) 939-9473" data-en="Call (727) 939-9473">Call (727) 939-9473</a>
+            </div>''')
+rep('''<div>
+              <p class="font-medium mb-1">Instagram</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira los sets más recientes de Yesi y escribe por DM cualquier duda antes de tu cita." data-en="See Yesi's latest sets and DM any questions before your appointment.">See Yesi's latest sets and DM any questions before your appointment.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(31,78,140,0.4)]" href="''' + FB_URL + '''" target="_blank" rel="noopener">@_lashbloom</a>
+            </div>''',
+    '''<div>
+              <p class="font-medium mb-1" data-es="Correo" data-en="Email">Email</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Para presupuestos y consultas por escrito." data-en="For written quotes and questions.">For written quotes and questions.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(31,78,140,0.4)]" href="mailto:randy@rsgnic.com">randy@rsgnic.com</a>
+            </div>''')
+rep('src="https://www.google.com/maps?q=4580+Cresthaven+Blvd,+West+Palm+Beach,+FL+33415&output=embed"',
+    'src="' + MAPS_Q + '&output=embed"')
+rep('title="Mapa: Lash Bloom, 4580 Cresthaven Blvd, West Palm Beach FL"',
+    'title="Map: Progressive Electrical Services, 40351 US Hwy 19 N #304, Tarpon Springs FL"')
+print("UBICACION done")
+
+# ---------------------------------------------------------------------------
+# 16. CTA FINAL
+# ---------------------------------------------------------------------------
+rep('<p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Pestañas que florecen contigo." data-en="Lashes that bloom with you.">Lashes that bloom with you.</p>',
+    '<p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Dando energía a Tampa Bay desde 1987." data-en="Powering Tampa Bay since 1987.">Powering Tampa Bay since 1987.</p>')
+rep('<h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu mirada nueva" data-en="Your new lashes">Your new lashes</span> <span class="text-shine" data-es="te está esperando" data-en="are waiting">are waiting</span></h2>',
+    '<h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto merece" data-en="Your project deserves">Your project deserves</span> <span class="text-shine" data-es="un electricista con licencia" data-en="a licensed electrician">a licensed electrician</span></h2>')
+rep('data-es="Reserva online en segundos: tu set clásico, híbrido o de volumen, o el relleno que ya te toca." data-en="Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.">Book online in seconds: your classic, hybrid or volume set, or the fill you are due for.</p>',
+    'data-es="Desde un solo tomacorriente hasta una remodelación comercial completa, Progressive Electrical Services aporta casi 40 años de experiencia con licencia a cada trabajo en los condados de Pinellas, Pasco y Hillsborough." data-en="From a single outlet to a full commercial build-out, Progressive Electrical Services brings almost 40 years of licensed experience to every job in Pinellas, Pasco and Hillsborough counties.">From a single outlet to a full commercial build-out, Progressive Electrical Services brings almost 40 years of licensed experience to every job in Pinellas, Pasco and Hillsborough counties.</p>')
+rep('''<a href="''' + TEL + '''" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar en Booksy" data-en="Book on Booksy">Reservar en Booksy</a>
+        <a href="''' + FB_URL + '''" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>''',
+    '''<a href="''' + TEL + '''" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar (727) 939-9473" data-en="Call (727) 939-9473">Call (727) 939-9473</a>
+        <a href="''' + FB_URL + '''" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Facebook" data-en="Follow on Facebook">Follow on Facebook</a>''')
+print("CTA FINAL done")
+
+# ---------------------------------------------------------------------------
+# 17. FOOTER
+# ---------------------------------------------------------------------------
+rep('<span class="foot-mark" aria-hidden="true">Lash Bloom</span>',
+    '<span class="foot-mark" aria-hidden="true">Progressive Electrical</span>')
+rep('''<div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/logo.jpg" alt="Lash Bloom" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(169,193,222,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Lash Bloom</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Lash studio en West Palm Beach, FL. Atención con cita previa." data-en="Lash studio in West Palm Beach, FL. By appointment only.">Lash studio in West Palm Beach, FL. By appointment only.</p>''',
+    '''<div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-sm ring-1 ring-[rgba(169,193,222,0.35)] bg-[rgba(169,193,222,0.08)]">PE</span>
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Progressive Electrical</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Contratista eléctrico con licencia en Tarpon Springs, FL. Al servicio de Tampa Bay desde 1987." data-en="Licensed electrical contractor in Tarpon Springs, FL. Serving Tampa Bay since 1987.">Licensed electrical contractor in Tarpon Springs, FL. Serving Tampa Bay since 1987.</p>''')
+rep('<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>\n        <p>4580 Cresthaven Blvd, West Palm Beach, FL 33415</p>\n        <p><a href="' + TEL + '" target="_blank" rel="noopener" class="hover:text-[#a9c1de]" data-es="Reservas online · Booksy" data-en="Online booking · Booksy">Reservas online · Booksy</a></p>',
+    '<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>\n        <p>40351 US Hwy 19 N #304, Tarpon Springs, FL 34689</p>\n        <p><a href="' + TEL + '" class="hover:text-[#a9c1de]">(727) 939-9473</a></p>\n        <p><a href="mailto:randy@rsgnic.com" class="hover:text-[#a9c1de]">randy@rsgnic.com</a></p>')
+rep('''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="''' + FB_URL + '''" target="_blank" rel="noopener" class="hover:text-[#a9c1de]">Instagram · @_lashbloom</a></p>''',
+    '''<p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Follow</p>
+        <p><a href="''' + FB_URL + '''" target="_blank" rel="noopener" class="hover:text-[#a9c1de]">Facebook · Progressive Electrical Services</a></p>
+        <p class="pt-1" data-es="Licencia FL EC0001666" data-en="FL License EC0001666">FL License EC0001666</p>''')
+rep('<p class="text-xs text-[color:var(--ink-40)]">© 2026 Lash Bloom.</p>',
+    '<p class="text-xs text-[color:var(--ink-40)]">© 2026 Progressive Electrical Services, Inc.</p>')
+print("FOOTER done")
+
+# ---------------------------------------------------------------------------
+# 18. Boton flotante de llamada (book-float)
+# ---------------------------------------------------------------------------
+rep('''<a href="''' + TEL + '''" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f2f5f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>''',
+    '''<a href="''' + TEL + '''" class="book-float" aria-label="Call Progressive Electrical Services">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f2f5f8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>''')
+print("BOOK-FLOAT done")
+
+# ---------------------------------------------------------------------------
+# 19. Limpieza: los CTA de nav heredaron target="_blank" del anchor de Booksy
+#     original; un tel: no necesita abrir pestaña nueva.
+# ---------------------------------------------------------------------------
+c = h.count('href="tel:+17279399473" target="_blank" rel="noopener"')
+assert c == 2, c
+h = h.replace('href="tel:+17279399473" target="_blank" rel="noopener"', 'href="tel:+17279399473"')
+print("TEL CLEANUP done")
+
 open(PATH, "w", encoding="utf-8").write(h)
-print("PART 1 WRITTEN")
+print("ALL DONE, FILE WRITTEN")
