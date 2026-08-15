@@ -1,0 +1,43 @@
+{
+ "slug": "bellosapressurewashing",
+ "name": "Bellosa's Pressure Washing LLC.",
+ "legal_name": "Bellosa's Pressure Washing LLC.",
+ "category": "Pressure washing service",
+ "niche": "pressure washing / limpieza de exteriores",
+ "address": "3899 New Moon Pkwy, Boynton Beach, FL 33436, United States",
+ "phone": "+1 561-452-6218",
+ "email": null,
+ "hours": ["Open - Closes 12 AM"],
+ "rating": 5.0,
+ "reviews_count": 32,
+ "reviews_verbatim": [],
+ "ig_url": null,
+ "ig_handle": null,
+ "facebook_url": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": ["bellosapressurewashing.com", "bellosaspressurewashing.com", "bellosapressure.com", "bellosaspressure.com", "bellosaswashing.com"],
+  "result": "sin website propio confirmado; ninguno de los dominios candidatos resuelve. Google Maps muestra boton 'Add website' (sin ficha de website). WebSearch de \"Bellosa's Pressure Washing\" Boynton Beach website no devuelve dominio propio: aparece en Thumbtack y Nextdoor (bajo el nombre 'Bellosa's Professional Services') pero ninguna de esas paginas lista un website propio.",
+  "verified_live_2026-08-15": true
+ },
+ "services_research": [
+  "House / exterior washing (soft wash)",
+  "Roof cleaning (barrel tile y flat tile, soft wash visible en multiples fotos antes/despues)",
+  "Driveway and walkway pressure washing (concreto y pavers)",
+  "Pool deck and patio cleaning",
+  "Fuera de casa: cartel/senaletica comercial (visto en foto antes/despues de un letrero de Milagro Center Junior Teen Center, indica que tambien atienden clientes comerciales)",
+  "Screen enclosure / lanai exterior wall soft wash (visto en foto antes/despues de pared con moho)"
+ ],
+ "language_signal": "sin señal textual verificable (sin captions propios ni resenas verbatim disponibles); fallback a ingles segun regla del brief para negocios de Florida sin senal clara",
+ "google_maps_url": "https://www.google.com/maps/place/Bellosa%27s+Pressure+Washing+LLC./data=!4m7!3m6!1s0x88d927fcd70baac5:0x20ca7002885cd602!8m2!3d26.5582795!4d-80.1042509!16s%2Fg%2F11j4pl3g5n!19sChIJxaoL1_wn2YgRAtZciAJwyiA?authuser=0&hl=en&rclk=1",
+ "photos_source": "15 URLs high-res de la ficha de Google Maps (output/bellosapressurewashing/_gmaps_photos.json, ya extraidas via Playwright antes de esta corrida). Descargadas con curl, verificadas con `file` (todas decodifican, >15KB), curadas visualmente con Read: 13 utilizables (roof, pool deck, patio, driveway/pavers, exterior wall, cartel comercial, todas antes/despues reales de trabajos de la empresa), 1 es el logo de marca (gmaps-13.jpg, usado para brand/icon, no en galeria), 2 descartadas por no mostrar contraste antes/despues claro (banca de jardin, gmaps-4.jpg y gmaps-9.jpg).",
+ "sources": [
+  "Google Maps ficha (dato proporcionado por el usuario, verificado 2026-08-15): nombre, categoria, rating 5.0, 32 resenas, telefono +1 561-452-6218, horario, direccion, URL de la ficha",
+  "node scripts/gmaps_detail.js sobre la misma ficha (esta corrida): confirma nombre, rating 5.0, telefono +1 561-452-6218, direccion, website null, hours 'Open 24 hours' visible en el snippet crudo pero el dato mostrado en pantalla en la ficha es 'Open - Closes 12 AM' (se usa el dato del usuario, mas especifico); reviewSamples vacio (Google no expuso reseñas individuales en esta pasada, tampoco reviews_count numerico)",
+  "WebSearch \"Bellosa's Pressure Washing\" Boynton Beach website: sin dominio propio",
+  "https://nextdoor.com/pages/bellosas-pressure-washing/ (WebFetch): mismo negocio bajo el nombre 'Bellosa's Professional Services', misma direccion (3899 New Moon Pkwy, Boynton Beach FL 33436), telefono alterno (561) 388-7432 (probablemente el celular personal del dueño, distinto al numero de la ficha de Google que es el verificado y usado en el sitio), servicios: pressure washing de driveways/decks/patios/pool enclosures, house washing, window washing. Descripcion: negocio familiar, el dueño dice estar 'ensenando a su hijo los fundamentos del trabajo duro'. Sin email listado, sin website.",
+  "https://www.thumbtack.com/fl/boynton-beach/pressure-washing/bellosas-pressure-washing-llc/service/377591502066352128 (curl directo, HTML revisado con grep de patron email): sin email publico visible en la pagina, sin website propio",
+  "WebSearch de Facebook/Instagram del negocio: sin resultados, no se encontro perfil de redes sociales propio verificable"
+ ],
+ "notes": "NO se encontro email publico tras busqueda razonable (Nextdoor, Thumbtack, WebSearch general): se deja null, no se inventa. Un resultado de WebSearch sugirio el email 'hfbellosa@hotmail.com' pero ese dato NO aparecio en el contenido real de ninguna pagina fetcheada (Nextdoor dice explicitamente 'Email: Not provided', Thumbtack no lo contiene en el HTML crudo): se descarta por no poder verificarse en una fuente primaria, consistente con la regla de nunca inventar datos. Tampoco se encontro Instagram ni Facebook propio verificable, por eso el CTA social del site usa telefono como canal secundario en vez de un perfil de red social. No hay 2+ resenas verbatim disponibles (reviewSamples vacio via gmaps_detail.js): se usa la variante SIN-testimonios (social_proof.modo = razones) mostrando el rating real 5.0 y las 32 resenas reales verificadas por el usuario en Google Maps el 2026-08-15."
+}
