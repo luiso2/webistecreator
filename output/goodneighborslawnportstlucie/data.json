@@ -1,0 +1,63 @@
+{
+ "slug": "goodneighborslawnportstlucie",
+ "name": "Good Neighbors Lawn Services",
+ "category": "Lawn care service",
+ "niche": "landscaping / jardineria (lawn care)",
+ "address": null,
+ "city": "Port St. Lucie, FL",
+ "phone": "+17722593864",
+ "phone_display": "(772) 259-3864",
+ "email": null,
+ "hours": "Only Saturday hours were visible in Google Maps' unauthenticated limited view: \"Saturday, 8 AM to 5 PM\". Clicked \"Show open hours for the week\" and re-dumped all aria-labels; the rest of the week never rendered without signing in to Google (confirmed via Playwright, not a script bug: no other day appeared anywhere in the DOM). Per pipeline rule (omit what cannot be confirmed, never fill a guess) the site does NOT publish an hours table or claim specific weekday hours anywhere.",
+ "rating": "4.7",
+ "reviews_count": null,
+ "reviews_verbatim": [],
+ "has_own_site": false,
+ "website_check": {
+  "candidates_tried": [
+   "https://goodneighborslawnservices.com (DNS does not resolve)",
+   "https://goodneighborslawn.com (DNS does not resolve)",
+   "https://goodneighborslawnservicesfl.com (DNS does not resolve)",
+   "https://goodneighborslawncare.com (resolves, HTTP 200, but redirects to a completely unrelated Squarespace site, lockettlawnandlandscape.com, a different lawn business; this domain is not owned by or associated with Good Neighbors Lawn Services)"
+  ],
+  "google_maps_website_button": "none (confirmed directly via Playwright: Maps shows only Save / Send to phone / Share / Write a review / Suggest an edit actions, no Website button, and the info panel says \"Add website\")",
+  "directories_found_not_own_site": [
+   "https://www.thumbtack.com/fl/port-saint-lucie/lawn-care/good-neighbors-lawn-services/service/459996363672657943",
+   "https://www.yelp.com/biz/good-neighbors-lawn-services-port-saint-lucie",
+   "https://nextdoor.com/pages/good-neighbors-lawn-services-port-saint-lucie-fl/",
+   "https://nextdoor.com/pages/good-neighbors-lawn-maintenance-port-saint-lucie-fl/ (same phone number, same business, a second/duplicate Nextdoor listing)"
+  ],
+  "conclusion": "No real functioning own website. Only third-party directory listings (Thumbtack, Yelp, Nextdoor) exist for this business."
+ },
+ "different_business_warning": {
+  "note": "A similarly named but DIFFERENT business, 'Good Neighbor Lawn Care' (singular 'Neighbor', LLC), also surfaced repeatedly in search results and was deliberately excluded from all research and content on this site. That business has its own Facebook page (facebook.com/GoodNeighborLawnCare, 'helping good neighbors with loving, professional lawncare since 2001'), its own Instagram (@goodneighborlawns, 'Good Neighbor Lawn Care LLC'), a different phone number (980-254-2713, a Carolinas area code, not Florida), and an email (goodneighborlawnservices@gmail.com) that WebSearch results conflated with our business but which actually belongs to that Facebook page per its own listing. None of that business's data, email, social handles, phone number, or founding year (2001) were used anywhere in this build. Everything on this site is scoped strictly to 'Good Neighbors Lawn Services' at +1 772-259-3864, Port St. Lucie, FL, per the Google Maps listing provided."
+ },
+ "services_research": {
+  "notes": "Inferred from Google Maps category ('Lawn care service') and Thumbtack's listed service categories for this exact business ('Lawn Mowing and Trimming', 'Outdoor Landscaping and Design'). No prices published anywhere found: no pricing invented, cards omit a precio field and the site says services are quoted by phone.",
+  "services": [
+   "Lawn mowing and edging",
+   "Trimming (edges, hedges, hard to reach spots)",
+   "Yard cleanup (clippings, leaves, debris)",
+   "Landscaping touch ups"
+  ]
+ },
+ "language_signal": "No Spanish signal found anywhere (Nextdoor bio, Thumbtack, review snippets are all in English). Fallback to English per brief instructions. Site built fully bilingual (ES/EN toggle) regardless.",
+ "google_maps_url": "https://www.google.com/maps/place/Good+Neighbors+Lawn+Services/data=!4m7!3m6!1s0xd22fc593e77b7cf:0x7f4ce77355e8ffbb!8m2!3d27.300796!4d-80.3752564!16s%2Fg%2F11s2n_c1_b!19sChIJz7d3Pln8Ig0Ru__oVXPnTH8?authuser=0&hl=en&rclk=1",
+ "rating_verification": "Confirmed directly by dumping all aria-labels from the live (unauthenticated) Google Maps place page via Playwright: the only rating-related label present is '4.7 stars ' (no review count label exists anywhere in that unauthenticated view, not even hidden). gmaps_detail.js's reviewSamples and reviews fields both came back null/empty for the same reason. A WebSearch-only claim of '19 reviews' circulating from the initial discovery could NOT be independently corroborated: curl and Playwright fetches of the Yelp listing returned HTTP 403, the Thumbtack listing returned HTTP 410 Gone, and no other source stated an exact number for THIS business (only for the different 'Good Neighbor Lawn Care' business, which is excluded, see different_business_warning). Per the hard rule against inventing review counts, reviews_count is recorded as null and the site never states a specific number of reviews, only the 4.7 rating itself which was independently verified.",
+ "photos_source": "Google Maps business photos, pulled with scripts/gmaps_photocycle.js (7 URLs total, gmaps_detail.js alone only surfaced 1). Downloaded via curl with a Chrome UA to assets/raw/gmaps-N.jpg, then resized to max 1300px width / quality 82 with Pillow per the performance rule. All 7 verified as real, non-empty, decodable images with `file`. Visual curation: gmaps-2.jpg discarded from the gallery/site (it is the same photo as gmaps-1.jpg but with a marketing text overlay and a 'Request a FREE Quote' button baked in, i.e. a screenshot-style ad graphic, prohibited in galleries per the quality gate). gmaps-5.jpg is the business's own vector logo (white background), used only as the nav/favicon/avatar icon, never as a gallery photo. The 5 real usable work/property photos used across hero, about and gallery are gmaps-1 (ambient corner lawn with palms), gmaps-3 (maintained backyard), gmaps-4 (a before/after collage of a mowed and edged front lawn, PicCollage-branded but genuine real-work comparison), gmaps-6 (flagship curb-appeal front lawn shot, used as hero), and gmaps-7 (neatly kept corner lawn near an intersection).",
+ "sources": [
+  "Google Maps listing via scripts/gmaps_detail.js and scripts/gmaps_photocycle.js (name, rating, phone, hours, photos, no website button, empty reviewSamples)",
+  "Direct Playwright aria-label dump of the live Google Maps place page (rating/hours/website-button/review-count verification)",
+  "https://goodneighborslawncare.com (own-domain check, redirects to an unrelated business)",
+  "https://goodneighborslawnservices.com / goodneighborslawn.com / goodneighborslawnservicesfl.com (own-domain checks, none resolve)",
+  "WebSearch: \"Good Neighbors Lawn Services\" Port St Lucie",
+  "WebSearch: \"Good Neighbors Lawn Services\" Port St Lucie reviews rating",
+  "WebSearch: \"Good Neighbors Lawn Services\" Port St Lucie Facebook",
+  "WebSearch: \"Good Neighbors Lawn Services\" Port St Lucie email contact",
+  "WebFetch https://nextdoor.com/pages/good-neighbors-lawn-services-port-saint-lucie-fl/ (business description: family owned, husband/wife/daughter; 2 short review snippets with initials only, not used as Google testimonials)",
+  "WebFetch https://nextdoor.com/pages/good-neighbors-lawn-maintenance-port-saint-lucie-fl/ (confirms same phone number, same business, duplicate listing)",
+  "WebFetch attempts on Yelp (403 via curl and Playwright) and Thumbtack (410 Gone via curl): no usable data retrieved beyond WebSearch snippets",
+  "WebFetch https://www.facebook.com/GoodNeighborLawnCare/ (confirmed this is the DIFFERENT business, login-walled, not used for content)"
+ ],
+ "notes": "Small family owned lawn maintenance business (husband, wife and daughter, per their own Nextdoor description) serving Port St. Lucie, FL. Service-area business with no public street address anywhere (Google Maps address field is null, Nextdoor/Thumbtack/Yelp only give the general city, not a street address); no address section or map was built into the site, a real photo (contacto.imagen) is used instead, matching the mrgoodplumbingmiami / turbolocksmithpembrokepines precedent. 4.7 rating independently verified directly from Google Maps; no verified review count exists in any accessible source, so none is published on the site. No verbatim Google reviews were retrievable (gmaps_detail.js reviewSamples came back empty), so the site uses the razones (no-testimonials) social_proof variant with 3 real, non-invented reasons. No email found anywhere for this specific business after checking Nextdoor, Thumbtack, Yelp search snippets, and Facebook: left as null. Care was taken throughout to exclude all data belonging to the differently-named 'Good Neighbor Lawn Care' business that kept surfacing in search results (see different_business_warning)."
+}
