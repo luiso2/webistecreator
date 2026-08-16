@@ -13,6 +13,9 @@ const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
 const queueText = (value, max) => stripUnsafe(value ?? '').trim().replace(/\s+/g, ' ').slice(0, max);
 const discoveryKey = request => [request?.niche, request?.location]
   .map(v => String(v || '').toLocaleLowerCase()).join('|');
+// Una forja normal cambia de etapa varias veces en menos de 7 min. Doce minutos sin
+// señal ya no es lentitud: es una ejecución muerta y se puede rescatar.
+const STALE_FORGE_MS = 12 * 60 * 1000;
 
 // SHA-256 del access key (el key real vive solo en el .env local del usuario)
 const KEY_HASH = 'b1e35fb9b55f29a4272b16173553f5f92b19b0b824ddb3d9789f28332bd4bf06';
@@ -47,16 +50,33 @@ export default {
     // de la cola; agregar items y escribir el registro siguen requiriendo la key.
     if (url.pathname === '/api/public/queue' && req.method === 'GET') {
       const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-      // 40 min sin reportar avance = huerfano, vuelve a la cola. Eran 90, pero el caso real
-      // (2026-08-14) fue una forja que reclamo 5 items, construyo 2 en su hora de sesion y
-      // murio: los otros 3 quedaron invisibles hora y media. Un item real reporta stage cada
-      // pocos minutos; 40 min sin senales es muerte segura, no lentitud.
-      const STALE_MS = 40 * 60 * 1000;
       const now = Date.now();
       const pending = queue
-        .filter(q => q.status === 'pending' || (q.status === 'processing' && now - Date.parse(q.stage_at || q.created) > STALE_MS))
+        .filter(q => q.status === 'pending' || (q.status === 'processing' && now - Date.parse(q.stage_at || q.created) > STALE_FORGE_MS))
+        .sort((a, b) => Date.parse(a.created) - Date.parse(b.created))
         .map(({ id, input, request, created }) => ({ id, input, request, created }));
       return json({ pending });
+    }
+
+    // Reclamo atomico: una sola forja puede tomar el item. Evita que dos slots hagan
+    // el mismo website cuando leen la cola simultaneamente.
+    if (url.pathname === '/api/public/queue/claim' && req.method === 'POST') {
+      let body;
+      try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+      if (typeof body.id !== 'string' || !body.id) return json({ error: 'id requerido' }, 400);
+      let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const now = new Date().toISOString();
+      let claimed = null;
+      queue = queue.map(q => {
+        if (q.id !== body.id) return q;
+        const stale = q.status === 'processing' && Date.now() - Date.parse(q.stage_at || q.created) > STALE_FORGE_MS;
+        if (q.status !== 'pending' && !stale) return q;
+        claimed = { id: q.id, input: q.input, request: q.request, created: q.created };
+        return { ...q, status: 'processing', stage: 'research', stage_at: now, started_at: now, note: 'Forja iniciada' };
+      });
+      if (!claimed) return json({ error: 'item ya reclamado' }, 409);
+      await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+      return json({ ok: true, item: claimed });
     }
 
     if (url.pathname === '/api/public/queue/progress' && req.method === 'POST') {

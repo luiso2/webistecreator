@@ -76,8 +76,9 @@ quedaron "en proceso" fantasma hora y media, invisibles para las forjas siguient
 Regla: se reporta `research` de UN item SOLO al empezar a trabajar ESE item. Los demas se
 quedan `pending`, visibles para cualquier otra forja concurrente. Al terminar un item (done
 o failed), recien entonces se toma el siguiente. Ademas, reportar progress al cambiar de
-etapa (research -> build -> verify -> commit): el panel rescata como huerfano todo item sin
-senales por 40 minutos, y un item que trabaja de verdad cambia de etapa mas seguido que eso.
+etapa (research -> build -> verify -> commit): reclamar con `POST /api/public/queue/claim {id}`
+antes de investigar; si devuelve `409`, tomar el siguiente. El panel rescata como huerfano todo
+item sin senales por **12 minutos**, y un item que trabaja de verdad cambia de etapa mas seguido.
 
 ## 0. Arranque paralelo (primer minuto, OBLIGATORIO)
 ### Pedido filtrado desde el panel (nicho + país o zona, sin website)
