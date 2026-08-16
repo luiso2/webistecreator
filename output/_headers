@@ -1,0 +1,4 @@
+# Los medios no llevan nombre con hash: se reutilizan durante un día para que una segunda
+# visita no tenga que revalidar cada imagen, pero una actualización sigue viéndose pronto.
+/:site/assets/*
+  Cache-Control: public, max-age=86400

@@ -1,3 +1,5 @@
+import { SHARED_STYLE_REV } from './shared-style.js';
+
 // Worker de demos: sirve los sitios de output/ como assets estaticos.
 // - En workers.dev (path-based): siteforge-demos.../<slug>/ -> se sirve tal cual.
 // - En un dominio propio comprado desde el panel: se mapea el hostname -> slug via KV
@@ -87,14 +89,82 @@ class OgAbsoluta {
   }
 }
 
-// Cada demo historico trae una copia identica de Tailwind (451 KB) en
-// <slug>/assets/tailwind.js. Con cientos de sitios eso hacia que cada deploy
-// tuviera que escanear ~164 MiB de duplicados. Se conserva la ruta en disco
-// para los workers individuales antiguos, pero el worker global la sustituye
-// al servir el HTML por una sola copia compartida. Asi no hace falta reescribir
-// ni arriesgar todos los index.html existentes para hacer el deploy ligero.
-class TailwindCompartido {
-  element(el) { el.setAttribute('src', '/_shared/tailwind.js'); }
+// Cada demo historico trae una copia del compilador de Tailwind (451 KB) en
+// <slug>/assets/tailwind.js. Antes el navegador descargaba y EJECUTABA ese
+// compilador en cada demo: una tarea costosa que bloqueaba el render. Ahora se
+// reemplaza por un CSS ya compilado, compartido y versionado por contenido.
+class EstilosCompartidos {
+  element(el) {
+    el.replace(
+      `<link rel="stylesheet" href="/_shared/tailwind.css?v=${SHARED_STYLE_REV}">`,
+      { html: true },
+    );
+  }
+}
+
+async function servirEstiloCompartido(env, req) {
+  const res = await env.ASSETS.fetch(req);
+  const headers = new Headers(res.headers);
+  // La URL lleva la huella del contenido, asi que puede vivir en la cache del
+  // navegador sin revalidacion. Si el CSS cambia, cambia tambien la URL.
+  headers.set('cache-control', 'public, max-age=31536000, immutable');
+  return new Response(res.body, {
+    status: res.status,
+    statusText: res.statusText,
+    headers,
+  });
+}
+
+// La mayoría de las galerías históricas no declaraban loading="lazy". Eso
+// iniciaba descargas de todas sus fotos (y de varios vídeos) aunque estuvieran
+// muchos scrolls por debajo del primer pantallazo. Los dos primeros <img> se
+// conservan prioritarios para logo/hero; el resto se difiere de forma nativa.
+class MediosDiferidos {
+  constructor() {
+    this.imagenes = 0;
+    this.tieneAutoplay = false;
+  }
+
+  imagen(el) {
+    this.imagenes += 1;
+    if (!el.hasAttribute('decoding')) el.setAttribute('decoding', 'async');
+    if (!el.hasAttribute('loading')) {
+      if (this.imagenes <= 2) {
+        if (this.imagenes === 2) el.setAttribute('fetchpriority', 'high');
+      } else {
+        el.setAttribute('loading', 'lazy');
+        el.setAttribute('fetchpriority', 'low');
+      }
+    }
+  }
+
+  video(el) {
+    if (!el.hasAttribute('autoplay')) return;
+    this.tieneAutoplay = true;
+    el.removeAttribute('autoplay');
+    el.setAttribute('preload', 'none');
+    el.setAttribute('data-sf-autoplay', '');
+  }
+
+  end(end) {
+    if (!this.tieneAutoplay) return;
+    end.append(
+      `<script>(function(){var q='video[data-sf-autoplay]';if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play().catch(function(){});}else{v.pause();}});},{rootMargin:'300px 0px'});document.querySelectorAll(q).forEach(function(v){io.observe(v);});})();</script>`,
+      { html: true },
+    );
+  }
+}
+
+function reescritorDeDemo(css, origen) {
+  const medios = new MediosDiferidos();
+  let rw = new HTMLRewriter()
+    .on('img', { element: el => medios.imagen(el) })
+    .on('video', { element: el => medios.video(el) })
+    .onDocument({ end: end => medios.end(end) })
+    .on('script[src="assets/tailwind.js"]', new EstilosCompartidos());
+  if (css) rw = rw.on('head', new InyectarColor(css));
+  if (origen) rw = rw.on('meta[property^="og:"]', new OgAbsoluta(origen));
+  return rw;
 }
 
 // Huella corta y estable del CSS inyectado, para meterla en el ETag.
@@ -113,10 +183,7 @@ async function servir(env, req, slug) {
     const res0 = await env.ASSETS.fetch(req);
     const tipo0 = res0.headers.get('content-type') || '';
     if (!tipo0.includes('text/html') || !origen) return res0;
-    return new HTMLRewriter()
-      .on('script[src="assets/tailwind.js"]', new TailwindCompartido())
-      .on('meta[property^="og:"]', new OgAbsoluta(origen))
-      .transform(res0);
+    return reescritorDeDemo(null, origen).transform(res0);
   }
 
   // EL BUG QUE ESTO ARREGLA (2026-08-12): el HTMLRewriter cambia el BODY pero conservaba los
@@ -137,10 +204,7 @@ async function servir(env, req, slug) {
   const salida = new Headers(res.headers);
   const base = (salida.get('etag') || 'sf').replace(/[^A-Za-z0-9._-]/g, '');
   salida.set('etag', `"${base}-c${huella(css)}"`);
-  let rw = new HTMLRewriter()
-    .on('head', new InyectarColor(css))
-    .on('script[src="assets/tailwind.js"]', new TailwindCompartido());
-  if (origen) rw = rw.on('meta[property^="og:"]', new OgAbsoluta(origen));
+  const rw = reescritorDeDemo(css, origen);
   return rw.transform(
     new Response(res.body, { status: res.status, statusText: res.statusText, headers: salida }));
 }
@@ -159,6 +223,9 @@ export default {
     // Los HTML de dominios propios tambien apuntan al asset compartido. Esta
     // ruta no pertenece a ningun slug: si pasara por la reescritura normal se
     // buscaria /<slug>/_shared/tailwind.js y fallaria con 404.
+    if (url.pathname === '/_shared/tailwind.css') return servirEstiloCompartido(env, req);
+    // Fallback para HTML que algun navegador pudo haber dejado en cache antes
+    // del cambio a CSS precompilado.
     if (url.pathname === '/_shared/tailwind.js') return env.ASSETS.fetch(req);
 
     // Dominio propio: buscar el slug mapeado
