@@ -7,6 +7,7 @@
 Uno de:
 - **Handle/nombre**: un Instagram handle o nombre de negocio (modo directo; aqui SI se aceptan negocios con website propio, con angulo rediseño).
 - **Descubrimiento**: encontrar `daily_count` negocios NUEVOS segun `config.json` que cumplan rating >= `min_rating`, reseñas >= `min_reviews`, NO esten en `data/processed.json` y (con `require_no_website: true`) NO tengan website propio.
+- **Búsqueda filtrada del panel**: un item con `request.type: "discovery"`, `niche`, `location`, `count` (1-3) y `require_no_website: true`. Busca SOLO dentro de la ubicación solicitada, por ejemplo `electricistas` en `España`; no cae a `config.json`, a otro país ni a negocios con website propio.
 
 ## Descubrimiento: como encontrar negocios SIN website (GOOGLE PRIMERO)
 Buscar "mejor <nicho> en <ciudad>" NO funciona: los que rankean ahi ya tienen SEO y website. Fuentes en ORDEN DE PRIORIDAD:
@@ -83,23 +84,25 @@ Puerta de calidad (leccion Sandra 2026-07-16: el site salio "con template" pero 
 
 ## Panel (siteforge-panel)
 - UI live: https://siteforge-panel.odd-forest-9504.workers.dev (worker `ui/`, KV `SITEFORGE_KV`, auth por hash SHA-256 del access key; el key vive SOLO en `~/Desktop/siteforge/.env` local y en el localStorage del navegador del usuario).
-- API con key (header `x-sf-key`): GET `/api/state` (registry + queue), POST `/api/queue` {input}, POST `/api/queue/done` {id}, POST `/api/registry` (array completo).
-- API publica (autorizada por el usuario 2026-07-16, para que la rutina cloud trabaje sin credenciales): GET `/api/public/queue` (solo items pending: id/input/created) y POST `/api/public/queue/done` {id, slug?, name?, url_demo?} (url_demo se valida server-side contra *.odd-forest-9504.workers.dev).
+- API con key (header `x-sf-key`): GET `/api/state` (registry + queue), POST `/api/queue` con `{input}` para un negocio puntual o `{request:{type:"discovery", niche, location, count}}` para encontrar 1-3 negocios sin website, POST `/api/queue/done` {id}, POST `/api/registry` (array completo).
+- API publica (autorizada por el usuario 2026-07-16, para que la rutina cloud trabaje sin credenciales): GET `/api/public/queue` (items pending: id/input/request/created) y POST `/api/public/queue/done` {id, slug?, name?, url_demo?, sites?}. `sites` admite los 1-3 resultados `{slug,name,url_demo,dm?}` de una búsqueda filtrada; url_demo se valida server-side contra *.odd-forest-9504.workers.dev.
 
 ## Forja de la cola (rutinas siteforge-queue y siteforge-queue-b)
-- DOS rutinas cloud desfasadas (minutos :22 y :52): espera maxima ~30 min. Cada una lee `/api/public/queue`; si no hay pendientes TERMINA de inmediato (sin email, sin commit). Los items "processing" no aparecen como pendientes (asi las dos forjas no chocan); si un item queda en processing sin avance por 90 min, el panel lo devuelve a la cola (auto-rescate).
-- MODO RAPIDO (objetivo ~10 min/negocio): paralelizar con subagentes si estan disponibles; research time-boxed (~8 min): menu con precios publicados, 4-8 imagenes verificadas, 3 reseñas verbatim, check de website propio. Nunca rellenar con datos inventados.
+- DOS rutinas cloud desfasadas (minutos :22 y :52): un pedido puede esperar hasta ~30 min para que una de ellas arranque. Cada una lee `/api/public/queue`; si no hay pendientes TERMINA de inmediato (sin email, sin commit). Los items `processing` no aparecen como pendientes; un item sin avance por 40 min vuelve a la cola (auto-rescate).
+- MODO RAPIDO (objetivo ~7 min/negocio): reclamar UN solo item al comenzar su research, no un lote entero. Usar los dossiers y `research_ig.py` antes de investigar manualmente; research time-boxed (~3 min cuando existe dossier o IG): menu con precios publicados, 4-8 imagenes verificadas, 3 reseñas verbatim y check de website propio. Nunca rellenar con datos inventados.
 - Progreso en vivo: reportar etapas research/build/verify/commit a `/api/public/queue/progress` (el panel muestra temporizador y barra).
-- Procesa hasta 3 items por pasada (los pedidos manuales SI pueden tener website propio: angulo rediseño). Dedupe contra `data/processed.json` y `data/queue_done.json` antes de procesar.
+- Procesa hasta 3 items por pasada si el tiempo de la rutina alcanza (los pedidos manuales SI pueden tener website propio: angulo rediseño). Tras cerrar cada uno, entonces reclama el siguiente. Dedupe contra `data/processed.json` y `data/queue_done.json` antes de procesar.
+- **Item `request.type: "discovery"`**: leer el filtro estructurado, buscar candidatos del `niche` exclusivamente en `location`, y verificar website propio antes de gastar el cupo. `require_no_website` es siempre true: un dominio propio descarta al candidato, mientras que Booksy, GlossGenius, Google Business, Facebook, Instagram o WhatsApp no cuentan como website propio. Construir hasta `count` candidatos válidos, hacer el upsert del registro por CADA uno y cerrar el id padre UNA vez con `sites: [{slug,name,url_demo,dm}, ...]`. Si no se encuentra ninguno dentro del filtro, cerrar como failed con un motivo; nunca ampliar el país, cambiar el nicho ni llenar con negocios que ya tienen web.
 - Al terminar cada item: actualiza registro (url_demo = https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/), agrega el id a `data/queue_done.json`, commit + push, y marca done en `/api/public/queue/done` con slug/name/url_demo.
 - Reporte por email a jose@merktop.com SOLO si proceso algo.
 
 ## Deploy automatico de demos (Workers Builds)
 - El worker `siteforge-demos` (config `demos/wrangler.jsonc`) sirve TODO `output/` como assets: cada site queda en `/<slug>/`.
+- El Tailwind runtime se sirve una sola vez desde `/_shared/tailwind.js`. El worker reescribe las referencias historicas al responder el HTML y `output/.assetsignore` excluye las copias por sitio. No quitar esa reescritura ni volver a publicar `**/assets/tailwind.js`: son cientos de copias identicas que ralentizan cada deploy.
 - El repo esta conectado a Cloudflare Workers Builds: cada push a main redeploya `siteforge-demos` automaticamente (deploy command: `npx wrangler deploy -c demos/wrangler.jsonc`). Asi la rutina cloud publica demos sin credenciales.
 - Los workers "bonitos" por negocio (`<slug>-demo.*.workers.dev`) se deployan en la sesion local de aprobacion antes del outreach.
 
 ## Limites de seguridad
-- Maximo `daily_count` (default 3) negocios nuevos por corrida.
+- Maximo `daily_count` segun `config.json` (actualmente 20) negocios nuevos por corrida.
 - Nunca enviar email sin `delivered` check; nunca dos emails al mismo negocio (registry).
 - Si una fase falla 2 veces para un negocio, marcarlo `failed` con motivo y seguir con el resto (anti-bucle).

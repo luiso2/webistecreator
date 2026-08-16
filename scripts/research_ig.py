@@ -31,6 +31,10 @@ UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
 IG_SERVICE_URL = os.environ.get('IG_SERVICE_URL', 'https://ig-photo-service-production.up.railway.app')
 IG_SERVICE_KEY = os.environ.get('IG_SERVICE_KEY', 'igsvc_pub_2026')
 MAX_FOTOS = 16
+# Limite de publicacion del pipeline. Las fotos se usan en hero y galeria, asi
+# que subir originales de Instagram solo alarga el build y la primera carga.
+MAX_LADO_PUBLICO = 1000
+CALIDAD_JPEG_PUBLICA = 82
 
 try:
     from PIL import Image, ImageDraw
@@ -164,8 +168,8 @@ def descargar_paralelo(urls, destino, start=1):
         try:
             Image.open(ruta).verify()
             im = Image.open(ruta).convert('RGB')
-            im.thumbnail((1300, 1300))
-            im.save(ruta, 'JPEG', quality=84)
+            im.thumbnail((MAX_LADO_PUBLICO, MAX_LADO_PUBLICO))
+            im.save(ruta, 'JPEG', quality=CALIDAD_JPEG_PUBLICA, optimize=True, progressive=True)
             validas.append(ruta)
         except Exception:
             if os.path.exists(ruta):
@@ -218,6 +222,7 @@ def check_websites(handle, links):
                    'booksy.com', 'glossgenius.com', 'square.site', 'fresha.com', 'vagaro.com',
                    'setmore.com', 'as.me', 'acuityscheduling.com', 'janeapp.com',
                    'wa.me', 'api.whatsapp', 'whatsapp.com', 'youtube.com', 'youtu.be',
+                   'amazon.com', 'amzn.to', 'etsy.com', 'linktr.ee',
                    'twitter.com', 'x.com', 'l.instagram.com', 'pinterest.com', 'snapchat.com')
     for l in links:
         host = urllib.parse.urlparse(l).netloc.lower()

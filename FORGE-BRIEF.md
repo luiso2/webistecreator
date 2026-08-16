@@ -80,6 +80,28 @@ etapa (research -> build -> verify -> commit): el panel rescata como huerfano to
 senales por 40 minutos, y un item que trabaja de verdad cambia de etapa mas seguido que eso.
 
 ## 0. Arranque paralelo (primer minuto, OBLIGATORIO)
+### Pedido filtrado desde el panel (nicho + país o zona, sin website)
+
+Si el item de `/api/public/queue` trae `request.type: "discovery"`, NO es un negocio directo. El
+objeto es la fuente de verdad, por ejemplo:
+
+```json
+{"type":"discovery","niche":"electricistas","location":"España","count":3,"require_no_website":true}
+```
+
+Buscar solo ese nicho en esa ubicación. Verificar que cada candidato no tenga website propio
+antes de hacer research o build; Booksy, GlossGenius, Google Business, Facebook, Instagram y
+WhatsApp no cuentan como website propio. No usar `config.json` como fallback, no salir de España
+ni rellenar el cupo con un negocio que ya tiene web. Construir hasta `count` candidatos válidos,
+hacer `registry-upsert` por cada uno y cerrar el id del pedido UNA vez con:
+
+```json
+{"id":"...","sites":[{"slug":"...","name":"...","url_demo":"https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/","dm":"..."}]}
+```
+
+Si ninguno cumple el filtro, marcar el pedido `failed` con el motivo. El progreso puede usar
+`note` para indicar, por ejemplo, `2/3 candidatos válidos`.
+
 Si el item de la cola es SOLO un nombre, un handle o "nombre + ciudad": es un encargo directo del usuario; hacer el discovery completo de ESE negocio (encontrar su Booksy/booking, verificar website propio, IG) y construirlo con la maxima prioridad, mismo pipeline.
 **PASO 1 (segundos, SIEMPRE primero)**: `python3 scripts/booksy_dossier.py <booksy_url> <slug>`.
 Un solo comando extrae TODO a `output/<slug>/data.json`: nombre, tipo schema, direccion, geo, rating,

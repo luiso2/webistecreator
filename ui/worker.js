@@ -8,6 +8,12 @@ const json = (data, status = 200) =>
 // como defensa en profundidad contra inyeccion (el front igual escapa todo al renderizar).
 const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
 
+// Texto que viene del panel y acaba guardado en KV. Ademas de evitar markup, se colapsan
+// espacios para que dos filtros iguales no creen trabajos duplicados por un espacio extra.
+const queueText = (value, max) => stripUnsafe(value ?? '').trim().replace(/\s+/g, ' ').slice(0, max);
+const discoveryKey = request => [request?.niche, request?.location]
+  .map(v => String(v || '').toLocaleLowerCase()).join('|');
+
 // SHA-256 del access key (el key real vive solo en el .env local del usuario)
 const KEY_HASH = 'b1e35fb9b55f29a4272b16173553f5f92b19b0b824ddb3d9789f28332bd4bf06';
 
@@ -41,11 +47,15 @@ export default {
     // de la cola; agregar items y escribir el registro siguen requiriendo la key.
     if (url.pathname === '/api/public/queue' && req.method === 'GET') {
       const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-      const STALE_MS = 90 * 60 * 1000; // procesando sin avance por 90 min = huerfano, vuelve a la cola
+      // 40 min sin reportar avance = huerfano, vuelve a la cola. Eran 90, pero el caso real
+      // (2026-08-14) fue una forja que reclamo 5 items, construyo 2 en su hora de sesion y
+      // murio: los otros 3 quedaron invisibles hora y media. Un item real reporta stage cada
+      // pocos minutos; 40 min sin senales es muerte segura, no lentitud.
+      const STALE_MS = 40 * 60 * 1000;
       const now = Date.now();
       const pending = queue
         .filter(q => q.status === 'pending' || (q.status === 'processing' && now - Date.parse(q.stage_at || q.created) > STALE_MS))
-        .map(({ id, input, created }) => ({ id, input, created }));
+        .map(({ id, input, request, created }) => ({ id, input, request, created }));
       return json({ pending });
     }
 
@@ -74,11 +84,28 @@ export default {
       let body;
       try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
       if (!body.id) return json({ error: 'id requerido' }, 400);
-      const result = {};
-      if (typeof body.slug === 'string' && /^[a-z0-9-]{1,40}$/.test(body.slug)) result.slug = body.slug;
-      if (typeof body.name === 'string' && body.name.length <= 120) result.name = stripUnsafe(body.name);
-      if (typeof body.url_demo === 'string' && DEMO_URL_RE.test(body.url_demo)) result.url_demo = body.url_demo;
-      if (typeof body.dm === 'string' && body.dm.length <= 500) result.dm = stripUnsafe(body.dm);
+      const siteResult = raw => {
+        raw = raw && typeof raw === 'object' ? raw : {};
+        const site = {};
+        if (typeof raw.slug === 'string' && /^[a-z0-9-]{1,40}$/.test(raw.slug)) site.slug = raw.slug;
+        if (typeof raw.name === 'string' && raw.name.length <= 120) site.name = stripUnsafe(raw.name);
+        if (typeof raw.url_demo === 'string' && DEMO_URL_RE.test(raw.url_demo)) site.url_demo = raw.url_demo;
+        if (typeof raw.dm === 'string' && raw.dm.length <= 500) site.dm = stripUnsafe(raw.dm);
+        return site;
+      };
+      const result = siteResult(body);
+      // Una busqueda filtrada puede producir hasta tres negocios. El contrato anterior
+      // (slug/name/url_demo en la raiz) sigue funcionando para pedidos directos.
+      if (body.sites !== undefined) {
+        if (!Array.isArray(body.sites) || body.sites.length < 1 || body.sites.length > 3) {
+          return json({ error: 'sites debe contener entre 1 y 3 resultados' }, 400);
+        }
+        const sites = body.sites.map(siteResult);
+        if (sites.some(site => !site.slug || !site.url_demo)) {
+          return json({ error: 'cada site requiere slug y url_demo validos' }, 400);
+        }
+        result.sites = sites;
+      }
       if (body.failed === true) {
         result.failed = true;
         if (typeof body.motivo === 'string') result.motivo = stripUnsafe(body.motivo.slice(0, 240));
@@ -263,13 +290,40 @@ export default {
       if (url.pathname === '/api/queue' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
-        const input = (body.input || '').toString().trim();
-        if (!input || input.length > 200) return json({ error: 'input requerido (max 200 chars)' }, 400);
+        let input;
+        let request;
+        if (body.request !== undefined) {
+          const raw = body.request;
+          if (!raw || typeof raw !== 'object' || raw.type !== 'discovery') {
+            return json({ error: 'request de descubrimiento invalido' }, 400);
+          }
+          const niche = queueText(raw.niche, 70);
+          const location = queueText(raw.location, 80);
+          const count = Number(raw.count);
+          if (!niche || !location) return json({ error: 'nicho y pais o zona son requeridos' }, 400);
+          if (!Number.isInteger(count) || count < 1 || count > 3) {
+            return json({ error: 'cantidad debe ser un entero entre 1 y 3' }, 400);
+          }
+          // Los descubrimientos creados en el panel SIEMPRE excluyen negocios con web propia.
+          // No se acepta un flag del cliente para que nadie pueda invertir esta regla por error.
+          request = { type: 'discovery', niche, location, count, require_no_website: true };
+          input = `Buscar ${count} ${niche} en ${location} sin website propio`;
+        } else {
+          input = queueText(body.input, 200);
+          if (!input) return json({ error: 'input requerido (max 200 chars)' }, 400);
+        }
         const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
         if (queue.filter(q => q.status === 'pending').length >= 20) {
           return json({ error: 'cola llena (20 pendientes max)' }, 429);
         }
-        const item = { id: crypto.randomUUID(), input, status: 'pending', created: new Date().toISOString() };
+        if (request && queue.some(q => (q.status === 'pending' || q.status === 'processing')
+          && q.request?.type === 'discovery' && discoveryKey(q.request) === discoveryKey(request))) {
+          return json({ error: 'esa busqueda ya esta activa en la cola' }, 409);
+        }
+        const item = {
+          id: crypto.randomUUID(), input, status: 'pending', created: new Date().toISOString(),
+          ...(request ? { request } : {}),
+        };
         queue.push(item);
         await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
         return json({ ok: true, item });

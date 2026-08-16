@@ -74,6 +74,22 @@
       transition: border-color 0.2s, box-shadow 0.2s;
     }
     .forge-row input:focus { border-color: rgba(184,240,77,0.5); box-shadow: 0 0 0 3px rgba(184,240,77,0.1); }
+    .forge-modes { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+    .mode-btn {
+      cursor: pointer; font: inherit; font-size: 12px; font-weight: 600; color: var(--ink-60);
+      background: transparent; border: 1px solid var(--border); border-radius: 999px; padding: 8px 12px;
+    }
+    .mode-btn.on { color: #102009; background: var(--lime); border-color: var(--lime); }
+    .discovery-form { display: grid; gap: 12px; }
+    .filter-row { display: grid; grid-template-columns: minmax(170px, 1fr) minmax(170px, 1fr) 118px; gap: 10px; }
+    .filter-field { display: grid; gap: 6px; font-size: 11px; color: var(--ink-40); letter-spacing: 0.07em; text-transform: uppercase; }
+    .filter-field input, .filter-field select {
+      width: 100%; min-height: 48px; background: rgba(0,0,0,0.35); border: 1px solid var(--border);
+      border-radius: 12px; padding: 11px 13px; color: var(--ink); font: inherit; font-size: 14px; letter-spacing: normal; text-transform: none; outline: none;
+    }
+    .filter-field input:focus, .filter-field select:focus { border-color: rgba(184,240,77,0.5); box-shadow: 0 0 0 3px rgba(184,240,77,0.1); }
+    .filter-note { font-size: 12px; color: var(--ink-60); }
+    .filter-note b { color: var(--lime); font-weight: 600; }
     .btn {
       border: none; cursor: pointer; font-family: inherit; font-weight: 600; font-size: 14px;
       padding: 15px 26px; border-radius: 14px; color: #0c1408;
@@ -125,6 +141,8 @@
     .qmore:hover { color: var(--ink); border-color: rgba(255,255,255,0.28); }
 
     /* Card de progreso (item en proceso) */
+    .prog.stale .fill { background: rgba(232,122,106,0.55); }
+    .prog.stale .stage { color: var(--amber); }
     .prog {
       width: 100%; margin-top: 14px; padding: 16px 18px; border-radius: 16px;
       border: 1px solid rgba(184,240,77,0.25); background: rgba(184,240,77,0.04);
@@ -302,6 +320,7 @@
       .stats { grid-template-columns: repeat(2, 1fr); }
       .card { padding: 14px; }
     }
+    @media (max-width: 620px) { .filter-row { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -323,10 +342,29 @@
 
     <section class="card forge reveal" style="animation-delay:0.08s">
       <h2>Forjar un <em>website nuevo</em></h2>
-      <p class="sub">Escribe un Instagram handle, el nombre de un negocio, o un nicho + ciudad. Las forjas pasan cada ~7 minutos: investigan el negocio, construyen su site premium y publican el demo automaticamente. El outreach siempre espera tu aprobacion.</p>
-      <div class="forge-row">
+      <p class="sub">Crea un demo para un negocio puntual, o busca negocios sin website propio por nicho y país o zona. Las forjas investigan, construyen y publican el demo; el outreach siempre espera tu aprobación.</p>
+      <div class="forge-modes" role="tablist" aria-label="Tipo de solicitud">
+        <button class="mode-btn on" id="modeDirect" type="button" role="tab" aria-selected="true">Negocio puntual</button>
+        <button class="mode-btn" id="modeDiscovery" type="button" role="tab" aria-selected="false">Buscar sin website</button>
+      </div>
+      <div class="forge-row" id="directForm">
         <input id="input" type="text" maxlength="200" placeholder="@mizuheadspamiami · Alea Skincare North Miami · head spas en Orlando" />
         <button class="btn" id="submit">Buscar y crear</button>
+      </div>
+      <div class="discovery-form" id="discoveryForm" hidden>
+        <div class="filter-row">
+          <label class="filter-field">Nicho
+            <input id="discoveryNiche" type="text" maxlength="70" placeholder="electricistas" />
+          </label>
+          <label class="filter-field">País o zona
+            <input id="discoveryLocation" type="text" maxlength="80" placeholder="España · Madrid · Andalucía" />
+          </label>
+          <label class="filter-field">Cantidad
+            <select id="discoveryCount"><option value="1">1 negocio</option><option value="2">2 negocios</option><option value="3" selected>3 negocios</option></select>
+          </label>
+        </div>
+        <p class="filter-note"><b>Filtro fijo:</b> se descartan negocios con website propio. Los perfiles de reserva de terceros no cuentan como website.</p>
+        <div class="forge-row"><button class="btn" id="discoverySubmit">Buscar y crear websites</button></div>
       </div>
       <p class="msg" id="msg"></p>
       <p class="hint">Tambien puedes correrlo al instante desde Claude Code: <code>/siteforge &lt;handle o nombre&gt;</code></p>
@@ -410,6 +448,14 @@
     function nombreItem(q) {
       const real = q.result && q.result.name;
       if (real) return { nombre: real, fuente: '' };
+      const request = q.request;
+      if (request && request.type === 'discovery') {
+        const cantidad = Number(request.count) || 1;
+        return {
+          nombre: `${cantidad} ${request.niche} en ${request.location} · sin website propio`,
+          fuente: 'búsqueda filtrada',
+        };
+      }
       const inp = String(q.input || '');
       if (inp.startsWith('@')) return { nombre: inp, fuente: 'instagram' };
       const b = inp.match(/booksy\.com\/[a-z-]+\/(\d+)_([^_/?]+)_[^_/?]+_(\d+)_([^_/?]+)/i);
@@ -728,8 +774,12 @@
       window.__queue = {};
       const chips = qItems.map(q => {
         window.__queue[q.id] = q;
-        const demo = q.result && q.result.url_demo && q.result.url_demo.startsWith('https://') && q.result.url_demo.includes('.odd-forest-9504.workers.dev')
-          ? `<a href="${esc(q.result.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">ver demo</a>` : '';
+        const resultSites = q.result && Array.isArray(q.result.sites)
+          ? q.result.sites : (q.result && q.result.url_demo ? [q.result] : []);
+        const demo = resultSites
+          .filter(site => site.url_demo && site.url_demo.startsWith('https://') && site.url_demo.includes('.odd-forest-9504.workers.dev'))
+          .map((site, index) => `<a href="${esc(site.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">${resultSites.length > 1 ? esc(site.name || `demo ${index + 1}`) : 'ver demo'}</a>`)
+          .join(' · ');
         const handle = q.input.startsWith('@') ? q.input.slice(1) : '';
         const dm = q.status === 'done' && q.result && q.result.dm && handle
           ? `<a href="#" onclick="event.preventDefault(); sendQueueDM('${esc(q.id)}', '${esc(handle)}')" style="color:var(--lime)">DM ✉</a>` : '';
@@ -752,15 +802,25 @@
           ${demo}${dm}${why}
         </div>${whyBox}`;
       }).join('');
-      const progs = working.map(q => `
-        <div class="prog">
+      const progs = working.map(q => {
+        // Si la forja no reporta avance hace rato, decirlo en vez de fingir progreso: el
+        // caso real fue una corrida muerta con 3 items "en proceso" durante hora y media.
+        const desde = Date.parse(q.stage_at || q.started_at || q.created) || Date.now();
+        const minSin = Math.floor((Date.now() - desde) / 60000);
+        const abandonado = minSin >= 10;
+        const estado = abandonado
+          ? `⚠️ Sin señales de la forja hace ${minSin} min · a los 40 vuelve a la cola solo`
+          : (STAGE_LABEL[q.stage] || 'En proceso');
+        return `
+        <div class="prog${abandonado ? ' stale' : ''}">
           <div class="row">
-            <span class="name">⚒️ ${esc(q.result && q.result.name || q.input)}</span>
-            <span class="stage">${STAGE_LABEL[q.stage] || 'En proceso'}</span>
+            <span class="name">⚒️ ${esc(q.result && q.result.name || nombreItem(q).nombre)}</span>
+            <span class="stage">${estado}</span>
             <span class="timer" data-start="${esc(q.started_at || q.created)}">0m 00s</span>
           </div>
-          <div class="bar"><div class="fill" style="width:${STAGE_PCT[q.stage] || 15}%"></div></div>
-        </div>`).join('');
+          <div class="bar"><div class="fill" style="width:${abandonado ? 100 : (STAGE_PCT[q.stage] || 15)}%"></div></div>
+        </div>`;
+      }).join('');
       // Items recien encolados: temporizador desde el primer segundo + cuenta regresiva a la proxima forja
       const FORGE_SLOTS = [7, 15, 22, 30, 37, 46, 52, 59];
       const now = new Date();
@@ -770,7 +830,7 @@
       const pendProgs = pending.map(q => `
         <div class="prog">
           <div class="row">
-            <span class="name">⏳ ${esc(q.input)}</span>
+            <span class="name">⏳ ${esc(nombreItem(q).nombre)}</span>
             <span class="stage">En cola · una forja lo toma en ~${waitMin} min</span>
             <span class="timer" data-start="${esc(q.created)}">0m 00s</span>
           </div>
@@ -914,24 +974,59 @@
       }
     }
 
+    let queueMode = 'direct';
+    function setQueueMode(mode) {
+      queueMode = mode;
+      const discovery = mode === 'discovery';
+      $('directForm').hidden = discovery;
+      $('discoveryForm').hidden = !discovery;
+      $('modeDirect').classList.toggle('on', !discovery);
+      $('modeDiscovery').classList.toggle('on', discovery);
+      $('modeDirect').setAttribute('aria-selected', String(!discovery));
+      $('modeDiscovery').setAttribute('aria-selected', String(discovery));
+      (discovery ? $('discoveryNiche') : $('input')).focus();
+    }
+    $('modeDirect').onclick = () => setQueueMode('direct');
+    $('modeDiscovery').onclick = () => setQueueMode('discovery');
+
+    async function queueRequest(body, button, onSuccess) {
+      const msg = $('msg');
+      button.disabled = true;
+      try {
+        const r = await fetch('/api/queue', { method: 'POST', headers: headers(), body: JSON.stringify(body) });
+        const data = await r.json();
+        if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(true); return; }
+        if (!r.ok) throw new Error(data.error || r.status);
+        msg.className = 'msg ok';
+        msg.textContent = 'En cola. Verás el progreso de la forja aquí mismo.';
+        onSuccess();
+        load();
+      } catch (e) {
+        msg.className = 'msg err'; msg.textContent = 'Error: ' + e.message;
+      } finally { button.disabled = false; }
+    }
+
     $('submit').onclick = async () => {
       const input = $('input').value.trim();
       const msg = $('msg');
       if (!input) { msg.className = 'msg err'; msg.textContent = 'Escribe un handle, negocio o nicho.'; return; }
-      $('submit').disabled = true;
-      try {
-        const r = await fetch('/api/queue', { method: 'POST', headers: headers(), body: JSON.stringify({ input }) });
-        const data = await r.json();
-        if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(true); return; }
-        if (!r.ok) throw new Error(data.error || r.status);
-        msg.className = 'msg ok'; msg.textContent = 'En cola. Una forja pasa cada ~7 minutos; veras el progreso aqui mismo.';
-        $('input').value = '';
-        load();
-      } catch (e) {
-        msg.className = 'msg err'; msg.textContent = 'Error: ' + e.message;
-      } finally { $('submit').disabled = false; }
+      queueRequest({ input }, $('submit'), () => { $('input').value = ''; });
+    };
+    $('discoverySubmit').onclick = () => {
+      const niche = $('discoveryNiche').value.trim();
+      const location = $('discoveryLocation').value.trim();
+      const msg = $('msg');
+      if (!niche || !location) {
+        msg.className = 'msg err'; msg.textContent = 'Indica un nicho y un país o zona.'; return;
+      }
+      queueRequest({ request: { type: 'discovery', niche, location, count: Number($('discoveryCount').value) } }, $('discoverySubmit'), () => {
+        $('discoveryNiche').value = ''; $('discoveryLocation').value = ''; $('discoveryCount').value = '3';
+      });
     };
     $('input').addEventListener('keydown', e => { if (e.key === 'Enter') $('submit').click(); });
+    ['discoveryNiche', 'discoveryLocation', 'discoveryCount'].forEach(id => $(id).addEventListener('keydown', e => {
+      if (e.key === 'Enter') $('discoverySubmit').click();
+    }));
 
     if (!localStorage.getItem(KEY_LS)) showGate(); else load();
     setInterval(load, 30000);

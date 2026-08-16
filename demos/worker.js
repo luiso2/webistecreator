@@ -87,6 +87,16 @@ class OgAbsoluta {
   }
 }
 
+// Cada demo historico trae una copia identica de Tailwind (451 KB) en
+// <slug>/assets/tailwind.js. Con cientos de sitios eso hacia que cada deploy
+// tuviera que escanear ~164 MiB de duplicados. Se conserva la ruta en disco
+// para los workers individuales antiguos, pero el worker global la sustituye
+// al servir el HTML por una sola copia compartida. Asi no hace falta reescribir
+// ni arriesgar todos los index.html existentes para hacer el deploy ligero.
+class TailwindCompartido {
+  element(el) { el.setAttribute('src', '/_shared/tailwind.js'); }
+}
+
 // Huella corta y estable del CSS inyectado, para meterla en el ETag.
 function huella(s) {
   let h = 5381;
@@ -103,7 +113,10 @@ async function servir(env, req, slug) {
     const res0 = await env.ASSETS.fetch(req);
     const tipo0 = res0.headers.get('content-type') || '';
     if (!tipo0.includes('text/html') || !origen) return res0;
-    return new HTMLRewriter().on('meta[property^="og:"]', new OgAbsoluta(origen)).transform(res0);
+    return new HTMLRewriter()
+      .on('script[src="assets/tailwind.js"]', new TailwindCompartido())
+      .on('meta[property^="og:"]', new OgAbsoluta(origen))
+      .transform(res0);
   }
 
   // EL BUG QUE ESTO ARREGLA (2026-08-12): el HTMLRewriter cambia el BODY pero conservaba los
@@ -124,7 +137,9 @@ async function servir(env, req, slug) {
   const salida = new Headers(res.headers);
   const base = (salida.get('etag') || 'sf').replace(/[^A-Za-z0-9._-]/g, '');
   salida.set('etag', `"${base}-c${huella(css)}"`);
-  let rw = new HTMLRewriter().on('head', new InyectarColor(css));
+  let rw = new HTMLRewriter()
+    .on('head', new InyectarColor(css))
+    .on('script[src="assets/tailwind.js"]', new TailwindCompartido());
   if (origen) rw = rw.on('meta[property^="og:"]', new OgAbsoluta(origen));
   return rw.transform(
     new Response(res.body, { status: res.status, statusText: res.statusText, headers: salida }));
@@ -140,6 +155,11 @@ export default {
       const m = url.pathname.match(/^\/([a-z0-9-]{1,40})(?:\/|$)/);
       return servir(env, req, m ? m[1] : null);
     }
+
+    // Los HTML de dominios propios tambien apuntan al asset compartido. Esta
+    // ruta no pertenece a ningun slug: si pasara por la reescritura normal se
+    // buscaria /<slug>/_shared/tailwind.js y fallaria con 404.
+    if (url.pathname === '/_shared/tailwind.js') return env.ASSETS.fetch(req);
 
     // Dominio propio: buscar el slug mapeado
     let slug = null;
