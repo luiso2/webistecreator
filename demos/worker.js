@@ -214,19 +214,19 @@ export default {
     const url = new URL(req.url);
     const host = url.hostname;
 
+    // Esta ruta comun no pertenece a un slug. Debe resolverse antes del
+    // enrutado workers.dev; de otro modo caerá en servir(..., null) y se
+    // perderá la politica de cache inmutable.
+    if (url.pathname === '/_shared/tailwind.css') return servirEstiloCompartido(env, req);
+    // Fallback para HTML que algun navegador pudo haber dejado en cache antes
+    // del cambio a CSS precompilado.
+    if (url.pathname === '/_shared/tailwind.js') return env.ASSETS.fetch(req);
+
     // workers.dev = comportamiento por path original (sin lookup de dominio)
     if (host.endsWith('.workers.dev')) {
       const m = url.pathname.match(/^\/([a-z0-9-]{1,40})(?:\/|$)/);
       return servir(env, req, m ? m[1] : null);
     }
-
-    // Los HTML de dominios propios tambien apuntan al asset compartido. Esta
-    // ruta no pertenece a ningun slug: si pasara por la reescritura normal se
-    // buscaria /<slug>/_shared/tailwind.js y fallaria con 404.
-    if (url.pathname === '/_shared/tailwind.css') return servirEstiloCompartido(env, req);
-    // Fallback para HTML que algun navegador pudo haber dejado en cache antes
-    // del cambio a CSS precompilado.
-    if (url.pathname === '/_shared/tailwind.js') return env.ASSETS.fetch(req);
 
     // Dominio propio: buscar el slug mapeado
     let slug = null;
