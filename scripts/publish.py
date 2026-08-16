@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Publica un demo ya construido: gate -> deploy -> verificar live -> registrar.
 
-Uso: python3 scripts/publish.py <slug> --lang es|en [--forbid "A,B"] [--name "..."]
+Uso: python3 scripts/publish.py <slug> --lang es|en|fr [--forbid "A,B"] [--name "..."]
                                 [--city "..."] [--ig "@handle"] [--dry-run]
 
 Por que existe: estos 4 pasos se hacian a mano y en ese orden esta el riesgo. Registrar un
@@ -47,7 +47,7 @@ def http_code(url, intentos=6, espera=5):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('slug')
-    ap.add_argument('--lang', required=True, choices=['es', 'en'])
+    ap.add_argument('--lang', required=True, choices=['es', 'en', 'fr'])
     ap.add_argument('--forbid', default='')
     ap.add_argument('--name', default=None)
     ap.add_argument('--city', default=None)

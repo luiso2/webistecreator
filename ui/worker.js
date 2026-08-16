@@ -166,7 +166,7 @@ export default {
         phone: S(body.phone, 30),
         outreach: 'pending_manual',
         status: 'staging',
-        language: body.language === 'en' ? 'en' : 'es',
+        language: ['en', 'fr'].includes(body.language) ? body.language : 'es',
         dm_message: S(body.dm_message, 500),
         thumb: typeof body.thumb === 'string' && body.thumb.startsWith('https://') && body.thumb.includes('.odd-forest-9504.workers.dev') ? S(body.thumb, 300) : undefined,
         fecha: S(body.fecha, 12) || new Date().toISOString().slice(0, 10),

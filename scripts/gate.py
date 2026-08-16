@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Puerta de calidad de un demo site. Falla (exit 1) si algo no pasa.
 
-Uso: python3 scripts/gate.py <slug> --lang es|en [--forbid "Str1,Str2,..."]
+Uso: python3 scripts/gate.py <slug> --lang es|en|fr [--forbid "Str1,Str2,..."]
 
 Checks (los mismos que el proceso manual probado):
 1. em-dash (U+2014) == 0 en index.html
@@ -35,7 +35,7 @@ MARKERS = ['text-shine', 'orb', 'glass', 'btn-3d', 'reveal', 'preloader', 'marqu
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('slug')
-    ap.add_argument('--lang', required=True, choices=['es', 'en'])
+    ap.add_argument('--lang', required=True, choices=['es', 'en', 'fr'])
     ap.add_argument('--forbid', default='')
     a = ap.parse_args()
 
@@ -77,9 +77,12 @@ def main():
     if not ml:
         fails.append('no se encontro applyLang default')
     else:
+        # El esqueleto usa data-es/data-en. Los demos franceses conservan data-es como
+        # alias interno de francés para no duplicar el runtime, pero exponen lang="fr".
         default = ml.group(2)
-        if default != a.lang:
-            fails.append(f'applyLang default es "{default}", esperado "{a.lang}"')
+        expected_default = 'es' if a.lang == 'fr' else a.lang
+        if default != expected_default:
+            fails.append(f'applyLang default es "{default}", esperado "{expected_default}"')
     mh = re.search(r'<html lang="(\w\w)"', h)
     if mh and mh.group(1) != a.lang:
         fails.append(f'<html lang="{mh.group(1)}"> esperado "{a.lang}"')
