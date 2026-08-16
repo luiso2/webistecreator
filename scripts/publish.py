@@ -65,25 +65,35 @@ def main():
     if os.path.exists(ruta_data):
         data = json.load(open(ruta_data, encoding='utf-8'))
 
-    paso('1/4 GATE de calidad')
+    paso('1/5 GATE de calidad')
     g = correr([sys.executable, 'scripts/gate.py', a.slug, '--lang', a.lang, '--forbid', a.forbid])
     print(g.stdout.strip() or g.stderr.strip())
     if g.returncode != 0:
         print('\nABORTADO: el gate no pasa. No se deploya nada.')
         sys.exit(1)
 
-    paso('2/4 Chequeo de duplicados en el registro')
+    paso('2/5 Chequeo de duplicados en el registro')
     dd = correr([sys.executable, 'scripts/dedup_check.py'])
     print(dd.stdout.strip())
     if dd.returncode != 0:
         print('\nABORTADO: hay negocios duplicados sin resolver. Resolverlos antes de publicar.')
         sys.exit(1)
 
+    paso('3/5 Compilar CSS compartido')
+    # Todos los demos consumen /_shared/tailwind.css. Regenerarlo justo antes
+    # del deploy incorpora las clases de la forja actual y actualiza su URL
+    # versionada; asi un sitio nuevo nunca queda sin estilos al publicarse.
+    s = correr(['npm', 'run', 'build:styles'])
+    print('\n'.join(((s.stdout or '') + (s.stderr or '')).strip().splitlines()[-4:]))
+    if s.returncode != 0:
+        print('\nABORTADO: no se pudo compilar el CSS compartido. No se deploya ni se registra.')
+        sys.exit(1)
+
     if a.dry_run:
-        print('\n--dry-run: no se deploya ni se registra.')
+        print('\n--dry-run: CSS compilado; no se deploya ni se registra.')
         return
 
-    paso('3/4 Deploy a Cloudflare Workers')
+    paso('4/5 Deploy a Cloudflare Workers')
     d = correr(['npx', 'wrangler', 'deploy', '-c', 'demos/wrangler.jsonc'])
     salida = (d.stdout or '') + (d.stderr or '')
     print('\n'.join(salida.strip().splitlines()[-6:]))
@@ -98,7 +108,7 @@ def main():
         sys.exit(1)
     print(f'  live OK: {url}')
 
-    paso('4/4 Registro en data/processed.json')
+    paso('5/5 Registro en data/processed.json')
     registro = json.load(open(REGISTRO, encoding='utf-8'))
     idx = next((i for i, x in enumerate(registro) if x['slug'] == a.slug), None)
     if idx is not None and registro[idx].get('outreach') in ('sent', 'skip_duplicate'):

@@ -11,7 +11,7 @@ pone el agente es el JUICIO: mirar el contact sheet y escribir el contenido.
 .venv-pw/bin/python scripts/research_ig.py <handle> [slug]   # ~7s: fotos+logo+bio+telefono+email+has_own_site+sheet
 #  -> MIRAR output/<slug>/_sheet.jpg y escribir output/<slug>/content.json (solo textos)
 python3 scripts/derive.py <slug>                             # ~0.03s: genera el index.html
-python3 scripts/publish.py <slug> --lang es --forbid "..."   # gate + deploy + verifica 200 + registra
+python3 scripts/publish.py <slug> --lang es --forbid "..."   # gate + CSS + deploy + verifica 200 + registra
 ```
 
 - `research_ig.py` abre Instagram UNA sola vez (antes eran 4 pasadas, ~22s y 4x el riesgo de
