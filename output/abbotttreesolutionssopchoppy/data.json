@@ -1,0 +1,48 @@
+{
+ "slug": "abbotttreesolutionssopchoppy",
+ "name": "Abbott Tree Solutions",
+ "legal_name": "Abbott Tree Solutions",
+ "category": "Tree service",
+ "niche": "tree service / arbolado (poda, tala, remocion de arboles)",
+ "address": "8 P A Sanders Rd, Sopchoppy, FL 32358, United States",
+ "phone": "+1 850-307-7721",
+ "email": null,
+ "hours": null,
+ "rating": 5.0,
+ "reviews_count": 50,
+ "reviews_verbatim": [],
+ "ig_url": null,
+ "ig_handle": null,
+ "facebook_url": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": [
+   "abbotttreesolutions.com (no resuelve / sin registro activo)",
+   "abbotttree.com (no resuelve / sin registro activo)",
+   "abbottsolutions.com (SI resuelve pero es un dominio generico sin relacion visible con tree service ni con Sopchoppy/Tallahassee; no se pudo confirmar contenido via WebFetch, tratado como no relacionado)",
+   "abbottsopchoppy.com (no resuelve)",
+   "abbotttreesolutionsllc.com (no resuelve)"
+  ],
+  "result": "sin website propio confirmado. La ficha de Google Maps muestra boton 'Add website' y campo website vacio en el panel de detalle. Existe un negocio DISTINTO y no relacionado, 'Abbott Tree Removal' en 9012 Smith Creek Rd, Tallahassee FL (telefono (850) 631-2121, dominio abbotttreecare.com), con direccion y telefono diferentes al de Sopchoppy: se descarto explicitamente para no mezclar datos de dos negocios distintos que comparten el apellido Abbott.",
+  "verified_live_2026-08-18": true
+ },
+ "services_research": [
+  "Tree removal con grua y camion con canasta (fotos de remocion controlada cerca de casas y lineas electricas)",
+  "Poda y recorte en altura (climber con cuerda y arnes en pinos altos, foto de trabajo cerca de vivienda)",
+  "Desbroce de terreno / land clearing (tractor forestal desbrozando maleza en lote boscoso)",
+  "Limpieza de ramas caidas / storm cleanup (tronco grande derribado junto a una casa, pila de ramas cerca de vivienda)"
+ ],
+ "language_signal": "ingles (nombre del negocio, zona rural del panhandle de Florida cerca de Tallahassee, sin senal de espanol en directorios ni en la ficha)",
+ "google_maps_url": "https://www.google.com/maps/place/Abbott+Tree+Solutions/data=!4m7!3m6!1s0x88ecbb4b70be4d27:0xc72c376d45875b46!8m2!3d30.0721541!4d-84.443268!16s%2Fg%2F11hdngvk5l!19sChIJJ02-cEu77IgRRluHRW03LMc?authuser=0&hl=en&rclk=1",
+ "photos_source": "18 fotos extraidas de la ficha de Google Maps via scripts/gmaps_photocycle.js (Playwright, ArrowRight cycling), descargadas con curl (UA Chrome), verificadas con `file` (todas JPEG validas, 90KB-1.2MB, ninguna de 0 bytes). Curadas visualmente con Read sobre cada una: 8 fotos de trabajo real utilizables (climber en pino alto, camion con canasta junto a vivienda, grua + mini cargador removiendo arbol, tractor forestal desbrozando, tronco grande derribado junto a casa, grua alcanzando pino muerto, tractor con troncos cortados) mas fotos de terreno/paisaje (lote boscoso, cabana con terreno despejado, rama de pino sobre humedal de Wakulla) usadas como ambientacion. Se descarto una foto antes/despues con texto superpuesto 'Before'/'After' para no usarla como tile de galeria (regla de curaduria: sin capturas con texto encima).",
+ "sources": [
+  "node scripts/gmaps_photocycle.js sobre la mapsUrl provista: 18 fotos reales de la ficha",
+  "curl + `file` sobre cada foto descargada: todas decodifican como JPEG valido",
+  "WebSearch \"Abbott Tree Solutions\" Sopchoppy Florida: confirma nombre, direccion 8 P A Sanders Rd Sopchoppy FL 32358, rating 5/5 (47-50 resenas segun snapshot) via HireAnyPro y Arborist.com.au",
+  "WebFetch hireanypro.com/listing/abbott-tree-solutions-sopchoppy: listado sin reclamar, email y website son placeholders genericos del directorio (info@example.com, www.example.com), NO datos reales del negocio",
+  "WebSearch \"Abbott Tree Solutions\" Tallahassee tree service phone: identifico un negocio DISTINTO 'Abbott Tree Removal' en 9012 Smith Creek Rd Tallahassee, telefono (850) 631-2121, descartado por no coincidir con la direccion ni el telefono verificados en Google Maps",
+  "WebSearch \"Abbott Tree Solutions\" Sopchoppy facebook OR instagram OR email: no arrojo perfil de Facebook o Instagram verificable propio del negocio de Sopchoppy (la unica pagina de Facebook encontrada, 'Abbott Tree Service', esta bloqueada por el muro de login y no se pudo confirmar que corresponda a este negocio)",
+  "curl a dominios candidatos (abbotttree.com, abbotttreesolutions.com, abbottsolutions.com, abbottsopchoppy.com, abbotttreesolutionsllc.com): solo abbottsolutions.com resuelve, sin contenido confirmable relacionado al negocio"
+ ],
+ "notes": "No se encontro email publico tras busqueda razonable (WebSearch + revision de directorios + intento de dominios propios): email queda null y el outreach es pending_manual solo con telefono. Tampoco se confirmo Instagram o Facebook propios del negocio: ig_url y facebook_url quedan null, y en content.json el bloque 'social' del site reutiliza el enlace a Google Maps (social_label = 'Google Maps') en vez de un perfil de red social, siguiendo el patron de daveslawnpestpembrokepines. El dato de horario visto en la ficha ('martes abierto 24 horas') no se uso para afirmar disponibilidad 24/7 en el copy del site, siguiendo la instruccion de no asumir mas alla del dato puntual observado."
+}
