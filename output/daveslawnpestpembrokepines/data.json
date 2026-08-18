@@ -1,0 +1,41 @@
+{
+ "slug": "daveslawnpestpembrokepines",
+ "name": "Dave's Lawn & Pest Control",
+ "legal_name": "Dave's Lawn & Pest Control",
+ "category": "Lawn care service",
+ "niche": "landscaping / lawn care",
+ "address": null,
+ "phone": "+1 954-665-9913",
+ "email": null,
+ "hours": null,
+ "rating": 4.9,
+ "reviews_count": 69,
+ "reviews_verbatim": [],
+ "ig_url": null,
+ "ig_handle": null,
+ "facebook_url": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": ["daveslawnandpest.com", "daveslawnpestcontrol.com", "daveslawnpest.com"],
+  "result": "sin website propio confirmado; ninguno de los dominios candidatos resuelve. Google Maps muestra boton 'Add website'.",
+  "verified_live_2026-08-18": true,
+  "brand_confusion_check": "existe una cadena regional grande con nombre similar, 'Dave's Pest Control' (davespestcontrol.com, sede Port Orange FL, sucursales en Sunrise/Lakeland/Longwood/St. Augustine). Se verifico que es un negocio DISTINTO: el telefono +1 954-665-9913 no coincide con ninguna sucursal publicada de la cadena (Sunrise: 954-385-2888), y SunBiz lista 'DAVES LAWN PEST CONTROL' (L20000366779) como entidad registrada separada de 'DAVE'S LAWN CARE'."
+ },
+ "services_research": [
+  "Lawn mowing and edging (corte con patron de rayas visible en multiples fotos)",
+  "Yard cleanup and shrub trimming",
+  "Landscaping maintenance (palmeras, setos, caminos de pavers)",
+  "Residential pest control (indicado por el nombre del negocio; sin fotos especificas de este servicio, no se fabrica detalle adicional)"
+ ],
+ "language_signal": "ingles (nombre del negocio, sin senal de espanol en la ficha)",
+ "google_maps_url": "https://www.google.com/maps/place/Dave%27s+Lawn+%26+Pest+Control/data=!4m7!3m6!1s0xa7bd44dfe496550b:0x24dfaedc43d54d5c!8m2!3d26.1561484!4d-80.4482804!16s%2Fg%2F11np77d71x!19sChIJC1WW5N9EvacRXE3VQ9yu3yQ?authuser=0&hl=en&rclk=1",
+ "photos_source": "21 fotos extraidas de la ficha de Google Maps via scripts/gmaps_photocycle.js (Playwright, ArrowRight cycling), descargadas con curl (UA Chrome), verificadas con `file` (todas JPEG validas, >150KB, ninguna de 0 bytes). Curadas visualmente con Read (contact sheet PIL): cespedes y jardines residenciales reales, sin personas, sin texto superpuesto, se descartaron 2 fotos (primer plano de corteza de arbol/orquidea sin relacion clara con el servicio, y una foto de cesped con parches secos poco favorecedora).",
+ "sources": [
+  "node scripts/gmaps_discover.js \"lawn care in Pembroke Pines, FL\": nombre, rating 4.9, resenas 69, boton Website ausente",
+  "node scripts/gmaps_detail.js sobre la ficha: confirma nombre, rating 4.9, telefono +1 954-665-9913, website null",
+  "node scripts/gmaps_photocycle.js: 21 fotos reales de jardines",
+  "WebSearch \"Dave's Lawn & Pest Control\" Pembroke Pines email instagram facebook: sin resultados propios, solo la cadena regional distinta (ver brand_confusion_check)",
+  "WebSearch \"954-665-9913\" Dave's Lawn Pest Control: confirma que el telefono no coincide con ninguna sucursal de la cadena regional; SunBiz muestra entidad registrada separada"
+ ],
+ "notes": "No se encontro direccion publica (negocio de zona de servicio / service-area business, sin local fisico publicado en Google Maps): se omite el campo direccion y JSON-LD sin PostalAddress, y la seccion de contacto del site usa una foto real en vez de mapa embebido. No se encontro email publico tras busqueda razonable: se deja null. No se pudieron extraer resenas verbatim (reviewSamples vacio, sin Yelp/Facebook propio indexado): se usa la variante SIN-testimonios (social_proof.modo = razones) con el rating real 4.9 y las 69 resenas reales verificadas en Google Maps. Precaucion de marca documentada en outreach-draft.md: verificar antes de contactar dado el nombre similar a una cadena regional mas grande."
+}
