@@ -1,0 +1,1 @@
+FAILED: all 25 Google Maps photos for Davenport Best Locksmith are recycled stock imagery (luxury real-estate stock front doors, generic lock/key product shots, and two competing locksmiths' own branded marketing graphics), leaving 0 usable real photos of this business against the 5-minimum bar, a known pattern for spam-prone locksmith listings.
