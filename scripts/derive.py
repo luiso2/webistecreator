@@ -341,10 +341,16 @@ def construir(slug):
             <p class="text-sm text-[color:var(--ink-60)]" {attrs(tarj["pie"])}>{t(tarj["pie"], lang)}</p>''')
 
     # 8. strip
+    def _count_span(count_val, texto_val):
+        """data-decimals evita que el contador anime 4.9 -> 5 (redondeo por defecto a 0 decimales)."""
+        dec = len(str(count_val).split('.')[1]) if '.' in str(count_val) else 0
+        dec_attr = f' data-decimals="{dec}"' if dec else ''
+        return f'<span data-count="{count_val}"{dec_attr}>{texto_val}</span>'
+
     celdas = []
     for i, s in enumerate(c['strip']):
         delay = f' style="transition-delay:{i * 90}ms"' if i else ''
-        val = (f'<span data-count="{s["count"]}">{s["valor"]}</span>' if s.get('count') else s['valor'])
+        val = (_count_span(s["count"], s["valor"]) if s.get('count') else s['valor'])
         clase = 'font-display text-2xl text-shine' if s.get('count') else 'font-display text-2xl'
         celdas.append(f'<div class="reveal"{delay}><p class="{clase}">{val}</p>'
                       f'<p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" {attrs(s["etiqueta"])}>{t(s["etiqueta"], lang)}</p></div>')
@@ -375,7 +381,7 @@ def construir(slug):
     mini = []
     for m in n['stats']:
         mini.append(f'<div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">'
-                    + (f'<span data-count="{m["count"]}">{m["valor"]}</span>' if m.get('count') else m['valor'])
+                    + (_count_span(m["count"], m["valor"]) if m.get('count') else m['valor'])
                     + f'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" {attrs(m["etiqueta"])}>{t(m["etiqueta"], lang)}</p></div>')
     d.rx(r'<div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">.*?</div>\s*</div>\s*<div class="reveal flex flex-wrap gap-4"',
          '<div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">\n          '
