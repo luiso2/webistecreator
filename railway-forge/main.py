@@ -31,19 +31,15 @@ import sys
 import time
 import urllib.request
 
+import contenido_script as cs
+
 PANEL = os.environ.get('PANEL_URL', 'https://siteforge-panel.odd-forest-9504.workers.dev')
 DEMOS = 'https://siteforge-demos.odd-forest-9504.workers.dev'
 GH_REPO = os.environ.get('GH_REPO', 'luiso2/webistecreator')
 GH_TOKEN = os.environ['GITHUB_TOKEN']
-# Proveedor LLM: DeepSeek si hay key (decision del usuario 2026-08-18); Anthropic como
-# alternativa si su variable esta presente. DeepSeek NO tiene vision ni busqueda web:
-# la curacion usa los alt-texts de las fotos (IG marca los flyers con "text that says")
-# y los items por NOMBRE se dejan para la rutina cloud, que si puede buscar.
-DEEPSEEK_KEY = os.environ.get('DEEPSEEK_API_KEY')
-ANTHROPIC_KEY = os.environ.get('ANTHROPIC_API_KEY')
-MODELO = os.environ.get('LLM_MODEL', 'claude-sonnet-5')  # modelo del camino Anthropic
-if not (DEEPSEEK_KEY or ANTHROPIC_KEY):
-    raise SystemExit('Falta DEEPSEEK_API_KEY o ANTHROPIC_API_KEY')
+# SIN IA (decision del usuario 2026-08-18): curacion por reglas y plantillas por nicho,
+# todo en contenido_script.py. Cero costo por site, cero dependencia de APIs de modelos.
+# Los items por NOMBRE (necesitan busqueda web) se dejan a la rutina cloud sin reclamarlos.
 POLL_S = int(os.environ.get('POLL_SECONDS', '25'))
 FORBID = 'Pure Artistry,pure.artistrysk,Booksy,booksy,121705,silk press,locs,K-Tip,W Grant,Chianita,Hair Studio'
 
@@ -81,30 +77,6 @@ def terminar(item_id, **result):
     panel('/api/public/queue/done', {'id': item_id, **result})
 
 
-def llm(prompt, max_tokens=8000, imagen_b64=None):
-    """DeepSeek primero (eleccion del usuario); si falla (p.ej. sin saldo, comprobado
-    2026-08-18: 'Insufficient Balance'), cae a Anthropic para que la forja no se detenga.
-    En cuanto DeepSeek tenga saldo vuelve a ser el que responde, sin redeploy."""
-    if DEEPSEEK_KEY:
-        try:
-            data = {'model': 'deepseek-chat', 'max_tokens': max_tokens,
-                    'messages': [{'role': 'user', 'content': prompt}]}
-            r = http('https://api.deepseek.com/chat/completions', data,
-                     headers={'Authorization': f'Bearer {DEEPSEEK_KEY}'}, timeout=300)
-            return r['choices'][0]['message']['content']
-        except Exception as e:
-            if not ANTHROPIC_KEY:
-                raise
-            print(f'  deepseek fallo ({str(e)[:80]}); usando anthropic', flush=True)
-    contenido = [{'type': 'text', 'text': prompt}]
-    if imagen_b64:
-        contenido.insert(0, {'type': 'image', 'source': {'type': 'base64', 'media_type': 'image/jpeg', 'data': imagen_b64}})
-    r = http('https://api.anthropic.com/v1/messages',
-             {'model': MODELO, 'max_tokens': max_tokens, 'messages': [{'role': 'user', 'content': contenido}]},
-             headers={'x-api-key': ANTHROPIC_KEY, 'anthropic-version': '2023-06-01'}, timeout=300)
-    return '\n'.join(b.get('text', '') for b in r.get('content', []) if b.get('type') == 'text')
-
-
 def subir_github(ruta_local, ruta_repo, intento=0):
     """Sube un archivo por la API de contents. Reintenta el 409 de SHA (commits concurrentes)."""
     with open(ruta_local, 'rb') as f:
@@ -136,65 +108,6 @@ def parece_handle(s):
 # Sin busqueda web (DeepSeek): un item por NOMBRE no se puede resolver a handle sin
 # adivinar, y adivinar esta prohibido. Esos items se SALTAN sin reclamarlos, para que la
 # rutina cloud (que si busca) los tome. Esta forja procesa los que traen @handle.
-
-
-PROMPT_CONTENIDO = """Eres el curador y redactor de la forja Siteforge. NO puedes ver las fotos:
-trabajas con sus ALT-TEXTS de Instagram (campo fotos_utilizables de los hechos; las que IG
-marco como graficos con texto ya fueron descartadas). Elige por el alt, se conservador: si
-un alt sugiere retrato, selfie, meme o producto, NO va en galeria.
-
-HECHOS (unica fuente de verdad):
-%s
-
-TAREA, responde UN SOLO JSON:
-{"construible": true|false, "motivo": "...",
- "fotos": {"hero": "bk-N.jpg", "nosotros": ["...","..."], "galeria": ["..." x6], "contacto": "..."},
- "dm": "mensaje de primer contacto, 300-400 chars, formato: ELLOS primero -> link -> sin riesgo -> pregunta",
- "content": { ...content.json completo con el MISMO schema del ejemplo de abajo... }}
-
-CURACION (regla dura): en galeria SOLO fotos reales del TRABAJO del negocio. PROHIBIDO:
-flyers o graficos con texto, memes, retratos/selfies, fotos de otras cuentas, stock,
-capturas con caption encima. Si tras descartar no quedan 5 usables: construible=false y
-motivo detallado (no fuerces un demo pobre). El logo del avatar es logo.jpg.
-
-CONTENIDO (regla dura): ni UN dato factual fuera de los HECHOS. Sin precios, resenas,
-ratings, anos de experiencia, zonas ni credenciales salvo que esten en los hechos. Los
-posts de IG se llaman "publicaciones", NUNCA "proyectos" ni "trabajos" (N posts no son N
-trabajos). social_proof modo "razones". contacto sin mapa (usa contacto.imagen). Bilingue
-es/en en cada texto; lang principal = idioma_principal de los hechos. cta_url del canal de
-los hechos. slug, base="dark-v2".
-
-SCHEMA de ejemplo (copiar estructura exacta, cambiar solo contenido):
-%s"""
-
-
-def fotos_curables(hechos):
-    """Prefiltro DETERMINISTICO con los alt-texts de IG: los flyers y capturas con caption
-    vienen marcados con 'text that says'. Sin vision, esto es la primera linea de curacion."""
-    fotos = hechos.get('fotos', [])
-    caps = hechos.get('captions', [])
-    limpias, sucias = [], []
-    for i, f in enumerate(fotos):
-        alt = (caps[i] if i < len(caps) else '') or ''
-        (sucias if 'text that says' in alt.lower() else limpias).append({'foto': f, 'alt': alt[:160]})
-    return limpias, sucias
-
-
-def curar_y_redactar(slug, hechos):
-    with open(f'{AQUI}/ejemplo-content.json', encoding='utf-8') as f:
-        ejemplo = f.read()
-    limpias, sucias = fotos_curables(hechos)
-    if len(limpias) < 5:
-        return {'construible': False,
-                'motivo': f'Solo {len(limpias)} fotos sin texto encima segun los alt de IG '
-                          f'({len(sucias)} marcadas como graficos/flyers). Liston: 5.'}
-    hechos = dict(hechos)
-    hechos['fotos_utilizables'] = limpias
-    hechos['fotos_descartadas_por_texto'] = [s['foto'] for s in sucias]
-    salida = llm(PROMPT_CONTENIDO % (json.dumps(hechos, ensure_ascii=False, indent=1), ejemplo),
-                 max_tokens=16000)
-    m = re.search(r'\{.*\}', salida, re.S)
-    return json.loads(m.group(0)) if m else None
 
 
 def guard_anti_invencion(content, hechos, slug):
@@ -235,15 +148,14 @@ def procesar(item):
     hechos['idioma_principal'] = 'es'  # Claude puede cambiarlo si la bio es EN; el gate valida coherencia
 
     progreso(iid, 'build')
-    plan = curar_y_redactar(slug, hechos)
-    if not plan:
-        terminar(iid, failed=True, motivo='La curacion no devolvio JSON valido')
+    # Sin IA (decision del usuario 2026-08-18): curacion por reglas + plantillas por nicho
+    fotos_sel, motivo = cs.curar(hechos)
+    if not fotos_sel:
+        terminar(iid, failed=True, motivo=f'Curacion por reglas: {motivo[:220]}')
         return
-    if not plan.get('construible'):
-        terminar(iid, failed=True, motivo=f'Curacion visual: {plan.get("motivo", "?")[:200]}')
-        return
-    content = plan['content']
-    content['slug'], content['base'] = slug, 'dark-v2'
+    content, dm, nicho = cs.construir(hechos, fotos_sel)
+    print(f'  nicho={nicho}', flush=True)
+    plan = {'fotos': fotos_sel, 'dm': dm}
     fallos = guard_anti_invencion(content, hechos, slug)
     if fallos:
         terminar(iid, failed=True, motivo=f'Guard anti-invencion: {"; ".join(fallos[:4])}')
@@ -296,7 +208,7 @@ def procesar(item):
 
 
 def main():
-    print(f'forja-railway arrancada (poll {POLL_S}s, modelo {MODELO})', flush=True)
+    print(f'forja-railway arrancada (poll {POLL_S}s, sin IA: plantillas por nicho)', flush=True)
     while True:
         q = panel('/api/public/queue') or {}
         pendientes = q.get('pending', [])
