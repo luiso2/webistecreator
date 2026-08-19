@@ -1,0 +1,52 @@
+{
+ "slug": "multihandymanlittlehavana",
+ "name": "Multi Handyman",
+ "legal_name": "Multi Handyman",
+ "category": "Handyman/Handywoman/Handyperson",
+ "niche": "handyman / remodelacion (prioridad #1 de config.json)",
+ "address": "1836 NW 35th St, Miami, FL 33142, United States",
+ "neighborhood_real": "Allapattah, Miami, FL (verificado via listado inmobiliario Elliman; NO es Little Havana, aunque el slug de entrada lo sugeria)",
+ "phone": "+1 786-468-1101",
+ "email": null,
+ "hours": "Solo se pudo verificar un fragmento parcial en la ficha (\"Tuesday, 9 AM to 7 PM\"), insuficiente para publicar un horario completo: se omite del site en vez de inventar el resto de la semana.",
+ "rating": 5.0,
+ "reviews_count": 11,
+ "reviews_verbatim": [],
+ "ig_url": null,
+ "ig_handle": null,
+ "facebook_url": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": [
+   "multihandyman.com (SI resuelve 200, pero es un dominio APARCADO: redirige a /lander y sirve la landing generica de parking de GoDaddy, wsimg.com/parking-lander, ap:\"parking\". No es un website operativo del negocio.)",
+   "multihandymanmiami.com (no resuelve)",
+   "multi-handyman.com (no resuelve)",
+   "multihandymanfl.com (no resuelve)",
+   "multihandymanllc.com (no resuelve)"
+  ],
+  "result": "sin website propio confirmado. La ficha de Google Maps muestra boton 'Add website' y campo website vacio (verificado en 2 corridas independientes de gmaps_detail.js). El unico dominio que resuelve (multihandyman.com) es un dominio aparcado sin contenido del negocio.",
+  "verified_live_2026-08-19": true
+ },
+ "services_research": [
+  "Montaje de TV en pared (foto de TV instalado sobre mueble junto a cuna/silla de bebe, y foto de dos tecnicos nivelando el soporte antes de montar otro TV)",
+  "Armado de muebles (foto de marco de cama en proceso de armado, caja de cama queen de dg casa sin abrir)",
+  "Instalacion de cobertizos de almacenamiento para patio (secuencia de 3 fotos: paneles siendo armados junto a la casa, cobertizo con puertas terminado con escalera adentro, y cobertizo terminado visto desde afuera junto a la vivienda amarilla)",
+  "Reparacion de paredes y resanado (foto de pared con juntas resanadas antes de pintar, con cubeta y espatula)",
+  "Instalacion de papel tapiz (foto de tecnico subido en escalera instalando papel tapiz en esquina de bano, y foto de papel tapiz azul/gris a medio instalar en recamara con escalera y rollo)",
+  "Preparacion para pintura interior (foto de bano vacio con bandeja y rodillo de pintura sobre superficie a resanar)"
+ ],
+ "language_signal": "inconcluso: nombre del negocio en ingles generico (\"Multi Handyman\"), pero zona (Allapattah, Miami-Dade) de mayoria hispanohablante; no se encontraron reseñas verbatim con autor para determinar idioma real de los clientes (las citas de mejoresmiami.com no tienen autor verificable, se tratan como no confiables). Se sigue la regla del brief: mercado Miami-Dade mixto/inconcluso -> se usa 'es'.",
+ "google_maps_url": "https://www.google.com/maps/place/Multi+Handyman/data=!4m7!3m6!1s0x88d9b1ea26d06aff:0xf8347dcc9403933d!8m2!3d25.8083101!4d-80.2267374!16s%2Fg%2F11twkl_v2w!19sChIJ_2rQJuqx2YgRPZMDlMx9NPg?authuser=0&hl=en&rclk=1",
+ "photos_source": "21 fotos candidatas extraidas de la ficha de Google Maps via scripts/gmaps_photocycle.js (Playwright, ArrowRight cycling), descargadas con curl (UA Chrome), verificadas con `file` (las 21 son JPEG validas, 83KB-512KB, ninguna de 0 bytes ni rota). Curadas visualmente con Read sobre cada una de las 21: se eligieron 10 para el site (hero, 2 de nosotros, avatar, logo/icon, y 6 tiles de galeria) mostrando trabajo real y limpio (montaje de TV, armado de muebles, cobertizo de almacenamiento completo, reparacion de pared, instalacion de papel tapiz). Se descartaron para galeria: fotos de cajas de producto sin abrir con texto de fabricante (dg casa, cobertizo aun en caja), una foto de pared vacia poco ilustrativa, y fotos de habitaciones terminadas redundantes con otras ya elegidas (se uso solo 1 de 4 dormitorios terminados similares para evitar relleno).",
+ "sources": [
+  "node scripts/gmaps_detail.js sobre la mapsUrl provista (corrido 2 veces): nombre, rating 5.0, telefono +1 786-468-1101 (consistente en ambas corridas), direccion 1836 NW 35th St Miami FL 33142, categoria Handyman/Handywoman/Handyperson, sin website (boton 'Add website'), sin reviewSamples verbatim (la vista sin sesion de Google Maps no expuso el conteo de reseñas ni las reseñas individuales en esta corrida)",
+  "node scripts/gmaps_photocycle.js sobre la mapsUrl: 21 fotos reales de la ficha",
+  "curl + `file` sobre las 21 fotos descargadas: todas decodifican como JPEG valido",
+  "WebFetch https://mejoresmiami.com/handyman/: corrobora rating 5.0, 'mas de 12 reseñas' (aproximado, cercano a las 11 ya verificadas en descubrimiento), direccion identica 1836 NW 35th St Miami FL 33142, pero telefono DISTINTO (+1 786-894-7937) al de Google Maps (+1 786-468-1101 verificado 2 veces): se descarta el telefono del directorio por no coincidir con la ficha oficial de Google, posible numero de rastreo del directorio. Las 'reseñas' listadas en ese directorio no tienen autor ni forma de verificarse como reseñas reales de Google: se tratan como marketing del directorio, NO como reviews_verbatim utilizables (se usa modo 'razones' en el site).",
+  "WebSearch 'Multi Handyman' Miami email instagram facebook website: no se encontro perfil de Instagram o Facebook propio del negocio (solo aparecieron otros negocios de handyman de Miami sin relacion, ej. Mr. Handyman Miami, MIAndy Handyman Solutions)",
+  "WebSearch site:facebook.com 'Multi Handyman' Miami OR Allapattah: sin resultados relacionados al negocio",
+  "curl a dominios candidatos (multihandyman.com, multihandymanmiami.com, multi-handyman.com, multihandymanfl.com, multihandymanllc.com): solo multihandyman.com resuelve (200), pero WebFetch + curl directo confirman que es una pagina de parking de dominio (GoDaddy wsimg.com/parking-lander), no un sitio del negocio",
+  "WebSearch inmobiliaria (Elliman) sobre la direccion 1836 NW 35th St: confirma que la zona real es Allapattah, Miami, FL 33142 (no Little Havana, que era solo una hipotesis del area de busqueda inicial)"
+ ],
+ "notes": "No se encontro email publico tras busqueda razonable (WebSearch, directorios, dominio propio inexistente salvo parking): email queda null y el outreach es pending_manual solo con telefono. Tampoco se confirmo Instagram o Facebook propios: ig_url y facebook_url quedan null; en content.json el bloque social del site reutiliza el enlace a Google Maps (social_label = 'Google Maps'), igual que el patron de abbotttreesolutionssopchoppy. El slug de entrada decia 'littlehavana' pero la direccion real verificada cae en Allapattah: el campo city del registro final usa 'Allapattah, Miami, FL' en vez de forzar Little Havana, y el copy del site tampoco menciona Little Havana. reviews_count se tomo como 11 (ya verificado en el descubrimiento previo a este research y corroborado de forma aproximada por el directorio mejoresmiami.com con 'mas de 12 reseñas'); reviews_verbatim queda vacio porque ninguna fuente trajo reseñas con autor verificable, asi que social_proof usa modo 'razones' en vez de testimonios inventados."
+}

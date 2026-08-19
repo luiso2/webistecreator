@@ -1,0 +1,50 @@
+{
+ "slug": "honkaandsonsservicespompano",
+ "name": "Honka & Son's Services llc",
+ "legal_name": "Honka & Son's Services llc",
+ "category": "Painter",
+ "niche": "residential and commercial painting contractor (interior/exterior painting, cabinet and floor refinishing)",
+ "address": "11 SE 15th St, Deerfield Beach, FL 33441, United States",
+ "phone": "+1 954-888-8595",
+ "email": null,
+ "hours": ["Tuesday: 7 AM to 8 PM"],
+ "rating": 4.8,
+ "reviews_count": 21,
+ "reviews_verbatim": [],
+ "ig_url": null,
+ "ig_handle": null,
+ "facebook_url": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": [
+   "honkaandsonsservices.com (no resuelve)",
+   "honkasons.com (no resuelve)",
+   "honkaandsons.com (no resuelve)",
+   "honkasonsservices.com (no resuelve)",
+   "honkapainting.com (no resuelve)",
+   "honkasonsllc.com (no resuelve)"
+  ],
+  "result": "sin website propio. Google Maps muestra boton 'Add website' y campo website vacio en el panel de detalle (verificado con scripts/gmaps_detail.js y scripts/gmaps_verify.js, ambos devuelven website: null). Ningun dominio candidato resuelve (curl https a los 6 dominios probados devuelve error de conexion / sin DNS).",
+  "verified_live_2026-08-19": true
+ },
+ "services_research": [
+  "Pintura de interiores residenciales (paredes, techos, closets bajo escalera, condominios) con acabados lisos y muros de acento en dos tonos",
+  "Pintura de exteriores residenciales (estuco, fascias, puertas de garaje) incluyendo casas de dos pisos con escalera de extension",
+  "Pintura comercial (nave/local comercial con fachada amarilla, aplicacion con equipo spray)",
+  "Refinamiento y pintura de pisos de losa/porcelanato (piso de terracota repintado a tono crema en un patio cubierto)"
+ ],
+ "language_signal": "ingles: sin senal de espanol en la ficha de Google (nombre del negocio, categoria y horario en ingles); zona de Deerfield Beach / Pompano Beach, Broward County, con alta poblacion de habla inglesa y caribena; sin bio, IG o reviews en espanol localizables tras busqueda razonable.",
+ "google_maps_url": "https://www.google.com/maps/place/Honka+%26+Son%27s+Services+llc/data=!4m7!3m6!1s0x88d91d639ddaa849:0xe1b888c0e669d9a0!8m2!3d26.2976718!4d-80.1029576!16s%2Fg%2F11c72vgcv4!19sChIJSajanWMd2YgRoNlp5sCIuOE?authuser=0&hl=en&rclk=1",
+ "photos_source": "21 fotos extraidas de la ficha de Google Maps via scripts/gmaps_photocycle.js (Playwright), descargadas con curl (UA Chrome), verificadas con `file` (todas JPEG validas, 66KB-653KB, ninguna de 0 bytes). Curadas visualmente con Read sobre cada una de las 21: se eligieron 10 fotos de trabajo real (interiores y exteriores en proceso o terminados, un trabajo comercial, un piso repintado) para hero/nosotros/avatar/galeria; se descartaron 11 (dormitorio desordenado con pertenencias personales, cuarto vacio sin evidencia de pintura reciente, fotos redundantes de la misma vivienda, y tomas sin valor de portafolio). Redimensionadas a max 1000px de ancho con Pillow, calidad 82.",
+ "sources": [
+  "node scripts/gmaps_detail.js sobre la mapsUrl provista: categoria 'Painter', rating 4.8, direccion 11 SE 15th St Deerfield Beach FL 33441, telefono +1 954-888-8595, horario visible 'Tuesday 7 AM to 8 PM', website: null",
+  "node scripts/gmaps_photocycle.js sobre la misma mapsUrl: 21 fotos reales de la ficha",
+  "node scripts/gmaps_verify.js: confirma statusLine OPEN_LISTED, websiteOnMaps: null, mismo snippet 'Add website' sin boton de sitio propio",
+  "curl + `file` sobre cada foto descargada: todas decodifican como JPEG valido",
+  "WebSearch \"Honka & Son's Services\" Deerfield Beach OR Pompano Beach painter reviews: sin resultados especificos del negocio, solo directorios genericos de pintores de la zona (BBB, HomeAdvisor, Houzz, Yellow Pages) sin listado propio localizado",
+  "WebSearch \"Honka & Son's Services\" painting website OR facebook OR instagram OR email: sin resultados; el nombre 'Honka' solo coincide con una empresa finlandesa de casas de troncos no relacionada",
+  "curl https a 6 dominios candidatos (honkaandsonsservices.com, honkasons.com, honkaandsons.com, honkasonsservices.com, honkapainting.com, honkasonsllc.com): ninguno resuelve (error de conexion en los 6)",
+  "El panel de detalle de Google Maps para este negocio se sirve en 'vista limitada' (sin sesion iniciada): no expone conteo de resenas ni texto verbatim via scraping (limitacion del entorno, no del negocio); el rating 4.8 y el conteo de 21 resenas fueron verificados en la fase de descubrimiento previa a este research (dato provisto y confirmado por el rating coincidente 4.8 en la misma ficha)"
+ ],
+ "notes": "No se encontro email publico tras busqueda razonable (WebSearch + intento de 6 dominios propios): email queda null y el outreach es pending_manual solo con telefono. No se confirmo Instagram ni Facebook propios: ig_url y facebook_url quedan null; en content.json el bloque social del site reutiliza el enlace a Google Maps (social_label = 'Google Maps'), igual que el patron de abbotttreesolutionssopchoppy. No se pudieron extraer resenas verbatim (el scraper solo accede a la vista limitada de Google Maps sin sesion, sin pestana de resenas): social_proof usa modo 'razones' con 3 especialidades reales derivadas de las fotos (interiores, exteriores, y trabajo comercial/pisos), sin inventar ninguna cita. La direccion verificada corresponde a Deerfield Beach, FL (no Pompano Beach); ambas ciudades son colindantes en Broward County, asi que el area de servicio en el site se describe como 'Deerfield Beach y Pompano Beach' sin inventar una direccion distinta a la verificada."
+}
