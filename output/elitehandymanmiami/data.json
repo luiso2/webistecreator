@@ -1,0 +1,50 @@
+{
+ "slug": "elitehandymanmiami",
+ "name": "Elite Handyman",
+ "legal_name": "Elite Handyman",
+ "category": "Handyman/Handywoman/Handyperson",
+ "niche": "handyman / remodelacion (TV mounting, carpinteria, reparaciones generales del hogar)",
+ "address": "16475 SW 84th Ln, Miami, FL 33193, United States",
+ "address_note": "Direccion tal como la declara la ficha de Google Maps (campo Address). Es zona de West Kendall / Tamiami, Miami-Dade (no Little Havana, que era solo la zona de busqueda inicial del discovery). Sin senal de que sea local comercial visible al publico: parece base residencial/operativa de un negocio de servicio a domicilio.",
+ "phone": "+1 786-566-1188",
+ "email": null,
+ "hours": ["Tuesday, 8 AM to 8 PM (unico horario visible en la ficha limitada de Google Maps)"],
+ "rating": 5.0,
+ "reviews_count": 23,
+ "reviews_count_note": "Verificado en el paso de descubrimiento previo a este research (rating 5.0, 23 resenas). El scrape de esta sesion (gmaps_detail.js) cargo la ficha en modo 'vista limitada' de Google Maps (sin sesion iniciada) y no expuso el aria-label de conteo de resenas ni la pestana de resenas (reviewSamples vacio en 2 intentos); se usa el numero ya verificado en el discovery en vez de dejarlo null.",
+ "reviews_verbatim": [],
+ "ig_url": null,
+ "ig_handle": null,
+ "facebook_url": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": [
+   "elitehandymanmiami.com (no resuelve / sin registro activo, DNS ENOTFOUND)",
+   "xtremedrillers.com (no resuelve / sin registro activo, DNS ENOTFOUND con y sin www; 'site:xtremedrillers.com' en Google no devuelve paginas indexadas)"
+  ],
+  "result": "sin website propio confirmado. El panel de detalle de Google Maps muestra 'Add website' (campo website vacio) para esta ficha 'Elite Handyman'. HALLAZGO IMPORTANTE: el texto crudo de la pagina (innerText) trae 'xtremedrillers.com' pegado justo antes del telefono (posicion tipica del campo website), pero el selector especifico de Google para el link de website (a[data-item-id='authority']) no encontro ningun elemento: no es un link activo, es texto residual. Se investigo ese dominio a fondo: una de las 14 fotos descargadas de esta misma ficha es el LOGO de 'Xtreme Drillers - TV Mounting and More' (gmaps-6.jpg), y una busqueda web confirma un listado de Yelp 'XTREME DRILLERS' en Miami con el MISMO telefono exacto (786-566-1188, linea en espanol; hay una segunda linea en ingles 786-545-6284 no verificada en la ficha de Google), operado por 'Joseph y Franco', ofreciendo TV mounting, reparaciones de drywall, trabajo electrico basico, pressure washing, cercas, instalacion de ventiladores de techo y armado de muebles. Esto confirma que 'Elite Handyman' y 'Xtreme Drillers' son el MISMO negocio/operadores (mismo telefono exacto), probablemente una ficha de Google renombrada o una segunda marca del mismo equipo. A pesar de esto, xtremedrillers.com NO resuelve por DNS (falla en dos intentos, con y sin www) y Google no tiene ninguna pagina indexada de ese dominio: no hay un website propio LIVE hoy bajo ningun nombre. Se construye el demo bajo el nombre 'Elite Handyman' (el que trae la ficha de Google Maps que se nos pidio procesar), y se deja esta nota para que el outreach pueda mencionar tambien 'Xtreme Drillers' si hace falta contexto.",
+  "verified_live_2026-08-19": true
+ },
+ "services_research": [
+  "TV mounting / instalacion de televisores en pared (la mayoria de las fotos de la ficha: montajes terminados y en proceso, con nivel y anclaje visible)",
+  "Muebles de entretenimiento y repisas flotantes a medida (foto de centro de medios empotrado con luces indirectas, sin marca de fabrica: trabajo de carpinteria/instalacion)",
+  "Estructuras de patio / pergolas (foto nocturna de una estructura de madera y metal en construccion sobre un patio, con columnas y vigas ancladas)",
+  "Reparaciones generales del hogar: segun el listado homonimo de Yelp del mismo telefono ('Xtreme Drillers'): reparaciones de drywall, trabajo electrico basico, pressure washing, cercas, instalacion de ventiladores de techo, armado de muebles"
+ ],
+ "language_signal": "espanol. La linea de contacto principal que aparece en la ficha de Google Maps (786-566-1188) es, segun el listado de Yelp del mismo negocio, la linea EN ESPANOL del equipo (hay una segunda linea en ingles distinta, 786-545-6284, no verificada como propia de esta ficha). La direccion cae en West Kendall/Tamiami, zona de Miami-Dade mayoritariamente hispanohablante. Sin resenas verbatim disponibles para confirmar por texto, se usa espanol como idioma principal del site por esta senal de la linea de contacto + la zona.",
+ "google_maps_url": "https://www.google.com/maps/place/Elite+Handyman/data=!4m7!3m6!1s0x3a85e895f2bbd:0x2ac763b38fd9fd6d!8m2!3d25.687018!4d-80.459617!16s%2Fg%2F11txpr2hr1!19sChIJvStfiV6oAwARbf3Zj7Njxyo?authuser=0&hl=en&rclk=1",
+ "photos_source": "14 fotos extraidas de la ficha de Google Maps via scripts/gmaps_photocycle.js (Playwright, ArrowRight cycling, 35 pasos), descargadas con curl (UA Chrome) a assets/raw/gmaps-1..14, verificadas con `file` (13 JPEG + 1 PNG, todas decodifican, ninguna de 0 bytes) y redimensionadas a max 1300px de ancho. Curadas visualmente con Read sobre cada una. De las 14: 2 son fotos de trabajo terminado SIN personas (gmaps-5.png: centro de medios empotrado con luces; gmaps-3.jpg: estructura de pergola/patio en construccion nocturna) usadas como hero y tile de galeria. El resto son en su mayoria fotos de los dos tecnicos (aparentemente 'Joseph y Franco') posando junto a TVs recien montados senalando la pantalla: se uso con moderacion (2 tiles de galeria que muestran el montaje terminado con el tecnico de cuerpo entero, no retrato de cerca) y una foto de equipo con herramientas DeWalt sobre una mesa para la seccion 'nosotros' (no como tile de galeria, siguiendo la regla de curaduria: selfies/retratos del dueno solo como avatar pequeno). Se descartaron: gmaps-4.jpg y gmaps-7.jpg (baja calidad/borrosas, de un trabajo distinto), gmaps-6.jpg (logo de marca 'Xtreme Drillers', no es foto de trabajo, no se usa para no mezclar identidades de marca en el site), gmaps-11.jpg/13.jpg/14.jpg (selfies de cerca de los tecnicos, prohibidas como tile de galeria por la regla de curaduria), gmaps-12.jpg (duplicado exacto de gmaps-1.jpg servido con otra URL de Google).",
+ "sources": [
+  "node scripts/gmaps_detail.js sobre la mapsUrl provista (2 corridas): nombre, rating 5.0, direccion, telefono, 1 foto principal, horario parcial. reviews y reviewSamples vinieron vacios (modo de vista limitada sin sesion de Google)",
+  "node scripts/gmaps_photocycle.js (35 pasos): 14 fotos reales de la ficha",
+  "curl + `file` sobre cada foto descargada: 13 JPEG + 1 PNG, todas validas",
+  "WebSearch \"Elite Handyman\" Miami \"786-566-1188\": sin coincidencia directa (confirma que no hay presencia web indexada bajo el nombre Elite Handyman con ese telefono)",
+  "WebSearch \"Xtreme Drillers\" TV Mounting Miami: listado de Yelp 'XTREME DRILLERS - Miami, Florida - Handyman' con el MISMO telefono 786-566-1188 (linea en espanol) + 786-545-6284 (linea en ingles), operado por Joseph y Franco, servicios de TV mounting, drywall, electrico basico, pressure washing, cercas, ventiladores de techo, armado de muebles",
+  "WebFetch/WebSearch a xtremedrillers.com y www.xtremedrillers.com: getaddrinfo ENOTFOUND en ambos casos (dominio no resuelve)",
+  "WebSearch site:xtremedrillers.com: 0 paginas indexadas por Google",
+  "WebFetch a elitehandymanmiami.com: getaddrinfo ENOTFOUND (dominio no resuelve)",
+  "WebSearch \"Elite Handyman\" 16475 SW 84th Miami / 33193: sin coincidencias; los homonimos encontrados (Elite Handyman OK, Elite Handyman & Remodeling, Elite Handyman Solutions LLC, Elite Handyman Specialist Broward, etc.) tienen telefonos/ubicaciones distintas y se descartaron por no coincidir con el telefono ni la direccion verificados en la ficha de Google Maps de este negocio",
+  "WebSearch \"Xtreme Drillers\" Miami email / Facebook: sin email publico ni pagina de Facebook propia encontrada"
+ ],
+ "notes": "No se encontro email publico tras busqueda razonable (WebSearch multiple + intento de dominios propios de ambos nombres + verificacion de homonimos). No se confirmo Instagram ni Facebook propios verificables (telefono/direccion coincidentes) bajo ninguno de los dos nombres. Con telefono como unico canal de contacto publico confirmado, el outreach queda pending_manual (llamada o SMS/WhatsApp al 786-566-1188). El hallazgo de 'Xtreme Drillers' como la marca original/hermana del mismo equipo se documenta en detalle en website_check y se puede mencionar en el mensaje de outreach para mostrar que se investigo a fondo, pero el site en si se construye 100% bajo el nombre 'Elite Handyman', que es el nombre de la ficha de Google Maps que se nos pidio procesar."
+}
