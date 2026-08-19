@@ -1,0 +1,60 @@
+{
+ "slug": "anibalandsonhandyman",
+ "name": "Anibal & Son",
+ "legal_name": "Anibal & Son",
+ "category": "Handyman/Handywoman/Handyperson",
+ "niche": "handyman / remodelacion",
+ "input_note": "El input de la tarea trae ciudad 'Homestead, FL' para el registro, pero la ficha de Google Maps EN VIVO (mismo Place ID/CID exacto dado en el input: 0x88d9c1468ce4bca7:0x534f82132390186f) devuelve una direccion en Miami (Kendall/Sunset, 33173), NO Homestead. Precedente identico ya documentado en este mismo repo bajo otro slug para el MISMO negocio: output/anibal-son-homestead/ (research anterior, tambien FAILED por el mismo motivo de fotos). Se documenta aqui como research independiente bajo el slug pedido en esta tarea (anibalandsonhandyman), con una mapsUrl de input con parametros ligeramente distintos (mismo CID/place, distinto sufijo 16s/19s) pero que resuelve a la MISMA ficha real.",
+ "google_maps": {
+  "url_input": "https://www.google.com/maps/place/Anibal+%26+Son/data=!4m7!3m6!1s0x88d9c1468ce4bca7:0x534f82132390186f!8m2!3d25.6885675!4d-80.3749154!16s%2Fg%2F11fl0v96gt!19sChIJp7zkjEbB2YgRbxiQIxOCT1M?authuser=0&hl=en&rclk=1",
+  "name": "Anibal & Son",
+  "rating": "4.7",
+  "review_count_task_input": 33,
+  "review_count_live_verified": null,
+  "review_count_note": "gmaps_detail.js corrido contra la ficha exacta del input devuelve la ficha en 'vista limitada de Google Maps' (banner de login). El bloque aria-label de estrellas se leyo bien (4.7), pero el bloque de conteo de resenas no aparecio en el DOM (reviews: null). Se deja el numero del input (33) como no re-verificado en esta corrida, consistente con el research previo del mismo negocio en output/anibal-son-homestead/data.json.",
+  "category": "Handyman/Handywoman/Handyperson",
+  "address": "11295 SW 88th St, Miami, FL 33173, United States",
+  "phone": "+1 786-343-4622",
+  "phone_alt_note": "WebSearch (snippet indexado de Yelp) muestra un telefono ligeramente distinto: (786) 343-4706. Se usa el telefono de la ficha de Google Maps EN VIVO (+1 786-343-4622) como fuente primaria por ser first-party y verificado directamente en el DOM (button[aria-label^='Phone:']); la discrepancia con el snippet de Yelp no se pudo resolver porque el acceso directo a Yelp esta bloqueado (ver yelp_check).",
+  "hours": ["Wednesday, 7 AM to 7 PM (unico dia visible en la vista limitada sin sesion)"],
+  "website": null,
+  "photos_found_gmaps_detail": 0,
+  "photos_found_photocycle": 3,
+  "photos_note": "gmaps_detail.js: el DOM no muestra boton de portada de fotos con contenido (la ficha ofrece 'Add a photo', confirmando que el negocio no subio ninguna foto propia). gmaps_photocycle.js (30 pasos) devolvio 3 URLs lh3.googleusercontent.com, pero las 3 son AVATARES/fotos de perfil de cuentas de Google (patron /a/ACg8oc... y /a-/ALV-Uj...), no fotos del negocio: se descargaron y se inspeccionaron visualmente las 3 (Read sobre cada imagen) y son (1) un icono generico letra 'G' sobre fondo azul, (2) la foto de perfil personal de un reviewer (una pintura de un Buda, sin relacion con el negocio), (3) un icono generico letra 'S' sobre fondo verde. Ninguna es una foto real del trabajo del negocio: se descartaron las 3 y no se guardo ninguna en assets/raw. Total de fotos reales y utilizables del negocio: 0.",
+  "no_own_site_confirmed": true,
+  "no_own_site_evidence": "Campo website de la ficha = null. Dominios probados con curl (timeout 8s, todos sin respuesta / no resuelven, codigo 000): anibalandson.com, anibalandsonhandyman.com, anibalson.com, anibalandsonllc.com. Microsites gratuitos de Google probados (curl): anibalandson.business.site, anibal-and-son.business.site, anibalsonhandyman.business.site: los 3 responden HTTP 404. handymananibal.com (encontrado en busqueda general) es un sitio de contenido/afiliado generico no relacionado con este negocio especifico (copy 'trusted since 2013... nationwide'), descartado como su website."
+ },
+ "yelp_check": {
+  "url": "https://www.yelp.com/biz/anibal-and-son-miami",
+  "found_via": "WebSearch (titulo indexado: 'ANIBAL AND SON - Updated July 2026 - 11295 SW 88th St, Miami, Florida - Handyman - Phone Number - Yelp')",
+  "direct_access_result": "BLOQUEADO: WebFetch a yelp.com/biz/anibal-and-son-miami devuelve HTTP 403 Forbidden.",
+  "info_recovered_only_via_search_snippets": "Servicios mencionados en snippets indexados: cabinet painting and staining, handyman contractor work, sheds & outdoor storage, art installation, acepta tarjetas de credito, abierto 24/7 segun un snippet (no verificable de forma independiente, no coincide con el horario limitado visto en Google Maps en vivo, que muestra un unico dia 'Wednesday 7 AM to 7 PM'). No se pudo confirmar ninguna foto ni cita verbatim con autor real: no utilizable como fuente de contenido citable."
+ },
+ "other_channels_checked": {
+  "facebook": "3 WebSearch dirigidas ('Anibal and Son handyman Miami facebook', 'Handyman Sons Miami facebook 786-343-4622', variantes). Aparece un perfil personal 'Anibal Son' (facebook.com/anibal.son.14) y una pagina distinta 'Handyman Sons' (facebook.com/handyman.sons, nombre parecido pero no identico). Se intento WebFetch sobre facebook.com/anibal.son.14: la pagina devuelve el muro de login de Facebook (contenido no accesible sin sesion), no se pudo confirmar que sea la pagina de este negocio (no expone telefono/direccion en el fetch). Ninguna pagina de Facebook se pudo verificar como perteneciente a este negocio especifico (mismo telefono o misma direccion).",
+  "instagram": "2 WebSearch dirigidas. Sin cuenta que coincida con el nombre exacto del negocio; solo cuentas de otras personas llamadas Anibal (@anibalcg, @anibalny) y negocios de handyman de Miami no relacionados (@mrhandymanmiami, @miami_handyman, @800handy). Ninguno coincide en telefono ni direccion.",
+  "bbb": "No se repitio la busqueda directa en esta sesion; el research previo del mismo negocio (output/anibal-son-homestead/data.json) ya documento 'No results for Anibal & Son in Miami, FL' en bbb.org."
+ },
+ "language": "es (hipotesis, no confirmada de forma directa)",
+ "language_note": "No hay resenas verbatim, captions de redes ni copy propio del negocio accesible en ningun canal (Yelp bloqueado, FB/IG no confirmados). Nombre del dueno 'Anibal' es hispanohablante y la zona (Kendall/Sunset, 33173) tiene alta poblacion hispana: 'es' es la hipotesis mas razonable pero queda sin confirmar con evidencia directa. Este dato queda documentado para una eventual sesion futura, no se uso para construir nada (ver build_status).",
+ "email": null,
+ "email_note": "No se encontro email publico en ninguna fuente accesible (Google Maps no lo expone en vista limitada; Yelp bloqueado 403; FB/IG no confirmados).",
+ "has_own_site": false,
+ "build_status": "failed",
+ "build_status_reason": "menos de 5 fotos reales utilizables",
+ "build_notes": "NO se copio ningun template ni se escribio content.json/HTML: el research se detuvo en fase 1 porque el minimo de 5 fotos reales del negocio no se pudo alcanzar. Total verificado: 0 fotos reales utilizables (gmaps_detail.js confirma 'Add a photo' en la ficha = el negocio nunca subio fotos; las 3 URLs que devolvio gmaps_photocycle.js son avatares/fotos de perfil de cuentas de Google, no fotos del trabajo del negocio, verificadas visualmente e inspeccionadas una por una y descartadas). Se investigaron Instagram y Facebook como fuente de rescate (regla del brief paso 1.3) sin encontrar ningun perfil verificable como propio de este negocio. Yelp, que segun el listado indexado por buscadores SI tiene una ficha con fotos, esta bloqueado (403 Forbidden) para acceso directo en este entorno. Este es el mismo negocio ya investigado y marcado FAILED en output/anibal-son-homestead/ (mismo Place ID/CID de Google, misma direccion, mismo telefono, mismo motivo de fallo): se confirma de forma independiente en esta segunda corrida el mismo resultado.",
+ "sources": [
+  "NODE_PATH=/opt/node22/lib/node_modules node scripts/gmaps_detail.js '<mapsUrl>' (1 corrida): nombre, rating 4.7, direccion, telefono +1 786-343-4622, horario parcial (Wednesday 7 AM-7 PM), website null, 0 fotos, 0 reviewSamples, reviews count no expuesto en el DOM",
+  "NODE_PATH=/opt/node22/lib/node_modules node scripts/gmaps_photocycle.js '<mapsUrl>' 30 (1 corrida): 3 URLs lh3.googleusercontent.com devueltas, las 3 descargadas con curl (UA Chrome) e inspeccionadas visualmente con Read: las 3 son avatares/fotos de perfil de cuentas de Google (icono letra G, foto de perfil de un reviewer sin relacion con el negocio, icono letra S), ninguna es una foto real del negocio; descartadas y borradas de assets/raw",
+  "curl (timeout 8s) sobre anibalandson.com, anibalandsonhandyman.com, anibalson.com, anibalandsonllc.com: los 4 sin respuesta (codigo 000, no resuelven)",
+  "curl sobre anibalandson.business.site, anibal-and-son.business.site, anibalsonhandyman.business.site: los 3 responden HTTP 404",
+  "WebSearch '\"Anibal & Son\" handyman Miami instagram': confirma listado de Yelp y direccion/telefono (variante 786-343-4706), sin cuenta de Instagram propia verificable",
+  "WebSearch '\"Anibal and Son\" handyman Miami facebook': confirma perfil personal 'Anibal Son' y pagina distinta 'Handyman Sons', ninguno verificado como propio del negocio; menciona handymananibal.com como sitio no relacionado",
+  "WebSearch '\"Anibal and Son\" 11295 SW 88th St Miami': confirma que la direccion corresponde a un complejo de apartamentos residencial (unidad tipo M109, listada en Rent.com, RE/MAX, Homes.com), consistente con handyman movil sin local comercial",
+  "WebFetch a https://www.yelp.com/biz/anibal-and-son-miami: HTTP 403 Forbidden",
+  "WebFetch a https://www.facebook.com/anibal.son.14/: devuelve muro de login de Facebook, contenido no verificable",
+  "WebSearch '\"Handyman Sons\" Miami facebook 786-343-4622': sin coincidencia de telefono confirmada en ningun resultado",
+  "Revision cruzada con output/anibal-son-homestead/data.json y output/anibal-son-homestead/FAILED.md del mismo repo: mismo negocio (mismo CID de Google), mismo resultado de 0 fotos reales, ya documentado en una corrida anterior independiente"
+ ],
+ "notes": "Este negocio tiene datos duros solidos y verificados (nombre, categoria, rating 4.7, telefono, direccion, ausencia de website propio), pero CERO fotos reales y utilizables en cualquier canal accesible desde este entorno (Google Maps: 0 subidas por el negocio, solo avatares de reviewers vía photocycle; Yelp: bloqueado 403 pese a que su listado indexado sugiere que SI tiene galeria; Facebook/Instagram: sin perfil verificable). Regla dura de PIPELINE.md/este brief: menos de 5 fotos reales fuerza FAILED antes de construir nada. Se marca FAILED sin construir content.json ni HTML, siguiendo la misma conclusion que la corrida anterior del mismo negocio en output/anibal-son-homestead/."
+}

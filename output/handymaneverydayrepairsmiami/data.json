@@ -1,0 +1,101 @@
+{
+ "slug": "handymaneverydayrepairsmiami",
+ "name": "Handyman Everyday Repair S",
+ "legal_name_note": "El nombre de la ficha de Google Maps termina en 'S' de forma abrupta ('Handyman Everyday Repair S'), casi seguro truncado (probable 'Services' o parte de un nombre LLC mas largo). Se usa el nombre EXACTO tal como aparece en la ficha de Google Maps, sin completar la letra faltante (no se inventa).",
+ "category": "Handyman/Handywoman/Handyperson (categoria declarada en la propia ficha de Google Maps)",
+ "niche": "handyman / remodelacion del hogar (instalaciones, reparaciones, montajes, pintura/impermeabilizacion, limpieza a presion)",
+ "address": null,
+ "address_note": "La ficha de Google Maps NO expone direccion (vista limitada sin sesion de Google: el boton 'Add missing information' / 'Suggest an edit' sugiere que el campo de direccion esta vacio o no publicado). Se corrio gmaps_detail.js 6+ veces (selector button[aria-label^='Address:']) y nunca devolvio un valor; el rawSnippet completo de la ficha tampoco contiene ningun texto de direccion. SI se cuenta con las coordenadas GPS incluidas en el propio mapsUrl que se nos dio (!8m2!3d25.5584269!4d-80.468195), que ubican el punto en el sur de Miami-Dade, cerca de Homestead/Naranja/Leisure City (zona ya indicada en el brief de la tarea). Se usa esta zona solo como referencia de idioma/contexto, NUNCA como direccion postal inventada. Por esto el content.json usa contacto.imagen (foto real) en vez de contacto.mapa.",
+ "phone": "+1 786-403-8364",
+ "phone_note": "Confirmado identico en 6 corridas de gmaps_detail.js sobre la ficha de Google Maps (formato consistente '+1 786-403-8364'), y coincide con el dato de descubrimiento previo entregado en la tarea.",
+ "email": null,
+ "hours": [
+  "Monday, 8 AM to 7 PM",
+  "Tuesday, 8 AM to 7 PM",
+  "Wednesday, 8 AM to 7 PM",
+  "Thursday, 8 AM to 7 PM",
+  "Friday, 8 AM to 7 PM",
+  "Saturday, Closed",
+  "Sunday, Closed"
+ ],
+ "hours_note": "Capturado via gmaps_detail.js (aria-label 'Copy open/closed hours' de la ficha), en una de las corridas donde el panel completo logro renderizar (la vista limitada de Google Maps es intermitente entre esta corridas).",
+ "rating": 5.0,
+ "reviews_count": 67,
+ "reviews_count_note": "Confirmado via gmaps_detail.js (aria-label '5.0 (67) / 67 reviews' de la ficha), coincide con el dato de descubrimiento previo (rating 5.0, 67 resenas).",
+ "reviews_verbatim": [
+  {
+   "autor": "Tiffany Davenport",
+   "texto_en": "I can't say enough great things about Dimas! He did an absolutely outstanding job stacking my washer and dryer and installing an air vent in my garage. His work was precise, professional, and clearly done with a lot of care and expertise.",
+   "fuente": "Resena real de Google visible en la ficha de Google Maps (capturada en vivo por gmaps_detail.js: nombre del autor, '3 reviews', '8 months ago', y el cuerpo de texto completo hasta el corte natural de '... More' de Google), NO reconstruida ni parafraseada por esta sesion.",
+   "uso": "No se usa como cita textual publica en el site (el modo elegido es 'razones', no 'testimonios', porque solo se pudo capturar de forma estable UNA resena verbatim completa, no 3+ como pide el criterio del brief para modo 'testimonios'). Se documenta aqui como evidencia real de research: confirma que el negocio SI hace instalacion de lavadora/secadora (coincide exactamente con la foto assets/raw/gmaps-1.jpg, un closet de lavado con lavadora y secadora LG rojas ya instaladas) y menciona a un tecnico real llamado 'Dimas'. No se uso el nombre 'Dimas' en el site (no hay forma de confirmar si es el dueno, un empleado, o si sigue en el equipo), pero queda documentado por si el outreach humano quiere mencionarlo."
+  }
+ ],
+ "service_mentions_google": [
+  "cleaning, mentioned in 8 reviews",
+  "punctual, mentioned in 11 reviews",
+  "fair pricing, mentioned in 3 reviews",
+  "work quality, mentioned in 8 reviews",
+  "attention to detail, mentioned in 4 reviews",
+  "reliability, mentioned in 4 reviews",
+  "courteous staff, mentioned in 2 reviews",
+  "responsive, mentioned in 2 reviews",
+  "meeting expectations, mentioned in 2 reviews",
+  "closet, mentioned in 2 reviews"
+ ],
+ "service_mentions_note": "Google Maps expone estos 'temas' auto-extraidos de las 67 resenas reales de la ficha (aria-label 'X, mentioned in N reviews'), capturados via gmaps_detail.js. Se usan como base real y verificable para los 3 items de social_proof.modo='razones' (puntualidad, atencion al detalle/calidad, precio justo), sin inventar ninguna cita.",
+ "ig_url": "https://www.instagram.com/everyday_repairsllc_handyman/",
+ "ig_handle": "@everyday_repairsllc_handyman",
+ "ig_verification_note": "NO se encontro este perfil via WebSearch (varias busquedas con el handle exacto y variantes) ni se pudo confirmar via WebFetch (instagram.com devolvio HTTP 429 Too Many Requests en 2 intentos, comportamiento tipico de Instagram bloqueando fetches automatizados sin sesion, no es evidencia de que el perfil no exista). La fuente real y directa es de PRIMERA MANO: el handle '@everyday_repairsllc_handyman' aparece impreso como marca de agua en AL MENOS 6 fotos distintas de trabajos distintos subidas a esta misma ficha de Google Maps (assets/raw/gmaps-11, 13, 14, 15, 16 antes de descartarlas/redimensionarlas; ver notas de fotos abajo), siempre con el mismo texto exacto. Se considera esto verificacion suficientemente fuerte (marca propia del negocio en su propio material, no una coincidencia de busqueda de terceros), pero se documenta la limitacion de no haber podido confirmar el perfil en vivo.",
+ "facebook_url": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": [
+   "handymaneverydayrepair.com",
+   "everydayrepairsllc.com",
+   "everydayhandymanrepair.com",
+   "handymaneverydayrepairs.com",
+   "everydayrepairhandyman.com",
+   "handymaneverydayrepairsmiami.com"
+  ],
+  "result": "Ninguno de los 6 dominios candidatos resuelve (curl vía el proxy de egress devuelve 'CONNECT tunnel failed, response 502' en los 6 casos, el mismo codigo que devuelve un dominio de prueba inexistente a proposito; confirmado que un dominio real como google.com sí responde 200 con el mismo curl). La propia ficha de Google Maps tampoco expone un boton de Website (campo vacio, 'Add website'). Se confirma has_own_site: false."
+ },
+ "services_research": [
+  "Instalacion/apilado de lavadora y secadora (LG) en closet de lavanderia: foto propia terminada (gmaps-1.jpg) + confirmado textualmente en la resena real de Tiffany Davenport ('stacking my washer and dryer and installing an air vent in my garage')",
+  "Montaje de TV en pared (TV mounting): foto propia terminada con soundbar y receptor conectados (gmaps-15.jpg, marca de agua @everyday_repairsllc_handyman)",
+  "Armado/instalacion de muebles (cama, mesas de noche con lamparas): foto propia terminada (gmaps-13.jpg, marca de agua)",
+  "Impermeabilizacion / pintura de techo y pretil (parapet) en exterior residencial: foto propia de un techo plano recien impermeabilizado con recubrimiento blanco (gmaps-16.jpg)",
+  "Limpieza a presion (pressure washing) de entradas de adoquin (pavers) y fachadas: foto propia de un tecnico limpiando a presion una entrada vehicular (gmaps-22.jpg)",
+  "Mantenimiento de exteriores / caminos de adoquin: foto propia de un camino de piso terminado con marca de agua @EVERYDAY_HANDYMAN (variante corta del mismo handle, gmaps-8.jpg)",
+  "Reparaciones de drywall / paneles de yeso: foto propia de una pared en reparacion con nota manuscrita digital 'Reparacion area repisa' + 'Cables' (gmaps-9.jpg, descartada de la galeria por tener texto/flechas superpuestas, pero documentada aqui como evidencia real)",
+  "Diagnostico y reparacion de humedad: foto propia de una pared con manchas de humedad marcadas 'Humedad' (gmaps-23.jpg, descartada de galeria por texto superpuesto, documentada como evidencia)",
+  "Reparacion de mobiliario de exterior (tumbonas/chaise lounges de madera teca): foto propia 'antes/despues' con circulo senalando la pieza reparada (gmaps-14.jpg, descartada de galeria por texto 'After' + circulo superpuestos, documentada como evidencia)",
+  "Plomeria basica / remodelacion de bano: foto propia de un bano en demolicion con inodoro y mueble de lavamanos desmontados (gmaps-25.jpg, descartada de galeria por ser una foto de obra sucia/con escombros, no presentable, documentada como evidencia de que tambien hacen trabajo de plomeria/remodelacion de banos)"
+ ],
+ "language_signal": "Se optó por espanol (lang: es) como idioma principal del site, con el ingles disponible en el toggle bilingue (igual que en todo el sitio). Señales encontradas: (1) las anotaciones manuscritas digitales que el propio negocio agrega a sus fotos de diagnostico son en espanol ('Reparacion area repisa', 'Cables', 'Humedad'), lo que sugiere que el operador piensa/anota en espanol como lengua de trabajo; (2) la zona que marcan las coordenadas GPS de la ficha (sur de Miami-Dade, cerca de Homestead) es mayoritariamente hispanohablante, consistente con el patron ya usado en otros negocios de esta zona en este mismo pipeline. Contrapeso: la UNICA resena verbatim capturada esta en ingles (Tiffany Davenport) y el handle de Instagram/nombre del negocio estan en ingles, lo cual indica que tambien atienden clientela angloparlante (normal en el sur de Florida). El site queda igualmente bilingue en cada campo (data-es/data-en), asi que el idioma por defecto no le quita alcance al otro segmento.",
+ "google_maps_url": "https://www.google.com/maps/place/Handyman+Everyday+Repair+S/data=!4m7!3m6!1s0x88d9bbc63bfbb729:0x3a7bcd6cb12ec203!8m2!3d25.5584269!4d-80.468195!16s%2Fg%2F11fhvmz5m8!19sChIJKbf7O8a72YgRA8IusWzNezo?authuser=0&hl=en&rclk=1",
+ "photos_source": "25 fotos extraidas de la ficha de Google Maps via scripts/gmaps_photocycle.js (Playwright, ciclado ArrowRight), descargadas con curl (UA Chrome) a assets/raw/gmaps-1..25, verificadas con `file` (24 JPEG + 1 PNG, todas decodifican, ninguna de 0 bytes). Curadas visualmente con Read sobre las 25, una por una. De las 25: MUCHAS son fotos de OTROS usuarios/Local Guides de Google subidas al mismo lugar/area y NO tienen relacion con el trabajo del negocio (se identificaron por ser evidentemente ajenas al rubro handyman -balcon con silla colgante, banca de jardin antigua, piso de un local comercial vacio en mudanza- y por aparecer DUPLICADAS dos veces cada una en el set de 25, señal clara de que Google las muestra como 'fotos del area' no como fotos subidas por el negocio: gmaps-5/gmaps-19 duplicado exacto, gmaps-6/gmaps-20 duplicado exacto, gmaps-7/gmaps-21 duplicado exacto). Se descartaron tambien: gmaps-2, gmaps-3, gmaps-4, gmaps-17, gmaps-18, gmaps-24 (ambiguas, sin marca de agua del negocio ni contexto claro de trabajo realizado, parecen fotos genericas de interiores/inmobiliaria sin evidencia de ser del handyman). De las que SI se pudo verificar como propias del negocio (marca de agua '@everyday_repairsllc_handyman' o '@EVERYDAY_HANDYMAN' impresa en la foto, o notas de diagnostico manuscritas digitales propias del oficio): se usaron 6 en la galeria final (gmaps-1, gmaps-8, gmaps-13, gmaps-15, gmaps-16, gmaps-22, redimensionadas a maximo 1000px de ancho, calidad JPEG 82) y se descartaron de la galeria (pero documentadas como evidencia de servicios en services_research arriba) 4 mas por tener texto/flechas/circulos superpuestos tipo antes-despues o notas de diagnostico (gmaps-9, gmaps-14, gmaps-23) o por ser una foto de obra sucia con escombros (gmaps-25), siguiendo la regla de curaduria del brief ('capturas con texto/caption superpuesto' y 'clutter' prohibidos en galeria).",
+ "photos_used_gallery": [
+  { "archivo": "gmaps-1.jpg", "descripcion": "Closet de lavanderia con lavadora y secadora LG rojas ya instaladas/apiladas, terminado y bien iluminado. Coincide con la resena real de Tiffany Davenport sobre instalacion de lavadora/secadora. Usada como imagen de hero." },
+  { "archivo": "gmaps-8.jpg", "descripcion": "Camino de piso de terracota entre jardines con flores, marca de agua @EVERYDAY_HANDYMAN visible." },
+  { "archivo": "gmaps-13.jpg", "descripcion": "Cama y mesas de noche con lamparas ya armadas/instaladas, marca de agua del negocio." },
+  { "archivo": "gmaps-15.jpg", "descripcion": "TV montada en pared con soundbar y receptor conectados, trabajo terminado, marca de agua del negocio." },
+  { "archivo": "gmaps-16.jpg", "descripcion": "Techo/pretil residencial recien impermeabilizado con recubrimiento blanco, palmeras de fondo, sin marca de agua pero contexto de trabajo claro (sombra del fotografo visible, no un retrato)." },
+  { "archivo": "gmaps-22.jpg", "descripcion": "Tecnico limpiando a presion una entrada vehicular de adoquines frente a una vivienda, de espaldas (no es retrato/selfie)." }
+ ],
+ "sources": [
+  "NODE_PATH=/opt/node22/lib/node_modules node scripts/gmaps_detail.js sobre el mapsUrl provisto (6 corridas: la vista limitada de Google Maps sin sesion es intermitente, unas corridas devuelven ficha minima y otras el panel completo con resenas/horario). Rating 5.0 y 67 resenas confirmados en las corridas donde el panel completo cargo. Direccion nunca se expuso en ninguna corrida.",
+  "NODE_PATH=/opt/node22/lib/node_modules node scripts/gmaps_photocycle.js sobre el mismo mapsUrl, 30 pasos pedidos: devolvio 25 fotos unicas",
+  "curl + `file` sobre las 25 fotos descargadas: 24 JPEG + 1 PNG, todas validas, ninguna de 0 bytes ni HTML de error",
+  "Read (inspeccion visual) de las 25 fotos, una por una, para curaduria",
+  "curl -sS -m 8 sobre 6 dominios candidatos de website propio (ver website_check): los 6 fallan con 'CONNECT tunnel failed, response 502' (equivalente a DNS no resuelve, confirmado comparando contra google.com que responde 200 y un dominio de prueba inexistente que da el mismo 502)",
+  "WebSearch \"everyday_repairsllc_handyman\" instagram: sin coincidencia directa",
+  "WebSearch \"Handyman Everyday Repair\" Homestead OR Miami instagram facebook: sin coincidencia (solo negocios homonimos de otras ciudades o sin relacion)",
+  "WebFetch https://www.instagram.com/everyday_repairsllc_handyman/ y https://instagram.com/everyday_repairsllc_handyman: HTTP 429 Too Many Requests en ambos intentos (bloqueo tipico de Instagram a fetches sin sesion, no confirma ni descarta el perfil)",
+  "WebSearch \"786-403-8364\": sin coincidencia directa (solo numeros similares no relacionados)",
+  "WebSearch \"Everyday Repair\" handyman \"786-403-8364\" OR \"everyday_repairsllc\": sin coincidencia (solo negocios homonimos de Pennsylvania, Minnesota, Maryland, Colorado, Virginia, sin relacion con este)",
+  "WebSearch \"everyday repairs\" LLC handyman Homestead Florida: sin coincidencia directa (solo otros handyman de la zona sin relacion)",
+  "WebSearch \"Handyman Everyday Repair\" Miami email contact: sin coincidencia (solo otros negocios de handyman de Miami sin relacion)",
+  "WebSearch everyday_repairsllc_handyman OR \"everyday repairs llc\" facebook: sin coincidencia (solo homonimos de Michigan, Virginia, Colorado)"
+ ],
+ "notes": "Negocio con presencia PURA en Google Maps: sin website propio, sin Facebook verificable, y con un Instagram real (evidenciado por marca de agua consistente en sus propias fotos) que no se pudo confirmar en vivo por el bloqueo automatico de Instagram a fetches externos. Sin email publico tras busqueda razonable (5 WebSearch dirigidas). El unico canal de contacto 100% confirmado y en vivo es el telefono +1 786-403-8364 (via ficha de Google Maps, coincide con el dato de descubrimiento). CTA del site apunta a tel: siguiendo la regla del brief para negocios de oficios. Direccion no publicada en la ficha: el site usa foto real en la seccion de contacto en vez de mapa inventado. Se encontro y documento una resena verbatim real (Tiffany Davenport) que ademas coincide fotograficamente con el trabajo de lavadora/secadora mostrado en gmaps-1.jpg, reforzando la autenticidad del research, aunque no se usa como testimonio publico (solo 1 resena estable, se necesitan 3+ para modo testimonios segun el brief)."
+}
