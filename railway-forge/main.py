@@ -39,7 +39,8 @@ GH_REPO = os.environ.get('GH_REPO', 'luiso2/webistecreator')
 GH_TOKEN = os.environ['GITHUB_TOKEN']
 # SIN IA (decision del usuario 2026-08-18): curacion por reglas y plantillas por nicho,
 # todo en contenido_script.py. Cero costo por site, cero dependencia de APIs de modelos.
-# Los items por NOMBRE (necesitan busqueda web) se dejan a la rutina cloud sin reclamarlos.
+# Los items por NOMBRE se resuelven con la ficha pública de Google Maps; antes se dejaban
+# sin reclamar y por eso se acumulaban indefinidamente cuando la rutina cloud estaba llena.
 POLL_S = int(os.environ.get('POLL_SECONDS', '25'))
 FORBID = 'Pure Artistry,pure.artistrysk,Booksy,booksy,121705,silk press,locs,K-Tip,W Grant,Chianita,Hair Studio'
 
@@ -103,11 +104,6 @@ def subir_github(ruta_local, ruta_repo, intento=0):
 def parece_handle(s):
     s = s.strip()
     return bool(re.fullmatch(r'@?[A-Za-z0-9._]{2,30}', s)) and ' ' not in s
-
-
-# Sin busqueda web (DeepSeek): un item por NOMBRE no se puede resolver a handle sin
-# adivinar, y adivinar esta prohibido. Esos items se SALTAN sin reclamarlos, para que la
-# rutina cloud (que si busca) los tome. Esta forja procesa los que traen @handle.
 
 
 def guard_anti_invencion(content, hechos, slug):
@@ -207,19 +203,101 @@ def procesar(item):
     print(f'  LISTO {url}', flush=True)
 
 
+def procesar_nombre(item):
+    """Construye entradas directas (nombre + ciudad) desde Google Maps.
+
+    Google Maps entrega nombre, rating, contacto, website declarado y fotos públicas sin
+    adivinar un handle de Instagram. Menos de cinco fotos propias se cierra con motivo
+    concreto en vez de dejar el item pendiente para siempre.
+    """
+    iid, entrada = item['id'], item['input'].strip()
+    print(f'== {entrada} (Google Maps)', flush=True)
+    progreso(iid, 'research', 'ficha publica de Google Maps')
+    m = re.match(r'^(.*?)\s*\(([^)]+)\)\s*$', entrada)
+    nombre = (m.group(1) if m else entrada).strip()
+    ciudad = (m.group(2) if m else 'Florida').strip()
+    slug = re.sub(r'[^a-z0-9-]', '', nombre.lower().replace('&', ' and ').replace('.', '-').replace('_', '-').replace(' ', '-'))[:56].strip('-')
+    r = subprocess.run([sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug], capture_output=True, text=True, timeout=360)
+    ruta_data = f'output/{slug}/data.json'
+    if not os.path.exists(ruta_data):
+        terminar(iid, failed=True, motivo=f'Research Google Maps sin datos: {(r.stdout or r.stderr)[-180:]}')
+        return
+    hechos = json.load(open(ruta_data, encoding='utf-8'))
+    fotos = hechos.get('fotos') or []
+    if len(fotos) < 5:
+        terminar(iid, failed=True, motivo=f'Google Maps solo expone {len(fotos)} fotos propias; se necesitan al menos 5 para una galeria real.')
+        return
+    progreso(iid, 'build', f'{len(fotos)} fotos publicas verificadas')
+    b = subprocess.run([sys.executable, 'scripts/build_maps_site.py', slug], capture_output=True, text=True, timeout=120)
+    if b.returncode != 0:
+        terminar(iid, failed=True, motivo=f'build_maps_site fallo: {(b.stdout or b.stderr)[-220:]}')
+        return
+    d = subprocess.run([sys.executable, 'scripts/derive.py', slug], capture_output=True, text=True, timeout=120)
+    if d.returncode != 0:
+        terminar(iid, failed=True, motivo='derive.py fallo para item por nombre')
+        return
+    subprocess.run(['cp', 'templates/assets/tailwind.js', f'output/{slug}/assets/tailwind.js'], check=False)
+    g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', 'en', '--forbid', FORBID], capture_output=True, text=True)
+    if g.returncode != 0:
+        terminar(iid, failed=True, motivo=f'GATE: {g.stdout[-220:]}')
+        return
+    progreso(iid, 'verify')
+    fotos_usadas = sorted(set(re.findall(r'gmaps-\d+\.jpg', open(f'output/{slug}/content.json').read())))
+    ok = subir_github(f'output/{slug}/index.html', f'output/{slug}/index.html')
+    for f in ['content.json', 'data.json', '.assetsignore', 'assets/tailwind.js']:
+        ok &= subir_github(f'output/{slug}/{f}', f'output/{slug}/{f}')
+    for f in fotos_usadas:
+        ok &= subir_github(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
+    if not ok:
+        terminar(iid, failed=True, motivo='Subida a GitHub incompleta')
+        return
+    url = f'{DEMOS}/{slug}/'
+    for _ in range(30):
+        time.sleep(25)
+        try:
+            if urllib.request.urlopen(url, timeout=15).status == 200:
+                break
+        except Exception:
+            pass
+    else:
+        terminar(iid, failed=True, motivo='El demo no respondio 200 tras el deploy')
+        return
+    progreso(iid, 'commit')
+    dm = (f'Hello! I prepared a website concept for {nombre} using the public Google Maps listing. '
+          f'See it here: {url} It is free to review and does not change your current operations.')
+    panel('/api/public/registry-upsert', {
+        'slug': slug, 'name': hechos.get('name') or nombre, 'city': ciudad,
+        'ig': 'Google Maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
+        'email': None, 'phone': hechos.get('phone'), 'language': 'en', 'dm_message': dm[:500],
+        'thumb': f'{url}assets/raw/{fotos_usadas[0]}',
+    })
+    terminar(iid, slug=slug, name=hechos.get('name') or nombre, url_demo=url, dm=dm)
+    print(f'  LISTO {url}', flush=True)
+
+
 def main():
     print(f'forja-railway arrancada (poll {POLL_S}s, sin IA: plantillas por nicho)', flush=True)
     while True:
         q = panel('/api/public/queue') or {}
         pendientes = q.get('pending', [])
         mios = [p for p in pendientes if parece_handle(p.get('input', ''))]
+        nombres = [p for p in pendientes if not p.get('request') and not parece_handle(p.get('input', ''))]
         if mios:
             try:
-                procesar(mios[0])  # de UNO en uno, regla del brief; los de nombre son de la rutina cloud
+                procesar(mios[0])
             except Exception as e:
                 print(f'  error procesando: {e}', flush=True)
                 try:
                     terminar(mios[0]['id'], failed=True, motivo=f'Excepcion en forja-railway: {str(e)[:160]}')
+                except Exception:
+                    pass
+        elif nombres:
+            try:
+                procesar_nombre(nombres[0])
+            except Exception as e:
+                print(f'  error procesando nombre: {e}', flush=True)
+                try:
+                    terminar(nombres[0]['id'], failed=True, motivo=f'Excepcion en research Google Maps: {str(e)[:160]}')
                 except Exception:
                     pass
         time.sleep(POLL_S)
