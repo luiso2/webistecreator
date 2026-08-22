@@ -15,9 +15,14 @@ Workers Builds deploya -> verifica 200 -> registra en el panel -> done.
 
 El worker procesa tanto items con `@handle` como items `nombre (ciudad)`. Las búsquedas
 manuales de nicho + ciudad (`request.type=discovery`) tienen prioridad sobre los candidatos
-del Cron: una sola reclamación descubre y construye hasta tres negocios sin website propio,
+del Cron: una sola reclamación descubre y construye hasta cinco negocios sin website propio,
 sin quedarse esperando a que el Cron vuelva a ejecutarse. El Cron sigue descubriendo en
 segundo plano y el claim atómico decide qué instancia construye cada item.
+
+Los candidatos de una misma búsqueda manual se construyen en paralelo (por defecto, dos
+workers por item), así que una solicitud de varios demos no queda bloqueada por una cadena
+serial de investigaciones y despliegues. Se puede ajustar con `DISCOVERY_BUILD_WORKERS`
+(1–3) si Railway dispone de más o menos CPU.
 
 El primer mensaje se genera con datos verificables (zona, fotos públicas, servicios y enlace
 del demo), explica el beneficio para el cliente y termina en una pregunta de bajo compromiso.

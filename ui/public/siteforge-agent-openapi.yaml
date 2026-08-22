@@ -34,7 +34,7 @@ paths:
     post:
       operationId: createWebsiteBuild
       summary: Queue one website build or a filtered discovery request
-      description: Use input for one known business, or niche plus location to discover businesses without their own website. Discovery count is 1 to 3.
+      description: Use input for one known business, or niche plus location to discover businesses without their own website. Discovery count is 1 to 5 and runs through the fast parallel builder lane.
       requestBody:
         required: true
         content:
@@ -54,7 +54,7 @@ paths:
                 count:
                   type: integer
                   minimum: 1
-                  maximum: 3
+                  maximum: 5
                   default: 1
       responses:
         '200':

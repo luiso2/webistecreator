@@ -112,12 +112,12 @@ def _detail(
     min_reviews: int,
 ) -> dict | None:
     try:
-        page.goto(href, wait_until="domcontentloaded", timeout=35000)
-        page.wait_for_timeout(2500)
+        page.goto(href, wait_until="domcontentloaded", timeout=25000)
+        page.wait_for_timeout(1800)
     except Exception:
         return None
 
-    body = page.locator("body").inner_text(timeout=10000)
+    body = page.locator("body").inner_text(timeout=6000)
     if re.search(r"permanently closed", body, re.I):
         return None
     title_locator = page.locator("h1").first
@@ -194,9 +194,9 @@ def discover(
             search.goto(
                 "https://www.google.com/maps/search/" + urllib.parse.quote(query),
                 wait_until="domcontentloaded",
-                timeout=35000,
+                timeout=25000,
             )
-            search.wait_for_timeout(4500)
+            search.wait_for_timeout(2200)
             links = search.locator("a.hfpxzc")
             if not links.count():
                 links = search.locator('a[href*="/maps/place/"]')

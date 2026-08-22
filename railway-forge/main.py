@@ -23,6 +23,7 @@ nunca dos items a la vez; el research degradado cierra rápido con un motivo tra
 para reintento, nunca deja un item fantasma en processing.
 """
 import base64
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 import os
 import re
@@ -43,6 +44,10 @@ GH_TOKEN = os.environ['GITHUB_TOKEN']
 # Los items por NOMBRE se resuelven con la ficha pública de Google Maps; antes se dejaban
 # sin reclamar y por eso se acumulaban indefinidamente cuando la rutina cloud estaba llena.
 POLL_S = int(os.environ.get('POLL_SECONDS', '10'))
+try:
+    DISCOVERY_BUILD_WORKERS = max(1, min(int(os.environ.get('DISCOVERY_BUILD_WORKERS', '2')), 3))
+except (TypeError, ValueError):
+    DISCOVERY_BUILD_WORKERS = 2
 FORBID = 'Pure Artistry,pure.artistrysk,Booksy,booksy,121705,silk press,locs,K-Tip,W Grant,Chianita,Hair Studio'
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -444,7 +449,7 @@ def procesar_descubrimiento(item):
     """Resuelve una búsqueda manual de nicho + ciudad sin esperar al Cron.
 
     El panel guarda estas búsquedas como un único item de cola. Se reclama de forma
-    atómica y aquí mismo se descubren y construyen hasta tres candidatos. Cada candidato
+    atómica y aquí mismo se descubren y construyen hasta cinco candidatos. Cada candidato
     reutiliza el pipeline de Google Maps (fotos, gate, GitHub y demo), mientras el item
     original solo se cierra cuando todos los resultados posibles ya fueron procesados.
     """
@@ -453,7 +458,7 @@ def procesar_descubrimiento(item):
     request = item.get('request') or {}
     niche = str(request.get('niche') or '').strip()
     location = str(request.get('location') or '').strip()
-    count = max(1, min(int(request.get('count') or 1), 3))
+    count = max(1, min(int(request.get('count') or 1), 5))
     if not niche or not location:
         terminar(iid, token=token, failed=True, motivo='Búsqueda manual sin nicho o ciudad.')
         return
@@ -487,30 +492,52 @@ def procesar_descubrimiento(item):
         terminar(iid, token=token, failed=True, motivo=f'No se encontraron negocios sin website propio en {location}. {detail}'.strip()[:300])
         return
 
-    sites = []
+    selected = []
     seen = set()
     for candidate in candidates:
-        if len(sites) >= count:
+        if len(selected) >= count:
             break
         name = str(candidate.get('name') or '').strip()
         key = re.sub(r'[^a-z0-9]', '', name.lower())
         if not name or key in seen:
             continue
         seen.add(key)
-        child = {
-            'id': f'{iid}:{candidate.get("slug") or key[:48]}',
-            'input': f'{name} ({candidate.get("location") or location})',
-            'nicho': candidate.get('niche') or niche,
-            'claim_token': token,
-        }
-        progreso(iid, 'build', f'Construyendo {len(sites) + 1}/{count}: {name}', token=token)
+        selected.append({
+            'index': len(selected),
+            'name': name,
+            'child': {
+                'id': f'{iid}:{candidate.get("slug") or key[:48]}',
+                'input': f'{name} ({candidate.get("location") or location})',
+                'nicho': candidate.get('niche') or niche,
+                'claim_token': token,
+            },
+        })
+
+    # Los candidatos de una búsqueda son independientes. Construirlos en paralelo
+    # evita que varias demos esperen varias veces la navegación de Maps, la descarga
+    # de fotos y Workers Builds. El límite conservador protege Google/GitHub y deja
+    # otras réplicas disponibles para nuevas solicitudes.
+    if selected:
+        progreso(iid, 'build', f'Iniciando {len(selected)} forjas en paralelo (máximo {DISCOVERY_BUILD_WORKERS})', token=token)
+
+    def build_candidate(entry):
+        name = entry['name']
         try:
-            result = procesar_nombre(child, cerrar=False, progress_id=iid)
+            result = procesar_nombre(entry['child'], cerrar=False, progress_id=iid)
         except Exception as exc:
             print(f'  candidato {name} fallo: {exc}', flush=True)
             result = {'failed': True, 'motivo': str(exc)[:180]}
-        if result and not result.get('failed'):
-            sites.append({k: result[k] for k in ('slug', 'name', 'url_demo') if k in result})
+        return entry['index'], result
+
+    completed = []
+    with ThreadPoolExecutor(max_workers=min(DISCOVERY_BUILD_WORKERS, len(selected))) as pool:
+        futures = [pool.submit(build_candidate, entry) for entry in selected]
+        for future in as_completed(futures):
+            index, result = future.result()
+            if result and not result.get('failed'):
+                completed.append((index, {k: result[k] for k in ('slug', 'name', 'url_demo') if k in result}))
+
+    sites = [result for _index, result in sorted(completed, key=lambda pair: pair[0])]
 
     if sites:
         terminar(iid, token=token, sites=sites, slug=sites[0].get('slug'), name=sites[0].get('name'), url_demo=sites[0].get('url_demo'))

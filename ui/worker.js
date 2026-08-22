@@ -396,8 +396,8 @@ export default {
           const location = queueText(body.location, 80);
           const count = Number(body.count || 1);
           if (!niche || !location) return json({ error: 'niche and location are required' }, 400);
-          if (!Number.isInteger(count) || count < 1 || count > 3) {
-            return json({ error: 'count must be an integer between 1 and 3' }, 400);
+          if (!Number.isInteger(count) || count < 1 || count > 5) {
+            return json({ error: 'count must be an integer between 1 and 5' }, 400);
           }
           request = { type: 'discovery', niche, location, count, require_no_website: true };
           input = `Buscar ${count} ${niche} en ${location} sin website propio`;
@@ -505,11 +505,11 @@ export default {
         return site;
       };
       const result = siteResult(body);
-      // Una busqueda filtrada puede producir hasta tres negocios. El contrato anterior
+      // Una busqueda filtrada puede producir hasta cinco negocios. El contrato anterior
       // (slug/name/url_demo en la raiz) sigue funcionando para pedidos directos.
       if (body.sites !== undefined) {
-        if (!Array.isArray(body.sites) || body.sites.length < 1 || body.sites.length > 3) {
-          return json({ error: 'sites debe contener entre 1 y 3 resultados' }, 400);
+        if (!Array.isArray(body.sites) || body.sites.length < 1 || body.sites.length > 5) {
+          return json({ error: 'sites debe contener entre 1 y 5 resultados' }, 400);
         }
         const sites = body.sites.map(siteResult);
         if (sites.some(site => !site.slug || !site.url_demo)) {
@@ -694,8 +694,8 @@ export default {
           const location = queueText(raw.location, 80);
           const count = Number(raw.count);
           if (!niche || !location) return json({ error: 'nicho y pais o zona son requeridos' }, 400);
-          if (!Number.isInteger(count) || count < 1 || count > 3) {
-            return json({ error: 'cantidad debe ser un entero entre 1 y 3' }, 400);
+          if (!Number.isInteger(count) || count < 1 || count > 5) {
+            return json({ error: 'cantidad debe ser un entero entre 1 y 5' }, 400);
           }
           // Los descubrimientos creados en el panel SIEMPRE excluyen negocios con web propia.
           // No se acepta un flag del cliente para que nadie pueda invertir esta regla por error.

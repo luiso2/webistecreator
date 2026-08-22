@@ -15,6 +15,7 @@ import subprocess
 import sys
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
@@ -81,7 +82,7 @@ def research(query: str, out_slug: str) -> dict:
         page = browser.new_page(user_agent=UA, viewport={"width": 1400, "height": 1000})
         page.goto("https://www.google.com/maps/search/" + urllib.parse.quote(query),
                   wait_until="domcontentloaded", timeout=35000)
-        page.wait_for_timeout(4000)
+        page.wait_for_timeout(2200)
         first = page.locator("a.hfpxzc").first
         if first.count():
             try:
@@ -94,7 +95,7 @@ def research(query: str, out_slug: str) -> dict:
                 if href:
                     page.goto(urllib.parse.urljoin("https://www.google.com", href),
                               wait_until="domcontentloaded", timeout=35000)
-            page.wait_for_timeout(3500)
+            page.wait_for_timeout(2200)
         out["maps_url"] = page.url
         title = page.locator("h1").first.text_content() if page.locator("h1").count() else None
         out["name"] = (title or query).strip()
@@ -140,10 +141,10 @@ def research(query: str, out_slug: str) -> dict:
         if btn.count():
             try:
                 btn.click(timeout=5000)
-                page.wait_for_timeout(1800)
-                for _ in range(8):
+                page.wait_for_timeout(800)
+                for _ in range(5):
                     page.mouse.wheel(0, 1600)
-                    page.wait_for_timeout(350)
+                    page.wait_for_timeout(220)
             except Exception:
                 pass
         image_urls.extend(page.locator("img").evaluate_all(
@@ -159,43 +160,47 @@ def research(query: str, out_slug: str) -> dict:
             if base not in seen and not any(x in base for x in ('/maps/api/', '/maps/vt/')):
                 seen.add(base)
                 out["photos"].append(base + "=w1600-h1200-k-no")
-        # Reviews are optional for the adapted non-salon variant. Keep short snippets.
-        tab = page.locator('button[role="tab"][aria-label*="Reviews" i]').first
-        if tab.count():
-            try:
-                tab.scroll_into_view_if_needed(timeout=2500)
-                tab.click(timeout=5000)
-                page.wait_for_timeout(1400)
-                for _ in range(4):
-                    page.mouse.wheel(0, 1500)
-                    page.wait_for_timeout(300)
-                out["reviewSamples"] = page.locator("div[data-review-id]").evaluate_all(
-                    "els => els.slice(0, 8).map(n => ({author:n.querySelector('button[aria-label]')?.getAttribute('aria-label')||null, text:Array.from(n.querySelectorAll('span')).map(s=>s.textContent).filter(t=>t&&t.length>25).sort((a,b)=>b.length-a.length)[0]||null})).filter(x=>x.text)"
-                )
-            except Exception:
-                # Reviews are optional evidence; a blocked tab must not discard
-                # photos, contact details, and the website decision already collected.
-                out["reviewSamples"] = []
+        # Review snippets are not used by the Maps template. Skip the extra tab
+        # navigation on the fast path; opt in only for a debugging run.
+        if os.environ.get("MAPS_INCLUDE_REVIEWS", "").lower() in {"1", "true", "yes"}:
+            tab = page.locator('button[role="tab"][aria-label*="Reviews" i]').first
+            if tab.count():
+                try:
+                    tab.scroll_into_view_if_needed(timeout=1800)
+                    tab.click(timeout=3500)
+                    page.wait_for_timeout(700)
+                    out["reviewSamples"] = page.locator("div[data-review-id]").evaluate_all(
+                        "els => els.slice(0, 8).map(n => ({author:n.querySelector('button[aria-label]')?.getAttribute('aria-label')||null, text:Array.from(n.querySelectorAll('span')).map(s=>s.textContent).filter(t=>t&&t.length>25).sort((a,b)=>b.length-a.length)[0]||null})).filter(x=>x.text)"
+                    )
+                except Exception:
+                    out["reviewSamples"] = []
         browser.close()
     root = Path("output") / out_slug
     raw = root / "assets" / "raw"
     raw.mkdir(parents=True, exist_ok=True)
     downloaded = []
-    for i, url in enumerate(out["photos"][:24], 1):
+    def download_photo(entry):
+        i, url = entry
         name = f"gmaps-{i}.jpg"
         target = raw / name
         try:
-            # curl negotiates the TLS proxy used by Railway more reliably than
-            # Python's urllib for googleusercontent media URLs.
-            subprocess.run(["curl", "-L", "--fail", "--retry", "2", "-A", UA,
-                            "-e", "https://www.google.com/maps/", "-o", str(target), url],
-                           check=False, timeout=45, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            if target.stat().st_size > 15000:
-                downloaded.append(name)
-            else:
-                target.unlink(missing_ok=True)
+            # Las fotos son independientes: descargarlas en paralelo evita que
+            # una URL lenta bloquee toda la galería.
+            subprocess.run(["curl", "-L", "--fail", "--retry", "1", "--connect-timeout", "12",
+                            "--max-time", "30", "-A", UA, "-e", "https://www.google.com/maps/",
+                            "-o", str(target), url], check=False, timeout=35,
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if target.exists() and target.stat().st_size > 15000:
+                return name
+            target.unlink(missing_ok=True)
         except Exception as exc:
             print(f"photo {i}: {exc}", file=sys.stderr)
+        return None
+
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        for name in pool.map(download_photo, list(enumerate(out["photos"][:16], 1))):
+            if name:
+                downloaded.append(name)
     out["fotos"] = downloaded
     out["has_own_site"] = is_own_website(out.get("website"))
     out["slug"] = out_slug
