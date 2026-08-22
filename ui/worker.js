@@ -237,7 +237,12 @@ export default {
       let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
       const exists = queue.some(q => q.id === body.id && (q.status === 'pending' || q.status === 'processing'));
       if (!exists) return json({ error: 'item no pendiente' }, 404);
-      queue = queue.map(q => (q.id === body.id ? { ...q, status: 'done', done_at: new Date().toISOString(), result } : q));
+      queue = queue.map(q => (q.id === body.id ? {
+        ...q,
+        status: body.failed === true ? 'failed' : 'done',
+        done_at: new Date().toISOString(),
+        result,
+      } : q));
       await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
       return json({ ok: true });
     }
@@ -454,6 +459,37 @@ export default {
         return json({ ok: true, item });
       }
 
+      // Reintento manual de un fallo visible en el historial. Los fallos no se
+      // reencolan solos porque algunos son definitivos (por ejemplo, una ficha sin
+      // cinco fotos propias); el usuario decide cuándo vale la pena volver a probar.
+      if (url.pathname === '/api/queue/retry' && req.method === 'POST') {
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        if (!body.id) return json({ error: 'id requerido' }, 400);
+        let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+        const item = queue.find(q => q.id === body.id);
+        if (!item) return json({ error: 'item no encontrado' }, 404);
+        const wasFailed = item.status === 'failed' || (item.status === 'done' && item.result?.failed === true);
+        if (!wasFailed) return json({ error: 'solo se pueden reintentar fallos' }, 409);
+        const retries = Number(item.retry_count || 0);
+        if (retries >= 2) return json({ error: 'este item ya tiene dos reintentos' }, 409);
+        const now = new Date().toISOString();
+        queue = queue.map(q => q.id === body.id ? {
+          ...q,
+          status: 'pending',
+          stage: null,
+          stage_at: null,
+          started_at: null,
+          done_at: null,
+          result: null,
+          retry_count: retries + 1,
+          retry_at: now,
+          note: 'Reintento solicitado desde el panel',
+        } : q);
+        await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+        return json({ ok: true, retry_count: retries + 1 });
+      }
+
       if (url.pathname === '/api/queue/done' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
@@ -462,7 +498,12 @@ export default {
         if (!body.id) return json({ error: 'id requerido' }, 400);
         let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
         if (!queue.some(q => q.id === body.id)) return json({ error: 'item no encontrado' }, 404);
-        queue = queue.map(q => (q.id === body.id ? { ...q, status: 'done', done_at: new Date().toISOString() } : q));
+        queue = queue.map(q => (q.id === body.id ? {
+          ...q,
+          status: body.failed === true ? 'failed' : 'done',
+          done_at: new Date().toISOString(),
+          result: body.failed === true ? { failed: true, motivo: typeof body.motivo === 'string' ? stripUnsafe(body.motivo.slice(0, 240)) : undefined } : q.result,
+        } : q));
         await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
         return json({ ok: true });
       }

@@ -114,20 +114,39 @@ def research(query: str, out_slug: str) -> dict:
             "els => els.map(e => e.getAttribute('aria-label').replace(/, Copy (open|closed) hours/i, ''))"
         )
         # Open the public photo gallery, then gather canonical googleusercontent URLs.
-        btn = page.locator('button[aria-label*="Photo of" i], button:has-text("See photos"), div[jsaction*="heroHeaderImage"] img').first
-        if btn.count():
-            btn.click()
-            page.wait_for_timeout(1800)
-            for _ in range(8):
-                page.mouse.wheel(0, 1600)
-                page.wait_for_timeout(350)
-        urls = page.locator("img").evaluate_all(
-            "els => els.map(e => e.src).filter(s => s && s.includes('googleusercontent'))"
+        # Maps cambia el botón y los atributos de las imágenes con frecuencia. Capturar
+        # src/srcset/data-src antes y después del click evita que un cambio de markup
+        # convierta una ficha construible en "0 fotos".
+        image_urls = page.locator("img").evaluate_all(
+            """els => els.flatMap(e => [e.currentSrc, e.src, e.getAttribute('data-src'),
+              ...(e.getAttribute('srcset') || '').split(',').map(x => x.trim().split(' ')[0])])
+              .filter(Boolean)"""
         )
+        btn = page.locator(
+            'button[aria-label*="Photo of" i], button[aria-label*="See photos" i], '
+            'button:has-text("See photos"), div[jsaction*="heroHeaderImage"] img, '
+            'img[src*="googleusercontent.com"]'
+        ).first
+        if btn.count():
+            try:
+                btn.click(timeout=5000)
+                page.wait_for_timeout(1800)
+                for _ in range(8):
+                    page.mouse.wheel(0, 1600)
+                    page.wait_for_timeout(350)
+            except Exception:
+                pass
+        image_urls.extend(page.locator("img").evaluate_all(
+            """els => els.flatMap(e => [e.currentSrc, e.src, e.getAttribute('data-src'),
+              ...(e.getAttribute('srcset') || '').split(',').map(x => x.trim().split(' ')[0])])
+              .filter(Boolean)"""
+        ))
         seen = set()
-        for url in urls:
+        for url in image_urls:
+            if 'googleusercontent.com' not in url:
+                continue
             base = url.split("=")[0]
-            if base not in seen:
+            if base not in seen and not any(x in base for x in ('/maps/api/', '/maps/vt/')):
                 seen.add(base)
                 out["photos"].append(base + "=w1600-h1200-k-no")
         # Reviews are optional for the adapted non-salon variant. Keep short snippets.
@@ -146,7 +165,7 @@ def research(query: str, out_slug: str) -> dict:
     raw = root / "assets" / "raw"
     raw.mkdir(parents=True, exist_ok=True)
     downloaded = []
-    for i, url in enumerate(out["photos"][:14], 1):
+    for i, url in enumerate(out["photos"][:24], 1):
         name = f"gmaps-{i}.jpg"
         target = raw / name
         try:

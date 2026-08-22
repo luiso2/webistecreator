@@ -139,6 +139,8 @@
       border: 1px solid var(--border); background: transparent; color: var(--ink-40); flex: 0 0 auto;
     }
     .qmore:hover { color: var(--ink); border-color: rgba(255,255,255,0.28); }
+    .qretry { cursor: pointer; font-family: inherit; font-size: 11px; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(232,122,106,0.35); background: transparent; color: var(--red); flex: 0 0 auto; }
+    .qretry:hover { color: var(--ink); border-color: var(--red); background: rgba(232,122,106,0.08); }
 
     /* Card de progreso (item en proceso) */
     .prog.stale .fill { background: rgba(232,122,106,0.55); }
@@ -767,8 +769,9 @@
       const clientes = reg.filter(b => b.crm_status === 'client').length;
       const porContactar = reg.filter(b => !b.crm_status && b.outreach !== 'sent' && (b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy')).length;
       const enCola = queue.filter(q => q.status === 'pending' || q.status === 'processing').length;
+      const fallidas = queue.filter(q => q.status === 'failed' || (q.status === 'done' && q.result && q.result.failed)).length;
       $('stats').innerHTML = [
-        ['Construidos · meta 10.000', reg.length], ['Clientes cerrados', clientes], ['Por contactar', porContactar], ['En cola de forja', enCola]
+        ['Construidos · meta 10.000', reg.length], ['Clientes cerrados', clientes], ['Por contactar', porContactar], ['En cola de forja', enCola], ['Fallidas', fallidas]
       ].map(([l, v], i) => `<div class="card stat reveal" style="animation-delay:${0.1 + i * 0.05}s"><b>${v}</b><span>${l}</span></div>`).join('');
 
       $('count').textContent = reg.length + ' negocios · primero los que esperan tu contacto';
@@ -859,7 +862,7 @@
         const handle = q.input.startsWith('@') ? q.input.slice(1) : '';
         const dm = q.status === 'done' && q.result && q.result.dm && handle
           ? `<a href="#" onclick="event.preventDefault(); sendQueueDM('${esc(q.id)}', '${esc(handle)}')" style="color:var(--lime)">DM ✉</a>` : '';
-        const failed = q.status === 'done' && q.result && q.result.failed;
+        const failed = q.status === 'failed' || (q.status === 'done' && q.result && q.result.failed);
         const nom = nombreItem(q);
         const motivo = q.result && q.result.motivo ? String(q.result.motivo) : '';
         // El motivo se lee, no se adivina en un tooltip: resumen en una linea y el resto
@@ -871,11 +874,13 @@
         const whyBox = motivo
           ? `<div class="qwhy" id="why-${esc(q.id)}" hidden>${esc(motivo)}</div>`
           : '';
+        const retry = failed && Number(q.retry_count || 0) < 2
+          ? `<button class="qretry" onclick="retryQueue('${esc(q.id)}', this)">Reintentar</button>` : '';
         return `<div class="qitem ${failed ? 'fail' : (q.status === 'done' ? 'done' : '')}">
           <span class="qmark">${q.status === 'pending' ? '⏳' : (failed ? '✗' : '✓')}</span>
           <span class="qname" title="${esc(q.input)}">${esc(nom.nombre)}${failed && corto ? ` <span style="opacity:0.6">· ${esc(corto)}</span>` : ''}</span>
           ${nom.fuente ? `<span class="qsrc">${esc(nom.fuente)}</span>` : ''}
-          ${demo}${dm}${why}
+          ${demo}${dm}${why}${retry}
         </div>${whyBox}`;
       }).join('');
       const progs = working.map(q => {
@@ -1023,6 +1028,20 @@
       m.className = 'msg ok';
       m.textContent = msg ? 'Mensaje copiado: pegalo en el DM que se abrio.' : 'Sin mensaje guardado.';
       window.open('https://ig.me/m/' + igSafe(handle), '_blank', 'noopener');
+    };
+
+    window.retryQueue = async (id, btn) => {
+      if (btn) { btn.disabled = true; btn.textContent = 'Reintentando…'; }
+      try {
+        const r = await fetch('/api/queue/retry', { method: 'POST', headers: headers(), body: JSON.stringify({ id }) });
+        const data = await r.json();
+        if (!r.ok) throw new Error(data.error || r.status);
+        aviso('Reintento encolado. Railway lo tomará en segundos.', true);
+        load();
+      } catch (e) {
+        aviso('No se pudo reintentar: ' + e.message, false);
+        if (btn) { btn.disabled = false; btn.textContent = 'Reintentar'; }
+      }
     };
 
     // Marca una tarjeta con demo caido. Lo dispara el onerror del thumb (una <img> carga

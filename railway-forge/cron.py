@@ -21,7 +21,9 @@ from scripts.maps_discover import discover
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATHS = [ROOT / "config.json", ROOT.parent / "config.json"]
-PANEL_KEY = os.environ.get("SITEFORGE_UI_KEY", "").strip()
+# Railway ya tenía instalaciones antiguas con PANEL_KEY; aceptar ambos nombres
+# evita que el descubrimiento automático se quede silenciosamente desactivado.
+PANEL_KEY = (os.environ.get("SITEFORGE_UI_KEY") or os.environ.get("PANEL_KEY") or "").strip()
 
 
 def _int_env(name: str, default: int, minimum: int = 0, maximum: int = 100) -> int:
