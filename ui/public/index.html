@@ -174,6 +174,14 @@
     .section-title { display: flex; align-items: baseline; justify-content: space-between; margin: 30px 0 16px; }
     .section-title h3 { font-size: 16px; font-weight: 600; letter-spacing: 0.02em; }
     .section-title span { font-size: 12px; color: var(--ink-40); }
+    .registry-tools { display: flex; gap: 8px; align-items: center; margin: -6px 0 14px; flex-wrap: wrap; }
+    .registry-search { position: relative; flex: 1; min-width: 220px; }
+    .registry-search .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-52%); color: var(--ink-40); pointer-events: none; font-size: 15px; }
+    .registry-tools input { width: 100%; background: rgba(0,0,0,0.35); border: 1px solid var(--border); border-radius: 11px; padding: 10px 13px 10px 35px; color: var(--ink); font: inherit; font-size: 13px; outline: none; }
+    .registry-tools input:focus { border-color: rgba(184,240,77,0.5); box-shadow: 0 0 0 3px rgba(184,240,77,0.1); }
+    .registry-tools button { cursor: pointer; border: 1px solid var(--border); border-radius: 11px; padding: 10px 13px; color: var(--ink-60); background: rgba(255,255,255,0.03); font: inherit; font-size: 12px; }
+    .registry-tools button:hover { color: var(--ink); border-color: rgba(184,240,77,0.45); }
+    .registry-tools small { color: var(--ink-40); font-size: 11px; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
     .biz { display: flex; flex-direction: column; gap: 12px; transition: transform 0.25s, border-color 0.25s; }
@@ -377,10 +385,18 @@
       <h3>Negocios procesados</h3>
       <span id="count"></span>
     </div>
+    <div class="registry-tools">
+      <label class="registry-search" aria-label="Buscar negocios">
+        <span class="search-icon" aria-hidden="true">🔎</span>
+        <input id="siteSearch" type="search" placeholder="Buscar por nombre, ciudad, teléfono o dominio…" autocomplete="off" />
+      </label>
+      <small id="visibleCount"></small>
+      <button id="showMore" type="button" hidden>Mostrar más</button>
+    </div>
     <div class="grid" id="grid"></div>
 
     <footer>
-      <p>Siteforge · la rutina diaria descubre negocios sin website (9:07 AM) y 8 forjas escalonadas procesan la cola cada ~7 min</p>
+      <p>Siteforge · descubrimiento automático cada 15 min · 4 forjas paralelas · meta 10.000 websites</p>
       <a class="merktop" href="https://merktop.com" target="_blank" rel="noopener"><span class="dot"></span>Powered by <b>&nbsp;Merktop</b></a>
     </footer>
   </div>
@@ -666,6 +682,31 @@
         box.innerHTML = aviso + (rows || 'sin resultados');
       } catch (e) { box.innerHTML = 'Error: ' + esc(e.message); }
     };
+    async function watchDomain(slug, domain, box) {
+      let tries = 0;
+      const poll = async () => {
+        tries += 1;
+        try {
+          const r = await fetch('/api/domain/status?slug=' + encodeURIComponent(slug) + '&domain=' + encodeURIComponent(domain), { headers: headers() });
+          const d = await r.json();
+          if (r.ok && d.ready) {
+            box.innerHTML = `<div class="dom-hit"><span>Live: <a href="${esc(d.live_url)}" target="_blank" rel="noopener" style="color:var(--lime)">${esc(d.domain)}</a></span></div><div style="font-size:11px;opacity:0.7">Dominio enlazado y sitio publicado.</div>`;
+            load();
+            return;
+          }
+          if (tries >= 40) {
+            box.innerHTML = `<div class="dom-hit"><span>${esc(domain)} sigue registrándose</span></div><div style="font-size:11px;opacity:0.7">El Worker seguirá reintentando automáticamente. Puedes recargar el panel más tarde.</div>`;
+            return;
+          }
+          box.innerHTML = `<div class="dom-hit"><span>Registrando ${esc(domain)}…</span></div><div style="font-size:11px;opacity:0.7">Cloudflare todavía está completando el dominio (${tries}/40).</div>`;
+          setTimeout(poll, 3000);
+        } catch (e) {
+          if (tries < 40) setTimeout(poll, 3000);
+          else box.innerHTML = 'Error consultando el dominio: ' + esc(e.message);
+        }
+      };
+      poll();
+    }
     window.buyDomain = async (slug, domain, price) => {
       if (!confirm(`Comprar ${domain} ${price} y montar el sitio?\nEsto registra el dominio y cobra a tu cuenta Cloudflare.`)) return;
       const box = $('domres-' + slug);
@@ -674,7 +715,13 @@
         const r = await fetch('/api/domain/buy', { method: 'POST', headers: headers(), body: JSON.stringify({ slug, domain, confirm: true }) });
         const d = await r.json();
         if (!r.ok) { box.innerHTML = 'Error: ' + esc(d.error || r.status); return; }
-        box.innerHTML = `<div class="dom-hit"><span>Live: <a href="${esc(d.live_url)}" target="_blank" rel="noopener" style="color:var(--lime)">${esc(d.domain)}</a></span></div><div style="font-size:11px;opacity:0.7">${esc(d.note || '')}</div>`;
+        if (d.pending || r.status === 202) {
+          box.innerHTML = `<div class="dom-hit"><span>Registrando ${esc(d.domain || domain)}…</span></div><div style="font-size:11px;opacity:0.7">El sitio se enlazará automáticamente cuando termine el registro.</div>`;
+          watchDomain(slug, d.domain || domain, box);
+        } else {
+          box.innerHTML = `<div class="dom-hit"><span>Live: <a href="${esc(d.live_url)}" target="_blank" rel="noopener" style="color:var(--lime)">${esc(d.domain)}</a></span></div><div style="font-size:11px;opacity:0.7">${esc(d.note || '')}</div>`;
+          load();
+        }
       } catch (e) { box.innerHTML = 'Error: ' + esc(e.message); }
     };
     window.markCRM = async (slug, status, btn) => {
@@ -694,23 +741,45 @@
       }
     };
 
+    const REGISTRY_PAGE_SIZE = 100;
+    window.__registryQuery = '';
+    window.__registryLimit = REGISTRY_PAGE_SIZE;
+    const searchKey = value => String(value || '').toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    window.filterRegistry = query => {
+      window.__registryQuery = searchKey(query).trim();
+      window.__registryLimit = REGISTRY_PAGE_SIZE;
+      render();
+    };
+
     function render(state) {
       // Se recuerda el ultimo estado para poder repintar sin volver a pedirlo al servidor
       // (por ejemplo al guardar un mensaje, que solo cambia datos que ya tenemos aqui).
       if (state) window.__state = state;
       else state = window.__state || { registry: [], queue: [] };
       const reg = state.registry || [], queue = state.queue || [];
+      window.__registryAll = reg;
       const clientes = reg.filter(b => b.crm_status === 'client').length;
       const porContactar = reg.filter(b => !b.crm_status && b.outreach !== 'sent' && (b.outreach === 'pending_manual' || b.outreach === 'pending_approval' || b.outreach === 'pending_deploy')).length;
       const enCola = queue.filter(q => q.status === 'pending' || q.status === 'processing').length;
       $('stats').innerHTML = [
-        ['Construidos · meta 500', reg.length], ['Clientes cerrados', clientes], ['Por contactar', porContactar], ['En cola de forja', enCola]
+        ['Construidos · meta 10.000', reg.length], ['Clientes cerrados', clientes], ['Por contactar', porContactar], ['En cola de forja', enCola]
       ].map(([l, v], i) => `<div class="card stat reveal" style="animation-delay:${0.1 + i * 0.05}s"><b>${v}</b><span>${l}</span></div>`).join('');
 
       $('count').textContent = reg.length + ' negocios · primero los que esperan tu contacto';
       // Orden: pendientes de contactar primero, luego clientes cerrados, al final descartados.
       const orden = b => (b.crm_status === 'declined' ? 2 : (b.crm_status === 'client' ? 1 : 0));
-      const lista = reg.slice().reverse().sort((a, b) => orden(a) - orden(b));
+      const sorted = reg.slice().reverse().sort((a, b) => orden(a) - orden(b));
+      const query = window.__registryQuery || '';
+      const filtered = query
+        ? sorted.filter(b => [b.name, b.city, b.phone, b.email, b.custom_domain, b.live_url, b.slug, b.ig]
+          .some(v => searchKey(v).includes(query)))
+        : sorted;
+      const lista = filtered.slice(0, window.__registryLimit || REGISTRY_PAGE_SIZE);
+      $('visibleCount').textContent = query
+        ? `${lista.length} de ${filtered.length} coincidencias`
+        : `mostrando ${lista.length} de ${filtered.length}`;
+      $('showMore').hidden = lista.length >= filtered.length;
+      $('showMore').textContent = `Mostrar ${Math.min(REGISTRY_PAGE_SIZE, filtered.length - lista.length)} más`;
       $('grid').innerHTML = lista.map((b, i) => `
         <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" id="biz-${esc(b.slug)}" style="animation-delay:${(0.12 + Math.min(i, 14) * 0.03).toFixed(2)}s">
           ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'; demoDown('${esc(b.slug)}')" /></a>` : ''}
@@ -821,17 +890,13 @@
           <div class="bar"><div class="fill" style="width:${abandonado ? 100 : (STAGE_PCT[q.stage] || 15)}%"></div></div>
         </div>`;
       }).join('');
-      // Items recien encolados: temporizador desde el primer segundo + cuenta regresiva a la proxima forja
-      const FORGE_SLOTS = [7, 15, 22, 30, 37, 46, 52, 59];
-      const now = new Date();
-      const min = now.getUTCMinutes() + now.getUTCSeconds() / 60;
-      const nextSlot = FORGE_SLOTS.find(s => s > min);
-      const waitMin = Math.max(1, Math.ceil(nextSlot !== undefined ? nextSlot - min : 60 - min));
+      // Items recién encolados: las réplicas permanentes reclaman en segundos;
+      // no mostrar la cuenta regresiva antigua de slots de siete minutos.
       const pendProgs = pending.map(q => `
         <div class="prog">
           <div class="row">
             <span class="name">⏳ ${esc(nombreItem(q).nombre)}</span>
-            <span class="stage">En cola · una forja lo toma en ~${waitMin} min</span>
+            <span class="stage">En cola · una forja lo toma en segundos</span>
             <span class="timer" data-start="${esc(q.created)}">0m 00s</span>
           </div>
           <div class="bar"><div class="fill" style="width:6%"></div></div>
@@ -1027,6 +1092,11 @@
     ['discoveryNiche', 'discoveryLocation', 'discoveryCount'].forEach(id => $(id).addEventListener('keydown', e => {
       if (e.key === 'Enter') $('discoverySubmit').click();
     }));
+    $('siteSearch').addEventListener('input', e => window.filterRegistry(e.target.value));
+    $('showMore').onclick = () => {
+      window.__registryLimit = (window.__registryLimit || REGISTRY_PAGE_SIZE) + REGISTRY_PAGE_SIZE;
+      render();
+    };
 
     if (!localStorage.getItem(KEY_LS)) showGate(); else load();
     setInterval(load, 30000);

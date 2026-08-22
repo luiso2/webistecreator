@@ -33,6 +33,16 @@ ARGS = [
 if PROXY:
     ARGS.append(f"--proxy-server={PROXY}")
 
+PROFILE_HOSTS = {
+    "facebook.com", "instagram.com", "booksy.com", "glossgenius.com", "vagaro.com",
+    "fresha.com", "styleseat.com", "treatwell.com", "mindbodyonline.com", "setmore.com",
+    "square.site", "squareup.com", "yelp.com", "google.com", "googleusercontent.com",
+    "linktr.ee", "beacons.ai", "whatsapp.com", "wa.me", "tripadvisor.com",
+    "yellowpages.com", "mapquest.com", "angi.com", "homeadvisor.com", "thumbtack.com",
+    "houzz.com", "porch.com", "nextdoor.com", "wixsite.com", "wix.com", "squarespace.com",
+    "weebly.com", "wordpress.com", "webflow.io", "godaddysites.com", "my.canva.site",
+}
+
 
 def slugify(text: str) -> str:
     text = text.lower().replace("&", " and ")
@@ -44,6 +54,19 @@ def clean_label(value: str | None, prefix: str) -> str | None:
     if not value:
         return None
     return re.sub(rf"^{re.escape(prefix)}\s*", "", value, flags=re.I).strip()
+
+
+def is_own_website(href: str | None) -> bool:
+    if not href:
+        return False
+    try:
+        parsed = urllib.parse.urlparse(href if "://" in href else f"https://{href}")
+        host = (parsed.hostname or "").lower().removeprefix("www.")
+    except ValueError:
+        return True
+    if not host:
+        return True
+    return not any(host == profile or host.endswith(f".{profile}") for profile in PROFILE_HOSTS)
 
 
 def research(query: str, out_slug: str) -> dict:
@@ -139,7 +162,7 @@ def research(query: str, out_slug: str) -> dict:
         except Exception as exc:
             print(f"photo {i}: {exc}", file=sys.stderr)
     out["fotos"] = downloaded
-    out["has_own_site"] = bool(out.get("website"))
+    out["has_own_site"] = is_own_website(out.get("website"))
     out["slug"] = out_slug
     (root / "data.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out

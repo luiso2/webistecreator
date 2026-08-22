@@ -16,6 +16,11 @@ const discoveryKey = request => [request?.niche, request?.location]
 // Una forja normal cambia de etapa varias veces en menos de 7 min. Doce minutos sin
 // señal ya no es lentitud: es una ejecución muerta y se puede rescatar.
 const STALE_FORGE_MS = 12 * 60 * 1000;
+// La meta operativa es 10.000 demos. KV admite un registro bastante mayor que
+// el límite histórico de 800; dejamos margen para no bloquear la forja al llegar
+// a la meta y para conservar los datos CRM en la misma lista.
+const REGISTRY_LIMIT = 12000;
+const QUEUE_PENDING_LIMIT = 20;
 
 // SHA-256 del access key (el key real vive solo en el .env local del usuario)
 const KEY_HASH = 'b1e35fb9b55f29a4272b16173553f5f92b19b0b824ddb3d9789f28332bd4bf06';
@@ -41,7 +46,106 @@ function cfRegistrarToken(env) {
   return null;
 }
 
+const CF_API = 'https://api.cloudflare.com/client/v4';
+const DOMAIN_PENDING_PREFIX = 'domain-pending:';
+const DOMAIN_WAITING_STATES = new Set(['pending', 'in_progress', 'action_required', 'blocked']);
+
+function cfRequest(token, path, options = {}) {
+  const target = path.startsWith('http') ? path : `${CF_API}${path}`;
+  return fetch(target, {
+    ...options,
+    headers: {
+      authorization: `Bearer ${token}`,
+      'content-type': 'application/json',
+      ...(options.headers || {}),
+    },
+  });
+}
+
+async function responseData(response) {
+  return response.json().catch(() => ({}));
+}
+
+async function zoneIdFor(token, domain) {
+  const response = await cfRequest(token, `/zones?name=${encodeURIComponent(domain)}`);
+  const data = await responseData(response);
+  return (response.ok && data.result && data.result[0] && data.result[0].id) || null;
+}
+
+// Termina el trabajo que empieza al pulsar "Comprar y lanzar". Registrar puede
+// responder 202 mientras el registro sigue en curso; esta función es idempotente
+// y la ejecutan tanto la respuesta inicial como el Cron del Worker.
+async function finalizePendingDomain(env, pending) {
+  const token = cfRegistrarToken(env);
+  if (!token || !env.CF_ACCOUNT_ID) return { pending: true, error: 'falta configuración de Registrar' };
+  const domain = pending.domain;
+  const slug = pending.slug;
+  let state = pending.registration_state || null;
+  let complete = pending.registration_complete === true;
+
+  if (!complete) {
+    const statusPath = pending.status_url || `/accounts/${env.CF_ACCOUNT_ID}/registrar/registrations/${encodeURIComponent(domain)}/registration-status`;
+    const statusResponse = await cfRequest(token, statusPath);
+    const statusData = await responseData(statusResponse);
+    const workflow = statusData.result || {};
+    state = workflow.state || state;
+    complete = workflow.completed === true || state === 'succeeded';
+    if (!statusResponse.ok) return { pending: true, state, error: 'Cloudflare aún no expone el estado del registro' };
+    if (state === 'failed') return { failed: true, error: workflow.error?.message || 'Cloudflare rechazó el registro del dominio' };
+    if (!complete || DOMAIN_WAITING_STATES.has(state)) return { pending: true, state: state || 'in_progress' };
+  }
+
+  const zoneId = await zoneIdFor(token, domain);
+  if (!zoneId) return { pending: true, state: 'zone_pending' };
+
+  const attachResponse = await cfRequest(token, `/accounts/${env.CF_ACCOUNT_ID}/workers/domains`, {
+    method: 'PUT',
+    body: JSON.stringify({ hostname: domain, service: 'siteforge-demos', zone_id: zoneId }),
+  });
+  const attachData = await responseData(attachResponse);
+  if (!attachResponse.ok || attachData.success === false) {
+    return { pending: true, state: 'worker_attach_pending', error: 'El dominio existe, pero Cloudflare aún no lo pudo enlazar al Worker' };
+  }
+
+  await env.SITEFORGE_KV.put('domain:' + domain, slug);
+  const buys = (await env.SITEFORGE_KV.get('domain_buys', 'json')) || [];
+  if (!buys.some(b => b.domain === domain)) {
+    buys.push({ domain, slug, at: pending.created_at || new Date().toISOString() });
+    await env.SITEFORGE_KV.put('domain_buys', JSON.stringify(buys));
+  }
+  const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
+  const updated = registry.map(b => (b.slug === slug
+    ? { ...b, custom_domain: domain, live_url: `https://${domain}/`, domain_status: 'live' }
+    : b));
+  await env.SITEFORGE_KV.put('registry', JSON.stringify(updated));
+  await env.SITEFORGE_KV.delete(DOMAIN_PENDING_PREFIX + domain);
+  return { done: true, domain, slug, live_url: `https://${domain}/`, worker_attached: true };
+}
+
+async function reconcilePendingDomains(env) {
+  const listed = await env.SITEFORGE_KV.list({ prefix: DOMAIN_PENDING_PREFIX });
+  for (const key of listed.keys.slice(0, 50)) {
+    const pending = await env.SITEFORGE_KV.get(key.name, 'json');
+    if (!pending || !pending.domain || !pending.slug) continue;
+    try {
+      const result = await finalizePendingDomain(env, pending);
+      if (result.failed) {
+        await env.SITEFORGE_KV.put('domain-failed:' + pending.domain, JSON.stringify({ ...pending, ...result, checked_at: new Date().toISOString() }));
+        await env.SITEFORGE_KV.delete(key.name);
+      } else if (!result.done) {
+        await env.SITEFORGE_KV.put(key.name, JSON.stringify({ ...pending, ...result, checked_at: new Date().toISOString() }));
+      }
+    } catch (error) {
+      await env.SITEFORGE_KV.put(key.name, JSON.stringify({ ...pending, error: String(error).slice(0, 220), checked_at: new Date().toISOString() }));
+    }
+  }
+}
+
 export default {
+  async scheduled(_controller, env) {
+    await reconcilePendingDomains(env);
+  },
+
   async fetch(req, env) {
     const url = new URL(req.url);
 
@@ -183,7 +287,7 @@ export default {
         delete nuevo.outreach;
         registry[idx] = { ...actual, ...nuevo };
       } else {
-        if (registry.length >= 800) return json({ error: 'registro lleno' }, 429);
+        if (registry.length >= REGISTRY_LIMIT) return json({ error: 'registro lleno' }, 429);
         registry.push(Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)));
       }
       await env.SITEFORGE_KV.put('registry', JSON.stringify(registry));
@@ -333,8 +437,8 @@ export default {
           if (!input) return json({ error: 'input requerido (max 200 chars)' }, 400);
         }
         const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-        if (queue.filter(q => q.status === 'pending').length >= 20) {
-          return json({ error: 'cola llena (20 pendientes max)' }, 429);
+        if (queue.filter(q => q.status === 'pending').length >= QUEUE_PENDING_LIMIT) {
+          return json({ error: `cola llena (${QUEUE_PENDING_LIMIT} pendientes max)` }, 429);
         }
         if (request && queue.some(q => (q.status === 'pending' || q.status === 'processing')
           && q.request?.type === 'discovery' && discoveryKey(q.request) === discoveryKey(request))) {
@@ -524,6 +628,18 @@ export default {
         const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
         const biz = registry.find(b => b.slug === slug);
         if (!biz) return json({ error: 'negocio no encontrado en el registro' }, 404);
+        const mappedSlug = await env.SITEFORGE_KV.get('domain:' + domain);
+        if (mappedSlug === slug) {
+          return json({ ok: true, domain, slug, live_url: `https://${domain}/`, worker_attached: true, already: true });
+        }
+        const pendingKey = DOMAIN_PENDING_PREFIX + domain;
+        const existingPending = await env.SITEFORGE_KV.get(pendingKey, 'json');
+        if (existingPending && existingPending.slug !== slug) {
+          return json({ error: 'ese dominio ya está reservado para otro negocio' }, 409);
+        }
+        if (existingPending) {
+          return json({ ok: true, pending: true, domain, slug, live_url: `https://${domain}/`, note: 'El registro sigue en curso; el Worker lo enlazará automáticamente.' }, 202);
+        }
         // Guardas de dinero: tope diario + anti-duplicado
         const buys = (await env.SITEFORGE_KV.get('domain_buys', 'json')) || [];
         const today = new Date().toISOString().slice(0, 10);
@@ -531,45 +647,58 @@ export default {
           return json({ error: 'tope diario de compras alcanzado (10). Reintenta manana.' }, 429);
         }
         if (buys.some(b => b.domain === domain)) return json({ error: 'ese dominio ya fue comprado' }, 409);
-        const cf = (path, opts = {}) => fetch(`https://api.cloudflare.com/client/v4${path}`, {
-          ...opts,
-          headers: { authorization: `Bearer ${cfTok}`, 'content-type': 'application/json', ...(opts.headers || {}) },
-        });
         // 1) re-check justo antes de registrar (recomendado por CF)
-        const chk = await cf(`/accounts/${env.CF_ACCOUNT_ID}/registrar/domain-check`, { method: 'POST', body: JSON.stringify({ domains: [domain] }) }).then(r => r.json()).catch(() => ({}));
+        const chk = await cfRequest(cfTok, `/accounts/${env.CF_ACCOUNT_ID}/registrar/domain-check`, { method: 'POST', body: JSON.stringify({ domains: [domain] }) }).then(responseData).catch(() => ({}));
         const availList = (chk.result && chk.result.domains) || chk.result || [];
         const avail = (Array.isArray(availList) ? availList : []).find(d => (d.domain || d.name) === domain);
         if (avail && avail.registrable === false) return json({ error: 'el dominio ya no esta disponible', detail: avail }, 409);
         // 2) registrar el dominio (cobra al billing profile de la cuenta CF)
-        const reg = await cf(`/accounts/${env.CF_ACCOUNT_ID}/registrar/registrations`, { method: 'POST', body: JSON.stringify({ domain_name: domain }) });
-        const regData = await reg.json().catch(() => ({}));
-        if (!reg.ok) return json({ error: 'registro fallo (revisa: registrant contact configurado, metodo de pago valido, acceso a la beta de Registrar API)', detail: regData }, 502);
-        // 3) zone_id (el registro crea la zona en CF; puede tardar unos segundos)
-        let zoneId = null;
-        for (let i = 0; i < 4 && !zoneId; i++) {
-          const zr = await cf(`/zones?name=${encodeURIComponent(domain)}`).then(r => r.json()).catch(() => ({}));
-          zoneId = (zr.result && zr.result[0] && zr.result[0].id) || null;
-          if (!zoneId) await new Promise(res => setTimeout(res, 1500));
-        }
-        // 4) montar: custom domain del worker de demos + mapa hostname->slug
-        let attached = false;
-        if (zoneId) {
-          const ad = await cf(`/accounts/${env.CF_ACCOUNT_ID}/workers/domains`, {
-            method: 'PUT',
-            body: JSON.stringify({ hostname: domain, service: 'siteforge-demos', environment: 'production', zone_id: zoneId }),
-          });
-          attached = ad.ok;
-        }
-        await env.SITEFORGE_KV.put('domain:' + domain, slug);
-        // 5) log de compra + actualizar el negocio
-        buys.push({ domain, slug, at: new Date().toISOString() });
-        await env.SITEFORGE_KV.put('domain_buys', JSON.stringify(buys));
-        const updated = registry.map(b => (b.slug === slug ? { ...b, custom_domain: domain, live_url: `https://${domain}/` } : b));
-        await env.SITEFORGE_KV.put('registry', JSON.stringify(updated));
-        return json({
-          ok: true, domain, slug, live_url: `https://${domain}/`, worker_attached: attached,
-          note: attached ? 'Sitio montado. SSL puede tardar unos minutos.' : 'Dominio registrado y mapeado; el enlace del worker se completara al propagar la zona.',
+        const reg = await cfRequest(cfTok, `/accounts/${env.CF_ACCOUNT_ID}/registrar/registrations`, {
+          method: 'POST',
+          body: JSON.stringify({ domain_name: domain }),
         });
+        const regData = await responseData(reg);
+        if (!reg.ok) return json({ error: 'registro fallo (revisa: registrant contact configurado, metodo de pago valido, acceso a la beta de Registrar API)', detail: regData }, 502);
+        // Registrar puede completar en 201 o devolver 202 con un workflow. En
+        // ambos casos guardamos el estado para que el Cron de este Worker lo
+        // reintente hasta que la zona y el custom domain estén listos.
+        const workflow = regData.result || {};
+        const state = workflow.state || (reg.status === 201 ? 'succeeded' : 'in_progress');
+        const pending = {
+          domain,
+          slug,
+          created_at: new Date().toISOString(),
+          status_url: workflow.links?.self || `/accounts/${env.CF_ACCOUNT_ID}/registrar/registrations/${encodeURIComponent(domain)}/registration-status`,
+          registration_state: state,
+          registration_complete: workflow.completed === true || state === 'succeeded',
+        };
+        const result = await finalizePendingDomain(env, pending);
+        if (result.done) {
+          return json({ ok: true, ...result, note: 'Sitio montado. SSL puede tardar unos minutos.' });
+        }
+        if (result.failed) return json({ error: result.error || 'registro de dominio fallido' }, 502);
+        await env.SITEFORGE_KV.put(pendingKey, JSON.stringify({ ...pending, ...result, checked_at: new Date().toISOString() }));
+        return json({
+          ok: true,
+          pending: true,
+          domain,
+          slug,
+          live_url: `https://${domain}/`,
+          note: 'Registro iniciado. El Worker lo enlazará y publicará automáticamente cuando Cloudflare termine.',
+        }, 202);
+      }
+
+      if (url.pathname === '/api/domain/status' && req.method === 'GET') {
+        const slug = (url.searchParams.get('slug') || '').toString();
+        const domain = (url.searchParams.get('domain') || '').toString().toLowerCase().trim();
+        if (!/^[a-z0-9-]{1,40}$/.test(slug) || !/^[a-z0-9-]{1,63}\.[a-z]{2,20}$/.test(domain)) {
+          return json({ error: 'slug o dominio invalido' }, 400);
+        }
+        const mappedSlug = await env.SITEFORGE_KV.get('domain:' + domain);
+        if (mappedSlug === slug) return json({ ok: true, domain, slug, live_url: `https://${domain}/`, ready: true });
+        const pending = await env.SITEFORGE_KV.get(DOMAIN_PENDING_PREFIX + domain, 'json');
+        if (pending && pending.slug === slug) return json({ ok: true, pending: true, domain, slug, ready: false, state: pending.state || pending.registration_state || 'in_progress' }, 202);
+        return json({ error: 'dominio no encontrado para este negocio' }, 404);
       }
 
       if (url.pathname === '/api/registry' && req.method === 'POST') {
