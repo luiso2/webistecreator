@@ -81,7 +81,18 @@ def esperar_demo(item_id, url, max_seconds=1800):
     ultimo_heartbeat = inicio
     while time.monotonic() - inicio < max_seconds:
         try:
-            if urllib.request.urlopen(url, timeout=15).status == 200:
+            # Usa una consulta no cacheada y un UA de navegador: Cloudflare puede
+            # servir una respuesta cacheada distinta a Railway si se consulta el
+            # mismo slug sin headers, justo durante la propagacion de Builds.
+            sep = '&' if '?' in url else '?'
+            check = urllib.request.Request(
+                f'{url}{sep}forge_check={int(time.time())}',
+                headers={
+                    'User-Agent': 'Mozilla/5.0 (compatible; siteforge-forja/1.0; +railway)',
+                    'Cache-Control': 'no-cache',
+                },
+            )
+            if urllib.request.urlopen(check, timeout=15).status == 200:
                 return True
         except Exception:
             pass

@@ -531,6 +531,32 @@ export default {
         return json({ ok: true, retry_count: retries + 1 });
       }
 
+      // Recupera un item que quedo processing por un reinicio de Railway. Solo se
+      // permite despues de 3 minutos sin heartbeat; un trabajo vivo actualiza
+      // stage_at cada minuto mientras espera Workers Builds.
+      if (url.pathname === '/api/queue/recover' && req.method === 'POST') {
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        if (!body.id) return json({ error: 'id requerido' }, 400);
+        let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+        const item = queue.find(q => q.id === body.id);
+        if (!item) return json({ error: 'item no encontrado' }, 404);
+        if (item.status !== 'processing') return json({ error: 'el item no esta processing' }, 409);
+        const age = Date.now() - Date.parse(item.stage_at || item.started_at || item.created);
+        if (!Number.isFinite(age) || age < 3 * 60 * 1000) {
+          return json({ error: 'el heartbeat aun puede estar vivo' }, 409);
+        }
+        const now = new Date().toISOString();
+        queue = queue.map(q => q.id === body.id ? {
+          ...q, status: 'pending', stage: null, stage_at: null,
+          started_at: null, done_at: null, note: 'Recuperado tras reinicio de la forja',
+          recovered_at: now,
+        } : q);
+        await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+        await env.QUEUE_CLAIMS.getByName('siteforge-queue').release(body.id);
+        return json({ ok: true, recovered: true });
+      }
+
       if (url.pathname === '/api/queue/done' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
