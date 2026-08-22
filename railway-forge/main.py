@@ -19,8 +19,8 @@ FLUJO por item:
 
 REGLAS QUE HEREDA DEL FORGE-BRIEF: solo datos reales (los hechos vienen del research);
 sin resenas ni precios inventados (modo razones); menos de 5 fotos usables = failed;
-nunca dos items a la vez; el research degradado NO condena al negocio (se deja con nota
-para reintento, no se marca failed por ceguera).
+nunca dos items a la vez; el research degradado cierra rápido con un motivo transitorio
+para reintento, nunca deja un item fantasma en processing.
 """
 import base64
 import json
@@ -273,8 +273,11 @@ def procesar(item):
         return
     hechos = json.load(open(ruta_data, encoding='utf-8'))
     if hechos.get('research_degradado') or len(hechos.get('fotos', [])) < 5:
-        # ceguera != negocio malo: se deja con nota; el rescate de 40 min lo reofrece
-        report('research', f'IG dio {len(hechos.get("fotos", []))} fotos desde Railway; reintento luego')
+        # No dejar el item processing mientras el research degradado espera al
+        # rescatador. Se cierra rápido con motivo transitorio y el panel permite
+        # reintentar hasta cinco veces para que otra ejecución pueda completar las fotos.
+        fotos = len(hechos.get('fotos', []))
+        finish(failed=True, motivo=f'Research Instagram incompleto ({fotos} fotos); reintenta para volver a consultar el perfil.')
         return
     hechos['slug'] = slug
     hechos['idioma_principal'] = 'es'  # el gate valida la coherencia del copy generado

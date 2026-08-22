@@ -874,7 +874,7 @@
         const whyBox = motivo
           ? `<div class="qwhy" id="why-${esc(q.id)}" hidden>${esc(motivo)}</div>`
           : '';
-        const retryLimit = /demo no respondio|Subida a GitHub/i.test(motivo) ? 5 : 3;
+        const retryLimit = /demo no respondio|Subida a GitHub|Research Instagram/i.test(motivo) ? 5 : 3;
         const retry = failed && Number(q.retry_count || 0) < retryLimit
           ? `<button class="qretry" onclick="retryQueue('${esc(q.id)}', this)">Reintentar</button>` : '';
         return `<div class="qitem ${failed ? 'fail' : (q.status === 'done' ? 'done' : '')}">

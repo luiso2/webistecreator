@@ -116,7 +116,7 @@ export class QueueClaims extends DurableObject {
       const retries = Number(item.retry_count || 0);
       // Publicacion/Builds son fallos transitorios; los filtros de Maps conservan
       // el limite corto para no repetir negocios que no cumplen los minimos.
-      const transient = /demo no respondio|Subida a GitHub/i.test(item.result?.motivo || '');
+      const transient = /demo no respondio|Subida a GitHub|Research Instagram/i.test(item.result?.motivo || '');
       const maxRetries = transient ? 5 : 3;
       if (retries >= maxRetries) return { ok: false, error: `este item ya tiene ${maxRetries} reintentos`, status: 409 };
       const stamp = new Date(now).toISOString();
