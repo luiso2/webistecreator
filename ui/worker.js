@@ -23,8 +23,8 @@ const STALE_FORGE_MS = 12 * 60 * 1000;
 // cuatro réplicas de Railway. Este objeto único serializa el reclamo de cada id y
 // evita el doble build que terminaba en conflictos 409 al subir assets a GitHub.
 export class QueueClaims extends DurableObject {
-  constructor(ctx) {
-    super(ctx);
+  constructor(ctx, env) {
+    super(ctx, env);
     ctx.blockConcurrencyWhile(async () => {
       ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS claims (id TEXT PRIMARY KEY, expires_at INTEGER NOT NULL)');
     });
