@@ -98,7 +98,14 @@ def research(query: str, out_slug: str) -> dict:
             page.wait_for_timeout(2200)
         out["maps_url"] = page.url
         title = page.locator("h1").first.text_content() if page.locator("h1").count() else None
-        out["name"] = (title or query).strip()
+        # Google Maps puede dejar "Results" como h1 cuando la ficha se abrió
+        # desde una búsqueda automatizada. Nunca propagamos ese título genérico
+        # al demo: usamos el nombre solicitado como fallback verificable.
+        fallback_name = query.split(',', 1)[0].strip()
+        title_text = (title or '').strip()
+        if not title_text or title_text.lower() in {'results', 'google maps'}:
+            title_text = fallback_name
+        out["name"] = title_text
         # aria labels are more stable than Maps' class names.
         labels = page.locator('[role="img"][aria-label]')
         for i in range(min(labels.count(), 120)):
