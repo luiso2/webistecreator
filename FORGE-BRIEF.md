@@ -78,7 +78,7 @@ quedan `pending`, visibles para cualquier otra forja concurrente. Al terminar un
 o failed), recien entonces se toma el siguiente. Ademas, reportar progress al cambiar de
 etapa (research -> build -> verify -> commit): reclamar con `POST /api/public/queue/claim {id}`
 antes de investigar; si devuelve `409`, tomar el siguiente. El panel rescata como huerfano todo
-item sin senales por **12 minutos**, y un item que trabaja de verdad cambia de etapa mas seguido.
+item sin senales por **30 minutos**, y un item que trabaja de verdad cambia de etapa mas seguido.
 
 ## 0. Arranque paralelo (primer minuto, OBLIGATORIO)
 ### Pedido filtrado desde el panel (nicho + país o zona, sin website)
@@ -209,7 +209,7 @@ construyo sin fabricar ninguno de los tres. Su `content.json` es la referencia d
 - **dm_message** (SIEMPRE): version corta del outreach para DM/WhatsApp, max 450 chars, idioma principal, link del demo, angulo segun has_own_site.
 - Ids procesados -> `data/queue_done.json` (failed: con motivo). Commit + push a main. Si el push es rechazado: `git pull --rebase`; si `data/processed.json` queda en conflicto, fusionar POR SLUG (base = `git show origin/main:data/processed.json`, agregar solo los slugs propios que falten via `git show REBASE_HEAD:data/processed.json`), NUNCA escoger un lado entero; `git add` + `git rebase --continue` + push. El push publica los demos solo (Workers Builds).
 - Verificacion live tras el push: `curl` del demo con User-Agent de navegador (python-urllib recibe 403 de Cloudflare) hasta obtener 200; los assets nuevos pueden dar 404 por 1-2 min de propagacion: reintentar antes de diagnosticar. Confirmar que el HTML live = local y que el thumb decodifica.
-- Panel publico: GET /api/public/queue, POST /api/public/queue/progress {id, stage: research|build|verify|commit}, POST /api/public/queue/done {id, slug, name, url_demo, dm}. Ademas, por CADA negocio construido: POST /api/public/registry-upsert con {slug, name, city, ig, url_demo, has_own_site, email, phone, language, dm_message, thumb, fecha} para que aparezca en la UI al instante. Item FALLIDO: POST done con {id, failed: true, motivo: "<resumen corto del porque>"} para que el panel lo muestre en rojo con su motivo.
+- Panel publico: GET /api/public/queue, POST /api/public/queue/claim {id} (devuelve token), POST /api/public/queue/progress {id, token, stage: research|build|verify|commit}, POST /api/public/queue/done {id, token, slug, name, url_demo, dm}. Ademas, por CADA negocio construido: POST /api/public/registry-upsert con {slug, name, city, ig, url_demo, has_own_site, email, phone, language, dm_message, thumb, fecha} para que aparezca en la UI al instante. Item FALLIDO: POST done con {id, token, failed: true, motivo: "<resumen corto del porque>"} para que el panel lo muestre en rojo con su motivo. El token es por intento y evita que una ejecución antigua cierre el reintento de otra.
 - PROHIBIDO contactar negocios por cualquier canal. Reporte unico por Resend a jose@merktop.com solo si se proceso algo; con email publico incluir boton mailto "ENVIAR ESTE CORREO (1 tap)" pre-llenado.
 
 ## 5. Reglas duras

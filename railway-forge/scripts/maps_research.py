@@ -84,10 +84,20 @@ def research(query: str, out_slug: str) -> dict:
         page.wait_for_timeout(4000)
         first = page.locator("a.hfpxzc").first
         if first.count():
-            first.click()
+            try:
+                first.scroll_into_view_if_needed(timeout=3000)
+                first.click(timeout=8000)
+            except Exception:
+                # Maps can keep a hidden result in the DOM while the feed settles.
+                # Navigate to its href rather than aborting the whole research.
+                href = first.get_attribute("href")
+                if href:
+                    page.goto(urllib.parse.urljoin("https://www.google.com", href),
+                              wait_until="domcontentloaded", timeout=35000)
             page.wait_for_timeout(3500)
         out["maps_url"] = page.url
-        out["name"] = page.locator("h1").first.text_content().strip() if page.locator("h1").count() else query
+        title = page.locator("h1").first.text_content() if page.locator("h1").count() else None
+        out["name"] = (title or query).strip()
         # aria labels are more stable than Maps' class names.
         labels = page.locator('[role="img"][aria-label]')
         for i in range(min(labels.count(), 120)):
@@ -152,14 +162,20 @@ def research(query: str, out_slug: str) -> dict:
         # Reviews are optional for the adapted non-salon variant. Keep short snippets.
         tab = page.locator('button[role="tab"][aria-label*="Reviews" i]').first
         if tab.count():
-            tab.click()
-            page.wait_for_timeout(1400)
-            for _ in range(4):
-                page.mouse.wheel(0, 1500)
-                page.wait_for_timeout(300)
-            out["reviewSamples"] = page.locator("div[data-review-id]").evaluate_all(
-                "els => els.slice(0, 8).map(n => ({author:n.querySelector('button[aria-label]')?.getAttribute('aria-label')||null, text:Array.from(n.querySelectorAll('span')).map(s=>s.textContent).filter(t=>t&&t.length>25).sort((a,b)=>b.length-a.length)[0]||null})).filter(x=>x.text)"
-            )
+            try:
+                tab.scroll_into_view_if_needed(timeout=2500)
+                tab.click(timeout=5000)
+                page.wait_for_timeout(1400)
+                for _ in range(4):
+                    page.mouse.wheel(0, 1500)
+                    page.wait_for_timeout(300)
+                out["reviewSamples"] = page.locator("div[data-review-id]").evaluate_all(
+                    "els => els.slice(0, 8).map(n => ({author:n.querySelector('button[aria-label]')?.getAttribute('aria-label')||null, text:Array.from(n.querySelectorAll('span')).map(s=>s.textContent).filter(t=>t&&t.length>25).sort((a,b)=>b.length-a.length)[0]||null})).filter(x=>x.text)"
+                )
+            except Exception:
+                # Reviews are optional evidence; a blocked tab must not discard
+                # photos, contact details, and the website decision already collected.
+                out["reviewSamples"] = []
         browser.close()
     root = Path("output") / out_slug
     raw = root / "assets" / "raw"

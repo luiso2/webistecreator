@@ -71,14 +71,18 @@ def panel(ruta, data=None):
         return None
 
 
-def progreso(item_id, stage, note=None):
-    panel('/api/public/queue/progress', {'id': item_id, 'stage': stage, **({'note': note} if note else {})})
+def progreso(item_id, stage, note=None, token=None):
+    payload = {'id': item_id, 'stage': stage, **({'note': note} if note else {})}
+    if token:
+        payload['token'] = token
+    panel('/api/public/queue/progress', payload)
 
 
-def esperar_demo(item_id, url, max_seconds=1800):
+def esperar_demo(item_id, url, max_seconds=1800, token=None):
     """Espera el Build sin dejar que el panel lo considere abandonado."""
     inicio = time.monotonic()
     ultimo_heartbeat = inicio
+    ultimo_status = 'sin respuesta'
     while time.monotonic() - inicio < max_seconds:
         try:
             # Usa una consulta no cacheada y un UA de navegador: Cloudflare puede
@@ -92,20 +96,27 @@ def esperar_demo(item_id, url, max_seconds=1800):
                     'Cache-Control': 'no-cache',
                 },
             )
-            if urllib.request.urlopen(check, timeout=15).status == 200:
+            with urllib.request.urlopen(check, timeout=15) as response:
+                ultimo_status = str(response.status)
+            if ultimo_status == '200':
                 return True
+        except urllib.error.HTTPError as exc:
+            ultimo_status = f'HTTP {exc.code}'
         except Exception:
-            pass
+            ultimo_status = 'error de red'
         ahora = time.monotonic()
         if ahora - ultimo_heartbeat >= 60:
-            progreso(item_id, 'commit', 'Workers Builds sigue desplegando el demo')
+            progreso(item_id, 'commit', f'Workers Builds sigue desplegando (último check: {ultimo_status})', token=token)
             ultimo_heartbeat = ahora
         time.sleep(10)
     return False
 
 
-def terminar(item_id, **result):
-    panel('/api/public/queue/done', {'id': item_id, **result})
+def terminar(item_id, token=None, **result):
+    payload = {'id': item_id, **result}
+    if token:
+        payload['token'] = token
+    panel('/api/public/queue/done', payload)
 
 
 def reclamar(item):
@@ -245,8 +256,11 @@ def guard_anti_invencion(content, hechos, slug):
 
 def procesar(item):
     iid, entrada = item['id'], item['input'].strip()
+    token = item.get('claim_token')
+    report = lambda stage, note=None: progreso(iid, stage, note, token=token)
+    finish = lambda **result: terminar(iid, token=token, **result)
     print(f'== {entrada}', flush=True)
-    progreso(iid, 'research', 'forja-railway')
+    report('research', 'forja-railway')
 
     handle = entrada.lstrip('@')
     slug = re.sub(r'[^a-z0-9-]', '', handle.lower().replace('.', '-').replace('_', '-'))[:40]
@@ -255,44 +269,44 @@ def procesar(item):
                        capture_output=True, text=True, timeout=300)
     ruta_data = f'output/{slug}/data.json'
     if not os.path.exists(ruta_data):
-        terminar(iid, failed=True, motivo=f'Research sin datos: {(r.stdout or r.stderr)[-180:]}')
+        finish(failed=True, motivo=f'Research sin datos: {(r.stdout or r.stderr)[-180:]}')
         return
     hechos = json.load(open(ruta_data, encoding='utf-8'))
     if hechos.get('research_degradado') or len(hechos.get('fotos', [])) < 5:
         # ceguera != negocio malo: se deja con nota; el rescate de 40 min lo reofrece
-        progreso(iid, 'research', f'IG dio {len(hechos.get("fotos", []))} fotos desde Railway; reintento luego')
+        report('research', f'IG dio {len(hechos.get("fotos", []))} fotos desde Railway; reintento luego')
         return
     hechos['slug'] = slug
     hechos['idioma_principal'] = 'es'  # el gate valida la coherencia del copy generado
 
-    progreso(iid, 'build')
+    report('build')
     # Sin IA (decision del usuario 2026-08-18): curacion por reglas + plantillas por nicho
     fotos_sel, motivo = cs.curar(hechos)
     if not fotos_sel:
-        terminar(iid, failed=True, motivo=f'Curacion por reglas: {motivo[:220]}')
+        finish(failed=True, motivo=f'Curacion por reglas: {motivo[:220]}')
         return
     content, dm, nicho = cs.construir(hechos, fotos_sel)
     print(f'  nicho={nicho}', flush=True)
     plan = {'fotos': fotos_sel, 'dm': dm}
     fallos = guard_anti_invencion(content, hechos, slug)
     if fallos:
-        terminar(iid, failed=True, motivo=f'Guard anti-invencion: {"; ".join(fallos[:4])}')
+        finish(failed=True, motivo=f'Guard anti-invencion: {"; ".join(fallos[:4])}')
         return
     json.dump(content, open(f'output/{slug}/content.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     subprocess.run(['cp', 'templates/.assetsignore-template', f'output/{slug}/.assetsignore'])
 
     if subprocess.run([sys.executable, 'scripts/derive.py', slug], capture_output=True).returncode != 0:
-        terminar(iid, failed=True, motivo='derive.py fallo (ancla rota)')
+        finish(failed=True, motivo='derive.py fallo (ancla rota)')
         return
-    progreso(iid, 'verify')
+    report('verify')
     lang = content.get('lang', 'es')
     g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', lang, '--forbid', FORBID],
                        capture_output=True, text=True)
     if g.returncode != 0:
-        terminar(iid, failed=True, motivo=f'GATE: {g.stdout[-200:]}')
+        finish(failed=True, motivo=f'GATE: {g.stdout[-200:]}')
         return
 
-    progreso(iid, 'commit')
+    report('commit')
     fotos_usadas = sorted(set(re.findall(r'(?:bk-\d+|logo)\.jpg', open(f'output/{slug}/content.json').read())))
     archivos = [(f'output/{slug}/index.html', f'output/{slug}/index.html')]
     archivos += [(f'output/{slug}/{f}', f'output/{slug}/{f}')
@@ -301,12 +315,12 @@ def procesar(item):
                  for f in fotos_usadas]
     ok = subir_sitio_github(slug, archivos)
     if not ok:
-        terminar(iid, failed=True, motivo='Subida a GitHub incompleta')
+        finish(failed=True, motivo='Subida a GitHub incompleta')
         return
 
     url = f'{DEMOS}/{slug}/'
-    if not esperar_demo(iid, url):
-        terminar(iid, failed=True, motivo='El demo no respondio 200 tras el deploy (no se registra)')
+    if not esperar_demo(iid, url, token=token):
+        finish(failed=True, motivo='El demo no respondio 200 tras el deploy (no se registra)')
         return
 
     panel('/api/public/registry-upsert', {
@@ -315,7 +329,7 @@ def procesar(item):
         'phone': hechos.get('phone'), 'language': lang, 'has_own_site': bool(hechos.get('has_own_site')),
         'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 2,
     })
-    terminar(iid, slug=slug, name=content.get('brand', {}).get('name', slug), url_demo=url)
+    finish(slug=slug, name=content.get('brand', {}).get('name', slug), url_demo=url)
     print(f'  LISTO {url}', flush=True)
 
 
@@ -327,14 +341,15 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
     concreto en vez de dejar el item pendiente para siempre.
     """
     iid, entrada = item['id'], item['input'].strip()
+    token = item.get('claim_token')
     report_id = progress_id or iid
 
     def report(stage, note=None):
-        progreso(report_id, stage, note)
+        progreso(report_id, stage, note, token=token)
 
     def fail(motivo):
         if cerrar:
-            terminar(iid, failed=True, motivo=motivo)
+            terminar(iid, token=token, failed=True, motivo=motivo)
         return {'failed': True, 'motivo': motivo}
 
     print(f'== {entrada} (Google Maps)', flush=True)
@@ -345,8 +360,26 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
     # El panel acepta slugs de hasta 40 caracteres; respetar el mismo límite aquí
     # evita terminar todo el build y dejar el item atascado al llamar a /done.
     slug = re.sub(r'[^a-z0-9-]', '', nombre.lower().replace('&', ' and ').replace('.', '-').replace('_', '-').replace(' ', '-'))[:40].strip('-')
-    r = subprocess.run([sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug], capture_output=True, text=True, timeout=360)
     ruta_data = f'output/{slug}/data.json'
+    # Nunca reutilizar datos/fotos de una corrida anterior con el mismo slug.
+    try:
+        os.unlink(ruta_data)
+    except FileNotFoundError:
+        pass
+    raw_dir = f'output/{slug}/assets/raw'
+    for old_photo in os.listdir(raw_dir) if os.path.isdir(raw_dir) else []:
+        if old_photo.startswith('gmaps-') and old_photo.endswith('.jpg'):
+            try:
+                os.unlink(os.path.join(raw_dir, old_photo))
+            except OSError:
+                pass
+    r = None
+    for attempt in range(2):
+        r = subprocess.run([sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug], capture_output=True, text=True, timeout=360)
+        if os.path.exists(ruta_data):
+            break
+        if attempt == 0:
+            time.sleep(4)
     if not os.path.exists(ruta_data):
         return fail(f'Research Google Maps sin datos: {(r.stdout or r.stderr)[-180:]}')
     hechos = json.load(open(ruta_data, encoding='utf-8'))
@@ -386,7 +419,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
     if not ok:
         return fail('Subida a GitHub incompleta')
     url = f'{DEMOS}/{slug}/'
-    if not esperar_demo(report_id, url):
+    if not esperar_demo(report_id, url, token=token):
         return fail('El demo no respondio 200 tras el deploy')
     report('commit')
     dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
@@ -399,7 +432,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
     })
     result = {'slug': slug, 'name': hechos.get('name') or nombre, 'url_demo': url, 'dm': dm}
     if cerrar:
-        terminar(iid, **result)
+        terminar(iid, token=token, **result)
     print(f'  LISTO {url}', flush=True)
     return result
 
@@ -413,15 +446,16 @@ def procesar_descubrimiento(item):
     original solo se cierra cuando todos los resultados posibles ya fueron procesados.
     """
     iid = item['id']
+    token = item.get('claim_token')
     request = item.get('request') or {}
     niche = str(request.get('niche') or '').strip()
     location = str(request.get('location') or '').strip()
     count = max(1, min(int(request.get('count') or 1), 3))
     if not niche or not location:
-        terminar(iid, failed=True, motivo='Búsqueda manual sin nicho o ciudad.')
+        terminar(iid, token=token, failed=True, motivo='Búsqueda manual sin nicho o ciudad.')
         return
 
-    progreso(iid, 'research', f'Google Maps: {niche} en {location}')
+    progreso(iid, 'research', f'Google Maps: {niche} en {location}', token=token)
     print(f'== {item.get("input", "descubrimiento")} (búsqueda manual prioritaria)', flush=True)
     try:
         discovery = subprocess.run(
@@ -430,7 +464,7 @@ def procesar_descubrimiento(item):
             capture_output=True, text=True, timeout=240,
         )
     except Exception as exc:
-        terminar(iid, failed=True, motivo=f'Descubrimiento Google Maps falló: {str(exc)[:180]}')
+        terminar(iid, token=token, failed=True, motivo=f'Descubrimiento Google Maps falló: {str(exc)[:180]}')
         return
 
     raw = (discovery.stdout or '').strip()
@@ -447,7 +481,7 @@ def procesar_descubrimiento(item):
                   and not c.get('website') and not c.get('has_own_site')]
     if not candidates:
         detail = payload.get('error') if isinstance(payload, dict) else ''
-        terminar(iid, failed=True, motivo=f'No se encontraron negocios sin website propio en {location}. {detail}'.strip()[:300])
+        terminar(iid, token=token, failed=True, motivo=f'No se encontraron negocios sin website propio en {location}. {detail}'.strip()[:300])
         return
 
     sites = []
@@ -464,8 +498,9 @@ def procesar_descubrimiento(item):
             'id': f'{iid}:{candidate.get("slug") or key[:48]}',
             'input': f'{name} ({candidate.get("location") or location})',
             'nicho': candidate.get('niche') or niche,
+            'claim_token': token,
         }
-        progreso(iid, 'build', f'Construyendo {len(sites) + 1}/{count}: {name}')
+        progreso(iid, 'build', f'Construyendo {len(sites) + 1}/{count}: {name}', token=token)
         try:
             result = procesar_nombre(child, cerrar=False, progress_id=iid)
         except Exception as exc:
@@ -475,10 +510,10 @@ def procesar_descubrimiento(item):
             sites.append({k: result[k] for k in ('slug', 'name', 'url_demo') if k in result})
 
     if sites:
-        terminar(iid, sites=sites, slug=sites[0].get('slug'), name=sites[0].get('name'), url_demo=sites[0].get('url_demo'))
+        terminar(iid, token=token, sites=sites, slug=sites[0].get('slug'), name=sites[0].get('name'), url_demo=sites[0].get('url_demo'))
         print(f'  DESCUBRIMIENTO LISTO: {len(sites)} demo(s)', flush=True)
     else:
-        terminar(iid, failed=True, motivo='Los candidatos encontrados no superaron research, fotos o validación.')
+        terminar(iid, token=token, failed=True, motivo='Los candidatos encontrados no superaron research, fotos o validación.')
 
 
 def main():
@@ -492,6 +527,7 @@ def main():
         mios = [p for p in pendientes if not p.get('request') and parece_handle(p.get('input', ''))]
         nombres = [p for p in pendientes if not p.get('request') and not parece_handle(p.get('input', ''))]
         if discoveries:
+            item = None
             try:
                 item = tomar_siguiente(discoveries)
                 if item:
@@ -499,10 +535,12 @@ def main():
             except Exception as e:
                 print(f'  error procesando búsqueda manual: {e}', flush=True)
                 try:
-                    terminar(discoveries[0]['id'], failed=True, motivo=f'Excepcion en búsqueda manual: {str(e)[:160]}')
+                    if item:
+                        terminar(item['id'], token=item.get('claim_token'), failed=True, motivo=f'Excepcion en búsqueda manual: {str(e)[:160]}')
                 except Exception:
                     pass
         elif mios:
+            item = None
             try:
                 item = tomar_siguiente(mios)
                 if item:
@@ -510,10 +548,12 @@ def main():
             except Exception as e:
                 print(f'  error procesando: {e}', flush=True)
                 try:
-                    terminar(mios[0]['id'], failed=True, motivo=f'Excepcion en forja-railway: {str(e)[:160]}')
+                    if item:
+                        terminar(item['id'], token=item.get('claim_token'), failed=True, motivo=f'Excepcion en forja-railway: {str(e)[:160]}')
                 except Exception:
                     pass
         elif nombres:
+            item = None
             try:
                 item = tomar_siguiente(nombres)
                 if item:
@@ -521,7 +561,8 @@ def main():
             except Exception as e:
                 print(f'  error procesando nombre: {e}', flush=True)
                 try:
-                    terminar(nombres[0]['id'], failed=True, motivo=f'Excepcion en research Google Maps: {str(e)[:160]}')
+                    if item:
+                        terminar(item['id'], token=item.get('claim_token'), failed=True, motivo=f'Excepcion en research Google Maps: {str(e)[:160]}')
                 except Exception:
                     pass
         time.sleep(POLL_S)

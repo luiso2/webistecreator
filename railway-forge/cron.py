@@ -207,7 +207,13 @@ def main() -> int:
             forge.procesar_nombre(claimed["item"])
         except Exception as exc:
             print(f"  build cron fallo: {exc}", flush=True)
-            forge.terminar(item["id"], failed=True, motivo=f"Excepción en cron: {str(exc)[:180]}")
+            claimed_item = claimed.get("item") or {}
+            forge.terminar(
+                claimed_item.get("id", item["id"]),
+                token=claimed_item.get("claim_token"),
+                failed=True,
+                motivo=f"Excepción en cron: {str(exc)[:180]}",
+            )
     return 0
 
 

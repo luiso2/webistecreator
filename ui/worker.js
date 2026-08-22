@@ -22,8 +22,8 @@ const discoveryKey = request => [request?.niche, request?.location]
 const STALE_FORGE_MS = 30 * 60 * 1000;
 
 // KV sirve para el estado y el historial, pero no ofrece un compare-and-set para
-// cuatro réplicas de Railway. Este objeto único serializa el reclamo de cada id y
-// evita el doble build que terminaba en conflictos 409 al subir assets a GitHub.
+// cuatro réplicas de Railway. Este objeto único serializa reclamos Y mutaciones de
+// cola/registro, evitando tanto dobles builds como actualizaciones que se pisan.
 export class QueueClaims extends DurableObject {
   constructor(ctx, env) {
     super(ctx, env);
@@ -32,14 +32,143 @@ export class QueueClaims extends DurableObject {
     });
   }
 
-  claim(id, now, ttl) {
-    const row = this.ctx.storage.sql.exec('SELECT expires_at FROM claims WHERE id = ?', id).toArray()[0];
-    if (row && Number(row.expires_at) > now) return false;
-    this.ctx.storage.sql.exec(
-      'INSERT INTO claims (id, expires_at) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET expires_at = excluded.expires_at',
-      id, now + ttl,
-    );
-    return true;
+  async claim(id, now, ttl) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const row = this.ctx.storage.sql.exec('SELECT expires_at FROM claims WHERE id = ?', id).toArray()[0];
+      if (row && Number(row.expires_at) > now) return { ok: false, error: 'item ya reclamado' };
+      const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const stale = q => q.status === 'processing'
+        && now - Date.parse(q.stage_at || q.created) > STALE_FORGE_MS;
+      let item;
+      const updated = queue.map(q => {
+        if (q.id !== id || (q.status !== 'pending' && !stale(q))) return q;
+        const claimToken = crypto.randomUUID();
+        item = { id: q.id, input: q.input, request: q.request, created: q.created, claim_token: claimToken };
+        return {
+          ...q, status: 'processing', stage: 'research', stage_at: new Date(now).toISOString(),
+          started_at: new Date(now).toISOString(), note: 'Forja iniciada', claim_token: claimToken,
+        };
+      });
+      if (!item) return { ok: false, error: 'item ya reclamado' };
+      await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
+      this.ctx.storage.sql.exec(
+        'INSERT INTO claims (id, expires_at) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET expires_at = excluded.expires_at',
+        id, now + ttl,
+      );
+      return { ok: true, item };
+    });
+  }
+
+  async progress(id, token, stage, note, now) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const item = queue.find(q => q.id === id && q.status === 'processing' && q.claim_token === token);
+      if (!item) return { ok: false, error: 'item no activo' };
+      const updated = queue.map(q => q.id === id ? {
+        ...q, status: 'processing', stage, stage_at: new Date(now).toISOString(),
+        started_at: q.started_at || new Date(now).toISOString(),
+        note: typeof note === 'string' ? note.slice(0, 140) : q.note,
+      } : q);
+      await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
+      return { ok: true };
+    });
+  }
+
+  async done(id, token, result, now) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
+      if (!queue.some(q => q.id === id && q.status === 'processing' && q.claim_token === token)) {
+        return { ok: false, error: 'item no pendiente' };
+      }
+      const updated = queue.map(q => q.id === id ? {
+        ...q, status: result.failed === true ? 'failed' : 'done',
+        done_at: new Date(now).toISOString(), result,
+      } : q);
+      await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
+      this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+      return { ok: true };
+    });
+  }
+
+  async enqueue(item, discoveryKeyValue = null) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
+      if (queue.filter(q => q.status === 'pending').length >= QUEUE_PENDING_LIMIT) {
+        return { ok: false, error: `cola llena (${QUEUE_PENDING_LIMIT} pendientes max)`, status: 429 };
+      }
+      if (discoveryKeyValue && queue.some(q => (q.status === 'pending' || q.status === 'processing')
+        && q.request?.type === 'discovery' && discoveryKey(q.request) === discoveryKeyValue)) {
+        return { ok: false, error: 'esa busqueda ya esta activa en la cola', status: 409 };
+      }
+      queue.push(item);
+      await this.env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+      return { ok: true, item };
+    });
+  }
+
+  async retry(id, now) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const item = queue.find(q => q.id === id);
+      if (!item) return { ok: false, error: 'item no encontrado', status: 404 };
+      const wasFailed = item.status === 'failed' || (item.status === 'done' && item.result?.failed === true);
+      if (!wasFailed) return { ok: false, error: 'solo se pueden reintentar fallos', status: 409 };
+      const retries = Number(item.retry_count || 0);
+      // Publicacion/Builds son fallos transitorios; los filtros de Maps conservan
+      // el limite corto para no repetir negocios que no cumplen los minimos.
+      const transient = /demo no respondio|Subida a GitHub/i.test(item.result?.motivo || '');
+      const maxRetries = transient ? 5 : 3;
+      if (retries >= maxRetries) return { ok: false, error: `este item ya tiene ${maxRetries} reintentos`, status: 409 };
+      const stamp = new Date(now).toISOString();
+      const updated = queue.map(q => q.id === id ? {
+        ...q, status: 'pending', stage: null, stage_at: null, started_at: null, done_at: null,
+        result: null, claim_token: null, note: 'Reintento solicitado desde el panel', retry_count: retries + 1, retry_at: stamp,
+      } : q);
+      await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
+      this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+      return { ok: true, retry_count: retries + 1 };
+    });
+  }
+
+  async recover(id, now, minAge) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
+      const item = queue.find(q => q.id === id);
+      if (!item) return { ok: false, error: 'item no encontrado', status: 404 };
+      if (item.status !== 'processing') return { ok: false, error: 'el item no esta processing', status: 409 };
+      const age = now - Date.parse(item.stage_at || item.started_at || item.created);
+      if (!Number.isFinite(age) || age < minAge) {
+        return { ok: false, error: 'el heartbeat aun puede estar vivo', status: 409 };
+      }
+      const stamp = new Date(now).toISOString();
+      const updated = queue.map(q => q.id === id ? {
+        ...q, status: 'pending', stage: null, stage_at: null, started_at: null, done_at: null,
+        claim_token: null, note: 'Recuperado tras reinicio de la forja', recovered_at: stamp,
+      } : q);
+      await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
+      this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+      return { ok: true, recovered: true };
+    });
+  }
+
+  async registryUpsert(limpio) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const registry = (await this.env.SITEFORGE_KV.get('registry', 'json')) || [];
+      const idx = registry.findIndex(b => b.slug === limpio.slug);
+      if (idx >= 0) {
+        const actual = registry[idx];
+        if (actual.outreach === 'sent') return { ok: true, skipped: 'ya contactado' };
+        if (actual.outreach === 'skip_duplicate') return { ok: true, skipped: 'marcado como duplicado' };
+        const nuevo = Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined));
+        delete nuevo.outreach;
+        registry[idx] = { ...actual, ...nuevo };
+      } else {
+        if (registry.length >= REGISTRY_LIMIT) return { ok: false, error: 'registro lleno', status: 429 };
+        registry.push(Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)));
+      }
+      await this.env.SITEFORGE_KV.put('registry', JSON.stringify(registry));
+      return { ok: true, count: registry.length };
+    });
   }
 
   release(id) {
@@ -172,9 +301,22 @@ async function reconcilePendingDomains(env) {
   }
 }
 
+async function reconcileStaleQueue(env) {
+  const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+  const now = Date.now();
+  const guard = env.QUEUE_CLAIMS.getByName('siteforge-queue');
+  for (const item of queue.filter(q => q.status === 'processing')) {
+    const stageAt = Date.parse(item.stage_at || item.started_at || item.created);
+    if (!Number.isFinite(stageAt) || now - stageAt <= STALE_FORGE_MS) continue;
+    // El propio DO vuelve a comprobar la edad bajo exclusión mutua, evitando
+    // rescatar un trabajo que acaba de enviar heartbeat mientras se leyó KV.
+    await guard.recover(item.id, now, STALE_FORGE_MS);
+  }
+}
+
 export default {
   async scheduled(_controller, env) {
-    await reconcilePendingDomains(env);
+    await Promise.all([reconcilePendingDomains(env), reconcileStaleQueue(env)]);
   },
 
   async fetch(req, env) {
@@ -200,52 +342,26 @@ export default {
       try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
       if (typeof body.id !== 'string' || !body.id) return json({ error: 'id requerido' }, 400);
       const claimGuard = env.QUEUE_CLAIMS.getByName('siteforge-queue');
-      if (!await claimGuard.claim(body.id, Date.now(), STALE_FORGE_MS)) {
-        return json({ error: 'item ya reclamado' }, 409);
-      }
-      let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-      const now = new Date().toISOString();
-      let claimed = null;
-      queue = queue.map(q => {
-        if (q.id !== body.id) return q;
-        const stale = q.status === 'processing' && Date.now() - Date.parse(q.stage_at || q.created) > STALE_FORGE_MS;
-        if (q.status !== 'pending' && !stale) return q;
-        claimed = { id: q.id, input: q.input, request: q.request, created: q.created };
-        return { ...q, status: 'processing', stage: 'research', stage_at: now, started_at: now, note: 'Forja iniciada' };
-      });
-      if (!claimed) {
-        await claimGuard.release(body.id);
-        return json({ error: 'item ya reclamado' }, 409);
-      }
-      await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
-      return json({ ok: true, item: claimed });
+      const claimed = await claimGuard.claim(body.id, Date.now(), STALE_FORGE_MS);
+      if (!claimed.ok) return json({ error: claimed.error || 'item ya reclamado' }, 409);
+      return json({ ok: true, item: claimed.item });
     }
 
     if (url.pathname === '/api/public/queue/progress' && req.method === 'POST') {
       let body;
       try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
       const STAGES = ['research', 'build', 'verify', 'commit'];
-      if (!body.id || !STAGES.includes(body.stage)) return json({ error: 'id y stage validos requeridos' }, 400);
-      let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-      const item = queue.find(q => q.id === body.id && (q.status === 'pending' || q.status === 'processing'));
-      if (!item) return json({ error: 'item no activo' }, 404);
-      const now = new Date().toISOString();
-      queue = queue.map(q => (q.id === body.id ? {
-        ...q,
-        status: 'processing',
-        stage: body.stage,
-        stage_at: now,
-        started_at: q.started_at || now,
-        note: typeof body.note === 'string' ? body.note.slice(0, 140) : q.note,
-      } : q));
-      await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
-      return json({ ok: true });
+      if (!body.id || typeof body.token !== 'string' || !STAGES.includes(body.stage)) return json({ error: 'id, token y stage validos requeridos' }, 400);
+      const result = await env.QUEUE_CLAIMS.getByName('siteforge-queue').progress(
+        body.id, body.token, body.stage, body.note, Date.now(),
+      );
+      return json(result, result.ok ? 200 : 404);
     }
 
     if (url.pathname === '/api/public/queue/done' && req.method === 'POST') {
       let body;
       try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
-      if (!body.id) return json({ error: 'id requerido' }, 400);
+      if (!body.id || typeof body.token !== 'string') return json({ error: 'id y token requeridos' }, 400);
       const siteResult = raw => {
         raw = raw && typeof raw === 'object' ? raw : {};
         const site = {};
@@ -272,18 +388,8 @@ export default {
         result.failed = true;
         if (typeof body.motivo === 'string') result.motivo = stripUnsafe(body.motivo.slice(0, 240));
       }
-      let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-      const exists = queue.some(q => q.id === body.id && (q.status === 'pending' || q.status === 'processing'));
-      if (!exists) return json({ error: 'item no pendiente' }, 404);
-      queue = queue.map(q => (q.id === body.id ? {
-        ...q,
-        status: body.failed === true ? 'failed' : 'done',
-        done_at: new Date().toISOString(),
-        result,
-      } : q));
-      await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
-      await env.QUEUE_CLAIMS.getByName('siteforge-queue').release(body.id);
-      return json({ ok: true });
+      const finished = await env.QUEUE_CLAIMS.getByName('siteforge-queue').done(body.id, body.token, result, Date.now());
+      return json(finished, finished.ok ? 200 : 404);
     }
 
     // Upsert publico de UN negocio al registro del panel (autorizado por el usuario 2026-07-19).
@@ -320,23 +426,8 @@ export default {
         thumb: typeof body.thumb === 'string' && body.thumb.startsWith('https://') && body.thumb.includes('.odd-forest-9504.workers.dev') ? S(body.thumb, 300) : undefined,
         fecha: S(body.fecha, 12) || new Date().toISOString().slice(0, 10),
       };
-      const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
-      const idx = registry.findIndex(b => b.slug === slug);
-      if (idx >= 0) {
-        const actual = registry[idx];
-        if (actual.outreach === 'sent') return json({ ok: true, skipped: 'ya contactado' });
-        if (actual.outreach === 'skip_duplicate') return json({ ok: true, skipped: 'marcado como duplicado' });
-        const nuevo = Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined));
-        // Un re-upsert refresca los datos del demo, pero NUNCA revierte el estado de outreach
-        // que el panel ya haya avanzado (si no, una corrida cloud lo devolveria a contactable).
-        delete nuevo.outreach;
-        registry[idx] = { ...actual, ...nuevo };
-      } else {
-        if (registry.length >= REGISTRY_LIMIT) return json({ error: 'registro lleno' }, 429);
-        registry.push(Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)));
-      }
-      await env.SITEFORGE_KV.put('registry', JSON.stringify(registry));
-      return json({ ok: true, count: registry.length });
+      const registryResult = await env.QUEUE_CLAIMS.getByName('siteforge-queue').registryUpsert(limpio);
+      return json(registryResult, registryResult.ok ? 200 : (registryResult.status || 500));
     }
 
     if (url.pathname.startsWith('/api/')) {
@@ -481,21 +572,14 @@ export default {
           input = queueText(body.input, 200);
           if (!input) return json({ error: 'input requerido (max 200 chars)' }, 400);
         }
-        const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-        if (queue.filter(q => q.status === 'pending').length >= QUEUE_PENDING_LIMIT) {
-          return json({ error: `cola llena (${QUEUE_PENDING_LIMIT} pendientes max)` }, 429);
-        }
-        if (request && queue.some(q => (q.status === 'pending' || q.status === 'processing')
-          && q.request?.type === 'discovery' && discoveryKey(q.request) === discoveryKey(request))) {
-          return json({ error: 'esa busqueda ya esta activa en la cola' }, 409);
-        }
         const item = {
           id: crypto.randomUUID(), input, status: 'pending', created: new Date().toISOString(),
           ...(request ? { request } : {}),
         };
-        queue.push(item);
-        await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
-        return json({ ok: true, item });
+        const queued = await env.QUEUE_CLAIMS.getByName('siteforge-queue').enqueue(
+          item, request ? discoveryKey(request) : null,
+        );
+        return json(queued, queued.ok ? 200 : (queued.status || 500));
       }
 
       // Reintento manual de un fallo visible en el historial. Los fallos no se
@@ -505,30 +589,8 @@ export default {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
         if (!body.id) return json({ error: 'id requerido' }, 400);
-        let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-        const item = queue.find(q => q.id === body.id);
-        if (!item) return json({ error: 'item no encontrado' }, 404);
-        const wasFailed = item.status === 'failed' || (item.status === 'done' && item.result?.failed === true);
-        if (!wasFailed) return json({ error: 'solo se pueden reintentar fallos' }, 409);
-        const retries = Number(item.retry_count || 0);
-        // Tres intentos cubren fallos transitorios de Builds o de una carrera de
-        // publicación sin convertir un registro definitivamente inválido en un bucle.
-        if (retries >= 3) return json({ error: 'este item ya tiene tres reintentos' }, 409);
-        const now = new Date().toISOString();
-        queue = queue.map(q => q.id === body.id ? {
-          ...q,
-          status: 'pending',
-          stage: null,
-          stage_at: null,
-          started_at: null,
-          done_at: null,
-          result: null,
-          retry_count: retries + 1,
-          retry_at: now,
-          note: 'Reintento solicitado desde el panel',
-        } : q);
-        await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
-        return json({ ok: true, retry_count: retries + 1 });
+        const retried = await env.QUEUE_CLAIMS.getByName('siteforge-queue').retry(body.id, Date.now());
+        return json(retried, retried.ok ? 200 : (retried.status || 500));
       }
 
       // Recupera un item que quedo processing por un reinicio de Railway. Solo se
@@ -538,23 +600,10 @@ export default {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
         if (!body.id) return json({ error: 'id requerido' }, 400);
-        let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-        const item = queue.find(q => q.id === body.id);
-        if (!item) return json({ error: 'item no encontrado' }, 404);
-        if (item.status !== 'processing') return json({ error: 'el item no esta processing' }, 409);
-        const age = Date.now() - Date.parse(item.stage_at || item.started_at || item.created);
-        if (!Number.isFinite(age) || age < 3 * 60 * 1000) {
-          return json({ error: 'el heartbeat aun puede estar vivo' }, 409);
-        }
-        const now = new Date().toISOString();
-        queue = queue.map(q => q.id === body.id ? {
-          ...q, status: 'pending', stage: null, stage_at: null,
-          started_at: null, done_at: null, note: 'Recuperado tras reinicio de la forja',
-          recovered_at: now,
-        } : q);
-        await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
-        await env.QUEUE_CLAIMS.getByName('siteforge-queue').release(body.id);
-        return json({ ok: true, recovered: true });
+        const recovered = await env.QUEUE_CLAIMS.getByName('siteforge-queue').recover(
+          body.id, Date.now(), 3 * 60 * 1000,
+        );
+        return json(recovered, recovered.ok ? 200 : (recovered.status || 500));
       }
 
       if (url.pathname === '/api/queue/done' && req.method === 'POST') {
@@ -562,18 +611,12 @@ export default {
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
         // Sin este guard, un body sin id recorre la cola comparando contra undefined y responde
         // ok:true sin haber cerrado nada (falso positivo para el que llama).
-        if (!body.id) return json({ error: 'id requerido' }, 400);
-        let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
-        if (!queue.some(q => q.id === body.id)) return json({ error: 'item no encontrado' }, 404);
-        queue = queue.map(q => (q.id === body.id ? {
-          ...q,
-          status: body.failed === true ? 'failed' : 'done',
-          done_at: new Date().toISOString(),
-          result: body.failed === true ? { failed: true, motivo: typeof body.motivo === 'string' ? stripUnsafe(body.motivo.slice(0, 240)) : undefined } : q.result,
-        } : q));
-        await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
-        await env.QUEUE_CLAIMS.getByName('siteforge-queue').release(body.id);
-        return json({ ok: true });
+        if (!body.id || typeof body.token !== 'string') return json({ error: 'id y token requeridos' }, 400);
+        const result = body.failed === true
+          ? { failed: true, motivo: typeof body.motivo === 'string' ? stripUnsafe(body.motivo.slice(0, 240)) : undefined }
+          : {};
+        const finished = await env.QUEUE_CLAIMS.getByName('siteforge-queue').done(body.id, body.token, result, Date.now());
+        return json(finished, finished.ok ? 200 : 404);
       }
 
       // Envio de outreach POR ACCION DIRECTA del usuario autenticado en el panel

@@ -121,7 +121,8 @@ def _detail(
     if re.search(r"permanently closed", body, re.I):
         return None
     title_locator = page.locator("h1").first
-    name = title_locator.text_content().strip() if title_locator.count() else fallback_name
+    title = title_locator.text_content() if title_locator.count() else None
+    name = (title or fallback_name).strip()
     if not name:
         return None
     rating, reviews = _rating_reviews(page)

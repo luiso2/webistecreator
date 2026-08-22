@@ -12,7 +12,12 @@
   // var puesta a mano en el dashboard se pierde en el siguiente deploy (paso el 2026-08-11:
   // se borro CF_REGISTRAR_TOKEN y la busqueda de dominios dejo de funcionar). Los secrets
   // sobreviven a los deploys. Nunca poner el valor aqui: este archivo esta en git.
-  "compatibility_date": "2026-07-01",
+  "compatibility_date": "2026-08-22",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": { "enabled": true, "head_sampling_rate": 1, "persist": true }
+  },
   "triggers": { "crons": ["*/5 * * * *"] },
   "vars": { "CF_ACCOUNT_ID": "e79469132f614c7f418a0e7a65466e88" },
   "assets": { "directory": "public", "binding": "ASSETS" },

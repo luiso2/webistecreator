@@ -874,7 +874,8 @@
         const whyBox = motivo
           ? `<div class="qwhy" id="why-${esc(q.id)}" hidden>${esc(motivo)}</div>`
           : '';
-        const retry = failed && Number(q.retry_count || 0) < 3
+        const retryLimit = /demo no respondio|Subida a GitHub/i.test(motivo) ? 5 : 3;
+        const retry = failed && Number(q.retry_count || 0) < retryLimit
           ? `<button class="qretry" onclick="retryQueue('${esc(q.id)}', this)">Reintentar</button>` : '';
         return `<div class="qitem ${failed ? 'fail' : (q.status === 'done' ? 'done' : '')}">
           <span class="qmark">${q.status === 'pending' ? '⏳' : (failed ? '✗' : '✓')}</span>
@@ -888,9 +889,9 @@
         // caso real fue una corrida muerta con 3 items "en proceso" durante hora y media.
         const desde = Date.parse(q.stage_at || q.started_at || q.created) || Date.now();
         const minSin = Math.floor((Date.now() - desde) / 60000);
-        const abandonado = minSin >= 10;
+        const abandonado = minSin >= 30;
         const estado = abandonado
-          ? `⚠️ Sin señales de la forja hace ${minSin} min · a los 40 vuelve a la cola solo`
+          ? `⚠️ Sin señales de la forja hace ${minSin} min · a los 30 vuelve a la cola solo`
           : (STAGE_LABEL[q.stage] || 'En proceso');
         return `
         <div class="prog${abandonado ? ' stale' : ''}">
