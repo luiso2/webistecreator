@@ -517,14 +517,14 @@ export default {
               biz.url_demo,
               `It gives a new customer one clear place to see your work and call or message you. No login and no change to your current booking flow — just take a look.`,
               `Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.`,
-              `Michael from Merktop`,
+              `José Michael from Merktop`,
             ]
           : [
               `Hola ${biz.name} — encontré su negocio en ${biz.city || 'su zona'} y ${redesign ? 'preparé una versión más clara de su página actual' : 'no vi un website propio enlazado desde su ficha pública'}, así que armé esto usando sus fotos y datos de contacto reales:`,
               biz.url_demo,
               `Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. No requiere iniciar sesión ni cambia sus reservas: solo échenle un vistazo.`,
               `¿Quieren que ajuste los colores y el dominio? Si no les resulta útil, respondan “no” y no volveré a insistir.`,
-              `Michael de Merktop`,
+              `José Michael de Merktop`,
             ];
         const lines = savedMessage
           ? (savedMessage.includes(biz.url_demo) ? savedMessage.split('\n\n') : [savedMessage, biz.url_demo])

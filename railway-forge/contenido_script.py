@@ -249,7 +249,7 @@ def generar_dm(hechos, url, nicho=None):
                 'It gives a new customer one clear place to see your work and call or message you. '
                 'No login and no change to your current booking flow — just take a look.\n\n'
                 'Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.\n\n'
-                '— Michael from Merktop')
+                '— José Michael from Merktop')
     contexto = (f'encontré {nombre} buscando {oficio_es} en {ciudad}. '
                 + ('Vi su página actual y preparé una versión más clara con sus fotos públicas y datos de contacto:'
                    if propio else 'No vi un website propio enlazado desde su perfil público, así que preparé una página limpia con sus fotos y datos de contacto reales:'))
@@ -257,7 +257,7 @@ def generar_dm(hechos, url, nicho=None):
             'Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. '
             'No requiere iniciar sesión ni cambia su sistema de reservas: solo échenle un vistazo.\n\n'
             '¿Quieren que ajuste los colores y el dominio para ustedes? Si no les resulta útil, respondan “no” y no volveré a insistir.\n\n'
-            '— Michael de Merktop')
+            '— José Michael de Merktop')
 
 
 # ------------------------------------------------------------------ contenido
