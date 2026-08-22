@@ -184,6 +184,9 @@ const QUEUE_PENDING_LIMIT = 20;
 
 // SHA-256 del access key (el key real vive solo en el .env local del usuario)
 const KEY_HASH = 'b1e35fb9b55f29a4272b16173553f5f92b19b0b824ddb3d9789f28332bd4bf06';
+// Clave independiente para el GPT de Siteforge. Nunca reutilizar x-sf-key en un GPT:
+// el secreto del Action podria acabar dando acceso a todo el panel administrativo.
+const AGENT_KEY_HASH = 'fcee22ff252c2cb328ec9a43f0abf249af79ec671db61fb3c8bd86fb889c51d2';
 
 async function isAuthorized(req) {
   const key = req.headers.get('x-sf-key') || '';
@@ -192,6 +195,43 @@ async function isAuthorized(req) {
   const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
   return hex === KEY_HASH;
 }
+
+async function isAgentAuthorized(req) {
+  const key = req.headers.get('x-siteforge-agent-key') || '';
+  if (!key) return false;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key));
+  const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  return hex === AGENT_KEY_HASH;
+}
+
+const agentItem = item => ({
+  id: item.id,
+  input: item.input,
+  request: item.request,
+  status: item.status,
+  stage: item.stage,
+  stage_at: item.stage_at,
+  created: item.created,
+  started_at: item.started_at,
+  done_at: item.done_at,
+  retry_count: Number(item.retry_count || 0),
+  result: item.result || null,
+  note: item.note || null,
+});
+
+const agentSite = site => ({
+  slug: site.slug,
+  name: site.name,
+  city: site.city || null,
+  url_demo: site.url_demo || null,
+  has_own_site: site.has_own_site === true,
+  email: site.email || null,
+  phone: site.phone || null,
+  language: site.language || 'es',
+  outreach: site.outreach || 'pending_manual',
+  dm_message: site.dm_message || null,
+  fecha: site.fecha || null,
+});
 
 // Solo se aceptan URLs de demo dentro de la cuenta Cloudflare del usuario
 const DEMO_URL_RE = /^https:\/\/[a-z0-9-]+\.odd-forest-9504\.workers\.dev(\/[a-z0-9-]*\/?)?$/;
@@ -321,6 +361,99 @@ export default {
 
   async fetch(req, env) {
     const url = new URL(req.url);
+
+    // API minima para el GPT Agent de Siteforge. Tiene una clave propia y solo expone
+    // cola, estados, registro y reintentos. Outreach y compra de dominios siguen fuera
+    // de este contrato hasta añadir una confirmacion explicita de usuario.
+    if (url.pathname.startsWith('/api/agent/')) {
+      if (!(await isAgentAuthorized(req))) return json({ error: 'unauthorized' }, 401);
+
+      if (url.pathname === '/api/agent/health' && req.method === 'GET') {
+        return json({ ok: true, service: 'siteforge-agent', queue_url: `${url.origin}/api/agent/queue` });
+      }
+
+      if (url.pathname === '/api/agent/queue' && req.method === 'GET') {
+        const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+        const counts = queue.reduce((out, item) => {
+          out[item.status] = (out[item.status] || 0) + 1;
+          return out;
+        }, {});
+        const items = queue
+          .filter(item => item.status !== 'done')
+          .sort((a, b) => Date.parse(b.created) - Date.parse(a.created))
+          .slice(0, 100)
+          .map(agentItem);
+        return json({ ok: true, counts, items });
+      }
+
+      if (url.pathname === '/api/agent/build' && req.method === 'POST') {
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        let input;
+        let request;
+        if (body && (body.niche !== undefined || body.location !== undefined)) {
+          const niche = queueText(body.niche, 70);
+          const location = queueText(body.location, 80);
+          const count = Number(body.count || 1);
+          if (!niche || !location) return json({ error: 'niche and location are required' }, 400);
+          if (!Number.isInteger(count) || count < 1 || count > 3) {
+            return json({ error: 'count must be an integer between 1 and 3' }, 400);
+          }
+          request = { type: 'discovery', niche, location, count, require_no_website: true };
+          input = `Buscar ${count} ${niche} en ${location} sin website propio`;
+        } else {
+          input = queueText(body?.input, 200);
+          if (!input) return json({ error: 'input is required (max 200 chars)' }, 400);
+        }
+        const item = {
+          id: crypto.randomUUID(), input, status: 'pending', created: new Date().toISOString(),
+          ...(request ? { request } : {}),
+        };
+        const queued = await env.QUEUE_CLAIMS.getByName('siteforge-queue').enqueue(
+          item, request ? discoveryKey(request) : null,
+        );
+        if (!queued.ok) return json(queued, queued.status || 500);
+        return json({ ok: true, job: agentItem(queued.item) });
+      }
+
+      const jobMatch = url.pathname.match(/^\/api\/agent\/jobs\/([^/]+)$/);
+      if (jobMatch && req.method === 'GET') {
+        const id = decodeURIComponent(jobMatch[1]);
+        const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
+        const item = queue.find(q => q.id === id);
+        if (!item) return json({ error: 'job not found' }, 404);
+        return json({ ok: true, job: agentItem(item) });
+      }
+
+      const retryMatch = url.pathname.match(/^\/api\/agent\/jobs\/([^/]+)\/retry$/);
+      if (retryMatch && req.method === 'POST') {
+        const id = decodeURIComponent(retryMatch[1]);
+        const retried = await env.QUEUE_CLAIMS.getByName('siteforge-queue').retry(id, Date.now());
+        return json(retried, retried.ok ? 200 : (retried.status || 500));
+      }
+
+      if (url.pathname === '/api/agent/sites' && req.method === 'GET') {
+        const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
+        const query = queueText(url.searchParams.get('q'), 120).toLocaleLowerCase();
+        const city = queueText(url.searchParams.get('city'), 80).toLocaleLowerCase();
+        const limit = Math.max(1, Math.min(Number(url.searchParams.get('limit') || 50), 100));
+        const sites = registry.filter(site => {
+          const haystack = [site.name, site.slug, site.email, site.ig, site.phone].join(' ').toLocaleLowerCase();
+          return (!query || haystack.includes(query)) && (!city || String(site.city || '').toLocaleLowerCase().includes(city));
+        }).slice(0, limit).map(agentSite);
+        return json({ ok: true, total: sites.length, sites });
+      }
+
+      const siteMatch = url.pathname.match(/^\/api\/agent\/sites\/([a-z0-9-]{1,40})$/);
+      if (siteMatch && req.method === 'GET') {
+        const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
+        const site = registry.find(item => item.slug === siteMatch[1]);
+        if (!site) return json({ error: 'site not found' }, 404);
+        return json({ ok: true, site: agentSite(site) });
+      }
+
+      return json({ error: 'agent route not found' }, 404);
+    }
 
     // Endpoints publicos autorizados por el usuario (2026-07-16): permiten que la
     // rutina cloud procese la cola sin guardar credenciales. Solo exponen metadata

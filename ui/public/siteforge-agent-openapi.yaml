@@ -1,0 +1,206 @@
+openapi: 3.0.3
+info:
+  title: Siteforge Agent API
+  version: 1.0.0
+  description: Safe control plane for the Siteforge website-building agent.
+servers:
+  - url: https://siteforge-panel.odd-forest-9504.workers.dev
+security:
+  - SiteforgeAgentKey: []
+paths:
+  /api/agent/health:
+    get:
+      operationId: siteforgeHealth
+      summary: Check Siteforge agent health
+      responses:
+        '200':
+          description: Service health
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+  /api/agent/queue:
+    get:
+      operationId: getForgeQueue
+      summary: Get queue counts and active jobs
+      responses:
+        '200':
+          description: Queue snapshot
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Queue'
+  /api/agent/build:
+    post:
+      operationId: createWebsiteBuild
+      summary: Queue one website build or a filtered discovery request
+      description: Use input for one known business, or niche plus location to discover businesses without their own website. Discovery count is 1 to 3.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+                  description: Business handle or business name with city.
+                niche:
+                  type: string
+                  description: Business category for discovery.
+                location:
+                  type: string
+                  description: City, country, or service area for discovery.
+                count:
+                  type: integer
+                  minimum: 1
+                  maximum: 3
+                  default: 1
+      responses:
+        '200':
+          description: Build queued
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BuildResponse'
+        '409':
+          description: Duplicate discovery already active
+        '429':
+          description: Queue is full
+  /api/agent/jobs/{id}:
+    get:
+      operationId: getBuildStatus
+      summary: Get the status of a website build
+      parameters:
+        - $ref: '#/components/parameters/JobId'
+      responses:
+        '200':
+          description: Build status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  job: { $ref: '#/components/schemas/Job' }
+        '404':
+          description: Job not found
+  /api/agent/jobs/{id}/retry:
+    post:
+      operationId: retryBuild
+      summary: Retry a failed website build
+      parameters:
+        - $ref: '#/components/parameters/JobId'
+      responses:
+        '200':
+          description: Retry accepted
+        '409':
+          description: Retry limit reached or job is not failed
+  /api/agent/sites:
+    get:
+      operationId: searchWebsites
+      summary: Search built websites in the Siteforge registry
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+          description: Search by name, slug, email, phone, or social handle.
+        - in: query
+          name: city
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, maximum: 100, default: 50 }
+      responses:
+        '200':
+          description: Matching websites
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  total: { type: integer }
+                  sites:
+                    type: array
+                    items: { $ref: '#/components/schemas/Site' }
+  /api/agent/sites/{slug}:
+    get:
+      operationId: getWebsite
+      summary: Get one website record
+      parameters:
+        - in: path
+          name: slug
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Website record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  site: { $ref: '#/components/schemas/Site' }
+        '404':
+          description: Website not found
+components:
+  securitySchemes:
+    SiteforgeAgentKey:
+      type: apiKey
+      in: header
+      name: x-siteforge-agent-key
+  parameters:
+    JobId:
+      in: path
+      name: id
+      required: true
+      schema: { type: string }
+  schemas:
+    Health:
+      type: object
+      properties:
+        ok: { type: boolean }
+        service: { type: string }
+    Queue:
+      type: object
+      properties:
+        ok: { type: boolean }
+        counts: { type: object, additionalProperties: { type: integer } }
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/Job' }
+    BuildResponse:
+      type: object
+      properties:
+        ok: { type: boolean }
+        job: { $ref: '#/components/schemas/Job' }
+    Job:
+      type: object
+      properties:
+        id: { type: string }
+        input: { type: string }
+        status: { type: string, enum: [pending, processing, done, failed] }
+        stage: { type: string, nullable: true }
+        stage_at: { type: string, nullable: true }
+        created: { type: string }
+        started_at: { type: string, nullable: true }
+        done_at: { type: string, nullable: true }
+        retry_count: { type: integer }
+        note: { type: string, nullable: true }
+        result: { type: object, nullable: true, additionalProperties: true }
+    Site:
+      type: object
+      properties:
+        slug: { type: string }
+        name: { type: string }
+        city: { type: string, nullable: true }
+        url_demo: { type: string, nullable: true, format: uri }
+        has_own_site: { type: boolean }
+        email: { type: string, nullable: true }
+        phone: { type: string, nullable: true }
+        language: { type: string }
+        outreach: { type: string }
+        dm_message: { type: string, nullable: true }
+        fecha: { type: string, nullable: true }
