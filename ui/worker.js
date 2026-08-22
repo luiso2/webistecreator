@@ -16,6 +16,33 @@ const discoveryKey = request => [request?.niche, request?.location]
 // Una forja normal cambia de etapa varias veces en menos de 7 min. Doce minutos sin
 // señal ya no es lentitud: es una ejecución muerta y se puede rescatar.
 const STALE_FORGE_MS = 12 * 60 * 1000;
+
+// KV sirve para el estado y el historial, pero no ofrece un compare-and-set para
+// cuatro réplicas de Railway. Este objeto único serializa el reclamo de cada id y
+// evita el doble build que terminaba en conflictos 409 al subir assets a GitHub.
+export class QueueClaims {
+  constructor(ctx) {
+    this.ctx = ctx;
+    ctx.blockConcurrencyWhile(async () => {
+      ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS claims (id TEXT PRIMARY KEY, expires_at INTEGER NOT NULL)');
+    });
+  }
+
+  claim(id, now, ttl) {
+    const row = this.ctx.storage.sql.exec('SELECT expires_at FROM claims WHERE id = ?', id).toArray()[0];
+    if (row && Number(row.expires_at) > now) return false;
+    this.ctx.storage.sql.exec(
+      'INSERT INTO claims (id, expires_at) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET expires_at = excluded.expires_at',
+      id, now + ttl,
+    );
+    return true;
+  }
+
+  release(id) {
+    this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+    return true;
+  }
+}
 // La meta operativa es 10.000 demos. KV admite un registro bastante mayor que
 // el límite histórico de 800; dejamos margen para no bloquear la forja al llegar
 // a la meta y para conservar los datos CRM en la misma lista.
@@ -168,6 +195,10 @@ export default {
       let body;
       try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
       if (typeof body.id !== 'string' || !body.id) return json({ error: 'id requerido' }, 400);
+      const claimGuard = env.QUEUE_CLAIMS.getByName('siteforge-queue');
+      if (!await claimGuard.claim(body.id, Date.now(), STALE_FORGE_MS)) {
+        return json({ error: 'item ya reclamado' }, 409);
+      }
       let queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
       const now = new Date().toISOString();
       let claimed = null;
@@ -178,7 +209,10 @@ export default {
         claimed = { id: q.id, input: q.input, request: q.request, created: q.created };
         return { ...q, status: 'processing', stage: 'research', stage_at: now, started_at: now, note: 'Forja iniciada' };
       });
-      if (!claimed) return json({ error: 'item ya reclamado' }, 409);
+      if (!claimed) {
+        await claimGuard.release(body.id);
+        return json({ error: 'item ya reclamado' }, 409);
+      }
       await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
       return json({ ok: true, item: claimed });
     }
@@ -244,6 +278,7 @@ export default {
         result,
       } : q));
       await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+      await env.QUEUE_CLAIMS.getByName('siteforge-queue').release(body.id);
       return json({ ok: true });
     }
 
@@ -505,6 +540,7 @@ export default {
           result: body.failed === true ? { failed: true, motivo: typeof body.motivo === 'string' ? stripUnsafe(body.motivo.slice(0, 240)) : undefined } : q.result,
         } : q));
         await env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
+        await env.QUEUE_CLAIMS.getByName('siteforge-queue').release(body.id);
         return json({ ok: true });
       }
 
