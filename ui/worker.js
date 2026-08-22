@@ -17,7 +17,9 @@ const discoveryKey = request => [request?.niche, request?.location]
   .map(v => String(v || '').toLocaleLowerCase()).join('|');
 // Una forja normal cambia de etapa varias veces en menos de 7 min. Doce minutos sin
 // señal ya no es lentitud: es una ejecución muerta y se puede rescatar.
-const STALE_FORGE_MS = 12 * 60 * 1000;
+// Un Build de Workers puede tardar varios minutos. El worker de Railway envia
+// heartbeat durante esa espera; 30 min solo libera trabajos realmente muertos.
+const STALE_FORGE_MS = 30 * 60 * 1000;
 
 // KV sirve para el estado y el historial, pero no ofrece un compare-and-set para
 // cuatro réplicas de Railway. Este objeto único serializa el reclamo de cada id y
@@ -509,7 +511,9 @@ export default {
         const wasFailed = item.status === 'failed' || (item.status === 'done' && item.result?.failed === true);
         if (!wasFailed) return json({ error: 'solo se pueden reintentar fallos' }, 409);
         const retries = Number(item.retry_count || 0);
-        if (retries >= 2) return json({ error: 'este item ya tiene dos reintentos' }, 409);
+        // Tres intentos cubren fallos transitorios de Builds o de una carrera de
+        // publicación sin convertir un registro definitivamente inválido en un bucle.
+        if (retries >= 3) return json({ error: 'este item ya tiene tres reintentos' }, 409);
         const now = new Date().toISOString();
         queue = queue.map(q => q.id === body.id ? {
           ...q,

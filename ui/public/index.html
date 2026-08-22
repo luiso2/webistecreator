@@ -874,7 +874,7 @@
         const whyBox = motivo
           ? `<div class="qwhy" id="why-${esc(q.id)}" hidden>${esc(motivo)}</div>`
           : '';
-        const retry = failed && Number(q.retry_count || 0) < 2
+        const retry = failed && Number(q.retry_count || 0) < 3
           ? `<button class="qretry" onclick="retryQueue('${esc(q.id)}', this)">Reintentar</button>` : '';
         return `<div class="qitem ${failed ? 'fail' : (q.status === 'done' ? 'done' : '')}">
           <span class="qmark">${q.status === 'pending' ? '⏳' : (failed ? '✗' : '✓')}</span>

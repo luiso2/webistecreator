@@ -75,6 +75,24 @@ def progreso(item_id, stage, note=None):
     panel('/api/public/queue/progress', {'id': item_id, 'stage': stage, **({'note': note} if note else {})})
 
 
+def esperar_demo(item_id, url, max_seconds=1800):
+    """Espera el Build sin dejar que el panel lo considere abandonado."""
+    inicio = time.monotonic()
+    ultimo_heartbeat = inicio
+    while time.monotonic() - inicio < max_seconds:
+        try:
+            if urllib.request.urlopen(url, timeout=15).status == 200:
+                return True
+        except Exception:
+            pass
+        ahora = time.monotonic()
+        if ahora - ultimo_heartbeat >= 60:
+            progreso(item_id, 'commit', 'Workers Builds sigue desplegando el demo')
+            ultimo_heartbeat = ahora
+        time.sleep(10)
+    return False
+
+
 def terminar(item_id, **result):
     panel('/api/public/queue/done', {'id': item_id, **result})
 
@@ -127,6 +145,70 @@ def subir_github(ruta_local, ruta_repo, intento=0):
             time.sleep(4)
             return subir_github(ruta_local, ruta_repo, intento + 1)
         print(f'  subida fallo {ruta_repo}: {e}', flush=True)
+        return False
+
+
+def subir_sitio_github(slug, archivos, intento=0):
+    """Publica un sitio completo en un solo commit de GitHub.
+
+    La API Contents crea un commit por archivo. Con las cuatro replicas de Railway
+    eso producia una carrera de SHA (409) y Builds podia arrancar con un sitio
+    incompleto. Git Data API permite crear blobs, un arbol y un commit atomico; si
+    otra forja avanzo ``main`` durante la operacion se vuelve a leer el head y se
+    reintenta el commit completo.
+    """
+    hdr = {
+        'Authorization': f'Bearer {GH_TOKEN}',
+        'Accept': 'application/vnd.github+json',
+    }
+    base = f'https://api.github.com/repos/{GH_REPO}'
+    try:
+        ref = http(f'{base}/git/ref/heads/main', headers=hdr)
+        head_sha = ref['object']['sha']
+        head_commit = http(f'{base}/git/commits/{head_sha}', headers=hdr)
+        entries = []
+        for local, repo_path in archivos:
+            with open(local, 'rb') as f:
+                encoded = base64.b64encode(f.read()).decode()
+            blob = http(f'{base}/git/blobs', {
+                'content': encoded,
+                'encoding': 'base64',
+            }, headers=hdr)
+            entries.append({
+                'path': repo_path,
+                'mode': '100644',
+                'type': 'blob',
+                'sha': blob['sha'],
+            })
+        tree = http(f'{base}/git/trees', {
+            'base_tree': head_commit['tree']['sha'],
+            'tree': entries,
+        }, headers=hdr)
+        commit = http(f'{base}/git/commits', {
+            'message': f'forja-railway: publish {slug}',
+            'tree': tree['sha'],
+            'parents': [head_sha],
+        }, headers=hdr)
+        # force=false conserva cambios de otras forjas; un 409 significa que
+        # simplemente debemos repetir con el nuevo head.
+        http(f'{base}/git/refs/heads/main', {
+            'sha': commit['sha'],
+            'force': False,
+        }, headers=hdr, method='PATCH')
+        return True
+    except urllib.error.HTTPError as exc:
+        # GitHub responde 409 o 422 segun el endpoint cuando otra replica
+        # avanzo main entre la lectura del head y el PATCH de la referencia.
+        if exc.code in (409, 422) and intento < 5:
+            time.sleep(2 + intento * 2)
+            return subir_sitio_github(slug, archivos, intento + 1)
+        print(f'  publicacion atomica fallo ({exc.code}) {slug}: {exc}', flush=True)
+        return False
+    except Exception as exc:
+        if intento < 2:
+            time.sleep(2 + intento * 2)
+            return subir_sitio_github(slug, archivos, intento + 1)
+        print(f'  publicacion atomica fallo {slug}: {exc}', flush=True)
         return False
 
 
@@ -201,24 +283,18 @@ def procesar(item):
 
     progreso(iid, 'commit')
     fotos_usadas = sorted(set(re.findall(r'(?:bk-\d+|logo)\.jpg', open(f'output/{slug}/content.json').read())))
-    ok = subir_github(f'output/{slug}/index.html', f'output/{slug}/index.html')
-    for f in ['content.json', 'data.json', '.assetsignore']:
-        ok &= subir_github(f'output/{slug}/{f}', f'output/{slug}/{f}')
-    for f in fotos_usadas:
-        ok &= subir_github(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
+    archivos = [(f'output/{slug}/index.html', f'output/{slug}/index.html')]
+    archivos += [(f'output/{slug}/{f}', f'output/{slug}/{f}')
+                 for f in ['content.json', 'data.json', '.assetsignore']]
+    archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
+                 for f in fotos_usadas]
+    ok = subir_sitio_github(slug, archivos)
     if not ok:
         terminar(iid, failed=True, motivo='Subida a GitHub incompleta')
         return
 
     url = f'{DEMOS}/{slug}/'
-    for _ in range(72):  # Workers Builds tarda 2-10 min segun cola; sondeo corto reduce latencia
-        time.sleep(10)
-        try:
-            if urllib.request.urlopen(url, timeout=15).status == 200:
-                break
-        except Exception:
-            pass
-    else:
+    if not esperar_demo(iid, url):
         terminar(iid, failed=True, motivo='El demo no respondio 200 tras el deploy (no se registra)')
         return
 
@@ -290,22 +366,16 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
         return fail(f'GATE: {g.stdout[-220:]}')
     report('verify')
     fotos_usadas = sorted(set(re.findall(r'gmaps-\d+\.jpg', open(f'output/{slug}/content.json').read())))
-    ok = subir_github(f'output/{slug}/index.html', f'output/{slug}/index.html')
-    for f in ['content.json', 'data.json', '.assetsignore', 'assets/tailwind.js']:
-        ok &= subir_github(f'output/{slug}/{f}', f'output/{slug}/{f}')
-    for f in fotos_usadas:
-        ok &= subir_github(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
+    archivos = [(f'output/{slug}/index.html', f'output/{slug}/index.html')]
+    archivos += [(f'output/{slug}/{f}', f'output/{slug}/{f}')
+                 for f in ['content.json', 'data.json', '.assetsignore', 'assets/tailwind.js']]
+    archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
+                 for f in fotos_usadas]
+    ok = subir_sitio_github(slug, archivos)
     if not ok:
         return fail('Subida a GitHub incompleta')
     url = f'{DEMOS}/{slug}/'
-    for _ in range(72):
-        time.sleep(10)
-        try:
-            if urllib.request.urlopen(url, timeout=15).status == 200:
-                break
-        except Exception:
-            pass
-    else:
+    if not esperar_demo(report_id, url):
         return fail('El demo no respondio 200 tras el deploy')
     report('commit')
     dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
