@@ -1,3 +1,5 @@
+import { DurableObject } from 'cloudflare:workers';
+
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
     status,
@@ -20,9 +22,9 @@ const STALE_FORGE_MS = 12 * 60 * 1000;
 // KV sirve para el estado y el historial, pero no ofrece un compare-and-set para
 // cuatro réplicas de Railway. Este objeto único serializa el reclamo de cada id y
 // evita el doble build que terminaba en conflictos 409 al subir assets a GitHub.
-export class QueueClaims {
+export class QueueClaims extends DurableObject {
   constructor(ctx) {
-    this.ctx = ctx;
+    super(ctx);
     ctx.blockConcurrencyWhile(async () => {
       ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS claims (id TEXT PRIMARY KEY, expires_at INTEGER NOT NULL)');
     });
