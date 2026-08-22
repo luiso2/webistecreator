@@ -214,7 +214,7 @@ GENERICO = dict(
   (_b('Presupuesto', 'Quotes'), _b('Cotización sin compromiso', 'No-strings quotes'),
    _b('Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar.', 'Tell us what you need and we tell you what it takes and what it costs before starting.')),
   (_b('Cercanía', 'Local'), _b('Negocio local', 'Local business'),
-   _b('De tu misma zona: llegamos rápido y respondemos después de entregar.', 'From your own area: quick to arrive and still answering after handover.'))])
+  _b('De tu misma zona: llegamos rápido y respondemos después de entregar.', 'From your own area: quick to arrive and still answering after handover.'))])
 
 
 def detectar_nicho(hechos):
@@ -224,6 +224,40 @@ def detectar_nicho(hechos):
         if any(k in texto for k in n['kw']):
             return nombre, n
     return 'generico', GENERICO
+
+
+def generar_dm(hechos, url, nicho=None):
+    """Redacta el primer contacto con una propuesta clara y verificable.
+
+    La estructura está pensada para una notificación corta: contexto real del negocio,
+    beneficio concreto del website, enlace visible, cero riesgo y una pregunta sencilla.
+    No promete resultados, reseñas ni precios que no estén en los hechos.
+    """
+    nombre = (hechos.get('nombre') or hechos.get('name') or hechos.get('ig', '').lstrip('@')
+              or hechos.get('slug') or 'su negocio').strip()
+    ciudad = (hechos.get('ciudad') or hechos.get('city') or 'su zona').split('(')[0].strip().rstrip(',')
+    _, n = detectar_nicho({**hechos, **({'nicho': nicho} if nicho else {})})
+    oficio_es = n['etiqueta']['es'].lower()
+    oficio_en = n['etiqueta']['en'].lower()
+    propio = bool(hechos.get('has_own_site'))
+    lang = hechos.get('idioma_principal') or hechos.get('language') or 'es'
+    if lang == 'en':
+        contexto = (f'I found {nombre} while looking for {oficio_en} in {ciudad}. '
+                    + ('I saw your current website and sketched a cleaner version using your public photos and contact details:'
+                       if propio else 'I could not find a dedicated website linked from your public profile, so I put together a clean page using your public photos and contact details:'))
+        return (f'Hi {nombre} — {contexto}\n\n{url}\n\n'
+                'It gives a new customer one clear place to see your work and call or message you. '
+                'No login and no change to your current booking flow — just take a look.\n\n'
+                'Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.\n\n'
+                '— Michael from Merktop')
+    contexto = (f'encontré {nombre} buscando {oficio_es} en {ciudad}. '
+                + ('Vi su página actual y preparé una versión más clara con sus fotos públicas y datos de contacto:'
+                   if propio else 'No vi un website propio enlazado desde su perfil público, así que preparé una página limpia con sus fotos y datos de contacto reales:'))
+    return (f'Hola {nombre} — {contexto}\n\n{url}\n\n'
+            'Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. '
+            'No requiere iniciar sesión ni cambia su sistema de reservas: solo échenle un vistazo.\n\n'
+            '¿Quieren que ajuste los colores y el dominio para ustedes? Si no les resulta útil, respondan “no” y no volveré a insistir.\n\n'
+            '— Michael de Merktop')
 
 
 # ------------------------------------------------------------------ contenido
@@ -244,6 +278,7 @@ def construir(hechos, fotos):
     seguidores, posts = hechos.get('followers'), hechos.get('posts')
     lang = hechos.get('idioma_principal', 'es')
     ig_url = f'https://www.instagram.com/{handle}/'
+    demo_url = f'https://siteforge-demos.odd-forest-9504.workers.dev/{hechos["slug"]}/'
     if tel:
         digitos = re.sub(r'[^0-9]', '', tel)
         cta_url, cta_ic = f'tel:+{digitos if digitos.startswith("1") else "1"+digitos}', 'telefono'
@@ -268,10 +303,23 @@ def construir(hechos, fotos):
         strip.append({'valor': '1:1', 'etiqueta': _b('Trato directo', 'Direct contact')})
     strip = strip[:4]
 
-    dm = (f"Hola {nombre}! Les armé un website con sus fotos reales de Instagram, para que quien "
-          f"busque {et['es'].lower()} en {ciudad.split(',')[0]} los encuentre: "
-          f"https://siteforge-demos.odd-forest-9504.workers.dev/{hechos['slug']}/ "
-          "Ya está listo y no les cuesta nada verlo. Si no les gusta, lo bajo hoy mismo. ¿Se los dejo activo?")
+    dm = generar_dm({**hechos, 'nombre': nombre, 'ciudad': ciudad, 'idioma_principal': lang}, demo_url, nicho_id)
+
+    city_parts = [part.strip() for part in ciudad.split(',') if part.strip()]
+    city_name = city_parts[0] if city_parts else ciudad
+    region = city_parts[1] if len(city_parts) > 1 else None
+    country = hechos.get('pais') or (region if region and len(region) > 3 else ('US' if region else None))
+    address = {
+      '@type': 'PostalAddress', 'addressLocality': city_name,
+      **({'addressRegion': region} if region else {}),
+      **({'addressCountry': country} if country else {}),
+    }
+    schema_type = {
+      'plomeria': 'Plumber', 'electricista': 'Electrician', 'closets': 'FurnitureStore',
+      'pressure': 'HomeAndConstructionBusiness', 'pintura': 'HomeAndConstructionBusiness',
+      'landscaping': 'LandscapingBusiness', 'cleaning': 'CleaningService',
+      'handyman': 'HomeAndConstructionBusiness',
+    }.get(nicho_id, 'LocalBusiness')
 
     content = {
      'slug': hechos['slug'], 'base': 'dark-v2', 'lang': lang,
@@ -286,10 +334,9 @@ def construir(hechos, fotos):
       'og_description': f"{et['es']} en {ciudad}. Trabajo real publicado en Instagram.",
       'og_image': f"assets/raw/{fotos['hero']}", 'icon': f"assets/raw/{fotos['logo']}"},
      'jsonld': {
-      '@context': 'https://schema.org', '@type': 'HomeAndConstructionBusiness',
+      '@context': 'https://schema.org', '@type': schema_type,
       'name': nombre, 'description': f"{et['es']} en {ciudad}.",
-      'address': {'@type': 'PostalAddress', 'addressLocality': ciudad.split(',')[0],
-                  'addressRegion': 'FL', 'addressCountry': 'US'},
+      'address': address,
       **({'telephone': tel} if tel else {}),
       'image': f"assets/raw/{fotos['hero']}", 'sameAs': [ig_url]},
      'nav': {'experiencia': _b('Nosotros', 'About us'), 'metodo': _b('Proceso', 'Process'),
@@ -312,7 +359,7 @@ def construir(hechos, fotos):
                   'destacado': tel or f'@{handle}',
                   'pie': _b(ciudad, ciudad)}},
      'strip': strip,
-     'marquee': n['marquee'],
+     'marquee': [city_name if word.lower() == 'florida' else word for word in n['marquee']],
      'nosotros': {
       'eyebrow': _b('Nosotros', 'About us'),
       'h2_a': _b('Un equipo,', 'One team,'), 'h2_shine': _b('un solo responsable', 'one accountable crew'),
@@ -356,8 +403,8 @@ def construir(hechos, fotos):
                  'Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.'),
       'cta': _b('Consultar', 'Ask about it'),
       'cards': [{'tag': t, 'titulo': ti, 'texto': tx} for t, ti, tx in n['cards']],
-      'pie': _b('¿No ves lo que necesitas? Escríbenos igual: si es de nuestro oficio, lo hacemos.',
-                'Need something not listed? Message us anyway: if it is our trade, we do it.')},
+      'pie': _b('¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte.',
+                'Do not see exactly what you need? Message us and we will confirm whether we can help.')},
      'galeria': {
       'h2_a': _b('Trabajos', 'Real'), 'h2_shine': _b('reales', 'work'),
       'tiles': [{'img': f, 'caption': et, 'alt': f'Trabajo de {nombre} en {ciudad}'}

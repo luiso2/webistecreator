@@ -124,14 +124,22 @@
     .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
     .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
     .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
       box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
+    .book-float-label { color: #1c1408; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
     .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
     .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; color: var(--ink-40); font-size: 0.72rem; letter-spacing: 0.02em; }
+    .hero-proof span { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .hero-proof span::before { content: '✓'; color: var(--accent-deep); font-weight: 700; }
+    @media (max-width: 640px) {
+      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
+      .book-float-label { font-size: 0.8rem; }
+    }
 
     /* ============ Motion v2 ============ */
     #preloader {
@@ -347,6 +355,11 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             @pure.artistrysk
           </a>
+        </div>
+        <div class="reveal hero-proof mt-5" style="transition-delay:420ms" aria-label="Lo que encontrará el cliente">
+          <span data-es="Fotos reales" data-en="Real work">Fotos reales</span>
+          <span data-es="Servicios claros" data-en="Clear services">Servicios claros</span>
+          <span data-es="Contacto directo" data-en="Direct contact">Contacto directo</span>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
@@ -683,6 +696,7 @@
   <!-- Boton flotante de reserva -->
   <a href="https://booksy.com/en-us/121705_pure-artistry_hair-salon_134763_orlando" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+    <span class="book-float-label" data-es="Reservar cita" data-en="Book now">Reservar cita</span>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>

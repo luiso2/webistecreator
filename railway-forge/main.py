@@ -226,7 +226,7 @@ def procesar(item):
         'slug': slug, 'name': content.get('brand', {}).get('name', slug),
         'city': (hechos.get('ciudad') or ''), 'ig': f'@{handle}', 'url_demo': url,
         'phone': hechos.get('phone'), 'language': lang, 'has_own_site': bool(hechos.get('has_own_site')),
-        'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:500],
+        'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 2,
     })
     terminar(iid, slug=slug, name=content.get('brand', {}).get('name', slug), url_demo=url)
     print(f'  LISTO {url}', flush=True)
@@ -267,6 +267,13 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
         return fail('La ficha de Google Maps figura como permanentemente cerrada.')
     if hechos.get('has_own_site'):
         return fail('La ficha ya tiene un website propio; se respeta el filtro sin website.')
+    # Maps no devuelve el contexto de la consulta dentro de data.json. Persistirlo antes
+    # del builder evita que todos los negocios manuales aparezcan como Hialeah, Florida.
+    hechos['nombre'] = hechos.get('name') or nombre
+    hechos['ciudad'] = ciudad
+    hechos['nicho'] = item.get('nicho') or hechos.get('nicho') or nombre
+    hechos['idioma_principal'] = 'en'
+    json.dump(hechos, open(ruta_data, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     fotos = hechos.get('fotos') or []
     if len(fotos) < 5:
         return fail(f'Google Maps solo expone {len(fotos)} fotos propias; se necesitan al menos 5 para una galeria real.')
@@ -301,12 +308,12 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
     else:
         return fail('El demo no respondio 200 tras el deploy')
     report('commit')
-    dm = (f'Hello! I prepared a website concept for {nombre} using the public Google Maps listing. '
-          f'See it here: {url} It is free to review and does not change your current operations.')
+    dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
+                        'idioma_principal': 'en'}, url, item.get('nicho') or hechos.get('nicho'))
     panel('/api/public/registry-upsert', {
         'slug': slug, 'name': hechos.get('name') or nombre, 'city': ciudad,
         'ig': 'Google Maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
-        'email': None, 'phone': hechos.get('phone'), 'language': 'en', 'dm_message': dm[:500],
+        'email': None, 'phone': hechos.get('phone'), 'language': 'en', 'dm_message': dm[:900], 'message_version': 2,
         'thumb': f'{url}assets/raw/{fotos_usadas[0]}',
     })
     result = {'slug': slug, 'name': hechos.get('name') or nombre, 'url_demo': url, 'dm': dm}
@@ -375,6 +382,7 @@ def procesar_descubrimiento(item):
         child = {
             'id': f'{iid}:{candidate.get("slug") or key[:48]}',
             'input': f'{name} ({candidate.get("location") or location})',
+            'nicho': candidate.get('niche') or niche,
         }
         progreso(iid, 'build', f'Construyendo {len(sites) + 1}/{count}: {name}')
         try:

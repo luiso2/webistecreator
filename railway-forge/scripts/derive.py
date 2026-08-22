@@ -548,10 +548,11 @@ def construir(slug):
           f'<p class="text-xs text-[color:var(--ink-40)]">© 2026 {b["name"]}.</p>')
 
     # 18. boton flotante
-    d.rx(r'<a href="[^"]*" target="_blank" rel="noopener" class="book-float" aria-label="[^"]*">\s*<svg.*?</svg>\s*</a>',
+    d.rx(r'<a href="[^"]*" target="_blank" rel="noopener" class="book-float" aria-label="[^"]*">\s*<svg.*?</svg>\s*(?:<span class="book-float-label".*?</span>\s*)?</a>',
          f'<a href="{CTA}" target="_blank" rel="noopener" class="book-float" aria-label="{t(c["cta_label"], lang)}">\n'
          f'    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{V["book_float_stroke"]}" stroke-width="2" '
-         f'stroke-linecap="round" stroke-linejoin="round">{ICONOS[c.get("cta_icono", "whatsapp")]}</svg>\n  </a>')
+         f'stroke-linecap="round" stroke-linejoin="round">{ICONOS[c.get("cta_icono", "whatsapp")]}</svg>\n'
+         f'    <span class="book-float-label" {attrs(c["cta_label"])}>{t(c["cta_label"], lang)}</span>\n  </a>')
 
     out_h = d.h
     if c.get('paleta'):

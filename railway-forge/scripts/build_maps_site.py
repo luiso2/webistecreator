@@ -49,13 +49,13 @@ def main(slug: str):
                 "galeria": (photos[3:9] + photos[1:3])[:6],
                 "contacto": photos[1], "logo": photos[0]}
     name = data.get("name") or slug.replace("-", " ").title()
-    city = "Hialeah, FL"
+    city = data.get("ciudad") or data.get("city") or "Local area"
     address = data.get("address") or city
     phone = data.get("phone")
     maps_url = data.get("maps_url") or f"https://www.google.com/maps/search/{name.replace(' ', '+')}+{city.replace(' ', '+')}"
     # Niche detection uses the public name/query only. No fake social handle is passed.
     facts = {**data, "slug": slug, "nombre": name, "ciudad": city,
-             "nicho": name, "ig": slug, "idioma_principal": "en",
+             "nicho": data.get("nicho") or name, "ig": slug, "idioma_principal": "en",
              "has_own_site": bool(data.get("website"))}
     content, _dm, _nicho = construir(facts, selected)
     replacements = [
@@ -82,10 +82,18 @@ def main(slug: str):
     content["head"]["description"] = f"{name}: servicios locales en {city}. Información, fotos y contacto verificados en Google Maps."
     content["head"]["og_title"] = f"{name} · {city}"
     content["head"]["og_description"] = f"{name} en {city}. Fotos públicas y contacto directo."
+    city_parts = [part.strip() for part in city.split(",") if part.strip()]
+    city_name = city_parts[0] if city_parts else city
+    region = city_parts[1] if len(city_parts) > 1 else None
+    address_data = {"@type": "PostalAddress", "streetAddress": address,
+                    "addressLocality": city_name,
+                    **({"addressRegion": region} if region else {})}
+    if data.get("pais"):
+        address_data["addressCountry"] = data["pais"]
     content["jsonld"].update({
         "name": name, "description": f"{name}, negocio local en {city}.",
         "sameAs": [maps_url], "image": f"assets/raw/{photos[0]}",
-        "address": {"@type": "PostalAddress", "streetAddress": address, "addressLocality": "Hialeah", "addressRegion": "FL", "addressCountry": "US"},
+        "address": address_data,
     })
     if phone:
         content["jsonld"]["telephone"] = phone
@@ -112,7 +120,7 @@ def main(slug: str):
     for item in content["social_proof"]["items"]:
         item["texto"] = walk_replace(item["texto"], [("feed", "ficha pública"), ("Instagram", "Google Maps")])
     content["contacto"]["h2_a"] = bilingual("Visítanos desde", "Reach us from")
-    content["contacto"]["h2_shine"] = "Hialeah"
+    content["contacto"]["h2_shine"] = city_name
     content["contacto"]["cards"] = ([{
         "icono": "telefono", "titulo": bilingual("Teléfono", "Phone"),
         "texto": bilingual("La vía más rápida para consultar disponibilidad.", "The fastest way to ask about availability."),
@@ -125,6 +133,7 @@ def main(slug: str):
     content["footer"]["descripcion"] = bilingual(f"{name} en {city}. Información pública y contacto directo.", f"{name} in {city}. Public information and direct contact.")
     content["footer"]["linea_contacto"] = address
     content["footer"]["enlace_contacto"] = bilingual(f"Teléfono · {phone}" if phone else "Google Maps", f"Phone · {phone}" if phone else "Google Maps")
+    content["dm_message"] = _dm
     (root / "content.json").write_text(json.dumps(content, ensure_ascii=False, indent=1), encoding="utf-8")
     shutil.copy(ROOT / "templates" / ".assetsignore-template", root / ".assetsignore")
     print(json.dumps({"slug": slug, "name": name, "niche": _nicho, "photos": photos}, ensure_ascii=False))

@@ -19,6 +19,12 @@ del Cron: una sola reclamación descubre y construye hasta tres negocios sin web
 sin quedarse esperando a que el Cron vuelva a ejecutarse. El Cron sigue descubriendo en
 segundo plano y el claim atómico decide qué instancia construye cada item.
 
+El primer mensaje se genera con datos verificables (zona, fotos públicas, servicios y enlace
+del demo), explica el beneficio para el cliente y termina en una pregunta de bajo compromiso.
+Nunca se envía automáticamente: el panel exige la acción directa del usuario. El mensaje de
+seguimiento comunica la oferta de $600 total, con dominio y mantenimiento incluidos durante
+el primer año.
+
 ## Deploy / redeploy
 El paquete es autocontenido (scripts y template copiados aqui). Desde esta carpeta:
 

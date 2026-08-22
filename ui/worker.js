@@ -214,7 +214,7 @@ export default {
         if (typeof raw.slug === 'string' && /^[a-z0-9-]{1,40}$/.test(raw.slug)) site.slug = raw.slug;
         if (typeof raw.name === 'string' && raw.name.length <= 120) site.name = stripUnsafe(raw.name);
         if (typeof raw.url_demo === 'string' && DEMO_URL_RE.test(raw.url_demo)) site.url_demo = raw.url_demo;
-        if (typeof raw.dm === 'string' && raw.dm.length <= 500) site.dm = stripUnsafe(raw.dm);
+        if (typeof raw.dm === 'string' && raw.dm.length <= 900) site.dm = stripUnsafe(raw.dm);
         return site;
       };
       const result = siteResult(body);
@@ -271,7 +271,8 @@ export default {
         outreach: 'pending_manual',
         status: 'staging',
         language: ['en', 'fr'].includes(body.language) ? body.language : 'es',
-        dm_message: S(body.dm_message, 500),
+        dm_message: S(body.dm_message, 900),
+        message_version: Number(body.message_version) === 2 ? 2 : undefined,
         thumb: typeof body.thumb === 'string' && body.thumb.startsWith('https://') && body.thumb.includes('.odd-forest-9504.workers.dev') ? S(body.thumb, 300) : undefined,
         fecha: S(body.fecha, 12) || new Date().toISOString().slice(0, 10),
       };
@@ -504,37 +505,33 @@ export default {
 
         const en = (biz.language || 'es') === 'en';
         const redesign = !!biz.has_own_site;
-        // El asunto decide si se abre: va el nombre del negocio y un hecho concreto, no una
-        // etiqueta de producto. "de muestra" se cayo a proposito: lee como plantilla o
-        // borrador, y lo que se construyo lleva SUS fotos y SUS servicios.
         const subject = en
-          ? (redesign ? `${biz.name}: a new version of your website` : `${biz.name}: your website is ready to look at`)
-          : (redesign ? `${biz.name}: una version nueva de su pagina` : `${biz.name}: su website ya esta listo para verlo`);
-        // Cierra en PREGUNTA: sin ella nada obliga a contestar. Y dice explicitamente que
-        // verlo no cuesta, que es el freno que hace que no respondan.
-        const lines = en
+          ? `${biz.name}: I prepared a website for you to review`
+          : `${biz.name}: preparé una página para que la revisen`;
+        // El texto editado manualmente manda. Si no existe, el mensaje mantiene la misma
+        // estructura que WhatsApp/DM: contexto real, beneficio, demo, cero fricción y pregunta.
+        const savedMessage = (await env.SITEFORGE_KV.get('msg:' + slug) || '').trim();
+        const fallbackLines = en
           ? [
-              `Hi ${biz.name} team!`,
-              redesign
-                ? `I'm Michael, from Merktop (Miami). I found you on Google and rebuilt your site using your own photos, services and reviews, so the people who land on it actually book:`
-                : `I'm Michael, from Merktop (Miami). I found you on Google, saw you didn't have your own website, and built you one with your real photos, services and reviews, so the people searching for you can find you and book:`,
+              `Hi ${biz.name} — I found your business in ${biz.city || 'your area'} and ${redesign ? 'sketched a clearer version of your current website' : 'could not find a dedicated website linked from your public listing'}, so I prepared this using your public photos and contact details:`,
               biz.url_demo,
-              `It's already built and it costs you nothing to look at. It doesn't touch your booking flow at all, and if you don't like it I take it down today.`,
-              en && redesign ? `Want me to walk you through it?` : `Want me to leave it up?`,
-              `Michael Vargas\nMerktop · https://merktop.com`,
+              `It gives a new customer one clear place to see your work and call or message you. No login and no change to your current booking flow — just take a look.`,
+              `Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.`,
+              `Michael from Merktop`,
             ]
           : [
-              `Hola equipo ${biz.name}!`,
-              redesign
-                ? `Soy Michael, de Merktop (Miami). Los encontre en Google y rearme su pagina con sus propias fotos, servicios y reseñas, para que quien llegue termine reservando:`
-                : `Soy Michael, de Merktop (Miami). Los encontre en Google, vi que no tenian website propio y les arme uno con sus fotos, servicios y reseñas reales, para que quien los busque los encuentre y reserve:`,
+              `Hola ${biz.name} — encontré su negocio en ${biz.city || 'su zona'} y ${redesign ? 'preparé una versión más clara de su página actual' : 'no vi un website propio enlazado desde su ficha pública'}, así que armé esto usando sus fotos y datos de contacto reales:`,
               biz.url_demo,
-              `Ya esta listo y no les cuesta nada verlo. No toca para nada su sistema de reservas, y si no les gusta lo bajo hoy mismo.`,
-              redesign ? `¿Se la muestro?` : `¿Se los dejo activo?`,
-              `Michael Vargas\nMerktop · https://merktop.com`,
+              `Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. No requiere iniciar sesión ni cambia sus reservas: solo échenle un vistazo.`,
+              `¿Quieren que ajuste los colores y el dominio? Si no les resulta útil, respondan “no” y no volveré a insistir.`,
+              `Michael de Merktop`,
             ];
+        const lines = savedMessage
+          ? (savedMessage.includes(biz.url_demo) ? savedMessage.split('\n\n') : [savedMessage, biz.url_demo])
+          : fallbackLines;
         const text = lines.join('\n\n');
-        const html = lines.map(p => `<p>${p.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(new RegExp(biz.url_demo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `<a href="${biz.url_demo}">${biz.url_demo}</a>`).replace(/\n/g, '<br>')}</p>`).join('');
+        const escapedUrl = biz.url_demo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const html = lines.map(p => `<p>${p.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(new RegExp(escapedUrl), `<a href="${biz.url_demo}">${biz.url_demo}</a>`).replace(/\n/g, '<br>')}</p>`).join('');
 
         const r = await fetch('https://api.resend.com/emails', {
           method: 'POST',
@@ -544,7 +541,7 @@ export default {
             'Idempotency-Key': `siteforge-panel-${slug}`,
           },
           body: JSON.stringify({
-            from: 'Michael Vargas <michael@go.merktop.com>',
+            from: 'José Michael | Merktop <jose@merktop.com>',
             to: [biz.email],
             reply_to: 'jose@merktop.com',
             subject,
