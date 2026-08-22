@@ -50,6 +50,19 @@ except (TypeError, ValueError):
     DISCOVERY_BUILD_WORKERS = 2
 FORBID = 'Pure Artistry,pure.artistrysk,Booksy,booksy,121705,silk press,locs,K-Tip,W Grant,Chianita,Hair Studio'
 
+# "negocio local" llega con frecuencia cuando el usuario pide solo una ciudad.
+# Google Maps no trata esa frase como un nicho de búsqueda útil; usarla literalmente
+# devuelve cero fichas o resultados no relacionados. Rotamos nichos concretos, sin
+# relajar nunca la comprobación de website propio, rating, reseñas ni fotos.
+GENERIC_DISCOVERY_NICHES = {
+    'negocio', 'negocios', 'negocio local', 'negocios locales', 'empresa', 'empresas',
+    'business', 'businesses', 'local business', 'local businesses', 'small business',
+}
+DISCOVERY_FALLBACK_NICHES = (
+    'handyman', 'plumber', 'electrician', 'landscaper', 'auto repair',
+    'cleaning service', 'barbershop', 'catering',
+)
+
 AQUI = os.path.dirname(os.path.abspath(__file__))
 os.chdir(AQUI)
 
@@ -66,6 +79,13 @@ def http(url, data=None, headers=None, method=None, timeout=90):
         req.add_header('Content-Type', 'application/json')
     with urllib.request.urlopen(req, body, timeout=timeout) as r:
         return json.loads(r.read().decode())
+
+
+def discovery_niches(niche: str) -> list[str]:
+    normalized = re.sub(r'\s+', ' ', niche.strip().lower())
+    if normalized in GENERIC_DISCOVERY_NICHES:
+        return list(DISCOVERY_FALLBACK_NICHES)
+    return [niche]
 
 
 def panel(ruta, data=None):
@@ -463,32 +483,53 @@ def procesar_descubrimiento(item):
         terminar(iid, token=token, failed=True, motivo='Búsqueda manual sin nicho o ciudad.')
         return
 
-    progreso(iid, 'research', f'Google Maps: {niche} en {location}', token=token)
     print(f'== {item.get("input", "descubrimiento")} (búsqueda manual prioritaria)', flush=True)
-    try:
-        discovery = subprocess.run(
-            [sys.executable, 'scripts/maps_discover.py', '--niche', niche, '--location', location,
-             '--limit', str(max(count * 4, 8))],
-            capture_output=True, text=True, timeout=240,
-        )
-    except Exception as exc:
-        terminar(iid, token=token, failed=True, motivo=f'Descubrimiento Google Maps falló: {str(exc)[:180]}')
-        return
+    candidates = []
+    seen_candidates = set()
+    discovery_errors = []
+    # Para un nicho concreto solo se hace una consulta. Si el usuario dejó el
+    # nicho vacío/genérico, probamos categorías locales concretas hasta reunir
+    # suficientes candidatos; nunca convertimos un negocio con dominio propio.
+    search_niches = discovery_niches(niche)
+    needed_candidates = max(count * 2, count)
+    for search_niche in search_niches:
+        progreso(iid, 'research', f'Google Maps: {search_niche} en {location}', token=token)
+        try:
+            discovery = subprocess.run(
+                [sys.executable, 'scripts/maps_discover.py', '--niche', search_niche, '--location', location,
+                 '--limit', str(max(count * 4, 8))],
+                capture_output=True, text=True, timeout=240,
+            )
+        except Exception as exc:
+            discovery_errors.append(str(exc)[:120])
+            continue
 
-    raw = (discovery.stdout or '').strip()
-    try:
-        payload = json.loads(raw) if raw else {}
-    except json.JSONDecodeError:
-        payload = {}
-    candidates = payload.get('results') if isinstance(payload, dict) else None
-    if not isinstance(candidates, list):
-        candidates = []
-    # Defensa en profundidad: aunque el descubridor ya filtre perfiles, no se procesa
-    # un candidato si otra versión del script devuelve un website propio.
-    candidates = [c for c in candidates if isinstance(c, dict) and c.get('name')
-                  and not c.get('website') and not c.get('has_own_site')]
+        raw = (discovery.stdout or '').strip()
+        try:
+            payload = json.loads(raw) if raw else {}
+        except json.JSONDecodeError:
+            payload = {}
+        found = payload.get('results') if isinstance(payload, dict) else None
+        if not isinstance(found, list):
+            found = []
+        # Defensa en profundidad: aunque el descubridor ya filtre perfiles, no se procesa
+        # un candidato si otra versión del script devuelve un website propio.
+        for candidate in found:
+            if not isinstance(candidate, dict) or not candidate.get('name'):
+                continue
+            if candidate.get('website') or candidate.get('has_own_site'):
+                continue
+            key = re.sub(r'[^a-z0-9]', '', str(candidate.get('name')).lower())
+            if not key or key in seen_candidates:
+                continue
+            seen_candidates.add(key)
+            candidate = {**candidate, 'niche': candidate.get('niche') or search_niche}
+            candidates.append(candidate)
+        if len(candidates) >= needed_candidates:
+            break
+
     if not candidates:
-        detail = payload.get('error') if isinstance(payload, dict) else ''
+        detail = '; '.join(discovery_errors) if discovery_errors else 'Google Maps no devolvió candidatos'
         terminar(iid, token=token, failed=True, motivo=f'No se encontraron negocios sin website propio en {location}. {detail}'.strip()[:300])
         return
 

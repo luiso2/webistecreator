@@ -24,6 +24,10 @@ workers por item), así que una solicitud de varios demos no queda bloqueada por
 serial de investigaciones y despliegues. Se puede ajustar con `DISCOVERY_BUILD_WORKERS`
 (1–3) si Railway dispone de más o menos CPU.
 
+Si la solicitud llega sin un nicho útil (por ejemplo, "negocio local"), la forja prueba
+categorías concretas como handyman, plumber, electrician y auto repair en la ciudad pedida.
+El filtro de website propio, rating, reseñas y fotos se mantiene en cada consulta.
+
 El primer mensaje se genera con datos verificables (zona, fotos públicas, servicios y enlace
 del demo), explica el beneficio para el cliente y termina en una pregunta de bajo compromiso.
 Nunca se envía automáticamente: el panel exige la acción directa del usuario. El mensaje de
