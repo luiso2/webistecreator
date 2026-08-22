@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 info:
   title: Siteforge Agent API
   version: 1.0.0
@@ -72,7 +72,10 @@ paths:
       operationId: getBuildStatus
       summary: Get the status of a website build
       parameters:
-        - $ref: '#/components/parameters/JobId'
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
       responses:
         '200':
           description: Build status
@@ -90,7 +93,10 @@ paths:
       operationId: retryBuild
       summary: Retry a failed website build
       parameters:
-        - $ref: '#/components/parameters/JobId'
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
       responses:
         '200':
           description: Retry accepted
@@ -151,12 +157,6 @@ components:
       type: apiKey
       in: header
       name: x-siteforge-agent-key
-  parameters:
-    JobId:
-      in: path
-      name: id
-      required: true
-      schema: { type: string }
   schemas:
     Health:
       type: object
