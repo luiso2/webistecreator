@@ -352,8 +352,8 @@ function redactControlAudit(value, depth = 0) {
   return output;
 }
 
-async function controlAudit(env, event) {
-  const audit = {
+function createControlAudit(event) {
+  return {
     id: crypto.randomUUID(),
     agentId: 'siteforge-gpt',
     action: event.action,
@@ -364,10 +364,17 @@ async function controlAudit(env, event) {
     timestamp: new Date().toISOString(),
     duration: Number(event.duration || 0),
   };
+}
+
+async function persistControlAudit(env, audit) {
   // La cola DO ya serializa mutaciones de esta instalación de propietario único;
   // el registro de auditoría se escribe allí para no perder eventos concurrentes.
   await env.QUEUE_CLAIMS.getByName('siteforge-queue').audit(audit);
   return audit;
+}
+
+async function controlAudit(env, event) {
+  return persistControlAudit(env, createControlAudit(event));
 }
 
 async function enqueueSiteUpdate(env, site, spec, reason = 'agent publish') {
@@ -568,21 +575,31 @@ async function executeControlTool(env, plan, tool, args) {
   throw new Error(`tool registrada pero sin adapter: ${tool}`);
 }
 
-async function executeControlPlan(env, plan, actor = 'siteforge-gpt') {
+async function executeControlPlan(env, plan, actor = 'siteforge-gpt', options = {}) {
   const normalized = validatePlan(plan);
   const results = [];
+  const recordAudit = async event => {
+    const audit = createControlAudit(event);
+    const pending = persistControlAudit(env, audit);
+    // Audit is durable work, but it should not hold the user-facing GPT response
+    // behind a second Durable Object round trip. Cloudflare's waitUntil keeps the
+    // write alive after the response; local/unit callers still await it normally.
+    if (options.deferAudit && typeof options.scheduleAudit === 'function') options.scheduleAudit(pending);
+    else await pending;
+    return audit;
+  };
   for (const step of normalized.steps) {
     const started = Date.now();
     try {
       const result = await executeControlTool(env, normalized, step.tool, step.args);
-      const audit = await controlAudit(env, {
+      const audit = await recordAudit({
         action: normalized.goal, tool: step.tool, input: step.args, result,
         status: 'ok', duration: Date.now() - started,
       });
       results.push({ tool: step.tool, ok: true, result, audit_id: audit.id });
     } catch (error) {
       const detail = { error: String(error.message || error), ...(error.code ? { code: error.code } : {}), ...(error.options ? { options: error.options } : {}) };
-      const audit = await controlAudit(env, {
+      const audit = await recordAudit({
         action: normalized.goal, tool: step.tool, input: step.args, result: detail,
         status: 'failed', duration: Date.now() - started,
       });
@@ -719,7 +736,7 @@ export default {
     await Promise.all([reconcilePendingDomains(env), reconcileStaleQueue(env)]);
   },
 
-  async fetch(req, env) {
+  async fetch(req, env, ctx) {
     const url = new URL(req.url);
 
     // API minima para el GPT Agent de Siteforge. Tiene una clave propia y solo expone
@@ -747,7 +764,10 @@ export default {
         const plan = body.plan || body;
         let result;
         try {
-          result = await executeControlPlan(env, plan, 'siteforge-gpt');
+          result = await executeControlPlan(env, plan, 'siteforge-gpt', {
+            deferAudit: Boolean(ctx?.waitUntil),
+            scheduleAudit: pending => ctx?.waitUntil(pending.catch(() => {})),
+          });
         } catch (error) {
           return json({ ok: false, error: String(error.message || error) }, 400);
         }
