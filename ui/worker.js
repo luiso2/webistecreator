@@ -314,8 +314,10 @@ async function loadControlSpec(env, site) {
   }
   const initial = siteSpecFromRegistry(site);
   assertSiteSpec(initial);
-  await env.SITEFORGE_KV.put(controlSpecKey(site.slug), JSON.stringify(initial));
-  await env.SITEFORGE_KV.put(controlSpecVersionKey(site.slug, initial.revision), JSON.stringify(initial));
+  await Promise.all([
+    env.SITEFORGE_KV.put(controlSpecKey(site.slug), JSON.stringify(initial)),
+    env.SITEFORGE_KV.put(controlSpecVersionKey(site.slug, initial.revision), JSON.stringify(initial)),
+  ]);
   return initial;
 }
 
@@ -333,8 +335,10 @@ async function saveControlSpec(env, previous, next, reason) {
     },
   };
   assertSiteSpec(candidate);
-  await env.SITEFORGE_KV.put(controlSpecKey(previous.slug), JSON.stringify(candidate));
-  await env.SITEFORGE_KV.put(controlSpecVersionKey(previous.slug, candidate.revision), JSON.stringify(candidate));
+  await Promise.all([
+    env.SITEFORGE_KV.put(controlSpecKey(previous.slug), JSON.stringify(candidate)),
+    env.SITEFORGE_KV.put(controlSpecVersionKey(previous.slug, candidate.revision), JSON.stringify(candidate)),
+  ]);
   return candidate;
 }
 
