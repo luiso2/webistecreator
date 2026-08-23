@@ -122,7 +122,12 @@ def _detail(
         return None
     title_locator = page.locator("h1").first
     title = title_locator.text_content() if title_locator.count() else None
-    name = (title or fallback_name).strip()
+    title_text = (title or '').strip()
+    # Maps puede usar "Results" como h1 al abrir una ficha desde una búsqueda
+    # automatizada. Nunca convertimos ese texto genérico en el nombre del negocio.
+    if not title_text or title_text.lower() in {'results', 'google maps'}:
+        title_text = fallback_name
+    name = title_text.strip()
     if not name:
         return None
     rating, reviews = _rating_reviews(page)
