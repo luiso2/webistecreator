@@ -51,9 +51,10 @@ El paquete es autocontenido (scripts y template copiados aqui). Desde esta carpe
     railway up --service forja --detach
 
 Para activar el descubrimiento automático crea un segundo servicio Railway desde
-esta misma carpeta, con Start Command `python3 cron.py`, y configura en Settings →
-Cron Schedule `*/15 * * * *` (UTC). Ese servicio debe terminar al acabar; no uses
-`main.py` como Cron porque `main.py` es el worker permanente.
+esta misma carpeta y selecciona `railway-cron.json` como Railway Config File. Ese
+archivo fija el Dockerfile, Start Command `python3 cron.py` y Cron Schedule
+`*/15 * * * *` (UTC). El servicio debe terminar al acabar; no uses `main.py` como
+Cron porque `main.py` es el worker permanente.
 
 El Cron llena hasta 12 huecos por ejecución (sin superar los 20 pendientes del panel),
 rota nicho/ciudad cada 15 minutos y deja que las réplicas permanentes construyan en
