@@ -60,6 +60,16 @@ class CronImportTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_rotation_batches_do_not_repeat_adjacent_queries(self):
+        result = self._run(
+            "niches = ['a', 'b', 'c']; locations = ['one', 'two']; "
+            "assert cron._rotation_pairs(niches, locations, 2, slot=0) == "
+            "[('a', 'one'), ('b', 'one')]; "
+            "assert cron._rotation_pairs(niches, locations, 2, slot=1) == "
+            "[('c', 'one'), ('a', 'two')]"
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -66,21 +66,21 @@ def _parse_rating_reviews(labels: list[str]) -> tuple[float | None, int | None]:
     reviews = None
     for label in labels:
         rating_match = re.search(r"(?<!\d)([0-5](?:[.,]\d)?)\s*(?:stars?|estrellas?)", label, re.I)
-        if rating_match:
+        if rating_match and rating is None:
             rating = float(rating_match.group(1).replace(",", "."))
         reviews_match = re.search(
             r"([\d,.]+)\s*([km])?\s*(?:Google\s+)?(?:reviews?|rese(?:n|ñ)as?)",
             label,
             re.I,
         )
-        if reviews_match:
+        if reviews_match and reviews is None:
             reviews = _number(reviews_match.group(1), reviews_match.group(2))
     return rating, reviews
 
 
 def _rating_reviews(page) -> tuple[float | None, int | None]:
     values = []
-    labels = page.locator('[role="img"][aria-label]')
+    labels = page.locator('[aria-label]')
     for i in range(min(labels.count(), 160)):
         values.append(labels.nth(i).get_attribute("aria-label") or "")
     return _parse_rating_reviews(values)
@@ -125,6 +125,11 @@ def _detail(
     if not name:
         return None
     rating, reviews = _rating_reviews(page)
+    if rating is None or reviews is None:
+        summary = re.search(r"\b([0-5](?:[.,]\d))\s*\n\s*\(?([\d,]+)\)?", body[:4000])
+        if summary:
+            rating = rating if rating is not None else float(summary.group(1).replace(",", "."))
+            reviews = reviews if reviews is not None else _number(summary.group(2))
     website = _first_attr(
         page,
         ['a[aria-label^="Website:" i]', 'a[data-item-id="authority"]'],

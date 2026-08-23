@@ -50,6 +50,45 @@ def clean_label(value: str | None, prefix: str) -> str | None:
     return re.sub(rf"^{re.escape(prefix)}\s*", "", value, flags=re.I).strip()
 
 
+def parse_rating_reviews(labels: list[str]) -> tuple[str | None, str | None]:
+    """Maps alterna entre labels separadas y una sola label combinada."""
+    rating = None
+    reviews = None
+    for label in labels:
+        rating_match = re.search(r"(?<!\d)([0-5](?:[.,]\d)?)\s*(?:stars?|estrellas?)", label, re.I)
+        if rating_match and rating is None:
+            rating = rating_match.group(1).replace(",", ".")
+        reviews_match = re.search(
+            r"([\d,.]+)\s*([km])?\s*(?:Google\s+)?(?:reviews?|rese(?:n|ñ)as?)",
+            label,
+            re.I,
+        )
+        if reviews_match and reviews is None:
+            raw = reviews_match.group(1).replace(",", "")
+            multiplier = {"k": 1_000, "m": 1_000_000}.get((reviews_match.group(2) or "").lower(), 1)
+            try:
+                reviews = str(int(float(raw) * multiplier))
+            except ValueError:
+                pass
+    return rating, reviews
+
+
+def page_photo_urls(page) -> list[str]:
+    """Recoge tanto <img> como tiles de galeria pintados con background-image."""
+    image_urls = page.locator("img").evaluate_all(
+        """els => els.flatMap(e => [e.currentSrc, e.src, e.getAttribute('data-src'),
+          ...(e.getAttribute('srcset') || '').split(',').map(x => x.trim().split(' ')[0])])
+          .filter(Boolean)"""
+    )
+    background_urls = page.locator("body *").evaluate_all(
+        """els => els.flatMap(e => {
+          const bg = getComputedStyle(e).backgroundImage || '';
+          return [...bg.matchAll(/url\\([\"']?(.*?)[\"']?\\)/g)].map(m => m[1]);
+        }).filter(Boolean)"""
+    )
+    return image_urls + background_urls
+
+
 def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
     out = {"query": query, "name": None, "rating": None, "reviews": None,
            "address": None, "phone": None, "hours": [], "website": None,
@@ -59,7 +98,19 @@ def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
         if CHROME:
             launch_args["executable_path"] = CHROME
         browser = pw.chromium.launch(**launch_args)
-        page = browser.new_page(user_agent=UA, viewport={"width": 1400, "height": 1000})
+        page = browser.new_page(
+            user_agent=UA,
+            locale="en-US",
+            viewport={"width": 1400, "height": 1000},
+            extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+        )
+        network_photos: set[str] = set()
+
+        def remember_photo(response):
+            if "googleusercontent.com" in response.url:
+                network_photos.add(response.url)
+
+        page.on("response", remember_photo)
         exact_url = safe_google_maps_url(maps_url)
         if maps_url and not exact_url:
             raise ValueError("maps_url no pertenece a Google Maps")
@@ -96,14 +147,17 @@ def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
             title_text = fallback_name
         out["name"] = title_text
         # aria labels are more stable than Maps' class names.
-        labels = page.locator('[role="img"][aria-label]')
+        labels = page.locator('[aria-label]')
+        rating_labels = []
         for i in range(min(labels.count(), 120)):
-            label = labels.nth(i).get_attribute("aria-label") or ""
-            if re.fullmatch(r"\d\.\d\s*stars?", label, re.I):
-                out["rating"] = label.split()[0]
-            elif re.fullmatch(r"[\d,]+\s*reviews?", label, re.I):
-                out["reviews"] = re.sub(r"\D", "", label.split()[0])
+            rating_labels.append(labels.nth(i).get_attribute("aria-label") or "")
+        out["rating"], out["reviews"] = parse_rating_reviews(rating_labels)
         body = page.locator("body").inner_text()
+        if out["rating"] is None or out["reviews"] is None:
+            summary = re.search(r"\b([0-5](?:[.,]\d))\s*\n\s*\(?([\d,]+)\)?", body[:4000])
+            if summary:
+                out["rating"] = out["rating"] or summary.group(1).replace(",", ".")
+                out["reviews"] = out["reviews"] or summary.group(2).replace(",", "")
         out["status"] = "PERMANENTLY_CLOSED" if re.search(r"permanently closed", body, re.I) else None
         for selector, key, prefix in [
             ('button[aria-label^="Phone:" i]', "phone", "Phone:"),
@@ -124,35 +178,40 @@ def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
         # Maps cambia el botón y los atributos de las imágenes con frecuencia. Capturar
         # src/srcset/data-src antes y después del click evita que un cambio de markup
         # convierta una ficha construible en "0 fotos".
-        image_urls = page.locator("img").evaluate_all(
-            """els => els.flatMap(e => [e.currentSrc, e.src, e.getAttribute('data-src'),
-              ...(e.getAttribute('srcset') || '').split(',').map(x => x.trim().split(' ')[0])])
-              .filter(Boolean)"""
-        )
-        btn = page.locator(
-            'button[aria-label*="Photo of" i], button[aria-label*="See photos" i], '
-            'button:has-text("See photos"), div[jsaction*="heroHeaderImage"] img, '
-            'img[src*="googleusercontent.com"]'
-        ).first
-        if btn.count():
+        image_urls = page_photo_urls(page)
+        # Elegir explicitamente "See photos". Un selector combinado con `.first`
+        # elegia antes la portada (que abre una sola foto) y ocultaba galerias de
+        # 20+ imagenes, convirtiendo negocios validos en falsos "1 foto".
+        btn = None
+        for selector in (
+            'button:has-text("See photos")',
+            'button[aria-label*="See photos" i]',
+            'button[aria-label*="Photo of" i]',
+            'div[jsaction*="heroHeaderImage"] img',
+            'img[src*="googleusercontent.com"]',
+        ):
+            candidate = page.locator(selector).first
+            if candidate.count():
+                btn = candidate
+                break
+        if btn is not None:
             try:
                 btn.click(timeout=5000)
-                page.wait_for_timeout(800)
-                for _ in range(5):
+                page.wait_for_timeout(1200)
+                for _ in range(7):
                     page.mouse.wheel(0, 1600)
-                    page.wait_for_timeout(220)
+                    page.wait_for_timeout(260)
             except Exception:
                 pass
-        image_urls.extend(page.locator("img").evaluate_all(
-            """els => els.flatMap(e => [e.currentSrc, e.src, e.getAttribute('data-src'),
-              ...(e.getAttribute('srcset') || '').split(',').map(x => x.trim().split(' ')[0])])
-              .filter(Boolean)"""
-        ))
+        image_urls.extend(page_photo_urls(page))
+        image_urls.extend(network_photos)
         seen = set()
         for url in image_urls:
             if 'googleusercontent.com' not in url:
                 continue
             base = url.split("=")[0]
+            if not any(marker in base for marker in ('/p/', '/gps-cs-s/')):
+                continue
             if base not in seen and not any(x in base for x in ('/maps/api/', '/maps/vt/')):
                 seen.add(base)
                 out["photos"].append(base + "=w1600-h1200-k-no")
@@ -199,6 +258,7 @@ def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
                 downloaded.append(name)
     out["fotos"] = downloaded
     out["has_own_site"] = is_own_website(out.get("website"))
+    out["profile_url"] = out.get("website") if out.get("website") and not out["has_own_site"] else None
     out["slug"] = out_slug
     (root / "data.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out

@@ -37,7 +37,8 @@ def _int_env(name: str, default: int, minimum: int = 0, maximum: int = 100) -> i
 DISCOVERY_TARGET = _int_env("DISCOVERY_TARGET", 12, minimum=1, maximum=20)
 DISCOVERY_CANDIDATES = _int_env("DISCOVERY_CANDIDATES", 50, minimum=5, maximum=50)
 CRON_MAX_BUILDS = _int_env("CRON_MAX_BUILDS", 1, minimum=0, maximum=3)
-DISCOVERY_ROTATION_MINUTES = _int_env("DISCOVERY_ROTATION_MINUTES", 15, minimum=5, maximum=360)
+DISCOVERY_ROTATION_MINUTES = _int_env("DISCOVERY_ROTATION_MINUTES", 5, minimum=5, maximum=360)
+DISCOVERY_QUERIES = _int_env("DISCOVERY_QUERIES", 2, minimum=1, maximum=3)
 
 
 # Las etiquetas de config.json son descriptivas y bilingues para el panel, no
@@ -144,6 +145,25 @@ def _rotation(niches: list[str], locations: list[str]) -> tuple[str, str]:
     return niche, location
 
 
+def _rotation_pairs(
+    niches: list[str], locations: list[str], count: int, slot: int | None = None
+) -> list[tuple[str, str]]:
+    """Rota pares sin repetir la segunda consulta en el ciclo siguiente."""
+    slot = slot if slot is not None else int(time.time() // (DISCOVERY_ROTATION_MINUTES * 60))
+    pairs = []
+    seen = set()
+    for offset in range(max(1, count)):
+        absolute = slot * max(1, count) + offset
+        pair = (
+            niches[absolute % len(niches)],
+            locations[(absolute // len(niches)) % len(locations)],
+        )
+        if pair not in seen:
+            seen.add(pair)
+            pairs.append(pair)
+    return pairs
+
+
 def _github_json(path: str) -> object:
     url = f"https://api.github.com/repos/{forge.GH_REPO}/contents/{path}?ref=main"
     headers = {
@@ -242,9 +262,6 @@ def _claim(item: dict) -> dict | None:
 def main() -> int:
     config = _config()
     niches, locations = _lists(config)
-    niche_label, location_label = _rotation(niches, locations)
-    niche = _search_niche(niche_label)
-    location = _search_location(location_label, config)
     try:
         min_rating = max(0.0, min(float(config.get("min_rating", 4.5)), 5.0))
     except (TypeError, ValueError):
@@ -253,7 +270,6 @@ def main() -> int:
         min_reviews = max(0, int(config.get("min_reviews", 10)))
     except (TypeError, ValueError):
         min_reviews = 10
-    print(f"discovery cron: {niche} en {location}", flush=True)
     known = _known()
     pending_count = sum(1 for item in (forge.panel("/api/public/queue") or {}).get("pending", []))
     free_slots = max(0, 20 - pending_count)
@@ -261,27 +277,40 @@ def main() -> int:
     if target == 0:
         print("cola llena o sin capacidad disponible; no se buscan candidatos nuevos", flush=True)
         return 0
-    try:
-        candidates = discover(niche, location, DISCOVERY_CANDIDATES, min_rating, min_reviews)
-    except Exception as exc:
-        print(f"discovery fallo: {exc}", flush=True)
-        return 1
     selected = []
-    for candidate in candidates:
-        keys = {
-            re.sub(r"[^a-z0-9]", "", str(candidate.get("slug", "")).lower()),
-            re.sub(r"[^a-z0-9]", "", str(candidate.get("name", "")).lower()),
-        }
-        if keys & known:
+    total_candidates = 0
+    successful_queries = 0
+    per_query_limit = min(DISCOVERY_CANDIDATES, max(target * 3, 18))
+    for niche_label, location_label in _rotation_pairs(niches, locations, DISCOVERY_QUERIES):
+        niche = _search_niche(niche_label)
+        location = _search_location(location_label, config)
+        print(f"discovery cron: {niche} en {location}", flush=True)
+        try:
+            candidates = discover(niche, location, per_query_limit, min_rating, min_reviews)
+            successful_queries += 1
+        except Exception as exc:
+            print(f"discovery fallo ({niche} / {location}): {exc}", flush=True)
             continue
-        selected.append(candidate)
-        known.update(keys)
+        total_candidates += len(candidates)
+        for candidate in candidates:
+            keys = {
+                re.sub(r"[^a-z0-9]", "", str(candidate.get("slug", "")).lower()),
+                re.sub(r"[^a-z0-9]", "", str(candidate.get("name", "")).lower()),
+            }
+            if keys & known:
+                continue
+            selected.append(candidate)
+            known.update(keys)
+            if len(selected) >= target:
+                break
         if len(selected) >= target:
             break
-    print(f"candidatos nuevos: {len(selected)} de {len(candidates)}", flush=True)
+    if not successful_queries:
+        return 1
+    print(f"candidatos nuevos: {len(selected)} de {total_candidates}", flush=True)
     queued: list[dict] = []
     for candidate in selected:
-        result = _enqueue(candidate, location)
+        result = _enqueue(candidate, str(candidate.get("location") or "Florida"))
         if result and result.get("item"):
             queued.append(result["item"])
             print(f"  encolado: {candidate['name']} ({candidate.get('score', 0)})", flush=True)

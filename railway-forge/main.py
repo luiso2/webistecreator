@@ -696,6 +696,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
             except OSError:
                 pass
     r = None
+    best_research = None
     for attempt in range(2):
         research_cmd = [sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug]
         if candidate.get('maps_url'):
@@ -703,12 +704,24 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
         r = subprocess.run(research_cmd,
                            capture_output=True, text=True, timeout=timeout_for(deadline, 150))
         if os.path.exists(ruta_data):
-            break
+            try:
+                current_research = json.load(open(ruta_data, encoding='utf-8'))
+            except (OSError, json.JSONDecodeError):
+                current_research = None
+            if current_research and (
+                best_research is None
+                or len(current_research.get('fotos') or []) > len(best_research.get('fotos') or [])
+            ):
+                best_research = current_research
+            if current_research and len(current_research.get('fotos') or []) >= 5:
+                break
         if attempt == 0:
+            report('research', 'Google Maps: reintentando galeria incompleta')
             sleep_for(4, deadline)
-    if not os.path.exists(ruta_data):
+    if best_research is None:
         return fail(f'Research Google Maps sin datos: {(r.stdout or r.stderr)[-180:]}')
-    hechos = json.load(open(ruta_data, encoding='utf-8'))
+    hechos = best_research
+    json.dump(hechos, open(ruta_data, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     if hechos.get('status') == 'PERMANENTLY_CLOSED':
         return fail('La ficha de Google Maps figura como permanentemente cerrada.')
     if hechos.get('has_own_site'):
@@ -740,7 +753,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     if g.returncode != 0:
         return fail(f'GATE: {g.stdout[-220:]}')
     report('verify')
-    fotos_usadas = sorted(set(re.findall(r'gmaps-\d+\.jpg', open(f'output/{slug}/content.json').read())))
+    fotos_usadas = sorted(set(re.findall(r'(?:gmaps-|bk-)\d+\.jpg', open(f'output/{slug}/content.json').read())))
     archivos = [(f'output/{slug}/index.html', f'output/{slug}/index.html')]
     archivos += [(f'output/{slug}/{f}', f'output/{slug}/{f}')
                  for f in ['content.json', 'data.json', '.assetsignore', 'assets/tailwind.js']]

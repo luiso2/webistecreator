@@ -56,7 +56,7 @@ def main(slug: str):
     # Niche detection uses the public name/query only. No fake social handle is passed.
     facts = {**data, "slug": slug, "nombre": name, "ciudad": city,
              "nicho": data.get("nicho") or name, "ig": slug, "idioma_principal": "en",
-             "has_own_site": bool(data.get("website"))}
+             "has_own_site": bool(data.get("has_own_site"))}
     content, _dm, _nicho = construir(facts, selected)
     replacements = [
         ("Instagram", "Google Maps"),

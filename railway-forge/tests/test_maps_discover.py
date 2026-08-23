@@ -19,6 +19,7 @@ except ModuleNotFoundError:
     sys.modules["playwright.sync_api"] = sync_api
 
 from maps_discover import _parse_rating_reviews  # noqa: E402
+from maps_research import parse_rating_reviews  # noqa: E402
 
 
 class MapsRatingParserTests(unittest.TestCase):
@@ -39,6 +40,11 @@ class MapsRatingParserTests(unittest.TestCase):
             _parse_rating_reviews(["4,7 estrellas 89 reseñas"]),
             (4.7, 89),
         )
+
+    def test_business_summary_is_not_overwritten_by_review_rows(self):
+        labels = ["4.9 stars", "82 reviews", "5 stars, 79 reviews", "1 star, 1 review"]
+        self.assertEqual(_parse_rating_reviews(labels), (4.9, 82))
+        self.assertEqual(parse_rating_reviews(labels), ("4.9", "82"))
 
 
 if __name__ == "__main__":

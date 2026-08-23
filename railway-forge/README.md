@@ -53,11 +53,11 @@ El paquete es autocontenido (scripts y template copiados aqui). Desde esta carpe
 Para activar el descubrimiento automático crea un segundo servicio Railway desde
 esta misma carpeta y selecciona `railway-cron.json` como Railway Config File. Ese
 archivo fija el Dockerfile, Start Command `python3 cron.py` y Cron Schedule
-`*/15 * * * *` (UTC). El servicio debe terminar al acabar; no uses `main.py` como
+`*/5 * * * *` (UTC). El servicio debe terminar al acabar; no uses `main.py` como
 Cron porque `main.py` es el worker permanente.
 
-El Cron llena hasta 12 huecos por ejecución (sin superar los 20 pendientes del panel),
-rota nicho/ciudad cada 15 minutos y deja que las réplicas permanentes construyan en
+El Cron consulta dos combinaciones de nicho/ciudad, llena hasta 12 huecos por ejecución
+(sin superar los 20 pendientes del panel), rota cada 5 minutos y deja que las réplicas permanentes construyan en
 paralelo. `railway.json` está preparado con 4 réplicas del worker; si el plan de Railway
 permite más recursos, subir ese número acelera linealmente el camino hacia 10.000 demos.
 
@@ -66,7 +66,8 @@ Variables adicionales del servicio Cron:
 - `SITEFORGE_UI_KEY`: el mismo access key que usa el panel (`.env` local), para
   poder crear items en `/api/queue` sin exponerlo en el código.
 - `DISCOVERY_TARGET`: candidatos nuevos por ejecución (por defecto `12`, máximo `20`).
-- `DISCOVERY_ROTATION_MINUTES`: intervalo de rotación de nicho/ciudad (por defecto `15`).
+- `DISCOVERY_ROTATION_MINUTES`: intervalo de rotación de nicho/ciudad (por defecto `5`).
+- `DISCOVERY_QUERIES`: combinaciones distintas por ejecución (por defecto `2`, máximo `3`).
 - `CRON_MAX_BUILDS`: cuántos construye el Cron directamente si el worker
   permanente no los reclama (por defecto `1`).
 - `DISCOVERY_NICHES` y `DISCOVERY_LOCATIONS`: listas separadas por comas para
