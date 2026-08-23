@@ -611,12 +611,11 @@ def procesar_descubrimiento(item, deadline=None):
             },
         })
 
-    # Los candidatos de una búsqueda son independientes. Construirlos en paralelo
-    # evita que varias demos esperen varias veces la navegación de Maps, la descarga
-    # de fotos y Workers Builds. El límite conservador protege Google/GitHub y deja
-    # otras réplicas disponibles para nuevas solicitudes.
+    # Los candidatos de una búsqueda son independientes. Construir una tanda del
+    # tamaño solicitado en paralelo evita esperas seriales; si alguno falla, la tanda
+    # siguiente usa los reemplazos sin publicar más de ``count`` demos.
     if selected:
-        progreso(iid, 'build', f'Iniciando {len(selected)} forjas en paralelo (máximo {DISCOVERY_BUILD_WORKERS})', token=token)
+        progreso(iid, 'build', f'Iniciando hasta {count} forjas en paralelo (máximo {DISCOVERY_BUILD_WORKERS})', token=token)
 
     def build_candidate(entry):
         name = entry['name']
@@ -640,14 +639,19 @@ def procesar_descubrimiento(item, deadline=None):
         return entry['index'], result
 
     completed = []
-    with ThreadPoolExecutor(max_workers=min(DISCOVERY_BUILD_WORKERS, len(selected))) as pool:
-        futures = [pool.submit(build_candidate, entry) for entry in selected]
-        for future in as_completed(futures):
-            index, result = future.result()
-            if result and not result.get('failed'):
-                completed.append((index, {k: result[k] for k in ('slug', 'name', 'url_demo') if k in result}))
-            elif result:
-                failed_candidates.append(f'{result.get("motivo") or "fallo sin detalle"}')
+    remaining_candidates = list(selected)
+    while remaining_candidates and len(completed) < count:
+        batch_size = min(count - len(completed), len(remaining_candidates))
+        batch = remaining_candidates[:batch_size]
+        remaining_candidates = remaining_candidates[batch_size:]
+        with ThreadPoolExecutor(max_workers=min(DISCOVERY_BUILD_WORKERS, len(batch))) as pool:
+            futures = [pool.submit(build_candidate, entry) for entry in batch]
+            for future in as_completed(futures):
+                index, result = future.result()
+                if result and not result.get('failed'):
+                    completed.append((index, {k: result[k] for k in ('slug', 'name', 'url_demo') if k in result}))
+                elif result:
+                    failed_candidates.append(f'{result.get("motivo") or "fallo sin detalle"}')
 
     sites = [result for _index, result in sorted(completed, key=lambda pair: pair[0])][:count]
 
