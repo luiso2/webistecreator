@@ -12,6 +12,16 @@ Generador automatico de websites demo premium para cold outreach: encuentra nego
 - **`data/processed.json`**: registro de negocios ya procesados (idempotencia, nunca reprocesar ni re-contactar).
 - **`output/<slug>/`**: sites generados (index.html + assets + data.json del research).
 
+## Control Plane del GPT (single-owner)
+
+El GPT existente conserva sus Actions v1 para descubrimiento y builds. Las operaciones sobre
+websites viven en `/api/agent/v2`: `GET /tools`, `POST /execute`, `GET /audit` y
+`GET /sites/<slug>/spec`. El GPT puede localizar un sitio por nombre, ciudad o slug, cambiar
+contenido/branding/SEO mediante un SiteSpec versionado y pedir una publicación confirmada.
+La forja aplica el patch JSON al `content.json` existente, ejecuta `derive.py` + `gate.py` y
+publica con el mismo Worker compartido. Esta instalación todavía es de un solo propietario:
+no hay `tenant_id` ni aislamiento multi-tenant.
+
 ## Uso local (on-demand)
 En Claude Code: `/siteforge <instagram handle | nombre del negocio | "buscar">`.
 - Con handle/nombre: procesa ese negocio.

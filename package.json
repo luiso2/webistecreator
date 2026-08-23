@@ -2,7 +2,8 @@
   "name": "siteforge",
   "private": true,
   "scripts": {
-    "build:styles": "npx --yes tailwindcss@3.4.17 -c tailwind.config.cjs -i styles/tailwind.css -o output/_shared/tailwind.css --minify && node scripts/write-style-revision.mjs"
+    "build:styles": "npx --yes tailwindcss@3.4.17 -c tailwind.config.cjs -i styles/tailwind.css -o output/_shared/tailwind.css --minify && node scripts/write-style-revision.mjs",
+    "test:control-plane": "node --test ui/control-plane.test.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.111.0"

@@ -1,4 +1,16 @@
 import { DurableObject } from 'cloudflare:workers';
+import {
+  TOOL_DEFINITIONS,
+  assertSiteSpec,
+  deepMerge,
+  normalizeRef,
+  normalizeSlug,
+  permissionForPlan,
+  sanitizePatch,
+  siteSpecFromRegistry,
+  toolDefinition,
+  validatePlan,
+} from './control-plane.mjs';
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -88,7 +100,7 @@ export class QueueClaims extends DurableObject {
     });
   }
 
-  async enqueue(item, discoveryKeyValue = null) {
+  async enqueue(item, discoveryKeyValue = null, operationKeyValue = null) {
     return this.ctx.blockConcurrencyWhile(async () => {
       const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
       if (queue.filter(q => q.status === 'pending').length >= QUEUE_PENDING_LIMIT) {
@@ -97,6 +109,10 @@ export class QueueClaims extends DurableObject {
       if (discoveryKeyValue && queue.some(q => (q.status === 'pending' || q.status === 'processing')
         && q.request?.type === 'discovery' && discoveryKey(q.request) === discoveryKeyValue)) {
         return { ok: false, error: 'esa busqueda ya esta activa en la cola', status: 409 };
+      }
+      if (operationKeyValue && queue.some(q => (q.status === 'pending' || q.status === 'processing')
+        && q.request?.operation_key === operationKeyValue)) {
+        return { ok: false, error: 'esa operación ya está activa en la cola', status: 409 };
       }
       queue.push(item);
       await this.env.SITEFORGE_KV.put('queue', JSON.stringify(queue));
@@ -169,6 +185,16 @@ export class QueueClaims extends DurableObject {
     });
   }
 
+  async audit(event) {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const index = (await this.env.SITEFORGE_KV.get('control:audit:index', 'json')) || [];
+      const ids = [event.id, ...index.filter(id => id !== event.id)].slice(0, 500);
+      await this.env.SITEFORGE_KV.put(`control:audit:${event.id}`, JSON.stringify(event));
+      await this.env.SITEFORGE_KV.put('control:audit:index', JSON.stringify(ids));
+      return { ok: true, id: event.id };
+    });
+  }
+
   release(id) {
     this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
     return true;
@@ -191,7 +217,7 @@ async function isAuthorized(req) {
   if (!key) return false;
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key));
   const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
-  return hex === KEY_HASH;
+  return safeEqualHex(hex, KEY_HASH);
 }
 
 async function isAgentAuthorized(req) {
@@ -199,7 +225,16 @@ async function isAgentAuthorized(req) {
   if (!key) return false;
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(key));
   const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
-  return hex === AGENT_KEY_HASH;
+  return safeEqualHex(hex, AGENT_KEY_HASH);
+}
+
+// Comparación constante para hashes de credenciales. Evita terminar en una
+// comparación de strings que revele el prefijo correcto por timing.
+function safeEqualHex(actual, expected) {
+  if (typeof actual !== 'string' || typeof expected !== 'string' || actual.length !== expected.length) return false;
+  let diff = 0;
+  for (let i = 0; i < actual.length; i += 1) diff |= actual.charCodeAt(i) ^ expected.charCodeAt(i);
+  return diff === 0;
 }
 
 const agentItem = item => ({
@@ -230,6 +265,333 @@ const agentSite = site => ({
   dm_message: site.dm_message || null,
   fecha: site.fecha || null,
 });
+
+const CONTROL_SPEC_PREFIX = 'site-spec:';
+const CONTROL_AUDIT_INDEX = 'control:audit:index';
+const CONTROL_IDEMPOTENCY_PREFIX = 'control:idempotency:';
+const CONTROL_TEXT = value => queueText(value, 240);
+const controlSpecKey = slug => `${CONTROL_SPEC_PREFIX}${slug}:current`;
+const controlSpecVersionKey = (slug, revision) => `${CONTROL_SPEC_PREFIX}${slug}:v:${revision}`;
+
+async function controlRegistry(env) {
+  return (await env.SITEFORGE_KV.get('registry', 'json')) || [];
+}
+
+function siteSearchHaystack(site) {
+  return [site.name, site.slug, site.email, site.ig, site.phone, site.city, site.custom_domain]
+    .filter(Boolean).join(' ').toLocaleLowerCase();
+}
+
+async function resolveControlSite(env, ref) {
+  const normalized = normalizeRef(ref);
+  if (!normalized) throw new Error('indica site.slug o site.query para localizar el website');
+  const registry = await controlRegistry(env);
+  if (normalized.slug) {
+    const exact = registry.find(site => site.slug === normalized.slug);
+    if (!exact) throw new Error(`website no encontrado: ${normalized.slug}`);
+    return exact;
+  }
+  const query = String(normalized.query || '').toLocaleLowerCase();
+  const city = String(normalized.city || '').toLocaleLowerCase();
+  const matches = registry.filter(site => siteSearchHaystack(site).includes(query)
+    && (!city || String(site.city || '').toLocaleLowerCase().includes(city)));
+  if (!matches.length) throw new Error(`no se encontró un website para "${normalized.query}"`);
+  if (matches.length > 1) {
+    const options = matches.slice(0, 5).map(site => ({ slug: site.slug, name: site.name, city: site.city || null }));
+    const error = new Error('la búsqueda devuelve más de un website; especifica el slug o la ciudad');
+    error.code = 'AMBIGUOUS_SITE';
+    error.options = options;
+    throw error;
+  }
+  return matches[0];
+}
+
+async function loadControlSpec(env, site) {
+  const stored = await env.SITEFORGE_KV.get(controlSpecKey(site.slug), 'json');
+  if (stored) {
+    assertSiteSpec(stored);
+    return stored;
+  }
+  const initial = siteSpecFromRegistry(site);
+  assertSiteSpec(initial);
+  await env.SITEFORGE_KV.put(controlSpecKey(site.slug), JSON.stringify(initial));
+  await env.SITEFORGE_KV.put(controlSpecVersionKey(site.slug, initial.revision), JSON.stringify(initial));
+  return initial;
+}
+
+async function saveControlSpec(env, previous, next, reason) {
+  const candidate = {
+    ...next,
+    version: 1,
+    siteId: previous.slug,
+    slug: previous.slug,
+    revision: Number(previous.revision || 0) + 1,
+    metadata: {
+      ...(next.metadata || {}),
+      updatedAt: new Date().toISOString(),
+      changeReason: CONTROL_TEXT(reason || 'agent update'),
+    },
+  };
+  assertSiteSpec(candidate);
+  await env.SITEFORGE_KV.put(controlSpecKey(previous.slug), JSON.stringify(candidate));
+  await env.SITEFORGE_KV.put(controlSpecVersionKey(previous.slug, candidate.revision), JSON.stringify(candidate));
+  return candidate;
+}
+
+function redactControlAudit(value, depth = 0) {
+  if (depth > 5) return '[depth-limited]';
+  if (typeof value === 'string') return value.slice(0, 500);
+  if (value === null || typeof value === 'number' || typeof value === 'boolean') return value;
+  if (Array.isArray(value)) return value.slice(0, 30).map(item => redactControlAudit(item, depth + 1));
+  if (!value || typeof value !== 'object') return null;
+  const output = {};
+  for (const [key, item] of Object.entries(value).slice(0, 80)) {
+    output[key] = /secret|token|password|authorization|api[-_]?key/i.test(key)
+      ? '[redacted]' : redactControlAudit(item, depth + 1);
+  }
+  return output;
+}
+
+async function controlAudit(env, event) {
+  const audit = {
+    id: crypto.randomUUID(),
+    agentId: 'siteforge-gpt',
+    action: event.action,
+    tool: event.tool,
+    input: redactControlAudit(event.input || {}),
+    result: redactControlAudit(event.result || null),
+    status: event.status || 'ok',
+    timestamp: new Date().toISOString(),
+    duration: Number(event.duration || 0),
+  };
+  // La cola DO ya serializa mutaciones de esta instalación de propietario único;
+  // el registro de auditoría se escribe allí para no perder eventos concurrentes.
+  await env.QUEUE_CLAIMS.getByName('siteforge-queue').audit(audit);
+  return audit;
+}
+
+async function enqueueSiteUpdate(env, site, spec, reason = 'agent publish') {
+  const item = {
+    id: crypto.randomUUID(),
+    input: `Actualizar website ${site.name || site.slug}`,
+    status: 'pending',
+    created: new Date().toISOString(),
+    request: {
+      type: 'site_update',
+      operation_key: `site-update:${site.slug}`,
+      slug: site.slug,
+      spec_revision: spec.revision,
+      content_patch: spec.contentPatch || {},
+      reason: CONTROL_TEXT(reason),
+    },
+  };
+  const queued = await env.QUEUE_CLAIMS.getByName('siteforge-queue').enqueue(
+    item, null, item.request.operation_key,
+  );
+  if (!queued.ok) throw new Error(queued.error || 'no se pudo encolar la publicación');
+  return queued.item;
+}
+
+function pageById(spec, pageId) {
+  const id = CONTROL_TEXT(pageId).toLowerCase();
+  const page = spec.pages.find(item => item.id === id);
+  if (!page) throw new Error(`página no encontrada: ${id}`);
+  return page;
+}
+
+function normalizePage(page) {
+  if (!page || typeof page !== 'object' || Array.isArray(page)) throw new Error('page debe ser un objeto');
+  const id = CONTROL_TEXT(page.id).toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/^-+|-+$/g, '').slice(0, 50);
+  if (!id) throw new Error('page.id requerido');
+  const path = CONTROL_TEXT(page.path || `/${id}`).replace(/\s/g, '-').slice(0, 100);
+  return {
+    id,
+    path: path.startsWith('/') ? path : `/${path}`,
+    title: CONTROL_TEXT(page.title || id).slice(0, 120),
+    sections: Array.isArray(page.sections) ? page.sections.slice(0, 80) : [],
+  };
+}
+
+function applyPageTool(spec, tool, args) {
+  const pages = Array.isArray(spec.pages) ? spec.pages.map(page => ({ ...page, sections: [...(page.sections || [])] })) : [];
+  if (tool === 'website.page.list') return { pages };
+  if (tool === 'website.page.create') {
+    const page = normalizePage(args.page);
+    if (pages.some(item => item.id === page.id || item.path === page.path)) throw new Error('ya existe una página con ese id o path');
+    pages.push(page);
+  } else if (tool === 'website.page.update') {
+    const id = CONTROL_TEXT(args.pageId).toLowerCase();
+    const index = pages.findIndex(page => page.id === id);
+    if (index < 0) throw new Error(`página no encontrada: ${id}`);
+    pages[index] = normalizePage({ ...pages[index], ...(args.patch || {}), id });
+  } else if (tool === 'website.page.delete') {
+    const id = CONTROL_TEXT(args.pageId).toLowerCase();
+    if (id === 'home') throw new Error('la página home no se puede eliminar');
+    const next = pages.filter(page => page.id !== id);
+    if (next.length === pages.length) throw new Error(`página no encontrada: ${id}`);
+    return { ...spec, pages: next };
+  } else {
+    const page = pageById({ ...spec, pages }, args.pageId);
+    const sections = page.sections || [];
+    if (tool === 'website.section.add') {
+      const section = sanitizePatch(args.section || {});
+      section.id = CONTROL_TEXT(section.id || `${section.type || 'section'}-${Date.now()}`).toLowerCase().replace(/[^a-z0-9-]/g, '-').slice(0, 60);
+      if (!section.type) throw new Error('section.type requerido');
+      if (sections.some(item => item.id === section.id)) throw new Error('section.id ya existe');
+      const index = Number.isInteger(args.index) ? Math.max(0, Math.min(args.index, sections.length)) : sections.length;
+      sections.splice(index, 0, section);
+    } else if (tool === 'website.section.update') {
+      const sectionId = CONTROL_TEXT(args.sectionId);
+      const index = sections.findIndex(section => section.id === sectionId);
+      if (index < 0) throw new Error(`sección no encontrada: ${sectionId}`);
+      sections[index] = deepMerge(sections[index], sanitizePatch(args.patch || {}));
+    } else if (tool === 'website.section.remove') {
+      const sectionId = CONTROL_TEXT(args.sectionId);
+      const next = sections.filter(section => section.id !== sectionId);
+      if (next.length === sections.length) throw new Error(`sección no encontrada: ${sectionId}`);
+      page.sections = next;
+    } else if (tool === 'website.section.reorder') {
+      const sectionId = CONTROL_TEXT(args.sectionId);
+      const index = sections.findIndex(section => section.id === sectionId);
+      if (index < 0) throw new Error(`sección no encontrada: ${sectionId}`);
+      const [section] = sections.splice(index, 1);
+      const target = Number.isInteger(args.index) ? Math.max(0, Math.min(args.index, sections.length)) : sections.length;
+      sections.splice(target, 0, section);
+    }
+    page.sections = sections;
+  }
+  return { ...spec, pages };
+}
+
+async function executeControlTool(env, plan, tool, args) {
+  permissionForPlan(plan, tool);
+  if (tool === 'website.search') {
+    const registry = await controlRegistry(env);
+    const query = CONTROL_TEXT(args.query || '').toLocaleLowerCase();
+    const city = CONTROL_TEXT(args.city || '').toLocaleLowerCase();
+    const limit = Math.max(1, Math.min(Number(args.limit || 20), 100));
+    const sites = registry.filter(site => (!query || siteSearchHaystack(site).includes(query))
+      && (!city || String(site.city || '').toLocaleLowerCase().includes(city)))
+      .slice(0, limit).map(agentSite);
+    return { ok: true, total: sites.length, sites };
+  }
+
+  const site = await resolveControlSite(env, args.site || args.slug || args.query);
+  let spec = await loadControlSpec(env, site);
+  if (tool === 'website.get') return { ok: true, site: agentSite(site), spec };
+  if (tool === 'website.preview') {
+    assertSiteSpec(spec);
+    return { ok: true, site: agentSite(site), revision: spec.revision, spec, preview_url: site.url_demo || null };
+  }
+  if (tool === 'website.test') {
+    const errors = [];
+    try { assertSiteSpec(spec); } catch (error) { errors.push(error.message); }
+    if (!site.url_demo) errors.push('el website todavía no tiene url_demo publicada');
+    return { ok: errors.length === 0, site: agentSite(site), revision: spec.revision, errors };
+  }
+  if (tool === 'website.page.list') return { ok: true, site: agentSite(site), ...applyPageTool(spec, tool, args) };
+  if (tool.startsWith('website.page.') || tool.startsWith('website.section.')) {
+    spec = applyPageTool(spec, tool, args);
+    const saved = await saveControlSpec(env, spec, spec, tool);
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: true, renderer: 'spec-only for pages/sections' };
+  }
+  if (tool === 'website.rollback') {
+    const revision = Number(args.revision);
+    if (!Number.isInteger(revision) || revision < 1) throw new Error('revision requerida');
+    const prior = await env.SITEFORGE_KV.get(controlSpecVersionKey(site.slug, revision), 'json');
+    if (!prior) throw new Error(`revisión no encontrada: ${revision}`);
+    const saved = await saveControlSpec(env, spec, { ...prior, metadata: { ...(prior.metadata || {}), rollbackFrom: revision } }, `rollback to ${revision}`);
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: true, rollback_from: revision };
+  }
+  if (tool === 'website.content.update') {
+    const patch = sanitizePatch(args.patch || {});
+    const saved = await saveControlSpec(env, spec, { ...spec, contentPatch: deepMerge(spec.contentPatch || {}, patch) }, 'content update');
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: true };
+  }
+  if (tool === 'website.branding.update') {
+    const branding = sanitizePatch(args.branding || {});
+    const saved = await saveControlSpec(env, spec, { ...spec, branding: deepMerge(spec.branding || {}, branding) }, 'branding update');
+    const palette = saved.branding?.palette;
+    if (palette && ['deep', 'mid', 'soft', 'ghost'].every(key => typeof palette[key] === 'string')) {
+      const colorOk = /^(#[0-9a-f]{3,8}|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*(?:0|1|0?\.\d+)\s*)?\))$/i;
+      if (['deep', 'mid', 'soft', 'ghost'].some(key => !colorOk.test(palette[key]))) throw new Error('palette contiene un color inválido');
+      await env.SITEFORGE_KV.put(`color:${site.slug}`, JSON.stringify(palette));
+    }
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: false };
+  }
+  if (tool === 'website.seo.configure') {
+    const seo = sanitizePatch(args.seo || {});
+    const saved = await saveControlSpec(env, spec, { ...spec, seo: deepMerge(spec.seo || {}, seo) }, 'seo configure');
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: true };
+  }
+  if (tool === 'website.seo.analyze') {
+    const seo = spec.seo || {};
+    const title = typeof seo.title === 'string' ? seo.title.trim() : '';
+    const description = typeof seo.description === 'string' ? seo.description.trim() : '';
+    const findings = [];
+    if (!title) findings.push({ level: 'warning', code: 'missing_title', message: 'Falta un título SEO.' });
+    else if (title.length > 60) findings.push({ level: 'warning', code: 'title_long', message: 'El título SEO supera 60 caracteres.' });
+    if (!description) findings.push({ level: 'warning', code: 'missing_description', message: 'Falta una meta description.' });
+    else if (description.length > 160) findings.push({ level: 'warning', code: 'description_long', message: 'La meta description supera 160 caracteres.' });
+    return { ok: true, site: agentSite(site), revision: spec.revision, score: Math.max(0, 100 - findings.length * 25), findings };
+  }
+  if (tool === 'website.image.update') {
+    const patch = sanitizePatch(args.patch || {});
+    const saved = await saveControlSpec(env, spec, { ...spec, contentPatch: deepMerge(spec.contentPatch || {}, patch) }, 'image update');
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: true };
+  }
+  if (['website.form.create', 'website.form.update', 'website.booking.install', 'website.booking.configure',
+    'website.whatsapp.install', 'website.whatsapp.configure', 'website.payment.install'].includes(tool)) {
+    const config = sanitizePatch(args.config || {});
+    const type = tool.split('.').slice(1).join('_');
+    const integrations = Array.isArray(spec.integrations) ? [...spec.integrations] : [];
+    const index = integrations.findIndex(item => item.type === type);
+    const entry = { type, config, updatedAt: new Date().toISOString() };
+    if (index >= 0) integrations[index] = { ...integrations[index], ...entry };
+    else integrations.push(entry);
+    const saved = await saveControlSpec(env, spec, { ...spec, integrations }, `${type} configure`);
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: true };
+  }
+  if (tool === 'website.analytics.get') {
+    return { ok: true, site: agentSite(site), metrics: [], note: 'Analytics aún no está conectado a una fuente de eventos.' };
+  }
+  if (tool === 'website.update') {
+    const patch = sanitizePatch(args.patch || {});
+    const next = deepMerge(spec, patch);
+    const saved = await saveControlSpec(env, spec, next, 'website update');
+    return { ok: true, site: agentSite(site), spec: saved, requires_publish: true };
+  }
+  if (tool === 'website.publish') {
+    const job = await enqueueSiteUpdate(env, site, spec, args.reason || plan.goal);
+    return { ok: true, site: agentSite(site), revision: spec.revision, job: agentItem(job), queued: true };
+  }
+  throw new Error(`tool registrada pero sin adapter: ${tool}`);
+}
+
+async function executeControlPlan(env, plan, actor = 'siteforge-gpt') {
+  const normalized = validatePlan(plan);
+  const results = [];
+  for (const step of normalized.steps) {
+    const started = Date.now();
+    try {
+      const result = await executeControlTool(env, normalized, step.tool, step.args);
+      const audit = await controlAudit(env, {
+        action: normalized.goal, tool: step.tool, input: step.args, result,
+        status: 'ok', duration: Date.now() - started,
+      });
+      results.push({ tool: step.tool, ok: true, result, audit_id: audit.id });
+    } catch (error) {
+      const detail = { error: String(error.message || error), ...(error.code ? { code: error.code } : {}), ...(error.options ? { options: error.options } : {}) };
+      const audit = await controlAudit(env, {
+        action: normalized.goal, tool: step.tool, input: step.args, result: detail,
+        status: 'failed', duration: Date.now() - started,
+      });
+      results.push({ tool: step.tool, ok: false, error: detail, audit_id: audit.id });
+      return { ok: false, actor, plan: normalized, results, failed_step: step.tool };
+    }
+  }
+  return { ok: true, actor, plan: normalized, results };
+}
 
 // Solo se aceptan URLs de demo dentro de la cuenta Cloudflare del usuario
 const DEMO_URL_RE = /^https:\/\/[a-z0-9-]+\.odd-forest-9504\.workers\.dev(\/[a-z0-9-]*\/?)?$/;
@@ -365,6 +727,55 @@ export default {
     // de este contrato hasta añadir una confirmacion explicita de usuario.
     if (url.pathname.startsWith('/api/agent/')) {
       if (!(await isAgentAuthorized(req))) return json({ error: 'unauthorized' }, 401);
+
+      // Control Plane v2: el mismo GPT puede descubrir un website, modificar su
+      // SiteSpec, probarlo, publicar una revisión y consultar la auditoría. No hay
+      // tenant_id en esta fase: la instalación sigue siendo de un solo propietario.
+      if (url.pathname === '/api/agent/v2/tools' && req.method === 'GET') {
+        return json({ ok: true, version: 1, tools: TOOL_DEFINITIONS });
+      }
+
+      if (url.pathname === '/api/agent/v2/execute' && req.method === 'POST') {
+        let body;
+        try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        const requestId = typeof body?.request_id === 'string'
+          ? body.request_id.replace(/[^A-Za-z0-9._:-]/g, '').slice(0, 100) : '';
+        if (!requestId) return json({ error: 'request_id requerido para idempotencia' }, 400);
+        const cacheKey = CONTROL_IDEMPOTENCY_PREFIX + requestId;
+        const previous = await env.SITEFORGE_KV.get(cacheKey, 'json');
+        if (previous) return json({ ...previous, idempotent_replay: true });
+        const plan = body.plan || body;
+        let result;
+        try {
+          result = await executeControlPlan(env, plan, 'siteforge-gpt');
+        } catch (error) {
+          return json({ ok: false, error: String(error.message || error) }, 400);
+        }
+        await env.SITEFORGE_KV.put(cacheKey, JSON.stringify(result), { expirationTtl: 24 * 60 * 60 });
+        return json(result, result.ok ? 200 : 422);
+      }
+
+      if (url.pathname === '/api/agent/v2/audit' && req.method === 'GET') {
+        const limit = Math.max(1, Math.min(Number(url.searchParams.get('limit') || 30), 100));
+        const ids = (await env.SITEFORGE_KV.get(CONTROL_AUDIT_INDEX, 'json')) || [];
+        const events = [];
+        for (const id of ids.slice(0, limit)) {
+          const event = await env.SITEFORGE_KV.get(`control:audit:${id}`, 'json');
+          if (event) events.push(event);
+        }
+        return json({ ok: true, total: events.length, events });
+      }
+
+      const specMatch = url.pathname.match(/^\/api\/agent\/v2\/sites\/([a-z0-9-]{1,40})\/spec$/);
+      if (specMatch && req.method === 'GET') {
+        try {
+          const site = await resolveControlSite(env, { slug: specMatch[1] });
+          const spec = await loadControlSpec(env, site);
+          return json({ ok: true, site: agentSite(site), spec });
+        } catch (error) {
+          return json({ ok: false, error: String(error.message || error) }, error.code === 'AMBIGUOUS_SITE' ? 409 : 404);
+        }
+      }
 
       if (url.pathname === '/api/agent/health' && req.method === 'GET') {
         return json({ ok: true, service: 'siteforge-agent', queue_url: `${url.origin}/api/agent/queue` });

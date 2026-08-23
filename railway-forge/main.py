@@ -416,6 +416,130 @@ def procesar(item, deadline=None):
     print(f'  LISTO {url}', flush=True)
 
 
+CONTENT_PATCH_ROOTS = {
+    'slug', 'base', 'lang', 'cta_url', 'cta_icono', 'cta_label', 'ig_url', 'ig_handle',
+    'paleta', 'brand', 'head', 'jsonld', 'nav', 'hero', 'strip', 'marquee', 'nosotros',
+    'proceso', 'servicios', 'galeria', 'social_proof', 'contacto', 'footer', 'seo',
+}
+
+
+def _clean_update_value(value, depth=0, state=None):
+    """Limpia y limita un patch del Control Plane antes de tocar content.json."""
+    state = state or {'keys': 0}
+    if depth > 6:
+        raise ValueError('patch demasiado profundo')
+    if value is None or isinstance(value, (bool, int, float)):
+        return value
+    if isinstance(value, str):
+        return re.sub(r'[<>\x00-\x1f\x7f]', '', value)[:2000]
+    if isinstance(value, list):
+        if len(value) > 40:
+            raise ValueError('una lista del patch no puede superar 40 elementos')
+        return [_clean_update_value(item, depth + 1, state) for item in value]
+    if not isinstance(value, dict):
+        raise ValueError('valor de patch inválido')
+    result = {}
+    for key, item in value.items():
+        state['keys'] += 1
+        if state['keys'] > 120:
+            raise ValueError('patch demasiado grande')
+        key = str(key)
+        if not key or '__' in key or key in {'constructor', 'prototype'} or len(key) > 80:
+            raise ValueError(f'clave de patch no permitida: {key[:80]}')
+        result[key] = _clean_update_value(item, depth + 1, state)
+    return result
+
+
+def _merge_update(base, patch):
+    """Deep merge determinista: objetos se fusionan, listas/valores se reemplazan."""
+    if not isinstance(base, dict) or not isinstance(patch, dict):
+        return patch
+    result = dict(base)
+    for key, value in patch.items():
+        result[key] = _merge_update(result[key], value) if isinstance(value, dict) and isinstance(result.get(key), dict) else value
+    return result
+
+
+def procesar_actualizacion(item, deadline=None):
+    """Aplica una revisión de SiteSpec al content.json existente y la publica.
+
+    El GPT nunca escribe HTML ni ejecuta comandos: solo entrega un patch JSON
+    validado por el Control Plane. El mismo derive.py/gate.py que usa la forja
+    inicial conserva la calidad y la compatibilidad de los sitios existentes.
+    """
+    iid = item['id']
+    token = item.get('claim_token')
+    request = item.get('request') or {}
+    slug = str(request.get('slug') or '').strip().lower()
+    if not re.fullmatch(r'[a-z0-9-]{1,40}', slug):
+        terminar(iid, token=token, failed=True, motivo='site_update con slug inválido.')
+        return
+
+    def report(stage, note=None):
+        progreso(iid, stage, note, token=token)
+
+    def fail(motivo):
+        terminar(iid, token=token, failed=True, motivo=motivo[:300])
+
+    content_path = f'output/{slug}/content.json'
+    if not os.path.exists(content_path):
+        fail(f'No existe content.json para {slug}; no se modifica el website.')
+        return
+    try:
+        content = json.load(open(content_path, encoding='utf-8'))
+        patch = request.get('content_patch') or {}
+        if not isinstance(patch, dict):
+            raise ValueError('content_patch debe ser un objeto')
+        unknown = set(patch) - CONTENT_PATCH_ROOTS
+        if unknown:
+            raise ValueError(f'raíces no permitidas: {", ".join(sorted(unknown))}')
+        patch = _clean_update_value(patch)
+        if len(json.dumps(patch, ensure_ascii=False)) > 16000:
+            raise ValueError('content_patch supera 16 KB')
+        updated = _merge_update(content, patch)
+        json.dump(updated, open(content_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    except Exception as exc:
+        fail(f'Patch de contenido rechazado: {exc}')
+        return
+
+    report('build', f'Revisión {request.get("spec_revision", "?")} · derive determinista')
+    derived = subprocess.run([sys.executable, 'scripts/derive.py', slug], capture_output=True, text=True,
+                             timeout=timeout_for(deadline, 60))
+    if derived.returncode != 0:
+        fail(f'derive.py fallo en actualización: {(derived.stdout or derived.stderr)[-220:]}')
+        return
+
+    lang = updated.get('lang', 'en')
+    gate = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', lang, '--forbid', FORBID],
+                          capture_output=True, text=True, timeout=timeout_for(deadline, 60))
+    if gate.returncode != 0:
+        fail(f'GATE en actualización: {gate.stdout[-220:]}')
+        return
+    report('verify', 'SiteSpec y contenido verificados')
+
+    photos = sorted(set(re.findall(r'(?:gmaps-\d+|bk-\d+|logo)\.jpg', json.dumps(updated))))
+    files = [(f'output/{slug}/index.html', f'output/{slug}/index.html'),
+             (content_path, content_path)]
+    if os.path.exists(f'output/{slug}/.assetsignore'):
+        files.append((f'output/{slug}/.assetsignore', f'output/{slug}/.assetsignore'))
+    files.extend((f'output/{slug}/assets/raw/{photo}', f'output/{slug}/assets/raw/{photo}')
+                 for photo in photos if os.path.exists(f'output/{slug}/assets/raw/{photo}'))
+    files.append(deploy_marker(slug))
+    report('commit', 'Publicando revisión atómica')
+    if not subir_sitio_github(slug, files, deadline=deadline):
+        fail('Subida a GitHub incompleta en actualización.')
+        return
+
+    url = f'{DEMOS}/{slug}/'
+    expected = updated.get('brand', {}).get('name') or slug
+    if not esperar_demo(iid, url, token=token, deadline=deadline, expected_marker=expected):
+        fail('El demo no respondió 200 tras publicar la actualización.')
+        return
+    terminar(iid, token=token, slug=slug, name=expected, url_demo=url,
+             revision=request.get('spec_revision'), updated=True)
+    print(f'  ACTUALIZADO {url} (revision {request.get("spec_revision", "?")})', flush=True)
+
+
 def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     """Construye entradas directas (nombre + ciudad) desde Google Maps.
 
@@ -686,10 +810,29 @@ def main():
         pendientes = q.get('pending', [])
         # Las búsquedas manuales tienen prioridad sobre los nombres que mete el Cron:
         # una persona no debe esperar a que se vacíe la cola automática para ver su demo.
+        updates = [p for p in pendientes if (p.get('request') or {}).get('type') == 'site_update']
         discoveries = [p for p in pendientes if (p.get('request') or {}).get('type') == 'discovery']
         mios = [p for p in pendientes if not p.get('request') and parece_handle(p.get('input', ''))]
         nombres = [p for p in pendientes if not p.get('request') and not parece_handle(p.get('input', ''))]
-        if discoveries:
+        # Una modificación solicitada desde el GPT tiene prioridad absoluta:
+        # el propietario no debe esperar a que termine el descubrimiento diario.
+        if updates:
+            item = None
+            deadline = None
+            try:
+                item = tomar_siguiente(updates)
+                if item:
+                    deadline = time.monotonic() + FORGE_DEADLINE_SECONDS
+                    procesar_actualizacion(item, deadline=deadline)
+            except Exception as e:
+                print(f'  error procesando actualización: {e}', flush=True)
+                try:
+                    if item:
+                        terminar(item['id'], token=item.get('claim_token'), failed=True,
+                                 motivo=f'Excepcion en actualización: {str(e)[:160]}')
+                except Exception:
+                    pass
+        elif discoveries:
             item = None
             deadline = None
             try:

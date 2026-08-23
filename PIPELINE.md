@@ -96,6 +96,12 @@ Puerta de calidad (leccion Sandra 2026-07-16: el site salio "con template" pero 
 - Al terminar cada item: actualiza registro (url_demo = https://siteforge-demos.odd-forest-9504.workers.dev/<slug>/), agrega el id a `data/queue_done.json`, commit + push, y marca done en `/api/public/queue/done` con slug/name/url_demo.
 - Reporte por email a jose@merktop.com SOLO si proceso algo.
 
+## Control Plane del GPT (single-owner)
+- `/api/agent/v2/tools` publica el Tool Registry y `/api/agent/v2/execute` recibe planes de hasta 8 pasos con `request_id` idempotente.
+- `website.content.update`, `website.branding.update` y `website.seo.configure` guardan una revisión de SiteSpec en KV; `website.publish` crea un item `request.type: site_update` y la forja lo prioriza por encima de descubrimientos.
+- Un `site_update` aplica únicamente un patch JSON permitido al `output/<slug>/content.json`, vuelve a ejecutar `derive.py` y `gate.py`, publica un commit atómico y espera el HTML live antes de cerrar el job.
+- `website.publish` y `website.rollback` requieren `confirmed: true`; cada paso deja un evento en el audit log. En esta fase no existe `tenant_id`: el GPT opera la instalación única del propietario.
+
 ## Deploy automatico de demos (Workers Builds)
 - El worker `siteforge-demos` (config `demos/wrangler.jsonc`) sirve TODO `output/` como assets: cada site queda en `/<slug>/`.
 - Cada demo usa CSS Tailwind precompilado desde `/_shared/tailwind.css`, con URL versionada y cache inmutable. El worker sustituye las referencias históricas a `assets/tailwind.js` al responder el HTML: no volver a ejecutar el compilador Tailwind en el navegador ni publicar las copias `**/assets/tailwind.js`; son cientos de copias idénticas y bloquean el render. `publish.py` siempre ejecuta `npm run build:styles` antes del deploy para incluir las clases del nuevo demo.

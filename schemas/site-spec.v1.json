@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://siteforge.merktop.com/schemas/site-spec.v1.json",
+  "title": "Siteforge SiteSpec v1",
+  "type": "object",
+  "required": ["version", "revision", "siteId", "slug", "business", "pages", "features", "integrations", "seo", "deployment", "contentPatch"],
+  "properties": {
+    "version": { "const": 1 },
+    "revision": { "type": "integer", "minimum": 1 },
+    "siteId": { "type": "string", "pattern": "^[a-z0-9-]{1,40}$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]{1,40}$" },
+    "business": { "type": "object", "additionalProperties": true },
+    "branding": { "type": "object", "additionalProperties": true },
+    "pages": { "type": "array", "maxItems": 100 },
+    "features": { "type": "array", "maxItems": 100 },
+    "integrations": { "type": "array", "maxItems": 100 },
+    "seo": { "type": "object", "additionalProperties": true },
+    "deployment": { "type": "object", "additionalProperties": true },
+    "contentPatch": { "type": "object", "maxProperties": 120 },
+    "metadata": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": true
+}
