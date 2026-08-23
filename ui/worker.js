@@ -2,7 +2,10 @@ import { DurableObject } from 'cloudflare:workers';
 import {
   TOOL_DEFINITIONS,
   assertSiteSpec,
+  businessIdentityKeys,
+  businessesShareIdentity,
   deepMerge,
+  googleMapsIdentity,
   normalizeRef,
   normalizeSlug,
   permissionForPlan,
@@ -18,6 +21,9 @@ const json = (data, status = 200) =>
     headers: { 'content-type': 'application/json; charset=utf-8' },
   });
 
+// Solo se aceptan URLs de demo dentro de la cuenta Cloudflare del usuario.
+const DEMO_URL_RE = /^https:\/\/[a-z0-9-]+\.odd-forest-9504\.workers\.dev(\/[a-z0-9-]*\/?)?$/;
+
 // Quita angle brackets y caracteres de control de texto que entra por endpoints publicos,
 // como defensa en profundidad contra inyeccion (el front igual escapa todo al renderizar).
 const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
@@ -27,9 +33,48 @@ const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
 const queueText = (value, max) => stripUnsafe(value ?? '').trim().replace(/\s+/g, ' ').slice(0, max);
 const discoveryKey = request => [request?.niche, request?.location]
   .map(v => String(v || '').toLocaleLowerCase()).join('|');
-// Railway corta cada forja antes de diez minutos. Diez minutos sin heartbeat ya no
-// es lentitud: es una ejecución muerta y se puede rescatar sin dejar filas atascadas.
-const STALE_FORGE_MS = 10 * 60 * 1000;
+const directBuildKey = input => `direct:${String(input || '').normalize('NFKD')
+  .replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()}`;
+const publicBusinessSite = site => ({
+  slug: site?.slug || null,
+  name: site?.name || null,
+  city: site?.city || null,
+  phone: site?.phone || null,
+  url_demo: typeof site?.url_demo === 'string' && DEMO_URL_RE.test(site.url_demo) ? site.url_demo : null,
+  maps_url: site?.maps_url || null,
+  business_key: site?.business_key || null,
+});
+const cleanBusinessCandidate = (raw, fallbackIndex = 0) => {
+  raw = raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
+  const name = queueText(raw.name, 120);
+  const location = queueText(raw.location || raw.city, 100);
+  const proposedSlug = queueText(raw.slug, 64).toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+  const derivedSlug = name.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+  const mapsUrl = typeof raw.maps_url === 'string' && googleMapsIdentity(raw.maps_url)
+    ? raw.maps_url.slice(0, 600) : undefined;
+  const businessKey = typeof raw.business_key === 'string'
+    ? raw.business_key.toLowerCase().replace(/[^a-z0-9:|._-]/g, '').slice(0, 220) : undefined;
+  return {
+    index: Number.isInteger(raw.index) && raw.index >= 0 && raw.index < 100 ? raw.index : fallbackIndex,
+    name,
+    slug: proposedSlug || derivedSlug || undefined,
+    location,
+    city: location,
+    niche: queueText(raw.niche, 100) || undefined,
+    phone: queueText(raw.phone, 30) || undefined,
+    maps_url: mapsUrl,
+    business_key: businessKey || undefined,
+  };
+};
+// Railway corta cada forja a los 510 s. A los nueve minutos desde started_at la
+// ejecución ya rebasó ese presupuesto y se puede rescatar aunque su último heartbeat
+// haya ocurrido cerca del final.
+const STALE_FORGE_MS = 9 * 60 * 1000;
+const BUSINESS_PUBLISHED_EXPIRES_AT = 4_102_444_800_000; // 2100-01-01
+const isStaleForge = (item, now) => item?.status === 'processing'
+  && now - Date.parse(item.started_at || item.created) >= STALE_FORGE_MS;
 
 // KV sirve para el estado y el historial, pero no ofrece un compare-and-set para
 // cuatro réplicas de Railway. Este objeto único serializa reclamos Y mutaciones de
@@ -39,6 +84,22 @@ export class QueueClaims extends DurableObject {
     super(ctx, env);
     ctx.blockConcurrencyWhile(async () => {
       ctx.storage.sql.exec('CREATE TABLE IF NOT EXISTS claims (id TEXT PRIMARY KEY, expires_at INTEGER NOT NULL)');
+      ctx.storage.sql.exec(`CREATE TABLE IF NOT EXISTS active_jobs (
+        id TEXT PRIMARY KEY,
+        token TEXT NOT NULL,
+        expires_at INTEGER NOT NULL
+      )`);
+      ctx.storage.sql.exec(`CREATE TABLE IF NOT EXISTS business_reservations (
+        identity_key TEXT PRIMARY KEY,
+        job_id TEXT NOT NULL,
+        claim_token TEXT NOT NULL,
+        slug TEXT,
+        status TEXT NOT NULL,
+        expires_at INTEGER NOT NULL,
+        site_json TEXT,
+        updated_at INTEGER NOT NULL
+      )`);
+      ctx.storage.sql.exec('CREATE INDEX IF NOT EXISTS idx_business_reservations_job ON business_reservations(job_id, status)');
     });
   }
 
@@ -47,13 +108,14 @@ export class QueueClaims extends DurableObject {
       const row = this.ctx.storage.sql.exec('SELECT expires_at FROM claims WHERE id = ?', id).toArray()[0];
       if (row && Number(row.expires_at) > now) return { ok: false, error: 'item ya reclamado' };
       const queue = (await this.env.SITEFORGE_KV.get('queue', 'json')) || [];
-      const stale = q => q.status === 'processing'
-        && now - Date.parse(q.stage_at || q.created) > STALE_FORGE_MS;
       let item;
       const updated = queue.map(q => {
-        if (q.id !== id || (q.status !== 'pending' && !stale(q))) return q;
+        if (q.id !== id || (q.status !== 'pending' && !isStaleForge(q, now))) return q;
         const claimToken = crypto.randomUUID();
-        item = { id: q.id, input: q.input, request: q.request, created: q.created, claim_token: claimToken };
+        item = {
+          id: q.id, input: q.input, request: q.request, created: q.created, claim_token: claimToken,
+          ...(q.candidate ? { candidate: q.candidate } : {}),
+        };
         return {
           ...q, status: 'processing', stage: 'research', stage_at: new Date(now).toISOString(),
           started_at: new Date(now).toISOString(), note: 'Forja iniciada', claim_token: claimToken,
@@ -64,6 +126,10 @@ export class QueueClaims extends DurableObject {
       this.ctx.storage.sql.exec(
         'INSERT INTO claims (id, expires_at) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET expires_at = excluded.expires_at',
         id, now + ttl,
+      );
+      this.ctx.storage.sql.exec(
+        'INSERT INTO active_jobs (id, token, expires_at) VALUES (?, ?, ?) ON CONFLICT(id) DO UPDATE SET token = excluded.token, expires_at = excluded.expires_at',
+        id, item.claim_token, now + ttl,
       );
       return { ok: true, item };
     });
@@ -96,6 +162,8 @@ export class QueueClaims extends DurableObject {
       } : q);
       await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
       this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+      this.ctx.storage.sql.exec('DELETE FROM active_jobs WHERE id = ?', id);
+      this.ctx.storage.sql.exec("DELETE FROM business_reservations WHERE job_id = ? AND status = 'building'", id);
       return { ok: true };
     });
   }
@@ -111,7 +179,7 @@ export class QueueClaims extends DurableObject {
         return { ok: false, error: 'esa busqueda ya esta activa en la cola', status: 409 };
       }
       if (operationKeyValue && queue.some(q => (q.status === 'pending' || q.status === 'processing')
-        && q.request?.operation_key === operationKeyValue)) {
+        && (q.request?.operation_key || (!q.request ? directBuildKey(q.input) : null)) === operationKeyValue)) {
         return { ok: false, error: 'esa operación ya está activa en la cola', status: 409 };
       }
       queue.push(item);
@@ -140,6 +208,8 @@ export class QueueClaims extends DurableObject {
       } : q);
       await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
       this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+      this.ctx.storage.sql.exec('DELETE FROM active_jobs WHERE id = ?', id);
+      this.ctx.storage.sql.exec("DELETE FROM business_reservations WHERE job_id = ? AND status = 'building'", id);
       return { ok: true, retry_count: retries + 1 };
     });
   }
@@ -150,9 +220,9 @@ export class QueueClaims extends DurableObject {
       const item = queue.find(q => q.id === id);
       if (!item) return { ok: false, error: 'item no encontrado', status: 404 };
       if (item.status !== 'processing') return { ok: false, error: 'el item no esta processing', status: 409 };
-      const age = now - Date.parse(item.stage_at || item.started_at || item.created);
+      const age = now - Date.parse(item.started_at || item.created);
       if (!Number.isFinite(age) || age < minAge) {
-        return { ok: false, error: 'el heartbeat aun puede estar vivo', status: 409 };
+        return { ok: false, error: 'la ejecución aún está dentro de su presupuesto', status: 409 };
       }
       const stamp = new Date(now).toISOString();
       const updated = queue.map(q => q.id === id ? {
@@ -161,14 +231,172 @@ export class QueueClaims extends DurableObject {
       } : q);
       await this.env.SITEFORGE_KV.put('queue', JSON.stringify(updated));
       this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+      this.ctx.storage.sql.exec('DELETE FROM active_jobs WHERE id = ?', id);
+      this.ctx.storage.sql.exec("DELETE FROM business_reservations WHERE job_id = ? AND status = 'building'", id);
       return { ok: true, recovered: true };
     });
+  }
+
+  activeJob(id, token, now, requireFresh = true) {
+    const row = this.ctx.storage.sql.exec(
+      'SELECT token, expires_at FROM active_jobs WHERE id = ?', id,
+    ).toArray()[0];
+    return Boolean(row && row.token === token && (!requireFresh || Number(row.expires_at) > now));
+  }
+
+  async reserveBusinesses(id, token, candidates, now, ttl) {
+    let registry;
+    if (!this.activeJob(id, token, now)) {
+      // Compatibilidad durante el rollout: una fila reclamada por la versión anterior
+      // aún no tiene active_jobs. Su token en KV permite incorporarla una sola vez.
+      const [currentRegistry, queue] = await Promise.all([
+        this.env.SITEFORGE_KV.get('registry', 'json'),
+        this.env.SITEFORGE_KV.get('queue', 'json'),
+      ]);
+      const active = (queue || []).find(item => item.id === id
+        && item.status === 'processing' && item.claim_token === token);
+      if (!active) return { ok: false, error: 'item no activo', status: 409 };
+      registry = currentRegistry || [];
+      this.ctx.storage.sql.exec(
+        'INSERT INTO active_jobs (id, token, expires_at) VALUES (?, ?, ?) ON CONFLICT(id) DO UPDATE SET token = excluded.token, expires_at = excluded.expires_at',
+        id, token, now + ttl,
+      );
+    }
+    // KV se lee antes de tocar las reservas. Tras este await se vuelve a validar el
+    // claim; todas las comprobaciones/escrituras SQL posteriores quedan en el mismo
+    // segmento síncrono y se confirman atómicamente por el output gate del DO.
+    registry = registry || (await this.env.SITEFORGE_KV.get('registry', 'json')) || [];
+    if (!this.activeJob(id, token, now)) return { ok: false, error: 'item no activo', status: 409 };
+    this.ctx.storage.sql.exec(
+      "DELETE FROM business_reservations WHERE status = 'building' AND expires_at <= ?", now,
+    );
+    const reserved = [];
+    const skipped = [];
+
+    for (const original of candidates.slice(0, 20)) {
+      const candidate = { ...original };
+      const requestedKey = candidate.business_key;
+      const keys = businessIdentityKeys({ ...candidate, business_key: undefined });
+      if (!keys.length) {
+        skipped.push({ candidate, reason: 'identidad insuficiente' });
+        continue;
+      }
+      candidate.business_key = keys.includes(requestedKey) ? requestedKey : keys[0];
+      const existing = registry.find(site => businessesShareIdentity(candidate, site));
+      if (existing) {
+        const site = publicBusinessSite(existing);
+        const siteJson = JSON.stringify(site);
+        for (const key of new Set([...keys, ...businessIdentityKeys(existing)])) {
+          this.ctx.storage.sql.exec(
+            `INSERT INTO business_reservations
+              (identity_key, job_id, claim_token, slug, status, expires_at, site_json, updated_at)
+             VALUES (?, ?, ?, ?, 'published', ?, ?, ?)
+             ON CONFLICT(identity_key) DO UPDATE SET
+               slug = excluded.slug, status = 'published', expires_at = excluded.expires_at,
+               site_json = excluded.site_json, updated_at = excluded.updated_at`,
+            key, id, token, site.slug, BUSINESS_PUBLISHED_EXPIRES_AT, siteJson, now,
+          );
+        }
+        skipped.push({ candidate, reason: 'ya existe en el registro', existing: site });
+        continue;
+      }
+
+      const placeholders = keys.map(() => '?').join(',');
+      const conflicts = this.ctx.storage.sql.exec(
+        `SELECT job_id, claim_token, status, expires_at, site_json
+         FROM business_reservations WHERE identity_key IN (${placeholders})`,
+        ...keys,
+      ).toArray().filter(row => row.status === 'published'
+        || (Number(row.expires_at) > now && (row.job_id !== id || row.claim_token !== token)));
+      if (conflicts.length) {
+        const published = conflicts.find(row => row.status === 'published' && row.site_json);
+        let existingSite = null;
+        try { existingSite = published ? JSON.parse(published.site_json) : null; } catch { existingSite = null; }
+        skipped.push({
+          candidate,
+          reason: published ? 'ya fue publicado' : 'otra forja ya lo está construyendo',
+          ...(existingSite ? { existing: existingSite } : {}),
+        });
+        continue;
+      }
+
+      for (const key of keys) {
+        this.ctx.storage.sql.exec(
+          `INSERT INTO business_reservations
+            (identity_key, job_id, claim_token, slug, status, expires_at, site_json, updated_at)
+           VALUES (?, ?, ?, ?, 'building', ?, NULL, ?)
+           ON CONFLICT(identity_key) DO UPDATE SET
+             job_id = excluded.job_id, claim_token = excluded.claim_token, slug = excluded.slug,
+             status = 'building', expires_at = excluded.expires_at, site_json = NULL,
+             updated_at = excluded.updated_at`,
+          key, id, token, candidate.slug || null, now + ttl, now,
+        );
+      }
+      reserved.push(candidate);
+    }
+    return { ok: true, reserved, skipped };
+  }
+
+  completeBusiness(id, token, candidate, site, now) {
+    if (!this.activeJob(id, token, now)) return { ok: false, error: 'item no activo', status: 409 };
+    const keys = [...new Set([
+      ...businessIdentityKeys({ ...candidate, business_key: undefined }),
+      ...businessIdentityKeys({ ...site, business_key: undefined }),
+    ])];
+    if (!keys.length) return { ok: false, error: 'identidad insuficiente', status: 400 };
+    const siteJson = JSON.stringify(publicBusinessSite(site));
+    for (const key of keys) {
+      const current = this.ctx.storage.sql.exec(
+        'SELECT job_id, claim_token, status, site_json FROM business_reservations WHERE identity_key = ?', key,
+      ).toArray()[0];
+      if (current?.status === 'published' && (current.job_id !== id || current.claim_token !== token)) {
+        let existing = null;
+        try { existing = current.site_json ? JSON.parse(current.site_json) : null; } catch { existing = null; }
+        return { ok: false, error: 'identidad ya publicada', status: 409, ...(existing ? { existing } : {}) };
+      }
+    }
+    for (const key of keys) {
+      this.ctx.storage.sql.exec(
+        `INSERT INTO business_reservations
+          (identity_key, job_id, claim_token, slug, status, expires_at, site_json, updated_at)
+         VALUES (?, ?, ?, ?, 'published', ?, ?, ?)
+         ON CONFLICT(identity_key) DO UPDATE SET
+           job_id = excluded.job_id, claim_token = excluded.claim_token, slug = excluded.slug,
+           status = 'published', expires_at = excluded.expires_at,
+           site_json = excluded.site_json, updated_at = excluded.updated_at`,
+        key, id, token, site.slug || candidate.slug || null,
+        BUSINESS_PUBLISHED_EXPIRES_AT, siteJson, now,
+      );
+    }
+    return { ok: true, business_key: candidate.business_key || keys[0] };
+  }
+
+  releaseBusiness(id, token, candidate, now) {
+    if (!this.activeJob(id, token, now, false)) return { ok: false, error: 'item no activo', status: 409 };
+    const keys = businessIdentityKeys(candidate);
+    for (const key of keys) {
+      this.ctx.storage.sql.exec(
+        "DELETE FROM business_reservations WHERE identity_key = ? AND job_id = ? AND claim_token = ? AND status = 'building'",
+        key, id, token,
+      );
+    }
+    return { ok: true, released: keys.length };
   }
 
   async registryUpsert(limpio) {
     return this.ctx.blockConcurrencyWhile(async () => {
       const registry = (await this.env.SITEFORGE_KV.get('registry', 'json')) || [];
-      const idx = registry.findIndex(b => b.slug === limpio.slug);
+      const exactSlug = registry.findIndex(b => b.slug === limpio.slug);
+      const identityMatch = exactSlug >= 0 ? exactSlug : registry.findIndex(b => businessesShareIdentity(limpio, b));
+      if (identityMatch >= 0 && registry[identityMatch].slug !== limpio.slug) {
+        return {
+          ok: true,
+          duplicate: true,
+          skipped: 'la identidad ya existe con otro slug',
+          existing: publicBusinessSite(registry[identityMatch]),
+        };
+      }
+      const idx = identityMatch;
       if (idx >= 0) {
         const actual = registry[idx];
         if (actual.outreach === 'sent') return { ok: true, skipped: 'ya contactado' };
@@ -197,6 +425,8 @@ export class QueueClaims extends DurableObject {
 
   release(id) {
     this.ctx.storage.sql.exec('DELETE FROM claims WHERE id = ?', id);
+    this.ctx.storage.sql.exec('DELETE FROM active_jobs WHERE id = ?', id);
+    this.ctx.storage.sql.exec("DELETE FROM business_reservations WHERE job_id = ? AND status = 'building'", id);
     return true;
   }
 }
@@ -260,6 +490,8 @@ const agentSite = site => ({
   has_own_site: site.has_own_site === true,
   email: site.email || null,
   phone: site.phone || null,
+  maps_url: site.maps_url || null,
+  business_key: site.business_key || null,
   language: site.language || 'es',
   outreach: site.outreach || 'pending_manual',
   dm_message: site.dm_message || null,
@@ -619,9 +851,6 @@ async function executeControlPlan(env, plan, actor = 'siteforge-gpt', options = 
   return { ok: true, actor, plan: normalized, results };
 }
 
-// Solo se aceptan URLs de demo dentro de la cuenta Cloudflare del usuario
-const DEMO_URL_RE = /^https:\/\/[a-z0-9-]+\.odd-forest-9504\.workers\.dev(\/[a-z0-9-]*\/?)?$/;
-
 // Resuelve el token de Registrar aunque el nombre de la variable venga con espacios o una
 // coma al final (typo comun al pegar el nombre en el dashboard de Cloudflare).
 function cfRegistrarToken(env) {
@@ -732,8 +961,8 @@ async function reconcileStaleQueue(env) {
   const now = Date.now();
   const guard = env.QUEUE_CLAIMS.getByName('siteforge-queue');
   for (const item of queue.filter(q => q.status === 'processing')) {
-    const stageAt = Date.parse(item.stage_at || item.started_at || item.created);
-    if (!Number.isFinite(stageAt) || now - stageAt <= STALE_FORGE_MS) continue;
+    const startedAt = Date.parse(item.started_at || item.created);
+    if (!Number.isFinite(startedAt) || now - startedAt < STALE_FORGE_MS) continue;
     // El propio DO vuelve a comprobar la edad bajo exclusión mutua, evitando
     // rescatar un trabajo que acaba de enviar heartbeat mientras se leyó KV.
     await guard.recover(item.id, now, STALE_FORGE_MS);
@@ -848,7 +1077,7 @@ export default {
           ...(request ? { request } : {}),
         };
         const queued = await env.QUEUE_CLAIMS.getByName('siteforge-queue').enqueue(
-          item, request ? discoveryKey(request) : null,
+          item, request ? discoveryKey(request) : null, request ? null : directBuildKey(input),
         );
         if (!queued.ok) return json(queued, queued.status || 500);
         return json({ ok: true, job: agentItem(queued.item) });
@@ -900,7 +1129,7 @@ export default {
       const queue = (await env.SITEFORGE_KV.get('queue', 'json')) || [];
       const now = Date.now();
       const pending = queue
-        .filter(q => q.status === 'pending' || (q.status === 'processing' && now - Date.parse(q.stage_at || q.created) > STALE_FORGE_MS))
+        .filter(q => q.status === 'pending' || isStaleForge(q, now))
         .sort((a, b) => Date.parse(a.created) - Date.parse(b.created))
         .map(({ id, input, request, created }) => ({ id, input, request, created }));
       return json({ pending });
@@ -927,6 +1156,55 @@ export default {
         body.id, body.token, body.stage, body.note, Date.now(),
       );
       return json(result, result.ok ? 200 : 404);
+    }
+
+    // Reserva permanente/atómica por identidad antes de investigar o construir.
+    // El claim token actúa como capability de corta duración: ningún caller puede
+    // reservar negocios para un item que no haya reclamado primero.
+    if (url.pathname === '/api/public/queue/candidates/reserve' && req.method === 'POST') {
+      let body;
+      try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+      if (typeof body.id !== 'string' || typeof body.token !== 'string'
+        || !Array.isArray(body.candidates) || body.candidates.length < 1 || body.candidates.length > 20) {
+        return json({ error: 'id, token y entre 1 y 20 candidates requeridos' }, 400);
+      }
+      const candidates = body.candidates.map(cleanBusinessCandidate)
+        .filter(candidate => candidate.name || candidate.slug);
+      if (!candidates.length) return json({ error: 'candidates sin identidad válida' }, 400);
+      const result = await env.QUEUE_CLAIMS.getByName('siteforge-queue').reserveBusinesses(
+        body.id, body.token, candidates, Date.now(), STALE_FORGE_MS,
+      );
+      return json(result, result.ok ? 200 : (result.status || 500));
+    }
+
+    if (url.pathname === '/api/public/queue/candidates/complete' && req.method === 'POST') {
+      let body;
+      try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+      if (typeof body.id !== 'string' || typeof body.token !== 'string') {
+        return json({ error: 'id y token requeridos' }, 400);
+      }
+      const candidate = cleanBusinessCandidate(body.candidate);
+      const site = cleanBusinessCandidate(body.site);
+      site.url_demo = typeof body.site?.url_demo === 'string' && DEMO_URL_RE.test(body.site.url_demo)
+        ? body.site.url_demo : undefined;
+      if (!site.slug || !site.url_demo) return json({ error: 'site requiere slug y url_demo válidos' }, 400);
+      const result = await env.QUEUE_CLAIMS.getByName('siteforge-queue').completeBusiness(
+        body.id, body.token, candidate, site, Date.now(),
+      );
+      return json(result, result.ok ? 200 : (result.status || 500));
+    }
+
+    if (url.pathname === '/api/public/queue/candidates/release' && req.method === 'POST') {
+      let body;
+      try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+      if (typeof body.id !== 'string' || typeof body.token !== 'string') {
+        return json({ error: 'id y token requeridos' }, 400);
+      }
+      const candidate = cleanBusinessCandidate(body.candidate);
+      const result = await env.QUEUE_CLAIMS.getByName('siteforge-queue').releaseBusiness(
+        body.id, body.token, candidate, Date.now(),
+      );
+      return json(result, result.ok ? 200 : (result.status || 500));
     }
 
     if (url.pathname === '/api/public/queue/done' && req.method === 'POST') {
@@ -989,6 +1267,11 @@ export default {
         // se habia encontrado para ese negocio (el filtro de abajo descarta solo undefined).
         email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || '') ? S(body.email, 120) : undefined,
         phone: S(body.phone, 30),
+        maps_url: typeof body.maps_url === 'string' && googleMapsIdentity(body.maps_url)
+          ? S(body.maps_url, 600) : undefined,
+        business_key: typeof body.business_key === 'string'
+          ? body.business_key.toLowerCase().replace(/[^a-z0-9:|._-]/g, '').slice(0, 220) || undefined
+          : undefined,
         outreach: 'pending_manual',
         status: 'staging',
         language: ['en', 'fr'].includes(body.language) ? body.language : 'es',
@@ -997,6 +1280,8 @@ export default {
         thumb: typeof body.thumb === 'string' && body.thumb.startsWith('https://') && body.thumb.includes('.odd-forest-9504.workers.dev') ? S(body.thumb, 300) : undefined,
         fecha: S(body.fecha, 12) || new Date().toISOString().slice(0, 10),
       };
+      const derivedBusinessKeys = businessIdentityKeys({ ...limpio, business_key: undefined });
+      if (!derivedBusinessKeys.includes(limpio.business_key)) limpio.business_key = derivedBusinessKeys[0];
       const registryResult = await env.QUEUE_CLAIMS.getByName('siteforge-queue').registryUpsert(limpio);
       return json(registryResult, registryResult.ok ? 200 : (registryResult.status || 500));
     }
@@ -1123,6 +1408,7 @@ export default {
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
         let input;
         let request;
+        let candidate;
         if (body.request !== undefined) {
           const raw = body.request;
           if (!raw || typeof raw !== 'object' || raw.type !== 'discovery') {
@@ -1142,13 +1428,18 @@ export default {
         } else {
           input = queueText(body.input, 200);
           if (!input) return json({ error: 'input requerido (max 200 chars)' }, 400);
+          if (body.candidate !== undefined) {
+            candidate = cleanBusinessCandidate(body.candidate);
+            if (!candidate.name || !candidate.slug) return json({ error: 'candidate directo inválido' }, 400);
+          }
         }
         const item = {
           id: crypto.randomUUID(), input, status: 'pending', created: new Date().toISOString(),
           ...(request ? { request } : {}),
+          ...(candidate ? { candidate } : {}),
         };
         const queued = await env.QUEUE_CLAIMS.getByName('siteforge-queue').enqueue(
-          item, request ? discoveryKey(request) : null,
+          item, request ? discoveryKey(request) : null, request ? null : directBuildKey(input),
         );
         return json(queued, queued.ok ? 200 : (queued.status || 500));
       }
@@ -1165,7 +1456,7 @@ export default {
       }
 
       // Recupera un item que quedó processing por un reinicio de Railway. Se
-      // permite después del mismo margen de 10 minutos que usa el reconciliador.
+      // permite a los nueve minutos desde started_at, igual que el reconciliador.
       if (url.pathname === '/api/queue/recover' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
@@ -1416,7 +1707,44 @@ export default {
         const mappedSlug = await env.SITEFORGE_KV.get('domain:' + domain);
         if (mappedSlug === slug) return json({ ok: true, domain, slug, live_url: `https://${domain}/`, ready: true });
         const pending = await env.SITEFORGE_KV.get(DOMAIN_PENDING_PREFIX + domain, 'json');
-        if (pending && pending.slug === slug) return json({ ok: true, pending: true, domain, slug, ready: false, state: pending.state || pending.registration_state || 'in_progress' }, 202);
+        if (pending && pending.slug === slug) {
+          const lastCheck = Date.parse(pending.checked_at || '');
+          // El panel puede consultar cada pocos segundos. Se intenta finalizar en la
+          // propia petición, con un throttle corto para no martillar Registrar.
+          if (Number.isFinite(lastCheck) && Date.now() - lastCheck < 5_000) {
+            return json({
+              ok: true, pending: true, domain, slug, ready: false,
+              state: pending.state || pending.registration_state || 'in_progress',
+            }, 202);
+          }
+          try {
+            const result = await finalizePendingDomain(env, pending);
+            if (result.done) return json({ ok: true, ...result, ready: true });
+            const checkedAt = new Date().toISOString();
+            if (result.failed) {
+              await Promise.all([
+                env.SITEFORGE_KV.put('domain-failed:' + domain, JSON.stringify({ ...pending, ...result, checked_at: checkedAt })),
+                env.SITEFORGE_KV.delete(DOMAIN_PENDING_PREFIX + domain),
+              ]);
+              return json({ error: result.error || 'Cloudflare rechazó el dominio', domain, slug }, 502);
+            }
+            await env.SITEFORGE_KV.put(
+              DOMAIN_PENDING_PREFIX + domain,
+              JSON.stringify({ ...pending, ...result, checked_at: checkedAt }),
+            );
+            return json({
+              ok: true, pending: true, domain, slug, ready: false,
+              state: result.state || pending.registration_state || 'in_progress',
+            }, 202);
+          } catch (error) {
+            await env.SITEFORGE_KV.put(DOMAIN_PENDING_PREFIX + domain, JSON.stringify({
+              ...pending, error: String(error).slice(0, 220), checked_at: new Date().toISOString(),
+            }));
+            return json({ ok: true, pending: true, domain, slug, ready: false, state: 'retrying' }, 202);
+          }
+        }
+        const failed = await env.SITEFORGE_KV.get('domain-failed:' + domain, 'json');
+        if (failed && failed.slug === slug) return json({ error: failed.error || 'registro de dominio fallido', domain, slug }, 502);
         return json({ error: 'dominio no encontrado para este negocio' }, 404);
       }
 

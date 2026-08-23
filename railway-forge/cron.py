@@ -105,6 +105,21 @@ def _known() -> set[str]:
             for value in (item.get("slug"), item.get("name"), item.get("ig")):
                 if value:
                     known.add(re.sub(r"[^a-z0-9]", "", str(value).lower().lstrip("@")))
+    # El registro del panel es más reciente que processed.json: una forja publica
+    # allí antes de que cualquier snapshot histórico llegue a GitHub.
+    if PANEL_KEY:
+        try:
+            state = forge.http(
+                f"{forge.PANEL}/api/state",
+                headers={"x-sf-key": PANEL_KEY},
+                timeout=30,
+            )
+            for item in state.get("registry", []) if isinstance(state, dict) else []:
+                for value in (item.get("slug"), item.get("name"), item.get("ig")):
+                    if value:
+                        known.add(re.sub(r"[^a-z0-9]", "", str(value).lower().lstrip("@")))
+        except Exception as exc:
+            print(f"  no se pudo leer el registro del panel: {exc}", flush=True)
     queue = forge.panel("/api/public/queue") or {}
     for item in queue.get("pending", []):
         value = item.get("input")
@@ -120,14 +135,25 @@ def _known() -> set[str]:
     return known
 
 
-def _enqueue(name: str, location: str) -> dict | None:
+def _enqueue(candidate: dict, location: str) -> dict | None:
+    name = str(candidate.get("name") or "").strip()
     if not PANEL_KEY:
         print("  falta SITEFORGE_UI_KEY: no se puede encolar un candidato", flush=True)
         return None
     try:
         return forge.http(
             f"{forge.PANEL}/api/queue",
-            {"input": f"{name} ({location})"},
+            {
+                "input": f"{name} ({location})",
+                "candidate": {
+                    "name": name,
+                    "slug": candidate.get("slug"),
+                    "location": location,
+                    "niche": candidate.get("niche"),
+                    "phone": candidate.get("phone"),
+                    "maps_url": candidate.get("maps_url"),
+                },
+            },
             headers={"x-sf-key": PANEL_KEY},
             timeout=45,
         )
@@ -192,7 +218,7 @@ def main() -> int:
     print(f"candidatos nuevos: {len(selected)} de {len(candidates)}", flush=True)
     queued: list[dict] = []
     for candidate in selected:
-        result = _enqueue(candidate["name"], location)
+        result = _enqueue(candidate, location)
         if result and result.get("item"):
             queued.append(result["item"])
             print(f"  encolado: {candidate['name']} ({candidate.get('score', 0)})", flush=True)

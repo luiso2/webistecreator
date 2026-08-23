@@ -10,7 +10,8 @@ flowchart TD
   P --> E[Execution engine]
   E --> S[SiteSpec v1 en KV]
   E --> Q[QueueClaims + cola de forja]
-  Q --> F[Railway deterministic forge]
+  Q --> I[Business identity reservations]
+  I --> F[Railway deterministic forge]
   F --> G[derive.py + gate.py]
   G --> C[GitHub atomic commit]
   C --> W[Cloudflare shared demo Worker]
@@ -38,3 +39,18 @@ Los endpoints `/api/agent/build`, `/api/agent/jobs/*` y `/api/agent/sites` se ma
 - `control:idempotency:<request_id>`: resultado durante 24 horas para evitar dobles operaciones.
 
 KV es suficiente para esta fase de propietario único. La migración futura a D1/R2/Queues puede conservar estas mismas interfaces.
+
+## Dedupe y SLA de construcción
+
+`QueueClaims` conserva los claims activos y las reservas de identidad en SQLite. Cada
+candidato genera claves por place id de Google Maps, teléfono normalizado, nombre+ciudad y
+slug. Reservar, completar y liberar pasan por el mismo Durable Object; por eso cuatro
+réplicas de Railway no pueden publicar dos veces el mismo negocio. El registro KV sigue
+siendo la fuente visible para el panel y sirve para sembrar la deduplicación permanente de
+los sitios históricos.
+
+La forja dispone de 510 segundos. Reutiliza la URL exacta de Maps, consulta nichos genéricos
+en pares, publica blobs de GitHub en paralelo y deja un margen de 90 segundos antes del SLA
+de diez minutos. El reconciliador se ejecuta cada minuto y rescata cualquier ejecución a los
+nueve minutos desde `started_at`, sin prolongar el SLA por heartbeats tardíos. El estado de un dominio pendiente también intenta finalizarse cuando
+la UI consulta `/api/domain/status`, además del Cron de un minuto.

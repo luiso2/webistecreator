@@ -25,6 +25,69 @@ export const normalizeSlug = value => {
   return SAFE_SLUG.test(slug) ? slug : null;
 };
 
+// Identidad determinista de negocios. La forja usa varias señales porque el nombre
+// visible y la URL de Maps pueden cambiar, mientras el teléfono o el place id siguen
+// siendo estables. Estas claves nunca contienen copy libre ni URLs completas.
+export const normalizeBusinessText = value => SAFE_TEXT(value)
+  .normalize('NFKD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, ' ')
+  .trim()
+  .slice(0, 120);
+
+export const googleMapsIdentity = value => {
+  if (typeof value !== 'string' || !value.trim()) return null;
+  try {
+    const url = new URL(value);
+    const host = url.hostname.toLowerCase().replace(/^www\./, '');
+    if (!(host === 'google.com' || host.endsWith('.google.com')) || !url.pathname.startsWith('/maps/')) {
+      return null;
+    }
+    const cid = url.searchParams.get('cid');
+    if (cid && /^[0-9]{4,30}$/.test(cid)) return `cid:${cid}`;
+    const placeId = decodeURIComponent(`${url.pathname}${url.search}`)
+      .match(/!1s(0x[a-f0-9]+:0x[a-f0-9]+)/i)?.[1];
+    if (placeId) return `place:${placeId.toLowerCase()}`;
+    const place = decodeURIComponent(url.pathname).match(/^\/maps\/place\/([^/]{2,160})/i)?.[1];
+    const normalizedPlace = normalizeBusinessText(place || '');
+    return normalizedPlace ? `place-name:${normalizedPlace}` : null;
+  } catch {
+    return null;
+  }
+};
+
+export const businessIdentityKeys = business => {
+  if (!business || typeof business !== 'object' || Array.isArray(business)) return [];
+  const keys = new Set();
+  const explicit = typeof business.business_key === 'string'
+    ? business.business_key.toLowerCase().replace(/[^a-z0-9:|._-]/g, '').slice(0, 220)
+    : '';
+  if (explicit) keys.add(/^(?:maps|phone|name-city|slug|key):/.test(explicit) ? explicit : `key:${explicit}`);
+  const maps = googleMapsIdentity(business.maps_url);
+  if (maps) keys.add(`maps:${maps}`);
+  const phone = String(business.phone || '').replace(/\D/g, '');
+  if (phone.length >= 7) {
+    keys.add(`phone:${phone.slice(-15)}`);
+    if (phone.length > 10) keys.add(`phone:${phone.slice(-10)}`);
+  }
+  const name = normalizeBusinessText(business.name || business.slug);
+  const city = normalizeBusinessText(business.city || business.location);
+  if (name && city) keys.add(`name-city:${name}|${city}`);
+  const slug = normalizeSlug(String(business.slug || '').slice(0, 40));
+  if (slug) keys.add(`slug:${slug}`);
+  // Los slugs de la forja se derivan del nombre y son globales. Generarlo aquí
+  // también permite detectar registros antiguos que aún no guardan business_key.
+  const derivedSlug = name.replace(/\s+/g, '-').slice(0, 40).replace(/^-+|-+$/g, '');
+  if (derivedSlug && SAFE_SLUG.test(derivedSlug)) keys.add(`slug:${derivedSlug}`);
+  return [...keys].slice(0, 8);
+};
+
+export const businessesShareIdentity = (left, right) => {
+  const rightKeys = new Set(businessIdentityKeys(right));
+  return businessIdentityKeys(left).some(key => rightKeys.has(key));
+};
+
 export const normalizeRef = value => {
   if (typeof value === 'string') {
     const text = SAFE_TEXT(value).slice(0, 120);

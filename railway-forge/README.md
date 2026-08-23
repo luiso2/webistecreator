@@ -1,7 +1,7 @@
 # forja-railway
 
 Worker que construye los sites automáticamente desde Railway, consumiendo la cola del panel.
-Sondea cada 10s: un item encolado a mano se toma en segundos, no en slots de ~7 min. Cada forja tiene un límite duro de 9 min para nunca dejar una fila atascada.
+Sondea cada 10s: un item encolado a mano se toma en segundos, no en slots de ~7 min. Cada forja tiene un límite duro de 510s (8.5 min) para cerrarse antes del SLA de diez minutos.
 
 También incluye `cron.py`, un job corto para Railway que descubre negocios en Google
 Maps, descarta fichas con website propio, evita duplicados y encola candidatos con
@@ -17,16 +17,26 @@ El worker procesa tanto items con `@handle` como items `nombre (ciudad)`. Las b�
 manuales de nicho + ciudad (`request.type=discovery`) tienen prioridad sobre los candidatos
 del Cron: una sola reclamación descubre y construye hasta cinco negocios sin website propio,
 sin quedarse esperando a que el Cron vuelva a ejecutarse. El Cron sigue descubriendo en
-segundo plano y el claim atómico decide qué instancia construye cada item.
+segundo plano y el claim atómico decide qué instancia construye cada item. Después del
+descubrimiento, el Durable Object reserva cada negocio por place id de Maps, teléfono,
+nombre+ciudad y slug. Una segunda réplica lo omite mientras está en construcción y un
+negocio ya publicado devuelve su demo existente sin volver a investigarlo.
 
-Los candidatos de una misma búsqueda manual se construyen en paralelo (por defecto, dos
+Los candidatos de una misma búsqueda manual se construyen en paralelo (por defecto, tres
 workers por item), así que una solicitud de varios demos no queda bloqueada por una cadena
 serial de investigaciones y despliegues. Se puede ajustar con `DISCOVERY_BUILD_WORKERS`
 (1–3) si Railway dispone de más o menos CPU.
 
 Si la solicitud llega sin un nicho útil (por ejemplo, "negocio local"), la forja prueba
 categorías concretas como handyman, plumber, electrician y auto repair en la ciudad pedida.
-El filtro de website propio, rating, reseñas y fotos se mantiene en cada consulta.
+Consulta dos categorías a la vez y como máximo cuatro, de modo que discovery no consume
+todo el presupuesto. El filtro de website propio, rating, reseñas y fotos se mantiene en
+cada consulta. Booksy, Facebook o Square siguen siendo perfiles; Wix, Squarespace,
+WordPress, Webflow, GoDaddy Sites y Canva sí cuentan como websites existentes.
+
+El segundo research abre directamente la URL exacta de Maps encontrada en discovery, sin
+repetir una búsqueda ambigua por nombre. Al publicar, los blobs de GitHub se crean en
+paralelo y después se conservan el árbol y commit atómicos de siempre.
 
 El primer mensaje se genera con datos verificables (zona, fotos públicas, servicios y enlace
 del demo), explica el beneficio para el cliente y termina en una pregunta de bajo compromiso.

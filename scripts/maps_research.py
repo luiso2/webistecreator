@@ -19,6 +19,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
+from maps_common import is_own_website, safe_google_maps_url
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 CHROME = (os.environ.get("CHROME_PATH") or shutil.which("chromium") or
@@ -34,17 +35,6 @@ ARGS = [
 if PROXY:
     ARGS.append(f"--proxy-server={PROXY}")
 
-PROFILE_HOSTS = {
-    "facebook.com", "instagram.com", "booksy.com", "glossgenius.com", "vagaro.com",
-    "fresha.com", "styleseat.com", "treatwell.com", "mindbodyonline.com", "setmore.com",
-    "square.site", "squareup.com", "yelp.com", "google.com", "googleusercontent.com",
-    "linktr.ee", "beacons.ai", "whatsapp.com", "wa.me", "tripadvisor.com",
-    "yellowpages.com", "mapquest.com", "angi.com", "homeadvisor.com", "thumbtack.com",
-    "houzz.com", "porch.com", "nextdoor.com", "wixsite.com", "wix.com", "squarespace.com",
-    "weebly.com", "wordpress.com", "webflow.io", "godaddysites.com", "my.canva.site",
-}
-
-
 def slugify(text: str) -> str:
     text = text.lower().replace("&", " and ")
     text = re.sub(r"[^a-z0-9]+", "-", text).strip("-")
@@ -57,20 +47,7 @@ def clean_label(value: str | None, prefix: str) -> str | None:
     return re.sub(rf"^{re.escape(prefix)}\s*", "", value, flags=re.I).strip()
 
 
-def is_own_website(href: str | None) -> bool:
-    if not href:
-        return False
-    try:
-        parsed = urllib.parse.urlparse(href if "://" in href else f"https://{href}")
-        host = (parsed.hostname or "").lower().removeprefix("www.")
-    except ValueError:
-        return True
-    if not host:
-        return True
-    return not any(host == profile or host.endswith(f".{profile}") for profile in PROFILE_HOSTS)
-
-
-def research(query: str, out_slug: str) -> dict:
+def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
     out = {"query": query, "name": None, "rating": None, "reviews": None,
            "address": None, "phone": None, "hours": [], "website": None,
            "photos": [], "reviewSamples": [], "maps_url": None}
@@ -80,22 +57,31 @@ def research(query: str, out_slug: str) -> dict:
             launch_args["executable_path"] = CHROME
         browser = pw.chromium.launch(**launch_args)
         page = browser.new_page(user_agent=UA, viewport={"width": 1400, "height": 1000})
-        page.goto("https://www.google.com/maps/search/" + urllib.parse.quote(query),
-                  wait_until="domcontentloaded", timeout=35000)
-        page.wait_for_timeout(2200)
-        first = page.locator("a.hfpxzc").first
-        if first.count():
-            try:
-                first.scroll_into_view_if_needed(timeout=3000)
-                first.click(timeout=8000)
-            except Exception:
-                # Maps can keep a hidden result in the DOM while the feed settles.
-                # Navigate to its href rather than aborting the whole research.
-                href = first.get_attribute("href")
-                if href:
-                    page.goto(urllib.parse.urljoin("https://www.google.com", href),
-                              wait_until="domcontentloaded", timeout=35000)
+        exact_url = safe_google_maps_url(maps_url)
+        if maps_url and not exact_url:
+            raise ValueError("maps_url no pertenece a Google Maps")
+        if exact_url:
+            # El descubridor ya abrió y verificó esta ficha. Reutilizar la URL exacta
+            # evita otra búsqueda por nombre, ambigüedad y dos esperas de interfaz.
+            page.goto(exact_url, wait_until="domcontentloaded", timeout=35000)
+            page.wait_for_timeout(1200)
+        else:
+            page.goto("https://www.google.com/maps/search/" + urllib.parse.quote(query),
+                      wait_until="domcontentloaded", timeout=35000)
             page.wait_for_timeout(2200)
+            first = page.locator("a.hfpxzc").first
+            if first.count():
+                try:
+                    first.scroll_into_view_if_needed(timeout=3000)
+                    first.click(timeout=8000)
+                except Exception:
+                    # Maps can keep a hidden result in the DOM while the feed settles.
+                    # Navigate to its href rather than aborting the whole research.
+                    href = first.get_attribute("href")
+                    if href:
+                        page.goto(urllib.parse.urljoin("https://www.google.com", href),
+                                  wait_until="domcontentloaded", timeout=35000)
+                page.wait_for_timeout(2200)
         out["maps_url"] = page.url
         title = page.locator("h1").first.text_content() if page.locator("h1").count() else None
         # Google Maps puede dejar "Results" como h1 cuando la ficha se abrió
@@ -216,7 +202,12 @@ def research(query: str, out_slug: str) -> dict:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        raise SystemExit("Uso: maps_research.py '<nombre, ciudad>' <slug>")
-    result = research(sys.argv[1], sys.argv[2])
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("query")
+    parser.add_argument("slug")
+    parser.add_argument("--maps-url")
+    args = parser.parse_args()
+    result = research(args.query, args.slug, maps_url=args.maps_url)
     print(json.dumps({k: result.get(k) for k in ("name", "rating", "reviews", "address", "phone", "website", "maps_url", "fotos", "status")}, ensure_ascii=False, indent=1))

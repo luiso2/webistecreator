@@ -19,6 +19,7 @@ from pathlib import Path
 
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 from playwright.sync_api import sync_playwright
+from maps_common import is_own_website
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 CHROME = (
@@ -37,20 +38,6 @@ ARGS = [
 if os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy"):
     ARGS.append(f"--proxy-server={os.environ.get('HTTPS_PROXY') or os.environ.get('https_proxy')}")
 
-# Estos perfiles sí pueden aparecer enlazados como "Website" en Google Maps,
-# pero no son un sitio propio del negocio. Dejarlos pasar mantiene el filtro
-# alineado con el panel: Booksy/Facebook/Instagram/WhatsApp no cuentan como web.
-PROFILE_HOSTS = {
-    "facebook.com", "instagram.com", "booksy.com", "glossgenius.com", "vagaro.com",
-    "fresha.com", "styleseat.com", "treatwell.com", "mindbodyonline.com", "setmore.com",
-    "square.site", "squareup.com", "yelp.com", "google.com", "googleusercontent.com",
-    "linktr.ee", "beacons.ai", "whatsapp.com", "wa.me", "tripadvisor.com",
-    "yellowpages.com", "mapquest.com", "angi.com", "homeadvisor.com", "thumbtack.com",
-    "houzz.com", "porch.com", "nextdoor.com", "wixsite.com", "wix.com", "squarespace.com",
-    "weebly.com", "wordpress.com", "webflow.io", "godaddysites.com", "my.canva.site",
-}
-
-
 def slugify(value: str) -> str:
     value = value.lower().replace("&", " and ")
     return re.sub(r"[^a-z0-9]+", "-", value).strip("-")[:64]
@@ -61,20 +48,6 @@ def _number(value: str | None) -> int | None:
         return None
     digits = re.sub(r"\D", "", value)
     return int(digits) if digits else None
-
-
-def is_own_website(href: str | None) -> bool:
-    """True only for a normal domain owned by the business, not a profile page."""
-    if not href:
-        return False
-    try:
-        parsed = urllib.parse.urlparse(href if "://" in href else f"https://{href}")
-        host = (parsed.hostname or "").lower().removeprefix("www.")
-    except ValueError:
-        return True
-    if not host:
-        return True
-    return not any(host == profile or host.endswith(f".{profile}") for profile in PROFILE_HOSTS)
 
 
 def _rating_reviews(page) -> tuple[float | None, int | None]:

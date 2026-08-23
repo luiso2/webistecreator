@@ -1,7 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  businessIdentityKeys,
+  businessesShareIdentity,
   deepMerge,
+  googleMapsIdentity,
   normalizeRef,
   permissionForPlan,
   sanitizePatch,
@@ -9,6 +12,27 @@ import {
   validatePlan,
   validateSiteSpec,
 } from './control-plane.mjs';
+
+test('crea identidad estable con Maps, teléfono y nombre normalizado', () => {
+  const business = {
+    name: 'Café Río & Spa',
+    city: 'Miami, Florida',
+    phone: '+1 (305) 555-0100',
+    maps_url: 'https://www.google.com/maps/place/Cafe+Rio/data=!4m2!3m1!1s0xabc:0xdef',
+  };
+  const keys = businessIdentityKeys(business);
+  assert.ok(keys.includes('maps:place:0xabc:0xdef'));
+  assert.ok(keys.includes('phone:13055550100'));
+  assert.ok(keys.includes('name-city:cafe rio spa|miami florida'));
+  assert.equal(googleMapsIdentity('https://evil.example/maps/place/Cafe'), null);
+});
+
+test('detecta un negocio existente aunque cambie el slug', () => {
+  assert.equal(businessesShareIdentity(
+    { name: 'Monique Austin Studio', city: 'Miami', phone: '305-555-0199' },
+    { slug: 'monique-austin', name: 'Monique A. Studio', city: 'Hialeah', phone: '+1 305 555 0199' },
+  ), true);
+});
 
 test('normaliza referencias por slug y búsqueda', () => {
   assert.deepEqual(normalizeRef({ slug: 'miami-handyman', city: 'Miami' }), {

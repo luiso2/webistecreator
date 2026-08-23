@@ -51,9 +51,9 @@ except (TypeError, ValueError):
 # Una forja nunca puede dejar una fila viva indefinidamente. Se reserva margen para
 # cerrar el item en el panel antes de los diez minutos que ve el usuario.
 try:
-    FORGE_DEADLINE_SECONDS = max(300, min(int(os.environ.get('FORGE_DEADLINE_SECONDS', '540')), 570))
+    FORGE_DEADLINE_SECONDS = max(300, min(int(os.environ.get('FORGE_DEADLINE_SECONDS', '510')), 540))
 except (TypeError, ValueError):
-    FORGE_DEADLINE_SECONDS = 540
+    FORGE_DEADLINE_SECONDS = 510
 FORBID = 'Pure Artistry,pure.artistrysk,Booksy,booksy,121705,silk press,locs,K-Tip,W Grant,Chianita,Hair Studio'
 
 # "negocio local" llega con frecuencia cuando el usuario pide solo una ciudad.
@@ -97,7 +97,7 @@ def timeout_for(deadline, cap):
         return cap
     remaining = deadline - time.monotonic()
     if remaining <= 0:
-        raise ForgeDeadlineExceeded(f'La forja superó el límite de {FORGE_DEADLINE_SECONDS // 60} minutos.')
+        raise ForgeDeadlineExceeded(f'La forja superó el límite de {FORGE_DEADLINE_SECONDS} segundos.')
     return max(1, min(cap, int(remaining)))
 
 
@@ -107,7 +107,7 @@ def sleep_for(seconds, deadline=None):
         return
     remaining = deadline - time.monotonic()
     if remaining <= 0:
-        raise ForgeDeadlineExceeded(f'La forja superó el límite de {FORGE_DEADLINE_SECONDS // 60} minutos.')
+        raise ForgeDeadlineExceeded(f'La forja superó el límite de {FORGE_DEADLINE_SECONDS} segundos.')
     time.sleep(min(seconds, remaining))
 
 
@@ -212,6 +212,47 @@ def reclamar(item):
     return None
 
 
+def reservar_candidatos(item_id, token, candidates):
+    """Reserva identidades bajo el claim activo; si el panel falla, no construye a ciegas."""
+    result = panel('/api/public/queue/candidates/reserve', {
+        'id': item_id,
+        'token': token,
+        'candidates': candidates,
+    }, timeout=25)
+    if not isinstance(result, dict) or not result.get('ok'):
+        return [], [], 'No se pudo reservar la identidad del negocio; se evita un build duplicado.'
+    return result.get('reserved') or [], result.get('skipped') or [], None
+
+
+def liberar_candidato(item_id, token, candidate):
+    if item_id and token and candidate:
+        panel('/api/public/queue/candidates/release', {
+            'id': item_id, 'token': token, 'candidate': candidate,
+        })
+
+
+def completar_candidato(item_id, token, candidate, site):
+    if not item_id or not token or not candidate:
+        return {'ok': False, 'error': 'reserva incompleta'}
+    return panel('/api/public/queue/candidates/complete', {
+        'id': item_id, 'token': token, 'candidate': candidate, 'site': site,
+    }) or {'ok': False, 'error': 'el panel no confirmó la identidad publicada'}
+
+
+def resultado_existente(skipped):
+    """Extrae un demo ya publicado de una respuesta de deduplicación."""
+    for entry in skipped or []:
+        existing = entry.get('existing') if isinstance(entry, dict) else None
+        if isinstance(existing, dict) and existing.get('slug') and existing.get('url_demo'):
+            return {
+                'slug': existing['slug'],
+                'name': existing.get('name') or existing['slug'],
+                'url_demo': existing['url_demo'],
+                'reused': True,
+            }
+    return None
+
+
 def tomar_siguiente(candidatos):
     """Reintenta dentro de la misma lectura si otra réplica ganó el primer claim."""
     for candidato in candidatos:
@@ -262,8 +303,8 @@ def subir_sitio_github(slug, archivos, intento=0, deadline=None):
         ref = http(f'{base}/git/ref/heads/main', headers=hdr, timeout=timeout_for(deadline, 30))
         head_sha = ref['object']['sha']
         head_commit = http(f'{base}/git/commits/{head_sha}', headers=hdr, timeout=timeout_for(deadline, 30))
-        entries = []
-        for local, repo_path in archivos:
+        def crear_blob(par):
+            local, repo_path = par
             timeout_for(deadline, 30)
             with open(local, 'rb') as f:
                 encoded = base64.b64encode(f.read()).decode()
@@ -271,12 +312,17 @@ def subir_sitio_github(slug, archivos, intento=0, deadline=None):
                 'content': encoded,
                 'encoding': 'base64',
             }, headers=hdr, timeout=timeout_for(deadline, 30))
-            entries.append({
+            return {
                 'path': repo_path,
                 'mode': '100644',
                 'type': 'blob',
                 'sha': blob['sha'],
-            })
+            }
+
+        # Los blobs no dependen entre sí. GitHub sigue recibiendo un solo árbol y
+        # un solo commit, pero las fotos dejan de sumar una latencia de red cada una.
+        with ThreadPoolExecutor(max_workers=min(4, max(1, len(archivos)))) as pool:
+            entries = list(pool.map(crear_blob, archivos))
         tree = http(f'{base}/git/trees', {
             'base_tree': head_commit['tree']['sha'],
             'tree': entries,
@@ -335,12 +381,44 @@ def procesar(item, deadline=None):
     iid, entrada = item['id'], item['input'].strip()
     token = item.get('claim_token')
     report = lambda stage, note=None: progreso(iid, stage, note, token=token)
-    finish = lambda **result: terminar(iid, token=token, **result)
+    reserved_candidate = None
+
+    def finish(**result):
+        nonlocal reserved_candidate
+        if result.get('failed'):
+            liberar_candidato(iid, token, reserved_candidate)
+        elif reserved_candidate:
+            completed = completar_candidato(iid, token, reserved_candidate, result)
+            if not completed.get('ok'):
+                conflict = completed.get('existing')
+                if isinstance(conflict, dict) and conflict.get('slug') and conflict.get('url_demo'):
+                    result = {
+                        'slug': conflict['slug'],
+                        'name': conflict.get('name') or conflict['slug'],
+                        'url_demo': conflict['url_demo'],
+                        'reused': True,
+                    }
+                else:
+                    result = {'failed': True, 'motivo': f'No se confirmó la identidad publicada: {completed.get("error", "error desconocido")}'[:300]}
+        terminar(iid, token=token, **result)
+
     print(f'== {entrada}', flush=True)
     report('research', 'forja-railway')
 
     handle = entrada.lstrip('@')
     slug = re.sub(r'[^a-z0-9-]', '', handle.lower().replace('.', '-').replace('_', '-'))[:40]
+    reserved, skipped, reserve_error = reservar_candidatos(iid, token, [{
+        'name': handle, 'slug': slug, 'location': 'Instagram', 'niche': 'Instagram',
+    }])
+    existing = resultado_existente(skipped)
+    if existing:
+        terminar(iid, token=token, **existing)
+        print(f'  REUTILIZADO {existing["url_demo"]}', flush=True)
+        return
+    if reserve_error or not reserved:
+        finish(failed=True, motivo=reserve_error or 'No se construyó para evitar un negocio duplicado.')
+        return
+    reserved_candidate = reserved[0]
 
     r = subprocess.run([sys.executable, 'scripts/research_ig.py', handle, slug],
                        capture_output=True, text=True, timeout=timeout_for(deadline, 300))
@@ -406,13 +484,22 @@ def procesar(item, deadline=None):
         finish(failed=True, motivo='El demo no respondio 200 tras el deploy (no se registra)')
         return
 
-    panel('/api/public/registry-upsert', {
+    registry_result = panel('/api/public/registry-upsert', {
         'slug': slug, 'name': content.get('brand', {}).get('name', slug),
         'city': (hechos.get('ciudad') or ''), 'ig': f'@{handle}', 'url_demo': url,
         'phone': hechos.get('phone'), 'language': lang, 'has_own_site': bool(hechos.get('has_own_site')),
+        'business_key': reserved_candidate.get('business_key'),
         'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 2,
     })
-    finish(slug=slug, name=content.get('brand', {}).get('name', slug), url_demo=url)
+    if not isinstance(registry_result, dict) or not registry_result.get('ok'):
+        finish(failed=True, motivo='El demo publicó, pero el registro del panel no confirmó el negocio.')
+        return
+    duplicate = registry_result.get('existing') if registry_result.get('duplicate') else None
+    if isinstance(duplicate, dict) and duplicate.get('slug') and duplicate.get('url_demo'):
+        finish(slug=duplicate['slug'], name=duplicate.get('name') or duplicate['slug'], url_demo=duplicate['url_demo'])
+    else:
+        finish(slug=slug, name=content.get('brand', {}).get('name', slug), url_demo=url,
+               business_key=reserved_candidate.get('business_key'))
     print(f'  LISTO {url}', flush=True)
 
 
@@ -551,11 +638,15 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     iid, entrada = item['id'], item['input'].strip()
     token = item.get('claim_token')
     report_id = progress_id or iid
+    candidate = None
 
     def report(stage, note=None):
         progreso(report_id, stage, note, token=token)
 
     def fail(motivo):
+        if item.get('business_reserved') and candidate:
+            liberar_candidato(report_id, token, candidate)
+            item['business_reserved'] = False
         if cerrar:
             terminar(iid, token=token, failed=True, motivo=motivo)
         return {'failed': True, 'motivo': motivo}
@@ -568,6 +659,29 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     # El panel acepta slugs de hasta 40 caracteres; respetar el mismo límite aquí
     # evita terminar todo el build y dejar el item atascado al llamar a /done.
     slug = re.sub(r'[^a-z0-9-]', '', nombre.lower().replace('&', ' and ').replace('.', '-').replace('_', '-').replace(' ', '-'))[:40].strip('-')
+    candidate = {
+        **(item.get('candidate') if isinstance(item.get('candidate'), dict) else {}),
+        'name': nombre,
+        'slug': slug,
+        'location': (item.get('candidate') or {}).get('location') if isinstance(item.get('candidate'), dict) else ciudad,
+        'city': ciudad,
+        'niche': item.get('nicho'),
+    }
+    candidate['location'] = candidate.get('location') or ciudad
+    if not item.get('business_reserved'):
+        reserved, skipped, reserve_error = reservar_candidatos(report_id, token, [candidate])
+        existing = resultado_existente(skipped)
+        if existing:
+            if cerrar:
+                terminar(iid, token=token, **existing)
+            print(f'  REUTILIZADO {existing["url_demo"]}', flush=True)
+            return existing
+        if reserve_error or not reserved:
+            reason = reserve_error or ((skipped[0].get('reason') if skipped else None) or 'identidad no disponible')
+            return fail(f'No se construyó para evitar duplicados: {reason}')
+        candidate = reserved[0]
+        item['candidate'] = candidate
+        item['business_reserved'] = True
     ruta_data = f'output/{slug}/data.json'
     # Nunca reutilizar datos/fotos de una corrida anterior con el mismo slug.
     try:
@@ -583,7 +697,10 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
                 pass
     r = None
     for attempt in range(2):
-        r = subprocess.run([sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug],
+        research_cmd = [sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug]
+        if candidate.get('maps_url'):
+            research_cmd += ['--maps-url', candidate['maps_url']]
+        r = subprocess.run(research_cmd,
                            capture_output=True, text=True, timeout=timeout_for(deadline, 150))
         if os.path.exists(ruta_data):
             break
@@ -602,6 +719,8 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     hechos['ciudad'] = ciudad
     hechos['nicho'] = item.get('nicho') or hechos.get('nicho') or nombre
     hechos['idioma_principal'] = 'en'
+    hechos['maps_url'] = hechos.get('maps_url') or candidate.get('maps_url')
+    hechos['business_key'] = candidate.get('business_key')
     json.dump(hechos, open(ruta_data, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     fotos = hechos.get('fotos') or []
     if len(fotos) < 5:
@@ -638,13 +757,33 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     report('commit')
     dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
                         'idioma_principal': 'en'}, url, item.get('nicho') or hechos.get('nicho'))
-    panel('/api/public/registry-upsert', {
+    registry_result = panel('/api/public/registry-upsert', {
         'slug': slug, 'name': hechos.get('name') or nombre, 'city': ciudad,
         'ig': 'Google Maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
         'email': None, 'phone': hechos.get('phone'), 'language': 'en', 'dm_message': dm[:900], 'message_version': 2,
+        'maps_url': hechos.get('maps_url'), 'business_key': candidate.get('business_key'),
         'thumb': f'{url}assets/raw/{fotos_usadas[0]}',
     })
-    result = {'slug': slug, 'name': hechos.get('name') or nombre, 'url_demo': url, 'dm': dm}
+    if not isinstance(registry_result, dict) or not registry_result.get('ok'):
+        return fail('El demo publicó, pero el registro del panel no confirmó el negocio.')
+    existing = registry_result.get('existing') if registry_result.get('duplicate') else None
+    site = existing if isinstance(existing, dict) and existing.get('url_demo') else {
+        'slug': slug,
+        'name': hechos.get('name') or nombre,
+        'city': ciudad,
+        'phone': hechos.get('phone'),
+        'url_demo': url,
+        'maps_url': hechos.get('maps_url'),
+        'business_key': candidate.get('business_key'),
+    }
+    completed_identity = completar_candidato(report_id, token, candidate, site)
+    if not completed_identity.get('ok'):
+        conflict = completed_identity.get('existing')
+        if isinstance(conflict, dict) and conflict.get('slug') and conflict.get('url_demo'):
+            site = conflict
+        else:
+            return fail(f'El demo publicó, pero no se confirmó su identidad: {completed_identity.get("error", "error desconocido")}')
+    result = {'slug': site['slug'], 'name': site.get('name') or nombre, 'url_demo': site['url_demo'], 'dm': dm}
     if cerrar:
         terminar(iid, token=token, **result)
     print(f'  LISTO {url}', flush=True)
@@ -677,21 +816,24 @@ def procesar_descubrimiento(item, deadline=None):
     # nicho vacío/genérico, probamos categorías locales concretas hasta reunir
     # suficientes candidatos; nunca convertimos un negocio con dominio propio.
     search_niches = discovery_niches(niche)
-    needed_candidates = max(count * 2, count)
-    for search_niche in search_niches:
-        progreso(iid, 'research', f'Google Maps: {search_niche} en {location}', token=token)
+    generic_search = len(search_niches) > 1
+    # Dos categorías genéricas se consultan juntas y, como máximo, se prueban cuatro.
+    # Esto acota discovery a ~150 s incluso cuando Maps no devuelve nada útil, dejando
+    # más de cinco minutos para construir, validar y desplegar.
+    search_niches = search_niches[:4] if generic_search else search_niches
+    needed_candidates = max(count * 6, 12) if generic_search else max(count * 2, count)
+
+    def run_discovery(search_niche):
         try:
             discovery = subprocess.run(
                 [sys.executable, 'scripts/maps_discover.py', '--niche', search_niche, '--location', location,
                  '--limit', str(max(count * 4, 8))],
-                capture_output=True, text=True, timeout=timeout_for(deadline, 90),
+                capture_output=True, text=True, timeout=timeout_for(deadline, 75),
             )
         except ForgeDeadlineExceeded as exc:
-            discovery_errors.append(str(exc))
-            break
+            return search_niche, [], str(exc)
         except Exception as exc:
-            discovery_errors.append(str(exc)[:120])
-            continue
+            return search_niche, [], str(exc)[:120]
 
         raw = (discovery.stdout or '').strip()
         try:
@@ -701,25 +843,49 @@ def procesar_descubrimiento(item, deadline=None):
         found = payload.get('results') if isinstance(payload, dict) else None
         if not isinstance(found, list):
             found = []
+        error = payload.get('error') if isinstance(payload, dict) else None
+        return search_niche, found, str(error or '')[:120]
+
+    query_workers = 2 if generic_search else 1
+    for offset in range(0, len(search_niches), query_workers):
+        batch_niches = search_niches[offset:offset + query_workers]
+        progreso(iid, 'research', f'Google Maps: {" + ".join(batch_niches)} en {location}', token=token)
+        with ThreadPoolExecutor(max_workers=len(batch_niches)) as pool:
+            discoveries = list(pool.map(run_discovery, batch_niches))
+        for search_niche, found, discovery_error in discoveries:
+            if discovery_error:
+                discovery_errors.append(discovery_error)
         # Defensa en profundidad: aunque el descubridor ya filtre perfiles, no se procesa
         # un candidato si otra versión del script devuelve un website propio.
-        for candidate in found:
-            if not isinstance(candidate, dict) or not candidate.get('name'):
-                continue
-            if candidate.get('website') or candidate.get('has_own_site'):
-                continue
-            key = re.sub(r'[^a-z0-9]', '', str(candidate.get('name')).lower())
-            if not key or key in seen_candidates:
-                continue
-            seen_candidates.add(key)
-            candidate = {**candidate, 'niche': candidate.get('niche') or search_niche}
-            candidates.append(candidate)
+            for candidate in found:
+                if not isinstance(candidate, dict) or not candidate.get('name'):
+                    continue
+                if candidate.get('website') or candidate.get('has_own_site'):
+                    continue
+                key = re.sub(r'[^a-z0-9]', '', str(candidate.get('name')).lower())
+                if not key or key in seen_candidates:
+                    continue
+                seen_candidates.add(key)
+                candidate = {**candidate, 'niche': candidate.get('niche') or search_niche}
+                candidates.append(candidate)
         if len(candidates) >= needed_candidates:
             break
 
     if not candidates:
         detail = '; '.join(discovery_errors) if discovery_errors else 'Google Maps no devolvió candidatos'
         terminar(iid, token=token, failed=True, motivo=f'No se encontraron negocios sin website propio en {location}. {detail}'.strip()[:300])
+        return
+
+    reservation_input = [{**candidate, 'index': index} for index, candidate in enumerate(candidates[:20])]
+    candidates, skipped_duplicates, reserve_error = reservar_candidatos(iid, token, reservation_input)
+    if reserve_error:
+        terminar(iid, token=token, failed=True, motivo=reserve_error)
+        return
+    if not candidates:
+        reasons = sorted({str(entry.get('reason') or '') for entry in skipped_duplicates if isinstance(entry, dict)})
+        detail = ', '.join(reason for reason in reasons if reason) or 'todos ya estaban registrados'
+        terminar(iid, token=token, failed=True,
+                 motivo=f'No hay negocios nuevos para construir: {detail}. No se crearon duplicados.'[:300])
         return
 
     selected = []
@@ -745,6 +911,8 @@ def procesar_descubrimiento(item, deadline=None):
                 'input': f'{name} ({candidate.get("location") or location})',
                 'nicho': candidate.get('niche') or niche,
                 'claim_token': token,
+                'candidate': candidate,
+                'business_reserved': True,
             },
         })
 
