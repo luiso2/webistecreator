@@ -15,9 +15,9 @@ const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
 const queueText = (value, max) => stripUnsafe(value ?? '').trim().replace(/\s+/g, ' ').slice(0, max);
 const discoveryKey = request => [request?.niche, request?.location]
   .map(v => String(v || '').toLocaleLowerCase()).join('|');
-// Railway corta cada forja antes de diez minutos. Doce minutos sin heartbeat ya no
+// Railway corta cada forja antes de diez minutos. Diez minutos sin heartbeat ya no
 // es lentitud: es una ejecución muerta y se puede rescatar sin dejar filas atascadas.
-const STALE_FORGE_MS = 12 * 60 * 1000;
+const STALE_FORGE_MS = 10 * 60 * 1000;
 
 // KV sirve para el estado y el historial, pero no ofrece un compare-and-set para
 // cuatro réplicas de Railway. Este objeto único serializa reclamos Y mutaciones de
@@ -725,7 +725,7 @@ export default {
       }
 
       // Recupera un item que quedó processing por un reinicio de Railway. Se
-      // permite después del mismo margen de 12 minutos que usa el reconciliador.
+      // permite después del mismo margen de 10 minutos que usa el reconciliador.
       if (url.pathname === '/api/queue/recover' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
