@@ -34,7 +34,7 @@ paths:
     post:
       operationId: createWebsiteBuild
       summary: Queue one website build or a filtered discovery request
-      description: Use input for one known business, or niche plus location to discover businesses without their own website. The action returns immediately with a job id; the cloud builder runs the request in parallel and enforces a hard sub-10-minute execution budget. Discovery count is 1 to 5 and runs through the fast parallel builder lane.
+      description: Use input for one known business, or niche plus location to discover businesses without their own website. Returns immediately with a job id; the cloud builder runs in parallel with a hard 10-minute budget. Count is 1 to 5.
       requestBody:
         required: true
         content:
