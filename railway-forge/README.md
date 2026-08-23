@@ -61,6 +61,10 @@ El Cron consulta dos combinaciones de nicho/ciudad, llena hasta 12 huecos por ej
 paralelo. `railway.json` está preparado con 4 réplicas del worker; si el plan de Railway
 permite más recursos, subir ese número acelera linealmente el camino hacia 10.000 demos.
 
+Ambos servicios limitan los autodeploys a `/railway-forge/**`. Los commits que publican
+un demo bajo `output/` siguen activando Cloudflare, pero no reinician los workers de
+Railway ni interrumpen el cierre del item que acaba de publicarlo.
+
 Variables adicionales del servicio Cron:
 
 - `SITEFORGE_UI_KEY`: el mismo access key que usa el panel (`.env` local), para
