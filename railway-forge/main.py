@@ -135,7 +135,9 @@ def panel(ruta, data=None, timeout=20):
 
 
 def progreso(item_id, stage, note=None, token=None):
-    payload = {'id': item_id, 'stage': stage, **({'note': note} if note else {})}
+    # Enviar cadena vacía cuando una etapa no trae nota limpia el mensaje de la etapa
+    # anterior (por ejemplo, no dejar "Workers Builds sigue desplegando" tras terminar).
+    payload = {'id': item_id, 'stage': stage, 'note': note or ''}
     if token:
         payload['token'] = token
     panel('/api/public/queue/progress', payload)
