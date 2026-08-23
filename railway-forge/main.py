@@ -444,7 +444,9 @@ def _clean_update_value(value, depth=0, state=None):
         if state['keys'] > 120:
             raise ValueError('patch demasiado grande')
         key = str(key)
-        if not key or '__' in key or key in {'constructor', 'prototype'} or len(key) > 80:
+<<<<<<< HEAD
+        if (not key or '__' in key or key in {'constructor', 'prototype'}
+                or len(key) > 80 or re.search(r'[<>\x00-\x1f\x7f]', key)):
             raise ValueError(f'clave de patch no permitida: {key[:80]}')
         result[key] = _clean_update_value(item, depth + 1, state)
     return result
