@@ -659,13 +659,14 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     # El panel acepta slugs de hasta 40 caracteres; respetar el mismo límite aquí
     # evita terminar todo el build y dejar el item atascado al llamar a /done.
     slug = re.sub(r'[^a-z0-9-]', '', nombre.lower().replace('&', ' and ').replace('.', '-').replace('_', '-').replace(' ', '-'))[:40].strip('-')
+    source_candidate = item.get('candidate') if isinstance(item.get('candidate'), dict) else {}
     candidate = {
-        **(item.get('candidate') if isinstance(item.get('candidate'), dict) else {}),
+        **source_candidate,
         'name': nombre,
         'slug': slug,
-        'location': (item.get('candidate') or {}).get('location') if isinstance(item.get('candidate'), dict) else ciudad,
+        'location': source_candidate.get('location') or ciudad,
         'city': ciudad,
-        'niche': item.get('nicho'),
+        'niche': item.get('nicho') or source_candidate.get('niche'),
     }
     candidate['location'] = candidate.get('location') or ciudad
     if not item.get('business_reserved'):
@@ -730,7 +731,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     # del builder evita que todos los negocios manuales aparezcan como Hialeah, Florida.
     hechos['nombre'] = hechos.get('name') or nombre
     hechos['ciudad'] = ciudad
-    hechos['nicho'] = item.get('nicho') or hechos.get('nicho') or nombre
+    hechos['nicho'] = item.get('nicho') or candidate.get('niche') or hechos.get('nicho') or nombre
     hechos['idioma_principal'] = 'en'
     hechos['maps_url'] = hechos.get('maps_url') or candidate.get('maps_url')
     hechos['business_key'] = candidate.get('business_key')
