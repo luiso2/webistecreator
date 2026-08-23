@@ -659,7 +659,8 @@ def procesar_descubrimiento(item, deadline=None):
 
 
 def main():
-    print(f'forja-railway arrancada (poll {POLL_S}s, sin IA: plantillas por nicho)', flush=True)
+    print(f'forja-railway arrancada (poll {POLL_S}s, deadline {FORGE_DEADLINE_SECONDS}s, '
+          f'workers {DISCOVERY_BUILD_WORKERS}, sin IA: plantillas por nicho)', flush=True)
     while True:
         q = panel('/api/public/queue') or {}
         pendientes = q.get('pending', [])
