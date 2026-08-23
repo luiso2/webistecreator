@@ -99,7 +99,7 @@ Puerta de calidad (leccion Sandra 2026-07-16: el site salio "con template" pero 
 ## Deploy automatico de demos (Workers Builds)
 - El worker `siteforge-demos` (config `demos/wrangler.jsonc`) sirve TODO `output/` como assets: cada site queda en `/<slug>/`.
 - Cada demo usa CSS Tailwind precompilado desde `/_shared/tailwind.css`, con URL versionada y cache inmutable. El worker sustituye las referencias históricas a `assets/tailwind.js` al responder el HTML: no volver a ejecutar el compilador Tailwind en el navegador ni publicar las copias `**/assets/tailwind.js`; son cientos de copias idénticas y bloquean el render. `publish.py` siempre ejecuta `npm run build:styles` antes del deploy para incluir las clases del nuevo demo.
-- El repo esta conectado a Cloudflare Workers Builds: cada push a main redeploya `siteforge-demos` automaticamente (deploy command: `npx wrangler deploy -c demos/wrangler.jsonc`). Asi la rutina cloud publica demos sin credenciales.
+- El repo esta conectado a Cloudflare Workers Builds: cada push a main redeploya `siteforge-demos` automaticamente (deploy command: `npx wrangler deploy -c demos/wrangler.jsonc`). La forja toca `demos/.forge-deploy` en cada publicación para activar el trigger incluso si la conexión usa filtros por ruta. Asi la rutina cloud publica demos sin credenciales.
 - Los workers "bonitos" por negocio (`<slug>-demo.*.workers.dev`) se deployan en la sesion local de aprobacion antes del outreach.
 
 ## Limites de seguridad

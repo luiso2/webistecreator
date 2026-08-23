@@ -111,6 +111,14 @@ def sleep_for(seconds, deadline=None):
     time.sleep(min(seconds, remaining))
 
 
+def deploy_marker(slug):
+    """Incluye un cambio bajo demos/ para activar Workers Builds aunque haya path filters."""
+    path = f'/tmp/siteforge-deploy-{slug}.txt'
+    with open(path, 'w', encoding='utf-8') as marker:
+        marker.write(f'{slug}\n{int(time.time())}\n')
+    return path, 'demos/.forge-deploy'
+
+
 def discovery_niches(niche: str) -> list[str]:
     normalized = re.sub(r'\s+', ' ', niche.strip().lower())
     if normalized in GENERIC_DISCOVERY_NICHES:
@@ -384,6 +392,7 @@ def procesar(item, deadline=None):
                  for f in ['content.json', 'data.json', '.assetsignore']]
     archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
                  for f in fotos_usadas]
+    archivos.append(deploy_marker(slug))
     ok = subir_sitio_github(slug, archivos, deadline=deadline)
     if not ok:
         finish(failed=True, motivo='Subida a GitHub incompleta')
@@ -491,6 +500,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
                  for f in ['content.json', 'data.json', '.assetsignore', 'assets/tailwind.js']]
     archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
                  for f in fotos_usadas]
+    archivos.append(deploy_marker(slug))
     ok = subir_sitio_github(slug, archivos, deadline=deadline)
     if not ok:
         return fail('Subida a GitHub incompleta')
