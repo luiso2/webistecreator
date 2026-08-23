@@ -596,11 +596,16 @@ async function executeControlPlan(env, plan, actor = 'siteforge-gpt', options = 
     const started = Date.now();
     try {
       const result = await executeControlTool(env, normalized, step.tool, step.args);
+      const stepOk = result?.ok !== false;
       const audit = await recordAudit({
         action: normalized.goal, tool: step.tool, input: step.args, result,
-        status: 'ok', duration: Date.now() - started,
+        status: stepOk ? 'ok' : 'failed', duration: Date.now() - started,
       });
-      results.push({ tool: step.tool, ok: true, result, audit_id: audit.id });
+      results.push({ tool: step.tool, ok: stepOk, result, audit_id: audit.id });
+      // Adapters such as website.test can report a deterministic validation
+      // failure without throwing. Stop dependent steps and surface that state
+      // to the GPT instead of returning a misleading plan-level ok:true.
+      if (!stepOk) return { ok: false, actor, plan: normalized, results, failed_step: step.tool };
     } catch (error) {
       const detail = { error: String(error.message || error), ...(error.code ? { code: error.code } : {}), ...(error.options ? { options: error.options } : {}) };
       const audit = await recordAudit({
