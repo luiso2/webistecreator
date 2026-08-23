@@ -19,7 +19,10 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
-from maps_common import is_own_website, safe_google_maps_url
+try:
+    from .maps_common import is_own_website, safe_google_maps_url
+except ImportError:  # ejecución directa: python scripts/maps_research.py
+    from maps_common import is_own_website, safe_google_maps_url
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 CHROME = (os.environ.get("CHROME_PATH") or shutil.which("chromium") or

@@ -19,7 +19,11 @@ from pathlib import Path
 
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 from playwright.sync_api import sync_playwright
-from maps_common import is_own_website
+try:
+    # `cron.py` importa este archivo como `scripts.maps_discover`.
+    from .maps_common import is_own_website
+except ImportError:  # ejecución directa: python scripts/maps_discover.py
+    from maps_common import is_own_website
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 CHROME = (
