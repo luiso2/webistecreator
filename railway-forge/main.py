@@ -588,8 +588,12 @@ def procesar_descubrimiento(item, deadline=None):
     selected = []
     seen = set()
     failed_candidates = []
+    # Reservar candidatos de reemplazo evita que una ficha con pocas fotos convierta
+    # una búsqueda de 1 negocio en un fallo total. El resultado padre sigue limitado
+    # exactamente a ``count`` demos.
+    target_candidates = min(len(candidates), count * 2)
     for candidate in candidates:
-        if len(selected) >= count:
+        if len(selected) >= target_candidates:
             break
         name = str(candidate.get('name') or '').strip()
         key = re.sub(r'[^a-z0-9]', '', name.lower())
@@ -645,7 +649,7 @@ def procesar_descubrimiento(item, deadline=None):
             elif result:
                 failed_candidates.append(f'{result.get("motivo") or "fallo sin detalle"}')
 
-    sites = [result for _index, result in sorted(completed, key=lambda pair: pair[0])]
+    sites = [result for _index, result in sorted(completed, key=lambda pair: pair[0])][:count]
 
     if sites:
         terminar(iid, token=token, sites=sites, slug=sites[0].get('slug'), name=sites[0].get('name'), url_demo=sites[0].get('url_demo'))
