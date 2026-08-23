@@ -535,6 +535,7 @@ def procesar_descubrimiento(item):
 
     selected = []
     seen = set()
+    failed_candidates = []
     for candidate in candidates:
         if len(selected) >= count:
             break
@@ -563,11 +564,20 @@ def procesar_descubrimiento(item):
 
     def build_candidate(entry):
         name = entry['name']
-        try:
-            result = procesar_nombre(entry['child'], cerrar=False, progress_id=iid)
-        except Exception as exc:
-            print(f'  candidato {name} fallo: {exc}', flush=True)
-            result = {'failed': True, 'motivo': str(exc)[:180]}
+        result = {'failed': True, 'motivo': 'fallo desconocido'}
+        # Maps/Workers pueden devolver una ficha incompleta en el primer intento
+        # aunque el candidato sea válido. Repetir solo los candidatos fallidos evita
+        # falsos errores sin ralentizar los builds que ya funcionan.
+        for attempt in range(2):
+            try:
+                result = procesar_nombre(entry['child'], cerrar=False, progress_id=iid)
+            except Exception as exc:
+                print(f'  candidato {name} intento {attempt + 1} fallo: {exc}', flush=True)
+                result = {'failed': True, 'motivo': str(exc)[:180]}
+            if result and not result.get('failed'):
+                break
+            if attempt == 0:
+                progreso(iid, 'research', f'Reintentando ficha: {name}', token=token)
         return entry['index'], result
 
     completed = []
@@ -577,6 +587,8 @@ def procesar_descubrimiento(item):
             index, result = future.result()
             if result and not result.get('failed'):
                 completed.append((index, {k: result[k] for k in ('slug', 'name', 'url_demo') if k in result}))
+            elif result:
+                failed_candidates.append(f'{result.get("motivo") or "fallo sin detalle"}')
 
     sites = [result for _index, result in sorted(completed, key=lambda pair: pair[0])]
 
@@ -584,7 +596,11 @@ def procesar_descubrimiento(item):
         terminar(iid, token=token, sites=sites, slug=sites[0].get('slug'), name=sites[0].get('name'), url_demo=sites[0].get('url_demo'))
         print(f'  DESCUBRIMIENTO LISTO: {len(sites)} demo(s)', flush=True)
     else:
-        terminar(iid, token=token, failed=True, motivo='Los candidatos encontrados no superaron research, fotos o validación.')
+        detail = '; '.join(failed_candidates[:3])
+        motivo = 'Los candidatos encontrados no superaron research, fotos o validación.'
+        if detail:
+            motivo += f' Detalle: {detail}'
+        terminar(iid, token=token, failed=True, motivo=motivo[:300])
 
 
 def main():
