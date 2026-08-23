@@ -47,26 +47,43 @@ def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value).strip("-")[:64]
 
 
-def _number(value: str | None) -> int | None:
+def _number(value: str | None, suffix: str | None = None) -> int | None:
     if not value:
         return None
-    digits = re.sub(r"\D", "", value)
-    return int(digits) if digits else None
+    normalized = value.replace(",", "").strip()
+    try:
+        number = float(normalized)
+    except ValueError:
+        digits = re.sub(r"\D", "", normalized)
+        return int(digits) if digits else None
+    multiplier = {"k": 1_000, "m": 1_000_000}.get((suffix or "").lower(), 1)
+    return int(number * multiplier)
+
+
+def _parse_rating_reviews(labels: list[str]) -> tuple[float | None, int | None]:
+    """Extrae valores tanto de labels separadas como de la label combinada de Maps."""
+    rating = None
+    reviews = None
+    for label in labels:
+        rating_match = re.search(r"(?<!\d)([0-5](?:[.,]\d)?)\s*(?:stars?|estrellas?)", label, re.I)
+        if rating_match:
+            rating = float(rating_match.group(1).replace(",", "."))
+        reviews_match = re.search(
+            r"([\d,.]+)\s*([km])?\s*(?:Google\s+)?(?:reviews?|rese(?:n|ñ)as?)",
+            label,
+            re.I,
+        )
+        if reviews_match:
+            reviews = _number(reviews_match.group(1), reviews_match.group(2))
+    return rating, reviews
 
 
 def _rating_reviews(page) -> tuple[float | None, int | None]:
-    rating = None
-    reviews = None
+    values = []
     labels = page.locator('[role="img"][aria-label]')
     for i in range(min(labels.count(), 160)):
-        label = labels.nth(i).get_attribute("aria-label") or ""
-        match = re.fullmatch(r"(\d(?:\.\d)?)\s*stars?", label, re.I)
-        if match:
-            rating = float(match.group(1))
-        match = re.fullmatch(r"([\d,]+)\s*reviews?", label, re.I)
-        if match:
-            reviews = _number(match.group(1))
-    return rating, reviews
+        values.append(labels.nth(i).get_attribute("aria-label") or "")
+    return _parse_rating_reviews(values)
 
 
 def _first_attr(page, selectors: list[str], attr: str) -> str | None:
@@ -171,35 +188,58 @@ def discover(
         if CHROME:
             launch["executable_path"] = CHROME
         browser = pw.chromium.launch(**launch)
-        search = browser.new_page(user_agent=UA, viewport={"width": 1400, "height": 1000})
+        search = browser.new_page(
+            user_agent=UA,
+            locale="en-US",
+            viewport={"width": 1400, "height": 1000},
+            extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+        )
         try:
-            search.goto(
-                "https://www.google.com/maps/search/" + urllib.parse.quote(query),
-                wait_until="domcontentloaded",
-                timeout=25000,
-            )
-            search.wait_for_timeout(2200)
-            links = search.locator("a.hfpxzc")
-            if not links.count():
-                links = search.locator('a[href*="/maps/place/"]')
-            for i in range(min(links.count(), limit * 3)):
-                link = links.nth(i)
-                href = link.get_attribute("href")
-                if not href:
+            search_urls = [
+                "https://www.google.com/maps/search/" + urllib.parse.quote(query) + "?hl=en",
+                "https://www.google.com/maps/search/?api=1&hl=en&query=" + urllib.parse.quote_plus(query),
+            ]
+            for search_url in search_urls:
+                search.goto(search_url, wait_until="domcontentloaded", timeout=25000)
+                try:
+                    search.locator('a.hfpxzc, a[href*="/maps/place/"]').first.wait_for(
+                        state="attached", timeout=6500
+                    )
+                except PlaywrightTimeoutError:
                     continue
-                href = urllib.parse.urljoin("https://www.google.com", href)
-                if href in seen_urls:
-                    continue
-                seen_urls.add(href)
-                label = link.get_attribute("aria-label") or ""
-                if not label:
-                    try:
-                        label = link.locator("xpath=..").inner_text(timeout=1000).splitlines()[0]
-                    except Exception:
-                        label = ""
-                candidates.append((href, label.strip()))
+                feed = search.locator('div[role="feed"]').first
+                if feed.count():
+                    for _ in range(2):
+                        feed.evaluate("node => { node.scrollTop = node.scrollHeight; }")
+                        search.wait_for_timeout(450)
+                links = search.locator("a.hfpxzc")
+                if not links.count():
+                    links = search.locator('a[href*="/maps/place/"]')
+                for i in range(min(links.count(), limit * 3)):
+                    link = links.nth(i)
+                    href = link.get_attribute("href")
+                    if not href:
+                        continue
+                    href = urllib.parse.urljoin("https://www.google.com", href)
+                    if href in seen_urls:
+                        continue
+                    seen_urls.add(href)
+                    label = link.get_attribute("aria-label") or ""
+                    if not label:
+                        try:
+                            label = link.locator("xpath=..").inner_text(timeout=1000).splitlines()[0]
+                        except Exception:
+                            label = ""
+                    candidates.append((href, label.strip()))
+                if candidates:
+                    break
 
-            detail = browser.new_page(user_agent=UA, viewport={"width": 1400, "height": 1000})
+            detail = browser.new_page(
+                user_agent=UA,
+                locale="en-US",
+                viewport={"width": 1400, "height": 1000},
+                extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+            )
             results: list[dict] = []
             seen_names: set[str] = set()
             for href, label in candidates:

@@ -40,6 +40,67 @@ CRON_MAX_BUILDS = _int_env("CRON_MAX_BUILDS", 1, minimum=0, maximum=3)
 DISCOVERY_ROTATION_MINUTES = _int_env("DISCOVERY_ROTATION_MINUTES", 15, minimum=5, maximum=360)
 
 
+# Las etiquetas de config.json son descriptivas y bilingues para el panel, no
+# consultas literales de Maps. Google puede interpretar el slash como parte del
+# nombre de un negocio y devolver una ficha aislada o ningun resultado. Mantener
+# aqui un vocabulario corto y concreto hace que el cron busque categorias reales.
+NICHE_SEARCH_TERMS = {
+    "handyman / remodelacion": "handyman",
+    "carpinteria / ebanisteria": "carpenter",
+    "plomeria / plumbing": "plumber",
+    "electricista": "electrician",
+    "aire acondicionado / hvac": "HVAC contractor",
+    "roofing / techos": "roofing contractor",
+    "pressure washing / limpieza de exteriores": "pressure washing service",
+    "pintura residencial": "residential painter",
+    "landscaping / jardineria": "landscaping service",
+    "cleaning service residencial": "house cleaning service",
+    "mudanzas / moving": "moving company",
+    "pisos / tile & flooring": "flooring contractor",
+    "cerrajeria / locksmith": "locksmith",
+    "control de plagas / pest control": "pest control service",
+    "detailing de autos": "auto detailing service",
+    "taller mecanico / auto repair": "auto repair shop",
+    "peluqueria canina / pet grooming": "pet groomer",
+    "food truck / cocina latina": "food truck",
+    "reposteria / bakery boutique": "bakery",
+    "catering / eventos": "caterer",
+    "fotografia / estudio de fotos": "photographer",
+    "tattoo / piercing studio": "tattoo shop",
+    "med spa / estetica": "medical spa",
+    "massage / bodywork studio": "massage therapist",
+    "head spa": "head spa",
+}
+
+
+def _search_niche(label: str) -> str:
+    """Convierte una etiqueta humana del panel en una categoria de Maps."""
+    clean = re.sub(r"\s+", " ", str(label or "").strip())
+    mapped = NICHE_SEARCH_TERMS.get(clean.lower())
+    if mapped:
+        return mapped
+    # Los overrides ya suelen ser categorias validas. Si tambien traen slash,
+    # preferimos la parte ASCII/inglesa mas informativa y nunca enviamos el slash.
+    parts = [part.strip() for part in clean.split("/") if part.strip()]
+    if len(parts) > 1:
+        ascii_parts = [part for part in parts if part.isascii()]
+        return max(ascii_parts or parts, key=len)
+    return clean
+
+
+def _search_location(label: str, config: dict) -> str:
+    """Desambigua las ciudades de la rotacion sin alterar overrides globales."""
+    clean = re.sub(r"\s+", " ", str(label or "").strip())
+    if re.search(r"\bflorida\b", clean, re.I):
+        return re.sub(r"\s*\(statewide\)\s*", "", clean, flags=re.I).strip()
+    if "," in clean or re.search(r"\bFL\b", clean, re.I):
+        return clean
+    configured_state = str(config.get("city") or "")
+    if "florida" in configured_state.lower():
+        return f"{clean}, FL"
+    return clean
+
+
 def _config() -> dict:
     for path in CONFIG_PATHS:
         if path.exists():
@@ -181,7 +242,9 @@ def _claim(item: dict) -> dict | None:
 def main() -> int:
     config = _config()
     niches, locations = _lists(config)
-    niche, location = _rotation(niches, locations)
+    niche_label, location_label = _rotation(niches, locations)
+    niche = _search_niche(niche_label)
+    location = _search_location(location_label, config)
     try:
         min_rating = max(0.0, min(float(config.get("min_rating", 4.5)), 5.0))
     except (TypeError, ValueError):
