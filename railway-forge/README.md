@@ -1,7 +1,7 @@
 # forja-railway
 
 Worker que construye los sites automáticamente desde Railway, consumiendo la cola del panel.
-Sondea cada 10s: un item encolado a mano se toma en segundos, no en slots de ~7 min.
+Sondea cada 10s: un item encolado a mano se toma en segundos, no en slots de ~7 min. Cada forja tiene un límite duro de 9 min para nunca dejar una fila atascada.
 
 También incluye `cron.py`, un job corto para Railway que descubre negocios en Google
 Maps, descarta fichas con website propio, evita duplicados y encola candidatos con

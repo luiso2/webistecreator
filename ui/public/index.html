@@ -889,9 +889,9 @@
         // caso real fue una corrida muerta con 3 items "en proceso" durante hora y media.
         const desde = Date.parse(q.stage_at || q.started_at || q.created) || Date.now();
         const minSin = Math.floor((Date.now() - desde) / 60000);
-        const abandonado = minSin >= 30;
+        const abandonado = minSin >= 12;
         const estado = abandonado
-          ? `⚠️ Sin señales de la forja hace ${minSin} min · a los 30 vuelve a la cola solo`
+          ? `⚠️ Sin señales de la forja hace ${minSin} min · a los 12 vuelve a la cola solo`
           : (STAGE_LABEL[q.stage] || 'En proceso');
         return `
         <div class="prog${abandonado ? ' stale' : ''}">

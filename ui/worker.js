@@ -15,11 +15,9 @@ const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
 const queueText = (value, max) => stripUnsafe(value ?? '').trim().replace(/\s+/g, ' ').slice(0, max);
 const discoveryKey = request => [request?.niche, request?.location]
   .map(v => String(v || '').toLocaleLowerCase()).join('|');
-// Una forja normal cambia de etapa varias veces en menos de 7 min. Doce minutos sin
-// señal ya no es lentitud: es una ejecución muerta y se puede rescatar.
-// Un Build de Workers puede tardar varios minutos. El worker de Railway envia
-// heartbeat durante esa espera; 30 min solo libera trabajos realmente muertos.
-const STALE_FORGE_MS = 30 * 60 * 1000;
+// Railway corta cada forja antes de diez minutos. Doce minutos sin heartbeat ya no
+// es lentitud: es una ejecución muerta y se puede rescatar sin dejar filas atascadas.
+const STALE_FORGE_MS = 12 * 60 * 1000;
 
 // KV sirve para el estado y el historial, pero no ofrece un compare-and-set para
 // cuatro réplicas de Railway. Este objeto único serializa reclamos Y mutaciones de
@@ -726,15 +724,14 @@ export default {
         return json(retried, retried.ok ? 200 : (retried.status || 500));
       }
 
-      // Recupera un item que quedo processing por un reinicio de Railway. Solo se
-      // permite despues de 3 minutos sin heartbeat; un trabajo vivo actualiza
-      // stage_at cada minuto mientras espera Workers Builds.
+      // Recupera un item que quedó processing por un reinicio de Railway. Se
+      // permite después del mismo margen de 12 minutos que usa el reconciliador.
       if (url.pathname === '/api/queue/recover' && req.method === 'POST') {
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
         if (!body.id) return json({ error: 'id requerido' }, 400);
         const recovered = await env.QUEUE_CLAIMS.getByName('siteforge-queue').recover(
-          body.id, Date.now(), 3 * 60 * 1000,
+          body.id, Date.now(), STALE_FORGE_MS,
         );
         return json(recovered, recovered.ok ? 200 : (recovered.status || 500));
       }

@@ -45,9 +45,15 @@ GH_TOKEN = os.environ['GITHUB_TOKEN']
 # sin reclamar y por eso se acumulaban indefinidamente cuando la rutina cloud estaba llena.
 POLL_S = int(os.environ.get('POLL_SECONDS', '10'))
 try:
-    DISCOVERY_BUILD_WORKERS = max(1, min(int(os.environ.get('DISCOVERY_BUILD_WORKERS', '2')), 3))
+    DISCOVERY_BUILD_WORKERS = max(1, min(int(os.environ.get('DISCOVERY_BUILD_WORKERS', '3')), 3))
 except (TypeError, ValueError):
-    DISCOVERY_BUILD_WORKERS = 2
+    DISCOVERY_BUILD_WORKERS = 3
+# Una forja nunca puede dejar una fila viva indefinidamente. Se reserva margen para
+# cerrar el item en el panel antes de los diez minutos que ve el usuario.
+try:
+    FORGE_DEADLINE_SECONDS = max(300, min(int(os.environ.get('FORGE_DEADLINE_SECONDS', '540')), 570))
+except (TypeError, ValueError):
+    FORGE_DEADLINE_SECONDS = 540
 FORBID = 'Pure Artistry,pure.artistrysk,Booksy,booksy,121705,silk press,locs,K-Tip,W Grant,Chianita,Hair Studio'
 
 # "negocio local" llega con frecuencia cuando el usuario pide solo una ciudad.
@@ -81,6 +87,30 @@ def http(url, data=None, headers=None, method=None, timeout=90):
         return json.loads(r.read().decode())
 
 
+class ForgeDeadlineExceeded(RuntimeError):
+    """La fila agotó su presupuesto; se cierra como fallo concreto, nunca queda processing."""
+
+
+def timeout_for(deadline, cap):
+    """Devuelve un timeout acotado al presupuesto restante de una fila."""
+    if deadline is None:
+        return cap
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        raise ForgeDeadlineExceeded(f'La forja superó el límite de {FORGE_DEADLINE_SECONDS // 60} minutos.')
+    return max(1, min(cap, int(remaining)))
+
+
+def sleep_for(seconds, deadline=None):
+    if deadline is None:
+        time.sleep(seconds)
+        return
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        raise ForgeDeadlineExceeded(f'La forja superó el límite de {FORGE_DEADLINE_SECONDS // 60} minutos.')
+    time.sleep(min(seconds, remaining))
+
+
 def discovery_niches(niche: str) -> list[str]:
     normalized = re.sub(r'\s+', ' ', niche.strip().lower())
     if normalized in GENERIC_DISCOVERY_NICHES:
@@ -88,9 +118,9 @@ def discovery_niches(niche: str) -> list[str]:
     return [niche]
 
 
-def panel(ruta, data=None):
+def panel(ruta, data=None, timeout=20):
     try:
-        return http(f'{PANEL}{ruta}', data)
+        return http(f'{PANEL}{ruta}', data, timeout=timeout)
     except Exception as e:
         print(f'  panel {ruta}: {e}', flush=True)
         return None
@@ -103,11 +133,13 @@ def progreso(item_id, stage, note=None, token=None):
     panel('/api/public/queue/progress', payload)
 
 
-def esperar_demo(item_id, url, max_seconds=1800, token=None):
-    """Espera el Build sin dejar que el panel lo considere abandonado."""
+def esperar_demo(item_id, url, max_seconds=420, token=None, deadline=None, expected_marker=None):
+    """Espera el deploy, comprobando contenido y respetando el deadline de la fila."""
     inicio = time.monotonic()
     ultimo_heartbeat = inicio
     ultimo_status = 'sin respuesta'
+    if deadline is not None:
+        max_seconds = min(max_seconds, max(0, deadline - time.monotonic()))
     while time.monotonic() - inicio < max_seconds:
         try:
             # Usa una consulta no cacheada y un UA de navegador: Cloudflare puede
@@ -121,9 +153,16 @@ def esperar_demo(item_id, url, max_seconds=1800, token=None):
                     'Cache-Control': 'no-cache',
                 },
             )
-            with urllib.request.urlopen(check, timeout=15) as response:
+            with urllib.request.urlopen(check, timeout=timeout_for(deadline, 15)) as response:
                 ultimo_status = str(response.status)
-            if ultimo_status == '200':
+                # Un 200 del mismo slug puede ser una versión vieja cacheada. Cuando
+                # conocemos el nombre esperado, exigimos verlo en el HTML antes de
+                # registrar el demo como terminado.
+                body = response.read(512 * 1024).decode('utf-8', errors='ignore') if expected_marker else ''
+            markers = [expected_marker] if expected_marker else []
+            if expected_marker and '&' in expected_marker:
+                markers.append(expected_marker.replace('&', '&amp;'))
+            if ultimo_status == '200' and (not markers or any(marker in body for marker in markers)):
                 return True
         except urllib.error.HTTPError as exc:
             ultimo_status = f'HTTP {exc.code}'
@@ -133,7 +172,7 @@ def esperar_demo(item_id, url, max_seconds=1800, token=None):
         if ahora - ultimo_heartbeat >= 60:
             progreso(item_id, 'commit', f'Workers Builds sigue desplegando (último check: {ultimo_status})', token=token)
             ultimo_heartbeat = ahora
-        time.sleep(10)
+        sleep_for(10, deadline)
     return False
 
 
@@ -195,7 +234,7 @@ def subir_github(ruta_local, ruta_repo, intento=0):
         return False
 
 
-def subir_sitio_github(slug, archivos, intento=0):
+def subir_sitio_github(slug, archivos, intento=0, deadline=None):
     """Publica un sitio completo en un solo commit de GitHub.
 
     La API Contents crea un commit por archivo. Con las cuatro replicas de Railway
@@ -210,17 +249,18 @@ def subir_sitio_github(slug, archivos, intento=0):
     }
     base = f'https://api.github.com/repos/{GH_REPO}'
     try:
-        ref = http(f'{base}/git/ref/heads/main', headers=hdr)
+        ref = http(f'{base}/git/ref/heads/main', headers=hdr, timeout=timeout_for(deadline, 30))
         head_sha = ref['object']['sha']
-        head_commit = http(f'{base}/git/commits/{head_sha}', headers=hdr)
+        head_commit = http(f'{base}/git/commits/{head_sha}', headers=hdr, timeout=timeout_for(deadline, 30))
         entries = []
         for local, repo_path in archivos:
+            timeout_for(deadline, 30)
             with open(local, 'rb') as f:
                 encoded = base64.b64encode(f.read()).decode()
             blob = http(f'{base}/git/blobs', {
                 'content': encoded,
                 'encoding': 'base64',
-            }, headers=hdr)
+            }, headers=hdr, timeout=timeout_for(deadline, 30))
             entries.append({
                 'path': repo_path,
                 'mode': '100644',
@@ -230,31 +270,33 @@ def subir_sitio_github(slug, archivos, intento=0):
         tree = http(f'{base}/git/trees', {
             'base_tree': head_commit['tree']['sha'],
             'tree': entries,
-        }, headers=hdr)
+        }, headers=hdr, timeout=timeout_for(deadline, 30))
         commit = http(f'{base}/git/commits', {
             'message': f'forja-railway: publish {slug}',
             'tree': tree['sha'],
             'parents': [head_sha],
-        }, headers=hdr)
+        }, headers=hdr, timeout=timeout_for(deadline, 30))
         # force=false conserva cambios de otras forjas; un 409 significa que
         # simplemente debemos repetir con el nuevo head.
         http(f'{base}/git/refs/heads/main', {
             'sha': commit['sha'],
             'force': False,
-        }, headers=hdr, method='PATCH')
+        }, headers=hdr, method='PATCH', timeout=timeout_for(deadline, 30))
         return True
+    except ForgeDeadlineExceeded:
+        raise
     except urllib.error.HTTPError as exc:
         # GitHub responde 409 o 422 segun el endpoint cuando otra replica
         # avanzo main entre la lectura del head y el PATCH de la referencia.
         if exc.code in (409, 422) and intento < 5:
-            time.sleep(2 + intento * 2)
-            return subir_sitio_github(slug, archivos, intento + 1)
+            sleep_for(2 + intento * 2, deadline)
+            return subir_sitio_github(slug, archivos, intento + 1, deadline)
         print(f'  publicacion atomica fallo ({exc.code}) {slug}: {exc}', flush=True)
         return False
     except Exception as exc:
         if intento < 2:
-            time.sleep(2 + intento * 2)
-            return subir_sitio_github(slug, archivos, intento + 1)
+            sleep_for(2 + intento * 2, deadline)
+            return subir_sitio_github(slug, archivos, intento + 1, deadline)
         print(f'  publicacion atomica fallo {slug}: {exc}', flush=True)
         return False
 
@@ -279,7 +321,7 @@ def guard_anti_invencion(content, hechos, slug):
     return sorted(set(fallos))
 
 
-def procesar(item):
+def procesar(item, deadline=None):
     iid, entrada = item['id'], item['input'].strip()
     token = item.get('claim_token')
     report = lambda stage, note=None: progreso(iid, stage, note, token=token)
@@ -291,7 +333,7 @@ def procesar(item):
     slug = re.sub(r'[^a-z0-9-]', '', handle.lower().replace('.', '-').replace('_', '-'))[:40]
 
     r = subprocess.run([sys.executable, 'scripts/research_ig.py', handle, slug],
-                       capture_output=True, text=True, timeout=300)
+                       capture_output=True, text=True, timeout=timeout_for(deadline, 300))
     ruta_data = f'output/{slug}/data.json'
     if not os.path.exists(ruta_data):
         finish(failed=True, motivo=f'Research sin datos: {(r.stdout or r.stderr)[-180:]}')
@@ -323,13 +365,14 @@ def procesar(item):
     json.dump(content, open(f'output/{slug}/content.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     subprocess.run(['cp', 'templates/.assetsignore-template', f'output/{slug}/.assetsignore'])
 
-    if subprocess.run([sys.executable, 'scripts/derive.py', slug], capture_output=True).returncode != 0:
+    if subprocess.run([sys.executable, 'scripts/derive.py', slug], capture_output=True,
+                      timeout=timeout_for(deadline, 60)).returncode != 0:
         finish(failed=True, motivo='derive.py fallo (ancla rota)')
         return
     report('verify')
     lang = content.get('lang', 'es')
     g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', lang, '--forbid', FORBID],
-                       capture_output=True, text=True)
+                       capture_output=True, text=True, timeout=timeout_for(deadline, 60))
     if g.returncode != 0:
         finish(failed=True, motivo=f'GATE: {g.stdout[-200:]}')
         return
@@ -341,13 +384,14 @@ def procesar(item):
                  for f in ['content.json', 'data.json', '.assetsignore']]
     archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
                  for f in fotos_usadas]
-    ok = subir_sitio_github(slug, archivos)
+    ok = subir_sitio_github(slug, archivos, deadline=deadline)
     if not ok:
         finish(failed=True, motivo='Subida a GitHub incompleta')
         return
 
     url = f'{DEMOS}/{slug}/'
-    if not esperar_demo(iid, url, token=token):
+    if not esperar_demo(iid, url, token=token, deadline=deadline,
+                        expected_marker=content.get('brand', {}).get('name')):
         finish(failed=True, motivo='El demo no respondio 200 tras el deploy (no se registra)')
         return
 
@@ -361,7 +405,7 @@ def procesar(item):
     print(f'  LISTO {url}', flush=True)
 
 
-def procesar_nombre(item, cerrar=True, progress_id=None):
+def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     """Construye entradas directas (nombre + ciudad) desde Google Maps.
 
     Google Maps entrega nombre, rating, contacto, website declarado y fotos públicas sin
@@ -403,11 +447,12 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
                 pass
     r = None
     for attempt in range(2):
-        r = subprocess.run([sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug], capture_output=True, text=True, timeout=360)
+        r = subprocess.run([sys.executable, 'scripts/maps_research.py', f'{nombre}, {ciudad}', slug],
+                           capture_output=True, text=True, timeout=timeout_for(deadline, 150))
         if os.path.exists(ruta_data):
             break
         if attempt == 0:
-            time.sleep(4)
+            sleep_for(4, deadline)
     if not os.path.exists(ruta_data):
         return fail(f'Research Google Maps sin datos: {(r.stdout or r.stderr)[-180:]}')
     hechos = json.load(open(ruta_data, encoding='utf-8'))
@@ -426,14 +471,17 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
     if len(fotos) < 5:
         return fail(f'Google Maps solo expone {len(fotos)} fotos propias; se necesitan al menos 5 para una galeria real.')
     report('build', f'{len(fotos)} fotos publicas verificadas')
-    b = subprocess.run([sys.executable, 'scripts/build_maps_site.py', slug], capture_output=True, text=True, timeout=120)
+    b = subprocess.run([sys.executable, 'scripts/build_maps_site.py', slug], capture_output=True,
+                       text=True, timeout=timeout_for(deadline, 90))
     if b.returncode != 0:
         return fail(f'build_maps_site fallo: {(b.stdout or b.stderr)[-220:]}')
-    d = subprocess.run([sys.executable, 'scripts/derive.py', slug], capture_output=True, text=True, timeout=120)
+    d = subprocess.run([sys.executable, 'scripts/derive.py', slug], capture_output=True,
+                       text=True, timeout=timeout_for(deadline, 60))
     if d.returncode != 0:
         return fail('derive.py fallo para item por nombre')
     subprocess.run(['cp', 'templates/assets/tailwind.js', f'output/{slug}/assets/tailwind.js'], check=False)
-    g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', 'en', '--forbid', FORBID], capture_output=True, text=True)
+    g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', 'en', '--forbid', FORBID],
+                       capture_output=True, text=True, timeout=timeout_for(deadline, 60))
     if g.returncode != 0:
         return fail(f'GATE: {g.stdout[-220:]}')
     report('verify')
@@ -443,11 +491,12 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
                  for f in ['content.json', 'data.json', '.assetsignore', 'assets/tailwind.js']]
     archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
                  for f in fotos_usadas]
-    ok = subir_sitio_github(slug, archivos)
+    ok = subir_sitio_github(slug, archivos, deadline=deadline)
     if not ok:
         return fail('Subida a GitHub incompleta')
     url = f'{DEMOS}/{slug}/'
-    if not esperar_demo(report_id, url, token=token):
+    if not esperar_demo(report_id, url, token=token, deadline=deadline,
+                        expected_marker=hechos.get('name') or nombre):
         return fail('El demo no respondio 200 tras el deploy')
     report('commit')
     dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
@@ -465,7 +514,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None):
     return result
 
 
-def procesar_descubrimiento(item):
+def procesar_descubrimiento(item, deadline=None):
     """Resuelve una búsqueda manual de nicho + ciudad sin esperar al Cron.
 
     El panel guarda estas búsquedas como un único item de cola. Se reclama de forma
@@ -498,8 +547,11 @@ def procesar_descubrimiento(item):
             discovery = subprocess.run(
                 [sys.executable, 'scripts/maps_discover.py', '--niche', search_niche, '--location', location,
                  '--limit', str(max(count * 4, 8))],
-                capture_output=True, text=True, timeout=240,
+                capture_output=True, text=True, timeout=timeout_for(deadline, 90),
             )
+        except ForgeDeadlineExceeded as exc:
+            discovery_errors.append(str(exc))
+            break
         except Exception as exc:
             discovery_errors.append(str(exc)[:120])
             continue
@@ -570,7 +622,10 @@ def procesar_descubrimiento(item):
         # falsos errores sin ralentizar los builds que ya funcionan.
         for attempt in range(2):
             try:
-                result = procesar_nombre(entry['child'], cerrar=False, progress_id=iid)
+                result = procesar_nombre(entry['child'], cerrar=False, progress_id=iid, deadline=deadline)
+            except ForgeDeadlineExceeded as exc:
+                result = {'failed': True, 'motivo': str(exc)}
+                break
             except Exception as exc:
                 print(f'  candidato {name} intento {attempt + 1} fallo: {exc}', flush=True)
                 result = {'failed': True, 'motivo': str(exc)[:180]}
@@ -615,10 +670,12 @@ def main():
         nombres = [p for p in pendientes if not p.get('request') and not parece_handle(p.get('input', ''))]
         if discoveries:
             item = None
+            deadline = None
             try:
                 item = tomar_siguiente(discoveries)
                 if item:
-                    procesar_descubrimiento(item)
+                    deadline = time.monotonic() + FORGE_DEADLINE_SECONDS
+                    procesar_descubrimiento(item, deadline=deadline)
             except Exception as e:
                 print(f'  error procesando búsqueda manual: {e}', flush=True)
                 try:
@@ -628,10 +685,12 @@ def main():
                     pass
         elif mios:
             item = None
+            deadline = None
             try:
                 item = tomar_siguiente(mios)
                 if item:
-                    procesar(item)
+                    deadline = time.monotonic() + FORGE_DEADLINE_SECONDS
+                    procesar(item, deadline=deadline)
             except Exception as e:
                 print(f'  error procesando: {e}', flush=True)
                 try:
@@ -641,10 +700,12 @@ def main():
                     pass
         elif nombres:
             item = None
+            deadline = None
             try:
                 item = tomar_siguiente(nombres)
                 if item:
-                    procesar_nombre(item)
+                    deadline = time.monotonic() + FORGE_DEADLINE_SECONDS
+                    procesar_nombre(item, deadline=deadline)
             except Exception as e:
                 print(f'  error procesando nombre: {e}', flush=True)
                 try:
