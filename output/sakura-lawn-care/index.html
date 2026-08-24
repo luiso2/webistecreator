@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="theme-color" content="#0f0b07" />
-  <title>sakura_lawn_care · Landscaping en Florida</title>
-  <meta name="description" content="sakura_lawn_care: landscaping en Florida. Mira nuestro trabajo real y escríbenos." />
-  <meta property="og:title" content="sakura_lawn_care · Landscaping" />
-  <meta property="og:description" content="Landscaping en Florida. Trabajo real publicado en Instagram." />
+  <title>Sakura Lawn Care · Hialeah, FL</title>
+  <meta name="description" content="Sakura Lawn Care: servicios locales en Hialeah, FL. Información, fotos y contacto verificados en Google Maps." />
+  <meta property="og:title" content="Sakura Lawn Care · Hialeah, FL" />
+  <meta property="og:description" content="Sakura Lawn Care en Hialeah, FL. Fotos públicas y contacto directo." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/raw/bk-1.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/logo.jpg" />
+  <meta property="og:image" content="assets/raw/gmaps-1.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-1.jpg" />
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "sakura_lawn_care",
-  "description": "Landscaping en Florida.",
+  "@type": "LandscapingBusiness",
+  "name": "Sakura Lawn Care",
+  "description": "Sakura Lawn Care, negocio local en Hialeah, FL.",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Florida",
-    "addressRegion": "FL",
-    "addressCountry": "US"
+    "streetAddress": "1670 W 39th Pl Ste 1301, Hialeah, FL 33012",
+    "addressLocality": "Hialeah",
+    "addressRegion": "FL"
   },
-  "image": "assets/raw/bk-1.jpg",
+  "telephone": "(305) 303-3334",
+  "image": "assets/raw/gmaps-1.jpg",
   "sameAs": [
-    "https://www.instagram.com/sakura_lawn_care/"
+    "https://www.google.com/maps/place/Sakura+Lawn+Care/data=!4m7!3m6!1s0x88d9bbb5079c568f:0xaae6c321b267c284!8m2!3d25.8572922!4d-80.3160169!16s%2Fg%2F11t9d5ymbj!19sChIJj1acB7W72YgRhMJnsiHD5qo?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1"
   ]
 }
   </script>
@@ -125,14 +126,22 @@
     .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
     .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
     .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
       box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
+    .book-float-label { color: #1c1408; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
     .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
     .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; color: var(--ink-40); font-size: 0.72rem; letter-spacing: 0.02em; }
+    .hero-proof span { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .hero-proof span::before { content: '✓'; color: var(--accent-deep); font-weight: 700; }
+    @media (max-width: 640px) {
+      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
+      .book-float-label { font-size: 0.8rem; }
+    }
 
     /* ============ Motion v2 ============ */
     #preloader {
@@ -275,8 +284,8 @@
 
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
-    <span class="pre-mono">S</span>
-    <span class="pre-word">sakura_lawn_care</span>
+    <span class="pre-mono">SL</span>
+    <span class="pre-word">Sakura Lawn Care</span>
     <span class="pre-line"></span>
   </div>
 
@@ -287,22 +296,22 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/logo.jpg" alt="sakura_lawn_care" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
-        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">sakura_lawn_care <span class="text-[color:var(--accent-deep)]">Landscaping</span></span>
+        <img src="assets/raw/gmaps-1.jpg" alt="Sakura Lawn Care" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Sakura <span class="text-[color:var(--accent-deep)]">Lawn Care</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">Nosotros</a>
-        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Proceso</a>
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
+        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
         <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="nav-link" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Por qué elegirnos</a>
-        <a class="nav-link" href="#ubicacion" data-es="Contacto" data-en="Contact">Contacto</a>
+        <a class="nav-link" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
+        <a class="nav-link" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
       </nav>
       <div class="flex items-center gap-3">
         <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
-        <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          <span data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Escríbenos por Instagram</span>
+        <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span data-es="Llamar ahora" data-en="Call now">Call now</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -313,13 +322,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">Nosotros</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Proceso</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Por qué elegirnos</a>
-        <a class="py-3 px-3" href="#ubicacion" data-es="Contacto" data-en="Contact">Contacto</a>
-        <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Escríbenos por Instagram</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
+        <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
       </nav>
     </div>
   </header>
@@ -329,36 +338,41 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Florida · Landscaping" data-en="Florida · Landscaping">Florida · Landscaping</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Trabajo real, trato directo.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Hialeah, FL · Landscaping" data-en="Hialeah, FL · Landscaping">Hialeah, FL · Landscaping</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          <span data-es="Tu jardín, cuidado" data-en="Your yard, cared for">Tu jardín, cuidado</span><br /><span data-es="todo el año por " data-en="year-round by ">todo el año por </span><span class="text-shine" data-es="sakura_lawn_care" data-en="sakura_lawn_care">sakura_lawn_care</span>
+          <span data-es="Tu jardín, cuidado" data-en="Your yard, cared for">Your yard, cared for</span><br /><span data-es="todo el año por " data-en="year-round by ">year-round by </span><span class="text-shine" data-es="Sakura" data-en="Sakura">Sakura</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Somos sakura_lawn_care, landscaping en Florida. Nuestro trabajo está publicado en Instagram: puedes ver cómo trabajamos antes de escribirnos, y hablas directo con quien hace el trabajo." data-en="We are sakura_lawn_care, landscaping in Florida. Our work is posted on Instagram: you can see how we work before reaching out, and you talk straight to the people doing the job.">Somos sakura_lawn_care, landscaping en Florida. Nuestro trabajo está publicado en Instagram: puedes ver cómo trabajamos antes de escribirnos, y hablas directo con quien hace el trabajo.</p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Sakura Lawn Care atiende a clientes en Hialeah, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente." data-en="Sakura Lawn Care serves customers in Hialeah, FL. Check the public listing, see real photos and contact the business directly.">Sakura Lawn Care serves customers in Hialeah, FL. Check the public listing, see real photos and contact the business directly.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
-          <svg class="text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          <span class="text-sm text-[color:var(--ink-60)]" data-es="571 seguidores en Instagram" data-en="571 followers on Instagram">571 seguidores en Instagram</span>
+          <svg class="text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="Ficha pública en Google Maps" data-en="Public Google Maps listing">Public Google Maps listing</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            <span data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Escríbenos por Instagram</span>
+          <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar ahora" data-en="Call now">Call now</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.instagram.com/sakura_lawn_care/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="https://www.google.com/maps/place/Sakura+Lawn+Care/data=!4m7!3m6!1s0x88d9bbb5079c568f:0xaae6c321b267c284!8m2!3d25.8572922!4d-80.3160169!16s%2Fg%2F11t9d5ymbj!19sChIJj1acB7W72YgRhMJnsiHD5qo?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            @sakura_lawn_care
+            Google Maps
           </a>
+        </div>
+        <div class="reveal hero-proof mt-5" style="transition-delay:420ms" aria-label="Lo que encontrará el cliente">
+          <span data-es="Fotos reales" data-en="Real work">Fotos reales</span>
+          <span data-es="Servicios claros" data-en="Clear services">Servicios claros</span>
+          <span data-es="Contacto directo" data-en="Direct contact">Contacto directo</span>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/bk-1.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/gmaps-1.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Atención directa</p>
-            <p class="font-display text-lg">@sakura_lawn_care</p>
-            <p class="text-sm text-[color:var(--ink-60)]" data-es="Florida" data-en="Florida">Florida</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
+            <p class="font-display text-lg">(305) 303-3334</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Hialeah, FL" data-en="Hialeah, FL">Hialeah, FL</p>
           </div>
         </div>
       </div>
@@ -368,10 +382,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="110">110</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Publicaciones en Instagram" data-en="Posts on Instagram">Publicaciones en Instagram</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">571</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Seguidores en Instagram" data-en="Followers on Instagram">Seguidores en Instagram</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Landscaping</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="El oficio" data-en="The trade">El oficio</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Florida</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de trabajo" data-en="Service area">Zona de trabajo</p></div>
+      <div class="reveal"><p class="font-display text-2xl">Landscaping</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="El oficio" data-en="The trade">The trade</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Hialeah</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de trabajo" data-en="Service area">Service area</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
     </div>
   </section>
 
@@ -384,7 +398,7 @@
         <span class="marquee-word">Podas</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Diseño</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Mantenimiento</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Florida</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
         <span class="marquee-word">Landscaping</span><span class="marquee-star">✦</span>
@@ -392,7 +406,7 @@
         <span class="marquee-word">Podas</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Diseño</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Mantenimiento</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Florida</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -403,26 +417,25 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/bk-2.jpg" alt="Trabajo de sakura_lawn_care" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Sakura Lawn Care" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/bk-3.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-3.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">Nosotros</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo," data-en="One team,">Un equipo,</span><br /><span class="text-shine" data-es="un solo responsable" data-en="one accountable crew">un solo responsable</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="sakura_lawn_care es un negocio local de Florida. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios." data-en="sakura_lawn_care is a local Florida business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.">sakura_lawn_care es un negocio local de Florida. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Nuestro trabajo está a la vista en Instagram: lo publicamos porque no tenemos nada que esconder. Mira el feed antes de decidir." data-en="Our work is out in the open on Instagram: we post it because we have nothing to hide. Check the feed before you decide.">Nuestro trabajo está a la vista en Instagram: lo publicamos porque no tenemos nada que esconder. Mira el feed antes de decidir.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo," data-en="One team,">One team,</span><br /><span class="text-shine" data-es="un solo responsable" data-en="one accountable crew">one accountable crew</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Sakura Lawn Care es un negocio local de Hialeah, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios." data-en="Sakura Lawn Care is a local Hialeah, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.">Sakura Lawn Care is a local Hialeah, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles." data-en="The public Google Maps listing collects the available photos and contact information.">The public Google Maps listing collects the available photos and contact information.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="110">110</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Publicaciones" data-en="Posts">Publicaciones</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">571</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Seguidores" data-en="Followers">Seguidores</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Trato directo</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">Hialeah</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Zona" data-en="Area">Area</p></div>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/logo.jpg" alt="Logo de sakura_lawn_care" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
-            <span class="text-sm font-light">sakura_lawn_care · <span class="text-[color:var(--ink-40)]" data-es="Florida" data-en="Florida">Florida</span></span>
+            <img src="assets/raw/gmaps-1.jpg" alt="Logo de Sakura Lawn Care" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Sakura Lawn Care · <span class="text-[color:var(--ink-40)]" data-es="Hialeah, FL" data-en="Hialeah, FL">Hialeah, FL</span></span>
           </div>
         </div>
       </div>
@@ -434,29 +447,29 @@
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Tu proyecto, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">Así trabajamos</span> <span class="text-shine" data-es="contigo" data-en="with you">contigo</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Get in touch">Escríbenos</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte." data-en="Tell us what you need; a photo of the space or the problem is enough to point you right.">Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Get in touch">Get in touch</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte." data-en="Tell us what you need; a photo of the space or the problem is enough to point you right.">Tell us what you need; a photo of the space or the problem is enough to point you right.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto claro" data-en="Clear quote">Presupuesto claro</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica." data-en="We tell you what the job takes and what it costs before starting, no fine print.">Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Presupuesto claro" data-en="Clear quote">Clear quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica." data-en="We tell you what the job takes and what it costs before starting, no fine print.">We tell you what the job takes and what it costs before starting, no fine print.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3" data-es="El trabajo" data-en="The job">El trabajo</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed." data-en="We arrive with everything needed and execute with the care you see on our feed.">Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed.</p>
+          <h3 class="font-display text-xl mb-3" data-es="El trabajo" data-en="The job">The job</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed." data-en="We arrive with everything needed and execute with the care you see on our feed.">We arrive with everything needed and execute with the care you see on our feed.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3" data-es="Entrega" data-en="Handover">Entrega</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima." data-en="We walk the result together and leave the area clean. And you keep our number for next time.">Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Entrega" data-en="Handover">Handover</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima." data-en="We walk the result together and leave the area clean. And you keep our number for next time.">We walk the result together and leave the area clean. And you keep our number for next time.</p>
         </div>
       </div>
     </div>
@@ -468,44 +481,44 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">Lo que</span> <span class="text-shine" data-es="hacemos" data-en="do">hacemos</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso." data-en="Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.">Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso.</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso." data-en="Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.">Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Mantenimiento" data-en="Maintenance">Mantenimiento</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Corte y cuidado del césped" data-en="Lawn care">Corte y cuidado del césped</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Corte, bordes y limpieza con una frecuencia que mantiene el jardín siempre presentable." data-en="Mowing, edging and cleanup on a schedule that keeps the yard presentable all the time.">Corte, bordes y limpieza con una frecuencia que mantiene el jardín siempre presentable.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Mantenimiento" data-en="Maintenance">Maintenance</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Corte y cuidado del césped" data-en="Lawn care">Lawn care</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Corte, bordes y limpieza con una frecuencia que mantiene el jardín siempre presentable." data-en="Mowing, edging and cleanup on a schedule that keeps the yard presentable all the time.">Mowing, edging and cleanup on a schedule that keeps the yard presentable all the time.</p>
           <div class="mt-auto">
-            <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Consultar</a>
+            <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Plantas" data-en="Plants">Plantas</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Podas y siembras" data-en="Trimming and planting">Podas y siembras</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Podas de arbustos y palmas, y siembras que le devuelven vida a los canteros." data-en="Shrub and palm trimming, and planting that brings the beds back to life.">Podas de arbustos y palmas, y siembras que le devuelven vida a los canteros.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Plantas" data-en="Plants">Plants</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Podas y siembras" data-en="Trimming and planting">Trimming and planting</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Podas de arbustos y palmas, y siembras que le devuelven vida a los canteros." data-en="Shrub and palm trimming, and planting that brings the beds back to life.">Shrub and palm trimming, and planting that brings the beds back to life.</p>
           <div class="mt-auto">
-            <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Consultar</a>
+            <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Proyectos" data-en="Projects">Proyectos</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Diseño de exteriores" data-en="Landscape design">Diseño de exteriores</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Renovación de áreas verdes: piedra, mulch y plantas elegidas para el clima de Florida." data-en="Outdoor makeovers: stone, mulch and plants chosen for Florida weather.">Renovación de áreas verdes: piedra, mulch y plantas elegidas para el clima de Florida.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Proyectos" data-en="Projects">Projects</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Diseño de exteriores" data-en="Landscape design">Landscape design</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Renovación de áreas verdes: piedra, mulch y plantas elegidas para el clima de Florida." data-en="Outdoor makeovers: stone, mulch and plants chosen for Florida weather.">Outdoor makeovers: stone, mulch and plants chosen for Florida weather.</p>
           <div class="mt-auto">
-            <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Consultar</a>
+            <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Extras" data-en="Extras">Extras</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Limpiezas y salidas puntuales" data-en="Cleanups and one-time visits">Limpiezas y salidas puntuales</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Limpiezas de temporada y trabajos puntuales cuando el jardín se salió de control." data-en="Seasonal cleanups and one-time jobs when the yard got out of hand.">Limpiezas de temporada y trabajos puntuales cuando el jardín se salió de control.</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Limpiezas y salidas puntuales" data-en="Cleanups and one-time visits">Cleanups and one-time visits</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Limpiezas de temporada y trabajos puntuales cuando el jardín se salió de control." data-en="Seasonal cleanups and one-time jobs when the yard got out of hand.">Seasonal cleanups and one-time jobs when the yard got out of hand.</p>
           <div class="mt-auto">
-            <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Consultar</a>
+            <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves lo que necesitas? Escríbenos igual: si es de nuestro oficio, lo hacemos." data-en="Need something not listed? Message us anyway: if it is our trade, we do it.">¿No ves lo que necesitas? Escríbenos igual: si es de nuestro oficio, lo hacemos.</span></p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte." data-en="Do not see exactly what you need? Message us and we will confirm whether we can help.">Do not see exactly what you need? Message us and we will confirm whether we can help.</span></p>
     </div>
   </section>
 
@@ -516,20 +529,20 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Trabajos</span> <span class="text-shine" data-es="reales" data-en="work">reales</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="work">work</span></h2>
         </div>
-        <a href="https://www.instagram.com/sakura_lawn_care/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.google.com/maps/place/Sakura+Lawn+Care/data=!4m7!3m6!1s0x88d9bbb5079c568f:0xaae6c321b267c284!8m2!3d25.8572922!4d-80.3160169!16s%2Fg%2F11t9d5ymbj!19sChIJj1acB7W72YgRhMJnsiHD5qo?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @sakura_lawn_care
+          Google Maps
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/bk-4.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/bk-5.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/bk-6.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/bk-7.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/bk-8.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/bk-9.jpg" alt="Trabajo de sakura_lawn_care en Florida" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/gmaps-4.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/gmaps-5.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/gmaps-6.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/gmaps-7.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/gmaps-8.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Landscaping" data-en="Landscaping">Landscaping</span><img src="assets/raw/gmaps-9.jpg" alt="Trabajo de Sakura Lawn Care en Hialeah, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -543,7 +556,7 @@
         <span class="marquee-word">Podas</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Diseño</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Mantenimiento</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Florida</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
         <span class="marquee-word">Landscaping</span><span class="marquee-star">✦</span>
@@ -551,7 +564,7 @@
         <span class="marquee-word">Podas</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Diseño</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Mantenimiento</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Florida</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Hialeah</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -561,29 +574,29 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué elegirnos" data-en="Why choose us">Por qué elegirnos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Tres razones</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">para escribirnos</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Nuestro trabajo está publicado en Instagram: revísalo antes de decidir." data-en="Our work is posted on Instagram: check it before you decide.">Nuestro trabajo está publicado en Instagram: revísalo antes de decidir.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">to message us</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha." data-en="We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.">We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.</p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 items-stretch">
         <div class="glass glass-hover rounded-3xl p-8 reveal">
           <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Trabajo a la vista" data-en="Work out in the open">Trabajo a la vista</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores." data-en="We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.">Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Trabajo a la vista" data-en="Work out in the open">Work out in the open</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores." data-en="We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.">We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
           <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="El que responde es el que llega" data-en="Who answers is who shows up">El que responde es el que llega</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo." data-en="You talk to the crew, agree with the crew, and the crew does the work.">Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo.</p>
+          <h3 class="font-display text-xl mb-3" data-es="El que responde es el que llega" data-en="Who answers is who shows up">Who answers is who shows up</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo." data-en="You talk to the crew, agree with the crew, and the crew does the work.">You talk to the crew, agree with the crew, and the crew does the work.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
           <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto antes de empezar" data-en="Quote before we start">Presupuesto antes de empezar</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra." data-en="You know what it takes and what it costs before the first hammer swing. No mid-job surprises.">Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Presupuesto antes de empezar" data-en="Quote before we start">Quote before we start</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra." data-en="You know what it takes and what it costs before the first hammer swing. No mid-job surprises.">You know what it takes and what it costs before the first hammer swing. No mid-job surprises.</p>
         </div>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.instagram.com/sakura_lawn_care/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver el trabajo en Instagram" data-en="See the work on Instagram">Ver el trabajo en Instagram</a>
+        <a href="https://www.google.com/maps/place/Sakura+Lawn+Care/data=!4m7!3m6!1s0x88d9bbb5079c568f:0xaae6c321b267c284!8m2!3d25.8572922!4d-80.3160169!16s%2Fg%2F11t9d5ymbj!19sChIJj1acB7W72YgRhMJnsiHD5qo?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver ficha y fotos en Google Maps" data-en="See listing and photos on Google Maps">See listing and photos on Google Maps</a>
       </div>
     </div>
   </section>
@@ -593,29 +606,29 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contacto</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Escríbenos desde" data-en="Reach us from">Escríbenos desde</span> <span class="text-shine">Florida</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos desde" data-en="Reach us from">Reach us from</span> <span class="text-shine">Hialeah</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Instagram" data-en="Instagram">Instagram</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Ahí publicamos el trabajo. También puedes escribirnos por DM." data-en="Where the work gets posted. You can also reach us by DM.">Ahí publicamos el trabajo. También puedes escribirnos por DM.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.instagram.com/sakura_lawn_care/" target="_blank" rel="noopener">@sakura_lawn_care</a>
+              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para consultar disponibilidad." data-en="The fastest way to ask about availability.">The fastest way to ask about availability.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="tel:+3053033334">(305) 303-3334</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Zona de trabajo" data-en="Service area">Zona de trabajo</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Florida y alrededores." data-en="Florida and nearby.">Florida y alrededores.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.instagram.com/sakura_lawn_care/" target="_blank" rel="noopener">Florida</a>
+              <p class="font-medium mb-1" data-es="Google Maps" data-en="Google Maps">Google Maps</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Dirección pública: 1670 W 39th Pl Ste 1301, Hialeah, FL 33012." data-en="Public address: 1670 W 39th Pl Ste 1301, Hialeah, FL 33012.">Public address: 1670 W 39th Pl Ste 1301, Hialeah, FL 33012.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.google.com/maps/place/Sakura+Lawn+Care/data=!4m7!3m6!1s0x88d9bbb5079c568f:0xaae6c321b267c284!8m2!3d25.8572922!4d-80.3160169!16s%2Fg%2F11t9d5ymbj!19sChIJj1acB7W72YgRhMJnsiHD5qo?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">1670 W 39th Pl Ste 1301, Hialeah, FL 33012</a>
             </div>
           </div>
         </div>
       </div>
       <div class="frame zoomable img-reveal min-h-[380px] h-full max-h-[560px] lg:max-h-none" style="transition-delay:180ms">
-        <img src="assets/raw/bk-2.jpg" alt="Trabajo de sakura_lawn_care" class="blur-up w-full h-full object-cover" loading="lazy" />
+        <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Sakura Lawn Care" class="blur-up w-full h-full object-cover" loading="lazy" />
       </div>
     </div>
   </section>
@@ -625,40 +638,40 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Trabajo real, trato directo.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Tu proyecto</span> <span class="text-shine" data-es="empieza con un mensaje" data-en="starts with a message">empieza con un mensaje</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso." data-en="Tell us what you need and we reply with ideas and a quote, no strings attached.">Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="empieza con un mensaje" data-en="starts with a message">starts with a message</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso." data-en="Tell us what you need and we reply with ideas and a quote, no strings attached.">Tell us what you need and we reply with ideas and a quote, no strings attached.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Escríbenos por Instagram" data-en="Message us on Instagram">Escríbenos por Instagram</a>
-        <a href="https://www.instagram.com/sakura_lawn_care/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Seguir en Instagram" data-en="Follow on Instagram">Seguir en Instagram</a>
+        <a href="tel:+3053033334" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a href="https://www.google.com/maps/place/Sakura+Lawn+Care/data=!4m7!3m6!1s0x88d9bbb5079c568f:0xaae6c321b267c284!8m2!3d25.8572922!4d-80.3160169!16s%2Fg%2F11t9d5ymbj!19sChIJj1acB7W72YgRhMJnsiHD5qo?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">See listing on Google Maps</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
-    <span class="foot-mark" aria-hidden="true">sakura_lawn_care</span>
+    <span class="foot-mark" aria-hidden="true">Sakura Lawn Care</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.jpg" alt="sakura_lawn_care" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
-          <span class="font-display text-lg tracking-[0.1em] uppercase">sakura_lawn_care</span>
+          <img src="assets/raw/gmaps-1.jpg" alt="Sakura Lawn Care" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Sakura Lawn Care</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Landscaping en Florida. Trabajo real publicado en Instagram." data-en="Landscaping in Florida. Real work posted on Instagram.">Landscaping en Florida. Trabajo real publicado en Instagram.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Sakura Lawn Care en Hialeah, FL. Información pública y contacto directo." data-en="Sakura Lawn Care in Hialeah, FL. Public information and direct contact.">Sakura Lawn Care in Hialeah, FL. Public information and direct contact.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
-        <p>Florida</p>
-        <p><a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="DM · @sakura_lawn_care" data-en="DM · @sakura_lawn_care">DM · @sakura_lawn_care</a></p>
+        <p>1670 W 39th Pl Ste 1301, Hialeah, FL 33012</p>
+        <p><a href="tel:+3053033334" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Teléfono · (305) 303-3334" data-en="Phone · (305) 303-3334">Phone · (305) 303-3334</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.instagram.com/sakura_lawn_care/" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · @sakura_lawn_care</a></p>
+        <p><a href="https://www.google.com/maps/place/Sakura+Lawn+Care/data=!4m7!3m6!1s0x88d9bbb5079c568f:0xaae6c321b267c284!8m2!3d25.8572922!4d-80.3160169!16s%2Fg%2F11t9d5ymbj!19sChIJj1acB7W72YgRhMJnsiHD5qo?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Google Maps · Google Maps</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 sakura_lawn_care.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Sakura Lawn Care.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -668,8 +681,9 @@
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="https://ig.me/m/sakura_lawn_care" target="_blank" rel="noopener" class="book-float" aria-label="Escríbenos por Instagram">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  <a href="tel:+3053033334" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    <span class="book-float-label" data-es="Llamar ahora" data-en="Call now">Call now</span>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
@@ -691,7 +705,7 @@
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
     let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
-    applyLang(lang === 'en' ? 'en' : 'es');
+    applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // Preloader
