@@ -20,9 +20,9 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 try:
-    from .maps_common import is_own_website, safe_google_maps_url
+    from .maps_common import instagram_handle, is_own_website, safe_google_maps_url
 except ImportError:  # ejecución directa: python scripts/maps_research.py
-    from maps_common import is_own_website, safe_google_maps_url
+    from maps_common import instagram_handle, is_own_website, safe_google_maps_url
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 CHROME = (os.environ.get("CHROME_PATH") or shutil.which("chromium") or
@@ -259,6 +259,7 @@ def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
     out["fotos"] = downloaded
     out["has_own_site"] = is_own_website(out.get("website"))
     out["profile_url"] = out.get("website") if out.get("website") and not out["has_own_site"] else None
+    out["instagram_handle"] = instagram_handle(out["profile_url"])
     out["slug"] = out_slug
     (root / "data.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out

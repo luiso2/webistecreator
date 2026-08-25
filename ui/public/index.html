@@ -215,6 +215,8 @@
     /* SMS: para negocios cuyo numero no tiene WhatsApp. Abre la app de mensajes con el texto. */
     .link-btn.sms { color: #d9e8ff; border-color: rgba(90,143,199,0.5); background: rgba(90,143,199,0.12); }
     .link-btn.sms:hover { border-color: rgba(90,143,199,0.9); background: rgba(90,143,199,0.22); }
+    .link-btn.maps { color: #d9e8ff; border-color: rgba(66,133,244,0.5); background: rgba(66,133,244,0.12); }
+    .link-btn.maps:hover { border-color: rgba(66,133,244,0.9); background: rgba(66,133,244,0.22); }
     /* Editor del mensaje: el DM de Instagram hay que pegarlo a mano, asi que se ajusta aqui */
     .msg-editor { display: grid; gap: 8px; margin-top: 6px; }
     .msg-guide { margin: 0; color: var(--ink-40); font-size: 11px; line-height: 1.45; }
@@ -419,7 +421,9 @@
     </div>
   </div>
 
-  <script>
+  <script type="module">
+    import { instagramDmUrl, normalizeGoogleMapsUrl, normalizeInstagramHandle } from './social-channels.mjs';
+
     const $ = id => document.getElementById(id);
     const KEY_LS = 'sf_key';
     const headers = () => ({ 'x-sf-key': localStorage.getItem(KEY_LS) || '', 'content-type': 'application/json' });
@@ -494,8 +498,9 @@
       const el = document.getElementById('why-' + id);
       if (el) el.hidden = !el.hidden;
     };
-    // Handle de IG seguro para URL (ig.me) y para incrustar en JS: solo caracteres validos.
-    function igSafe(s) { return String(s || '').replace(/[^A-Za-z0-9_.]/g, ''); }
+    // Valida el canal en vez de convertir texto arbitrario en un supuesto handle.
+    const igSafe = normalizeInstagramHandle;
+    const mapsSafe = normalizeGoogleMapsUrl;
 
     // Mensaje de outreach de un negocio: el guardado, o uno de respaldo que SIEMPRE
     // incluye el link del demo (para que WhatsApp/DM abran con el website incluido).
@@ -789,13 +794,19 @@
         : `mostrando ${lista.length} de ${filtered.length}`;
       $('showMore').hidden = lista.length >= filtered.length;
       $('showMore').textContent = `Mostrar ${Math.min(REGISTRY_PAGE_SIZE, filtered.length - lista.length)} más`;
-      $('grid').innerHTML = lista.map((b, i) => `
+      $('grid').innerHTML = lista.map((b, i) => {
+        const ig = igSafe(b.ig);
+        const maps = mapsSafe(b.maps_url);
+        const canal = ig
+          ? `@${esc(ig)}`
+          : (maps ? 'Encontrado en Google Maps · Instagram no verificado' : 'Instagram no verificado');
+        return `
         <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" id="biz-${esc(b.slug)}" style="animation-delay:${(0.12 + Math.min(i, 14) * 0.03).toFixed(2)}s">
           ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'; demoDown('${esc(b.slug)}')" /></a>` : ''}
           <div class="top">
             <div><h4>${esc(b.name)}</h4><p class="city">${esc(b.city || '')} · ${esc(b.fecha || '')}</p></div>
           </div>
-          <p class="ig">${esc(b.ig || '')}${b.email ? ' · ' + esc(b.email) : ''}${b.phone ? ' · ' + esc(b.phone) : ''}</p>
+          <p class="ig">${canal}${b.email ? ' · ' + esc(b.email) : ''}${b.phone ? ' · ' + esc(b.phone) : ''}</p>
           <div class="badges">
             ${b.crm_status === 'client' ? '<span class="badge b-client">✓ Cliente cerrado</span>' : (b.crm_status === 'declined' ? '<span class="badge b-declined">Descartado</span>' : badgeOutreach(b))}
             ${b.has_own_site ? '<span class="badge b-site">Ya tenia website</span>' : '<span class="badge b-site">Sin website propio</span>'}
@@ -804,10 +815,11 @@
             ${b.url_demo && String(b.url_demo).startsWith('https://') ? `<a class="link-btn primary" href="${esc(b.url_demo)}" target="_blank" rel="noopener">Ver demo</a>` : '<span class="link-btn" style="opacity:0.5">Demo pendiente</span>'}
             ${waHref(b) ? `<a class="link-btn wa" href="${waHref(b)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
             ${smsHref(b) ? `<a class="link-btn sms" href="${smsHref(b)}">SMS 💬</a>` : ''}
+            ${maps ? `<a class="link-btn maps" href="${esc(maps)}" target="_blank" rel="noopener">Google Maps</a>` : ''}
           </div>
           <div class="actions">
             ${b.email && b.url_demo && b.outreach !== 'sent' ? `<button class="link-btn send-email" id="send-${esc(b.slug)}" onclick="sendEmail('${esc(b.slug)}', this)">Email (${(b.language || 'es').toUpperCase()})</button>` : ''}
-            ${b.ig ? `<button class="link-btn" onclick="sendDM('${igSafe(b.ig)}', ${i})">DM ✉</button>` : ''}
+            ${ig ? `<button class="link-btn" onclick="sendDM('${ig}', ${i})">DM ✉</button>` : ''}
             <button class="link-btn" onclick="editarMsg('${esc(b.slug)}')">✎ Mensaje${b.msg_editado ? ' ·' : ''}</button>
           </div>
           <div class="msg-editor" id="ed-${esc(b.slug)}" hidden>
@@ -816,8 +828,8 @@
               oninput="contarMsg('${esc(b.slug)}')">${esc(dmText(b))}</textarea>
             <div class="msg-acts">
               <button class="link-btn primary" onclick="guardarMsg('${esc(b.slug)}')">Guardar</button>
-              <button class="link-btn" onclick="copiarMsg('${esc(b.slug)}')">Copiar para el DM</button>
-              ${b.ig ? `<button class="link-btn" onclick="copiarYAbrirIG('${esc(b.slug)}','${igSafe(b.ig)}')">Copiar y abrir IG</button>` : ''}
+              <button class="link-btn" onclick="copiarMsg('${esc(b.slug)}')">${ig ? 'Copiar para el DM' : 'Copiar mensaje'}</button>
+              ${ig ? `<button class="link-btn" onclick="copiarYAbrirIG('${esc(b.slug)}','${ig}')">Copiar y abrir IG</button>` : ''}
               <button class="link-btn" onclick="restaurarMsg('${esc(b.slug)}')">Volver al original</button>
               <span class="msg-chars" id="ch-${esc(b.slug)}"></span>
             </div>
@@ -842,7 +854,8 @@
             <button class="dom-btn" onclick="checkDomain('${esc(b.slug)}')">Buscar dominio</button>
             <div class="dom-results" id="domres-${esc(b.slug)}">${b.live_url ? `<div class="dom-hit"><span>Live: <a href="${esc(b.live_url)}" target="_blank" rel="noopener" style="color:var(--lime)">${esc(b.custom_domain || b.live_url)}</a></span></div>` : ''}</div>
           </div>
-        </div>`).join('');
+        </div>`;
+      }).join('');
       window.__reg = lista;
 
       const STAGE_LABEL = { research: 'Investigando el negocio', build: 'Construyendo el website', verify: 'Verificando calidad', commit: 'Publicando' };
@@ -859,7 +872,7 @@
           .filter(site => site.url_demo && site.url_demo.startsWith('https://') && site.url_demo.includes('.odd-forest-9504.workers.dev'))
           .map((site, index) => `<a href="${esc(site.url_demo)}" target="_blank" rel="noopener" style="color:var(--lime)">${resultSites.length > 1 ? esc(site.name || `demo ${index + 1}`) : 'ver demo'}</a>`)
           .join(' · ');
-        const handle = q.input.startsWith('@') ? q.input.slice(1) : '';
+        const handle = q.input.startsWith('@') ? igSafe(q.input) : '';
         const dm = q.status === 'done' && q.result && q.result.dm && handle
           ? `<a href="#" onclick="event.preventDefault(); sendQueueDM('${esc(q.id)}', '${esc(handle)}')" style="color:var(--lime)">DM ✉</a>` : '';
         const failed = q.status === 'failed' || (q.status === 'done' && q.result && q.result.failed);
@@ -959,15 +972,18 @@
     window.copiarMsg = async (slug) => {
       const ta = $('ta-' + slug);
       if (!ta) return;
-      try { await navigator.clipboard.writeText(ta.value); aviso('Copiado. Pegalo en el DM.'); }
+      const tieneInstagram = Boolean(igSafe(negocio(slug).ig));
+      try { await navigator.clipboard.writeText(ta.value); aviso(tieneInstagram ? 'Copiado. Pégalo en el DM.' : 'Mensaje copiado.'); }
       catch { ta.select(); aviso('Selecciona y copia con Cmd+C.', false); }
     };
 
     window.copiarYAbrirIG = async (slug, handle) => {
+      const target = instagramDmUrl(handle);
+      if (!target) { aviso('Este negocio no tiene un Instagram verificado.', false); return; }
       const ta = $('ta-' + slug);
       try { if (ta) await navigator.clipboard.writeText(ta.value); } catch {}
       aviso('Copiado: pegalo en el DM que se abrio.');
-      window.open('https://ig.me/m/' + handle, '_blank', 'noopener');
+      window.open(target, '_blank', 'noopener');
     };
 
     window.restaurarMsg = async (slug) => {
@@ -984,13 +1000,15 @@
     // Boton DM: copia el mensaje (en el idioma del site) y abre el hilo de Instagram.
     // Instagram no soporta pre-llenar el texto por URL, por eso: copiar + pegar.
     window.sendDM = async (handle, idx) => {
+      const target = instagramDmUrl(handle);
+      if (!target) { aviso('Este negocio no tiene un Instagram verificado.', false); return; }
       const b = (window.__reg || [])[idx] || {};
       const msg = dmText(b);
       try { if (msg) await navigator.clipboard.writeText(msg); } catch {}
       const m = $('msg');
       m.className = 'msg ok';
       m.textContent = msg ? 'Mensaje copiado al portapapeles: pegalo en el DM que se abrio.' : 'Sin mensaje guardado para este negocio.';
-      window.open('https://ig.me/m/' + igSafe(handle), '_blank', 'noopener');
+      window.open(target, '_blank', 'noopener');
     };
 
     // Boton de envio de email: DOS pasos (armar + confirmar) para que ningun click
@@ -1022,13 +1040,15 @@
     };
 
     window.sendQueueDM = async (id, handle) => {
+      const target = instagramDmUrl(handle);
+      if (!target) { aviso('El trabajo no tiene un Instagram verificado.', false); return; }
       const q = (window.__queue || {})[id] || {};
       const msg = (q.result && q.result.dm) || '';
       try { if (msg) await navigator.clipboard.writeText(msg); } catch {}
       const m = $('msg');
       m.className = 'msg ok';
       m.textContent = msg ? 'Mensaje copiado: pegalo en el DM que se abrio.' : 'Sin mensaje guardado.';
-      window.open('https://ig.me/m/' + igSafe(handle), '_blank', 'noopener');
+      window.open(target, '_blank', 'noopener');
     };
 
     window.retryQueue = async (id, btn) => {

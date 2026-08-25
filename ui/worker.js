@@ -14,6 +14,7 @@ import {
   toolDefinition,
   validatePlan,
 } from './control-plane.mjs';
+import { normalizeInstagramHandle } from './public/social-channels.mjs';
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -482,6 +483,11 @@ const agentItem = item => ({
   note: item.note || null,
 });
 
+const canonicalInstagram = value => {
+  const handle = normalizeInstagramHandle(value);
+  return handle ? `@${handle}` : null;
+};
+
 const agentSite = site => ({
   slug: site.slug,
   name: site.name,
@@ -490,7 +496,9 @@ const agentSite = site => ({
   has_own_site: site.has_own_site === true,
   email: site.email || null,
   phone: site.phone || null,
+  ig: canonicalInstagram(site.ig),
   maps_url: site.maps_url || null,
+  source: site.source || (site.maps_url ? 'google_maps' : null),
   business_key: site.business_key || null,
   language: site.language || 'es',
   outreach: site.outreach || 'pending_manual',
@@ -1256,11 +1264,12 @@ export default {
       // es privado (raw github 404 sin token). La prevencion de tarjetas fantasma vive en la
       // forja (verifica 200 antes de upsert, ver FORGE-BRIEF) y en el chequeo client-side del panel.
       const S = (v, max) => (typeof v === 'string' ? stripUnsafe(v.slice(0, max)) : undefined);
+      const instagramHandle = normalizeInstagramHandle(body.ig);
       const limpio = {
         slug,
         name: S(body.name, 120) || slug,
         city: S(body.city, 80),
-        ig: S(body.ig, 60),
+        ig: instagramHandle ? `@${instagramHandle}` : undefined,
         url_demo: body.url_demo,
         has_own_site: body.has_own_site === true,
         // undefined (no null): un upsert que viene sin email NO debe borrar el email que ya
@@ -1269,6 +1278,7 @@ export default {
         phone: S(body.phone, 30),
         maps_url: typeof body.maps_url === 'string' && googleMapsIdentity(body.maps_url)
           ? S(body.maps_url, 600) : undefined,
+        source: ['google_maps', 'instagram', 'manual'].includes(body.source) ? body.source : undefined,
         business_key: typeof body.business_key === 'string'
           ? body.business_key.toLowerCase().replace(/[^a-z0-9:|._-]/g, '').slice(0, 220) || undefined
           : undefined,
@@ -1311,7 +1321,15 @@ export default {
         // El CRM (cliente cerrado / descartado) vive en su propia llave: ninguna
         // sincronizacion del registro desde el repo o la forja lo puede pisar.
         const map = crm || {};
-        const reg = (registry || []).map(b => (map[b.slug]
+        const reg = (registry || [])
+          // Compatibilidad inmediata con el registro histórico: URLs de perfil se
+          // canonizan y sentinels como "Google Maps" dejan de salir como Instagram.
+          .map(b => ({
+            ...b,
+            ig: canonicalInstagram(b.ig),
+            source: b.source || (b.maps_url ? 'google_maps' : undefined),
+          }))
+          .map(b => (map[b.slug]
           ? {
               ...b,
               crm_status: map[b.slug].status,
@@ -1506,9 +1524,11 @@ export default {
           return json({ error: 'este registro esta marcado como duplicado', duplicate_of: biz.duplicate_of || null }, 409);
         }
         const norm = v => (v || '').toString().trim().toLowerCase().replace(/^@/, '');
+        const bizInstagram = normalizeInstagramHandle(biz.ig);
         const gemelo = registry.find(b => b.slug !== slug
           && (b.outreach === 'sent' || sentLog[b.slug])
-          && ((biz.email && norm(b.email) === norm(biz.email)) || (biz.ig && norm(b.ig) === norm(biz.ig))));
+          && ((biz.email && norm(b.email) === norm(biz.email))
+            || (bizInstagram && normalizeInstagramHandle(b.ig)?.toLowerCase() === bizInstagram.toLowerCase())));
         if (gemelo) {
           return json({
             error: 'ya se le envio email a este negocio bajo otro slug (mismo email o IG)',

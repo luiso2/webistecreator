@@ -6,7 +6,7 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
-from maps_common import is_own_website, safe_google_maps_url  # noqa: E402
+from maps_common import instagram_handle, is_own_website, safe_google_maps_url  # noqa: E402
 
 
 class MapsWebsiteFilterTests(unittest.TestCase):
@@ -37,6 +37,28 @@ class MapsWebsiteFilterTests(unittest.TestCase):
         self.assertEqual(safe_google_maps_url(valid), valid)
         self.assertIsNone(safe_google_maps_url("http://www.google.com/maps/place/Demo"))
         self.assertIsNone(safe_google_maps_url("https://example.com/maps/place/Demo"))
+
+    def test_instagram_handles_and_profile_urls_are_canonicalized(self):
+        self.assertEqual(instagram_handle("@pure.artistrysk"), "pure.artistrysk")
+        self.assertEqual(
+            instagram_handle("https://www.instagram.com/bareface.estheticsfl/?igsh=profilecard"),
+            "bareface.estheticsfl",
+        )
+        self.assertEqual(instagram_handle("instagram.com/_u/demo_studio/"), "demo_studio")
+
+    def test_non_profile_channels_never_become_instagram_handles(self):
+        for value in (
+            "Google Maps",
+            "https://www.google.com/maps/place/Demo",
+            "https://facebook.com/demo",
+            "https://instagram.com/p/ABC123/",
+            "https://instagram.com/reel/ABC123/",
+            "https://instagram.com/stories/demo/123/",
+            "@nails-by_meliza",
+            "@demo (no confirmado)",
+        ):
+            with self.subTest(value=value):
+                self.assertIsNone(instagram_handle(value))
 
 
 if __name__ == "__main__":

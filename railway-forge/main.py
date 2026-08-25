@@ -34,6 +34,7 @@ import urllib.error
 import urllib.request
 
 import contenido_script as cs
+from scripts.maps_common import instagram_handle
 
 PANEL = os.environ.get('PANEL_URL', 'https://siteforge-panel.odd-forest-9504.workers.dev')
 DEMOS = 'https://siteforge-demos.odd-forest-9504.workers.dev'
@@ -489,6 +490,7 @@ def procesar(item, deadline=None):
         'city': (hechos.get('ciudad') or ''), 'ig': f'@{handle}', 'url_demo': url,
         'phone': hechos.get('phone'), 'language': lang, 'has_own_site': bool(hechos.get('has_own_site')),
         'business_key': reserved_candidate.get('business_key'),
+        'source': 'instagram',
         'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 2,
     })
     if not isinstance(registry_result, dict) or not registry_result.get('ok'):
@@ -771,9 +773,13 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     report('commit')
     dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
                         'idioma_principal': 'en'}, url, item.get('nicho') or hechos.get('nicho'))
+    verified_instagram = instagram_handle(
+        hechos.get('instagram_handle') or hechos.get('profile_url') or hechos.get('website')
+    )
     registry_result = panel('/api/public/registry-upsert', {
         'slug': slug, 'name': hechos.get('name') or nombre, 'city': ciudad,
-        'ig': 'Google Maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
+        **({'ig': f'@{verified_instagram}'} if verified_instagram else {}),
+        'source': 'google_maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
         'email': None, 'phone': hechos.get('phone'), 'language': 'en', 'dm_message': dm[:900], 'message_version': 2,
         'maps_url': hechos.get('maps_url'), 'business_key': candidate.get('business_key'),
         'thumb': f'{url}assets/raw/{fotos_usadas[0]}',
