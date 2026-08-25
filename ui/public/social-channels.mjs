@@ -59,3 +59,12 @@ export function normalizeGoogleMapsUrl(value) {
     return null;
   }
 }
+
+export function inferLeadSource(site) {
+  if (site?.source === 'google_maps' || site?.source === 'instagram' || site?.source === 'manual') {
+    return site.source;
+  }
+  const legacyMapsMarker = typeof site?.ig === 'string'
+    && site.ig.trim().replace(/\s+/g, ' ').toLowerCase() === 'google maps';
+  return site?.maps_url || legacyMapsMarker ? 'google_maps' : null;
+}

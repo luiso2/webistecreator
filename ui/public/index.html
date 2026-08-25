@@ -422,7 +422,7 @@
   </div>
 
   <script type="module">
-    import { instagramDmUrl, normalizeGoogleMapsUrl, normalizeInstagramHandle } from './social-channels.mjs';
+    import { inferLeadSource, instagramDmUrl, normalizeGoogleMapsUrl, normalizeInstagramHandle } from './social-channels.mjs';
 
     const $ = id => document.getElementById(id);
     const KEY_LS = 'sf_key';
@@ -799,7 +799,9 @@
         const maps = mapsSafe(b.maps_url);
         const canal = ig
           ? `@${esc(ig)}`
-          : (maps ? 'Encontrado en Google Maps · Instagram no verificado' : 'Instagram no verificado');
+          : (inferLeadSource(b) === 'google_maps'
+            ? 'Encontrado en Google Maps · Instagram no verificado'
+            : 'Instagram no verificado');
         return `
         <div class="card biz reveal ${b.crm_status === 'client' ? 'is-client' : (b.crm_status === 'declined' ? 'is-declined' : '')}" id="biz-${esc(b.slug)}" style="animation-delay:${(0.12 + Math.min(i, 14) * 0.03).toFixed(2)}s">
           ${b.thumb && b.thumb.includes('.odd-forest-9504.workers.dev') ? `<a href="${esc(b.url_demo)}" target="_blank" rel="noopener" class="thumb-wrap"><img class="thumb" src="${esc(b.thumb)}" alt="" loading="lazy" onerror="this.closest('.thumb-wrap').style.display='none'; demoDown('${esc(b.slug)}')" /></a>` : ''}

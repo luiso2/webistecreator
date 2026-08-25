@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
+  inferLeadSource,
   instagramDmUrl,
   normalizeGoogleMapsUrl,
   normalizeInstagramHandle,
@@ -37,4 +38,11 @@ test('solo permite enlaces seguros de Google Maps', () => {
   assert.equal(normalizeGoogleMapsUrl('https://maps.app.goo.gl/abc123'), 'https://maps.app.goo.gl/abc123');
   assert.equal(normalizeGoogleMapsUrl('http://www.google.com/maps/place/Demo'), null);
   assert.equal(normalizeGoogleMapsUrl('https://evil.example/maps/place/Demo'), null);
+});
+
+test('conserva Google Maps como fuente, nunca como Instagram', () => {
+  assert.equal(inferLeadSource({ ig: 'Google   Maps' }), 'google_maps');
+  assert.equal(inferLeadSource({ maps_url: 'https://www.google.com/maps/place/Demo' }), 'google_maps');
+  assert.equal(inferLeadSource({ source: 'instagram', ig: '@demo' }), 'instagram');
+  assert.equal(inferLeadSource({ ig: '@demo' }), null);
 });

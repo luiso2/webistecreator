@@ -14,7 +14,7 @@ import {
   toolDefinition,
   validatePlan,
 } from './control-plane.mjs';
-import { normalizeInstagramHandle } from './public/social-channels.mjs';
+import { inferLeadSource, normalizeInstagramHandle } from './public/social-channels.mjs';
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -498,7 +498,7 @@ const agentSite = site => ({
   phone: site.phone || null,
   ig: canonicalInstagram(site.ig),
   maps_url: site.maps_url || null,
-  source: site.source || (site.maps_url ? 'google_maps' : null),
+  source: inferLeadSource(site),
   business_key: site.business_key || null,
   language: site.language || 'es',
   outreach: site.outreach || 'pending_manual',
@@ -1327,7 +1327,7 @@ export default {
           .map(b => ({
             ...b,
             ig: canonicalInstagram(b.ig),
-            source: b.source || (b.maps_url ? 'google_maps' : undefined),
+            source: inferLeadSource(b) || undefined,
           }))
           .map(b => (map[b.slug]
           ? {
