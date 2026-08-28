@@ -20,6 +20,131 @@ import re
 # ------------------------------------------------------------------ curacion
 RE_AUTOR = re.compile(r'^(?:Video|Photo)\s+by\s+(.+?)\s+on\s', re.I)
 
+IDIOMAS_SOPORTADOS = {'es', 'en'}
+PAISES_HISPANOS = (
+    'argentina', 'bolivia', 'chile', 'colombia', 'costa rica', 'cuba',
+    'dominican republic', 'ecuador', 'el salvador', 'españa', 'spain',
+    'guatemala', 'honduras', 'méxico', 'mexico', 'nicaragua', 'panamá',
+    'panama', 'paraguay', 'perú', 'peru', 'puerto rico', 'uruguay', 'venezuela',
+)
+CODIGOS_PAISES_HISPANOS = {
+    'ar', 'bo', 'cl', 'co', 'cr', 'cu', 'do', 'ec', 'sv', 'es', 'gt', 'hn',
+    'mx', 'ni', 'pa', 'py', 'pe', 'pr', 'uy', 've',
+}
+PATRONES_ES_FUERTES = (
+    r'\bde\s+lo\s+m[ií]o\b', r'\bel\s+rinc[oó]n\b', r'\bcon\s+sabor\b',
+    r'\bel\s+l[ií]der\b', r'\bmasajes?\b', r'\blinf[aá]tic',
+    r'\bpanader[ií]a\b', r'\btaquer[ií]a\b', r'\bel\s+sabor\b',
+    r'\btacos?\W+(?:el|la|los|las|de|del)\b', r'\blocos\s+por\s+tacos?\b',
+    r'\bmaracuch', r'\bnicarag[uü]ense\b', r'\bpaparrilla\b', r'\bla\s+bendita\b',
+    r'\bcomida\b', r'\bsaz[oó]n\b', r'\bantojitos?\b',
+)
+PALABRAS_ES = {
+    'el', 'la', 'los', 'las', 'de', 'del', 'en', 'para', 'con', 'mi', 'tu',
+    'más', 'mas', 'y', 'servicios', 'belleza', 'comida', 'sabor', 'masaje',
+    'masajes', 'panaderia', 'panadería', 'taqueria', 'taquería', 'rincón',
+    'rincon', 'salón', 'venezolano', 'cubano', 'mexicano', 'dominicano',
+}
+PALABRAS_EN = {
+    'the', 'and', 'of', 'for', 'with', 'your', 'mobile', 'cleaning', 'food',
+    'truck', 'auto', 'detailing', 'services', 'service', 'barber', 'shop',
+    'beauty', 'nails', 'spa', 'plumbing', 'electric', 'landscaping', 'grooming',
+}
+
+
+def _idioma_normalizado(value):
+    value = str(value or '').strip().lower().replace('_', '-').split('-', 1)[0]
+    return value if value in IDIOMAS_SOPORTADOS else None
+
+
+def _texto_idioma(hechos, incluir_resenas=True):
+    partes = []
+    for key in ('nombre', 'name', 'bio_raw', 'nicho', 'query', 'description',
+                'category', 'address', 'pais', 'country'):
+        value = hechos.get(key)
+        if isinstance(value, str):
+            partes.append(value)
+        elif isinstance(value, list):
+            partes.extend(str(item) for item in value if isinstance(item, (str, int, float)))
+    if incluir_resenas:
+        for review in hechos.get('reviewSamples') or hechos.get('reviews_sample') or []:
+            if isinstance(review, dict) and isinstance(review.get('text'), str):
+                partes.append(review['text'])
+            elif isinstance(review, str):
+                partes.append(review)
+    return ' '.join(partes).lower()
+
+
+def _pais_hispano(hechos):
+    """Usa campos geográficos estructurados; nunca substrings de nombre o reseñas."""
+    def normalizar(value):
+        value = str(value or '').strip().lower()
+        value = re.sub(r'\b\d{4,6}(?:-\d{3,4})?\b', '', value)
+        return re.sub(r'\s+', ' ', value).strip(' .')
+
+    for key in ('pais', 'country', 'country_code', 'countryCode'):
+        value = normalizar(hechos.get(key))
+        if value in PAISES_HISPANOS or value in CODIGOS_PAISES_HISPANOS:
+            return True
+    # En una dirección normalizada, el país/código aparece como último segmento.
+    # Así "Panama City Beach, FL" no se confunde con el país Panamá.
+    for key in ('address', 'ciudad', 'city', 'location'):
+        raw = hechos.get(key)
+        if not isinstance(raw, str) or not raw.strip():
+            continue
+        tail = normalizar(raw.rsplit(',', 1)[-1])
+        if tail in PAISES_HISPANOS or tail in CODIGOS_PAISES_HISPANOS:
+            return True
+    return False
+
+
+def decidir_idioma(hechos, fallback='en', usar_explicito=True):
+    """Elige un solo idioma para site, panel y outreach con reglas auditables."""
+    fallback = _idioma_normalizado(fallback) or 'en'
+    if usar_explicito:
+        for key in ('requested_language', 'primary_language', 'outreach_language',
+                    'language', 'idioma_principal', 'lang'):
+            explicit = _idioma_normalizado(hechos.get(key))
+            if explicit:
+                return {'language': explicit, 'source': f'explicit:{key}', 'confidence': 1.0}
+
+    texto = _texto_idioma(hechos)
+    if _pais_hispano(hechos):
+        return {'language': 'es', 'source': 'country', 'confidence': 0.98}
+
+    # El nombre/actividad pertenece al negocio; una reseña escrita en otro idioma no
+    # debe derrotar señales explícitas como "Taquería", "Masajes" o "Paparrilla".
+    core_text = _texto_idioma(hechos, incluir_resenas=False)
+    core_strong = sum(1 for pattern in PATRONES_ES_FUERTES if re.search(pattern, core_text, re.I))
+    if core_strong:
+        return {
+            'language': 'es',
+            'source': 'business_text',
+            'confidence': min(0.97, round(0.86 + 0.04 * core_strong, 2)),
+        }
+
+    tokens = re.findall(r"[a-záéíóúüñ]+", texto)
+    es_score = sum(1 for token in tokens if token in PALABRAS_ES)
+    en_score = sum(1 for token in tokens if token in PALABRAS_EN)
+    strong_matches = sum(1 for pattern in PATRONES_ES_FUERTES if re.search(pattern, texto, re.I))
+    # Una categoría genérica de Maps ("food truck", "spa") no debe ganar sobre una
+    # señal comercial inequívoca como "Paparrilla" o "Taquería".
+    es_score += strong_matches * 5
+    if re.search(r'[áéíóúüñ¿¡]', texto):
+        es_score += 2
+
+    if es_score >= 3 and (es_score > en_score or (strong_matches and es_score == en_score)):
+        confidence = min(0.97, 0.70 + 0.04 * (es_score - en_score))
+        return {'language': 'es', 'source': 'business_text', 'confidence': round(confidence, 2)}
+    if en_score >= 3 and en_score >= es_score:
+        confidence = min(0.95, 0.68 + 0.03 * (en_score - es_score))
+        return {'language': 'en', 'source': 'business_text', 'confidence': round(confidence, 2)}
+    return {'language': fallback, 'source': 'fallback', 'confidence': 0.5}
+
+
+def detectar_idioma(hechos, fallback='en', usar_explicito=True):
+    return decidir_idioma(hechos, fallback=fallback, usar_explicito=usar_explicito)['language']
+
 
 def _norm(s):
     return re.sub(r'[^a-z0-9]', '', (s or '').lower())
@@ -239,20 +364,28 @@ def generar_dm(hechos, url, nicho=None):
     _, n = detectar_nicho({**hechos, **({'nicho': nicho} if nicho else {})})
     oficio_es = n['etiqueta']['es'].lower()
     oficio_en = n['etiqueta']['en'].lower()
-    propio = bool(hechos.get('has_own_site'))
-    lang = hechos.get('idioma_principal') or hechos.get('language') or 'es'
+    propio = hechos.get('has_own_site')
+    lang = detectar_idioma(hechos, fallback='es')
     if lang == 'en':
-        contexto = (f'I found {nombre} while looking for {oficio_en} in {ciudad}. '
-                    + ('I saw your current website and sketched a cleaner version using your public photos and contact details:'
-                       if propio else 'I could not find a dedicated website linked from your public profile, so I put together a clean page using your public photos and contact details:'))
+        if propio is True:
+            detalle = 'I saw your current website and sketched a cleaner version using your public photos and contact details:'
+        elif propio is False:
+            detalle = 'I could not find a dedicated website linked from your public profile, so I put together a clean page using your public photos and contact details:'
+        else:
+            detalle = 'I put together a clean page using your public photos and contact details:'
+        contexto = f'I found {nombre} while looking for {oficio_en} in {ciudad}. {detalle}'
         return (f'Hi {nombre} — {contexto}\n\n{url}\n\n'
                 'It gives a new customer one clear place to see your work and call or message you. '
                 'No login and no change to your current booking flow — just take a look.\n\n'
                 'Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.\n\n'
                 '— José Michael from Merktop')
-    contexto = (f'encontré {nombre} buscando {oficio_es} en {ciudad}. '
-                + ('Vi su página actual y preparé una versión más clara con sus fotos públicas y datos de contacto:'
-                   if propio else 'No vi un website propio enlazado desde su perfil público, así que preparé una página limpia con sus fotos y datos de contacto reales:'))
+    if propio is True:
+        detalle = 'Vi su página actual y preparé una versión más clara con sus fotos públicas y datos de contacto:'
+    elif propio is False:
+        detalle = 'No vi un website propio enlazado desde su perfil público, así que preparé una página limpia con sus fotos y datos de contacto reales:'
+    else:
+        detalle = 'Preparé una página limpia con sus fotos públicas y datos de contacto reales:'
+    contexto = f'encontré {nombre} buscando {oficio_es} en {ciudad}. {detalle}'
     return (f'Hola {nombre} — {contexto}\n\n{url}\n\n'
             'Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. '
             'No requiere iniciar sesión ni cambia su sistema de reservas: solo échenle un vistazo.\n\n'
@@ -269,6 +402,23 @@ def _partir_nombre(nombre):
     return ' '.join(palabras[:mitad]), ' '.join(palabras[mitad:])
 
 
+MARQUEE_EN = {
+    'Plomería': 'Plumbing', 'Destapes': 'Drain clearing', 'Fugas': 'Leaks',
+    'Calentadores': 'Water heaters', 'Instalaciones': 'Installations',
+    'Electricidad': 'Electrical', 'Iluminación': 'Lighting', 'Paneles': 'Panels',
+    'Tomacorrientes': 'Outlets', 'Closets a medida': 'Custom closets',
+    'Carpintería': 'Millwork', 'Gabinetes': 'Cabinets', 'Diseño': 'Design',
+    'Techos': 'Roofs', 'Fachadas': 'Exteriors', 'Pintura': 'Painting',
+    'Interiores': 'Interiors', 'Exteriores': 'Exteriors', 'Acabados': 'Finishes',
+    'Césped': 'Lawns', 'Podas': 'Trimming', 'Mantenimiento': 'Maintenance',
+    'Limpieza': 'Cleaning', 'Hogares': 'Homes', 'Oficinas': 'Offices',
+    'Remodelación': 'Remodeling', 'Reparaciones': 'Repairs', 'Baños': 'Bathrooms',
+    'Cocinas': 'Kitchens', 'Pisos': 'Flooring', 'Servicio local': 'Local service',
+    'Calidad': 'Quality', 'Trato directo': 'Direct contact',
+    'Presupuesto claro': 'Clear quotes', 'Confianza': 'Trust',
+}
+
+
 def construir(hechos, fotos):
     nicho_id, n = detectar_nicho(hechos)
     nombre = (hechos.get('nombre') or hechos.get('ig', '').lstrip('@') or hechos['slug']).strip()
@@ -276,7 +426,8 @@ def construir(hechos, fotos):
     handle = hechos.get('ig', '').lstrip('@') or hechos['slug']
     tel = hechos.get('phone') or hechos.get('telefono_publicado')
     seguidores, posts = hechos.get('followers'), hechos.get('posts')
-    lang = hechos.get('idioma_principal', 'es')
+    lang = detectar_idioma(hechos, fallback='es')
+    primary = lambda es, en: en if lang == 'en' else es
     ig_url = f'https://www.instagram.com/{handle}/'
     demo_url = f'https://siteforge-demos.odd-forest-9504.workers.dev/{hechos["slug"]}/'
     if tel:
@@ -297,7 +448,7 @@ def construir(hechos, fotos):
     if seguidores:
         strip.append({'valor': str(seguidores),
                       'etiqueta': _b('Seguidores en Instagram', 'Followers on Instagram')})
-    strip.append({'valor': et['es'], 'etiqueta': _b('El oficio', 'The trade')})
+    strip.append({'valor': primary(et['es'], et['en']), 'etiqueta': _b('El oficio', 'The trade')})
     strip.append({'valor': ciudad.split(',')[0], 'etiqueta': _b('Zona de trabajo', 'Service area')})
     while len(strip) < 4:
         strip.append({'valor': '1:1', 'etiqueta': _b('Trato directo', 'Direct contact')})
@@ -325,17 +476,21 @@ def construir(hechos, fotos):
      'slug': hechos['slug'], 'base': 'dark-v2', 'lang': lang,
      'cta_url': cta_url, 'cta_icono': cta_ic, 'cta_label': cta_label,
      'ig_url': ig_url, 'ig_handle': f'@{handle}',
-     'brand': {'name': nombre, 'nav_a': a, 'nav_b': b_ or et['es'], 'mono': mono,
+     'brand': {'name': nombre, 'nav_a': a, 'nav_b': b_ or primary(et['es'], et['en']), 'mono': mono,
                'footmark': a or nombre, 'logo': f"assets/raw/{fotos['logo']}"},
      'head': {
-      'title': f"{nombre} · {et['es']} en {ciudad}",
-      'description': f"{nombre}: {et['es'].lower()} en {ciudad}. Mira nuestro trabajo real y escríbenos.",
-      'og_title': f"{nombre} · {et['es']}",
-      'og_description': f"{et['es']} en {ciudad}. Trabajo real publicado en Instagram.",
+      'title': primary(f"{nombre} · {et['es']} en {ciudad}", f"{nombre} · {et['en']} in {ciudad}"),
+      'description': primary(
+          f"{nombre}: {et['es'].lower()} en {ciudad}. Mira nuestro trabajo real y escríbenos.",
+          f"{nombre}: {et['en'].lower()} in {ciudad}. See our real work and get in touch."),
+      'og_title': f"{nombre} · {primary(et['es'], et['en'])}",
+      'og_description': primary(
+          f"{et['es']} en {ciudad}. Trabajo real publicado en Instagram.",
+          f"{et['en']} in {ciudad}. Real work posted on Instagram."),
       'og_image': f"assets/raw/{fotos['hero']}", 'icon': f"assets/raw/{fotos['logo']}"},
      'jsonld': {
       '@context': 'https://schema.org', '@type': schema_type,
-      'name': nombre, 'description': f"{et['es']} en {ciudad}.",
+      'name': nombre, 'description': primary(f"{et['es']} en {ciudad}.", f"{et['en']} in {ciudad}."),
       'address': address,
       **({'telephone': tel} if tel else {}),
       'image': f"assets/raw/{fotos['hero']}", 'sameAs': [ig_url]},
@@ -354,12 +509,15 @@ def construir(hechos, fotos):
       'senal_icono': 'instagram',
       'senal': (_b(f'{seguidores} seguidores en Instagram', f'{seguidores} followers on Instagram')
                 if seguidores else _b(f'Encuéntranos: @{handle}', f'Find us: @{handle}')),
-      'imagen': fotos['hero'], 'imagen_alt': f"Trabajo de {nombre} en {ciudad}",
+      'imagen': fotos['hero'], 'imagen_alt': primary(
+          f"Trabajo de {nombre} en {ciudad}", f"Work by {nombre} in {ciudad}"),
       'tarjeta': {'tag': _b('Atención directa', 'Direct line'),
                   'destacado': tel or f'@{handle}',
                   'pie': _b(ciudad, ciudad)}},
      'strip': strip,
-     'marquee': [city_name if word.lower() == 'florida' else word for word in n['marquee']],
+     'marquee': [city_name if word.lower() == 'florida'
+                  else (MARQUEE_EN.get(word, word) if lang == 'en' else word)
+                  for word in n['marquee']],
      'nosotros': {
       'eyebrow': _b('Nosotros', 'About us'),
       'h2_a': _b('Un equipo,', 'One team,'), 'h2_shine': _b('un solo responsable', 'one accountable crew'),
@@ -373,14 +531,17 @@ def construir(hechos, fotos):
        "esconder. Mira el feed antes de decidir.",
        "Our work is out in the open on Instagram: we post it because we have nothing to hide. "
        "Check the feed before you decide."),
-      'imagen_1': fotos['nosotros'][0], 'imagen_1_alt': f"Trabajo de {nombre}",
-      'imagen_2': fotos['nosotros'][1], 'imagen_2_alt': f"Trabajo de {nombre} en {ciudad}",
+      'imagen_1': fotos['nosotros'][0], 'imagen_1_alt': primary(
+          f"Trabajo de {nombre}", f"Work by {nombre}"),
+      'imagen_2': fotos['nosotros'][1], 'imagen_2_alt': primary(
+          f"Trabajo de {nombre} en {ciudad}", f"Work by {nombre} in {ciudad}"),
       'stats': ([{'valor': str(posts), 'count': re.sub(r'[^0-9]', '', str(posts)),
                   'etiqueta': _b('Publicaciones', 'Posts')}] if posts else []) +
                ([{'valor': str(seguidores), 'etiqueta': _b('Seguidores', 'Followers')}] if seguidores else []) +
                [{'valor': '1:1', 'etiqueta': _b('Trato directo', 'Direct contact')},
                 {'valor': ciudad.split(',')[0], 'etiqueta': _b('Zona', 'Area')}],
-      'stats_fix':None, 'avatar': fotos['logo'], 'avatar_alt': f'Logo de {nombre}', 'avatar_pie': _b(ciudad, ciudad)},
+      'stats_fix':None, 'avatar': fotos['logo'], 'avatar_alt': primary(
+          f'Logo de {nombre}', f'{nombre} logo'), 'avatar_pie': _b(ciudad, ciudad)},
      'proceso': {
       'eyebrow': _b('Tu proyecto, paso a paso', 'Your project, step by step'),
       'h2_a': _b('Así trabajamos', 'How we work'), 'h2_shine': _b('contigo', 'with you'),
@@ -407,7 +568,8 @@ def construir(hechos, fotos):
                 'Do not see exactly what you need? Message us and we will confirm whether we can help.')},
      'galeria': {
       'h2_a': _b('Trabajos', 'Real'), 'h2_shine': _b('reales', 'work'),
-      'tiles': [{'img': f, 'caption': et, 'alt': f'Trabajo de {nombre} en {ciudad}'}
+      'tiles': [{'img': f, 'caption': et, 'alt': primary(
+          f'Trabajo de {nombre} en {ciudad}', f'Work by {nombre} in {ciudad}')}
                 for f in fotos['galeria']]},
      'social_proof': {
       'modo': 'razones',
@@ -429,7 +591,8 @@ def construir(hechos, fotos):
      'contacto': {
       'eyebrow': _b('Contacto', 'Contact'),
       'h2_a': _b('Escríbenos desde', 'Reach us from'), 'h2_shine': ciudad.split(',')[0],
-      'imagen': fotos['contacto'], 'imagen_alt': f'Trabajo de {nombre}',
+      'imagen': fotos['contacto'], 'imagen_alt': primary(
+          f'Trabajo de {nombre}', f'Work by {nombre}'),
       'cards': ([{'icono': 'telefono', 'titulo': _b('Llámanos o escríbenos', 'Call or text'),
                   'texto': _b('La vía más rápida: cuéntanos qué necesitas y te respondemos con el detalle.',
                               'The fastest way: tell us what you need and we reply with the details.'),

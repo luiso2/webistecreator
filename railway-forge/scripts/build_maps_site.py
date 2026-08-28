@@ -18,7 +18,7 @@ if (ROOT / "contenido_script.py").exists():
     sys.path.insert(0, str(ROOT))
 else:
     sys.path.insert(0, str(ROOT / "railway-forge"))
-from contenido_script import construir  # noqa: E402
+from contenido_script import construir, decidir_idioma  # noqa: E402
 
 
 def bilingual(es: str, en: str | None = None) -> dict:
@@ -52,10 +52,18 @@ def main(slug: str):
     city = data.get("ciudad") or data.get("city") or "Local area"
     address = data.get("address") or city
     phone = data.get("phone")
+    phone_digits = re.sub(r"\D", "", phone or "")
     maps_url = data.get("maps_url") or f"https://www.google.com/maps/search/{name.replace(' ', '+')}+{city.replace(' ', '+')}"
+    language_decision = decidir_idioma(data, fallback="en")
+    lang = language_decision["language"]
+    data["idioma_principal"] = lang
+    data["primary_language"] = lang
+    data["language_source"] = language_decision["source"]
+    data["language_confidence"] = language_decision["confidence"]
+    (root / "data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     # Niche detection uses the public name/query only. No fake social handle is passed.
     facts = {**data, "slug": slug, "nombre": name, "ciudad": city,
-             "nicho": data.get("nicho") or name, "ig": slug, "idioma_principal": "en",
+             "nicho": data.get("nicho") or name, "ig": slug, "idioma_principal": lang,
              "has_own_site": bool(data.get("has_own_site"))}
     content, _dm, _nicho = construir(facts, selected)
     replacements = [
@@ -64,12 +72,12 @@ def main(slug: str):
         ("@" + slug, "Google Maps"),
         (f"https://www.google.com/maps/search/{slug}/", maps_url),
         (f"https://www.instagram.com/{slug}/", maps_url),
-        (f"https://ig.me/m/{slug}", f"tel:+{re.sub(r'\\D', '', phone or '')}" if phone else maps_url),
+        (f"https://ig.me/m/{slug}", f"tel:+{phone_digits}" if phone else maps_url),
     ]
     content = walk_replace(content, replacements)
     # Facts that the generic social template cannot infer.
-    content["lang"] = "en"
-    content["cta_url"] = f"tel:+{re.sub(r'\D', '', phone)}" if phone else maps_url
+    content["lang"] = lang
+    content["cta_url"] = f"tel:+{phone_digits}" if phone else maps_url
     content["cta_icono"] = "telefono" if phone else "mapa"
     content["cta_label"] = bilingual("Llamar ahora" if phone else "Ver en Google Maps", "Call now" if phone else "See us on Google Maps")
     content["ig_url"] = maps_url
@@ -79,9 +87,13 @@ def main(slug: str):
     content["brand"]["name"] = name
     content["brand"]["footmark"] = name
     content["head"]["title"] = f"{name} · {city}"
-    content["head"]["description"] = f"{name}: servicios locales en {city}. Información, fotos y contacto verificados en Google Maps."
+    content["head"]["description"] = (f"{name}: servicios locales en {city}. Información, fotos y contacto verificados en Google Maps."
+                                              if lang == "es" else
+                                              f"{name}: local services in {city}. Public photos and contact details verified on Google Maps.")
     content["head"]["og_title"] = f"{name} · {city}"
-    content["head"]["og_description"] = f"{name} en {city}. Fotos públicas y contacto directo."
+    content["head"]["og_description"] = (f"{name} en {city}. Fotos públicas y contacto directo."
+                                             if lang == "es" else
+                                             f"{name} in {city}. Public photos and direct contact.")
     city_parts = [part.strip() for part in city.split(",") if part.strip()]
     city_name = city_parts[0] if city_parts else city
     region = city_parts[1] if len(city_parts) > 1 else None
@@ -91,7 +103,9 @@ def main(slug: str):
     if data.get("pais"):
         address_data["addressCountry"] = data["pais"]
     content["jsonld"].update({
-        "name": name, "description": f"{name}, negocio local en {city}.",
+        "name": name,
+        "description": (f"{name}, negocio local en {city}." if lang == "es"
+                        else f"{name}, a local business in {city}."),
         "sameAs": [maps_url], "image": f"assets/raw/{photos[0]}",
         "address": address_data,
     })
@@ -136,7 +150,8 @@ def main(slug: str):
     content["dm_message"] = _dm
     (root / "content.json").write_text(json.dumps(content, ensure_ascii=False, indent=1), encoding="utf-8")
     shutil.copy(ROOT / "templates" / ".assetsignore-template", root / ".assetsignore")
-    print(json.dumps({"slug": slug, "name": name, "niche": _nicho, "photos": photos}, ensure_ascii=False))
+    print(json.dumps({"slug": slug, "name": name, "niche": _nicho, "photos": photos,
+                      "language": lang, "language_source": language_decision["source"]}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

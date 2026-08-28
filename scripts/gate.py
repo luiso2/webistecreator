@@ -12,7 +12,8 @@ Checks (los mismos que el proceso manual probado):
    cursor-ring, foot-mark, heroInner, assets/tailwind.js)
 5. applyLang default y <html lang> coherentes con --lang
 6. strings prohibidos ausentes (nombres del negocio anterior del esqueleto, ciudad vieja, etc.)
-7. sin referencias a localhost ni a templates/
+7. idioma aislado por sitio (sin localStorage global ni navigator.language)
+8. sin referencias a localhost ni a templates/
 """
 import argparse
 import json
@@ -84,8 +85,17 @@ def main():
         if default != expected_default:
             fails.append(f'applyLang default es "{default}", esperado "{expected_default}"')
     mh = re.search(r'<html lang="(\w\w)"', h)
-    if mh and mh.group(1) != a.lang:
+    if not mh:
+        fails.append('falta <html lang>')
+    elif mh.group(1) != a.lang:
         fails.append(f'<html lang="{mh.group(1)}"> esperado "{a.lang}"')
+
+    if 'siteforge:lang:' not in h:
+        fails.append('falta clave de idioma aislada por sitio')
+    if re.search(r"localStorage\.(?:getItem|setItem)\(['\"]lang['\"]", h):
+        fails.append('usa localStorage global para el idioma')
+    if 'navigator.language' in h:
+        fails.append('usa navigator.language en vez del idioma canonico del sitio')
 
     for s in [x.strip() for x in a.forbid.split(',') if x.strip()]:
         c = h.count(s)

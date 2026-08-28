@@ -56,6 +56,10 @@ paths:
                   minimum: 1
                   maximum: 5
                   default: 1
+                language:
+                  type: string
+                  enum: [es, en]
+                  description: Optional primary website and outreach language. When omitted, Siteforge detects it from public business evidence.
       responses:
         '200':
           description: Build queued

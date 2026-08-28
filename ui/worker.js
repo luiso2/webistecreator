@@ -32,7 +32,7 @@ const stripUnsafe = s => String(s).replace(/[<>\x00-\x1F\x7F]/g, "");
 // Texto que viene del panel y acaba guardado en KV. Ademas de evitar markup, se colapsan
 // espacios para que dos filtros iguales no creen trabajos duplicados por un espacio extra.
 const queueText = (value, max) => stripUnsafe(value ?? '').trim().replace(/\s+/g, ' ').slice(0, max);
-const discoveryKey = request => [request?.niche, request?.location]
+const discoveryKey = request => [request?.niche, request?.location, request?.language || 'auto']
   .map(v => String(v || '').toLocaleLowerCase()).join('|');
 const directBuildKey = input => `direct:${String(input || '').normalize('NFKD')
   .replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()}`;
@@ -67,6 +67,8 @@ const cleanBusinessCandidate = (raw, fallbackIndex = 0) => {
     phone: queueText(raw.phone, 30) || undefined,
     maps_url: mapsUrl,
     business_key: businessKey || undefined,
+    language: ['es', 'en'].includes(String(raw.language || '').toLowerCase())
+      ? String(raw.language).toLowerCase() : undefined,
   };
 };
 // Railway corta cada forja a los 510 s. A los nueve minutos desde started_at la
@@ -116,6 +118,7 @@ export class QueueClaims extends DurableObject {
         item = {
           id: q.id, input: q.input, request: q.request, created: q.created, claim_token: claimToken,
           ...(q.candidate ? { candidate: q.candidate } : {}),
+          ...(['es', 'en'].includes(q.language) ? { language: q.language } : {}),
         };
         return {
           ...q, status: 'processing', stage: 'research', stage_at: new Date(now).toISOString(),
@@ -407,7 +410,14 @@ export class QueueClaims extends DurableObject {
         registry[idx] = { ...actual, ...nuevo };
       } else {
         if (registry.length >= REGISTRY_LIMIT) return { ok: false, error: 'registro lleno', status: 429 };
-        registry.push(Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined)));
+        const nuevo = Object.fromEntries(Object.entries(limpio).filter(([, v]) => v !== undefined));
+        if (!nuevo.business_key) {
+          nuevo.business_key = businessIdentityKeys({ ...nuevo, business_key: undefined })[0];
+        }
+        registry.push({
+          name: limpio.slug, outreach: 'pending_manual', status: 'staging', language: 'es',
+          fecha: new Date().toISOString().slice(0, 10), ...nuevo,
+        });
       }
       await this.env.SITEFORGE_KV.put('registry', JSON.stringify(registry));
       return { ok: true, count: registry.length };
@@ -631,6 +641,7 @@ async function enqueueSiteUpdate(env, site, spec, reason = 'agent publish') {
       type: 'site_update',
       operation_key: `site-update:${site.slug}`,
       slug: site.slug,
+      ...(typeof site.has_own_site === 'boolean' ? { has_own_site: site.has_own_site } : {}),
       spec_revision: spec.revision,
       content_patch: spec.contentPatch || {},
       reason: CONTROL_TEXT(reason),
@@ -1066,23 +1077,35 @@ export default {
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
         let input;
         let request;
+        let buildLanguage;
         if (body && (body.niche !== undefined || body.location !== undefined)) {
           const niche = queueText(body.niche, 70);
           const location = queueText(body.location, 80);
           const count = Number(body.count || 1);
+          const language = String(body.language || '').toLowerCase();
           if (!niche || !location) return json({ error: 'niche and location are required' }, 400);
           if (!Number.isInteger(count) || count < 1 || count > 5) {
             return json({ error: 'count must be an integer between 1 and 5' }, 400);
           }
-          request = { type: 'discovery', niche, location, count, require_no_website: true };
+          if (body.language !== undefined && !['es', 'en'].includes(language)) {
+            return json({ error: 'language must be es or en' }, 400);
+          }
+          request = { type: 'discovery', niche, location, count, require_no_website: true,
+            ...(['es', 'en'].includes(language) ? { language } : {}) };
           input = `Buscar ${count} ${niche} en ${location} sin website propio`;
         } else {
           input = queueText(body?.input, 200);
           if (!input) return json({ error: 'input is required (max 200 chars)' }, 400);
+          const language = String(body?.language || '').toLowerCase();
+          if (body?.language !== undefined && !['es', 'en'].includes(language)) {
+            return json({ error: 'language must be es or en' }, 400);
+          }
+          if (['es', 'en'].includes(language)) buildLanguage = language;
         }
         const item = {
           id: crypto.randomUUID(), input, status: 'pending', created: new Date().toISOString(),
           ...(request ? { request } : {}),
+          ...(buildLanguage ? { language: buildLanguage } : {}),
         };
         const queued = await env.QUEUE_CLAIMS.getByName('siteforge-queue').enqueue(
           item, request ? discoveryKey(request) : null, request ? null : directBuildKey(input),
@@ -1259,6 +1282,9 @@ export default {
       const slug = (body.slug || '').toString();
       if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
       if (typeof body.url_demo !== 'string' || !DEMO_URL_RE.test(body.url_demo)) return json({ error: 'url_demo invalida' }, 400);
+      if (body.language !== undefined && !['es', 'en', 'fr'].includes(body.language)) {
+        return json({ error: 'language invalido' }, 400);
+      }
       // Nota: no se verifica el demo con fetch aqui. Un Worker no puede hacer fetch fiable a
       // otro Worker de la MISMA cuenta workers.dev (da 404 aunque el demo este live), y el repo
       // es privado (raw github 404 sin token). La prevencion de tarjetas fantasma vive en la
@@ -1267,11 +1293,11 @@ export default {
       const instagramHandle = normalizeInstagramHandle(body.ig);
       const limpio = {
         slug,
-        name: S(body.name, 120) || slug,
+        name: S(body.name, 120),
         city: S(body.city, 80),
         ig: instagramHandle ? `@${instagramHandle}` : undefined,
         url_demo: body.url_demo,
-        has_own_site: body.has_own_site === true,
+        has_own_site: typeof body.has_own_site === 'boolean' ? body.has_own_site : undefined,
         // undefined (no null): un upsert que viene sin email NO debe borrar el email que ya
         // se habia encontrado para ese negocio (el filtro de abajo descarta solo undefined).
         email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email || '') ? S(body.email, 120) : undefined,
@@ -1282,16 +1308,12 @@ export default {
         business_key: typeof body.business_key === 'string'
           ? body.business_key.toLowerCase().replace(/[^a-z0-9:|._-]/g, '').slice(0, 220) || undefined
           : undefined,
-        outreach: 'pending_manual',
-        status: 'staging',
-        language: ['en', 'fr'].includes(body.language) ? body.language : 'es',
+        language: ['es', 'en', 'fr'].includes(body.language) ? body.language : undefined,
         dm_message: S(body.dm_message, 900),
-        message_version: Number(body.message_version) === 2 ? 2 : undefined,
+        message_version: [2, 3].includes(Number(body.message_version)) ? Number(body.message_version) : undefined,
         thumb: typeof body.thumb === 'string' && body.thumb.startsWith('https://') && body.thumb.includes('.odd-forest-9504.workers.dev') ? S(body.thumb, 300) : undefined,
-        fecha: S(body.fecha, 12) || new Date().toISOString().slice(0, 10),
+        fecha: /^\d{4}-\d{2}-\d{2}$/.test(body.fecha || '') ? body.fecha : undefined,
       };
-      const derivedBusinessKeys = businessIdentityKeys({ ...limpio, business_key: undefined });
-      if (!derivedBusinessKeys.includes(limpio.business_key)) limpio.business_key = derivedBusinessKeys[0];
       const registryResult = await env.QUEUE_CLAIMS.getByName('siteforge-queue').registryUpsert(limpio);
       return json(registryResult, registryResult.ok ? 200 : (registryResult.status || 500));
     }
@@ -1427,6 +1449,7 @@ export default {
         let input;
         let request;
         let candidate;
+        let buildLanguage;
         if (body.request !== undefined) {
           const raw = body.request;
           if (!raw || typeof raw !== 'object' || raw.type !== 'discovery') {
@@ -1435,17 +1458,27 @@ export default {
           const niche = queueText(raw.niche, 70);
           const location = queueText(raw.location, 80);
           const count = Number(raw.count);
+          const language = String(raw.language || '').toLowerCase();
           if (!niche || !location) return json({ error: 'nicho y pais o zona son requeridos' }, 400);
           if (!Number.isInteger(count) || count < 1 || count > 5) {
             return json({ error: 'cantidad debe ser un entero entre 1 y 5' }, 400);
           }
+          if (raw.language !== undefined && !['es', 'en'].includes(language)) {
+            return json({ error: 'idioma debe ser es o en' }, 400);
+          }
           // Los descubrimientos creados en el panel SIEMPRE excluyen negocios con web propia.
           // No se acepta un flag del cliente para que nadie pueda invertir esta regla por error.
-          request = { type: 'discovery', niche, location, count, require_no_website: true };
+          request = { type: 'discovery', niche, location, count, require_no_website: true,
+            ...(['es', 'en'].includes(language) ? { language } : {}) };
           input = `Buscar ${count} ${niche} en ${location} sin website propio`;
         } else {
           input = queueText(body.input, 200);
           if (!input) return json({ error: 'input requerido (max 200 chars)' }, 400);
+          const language = String(body.language || '').toLowerCase();
+          if (body.language !== undefined && !['es', 'en'].includes(language)) {
+            return json({ error: 'idioma debe ser es o en' }, 400);
+          }
+          if (['es', 'en'].includes(language)) buildLanguage = language;
           if (body.candidate !== undefined) {
             candidate = cleanBusinessCandidate(body.candidate);
             if (!candidate.name || !candidate.slug) return json({ error: 'candidate directo inválido' }, 400);
@@ -1455,6 +1488,7 @@ export default {
           id: crypto.randomUUID(), input, status: 'pending', created: new Date().toISOString(),
           ...(request ? { request } : {}),
           ...(candidate ? { candidate } : {}),
+          ...(buildLanguage ? { language: buildLanguage } : {}),
         };
         const queued = await env.QUEUE_CLAIMS.getByName('siteforge-queue').enqueue(
           item, request ? discoveryKey(request) : null, request ? null : directBuildKey(input),

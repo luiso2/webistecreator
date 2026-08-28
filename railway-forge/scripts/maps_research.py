@@ -153,6 +153,14 @@ def research(query: str, out_slug: str, maps_url: str | None = None) -> dict:
             rating_labels.append(labels.nth(i).get_attribute("aria-label") or "")
         out["rating"], out["reviews"] = parse_rating_reviews(rating_labels)
         body = page.locator("body").inner_text()
+        # Reseñas ya visibles aportan señal de idioma sin abrir otra pestaña ni
+        # ralentizar la ruta rápida.
+        try:
+            out["reviewSamples"] = page.locator("div[data-review-id]").evaluate_all(
+                "els => els.slice(0, 6).map(n => ({author:n.querySelector('button[aria-label]')?.getAttribute('aria-label')||null, text:Array.from(n.querySelectorAll('span')).map(s=>s.textContent).filter(t=>t&&t.length>25).sort((a,b)=>b.length-a.length)[0]||null})).filter(x=>x.text)"
+            )
+        except Exception:
+            out["reviewSamples"] = []
         if out["rating"] is None or out["reviews"] is None:
             summary = re.search(r"\b([0-5](?:[.,]\d))\s*\n\s*\(?([\d,]+)\)?", body[:4000])
             if summary:
