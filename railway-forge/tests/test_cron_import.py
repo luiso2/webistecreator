@@ -70,6 +70,17 @@ class CronImportTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_transient_maps_outage_does_not_fail_scheduled_service(self):
+        result = self._run(
+            "cron._known = lambda: set(); "
+            "cron.forge.panel = lambda *args, **kwargs: {'pending': []}; "
+            "cron.discover = lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError('maps unavailable')); "
+            "cron.DISCOVERY_QUERIES = 1; "
+            "assert cron.main() == 0"
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('se reintentará en el próximo cron', result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

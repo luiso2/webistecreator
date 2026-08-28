@@ -306,7 +306,11 @@ def main() -> int:
         if len(selected) >= target:
             break
     if not successful_queries:
-        return 1
+        # Google Maps es una dependencia externa y puede fallar temporalmente. Un cron
+        # debe terminar limpio para conservar el schedule y volver a probar en el
+        # próximo intervalo, no convertir un corte externo en deployment fallido.
+        print('ninguna consulta de Maps respondió; se reintentará en el próximo cron', flush=True)
+        return 0
     print(f"candidatos nuevos: {len(selected)} de {total_candidates}", flush=True)
     queued: list[dict] = []
     for candidate in selected:
