@@ -209,6 +209,19 @@ async function servir(env, req, slug) {
     new Response(res.body, { status: res.status, statusText: res.statusText, headers: salida }));
 }
 
+// A new site is committed to GitHub before Workers Builds finishes uploading the
+// asset bundle. During that short window the slug is valid but ASSETS returns 404,
+// which made the panel look broken and encouraged users to retry the same build.
+// Keep real missing files as 404s, but give the canonical site root a small,
+// uncached readiness page while the next asset deployment is propagating.
+function demoEnConstruccion(slug) {
+  const safeSlug = String(slug).replace(/[^a-z0-9-]/g, '');
+  return new Response(`<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="15"><title>Preparando tu demo</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#111;color:#f5f1e8;font:16px system-ui,sans-serif;text-align:center}main{max-width:34rem;padding:2rem}h1{font-size:clamp(1.8rem,5vw,3rem);margin:0 0 1rem}p{line-height:1.6;color:#c9c3b8}.dot{display:inline-block;width:.65rem;height:.65rem;border-radius:50%;background:#d7b56d;box-shadow:0 0 18px #d7b56d;margin:.2rem}</style></head><body><main><div aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><h1>Tu demo se está preparando</h1><p>La página de <strong>${safeSlug}</strong> ya fue publicada y estará disponible en unos segundos. Esta pantalla se actualizará automáticamente.</p></main></body></html>`, {
+    status: 200,
+    headers: { 'content-type': 'text/html; charset=UTF-8', 'cache-control': 'no-store', 'x-siteforge-demo-status': 'building' },
+  });
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -225,7 +238,12 @@ export default {
     // workers.dev = comportamiento por path original (sin lookup de dominio)
     if (host.endsWith('.workers.dev')) {
       const m = url.pathname.match(/^\/([a-z0-9-]{1,40})(?:\/|$)/);
-      return servir(env, req, m ? m[1] : null);
+      const slug = m ? m[1] : null;
+      const response = await servir(env, req, slug);
+      if (slug && req.method === 'GET' && (url.pathname === `/${slug}` || url.pathname === `/${slug}/`) && response.status === 404) {
+        return demoEnConstruccion(slug);
+      }
+      return response;
     }
 
     // Dominio propio: buscar el slug mapeado
