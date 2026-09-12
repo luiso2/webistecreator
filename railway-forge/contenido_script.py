@@ -396,7 +396,7 @@ def generar_dm(hechos, url, nicho=None):
         contexto = f'I found {nombre} while looking for {oficio_en} in {ciudad}. {detalle}'
         return (f'Hi {nombre} — {contexto}\n\n{url}\n\n'
                 'It gives a new customer one clear place to see your work and call or message you. '
-                'No login and no change to your current booking flow — just take a look.\n\n'
+                'No login, no obligation, and nothing has been published under your domain — just take a look.\n\n'
                 'Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.\n\n'
                 '— José Michael from Merktop')
     if propio is True:
@@ -408,7 +408,7 @@ def generar_dm(hechos, url, nicho=None):
     contexto = f'encontré {nombre} buscando {oficio_es} en {ciudad}. {detalle}'
     return (f'Hola {nombre} — {contexto}\n\n{url}\n\n'
             'Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. '
-            'No requiere iniciar sesión ni cambia su sistema de reservas: solo échenle un vistazo.\n\n'
+            'No requiere iniciar sesión, no hay compromiso y nada se publicó bajo su dominio: solo échenle un vistazo.\n\n'
             '¿Quieren que ajuste los colores y el dominio para ustedes? Si no les resulta útil, respondan “no” y no volveré a insistir.\n\n'
             '— José Michael de Merktop')
 
@@ -436,6 +436,8 @@ MARQUEE_EN = {
     'Cocinas': 'Kitchens', 'Pisos': 'Flooring', 'Servicio local': 'Local service',
     'Calidad': 'Quality', 'Trato directo': 'Direct contact',
     'Presupuesto claro': 'Clear quotes', 'Confianza': 'Trust',
+    'Comida local': 'Local food', 'Hecho al momento': 'Made to order',
+    'Sabor': 'Flavor', 'Para llevar': 'To go',
 }
 
 
@@ -474,7 +476,11 @@ def construir(hechos, fotos):
         strip.append({'valor': '1:1', 'etiqueta': _b('Trato directo', 'Direct contact')})
     strip = strip[:4]
 
-    dm = generar_dm({**hechos, 'nombre': nombre, 'ciudad': ciudad, 'idioma_principal': lang}, demo_url, nicho_id)
+    dm = generar_dm(
+        {**hechos, 'nombre': nombre, 'ciudad': ciudad, 'idioma_principal': lang},
+        demo_url,
+        hechos.get('nicho') or nicho_id,
+    )
 
     city_parts = [part.strip() for part in ciudad.split(',') if part.strip()]
     city_name = city_parts[0] if city_parts else ciudad
@@ -490,6 +496,7 @@ def construir(hechos, fotos):
       'pressure': 'HomeAndConstructionBusiness', 'pintura': 'HomeAndConstructionBusiness',
       'landscaping': 'LandscapingBusiness', 'cleaning': 'CleaningService',
       'handyman': 'HomeAndConstructionBusiness',
+      'food_truck': 'FoodEstablishment',
     }.get(nicho_id, 'LocalBusiness')
 
     content = {
@@ -637,6 +644,112 @@ def construir(hechos, fotos):
                           else _b(f'DM · @{handle}', f'DM · @{handle}')),
       'social_extra': []},
     }
+    if nicho_id == 'food_truck':
+        # A food business cannot inherit contractor language such as projects,
+        # quotes, crews or handovers. Keep the shared renderer, but give the niche
+        # its own complete experience and a warm visual identity.
+        content['paleta'] = {'hue': 28, 'sat_mult': 1.08, 'light_mult': 1.02}
+        content['nav']['metodo'] = _b('Antes de ir', 'Before you go')
+        content['hero'].update({
+          'script': _b('Buena comida. Una parada local.', 'Good food. One local stop.'),
+          'h1_a': _b('Sabor hecho al momento,', 'Made-to-order flavor,'),
+          'h1_b': _b('servido por ', 'served by '),
+          'h1_shine': _b(nombre, nombre),
+          'parrafo': _b(
+            f'{nombre} es una opción de comida local en {ciudad}. Mira los platos en fotos reales '
+            'y llama directamente para confirmar la ubicación y disponibilidad de hoy.',
+            f'{nombre} is a local food stop in {ciudad}. See the dishes in real photos and call '
+            'directly to confirm today\'s location and availability.'),
+          'imagen_alt': primary(
+            f'Comida de {nombre} en {ciudad}', f'Food from {nombre} in {ciudad}'),
+          'tarjeta': {
+            'tag': _b('Antes de salir', 'Before you go'),
+            'destacado': tel or primary('Ver ubicación', 'Check location'),
+            'pie': _b('Llama para confirmar', 'Call to confirm'),
+          },
+        })
+        content['nosotros'].update({
+          'eyebrow': _b('La parada', 'The local stop'),
+          'h2_a': _b('Comida local,', 'Local food,'),
+          'h2_shine': _b('hecha para compartir', 'made to be shared'),
+          'parrafo_1': _b(
+            f'{nombre} lleva una experiencia de food truck a {ciudad}: una cocina móvil, '
+            'contacto directo y platos que puedes conocer antes de llegar.',
+            f'{nombre} brings the food-truck experience to {ciudad}: a mobile kitchen, '
+            'direct contact, and dishes you can preview before you arrive.'),
+          'parrafo_2': _b(
+            'Las fotos públicas muestran la comida y el ambiente. Confirma directamente el punto '
+            'de servicio y el horario del día.',
+            'The public photos show the food and atmosphere. Confirm the day\'s serving spot and '
+            'hours directly with the business.'),
+          'imagen_1_alt': primary(f'Plato de {nombre}', f'Dish from {nombre}'),
+          'imagen_2_alt': primary(f'Food truck {nombre}', f'{nombre} food truck'),
+        })
+        content['proceso'] = {
+          'eyebrow': _b('Antes de ir', 'Before you go'),
+          'h2_a': _b('Del antojo', 'From craving'),
+          'h2_shine': _b('al primer bocado', 'to first bite'),
+          'pasos': [
+            {'titulo': _b('Mira los platos', 'See the food'),
+             'texto': _b('Explora las fotos reales y elige qué te provoca probar.',
+                         'Browse real photos and see what catches your eye.')},
+            {'titulo': _b('Confirma el punto', 'Confirm the stop'),
+             'texto': _b('La ubicación de un food truck puede variar; llama antes de salir.',
+                         'A food truck can move; call to confirm before heading out.')},
+            {'titulo': _b('Pide directo', 'Order directly'),
+             'texto': _b('Pregunta por disponibilidad y tiempo de preparación directamente al negocio.',
+                         'Ask the business directly about availability and preparation time.')},
+            {'titulo': _b('Disfruta', 'Enjoy'),
+             'texto': _b('Recoge tu pedido y disfruta una parada local en Kissimmee.',
+                         'Pick up your order and enjoy a local Kissimmee stop.')},
+          ],
+        }
+        content['servicios'].update({
+          'h2_a': _b('Lo que te espera', 'What is waiting'),
+          'h2_shine': _b('en la parada', 'at the stop'),
+          'nota': _b('La disponibilidad puede cambiar cada día. Llama para confirmar antes de ir.',
+                     'Availability can change daily. Call to confirm before you go.'),
+          'cta': _b('Llamar ahora', 'Call now'),
+          'pie': _b('Consulta directamente el menú disponible, la ubicación y el horario de hoy.',
+                    'Ask directly about today\'s available menu, location, and hours.'),
+        })
+        content['galeria'].update({
+          'h2_a': _b('Sabor', 'Real'),
+          'h2_shine': _b('en fotos reales', 'food, real photos'),
+          'tiles': [{'img': f, 'caption': _b('Comida local', 'Local food'),
+                     'alt': primary(f'Comida de {nombre}', f'Food from {nombre}')}
+                    for f in fotos['galeria']],
+        })
+        content['social_proof'].update({
+          'eyebrow': _b('Antes de elegir', 'Before you choose'),
+          'h2_a': _b('Tres cosas', 'Three things'),
+          'h2_shine': _b('que puedes comprobar', 'you can check'),
+          'subtitulo': _b('Fotos públicas, contacto directo y una ficha que puedes revisar antes de ir.',
+                          'Public photos, direct contact, and a listing you can check before you go.'),
+          'cta': _b('Ver fotos y ubicación', 'See photos and location'),
+          'items': [
+            {'icono': 'escudo', 'titulo': _b('Fotos reales', 'Real photos'),
+             'texto': _b('Mira los platos y la cocina móvil antes de decidir qué probar.',
+                         'See the dishes and mobile kitchen before deciding what to try.')},
+            {'icono': 'telefono', 'titulo': _b('Contacto directo', 'Direct contact'),
+             'texto': _b('Confirma ubicación, horario y disponibilidad con el negocio.',
+                         'Confirm location, hours, and availability with the business.')},
+            {'icono': 'mapa', 'titulo': _b('Información pública', 'Public information'),
+             'texto': _b('Revisa la ficha pública y encuentra la ruta antes de salir.',
+                         'Check the public listing and get directions before heading out.')},
+          ],
+        })
+        content['cta_final'] = {
+          'script': _b('Tu próxima parada local.', 'Your next local stop.'),
+          'h2_a': _b('El próximo antojo', 'Your next craving'),
+          'h2_shine': _b('empieza aquí', 'starts here'),
+          'parrafo': _b('Llama para confirmar qué hay disponible y dónde encontrarnos hoy.',
+                        'Call to confirm what is available and where to find us today.'),
+        }
+        content['footer']['descripcion'] = _b(
+          f'Comida local en {ciudad}. Fotos reales y contacto directo.',
+          f'Local food in {ciudad}. Real photos and direct contact.')
+
     content['nosotros']['stats'] = content['nosotros']['stats'][:3]
     content['nosotros'].pop('stats_fix', None)
     return content, dm, nicho_id

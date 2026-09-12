@@ -8,12 +8,14 @@ inventing an Instagram handle or a booking flow.
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+OUTPUT_ROOT = Path(os.environ.get("SITEFORGE_OUTPUT_ROOT", ROOT / "output")).resolve()
 if (ROOT / "contenido_script.py").exists():
     sys.path.insert(0, str(ROOT))
 else:
@@ -38,7 +40,7 @@ def walk_replace(value, replacements):
 
 
 def main(slug: str):
-    root = ROOT / "output" / slug
+    root = OUTPUT_ROOT / slug
     data = json.loads((root / "data.json").read_text(encoding="utf-8"))
     photos = data.get("fotos", [])
     if len(photos) < 5:

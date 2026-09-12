@@ -555,7 +555,14 @@ def procesar(item, deadline=None):
         finish(failed=True, motivo=f'Research Instagram incompleto ({fotos} fotos); reintenta para volver a consultar el perfil.')
         return
     hechos['slug'] = slug
-    hechos['idioma_principal'] = 'es'  # el gate valida la coherencia del copy generado
+    requested_language = item.get('language')
+    language_decision = cs.decidir_idioma({
+        **hechos,
+        **({'language': requested_language} if requested_language else {}),
+    }, fallback='es')
+    hechos['idioma_principal'] = language_decision['language']
+    hechos['primary_language'] = language_decision['language']
+    hechos['language_source'] = language_decision['source']
 
     report('build')
     # Sin IA (decision del usuario 2026-08-18): curacion por reglas + plantillas por nicho
@@ -606,7 +613,7 @@ def procesar(item, deadline=None):
         'city': (hechos.get('ciudad') or ''), 'ig': f'@{handle}', 'url_demo': url,
         'phone': hechos.get('phone'), 'language': lang, 'has_own_site': bool(hechos.get('has_own_site')),
         'business_key': reserved_candidate.get('business_key'),
-        'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 2,
+        'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 3,
     })
     if not isinstance(registry_result, dict) or not registry_result.get('ok'):
         finish(failed=True, motivo='El demo publicó, pero el registro del panel no confirmó el negocio.')
@@ -715,6 +722,19 @@ def procesar_actualizacion(item, deadline=None):
         return
 
     lang = updated.get('lang', 'en')
+    expected = updated.get('brand', {}).get('name') or slug
+    address = updated.get('jsonld', {}).get('address') or {}
+    city_parts = [address.get('addressLocality'), address.get('addressRegion')]
+    city = ', '.join(str(part) for part in city_parts if part) or updated.get('footer', {}).get('linea_contacto') or ''
+    dm = cs.generar_dm({
+        'nombre': expected,
+        'ciudad': city,
+        'primary_language': lang,
+        'has_own_site': updated.get('has_own_site'),
+        'nicho': updated.get('jsonld', {}).get('@type'),
+    }, f'{DEMOS}/{slug}/')
+    updated['dm_message'] = dm
+    json.dump(updated, open(content_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     gate = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', lang, '--forbid', FORBID],
                           capture_output=True, text=True, timeout=timeout_for(deadline, 60))
     if gate.returncode != 0:
@@ -732,10 +752,20 @@ def procesar_actualizacion(item, deadline=None):
     files.append(deploy_marker(slug))
     report('commit', 'Publicando revisión atómica')
     url = f'{DEMOS}/{slug}/'
-    expected = updated.get('brand', {}).get('name') or slug
     ok, publish_error = publicar_demo(iid, token, slug, files, expected, deadline=deadline)
     if not ok:
         fail(publish_error or 'El demo no respondió 200 tras publicar la actualización.')
+        return
+    registry_result = panel('/api/public/registry-upsert', {
+        'slug': slug,
+        'name': expected,
+        'url_demo': url,
+        'language': lang,
+        'dm_message': dm[:900],
+        'message_version': 3,
+    })
+    if not isinstance(registry_result, dict) or not registry_result.get('ok'):
+        fail('La revisión publicó, pero no se pudo sincronizar su mensaje en el panel.')
         return
     terminar(iid, token=token, slug=slug, name=expected, url_demo=url,
              revision=request.get('spec_revision'), updated=True)
@@ -846,7 +876,15 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     hechos['nombre'] = hechos.get('name') or nombre
     hechos['ciudad'] = ciudad
     hechos['nicho'] = item.get('nicho') or candidate.get('niche') or hechos.get('nicho') or nombre
-    hechos['idioma_principal'] = 'en'
+    requested_language = item.get('language')
+    language_decision = cs.decidir_idioma({
+        **hechos,
+        **({'language': requested_language} if requested_language else {}),
+    }, fallback='en')
+    lang = language_decision['language']
+    hechos['idioma_principal'] = lang
+    hechos['primary_language'] = lang
+    hechos['language_source'] = language_decision['source']
     hechos['maps_url'] = hechos.get('maps_url') or candidate.get('maps_url')
     hechos['business_key'] = candidate.get('business_key')
     json.dump(hechos, open(ruta_data, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
@@ -863,7 +901,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     if d.returncode != 0:
         return fail('derive.py fallo para item por nombre')
     subprocess.run(['cp', 'templates/assets/tailwind.js', f'output/{slug}/assets/tailwind.js'], check=False)
-    g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', 'en', '--forbid', FORBID],
+    g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', lang, '--forbid', FORBID],
                        capture_output=True, text=True, timeout=timeout_for(deadline, 60))
     if g.returncode != 0:
         return fail(f'GATE: {g.stdout[-220:]}')
@@ -883,11 +921,11 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
         return fail(publish_error or 'El demo no respondio 200 tras publicar')
     report('commit')
     dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
-                        'idioma_principal': 'en'}, url, item.get('nicho') or hechos.get('nicho'))
+                        'primary_language': lang}, url, item.get('nicho') or hechos.get('nicho'))
     registry_result = panel('/api/public/registry-upsert', {
         'slug': slug, 'name': hechos.get('name') or nombre, 'city': ciudad,
         'ig': 'Google Maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
-        'email': None, 'phone': hechos.get('phone'), 'language': 'en', 'dm_message': dm[:900], 'message_version': 2,
+        'email': None, 'phone': hechos.get('phone'), 'language': lang, 'dm_message': dm[:900], 'message_version': 3,
         'maps_url': hechos.get('maps_url'), 'business_key': candidate.get('business_key'),
         'thumb': f'{url}assets/raw/{fotos_usadas[0]}',
     })
@@ -1037,6 +1075,7 @@ def procesar_descubrimiento(item, deadline=None):
                 'id': f'{iid}:{candidate.get("slug") or key[:48]}',
                 'input': f'{name} ({candidate.get("location") or location})',
                 'nicho': candidate.get('niche') or niche,
+                **({'language': request.get('language')} if request.get('language') else {}),
                 'claim_token': token,
                 'candidate': candidate,
                 'business_reserved': True,

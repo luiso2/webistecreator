@@ -18,8 +18,14 @@ import json
 import os
 import re
 import sys
+from pathlib import Path
 
-ESQUELETOS = {'dark-v2': 'templates/dark-v2/index.html', 'light-v2': 'templates/light-v2/index.html'}
+SERVICE_ROOT = Path(__file__).resolve().parents[1]
+OUTPUT_ROOT = Path(os.environ.get('SITEFORGE_OUTPUT_ROOT', SERVICE_ROOT / 'output')).resolve()
+ESQUELETOS = {
+    'dark-v2': SERVICE_ROOT / 'templates/dark-v2/index.html',
+    'light-v2': SERVICE_ROOT / 'templates/light-v2/index.html',
+}
 ACCENT_REF = {'light-v2': 'a04a72', 'dark-v2': 'd4a84b'}
 
 
@@ -247,7 +253,7 @@ def svg(nombre, clases, tam=20, stroke='1.8'):
 
 
 def construir(slug):
-    ruta_content = f'output/{slug}/content.json'
+    ruta_content = OUTPUT_ROOT / slug / 'content.json'
     c = json.load(open(ruta_content, encoding='utf-8'))
     lang = c.get('lang', 'es')
     base = c.get('base', 'dark-v2')
@@ -558,7 +564,7 @@ def construir(slug):
     if c.get('paleta'):
         out_h = aplicar_paleta(out_h, base, c['paleta'])
 
-    salida = f'output/{slug}/index.html'
+    salida = OUTPUT_ROOT / slug / 'index.html'
     open(salida, 'w', encoding='utf-8').write(out_h)
     return salida
 
@@ -568,8 +574,8 @@ def main():
         print(__doc__)
         sys.exit(2)
     slug = sys.argv[1]
-    if not os.path.exists(f'output/{slug}/content.json'):
-        print(f'FAIL: falta output/{slug}/content.json')
+    if not (OUTPUT_ROOT / slug / 'content.json').exists():
+        print(f'FAIL: falta {OUTPUT_ROOT / slug / "content.json"}')
         sys.exit(1)
     salida = construir(slug)
     print(f'{slug}: derivado -> {salida}')

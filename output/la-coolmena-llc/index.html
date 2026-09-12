@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0f0b07" />
+  <meta name="theme-color" content="#100907" />
   <title>La Coolmena LLC · Kissimmee, FL</title>
   <meta name="description" content="La Coolmena LLC: local services in Kissimmee, FL. Public photos and contact details verified on Google Maps." />
   <meta property="og:title" content="La Coolmena LLC · Kissimmee, FL" />
@@ -14,7 +14,7 @@
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "FoodEstablishment",
   "name": "La Coolmena LLC",
   "description": "La Coolmena LLC, a local business in Kissimmee, FL.",
   "address": {
@@ -42,16 +42,16 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0f0b07;
-      --bg-2: #171207;
+      --bg: #100907;
+      --bg-2: #180f06;
       --surface: rgba(255,255,255,0.045);
-      --ink: #f5efe3;
-      --ink-60: rgba(245,239,227,0.62);
-      --ink-40: rgba(245,239,227,0.42);
-      --accent-deep: #d4a84b;
-      --accent-mid: #b8934a;
-      --accent-soft: #241c0e;
-      --accent-ghost: rgba(212,168,75,0.16);
+      --ink: #f8f0e9;
+      --ink-60: rgba(248,240,233,0.62);
+      --ink-40: rgba(248,240,233,0.42);
+      --accent-deep: #da8e4a;
+      --accent-mid: #be7e49;
+      --accent-soft: #26180d;
+      --accent-ghost: rgba(218,142,74,0.16);
     }
     html, body { background: var(--bg); }
     body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -59,10 +59,10 @@
     .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(212,168,75,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(212,168,75,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,75,0.08); }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(218,142,74,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(218,142,74,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(218,142,74,0.08); }
     .text-shine {
-      background: linear-gradient(110deg, #d4a84b 0%, #f0dc9e 30%, #9a7431 52%, #d4a84b 75%, #e5c374 100%);
+      background: linear-gradient(110deg, #da8e4a 0%, #f4cfa2 30%, #a15f2e 52%, #da8e4a 75%, #eaae75 100%);
       background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
       animation: shimmer 12s linear infinite;
     }
@@ -70,9 +70,9 @@
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
     @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,168,75,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(122,90,30,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(180,140,60,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(218,142,74,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(128,71,27,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(188,116,56,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
     .grain::after {
       content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
@@ -84,17 +84,17 @@
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 48%, #96742c 100%);
-      color: #1c1408; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #edaf78 0%, #cf8849 48%, #9d5f29 100%);
+      color: #1d1007; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(80,58,18,0.4), 0 5px 0 #6b5222, 0 12px 24px rgba(0,0,0,0.5);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(84,45,16,0.4), 0 5px 0 #704420, 0 12px 24px rgba(0,0,0,0.5);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(80,58,18,0.4), 0 7px 0 #6b5222, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,168,75,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(80,58,18,0.45), 0 1px 0 #6b5222, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(84,45,16,0.4), 0 7px 0 #704420, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(218,142,74,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(84,45,16,0.45), 0 1px 0 #704420, 0 4px 10px rgba(0,0,0,0.45); }
     .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
     .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(212,168,75,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,168,75,0.7); background: rgba(212,168,75,0.08); box-shadow: 0 10px 26px rgba(54,42,38,0.14); }
+    .btn-ghost { border: 1px solid rgba(218,142,74,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(218,142,74,0.7); background: rgba(218,142,74,0.08); box-shadow: 0 10px 26px rgba(56,39,38,0.14); }
     .merktop-badge {
       display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
       border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
@@ -105,41 +105,41 @@
     .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
     @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    #nav.scrolled { background: rgba(16,9,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
     .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,168,75,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(218,142,74,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5c374, #9a7431); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #d4a84b; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,168,75,0.45); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #eaae75, #a15f2e); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #da8e4a; letter-spacing: 2px; text-shadow: 0 0 14px rgba(218,142,74,0.45); }
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
     .dark-band {
-      --ink: #f5efe3; --ink-60: rgba(245,239,227,0.65); --ink-40: rgba(245,239,227,0.45);
-      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,210,160,0.16); color: var(--ink);
+      --ink: #f8f0e9; --ink-60: rgba(248,240,233,0.65); --ink-40: rgba(248,240,233,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(236,199,164,0.16); color: var(--ink);
     }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8cf96 0%, #f8eed3 30%, #bfa060 52%, #e8cf96 75%, #f0dcae 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,150,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #faf1dc 0%, #ecd9a8 48%, #c9ab6b 100%); color: #1c1408; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(110,85,35,0.35), 0 5px 0 #8a744a, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,85,35,0.35), 0 7px 0 #8a744a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,150,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,85,35,0.4), 0 1px 0 #8a744a, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,150,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #ecc199 0%, #faebda 30%, #c48f60 52%, #ecc199 75%, #f4d2b3 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(236,193,153,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(189,130,132,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #fcefe3 0%, #f0cfac 48%, #ce9a6c 100%); color: #1d1007; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(115,70,33,0.35), 0 5px 0 #8f6849, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(115,70,33,0.35), 0 7px 0 #8f6849, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(236,193,153,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(115,70,33,0.4), 0 1px 0 #8f6849, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(236,193,153,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(236,193,153,0.7); background: rgba(236,193,153,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #edbaaf; text-shadow: 0 0 14px rgba(236,193,153,0.4); }
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
-      box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(180deg, #edaf78 0%, #cf8849 100%);
+      box-shadow: 0 6px 0 #704420, 0 14px 30px rgba(0,0,0,0.5);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float-label { color: #1c1408; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
+    .book-float-label { color: #1d1007; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #704420, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(218,142,74,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #704420, 0 6px 14px rgba(0,0,0,0.4); }
     .hero-proof { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; color: var(--ink-40); font-size: 0.72rem; letter-spacing: 0.02em; }
     .hero-proof span { display: inline-flex; align-items: center; gap: 0.35rem; }
     .hero-proof span::before { content: '✓'; color: var(--accent-deep); font-weight: 700; }
@@ -155,13 +155,13 @@
     }
     #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
     @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(212,168,75,0.35); background: rgba(212,168,75,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(218,142,74,0.35); background: rgba(218,142,74,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
     .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
     .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
     @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
     @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
     @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #96742c 0%, #d4a84b 45%, #f0dc9e 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #9d5f29 0%, #da8e4a 45%, #f4cfa2 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
     .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
     .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
     .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
@@ -180,11 +180,11 @@
       .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
       .tilt:hover::before { opacity: 1; }
     }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,207,150,0.14) 0%, rgba(212,168,75,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(236,193,153,0.14) 0%, rgba(218,142,74,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
     .cursor-glow.on { opacity: 1; }
     .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(212,168,75,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(218,142,74,0.5); transform: translateY(-3px); }
 
     /* ============ Motion v3 (premium+) ============ */
     .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
@@ -193,7 +193,7 @@
     .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
     .frame .tile-cap {
       position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf6ea;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fdf7f2;
       background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
       opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
     }
@@ -202,7 +202,7 @@
     .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
     .cursor-ring.on { opacity: 0.75; }
     .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,207,150,0.09); pointer-events: none; user-select: none; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(236,193,153,0.09); pointer-events: none; user-select: none; }
 
     @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
@@ -301,12 +301,12 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/gmaps-1.jpg" alt="La Coolmena LLC" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
+        <img src="assets/raw/gmaps-1.jpg" alt="La Coolmena LLC" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(218,142,74,0.35)]" />
         <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">La <span class="text-[color:var(--accent-deep)]">Coolmena LLC</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
         <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="nav-link" href="#metodo" data-es="Antes de ir" data-en="Before you go">Before you go</a>
         <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
         <a class="nav-link" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
@@ -328,7 +328,7 @@
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Antes de ir" data-en="Before you go">Before you go</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
@@ -343,10 +343,10 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Kissimmee, FL · Servicios" data-en="Kissimmee, FL · Services">Kissimmee, FL · Services</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Kissimmee, FL · Comida local" data-en="Kissimmee, FL · Local food">Kissimmee, FL · Local food</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Buena comida. Una parada local." data-en="Good food. One local stop.">Good food. One local stop.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          <span data-es="Tu proyecto," data-en="Your project,">Your project,</span><br /><span data-es="en manos de " data-en="handled by ">handled by </span><span class="text-shine" data-es="La" data-en="La">La</span>
+          <span data-es="Sabor hecho al momento," data-en="Made-to-order flavor,">Made-to-order flavor,</span><br /><span data-es="servido por " data-en="served by ">served by </span><span class="text-shine" data-es="La Coolmena LLC" data-en="La Coolmena LLC">La Coolmena LLC</span>
         </h1>
         <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="La Coolmena LLC atiende a clientes en Kissimmee, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente." data-en="La Coolmena LLC serves customers in Kissimmee, FL. Check the public listing, see real photos and contact the business directly.">La Coolmena LLC serves customers in Kissimmee, FL. Check the public listing, see real photos and contact the business directly.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
@@ -372,10 +372,10 @@
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/gmaps-1.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/gmaps-1.jpg" alt="Food from La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Antes de salir" data-en="Before you go">Before you go</p>
             <p class="font-display text-lg">(321) 447-0380</p>
             <p class="text-sm text-[color:var(--ink-60)]" data-es="Kissimmee, FL" data-en="Kissimmee, FL">Kissimmee, FL</p>
           </div>
@@ -398,20 +398,20 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Local food</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Made to order</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flavor</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">To go</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Local food</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Made to order</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flavor</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">To go</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -422,16 +422,16 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/gmaps-2.jpg" alt="Work by La Coolmena LLC" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-2.jpg" alt="Dish from La Coolmena LLC" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/gmaps-3.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-3.jpg" alt="La Coolmena LLC food truck" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo," data-en="One team,">One team,</span><br /><span class="text-shine" data-es="un solo responsable" data-en="one accountable crew">one accountable crew</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="La Coolmena LLC es un negocio local de Kissimmee, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios." data-en="La Coolmena LLC is a local Kissimmee, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.">La Coolmena LLC is a local Kissimmee, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La parada" data-en="The local stop">The local stop</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Comida local," data-en="Local food,">Local food,</span><br /><span class="text-shine" data-es="hecha para compartir" data-en="made to be shared">made to be shared</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="La Coolmena LLC lleva una experiencia de food truck a Kissimmee, FL: una cocina móvil, contacto directo y platos que puedes conocer antes de llegar." data-en="La Coolmena LLC brings the food-truck experience to Kissimmee, FL: a mobile kitchen, direct contact, and dishes you can preview before you arrive.">La Coolmena LLC brings the food-truck experience to Kissimmee, FL: a mobile kitchen, direct contact, and dishes you can preview before you arrive.</p>
         <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles." data-en="The public Google Maps listing collects the available photos and contact information.">The public Google Maps listing collects the available photos and contact information.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
@@ -439,7 +439,7 @@
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/gmaps-1.jpg" alt="La Coolmena LLC logo" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
+            <img src="assets/raw/gmaps-1.jpg" alt="La Coolmena LLC logo" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(218,142,74,0.3)]" loading="lazy" />
             <span class="text-sm font-light">La Coolmena LLC · <span class="text-[color:var(--ink-40)]" data-es="Kissimmee, FL" data-en="Kissimmee, FL">Kissimmee, FL</span></span>
           </div>
         </div>
@@ -452,29 +452,29 @@
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Antes de ir" data-en="Before you go">Before you go</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Del antojo" data-en="From craving">From craving</span> <span class="text-shine" data-es="al primer bocado" data-en="to first bite">to first bite</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Get in touch">Get in touch</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte." data-en="Tell us what you need; a photo of the space or the problem is enough to point you right.">Tell us what you need; a photo of the space or the problem is enough to point you right.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Mira los platos" data-en="See the food">See the food</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Explora las fotos reales y elige qué te provoca probar." data-en="Browse real photos and see what catches your eye.">Browse real photos and see what catches your eye.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto claro" data-en="Clear quote">Clear quote</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica." data-en="We tell you what the job takes and what it costs before starting, no fine print.">We tell you what the job takes and what it costs before starting, no fine print.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Confirma el punto" data-en="Confirm the stop">Confirm the stop</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="La ubicación de un food truck puede variar; llama antes de salir." data-en="A food truck can move; call to confirm before heading out.">A food truck can move; call to confirm before heading out.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3" data-es="El trabajo" data-en="The job">The job</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed." data-en="We arrive with everything needed and execute with the care you see on our feed.">We arrive with everything needed and execute with the care you see on our feed.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Pide directo" data-en="Order directly">Order directly</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Pregunta por disponibilidad y tiempo de preparación directamente al negocio." data-en="Ask the business directly about availability and preparation time.">Ask the business directly about availability and preparation time.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3" data-es="Entrega" data-en="Handover">Handover</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima." data-en="We walk the result together and leave the area clean. And you keep our number for next time.">We walk the result together and leave the area clean. And you keep our number for next time.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Disfruta" data-en="Enjoy">Enjoy</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Recoge tu pedido y disfruta una parada local en Kissimmee." data-en="Pick up your order and enjoy a local Kissimmee stop.">Pick up your order and enjoy a local Kissimmee stop.</p>
         </div>
       </div>
     </div>
@@ -486,44 +486,44 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso." data-en="Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.">Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que te espera" data-en="What is waiting">What is waiting</span> <span class="text-shine" data-es="en la parada" data-en="at the stop">at the stop</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="La disponibilidad puede cambiar cada día. Llama para confirmar antes de ir." data-en="Availability can change daily. Call to confirm before you go.">Availability can change daily. Call to confirm before you go.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="El oficio" data-en="The craft">The craft</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Nuestro trabajo" data-en="What we do">What we do</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Lo que publicamos en Google Maps es lo que hacemos: mira el feed y júzganos por ahí." data-en="What we post on Google Maps is what we do: check the feed and judge us by it.">What we post on Google Maps is what we do: check the feed and judge us by it.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(218,142,74,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="La especialidad" data-en="The specialty">The specialty</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Favoritos de la casa" data-en="House favorites">House favorites</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Platos preparados al momento con el sabor y el cuidado que se ven en cada foto." data-en="Made-to-order dishes with the flavor and care shown in every photo.">Made-to-order dishes with the flavor and care shown in every photo.</p>
           <div class="mt-auto">
-            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar ahora" data-en="Call now">Call now</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Trato" data-en="Service">Service</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Atención directa" data-en="Direct service">Direct service</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Hablas con quien hace el trabajo, no con una central: acuerdos claros y sin intermediarios." data-en="You talk to the person doing the work, not a call center: clear agreements, no middlemen.">You talk to the person doing the work, not a call center: clear agreements, no middlemen.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Para compartir" data-en="Made to share">Made to share</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Una parada que reúne" data-en="A stop worth sharing">A stop worth sharing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Una opción local para comer en familia, con amigos o resolver un antojo." data-en="A local stop for family, friends, or whenever the craving hits.">A local stop for family, friends, or whenever the craving hits.</p>
           <div class="mt-auto">
-            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar ahora" data-en="Call now">Call now</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Presupuesto" data-en="Quotes">Quotes</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Cotización sin compromiso" data-en="No-strings quotes">No-strings quotes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar." data-en="Tell us what you need and we tell you what it takes and what it costs before starting.">Tell us what you need and we tell you what it takes and what it costs before starting.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Pedido" data-en="Ordering">Ordering</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Llama antes de llegar" data-en="Call before you arrive">Call before you arrive</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Consulta disponibilidad y tiempos directamente con el negocio antes de salir." data-en="Ask the business directly about availability and timing before heading over.">Ask the business directly about availability and timing before heading over.</p>
           <div class="mt-auto">
-            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar ahora" data-en="Call now">Call now</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cercanía" data-en="Local">Local</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Negocio local" data-en="Local business">Local business</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="De tu misma zona: llegamos rápido y respondemos después de entregar." data-en="From your own area: quick to arrive and still answering after handover.">From your own area: quick to arrive and still answering after handover.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Ubicación" data-en="Location">Location</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Encuéntranos en Maps" data-en="Find us on Maps">Find us on Maps</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Revisa la ubicación, el horario y las fotos públicas en la ficha verificada." data-en="Check the location, hours, and public photos on the verified listing.">Check the location, hours, and public photos on the verified listing.</p>
           <div class="mt-auto">
-            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar ahora" data-en="Call now">Call now</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte." data-en="Do not see exactly what you need? Message us and we will confirm whether we can help.">Do not see exactly what you need? Message us and we will confirm whether we can help.</span></p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Consulta directamente el menú disponible, la ubicación y el horario de hoy." data-en="Ask directly about today's available menu, location, and hours.">Ask directly about today's available menu, location, and hours.</span></p>
     </div>
   </section>
 
@@ -534,7 +534,7 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="work">work</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Sabor" data-en="Real">Real</span> <span class="text-shine" data-es="en fotos reales" data-en="food, real photos">food, real photos</span></h2>
         </div>
         <a href="https://www.google.com/maps/place/La+Coolmena+LLC/data=!4m7!3m6!1s0x88dd73541c08d6e5:0x18009c2dbdba5711!8m2!3d28.3349381!4d-81.5007006!16s%2Fg%2F11tcqnt8yf!19sChIJ5dYIHFRz3YgREVe6vS2cABg?authuser=0&hl=en&g_ep=EgoyMDI2MDkwOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
@@ -542,12 +542,12 @@
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-4.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-5.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-6.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-7.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-2.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-3.jpg" alt="Work by La Coolmena LLC in Kissimmee, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Comida local" data-en="Local food">Local food</span><img src="assets/raw/gmaps-4.jpg" alt="Food from La Coolmena LLC" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Comida local" data-en="Local food">Local food</span><img src="assets/raw/gmaps-5.jpg" alt="Food from La Coolmena LLC" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Comida local" data-en="Local food">Local food</span><img src="assets/raw/gmaps-6.jpg" alt="Food from La Coolmena LLC" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Comida local" data-en="Local food">Local food</span><img src="assets/raw/gmaps-7.jpg" alt="Food from La Coolmena LLC" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Comida local" data-en="Local food">Local food</span><img src="assets/raw/gmaps-2.jpg" alt="Food from La Coolmena LLC" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Comida local" data-en="Local food">Local food</span><img src="assets/raw/gmaps-3.jpg" alt="Food from La Coolmena LLC" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -556,20 +556,20 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Local food</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Made to order</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flavor</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">To go</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Local food</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Made to order</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Flavor</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">To go</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -579,25 +579,25 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">to message us</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Antes de elegir" data-en="Before you choose">Before you choose</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres cosas" data-en="Three things">Three things</span> <span class="text-shine" data-es="que puedes comprobar" data-en="you can check">you can check</span></h2>
         <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha." data-en="We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.">We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.</p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 items-stretch">
         <div class="glass glass-hover rounded-3xl p-8 reveal">
           <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Trabajo a la vista" data-en="Work out in the open">Work out in the open</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores." data-en="We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.">We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Fotos reales" data-en="Real photos">Real photos</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Mira los platos y la cocina móvil antes de decidir qué probar." data-en="See the dishes and mobile kitchen before deciding what to try.">See the dishes and mobile kitchen before deciding what to try.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
           <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="El que responde es el que llega" data-en="Who answers is who shows up">Who answers is who shows up</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo." data-en="You talk to the crew, agree with the crew, and the crew does the work.">You talk to the crew, agree with the crew, and the crew does the work.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Contacto directo" data-en="Direct contact">Direct contact</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Confirma ubicación, horario y disponibilidad con el negocio." data-en="Confirm location, hours, and availability with the business.">Confirm location, hours, and availability with the business.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto antes de empezar" data-en="Quote before we start">Quote before we start</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra." data-en="You know what it takes and what it costs before the first hammer swing. No mid-job surprises.">You know what it takes and what it costs before the first hammer swing. No mid-job surprises.</p>
+          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3 class="font-display text-xl mb-3" data-es="Información pública" data-en="Public information">Public information</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisa la ficha pública y encuentra la ruta antes de salir." data-en="Check the public listing and get directions before heading out.">Check the public listing and get directions before heading out.</p>
         </div>
       </div>
       <div class="text-center mt-10 reveal">
@@ -619,7 +619,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para consultar disponibilidad." data-en="The fastest way to ask about availability.">The fastest way to ask about availability.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="tel:+3214470380">(321) 447-0380</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(218,142,74,0.4)]" href="tel:+3214470380">(321) 447-0380</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
@@ -627,7 +627,7 @@
             <div>
               <p class="font-medium mb-1" data-es="Google Maps" data-en="Google Maps">Google Maps</p>
               <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Dirección pública: 5405 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746." data-en="Public address: 5405 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746.">Public address: 5405 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.google.com/maps/place/La+Coolmena+LLC/data=!4m7!3m6!1s0x88dd73541c08d6e5:0x18009c2dbdba5711!8m2!3d28.3349381!4d-81.5007006!16s%2Fg%2F11tcqnt8yf!19sChIJ5dYIHFRz3YgREVe6vS2cABg?authuser=0&hl=en&g_ep=EgoyMDI2MDkwOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">5405 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746</a>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(218,142,74,0.4)]" href="https://www.google.com/maps/place/La+Coolmena+LLC/data=!4m7!3m6!1s0x88dd73541c08d6e5:0x18009c2dbdba5711!8m2!3d28.3349381!4d-81.5007006!16s%2Fg%2F11tcqnt8yf!19sChIJ5dYIHFRz3YgREVe6vS2cABg?authuser=0&hl=en&g_ep=EgoyMDI2MDkwOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">5405 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746</a>
             </div>
           </div>
         </div>
@@ -639,13 +639,13 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #191307 0%, #100c05 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #1a0f06 0%, #110a05 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="empieza con un mensaje" data-en="starts with a message">starts with a message</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso." data-en="Tell us what you need and we reply with ideas and a quote, no strings attached.">Tell us what you need and we reply with ideas and a quote, no strings attached.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Tu próxima parada local." data-en="Your next local stop.">Your next local stop.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="El próximo antojo" data-en="Your next craving">Your next craving</span> <span class="text-shine" data-es="empieza aquí" data-en="starts here">starts here</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama para confirmar qué hay disponible y dónde encontrarnos hoy." data-en="Call to confirm what is available and where to find us today.">Call to confirm what is available and where to find us today.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
         <a href="tel:+3214470380" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
         <a href="https://www.google.com/maps/place/La+Coolmena+LLC/data=!4m7!3m6!1s0x88dd73541c08d6e5:0x18009c2dbdba5711!8m2!3d28.3349381!4d-81.5007006!16s%2Fg%2F11tcqnt8yf!19sChIJ5dYIHFRz3YgREVe6vS2cABg?authuser=0&hl=en&g_ep=EgoyMDI2MDkwOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">See listing on Google Maps</a>
@@ -654,12 +654,12 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0d0805]">
     <span class="foot-mark" aria-hidden="true">La Coolmena LLC</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/gmaps-1.jpg" alt="La Coolmena LLC" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
+          <img src="assets/raw/gmaps-1.jpg" alt="La Coolmena LLC" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(236,193,153,0.35)]" loading="lazy" />
           <span class="font-display text-lg tracking-[0.1em] uppercase">La Coolmena LLC</span>
         </div>
         <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="La Coolmena LLC en Kissimmee, FL. Información pública y contacto directo." data-en="La Coolmena LLC in Kissimmee, FL. Public information and direct contact.">La Coolmena LLC in Kissimmee, FL. Public information and direct contact.</p>
@@ -667,11 +667,11 @@
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>5405 W Irlo Bronson Memorial Hwy, Kissimmee, FL 34746</p>
-        <p><a href="tel:+3214470380" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Teléfono · (321) 447-0380" data-en="Phone · (321) 447-0380">Phone · (321) 447-0380</a></p>
+        <p><a href="tel:+3214470380" target="_blank" rel="noopener" class="hover:text-[#edbaaf]" data-es="Teléfono · (321) 447-0380" data-en="Phone · (321) 447-0380">Phone · (321) 447-0380</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.google.com/maps/place/La+Coolmena+LLC/data=!4m7!3m6!1s0x88dd73541c08d6e5:0x18009c2dbdba5711!8m2!3d28.3349381!4d-81.5007006!16s%2Fg%2F11tcqnt8yf!19sChIJ5dYIHFRz3YgREVe6vS2cABg?authuser=0&hl=en&g_ep=EgoyMDI2MDkwOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Google Maps · Google Maps</a></p>
+        <p><a href="https://www.google.com/maps/place/La+Coolmena+LLC/data=!4m7!3m6!1s0x88dd73541c08d6e5:0x18009c2dbdba5711!8m2!3d28.3349381!4d-81.5007006!16s%2Fg%2F11tcqnt8yf!19sChIJ5dYIHFRz3YgREVe6vS2cABg?authuser=0&hl=en&g_ep=EgoyMDI2MDkwOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#edbaaf]">Google Maps · Google Maps</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
@@ -679,7 +679,7 @@
         <p class="text-xs text-[color:var(--ink-40)]">© 2026 La Coolmena LLC.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
-          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+          <span class="text-xs text-[#f7efe8]">Powered by <span class="font-semibold">Merktop</span></span>
         </a>
       </div>
     </div>
@@ -687,7 +687,7 @@
 
   <!-- Boton flotante de reserva -->
   <a href="tel:+3214470380" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1d1007" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
     <span class="book-float-label" data-es="Llamar ahora" data-en="Call now">Call now</span>
   </a>
 
