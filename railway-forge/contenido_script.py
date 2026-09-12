@@ -326,6 +326,26 @@ NICHOS = {
     _b('Gabinetes, encimeras y acabados que convierten la cocina en otra.', 'Cabinets, counters and finishes that make it a different kitchen.')),
    (_b('Superficies', 'Surfaces'), _b('Pisos y pintura', 'Floors and paint'),
     _b('Pisos nuevos y pintura con preparación seria, para un cambio que dura.', 'New floors and paint with real prep, for a change that lasts.'))]),
+ 'food_truck': dict(
+  kw=['food truck', 'restaurant', 'restaurante', 'cocina', 'taco', 'birria', 'comida',
+      'bakery', 'panader', 'cafe', 'coffee', 'pizza', 'burger', 'bbq'],
+  etiqueta=_b('Comida local', 'Local food'),
+  h1=(_b('Sabor hecho al momento,', 'Made-to-order flavor,'),
+      _b('servido por ', 'served by ')),
+  marquee=['Comida local', 'Hecho al momento', 'Sabor', 'Kissimmee', 'Para llevar', 'Florida'],
+  cards=[
+   (_b('La especialidad', 'The specialty'), _b('Favoritos de la casa', 'House favorites'),
+    _b('Platos preparados al momento con el sabor y el cuidado que se ven en cada foto.',
+       'Made-to-order dishes with the flavor and care shown in every photo.')),
+   (_b('Para compartir', 'Made to share'), _b('Una parada que reúne', 'A stop worth sharing'),
+    _b('Una opción local para comer en familia, con amigos o resolver un antojo.',
+       'A local stop for family, friends, or whenever the craving hits.')),
+   (_b('Pedido', 'Ordering'), _b('Llama antes de llegar', 'Call before you arrive'),
+    _b('Consulta disponibilidad y tiempos directamente con el negocio antes de salir.',
+       'Ask the business directly about availability and timing before heading over.')),
+   (_b('Ubicación', 'Location'), _b('Encuéntranos en Maps', 'Find us on Maps'),
+    _b('Revisa la ubicación, el horario y las fotos públicas en la ficha verificada.',
+       'Check the location, hours, and public photos on the verified listing.'))]),
 }
 GENERICO = dict(
  kw=[], etiqueta=_b('Servicios', 'Services'),

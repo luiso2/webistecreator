@@ -41,7 +41,9 @@ import contenido_script as cs
 PANEL = os.environ.get('PANEL_URL', 'https://siteforge-panel.odd-forest-9504.workers.dev')
 DEMOS = os.environ.get('DEMOS_URL', 'https://siteforge-demos.odd-forest-9504.workers.dev').rstrip('/')
 GH_REPO = os.environ.get('GH_REPO', 'luiso2/webistecreator')
-GH_TOKEN = os.environ['GITHUB_TOKEN']
+# R2 is the primary publisher.  Keep GitHub optional so a missing backup token
+# cannot prevent the Cloudflare container from starting and serving health checks.
+GH_TOKEN = os.environ.get('GITHUB_TOKEN', '').strip()
 DEMO_PUBLISH_KEY = (os.environ.get('SITEFORGE_PUBLISH_KEY')
                     or os.environ.get('SITEFORGE_AGENT_KEY')
                     or os.environ.get('SITEFORGE_UI_KEY'))

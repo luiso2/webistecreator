@@ -5,7 +5,10 @@
     "build:styles": "npx --yes tailwindcss@3.4.17 -c tailwind.config.cjs -i styles/tailwind.css -o output/_shared/tailwind.css --minify && node scripts/write-style-revision.mjs",
     "test:control-plane": "node --test ui/control-plane.test.mjs"
   },
+  "dependencies": {
+    "@cloudflare/containers": "^0.3.7"
+  },
   "devDependencies": {
-    "wrangler": "^4.111.0"
+    "wrangler": "^4.131.1"
   }
 }

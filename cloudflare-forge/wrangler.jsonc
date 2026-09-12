@@ -1,0 +1,55 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "siteforge-forge",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": { "enabled": true, "head_sampling_rate": 1, "persist": true }
+  },
+  "vars": {
+    "PANEL_URL": "https://siteforge-panel.odd-forest-9504.workers.dev",
+    "DEMOS_URL": "https://siteforge-demos.odd-forest-9504.workers.dev",
+    "GH_REPO": "luiso2/webistecreator",
+    "POLL_SECONDS": "10",
+    "FORGE_DEADLINE_SECONDS": "510",
+    "DISCOVERY_BUILD_WORKERS": "3",
+    "DISCOVERY_TARGET": "12",
+    "DISCOVERY_CANDIDATES": "50",
+    "CRON_MAX_BUILDS": "1",
+    "DISCOVERY_ROTATION_MINUTES": "5",
+    "DISCOVERY_QUERIES": "2"
+  },
+  "triggers": {
+    "crons": ["* * * * *", "*/5 * * * *"]
+  },
+  "containers": [
+    {
+      "class_name": "SiteforgeForgeContainer",
+      "image": "../railway-forge/Dockerfile",
+      "max_instances": 4,
+      "instance_type": "standard-1"
+    },
+    {
+      "class_name": "SiteforgeCronContainer",
+      "image": "../railway-forge/Dockerfile",
+      "max_instances": 1,
+      "instance_type": "standard-1"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      { "name": "FORGE_CONTAINERS", "class_name": "SiteforgeForgeContainer" },
+      { "name": "CRON_CONTAINER", "class_name": "SiteforgeCronContainer" }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["SiteforgeForgeContainer", "SiteforgeCronContainer"]
+    }
+  ]
+}
