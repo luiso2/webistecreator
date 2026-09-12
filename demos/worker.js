@@ -12,6 +12,192 @@ import { SHARED_STYLE_REV } from './shared-style.js';
 // <style>, y sin validarlos una escritura en KV podria cerrar la etiqueta e inyectar markup.
 const COLOR_OK = /^(#[0-9a-f]{3,8}|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(?:,\s*(?:0|1|0?\.\d+)\s*)?\))$/i;
 const TOKENS = ['deep', 'mid', 'soft', 'ghost'];
+const SLUG_OK = /^[a-z0-9-]{1,40}$/;
+const VERSION_OK = /^[a-f0-9]{64}$/;
+const MAX_FILE_BYTES = 15 * 1024 * 1024;
+const MAX_BUNDLE_FILES = 160;
+
+function rutaValida(path) {
+  return typeof path === 'string' && path.length > 0 && path.length <= 240
+    && !path.startsWith('/') && !path.includes('..')
+    && /^[A-Za-z0-9._/-]+$/.test(path);
+}
+
+async function sha256Hex(value) {
+  const digest = await crypto.subtle.digest('SHA-256', value);
+  return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function secretoValido(provided, expected) {
+  if (!provided || !expected) return false;
+  const encoder = new TextEncoder();
+  const [a, b] = await Promise.all([
+    crypto.subtle.digest('SHA-256', encoder.encode(provided)),
+    crypto.subtle.digest('SHA-256', encoder.encode(expected)),
+  ]);
+  const left = new Uint8Array(a);
+  const right = new Uint8Array(b);
+  let difference = 0;
+  for (let index = 0; index < left.length; index += 1) difference |= left[index] ^ right[index];
+  return difference === 0;
+}
+
+function json(data, status = 200) {
+  return Response.json(data, {
+    status,
+    headers: { 'cache-control': 'no-store' },
+  });
+}
+
+function versionPrefix(slug, version) {
+  return `sites/${slug}/versions/${version}/`;
+}
+
+async function publicarArchivo(req, env, url) {
+  const slug = url.searchParams.get('slug') || '';
+  const version = url.searchParams.get('version') || '';
+  const path = url.searchParams.get('path') || '';
+  if (!SLUG_OK.test(slug) || !VERSION_OK.test(version) || !rutaValida(path)) {
+    return json({ ok: false, error: 'Ruta de bundle invalida.' }, 400);
+  }
+  const length = Number(req.headers.get('content-length') || 0);
+  if (length > MAX_FILE_BYTES) return json({ ok: false, error: 'Archivo demasiado grande.' }, 413);
+  const body = await req.arrayBuffer();
+  if (body.byteLength > MAX_FILE_BYTES) return json({ ok: false, error: 'Archivo demasiado grande.' }, 413);
+  const actualSha = await sha256Hex(body);
+  const expectedSha = (req.headers.get('x-siteforge-sha256') || '').toLowerCase();
+  if (!VERSION_OK.test(expectedSha) || actualSha !== expectedSha) {
+    return json({ ok: false, error: 'Checksum del archivo no coincide.' }, 400);
+  }
+  const key = versionPrefix(slug, version) + path;
+  const object = await env.DEMO_BUNDLES.put(key, body, {
+    httpMetadata: {
+      contentType: req.headers.get('content-type') || 'application/octet-stream',
+      cacheControl: 'public, max-age=31536000, immutable',
+    },
+    customMetadata: { sha256: actualSha },
+    sha256: actualSha,
+  });
+  if (!object) return json({ ok: false, error: 'R2 no confirmo la escritura.' }, 502);
+  return json({ ok: true, path, size: body.byteLength, sha256: actualSha });
+}
+
+async function finalizarPublicacion(req, env, origin) {
+  let payload;
+  try {
+    payload = await req.json();
+  } catch (_) {
+    return json({ ok: false, error: 'Manifest JSON invalido.' }, 400);
+  }
+  const slug = String(payload?.slug || '');
+  const version = String(payload?.version || '');
+  const files = Array.isArray(payload?.files) ? payload.files : [];
+  if (!SLUG_OK.test(slug) || !VERSION_OK.test(version) || files.length < 1 || files.length > MAX_BUNDLE_FILES) {
+    return json({ ok: false, error: 'Manifest invalido.' }, 400);
+  }
+  const normalized = [];
+  const seen = new Set();
+  for (const entry of files) {
+    const path = String(entry?.path || '');
+    const size = Number(entry?.size);
+    const sha256 = String(entry?.sha256 || '').toLowerCase();
+    if (!rutaValida(path) || seen.has(path) || !Number.isSafeInteger(size) || size < 0
+        || size > MAX_FILE_BYTES || !VERSION_OK.test(sha256)) {
+      return json({ ok: false, error: `Entrada de manifest invalida: ${path.slice(0, 80)}` }, 400);
+    }
+    seen.add(path);
+    normalized.push({ path, size, sha256, contentType: String(entry?.contentType || 'application/octet-stream') });
+  }
+  if (!seen.has('index.html')) return json({ ok: false, error: 'El bundle no contiene index.html.' }, 400);
+
+  const prefix = versionPrefix(slug, version);
+  for (let offset = 0; offset < normalized.length; offset += 12) {
+    const batch = normalized.slice(offset, offset + 12);
+    const heads = await Promise.all(batch.map(entry => env.DEMO_BUNDLES.head(prefix + entry.path)));
+    for (let index = 0; index < batch.length; index += 1) {
+      const entry = batch[index];
+      const object = heads[index];
+      if (!object || object.size !== entry.size || object.customMetadata?.sha256 !== entry.sha256) {
+        return json({ ok: false, error: `Archivo ausente o corrupto: ${entry.path}` }, 409);
+      }
+    }
+  }
+
+  const publishedAt = new Date().toISOString();
+  const manifest = {
+    schemaVersion: 1,
+    slug,
+    version,
+    publishedAt,
+    files: normalized.map(entry => ({
+      ...entry,
+      url: `${origin}/_siteforge/assets/${slug}/${version}/${entry.path}`,
+    })),
+  };
+  const manifestKey = prefix + 'manifest.json';
+  await env.DEMO_BUNDLES.put(manifestKey, JSON.stringify(manifest), {
+    httpMetadata: { contentType: 'application/json; charset=UTF-8', cacheControl: 'public, max-age=31536000, immutable' },
+  });
+  // R2 is strongly consistent. This final write is the atomic cutover: readers
+  // never see the new version until every object above has been verified.
+  await env.DEMO_BUNDLES.put(`sites/${slug}/current.json`, JSON.stringify({ ...manifest, manifestKey }), {
+    httpMetadata: { contentType: 'application/json; charset=UTF-8', cacheControl: 'no-store' },
+  });
+  return json({
+    ok: true,
+    url: `${origin}/${slug}/`,
+    manifestUrl: `${origin}/_siteforge/manifests/${slug}/${version}.json`,
+    version,
+    files: normalized.length,
+  });
+}
+
+async function manejarPublicacion(req, env, url) {
+  const valid = await secretoValido(req.headers.get('x-siteforge-publish-key') || '', env.SITEFORGE_PUBLISH_KEY || '');
+  if (!valid) return json({ ok: false, error: 'No autorizado.' }, 401);
+  if (req.method === 'PUT' && url.pathname === '/__siteforge/publish/file') {
+    return publicarArchivo(req, env, url);
+  }
+  if (req.method === 'POST' && url.pathname === '/__siteforge/publish/finalize') {
+    return finalizarPublicacion(req, env, url.origin);
+  }
+  return json({ ok: false, error: 'Ruta de publicacion no encontrada.' }, 404);
+}
+
+async function objetoR2Response(req, object, immutable) {
+  const headers = new Headers();
+  object.writeHttpMetadata(headers);
+  headers.set('etag', object.httpEtag);
+  headers.set('cache-control', immutable ? 'public, max-age=31536000, immutable' : 'public, max-age=30, must-revalidate');
+  if (req.headers.get('if-none-match') === object.httpEtag) return new Response(null, { status: 304, headers });
+  return new Response(req.method === 'HEAD' ? null : object.body, { headers });
+}
+
+async function manifestActual(env, slug) {
+  if (!SLUG_OK.test(slug)) return null;
+  const object = await env.DEMO_BUNDLES.get(`sites/${slug}/current.json`);
+  if (!object) return null;
+  try {
+    const manifest = await object.json();
+    return VERSION_OK.test(manifest?.version || '') ? manifest : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+async function servirR2Inmutable(req, env, url) {
+  const match = url.pathname.match(/^\/_siteforge\/assets\/([a-z0-9-]{1,40})\/([a-f0-9]{64})\/(.+)$/);
+  if (!match || !rutaValida(match[3])) return null;
+  const object = await env.DEMO_BUNDLES.get(versionPrefix(match[1], match[2]) + match[3]);
+  return object ? objetoR2Response(req, object, true) : new Response('Not found', { status: 404 });
+}
+
+async function servirManifestR2(req, env, url) {
+  const match = url.pathname.match(/^\/_siteforge\/manifests\/([a-z0-9-]{1,40})\/([a-f0-9]{64})\.json$/);
+  if (!match) return null;
+  const object = await env.DEMO_BUNDLES.get(versionPrefix(match[1], match[2]) + 'manifest.json');
+  return object ? objetoR2Response(req, object, true) : new Response('Not found', { status: 404 });
+}
 
 // Los esqueletos NO usan var(--accent-*) en todas partes: el gradiente de .text-shine, el
 // relieve de .btn-3d, .step-num, .stars, .book-float y la barra de progreso llevan el dorado
@@ -102,7 +288,22 @@ class EstilosCompartidos {
   }
 }
 
+class AssetInmutable {
+  constructor(attribute, base) {
+    this.attribute = attribute;
+    this.base = base;
+  }
+  element(el) {
+    const value = el.getAttribute(this.attribute) || '';
+    if (!value || value === 'assets/tailwind.js' || value === './assets/tailwind.js') return;
+    const clean = value.replace(/^\.\//, '');
+    if (clean.startsWith('assets/')) el.setAttribute(this.attribute, this.base + clean);
+  }
+}
+
 async function servirEstiloCompartido(env, req) {
+  const shared = await env.DEMO_BUNDLES.get('shared/tailwind.css');
+  if (shared) return objetoR2Response(req, shared, true);
   const res = await env.ASSETS.fetch(req);
   const headers = new Headers(res.headers);
   // La URL lleva la huella del contenido, asi que puede vivir en la cache del
@@ -155,13 +356,22 @@ class MediosDiferidos {
   }
 }
 
-function reescritorDeDemo(css, origen) {
+function reescritorDeDemo(css, origen, assetBase = null) {
   const medios = new MediosDiferidos();
   let rw = new HTMLRewriter()
     .on('img', { element: el => medios.imagen(el) })
     .on('video', { element: el => medios.video(el) })
     .onDocument({ end: end => medios.end(end) })
     .on('script[src="assets/tailwind.js"]', new EstilosCompartidos());
+  if (assetBase) {
+    rw = rw
+      .on('img[src]', new AssetInmutable('src', assetBase))
+      .on('source[src]', new AssetInmutable('src', assetBase))
+      .on('video[src]', new AssetInmutable('src', assetBase))
+      .on('video[poster]', new AssetInmutable('poster', assetBase))
+      .on('script[src]', new AssetInmutable('src', assetBase))
+      .on('link[href]', new AssetInmutable('href', assetBase));
+  }
   if (css) rw = rw.on('head', new InyectarColor(css));
   if (origen) rw = rw.on('meta[property^="og:"]', new OgAbsoluta(origen));
   return rw;
@@ -177,6 +387,32 @@ function huella(s) {
 async function servir(env, req, slug) {
   const css = await estiloDe(env, slug);
   const origen = slug ? `https://siteforge-demos.odd-forest-9504.workers.dev/${slug}/` : null;
+  let r2 = null;
+  let current = null;
+  if (slug && SLUG_OK.test(slug)) {
+    current = await manifestActual(env, slug);
+    if (current) {
+      const url = new URL(req.url);
+      let relative = url.pathname.replace(new RegExp(`^/${slug}/?`), '');
+      if (!relative) relative = 'index.html';
+      if (rutaValida(relative)) {
+        const object = await env.DEMO_BUNDLES.get(versionPrefix(slug, current.version) + relative);
+        if (object) r2 = await objetoR2Response(req, object, false);
+      }
+    }
+  }
+  if (r2) {
+    const tipo = r2.headers.get('content-type') || '';
+    if (!tipo.includes('text/html') || !origen || req.method === 'HEAD') return r2;
+    const headers = new Headers(r2.headers);
+    const base = (headers.get('etag') || 'sf').replace(/[^A-Za-z0-9._-]/g, '');
+    headers.set('etag', `"${base}${css ? `-c${huella(css)}` : ''}"`);
+    headers.set('cache-control', 'no-cache');
+    const assetBase = `/_siteforge/assets/${slug}/${current.version}/`;
+    return reescritorDeDemo(css, origen, assetBase).transform(
+      new Response(r2.body, { status: r2.status, statusText: r2.statusText, headers }),
+    );
+  }
   // Sin color, el HTML igual pasa por el rewriter para absolutizar og:image (el preview de
   // WhatsApp/iMessage no funciona con rutas relativas); lo no-HTML no se toca.
   if (!css) {
@@ -226,6 +462,12 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     const host = url.hostname;
+
+    if (url.pathname.startsWith('/__siteforge/publish/')) return manejarPublicacion(req, env, url);
+    const immutable = await servirR2Inmutable(req, env, url);
+    if (immutable) return immutable;
+    const manifest = await servirManifestR2(req, env, url);
+    if (manifest) return manifest;
 
     // Esta ruta comun no pertenece a un slug. Debe resolverse antes del
     // enrutado workers.dev; de otro modo caerá en servir(..., null) y se

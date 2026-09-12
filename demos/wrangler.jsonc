@@ -1,7 +1,12 @@
 {
   "name": "siteforge-demos",
   "main": "worker.js",
-  "compatibility_date": "2026-07-01",
+  "compatibility_date": "2026-09-12",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
   // run_worker_first por defecto es FALSE: si la peticion coincide con un asset que existe,
   // Cloudflare lo sirve directo del CDN y el Worker NO se ejecuta. Por eso la inyeccion de
   // color no llegaba a correr nunca para /<slug>/ (que es un asset HTML).
@@ -12,8 +17,11 @@
     "directory": "../output",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
-    "run_worker_first": ["/*", "!/*/assets/*"]
+    "run_worker_first": ["/*"]
   },
+  "r2_buckets": [
+    { "binding": "DEMO_BUNDLES", "bucket_name": "siteforge-demos-assets" }
+  ],
   "kv_namespaces": [
     { "binding": "DOMAIN_MAP", "id": "3a40823222b6421fafe3969982345792" }
   ]

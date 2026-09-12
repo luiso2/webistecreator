@@ -24,22 +24,27 @@ para reintento, nunca deja un item fantasma en processing.
 """
 import base64
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import hashlib
 import json
+import mimetypes
 import os
 import re
 import subprocess
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 
 import contenido_script as cs
-from scripts.maps_common import instagram_handle
 
 PANEL = os.environ.get('PANEL_URL', 'https://siteforge-panel.odd-forest-9504.workers.dev')
-DEMOS = 'https://siteforge-demos.odd-forest-9504.workers.dev'
+DEMOS = os.environ.get('DEMOS_URL', 'https://siteforge-demos.odd-forest-9504.workers.dev').rstrip('/')
 GH_REPO = os.environ.get('GH_REPO', 'luiso2/webistecreator')
 GH_TOKEN = os.environ['GITHUB_TOKEN']
+DEMO_PUBLISH_KEY = (os.environ.get('SITEFORGE_PUBLISH_KEY')
+                    or os.environ.get('SITEFORGE_AGENT_KEY')
+                    or os.environ.get('SITEFORGE_UI_KEY'))
 # SIN IA (decision del usuario 2026-08-18): curacion por reglas y plantillas por nicho,
 # todo en contenido_script.py. Cero costo por site, cero dependencia de APIs de modelos.
 # Los items por NOMBRE se resuelven con la ficha pública de Google Maps; antes se dejaban
@@ -358,6 +363,115 @@ def subir_sitio_github(slug, archivos, intento=0, deadline=None):
         return False
 
 
+def _bundle_file(slug, pair):
+    local, repo_path = pair
+    prefix = f'output/{slug}/'
+    if not repo_path.startswith(prefix) or not os.path.isfile(local):
+        return None
+    path = repo_path[len(prefix):]
+    with open(local, 'rb') as source:
+        body = source.read()
+    mime = mimetypes.guess_type(path)[0] or 'application/octet-stream'
+    if path.endswith('.html'):
+        mime = 'text/html; charset=UTF-8'
+    elif path.endswith('.json'):
+        mime = 'application/json; charset=UTF-8'
+    return {
+        'local': local,
+        'path': path,
+        'size': len(body),
+        'sha256': hashlib.sha256(body).hexdigest(),
+        'contentType': mime,
+    }
+
+
+def subir_sitio_r2(slug, archivos, deadline=None):
+    """Sube un bundle versionado y activa el slug solo después de verificarlo.
+
+    Cada archivo vive bajo un prefijo inmutable. El endpoint del Worker valida
+    tamaño y SHA-256 de todos los objetos antes de cambiar current.json, de modo
+    que un visitante nunca puede recibir media publicación.
+    """
+    if not DEMO_PUBLISH_KEY:
+        print('  R2 omitido: falta SITEFORGE_PUBLISH_KEY/SITEFORGE_AGENT_KEY', flush=True)
+        return None
+    prepared = [entry for entry in (_bundle_file(slug, pair) for pair in archivos) if entry]
+    if not prepared or not any(entry['path'] == 'index.html' for entry in prepared):
+        print(f'  R2 omitido: bundle incompleto para {slug}', flush=True)
+        return None
+    canonical = json.dumps(
+        [{key: entry[key] for key in ('path', 'size', 'sha256', 'contentType')}
+         for entry in sorted(prepared, key=lambda item: item['path'])],
+        ensure_ascii=False, separators=(',', ':'), sort_keys=True,
+    ).encode('utf-8')
+    version = hashlib.sha256(canonical).hexdigest()
+    headers = {'x-siteforge-publish-key': DEMO_PUBLISH_KEY}
+
+    def upload(entry):
+        timeout = timeout_for(deadline, 60)
+        query = urllib.parse.urlencode({'slug': slug, 'version': version, 'path': entry['path']})
+        with open(entry['local'], 'rb') as source:
+            body = source.read()
+        request = urllib.request.Request(
+            f'{DEMOS}/__siteforge/publish/file?{query}', data=body, method='PUT',
+            headers={
+                'User-Agent': 'siteforge-forja/2.0',
+                'Content-Type': entry['contentType'],
+                'x-siteforge-publish-key': DEMO_PUBLISH_KEY,
+                'x-siteforge-sha256': entry['sha256'],
+            },
+        )
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            result = json.loads(response.read().decode('utf-8'))
+        if not result.get('ok'):
+            raise RuntimeError(result.get('error') or f'R2 rechazó {entry["path"]}')
+        return entry['path']
+
+    try:
+        with ThreadPoolExecutor(max_workers=min(6, len(prepared))) as pool:
+            list(pool.map(upload, prepared))
+        manifest_files = [{key: entry[key] for key in ('path', 'size', 'sha256', 'contentType')}
+                          for entry in prepared]
+        result = http(
+            f'{DEMOS}/__siteforge/publish/finalize',
+            {'slug': slug, 'version': version, 'files': manifest_files},
+            headers=headers,
+            timeout=timeout_for(deadline, 60),
+        )
+        if not isinstance(result, dict) or not result.get('ok'):
+            raise RuntimeError((result or {}).get('error') or 'R2 no confirmó el manifest')
+        print(f'  R2 ACTIVO {slug} ({len(prepared)} archivos)', flush=True)
+        return result
+    except ForgeDeadlineExceeded:
+        raise
+    except Exception as exc:
+        print(f'  publicacion R2 fallo {slug}: {exc}', flush=True)
+        return None
+
+
+def publicar_demo(item_id, token, slug, archivos, expected_marker, deadline=None):
+    """Publica primero en R2; GitHub queda como archivo/fallback, no como bloqueo."""
+    r2 = subir_sitio_r2(slug, archivos, deadline=deadline)
+    url = f'{DEMOS}/{slug}/'
+    if r2:
+        if not esperar_demo(item_id, url, max_seconds=45, token=token, deadline=deadline,
+                            expected_marker=expected_marker):
+            return False, 'R2 activó el bundle, pero la URL estable no pasó la verificación.'
+        # Conserva el repositorio histórico y el fallback de Static Assets. La
+        # disponibilidad del demo ya no depende de que este build termine.
+        if not subir_sitio_github(slug, archivos, deadline=deadline):
+            print(f'  aviso: {slug} quedó live en R2, pero falló el backup GitHub', flush=True)
+        return True, None
+
+    # Compatibilidad durante el rollout si una réplica antigua aún no tiene la
+    # variable de publicación o Cloudflare devuelve un fallo transitorio.
+    if not subir_sitio_github(slug, archivos, deadline=deadline):
+        return False, 'Publicación R2 y backup GitHub fallaron.'
+    if not esperar_demo(item_id, url, token=token, deadline=deadline, expected_marker=expected_marker):
+        return False, 'El demo no respondió 200 tras el deploy de compatibilidad.'
+    return True, None
+
+
 def parece_handle(s):
     s = s.strip()
     return bool(re.fullmatch(r'@?[A-Za-z0-9._]{2,30}', s)) and ' ' not in s
@@ -436,15 +550,7 @@ def procesar(item, deadline=None):
         finish(failed=True, motivo=f'Research Instagram incompleto ({fotos} fotos); reintenta para volver a consultar el perfil.')
         return
     hechos['slug'] = slug
-    language_facts = dict(hechos)
-    if item.get('language'):
-        language_facts['requested_language'] = item['language']
-    language_decision = cs.decidir_idioma(language_facts, fallback='en')
-    hechos['idioma_principal'] = language_decision['language']
-    hechos['primary_language'] = language_decision['language']
-    hechos['language_source'] = language_decision['source']
-    hechos['language_confidence'] = language_decision['confidence']
-    json.dump(hechos, open(ruta_data, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    hechos['idioma_principal'] = 'es'  # el gate valida la coherencia del copy generado
 
     report('build')
     # Sin IA (decision del usuario 2026-08-18): curacion por reglas + plantillas por nicho
@@ -482,15 +588,12 @@ def procesar(item, deadline=None):
     archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
                  for f in fotos_usadas]
     archivos.append(deploy_marker(slug))
-    ok = subir_sitio_github(slug, archivos, deadline=deadline)
-    if not ok:
-        finish(failed=True, motivo='Subida a GitHub incompleta')
-        return
-
     url = f'{DEMOS}/{slug}/'
-    if not esperar_demo(iid, url, token=token, deadline=deadline,
-                        expected_marker=content.get('brand', {}).get('name')):
-        finish(failed=True, motivo='El demo no respondio 200 tras el deploy (no se registra)')
+    ok, publish_error = publicar_demo(
+        iid, token, slug, archivos, content.get('brand', {}).get('name'), deadline=deadline,
+    )
+    if not ok:
+        finish(failed=True, motivo=publish_error or 'El demo no pudo publicarse.')
         return
 
     registry_result = panel('/api/public/registry-upsert', {
@@ -498,8 +601,7 @@ def procesar(item, deadline=None):
         'city': (hechos.get('ciudad') or ''), 'ig': f'@{handle}', 'url_demo': url,
         'phone': hechos.get('phone'), 'language': lang, 'has_own_site': bool(hechos.get('has_own_site')),
         'business_key': reserved_candidate.get('business_key'),
-        'source': 'instagram',
-        'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 3,
+        'thumb': f'{url}assets/raw/{plan["fotos"]["hero"]}', 'dm_message': plan.get('dm', '')[:900], 'message_version': 2,
     })
     if not isinstance(registry_result, dict) or not registry_result.get('ok'):
         finish(failed=True, motivo='El demo publicó, pero el registro del panel no confirmó el negocio.')
@@ -624,51 +726,11 @@ def procesar_actualizacion(item, deadline=None):
                  for photo in photos if os.path.exists(f'output/{slug}/assets/raw/{photo}'))
     files.append(deploy_marker(slug))
     report('commit', 'Publicando revisión atómica')
-    if not subir_sitio_github(slug, files, deadline=deadline):
-        fail('Subida a GitHub incompleta en actualización.')
-        return
-
     url = f'{DEMOS}/{slug}/'
     expected = updated.get('brand', {}).get('name') or slug
-    if not esperar_demo(iid, url, token=token, deadline=deadline, expected_marker=expected):
-        fail('El demo no respondió 200 tras publicar la actualización.')
-        return
-    address = updated.get('jsonld', {}).get('address', {})
-    if not isinstance(address, dict):
-        address = {}
-    city = address.get('addressLocality') or ''
-    region = address.get('addressRegion') or ''
-    if city and region:
-        city = f'{city}, {region}'
-    existing_facts = {}
-    data_path = f'output/{slug}/data.json'
-    if os.path.exists(data_path):
-        try:
-            existing_facts = json.load(open(data_path, encoding='utf-8'))
-        except (OSError, ValueError, TypeError):
-            existing_facts = {}
-    has_own_site = request.get('has_own_site')
-    if not isinstance(has_own_site, bool):
-        stored_flag = existing_facts.get('has_own_site')
-        has_own_site = stored_flag if isinstance(stored_flag, bool) else None
-    dm = cs.generar_dm({
-        'nombre': expected,
-        'ciudad': city,
-        'primary_language': lang,
-        'nicho': updated.get('jsonld', {}).get('@type') or '',
-        'has_own_site': has_own_site,
-    }, url)
-    registry_result = panel('/api/public/registry-upsert', {
-        'slug': slug,
-        'name': expected,
-        'city': city or None,
-        'url_demo': url,
-        'language': lang,
-        'dm_message': dm[:900],
-        'message_version': 3,
-    })
-    if not isinstance(registry_result, dict) or not registry_result.get('ok'):
-        fail('El website se publicó, pero el panel no sincronizó su idioma y mensaje.')
+    ok, publish_error = publicar_demo(iid, token, slug, files, expected, deadline=deadline)
+    if not ok:
+        fail(publish_error or 'El demo no respondió 200 tras publicar la actualización.')
         return
     terminar(iid, token=token, slug=slug, name=expected, url_demo=url,
              revision=request.get('spec_revision'), updated=True)
@@ -779,18 +841,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     hechos['nombre'] = hechos.get('name') or nombre
     hechos['ciudad'] = ciudad
     hechos['nicho'] = item.get('nicho') or candidate.get('niche') or hechos.get('nicho') or nombre
-    requested_language = (item.get('language')
-                          or (item.get('request') or {}).get('language')
-                          or candidate.get('language'))
-    language_facts = {**hechos, 'nombre': hechos.get('name') or nombre,
-                      'ciudad': ciudad, 'nicho': hechos['nicho']}
-    if requested_language:
-        language_facts['requested_language'] = requested_language
-    language_decision = cs.decidir_idioma(language_facts, fallback='en')
-    hechos['idioma_principal'] = language_decision['language']
-    hechos['primary_language'] = language_decision['language']
-    hechos['language_source'] = language_decision['source']
-    hechos['language_confidence'] = language_decision['confidence']
+    hechos['idioma_principal'] = 'en'
     hechos['maps_url'] = hechos.get('maps_url') or candidate.get('maps_url')
     hechos['business_key'] = candidate.get('business_key')
     json.dump(hechos, open(ruta_data, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
@@ -807,9 +858,7 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     if d.returncode != 0:
         return fail('derive.py fallo para item por nombre')
     subprocess.run(['cp', 'templates/assets/tailwind.js', f'output/{slug}/assets/tailwind.js'], check=False)
-    content = json.load(open(f'output/{slug}/content.json', encoding='utf-8'))
-    lang = cs.detectar_idioma(content, fallback=hechos['primary_language'])
-    g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', lang, '--forbid', FORBID],
+    g = subprocess.run([sys.executable, 'scripts/gate.py', slug, '--lang', 'en', '--forbid', FORBID],
                        capture_output=True, text=True, timeout=timeout_for(deadline, 60))
     if g.returncode != 0:
         return fail(f'GATE: {g.stdout[-220:]}')
@@ -821,24 +870,19 @@ def procesar_nombre(item, cerrar=True, progress_id=None, deadline=None):
     archivos += [(f'output/{slug}/assets/raw/{f}', f'output/{slug}/assets/raw/{f}')
                  for f in fotos_usadas]
     archivos.append(deploy_marker(slug))
-    ok = subir_sitio_github(slug, archivos, deadline=deadline)
-    if not ok:
-        return fail('Subida a GitHub incompleta')
     url = f'{DEMOS}/{slug}/'
-    if not esperar_demo(report_id, url, token=token, deadline=deadline,
-                        expected_marker=hechos.get('name') or nombre):
-        return fail('El demo no respondio 200 tras el deploy')
+    ok, publish_error = publicar_demo(
+        report_id, token, slug, archivos, hechos.get('name') or nombre, deadline=deadline,
+    )
+    if not ok:
+        return fail(publish_error or 'El demo no respondio 200 tras publicar')
     report('commit')
     dm = cs.generar_dm({**hechos, 'nombre': hechos.get('name') or nombre, 'ciudad': ciudad,
-                        'primary_language': lang}, url, item.get('nicho') or hechos.get('nicho'))
-    verified_instagram = instagram_handle(
-        hechos.get('instagram_handle') or hechos.get('profile_url') or hechos.get('website')
-    )
+                        'idioma_principal': 'en'}, url, item.get('nicho') or hechos.get('nicho'))
     registry_result = panel('/api/public/registry-upsert', {
         'slug': slug, 'name': hechos.get('name') or nombre, 'city': ciudad,
-        **({'ig': f'@{verified_instagram}'} if verified_instagram else {}),
-        'source': 'google_maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
-        'email': None, 'phone': hechos.get('phone'), 'language': lang, 'dm_message': dm[:900], 'message_version': 3,
+        'ig': 'Google Maps', 'url_demo': url, 'has_own_site': bool(hechos.get('has_own_site')),
+        'email': None, 'phone': hechos.get('phone'), 'language': 'en', 'dm_message': dm[:900], 'message_version': 2,
         'maps_url': hechos.get('maps_url'), 'business_key': candidate.get('business_key'),
         'thumb': f'{url}assets/raw/{fotos_usadas[0]}',
     })
@@ -991,8 +1035,6 @@ def procesar_descubrimiento(item, deadline=None):
                 'claim_token': token,
                 'candidate': candidate,
                 'business_reserved': True,
-                **({'language': request.get('language')}
-                   if request.get('language') in ('es', 'en') else {}),
             },
         })
 

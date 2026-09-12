@@ -10,8 +10,9 @@ rating/reseñas/contacto suficientes. El job rota nichos y ciudades según `conf
 ## Como funciona
 cola del panel -> research (Instagram o Google Maps con Playwright del container) ->
 curacion + contenido por reglas y plantillas por nicho (sin llamada a un modelo) ->
-guard anti-invencion deterministico -> derive + gate -> sube al repo (API GitHub) ->
-Workers Builds deploya -> verifica 200 -> registra en el panel -> done.
+guard anti-invencion deterministico -> derive + gate -> publica un bundle versionado en
+R2 -> verifica 200 -> registra en el panel -> done. El commit de GitHub se conserva como
+archivo y fallback, pero ya no bloquea la disponibilidad del demo.
 
 El worker procesa tanto items con `@handle` como items `nombre (ciudad)`. Las búsquedas
 manuales de nicho + ciudad (`request.type=discovery`) tienen prioridad sobre los candidatos
@@ -35,8 +36,10 @@ cada consulta. Booksy, Facebook o Square siguen siendo perfiles; Wix, Squarespac
 WordPress, Webflow, GoDaddy Sites y Canva sí cuentan como websites existentes.
 
 El segundo research abre directamente la URL exacta de Maps encontrada en discovery, sin
-repetir una búsqueda ambigua por nombre. Al publicar, los blobs de GitHub se crean en
-paralelo y después se conservan el árbol y commit atómicos de siempre.
+repetir una búsqueda ambigua por nombre. Al publicar, los archivos se suben en paralelo a
+un prefijo inmutable de R2. El Worker comprueba tamaño y SHA-256 de cada objeto antes de
+cambiar el puntero `current.json`; por eso nunca expone un bundle parcial. Después conserva
+el árbol y commit atómicos de GitHub como respaldo.
 
 El primer mensaje se genera con datos verificables (zona, fotos públicas, servicios y enlace
 del demo), explica el beneficio para el cliente y termina en una pregunta de bajo compromiso.
@@ -81,4 +84,7 @@ Variables adicionales del servicio Cron:
 - GITHUB_TOKEN       para subir los sites al repo
 - GH_REPO            luiso2/webistecreator
 - PANEL_URL          opcional; por defecto usa el panel Siteforge
-- SITEFORGE_UI_KEY   access key del panel, solo necesario para el servicio Cron
+- SITEFORGE_PUBLISH_KEY clave privada para publicar bundles en R2; debe coincidir con el
+  secret del Worker. Por compatibilidad también acepta `SITEFORGE_AGENT_KEY` o
+  `SITEFORGE_UI_KEY`.
+- SITEFORGE_UI_KEY   access key del panel y fallback de publicación; necesario en Cron
