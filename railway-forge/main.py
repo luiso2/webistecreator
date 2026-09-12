@@ -45,6 +45,9 @@ GH_TOKEN = os.environ['GITHUB_TOKEN']
 DEMO_PUBLISH_KEY = (os.environ.get('SITEFORGE_PUBLISH_KEY')
                     or os.environ.get('SITEFORGE_AGENT_KEY')
                     or os.environ.get('SITEFORGE_UI_KEY'))
+GITHUB_BACKUP_ENABLED = os.environ.get('GITHUB_BACKUP_ENABLED', '').strip().lower() in {
+    '1', 'true', 'yes', 'on',
+}
 # SIN IA (decision del usuario 2026-08-18): curacion por reglas y plantillas por nicho,
 # todo en contenido_script.py. Cero costo por site, cero dependencia de APIs de modelos.
 # Los items por NOMBRE se resuelven con la ficha pública de Google Maps; antes se dejaban
@@ -457,9 +460,9 @@ def publicar_demo(item_id, token, slug, archivos, expected_marker, deadline=None
         if not esperar_demo(item_id, url, max_seconds=45, token=token, deadline=deadline,
                             expected_marker=expected_marker):
             return False, 'R2 activó el bundle, pero la URL estable no pasó la verificación.'
-        # Conserva el repositorio histórico y el fallback de Static Assets. La
-        # disponibilidad del demo ya no depende de que este build termine.
-        if not subir_sitio_github(slug, archivos, deadline=deadline):
+        # El backup por sitio queda opt-in. Activarlo en cada publicación
+        # recrearía el ciclo que disparaba Cloudflare y Railway con cada demo.
+        if GITHUB_BACKUP_ENABLED and not subir_sitio_github(slug, archivos, deadline=deadline):
             print(f'  aviso: {slug} quedó live en R2, pero falló el backup GitHub', flush=True)
         return True, None
 

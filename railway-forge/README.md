@@ -12,7 +12,8 @@ cola del panel -> research (Instagram o Google Maps con Playwright del container
 curacion + contenido por reglas y plantillas por nicho (sin llamada a un modelo) ->
 guard anti-invencion deterministico -> derive + gate -> publica un bundle versionado en
 R2 -> verifica 200 -> registra en el panel -> done. El commit de GitHub se conserva como
-archivo y fallback, pero ya no bloquea la disponibilidad del demo.
+fallback cuando R2 falla. El backup adicional por sitio es opt-in porque cada commit volvía
+a disparar despliegues globales de Cloudflare y Railway.
 
 El worker procesa tanto items con `@handle` como items `nombre (ciudad)`. Las búsquedas
 manuales de nicho + ciudad (`request.type=discovery`) tienen prioridad sobre los candidatos
@@ -38,8 +39,8 @@ WordPress, Webflow, GoDaddy Sites y Canva sí cuentan como websites existentes.
 El segundo research abre directamente la URL exacta de Maps encontrada en discovery, sin
 repetir una búsqueda ambigua por nombre. Al publicar, los archivos se suben en paralelo a
 un prefijo inmutable de R2. El Worker comprueba tamaño y SHA-256 de cada objeto antes de
-cambiar el puntero `current.json`; por eso nunca expone un bundle parcial. Después conserva
-el árbol y commit atómicos de GitHub como respaldo.
+cambiar el puntero `current.json`; por eso nunca expone un bundle parcial. Si se habilita el
+backup opcional, también conserva el árbol y commit atómicos de GitHub.
 
 El primer mensaje se genera con datos verificables (zona, fotos públicas, servicios y enlace
 del demo), explica el beneficio para el cliente y termina en una pregunta de bajo compromiso.
@@ -88,3 +89,5 @@ Variables adicionales del servicio Cron:
   secret del Worker. Por compatibilidad también acepta `SITEFORGE_AGENT_KEY` o
   `SITEFORGE_UI_KEY`.
 - SITEFORGE_UI_KEY   access key del panel y fallback de publicación; necesario en Cron
+- GITHUB_BACKUP_ENABLED `true` solo si se desea archivar cada bundle también en GitHub;
+  por defecto está desactivado para no reiniciar Cloudflare/Railway con cada sitio.
