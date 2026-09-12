@@ -47,7 +47,10 @@ export class SiteforgeForgeContainer extends Container {
 export class SiteforgeCronContainer extends Container {
   defaultPort = 8080;
   requiredPorts = [8080];
-  sleepAfter = "2m";
+  // Discovery can enqueue and build one complete demo. Keep the container awake
+  // past FORGE_DEADLINE_SECONDS so a quiet HTTP interval cannot suspend the
+  // background cron thread halfway through a valid build.
+  sleepAfter = "15m";
   enableInternet = true;
   entrypoint = ["python3", "cloudflare_service.py"];
   pingEndpoint = "http://localhost:8080/health";
