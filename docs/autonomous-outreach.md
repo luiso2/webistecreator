@@ -124,6 +124,23 @@ DO migration is additive and does not remove queue or website state.
 5. Add reply-aware followups and qualified proposal handling; preserve the price
    and domain commitments the owner actually approves. Do not invent sales.
 
+### Verified deployment (September 12, 2026, America/New_York)
+
+- Commit `69a3d2d6` pushed to main and panel deployed; cron observed on production.
+- 31 local tests passed, including workerd RPC and authentication boundaries.
+- La Coolmena live QA: HTML 200, manifest 200, 12 immutable assets 200.
+- Telnyx credential validated and stored as a Worker secret. The account's one
+  active number and `Merktop SMS` messaging profile were configured with the
+  user-provided public verification key. The formerly empty profile webhook was
+  set to this Worker's signed webhook route (PATCH returned 200).
+- Production readiness reports key, number, profile and public key configured.
+- Telnyx's brand listing returned **zero records** and the number's campaign
+  lookup returned **404: Phone Number Campaign does not exist on account**.
+  No registration was purchased or fabricated; approval flag remains unset.
+- Production send ledger has zero accepted sends. No live outbound SMS, inbound
+  SMS or client acquisition is claimed. The authenticated status endpoint reports
+  blockers rather than claiming unattended sales are already working.
+
 References checked September 12, 2026:
 - https://resend.com/legal/acceptable-use
 - https://resend.com/docs/api-reference/emails/send-email

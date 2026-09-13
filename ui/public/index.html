@@ -1094,8 +1094,10 @@
         if (!response.ok) throw new Error('Estado no disponible');
         const s = await response.json();
         autonomyConfig = s.config;
+        const telnyxConfigured = s.telnyx?.keyConfigured && s.telnyx?.numberConfigured && s.telnyx?.profileConfigured && s.telnyx?.webhookKeyConfigured;
+        const smsState = s.channels.sms ? 'habilitado' : telnyxConfigured ? 'conectado; falta verificar registro 10DLC/campaña' : 'pendiente de configuración';
         $('autonomyStatus').textContent = `${s.config.enabled ? 'Piloto habilitado' : 'Piloto pausado'} · ${s.eligible} elegibles · ${s.accepted} aceptados · ${s.delivered} entregados · ${s.confirmedClients} clientes confirmados`;
-        $('autonomyChannels').textContent = `Email: ${s.channels.email ? 'configurado' : 'sin configurar'} · SMS Telnyx: ${s.channels.sms ? 'configurado' : 'pendiente de configuración/verificación'} · WhatsApp: sin integrar. ${s.blocked.email_permission_required || 0} emails pendientes de permiso. ${s.needsReview} envíos requieren revisión. Última revisión del cron: ${s.lastRun?.at ? new Date(s.lastRun.at).toLocaleString() : 'pendiente'}.`;
+        $('autonomyChannels').textContent = `Email: ${s.channels.email ? 'configurado' : 'sin configurar'} · SMS Telnyx: ${smsState} · WhatsApp: sin integrar. ${s.blocked.email_permission_required || 0} emails pendientes de permiso. ${s.repliesReceived || 0} respuestas SMS recibidas. ${s.needsReview} envíos requieren revisión. Última revisión del cron: ${s.lastRun?.at ? new Date(s.lastRun.at).toLocaleString() : 'pendiente'}.`;
         $('autonomyToggle').disabled = false;
         $('autonomyToggle').textContent = s.config.enabled ? 'Pausar piloto' : 'Activar piloto';
       } catch { $('autonomyStatus').textContent = 'No se pudo verificar el estado del piloto. No se asume que esté enviando.'; }
