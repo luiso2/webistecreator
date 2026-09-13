@@ -7,6 +7,8 @@ export class OutreachCampaign extends DurableObject {
     this.engine = new OutreachEngine(ctx.storage, env);
   }
   status() { return this.engine.status(); }
+  inbox(threadId) { return this.engine.inbox(threadId); }
+  readReply(input) { return this.engine.readReply(input); }
   configure(input) { return this.engine.config(input); }
   consent(input) { return this.engine.consent(input); }
   event(input) { return this.engine.event(input); }

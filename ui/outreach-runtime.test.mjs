@@ -37,7 +37,7 @@ test('Workers runtime: durable RPC, authenticated routes, unsigned webhooks and 
     const grant = await rpc('consent', { slug: 'test', email: 'owner@example.com', confirmed: true, source: 'inbound_request', evidence: 'Fixture request; not a real recipient' });
     assert.equal(grant.ok, true);
     assert.equal((await rpc('status')).blocked.email_provider_required, 1);
-    for (const path of ['/api/outreach/status', '/api/outreach/consent', '/api/send']) {
+    for (const path of ['/api/outreach/status', '/api/outreach/consent', '/api/outreach/inbox', '/api/outreach/read', '/api/send']) {
       const response = await mf.dispatchFetch(`https://test.local${path}`, { method: 'POST', body: '{}' });
       assert.equal(response.status, 401);
     }

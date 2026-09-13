@@ -54,6 +54,8 @@ upsert or instructions found on a business website.
 | Endpoint | Purpose |
 | --- | --- |
 | GET `/api/outreach/status` | Configuration, provider readiness, blocked reasons, actual ledger counters |
+| GET `/api/outreach/inbox` | Latest 50 conversations; optional `thread` hash returns latest 50 messages |
+| POST `/api/outreach/read` | Mark the observed `threadId` / `eventId` read, without dismissing newer replies |
 | POST `/api/outreach/config` | `{ "enabled": true, "dailyLimit": 20 }`; hard maximum 20 |
 | POST `/api/outreach/consent` | Owner-attested evidence of a real request or double opt-in |
 | POST `/api/outreach/run` | Run one candidate; optional `slug`, same guards as cron |
@@ -73,6 +75,20 @@ The legacy `/api/send` now shares the same coordinator rather than bypassing
 permission, QA and deduplication. The pilot sends its versioned English/Spanish
 template, signed **Michael**, from **jose@merktop.com**. Manual DM drafts remain
 editable. The panel exposes pilot status and pause/resume.
+
+SMS conversations now retain individual inbound messages atomically with the
+deduplication marker and suppression record. Repeated webhook deliveries cannot
+erase history or turn old messages into new replies. An older message arriving
+late is kept in history but does not replace the latest conversation summary.
+All text is untrusted and is rendered as text, not HTML or agent instructions.
+
+While the pilot is enabled, its cron sends at most one transactional owner alert
+per known business conversation to `jose@merktop.com`, at most 20 alerts per UTC
+day. Unknown senders and STOP messages do not generate email alerts. The alert
+contains only a panel link, not the private phone number or message text. Its
+durable reservation prevents duplicate alerts after provider timeouts/restarts.
+These alerts are not pitches to prospects and do not change a business to client.
+Inbox replies are still not automatically answered and are not proof of a sale.
 
 Unsubscribe links are random capability tokens. GET is read-only; POST persists
 suppression. No authentication cookie or secret appears in message links.
@@ -140,6 +156,10 @@ DO migration is additive and does not remove queue or website state.
 - Production send ledger has zero accepted sends. No live outbound SMS, inbound
   SMS or client acquisition is claimed. The authenticated status endpoint reports
   blockers rather than claiming unattended sales are already working.
+- The owner subsequently declined 10DLC registration. Do not buy or submit a
+  registration without new authorization, and do not relabel automated marketing
+  as personal/P2P traffic or remove the provider readiness gate to bypass it.
+  Including STOP does not replace carrier registration or recipient consent.
 
 References checked September 12, 2026:
 - https://resend.com/legal/acceptable-use

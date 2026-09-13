@@ -1362,6 +1362,11 @@ export default {
       if (url.pathname.startsWith('/api/outreach/')) {
         const campaign = env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1');
         if (url.pathname === '/api/outreach/status' && req.method === 'GET') return json(await campaign.status());
+        if (url.pathname === '/api/outreach/inbox' && req.method === 'GET') {
+          const thread = url.searchParams.get('thread');
+          if (thread !== null && !/^[a-f0-9]{64}$/.test(thread)) return json({ error: 'invalid thread' }, 400);
+          return json(await campaign.inbox(thread ?? undefined));
+        }
         if (req.method !== 'POST') return json({ error: 'method not allowed' }, 405);
         let input;
         try { input = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
@@ -1370,6 +1375,7 @@ export default {
           if (url.pathname === '/api/outreach/config') return json(await campaign.configure(input));
           if (url.pathname === '/api/outreach/consent') return json(await campaign.consent(input));
           if (url.pathname === '/api/outreach/event') return json(await campaign.event(input));
+          if (url.pathname === '/api/outreach/read') return json(await campaign.readReply(input));
           if (url.pathname === '/api/outreach/run') {
             if (input.slug !== undefined && !/^[a-z0-9-]{1,40}$/.test(input.slug)) return json({ error: 'invalid slug' }, 400);
             return json(await campaign.run(input.slug));

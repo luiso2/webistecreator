@@ -395,6 +395,12 @@
       <p class="hint">Solo contactos con permiso registrado y demos verificados. Los mensajes aceptados no equivalen a entregados ni a ventas.</p>
       <button class="btn" id="autonomyToggle" type="button" disabled>Pausar piloto</button>
     </section>
+    <section class="forge" id="outreachInbox" aria-labelledby="outreachInboxTitle">
+      <h3 id="outreachInboxTitle">Respuestas de negocios</h3>
+      <p class="hint">SMS recibidos y verificados por Telnyx. Responder o pedir un precio no significa que el negocio ya sea cliente.</p>
+      <p id="outreachInboxStatus" role="status">Consultando respuestas…</p>
+      <div id="outreachInboxThreads"></div>
+    </section>
 
     <div class="section-title reveal" style="animation-delay:0.16s">
       <h3>Negocios procesados</h3>
@@ -1088,6 +1094,57 @@
 
     let autonomyConfig;
     let autonomyFetchedAt = 0;
+    async function loadInbox() {
+      try {
+        const response = await fetch('/api/outreach/inbox', { headers: headers() });
+        if (!response.ok) throw new Error('No se pudo consultar la bandeja');
+        const data = await response.json();
+        $('outreachInboxStatus').textContent = `${data.total} conversaciones · ${data.unread} sin leer`;
+        const container = $('outreachInboxThreads');
+        container.replaceChildren();
+        for (const thread of data.threads) {
+          const card = document.createElement('article');
+          card.className = 'biz';
+          const title = document.createElement('h4');
+          title.textContent = thread.name || thread.phone || 'Remitente sin identificar';
+          const meta = document.createElement('p');
+          meta.className = 'hint';
+          meta.textContent = `${thread.type === 'unsubscribed' ? 'Solicitó baja' : 'Respondió'} · ${new Date(thread.at).toLocaleString()}${thread.matched ? '' : ' · Sin negocio asociado'}`;
+          const content = document.createElement('p');
+          content.style.whiteSpace = 'pre-wrap';
+          content.style.overflowWrap = 'anywhere';
+          content.textContent = thread.text;
+          const history = document.createElement('button');
+          history.type = 'button'; history.textContent = 'Ver conversación';
+          history.onclick = async () => {
+            history.disabled = true;
+            try {
+              const r = await fetch('/api/outreach/inbox?thread=' + encodeURIComponent(thread.id), { headers: headers() });
+              if (!r.ok) throw new Error('No se pudo cargar el historial');
+              const detail = await r.json();
+              content.textContent = detail.messages.map(m => `${new Date(m.at).toLocaleString()}\n${m.text}`).join('\n\n');
+            } catch (e) { content.textContent = e.message; }
+            history.disabled = false;
+          };
+          card.append(title, meta, content, history);
+          if (thread.eventId !== thread.readEventId) {
+            const read = document.createElement('button');
+            read.type = 'button'; read.textContent = 'Marcar como leída';
+            read.onclick = async () => {
+              read.disabled = true;
+              try {
+                const r = await fetch('/api/outreach/read', { method: 'POST', headers: headers(), body: JSON.stringify({ threadId: thread.id, eventId: thread.eventId }) });
+                const result = await r.json();
+                if (!r.ok || !result.ok) throw new Error('Llegó otra respuesta; revisa la conversación actualizada');
+                await loadInbox();
+              } catch (e) { $('outreachInboxStatus').textContent = e.message; read.disabled = false; }
+            };
+            card.append(read);
+          }
+          container.append(card);
+        }
+      } catch { $('outreachInboxStatus').textContent = 'No se pudo verificar la bandeja. No se asume que esté vacía.'; }
+    }
     async function loadAutonomy() {
       try {
         const response = await fetch('/api/outreach/status', { headers: headers() });
@@ -1100,6 +1157,7 @@
         $('autonomyChannels').textContent = `Email: ${s.channels.email ? 'configurado' : 'sin configurar'} · SMS Telnyx: ${smsState} · WhatsApp: sin integrar. ${s.blocked.email_permission_required || 0} emails pendientes de permiso. ${s.repliesReceived || 0} respuestas SMS recibidas. ${s.needsReview} envíos requieren revisión. Última revisión del cron: ${s.lastRun?.at ? new Date(s.lastRun.at).toLocaleString() : 'pendiente'}.`;
         $('autonomyToggle').disabled = false;
         $('autonomyToggle').textContent = s.config.enabled ? 'Pausar piloto' : 'Activar piloto';
+        void loadInbox();
       } catch { $('autonomyStatus').textContent = 'No se pudo verificar el estado del piloto. No se asume que esté enviando.'; }
     }
     $('autonomyToggle').onclick = async () => {

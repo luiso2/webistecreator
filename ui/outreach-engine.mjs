@@ -1,4 +1,4 @@
-import { DEFAULT_CONFIG, eligibility, emailKey, validEmail, validPhone, smsReady, smsOpener, opener, verifyDemo } from './outreach-policy.mjs';
+import { DEFAULT_CONFIG, eligibility, emailKey, validEmail, validPhone, phoneMatches, smsReady, smsOpener, opener, verifyDemo } from './outreach-policy.mjs';
 import { businessIdentityKeys } from './control-plane.mjs';
 
 const hash = async text => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)))].map(b => b.toString(16).padStart(2, '0')).join('');
@@ -58,6 +58,69 @@ export class OutreachEngine {
     return true;
   }
 
+  async inbox(threadId) {
+    const registry = (await this.env.SITEFORGE_KV.get('registry', 'json')) || [];
+    const replies = await this.storage.list({ prefix: 'reply:' });
+    const threads = [...replies.entries()].map(([key, reply]) => {
+      const matches = registry.filter(b => reply.phone && phoneMatches(b.phone, reply.phone));
+      const biz = matches.length === 1 ? matches[0] : null;
+      return { id: key.slice(6), ...reply, slug: biz?.slug || reply.slug || null, name: biz?.name || null,
+        language: biz?.language || null, matched: Boolean(biz || reply.slug) };
+    }).sort((a, b) => b.at.localeCompare(a.at));
+    if (threadId !== undefined) {
+      if (!/^[a-f0-9]{64}$/.test(threadId)) throw new Error('invalid_thread');
+      const thread = threads.find(t => t.id === threadId);
+      if (!thread) return { thread: null, messages: [] };
+      const rows = await this.storage.list({ prefix: `message:${threadId}:`, reverse: true, limit: 50 });
+      return { thread, messages: [...rows.values()].sort((a, b) => a.at.localeCompare(b.at)).slice(-50) };
+    }
+    return { threads: threads.slice(0, 50), total: threads.length, unread: threads.filter(t => t.readEventId !== t.eventId).length };
+  }
+
+  async readReply(input) {
+    if (!/^[a-f0-9]{64}$/.test(input?.threadId || '') || typeof input.eventId !== 'string') throw new Error('invalid_thread');
+    return this.storage.transaction(async tx => {
+      const key = `reply:${input.threadId}`;
+      const reply = await tx.get(key);
+      if (!reply || reply.eventId !== input.eventId) return { ok: false, reason: 'new_reply_received' };
+      await tx.put(key, { ...reply, readEventId: input.eventId });
+      return { ok: true };
+    });
+  }
+
+  async notifyReplies() {
+    if (!this.env.RESEND_API_KEY) return { reason: 'email_provider_required' };
+    const notices = await this.storage.list({ prefix: 'notice:' });
+    if ([...notices.values()].filter(n => n.at.startsWith(iso().slice(0, 10))).length >= 20) return { reason: 'owner_alert_daily_limit' };
+    const inbox = await this.inbox();
+    // A first reply from a known lead warrants an owner alert, not another cold pitch.
+    // Unknown inbound senders are visible in the inbox but cannot trigger email floods.
+    for (const reply of inbox.threads.filter(t => t.matched && t.type === 'replied' && t.readEventId !== t.eventId)) {
+      const noticeKey = `notice:${reply.id}`;
+      if (await this.storage.get(noticeKey)) continue;
+      const reserved = await this.storage.transaction(async tx => {
+        if (await tx.get(noticeKey)) return false;
+        await tx.put(noticeKey, { status: 'sending', at: iso(), eventId: reply.eventId });
+        return true;
+      });
+      if (!reserved) continue;
+      try {
+        const response = await this.fetcher('https://api.resend.com/emails', {
+          method: 'POST', signal: AbortSignal.timeout(8000),
+          headers: { authorization: `Bearer ${this.env.RESEND_API_KEY}`, 'content-type': 'application/json', 'Idempotency-Key': `siteforge-reply-alert-${reply.id}` },
+          body: JSON.stringify({ from: 'Siteforge | Merktop <jose@merktop.com>', to: ['jose@merktop.com'],
+            subject: 'Siteforge: un negocio respondió',
+            // Keep phone, SMS body and other private conversation data inside the authenticated panel.
+            text: 'Hay una nueva respuesta de un negocio en la bandeja de Siteforge. Revísala en https://siteforge-panel.odd-forest-9504.workers.dev/#outreachInbox. Una respuesta no implica que se haya cerrado una venta.' }),
+        });
+        const data = await response.json().catch(() => ({}));
+        await this.storage.put(noticeKey, { status: response.ok && data.id ? 'accepted' : 'needs_review', providerId: data.id || null, at: iso(), eventId: reply.eventId });
+      } catch { await this.storage.put(noticeKey, { status: 'needs_review', at: iso(), eventId: reply.eventId }); }
+      return { notified: reply.id }; // At most one owner alert per cron, once per conversation.
+    }
+    return { notified: null };
+  }
+
   async snapshot() {
     const [registry, crm, legacyLog, consents, sends, suppressed] = await Promise.all([
       this.env.SITEFORGE_KV.get('registry', 'json'), this.env.SITEFORGE_KV.get('crm', 'json'),
@@ -93,8 +156,8 @@ export class OutreachEngine {
   }
 
   async status() {
-    const [state, config, lastRun, events, replies] = await Promise.all([
-      this.snapshot(), this.config(), this.storage.get('lastRun'), this.storage.list({ prefix: 'event:' }), this.storage.list({ prefix: 'reply:' }),
+    const [state, config, lastRun, events, replies, notices] = await Promise.all([
+      this.snapshot(), this.config(), this.storage.get('lastRun'), this.storage.list({ prefix: 'event:' }), this.storage.list({ prefix: 'reply:' }), this.storage.list({ prefix: 'notice:' }),
     ]);
     return {
       config, provider: this.env.RESEND_API_KEY ? 'resend' : null,
@@ -105,6 +168,9 @@ export class OutreachEngine {
       automaticReplies: false, automaticFollowups: false,
       inboundSMS: !!this.env.TELNYX_PUBLIC_KEY,
       repliesReceived: replies.size,
+      unreadReplies: [...replies.values()].filter(r => r.readEventId !== r.eventId).length,
+      ownerAlertsAccepted: [...notices.values()].filter(n => n.status === 'accepted').length,
+      ownerAlertsNeedReview: [...notices.values()].filter(n => n.status !== 'accepted').length,
       total: state.total, eligible: state.candidates.length, blocked: state.reasons,
       accepted: state.sends.filter(s => s.providerId).length,
       delivered: state.sends.filter(s => s.delivery === 'delivered').length,
@@ -149,6 +215,7 @@ export class OutreachEngine {
       return result;
     };
     if (!config.enabled) return finish({ ok: false, reason: 'paused' });
+    await this.notifyReplies();
     if (!this.env.RESEND_API_KEY && !smsReady(this.env)) return finish({ ok: false, reason: 'provider_not_configured' });
     if (this.env.RESEND_API_KEY) await this.reconcileDelivery();
     const state = await this.snapshot();
@@ -198,8 +265,10 @@ export class OutreachEngine {
       });
       const data = await response.json().catch(() => ({}));
       const providerId = channel === 'sms' ? data.data?.id : data.id;
-      if (!response.ok || !providerId) {
-        const status = response.status >= 400 && response.status < 500 ? 'rejected' : 'uncertain';
+      const explicitlyRejected = channel === 'sms' && (data.data?.errors?.length > 0
+        || data.data?.to?.some(to => ['delivery_failed', 'sending_failed'].includes(to.status)));
+      if (!response.ok || !providerId || explicitlyRejected) {
+        const status = explicitlyRejected || (response.status >= 400 && response.status < 500) ? 'rejected' : 'uncertain';
         await this.storage.put(`send:${key}`, { ...record, status, reason: `provider_http_${response.status}` });
         return finish({ ok: false, slug: biz.slug, reason: status });
       }
@@ -229,10 +298,26 @@ export class OutreachEngine {
       const key = await hash(`sms:${payload.from.phone_number}`);
       const text = String(payload.text || '').trim().slice(0, 1600);
       const type = /^(?:stop|stopall|unsubscribe|cancel|end|quit|baja|no)\b/i.test(text) ? 'unsubscribed' : 'replied';
-      // Treat every reply as a conversation, NEVER as a sale or a new permission grant.
-      await this.storage.put(`suppress:${key}`, { type, at: iso() });
-      await this.storage.put(`reply:${key}`, { type, at: iso(), text, eventId: event.id });
-      return { ok: true };
+      const eventKey = await hash(event.id);
+      const occurredAt = Date.parse(event.occurred_at);
+      const at = Number.isFinite(occurredAt) ? new Date(occurredAt).toISOString() : iso();
+      // Commit suppression, dedup marker, history and latest summary in one transaction.
+      // Replayed or out-of-order webhooks must not lose messages or resurrect an opt-out.
+      return this.storage.transaction(async tx => {
+        if (await tx.get(`seen-inbound:${eventKey}`)) return { ok: true, duplicate: true };
+        const previous = await tx.get(`reply:${key}`);
+        const suppression = await tx.get(`suppress:${key}`);
+        const record = { type, at, receivedAt: iso(), text, eventId: event.id, phone: payload.from.phone_number, channel: 'sms' };
+        await tx.put(`seen-inbound:${eventKey}`, { at });
+        await tx.put(`message:${key}:${at}:${eventKey}`, record);
+        if (!suppression || suppression.type === 'replied' || type === 'unsubscribed') {
+          await tx.put(`suppress:${key}`, { type, at });
+        }
+        if (!previous || at >= previous.at) {
+          await tx.put(`reply:${key}`, { ...record, ...(previous?.readEventId ? { readEventId: previous.readEventId } : {}) });
+        }
+        return { ok: true };
+      });
     }
     if (['message.sent', 'message.finalized'].includes(event.event_type)) {
       const key = await this.storage.get(`provider:${payload.id}`);

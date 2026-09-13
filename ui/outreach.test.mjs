@@ -161,3 +161,74 @@ test('late consent change during QA prevents provider call', async () => {
   assert.equal((await f.engine.run()).reason, 'eligibility_changed');
   assert.equal(providerCalls(f).length, 0);
 });
+
+function incoming(f, id, text, at = '2026-09-13T00:00:00Z', phone = biz.phone) {
+  f.env.TELNYX_FROM_NUMBER = '+13055550199';
+  f.env.TELNYX_MESSAGING_PROFILE_ID = 'profile';
+  return { id, occurred_at: at, event_type: 'message.received', payload: { messaging_profile_id: 'profile', from: { phone_number: phone }, to: [{ phone_number: f.env.TELNYX_FROM_NUMBER }], text } };
+}
+test('SMS history preserves multiple messages, deduplicates retries and handles late events', async () => {
+  const f = fixture();
+  const first = incoming(f, 'first', 'What is the price?');
+  await f.engine.telnyxEvent(first);
+  assert.equal((await f.engine.telnyxEvent(first)).duplicate, true);
+  await f.engine.telnyxEvent(incoming(f, 'second', 'Can we talk?', '2026-09-13T00:01:00Z'));
+  await f.engine.telnyxEvent(incoming(f, 'late', 'Hi', '2026-09-12T23:59:00Z'));
+  const inbox = await f.engine.inbox();
+  assert.equal(inbox.total, 1);
+  assert.equal(inbox.threads[0].text, 'Can we talk?');
+  assert.equal(inbox.threads[0].name, biz.name);
+  const detail = await f.engine.inbox(inbox.threads[0].id);
+  assert.equal(detail.messages.length, 3);
+  assert.equal((await f.engine.status()).confirmedClients, 0);
+});
+test('mark-read cannot accidentally dismiss a newer reply', async () => {
+  const f = fixture(); await f.engine.telnyxEvent(incoming(f, 'first', 'Hi'));
+  const thread = (await f.engine.inbox()).threads[0];
+  await f.engine.telnyxEvent(incoming(f, 'second', 'Price?', '2026-09-13T00:01:00Z'));
+  assert.equal((await f.engine.readReply({ threadId: thread.id, eventId: 'first' })).ok, false);
+  assert.equal((await f.engine.inbox()).unread, 1);
+  assert.equal((await f.engine.readReply({ threadId: thread.id, eventId: 'second' })).ok, true);
+  assert.equal((await f.engine.inbox()).unread, 0);
+});
+test('owner alert only once per known conversation and contains no SMS/phone', async () => {
+  const f = fixture(); await f.engine.telnyxEvent(incoming(f, 'first', 'My private response'));
+  await f.engine.notifyReplies(); await f.engine.notifyReplies();
+  const calls = providerCalls(f);
+  assert.equal(calls.length, 1);
+  const payload = JSON.parse(calls[0].options.body);
+  assert.deepEqual(payload.to, ['jose@merktop.com']);
+  assert.ok(!payload.text.includes('My private response'));
+  assert.ok(!payload.text.includes(biz.phone));
+});
+test('unknown inbound sender and STOP do not generate owner alert', async () => {
+  const f = fixture();
+  await f.engine.telnyxEvent(incoming(f, 'unknown', 'Hi', undefined, '+13055550198'));
+  await f.engine.telnyxEvent(incoming(f, 'stop', 'STOP'));
+  await f.engine.notifyReplies();
+  assert.equal(providerCalls(f).length, 0);
+});
+test('an uncertain owner notification is not retried after restarting', async () => {
+  const f = fixture({ provider: () => { throw new Error('timeout'); } });
+  await f.engine.telnyxEvent(incoming(f, 'first', 'Price?'));
+  await f.engine.notifyReplies();
+  await new OutreachEngine(f.storage, f.env, f.fetcher).notifyReplies();
+  assert.equal(providerCalls(f).length, 1);
+  assert.equal((await f.engine.status()).ownerAlertsNeedReview, 1);
+});
+test('owner alerts obey their daily ceiling', async () => {
+  const f = fixture(); await f.engine.telnyxEvent(incoming(f, 'first', 'Price?'));
+  for (let i = 0; i < 20; i++) await f.storage.put(`notice:${i}`, { at: new Date().toISOString(), status: 'accepted' });
+  assert.equal((await f.engine.notifyReplies()).reason, 'owner_alert_daily_limit');
+  assert.equal(providerCalls(f).length, 0);
+});
+test('Telnyx rejection inside a 200 response is not marked contacted', async () => {
+  const f = fixture({ provider: () => Response.json({ data: { id: 'rejected-id', errors: [{ code: '40010' }], to: [{ status: 'sending_failed' }] } }) });
+  Object.assign(f.env, { TELNYX_API_KEY: 'test', TELNYX_FROM_NUMBER: '+13055550199', TELNYX_PUBLIC_KEY: 'test', TELNYX_MESSAGING_PROFILE_ID: 'profile', TELNYX_SMS_APPROVED: 'true' });
+  let marked = false;
+  f.env.QUEUE_CLAIMS.getByName = () => ({ markOutreachSent: async () => { marked = true; } });
+  await f.engine.consent({ ...consent, channel: 'sms', email: undefined, phone: biz.phone });
+  assert.equal((await f.engine.run()).reason, 'rejected');
+  assert.equal(marked, false);
+  assert.equal((await f.engine.status()).accepted, 0);
+});
