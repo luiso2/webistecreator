@@ -15,6 +15,9 @@ import {
   validatePlan,
 } from './control-plane.mjs';
 import { inferLeadSource, normalizeInstagramHandle } from './public/social-channels.mjs';
+import { cleanMessage, repairDemoSeparator } from './public/outreach-message.mjs';
+import { boundedBody, verifyTelnyxWebhook } from './telnyx.mjs';
+export { OutreachCampaign } from './outreach.js';
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -424,6 +427,18 @@ export class QueueClaims extends DurableObject {
     });
   }
 
+  async markOutreachSent(slug, providerId, at, channel = 'email') {
+    return this.ctx.blockConcurrencyWhile(async () => {
+      const registry = (await this.env.SITEFORGE_KV.get('registry', 'json')) || [];
+      const sentLog = (await this.env.SITEFORGE_KV.get('sent_log', 'json')) || {};
+      sentLog[slug] = at;
+      await this.env.SITEFORGE_KV.put('sent_log', JSON.stringify(sentLog));
+      await this.env.SITEFORGE_KV.put('registry', JSON.stringify(registry.map(b => b.slug === slug
+        ? { ...b, outreach: 'sent', ...(channel === 'sms' ? { telnyx_id: providerId } : { resend_id: providerId }) } : b)));
+      return { ok: true };
+    });
+  }
+
   async audit(event) {
     return this.ctx.blockConcurrencyWhile(async () => {
       const index = (await this.env.SITEFORGE_KV.get('control:audit:index', 'json')) || [];
@@ -512,7 +527,7 @@ const agentSite = site => ({
   business_key: site.business_key || null,
   language: site.language || 'es',
   outreach: site.outreach || 'pending_manual',
-  dm_message: site.dm_message || null,
+  dm_message: repairDemoSeparator(site.dm_message, site.url_demo) || null,
   fecha: site.fecha || null,
 });
 
@@ -990,11 +1005,34 @@ async function reconcileStaleQueue(env) {
 
 export default {
   async scheduled(_controller, env) {
-    await Promise.all([reconcilePendingDomains(env), reconcileStaleQueue(env)]);
+    await Promise.all([reconcilePendingDomains(env), reconcileStaleQueue(env),
+      env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1').run()]);
   },
 
   async fetch(req, env, ctx) {
     const url = new URL(req.url);
+
+    if (url.pathname === '/webhooks/telnyx' && req.method === 'POST') {
+      let raw;
+      try { raw = await boundedBody(req); } catch { return json({ error: 'too large' }, 413); }
+      if (!(await verifyTelnyxWebhook(raw, req.headers, env.TELNYX_PUBLIC_KEY))) return json({ error: 'invalid signature' }, 401);
+      try {
+        return json(await env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1').telnyxEvent(JSON.parse(raw).data));
+      } catch { return json({ error: 'event could not be recorded' }, 503); }
+    }
+
+    // Unsubscribe is a secret capability link: GET only displays, POST applies.
+    if (url.pathname.startsWith('/unsubscribe/')) {
+      if (!['GET', 'POST'].includes(req.method)) return new Response('Method not allowed', { status: 405 });
+      const token = url.pathname.slice('/unsubscribe/'.length);
+      const valid = await env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1').unsubscribe(token, req.method === 'POST');
+      if (!valid) return new Response('Invalid link', { status: 404 });
+      const body = req.method === 'POST' ? '<h1>Unsubscribed / Baja confirmada</h1><p>No more outreach emails will be sent to this address.</p>'
+        : '<h1>Merktop · Email preferences</h1><form method="post"><button type="submit">Unsubscribe / No recibir más correos</button></form>';
+      return new Response(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Merktop · Email preferences</title><body>${body}</body></html>`, {
+        headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'referrer-policy': 'no-referrer', 'content-security-policy': "default-src 'none'; form-action 'self'; frame-ancestors 'none'" },
+      });
+    }
 
     // API minima para el GPT Agent de Siteforge. Tiene una clave propia y solo expone
     // cola, estados, registro y reintentos. Outreach y compra de dominios siguen fuera
@@ -1248,7 +1286,7 @@ export default {
         if (typeof raw.slug === 'string' && /^[a-z0-9-]{1,40}$/.test(raw.slug)) site.slug = raw.slug;
         if (typeof raw.name === 'string' && raw.name.length <= 120) site.name = stripUnsafe(raw.name);
         if (typeof raw.url_demo === 'string' && DEMO_URL_RE.test(raw.url_demo)) site.url_demo = raw.url_demo;
-        if (typeof raw.dm === 'string' && raw.dm.length <= 900) site.dm = stripUnsafe(raw.dm);
+        if (typeof raw.dm === 'string' && raw.dm.length <= 900) site.dm = cleanMessage(raw.dm, 900);
         return site;
       };
       const result = siteResult(body);
@@ -1309,7 +1347,7 @@ export default {
           ? body.business_key.toLowerCase().replace(/[^a-z0-9:|._-]/g, '').slice(0, 220) || undefined
           : undefined,
         language: ['es', 'en', 'fr'].includes(body.language) ? body.language : undefined,
-        dm_message: S(body.dm_message, 900),
+        dm_message: typeof body.dm_message === 'string' ? cleanMessage(body.dm_message, 900) : undefined,
         message_version: [2, 3].includes(Number(body.message_version)) ? Number(body.message_version) : undefined,
         thumb: typeof body.thumb === 'string' && body.thumb.startsWith('https://') && body.thumb.includes('.odd-forest-9504.workers.dev') ? S(body.thumb, 300) : undefined,
         fecha: /^\d{4}-\d{2}-\d{2}$/.test(body.fecha || '') ? body.fecha : undefined,
@@ -1320,6 +1358,25 @@ export default {
 
     if (url.pathname.startsWith('/api/')) {
       if (!(await isAuthorized(req))) return json({ error: 'unauthorized' }, 401);
+
+      if (url.pathname.startsWith('/api/outreach/')) {
+        const campaign = env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1');
+        if (url.pathname === '/api/outreach/status' && req.method === 'GET') return json(await campaign.status());
+        if (req.method !== 'POST') return json({ error: 'method not allowed' }, 405);
+        let input;
+        try { input = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
+        if (!input || typeof input !== 'object' || Array.isArray(input)) return json({ error: 'invalid input' }, 400);
+        try {
+          if (url.pathname === '/api/outreach/config') return json(await campaign.configure(input));
+          if (url.pathname === '/api/outreach/consent') return json(await campaign.consent(input));
+          if (url.pathname === '/api/outreach/event') return json(await campaign.event(input));
+          if (url.pathname === '/api/outreach/run') {
+            if (input.slug !== undefined && !/^[a-z0-9-]{1,40}$/.test(input.slug)) return json({ error: 'invalid slug' }, 400);
+            return json(await campaign.run(input.slug));
+          }
+        } catch { return json({ error: 'La operación requiere datos válidos y evidencia verificable; revise consentimiento o supresión.' }, 400); }
+        return json({ error: 'not found' }, 404);
+      }
 
       if (url.pathname === '/api/state' && req.method === 'GET') {
         const [registry, queue, crm, colores, mensajes] = await Promise.all([
@@ -1348,6 +1405,7 @@ export default {
           // canonizan y sentinels como "Google Maps" dejan de salir como Instagram.
           .map(b => ({
             ...b,
+            dm_message: repairDemoSeparator(b.dm_message, b.url_demo),
             ig: canonicalInstagram(b.ig),
             source: inferLeadSource(b) || undefined,
           }))
@@ -1361,7 +1419,7 @@ export default {
             }
           : b))
           .map(b => (colores[b.slug] ? { ...b, color: colores[b.slug] } : b))
-          .map(b => (mensajes[b.slug] ? { ...b, msg_editado: mensajes[b.slug] } : b));
+          .map(b => (mensajes[b.slug] ? { ...b, msg_editado: repairDemoSeparator(mensajes[b.slug], b.url_demo) } : b));
         return json({ registry: reg, queue: queue || [] });
       }
 
@@ -1532,99 +1590,13 @@ export default {
         return json(finished, finished.ok ? 200 : 404);
       }
 
-      // Envio de outreach POR ACCION DIRECTA del usuario autenticado en el panel
-      // (cada envio = un click + confirmacion del dueno del panel; nunca automatico).
+      // Manual and scheduled sends use the SAME permission, QA and durable dedup gate.
       if (url.pathname === '/api/send' && req.method === 'POST') {
-        if (!env.RESEND_API_KEY) return json({ error: 'RESEND_API_KEY no configurada en el worker' }, 500);
         let body;
         try { body = await req.json(); } catch { return json({ error: 'bad json' }, 400); }
-        const slug = (body.slug || '').toString();
-        if (!/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'slug invalido' }, 400);
-        const registry = (await env.SITEFORGE_KV.get('registry', 'json')) || [];
-        const biz = registry.find(b => b.slug === slug);
-        if (!biz) return json({ error: 'negocio no encontrado' }, 404);
-        if (!biz.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(biz.email)) return json({ error: 'sin email publico valido' }, 400);
-        if (!biz.url_demo || !DEMO_URL_RE.test(biz.url_demo)) return json({ error: 'url_demo invalida' }, 400);
-        // Anti-duplicado: registry (sincronizado desde el repo) + log propio del panel.
-        // El slug NO identifica al negocio: una segunda corrida puede derivar otro slug para el
-        // mismo negocio (caso real 305esthetics / threezerofiveesthetics, mismo IG y email), y un
-        // dedup solo por slug deja pasar un segundo email al mismo dueno (rompe la regla dura #3).
-        // Por eso la identidad se chequea tambien por email y por handle de IG.
-        const sentLog = (await env.SITEFORGE_KV.get('sent_log', 'json')) || {};
-        if (biz.outreach === 'sent' || sentLog[slug]) {
-          return json({ error: 'ya se le envio email a este negocio', sent_at: sentLog[slug] || biz.fecha }, 409);
-        }
-        if (biz.outreach === 'skip_duplicate') {
-          return json({ error: 'este registro esta marcado como duplicado', duplicate_of: biz.duplicate_of || null }, 409);
-        }
-        const norm = v => (v || '').toString().trim().toLowerCase().replace(/^@/, '');
-        const bizInstagram = normalizeInstagramHandle(biz.ig);
-        const gemelo = registry.find(b => b.slug !== slug
-          && (b.outreach === 'sent' || sentLog[b.slug])
-          && ((biz.email && norm(b.email) === norm(biz.email))
-            || (bizInstagram && normalizeInstagramHandle(b.ig)?.toLowerCase() === bizInstagram.toLowerCase())));
-        if (gemelo) {
-          return json({
-            error: 'ya se le envio email a este negocio bajo otro slug (mismo email o IG)',
-            slug_contactado: gemelo.slug, sent_at: sentLog[gemelo.slug] || gemelo.fecha,
-          }, 409);
-        }
-
-        const en = (biz.language || 'es') === 'en';
-        const redesign = !!biz.has_own_site;
-        const subject = en
-          ? `${biz.name}: I prepared a website for you to review`
-          : `${biz.name}: preparé una página para que la revisen`;
-        // El texto editado manualmente manda. Si no existe, el mensaje mantiene la misma
-        // estructura que WhatsApp/DM: contexto real, beneficio, demo, cero fricción y pregunta.
-        const savedMessage = (await env.SITEFORGE_KV.get('msg:' + slug) || '').trim();
-        const fallbackLines = en
-          ? [
-              `Hi ${biz.name} — I found your business in ${biz.city || 'your area'} and ${redesign ? 'sketched a clearer version of your current website' : 'could not find a dedicated website linked from your public listing'}, so I prepared this using your public photos and contact details:`,
-              biz.url_demo,
-              `It gives a new customer one clear place to see your work and call or message you. No login and no change to your current booking flow — just take a look.`,
-              `Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.`,
-              `José Michael from Merktop`,
-            ]
-          : [
-              `Hola ${biz.name} — encontré su negocio en ${biz.city || 'su zona'} y ${redesign ? 'preparé una versión más clara de su página actual' : 'no vi un website propio enlazado desde su ficha pública'}, así que armé esto usando sus fotos y datos de contacto reales:`,
-              biz.url_demo,
-              `Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. No requiere iniciar sesión ni cambia sus reservas: solo échenle un vistazo.`,
-              `¿Quieren que ajuste los colores y el dominio? Si no les resulta útil, respondan “no” y no volveré a insistir.`,
-              `José Michael de Merktop`,
-            ];
-        const lines = savedMessage
-          ? (savedMessage.includes(biz.url_demo) ? savedMessage.split('\n\n') : [savedMessage, biz.url_demo])
-          : fallbackLines;
-        const text = lines.join('\n\n');
-        const escapedUrl = biz.url_demo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const html = lines.map(p => `<p>${p.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(new RegExp(escapedUrl), `<a href="${biz.url_demo}">${biz.url_demo}</a>`).replace(/\n/g, '<br>')}</p>`).join('');
-
-        const r = await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            authorization: `Bearer ${env.RESEND_API_KEY}`,
-            'content-type': 'application/json',
-            'Idempotency-Key': `siteforge-panel-${slug}`,
-          },
-          body: JSON.stringify({
-            from: 'José Michael | Merktop <jose@merktop.com>',
-            to: [biz.email],
-            reply_to: 'jose@merktop.com',
-            subject,
-            text,
-            html,
-            tags: [{ name: 'campaign', value: 'siteforge' }],
-          }),
-        });
-        const data = await r.json().catch(() => ({}));
-        if (!r.ok) return json({ error: 'Resend fallo', detail: data }, 502);
-
-        sentLog[slug] = new Date().toISOString();
-        await env.SITEFORGE_KV.put('sent_log', JSON.stringify(sentLog));
-        const updated = registry.map(b => (b.slug === slug ? { ...b, outreach: 'sent', resend_id: data.id || b.resend_id } : b));
-        await env.SITEFORGE_KV.put('registry', JSON.stringify(updated));
-        return json({ ok: true, id: data.id, to: biz.email, subject, lang: en ? 'en' : 'es' });
+        if (!/^[a-z0-9-]{1,40}$/.test(body?.slug || '')) return json({ error: 'slug invalido' }, 400);
+        const result = await env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1').run(body.slug);
+        return json(result.ok ? result : { ...result, error: 'Envío bloqueado: ' + result.reason }, result.ok ? 200 : 409);
       }
 
       // ---- DOMINIOS (Cloudflare Registrar) ----

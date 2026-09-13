@@ -388,6 +388,13 @@
     </section>
 
     <div class="stats" id="stats"></div>
+    <section class="forge" aria-labelledby="autonomyTitle">
+      <h3 id="autonomyTitle">Piloto de contacto autónomo</h3>
+      <p id="autonomyStatus" role="status">Consultando el coordinador de Cloudflare…</p>
+      <p class="hint" id="autonomyChannels"></p>
+      <p class="hint">Solo contactos con permiso registrado y demos verificados. Los mensajes aceptados no equivalen a entregados ni a ventas.</p>
+      <button class="btn" id="autonomyToggle" type="button" disabled>Pausar piloto</button>
+    </section>
 
     <div class="section-title reveal" style="animation-delay:0.16s">
       <h3>Negocios procesados</h3>
@@ -406,7 +413,7 @@
     <div class="grid" id="grid"></div>
 
     <footer>
-      <p>Siteforge · descubrimiento automático cada 15 min · forjas paralelas · meta 10.000 websites</p>
+      <p>Siteforge · descubrimiento en Cloudflare cada 5 min · forjas paralelas · meta 10.000 websites</p>
       <a class="merktop" href="https://merktop.com" target="_blank" rel="noopener"><span class="dot"></span>Powered by <b>&nbsp;Merktop</b></a>
     </footer>
   </div>
@@ -423,6 +430,7 @@
 
   <script type="module">
     import { inferLeadSource, instagramDmUrl, normalizeGoogleMapsUrl, normalizeInstagramHandle } from './social-channels.mjs';
+    import { repairDemoSeparator } from './outreach-message.mjs';
 
     const $ = id => document.getElementById(id);
     const KEY_LS = 'sf_key';
@@ -518,7 +526,7 @@
       // Lo que se edito a mano manda sobre todo lo demas: es la version que el usuario ya
       // adapto a ese negocio, y es la que tiene que salir en WhatsApp, en el SMS y al copiar.
       if (b.msg_editado) return b.msg_editado;
-      if (b.dm_message && Number(b.message_version || 0) >= 2) return b.dm_message;
+      if (b.dm_message && Number(b.message_version || 0) >= 2) return repairDemoSeparator(b.dm_message, b.url_demo);
       if (!b.url_demo) return '';
       const nom = b.name || (b.language === 'en' ? 'your business' : 'su negocio');
       const zona = b.city || (b.language === 'en' ? 'your area' : 'su zona');
@@ -1078,11 +1086,38 @@
       if (badges) badges.insertAdjacentHTML('afterbegin', '<span class="badge demo-down">⚠ Demo caido</span>');
     };
 
+    let autonomyConfig;
+    let autonomyFetchedAt = 0;
+    async function loadAutonomy() {
+      try {
+        const response = await fetch('/api/outreach/status', { headers: headers() });
+        if (!response.ok) throw new Error('Estado no disponible');
+        const s = await response.json();
+        autonomyConfig = s.config;
+        $('autonomyStatus').textContent = `${s.config.enabled ? 'Piloto habilitado' : 'Piloto pausado'} · ${s.eligible} elegibles · ${s.accepted} aceptados · ${s.delivered} entregados · ${s.confirmedClients} clientes confirmados`;
+        $('autonomyChannels').textContent = `Email: ${s.channels.email ? 'configurado' : 'sin configurar'} · SMS Telnyx: ${s.channels.sms ? 'configurado' : 'pendiente de configuración/verificación'} · WhatsApp: sin integrar. ${s.blocked.email_permission_required || 0} emails pendientes de permiso. ${s.needsReview} envíos requieren revisión. Última revisión del cron: ${s.lastRun?.at ? new Date(s.lastRun.at).toLocaleString() : 'pendiente'}.`;
+        $('autonomyToggle').disabled = false;
+        $('autonomyToggle').textContent = s.config.enabled ? 'Pausar piloto' : 'Activar piloto';
+      } catch { $('autonomyStatus').textContent = 'No se pudo verificar el estado del piloto. No se asume que esté enviando.'; }
+    }
+    $('autonomyToggle').onclick = async () => {
+      if (!autonomyConfig) return;
+      $('autonomyToggle').disabled = true;
+      try {
+        const response = await fetch('/api/outreach/config', { method: 'POST', headers: headers(), body: JSON.stringify({ ...autonomyConfig, enabled: !autonomyConfig.enabled }) });
+        if (!response.ok) throw new Error('No se pudo cambiar el piloto');
+      } catch (e) { $('autonomyStatus').textContent = e.message; }
+      await loadAutonomy();
+    };
     async function load() {
       try {
         const r = await fetch('/api/state', { headers: headers() });
         if (r.status === 401) { localStorage.removeItem(KEY_LS); showGate(true); return; }
         render(await r.json());
+        if (Date.now() - autonomyFetchedAt > 60000) {
+          autonomyFetchedAt = Date.now();
+          void loadAutonomy();
+        }
       } catch (e) {
         $('msg').className = 'msg err'; $('msg').textContent = 'Error cargando estado: ' + e.message;
       }

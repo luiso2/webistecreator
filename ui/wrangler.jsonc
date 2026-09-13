@@ -22,9 +22,11 @@
   "vars": { "CF_ACCOUNT_ID": "e79469132f614c7f418a0e7a65466e88" },
   "assets": { "directory": "public", "binding": "ASSETS" },
   "durable_objects": {
-    "bindings": [{ "name": "QUEUE_CLAIMS", "class_name": "QueueClaims" }]
+    "bindings": [{ "name": "QUEUE_CLAIMS", "class_name": "QueueClaims" },
+      { "name": "OUTREACH_CAMPAIGN", "class_name": "OutreachCampaign" }]
   },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["QueueClaims"] }],
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["QueueClaims"] },
+    { "tag": "v2", "new_sqlite_classes": ["OutreachCampaign"] }],
   "kv_namespaces": [
     { "binding": "SITEFORGE_KV", "id": "3a40823222b6421fafe3969982345792" }
   ]
