@@ -65,6 +65,16 @@ def main():
     if os.path.exists(ruta_data):
         data = json.load(open(ruta_data, encoding='utf-8'))
 
+    # paleta usada en este build (para que paleta_auto.py varie el color
+    # entre builds y no salgan varios sites seguidos del mismo tono)
+    paleta_hue = None
+    ruta_content = f'output/{a.slug}/content.json'
+    if os.path.exists(ruta_content):
+        try:
+            paleta_hue = json.load(open(ruta_content, encoding='utf-8')).get('paleta', {}).get('hue')
+        except Exception:
+            pass
+
     paso('1/5 GATE de calidad')
     g = correr([sys.executable, 'scripts/gate.py', a.slug, '--lang', a.lang, '--forbid', a.forbid])
     print(g.stdout.strip() or g.stderr.strip())
@@ -128,6 +138,7 @@ def main():
             'outreach': 'pending_manual',
             'fecha': time.strftime('%Y-%m-%d'),
             'language': a.lang,
+            'paleta_hue': paleta_hue,
             'status': 'staging',
         }
         if fotos:
