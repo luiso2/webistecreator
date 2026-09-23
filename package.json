@@ -4,7 +4,7 @@
   "scripts": {
     "build:styles": "npx --yes tailwindcss@3.4.17 -c tailwind.config.cjs -i styles/tailwind.css -o output/_shared/tailwind.css --minify && node scripts/write-style-revision.mjs",
     "test:control-plane": "node --test ui/control-plane.test.mjs",
-    "test:outreach": "node --test ui/outreach.test.mjs ui/outreach-runtime.test.mjs"
+    "test:outreach": "node --test ui/outreach.test.mjs ui/outreach-runtime.test.mjs ui/sales.test.mjs"
   },
   "dependencies": {
     "@cloudflare/containers": "^0.3.7"

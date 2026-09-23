@@ -33,6 +33,26 @@ function fixture({ leads = [biz], provider, qaFailure } = {}) {
 }
 const providerCalls = f => f.requests.filter(r => r.url.startsWith('https://api.') && r.options.method === 'POST');
 
+const salesInput = { slug:biz.slug,revision:0,stage:'interested',channel:'email',language:'en',benefit:'contact',objection:'none',observation:'',note:'Owner requested pricing in an actual reply.',confirmed:true,followupAt:null };
+test('commercial records persist with history, do not send, and block duplicate outreach',async()=>{
+  const f=fixture(); await f.engine.consent(consent);
+  const result=await f.engine.salesSave(salesInput);
+  assert.equal(result.record.revision,1);
+  assert.equal((await f.engine.salesSave(salesInput)).conflict,true);
+  assert.equal((await f.engine.salesHistory(biz.slug)).length,1);
+  assert.equal((await f.engine.run()).reason,'no_eligible_candidates');
+  assert.equal(providerCalls(f).length,0);
+  assert.equal((await new OutreachEngine(f.storage,f.env,f.fetcher).salesList()).sales[biz.slug].stage,'interested');
+  await assert.rejects(f.engine.salesSave({...salesInput,slug:'unknown'}),/unknown_business/);
+});
+test('opt-out is sticky and a duplicate identity cannot get another first-contact message',async()=>{
+  const f=fixture({leads:[biz,{...biz,slug:'alias'}]});await f.engine.consent(consent);
+  await f.engine.salesSave({...salesInput,slug:'alias',stage:'opted_out'});
+  assert.equal((await f.engine.run()).reason,'no_eligible_candidates');
+  await assert.rejects(f.engine.salesSave({...salesInput,slug:'alias',revision:1,stage:'new'}),/recipient_suppressed/);
+  assert.equal(providerCalls(f).length,0);
+});
+
 test('new messages preserve line breaks and old URL + It gets repaired', () => {
   const text = `See this:\n\n${biz.url_demo}\n\nIt is your preview.`;
   assert.equal(cleanMessage(text), text);

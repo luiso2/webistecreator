@@ -1361,6 +1361,18 @@ export default {
 
       if (url.pathname.startsWith('/api/outreach/')) {
         const campaign = env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1');
+        if (url.pathname === '/api/outreach/sales' && req.method === 'GET') {
+          const slug = url.searchParams.get('slug');
+          if (slug && !/^[a-z0-9-]{1,40}$/.test(slug)) return json({ error: 'invalid slug' }, 400);
+          return json(slug ? { history: await campaign.salesHistory(slug) } : await campaign.salesList());
+        }
+        if (url.pathname === '/api/outreach/sales' && req.method === 'POST') {
+          try {
+            const raw = await boundedBody(req, 8192);
+            const result = await campaign.salesSave(JSON.parse(raw));
+            return json(result, result.conflict ? 409 : 200);
+          } catch { return json({ error: 'Datos inválidos: verifica negocio, idioma, evidencia y fecha; no se puede revertir una baja desde ventas.' }, 400); }
+        }
         if (url.pathname === '/api/outreach/status' && req.method === 'GET') return json(await campaign.status());
         if (url.pathname === '/api/outreach/inbox' && req.method === 'GET') {
           const thread = url.searchParams.get('thread');
@@ -1385,7 +1397,7 @@ export default {
       }
 
       if (url.pathname === '/api/state' && req.method === 'GET') {
-        const [registry, queue, crm, colores, mensajes] = await Promise.all([
+        const [registry, queue, crm, colores, mensajes, commercial] = await Promise.all([
           env.SITEFORGE_KV.get('registry', 'json'),
           env.SITEFORGE_KV.get('queue', 'json'),
           env.SITEFORGE_KV.get('crm', 'json'),
@@ -1402,6 +1414,7 @@ export default {
               env.SITEFORGE_KV.get(k.name).then(v => [k.name.slice(4), v]))))
             .then(pares => Object.fromEntries(pares.filter(([, v]) => v)))
             .catch(() => ({})),
+          env.OUTREACH_CAMPAIGN.getByName('permission-pilot-v1').salesList(),
         ]);
         // El CRM (cliente cerrado / descartado) vive en su propia llave: ninguna
         // sincronizacion del registro desde el repo o la forja lo puede pisar.
@@ -1425,7 +1438,8 @@ export default {
             }
           : b))
           .map(b => (colores[b.slug] ? { ...b, color: colores[b.slug] } : b))
-          .map(b => (mensajes[b.slug] ? { ...b, msg_editado: repairDemoSeparator(mensajes[b.slug], b.url_demo) } : b));
+          .map(b => (mensajes[b.slug] ? { ...b, msg_editado: repairDemoSeparator(mensajes[b.slug], b.url_demo) } : b))
+          .map(b => ({ ...b, sales: commercial.sales[b.slug] || null, delivery_evidence: commercial.delivery[b.slug] || null }));
         return json({ registry: reg, queue: queue || [] });
       }
 

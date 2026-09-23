@@ -20,6 +20,9 @@ test('Workers runtime: durable RPC, authenticated routes, unsigned webhooks and 
         if (method === 'status') return Response.json(await campaign.status());
         if (method === 'run') return Response.json(await campaign.run());
         if (method === 'consent') return Response.json(await campaign.consent(input));
+        if (method === 'salesSave') return Response.json(await campaign.salesSave(input));
+        if (method === 'salesList') return Response.json(await campaign.salesList());
+        if (method === 'salesHistory') return Response.json(await campaign.salesHistory(input));
       }
       return worker.fetch(req, env, ctx);
     }};
@@ -37,7 +40,13 @@ test('Workers runtime: durable RPC, authenticated routes, unsigned webhooks and 
     const grant = await rpc('consent', { slug: 'test', email: 'owner@example.com', confirmed: true, source: 'inbound_request', evidence: 'Fixture request; not a real recipient' });
     assert.equal(grant.ok, true);
     assert.equal((await rpc('status')).blocked.email_provider_required, 1);
-    for (const path of ['/api/outreach/status', '/api/outreach/consent', '/api/outreach/inbox', '/api/outreach/read', '/api/send']) {
+    const sale={slug:'test',revision:0,stage:'interested',channel:'email',language:'en',benefit:'contact',objection:'none',observation:'',note:'Fixture: owner asked about pricing.',confirmed:true};
+    const results=await Promise.all([rpc('salesSave',sale),rpc('salesSave',sale)]);
+    assert.equal(results.filter(r=>r.ok).length,1);
+    assert.equal(results.filter(r=>r.conflict).length,1);
+    assert.equal((await rpc('salesList')).sales.test.stage,'interested');
+    assert.equal((await rpc('salesHistory','test')).length,1);
+    for (const path of ['/api/outreach/sales', '/api/outreach/status', '/api/outreach/consent', '/api/outreach/inbox', '/api/outreach/read', '/api/send']) {
       const response = await mf.dispatchFetch(`https://test.local${path}`, { method: 'POST', body: '{}' });
       assert.equal(response.status, 401);
     }

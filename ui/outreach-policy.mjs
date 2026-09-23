@@ -1,3 +1,4 @@
+import { commercialMessage } from './public/sales.mjs';
 export const DEMO_ORIGIN = 'https://siteforge-demos.odd-forest-9504.workers.dev';
 export const DEFAULT_CONFIG = Object.freeze({ enabled: true, dailyLimit: 20, channel: 'email' });
 export const emailKey = value => String(value || '').trim().toLowerCase();
@@ -34,24 +35,9 @@ export function smsOpener(biz) {
 }
 
 export function opener(biz, unsubscribeUrl) {
-  const en = biz.language === 'en';
+  const en = (biz.sales?.language || biz.language) === 'en';
   const subject = en ? `${biz.name}: your website preview` : `${biz.name}: la vista previa de su website`;
-  const lines = en ? [
-    `Hi ${biz.name},`,
-    'Here is the website concept for your business. It gives customers one place to see your services and get in touch:',
-    biz.url_demo,
-    'This is a demo, with no obligation and no changes to your domain. Would you like me to explain how to make it yours?',
-    'Michael | Merktop',
-    `No more emails: ${unsubscribeUrl}`,
-  ] : [
-    `Hola ${biz.name},`,
-    'Aquí está el concepto de website para su negocio: un lugar donde sus clientes pueden conocer sus servicios y contactarles:',
-    biz.url_demo,
-    'Es una demo, sin compromiso y sin cambios en su dominio. ¿Les gustaría que les explique cómo hacerla suya?',
-    'Michael | Merktop',
-    `No recibir más correos: ${unsubscribeUrl}`,
-  ];
-  return { subject, text: lines.join('\n\n') };
+  return { subject, text: commercialMessage(biz) + '\n\n' + (en ? 'No more emails: ' : 'No recibir más correos: ') + unsubscribeUrl };
 }
 
 async function checkedFetch(url, fetcher, method = 'GET') {

@@ -1,5 +1,6 @@
 import { DEFAULT_CONFIG, eligibility, emailKey, validEmail, validPhone, phoneMatches, smsReady, smsOpener, opener, verifyDemo } from './outreach-policy.mjs';
 import { businessIdentityKeys } from './control-plane.mjs';
+import { validateSales, validSlug } from './public/sales.mjs';
 
 const hash = async text => [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)))].map(b => b.toString(16).padStart(2, '0')).join('');
 const iso = () => new Date().toISOString();
@@ -20,6 +21,40 @@ export class OutreachEngine {
       await this.storage.put('config', { ...DEFAULT_CONFIG, enabled: input.enabled, dailyLimit: input.dailyLimit });
     }
     return await this.storage.get('config') || DEFAULT_CONFIG;
+  }
+
+  async salesList() {
+    const [records, sends] = await Promise.all([this.storage.list({ prefix: 'sales:' }), this.storage.list({ prefix: 'send:' })]);
+    const sales = Object.fromEntries([...records].map(([key, value]) => [key.slice(6), value]));
+    const delivery = {};
+    for (const s of sends.values()) if (!delivery[s.slug] || s.at > delivery[s.slug].at) {
+      delivery[s.slug] = { status: s.status, delivery: s.delivery || null, at: s.at, channel: s.channel || 'email', source: 'provider' };
+    }
+    return { sales, delivery };
+  }
+
+  async salesSave(input) {
+    const record = validateSales(input);
+    const registry = await this.env.SITEFORGE_KV.get('registry', 'json') || [];
+    const biz = registry.find(b => b.slug === record.slug);
+    if (!biz) throw new Error('unknown_business');
+    const at = iso();
+    return this.storage.transaction(async tx => {
+      const key = `sales:${record.slug}`;
+      const previous = await tx.get(key);
+      if ((previous?.revision || 0) !== input.revision) return { ok: false, conflict: true };
+      // Opt-outs cannot be undone by a sales edit; permission has a separate audited flow.
+      if (previous?.stage === 'opted_out' && record.stage !== 'opted_out') throw new Error('recipient_suppressed');
+      const next = { ...record, at, identities: businessIdentityKeys(biz), revision: input.revision + 1, source: 'operator_attested' };
+      await tx.put(key, next);
+      await tx.put(`sales-history:${record.slug}:${String(next.revision).padStart(10, '0')}`, next);
+      return { ok: true, record: next };
+    });
+  }
+
+  async salesHistory(slug) {
+    if (!validSlug(slug)) throw new Error('invalid_slug');
+    return [...(await this.storage.list({ prefix: `sales-history:${slug}:`, reverse: true, limit: 30 })).values()];
   }
 
   async consent(input) {
@@ -122,10 +157,11 @@ export class OutreachEngine {
   }
 
   async snapshot() {
-    const [registry, crm, legacyLog, consents, sends, suppressed] = await Promise.all([
+    const [registry, crm, legacyLog, consents, sends, suppressed, sales] = await Promise.all([
       this.env.SITEFORGE_KV.get('registry', 'json'), this.env.SITEFORGE_KV.get('crm', 'json'),
       this.env.SITEFORGE_KV.get('sent_log', 'json'), this.storage.list({ prefix: 'consent:' }),
       this.storage.list({ prefix: 'send:' }), this.storage.list({ prefix: 'suppress:' }),
+      this.storage.list({ prefix: 'sales:' }),
     ]);
     const contacted = (registry || []).filter(b => b.outreach === 'sent' || legacyLog?.[b.slug]);
     const already = new Set(contacted.filter(b => b.email).map(b => emailKey(b.email)));
@@ -134,7 +170,10 @@ export class OutreachEngine {
     for (const s of sends.values()) for (const id of s.identities || []) identities.add(id);
     const candidates = [];
     const reasons = {};
-    for (const biz of registry || []) {
+    const salesIdentities = new Set((registry || []).filter(b => sales.get(`sales:${b.slug}`)?.stage && sales.get(`sales:${b.slug}`).stage !== 'new').flatMap(businessIdentityKeys));
+    for (const raw of registry || []) {
+      const commercial = sales.get(`sales:${raw.slug}`);
+      const biz = { ...raw, sales: commercial, language: commercial?.language || raw.language };
       const smsConsent = consents.get(`consent:sms:${biz.slug}`);
       const emailConsent = consents.get(`consent:email:${biz.slug}`);
       const channel = emailConsent && this.env.RESEND_API_KEY ? 'email' : smsConsent ? 'sms' : 'email';
@@ -147,6 +186,7 @@ export class OutreachEngine {
         suppressed: suppressed.has(`suppress:${key}`) || (alternate && suppressed.has(`suppress:${alternate}`)), sent: already.has(emailKey(biz.email)) || sends.has(`send:${key}`)
           || sentSlugs.has(biz.slug) || businessIdentityKeys(biz).some(id => identities.has(id)),
       });
+      if (businessIdentityKeys(biz).some(id => salesIdentities.has(id))) reason = 'sales_conversation_active';
       if (!reason && channel === 'sms' && !smsReady(this.env)) reason = 'telnyx_setup_required';
       if (!reason && channel === 'email' && !this.env.RESEND_API_KEY) reason = 'email_provider_required';
       if (reason) reasons[reason] = (reasons[reason] || 0) + 1;
@@ -245,6 +285,8 @@ export class OutreachEngine {
     const record = { slug: biz.slug, channel, identities: businessIdentityKeys(biz), status: 'sending', at, qa };
     const reserved = await this.storage.transaction(async tx => {
       if (await tx.get(`send:${key}`)) return false;
+      const sales = await tx.list({ prefix: 'sales:' });
+      if ([...sales.values()].some(s => s.stage !== 'new' && (s.slug === biz.slug || (s.identities || []).some(id => record.identities.includes(id))))) return false;
       await tx.put(`send:${key}`, record);
       await tx.put(`token:${token}`, key);
       return true;
