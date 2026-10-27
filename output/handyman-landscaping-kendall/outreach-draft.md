@@ -1,39 +1,39 @@
-# Outreach draft: Handyman & Landscaping (handyman-landscaping-kendall)
+# Outreach draft: Handyman & Landscaping and more (handyman-landscaping-kendall)
 
 - **Estado**: pending_approval (NO enviar sin OK explicito del usuario)
-- **Para**: sin email publico confirmado (ver data.json / notas de research: Instagram @jlimongilawnc dio HTTP 429 en WebFetch tras el intento, WebSearch por nombre del negocio + "Juan Limongi" + Kendall/Miami no devolvio ningun resultado que coincida, WebSearch por el telefono +1 772-404-9414 tampoco devolvio coincidencia, busqueda de Facebook tampoco encontro una pagina. Email: null.)
+- **Para**: sin email publico confirmado. Busqueda: WebSearch "Handyman & Landscaping" Kendall Miami FL Juan (sin resultados relacionados), intento de IG @jlimongilawnc via WebFetch (sin acceso, IG bloquea fetch directo), curl a jlimongilawn.com, jlimongilawncare.com y handymanlandscapingkendall.com (ninguno resuelve), sin perfil en directorios (BBB, buzzfile, yelp, nextdoor).
 - **De**: Michael Vargas <michael@go.merktop.com>
 - **Reply-To**: jose@merktop.com
 - **Tag**: campaign=siteforge
 - **Idempotency-Key**: siteforge-handyman-landscaping-kendall-2026-10-27
-- **Angulo**: sin website propio (handymanandlandscaping.com existe pero es un negocio distinto y no relacionado, con area code de Georgia, no de Miami; sin website propio confirmado para este negocio)
-- **Idioma**: ingles (idioma de todas las resenas reales de clientes, aunque una foto de marketing tenga un caption en espanol)
+- **Angulo**: sin website propio (sin dominio real encontrado tras busqueda exhaustiva)
+- **Idioma**: espanol (una de las fotos del negocio en Google Maps trae un caption en espanol "Haciendo tu espacio un..." quemado en la imagen, senal real de que el negocio publica en espanol; mercado de Kendall/Miami mayoritariamente hispanohablante)
 - **Demo**: https://siteforge-demos.odd-forest-9504.workers.dev/handyman-landscaping-kendall/
-- **Canal disponible**: sin email publico confirmado. Registrado como `outreach: pending_manual` con telefono (772) 404-9414 e Instagram @jlimongilawnc (canal real del dueño Juan) para mensaje/DM manual o WhatsApp.
+- **Canal disponible**: sin email publico confirmado. Registrado como `outreach: pending_manual` con telefono (772) 404-9414 e Instagram @jlimongilawnc (sin verificar acceso) para mensaje/DM manual.
 
-## Subject (para cuando haya un canal de email)
-A sample website for Handyman & Landscaping (Kendall, FL)
+## Asunto (para cuando haya un canal de email)
+Un sitio web de muestra para Handyman & Landscaping (ya esta listo)
 
-## Cuerpo (referencia, para email o como base del DM largo)
+## Cuerpo (referencia, para email o como base del mensaje)
 
-Hi Juan,
+Hola Juan,
 
-I'm Michael, from Merktop. I came across Handyman & Landscaping while looking at home repair and landscaping services in Kendall, and a 5.0 rating across 61 Google reviews caught my eye, people specifically mention how professional and reliable the work is, from restoring pavers to fixing irrigation systems that hadn't worked in years.
+Soy Michael, de Merktop. Encontre Handyman & Landscaping buscando servicios de jardineria en Kendall, y una calificacion de 5.0 en 61 resenas de Google me llamo la atencion, los clientes destacan lo profesional, puntual y de calidad que es el trabajo.
 
-I noticed you don't have a website of your own right now, so I went ahead and built you a sample one with your real rating, real reviews and real photos of your work:
+Note que no tienen un website propio en este momento, asi que les construi uno de muestra con su calificacion real, resenas reales y fotos reales de sus trabajos de paisajismo:
 
 https://siteforge-demos.odd-forest-9504.workers.dev/handyman-landscaping-kendall/
 
-Two things worth knowing:
-- It doesn't touch how you take calls today. Every quote request still goes straight to (772) 404-9414, exactly like now.
-- It's bilingual (English and Spanish), useful for Kendall's community.
+Dos cosas que vale la pena saber:
+- No cambia como reciben llamadas hoy. Cada solicitud sigue llegando directo al (772) 404-9414, igual que ahora.
+- Es bilingue (espanol e ingles), util para la comunidad de Kendall.
 
-If you like it, I can put it on your own domain and we can tweak it together. If it's not for you, I'll take it down, no hard feelings either way.
+Si les gusta, puedo dejarlo en su propio dominio. Si no es para ustedes, lo retiro sin compromiso.
 
-Best,
+Saludos,
 Michael Vargas
 Merktop . merktop.com
 
-## Version corta para DM / WhatsApp / Instagram (dm_message)
+## Version corta para DM / WhatsApp (dm_message, 412 caracteres)
 
-Hi! I'm Michael, from Merktop. I saw Handyman & Landscaping has a 5.0 rating from 61 Google reviews, people love the paver and irrigation work, so I built a free sample website with your real rating, photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/handyman-landscaping-kendall/ It doesn't touch how you take calls today. If you like it, I'll put it on your own domain. If not, I'll take it down, no problem.
+Hola! Soy Michael, de Merktop. Vi que Handyman & Landscaping tiene 5.0 de calificacion con 61 resenas en Google, los clientes aman la calidad de su trabajo de jardineria, asi que les cree un sitio web de muestra gratis con su calificacion, fotos y resenas reales: https://siteforge-demos.odd-forest-9504.workers.dev/handyman-landscaping-kendall/ No cambia como reciben llamadas hoy. Si les gusta, se los dejo en su propio dominio.
