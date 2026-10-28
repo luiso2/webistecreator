@@ -8,7 +8,7 @@ Angle: has_own_site = false (free sample page)
 
 Subject: A free sample website for A Quicker Than Quick Locksmith
 
-Hi Albert,
+Hi there,
 
 I found A Quicker Than Quick Locksmith while looking for locksmiths in Tallahassee, FL, you are at 4.9 stars with 68 reviews on Google, which is great. I noticed there is no dedicated website linked from your listing, so I put together a free sample page using your real photos and public contact details:
 
