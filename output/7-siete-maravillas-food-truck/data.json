@@ -1,0 +1,32 @@
+{
+ "name": "7 Siete Maravillas Food Truck Miami",
+ "niche": "food truck / cocina latina (Latin American street food bus, Mexican-leaning menu with Honduran/Dominican items)",
+ "city": "Miami, FL (Quail Roost Dr / Cutler Bay area)",
+ "address": "11334 Quail Roost Dr, Miami, FL 33157, United States",
+ "phone": "+1 305-244-7643",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website field), only an in-app 'Place an order' button. WebSearch for '7 Siete Maravillas food truck Miami website' found only third-party aggregator listings (Atly, Food Trucks in Miami directory); none link to an official domain or social profile.",
+ "rating": 4.9,
+ "reviews": 1697,
+ "hours": "Thu-Tue 12 PM-12 AM (Fri/Sat until 1 AM), closed Wednesdays",
+ "language": "en",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"food truck / cocina latina\" --location \"Cutler Bay, FL\" --min-rating 4.5 --min-reviews 10 -> 7 SIETE MARAVILLAS FOOD TRUCK Miami, 4.9 stars, 1697 reviews, no website",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> category 'Mexican restaurant', rating 4.9, reviews 1697, hours Thu-Tue 12PM-12AM (Fri/Sat to 1AM, closed Wed), address 11334 Quail Roost Dr Miami FL 33157, website null, 405 Google photos, phone +1 305-244-7643",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim reviews after de-dup (4 five-star, 1 one-star used only internally, not published); used the 3 strongest 5-star quotes for testimonials",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 24 -> 9 unique Google Maps photos, visually curated one by one with the Read tool; 8 kept (1 exact duplicate dropped)",
+  "domain_check": "WebSearch '7 Siete Maravillas food truck Miami website' -> no official website or social handle found in results, only Atly and a food-truck directory listing with no live links."
+ },
+ "reviews_verbatim": [
+  { "author": "George Kalil", "stars": 5, "text": "YOU BETTER BE HUNGRY!!! Not only does this place have the best Mexican food my wife and I have ever eaten but be ready to take home half of your 3 lb. burrito." },
+  { "author": "Meredith Finchum", "stars": 5, "text": "Absolutely incredible. Made fresh to order. Prices were not too high. Got the Birria tacos, street corn, a beef taco, and an Al pastor one. Would definitely return." },
+  { "author": "Ashley Martinez (ash)", "stars": 4, "text": "i love how they have a diverse menu and we had their al pastor tacos with beef burrito, the salsa verde is delicious one of the best... very good place, will buy again" }
+ ],
+ "real_published_menu_found": true,
+ "menu_source_note": "Menu boards are visible (legible) in 2 of the Google Maps photos mounted on the truck/bus itself, listing categories DESSERTS and DRINKS plus taco/plate items, but exact prices on those small boards were not legibly readable at the resolution available. Per pipeline VARIANTE ADAPTADA, since exact prices could not be verified with certainty from the photos, servicios cards use real dish names pulled from Google review service-mention data (birria tacos mentioned in 124 reviews, baleadas in 35, street corn in 9, gyro in 7, dominican burger in 7, fried oreos in 36) with 'se cotiza, escribenos' / call-to-order copy instead of invented prices.",
+ "service_area_note": "Fixed lot location at 11334 Quail Roost Dr, Miami FL 33157 (repurposed green school bus, 'Maravillas Bus', permanently parked with outdoor seating, string lights and neon signage), not a roaming truck despite the 'food truck' category tag.",
+ "gallery_curation_notes": "9 Google Maps photos reviewed individually with the Read tool. 1 exact duplicate night exterior shot was dropped. The remaining 8 are a mix of professional-looking food photography (tacos trio, al pastor tacos, gyro wrap, quesadilla, burrito and chips) and real bus-exterior shots (day and night) with no text overlays, no watermarks and no prominent selfies; one daytime exterior shot includes a customer's back turned to camera (incidental, not a posed portrait, kept as it documents the real location).",
+ "notes": "No email, website or social profile found despite deep search; 1,697 Google reviews is unusually high for a business with zero web presence, confirmed independently via WebSearch. Only verified public contact channel is the phone number (305) 244-7643, so outreach is phone/text only, outreach: pending_manual. status: staging, not deployed by this routine."
+}

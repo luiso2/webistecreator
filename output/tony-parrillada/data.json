@@ -1,0 +1,32 @@
+{
+ "name": "Tony Parrillada",
+ "niche": "catering / eventos (Argentinian-style asado / grill catering)",
+ "city": "Hollywood, FL",
+ "address": "Hollywood, FL 33020, United States (no public street address; mobile catering, cooks on-site at the client's venue)",
+ "phone": "+1 305-992-4688",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website field). No domain or social profile found for 'Tony Parrillada' after a web search; the only public presence is the Google Business Profile.",
+ "rating": 5.0,
+ "reviews": 75,
+ "hours": "Daily 9 AM-9 PM",
+ "language": "en",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"catering / eventos\" --location \"Hollywood, FL\" --min-rating 4.5 --min-reviews 10 -> Tony Parrillada, 5.0 stars, 75 reviews, no website",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> category 'Caterer', rating 5.0, reviews 75, hours daily 9AM-9PM, no fixed street address (Hollywood FL 33020 area only), website null, 131 Google photos, phone +1 305-992-4688",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviews after de-dup, consistently describing Argentinian-style grill catering for quinces, birthdays and sweet 16s",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 24 -> 10 unique Google Maps photos, visually curated one by one with the Read tool; 8 kept (1 exact duplicate and 1 people-forward shot set aside)"
+ },
+ "reviews_verbatim": [
+  { "author": "Deanette Peraza", "stars": 5, "text": "The team at Tony Parrillada are very easy to communicate with in the planning process. The service and food was so amazing we received so many compliments from our guest. The catering service made our daughter's quinces perfect." },
+  { "author": "Lourdes Boyer", "stars": 5, "text": "Tonya Parrillada, is the best Argentinian style grill that comes to you. They are very professional and friendly and attentive to detail. The food is absolutely delicious and all my guests truly love it. I've used them a couple times." },
+  { "author": "Giancarlo Maldonado", "stars": 5, "text": "We had them cater a picnic style sweet 16 for my niece, they were GREAT! very professional in the way they cater the event, the food was AMAZING! Their chimichurri is DELICIOUS! A MUST TRY." },
+  { "author": "Cristhian Alvarez", "stars": 5, "text": "Excellent service, best Argentinian meat I ever had. We celebrated my wife's birthday and definitely loved the service, staff is very good and friendly, and the food is amazing." }
+ ],
+ "real_published_menu_found": false,
+ "menu_source_note": "No published price list found (no website, no menu board visible in any photo). Per pipeline VARIANTE ADAPTADA, pricing uses 'se cotiza, escribenos' copy. Real dishes documented across photos and review service-mentions: Argentinian asado (grilled short rib / tira de asado), morcilla and chorizo sausages, grilled chicken, grilled vegetables (asparagus, eggplant, zucchini, bell pepper, mushroom, onion, potato), and housemade chimichurri.",
+ "service_area_note": "No fixed venue; a mobile open-flame parrilla (Argentine grill cart) travels to the client's event. Photos show the grill set up at private backyards, poolside parties and a beachfront property across the Hollywood/Fort Lauderdale area, consistent with reviews describing quinces, sweet 16s and birthday parties at private homes.",
+ "gallery_curation_notes": "10 Google Maps photos reviewed individually with the Read tool. 1 exact duplicate wide shot was dropped. 1 photo showing elderly guests being served plate-side with clear faces as the main subject was set aside from the main gallery grid (used only in the about/experience section per the no-selfies-in-gallery rule). The remaining 8 are genuine grill/food photography (close-up sizzling meats, loaded grill carts, a stunning beachfront grill setup, poolside spreads with chimichurri) with no text overlays or watermarks; several show guests blurred/incidental in the background of wide event shots, kept because the food remains the clear subject.",
+ "notes": "No email, website or social profile found anywhere after a deep search. Only verified public contact channel is the phone number (305) 992-4688, so outreach is phone/text only, outreach: pending_manual. status: staging, not deployed by this routine."
+}

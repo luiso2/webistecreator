@@ -1,0 +1,35 @@
+{
+ "name": "Orozco's Latin Cuisine",
+ "niche": "catering / eventos (Nicaraguan / Latin American event catering with bartending and party rental add-ons)",
+ "city": "Cutler Bay, FL",
+ "address": "7901 SW 197th Terrace, Cutler Bay, FL 33189, United States",
+ "phone": "+1 954-401-8518",
+ "email": "Orozco2_aa07@me.com",
+ "ig": null,
+ "facebook": "https://www.facebook.com/orozcoslatincuisine/",
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' and no phone field at all (phone was found independently via Yelp/Facebook, not Maps). The business's own Facebook About page lists 'orozcoslatincuisine.com' as a website field, but that domain does NOT resolve: getent hosts and python socket.gethostbyname both returned NXDOMAIN ('Name or service not known'), confirming it is a dead/never-launched domain name, not a live site. Treated as has_own_site: false, consistent with Google Maps showing no working website link anywhere.",
+ "rating": 5.0,
+ "reviews": 23,
+ "hours": "Mon-Sat 7 AM-10 PM, closed Sundays",
+ "language": "en",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"catering / eventos\" --location \"Cutler Bay, FL\" --min-rating 4.5 --min-reviews 10 -> Orozco's Latin Cuisine, 5.0 stars, 23 reviews, no website",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> category 'Family restaurant' (business actually operates as full-service event catering per reviews), rating 5.0, reviews 23, hours Mon-Sat 7AM-10PM closed Sun, address confirmed, 502 Google photos, no phone/website field on Maps",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviews after de-dup, repeatedly describing catered weddings, quinces, baby showers and corporate lunches; owner/manager named 'Anallency' mentioned by a reviewer",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 24 -> 9 unique Google Maps photos, visually curated one by one with the Read tool; 7 kept (1 exact duplicate and 1 near-duplicate dropped)",
+  "contact_deep_search": "WebSearch 'Orozco's Latin Cuisine Cutler Bay phone instagram catering' -> surfaced the business's own Facebook page (facebook.com/orozcoslatincuisine), a Yelp listing with phone (954) 401-8518, and the Facebook About section listing email Orozco2_aa07@me.com and the (dead) domain orozcoslatincuisine.com. This satisfies pipeline Fase 1 point 7 (deep email search via Facebook About).",
+  "domain_check": "getent hosts orozcoslatincuisine.com -> no record. python3 socket.gethostbyname('orozcoslatincuisine.com') -> 'Name or service not known' (NXDOMAIN), confirmed not a live website."
+ },
+ "reviews_verbatim": [
+  { "author": "Sarah Sassen", "stars": 5, "text": "Anallency and her team were AMAZING! She listened to every little concern we had and let us try the food beforehand to decide. They catered our all-vegetarian wedding last November and I can't thank them enough. The food was SO GOOD." },
+  { "author": "Venture X Palmetto Bay", "stars": 5, "text": "Fantastic service! They've been a great lunch catering partner for our members at Venture X Palmetto Bay. The food is always fresh, delicious, and beautifully presented, and they're consistently on time and easy to work with." },
+  { "author": "Lucero Rodriguez", "stars": 5, "text": "We recently used Orozco's latin cuisine for a baby shower, and I can't recommend them highly enough! From start to finish, their team was professional, friendly, and incredibly attentive to every detail." },
+  { "author": "Rosy Jiron", "stars": 5, "text": "Food was delicious, setting was spectacular, above all my expectations! My guests can't stop talking about the setting and how yummy the food was! Thank you for making my birthday celebration such a wonderful and blessed event!" }
+ ],
+ "real_published_menu_found": false,
+ "menu_source_note": "No published price list found (no website, no menu board visible in any photo). Per pipeline VARIANTE ADAPTADA, pricing uses 'se cotiza, escribenos' copy. Real services documented in photos and reviews: full buffet catering with chafing dishes, Argentine-style open-flame grilling (parrillada: churrasco, sausages, chicken), charcuterie/grazing tables, a full bar/bartending setup, and traditional Nicaraguan clay-pot presentations (nacatamales-style).",
+ "service_area_note": "Address is a home base in Cutler Bay; the business travels to the client's venue for events (photos show waterfront patios, pool decks and private backyards across the Miami area), consistent with reviews describing weddings, quinces, baby showers and corporate lunches at outside venues.",
+ "gallery_curation_notes": "9 Google Maps photos reviewed individually with the Read tool. 1 exact duplicate of the holiday buffet table was dropped. The remaining 8 are genuine event-catering photography: open-flame grilling action shots, a charcuterie/grazing table, a premium bar setup, traditional Nicaraguan clay-pot presentation, and elegant plated/chafing-dish table setups; none show prominent faces as the main subject, none have text overlays or watermarks. One holiday-themed buffet shot (Christmas table runner) was kept as a secondary gallery tile since it is otherwise clean, well-lit, professional event photography and the caption context (grazing/charcuterie table) is evergreen even if the decor is seasonal.",
+ "notes": "status: staging, not deployed by this routine. Deep contact search succeeded: real phone + real email + Facebook page confirmed, enabling direct email outreach rather than phone-only."
+}
