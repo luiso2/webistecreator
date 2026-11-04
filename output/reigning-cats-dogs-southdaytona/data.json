@@ -1,0 +1,31 @@
+{
+ "name": "Reigning Cats & Dogs",
+ "niche": "pet grooming (dog & cat)",
+ "city": "South Daytona, FL",
+ "address": "411 Ridge Blvd, South Daytona, FL 32119, United States",
+ "phone": "+1 386-760-6011",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing's website field points only to a Facebook page (facebook.com/Reigning-Cats-and-Dogs-Pet-Grooming-103992887981633), which does not count as an owned website per project rules. WebSearch for 'Reigning Cats & Dogs South Daytona FL website' found no owned domain, only directory aggregators (MapQuest, Care.com) with no live site link.",
+ "rating": 4.7,
+ "reviews": 130,
+ "hours": "Tuesday-Saturday 9 AM-5 PM, closed Sunday and Monday",
+ "language": "en",
+ "attributes": ["Owner-operated and groomed by Caprice (named in multiple reviews)"],
+ "pricing_notes": "No published price list found on Google or in search. Services quoted by breed/size over the phone (VARIANTE ADAPTADA).",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"pet grooming\" --location \"Daytona Beach, FL\" --min-rating 4.5 --min-reviews 10",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 4.7, reviews 130, phone, hours, website field points only to a Facebook page",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim reviews (1 one-star about a nail-trim quick cut, 4 five-star); 3 five-star reviews used on site",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 25 -> 11 unique Google Maps photos, visually curated one by one with Read tool; 8 kept (1 excluded as exact duplicate, 2 excluded as redundant with better alternatives already selected)"
+ },
+ "reviews_verbatim": [
+  { "author": "Martin Barwikowski", "stars": 5, "text": "Love this place. Coolest owner. Always fits in our boy somehow. Calls back. She has her own pets. Super caring, super hard working. Always go an extra mile to make my six year old smile when she picks up her puppy." },
+  { "author": "Suzanne Marcotullio", "stars": 5, "text": "Great service! Caprice, the owner, is extremely knowledgeable about all kinds of pets. My two Shih Tzu dogs always look amazing after they have been groomed at Reigning Cats and Dogs." },
+  { "author": "Denise Siebers", "stars": 5, "text": "Our pets really loved this place.  These gals were so friendly and made sure the dogs haircut was exactly what we wanted.   We will continue to take our fur babies here." },
+  { "author": "Alexis Albanese", "stars": 5, "text": "I took my fur baby here and they did an excellent job and really seem to love what they do. Will definitely be coming back!!" },
+  { "author": "Katelyn", "stars": 1, "text": "i came in for a nail trim on my dog & the groomer cut into my dog’s quick. i get accidents happen but they didn’t inform us it happened nor did they patch it up. on top of this, there was a sort of deep scratch on my dog’s paw as well, …" }
+ ],
+ "dm_message": "Hi! I found Reigning Cats & Dogs on Google (4.7 stars, 130 reviews) and noticed you don't have a website yet, so I built a free sample one with your real photos: https://siteforge-demos.odd-forest-9504.workers.dev/reigning-cats-dogs-southdaytona/ No cost, no obligation. If you like it I can put it on your own domain, if not I will take it down. Michael, Merktop."
+}
