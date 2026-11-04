@@ -1,0 +1,43 @@
+{
+ "name": "The Skin Spot Laser & Aesthetics",
+ "niche": "med spa / estetica (laser hair removal, waxing, lash extensions, skin treatments)",
+ "city": "Fort Pierce, FL",
+ "address": "117 N 5th St, Fort Pierce, FL 34950, United States",
+ "phone": "+1 772-323-4432",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows no website field, only a 'Book online' button linking to vagaro.com/theskinspotfl (a Vagaro booking subdomain, which per pipeline rules does NOT count as an owned website). Tried theskinspotfl.com and theskinspotlaserandaesthetics.com (both fail to resolve, DNS error) and theskinspot.com (resolves, but is an unrelated Los Angeles skincare e-commerce brand founded by Dr. Sheila Nazarian, confirmed via web search, not this Fort Pierce business). No Instagram account could be confirmed: tried handles theskinspotfl, theskinspot_fl, theskinspotlaser, theskinspotaesthetics, the_skin_spot_fl, theskinspotfl_ via the IG web_profile_info endpoint, all returned 404 (the endpoint itself appears blocked in this environment, confirmed because even the handle 'instagram' returned 404 too), and a Google search for an Instagram/Facebook link for this exact business found none. has_own_site: false confirmed.",
+ "rating": 5.0,
+ "reviews": 80,
+ "hours": "Mon 11am-7pm, Tue 11am-7pm, Wed 11am-7pm, Thu 10am-5pm, Fri 10am-6pm, Sat 10am-5pm, Sun closed",
+ "language": "en",
+ "booking_channel": "https://www.vagaro.com/theskinspotfl (Vagaro booking page linked from the Google Business Profile's 'Book online' button)",
+ "owner_note": "Reviews repeatedly and consistently name 'Julissa' as the esthetician/owner performing treatments, with one review also mentioning 'her mom' working alongside her. No last name found on any public source.",
+ "services_observed": [
+  "Laser hair removal (photo evidence: handheld diode laser device in active use on a client's neck, assets/raw/treatment-laser.jpg; also directly named in a review: 'My second time getting a laser treatment')",
+  "Waxing (photo evidence: wax strip application on a client's forearm, assets/raw/treatment-waxing.jpg)",
+  "Lash extensions (photo evidence: tweezer application of individual lash extensions under eye patches, assets/raw/treatment-lash.jpg)",
+  "Facial / skin treatments, including a named 'Skin Sculpt' facial (directly named in a review: 'I recently went for the Skin Sculpt facial and it was so relaxing I genuinely fell asleep')",
+  "Close-up precision facial/brow work with a blade-style tool (photo evidence: assets/raw/treatment-facial.jpg); worded cautiously on the site as general skin care since the exact procedure name is not confirmed"
+ ],
+ "services_note": "No public price list exists anywhere (the Vagaro booking page's service menu did not render any priced services in a fetch of the public page; a full facility listing was present but no service/price rows). Site follows the adapted 'se cotiza, escribenos' pattern for services, naming only service categories that are directly evidenced by photos or reviews, with the real Vagaro link as the booking CTA for availability and pricing.",
+ "pricing_published": false,
+ "booking_platform_note": "Vagaro profile confirmed live (HTTP 200) at vagaro.com/theskinspotfl, page title 'The Skin Spot Aesthetics Wellness Studios - Fort Pierce FL'. The service/price menu on that public page was empty when fetched (likely requires being logged in or loads per-staff availability client-side); no prices could be verified from it.",
+ "source_of_data": {
+  "discovery": "CHROME_PATH=/usr/bin/google-chrome python3 scripts/maps_discover.py --niche \"med spa\" --location \"Fort Pierce, FL\" --limit 8 --min-rating 4.5 --min-reviews 10 (and a second pass with --niche \"medical spa\" for cross-check)",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 5.0, reviews 80, phone, address, hours, website null, Vagaro link in raw snippet",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviews after de-dup",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 60 -> 5 unique Google Maps photos total (the full album, re-checked at higher limits, does not contain more), visually curated one by one with the Read tool: 4 real treatment photos kept (laser hair removal, waxing, lash extensions, a close-up skin/brow procedure) plus 1 business logo graphic (used as a small brand mark only, not a gallery tile, since it is not a photo). No photos were discarded for quality; all 4 treatment photos show a real, in-progress, well-lit procedure with no closed-eyes-mid-procedure, irritated skin, photographer-POV, caption overlay, or selfie/portrait issues."
+ },
+ "reviews_verbatim": [
+  { "author": "Nicole Vazquez", "stars": 5, "text": "I absolutely love The Skin Spot! Ashley and Julissa are both amazing at what they do. They make you feel comfortable, welcomed, and well taken care of every time you visit. You can tell they …" },
+  { "author": "Jinna C", "stars": 5, "text": "I've been seeing Julissa for the past 5 years, and I cannot recommend her highly enough. The transformation in both my skin and my husband's skin has been incredible. She is knowledgeable, professional, and truly passionate about helping …" },
+  { "author": "Briana Padrick", "stars": 5, "text": "The Skin Spot is amazing! I recently went for the \"Skin Sculpt\" facial and it was so relaxing I genuinely fell asleep a few times. Julissa has a magic touch for sure. The office is clean, calming, and the staff is welcoming. Check them out and you won't be disappointed. I can't wait for my next appointment!" },
+  { "author": "LINDA CEPEDA", "stars": 5, "text": "My second time getting a laser treatment and I love it !! The place is always clean very well decorated and organized, the environment; overall very professional and her mom are very friendly ! Julissa is very knowledgeable with all my questions and explanations about the treatment. Highly recommend!!" },
+  { "author": "BabySister Burks", "stars": 5, "text": "Julissa is so passionate and knowledgeable about quality skin care! She is super patient and attentive to client needs. I felt super pampered. If you are in your \"self care\" era you have to treat yourself to some skin care luxury!!!" }
+ ],
+ "brand_vibe": "Logo is a warm watercolor tan/bronze crescent mark on cream, serif wordmark 'THE SKIN SPOT / LASER & AESTHETICS'. Light, warm, feminine aesthetic clinic look. Built on a light base with a warm bronze/gold accent (amani-style palette), distinct hue from other gold palettes already in the registry by leaning slightly more terracotta/tan.",
+ "outreach": "pending_manual",
+ "status": "staging"
+}
