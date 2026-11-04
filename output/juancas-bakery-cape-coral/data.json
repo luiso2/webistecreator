@@ -1,0 +1,41 @@
+{
+ "slug": "juancas-bakery-cape-coral",
+ "name": "Juanca's Bakery",
+ "niche": "reposteria / bakery boutique (Cuban bakery)",
+ "city": "Cape Coral, FL",
+ "address": "1524 Hancock Bridge Pkwy, Cape Coral, FL 33990, United States",
+ "address_source": "Google Maps business listing detail page",
+ "phone": "+1 239-257-1403",
+ "phone_source": "Google Maps listing",
+ "email": null,
+ "email_note": "No public email found. Instagram API lookups for likely handles (juancasbakery, juanca.bakery) returned blocked/empty responses twice, per 2-attempt limit; followed with no further IG attempts. TikTok page (their only public web presence) does not expose an email in what is reachable without login.",
+ "has_own_site": false,
+ "has_own_site_note": "Google Maps website field points to https://www.tiktok.com/@juanca.bakery — TikTok is a social platform, not an owned domain, so it does not count as an own website per pipeline rules. No separate domain found.",
+ "maps_url": "https://www.google.com/maps/place/Juanca%27s+Bakery/@26.6515231,-81.9417602,17z/data=!4m7!3m6!1s0x88db419b68491c27:0xe9ca06a28736e927!8m2!3d26.6515231!4d-81.9417602!16s%2Fg%2F11w_ccjtx5",
+ "rating": 5.0,
+ "reviews": 161,
+ "rating_source": "Google Maps business listing, scraped 2026-11-04",
+ "hours": [
+  "Tuesday, 7 AM to 5 PM",
+  "Wednesday, 7 AM to 5 PM",
+  "Thursday, 7 AM to 5 PM",
+  "Friday, 7 AM to 5 PM",
+  "Saturday, 7 AM to 5 PM",
+  "Sunday, 8 AM to 2 PM",
+  "Monday, 7 AM to 5 PM"
+ ],
+ "language": "es",
+ "language_note": "Primary language set to Spanish: menu items are Cuban-Spanish terms (croquetas, pastelitos, brazo gitano), Google profile shows \"Identifies as Latino-owned\", and sibling Cuban bakery J&J Paradise Bakery (same city) uses es as default. Google reviews found happen to be in English, included verbatim in their original language per rules.",
+ "services_mentioned": ["croquetas", "pastelitos de guayaba y queso", "empanadas", "brazo gitano (guava / dulce de leche / chocolate)", "eclairs de chocolate", "tortas de celebracion por encargo (incl. viral TikTok guava cake)", "comida casera cubana (pollo frito, arroz, tostones)"],
+ "review_samples": [
+  { "author": "Natan Saidon", "stars": 5, "text": "Nice little Cuban bakery, mom-and-pop diner atmosphere. One of those tiny places in Cape Coral you wouldn't even notice unless you knew it was there." },
+  { "author": "Kathleen Hawkins", "stars": 5, "text": "I've been searching for years for good guava treats for my husband. I came across a tiktok video of a guava cake they made, and it did not disappoint." },
+  { "author": "Royalty Padding", "stars": 5, "text": "Juanca's Bakery is a true gem. Every visit has been a great experience. The food is fresh, the service is outstanding." },
+  { "author": "Nina R", "stars": 5, "text": "It is a tiny restaurant/cafe but they are always organized and give good service, the coffee is great and the pastries too." }
+ ],
+ "photos_source": "Google Maps photo viewer (gmaps_photocycle.js), 6 photos pulled, 1 exact duplicate removed, 5 unique real photos used (hero/about/gallery), all food shots (cake rolls, croquetas/empanadas, eclairs, pastelitos, a prepared plate).",
+ "photo_count_note": "5 is the pipeline hard minimum for usable real photos; all 5 passed visual review (no closed-eyes, no captions overlaid, no blur).",
+ "discovery_method": "node scripts/gmaps_discover.js \"bakery pasteleria in Cape Coral, FL\" 4 and \"panaderia cubana in Cape Coral, FL\" 4 -> rating 5.0 / 161 reviews, website field pointed to TikTok only, verified with gmaps_detail.js.",
+ "dedup_check": "Not present in data/processed.json (checked by name/phone against city filter Cape Coral|Fort Myers|Naples). An existing output/jj-paradise-bakery-cape-coral (different business, same city/niche) was found and left untouched.",
+ "fecha_research": "2026-11-04"
+}
