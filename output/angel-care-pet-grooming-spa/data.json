@@ -1,0 +1,30 @@
+{
+ "name": "Angel Care Pet Grooming Spa",
+ "niche": "pet grooming (dog & cat)",
+ "city": "Daytona Beach, FL",
+ "address": "115 S Palmetto Ave, Daytona Beach, FL 32114, United States (Palmetto Professional Center)",
+ "phone": "+1 386-307-8940",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website button). WebSearch for 'Angel Care Pet Grooming Spa Daytona Beach FL website' found only directory aggregator listings (dogdog.org, beautynailhairsalons.com), no owned domain, no confirmed Instagram or Facebook page for this exact business.",
+ "rating": 4.9,
+ "reviews": 182,
+ "hours": "Monday-Saturday 7 AM-6 PM, closed Sunday",
+ "language": "en",
+ "attributes": ["No kennels on site (pets wait with their groomer, per review mentions)", "Grooms both dogs and cats", "Named groomers Jake and Jacob mentioned repeatedly in reviews"],
+ "pricing_notes": "No published price list found on Google or in search. Services quoted by breed/size over the phone (VARIANTE ADAPTADA).",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"pet grooming\" --location \"Daytona Beach, FL\" --min-rating 4.5 --min-reviews 10",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 4.9, reviews 182, phone, hours, website:null",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviews",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 25 -> 11 unique Google Maps photos, visually curated one by one with Read tool; 6 kept (5 excluded: 4 were AI-composited promotional images with fantasy backgrounds unrelated to the real shop, 1 had a similar composite sunset background)"
+ },
+ "reviews_verbatim": [
+  { "author": "Chris Hunter", "stars": 5, "text": "We had such a great experience with Jake! He was incredibly patient, kind, and caring throughout the entire grooming process. You can truly tell he loves what he does and genuinely cares about the animals he works with. He took his time, …" },
+  { "author": "Ashley Gilbert", "stars": 5, "text": "Jacob did an amazing job grooming my two white miniature schnauzers. He was very patient and gentle with both of them. He made sure to greet me and introduce himself when we first arrived, and he even stopped grooming another dog to come greet me when I arrived to pick up my dogs." },
+  { "author": "Ganiqua Rogers", "stars": 5, "text": "I want the world to know about this pet grooming service, they are professional, kind, caring. I scheduled an appointment for my mini golden doodle on a Friday. Not knowing his hair was matted I was turned around . Before leaving the owner …" },
+  { "author": "Alexis Azar", "stars": 5, "text": "Huge thank you to our amazing new groomer for transforming my 'Floof of a Hairicane' into the Mane Attraction! So happy to have found this gem pet spa. If you're looking for someone who is talented and truly cares about your pets, I can't …" }
+ ],
+ "dm_message": "Hi! I found Angel Care Pet Grooming Spa on Google (4.9 stars, 182 reviews) and noticed you don't have a website yet, so I built a free sample one with your real photos: https://siteforge-demos.odd-forest-9504.workers.dev/angel-care-pet-grooming-spa/ No cost, no obligation. If you like it I can put it on your own domain, if not I will take it down. Michael, Merktop."
+}

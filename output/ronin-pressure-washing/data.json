@@ -1,0 +1,29 @@
+{
+ "name": "Ronin Pressure Washing",
+ "niche": "pressure washing",
+ "city": "Coral Springs, FL",
+ "address": null,
+ "phone": "+1 954-858-6702",
+ "email": null,
+ "ig": "@roninpressurewashing",
+ "has_own_site": false,
+ "website_check": "Google Maps listing's 'website' field links only to https://www.instagram.com/roninpressurewashing/ (an Instagram profile, not a standalone website per the pipeline's own-site rules). Their service trailer is branded with 'RoninPressureWashing.com', so that domain was checked directly: https://roninpressurewashing.com and https://www.roninpressurewashing.com both return a genuine HTTP 404 Not Found (domain registered, no live site), confirmed with curl and WebFetch. No functioning website exists for this business.",
+ "rating": 5.0,
+ "reviews": 84,
+ "hours": "Open 24 hours, every day",
+ "language": "en",
+ "booking_channel": null,
+ "source_of_data": {
+  "discovery": "CHROME_PATH=/usr/bin/google-chrome python3 scripts/maps_discover.py --niche \"pressure washing\" --location \"Coral Springs, FL\" --limit 8 --min-rating 4.5 --min-reviews 10 -> candidate (Ronin Pressure Washing, 5.0, 84 reviews, website field = Instagram only)",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 5.0, reviews 84, phone, hours Open 24 hours every day, website field = instagram.com/roninpressurewashing, no public address, category Pressure washing service",
+  "website_followup": "curl -I and WebFetch on https://roninpressurewashing.com and https://www.roninpressurewashing.com (domain printed on their service trailer in gmaps-1.jpg) -> both HTTP 404 Not Found, no live site",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviews after de-dup (Jose Cruz, Kevin Coney, Una Louis, Eric Bronson, Manoj Harpalani), all English, naming the technician Ozzy",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 30 -> 9 unique Google Maps photos after de-dup (2 exact duplicates removed), visually curated one by one with Read tool; 7 kept as real job, crew and equipment photos, 2 excluded (an unwashed fence shown with no after shot, and a generic commercial parking lot with no visible wash result)"
+ },
+ "reviews_verbatim": [
+  { "author": "Jose Cruz", "stars": 5, "text": "Ozzy did an outstanding job with the pressure cleaning! Very professional, reliable, and thorough. Everything came out looking great, and you can really see the difference in the quality of the work. Ozzy takes pride in what he does, pays …" },
+  { "author": "Kevin Coney", "stars": 5, "text": "I couldn't be more satisfied with the service provided. Ronin Pressure Washing LLC is very knowledgeable in the pressure cleaning business and understands the proper techniques to get the job done right. Highly recommend!" },
+  { "author": "Eric Bronson", "stars": 5, "text": "Ozzy was great, showed up on time. He did a great job, the roof looks fantastic, he sent me before and after pictures. He was a pleasure to deal with and I will absolutely use him again." },
+  { "author": "Manoj Harpalani", "stars": 5, "text": "Highly recommended! I hired Ronin Pressure Washing for a roof wash, and they went above and beyond. Not only is the roof spotless, but they also cleaned our exterior walls, back patio, front and garage doors, and the front yard, making the …" }
+ ]
+}
