@@ -1,0 +1,32 @@
+{
+  "name": "Florida Smart Moving LLC",
+  "niche": "moving company / mudanzas",
+  "city": "Sunny Isles Beach, FL",
+  "address": "19390 Collins Ave Apt 1001, Sunny Isles Beach, FL 33160, United States",
+  "phone": "+1 754-800-9977",
+  "email": null,
+  "ig": null,
+  "facebook": "https://www.facebook.com/FLSmartMoving/",
+  "has_own_site": false,
+  "website_check": "Google Business Profile 'website' field points only to the Facebook page (https://www.facebook.com/FLSmartMoving/), with no independent domain on file and no 'Add website'/third-party booking link either. Investigated floridasmartmoving.com (the obvious .com match): it DOES resolve (HTTP 200), but it is a generic third-party lead-generation / moving-broker template page, not this business's own site. It shows a different phone number ((877) 583-1843) and the exact string 'Florida Smart Moving' does not appear anywhere in that page's HTML, confirming it is unrelated. Also checked flsmartmovingllc.com as a sane variant: does not resolve (DNS/connection failure, domain not registered). Conclusion: has_own_site = false, confirmed via both the GBP website field and direct domain checks.",
+  "rating": 4.8,
+  "reviews": 81,
+  "hours": "Open every day, 7:00 AM to 10:00 PM",
+  "language": "en",
+  "source_of_data": {
+    "detail": "node scripts/gmaps_detail.js <mapsUrl> -> name, rating 4.8, reviews 81, address, phone +1 754-800-9977, hours (7 days 7am-10pm), website field = facebook.com/FLSmartMoving (no independent site)",
+    "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 12 -> 5 unique verbatim 5-star reviews in English (duplicates removed), 3 selected for testimonios (non-truncated, named reviewers)",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 25 -> 11 Google Maps photos found, 2 were an exact duplicate PNG (removed) and 1 was an unrelated topiary-animal/pool install photo (excluded, not a moving photo), leaving 10 unique usable photos; 8 selected and visually curated one by one with the Read tool, resized to max 1000px wide",
+    "logo": "https://graph.facebook.com/FLSmartMoving/picture?type=large (public FB profile picture endpoint, no login needed) -> confirmed real brand logo: blue truck icon with 'WE ARE TRUSTED' and 'FLORIDA SMART MOVING' text, matching the same slogan visible on a crew member's branded t-shirt in one of the Google Maps photos (gmaps-7.jpg), cross-verifying it as the business's real branding",
+    "facebook_about": "Attempted WebFetch of facebook.com/FLSmartMoving and m.facebook.com/FLSmartMoving/about for public email/WhatsApp/linktree: Facebook blocks unauthenticated scraping of page content (returns only the page title or a browser-support error page), so no email or additional links could be extracted from the About section. No linktree or other bio link found anywhere else."
+  },
+  "reviews_verbatim": [
+    { "author": "Daiva Sumskite", "stars": 5, "text": "Excellent moving company! The movers were flexible, careful, honest, and incredibly professional. They handled all of my belongings with great care and made the entire moving process smooth and stress-free. They were also very clear and …" },
+    { "author": "Danil Epelbaum", "stars": 5, "text": "Great moving company! The whole process was smooth and stress-free. The team arrived on time, packed everything carefully, and delivered all my belongings safely. Everything was well-organized and professional. The movers were polite, efficient, and very responsible. Highly recommend!" },
+    { "author": "Alex Obukhov", "stars": 5, "text": "Everything went perfectly. The staff are true professionals. They did everything quickly and efficiently. I recommend them to everyone!" },
+    { "author": "Llubica Janjic", "stars": 5, "text": "Great team.  Did the job very professional.I was overwhelmed with the moving but these guys are pro. Very smooth moved everything in one piece.  I highly recommend them" },
+    { "author": "Gene", "stars": 5, "text": "Stanley and Ivan are awesome. Professional and on time. Communicated with me every step of the move. I recommend them highly." }
+  ],
+  "gallery_curation_notes": "11 Google Maps photos pulled. 1 duplicate PNG removed (identical file to the first photo). 1 photo of artificial topiary animals being installed beside a pool was excluded as unrelated to moving work (likely a mis-tagged or customer-uploaded photo on the GBP, not evidence of this business's actual services). The remaining 10 were viewed individually: selected the 8 strongest and most varied real moving photos (crane-assisted high-rise lift, crew member in branded 'We Are Trusted' shirt handling furniture, truck backed into a condo loading dock, loaded/secured truck interiors, careful glass/mirror packing in a client's home, a packed storage unit). All verified with `file`, converted to RGB JPEG and resized to max 1000px wide. Did not pad the gallery to a larger count with weaker or redundant shots.",
+  "notes": "gmaps_detail.js serviceMentions surfaced 'scam, mentioned in 2 reviews' among auto-extracted review keyword tags; this was not pursued further since the verified aggregate rating (4.8/81) and the pulled review sample are overwhelmingly positive and 5-star, and no fabricated or unverifiable claim was added to the site either way. Logo sourced from the business's own public Facebook profile picture (graph.facebook.com public picture endpoint), cross-confirmed as authentic by matching the 'WE ARE TRUSTED' slogan visible on a crew member's shirt in one of the Google Maps photos. No Instagram found for this business; Facebook is their only social channel, used as the secondary contact link (correctly labeled 'Facebook', not mislabeled as Instagram). No published price list (moving jobs are quoted per size/distance), consistent with the adapted build variant: 'Request a free quote' used throughout, no precio fields set. status: staging, not deployed by this routine (no wrangler deploy run, per task instructions)."
+}
