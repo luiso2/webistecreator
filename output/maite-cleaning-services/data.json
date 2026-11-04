@@ -1,0 +1,29 @@
+{
+ "name": "Maite Cleaning Services",
+ "niche": "house cleaning / janitorial service",
+ "city": "Homestead, FL",
+ "address": null,
+ "phone": "+1 786-346-5849",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website button), only a jotform.com intake link and the phone number. WebSearch for the exact business name plus Homestead FL found no owned domain, no Instagram, no Facebook. The only loose match (a Care.com profile for an individual 'Maite A.' in Opa Locka) is a different, unconfirmed listing and was not treated as this business.",
+ "rating": 4.9,
+ "reviews": 57,
+ "hours": "Mon-Fri 7 AM-5 PM, Sat 8 AM-2 PM, closed Sunday",
+ "language": "en",
+ "attributes": ["Identifies as women-owned", "Identifies as Latino-owned"],
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"house cleaning service\" --location \"Homestead, FL\" (daily discovery batch)",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 4.9, reviews 57, phone, hours, website:null, owner note in Spanish",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim reviews, all 5 stars, in English",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 45 -> 7 unique Google Maps photos (business album), visually curated one by one with Read tool; 5 kept (2 excluded: a face-on profile shot and a grimy drain close-up)"
+ },
+ "reviews_verbatim": [
+  { "author": "Banesa Bernal", "stars": 5, "text": "I highly recommend Maite! She does an amazing job every single time. She is very thorough, reliable, and pays attention to every little detail. My house always looks and smells so fresh and clean when she's finished. Maite takes pride in …" },
+  { "author": "Isabela Rios", "stars": 5, "text": "Marte and her team provide exceptional cleaning services. She's reliable, detail-oriented, and leaves every space spotless." },
+  { "author": "Yaimary Santiesteban", "stars": 5, "text": "The best service, a staff prepared to provide the best quality of service." },
+  { "author": "Helen Espinosa", "stars": 5, "text": "Maite Cleaning Service is amazing! They clean in places I didn't even know existed. Three women came and cleaned my huge house in 3 hours. My house sparkled! The ladies worked quickly and were very professional. They even made my bed! My …" },
+  { "author": "Carlos Obregon", "stars": 5, "text": "I am very happy with their services. They are efficient and pay a lot of attention to detail. I would definitely recommend." }
+ ]
+}

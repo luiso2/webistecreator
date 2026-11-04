@@ -1,0 +1,28 @@
+{
+ "name": "Flawless Auto Detailing Hollywood",
+ "niche": "auto detailing service (mobile)",
+ "city": "Hollywood, FL",
+ "address": "1052 N Federal Hwy, Hollywood, FL 33020, United States",
+ "phone": "+1 772-291-5749",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website button, only a Calendly booking link under the Book action). flawlessautodetailing.com and glosshausauto.com do not resolve to this business (flawlessautodetailing.com is a parked GoDaddy for-sale page, unrelated to this Hollywood FL business; glosshausauto.com does not resolve). No Instagram/Facebook profile found for this exact business after search.",
+ "rating": 5.0,
+ "reviews": 31,
+ "hours": "Open 24 hours (mobile detailing, comes to the customer's location)",
+ "language": "en",
+ "booking_channel": "https://calendly.com/glosshausauto/full-detail (Calendly scheduling page linked from the Google Business Profile's Book button; operates under the booking name 'Gloss Haus', one service listed: Full Detail, 3h 30min, no public price)",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"handyman\" ... ; python3.13-equivalent live search \"auto detailing service\" in \"Hollywood, FL\"",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 5.0, reviews 31, phone, address, hours Open 24 hours, website null, calendly.com link in raw snippet",
+  "booking_link": "node script extracting <a href> containing 'calendly' from the rendered Maps place page -> https://calendly.com/glosshausauto/full-detail ; rendered that page with Playwright -> service 'Full Detail', 3h 30min, text confirm, no price shown",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 3 unique verbatim 5-star reviews after de-dup",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 15 -> 11 unique Google Maps photos, visually curated one by one with the Read tool, 9 kept (2 dropped: exact duplicate and a shadow-silhouette shot of the photographer)"
+ },
+ "reviews_verbatim": [
+  { "author": "Jason", "stars": 5, "text": "Great service , 100% recommended" },
+  { "author": "Mariana Torres Forero", "stars": 5, "text": "Hey these guys really do good work, I promise!" },
+  { "author": "Juan Cevallos", "stars": 5, "text": "They have the best car detailing in town, they do excellent work and the customer service is really good too. Definitely coming back!" }
+ ]
+}
