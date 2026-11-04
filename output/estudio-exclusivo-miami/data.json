@@ -1,0 +1,43 @@
+{
+  "name": "Estudio Exclusivo LLC",
+  "niche": "fotografia (photography studio)",
+  "city": "Miami, FL",
+  "address": "7400 NW 7th St Ste 113, Miami, FL 33126, United States",
+  "phone": "+1 786-814-9602",
+  "email": null,
+  "ig": "https://www.instagram.com/estudioexclusivomiami/",
+  "has_own_site": false,
+  "website_check": "Google Maps 'website' field points to https://instagram.com/estudioexclusivomiami (not a real own domain). Checked estudioexclusivomiami.com, estudioexclusivo.com and estudioexclusivollc.com directly: none resolve (CONNECT/DNS failure through the proxy, confirmed against a known-good control domain that resolved fine). No own website found.",
+  "rating": 5.0,
+  "reviews": 164,
+  "hours": "Google Maps shows 'Open 24 hours' with no detailed weekly schedule (by-appointment studio); not used as real business hours copy on the site, omitted from JSON-LD.",
+  "language": "es",
+  "language_note": "Business name, brand and Kendall/West Miami (33126) location are fully Spanish-market signals. Verbatim Google reviews collected are mostly in English (common for bilingual Miami customers), with some Spanish phrases mixed in ('Gracias por todo'). Instagram captions could not be checked (IG API blocked, see notes). Set lang=es based on brand/market signal per task guidance; reviews kept in their original (English) text per DESIGN.md rule (quotes never translated).",
+  "source_of_data": {
+    "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 5.0, reviews 164, phone, address, category 'Commercial photographer', women-owned + LGBTQ+ friendly attributes, website field = Instagram link",
+    "reviews": "node scripts/gmaps_reviews.js + custom full-text variant (clicks 'See more') <mapsUrl> 15 -> 5 unique verbatim reviewers (10 raw rows, deduped), all 5 stars",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 25 -> 10 Google Maps photos returned, 1 exact duplicate removed, 9 unique curated after viewing each one individually with Read tool",
+    "instagram": "Attempted node-documented API fetch (x-ig-app-id header) for @estudioexclusivomiami web_profile_info twice as instructed in the task; both attempts returned IG's generic 'Page Not Found' 404 payload (blocked). Confirmed the handle itself is real via a plain HEAD request (301 redirect to www.instagram.com/estudioexclusivomiami). Per pipeline rule (max 2 IG attempts, then fall back), did not pursue further browser-based IG scraping (flagged as bot-check circumvention by the harness and stopped). Fell back fully to the 9 curated Google Maps photos, which turned out to be genuine, high-quality portfolio work (newborn, children, maternity/wedding, editorial portrait, commercial, pet/holiday mini sessions) -- no stock photos used anywhere.",
+    "domain_check": "curl HEAD against estudioexclusivomiami.com / estudioexclusivo.com / estudioexclusivollc.com all failed at the proxy (CONNECT tunnel failed / 502), while a known-good control domain (instagram.com) and an unrelated real business domain both succeeded through the same proxy in the same session, confirming these are genuine non-existent domains, not a proxy outage."
+  },
+  "reviews_verbatim": [
+    { "author": "Leidy Osinski", "stars": 5, "text": "Estudio Exclusivo has been part of our family's story since before our daughter was even born, and I honestly cannot imagine trusting anyone else with our memories. Their professionalism is incredible, but what truly makes them special is the way they treat you. From the moment you walk in, you don't feel like a client, you feel at home, like family. Every session is more than just taking pictures; it's an entire experience. They are patient, warm, thoughtful, and you can genuinely feel how much they care about the people in front of their camera. They have captured some of the most meaningful stages of our lives, especially watching our daughter grow, and those memories are priceless to us. There is something so special about knowing that the same people who photographed us before she was born are still capturing our family today. The quality of their work is beautiful, but their humanity is what keeps us coming back. When you find people who combine this level of talent, professionalism, and genuine care, you don't want to go anywhere else. Estudio Exclusivo is not just our photography studio anymore. They have become part of our family's memories, and I will forever be grateful for that." },
+    { "author": "Adiel Gonzalez", "stars": 5, "text": "We worked with Studio Exclusivo for our tour videos and photos, and the experience was nothing short of exceptional. Adrian and Chris went above and beyond to capture the best angles, energy, and moments from our boat charters. They created two amazing videos and took over 100 high-quality photos that truly elevated our brand. Their creativity, professionalism, and attention to detail made a huge difference. Highly recommend them to any business looking to stand out visually!" },
+    { "author": "CARWARRIORS LLC", "stars": 5, "text": "Studio Exclusivo Miami is simply amazing! Every time we need special photos of my daughter or our family, we never hesitate to go to them. Their work is flawless, professional, and has a unique touch that makes every session magical. Thank you to Adrian and Alicia for always treating us with such care and dedication. They are the best at what they do, and I wouldn't change them for anything!" },
+    { "author": "Eduardo Leon", "stars": 5, "text": "Great staff, Alicia and her husband have an awesome working relationship with customers. Our pictures came out looking outstanding, they met all of our needs and we are looking forward to have many other picture sections done with them. Five stars all the way." },
+    { "author": "Eileen", "stars": 5, "text": "We had such an amazing experience with Alicia and Adrian. They were super professional, creative, and made my daughter feel special. I highly recommend them! Gracias por todo! Best regards, Eileen" }
+  ],
+  "owners_identified": "Alicia and Adrian (surname not confirmed), referenced by name across multiple verbatim Google reviews as the people running sessions.",
+  "service_mentions_from_google": [
+    "children's photography, mentioned in 10 reviews",
+    "maternity photos, mentioned in 4 reviews",
+    "exclusive studio, mentioned in 6 reviews",
+    "family atmosphere, mentioned in 13 reviews",
+    "event photos, mentioned in 2 reviews",
+    "patience with children, mentioned in 5 reviews"
+  ],
+  "pricing_found": false,
+  "pricing_note": "No published package pricing found anywhere (no booking platform, no price list on Google Maps, IG bio/highlights could not be checked). Site uses 'ask about it / message us' copy and omits all precio fields per pipeline rule, never invented.",
+  "gallery_curation_notes": "9 unique Google Maps photos downloaded (1 exact-duplicate byte-for-byte file removed) and viewed individually with the Read tool before selecting. All 9 used: B&W editorial street couple (hero), newborn, mermaid-costume child, toddler with teddy bear, 1st-birthday cake smash, red-blazer fashion portrait, wedding bouquet/rings macro, Christmas pet mini session, studio male portrait. No blurry, duplicate, watermarked, text-overlaid, or behind-the-scenes clutter shots existed in the set; every photo was finished client work suitable for a gallery tile. All resized to max 1000px wide, quality 82, verified with PIL after resize.",
+  "notes": "No Facebook page confirmed reachable (curl fetch returned a generic FB error page, inconclusive, not used). No email found anywhere (IG bio blocked, no booking platform, no domain). Primary contact channel is Instagram DM (listed as the 'website' on their own Google Business Profile) plus phone. status: staging, not deployed by this routine per task instructions (no wrangler deploy run)."
+}
