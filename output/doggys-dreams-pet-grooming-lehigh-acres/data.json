@@ -1,0 +1,44 @@
+{
+  "name": "Doggy's Dreams Mobile Pet Grooming",
+  "niche": "pet grooming (mobile)",
+  "city": "Lehigh Acres, FL",
+  "address": "907 Richmond Ave N, Lehigh Acres, FL 33972, United States",
+  "phone": "+1 239-236-6613",
+  "email": null,
+  "ig": null,
+  "has_own_site": false,
+  "website_check": "Google Maps 'website' field shows 'Add website' (no website on the Business Profile). Tried doggysdreamsmobilepetgrooming.com and doggysdreamsgrooming.com directly: both failed at the proxy with connect_rejected / CONNECT tunnel failed (the same failure signature as a genuinely non-existent domain), while a known-good control domain (instagram.com) returned 200 in the same session, confirming these domains do not exist. No own website found. No Instagram/Facebook profile listed on the Google Business Profile either (mobile-only operation, two branded vans serve as the storefront).",
+  "rating": 4.9,
+  "reviews": 583,
+  "hours": "Mon-Fri 8 AM-10 PM, Sat-Sun Closed (mobile grooming, comes to the customer's location)",
+  "language": "en",
+  "language_note": "All verbatim Google reviews are in English, and the shop's van livery/signage is in English. Set lang=en as the default/primary language.",
+  "source_of_data": {
+    "discovery": "python3 scripts/maps_discover.py --niche \"tattoo / piercing studio\" --location \"Lehigh Acres, FL\" -> 0 valid in-area candidates (only out-of-area result); python3 scripts/maps_discover.py --niche \"fotografia / estudio de fotos\" --location \"Lehigh Acres, FL\" -> 0 results. Per PIPELINE fallback rule, tried fallback niche 'pet grooming' in Lehigh Acres, FL -> 8 candidates, no website on any. Doggy's Dreams Mobile Pet Grooming picked as the strongest (4.9 rating, 583 reviews, by far the most reviewed candidate).",
+    "detail": "node scripts/gmaps_detail.js <mapsUrl> -> category 'Pet groomer', address, hours, phone +1 239-236-6613, website null",
+    "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviewers after de-dup (Lisa Solis, Lori Laubscher, Sara Hagis, Marianne Fredericks, Evangeline)",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 40 -> 11 unique Google Maps photos, all verified with 'file' as real JPEGs >15KB, resized to max 1000px wide at quality 82, and viewed individually with the Read tool before selecting. 2 near-duplicate shots of van #1 kept for hero/about use (clear phone number signage, 239-236-6613, matching the Google Business Profile exactly). 6 kept for the gallery, all finished, well-lit grooming results with happy, comfortable dogs (red poodle with bow tie, poodle + French bulldog pair, two schnauzers in bow ties, cocker spaniel with bandana, shih tzu mix with tongue out, German shepherd on the grooming table). 1 photo of an owner/groomer posing with a client's Rottweiler next to the second van was kept only as a supporting 'about' image (not a gallery tile, per the no-owner-portrait-as-gallery-tile rule), along with a second van livery photo for the same purpose.",
+    "domain_check": "curl HEAD against doggysdreamsmobilepetgrooming.com and doggysdreamsgrooming.com both failed at the proxy (connect_rejected), while a control domain (instagram.com) succeeded in the same session, confirming these are genuinely non-existent domains."
+  },
+  "reviews_verbatim": [
+    { "author": "Lisa Solis", "stars": 5, "text": "The service was wonderful. Our dog was a little anxious at first, but our groomer was great with her. She loves to swim and had a lot of matting. The young man was amazing with her. The groomer did what I asked, cutting her nails, shaving her down, but only trimming her tail. She was so excited when she came back in. Thank you!" },
+    { "author": "Lori Laubscher", "stars": 5, "text": "I have a old pit mix. She can be temperamental. Her first grooming went with such ease. She seemed very comfortable with him. I will definitely use again....like tomorrow. Appointment already made." },
+    { "author": "Sara Hagis", "stars": 5, "text": "They are exceptional and affordable. Great staff. Flexible with appointments. Amazing service." },
+    { "author": "Marianne Fredericks", "stars": 5, "text": "Very happy with results. It was my first time using them and my sister & I were very happy & impressed. They made it very simple with making an appointment. Saul was awesome with our 4 dogs. He had quite the workout with our fur puppies." },
+    { "author": "Evangeline", "stars": 5, "text": "Doggy's Dream did an amazing job with my Malinois Mix Poe, got all the shedd off his coat and brought him back to us with nails trimmed. We have used several groomers and have had trouble with them being able to trimm his nails, will definitely be using doggy's Dream again" }
+  ],
+  "owner_identified": "Groomer named Saul mentioned by name in one review; another review mentions 'the young man' and 'him' without a name.",
+  "service_mentions_from_google": [
+    "mobile grooming, mentioned in 36 reviews",
+    "punctuality, mentioned in 55 reviews",
+    "professional groomers, mentioned in 10 reviews",
+    "gentle grooming, mentioned in 8 reviews",
+    "husky grooming, mentioned in 4 reviews",
+    "knot removal / matting, mentioned in 2+ reviews",
+    "dog handling with anxious/temperamental dogs, mentioned repeatedly"
+  ],
+  "pricing_found": false,
+  "pricing_note": "No published price list anywhere (no website, no booking platform, no social profile found). Site uses 'se cotiza, escribenos' / 'price on consultation' copy per VARIANTE ADAPTADA and omits all price fields, never invented.",
+  "gallery_curation_notes": "11 Google Maps photos downloaded, verified with 'file', resized to max 1000px wide at quality 82, and viewed individually with the Read tool. 6 selected for the gallery: all are finished grooming results with calm, happy dogs in good light (red poodle with blue bow tie, poodle + French bulldog pair with bow ties, two schnauzers with bow ties, cocker spaniel with bandana and harness, shih tzu mix with tongue out mid-brush, German shepherd on the grooming table with a bandana). No blurry, duplicate, or distressing shots; the dogs are calm and comfortable in every kept photo. 2 van photos and 1 owner-with-client-dog photo were kept as supporting hero/about images only, never as gallery tiles (per the no-selfie/no-owner-portrait-as-gallery-tile rule).",
+  "notes": "No email or confirmed social profile found anywhere (mobile-only operation, Google Business Profile lists no website or social link). Primary contact channel is phone (call or text, +1 239-236-6613), independently confirmed against the van's own livery/signage in multiple photos. status: staging, not deployed by this routine (no wrangler deploy run)."
+}

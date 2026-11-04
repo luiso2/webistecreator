@@ -1,0 +1,44 @@
+{
+  "name": "Pro Lens Art",
+  "niche": "fotografia / estudio de fotos (children's & family photography studio)",
+  "city": "Plant City, FL",
+  "address": "1309 W Redbud St, Plant City, FL 33563, United States",
+  "phone": null,
+  "email": null,
+  "ig": "https://www.instagram.com/pro_lens_art_photography/",
+  "ig_handle": "@pro_lens_art_photography",
+  "fb": "https://www.facebook.com/share/17xwKfpuHE/",
+  "has_own_site": false,
+  "website_check": "Google Maps 'website' field points to a Facebook share link (https://www.facebook.com/share/17xwKfpuHE/), not an own domain (Facebook profiles do not count as own website per pipeline rule). Tried prolensart.com and prolensartstudio.com directly: both failed at the proxy with connect_rejected / CONNECT tunnel failed (the same failure signature as a genuinely non-existent domain), while a known-good control domain (instagram.com) returned 200 in the same session, confirming these domains do not exist. No own website found.",
+  "rating": 5.0,
+  "reviews": 75,
+  "hours": "Mon-Fri 9 AM-4 PM, Sat 9-11:30 AM, Sun Closed (by appointment, children's/family photography studio)",
+  "language": "es",
+  "language_note": "No Spanish-language captions or reviews could be directly confirmed (IG web_profile_info API returned a blocked/bot-check response for the handle; Facebook page content is behind a login wall and was not scraped). However every one of the 5 verbatim Google reviewers has a clearly Hispanic/Cuban name (Noemi Perdones, Geisel Ramos, Yoelsis Iglesias, Yosmarys Roque), the business is a baby/family portrait studio in Plant City FL (Tampa Bay area with a large Hispanic community), and review text uses warm, informal phrasing typical of bilingual Hispanic-market small businesses. Set lang=es based on this clientele/market signal, same approach used for estudio-exclusivo-miami. Review quotes kept in their original English text per DESIGN.md rule (quotes never translated).",
+  "source_of_data": {
+    "discovery": "python3 scripts/maps_discover.py --niche \"fotografia / estudio de fotos\" --location \"Plant City, FL\" --limit 8 --min-rating 4.5 --min-reviews 10 -> 1 candidate, Pro Lens Art, no website, rating 5.0, 75 reviews",
+    "detail": "node scripts/gmaps_detail.js <mapsUrl> -> category 'Photography studio', address, hours, website field = Facebook share link, phone not listed on Google Business Profile",
+    "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 4 unique verbatim 5-star reviewers after de-dup (Noemi Perdones, Geisel Ramos, Yoelsis Iglesias, Yosmarys Roque); a 5th row from 'DC Specialty Granite' was just 'Response from the owner' with no review text, not usable",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 40 -> 7 unique Google Maps photos (plateau reached, Maps UI only exposed 7 via the photo viewer despite '330 Photos' shown on the listing), all 7 visually curated one by one with the Read tool and kept: all are finished, professionally lit themed photoshoots (baby boy hot-air-balloon 1st birthday, vintage flying-books boy, princess castle 2nd birthday girl, Christmas family portrait, lemon-garden baby decor, teddy-bear vintage baby boy, pink Paris-themed girl). One photo (gmaps-1.jpg) carries an Instagram watermark reading '@PRO_LENS_ART_PHOTOGRAPHY', which is how the real IG handle was confirmed (Google Maps itself exposes no social link besides the Facebook share URL).",
+    "instagram": "Attempted node fetch of instagram.com/api/v1/users/web_profile_info/?username=pro_lens_art_photography with x-ig-app-id header (per pipeline rule) and one alternate attempt: both blocked/returned a non-JSON bot-check response. Per the 'max 2 attempts, then fall back' rule, did not pursue further circumvention of Instagram/Facebook's bot or login walls. Handle confirmed real via the photo watermark instead; IG DM is the contact channel used for outreach.",
+    "domain_check": "curl HEAD against prolensart.com and prolensartstudio.com both failed at the proxy (connect_rejected / CONNECT tunnel failed), while a control domain (instagram.com) succeeded in the same session, confirming these are genuinely non-existent domains."
+  },
+  "reviews_verbatim": [
+    { "author": "Noemi Perdones", "stars": 5, "text": "Honest, Professional, super sweet & nice. The pictures don't take long before you get them. I always get mine before the time frame. Quality work. I've dealt with a lot of photographers but she's the main one I got to because she delivers every single time! The absolute best at what she does & I am a fan of her work." },
+    { "author": "Geisel Ramos", "stars": 5, "text": "Great experience!! 100% recommended!! She is super nice with kids and love my pictures" },
+    { "author": "Yoelsis Iglesias", "stars": 5, "text": "excellent professional the best. place to take the best photos for your family" },
+    { "author": "Yosmarys Roque", "stars": 5, "text": "Excellent service" }
+  ],
+  "owner_identified": "Female photographer, referred to as 'she' across all reviews; no full name confirmed anywhere public.",
+  "service_mentions_from_google": [
+    "children's photography, mentioned in 11 reviews",
+    "treatment of babies / patience with children, mentioned in 11+5 reviews",
+    "professional photographer, mentioned in 4 reviews",
+    "family photos, mentioned in 2 reviews",
+    "fun atmosphere, mentioned in 2 reviews"
+  ],
+  "pricing_found": false,
+  "pricing_note": "No published price list anywhere (no booking platform, IG/FB blocked from scraping). Site uses 'se cotiza, escribenos' / 'price on consultation' copy per VARIANTE ADAPTADA and omits all price fields, never invented.",
+  "gallery_curation_notes": "7 unique Google Maps photos downloaded, each verified with 'file' as a real JPEG >15KB, and viewed individually with the Read tool before selecting. All 7 kept: themed studio sessions (1st-birthday hot air balloon boy, vintage storybook boy with flying pages, princess Disney-castle 2nd birthday girl, matching-red Christmas family portrait by the tree, lemon-garden baby decor, vintage teddy-bear baby boy with suspenders, pink Paris-themed toddler girl). No blurry, duplicate, watermarked-with-distracting-text, or behind-the-scenes clutter shots; every photo is finished client work suitable for a gallery tile. All resized to max 1000px wide, quality 82.",
+  "notes": "No phone number listed on the Google Business Profile ('Add place's phone number' shown instead of a number) and no email found anywhere (IG/FB blocked from deeper scraping). Primary and only contact channel is Instagram DM (@pro_lens_art_photography) or the Facebook page. status: staging, not deployed by this routine (no wrangler deploy run)."
+}

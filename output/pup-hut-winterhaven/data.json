@@ -1,0 +1,30 @@
+{
+ "name": "Pup Hut",
+ "niche": "pet grooming (dog & cat)",
+ "city": "Winter Haven, FL",
+ "address": "1619 Dundee Rd, Winter Haven, FL 33884, United States (Lake Elbert Shopping Center)",
+ "phone": "+1 863-294-1799",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website button). WebSearch for 'Pup Hut Winter Haven FL website' found no owned domain, no Instagram, no Facebook page for this exact business.",
+ "rating": 4.8,
+ "reviews": 22,
+ "hours": "Tuesday-Friday 8 AM-2 PM, closed Saturday, Sunday and Monday",
+ "language": "en",
+ "attributes": ["Identifies as women-owned", "No tranquilizers used (per in-store flyer)", "Over 45 years combined grooming experience (per in-store flyer)"],
+ "pricing_notes": "Full Groom (bath, haircut, nails, ears) and Bath service: price quoted by breed/size, not published. Nail Trim only: $5 small breeds, $10 large breeds (published on in-store flyer, photographed via Google Maps).",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"pet grooming\" --location \"Winter Haven, FL\" --min-rating 4.5 --min-reviews 10",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 4.8, reviews 22, phone, hours, website:null, women-owned attribute",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim reviews (4 five-star, 1 one-star), 3 five-star used on site",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 30 -> 10 unique Google Maps photos, visually curated one by one with Read tool; 6 kept (2 duplicate promotional flyer images with pricing text used only for pricing data, 1 closed-eyes shot, 1 blurry close-up with a human hand excluded from gallery)"
+ },
+ "reviews_verbatim": [
+  { "author": "Tana Sauder", "stars": 5, "text": "Very happy with grooming.  Not only do they give my Maltese a great cut they are really nice to him.  They get him in and out in a reasonable time and he always looks great!!" },
+  { "author": "Sarah Frederick", "stars": 5, "text": "Both groomers are sweet loving, caring and most of all, compassionate to all the fur babies who walk into their shop! They remember your dog and their cut. I've never had anything to complain about!" },
+  { "author": "amber price", "stars": 5, "text": "She is amazing!! My grandma always brought her dogs here when I was a kid, and I will not take my dogs anywhere else now. Amazing price, service, etc" },
+  { "author": "Christine “Chrissy” Peltier", "stars": 5, "text": "Called around needing a nail trim for my 8-month-old puppy, and Pup Hut was the only place willing to fit her in, same day. Unfortunately, my babygirl proceeded to snap at the groomer, so I had to hold her through the service. The groomer …" }
+ ],
+ "dm_message": "Hi! I found Pup Hut on Google (4.8 stars, 22 reviews) and noticed you don't have a website yet, so I built a free sample one with your real photos: https://siteforge-demos.odd-forest-9504.workers.dev/pup-hut-winterhaven/ No cost, no obligation. If you like it I can put it on your own domain, if not I will take it down. Michael, Merktop."
+}

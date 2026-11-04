@@ -1,0 +1,44 @@
+{
+  "name": "LuckyDawg Ink",
+  "niche": "tattoo / piercing studio",
+  "city": "Plant City, FL",
+  "address": "1514 S Alexander St Ste 208, Plant City, FL 33563, United States",
+  "phone": "+1 813-704-6009",
+  "email": null,
+  "ig": null,
+  "has_own_site": false,
+  "website_check": "Google Maps 'website' field shows 'Add website' (no website on the Business Profile). Tried luckydawgink.com directly: failed at the proxy with connect_rejected / CONNECT tunnel failed (the same failure signature as a genuinely non-existent domain), while a known-good control domain (instagram.com) returned 200 in the same session, confirming the domain does not exist. Tried 3 Instagram handle guesses (luckydawgink, lucky_dawg_ink, luckydawg_ink) via the web_profile_info endpoint with the x-ig-app-id header: all returned a blocked/non-JSON response, no real profile confirmed. No own website or confirmed social profile found.",
+  "rating": 4.6,
+  "reviews": 30,
+  "hours": "Mon-Sat 12 PM-10 PM, Sun 12 PM-8 PM",
+  "language": "en",
+  "language_note": "All verbatim Google reviews are in English, the shop's door signage (photographed) is in English, and reviewer names show no strong Spanish-market signal. Set lang=en as the default/primary language.",
+  "source_of_data": {
+    "discovery": "python3 scripts/maps_discover.py --niche \"tattoo / piercing studio\" --location \"Plant City, FL\" --limit 8 --min-rating 4.5 --min-reviews 10 -> 3 candidates; Dixie Station LLC discarded (has own website, dixiestation.com, confirmed live WordPress site 'Dixie Station Tattoo & Armory'); Giga Glam Studios LLC discarded (Google category is actually 'Health and beauty shop' / lash extensions and henna, not a real tattoo/piercing studio, saturated-niche adjacent); LuckyDawg Ink kept, category confirmed 'Tattoo shop', no website, rating 4.6, 30 reviews",
+    "detail": "node scripts/gmaps_detail.js <mapsUrl> -> category 'Tattoo shop', address, hours, phone +1 813-704-6009, website null",
+    "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviewers after de-dup (Carlos Otero, Punk Watson, Shad Fitzpatrick, Joshua Chapman, kayla bailey)",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 40 -> 9 unique Google Maps photos, all verified with 'file' as real JPEGs >15KB and viewed individually with the Read tool. 2 (gmaps-1/gmaps-2, duplicate shots of the shop's closed-sign door) kept only as supporting storefront/contact proof, not gallery tiles. Of the 7 tattoo photos, 6 kept as finished, healed work in good light (scorpio-woman forearm piece, skull/dice/flame forearm sleeve, wing/feather forearm sleeve, Captain Spaulding color portrait, flamingo script piece, voodoo-skull cartoon shin piece). 1 (gmaps-8, a name script tattoo) was DROPPED per the prohibited-in-gallery rule: visible pink/red irritation halo around the fresh lettering, consistent with a just-finished (not healed) tattoo.",
+    "phone_cross_check": "The shop's own door signage, visible in gmaps-1.jpg/gmaps-2.jpg, prints '813-704-6009' and '1514 South Alexander St. Suite 208, PlantCity Fl. 33563', which matches the Google Business Profile phone and address exactly, independently confirming both as accurate.",
+    "domain_check": "curl HEAD against luckydawgink.com failed at the proxy (connect_rejected), while a control domain (instagram.com) succeeded in the same session, confirming it is a genuinely non-existent domain."
+  },
+  "reviews_verbatim": [
+    { "author": "Carlos Otero", "stars": 5, "text": "Recently got a tattoo done and I must say I am very happy with the tattoo and the price he charged me as well I would definitely recommend anybody looking for a tattoo to stop in I can't wait for my next tattoo to stop in again" },
+    { "author": "Punk Watson", "stars": 5, "text": "He is a Very talented and friendly Artist, I will be going back again!!" },
+    { "author": "Shad Fitzpatrick", "stars": 5, "text": "Went in for an update on one tattoo and a whole new tattoo. Both look awesome and the best prices in town. Will definitely be going back for my next tattoo. Highly recommend!" },
+    { "author": "Joshua Chapman", "stars": 5, "text": "Dawg is an amazing artist and enjoyable to be around for hours. Great prices, clean studio. Can't wait to get the rest of my arm done!" },
+    { "author": "kayla bailey", "stars": 5, "text": "Dawg is absolutely amazing!!! I come out falling in love with my tattoo more and more every time. He is such an amazing artist and you come out with masterpieces that are one of a kind." }
+  ],
+  "owner_identified": "Artist goes by 'Dawg' (referenced by name/nickname in 3 of 5 reviews).",
+  "service_mentions_from_google": [
+    "tattoos, mentioned in 6 reviews",
+    "artist, mentioned in 6 reviews",
+    "clean shop, mentioned in 2 reviews",
+    "cover up, mentioned in 2 reviews",
+    "cool staff, mentioned in 2 reviews",
+    "good prices, mentioned across several reviews"
+  ],
+  "pricing_found": false,
+  "pricing_note": "No published price list (no booking platform, no IG/FB confirmed). Reviews repeatedly mention 'great prices' / 'best prices in town' but no specific numbers. Site uses 'se cotiza, escribenos' / 'price on consultation' copy per VARIANTE ADAPTADA and omits all price fields, never invented.",
+  "gallery_curation_notes": "9 Google Maps photos downloaded, each verified with 'file' as a real JPEG >15KB, resized to max 1000px wide at quality 82, and viewed individually with the Read tool before selecting. 6 kept for the gallery (all finished, healed tattoo results in good light, no blood/irritation, no selfies): scorpio-zodiac woman forearm piece, skull/ace-of-spades/dice forearm sleeve, feather-wing forearm sleeve, Captain Spaulding color portrait, flamingo with scripture text, voodoo-skull cartoon shin piece. 1 photo (a name-script tattoo) was dropped: visible pink irritation halo around the lettering, consistent with a just-finished rather than healed tattoo, which is prohibited for the gallery. 2 photos of the shop's closed-sign door were kept only as storefront/contact proof (used in the about section), not as gallery tiles.",
+  "notes": "No email or confirmed social profile found anywhere (3 Instagram handle guesses all blocked/unconfirmed). Primary contact channel is phone (call or text, +1 813-704-6009), independently confirmed against the shop's own door signage. status: staging, not deployed by this routine (no wrangler deploy run)."
+}

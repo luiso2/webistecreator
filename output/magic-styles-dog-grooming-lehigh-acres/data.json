@@ -1,0 +1,45 @@
+{
+  "name": "Magic Styles Dog Grommers",
+  "niche": "pet grooming (mobile)",
+  "city": "Lehigh Acres, FL",
+  "address": "2920 20th St SW, Lehigh Acres, FL 33976, United States",
+  "phone": "+1 305-721-4651",
+  "email": null,
+  "ig": null,
+  "has_own_site": false,
+  "website_check": "Google Maps 'website' field links to moego.pet (a third-party pet-grooming booking platform, same category as Booksy/Vagaro, does not count as own website per pipeline rule). The business's own van livery additionally prints 'www.magicstylesdoggromers.com' (note the van's own typo: 'doggromers'); that exact domain fails at the proxy (connect_rejected, non-existent). The corrected spelling, magicstylesdoggroomers.com, DOES resolve (301 to a domain marketplace) but lands on an expired-domain-for-sale page ('magicstylesdoggroomers.com for sale, descriptive .com domain'), not a live business site, the same pattern as a parked GoDaddy sale page treated as 'no own website' in prior pipeline runs (precedent: flawlessautodetailing.com). No live own website found.",
+  "rating": 4.9,
+  "reviews": 196,
+  "hours": "Mon-Tue, Thu-Fri 8 AM-5:30 PM, Sat 9 AM-5 PM, Wed/Sun Closed (mobile grooming, comes to the customer's location)",
+  "language": "en",
+  "language_note": "Verbatim Google reviews are in English and the van signage advertises bilingual service ('ENGLISH / ESPANOL'). Set lang=en as the default/primary language given the reviews are all English; the bilingual toggle on the site serves the Spanish-speaking share of their stated clientele.",
+  "source_of_data": {
+    "discovery": "python3 scripts/maps_discover.py --niche \"pet grooming\" --location \"Lehigh Acres, FL\" --limit 8 --min-rating 4.5 --min-reviews 10 -> 8 candidates; Magic Styles Dog Grommers picked as a second strong fallback candidate (4.9 rating, 196 reviews, real booking platform link via moego.pet)",
+    "detail": "node scripts/gmaps_detail.js <mapsUrl> -> category 'Pet groomer', address, hours, phone +1 305-721-4651, Google's website field = moego.pet (booking platform, not own site)",
+    "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviewers after de-dup (Deborah Garciga, Yokasta Saldana, Lucimayre Da Silva, dianelis masso sanchez, Mark C)",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 40 -> 11 unique Google Maps photos, all verified with 'file' as real JPEGs >15KB, resized to max 1000px wide at quality 82, and viewed individually with the Read tool before selecting. 2 near-duplicate close-up dog-teeth/dental-check photos were dropped entirely (not a flattering or relevant gallery/about image). 6 kept for the gallery: all finished, happy, well-lit grooming results (shih tzu with red bow collage, smiling yorkie with tongue out, French bulldog puppy collage with red bandana, merle schnauzer cut, fluffy Pomeranian with red bandana, long-haired dachshund). 1 photo of a small terrier next to a large pile of shaved fur was kept as a supporting 'process' image (shows the dramatic de-shed result, not used as a gallery tile since it centers the fur pile rather than the finished dog). 2 van livery photos kept for hero/about use (clear phone number and full service list, matching the Google Business Profile phone exactly).",
+    "van_signage_crosscheck": "The van's own paint job lists the full service menu (Cut, Bath, Nail Cut, Anal Glands, Ear Cleaning, Teeth Brushing), the phone 305.721.4651 (matches Google exactly), bilingual service (English/Espanol), and 'BOOK ONLINE 24/7' pointing at the now-expired domain discussed above.",
+    "domain_check": "curl HEAD against magicstylesdoggromers.com (as painted on the van) failed at the proxy (connect_rejected, non-existent). The corrected-spelling variant magicstylesdoggroomers.com returns 301 to an expired-domain marketplace page offering the domain for sale, confirming no live own website is currently running."
+  },
+  "reviews_verbatim": [
+    { "author": "Deborah Garciga", "stars": 5, "text": "Excelent!!! Our Lola smells good and look beautiful with her haircut. The groomer took the time to take care of her with love and professionalism." },
+    { "author": "Yokasta Saldana", "stars": 5, "text": "I recently had an exceptional experience using Magic Styles' mobile grooming service for my furry baby, Puffy. Not only did the groomer arrive on time, but they were also incredibly friendly and attentive to my dog's needs." },
+    { "author": "Lucimayre Da Silva", "stars": 5, "text": "I loved the service you guys provided. On time, great professionalism, great communication. My dogs look amazing." },
+    { "author": "dianelis masso sanchez", "stars": 5, "text": "I can't recommend magic style grooming enough. They are always on time for their appointment, you can tell my dog enjoys his time with them because he doesn't want to leave the minivan when I'm coming to pick him up." },
+    { "author": "Mark C", "stars": 5, "text": "Great grooming - carefully checked what we wanted and touched base to ensure we were satisfied. Highly satisfied. Groomer came right to our community and on time." }
+  ],
+  "owner_identified": "Not confirmed by name; reviews refer to 'the groomer' / 'them' / 'he'.",
+  "service_mentions_from_google": [
+    "mobile grooming, mentioned in 4 reviews",
+    "goldendoodle grooming, mentioned in 3 reviews",
+    "punctuality, mentioned in 6 reviews",
+    "cat nail trimming, mentioned in 4 reviews",
+    "ears cleaned, mentioned in 2 reviews",
+    "affordable, mentioned in 3 reviews"
+  ],
+  "van_service_list": ["Cut", "Bath", "Nail Cut", "Anal Glands", "Ear Cleaning", "Teeth Brushing"],
+  "pricing_found": false,
+  "pricing_note": "No specific prices published anywhere (the Moego booking link was referenced by Google Maps but its exact URL could not be captured by the scraper, so it is not used as a verified link). Reviews mention 'very decent price' but no numbers. Site uses 'se cotiza, escribenos' / 'price on consultation' copy per VARIANTE ADAPTADA and omits all price fields, never invented.",
+  "gallery_curation_notes": "11 Google Maps photos downloaded, verified with 'file', resized to max 1000px wide at quality 82, and viewed individually with the Read tool. 6 selected for the gallery, all finished grooming results with calm, happy dogs in good light (shih tzu with red bow, smiling yorkie, French bulldog puppy with bandana, merle-pattern schnauzer cut, fluffy Pomeranian with bandana, long-haired dachshund). 2 close-up dog-dental photos were dropped (not gallery-appropriate). 1 before/after-style photo (small dog next to a large pile of shaved fur) was kept only as a supporting process image, not a gallery tile.",
+  "notes": "No email or confirmed social profile found anywhere; the van references a now-expired/parked domain, not a live website. Primary contact channel is phone (call or text, +1 305-721-4651), independently confirmed against the van's own livery/signage. status: staging, not deployed by this routine (no wrangler deploy run)."
+}

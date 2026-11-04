@@ -1,0 +1,31 @@
+{
+ "name": "Love-N-Care Pet Salon",
+ "niche": "pet grooming (dog & cat)",
+ "city": "Lake Alfred, FL",
+ "address": "1502 Lake Alfred Rd, Lake Alfred, FL 33850, United States",
+ "phone": "+1 863-268-6304",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website button). WebSearch for 'Love-N-Care Pet Salon Lake Alfred FL website' found only directory aggregator listings (dogdog.org, yext.com), no owned domain, no Instagram, no Facebook page confirmed for this exact business.",
+ "rating": 4.9,
+ "reviews": 337,
+ "hours": "Tuesday-Saturday 8 AM-4 PM, closed Sunday and Monday",
+ "language": "en",
+ "attributes": ["Storefront mural lists all breeds welcome (Border Collie, Chow Chow, Dalmatian, Doberman, Labrador, Rottweiler, Husky, Pug, Chihuahua, Cavalier, Dogo, Pitbull, Poodle, Shar Pei)"],
+ "pricing_notes": "No published price list found on Google or in search. Services quoted by breed/size over the phone (VARIANTE ADAPTADA).",
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"pet grooming\" --location \"Winter Haven, FL\" --min-rating 4.5 --min-reviews 10 (returned as a nearby-metro candidate)",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 4.9, reviews 337, phone, hours, website:null",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviews",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 25 -> 14 photo URLs (3 excluded as reviewer profile avatars), visually curated one by one with Read tool; 8 kept for gallery/about use"
+ },
+ "reviews_verbatim": [
+  { "author": "Sara Tilus", "stars": 5, "text": "The staff is amazing..super friendly and they treat my Mickey with love N care just as the name says. I highly recommend you bring your pets here. They will love them as you do." },
+  { "author": "Mama Deborah", "stars": 5, "text": "Love our new groomers! Good prices and our pup came back HAPPY, fresh and looking so cute. They went above and beyond with bows and a bandana and most of all she seemed to enjoy the experience. We'll be back!" },
+  { "author": "Mary Bryson", "stars": 5, "text": "My dog Pepper had not been groomed professionally in close to 10 years but I took him in today and the people at Love-n-Care took such great care of him and he looks so good! They even remembered little things I said about him getting …" },
+  { "author": "Vicky Richard (KittyPawz)", "stars": 5, "text": "Our 2 dogs love going here! They are so good with even my rescue, Oscar, who has severe anxiety about his paws. And our little chihuahua, Penny, readily let's them dremel her nails, when no one else before ever could do even a trim without …" },
+  { "author": "Kaethe Fajardo Bauman", "stars": 5, "text": "Sully had a great first time with Janet! We recently moved to the area and had to find a new groomer and Love-N-Care has been awesome. They are very responsive and flexible with scheduling. You can tell they really care about their …" }
+ ],
+ "dm_message": "Hi! I found Love-N-Care Pet Salon on Google (4.9 stars, 337 reviews!) and noticed you don't have a website yet, so I built a free sample one with your real photos: https://siteforge-demos.odd-forest-9504.workers.dev/love-n-care-pet-salon/ No cost, no obligation. If you like it I can put it on your own domain, if not I will take it down. Michael, Merktop."
+}
