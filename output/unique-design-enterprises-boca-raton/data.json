@@ -1,0 +1,31 @@
+{
+  "name": "Unique Design Enterprises Corp.",
+  "owner_first_name": "Junior",
+  "niche": "carpinteria / ebanisteria (custom cabinetry / closet & kitchen design)",
+  "city": "Boca Raton, FL",
+  "address": "1181 S Rogers Cir Ste 22, Boca Raton, FL 33487, United States",
+  "phone": "+1 561-465-8558",
+  "email": null,
+  "ig": null,
+  "has_own_site": false,
+  "website_check": "Google Maps listing shows 'Add website' (no website button, website field null in detail scrape). No domain found. Boca Raton carpentry/cabinet niche is heavily saturated with businesses that DO have their own sites (60+ reviewed, most with domains); this was one of only two candidates in the city meeting rating/review minimums with no own site.",
+  "rating": 4.9,
+  "reviews": 12,
+  "hours": "Monday-Friday 9 AM-5 PM, closed Saturday/Sunday",
+  "language": "en",
+  "source_of_data": {
+    "discovery": "node scripts/gmaps_discover.js \"carpenter cabinet maker in Boca Raton, FL\" 6",
+    "detail": "node scripts/gmaps_detail.js <mapsUrl>",
+    "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim reviews, 5 stars, owner named 'Junior' in multiple independent reviews",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 20 -> 10 unique photos, visually curated one by one with Read tool"
+  },
+  "reviews_verbatim": [
+    { "author": "Rick S.", "stars": 5, "text": "Hands down the best carpenter you'll ever work with! Junior and his team are top notch, and deliver the quality you'd expect from their company name! Very fair in pricing and realistic timelines." },
+    { "author": "ruthy weiss", "stars": 5, "text": "From start to finish the renovation of my kitchen was a total pleasure with the UDE team of professionals. I never felt pressured into more expensive choices and was given plenty of time to make my choices with tremendous patience." },
+    { "author": "Mark Monroe", "stars": 5, "text": "Unique Design has done several projects for us (two built in cabinets, one table and one set of archway inserts). Their work product consistently exceeds expectations." },
+    { "author": "Rich Bernstein", "stars": 5, "text": "We have been working with Unique Design Enterprises for nearly 2 years. Junior and his crew are professional, polite, and have a plethora of ideas, materials, hardware, options." },
+    { "author": "Jennifer MIRCH", "stars": 5, "text": "Jennifer Mirch design has had the pleasure of working with Unique Designs many years. They have worked on every level of cabinetry design from closets to very detailed kitchen and entertainment units." }
+  ],
+  "gallery_curation_notes": "10 unique Google Maps photos downloaded and viewed individually. Used: wood slat TV wall with floating shelves (hero), walk-in closet with marble island and palm-tree window view, TV wall with built-in electric fireplace, floating oak console with framed art, white built-in with sculptures, home office desk. Not used: a showroom photo with a large gold 'Unique Design Enterprises' wall sign (real signage, not a UI caption, but kept out of the gallery to avoid any text-on-tile ambiguity and used only as research context).",
+  "notes": "No Instagram or Facebook found. No public price list, quoted per project. Owner first name 'Junior' confirmed via 3 independent reviews. status: staging."
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Roland Custom Cabinets, LLC",
+  "niche": "carpinteria / ebanisteria (cabinet maker)",
+  "city": "Port St. Lucie, FL",
+  "address": "1952 SW Hayworth Ave, Port St. Lucie, FL 34953, United States",
+  "phone": "+1 772-528-2181",
+  "email": null,
+  "ig": null,
+  "has_own_site": false,
+  "website_check": "Google Maps listing shows 'Add website' (no website button). No <negocio>.com domain found (roland* variants not checked individually since Maps itself confirms no website on file). Only public presence is the Google Business Profile.",
+  "rating": 4.7,
+  "reviews": 25,
+  "hours": "Monday-Friday 7:30 AM-3:30 PM, closed Saturday/Sunday",
+  "language": "en",
+  "source_of_data": {
+    "discovery": "node scripts/gmaps_discover.js \"carpentry cabinetry woodwork in Port St. Lucie, FL\" 4",
+    "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating, reviews, phone, address, hours, website:null",
+    "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim reviews, all 5 stars",
+    "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 25 -> 11 unique Google Maps photos, visually curated one by one with Read tool"
+  },
+  "reviews_verbatim": [
+    { "author": "Lynn Carrithers", "stars": 5, "text": "We had a custom 20ft long entertainment center built for the great room in our home and we are very pleased with the end result. The professional craftsmanship that went into designing and building this beautiful entertainment center was outstanding." },
+    { "author": "Peggy Pierson", "stars": 5, "text": "I am very satisfied with the work performed by Roland Custom Cabinets. Very responsive, meticulous and professional. I highly recommend their services if you need custom cabinetry." },
+    { "author": "Naresh Bissoon", "stars": 5, "text": "Roland's custom cabinets have crafted two separate kitchens for me within the last 10 years and their quality and services continue to improve with time. Their wood is beautifully finished." },
+    { "author": "Pietro Pizzani", "stars": 5, "text": "Adesh was professional, patient and knowledgeable in the topic. With a simple friendly conversation he was able to explain everything and make a cabinet that fit my needs perfectly." },
+    { "author": "Leslie A", "stars": 5, "text": "Very pleased with laundry room build out & installation of cabinets, drawers & countertops. They only offer laminate countertops, but for laundry room this was fine." }
+  ],
+  "gallery_curation_notes": "11 Google Maps photos downloaded and viewed individually before selecting. Used: entertainment center w/ decor (hero), built-in bookshelf+TV, blue island kitchen, white TV wall unit, gray kitchen, bathroom vanity. Discarded: a photo that appeared to be an unrelated commercial lobby (TV showing unrelated news content, inconsistent with residential cabinetry work, excluded out of caution), a dim empty-shelving living room shot, a wall-decal 'Enjoy' closeup and a marble countertop macro shot (kept options open, not used to avoid redundancy with kitchen shots already selected). All used images verified >15KB and resized to max 1000px wide.",
+  "notes": "No Instagram or Facebook found for this business; Google Business Profile is the only public channel besides phone. No public price list (cabinet work is quoted per project), consistent with the 'razones/testimonios adaptada' build variant: used real verbatim reviews instead of invented pricing. status: staging, not deployed by this routine (per task instructions, no wrangler deploy run)."
+}
