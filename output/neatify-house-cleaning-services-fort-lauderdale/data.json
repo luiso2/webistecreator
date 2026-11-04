@@ -1,0 +1,29 @@
+{
+ "name": "Neatify House Cleaning Services Fort Lauderdale",
+ "niche": "house cleaning service",
+ "city": "Fort Lauderdale, FL",
+ "address": "707 SE 3rd Ave, Fort Lauderdale, FL 33316, United States",
+ "phone": "+1 954-466-3731",
+ "email": null,
+ "ig": null,
+ "has_own_site": false,
+ "website_check": "Google Maps listing shows 'Add website' (no website button). WebSearch pass for the business name plus Fort Lauderdale found no independently owned domain, Instagram, or Facebook page for this exact business (only unrelated same-name businesses elsewhere and third-party directory listings).",
+ "rating": 5.0,
+ "reviews": 14,
+ "hours": "Open 7 days a week, 7 AM to 11 PM",
+ "language": "en",
+ "attributes": ["LGBTQ+ friendly", "Identifies as Latino-owned"],
+ "source_of_data": {
+  "discovery": "python3 scripts/maps_discover.py --niche \"house cleaning service\" --location \"Fort Lauderdale, FL\" --limit 10 --min-rating 4.5 --min-reviews 10",
+  "detail": "node scripts/gmaps_detail.js <mapsUrl> -> rating 5.0, reviews 14, phone, address, hours, website:null, LGBTQ+ friendly / Latino-owned attributes",
+  "reviews": "node scripts/gmaps_reviews.js <mapsUrl> 10 -> 5 unique verbatim 5-star reviews",
+  "photos": "node scripts/gmaps_photocycle.js <mapsUrl> 25 -> 11 Google Maps photos (2 duplicates), visually curated one by one with the Read tool; 9 unique used across hero/about/gallery"
+ },
+ "reviews_verbatim": [
+  { "author": "Alan Garcia", "stars": 5, "text": "Pulled up and took care of everything I needed to be cleaned. Super careful and trustworthy. 100% recommend" },
+  { "author": "Felix Aragon", "stars": 5, "text": "excellent service and very reasonable price, i would highly recommend if you are looking for a good price and high quality cleaning service!" },
+  { "author": "Zay", "stars": 5, "text": "Great Price Great Service. 10/10 use again." },
+  { "author": "Royce Roy", "stars": 5, "text": "Wonderful service everything was perfect would do buisness again." },
+  { "author": "Daniel Grusky", "stars": 5, "text": "Always a good experience. Professional, on-time, and pay close attention to detail. Very satisfied and would highly recommend!" }
+ ]
+}
