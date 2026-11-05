@@ -326,9 +326,27 @@ NICHOS = {
     _b('Gabinetes, encimeras y acabados que convierten la cocina en otra.', 'Cabinets, counters and finishes that make it a different kitchen.')),
    (_b('Superficies', 'Surfaces'), _b('Pisos y pintura', 'Floors and paint'),
     _b('Pisos nuevos y pintura con preparación seria, para un cambio que dura.', 'New floors and paint with real prep, for a change that lasts.'))]),
+ 'reposteria': dict(
+  kw=['bakery', 'panader', 'reposter', 'cake', 'pasteler', 'bizcocho'],
+  etiqueta=_b('Repostería', 'Bakery'),
+  h1=(_b('Pasteles hechos a mano,', 'Handmade cakes,'), _b('horneados por ', 'baked by ')),
+  marquee=['Repostería', 'Pasteles', 'Postres', 'Sabor', 'Pedidos', 'Florida'],
+  cards=[
+   (_b('La especialidad', 'The specialty'), _b('Pasteles personalizados', 'Custom cakes'),
+    _b('Diseños a medida para cumpleaños, baby showers y toda ocasión especial.',
+       'Custom designs for birthdays, baby showers and every special occasion.')),
+   (_b('Dulces', 'Treats'), _b('Postres y cake pops', 'Desserts and cake pops'),
+    _b('Cake pops, galletas y postres hechos frescos para eventos y pedidos individuales.',
+       'Cake pops, cookies and desserts made fresh for events and individual orders.')),
+   (_b('Pedido', 'Ordering'), _b('Encarga con anticipación', 'Order ahead'),
+    _b('Consulta sabores, tamaños y tiempos de entrega directamente con el negocio.',
+       'Ask the business directly about flavors, sizes and lead times.')),
+   (_b('Tienda', 'Storefront'), _b('Visítanos en Maps', 'Find us on Maps'),
+    _b('Revisa la ubicación, el horario y las fotos públicas en la ficha verificada.',
+       'Check the location, hours, and public photos on the verified listing.'))]),
  'food_truck': dict(
   kw=['food truck', 'restaurant', 'restaurante', 'cocina', 'taco', 'birria', 'comida',
-      'bakery', 'panader', 'cafe', 'coffee', 'pizza', 'burger', 'bbq'],
+      'cafe', 'coffee', 'pizza', 'burger', 'bbq'],
   etiqueta=_b('Comida local', 'Local food'),
   h1=(_b('Sabor hecho al momento,', 'Made-to-order flavor,'),
       _b('servido por ', 'served by ')),
@@ -394,11 +412,11 @@ def generar_dm(hechos, url, nicho=None):
         else:
             detalle = 'I put together a clean page using your public photos and contact details:'
         contexto = f'I found {nombre} while looking for {oficio_en} in {ciudad}. {detalle}'
-        return (f'Hi {nombre} — {contexto}\n\n{url}\n\n'
+        return (f'Hi {nombre}, {contexto}\n\n{url}\n\n'
                 'It gives a new customer one clear place to see your work and call or message you. '
-                'No login, no obligation, and nothing has been published under your domain — just take a look.\n\n'
+                'No login, no obligation, and nothing has been published under your domain, just take a look.\n\n'
                 'Would you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.\n\n'
-                '— José Michael from Merktop')
+                'Michael Vargas, Merktop')
     if propio is True:
         detalle = 'Vi su página actual y preparé una versión más clara con sus fotos públicas y datos de contacto:'
     elif propio is False:
@@ -406,11 +424,11 @@ def generar_dm(hechos, url, nicho=None):
     else:
         detalle = 'Preparé una página limpia con sus fotos públicas y datos de contacto reales:'
     contexto = f'encontré {nombre} buscando {oficio_es} en {ciudad}. {detalle}'
-    return (f'Hola {nombre} — {contexto}\n\n{url}\n\n'
+    return (f'Hola {nombre}, {contexto}\n\n{url}\n\n'
             'Le da a cada cliente nuevo un lugar claro para ver su trabajo y llamar o escribirles. '
             'No requiere iniciar sesión, no hay compromiso y nada se publicó bajo su dominio: solo échenle un vistazo.\n\n'
             '¿Quieren que ajuste los colores y el dominio para ustedes? Si no les resulta útil, respondan “no” y no volveré a insistir.\n\n'
-            '— José Michael de Merktop')
+            'Michael Vargas de Merktop')
 
 
 # ------------------------------------------------------------------ contenido
