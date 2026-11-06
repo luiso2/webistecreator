@@ -22,10 +22,10 @@ Business details used (all public, from your Google listing):
 
 Real reviews featured on the site:
 - "Love John and Amber!!!
-These are pictures from my house before it was recently torn down, they helped me maintain a house beaten from Ian till I could get it replaced. They have …" — Susan Hewitt
-- "Great couple to do business with. This is the judges molding they put up and I’ve had so many compliments. No job was too big or two small, repaired my screen door that no one else could, painted my garage doors and trim. They have always …" — Debra Judd
-- "John Denny and Amber Haskett are wonderful to work with. They are the best handyman service that you could ask for. They have painted the inside and outside of my home, they have done a decorative wood wall in my daughter’s bedroom, they …" — Kim Milne
-- "John and Amber are an amazing team! They are punctual and they work fast! They totally helped us with many projects as we first moved in. They took care of everything! They just know what to do! Their work is top notch, whatever the chore is! Great people!" — Blake Byars
+These are pictures from my house before it was recently torn down, they helped me maintain a house beaten from Ian till I could get it replaced. They have …" (by Susan Hewitt)
+- "Great couple to do business with. This is the judges molding they put up and I’ve had so many compliments. No job was too big or two small, repaired my screen door that no one else could, painted my garage doors and trim. They have always …" (by Debra Judd)
+- "John Denny and Amber Haskett are wonderful to work with. They are the best handyman service that you could ask for. They have painted the inside and outside of my home, they have done a decorative wood wall in my daughter’s bedroom, they …" (by Kim Milne)
+- "John and Amber are an amazing team! They are punctual and they work fast! They totally helped us with many projects as we first moved in. They took care of everything! They just know what to do! Their work is top notch, whatever the chore is! Great people!" (by Blake Byars)
 
 Best,
 Michael Vargas

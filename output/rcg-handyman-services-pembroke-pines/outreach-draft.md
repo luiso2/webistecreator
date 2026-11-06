@@ -21,10 +21,10 @@ Business details used (all public, from your Google listing):
 - Rating: 4.6 stars, 31 reviews
 
 Real reviews featured on the site:
-- "Ramon and his team did an excellent job installing our floating vanities, lighting, vinyl floor, shower tiles, electrical and finish plumbing. The LED lighting in the ceiling and new fans really look great. His team was very nice and Ramon …" — Eric Jones
-- "Great job needed a handyman and RCG Service came out to give me a free estimate the same day I called. Wrote a proposal for drywall, painting replace base board and screened my patio. I accepted the proposal and the following week the work …" — Sunshine Plumbing of South Florida , INC
-- "I called on a Friday to update the siding of my house and Ramon and his team scheduled it for Monday. The work was done by Tuesday (the rain delayed it but they had done a lot of work) …" — Krystal O
-- "Ramon is very affordable and did a wonderfully job replacing water damaged wood on my outside storage area. I will definitely continue to use his services on repairs to my home, Great Job!" — Latonya Grier
+- "Ramon and his team did an excellent job installing our floating vanities, lighting, vinyl floor, shower tiles, electrical and finish plumbing. The LED lighting in the ceiling and new fans really look great. His team was very nice and Ramon …" (by Eric Jones)
+- "Great job needed a handyman and RCG Service came out to give me a free estimate the same day I called. Wrote a proposal for drywall, painting replace base board and screened my patio. I accepted the proposal and the following week the work …" (by Sunshine Plumbing of South Florida , INC)
+- "I called on a Friday to update the siding of my house and Ramon and his team scheduled it for Monday. The work was done by Tuesday (the rain delayed it but they had done a lot of work) …" (by Krystal O)
+- "Ramon is very affordable and did a wonderfully job replacing water damaged wood on my outside storage area. I will definitely continue to use his services on repairs to my home, Great Job!" (by Latonya Grier)
 
 Best,
 Michael Vargas

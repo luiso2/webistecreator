@@ -21,10 +21,10 @@ Business details used (all public, from your Google listing):
 - Rating: 4.7 stars, 14 reviews
 
 Real reviews featured on the site:
-- "Avi did an absolute phenomenal job repairing my broken wood fence! He went above and beyond by building a brand-new gate with a larger opening exactly as we had agreed. His work is perfect, and he proved to be completely reliable throughout the entire process. I highly recommend Avi for his craftsmanship and dependability!" — Roni Levi
-- "Avi did an amazing job with drywall repairs and a vanity installation. He arrived shortly after we spoke on the phone and was very polite. He explained everything before he started and completed my repairs in no time. I am very happy with …" — Will Mahoney
-- "Avi did an amazing job installing our ceiling fan and chandelier. Great attention to detail and an honest man with an honest work ethic. Avi thank you for the help and I will be definitely be requesting your services again in the future!" — Diego Desantiago
-- "Very professional, knew what he was talking about, came quickly and helped me at a reasonable price. I'm definitely hiring him again. …" — Rick Woodward
+- "Avi did an absolute phenomenal job repairing my broken wood fence! He went above and beyond by building a brand-new gate with a larger opening exactly as we had agreed. His work is perfect, and he proved to be completely reliable throughout the entire process. I highly recommend Avi for his craftsmanship and dependability!" (by Roni Levi)
+- "Avi did an amazing job with drywall repairs and a vanity installation. He arrived shortly after we spoke on the phone and was very polite. He explained everything before he started and completed my repairs in no time. I am very happy with …" (by Will Mahoney)
+- "Avi did an amazing job installing our ceiling fan and chandelier. Great attention to detail and an honest man with an honest work ethic. Avi thank you for the help and I will be definitely be requesting your services again in the future!" (by Diego Desantiago)
+- "Very professional, knew what he was talking about, came quickly and helped me at a reasonable price. I'm definitely hiring him again. …" (by Rick Woodward)
 
 Best,
 Michael Vargas

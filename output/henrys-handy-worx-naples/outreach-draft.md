@@ -23,10 +23,10 @@ Business details used (all public, from your Google listing):
 Real reviews featured on the site:
 - "I have to share this story because people like Henry deserve to be recognized!
 
-After spending days searching Nextdoor for a handyman, I was fortunate enough to …" — Brooke Michie
-- "Henry was very professional and efficient. He fixed my drywall the same day I called for a great price. Would definitely recommend to anyone in Naples in need of handyman work." — Jule
-- "Henry was so professional and quick!! Loved the communication he kept with me. He was hired to do work in my condo. Excellent job! He painted our bedroom… shampooed carpets, and hung the ceiling fan! 10 out of 10!!" — Cheryl Kinch
-- "Excellent service. I had two double hung hurricane windows that could not be locked/latched after I opened them. Basically the upper windows fell and there was a big gap at the top. Henry figured out the mechanics of the windows, realigned …" — Marina Drazovic
+After spending days searching Nextdoor for a handyman, I was fortunate enough to …" (by Brooke Michie)
+- "Henry was very professional and efficient. He fixed my drywall the same day I called for a great price. Would definitely recommend to anyone in Naples in need of handyman work." (by Jule)
+- "Henry was so professional and quick!! Loved the communication he kept with me. He was hired to do work in my condo. Excellent job! He painted our bedroom… shampooed carpets, and hung the ceiling fan! 10 out of 10!!" (by Cheryl Kinch)
+- "Excellent service. I had two double hung hurricane windows that could not be locked/latched after I opened them. Basically the upper windows fell and there was a big gap at the top. Henry figured out the mechanics of the windows, realigned …" (by Marina Drazovic)
 
 Best,
 Michael Vargas

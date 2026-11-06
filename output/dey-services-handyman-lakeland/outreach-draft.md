@@ -21,10 +21,10 @@ Business details used (all public, from your Google listing):
 - Rating: 4.8 stars, 17 reviews
 
 Real reviews featured on the site:
-- "Update 7/2/2026: I used DEY again. Nothing but great quality DEY replaced my too boards on my front deck and built a ramp. He also does so much more, he is repairing the inside of my place next week to include all new flooring, cabinets, …" — Jeff Grass
-- "He was very professional and his work was outstanding. The price was even better, very affordable. He's friendly and competent and his wife/helper makes any woman feel better about having a man they don't know in their home. I've hired him …" — Robin Bedell
-- "I had a great experience with Dey Services Handyman & H²O Leak Specialist. They were professional, reliable, and did a great job with the repairs. The work was completed efficiently, and everything was handled with care. I would definitely recommend their services!" — Duplicee David
-- "I hired Dustin to pressure wash and paint my 2900 sq ft house. With his one helper, they finished it in only 3 days and the cost was very competitive, he's not the cheapest, or the most expensive, but he does the quality work of a master painter." — Robin Banks
+- "Update 7/2/2026: I used DEY again. Nothing but great quality DEY replaced my too boards on my front deck and built a ramp. He also does so much more, he is repairing the inside of my place next week to include all new flooring, cabinets, …" (by Jeff Grass)
+- "He was very professional and his work was outstanding. The price was even better, very affordable. He's friendly and competent and his wife/helper makes any woman feel better about having a man they don't know in their home. I've hired him …" (by Robin Bedell)
+- "I had a great experience with Dey Services Handyman & H²O Leak Specialist. They were professional, reliable, and did a great job with the repairs. The work was completed efficiently, and everything was handled with care. I would definitely recommend their services!" (by Duplicee David)
+- "I hired Dustin to pressure wash and paint my 2900 sq ft house. With his one helper, they finished it in only 3 days and the cost was very competitive, he's not the cheapest, or the most expensive, but he does the quality work of a master painter." (by Robin Banks)
 
 Best,
 Michael Vargas

@@ -21,10 +21,10 @@ Business details used (all public, from your Google listing):
 - Rating: 5.0 stars, 20 reviews
 
 Real reviews featured on the site:
-- "I recently hired Alfredo to put up a fence in my backyard, and I couldn’t be happier with the result. He showed up on time, worked efficiently, and paid close attention to detail. The fence looks solid and really improved the look of my …" — Mario Campos
-- "The service provider did an excellent job. They installed garbage disposal and furniture. They were punctual and on schedule. They have liability insurance for the office building requirements. A 5-star service." — Vanessa García
-- "I got a gas stove installed and it was an incredible job. Great friendly service that was very quick and easy to work with." — Leander Mesa
-- "Incredible work and great people to work with! Installed my brand new appliances quickly and without any issues. Highly recommend!!" — Ale Morao
+- "I recently hired Alfredo to put up a fence in my backyard, and I couldn’t be happier with the result. He showed up on time, worked efficiently, and paid close attention to detail. The fence looks solid and really improved the look of my …" (by Mario Campos)
+- "The service provider did an excellent job. They installed garbage disposal and furniture. They were punctual and on schedule. They have liability insurance for the office building requirements. A 5-star service." (by Vanessa García)
+- "I got a gas stove installed and it was an incredible job. Great friendly service that was very quick and easy to work with." (by Leander Mesa)
+- "Incredible work and great people to work with! Installed my brand new appliances quickly and without any issues. Highly recommend!!" (by Ale Morao)
 
 Best,
 Michael Vargas

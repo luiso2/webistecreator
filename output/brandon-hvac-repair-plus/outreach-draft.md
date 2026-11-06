@@ -21,10 +21,10 @@ Business details used (all public, from your Google listing):
 - Rating: 5.0 stars, 11 reviews
 
 Real reviews featured on the site:
-- "Before installing the new AC unit, I had to work closely with the building management to ensure all guidelines were met, and once resolved, the technician completed the installation efficiently within a few hours. The process involved …" — YAMILETH ALEJANDRA AYME VELASQUEZ
-- "After learning the issue was a faulty thermostat, I compared two HVAC repair services and found one to be more thorough in their diagnosis process. The second evaluation provided clarity and ultimately resolved the cooling issues effectively." — dAnE LuTz
-- "Their quote for preventive maintenance was slightly higher than the first company, but the technician took the time to inspect each component thoroughly, which gave me confidence in his assessment. After comparing both visits, I appreciated …" — A Google User
-- "Our portable A/C unit had been making an unusual noise, and after their technician replaced a faulty fan motor, it has been running smoothly for the past week. The visit took about an hour, and the technician was clear about what he was doing at each step." — Robert Robert
+- "Before installing the new AC unit, I had to work closely with the building management to ensure all guidelines were met, and once resolved, the technician completed the installation efficiently within a few hours. The process involved …" (by YAMILETH ALEJANDRA AYME VELASQUEZ)
+- "After learning the issue was a faulty thermostat, I compared two HVAC repair services and found one to be more thorough in their diagnosis process. The second evaluation provided clarity and ultimately resolved the cooling issues effectively." (by dAnE LuTz)
+- "Their quote for preventive maintenance was slightly higher than the first company, but the technician took the time to inspect each component thoroughly, which gave me confidence in his assessment. After comparing both visits, I appreciated …" (by A Google User)
+- "Our portable A/C unit had been making an unusual noise, and after their technician replaced a faulty fan motor, it has been running smoothly for the past week. The visit took about an hour, and the technician was clear about what he was doing at each step." (by Robert Robert)
 
 Best,
 Michael Vargas

@@ -21,12 +21,12 @@ Business details used (all public, from your Google listing):
 - Rating: 5.0 stars, 10 reviews
 
 Real reviews featured on the site:
-- "Excellent work. Their responsibility, attention to detail, and the cleanliness with which they carried out the installation exceeded my expectations. The lamps turned out perfectly, and the final result was impeccable. I recommend them with complete confidence." — Nilso Enrique Negrette Bravo
+- "Excellent work. Their responsibility, attention to detail, and the cleanliness with which they carried out the installation exceeded my expectations. The lamps turned out perfectly, and the final result was impeccable. I recommend them with complete confidence." (by Nilso Enrique Negrette Bravo)
 - "Excellent service! Highly recommended.
 
-I wanted to share my experience because it truly exceeded all my expectations. …" — consultoria Sap
-- "I hired Rinca to install the lights in my living room and entryway, and I was 100% satisfied. Duilio was very professional, punctual, and detail-oriented. He also went the extra mile to make sure everything was perfect. I recommend Rinca without hesitation!" — Iraida Camacho
-- "I highly recommend this company. They are punctual and very organized. I hired them to hang the TV in my room, and they did it very quickly and left everything clean and tidy. 100% recommended." — Alejandra Matos
+I wanted to share my experience because it truly exceeded all my expectations. …" (by consultoria Sap)
+- "I hired Rinca to install the lights in my living room and entryway, and I was 100% satisfied. Duilio was very professional, punctual, and detail-oriented. He also went the extra mile to make sure everything was perfect. I recommend Rinca without hesitation!" (by Iraida Camacho)
+- "I highly recommend this company. They are punctual and very organized. I hired them to hang the TV in my room, and they did it very quickly and left everything clean and tidy. 100% recommended." (by Alejandra Matos)
 
 Best,
 Michael Vargas

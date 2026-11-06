@@ -21,10 +21,10 @@ Business details used (all public, from your Google listing):
 - Rating: 4.9 stars, 19 reviews
 
 Real reviews featured on the site:
-- "A D Handyman Solution INC. is a very professional company, I have been dealing with them a little over a year. The company has completed several jobs for me and not only did they meet my expectation, but in a timely manner. …" — Growing Angels Inc.
-- "A D Handyman Solution was easy to schedule. He’s very versatile doing plumbing, electrical, installation, and painting for me. I will definitely call him again." — Katie
-- "We have AD Handyman Solution Inc. Remodel our guest bathroom and master bathroom. I love that they were always on time.  We are happy with the work they have done." — Darkangel
-- "would like to point out that I recommend to A D Handyman Solution for remodeling and property repairs. I know that this company does a very good job, with honesty and has experience" — Veronica Dominguez
+- "A D Handyman Solution INC. is a very professional company, I have been dealing with them a little over a year. The company has completed several jobs for me and not only did they meet my expectation, but in a timely manner. …" (by Growing Angels Inc.)
+- "A D Handyman Solution was easy to schedule. He’s very versatile doing plumbing, electrical, installation, and painting for me. I will definitely call him again." (by Katie)
+- "We have AD Handyman Solution Inc. Remodel our guest bathroom and master bathroom. I love that they were always on time.  We are happy with the work they have done." (by Darkangel)
+- "would like to point out that I recommend to A D Handyman Solution for remodeling and property repairs. I know that this company does a very good job, with honesty and has experience" (by Veronica Dominguez)
 
 Best,
 Michael Vargas
