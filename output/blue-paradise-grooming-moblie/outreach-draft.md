@@ -1,0 +1,21 @@
+# Outreach draft: Blue Paradise Grooming Mobile (Miami, FL)
+
+Status: no public email found (deep search for business name plus Miami, FL and groomer name "Claudia"; only a directory listing with the Google phone number turned up, no email, Facebook, or Instagram). Channel: phone / WhatsApp / DM via panel.
+
+Language: en
+Angle: has_own_site = false ("we built you a sample website")
+
+---
+
+Subject: A sample website for Blue Paradise Grooming Mobile
+
+Hi, I found Blue Paradise Grooming Mobile while looking for mobile dog groomers around Miami, FL (4.9 on Google, 57 reviews). I could not find a dedicated website linked from your public profile, so I put together a clean demo using your own real photos and contact details:
+
+https://siteforge-demos.odd-forest-9504.workers.dev/blue-paradise-grooming-moblie/
+
+It does not touch how Claudia currently books visits, it just gives a new customer one clear place to see real results and call directly. No login, no obligation, nothing has been published under your own domain, just take a look.
+
+If you would like it tailored or put on your own domain, I am happy to help. If it is not useful, just reply "no" and I will not follow up.
+
+Michael Vargas
+Merktop
