@@ -3,30 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0f0b07" />
-  <title>Ana’s Bakery · Clearwater, FL</title>
-  <meta name="description" content="Ana’s Bakery: servicios locales en Clearwater, FL. Información, fotos y contacto verificados en Google Maps." />
+  <meta name="theme-color" content="#e7f2df" />
+  <title>Ana’s Bakery · Albanian Bakery & Cafe in Clearwater, FL | Byrek, Baklava & Custom Cakes</title>
+  <meta name="description" content="Ana's Bakery, Clearwater FL: fresh byrek, baklava, macarons and custom cakes made daily at 1441 S Belcher Rd. 5.0 stars, 392 Google reviews. Call (727) 286-6140." />
   <meta property="og:title" content="Ana’s Bakery · Clearwater, FL" />
-  <meta property="og:description" content="Ana’s Bakery en Clearwater, FL. Fotos públicas y contacto directo." />
+  <meta property="og:description" content="Byrek, baklava, macarons and custom cakes, baked fresh every day. 5.0 stars on Google." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/raw/gmaps-1.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-1.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/logo.jpg" />
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Bakery",
   "name": "Ana’s Bakery",
-  "description": "Ana’s Bakery, negocio local en Clearwater, FL.",
+  "description": "Albanian bakery and cafe in Clearwater, Florida serving byrek, baklava, custom cakes, macarons and coffee, baked fresh daily.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "1441 S Belcher Rd, Clearwater, FL 33764",
+    "streetAddress": "1441 S Belcher Rd",
     "addressLocality": "Clearwater",
-    "addressRegion": "FL"
+    "addressRegion": "FL",
+    "postalCode": "33764",
+    "addressCountry": "US"
   },
-  "telephone": "(727) 286-6140",
+  "telephone": "+1-727-286-6140",
   "image": "assets/raw/gmaps-1.jpg",
+  "servesCuisine": "Albanian",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "392"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "07:00",
+      "closes": "18:00"
+    }
+  ],
   "sameAs": [
-    "https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1"
+    "https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44"
   ]
 }
   </script>
@@ -36,17 +60,17 @@
   <script src="assets/tailwind.js"></script>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0f0b07;
-      --bg-2: #171207;
-      --surface: rgba(255,255,255,0.045);
-      --ink: #f5efe3;
-      --ink-60: rgba(245,239,227,0.62);
-      --ink-40: rgba(245,239,227,0.42);
-      --accent-deep: #d4a84b;
-      --accent-mid: #b8934a;
-      --accent-soft: #241c0e;
-      --accent-ghost: rgba(212,168,75,0.16);
+      color-scheme: light;
+      --bg: #f6efe7;
+      --bg-2: #f0e2d5;
+      --surface: rgba(251,241,233,0.7);
+      --ink: #322821;
+      --ink-60: rgba(50,40,33,0.62);
+      --ink-40: rgba(50,40,33,0.42);
+      --accent-deep: #9d7446;
+      --accent-mid: #c39d71;
+      --accent-soft: #f0e2d5;
+      --accent-ghost: rgba(157,116,70,0.14);
     }
     html, body { background: var(--bg); }
     body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -54,10 +78,10 @@
     .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(212,168,75,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(212,168,75,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,75,0.08); }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(157,116,70,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(251,241,233,0.88); border-color: rgba(157,116,70,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(50,40,33,0.14), 0 0 40px rgba(157,116,70,0.08); }
     .text-shine {
-      background: linear-gradient(110deg, #d4a84b 0%, #f0dc9e 30%, #9a7431 52%, #d4a84b 75%, #e5c374 100%);
+      background: linear-gradient(110deg, #9d7446 0%, #c89d6f 30%, #5d4129 52%, #9d7446 75%, #b28352 100%);
       background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
       animation: shimmer 12s linear infinite;
     }
@@ -65,9 +89,9 @@
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
     @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,168,75,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(122,90,30,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(180,140,60,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #f0ddca 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d7b99f 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e2cbb7 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
     .grain::after {
       content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
@@ -79,17 +103,17 @@
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 48%, #96742c 100%);
-      color: #1c1408; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #c39d71 0%, #9d7446 48%, #7b5731 100%);
+      color: #f6efe7; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(80,58,18,0.4), 0 5px 0 #6b5222, 0 12px 24px rgba(0,0,0,0.5);
+      box-shadow: inset 0 1px 0 rgba(247,247,247,0.3), inset 0 -2px 5px rgba(69,43,23,0.4), 0 5px 0 #5b3b1f, 0 12px 24px rgba(50,40,33,0.28);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(80,58,18,0.4), 0 7px 0 #6b5222, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,168,75,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(80,58,18,0.45), 0 1px 0 #6b5222, 0 4px 10px rgba(0,0,0,0.45); }
-    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(247,247,247,0.35), inset 0 -2px 5px rgba(69,43,23,0.4), 0 7px 0 #5b3b1f, 0 18px 34px rgba(50,40,33,0.32), 0 0 40px rgba(157,116,70,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(247,247,247,0.25), inset 0 -1px 3px rgba(69,43,23,0.45), 0 1px 0 #5b3b1f, 0 4px 10px rgba(50,40,33,0.25); }
+    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(247,247,247,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
     .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(212,168,75,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,168,75,0.7); background: rgba(212,168,75,0.08); box-shadow: 0 10px 26px rgba(54,42,38,0.14); }
+    .btn-ghost { border: 1px solid rgba(157,116,70,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(157,116,70,0.7); background: rgba(157,116,70,0.08); box-shadow: 0 10px 26px rgba(50,40,33,0.14); }
     .merktop-badge {
       display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
       border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
@@ -100,48 +124,40 @@
     .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
     @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    #nav.scrolled { background: rgba(246,239,231,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(50,40,33,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,168,75,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(50,40,33,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(157,116,70,0.14), inset 0 -60px 100px rgba(50,40,33,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5c374, #9a7431); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #d4a84b; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,168,75,0.45); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #c39d71, #5d4129); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #9d7446; letter-spacing: 2px; text-shadow: 0 0 14px rgba(157,116,70,0.3); }
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
     .dark-band {
-      --ink: #f5efe3; --ink-60: rgba(245,239,227,0.65); --ink-40: rgba(245,239,227,0.45);
-      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,210,160,0.16); color: var(--ink);
+      --ink: #f6efe7; --ink-60: rgba(246,239,231,0.65); --ink-40: rgba(246,239,231,0.45);
+      --surface: rgba(247,247,247,0.05); --accent-ghost: rgba(209,231,175,0.16); color: var(--ink);
     }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8cf96 0%, #f8eed3 30%, #bfa060 52%, #e8cf96 75%, #f0dcae 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,150,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #faf1dc 0%, #ecd9a8 48%, #c9ab6b 100%); color: #1c1408; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(110,85,35,0.35), 0 5px 0 #8a744a, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,85,35,0.35), 0 7px 0 #8a744a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,150,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,85,35,0.4), 0 1px 0 #8a744a, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,150,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #efd0b2 0%, #f6e5d3 30%, #d7b99f 52%, #efd0b2 75%, #f0dac3 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(239,208,178,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(172,183,120,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #f9eee3 0%, #edd8c5 48%, #d1b399 100%); color: #322821; box-shadow: inset 0 1px 0 rgba(247,247,247,0.55), inset 0 -2px 5px rgba(123,87,49,0.35), 0 5px 0 #876951, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(247,247,247,0.6), inset 0 -2px 5px rgba(123,87,49,0.35), 0 7px 0 #876951, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(239,208,178,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(247,247,247,0.4), inset 0 -1px 3px rgba(123,87,49,0.4), 0 1px 0 #876951, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(239,208,178,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(239,208,178,0.7); background: rgba(239,208,178,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #efd0b2; text-shadow: 0 0 14px rgba(239,208,178,0.4); }
     .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
-      box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(180deg, #c39d71 0%, #9d7446 100%);
+      box-shadow: 0 6px 0 #5b3b1f, 0 14px 30px rgba(50,40,33,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float-label { color: #1c1408; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
-    .hero-proof { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; color: var(--ink-40); font-size: 0.72rem; letter-spacing: 0.02em; }
-    .hero-proof span { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .hero-proof span::before { content: '✓'; color: var(--accent-deep); font-weight: 700; }
-    @media (max-width: 640px) {
-      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
-      .book-float-label { font-size: 0.8rem; }
-    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5b3b1f, 0 20px 40px rgba(50,40,33,0.4), 0 0 34px rgba(157,116,70,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5b3b1f, 0 6px 14px rgba(50,40,33,0.3); }
 
     /* ============ Motion v2 ============ */
     #preloader {
@@ -150,13 +166,13 @@
     }
     #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
     @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(212,168,75,0.35); background: rgba(212,168,75,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(157,116,70,0.35); background: rgba(157,116,70,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
     .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
     .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
     @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
     @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
     @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #96742c 0%, #d4a84b 45%, #f0dc9e 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #7b5731 0%, #9d7446 45%, #dbb593 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
     .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
     .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
     .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
@@ -172,14 +188,14 @@
     @media (hover: hover) and (pointer: fine) {
       .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
       .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
-      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(247,247,247,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
       .tilt:hover::before { opacity: 1; }
     }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,207,150,0.14) 0%, rgba(212,168,75,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(239,208,178,0.14) 0%, rgba(157,116,70,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
     .cursor-glow.on { opacity: 1; }
     .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(212,168,75,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(157,116,70,0.5); transform: translateY(-3px); }
 
     /* ============ Motion v3 (premium+) ============ */
     .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
@@ -188,8 +204,8 @@
     .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
     .frame .tile-cap {
       position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf6ea;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #f8eee7;
+      background: linear-gradient(180deg, transparent 0%, rgba(39,25,15,0.62) 100%);
       opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
     }
     .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
@@ -197,7 +213,7 @@
     .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
     .cursor-ring.on { opacity: 0.75; }
     .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,207,150,0.09); pointer-events: none; user-select: none; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(239,208,178,0.09); pointer-events: none; user-select: none; }
 
     @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
@@ -296,20 +312,20 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/gmaps-1.jpg" alt="Ana’s Bakery" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
+        <img src="assets/raw/logo.jpg" alt="Ana’s Bakery" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(113,214,64,0.35)]" />
         <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Ana’s <span class="text-[color:var(--accent-deep)]">Bakery</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
         <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="nav-link" href="#metodo" data-es="Cómo pedir" data-en="How to order">How to order</a>
         <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="nav-link" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
-        <a class="nav-link" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
+        <a class="nav-link" href="#opiniones" data-es="Reseñas" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Visítanos" data-en="Visit us">Visit us</a>
       </nav>
       <div class="flex items-center gap-3">
         <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
-        <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <span data-es="Llamar ahora" data-en="Call now">Call now</span>
         </a>
@@ -323,12 +339,12 @@
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Cómo pedir" data-en="How to order">How to order</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
-        <a class="py-3 px-3" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
-        <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Reseñas" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Visítanos" data-en="Visit us">Visit us</a>
+        <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
       </nav>
     </div>
   </header>
@@ -338,39 +354,34 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Clearwater, FL · Servicios" data-en="Clearwater, FL · Services">Clearwater, FL · Services</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Clearwater, FL · Panadería y Café" data-en="Clearwater, FL · Bakery & Cafe">Clearwater, FL · Bakery & Cafe</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Horneado fresco, todos los días." data-en="Baked fresh, every single day.">Baked fresh, every single day.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          <span data-es="Tu proyecto," data-en="Your project,">Your project,</span><br /><span data-es="en manos de " data-en="handled by ">handled by </span><span class="text-shine" data-es="Ana’s" data-en="Ana’s">Ana’s</span>
+          <span data-es="Byrek, baklava y pasteles" data-en="Byrek, baklava and cakes">Byrek, baklava and cakes</span><br /><span data-es="hechos a la " data-en="made the ">made the </span><span class="text-shine" data-es="manera tradicional" data-en="old-fashioned way">old-fashioned way</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Ana’s Bakery atiende a clientes en Clearwater, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente." data-en="Ana’s Bakery serves customers in Clearwater, FL. Check the public listing, see real photos and contact the business directly.">Ana’s Bakery serves customers in Clearwater, FL. Check the public listing, see real photos and contact the business directly.</p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="En el 1441 S Belcher Rd horneamos byrek, baklava, macarons y pasteles de cumpleaños cada día, junto con café turco de verdad. Todo preparado a mano, con la misma receta familiar de siempre." data-en="At 1441 S Belcher Rd we bake byrek, baklava, macarons and birthday cakes every day, alongside real Turkish coffee. Everything made by hand, with the same family recipe as always.">At 1441 S Belcher Rd we bake byrek, baklava, macarons and birthday cakes every day, alongside real Turkish coffee. Everything made by hand, with the same family recipe as always.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
-          <svg class="text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span class="text-sm text-[color:var(--ink-60)]" data-es="Ficha pública en Google Maps" data-en="Public Google Maps listing">Public Google Maps listing</span>
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 392 reseñas en Google" data-en="5.0 · 392 reviews on Google">5.0 · 392 reviews on Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <span data-es="Llamar ahora" data-en="Call now">Call now</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            Google Maps
+            Reviews & Photos
           </a>
-        </div>
-        <div class="reveal hero-proof mt-5" style="transition-delay:420ms" aria-label="Lo que encontrará el cliente">
-          <span data-es="Fotos reales" data-en="Real work">Fotos reales</span>
-          <span data-es="Servicios claros" data-en="Clear services">Servicios claros</span>
-          <span data-es="Contacto directo" data-en="Direct contact">Contacto directo</span>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/gmaps-1.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/gmaps-1.jpg" alt="Storefront of Ana's Bakery in Clearwater, Florida, with the lit sign and OPEN neon" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Pedidos y consultas" data-en="Orders & questions">Orders & questions</p>
             <p class="font-display text-lg">(727) 286-6140</p>
             <p class="text-sm text-[color:var(--ink-60)]" data-es="Clearwater, FL" data-en="Clearwater, FL">Clearwater, FL</p>
           </div>
@@ -382,10 +393,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl">Servicios</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="El oficio" data-en="The trade">The trade</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Clearwater</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de trabajo" data-en="Service area">Service area</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Calificación en Google" data-en="Google rating">Google rating</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="392">392</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas en Google" data-en="Google reviews">Google reviews</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">7 días</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Abierto toda la semana" data-en="Open every day">Open every day</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Belcher Rd</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Clearwater, FL" data-en="Clearwater, FL">Clearwater, FL</p></div>
     </div>
   </section>
 
@@ -393,20 +404,20 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clearwater</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Byrek</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Baklava</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Cakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Macarons</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Turkish Coffee</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clearwater</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Byrek</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Baklava</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Cakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Macarons</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Turkish Coffee</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -417,25 +428,26 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Ana’s Bakery" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-5.jpg" alt="Cappuccino and a fresh-baked spinach byrek served at Ana's Bakery" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/gmaps-3.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-2.jpg" alt="Layer cake and macarons in the display case at Ana's Bakery" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo," data-en="One team,">One team,</span><br /><span class="text-shine" data-es="un solo responsable" data-en="one accountable crew">one accountable crew</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Ana’s Bakery es un negocio local de Clearwater, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios." data-en="Ana’s Bakery is a local Clearwater, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.">Ana’s Bakery is a local Clearwater, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles." data-en="The public Google Maps listing collects the available photos and contact information.">The public Google Maps listing collects the available photos and contact information.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nuestra historia" data-en="Our story">Our story</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Una panadería familiar," data-en="A family bakery,">A family bakery,</span><br /><span class="text-shine" data-es="hecha a mano" data-en="made by hand">made by hand</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Ana's Bakery abrió sus puertas en Belcher Road para traer a Clearwater los sabores de la repostería albanesa: byrek horneado en el momento, baklava, macarons y pasteles de cumpleaños que se preparan a pedido." data-en="Ana's Bakery opened its doors on Belcher Road to bring Albanian-style baking to Clearwater: byrek baked fresh daily, baklava, macarons and birthday cakes made to order.">Ana's Bakery opened its doors on Belcher Road to bring Albanian-style baking to Clearwater: byrek baked fresh daily, baklava, macarons and birthday cakes made to order.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="No hay atajos: cada bandeja de byrek, cada bandeja de baklava y cada pastel sale de la cocina de la tienda el mismo día que se sirve. Es la razón por la que 392 personas le dieron 5.0 estrellas en Google." data-en="There are no shortcuts here: every tray of byrek, every batch of baklava and every cake comes out of the shop's own kitchen the same day it's served. That is why 392 people gave it 5.0 stars on Google.">There are no shortcuts here: every tray of byrek, every batch of baklava and every cake comes out of the shop's own kitchen the same day it's served. That is why 392 people gave it 5.0 stars on Google.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">Clearwater</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Zona" data-en="Area">Area</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Calificación" data-en="Rating">Rating</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="392">392</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="7">7</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Días a la semana" data-en="Days a week">Days a week</p></div>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/gmaps-1.jpg" alt="Logo de Ana’s Bakery" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
-            <span class="text-sm font-light">Ana’s Bakery · <span class="text-[color:var(--ink-40)]" data-es="Clearwater, FL" data-en="Clearwater, FL">Clearwater, FL</span></span>
+            <img src="assets/raw/logo.jpg" alt="Ana's Bakery sign on the storefront at 1441 S Belcher Rd" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(113,214,64,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Ana’s Bakery · <span class="text-[color:var(--ink-40)]" data-es="Panadería familiar · Clearwater, FL" data-en="Family bakery · Clearwater, FL">Family bakery · Clearwater, FL</span></span>
           </div>
         </div>
       </div>
@@ -447,29 +459,29 @@
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Cómo pedir" data-en="How it works">How it works</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así es pedir" data-en="Here's how">Here's how</span> <span class="text-shine" data-es="en Ana's" data-en="it works">it works</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Get in touch">Get in touch</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte." data-en="Tell us what you need; a photo of the space or the problem is enough to point you right.">Tell us what you need; a photo of the space or the problem is enough to point you right.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Visítanos o llama" data-en="Visit or call">Visit or call</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Pasa por 1441 S Belcher Rd o llámanos al (727) 286-6140 para preguntar qué hay fresco ese día." data-en="Stop by 1441 S Belcher Rd or call (727) 286-6140 to ask what's fresh that day.">Stop by 1441 S Belcher Rd or call (727) 286-6140 to ask what's fresh that day.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto claro" data-en="Clear quote">Clear quote</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica." data-en="We tell you what the job takes and what it costs before starting, no fine print.">We tell you what the job takes and what it costs before starting, no fine print.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Elige de la vitrina" data-en="Pick from the case">Pick from the case</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Byrek de espinaca, carne y cebolla o tomate y cebolla, baklava, macarons, tiramisú, cheesecake y más, siempre horneados ese mismo día." data-en="Spinach, meat and onion or tomato and onion byrek, baklava, macarons, tiramisu, cheesecake and more, always baked that same day.">Spinach, meat and onion or tomato and onion byrek, baklava, macarons, tiramisu, cheesecake and more, always baked that same day.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3" data-es="El trabajo" data-en="The job">The job</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed." data-en="We arrive with everything needed and execute with the care you see on our feed.">We arrive with everything needed and execute with the care you see on our feed.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Pide tu pastel a medida" data-en="Order your custom cake">Order your custom cake</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Para cumpleaños y celebraciones, cuéntanos el diseño y la fecha: cada pastel se cotiza según el tamaño y la decoración." data-en="For birthdays and celebrations, tell us the design and the date: every cake is quoted based on size and decoration.">For birthdays and celebrations, tell us the design and the date: every cake is quoted based on size and decoration.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3" data-es="Entrega" data-en="Handover">Handover</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima." data-en="We walk the result together and leave the area clean. And you keep our number for next time.">We walk the result together and leave the area clean. And you keep our number for next time.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Recógelo fresco" data-en="Pick it up fresh">Pick it up fresh</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Abierto los 7 días de la semana, de 7 AM a 6 PM, para que tu pedido salga del horno y llegue directo a tu mesa." data-en="Open seven days a week, 7 AM to 6 PM, so your order goes straight from the oven to your table.">Open seven days a week, 7 AM to 6 PM, so your order goes straight from the oven to your table.</p>
         </div>
       </div>
     </div>
@@ -481,44 +493,45 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso." data-en="Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.">Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="horneamos" data-en="bake">bake</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Macarons y café tienen precio fijo en el mostrador. Los pasteles personalizados se cotizan según el diseño: llama o pasa por la tienda." data-en="Macarons and coffee have set prices at the counter. Custom cakes are quoted based on the design: call or stop by the shop.">Macarons and coffee have set prices at the counter. Custom cakes are quoted based on the design: call or stop by the shop.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="El oficio" data-en="The craft">The craft</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Nuestro trabajo" data-en="What we do">What we do</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Lo que publicamos en Google Maps es lo que hacemos: mira el feed y júzganos por ahí." data-en="What we post on Google Maps is what we do: check the feed and judge us by it.">What we post on Google Maps is what we do: check the feed and judge us by it.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(113,214,64,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="A tu pedido" data-en="Made to order">Made to order</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Pasteles personalizados" data-en="Custom cakes">Custom cakes</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Pasteles de cumpleaños, baby shower y celebraciones, decorados a mano. Cuéntanos la fecha y el diseño y te damos el precio." data-en="Birthday, baby shower and celebration cakes, decorated by hand. Tell us the date and the design and we'll give you the price.">Birthday, baby shower and celebration cakes, decorated by hand. Tell us the date and the design and we'll give you the price.</p>
           <div class="mt-auto">
-            <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Trato" data-en="Service">Service</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Atención directa" data-en="Direct service">Direct service</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Hablas con quien hace el trabajo, no con una central: acuerdos claros y sin intermediarios." data-en="You talk to the person doing the work, not a call center: clear agreements, no middlemen.">You talk to the person doing the work, not a call center: clear agreements, no middlemen.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Receta tradicional" data-en="Traditional recipe">Traditional recipe</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Byrek horneado al momento" data-en="Fresh-baked byrek">Fresh-baked byrek</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Espinaca, carne y cebolla, o tomate y cebolla: el byrek albanés hojaldrado que se hornea cada mañana en la tienda." data-en="Spinach, meat and onion, or tomato and onion: the flaky Albanian byrek baked fresh in-house every morning.">Spinach, meat and onion, or tomato and onion: the flaky Albanian byrek baked fresh in-house every morning.</p>
           <div class="mt-auto">
-            <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Presupuesto" data-en="Quotes">Quotes</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Cotización sin compromiso" data-en="No-strings quotes">No-strings quotes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar." data-en="Tell us what you need and we tell you what it takes and what it costs before starting.">Tell us what you need and we tell you what it takes and what it costs before starting.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Vitrina de postres" data-en="The dessert case">The dessert case</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Baklava, macarons y más" data-en="Baklava, macarons and more">Baklava, macarons and more</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Baklava, macarons a $1.50, tiramisú, cheesecake y la zupa de la casa a $5.00, siempre frescos en la vitrina." data-en="Baklava, macarons at $1.50, tiramisu, cheesecake and the house zupa at $5.00, always fresh in the case.">Baklava, macarons at $1.50, tiramisu, cheesecake and the house zupa at $5.00, always fresh in the case.</p>
           <div class="mt-auto">
-            <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cercanía" data-en="Local">Local</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Negocio local" data-en="Local business">Local business</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="De tu misma zona: llegamos rápido y respondemos después de entregar." data-en="From your own area: quick to arrive and still answering after handover.">From your own area: quick to arrive and still answering after handover.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="En el mostrador" data-en="At the counter">At the counter</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Café turco y más" data-en="Turkish coffee and more">Turkish coffee and more</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Café turco, cappuccino, frappé, café americano y té caliente, preparados al momento para acompañar tu byrek." data-en="Turkish coffee, cappuccino, frappe, American coffee and hot tea, made fresh to go with your byrek.">Turkish coffee, cappuccino, frappe, American coffee and hot tea, made fresh to go with your byrek.</p>
           <div class="mt-auto">
-            <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-3xl text-shine">$2.00</p><p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">Turkish coffee</p></div>
+            <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Preguntar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte." data-en="Do not see exactly what you need? Message us and we will confirm whether we can help.">Do not see exactly what you need? Message us and we will confirm whether we can help.</span></p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿Buscas algo que no está en la vitrina? Pregunta por pedidos especiales con aviso previo." data-en="Looking for something that's not in the case? Ask about special orders with advance notice.">Looking for something that's not in the case? Ask about special orders with advance notice.</span></p>
     </div>
   </section>
 
@@ -529,20 +542,19 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="work">work</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que sale" data-en="Fresh">Fresh</span> <span class="text-shine" data-es="del horno" data-en="from the oven">from the oven</span></h2>
         </div>
-        <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          Google Maps
+          Reviews & Photos
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-4.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-5.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-6.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-7.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-8.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-9.jpg" alt="Trabajo de Ana’s Bakery en Clearwater, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Vitrina diaria" data-en="Daily case">Daily case</span><img src="assets/raw/gmaps-9.jpg" alt="Display case full of cakes, baklava, tiramisu and cheesecake at Ana's Bakery" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Pasteles a medida" data-en="Custom cakes">Custom cakes</span><img src="assets/raw/gmaps-4.jpg" alt="Heart-shaped custom cake topped with fresh raspberries" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Byrek recién horneado" data-en="Fresh byrek">Fresh byrek</span><img src="assets/raw/gmaps-7.jpg" alt="Box of freshly baked Albanian byrek pastries" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Café y byrek" data-en="Coffee and byrek">Coffee and byrek</span><img src="assets/raw/gmaps-5.jpg" alt="Cappuccino and a spinach byrek served on the table" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Hora del café" data-en="Coffee time">Coffee time</span><img src="assets/raw/gmaps-6.jpg" alt="Table with several cappuccinos at Ana's Bakery" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -551,52 +563,52 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clearwater</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Byrek</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Baklava</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Cakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Macarons</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Turkish Coffee</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clearwater</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Byrek</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Baklava</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Cakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Macarons</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Turkish Coffee</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Clearwater, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
 
-  <!-- PRUEBA SOCIAL (razones) -->
+  <!-- PRUEBA SOCIAL (testimonios) -->
   <section id="opiniones" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">to message us</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha." data-en="We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.">We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Reseñas reales" data-en="Real reviews">Real reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What people">What people</span> <span class="text-shine" data-es="en Google" data-en="say on Google">say on Google</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="392 reseñas en Google, con un promedio de 5.0 estrellas." data-en="392 reviews on Google, averaging 5.0 stars.">392 reviews on Google, averaging 5.0 stars.</span></p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-8 reveal">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Trabajo a la vista" data-en="Work out in the open">Work out in the open</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores." data-en="We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.">We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="El que responde es el que llega" data-en="Who answers is who shows up">Who answers is who shows up</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo." data-en="You talk to the crew, agree with the crew, and the crew does the work.">You talk to the crew, agree with the crew, and the crew does the work.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto antes de empezar" data-en="Quote before we start">Quote before we start</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra." data-en="You know what it takes and what it costs before the first hammer swing. No mid-job surprises.">You know what it takes and what it costs before the first hammer swing. No mid-job surprises.</p>
-        </div>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Absolute gem in Clearwater, Florida. First time visiting and it was delicious. The byrek, shendetli, zuppa was amazing but the most amazing were the people owning the shop. We really enjoyed the food and also took some byrek home for our family to try and they absolutely loved it. Thank you Ana's Bakery. We will definitely be back"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Risena Dushi</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"My co-worker is from Albania and invited me to come here. I really enjoyed my time here. Very clean and everything is fresh. I opted for a cappuccino and a spinach and feta cheese pastry. It was delicious!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Michelle Kraemer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"The byrek reminded me of the byrek my grandma used to do! My favourite was the feta cheese and ricotta, and from the dessert Napolitana was very light and delicious."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Fili Kanina</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+        </figure>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver ficha y fotos en Google Maps" data-en="See listing and photos on Google Maps">See listing and photos on Google Maps</a>
+        <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver todas las reseñas" data-en="See all the reviews">See all the reviews</a>
       </div>
     </div>
   </section>
@@ -606,67 +618,75 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos desde" data-en="Reach us from">Reach us from</span> <span class="text-shine">Clearwater</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Encuéntranos en" data-en="Find us in">Find us in</span> <span class="text-shine">Clearwater</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para consultar disponibilidad." data-en="The fastest way to ask about availability.">The fastest way to ask about availability.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="tel:+7272866140">(727) 286-6140</a>
+              <p class="font-medium mb-1" data-es="Llámanos" data-en="Call us">Call us</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La forma más rápida de preguntar qué hay fresco hoy o de encargar un pastel." data-en="The fastest way to ask what's fresh today or to order a cake.">The fastest way to ask what's fresh today or to order a cake.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(113,214,64,0.4)]" href="tel:+17272866140">(727) 286-6140</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Google Maps" data-en="Google Maps">Google Maps</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Dirección pública: 1441 S Belcher Rd, Clearwater, FL 33764." data-en="Public address: 1441 S Belcher Rd, Clearwater, FL 33764.">Public address: 1441 S Belcher Rd, Clearwater, FL 33764.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">1441 S Belcher Rd, Clearwater, FL 33764</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="A pie de calle en Belcher Road, con estacionamiento frente a la tienda." data-en="Right on Belcher Road, with parking in front of the shop.">Right on Belcher Road, with parking in front of the shop.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(113,214,64,0.4)]" href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44" target="_blank" rel="noopener">1441 S Belcher Rd, Clearwater, FL 33764</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Abierto los 7 días de la semana." data-en="Open seven days a week.">Open seven days a week.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(113,214,64,0.4)]" href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44" target="_blank" rel="noopener">7 AM – 6 PM, daily</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="frame zoomable img-reveal min-h-[380px] h-full max-h-[560px] lg:max-h-none" style="transition-delay:180ms">
-        <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Ana’s Bakery" class="blur-up w-full h-full object-cover" loading="lazy" />
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Ana's Bakery, Clearwater FL" src="https://www.google.com/maps?q=1441+S+Belcher+Rd,+Clearwater,+FL+33764&output=embed" class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #191307 0%, #100c05 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #291e16 0%, #1e150e 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="empieza con un mensaje" data-en="starts with a message">starts with a message</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso." data-en="Tell us what you need and we reply with ideas and a quote, no strings attached.">Tell us what you need and we reply with ideas and a quote, no strings attached.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Horneado fresco, todos los días." data-en="Baked fresh, every single day.">Baked fresh, every single day.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu byrek y tu pastel" data-en="Your byrek and your cake">Your byrek and your cake</span> <span class="text-shine" data-es="te están esperando" data-en="are waiting for you">are waiting for you</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Pasa por 1441 S Belcher Rd o llama al (727) 286-6140. Byrek, baklava, macarons y pasteles personalizados, horneados frescos cada día." data-en="Stop by 1441 S Belcher Rd or call (727) 286-6140. Byrek, baklava, macarons and custom cakes, baked fresh every day.">Stop by 1441 S Belcher Rd or call (727) 286-6140. Byrek, baklava, macarons and custom cakes, baked fresh every day.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="tel:+7272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
-        <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">See listing on Google Maps</a>
+        <a href="tel:+17272866140" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver en Google Maps" data-en="See on Google Maps">See on Google Maps</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#1b140e]">
     <span class="foot-mark" aria-hidden="true">Ana’s Bakery</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/gmaps-1.jpg" alt="Ana’s Bakery" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
+          <img src="assets/raw/logo.jpg" alt="Ana’s Bakery" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(167,232,138,0.35)]" loading="lazy" />
           <span class="font-display text-lg tracking-[0.1em] uppercase">Ana’s Bakery</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Ana’s Bakery en Clearwater, FL. Información pública y contacto directo." data-en="Ana’s Bakery in Clearwater, FL. Public information and direct contact.">Ana’s Bakery in Clearwater, FL. Public information and direct contact.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Panadería y café albanés en Clearwater, FL. Byrek, baklava, macarons y pasteles personalizados, horneados frescos cada día." data-en="Albanian bakery and cafe in Clearwater, FL. Byrek, baklava, macarons and custom cakes, baked fresh every day.">Albanian bakery and cafe in Clearwater, FL. Byrek, baklava, macarons and custom cakes, baked fresh every day.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>1441 S Belcher Rd, Clearwater, FL 33764</p>
-        <p><a href="tel:+7272866140" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Teléfono · (727) 286-6140" data-en="Phone · (727) 286-6140">Phone · (727) 286-6140</a></p>
+        <p><a href="tel:+17272866140" target="_blank" rel="noopener" class="hover:text-[#efd0b2]" data-es="Llamar · (727) 286-6140" data-en="Call · (727) 286-6140">Call · (727) 286-6140</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Google Maps · Google Maps</a></p>
+        <p><a href="https://www.google.com/maps/place/Ana%E2%80%99s+Bakery/data=!4m7!3m6!1s0x88c2f100352d88b9:0x8e832882ebbe51ac!8m2!3d27.9438983!4d-82.7453687!16s%2Fg%2F11w44vjvwx!19sChIJuYgtNQDxwogRrFG-64Iog44" target="_blank" rel="noopener" class="hover:text-[#efd0b2]">Google Maps · Reviews & Photos</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
@@ -674,15 +694,15 @@
         <p class="text-xs text-[color:var(--ink-40)]">© 2026 Ana’s Bakery.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
-          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+          <span class="text-xs text-[#e0f1d7]">Powered by <span class="font-semibold">Merktop</span></span>
         </a>
       </div>
     </div>
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="tel:+7272866140" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+  <a href="tel:+17272866140" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f6efe7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
     <span class="book-float-label" data-es="Llamar ahora" data-en="Call now">Call now</span>
   </a>
 
@@ -697,14 +717,15 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    // El idioma primario del negocio gana; la preferencia se guarda por site.
+    const siteLanguageKey = `siteforge:lang:${location.pathname.split('/').filter(Boolean)[0] || 'home'}`;
     const applyLang = l => {
       document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
       document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
+      localStorage.setItem(siteLanguageKey, l);
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    let lang = localStorage.getItem(siteLanguageKey) || document.documentElement.lang;
     applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
