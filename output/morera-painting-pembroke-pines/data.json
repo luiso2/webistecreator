@@ -1,0 +1,55 @@
+{
+ "source": "Google Maps live (scripts/gmaps_discover.js, gmaps_detail.js, gmaps_reviews.js, gmaps_photocycle.js)",
+ "query": "house painter in Pembroke Pines, FL",
+ "name": "Morera Painting & Services LLC",
+ "category": "Painter",
+ "rating": "5.0",
+ "reviews": "15",
+ "phone": "+1 786-319-6848",
+ "address": null,
+ "address_note": "Service-area business, no storefront address shown on the Google Maps listing (Suggest an edit / Add missing information shown instead of an address). Coordinates on the listing: 25.9421641,-80.241531, which sits in the wider Pembroke Pines / Miramar / west Miami-Dade service radius that this listing surfaces for under Pembroke Pines painter searches.",
+ "hours": [
+  "Monday 8 AM-4 PM", "Tuesday 8 AM-4 PM", "Wednesday 8 AM-4 PM",
+  "Thursday 8 AM-4 PM", "Friday 8 AM-4 PM", "Saturday 8 AM-4 PM", "Sunday Closed"
+ ],
+ "website": null,
+ "website_check": "Tried morerapainting.com, morerapaintingservices.com, morerapaintingandservices.com, morerapaintingservicesllc.com: none resolve (proxy connect_rejected / NXDOMAIN-equivalent). WebSearch for the business name plus Instagram/Facebook, plus the phone number, returned no results beyond the Google Maps listing itself. No Sunbiz (Florida Division of Corporations) record found either. Conclusion: no own website, no social media, no public email found anywhere.",
+ "email": null,
+ "instagram": null,
+ "facebook": null,
+ "owner_first_name": "Adrian",
+ "language": "en",
+ "photos_from_gmaps": 11,
+ "photos_used_after_curation": 8,
+ "photos_excluded": [
+  "2 Google-hosted photos showed a worker wearing a shirt branded \"KY Constructions / General Contractor\" (a different company's logo/phone/website printed on the shirt) during an interior drywall job. Excluded from the gallery and from assets entirely to avoid misattributing another company's branding as Morera's own, even though the photo was surfaced on Morera's Google listing.",
+  "1 duplicate (identical file hash to another downloaded photo)"
+ ],
+ "reviews_verbatim_source": "scripts/gmaps_reviews.js against the live Google Maps listing, 5 unique reviewers captured, all 5 stars, 3 used verbatim (2 complete, kept whole; the 2 unused were mid-sentence truncated by Google's DOM and were not used without full text). Used quotes trimmed only at natural sentence boundaries where Google's own UI truncated them, no words altered.",
+ "discarded_candidates": [
+  {"name": "Higgs Painting & Pressure Cleaning LLC", "rating": "4.9", "reviews": "138", "reason": "has own website, higgspaint.com"},
+  {"name": "Florida Painting LLC", "rating": "4.9", "reviews": "60", "reason": "has own website, floridapaintingllc.com"},
+  {"name": "JA Painting Services Inc", "rating": "5.0", "reviews": "50", "reason": "has own website, japaintingservicesinc.com"},
+  {"name": "Paint EZ of Pembroke Pines", "rating": "5.0", "reviews": "13", "reason": "national franchise with own website, paintez.com"},
+  {"name": "All Coast Painting", "rating": "4.9", "reviews": "25", "reason": "has own website, allcoastpainting.com"},
+  {"name": "A-Best Painting Contractors", "rating": "4.8", "reviews": "82", "reason": "has own website, abestpainting.com"},
+  {"name": "Paint2Last", "rating": "5.0", "reviews": "106", "reason": "has own website, paint2last.com"},
+  {"name": "Gamaliel Painting & Services, LLC", "rating": "5.0", "reviews": "69", "reason": "has own website, gamalielpainting.com"},
+  {"name": "CertaPro Painters of Broward County, FL", "rating": "4.8", "reviews": "225", "reason": "national franchise with own website, certapro.com"},
+  {"name": "Tabban Painting Corporation", "rating": "5.0", "reviews": "283", "reason": "has own website, tabbanpainting.com"},
+  {"name": "Hart's Painting", "rating": "5.0", "reviews": "8", "reason": "no website, but below min_reviews (8 < 10)"},
+  {"name": "M & A Painting Contractors LLC", "rating": "5.0", "reviews": "2", "reason": "no website, but far below min_reviews (2 < 10)"},
+  {"name": "Same Day Exterior Paint & Drywalls Services", "rating": "4.0", "reviews": "4", "reason": "below min_rating and min_reviews"},
+  {"name": "Triple Quality Painting, Inc.", "rating": "4.9", "reviews": "129", "reason": "no website button on this search, but the listing's coordinates (26.72,-80.14) place it in West Palm Beach, not Pembroke Pines; this repo already has an unregistered in-progress build for this exact business at output/triple-quality-painting-inc (city: West Palm Beach) from a prior session, so it was skipped here to avoid duplicating that work under a different area"},
+  {"name": "Sharp and Fast Painters, Corp", "rating": "4.9", "reviews": "38", "reason": "no website, meets rating/review minimums, but coordinates (25.75,-80.45) place it well south in the Kendall/West Miami-Dade area, materially further from Pembroke Pines than Morera Painting; kept as a documented backup candidate, not selected"},
+  {"name": "XLP House Painting Coral Springs", "rating": "3.7", "reviews": "3", "reason": "below min_rating and min_reviews"},
+  {"name": "R & T House Painters Hialeah", "rating": "1.8", "reviews": "5", "reason": "below min_rating"},
+  {"name": "Seal Kote Painting & Waterproofing", "rating": "4.8", "reviews": "4", "reason": "below min_reviews"},
+  {"name": "360º Painting of Fort Lauderdale", "rating": "4.0", "reviews": "1", "reason": "below min_rating and min_reviews"},
+  {"name": "Jag Painting Contractors", "rating": "4.0", "reviews": "2", "reason": "below min_rating and min_reviews"}
+ ],
+ "prior_abandoned_attempt_found": {
+  "slug": "jireh-painting--and--flooring",
+  "note": "Found an existing output/jireh-painting--and--flooring/ (content.json + derived index.html already present, city Pembroke Pines) from an earlier, unfinished session, never added to data/processed.json. NOT reused: its data.json records reviews: null with an empty reviewSamples array, meaning the review count was never actually verified against the min_reviews >= 10 requirement, and it has no verbatim reviews at all (built with the social_proof 'razones' fallback). Left untouched; a different, independently verified candidate (Morera Painting & Services) was used instead for this run."
+ }
+}
