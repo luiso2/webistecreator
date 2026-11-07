@@ -1,15 +1,21 @@
-Subject: A quick demo website for Jack & Sons Home Repair
+# Outreach draft: Jack & Sons Home Repair LLC (Lakeland, FL)
 
-Hi Jack,
+Status: no public email found (deep search for business name + Lakeland/Polk City, FL; no matching Facebook page or directory email, only unrelated similarly-named businesses). Channel: phone / WhatsApp / DM via panel.
 
-My name is Michael Vargas, I work with Merktop. I came across Jack & Sons Home Repair LLC while looking at home repair companies near Polk City and Lakeland, and your Google listing stood out: 5.0 stars across 16 reviews, with customers specifically calling out your honesty, punctuality and fair pricing.
+Language: en
+Angle: has_own_site = false ("we built you a sample website")
 
-I noticed you do not have a dedicated website linked from your profile, so I put together a sample page using your own public photos and contact information, just to show what it could look like:
+---
+
+Subject: A sample website for Jack & Sons Home Repair
+
+Hi, I found Jack & Sons Home Repair while looking for handyman and home repair services around Lakeland, FL (5.0 on Google, 16 reviews). I could not find a dedicated website linked from your public profile, so I put together a clean demo using your own public photos and contact details:
 
 https://siteforge-demos.odd-forest-9504.workers.dev/jack-and-sons-home-repair-llc-lakeland/
 
-It does not touch your current setup in any way, no booking changes, no new phone number, nothing to manage. If you like it, I can put it on your own domain. If it is not useful, just let me know and I will take it down, no hard feelings either way.
+It does not touch how you currently take calls or bookings, it just gives a new customer one clear place to see your work and call or message you. No login, no obligation, nothing has been published under your own domain, just take a look.
 
-Best,
+If you would like it tailored or put on your own domain, I am happy to help. If it is not useful, just reply "no" and I will not follow up.
+
 Michael Vargas
 Merktop
