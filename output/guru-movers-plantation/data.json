@@ -1,0 +1,41 @@
+{
+  "name": "Guru Movers",
+  "city": "Plantation, FL",
+  "niche": "moving / mudanzas",
+  "address": "8233 NW 8th St, Plantation, FL 33324, United States",
+  "phone": "+1 954-594-2664",
+  "email": null,
+  "ig": null,
+  "facebook": null,
+  "website_status": "none",
+  "language": "en",
+  "rating": 5.0,
+  "review_count": 144,
+  "hours": "Open 24 hours (los 7 dias, confirmado via Playwright directo sobre la ficha)",
+  "owner_mentioned": "Alex (nombrado como dueño en multiples reviews verbatim)",
+  "research_notes": [
+    "Verificado con node scripts/_gmaps_url_detail.js sobre el maps_url del manifiesto: name, rating 5.0, reviews 144, address, phone y hours coinciden exactamente con el manifiesto.",
+    "11 fotos reales descargadas de la ficha de Google Maps (lh3.googleusercontent.com) via el mismo script + scripts/_gmaps_photos.py. Contact sheet revisado visualmente (output/guru-movers-plantation/_sheet.jpg).",
+    "gmaps-10.jpg se DESCARTO en curaduria visual: muestra equipo de restauracion/secado (ventiladores, deshumidificadores azules/amarillos), no tiene relacion con mudanzas; es casi seguro una foto de otro negocio mezclada en la galeria de Maps. No se uso en ningun lado.",
+    "gmaps-1.jpg y gmaps-2.jpg son casi duplicadas: Alex (dueno, nombrado en 3 reviews) saludando desde la ventana del camion con el logo GURU MOVERS pintado. Se uso gmaps-1 como brand.logo/avatar (reuso de foto real, no hay logo grafico propio) y gmaps-2 como imagen de hero (unica imagen de marca+camion disponible); NINGUNA de las dos se uso como tile de galeria para respetar la regla de no selfies/retratos como tile.",
+    "Resto de fotos (3,4,5,6,7,8,9,11): muebles envueltos y protegidos, interior de camion cargado, bodega/storage con muebles en buen estado. Todas reales y consistentes con las reviews (wrapping, cuidado, sin danos).",
+    "Busqueda web adicional (WebSearch + WebFetch): Birdeye (reviews.birdeye.com/guru-movers-169864123054587) confirma MISMA direccion exacta (8233 NW 8th St, Plantation, FL 33324) y rating/reviews similares (4.9/155, perfil sin reclamar). HireAHelper (hireahelper.com/movers/fort-lauderdale_fl/guru-movers) lista el mismo negocio sirviendo el area de Fort Lauderdale, SIN sitio propio, SIN email publico. Ninguna fuente (Birdeye, HireAHelper, MovingLabor) expone un email o website propio: se agotaron las fuentes estandar (directorios, IG/FB -no existen perfiles propios verificables-).",
+    "NO se uso el precio por hora ($120/hr) que aparece en HireAHelper: es la tarifa del PRODUCTO de day-labor de esa plataforma de terceros, no una tarifa publicada por Guru Movers mismo, y contradice las reviews reales (Don Dadda describe una cotizacion personalizada por email, no una tarifa plana). Se mantiene el modelo 'se cotiza, escribenos' para evitar inventar/mezclar un precio que no es del negocio.",
+    "Sin Instagram ni Facebook propios verificables (confirmado por manifiesto y por la busqueda web). Se reusa la ficha de Google Maps como canal social (ig_url = maps_url, social_label = Google) segun la regla del playbook.",
+    "Idioma principal: ingles (reviews, ubicacion en Florida, sin evidencia de operacion en espanol)."
+  ],
+  "services_evidence": [
+    "Google category: 'Mover'.",
+    "Rotulo visible en el camion (fotos gmaps-1/2): 'RESIDENTIAL COMM[ERCIAL]...' confirma mudanzas residenciales Y comerciales.",
+    "Reviews destacadas por Google bajo el negocio: 'last minute move' (x6), 'fair rates' (x5), 'no extra charges' (x3), 'free quote' (x2): confirma mudanzas de ultimo momento, cotizacion gratis y sin cargos ocultos.",
+    "Review de Don Dadda: 'free estimate and a absolutely fair price, which is detailed in a email with no hidden cost... secured and wrapped all furniture and boxes... delivery was exceptional and everything got to it's new location safe with no damage.' Base real para el proceso de 4 pasos.",
+    "Review de Alana Paris: 'His team... wrapped and protected all my belongings so delicately and with so much care'. Base real para el servicio de empaque/proteccion de muebles."
+  ],
+  "photos_used": {
+    "brand_logo_avatar": "gmaps-1.jpg",
+    "hero": "gmaps-2.jpg",
+    "nosotros": ["gmaps-6.jpg", "gmaps-9.jpg"],
+    "galeria": ["gmaps-4.jpg", "gmaps-3.jpg", "gmaps-5.jpg", "gmaps-7.jpg", "gmaps-8.jpg", "gmaps-11.jpg"],
+    "descartada": "gmaps-10.jpg (equipo de restauracion, no relacionado, descartado en curaduria visual)"
+  }
+}
