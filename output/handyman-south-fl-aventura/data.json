@@ -1,0 +1,47 @@
+{
+  "name": "Handyman South FL LLC",
+  "city": "Aventura, FL",
+  "niche": "handyman / remodelacion",
+  "address": "3155 NE 184th St Apt 8102, Aventura, FL 33160, United States (direccion registrada, parece residencial/apto; negocio de zona de servicio sin local publico)",
+  "phone": "+1 954-706-2159",
+  "email": null,
+  "ig": null,
+  "facebook": null,
+  "website_status": "none",
+  "maps_url": "https://www.google.com/maps/place/handyman+south+fl+llc/data=!4m7!3m6!1s0x88d9ade57185bbab:0x25f991c7367edf79!8m2!3d25.9472822!4d-80.137449!16s%2Fg%2F11fvlfv6c4!19sChIJq7uFceWt2YgRed9-NseR-SU",
+  "rating": 4.9,
+  "review_count": 24,
+  "hours": {
+    "Saturday": "Closed",
+    "Sunday": "11 AM to 6 PM",
+    "Monday": "9 AM to 7 PM",
+    "Tuesday": "9 AM to 7 PM",
+    "Wednesday": "9 AM to 7 PM",
+    "Thursday": "9 AM to 7 PM",
+    "Friday": "9 AM to 4 PM"
+  },
+  "owner_name_mentioned_in_reviews": "Yani / Yaniv Gozali (nunca confirmado en ninguna fuente propia, solo en reviews de clientes)",
+  "reviews_verbatim": [
+    "Mateo Ventura Bruer, Mindy Pordes, Yaron Davidson, sivan bitton, Carlos Velez (ver manifiesto), todas 5 estrellas, mencionan reparaciones generales del hogar, AC, plomeria de bajo nivel"
+  ],
+  "research_degradado": false,
+  "research_metodo": "node scripts/gmaps_detail.js + gmaps_photocycle.js + gmaps_detail2.js (Playwright headless directo a la ficha exacta de Maps) + WebSearch exhaustivo",
+  "fotos_encontradas": {
+    "total_en_ficha_google": "La propia ficha declara explicitamente '2 Photos' en el panel de Google Maps (texto literal capturado: 'Photos\\n2 Photos'). El listener de red de gmaps_detail2.js capturo 5 URLs unicas de googleusercontent, pero 2 eran duplicados exactos (mismo byte-size) de las 2 fotos reales, y 1 url mas resulto ser una pieza grafica generica tipo stock ('HandyMan South FL' con monito 3D generico de herramientas, logo tipo plantilla de Canva), no una foto real del trabajo.",
+    "fotos_reales_unicas_utilizables": 2,
+    "detalle": [
+      "gmaps-real-1-bathroom.jpg: bano remodelado (ducha con azulejo nuevo, inodoro nuevo, piso de bano instalado). Foto real de trabajo terminado, buena luz, sin personas, usable.",
+      "gmaps-real-2-flooring.jpg: piso de vinilo/laminado instalado en pasillo, foto algo borrosa pero real y usable.",
+      "gmaps-logo-stock.jpg: NO es foto real, es un grafico de stock/plantilla con el nombre del negocio y telefono (logo propio del negocio, reusable solo como posible avatar/logo, nunca como tile de galeria real)."
+    ]
+  },
+  "busquedas_realizadas": [
+    "WebSearch: \"Yani\" OR \"Yaniv Gozali\" handyman south florida 954-706-2159 -> sin resultados que conecten el nombre/telefono a ningun sitio, red social o directorio",
+    "WebSearch: \"handyman south fl llc\" Aventura Facebook Instagram -> sin coincidencias; solo competidores no relacionados",
+    "WebSearch: \"954-706-2159\" handyman -> sin resultados que incluyan ese numero",
+    "WebSearch: \"Handyman South FL\" Aventura LLC Yani -> sin resultados que conecten los terminos",
+    "Dominios probados previamente por discovery (ver manifiesto): handymansouthfl.com, handysouthfl.com, yanihandyman.com (no resuelven), southflhandyman.com (resuelve pero es OTRO negocio distinto, Top 2 Bottom Home Improvement LLC DBA South Fl Handyman, Pembroke Pines, telefono diferente)"
+  ],
+  "language": "en",
+  "conclusion": "Negocio real, rating excelente (4.9/24), pero sin ningun canal digital propio (sin website, sin IG, sin FB, sin email publico) y con solo 2 fotos reales utilizables en su unica fuente visual (su ficha de Google Maps declara textualmente '2 Photos'). Por debajo del minimo de 5 fotos reales que exige el playbook para construir sin inventar contenido visual. Research NO degradado: se accedio directamente a la ficha con Playwright (no via servicio de terceros) y se vio el conteo real de fotos; no aplica la excepcion de 'research_degradado' de FORGE-BRIEF 0.b. Se marca failed."
+}
