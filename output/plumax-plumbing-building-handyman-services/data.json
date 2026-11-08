@@ -1,0 +1,64 @@
+{
+ "slug": "plumax-plumbing-building-handyman-services",
+ "name": "PluMax Plumbing / Building / Handyman Services",
+ "category": "Plumber (nombre del negocio indica tambien building/handyman; Google Maps category field vino null en el JSON crudo, pero el rawSnippet muestra la etiqueta 'Plumber' justo debajo del nombre en la ficha)",
+ "niche": "plomeria, remodelacion de banos y servicios generales de handyman / building",
+ "city": "Clearwater, FL",
+ "address": "2009 Healy Dr, Clearwater, FL 33763, United States",
+ "address_note": "Direccion exacta tal como aparece en el JSON crudo verificado de Google Maps (campo address) y en el dato entregado en el encargo. Se mantiene el mapa embed (variante 0.b) porque es la direccion publicada en la propia ficha de Google Business del negocio, mismo precedente que output/professional-trenchless-plumbing-homestead.",
+ "phone": "+1 727-358-8678",
+ "email": null,
+ "email_search": "3 intentos reales de busqueda, ninguno encontro un email publico: (1) WebSearch 'PluMax Plumbing' Clearwater FL website: solo aparecen perfiles de directorios de terceros (lantern.llc, Houzz de otros plomeros, Angi, BBB), ningun dominio propio. (2) WebSearch 'PluMax Plumbing' Clearwater FL email contact: cero resultados con email, solo el mismo perfil de lantern.llc con telefono. (3) WebSearch 'PluMax Plumbing' 727-358-8678 facebook: no aparece ninguna pagina de Facebook propia verificable. Se abrio (WebFetch) el perfil de lantern.llc/b/plumax-plumbing-handyman-service-clearwater/book que devolvio 404, y el perfil sin /book no expone mailto ni email. Busqueda adicional 'PluMax plumbing Clearwater Viktor OR Victor owner email' tampoco dio resultado. email: null.",
+ "hours": {
+  "mon": "8 AM - 6 PM", "tue": "8 AM - 6 PM", "wed": "8 AM - 6 PM",
+  "thu": "8 AM - 6 PM", "fri": "8 AM - 6 PM", "sat": "Closed", "sun": "Closed"
+ },
+ "hours_note": "El JSON crudo trae una nota especial solo para el miercoles de la semana del research ('Wednesday (Veterans Day), 8 AM to 6 PM, Hours might differ', feriado del 11 de noviembre). Se uso el horario regular de lunes a viernes sin esa nota de feriado puntual, que no aplica de forma permanente.",
+ "rating": 5.0,
+ "review_count": 84,
+ "reviews_verbatim": [
+  { "author": "S.E. Desai", "text": "Wow. Above and beyond. I didn't realize how much work it is to install a bathroom vanity.  Viktor gave up his Saturday to get it installed. He did an amazing job, cutting away trim where needed so that the top would fit flush with the wall …", "note": "cita verbatim con truncado '...' propio de la vista previa de Google Maps (asi vino en reviewSamples). El original traia un em-dash entre 'job' y 'cutting'; se sustituyo por coma segun la regla dura del pipeline, manteniendo el resto exacto." },
+  { "author": "Betty Lee", "text": "Plumax/Victor did an excellent job on my bathroom. He replace my bathtub, shower and wall tile. Every detail was perfect and it turn out to be more beautiful than I thought it would. I love it. i have already recommended Plumax to all my …", "note": "verbatim exacto incluyendo errores gramaticales menores del autor original ('He replace', 'it turn out'), sin em-dash." },
+  { "author": "Shannan Brennan", "text": "Viktor does excellent work! He has completed several repairs at my home, and I have been extremely pleased every time. He is meticulous, reasonably priced, and takes great care of your property while working. Most importantly, he genuinely …", "note": "verbatim exacto, sin em-dash." },
+  { "author": "Leah Hayes", "text": "Victor is the owner of PluMax and does all his own work, he is courteous, on time, and knows everything about home repairs and maintenance solutions per his background as a general contractor. …", "note": "el original traia un em-dash entre 'work' y 'he is courteous' (sin espacios, 'work—he'); se sustituyo por coma segun la regla dura del pipeline." },
+  { "author": "L C", "text": "I am very happy with Viktor / Plumax. He has installed vinyl flooring and baseboards, replaced a garbage disposal, shower faucet/hardware, toilet and 2 water heaters as well as fixing a sewer drain clog. His pricing is reasonable and he does great work. I will call on him again for future projects and repairs.", "note": "unica de las 5 reviews que vino completa (sin truncar) en el JSON crudo, sin em-dash." }
+ ],
+ "reviews_dedup_note": "El array reviewSamples del JSON crudo traia cada autor duplicado (10 entradas = 5 autores x2, texto identico). Se tomo una copia por autor.",
+ "owner_name_seen": "Viktor / Victor (el mismo nombre con dos grafias distintas entre reviews, 'Viktor' en 3 de las 5 reviews usadas y 'Victor' en 2; se uso 'Viktor' en el site por ser la grafia mas frecuente). Mencionado por nombre como dueno, hace el trabajo el mismo, con experiencia como general contractor (review de Leah Hayes).",
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": [
+   "plumaxplumbing.com: el proxy de salida rechazo la conexion (connect_rejected), consistente con dominio que no resuelve.",
+   "plumaxservices.com: el proxy de salida rechazo la conexion (connect_rejected), consistente con dominio que no resuelve.",
+   "plumax.com: SI responde (HTTP 200), pero es un dominio parqueado en venta: redirige a /lander que a su vez redirige a forsale.godaddy.com/forsale/plumax.com (pagina de GoDaddy ofreciendo el dominio en venta). No es el sitio del negocio, es un dominio generico 'PluMax' sin relacion confirmada con la empresa de Clearwater.",
+   "WebSearch '\"PluMax Plumbing\" Clearwater FL website': los unicos resultados son perfiles de directorios de terceros (lantern.llc, Houzz de otros profesionales no relacionados, 1800plumber, Angi), ningun dominio propio del negocio.",
+   "El JSON crudo de Google Maps trae 'website': null (el boton de la ficha es 'Add website', confirmado tambien en el rawSnippet: 'Add website' aparece explicitamente en el texto crudo de la pagina)."
+  ],
+  "result": "sin website propio confirmado. Coincide con lo entregado en el encargo (negocio sin boton de website en Google Maps)."
+ },
+ "social_channels": {
+  "instagram": null,
+  "facebook": null,
+  "notes": "Ningun perfil de Instagram o Facebook propio verificable en las busquedas realizadas. El unico canal publico ademas de Google Maps es un perfil de agregador de terceros (lantern.llc), que no cuenta como website ni red social propia. Se usa el enlace de Google Maps como canal social (social_label: Google)."
+ },
+ "services_research": [
+  "Remodelacion de banos (bathroom remodeling): confirmado por multiples fotos reales de antes/despues (instalacion de tocador completo con grifo nuevo, reemplazo de banera/ducha y azulejo de pared, piso de ducha) y por las reviews de S.E. Desai ('install a bathroom vanity') y Betty Lee ('He replace my bathtub, shower and wall tile').",
+  "Instalacion y reemplazo de calentadores de agua: foto real de antes/despues mostrando el cambio de un calentador de agua Bradford White por uno AO Smith con tanque de expansion rotulado 'PluMax', y confirmado por la review de L C ('2 water heaters').",
+  "Reparaciones de plomeria e instalacion de accesorios: inodoros, triturador de basura, llave y accesorios de ducha, destape de drenaje, segun la review de L C ('replaced a garbage disposal, shower faucet/hardware, toilet ... fixing a sewer drain clog') y foto real de antes/despues de instalacion de inodoro.",
+  "Construccion y mantenimiento general / handyman: piso vinilico y zocalos (review de L C: 'installed vinyl flooring and baseboards'), y experiencia como contratista general segun la review de Leah Hayes ('per his background as a general contractor'), ademas de remodelacion de cocina visible en fotos reales de antes/despues (cambio de gabinetes y electrodomesticos).",
+  "Categoria de Google Maps: 'Plumber' (visible en el rawSnippet justo debajo del nombre). Rating 5.0 con 84 reseñas segun el resumen de la ficha."
+ ],
+ "brand_notes": "El negocio no tiene un logo grafico descargable via el research de Google Maps. Casi todas las fotos de la galeria traen marca de agua propia del dueno ('PluMax', telefono y 'Licensed Insured' superpuestos en collages de antes/despues), que confirma que son fotos reales y propias de su trabajo (no de terceros) y no cuentan como 'capturas con texto superpuesto' tipo screenshot de UI: son material de marketing legitimo del propio negocio mostrando transformaciones reales, por eso se incluyeron en galeria. Como avatar/logo del nav y footer se uso una foto real sin texto superpuesto (azulejo de ducha en blanco y negro, g-3.jpg).",
+ "language": "en",
+ "language_signal": "Las 5 reseñas verbatim recolectadas estan en ingles, el nombre del negocio es en ingles ('PluMax Plumbing / Building / Handyman Services') y no hay ninguna señal de operacion en español en las fotos, reseñas o la ficha de Google. Se construye bilingue (es/en) con ingles como idioma principal.",
+ "photos_source": "13 URLs de fotos descargadas del array photos del JSON crudo de Google Maps (lh3.googleusercontent.com), curl con UA de Chrome. 2 eran duplicados exactos por md5 (g-2.jpg duplicado de g-1.jpg, g-12.jpg duplicado de g-3.jpg) y se borraron, quedando 11 fotos unicas: g-1, g-3, g-4, g-5, g-6, g-7, g-8, g-9, g-10, g-11, g-13.",
+ "photos_curation": [
+  "Las 11 fotos unicas se revisaron una por una con la herramienta Read (no por nombre de archivo). Las 11 muestran trabajo real y propio del negocio: remodelaciones de bano, instalacion de calentadores de agua, instalacion de inodoros, piso de ducha, remodelacion de cocina. Ninguna es selfie o retrato del dueno mirando a camara, ninguna es stock, ninguna es grafico sin relacion con el negocio. 0 fotos descartadas por calidad.",
+  "4 de las 11 (g-10, g-11, g-5, g-3) no traen ninguna marca de agua y se usaron como hero, about y avatar/logo del nav y footer.",
+  "Las otras 7 (g-1, g-4, g-6, g-7, g-8, g-9, g-13) son collages de antes/despues con el telefono, nombre y 'Licensed Insured' superpuestos por el propio dueno como material de marketing: se usaron 6 de ellas en la galeria (se dejo g-4 sin usar, no obligatorio usar las 11) porque muestran de forma muy clara el ANTES y DESPUES de cada trabajo, un argumento de venta fuerte y 100% real, sin fabricar nada.",
+  "Resultado: 10 fotos reales y propias usadas en el site (hero, about x2, nav/footer avatar, galeria x6), 1 foto de respaldo sin usar (g-4). Muy por encima del minimo de 5 fotos usables que exige el pipeline."
+ ],
+ "google_maps_url": "https://www.google.com/maps/place/PluMax+Plumbing+%2F+Building+%2F+Handyman+Services/data=!4m7!3m6!1s0x88c2f1a7e2c10c89:0x824a91c9ab85ca01!8m2!3d27.9981569!4d-82.7542518!16s%2Fg%2F11w28_1spw!19sChIJiQzB4qfxwogRAcqFq8mRSoI",
+ "brand_vibe": "Paleta de trade/construccion adaptada de los tokens de DESIGN.md (ninguna de las 5 paletas con nombre -mizu/amani/mare/alea/pausa- calzaba con el negocio): 'carbon + ambar', base oscura con --bg carbon casi negro (#121212) y acento cobre/ambar (#c2793a / #d98f4e), derivada de las fotos reales: azulejo negro tipo espiga con luz LED calida, griferia en negro mate y bronce cepillado, tanques de calentadores con tonos metalicos calidos. El merktop-badge dorado se dejo intacto sin tocar.",
+ "notes": "Research via el JSON crudo verificado de Google Maps entregado en el encargo (nombre, rating, resenas, telefono, horario y direccion coinciden con lo entregado). No tiene website propio (campo website: null, boton 'Add website' visible en el rawSnippet). plumax.com existe pero es un dominio parqueado en venta por GoDaddy, no es el sitio del negocio. Email publico agotado tras 3 busquedas reales. CTA principal = telefono, unico canal de contacto real y verificado."
+}
