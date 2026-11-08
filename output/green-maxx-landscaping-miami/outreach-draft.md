@@ -1,22 +1,22 @@
 # Outreach draft: Green MaxX Landscaping LLC
 
-**Para**: sin email publico, usar WhatsApp/DM/llamada al +1 786-277-4368 (o DM a @greenmaxxlanscaping en Instagram)
-**Asunto**: Les hice un sitio de muestra gratis, Green MaxX
+**Para**: no public email found, use WhatsApp/DM/call at +1 786-277-4368 (or DM @greenmaxxlanscaping on Instagram)
+**Asunto**: I built you a free sample site, Green MaxX
 
-Hola Paul,
+Hi Paul,
 
-Los encontre por su ficha de Google, 4.8 estrellas con 23 resenas, se nota el trabajo serio que hacen en poda, remocion de arboles y jardin por Westchester, Kendall y Doral.
+I found Green MaxX through your Google listing, 4.8 stars with 23 reviews, it shows in the real work you're doing on tree removal, pruning and garden care around Westchester, Kendall and Doral.
 
-Les arme un sitio de muestra gratis para que vean como se verian con uno propio, sin tocar nada de como trabajan hoy: https://siteforge-demos.odd-forest-9504.workers.dev/green-maxx-landscaping-miami/
+I put together a free sample website for you, just to show what it could look like, it doesn't touch anything about how you run the business today: https://siteforge-demos.odd-forest-9504.workers.dev/green-maxx-landscaping-miami/
 
-Si les gusta se los dejo apuntando a su propio dominio. Si no, lo retiro sin ningun compromiso.
+If you like it, I can point it to your own domain. If not, I'll take it down, no strings attached.
 
-Cualquier pregunta me escriben por aqui mismo o al telefono.
+Happy to answer any questions here or by phone.
 
-Saludos,
+Best,
 Michael Vargas
 Merktop
 
 ---
-**dm_message** (version corta para WhatsApp/DM, max 450 caracteres, mismo idioma, con el link):
-Hola Paul, soy Michael de Merktop. Vi su ficha de Green MaxX en Google (4.8 estrellas, 23 resenas) y les arme un sitio de muestra gratis, sin compromiso: https://siteforge-demos.odd-forest-9504.workers.dev/green-maxx-landscaping-miami/ Si les gusta se lo dejo en su propio dominio, si no lo retiro sin problema. Cualquier duda me escriben.
+**dm_message** (short version for WhatsApp/DM, max 450 characters, same language, with the link):
+Hi Paul, this is Michael from Merktop. I saw Green MaxX's Google listing (4.8 stars, 23 reviews) and built you a free sample website, no strings attached: https://siteforge-demos.odd-forest-9504.workers.dev/green-maxx-landscaping-miami/ If you like it I can point it to your own domain, if not I'll take it down. Happy to answer any questions.
