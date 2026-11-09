@@ -1,0 +1,62 @@
+{
+  "slug": "handy-randy-and-danny-port-st-lucie",
+  "status": "failed",
+  "failed_reason": "menos de 5 fotos reales utilizables. The Google Maps research packet (already scraped, not re-scraped per instructions) lists exactly 1 photo URL for this listing. It was downloaded and verified with PIL (output/handy-randy-and-danny-port-st-lucie/assets/raw/gmaps-1.jpg, visually confirmed as a real kitchen sink/faucet install photo, not stock or broken). An honest rescue effort was made for additional real photos from other sources the brief allows: no Facebook page found for this exact business (web search for the business name plus 'facebook', plus a site:facebook.com search, returned nothing matching); no Instagram account found (web search for the business name plus 'instagram' returned nothing matching); Yelp/BBB/Angi/Nextdoor web search returned no page for this exact business (address 706 Anita St, Fort Pierce, FL 34982, phone +1 772-595-2000); the only non-Google listings found were lead-gen aggregator/directory pages (lantern.llc, MapQuest) which do not host any additional photos, Facebook link, Instagram link, or email of their own (the facebook.com/instagram.com/mailto links present on the MapQuest page are MapQuest's own social links, not the business's). Result: 1 real usable photo total, below the hard minimum of 5. Per the brief's explicit rule, the build was not started: no content.json, index.html, palette, gate run, or outreach draft were created.",
+  "name": "Handy Randy and Danny Home Improvements LLC",
+  "niche": "handyman / home improvement",
+  "city": "Port St. Lucie, FL",
+  "language": "en",
+  "address": "706 Anita St, Fort Pierce, FL 34982, United States",
+  "phone": "+1 772-595-2000",
+  "hours": "Open 24 hours (all days, per Google Maps listing)",
+  "rating": 4.6,
+  "review_count": 37,
+  "maps_url": "https://www.google.com/maps/place/Handy+Randy+and+Danny+Home+Improvements+LLC/data=!4m7!3m6!1s0x66cc7860fb3df6f9:0xe715e4cb366677f8!8m2!3d27.3694054!4d-80.3320085!16s%2Fg%2F11ldhy2dd2!19sChIJ-fY9-2B4zGYR-HdmNsvkFec?authuser=0&hl=en&g_ep=EgoyMDI2MTEwNC4wIJJjKgBIAVAD&rclk=1",
+  "has_own_site": false,
+  "own_site_check": "detail.website in the research packet is null (no Website button on the Maps listing). Tried https://handyrandyanddanny.com, handyrandyanddannyhomeimprovements.com, handyrandyanddannyllc.com, randyanddanny.com, handyrandyanddanny.net: all returned curl exit code / HTTP 000 (no DNS resolution at all), confirmed network itself works (https://www.google.com returned 200 in the same session). No Wix/Squarespace/WordPress/Webflow/GoDaddy Sites/Canva site, and no real custom domain, found via web search either. has_own_site: false confirmed.",
+  "email": null,
+  "email_note": "Deep search per Fase 1.7: no Facebook page found to check an About section, no Instagram bio/linktree found, no mailto on either aggregator page that mentions this business, domain-check attempts above all failed to resolve. No public email exists for this business as far as can be determined. email: null, outreach would have been pending_manual (phone +1 772-595-2000) had the build proceeded.",
+  "reviews_found": [
+    {
+      "author": "William Hood",
+      "text": "Needed 3, 4x4 porch posts replaced. I purchased the materials, he picked them up and installed. Two were straight forward, the 3rd, a corner post with multiple items attached including shutters, was more involved. Randy did them all …",
+      "stars": "5 stars"
+    },
+    {
+      "author": "Ralph Barker",
+      "text": "Randy has done two separate projects for me and I am more than pleased with the results! He is an honest, very capable handyman and plumber who really knows his stuff. He did an excellent job installing my bathroom floors, stayed extra …",
+      "stars": "5 stars"
+    },
+    {
+      "author": "Alan Wimer",
+      "text": "Had a severe water leak in the crawl space of a friends house late afternoon. Called Toby who responded and worked well into the night to make water available that night. We then decided the piping needed to be replaced. Tobi worked late …",
+      "stars": "5 stars"
+    },
+    {
+      "author": "Lorraine Chapin",
+      "text": "We were totally happy with him, he replaced our hot water heater the same day we called. Great price and service. Don't hesitate to call him, he's on my call list! Thank you for doing such a great job Randy! 5 stars for us..",
+      "stars": "5 stars"
+    },
+    {
+      "author": "Photo of Tanaz",
+      "text": "Took the deposit, demolished, then took the material bought with my money, and ran. Be extremely careful dealing with them. …",
+      "stars": "1 star",
+      "note": "Not usable as social proof (negative), kept here only for research completeness. Overall listing rating (4.6/37) already factors this in."
+    }
+  ],
+  "photos": {
+    "attempted": [
+      "Research packet (pre-fetched Google Maps data, not re-scraped per instructions): 1 photo URL listed under detail.photos",
+      "scripts/_gmaps_photos.py handy-randy-and-danny-port-st-lucie <urls.json> -> 1 of 1 URLs valid, downloaded to output/handy-randy-and-danny-port-st-lucie/assets/raw/gmaps-1.jpg, PIL-verified, visually confirmed as a real kitchen sink/faucet install (not stock, not broken)",
+      "Facebook search (web search for business name + 'facebook', plus site:facebook.com search) -> no page found for this business",
+      "Instagram search (web search for business name + 'instagram') -> no account found for this business",
+      "Yelp/BBB/Angi/Nextdoor search -> no listing found matching this exact business (address/phone)",
+      "lantern.llc listing page -> fetched via WebFetch (404/empty) and via curl with browser UA (404), no content retrievable",
+      "MapQuest listing page -> fetched successfully (200), grepped for lh3.googleusercontent.com image URLs (none found) and for facebook.com/instagram.com/mailto links (only MapQuest's own generic social links present, not the business's)"
+    ],
+    "usable_count": 1,
+    "curation_verdict": "Only 1 real photo exists for this business across every source checked. It is a genuine, good-quality photo of real work (kitchen sink and faucet installation), but 1 is far below the hard minimum of 5 real usable photos. Build STOPPED per the brief's explicit rule rather than forcing a degraded build with filler/stock content."
+  },
+  "build_status": "NOT STARTED. No content.json, index.html, palette, gate run, or outreach-draft.md were created. The single verified real photo remains at output/handy-randy-and-danny-port-st-lucie/assets/raw/gmaps-1.jpg and the contact sheet at output/handy-randy-and-danny-port-st-lucie/_sheet.jpg for audit purposes only; neither is referenced by any HTML.",
+  "orphan_check": "Checked output/ for any pre-existing build of this exact business under a different slug before starting (same Google Maps place id / address / phone): grepped all output/*/content.json and output/*/*.json for '772-595-2000', '7725952000' and '706 Anita' - no matches. The only similarly-named existing build, output/handy-danny-top-notch-services-llc/, is confirmed to be a different, unrelated business (phone (561) 806-8111, address 3630 Consumer St Ste 112, West Palm Beach, FL 33404). No orphaned duplicate exists."
+}
