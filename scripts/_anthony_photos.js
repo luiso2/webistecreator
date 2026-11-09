@@ -50,6 +50,14 @@ async function main() {
     });
     out.seeMorePhotosClicked = smp;
     await page.waitForTimeout(2000);
+    // dismiss the "Sign-in to get the best of Google Maps" modal if it appears
+    const dismissed = await page.evaluate(() => {
+      const btn = Array.from(document.querySelectorAll('button')).find(b => (b.textContent || '').trim() === 'Dismiss');
+      if (btn) { btn.click(); return true; }
+      return false;
+    });
+    out.dismissed = dismissed;
+    await page.waitForTimeout(800);
 
     const seen = new Set();
     function collect() {
@@ -67,32 +75,24 @@ async function main() {
       });
     }
     out.nextClicks = 0;
-    // first: scroll the gallery grid heavily to lazy-load many thumbnails
-    for (let i = 0; i < 60; i++) {
-      await page.mouse.wheel(0, 2200);
-      await page.waitForTimeout(220);
+    // scroll the left thumbnail sidebar (mouse positioned over it) to lazy-load many thumbnails
+    await page.mouse.move(115, 400);
+    for (let i = 0; i < 80; i++) {
+      await page.mouse.wheel(0, 1400);
+      await page.waitForTimeout(230);
       const found = await collect();
       for (const u of found) {
         const base = u.split('=')[0];
         if (!seen.has(base)) { seen.add(base); out.photoUrls.push(base + '=w1200-h1200-k-no'); }
       }
+      if (i === 20 || i === 60) await page.screenshot({ path: `/tmp/claude-0/anthony_scroll_${i}.png` });
     }
-    // then: if a "Next" image-viewer button exists (in case we are in single-photo view), page through it too
-    for (let i = 0; i < 60; i++) {
-      const found = await collect();
-      for (const u of found) {
-        const base = u.split('=')[0];
-        if (!seen.has(base)) { seen.add(base); out.photoUrls.push(base + '=w1200-h1200-k-no'); }
-      }
-      const clickedNext = await page.evaluate(() => {
-        const btn = Array.from(document.querySelectorAll('button[aria-label]')).find(b => b.getAttribute('aria-label') === 'Next');
-        if (btn) { btn.click(); return true; }
-        return false;
-      });
-      if (clickedNext) out.nextClicks++;
-      else break;
-      await page.waitForTimeout(260);
-    }
+    out.debugAllImgSrcCount = await page.evaluate(() => document.querySelectorAll('img').length);
+    out.scrollableFound = await page.evaluate(() => {
+      const els = Array.from(document.querySelectorAll('div'));
+      const scrollable = els.filter(e => e.scrollHeight > e.clientHeight + 50 && e.clientHeight > 200);
+      return scrollable.length;
+    });
   } catch (e) { out.error = e.message.split('\n')[0]; }
   await browser.close();
   console.log(JSON.stringify(out, null, 1));
