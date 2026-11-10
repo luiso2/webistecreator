@@ -34,7 +34,7 @@ Merktop
 
 ---
 
-## DM / WhatsApp version (dm_message, 406 chars)
+## DM / WhatsApp version (dm_message, 432 chars)
 
 Hi! I came across Rags2riches Solutions on Google, rated 4.7 with 47 reviews, Tallahassee FL
 mobile detailing. I built a free sample site for you using your real photos and reviews:

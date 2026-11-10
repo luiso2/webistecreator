@@ -24,6 +24,6 @@ Merktop
 
 ---
 
-## DM / WhatsApp version (dm_message, 398 chars)
+## DM / WhatsApp version (dm_message, 405 chars)
 
 Hi! I came across Garage98 Auto Repairs on Google, rated 4.9 with 34 reviews, Naples FL. I built a free sample site for you using your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/garage98-auto-repairs-naples/ It does not touch your Google listing, just an extra page people could call you from. Want it on your own domain? No pressure either way. - Michael Vargas, Merktop
