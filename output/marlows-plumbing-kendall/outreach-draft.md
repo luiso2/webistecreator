@@ -24,6 +24,6 @@ Merktop
 
 ---
 
-## DM / WhatsApp version (dm_message, 431 chars)
+## DM / WhatsApp version (dm_message, 398 chars)
 
 Hi! I came across Marlow's Plumbing on Google, rated 4.7 with 20 reviews, Kendall FL. I built a free sample site for you using your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/marlows-plumbing-kendall/ It does not touch your Google listing, just an extra page people could call you from. Want it on your own domain? No pressure either way. - Michael Vargas, Merktop
