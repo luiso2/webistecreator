@@ -24,6 +24,6 @@ Merktop
 
 ---
 
-## DM / WhatsApp version (dm_message, 429 chars)
+## DM / WhatsApp version (dm_message, 425 chars)
 
 Hi! I came across Namastegrand Petstylists on Google, rated 4.9 with 60 reviews, Wilton Manors FL. I built a free sample site for you using your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/namastegrand-petstylists-wilton-manors/ It does not touch your Google listing, just an extra page people could call you from. Want it on your own domain? No pressure either way. - Michael Vargas, Merktop
