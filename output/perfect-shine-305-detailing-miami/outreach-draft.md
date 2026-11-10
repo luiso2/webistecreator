@@ -26,6 +26,6 @@ Merktop
 
 ---
 
-## DM / WhatsApp version (dm_message, 406 chars)
+## DM / WhatsApp version (dm_message, 427 chars)
 
 Hi! I came across Perfect Shine 305 on Google, rated 5.0 with 81 reviews, mobile auto detailing in Miami. I built a free sample site for you using your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/perfect-shine-305-detailing-miami/ It does not touch your Google listing, just an extra page people could call you from. Want it on your own domain? No pressure either way. - Michael Vargas, Merktop
