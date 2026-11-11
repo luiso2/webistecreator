@@ -19,13 +19,23 @@ import sys
 VENV_PY = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '.venv-pw', 'bin', 'python'))
 
 _DRIVER = r'''
-import sys, json, re
+import os, sys, json, re, shutil
 from playwright.sync_api import sync_playwright
 UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
 h=sys.argv[1]
 out={'handle':h,'email':'','phone':'','whatsapp':'','booking':'','bio':'','login_wall':False}
+_CHROME = (os.environ.get('CHROME_PATH') or shutil.which('chromium') or shutil.which('google-chrome'))
+_ARGS = ['--no-sandbox', '--disable-gpu', '--disable-quic',
+         '--disable-features=QUIC,EncryptedClientHello,PostQuantumKyber,UseDnsHttpsSvcb',
+         '--ssl-version-max=tls1.2']
+_px = os.environ.get('HTTPS_PROXY') or os.environ.get('https_proxy')
+if _px:
+    _ARGS.append(f'--proxy-server={_px}')
 with sync_playwright() as p:
-    b=p.chromium.launch(headless=True, args=['--no-sandbox'])
+    _kw = {'headless': True, 'args': _ARGS}
+    if _CHROME:
+        _kw['executable_path'] = _CHROME
+    b=p.chromium.launch(**_kw)
     pg=b.new_page(user_agent=UA, viewport={'width':1280,'height':1600})
     pg.goto(f'https://www.instagram.com/{h}/', wait_until='domcontentloaded', timeout=45000)
     pg.wait_for_timeout(2800)

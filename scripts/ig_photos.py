@@ -75,14 +75,18 @@ def extract():
     }"""
 u=sys.argv[1]
 with sync_playwright() as p:
-    import os as _os
-    _exe = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
-    _kw = {'headless': True, 'args': ['--no-sandbox']}
+    import os as _os, shutil as _shutil
+    _exe = (_os.environ.get('CHROME_PATH') or _shutil.which('chromium') or _shutil.which('google-chrome')
+            or '/opt/pw-browsers/chromium')
+    _args = ['--no-sandbox', '--disable-gpu', '--disable-quic',
+             '--disable-features=QUIC,EncryptedClientHello,PostQuantumKyber,UseDnsHttpsSvcb',
+             '--ssl-version-max=tls1.2']
+    _kw = {'headless': True, 'args': _args}
     if _os.path.exists(_exe):
         _kw['executable_path'] = _exe
     _px = _os.environ.get('HTTPS_PROXY') or _os.environ.get('https_proxy')
     if _px:
-        _kw['proxy'] = {'server': _px}
+        _args.append(f'--proxy-server={_px}')
     b=p.chromium.launch(**_kw)
     pg=b.new_page(user_agent=UA, viewport={'width':1280,'height':2200})
     pg.goto(f'https://www.instagram.com/{u}/', wait_until='networkidle', timeout=45000)

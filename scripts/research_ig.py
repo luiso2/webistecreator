@@ -44,10 +44,17 @@ except ImportError:
 
 # Driver de UNA pasada: perfil + bio + contacto + foto de perfil + fotos + captions.
 _DRIVER = r'''
-import sys, json
+import os, sys, json, shutil
 from playwright.sync_api import sync_playwright
 UA='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
 h=sys.argv[1]
+CHROME = (os.environ.get('CHROME_PATH') or shutil.which('chromium') or shutil.which('google-chrome'))
+LAUNCH_ARGS = ['--no-sandbox', '--disable-gpu', '--disable-quic',
+               '--disable-features=QUIC,EncryptedClientHello,PostQuantumKyber,UseDnsHttpsSvcb',
+               '--ssl-version-max=tls1.2']
+_proxy = os.environ.get('HTTPS_PROXY') or os.environ.get('https_proxy')
+if _proxy:
+    LAUNCH_ARGS.append(f'--proxy-server={_proxy}')
 EXTRAER = """() => {
   const header = document.querySelector('header');
   const bio = header ? header.innerText : '';
@@ -75,7 +82,10 @@ EXTRAER = """() => {
   };
 }"""
 with sync_playwright() as p:
-    b=p.chromium.launch(headless=True, args=['--no-sandbox'])
+    launch_kw = {'headless': True, 'args': LAUNCH_ARGS}
+    if CHROME:
+        launch_kw['executable_path'] = CHROME
+    b=p.chromium.launch(**launch_kw)
     pg=b.new_page(user_agent=UA, viewport={'width':1280,'height':2400})
     # domcontentloaded + espera corta: networkidle en IG cuesta segundos extra y no aporta
     pg.goto(f'https://www.instagram.com/{h}/', wait_until='domcontentloaded', timeout=45000)
