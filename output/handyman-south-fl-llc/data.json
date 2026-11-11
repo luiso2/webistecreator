@@ -1,0 +1,46 @@
+{
+  "name": "Handyman South Fl LLC",
+  "niche": "handyman / remodelacion",
+  "city": "Aventura, FL",
+  "address": "3155 NE 184th St Apt 8102, Aventura, FL 33160, United States",
+  "phone": "+1 954-706-2159",
+  "hours": {
+    "Monday": "9 AM to 7 PM",
+    "Tuesday": "9 AM to 7 PM",
+    "Wednesday": "9 AM to 7 PM",
+    "Thursday": "9 AM to 7 PM",
+    "Friday": "9 AM to 4 PM",
+    "Saturday": "Closed",
+    "Sunday": "11 AM to 6 PM"
+  },
+  "rating": 4.9,
+  "review_count": 24,
+  "maps_url": "https://www.google.com/maps/place/handyman+south+fl+llc/data=!4m7!3m6!1s0x88d9ade57185bbab:0x25f991c7367edf79!8m2!3d25.9472822!4d-80.137449!16s%2Fg%2F11fvlfv6c4!19sChIJq7uFceWt2YgRed9-NseR-SU",
+  "website": null,
+  "has_own_site": false,
+  "email": null,
+  "ig": null,
+  "fb": null,
+  "language": "en",
+  "fotos": ["assets/raw/gmaps-1.jpg", "assets/raw/gmaps-2.jpg"],
+  "fotos_nota": "gmaps-1.jpg y gmaps-2.jpg son DOS URLs distintas de la ficha de Google Maps pero decodifican al MISMO archivo (md5 identico): bano remodelado (ducha con azulejo nuevo, inodoro nuevo). La ficha de Google declara textualmente 'Photos\\n2 Photos'. Una sesion de research previa (output/handyman-south-fl-aventura/data.json) capturo ademas una segunda foto real distinta via listener de red (piso de vinilo instalado, algo borrosa): assets_previos = output/handyman-south-fl-aventura/assets/raw/gmaps-real-2-flooring.jpg. Total de fotos reales y propias del negocio confirmadas en TODAS las fuentes: 2 (bano + piso). Muy por debajo del minimo de 5 que exige el pipeline para construir sin fabricar contenido visual.",
+  "reviewSamples": [],
+  "review_summary_snippets_sin_autor": [
+    "Quick response, professional and very happy with service.",
+    "I highly recommend this guy, great customer service, called for follow-up.",
+    "He did quality work at a fair price."
+  ],
+  "research_degradado": false,
+  "research_metodo": "curl (verificacion de dominios), WebSearch (nombre+ciudad, telefono exacto, sunbiz), WebFetch (facebook.com/61582323060899, login-gated sin datos), node scripts/gmaps_detail.js (Playwright headless directo a la ficha exacta de Maps dada en el brief, con flags TLS fix)",
+  "busquedas_realizadas": [
+    "curl -I handymansouthfl.com, handymansouthflllc.com, handyman-south-fl.com, handymansouthfl.net -> DNS no resuelve (connect_unreachable)",
+    "curl handymansouthflorida.com -> resuelve pero redirige a /lander, sin relacion verificable con este negocio (sin telefono/direccion que coincida)",
+    "curl southflhandyman.com -> resuelve, pero es OTRO negocio (Top 2 Bottom Home Improvement LLC DBA South Fl Handyman, Pembroke Pines, telefono distinto, confirmado en sesion de research previa)",
+    "WebSearch \"handyman south fl llc\" Aventura instagram OR facebook -> 0 coincidencias, solo competidores no relacionados (Mr Handyman, IRT Services, PalmFix, etc.)",
+    "WebSearch \"954-706-2159\" handyman -> 0 resultados con ese numero",
+    "WebSearch \"Handyman South Fl\" LLC sunbiz Aventura -> sin registro de Sunbiz encontrado para este nombre exacto",
+    "WebFetch facebook.com/61582323060899 (unico link de FB encontrado en research previo) -> solo muro de login, sin poder confirmar nombre/telefono/fotos",
+    "node scripts/gmaps_detail.js <maps_url exacta> -> confirma: website null, 2 URLs de foto (resultan ser el mismo archivo), 0 reviewSamples verbatim con autor, rating 4.9/24 OK"
+  ],
+  "conclusion": "Tercer intento de research independiente sobre este mismo negocio (dos sesiones previas en output/handyman-south-fl-aventura y output/handymansouthflaventura, ambas FAILED por el mismo motivo). Confirmado de forma no degradada (Playwright directo a la ficha exacta de Maps): el negocio no tiene website, no tiene Instagram ni Facebook localizables, no tiene perfil en Thumbtack/Yelp/BBB/HomeAdvisor/Sunbiz encontrable, y su ficha de Google Maps declara literalmente 2 fotos, de las cuales el research acumulado (esta sesion + la sesion anterior que capturo una foto adicional por listener de red) arroja un total de 2 fotos reales y distintas (bano remodelado + piso instalado). Por debajo del minimo duro de 5 fotos reales propias que exige PIPELINE.md fase 3 punto 5 y FORGE-BRIEF seccion 0.b para construir sin fabricar contenido visual. No hay ningun canal de contacto publico adicional (sin email, sin IG, sin FB verificable) que permita pedir mas fotos. Se marca failed."
+}
