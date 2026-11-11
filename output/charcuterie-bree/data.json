@@ -1,0 +1,73 @@
+{
+ "slug": "charcuterie-bree",
+ "name": "Charcuterie Bree",
+ "niche": "catering / charcuterie boards",
+ "city": "Kendall, Miami, FL",
+ "rating": 5.0,
+ "reviews": 18,
+ "address": null,
+ "phone": "+1 305-710-4492",
+ "hours": "9 AM to 7 PM, every day",
+ "website": null,
+ "has_own_site": false,
+ "website_check": {
+  "domains_tried": ["charcuteriebree.com", "charcuterie-bree.com", "charcuteriebreecatering.com", "charcuteriebreemiami.com"],
+  "result": "none resolve (DNS failure on all 4), Google Maps ficha shows an \"Add website\" button (no site on file), web search found no owned domain"
+ },
+ "email": null,
+ "ig_handle": "@charcuteriebree",
+ "ig_url": "https://www.instagram.com/charcuteriebree/",
+ "fb_url": "https://www.facebook.com/charcuteriebree/",
+ "fb_note": "page exists (found via web search) but could not be scraped (403/JS-gated); not used as a data source beyond confirming existence",
+ "gmaps_url": "https://www.google.com/maps/place/Charcuterie+Bree/data=!4m7!3m6!1s0x83d277358a30fbed:0x3e602f3c36ed8d95!8m2!3d25.657927!4d-80.3584765!16s%2Fg%2F11t9rh8cm1!19sChIJ7fswijV30oMRlY3tNjwvYD4?authuser=0&hl=en",
+ "gmaps_category": "Caterer",
+ "owner_first_name": "Bree",
+ "language": "en",
+ "language_note": "all Instagram captions, the posted menu and every Google review are in English; no Spanish signal found",
+ "photos_sources": {
+  "instagram": "node scripts/ig_scrape_fixed.js charcuteriebree (24 nodes returned, 10 real feed photos usable after discarding profile/highlight thumbnails)",
+  "google_maps": "node scripts/gmaps_detail.js <maps_url> + scratchpad gmaps_full.js (photo lightbox), 2 distinct photos (a 3rd URL was a byte-identical duplicate, discarded)",
+  "zola": "WebFetch of https://www.zola.com/wedding-vendors/wedding-catering/charcuterie-bree, 2 photos labeled \"Photo from Charcuterie Bree\""
+ },
+ "photos_curated": [
+  {"file": "assets/raw/zola-2.webp", "desc": "classic charcuterie board on marble counter, source: Zola", "use": "hero"},
+  {"file": "assets/raw/ig-9.jpg", "desc": "individual charcuterie cups branded \"Charcuterie Bree\" (Valentine's set), source: Instagram", "use": "nosotros + galeria"},
+  {"file": "assets/raw/gmaps-1.jpg", "desc": "dozens of charcuterie cups lined up for an event, source: Google Maps", "use": "nosotros + galeria"},
+  {"file": "assets/raw/ig-4.jpg", "desc": "brunch grazing board: bagels, donuts, fruit, cream cheese dips, source: Instagram", "use": "contacto + galeria"},
+  {"file": "assets/raw/zola-1.webp", "desc": "catering spread: sliders, chips, fruit, source: Zola", "use": "galeria (wide tile)"},
+  {"file": "assets/raw/ig-1.jpg", "desc": "Halloween-themed coffin board, source: Instagram", "use": "galeria"},
+  {"file": "assets/raw/logo.jpg", "desc": "circular brand logo (cleaver + knife), source: Instagram profile picture", "use": "nav/footer logo + avatar"}
+ ],
+ "photos_discarded": [
+  {"file": "ig-2 (not saved)", "reason": "printed price menu graphic, not a product photo (used only to read real prices into content.json)"},
+  {"file": "ig-3 (not saved)", "reason": "product-size comparison graphic with heavy text overlay"},
+  {"file": "ig-5 (not saved)", "reason": "real product (school-event cups) but ribbon shows a customer's first name, not used to avoid showing a third party's name"},
+  {"file": "ig-6 (not saved)", "reason": "\"STAR BOARD\" text overlay across the photo"},
+  {"file": "ig-7 (not saved)", "reason": "ingredient-label diagram with heavy text/arrow overlays"},
+  {"file": "ig-8 (not saved)", "reason": "Easter board with heavy text/arrow overlays"},
+  {"file": "ig-10 (not saved)", "reason": "event flyer/poster (Galentine's workshop ad), not a product photo"}
+ ],
+ "prices_source": "ig-2.jpg (price list graphic posted to Instagram, read visually, not saved to assets)",
+ "prices": [
+  {"item": "Charcuterie Cup", "price": "$12"},
+  {"item": "Mini Box", "price": "$18"},
+  {"item": "Charcuterie Box (2 ppl)", "price": "$28"},
+  {"item": "Small Bamboo Board (4-6 ppl, disposable)", "price": "$75"},
+  {"item": "Medium Board (8 ppl)", "price": "$150"},
+  {"item": "Large Board (18-20 ppl, disposable)", "price": "$250"},
+  {"item": "XL Bamboo Board (20 ppl)", "price": "$220"},
+  {"item": "XL Board (up to 25 ppl)", "price": "$275"}
+ ],
+ "reviewSamples": [
+  {"author": "Penelope De", "stars": 5, "text": "I have used Charcuterie Bree on many occasions and have never been disappointed!", "source": "Google Maps"},
+  {"author": "Sara Ferrer", "stars": 5, "text": "Bree and her charcuterie boards are the absolute best! She decorates all her boards beautifully and uses great quality cheeses and meats for a great price. She is creative and has plenty of options to choose from savory or sweet! 10/10 !!", "source": "Google Maps"},
+  {"author": "Michelle Rose", "stars": 5, "text": "I've purchased boards from Charcuterie Bree on several occasions, and she never disappoints! Boards are alway a visual delight and delicious! Bree is so accommodating and friendly, and can create something special for any occasion. I'd give her ten stars if I could.", "source": "Google Maps"},
+  {"author": "Brian McSwiney", "stars": 5, "text": "Bree has a great eye for making a beautiful looking board for any occasion from Holidays to special events. She can also custom make any order to fit your needs. We have had the greatest success and compliments whenever we use her.", "source": "Google Maps"},
+  {"author": "Gio+Carolina Romeo", "stars": 5, "text": "The boards from Bree are generously filled with fresh and delicious bites. I love the presentation, always in a brand new wooden board and she delivers, which makes it very convenient. Great addition to our events.", "source": "Google Maps"}
+ ],
+ "service_mentions": [
+  "charcuterie boards (4 reviews)", "chocolate covered strawberries (2 reviews)", "custom orders (2 reviews)",
+  "fresh product (2 reviews)", "event catering (2 reviews)", "quality product (2 reviews)",
+  "new ideas (2 reviews)", "delicious food (4 reviews)", "creativity (3 reviews)", "holiday (3 reviews)"
+ ]
+}
