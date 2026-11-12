@@ -1,22 +1,28 @@
 # Outreach draft: Wash Force
 
-Status: no public email found. Outreach is `pending_manual` (phone / text / WhatsApp to +1 863-225-1919).
-Language: English (business name, reviews and Google listing are all in English).
-Channel: phone call or SMS/WhatsApp to the number above. No email exists to draft a cold email to, so this is the manual-contact message, structured the same way an email would be.
+CORRECTION (2026-11-12): a deeper research pass found that Wash Force DOES have its own
+active website at https://washforce.us (same address, phone and a real business email,
+washforce@washforce.us). The 2026-11-10 registration had `has_own_site: false`, which was
+wrong; Google's Business Profile simply does not link the website, it does not mean there
+is none. Fixed in data/processed.json: `has_own_site: true`, `email: "washforce@washforce.us"`,
+angle switched to "alternative design proposal" below. The draft below (and the 2026-11-10
+one) was NEVER sent. Do not use the old "you don't have a website" framing.
+
+Status: public email found (washforce@washforce.us). Outreach is `pending_manual`, awaiting
+human approval for this re-angled draft.
+Language: English.
 
 ---
 
 Hi,
 
-I came across Wash Force on Google while looking at pressure washing companies in Lakeland, I noticed you're rated 5.0 with 69 reviews, which is a great track record, but your Google Business profile doesn't link to a website of your own.
+My name is Michael Vargas, I work with Merktop. I came across Wash Force on Google, 5.0 stars across 69 reviews in Lakeland, that's a strong track record.
 
-So I put together a sample site for you, using your real before and after photos, your real rating, and a few of your actual Google reviews:
+I saw you already have a site at washforce.us, so this isn't about you not having one. As an example, I put together an alternative premium design using your real photos and real Google reviews, just to show a different direction:
 
 https://siteforge-demos.odd-forest-9504.workers.dev/wash-force-lakeland/
 
-It's a clean one-page site built around your pool cage and lanai cleaning, driveways, sidewalks and fences, with your phone number front and center so people can call you directly. It doesn't touch your Google Business listing or change anything about how you get found there, it's just an extra page you could point people to.
-
-If you like it, I can set it up on your own domain. If it's not useful to you, no problem, just let me know and I'll take it down, no strings attached either way.
+It doesn't touch your current site or your Google listing, it's just a sample. If you like the direction, I can help adapt it to your domain. If not, no problem, just let me know and I'll take it down, no strings attached.
 
 Best,
 Michael Vargas
@@ -24,6 +30,6 @@ Merktop
 
 ---
 
-## DM / WhatsApp version (dm_message, 387 chars)
+## DM / WhatsApp version (dm_message)
 
-Hi! I came across Wash Force on Google, rated 5.0 with 69 reviews, Lakeland FL. I built a free sample site for you using your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/wash-force-lakeland/ It does not touch your Google listing, just an extra page people could call you from. Want it on your own domain? No pressure either way. - Michael Vargas, Merktop
+Hi, this is Michael from Merktop. I came across Wash Force on Google (5.0 stars, 69 reviews) in Lakeland, FL. I saw you already have a site at washforce.us, so as an example I put together an alternative premium design using your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/wash-force-lakeland/ No pressure, happy to adapt it to your domain or take it down, your call.
