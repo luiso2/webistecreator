@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#110f0d" />
+  <title>The Tattoo Gallery · Tattoo &amp; Piercing Studio on Fort Lauderdale Beach | Since 1998</title>
+  <meta name="description" content="The Tattoo Gallery, a walk-in friendly tattoo and piercing studio on Fort Lauderdale Beach Blvd since 1998. Custom tattoos from $100, piercings with real jewelry. 4.9 on Google, 1,018 reviews." />
+  <meta property="og:title" content="The Tattoo Gallery · Tattoo &amp; Piercing Studio on Fort Lauderdale Beach" />
+  <meta property="og:description" content="Walk-ins welcome since 1998. Custom tattoos from $100. 4.9 on Google with 1,018 reviews." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/interior-shop.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "The Tattoo Gallery",
+    "description": "Walk-in friendly tattoo and piercing studio on Fort Lauderdale Beach Boulevard, open since 1998.",
+    "telephone": "+1-954-767-8833",
+    "priceRange": "$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "415 S Fort Lauderdale Beach Blvd, Suite A",
+      "addressLocality": "Fort Lauderdale",
+      "addressRegion": "FL",
+      "postalCode": "33316",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "10:00", "closes": "21:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/tattoo_gallery954/",
+      "https://www.facebook.com/tattoogalleryftl"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1018", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Tattoos and piercings",
+      "itemListElement": [
+        { "@type": "Offer", "price": "100", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Custom Tattoo (starting price)", "serviceType": "Tattoo" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <noscript><style>#preloader{display:none}.reveal,.img-reveal{opacity:1;transform:none;clip-path:none}.img-reveal img{transform:none}</style></noscript>
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #110f0d;
+      --bg-2: #181411;
+      --surface: rgba(255,255,255,0.03);
+      --ink: #f3ece1;
+      --ink-60: rgba(243,236,225,0.62);
+      --ink-40: rgba(243,236,225,0.42);
+      --accent-deep: #d4a24a;
+      --accent-mid: #c9904a;
+      --accent-soft: #8a6a3e;
+      --accent-ghost: rgba(212,162,74,0.15);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass oscuro calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border: 1px solid var(--accent-ghost);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(255,255,255,0.055);
+      border-color: rgba(212,162,74,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.45), 0 0 40px rgba(212,162,74,0.06);
+    }
+
+    /* Sheen gold sobre texto */
+    .text-shine {
+      background: linear-gradient(110deg, #d4a24a 0%, #f3dca8 30%, #c9904a 52%, #d4a24a 75%, #f0d49b 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,162,74,0.16) 0%, transparent 70%); top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(138,106,62,0.14) 0%, transparent 70%); bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(212,162,74,0.10) 0%, transparent 70%); top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D gold */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #f3dca8 0%, #d4a24a 48%, #a67a37 100%);
+      color: #241c12; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(90,65,25,0.35),
+        0 5px 0 #6e5226,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(90,65,25,0.35), 0 7px 0 #6e5226, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,162,74,0.18); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(90,65,25,0.4), 0 1px 0 #6e5226, 0 4px 10px rgba(0,0,0,0.4); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(212,162,74,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,162,74,0.7); background: rgba(212,162,74,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(30,25,20,0.92) 0%, rgba(20,17,14,0.9) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(17,15,13,0.82); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,162,74,0.12), inset 0 -80px 120px rgba(17,15,13,0.35); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros de pasos */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #f3dca8, #a67a37);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #d4a24a; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,162,74,0.4); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.92) brightness(0.9); }
+
+    /* Boton flotante de llamada */
+    .call-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #f3dca8 0%, #d4a24a 100%);
+      box-shadow: 0 6px 0 #6e5226, 0 14px 30px rgba(0,0,0,0.5);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .call-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6e5226, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,162,74,0.35); }
+    .call-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6e5226, 0 6px 14px rgba(0,0,0,0.45); }
+
+    /* ===== Motion v2 (nivel $100k) ===== */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 120; background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    .preloader-mono {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.75rem, 8vw, 4.25rem); line-height: 1.15;
+      background: linear-gradient(110deg, #d4a24a 0%, #f3dca8 45%, #c9904a 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      clip-path: inset(0 0 100% 0);
+      animation: preReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.08s forwards;
+    }
+    .preloader-word {
+      margin-top: 0.7rem; font-size: 0.62rem; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--ink-40); opacity: 0; transform: translateY(8px);
+      animation: preFade 0.7s ease 0.4s forwards;
+    }
+    .preloader-line {
+      display: block; width: 74px; height: 1px; margin: 1.15rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent-deep), transparent);
+      transform: scaleX(0);
+      animation: preLine 0.85s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+    }
+    @keyframes preReveal { to { clip-path: inset(0 0 0% 0); } }
+    @keyframes preFade { to { opacity: 1; transform: translateY(0); } }
+    @keyframes preLine { to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; width: 100%; height: 2px; z-index: 110;
+      background: linear-gradient(90deg, #c9904a 0%, #d4a24a 55%, #f3dca8 100%);
+      transform: scaleX(0); transform-origin: left center;
+      pointer-events: none; will-change: transform;
+    }
+
+    /* 3. Parallax por capas */
+    [data-parallax] { will-change: transform, translate; }
+
+    /* 4. Reveal editorial de imagenes */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); will-change: clip-path; }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { transition: filter 0.9s ease, transform 1.25s cubic-bezier(0.22,1,0.36,1); transition-delay: inherit; }
+    .img-reveal:not(.in) img { transform: scale(1.06); }
+
+    /* 6. Marquee infinito */
+    .marquee { overflow: hidden; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-seg { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-item { padding: 0 1.6rem; }
+    .marquee-sep { color: var(--accent-deep); font-size: 0.75em; opacity: 0.85; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+
+    /* 7. Carrusel de opiniones */
+    .carousel-viewport { overflow: hidden; touch-action: pan-y; cursor: grab; }
+    .carousel-viewport:active { cursor: grabbing; }
+    .carousel-track {
+      position: relative; display: flex; gap: 20px;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+      will-change: transform; user-select: none; -webkit-user-select: none;
+    }
+    .carousel-slide { flex: 0 0 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 calc(50% - 10px); } }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(243,236,225,0.22); transition: background 0.3s ease, width 0.3s ease; }
+    .carousel-dot:hover { background: rgba(212,162,74,0.55); }
+    .carousel-dot.active { width: 26px; background: linear-gradient(90deg, #c9904a, #d4a24a); }
+
+    /* 8. Boton magnetico (solo desktop) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition-property: box-shadow; will-change: transform; }
+    }
+
+    /* 9. Tilt 3D sutil + glare (solo desktop) */
+    [data-tilt] { position: relative; }
+    .tilt-glare {
+      position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+      opacity: 0; transition: opacity 0.45s ease;
+      background: radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), rgba(212,162,74,0.12), transparent 65%);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      [data-tilt] { will-change: transform; }
+      [data-tilt].tilting { transition: background 0.35s ease, border-color 0.35s ease, transform 0.16s ease-out, box-shadow 0.35s ease; }
+      [data-tilt]:hover .tilt-glare { opacity: 1; }
+    }
+
+    /* 10. Cursor glow en banda oscura (solo desktop) */
+    .cursor-glow {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      opacity: 0; transition: opacity 0.5s ease;
+      background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 40%), rgba(212,162,74,0.09), transparent 65%);
+    }
+
+    /* 11. Back to top */
+    .back-to-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-60); opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { color: var(--ink); border-color: rgba(212,162,74,0.5); }
+
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #f6f1e7;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px var(--accent-ghost); pointer-events: none; user-select: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot, .marquee-track, .preloader-mono, .preloader-word, .preloader-line { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { transform: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      .carousel-track, .back-to-top, #scroll-progress, #preloader, .tilt-glare, .cursor-glow { transition: none !important; }
+      [data-parallax] { translate: none !important; will-change: auto !important; }
+      .preloader-mono { clip-path: none !important; }
+      .preloader-word { opacity: 1 !important; transform: none !important; }
+      .preloader-line { transform: scaleX(1) !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <div class="text-center px-6">
+      <p class="preloader-mono">TG</p>
+      <p class="preloader-word">Tattoo Gallery</p>
+      <span class="preloader-line"></span>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(212,162,74,0.35)] bg-[rgba(212,162,74,0.1)] text-[color:var(--accent-deep)]">TG</span>
+        <span class="font-display text-xl tracking-wide">The <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1" data-es="GALERÍA DE TATUAJES" data-en="TATTOO GALLERY">TATTOO GALLERY</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="La Casa" data-en="The Shop">The Shop</a>
+        <a class="nav-link" href="#proceso" data-es="Cómo Funciona" data-en="How It Works">How It Works</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" type="button" aria-label="Switch language">ES</button>
+        <a href="tel:+19547678833" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="Llamar" data-en="Call Now">Call Now</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Open menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Casa" data-en="The Shop">The Shop</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#proceso" data-es="Cómo Funciona" data-en="How It Works">How It Works</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="tel:+19547678833" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.08"></div><div class="orb orb-c" data-parallax="0.18"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-6" data-es="FORT LAUDERDALE BEACH · DESDE 1998" data-en="FORT LAUDERDALE BEACH · SINCE 1998">FORT LAUDERDALE BEACH · SINCE 1998</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Entra caminando. Sal con tu historia." data-en="Walk in. Walk out wearing your story.">Walk in. Walk out wearing your story.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          Ink made <span class="text-shine">to last</span>, steps from the sand
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Un estudio de tatuajes y piercings con puertas abiertas a la calle en Fort Lauderdale Beach Blvd desde 1998. Sin cita, sin presión: solo buen trabajo y artistas que conocen su oficio." data-en="A tattoo and piercing studio with its doors open to the street on Fort Lauderdale Beach Blvd since 1998. No appointment required, no pressure, just solid work from artists who know their craft.">A tattoo and piercing studio with its doors open to the street on Fort Lauderdale Beach Blvd since 1998. No appointment required, no pressure, just solid work from artists who know their craft.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.9 · 1,018 reseñas en Google" data-en="4.9 · 1,018 reviews on Google">4.9 · 1,018 reviews on Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="tel:+19547678833" class="btn-3d magnetic rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar para reservar" data-en="Call to Book">Call to Book</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.google.com/maps/place/The+Tattoo+Gallery/@26.0558784,-80.1713165,13z/data=!4m6!3m5!1s0x88d9002ec40e3f67:0x2754f49ffee1ae50!8m2!3d26.0558784!4d-80.1713165" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-es="Cómo llegar" data-en="Get Directions">Get Directions</span>
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:320ms" data-parallax="-0.06">
+            <img src="assets/raw/interior-shop.jpg" alt="Interior of The Tattoo Gallery with mural wall and piercing jewelry displays" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-mid)] mb-1" data-es="Servicio insignia" data-en="Most requested">Most requested</p>
+            <p class="font-display text-lg" data-es="Tatuaje personalizado" data-en="Custom Tattoo">Custom Tattoo</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Desde $100" data-en="Starting at $100">Starting at $100</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="1018">1018</span> <span data-es="reseñas en Google" data-en="Google reviews">Google reviews</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl" data-es="Sin cita" data-en="Walk-ins">Walk-ins</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Siempre bienvenidos" data-en="Always welcome">Always welcome</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Est. <span class="text-shine">1998</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="En Fort Lauderdale Beach" data-en="On Fort Lauderdale Beach">On Fort Lauderdale Beach</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">10 AM <span class="text-shine">- 9 PM</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Abierto todos los días" data-en="Open every day">Open every day</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee border-b border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+      </div>
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA CASA / THE SHOP -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/interior-shop.jpg" alt="Front counter of The Tattoo Gallery with a colorful skull and butterfly mural" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/studio-session.jpg" alt="Artist tattooing a client's foot while another artist works in the background" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="La casa" data-en="The shop">The shop</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms" data-es="Una esquina de Fort Lauderdale Beach que lleva tinta desde 1998" data-en="A Fort Lauderdale Beach corner that has been inking since 1998">A Fort Lauderdale Beach corner that has been inking since 1998</h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="The Tattoo Gallery es un estudio de puertas abiertas en plena South Fort Lauderdale Beach Blvd: paredes negras, un mural de calavera y mariposas a la entrada, vitrinas de joyería para piercing y sillas de trabajo a la vista. Vacacionistas y locales entran caminando y salen con algo nuevo en la piel." data-en="The Tattoo Gallery is a walk-in studio right on South Fort Lauderdale Beach Blvd: black walls, a skull and butterfly mural at the entrance, piercing jewelry cases, and work chairs in plain view. Tourists and locals wander in off the beach and walk out with something new on their skin.">The Tattoo Gallery is a walk-in studio right on South Fort Lauderdale Beach Blvd: black walls, a skull and butterfly mural at the entrance, piercing jewelry cases, and work chairs in plain view. Tourists and locals wander in off the beach and walk out with something new on their skin.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Clientes mencionan una y otra vez a los mismos artistas en sus reseñas: Sergio, Nicole y Rachel entre ellos. Cada pieza, de la más pequeña a la más grande, se trata con la misma" data-en="Customers mention the same artists over and over in their reviews, Sergio, Nicole and Rachel among them. Every piece, from the smallest to the largest, gets the same">Customers mention the same artists over and over in their reviews, Sergio, Nicole and Rachel among them. Every piece, from the smallest to the largest, gets the same <em class="font-script text-[color:var(--accent-deep)]" data-es="atención paciente." data-en="patient attention.">patient attention.</em></p>
+        <div class="reveal grid grid-cols-3 gap-4" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">4.9</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1998</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Fundado" data-en="Founded">Founded</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1,018</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="proceso" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Cómo funciona" data-en="How it works">How it works</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="De la idea a la <span class='text-shine'>piel</span>" data-en="From idea to <span class='text-shine'>ink</span>">From idea to <span class="text-shine">ink</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Entra o llama" data-en="Walk in or call">Walk in or call</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sin cita previa requerida. Pasa por la tienda en Fort Lauderdale Beach Blvd o llama para preguntar disponibilidad." data-en="No appointment required. Stop by the shop on Fort Lauderdale Beach Blvd or call ahead to check availability.">No appointment required. Stop by the shop on Fort Lauderdale Beach Blvd or call ahead to check availability.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Diseña con tu artista" data-en="Design it together">Design it together</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Comparte tu idea, tamaño y ubicación. El artista te ayuda a ajustar el diseño antes de encender la máquina." data-en="Share your idea, size and placement. Your artist helps you refine the design before the machine turns on.">Share your idea, size and placement. Your artist helps you refine the design before the machine turns on.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tatuaje o piercing" data-en="Tattoo or piercing">Tattoo or piercing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Equipo estéril, guantes nuevos para cada cliente y joyería real para cada piercing." data-en="Sterile setup, fresh gloves for every client, and real jewelry for every piercing.">Sterile setup, fresh gloves for every client, and real jewelry for every piercing.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cuidado posterior" data-en="Aftercare">Aftercare</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te explicamos cómo cuidar tu nueva pieza mientras sana, y estamos aquí si tienes preguntas después." data-en="We walk you through healing your new piece, and we're here if you have questions after you leave.">We walk you through healing your new piece, and we're here if you have questions after you leave.</p>
+        </div>
+      </div>
+
+      <!-- Card destacada -->
+      <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal" data-tilt>
+        <span class="tilt-glare" aria-hidden="true"></span>
+        <div class="lg:col-span-2 zoomable relative min-h-[320px]">
+          <img src="assets/raw/tattoo-color-wave.jpg" alt="Freshly wrapped colorful wave tattoo on a forearm" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="lg:col-span-3 p-8 sm:p-12">
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-4" data-es="Lo más pedido" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3" data-es="Tatuaje <span class='text-shine'>personalizado</span>" data-en="Custom <span class='text-shine'>tattoo</span> session">Custom <span class="text-shine">tattoo</span> session</h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7" data-es="De líneas finas a piezas a color, trabajamos contigo el tamaño y el estilo en el momento. También hacemos piercings con joyería real y cover-ups de tatuajes anteriores." data-en="From fine line to bold color, we work out size and style with you on the spot. We also do piercings with real jewelry and cover-ups of older tattoos.">From fine line to bold color, we work out size and style with you on the spot. We also do piercings with real jewelry and cover-ups of older tattoos.</p>
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
+            <div><p class="font-display text-3xl text-shine" data-es="Desde $100" data-en="From $100">From $100</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Precio" data-en="Price">Price</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl" data-es="Sin cita" data-en="Walk-in">Walk-in</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Disponibilidad" data-en="Availability">Availability</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Con tu artista" data-en="With your artist">With your artist</p></div>
+          </div>
+          <a href="tel:+19547678833" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar ahora" data-en="Call now">Call now</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Precios exactos dependen de tamaño, estilo y tiempo en la silla. Pregunta en la tienda o por teléfono." data-en="Exact pricing depends on size, style and time in the chair. Ask in the shop or by phone.">Exact pricing depends on size, style and time in the chair. Ask in the shop or by phone.</p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Dentro del <span class='text-shine'>estudio</span>" data-en="Inside the <span class='text-shine'>gallery</span>">Inside the <span class="text-shine">gallery</span></h2>
+        </div>
+        <a href="https://www.instagram.com/tattoo_gallery954/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          @tattoo_gallery954
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Dentro de la galería" data-en="Inside the gallery">Inside the gallery</span><img src="assets/raw/interior-shop.jpg" alt="Shop floor with mural, piercing jewelry cases and tile flooring" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="En la silla" data-en="At the chair">At the chair</span><img src="assets/raw/studio-session.jpg" alt="Artist tattooing a client's foot inside the studio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Línea fina" data-en="Fine line work">Fine line work</span><img src="assets/raw/tattoo-dagger-forearm.jpg" alt="Fine line dagger tattoo on a forearm" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Color audaz" data-en="Bold color">Bold color</span><img src="assets/raw/tattoo-color-wave.jpg" alt="Freshly done colorful wave tattoo, wrapped" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Trazo minimalista" data-en="Minimalist linework">Minimalist linework</span><img src="assets/raw/tattoo-ekg-line.jpg" alt="Minimalist EKG heartbeat line tattoo on a leg" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Guion personalizado" data-en="Custom script">Custom script</span><img src="assets/raw/tattoo-infinity-wrist.jpg" alt="Infinity symbol with a date, custom script tattoo on a wrist" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Pequeño y delicado" data-en="Small and delicate">Small and delicate</span><img src="assets/raw/tattoo-heart-ankle.jpg" alt="Small heart and ribbon tattoo on an ankle" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:240ms"><span class="tile-cap" data-es="Piercing y joyería" data-en="Piercing and jewelry">Piercing and jewelry</span><img src="assets/raw/piercing-navel.jpg" alt="Healed navel piercing with two gem jewelry pieces" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee border-t border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+      </div>
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Tattoos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Piercings</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Cover-Ups</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fine Line</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Fort Lauderdale Beach</span><span class="marquee-sep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Lo que dicen <span class='text-shine'>nuestros clientes</span>" data-en="What <span class='text-shine'>our clients</span> say">What <span class="text-shine">our clients</span> say</h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.9 de 5 · 1,018 reseñas verificadas en Google" data-en="4.9 of 5 · 1,018 verified reviews on Google">4.9 of 5 · 1,018 verified reviews on Google</span></p>
+      </div>
+      <div id="reviews-carousel" class="reveal" style="transition-delay:120ms">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"An amazing tattoo shop that I never ceases to amaze on beautiful experiences, real culture, knowledgeable people..."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Giovanni B.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Walked in while vacationing here. I wanted something to resemble my daughter and got her first initial..."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Reena G.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Random decision to get a tattoo in a city away from home... had a great experience with Nicole."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">April W.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Impulsively, while on a trip, I was walking by the beach and saw the shop and decided to get my belly pierced..."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">N.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"We had a great experience with Sergio. He actually both sold us the tattoo. He helped us pick the right design..."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jason T.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="carousel-dots flex justify-center gap-2.5 mt-8"></div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.google.com/maps/place/The+Tattoo+Gallery/@26.0558784,-80.1713165,13z/data=!4m6!3m5!1s0x88d9002ec40e3f67:0x2754f49ffee1ae50!8m2!3d26.0558784!4d-80.1713165" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-es="Leer las 1,018 reseñas en Google" data-en="Read all 1,018 reviews on Google">Read all 1,018 reviews on Google</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Visítanos" data-en="Visit us">Visit us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms" data-es="A pasos de la <span class='text-shine'>playa</span>" data-en="Steps from the <span class='text-shine'>beach</span>">Steps from the <span class="text-shine">beach</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">415 S Fort Lauderdale Beach Blvd, Suite A, Fort Lauderdale, FL 33316</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,162,74,0.4)]" href="https://www.google.com/maps/place/The+Tattoo+Gallery/@26.0558784,-80.1713165,13z/data=!4m6!3m5!1s0x88d9002ec40e3f67:0x2754f49ffee1ae50!8m2!3d26.0558784!4d-80.1713165" target="_blank" rel="noopener"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Todos los días: 10:00 AM a 9:00 PM" data-en="Every day: 10:00 AM to 9:00 PM">Every day: 10:00 AM to 9:00 PM</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Bookings</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Llamadas y sin cita:" data-en="Calls and walk-ins:">Calls and walk-ins:</span> <a class="text-[color:var(--accent-deep)]" href="tel:+19547678833">(954) 767-8833</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Inglés y español." data-en="English and Spanish spoken.">English and Spanish spoken.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Map: The Tattoo Gallery, 415 S Fort Lauderdale Beach Blvd, Fort Lauderdale FL"
+          src="https://www.google.com/maps?q=The+Tattoo+Gallery,+415+S+Fort+Lauderdale+Beach+Blvd,+Fort+Lauderdale,+FL+33316&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cursor-glow-zone relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, var(--bg-2) 0%, #0b0a08 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Sin cita. Sin presión." data-en="No appointment. No pressure.">No appointment. No pressure.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms" data-es="Tu próximo tatuaje te está <span class='text-shine'>esperando</span>" data-en="Your next tattoo is <span class='text-shine'>waiting</span>">Your next tattoo is <span class="text-shine">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama o pasa por la tienda en Fort Lauderdale Beach Blvd. Abrimos todos los días de 10 AM a 9 PM." data-en="Call us or stop by the shop on Fort Lauderdale Beach Blvd. Open every day from 10 AM to 9 PM.">Call us or stop by the shop on Fort Lauderdale Beach Blvd. Open every day from 10 AM to 9 PM.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+19547678833" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
+        <a href="https://www.google.com/maps/place/The+Tattoo+Gallery/@26.0558784,-80.1713165,13z/data=!4m6!3m5!1s0x88d9002ec40e3f67:0x2754f49ffee1ae50!8m2!3d26.0558784!4d-80.1713165" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0b0a08]">
+    <span class="foot-mark" aria-hidden="true">Tattoo Gallery</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(212,162,74,0.35)] bg-[rgba(212,162,74,0.08)] text-[color:var(--accent-deep)]">TG</span>
+          <span class="font-display text-lg">The Tattoo Gallery</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de tatuajes y piercings sin cita previa en Fort Lauderdale Beach, desde 1998." data-en="Walk-in tattoo and piercing studio on Fort Lauderdale Beach, since 1998.">Walk-in tattoo and piercing studio on Fort Lauderdale Beach, since 1998.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>415 S Fort Lauderdale Beach Blvd, Suite A, Fort Lauderdale, FL 33316</p>
+        <p><a href="tel:+19547678833" class="hover:text-[color:var(--accent-deep)]">(954) 767-8833</a></p>
+        <p data-es="Todos los días · 10 AM a 9 PM" data-en="Every day · 10 AM to 9 PM">Every day · 10 AM to 9 PM</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow us">Follow us</p>
+        <p><a href="https://www.instagram.com/tattoo_gallery954/" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @tattoo_gallery954</a></p>
+        <p><a href="https://www.facebook.com/tattoogalleryftl" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Facebook · Tattoo Gallery FTL</a></p>
+        <p><a href="tel:+19547678833" class="hover:text-[color:var(--accent-deep)]" data-es="Llamada directa" data-en="Direct call">Direct call</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 The Tattoo Gallery.<span data-es=" Todos los derechos reservados." data-en=" All rights reserved."> All rights reserved.</span></p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de llamada -->
+  <a href="tel:+19547678833" class="call-float" aria-label="Call now">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#241c12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <button id="backToTop" type="button" class="back-to-top glass" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Bilingue: EN es el idioma principal del negocio, ES disponible via toggle
+    const applyLang = l => {
+      document.querySelectorAll('[data-en]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.en; });
+      document.documentElement.lang = l;
+      try { localStorage.setItem('lang', l); } catch (e) {}
+      const toggle = document.getElementById('langToggle');
+      if (toggle) toggle.textContent = l === 'en' ? 'ES' : 'EN';
+    };
+    let initialLang = 'en';
+    try {
+      const saved = localStorage.getItem('lang');
+      if (saved === 'es' || saved === 'en') initialLang = saved;
+      else if ((navigator.language || 'en').slice(0, 2) === 'es') initialLang = 'es';
+    } catch (e) {}
+    if (initialLang !== 'en') applyLang(initialLang);
+    document.getElementById('langToggle').addEventListener('click', () => {
+      applyLang(document.documentElement.lang === 'en' ? 'es' : 'en');
+    });
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    const hidePreloader = () => {
+      if (!preloader || preloader.classList.contains('done')) return;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 700);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      const maxWait = setTimeout(hidePreloader, 1200);
+      const onLoaded = () => {
+        clearTimeout(maxWait);
+        setTimeout(hidePreloader, Math.min(500, Math.max(0, 1200 - performance.now())));
+      };
+      if (document.readyState === 'complete') onLoaded();
+      else window.addEventListener('load', onLoaded, { once: true });
+    }
+
+    // 2, 3, 11: un solo listener de scroll con rAF (nav, progreso, back-to-top, parallax)
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backToTop = document.getElementById('backToTop');
+    const parallaxLayers = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'))
+      .map(el => ({ el, factor: parseFloat(el.dataset.parallax) || 0 }));
+    let viewportH = window.innerHeight;
+    let scrollTicking = false;
+
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - viewportH;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(y / maxScroll, 1).toFixed(4) : 0) + ')';
+      backToTop.classList.toggle('visible', y > viewportH * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < viewportH) {
+        const p = y / viewportH;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (y < viewportH * 1.6) {
+        parallaxLayers.forEach(layer => { layer.el.style.translate = '0 ' + (y * layer.factor).toFixed(1) + 'px'; });
+      }
+    };
+    const requestScrollFrame = () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    };
+    window.addEventListener('scroll', requestScrollFrame, { passive: true });
+    window.addEventListener('resize', () => { viewportH = window.innerHeight; requestScrollFrame(); }, { passive: true });
+    onScrollFrame();
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // 4. Reveals: texto (.reveal) e imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados
+    const counters = document.querySelectorAll('[data-count]');
+    if (!reducedMotion && counters.length) {
+      const decimalsOf = el => (el.dataset.count.split('.')[1] || '').length;
+      counters.forEach(el => { el.textContent = (0).toFixed(decimalsOf(el)); });
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          counterIO.unobserve(entry.target);
+          const el = entry.target;
+          const target = parseFloat(el.dataset.count);
+          const decimals = decimalsOf(el);
+          const duration = 1500;
+          const start = performance.now();
+          const tick = now => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = (target * eased).toFixed(decimals);
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => counterIO.observe(el));
+    }
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    const carousel = document.getElementById('reviews-carousel');
+    if (carousel) {
+      const viewport = carousel.querySelector('.carousel-viewport');
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = carousel.querySelector('.carousel-dots');
+      const twoUp = window.matchMedia('(min-width: 640px)');
+      let index = 0, offset = 0, dots = [];
+      let autoplayTimer = null, resumeTimer = null;
+
+      const maxIndex = () => slides.length - (twoUp.matches ? 2 : 1);
+      const goTo = (i, instant) => {
+        index = Math.max(0, Math.min(i, maxIndex()));
+        offset = slides[index].offsetLeft;
+        if (instant) track.style.transition = 'none';
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+        if (instant) requestAnimationFrame(() => { track.style.transition = ''; });
+        dots.forEach((dot, di) => dot.classList.toggle('active', di === index));
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        dots = [];
+        for (let i = 0; i <= maxIndex(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+          dot.addEventListener('click', () => { stopAutoplay(); goTo(i); scheduleResume(); });
+          dotsWrap.appendChild(dot);
+          dots.push(dot);
+        }
+      };
+      const next = () => goTo(index >= maxIndex() ? 0 : index + 1);
+      const stopAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; } };
+      const startAutoplay = () => { if (reducedMotion) return; stopAutoplay(); autoplayTimer = setInterval(next, 5000); };
+      const scheduleResume = () => { clearTimeout(resumeTimer); resumeTimer = setTimeout(startAutoplay, 9000); };
+
+      let dragging = false, dragStartX = 0, dragDelta = 0, dragBase = 0;
+      viewport.addEventListener('pointerdown', e => {
+        dragging = true; dragStartX = e.clientX; dragDelta = 0; dragBase = offset;
+        stopAutoplay();
+        track.style.transition = 'none';
+        viewport.setPointerCapture(e.pointerId);
+      });
+      viewport.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        dragDelta = e.clientX - dragStartX;
+        let target = dragBase - dragDelta;
+        const maxOffset = slides[maxIndex()].offsetLeft;
+        if (target < 0) target *= 0.35;
+        else if (target > maxOffset) target = maxOffset + (target - maxOffset) * 0.35;
+        track.style.transform = 'translateX(' + (-target) + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        track.style.transition = '';
+        if (Math.abs(dragDelta) > 48) goTo(index + (dragDelta < 0 ? 1 : -1));
+        else goTo(index);
+        scheduleResume();
+      };
+      viewport.addEventListener('pointerup', endDrag);
+      viewport.addEventListener('pointercancel', endDrag);
+      if (finePointer) {
+        viewport.addEventListener('mouseenter', stopAutoplay);
+        viewport.addEventListener('mouseleave', () => { if (!dragging) scheduleResume(); });
+      }
+      twoUp.addEventListener('change', () => { buildDots(); goTo(index, true); });
+      window.addEventListener('resize', () => goTo(index, true), { passive: true });
+
+      buildDots();
+      goTo(0, true);
+      startAutoplay();
+    }
+
+    // 8, 9, 10: efectos de puntero, solo (hover: hover) and (pointer: fine) y sin reduced motion
+    if (finePointer && !reducedMotion) {
+
+      // 8. Botones magneticos
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        let targetX = 0, targetY = 0, curX = 0, curY = 0, rafId = null, hovering = false;
+        const animate = () => {
+          curX += (targetX - curX) * 0.18;
+          curY += (targetY - curY) * 0.18;
+          btn.style.transform = 'translate(' + curX.toFixed(2) + 'px, ' + curY.toFixed(2) + 'px)';
+          if (hovering || Math.abs(curX) + Math.abs(curY) > 0.15) rafId = requestAnimationFrame(animate);
+          else { btn.style.transform = ''; curX = curY = 0; rafId = null; }
+        };
+        btn.addEventListener('mousemove', e => {
+          const r = btn.getBoundingClientRect();
+          targetX = Math.max(-6, Math.min(6, (e.clientX - (r.left + r.width / 2)) * 0.12));
+          targetY = Math.max(-6, Math.min(6, (e.clientY - (r.top + r.height / 2)) * 0.3));
+          hovering = true;
+          if (!rafId) rafId = requestAnimationFrame(animate);
+        });
+        btn.addEventListener('mouseleave', () => {
+          targetX = 0; targetY = 0; hovering = false;
+          if (!rafId) rafId = requestAnimationFrame(animate);
+        });
+      });
+
+      // 9. Tilt 3D sutil + glare en cards glass
+      document.querySelectorAll('[data-tilt]').forEach(card => {
+        const glare = card.querySelector('.tilt-glare');
+        let rafId = null, lastEvent = null;
+        card.addEventListener('mouseenter', () => card.classList.add('tilting'));
+        card.addEventListener('mousemove', e => {
+          lastEvent = e;
+          if (rafId) return;
+          rafId = requestAnimationFrame(() => {
+            rafId = null;
+            const r = card.getBoundingClientRect();
+            const px = (lastEvent.clientX - r.left) / r.width;
+            const py = (lastEvent.clientY - r.top) / r.height;
+            card.style.transform = 'perspective(800px) rotateX(' + ((0.5 - py) * 6).toFixed(2) + 'deg) rotateY(' + ((px - 0.5) * 6).toFixed(2) + 'deg) translateY(-4px)';
+            if (glare) {
+              glare.style.setProperty('--tx', (px * 100).toFixed(1) + '%');
+              glare.style.setProperty('--ty', (py * 100).toFixed(1) + '%');
+            }
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('tilting');
+          card.style.transform = '';
+        });
+      });
+
+      // 10. Cursor glow en la banda oscura final
+      document.querySelectorAll('.cursor-glow-zone').forEach(zone => {
+        const glow = zone.querySelector('.cursor-glow');
+        if (!glow) return;
+        zone.addEventListener('mousemove', e => {
+          const r = zone.getBoundingClientRect();
+          glow.style.setProperty('--gx', (e.clientX - r.left).toFixed(0) + 'px');
+          glow.style.setProperty('--gy', (e.clientY - r.top).toFixed(0) + 'px');
+          glow.style.opacity = '1';
+        });
+        zone.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+      });
+    }
+  </script>
+</body>
+</html>
