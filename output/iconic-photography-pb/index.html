@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0f0b07" />
-  <title>Iconic Photography Pb · West Palm Beach, FL</title>
-  <meta name="description" content="Iconic Photography Pb: local services in West Palm Beach, FL. Public photos and contact details verified on Google Maps." />
-  <meta property="og:title" content="Iconic Photography Pb · West Palm Beach, FL" />
-  <meta property="og:description" content="Iconic Photography Pb in West Palm Beach, FL. Public photos and direct contact." />
+  <meta name="theme-color" content="#f5edeb" />
+  <title>Iconic Photography · Family &amp; Maternity Studio in Lake Park, FL | 5.0 on Google</title>
+  <meta name="description" content="Iconic Photography, Lake Park FL: maternity, newborn, milestone and quinceañera portrait sessions. 5.0 stars across 175 Google reviews. Call for availability." />
+  <meta property="og:title" content="Iconic Photography · Portrait Studio in Lake Park, FL" />
+  <meta property="og:description" content="Maternity, newborn, milestone and quinceañera portraits. 5.0 on Google with 175 reviews." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/raw/gmaps-1.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-1.jpg" />
+  <meta property="og:image" content="assets/hero-quince-blue.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Iconic Photography Pb",
-  "description": "Iconic Photography Pb, a local business in West Palm Beach, FL.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "230 N Congress Ave C1, Lake Park, FL 33403",
-    "addressLocality": "West Palm Beach",
-    "addressRegion": "FL"
-  },
-  "telephone": "(561) 444-6545",
-  "image": "assets/raw/gmaps-1.jpg",
-  "sameAs": [
-    "https://www.google.com/maps/place/Iconic+Photography+Pb/data=!4m7!3m6!1s0xa67dd5dd30dca0f1:0x71dc0135d3d6119b!8m2!3d26.7986084!4d-80.0834083!16s%2Fg%2F11tjzkmbrz!19sChIJ8aDcMN3VfaYRmxHW0zUB3HE?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1"
-  ]
-}
+    "@context": "https://schema.org",
+    "@type": "PhotographyBusiness",
+    "name": "Iconic Photography",
+    "description": "Portrait photography studio in Lake Park, FL: maternity, newborn, milestone and quinceañera sessions.",
+    "address": { "@type": "PostalAddress", "streetAddress": "230 N Congress Ave C1", "addressLocality": "Lake Park", "addressRegion": "FL", "postalCode": "33403", "addressCountry": "US" },
+    "telephone": "+1-561-444-6545",
+    "areaServed": "West Palm Beach, FL",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "175", "bestRating": "5" },
+    "hasOfferCatalog": { "@type": "OfferCatalog", "name": "Portrait photography services", "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maternity Portrait Sessions" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Newborn &amp; Milestone Sessions" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quinceañera Portraits" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Family Portraits" } }
+    ] }
+  }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,17 +35,17 @@
   <script src="assets/tailwind.js"></script>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0f0b07;
-      --bg-2: #171207;
-      --surface: rgba(255,255,255,0.045);
-      --ink: #f5efe3;
-      --ink-60: rgba(245,239,227,0.62);
-      --ink-40: rgba(245,239,227,0.42);
-      --accent-deep: #d4a84b;
-      --accent-mid: #b8934a;
-      --accent-soft: #241c0e;
-      --accent-ghost: rgba(212,168,75,0.16);
+      color-scheme: light;
+      --bg: #f9f4f3;
+      --bg-2: #f1e4e2;
+      --surface: rgba(252,248,247,0.7);
+      --ink: #312624;
+      --ink-60: rgba(49,38,36,0.62);
+      --ink-40: rgba(49,38,36,0.42);
+      --accent-deep: #985d52;
+      --accent-mid: #bd8b81;
+      --accent-soft: #f1e4e2;
+      --accent-ghost: rgba(152,93,82,0.14);
     }
     html, body { background: var(--bg); }
     body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -54,10 +53,10 @@
     .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(212,168,75,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(212,168,75,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,75,0.08); }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(152,93,82,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(252,248,247,0.88); border-color: rgba(152,93,82,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(49,38,36,0.14), 0 0 40px rgba(152,93,82,0.08); }
     .text-shine {
-      background: linear-gradient(110deg, #d4a84b 0%, #f0dc9e 30%, #9a7431 52%, #d4a84b 75%, #e5c374 100%);
+      background: linear-gradient(110deg, #985d52 0%, #c28a7f 30%, #5a3831 52%, #985d52 75%, #aa6e62 100%);
       background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
       animation: shimmer 12s linear infinite;
     }
@@ -65,9 +64,9 @@
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
     @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,168,75,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(122,90,30,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(180,140,60,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #efdcd8 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d5b3ac 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e2c9c4 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
     .grain::after {
       content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
@@ -79,17 +78,17 @@
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 48%, #96742c 100%);
-      color: #1c1408; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #bd8b81 0%, #985d52 48%, #76453b 100%);
+      color: #f9f4f3; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(80,58,18,0.4), 0 5px 0 #6b5222, 0 12px 24px rgba(0,0,0,0.5);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(66,35,29,0.4), 0 5px 0 #572e26, 0 12px 24px rgba(49,38,36,0.28);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(80,58,18,0.4), 0 7px 0 #6b5222, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,168,75,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(80,58,18,0.45), 0 1px 0 #6b5222, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(66,35,29,0.4), 0 7px 0 #572e26, 0 18px 34px rgba(49,38,36,0.32), 0 0 40px rgba(152,93,82,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(66,35,29,0.45), 0 1px 0 #572e26, 0 4px 10px rgba(49,38,36,0.25); }
     .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
     .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(212,168,75,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,168,75,0.7); background: rgba(212,168,75,0.08); box-shadow: 0 10px 26px rgba(54,42,38,0.14); }
+    .btn-ghost { border: 1px solid rgba(152,93,82,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(152,93,82,0.7); background: rgba(152,93,82,0.08); box-shadow: 0 10px 26px rgba(49,38,36,0.14); }
     .merktop-badge {
       display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
       border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
@@ -100,48 +99,40 @@
     .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
     @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    #nav.scrolled { background: rgba(249,244,243,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(49,38,36,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,168,75,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(49,38,36,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(152,93,82,0.14), inset 0 -60px 100px rgba(49,38,36,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5c374, #9a7431); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #d4a84b; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,168,75,0.45); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #bd8b81, #5a3831); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #985d52; letter-spacing: 2px; text-shadow: 0 0 14px rgba(152,93,82,0.3); }
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
     .dark-band {
-      --ink: #f5efe3; --ink-60: rgba(245,239,227,0.65); --ink-40: rgba(245,239,227,0.45);
-      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,210,160,0.16); color: var(--ink);
+      --ink: #f9f4f3; --ink-60: rgba(249,244,243,0.65); --ink-40: rgba(249,244,243,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(229,197,190,0.16); color: var(--ink);
     }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8cf96 0%, #f8eed3 30%, #bfa060 52%, #e8cf96 75%, #f0dcae 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,150,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #faf1dc 0%, #ecd9a8 48%, #c9ab6b 100%); color: #1c1408; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(110,85,35,0.35), 0 5px 0 #8a744a, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,85,35,0.35), 0 7px 0 #8a744a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,150,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,85,35,0.4), 0 1px 0 #8a744a, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,150,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #ecc9c2 0%, #f6e5e1 30%, #d5b3ac 52%, #ecc9c2 75%, #efd7d2 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(236,201,194,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(180,141,133,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #faf2f0 0%, #ecd7d3 48%, #cfada6 100%); color: #312624; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(118,69,59,0.35), 0 5px 0 #85615a, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(118,69,59,0.35), 0 7px 0 #85615a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(236,201,194,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(118,69,59,0.4), 0 1px 0 #85615a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(236,201,194,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(236,201,194,0.7); background: rgba(236,201,194,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #ecc9c2; text-shadow: 0 0 14px rgba(236,201,194,0.4); }
     .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
-      box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(180deg, #bd8b81 0%, #985d52 100%);
+      box-shadow: 0 6px 0 #572e26, 0 14px 30px rgba(49,38,36,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float-label { color: #1c1408; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
-    .hero-proof { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; color: var(--ink-40); font-size: 0.72rem; letter-spacing: 0.02em; }
-    .hero-proof span { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .hero-proof span::before { content: '✓'; color: var(--accent-deep); font-weight: 700; }
-    @media (max-width: 640px) {
-      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
-      .book-float-label { font-size: 0.8rem; }
-    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #572e26, 0 20px 40px rgba(49,38,36,0.4), 0 0 34px rgba(152,93,82,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #572e26, 0 6px 14px rgba(49,38,36,0.3); }
 
     /* ============ Motion v2 ============ */
     #preloader {
@@ -150,13 +141,13 @@
     }
     #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
     @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(212,168,75,0.35); background: rgba(212,168,75,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(152,93,82,0.35); background: rgba(152,93,82,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
     .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
     .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
     @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
     @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
     @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #96742c 0%, #d4a84b 45%, #f0dc9e 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #76453b 0%, #985d52 45%, #d6aba3 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
     .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
     .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
     .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
@@ -175,11 +166,11 @@
       .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
       .tilt:hover::before { opacity: 1; }
     }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,207,150,0.14) 0%, rgba(212,168,75,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(236,201,194,0.14) 0%, rgba(152,93,82,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
     .cursor-glow.on { opacity: 1; }
     .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(212,168,75,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(152,93,82,0.5); transform: translateY(-3px); }
 
     /* ============ Motion v3 (premium+) ============ */
     .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
@@ -188,8 +179,8 @@
     .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
     .frame .tile-cap {
       position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf6ea;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf5f4;
+      background: linear-gradient(180deg, transparent 0%, rgba(38,21,18,0.62) 100%);
       opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
     }
     .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
@@ -197,7 +188,7 @@
     .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
     .cursor-ring.on { opacity: 0.75; }
     .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,207,150,0.09); pointer-events: none; user-select: none; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(236,201,194,0.09); pointer-events: none; user-select: none; }
 
     @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
@@ -285,7 +276,7 @@
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <span class="pre-mono">IP</span>
-    <span class="pre-word">Iconic Photography Pb</span>
+    <span class="pre-word">Iconic Photography</span>
     <span class="pre-line"></span>
   </div>
 
@@ -296,22 +287,22 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/gmaps-1.jpg" alt="Iconic Photography Pb" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
-        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Iconic <span class="text-[color:var(--accent-deep)]">Photography Pb</span></span>
+        <img src="assets/logo.jpg" alt="Iconic Photography" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(152,93,82,0.35)]" />
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Iconic <span class="text-[color:var(--accent-deep)]">Photography</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="nav-link" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="nav-link" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
         <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="nav-link" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
-        <a class="nav-link" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="nav-link" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
       </nav>
       <div class="flex items-center gap-3">
         <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
-        <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <span data-es="Llamar ahora" data-en="Call now">Call now</span>
+        <a href="tel:+15614446545" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Call to book" data-en="Call to book">Call to book</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -322,13 +313,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="La Experiencia" data-en="The Experience">La Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="El Método" data-en="The Method">El Método</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
-        <a class="py-3 px-3" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
-        <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Opiniones</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Ubicación" data-en="Location">Ubicación</a>
+        <a href="tel:+15614446545" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Call to book" data-en="Call to book">Call to book</a>
       </nav>
     </div>
   </header>
@@ -338,41 +329,36 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="West Palm Beach, FL · Servicios" data-en="West Palm Beach, FL · Services">West Palm Beach, FL · Services</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Lake Park, FL · Portrait Studio" data-en="Lake Park, FL · Portrait Studio">Lake Park, FL · Portrait Studio</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Every milestone, made iconic." data-en="Every milestone, made iconic.">Every milestone, made iconic.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          <span data-es="Tu proyecto," data-en="Your project,">Your project,</span><br /><span data-es="en manos de " data-en="handled by ">handled by </span><span class="text-shine" data-es="Iconic" data-en="Iconic">Iconic</span>
+          <span data-es="Maternity, newborn and" data-en="Maternity, newborn and">Maternity, newborn and</span><br /><span data-es="quinceañera portraits, made " data-en="quinceañera portraits, made ">quinceañera portraits, made </span><span class="text-shine" data-es="iconic" data-en="iconic">iconic</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Iconic Photography Pb atiende a clientes en West Palm Beach, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente." data-en="Iconic Photography Pb serves customers in West Palm Beach, FL. Check the public listing, see real photos and contact the business directly.">Iconic Photography Pb serves customers in West Palm Beach, FL. Check the public listing, see real photos and contact the business directly.</p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="From the first maternity glow to a quinceañera gown, Iconic Photography makes every family milestone around Lake Park and West Palm Beach feel like a fine art session, with a perfect 5.0 across 175 Google reviews." data-en="From the first maternity glow to a quinceañera gown, Iconic Photography makes every family milestone around Lake Park and West Palm Beach feel like a fine art session, with a perfect 5.0 across 175 Google reviews.">From the first maternity glow to a quinceañera gown, Iconic Photography makes every family milestone around Lake Park and West Palm Beach feel like a fine art session, with a perfect 5.0 across 175 Google reviews.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
-          <svg class="text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span class="text-sm text-[color:var(--ink-60)]" data-es="Ficha pública en Google Maps" data-en="Public Google Maps listing">Public Google Maps listing</span>
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 175 reviews on Google" data-en="5.0 · 175 reviews on Google">5.0 · 175 reviews on Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            <span data-es="Llamar ahora" data-en="Call now">Call now</span>
+          <a href="tel:+15614446545" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Call (561) 444-6545" data-en="Call (561) 444-6545">Call (561) 444-6545</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.google.com/maps/place/Iconic+Photography+Pb/data=!4m7!3m6!1s0xa67dd5dd30dca0f1:0x71dc0135d3d6119b!8m2!3d26.7986084!4d-80.0834083!16s%2Fg%2F11tjzkmbrz!19sChIJ8aDcMN3VfaYRmxHW0zUB3HE?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="https://www.google.com/search?q=Iconic+Photography+Lake+Park+FL+reviews" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            Google Maps
+            Google Reviews
           </a>
-        </div>
-        <div class="reveal hero-proof mt-5" style="transition-delay:420ms" aria-label="Lo que encontrará el cliente">
-          <span data-es="Fotos reales" data-en="Real work">Fotos reales</span>
-          <span data-es="Servicios claros" data-en="Clear services">Servicios claros</span>
-          <span data-es="Contacto directo" data-en="Direct contact">Contacto directo</span>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/gmaps-1.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" />
+            <img src="assets/hero-quince-blue.jpg" alt="A quinceañera in a royal blue and gold gown on a stone staircase, by Iconic Photography" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
-            <p class="font-display text-lg">(561) 444-6545</p>
-            <p class="text-sm text-[color:var(--ink-60)]" data-es="West Palm Beach, FL" data-en="West Palm Beach, FL">West Palm Beach, FL</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Available" data-en="Available">Available</p>
+            <p class="font-display text-lg" data-es="Maternity Sessions" data-en="Maternity Sessions">Maternity Sessions</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Call for availability" data-en="Call for availability">Call for availability</p>
           </div>
         </div>
       </div>
@@ -382,10 +368,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl">Services</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="El oficio" data-en="The trade">The trade</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">West Palm Beach</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de trabajo" data-en="Service area">Service area</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="175">175</span> <span data-es="reviews on Google" data-en="reviews on Google">reviews on Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Maternity <span class="text-shine">&amp;</span> Newborn</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Quince · Familia" data-en="Quince · Family">Quince · Family</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl" data-es="Fine Art Sets" data-en="Fine Art Sets">Fine Art Sets</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Estudio y locación" data-en="Studio &amp; on-location">Studio &amp; on-location</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Lake Park</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="West Palm Beach, FL" data-en="West Palm Beach, FL">West Palm Beach, FL</p></div>
     </div>
   </section>
 
@@ -393,20 +379,20 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">West Palm Beach</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maternity</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Newborn</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quinceañera</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Family Portraits</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Milestone Sessions</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lake Park, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">West Palm Beach</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maternity</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Newborn</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quinceañera</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Family Portraits</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Milestone Sessions</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lake Park, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -415,27 +401,25 @@
   <section id="experiencia" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">01</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
-      <div class="grid grid-cols-2 gap-5">
-        <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/gmaps-2.jpg" alt="Work by Iconic Photography Pb" class="blur-up w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/gmaps-3.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" loading="lazy" />
+      <div class="grid grid-cols-1 gap-5">
+        <div class="frame zoomable aspect-[4/3] img-reveal">
+          <img src="assets/about-milestones.jpg" alt="An expecting couple on the beach at sunset, a maternity session by Iconic Photography" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo," data-en="One team,">One team,</span><br /><span class="text-shine" data-es="un solo responsable" data-en="one accountable crew">one accountable crew</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Iconic Photography Pb es un negocio local de West Palm Beach, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios." data-en="Iconic Photography Pb is a local West Palm Beach, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.">Iconic Photography Pb is a local West Palm Beach, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles." data-en="The public Google Maps listing collects the available photos and contact information.">The public Google Maps listing collects the available photos and contact information.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="One studio," data-en="One studio,">One studio,</span><br /><span class="text-shine" data-es="every milestone covered" data-en="every milestone covered">every milestone covered</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Iconic Photography is a Lake Park studio covering maternity, newborn, milestone and quinceañera portraits for families across West Palm Beach, with the same gentle, patient direction on every session." data-en="Iconic Photography is a Lake Park studio covering maternity, newborn, milestone and quinceañera portraits for families across West Palm Beach, with the same gentle, patient direction on every session.">Iconic Photography is a Lake Park studio covering maternity, newborn, milestone and quinceañera portraits for families across West Palm Beach, with the same gentle, patient direction on every session.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="The result: a perfect 5.0 across 175 Google reviews, with clients praising how welcomed and comfortable they felt from the moment they arrived." data-en="The result: a perfect 5.0 across 175 Google reviews, with clients praising how welcomed and comfortable they felt from the moment they arrived.">The result: a perfect 5.0 across 175 Google reviews, with clients praising how welcomed and comfortable they felt from the moment they arrived.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">West Palm Beach</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Zona" data-en="Area">Area</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="175">175</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine" data-es="1:1" data-en="1:1">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal care">Personal care</p></div>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/gmaps-1.jpg" alt="Iconic Photography Pb logo" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
-            <span class="text-sm font-light">Iconic Photography Pb · <span class="text-[color:var(--ink-40)]" data-es="West Palm Beach, FL" data-en="West Palm Beach, FL">West Palm Beach, FL</span></span>
+            <img src="assets/logo.jpg" alt="Iconic Photography" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(152,93,82,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Iconic Photography · <span class="text-[color:var(--ink-40)]" data-es="Portrait studio" data-en="Portrait studio">Portrait studio</span></span>
           </div>
         </div>
       </div>
@@ -447,29 +431,29 @@
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Your session," data-en="Your session,">Your session,</span> <span class="text-shine" data-es="start to finish" data-en="start to finish">start to finish</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Get in touch">Get in touch</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte." data-en="Tell us what you need; a photo of the space or the problem is enough to point you right.">Tell us what you need; a photo of the space or the problem is enough to point you right.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Call to book" data-en="Call to book">Call to book</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Call to check availability for your maternity, newborn, quinceañera or family session." data-en="Call to check availability for your maternity, newborn, quinceañera or family session.">Call to check availability for your maternity, newborn, quinceañera or family session.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto claro" data-en="Clear quote">Clear quote</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica." data-en="We tell you what the job takes and what it costs before starting, no fine print.">We tell you what the job takes and what it costs before starting, no fine print.</p>
+          <h3 class="font-display text-xl mb-3" data-es="A warm welcome" data-en="A warm welcome">A warm welcome</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="You arrive to a comfortable studio and a team that takes its time explaining poses and wardrobe options." data-en="You arrive to a comfortable studio and a team that takes its time explaining poses and wardrobe options.">You arrive to a comfortable studio and a team that takes its time explaining poses and wardrobe options.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3" data-es="El trabajo" data-en="The job">The job</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed." data-en="We arrive with everything needed and execute with the care you see on our feed.">We arrive with everything needed and execute with the care you see on our feed.</p>
+          <h3 class="font-display text-xl mb-3" data-es="The session" data-en="The session">The session</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Gentle, patient direction through every pose, whether it is a maternity glow or a quinceañera gown change." data-en="Gentle, patient direction through every pose, whether it is a maternity glow or a quinceañera gown change.">Gentle, patient direction through every pose, whether it is a maternity glow or a quinceañera gown change.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3" data-es="Entrega" data-en="Handover">Handover</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima." data-en="We walk the result together and leave the area clean. And you keep our number for next time.">We walk the result together and leave the area clean. And you keep our number for next time.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Your gallery" data-en="Your gallery">Your gallery</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Your finished gallery arrives ready to share, with the option of prints and keepsakes of the day." data-en="Your finished gallery arrives ready to share, with the option of prints and keepsakes of the day.">Your finished gallery arrives ready to share, with the option of prints and keepsakes of the day.</p>
         </div>
       </div>
     </div>
@@ -481,44 +465,48 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso." data-en="Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.">Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Sessions for" data-en="Sessions for">Sessions for</span> <span class="text-shine" data-es="every milestone" data-en="every milestone">every milestone</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Every session is quoted around wardrobe, location and crew, with a straight answer by phone." data-en="Every session is quoted around wardrobe, location and crew, with a straight answer by phone.">Every session is quoted around wardrobe, location and crew, with a straight answer by phone.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="El oficio" data-en="The craft">The craft</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Nuestro trabajo" data-en="What we do">What we do</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Lo que publicamos en Google Maps es lo que hacemos: mira el feed y júzganos por ahí." data-en="What we post on Google Maps is what we do: check the feed and judge us by it.">What we post on Google Maps is what we do: check the feed and judge us by it.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(152,93,82,0.4); box-shadow: 0 18px 50px rgba(49,38,36,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Most requested" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Maternity Sessions" data-en="Maternity Sessions">Maternity Sessions</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Fine art gowns and gentle direction in studio or on location, timed around how far along you are." data-en="Fine art gowns and gentle direction in studio or on location, timed around how far along you are.">Fine art gowns and gentle direction in studio or on location, timed around how far along you are.</p>
           <div class="mt-auto">
-            <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Call for a quote" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+15614446545" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Call" data-en="Call">Call</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Trato" data-en="Service">Service</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Atención directa" data-en="Direct service">Direct service</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Hablas con quien hace el trabajo, no con una central: acuerdos claros y sin intermediarios." data-en="You talk to the person doing the work, not a call center: clear agreements, no middlemen.">You talk to the person doing the work, not a call center: clear agreements, no middlemen.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="First year" data-en="First year">First year</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Newborn &amp; Milestone" data-en="Newborn &amp; Milestone">Newborn &amp; Milestone</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Newborn portraits and milestone sets, from cake smashes to the first birthday, with real backdrops and props." data-en="Newborn portraits and milestone sets, from cake smashes to the first birthday, with real backdrops and props.">Newborn portraits and milestone sets, from cake smashes to the first birthday, with real backdrops and props.</p>
           <div class="mt-auto">
-            <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Call for a quote" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+15614446545" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Call" data-en="Call">Call</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Presupuesto" data-en="Quotes">Quotes</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Cotización sin compromiso" data-en="No-strings quotes">No-strings quotes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar." data-en="Tell us what you need and we tell you what it takes and what it costs before starting.">Tell us what you need and we tell you what it takes and what it costs before starting.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Quinceañera" data-en="Quinceañera">Quinceañera</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Quinceañera Portraits" data-en="Quinceañera Portraits">Quinceañera Portraits</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Gown changes and fine art backdrops for a quinceañera session that feels as grand as the day itself." data-en="Gown changes and fine art backdrops for a quinceañera session that feels as grand as the day itself.">Gown changes and fine art backdrops for a quinceañera session that feels as grand as the day itself.</p>
           <div class="mt-auto">
-            <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Call for a quote" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+15614446545" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Call" data-en="Call">Call</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cercanía" data-en="Local">Local</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Negocio local" data-en="Local business">Local business</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="De tu misma zona: llegamos rápido y respondemos después de entregar." data-en="From your own area: quick to arrive and still answering after handover.">From your own area: quick to arrive and still answering after handover.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Family" data-en="Family">Family</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Family Portraits" data-en="Family Portraits">Family Portraits</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Multi-generation and sibling sessions in studio, with coordinated wardrobe guidance before the shoot." data-en="Multi-generation and sibling sessions in studio, with coordinated wardrobe guidance before the shoot.">Multi-generation and sibling sessions in studio, with coordinated wardrobe guidance before the shoot.</p>
           <div class="mt-auto">
-            <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5"><p class="font-display text-lg text-shine" data-es="Call for a quote" data-en="Call for a quote">Call for a quote</p></div>
+            <a href="tel:+15614446545" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Call" data-en="Call">Call</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte." data-en="Do not see exactly what you need? Message us and we will confirm whether we can help.">Do not see exactly what you need? Message us and we will confirm whether we can help.</span></p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Pricing depends on wardrobe, location and crew. Call (561) 444-6545 for a free quote." data-en="Pricing depends on wardrobe, location and crew. Call (561) 444-6545 for a free quote.">Pricing depends on wardrobe, location and crew. Call (561) 444-6545 for a free quote.</span></p>
     </div>
   </section>
 
@@ -529,20 +517,17 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="work">work</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Real" data-en="Real">Real</span> <span class="text-shine" data-es="milestones" data-en="milestones">milestones</span></h2>
         </div>
-        <a href="https://www.google.com/maps/place/Iconic+Photography+Pb/data=!4m7!3m6!1s0xa67dd5dd30dca0f1:0x71dc0135d3d6119b!8m2!3d26.7986084!4d-80.0834083!16s%2Fg%2F11tjzkmbrz!19sChIJ8aDcMN3VfaYRmxHW0zUB3HE?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          Google Maps
+        <a href="tel:+15614446545" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (561) 444-6545
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-4.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-5.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-6.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-7.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-8.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-9.jpg" alt="Work by Iconic Photography Pb in West Palm Beach, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Primer antojo de pastel" data-en="First cake smash">First cake smash</span><img src="assets/gallery-cake-smash.jpg" alt="A baby's first birthday cake smash session by Iconic Photography" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Seis meses" data-en="Six months">Six months</span><img src="assets/gallery-baby-six.jpg" alt="A six-month milestone portrait of a baby girl by Iconic Photography" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-square img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Primer cumpleaños" data-en="First birthday">First birthday</span><img src="assets/gallery-boy-balloon.jpg" alt="A baby boy's first birthday portrait with a hot air balloon prop, by Iconic Photography" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -551,52 +536,52 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">West Palm Beach</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maternity</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Newborn</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quinceañera</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Family Portraits</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Milestone Sessions</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lake Park, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Local service</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Quality</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Direct contact</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Clear quotes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">West Palm Beach</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trust</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Maternity</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Newborn</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Quinceañera</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Family Portraits</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Milestone Sessions</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lake Park, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
 
-  <!-- PRUEBA SOCIAL (razones) -->
+  <!-- OPINIONES -->
   <section id="opiniones" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">to message us</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha." data-en="We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.">We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="What Lake Park" data-en="What Lake Park">What Lake Park</span> <span class="text-shine" data-es="families say" data-en="families say">families say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 out of 5 · 175 reviews on Google" data-en="5.0 out of 5 · 175 reviews on Google">5.0 out of 5 · 175 reviews on Google</span></p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-8 reveal">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Trabajo a la vista" data-en="Work out in the open">Work out in the open</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores." data-en="We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.">We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="El que responde es el que llega" data-en="Who answers is who shows up">Who answers is who shows up</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo." data-en="You talk to the crew, agree with the crew, and the crew does the work.">You talk to the crew, agree with the crew, and the crew does the work.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto antes de empezar" data-en="Quote before we start">Quote before we start</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra." data-en="You know what it takes and what it costs before the first hammer swing. No mid-job surprises.">You know what it takes and what it costs before the first hammer swing. No mid-job surprises.</p>
-        </div>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"We could not have asked for a better experience for our maternity pictures. They truly brought my vision to life and exceeded every expectation, from the location to the dress to the poses."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Tiffany Mercado</span> <span class="text-[color:var(--ink-40)]" data-es="Reseña de Google" data-en="Google review">Google review</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Absolutely loved the service. I did my photoshoot at 34 weeks pregnant and they were so kind and made sure we were comfortable at all times, with great attention to every detail."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Jessica Vasquez</span> <span class="text-[color:var(--ink-40)]" data-es="Reseña de Google" data-en="Google review">Google review</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Such an amazing experience with Iconic Photography. From the moment I arrived, they made me feel so welcomed, comfortable and beautiful, and took their time to make sure every picture came out great."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Estere Deizan</span> <span class="text-[color:var(--ink-40)]" data-es="Reseña de Google" data-en="Google review">Google review</span></figcaption>
+        </figure>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Iconic+Photography+Pb/data=!4m7!3m6!1s0xa67dd5dd30dca0f1:0x71dc0135d3d6119b!8m2!3d26.7986084!4d-80.0834083!16s%2Fg%2F11tjzkmbrz!19sChIJ8aDcMN3VfaYRmxHW0zUB3HE?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver ficha y fotos en Google Maps" data-en="See listing and photos on Google Maps">See listing and photos on Google Maps</a>
+        <a href="https://www.google.com/search?q=Iconic+Photography+Lake+Park+FL+reviews" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Read all 175 reviews on Google" data-en="Read all 175 reviews on Google">Read all 175 reviews on Google</a>
       </div>
     </div>
   </section>
@@ -606,72 +591,82 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos desde" data-en="Reach us from">Reach us from</span> <span class="text-shine">West Palm Beach</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visit us in" data-en="Visit us in">Visit us in</span> <span class="text-shine">Lake Park</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para consultar disponibilidad." data-en="The fastest way to ask about availability.">The fastest way to ask about availability.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="tel:+5614446545">(561) 444-6545</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">230 N Congress Ave C1, Lake Park, FL 33403</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(152,93,82,0.4)]" href="https://www.google.com/maps?q=230+N+Congress+Ave+C1,+Lake+Park,+FL+33403" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Google Maps" data-en="Google Maps">Google Maps</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Dirección pública: 230 N Congress Ave C1, Lake Park, FL 33403." data-en="Public address: 230 N Congress Ave C1, Lake Park, FL 33403.">Public address: 230 N Congress Ave C1, Lake Park, FL 33403.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.google.com/maps/place/Iconic+Photography+Pb/data=!4m7!3m6!1s0xa67dd5dd30dca0f1:0x71dc0135d3d6119b!8m2!3d26.7986084!4d-80.0834083!16s%2Fg%2F11tjzkmbrz!19sChIJ8aDcMN3VfaYRmxHW0zUB3HE?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">230 N Congress Ave C1, Lake Park, FL 33403</a>
+              <p class="font-medium mb-1" data-es="Appointments" data-en="Appointments">Appointments</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="By appointment, open daily from 9 AM to 5 PM. Call to check availability." data-en="By appointment, open daily from 9 AM to 5 PM. Call to check availability.">By appointment, open daily from 9 AM to 5 PM. Call to check availability.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(152,93,82,0.4)]" href="tel:+15614446545" data-es="Call (561) 444-6545" data-en="Call (561) 444-6545">Call (561) 444-6545</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reviews" data-en="Reviews">Reviews</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Read what West Palm Beach families say about their sessions on Google." data-en="Read what West Palm Beach families say about their sessions on Google.">Read what West Palm Beach families say about their sessions on Google.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(152,93,82,0.4)]" href="https://www.google.com/search?q=Iconic+Photography+Lake+Park+FL+reviews" target="_blank" rel="noopener">Google Reviews</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="frame zoomable img-reveal min-h-[380px] h-full max-h-[560px] lg:max-h-none" style="transition-delay:180ms">
-        <img src="assets/raw/gmaps-2.jpg" alt="Work by Iconic Photography Pb" class="blur-up w-full h-full object-cover" loading="lazy" />
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Iconic Photography, 230 N Congress Ave C1, Lake Park FL"
+          src="https://www.google.com/maps?q=230+N+Congress+Ave+C1,+Lake+Park,+FL+33403&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #191307 0%, #100c05 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #281b19 0%, #1e1310 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="empieza con un mensaje" data-en="starts with a message">starts with a message</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso." data-en="Tell us what you need and we reply with ideas and a quote, no strings attached.">Tell us what you need and we reply with ideas and a quote, no strings attached.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Every milestone, made iconic." data-en="Every milestone, made iconic.">Every milestone, made iconic.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Your session" data-en="Your session">Your session</span> <span class="text-shine" data-es="awaits" data-en="awaits">awaits</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Call today to check availability for your maternity, newborn, quinceañera or family portraits." data-en="Call today to check availability for your maternity, newborn, quinceañera or family portraits.">Call today to check availability for your maternity, newborn, quinceañera or family portraits.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="tel:+5614446545" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
-        <a href="https://www.google.com/maps/place/Iconic+Photography+Pb/data=!4m7!3m6!1s0xa67dd5dd30dca0f1:0x71dc0135d3d6119b!8m2!3d26.7986084!4d-80.0834083!16s%2Fg%2F11tjzkmbrz!19sChIJ8aDcMN3VfaYRmxHW0zUB3HE?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">See listing on Google Maps</a>
+        <a href="tel:+15614446545" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Call (561) 444-6545" data-en="Call (561) 444-6545">Call (561) 444-6545</a>
+        <a href="https://www.google.com/search?q=Iconic+Photography+Lake+Park+FL+reviews" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Google Reviews" data-en="Google Reviews">Google Reviews</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
-    <span class="foot-mark" aria-hidden="true">Iconic Photography Pb</span>
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#1b1210]">
+    <span class="foot-mark" aria-hidden="true">Iconic Photography</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/gmaps-1.jpg" alt="Iconic Photography Pb" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
-          <span class="font-display text-lg tracking-[0.1em] uppercase">Iconic Photography Pb</span>
+          <img src="assets/logo.jpg" alt="Iconic Photography" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(236,201,194,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Iconic Photography</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Iconic Photography Pb en West Palm Beach, FL. Información pública y contacto directo." data-en="Iconic Photography Pb in West Palm Beach, FL. Public information and direct contact.">Iconic Photography Pb in West Palm Beach, FL. Public information and direct contact.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Portrait studio in Lake Park, FL. By appointment only." data-en="Portrait studio in Lake Park, FL. By appointment only.">Portrait studio in Lake Park, FL. By appointment only.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>230 N Congress Ave C1, Lake Park, FL 33403</p>
-        <p><a href="tel:+5614446545" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Teléfono · (561) 444-6545" data-en="Phone · (561) 444-6545">Phone · (561) 444-6545</a></p>
+        <p><a href="tel:+15614446545" class="hover:text-[#ecc9c2]" data-es="Call (561) 444-6545" data-en="Call (561) 444-6545">Call (561) 444-6545</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.google.com/maps/place/Iconic+Photography+Pb/data=!4m7!3m6!1s0xa67dd5dd30dca0f1:0x71dc0135d3d6119b!8m2!3d26.7986084!4d-80.0834083!16s%2Fg%2F11tjzkmbrz!19sChIJ8aDcMN3VfaYRmxHW0zUB3HE?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Google Maps · Google Maps</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <p><a href="https://www.google.com/search?q=Iconic+Photography+Lake+Park+FL+reviews" target="_blank" rel="noopener" class="hover:text-[#ecc9c2]">Google Reviews · 5.0 (175)</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Iconic Photography Pb.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Iconic Photography.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -681,9 +676,8 @@
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="tel:+5614446545" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-    <span class="book-float-label" data-es="Llamar ahora" data-en="Call now">Call now</span>
+  <a href="tel:+15614446545" class="book-float" aria-label="Call Iconic Photography">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f9f4f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
