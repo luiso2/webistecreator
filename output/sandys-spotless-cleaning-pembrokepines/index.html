@@ -1017,16 +1017,17 @@
       restartAuto();
     }
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language (default EN)
+    // Multilenguaje: data-es/data-en + toggle + localStorage aislada por sitio (default EN)
+    const LANG_KEY = 'siteforge:lang:sandys-spotless-cleaning-pembrokepines';
     const applyLang = l => {
       document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.en; });
       document.documentElement.lang = l;
-      try { localStorage.setItem('lang', l); } catch (e) {}
+      try { localStorage.setItem(LANG_KEY, l); } catch (e) {}
       document.getElementById('langToggle').textContent = l === 'en' ? 'ES' : 'EN';
     };
     let storedLang = null;
-    try { storedLang = localStorage.getItem('lang'); } catch (e) {}
-    let lang = storedLang || (navigator.language || 'en').slice(0, 2);
+    try { storedLang = localStorage.getItem(LANG_KEY); } catch (e) {}
+    let lang = storedLang || 'en';
     applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 

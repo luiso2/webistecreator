@@ -362,8 +362,8 @@
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <div class="text-center px-6">
-      <p class="preloader-mono">Mizū</p>
-      <p class="preloader-word">Head Spa · Miami</p>
+      <p class="preloader-mono">Naples</p>
+      <p class="preloader-word">Photography</p>
       <span class="preloader-line"></span>
     </div>
   </div>
@@ -857,6 +857,19 @@
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language (default EN)
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.en; });
+      document.documentElement.lang = l;
+      try { localStorage.setItem('lang', l); } catch (e) {}
+      document.getElementById('langToggle').textContent = l === 'en' ? 'ES' : 'EN';
+    };
+    let storedLang = null;
+    try { storedLang = localStorage.getItem('lang'); } catch (e) {}
+    let lang = storedLang || (navigator.language || 'en').slice(0, 2);
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // 4. Reveals: texto (.reveal) e imagenes con clip-path (.img-reveal)
     const io = new IntersectionObserver((entries) => {
