@@ -72,14 +72,14 @@
       background: var(--surface);
       backdrop-filter: blur(16px) saturate(150%);
       -webkit-backdrop-filter: blur(16px) saturate(150%);
-      border: 1px solid rgba(138,111,77,0.16);
+      border: 1px solid rgba(15,139,127,0.16);
       transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     }
     .glass-hover:hover {
-      background: rgba(250,247,241,0.88);
-      border-color: rgba(138,111,77,0.32);
+      background: rgba(250,253,252,0.88);
+      border-color: rgba(15,139,127,0.32);
       transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(50,40,31,0.14), 0 0 40px rgba(138,111,77,0.08);
+      box-shadow: 0 18px 42px rgba(10,40,36,0.14), 0 0 40px rgba(15,139,127,0.08);
     }
 
     /* Sheen teal sobre texto (tonos profundos, legible en crema) */
@@ -140,10 +140,10 @@
 
     /* Boton ghost */
     .btn-ghost {
-      border: 1px solid rgba(138,111,77,0.35); color: var(--ink);
+      border: 1px solid rgba(15,139,127,0.35); color: var(--ink);
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(138,111,77,0.7); background: rgba(138,111,77,0.08); box-shadow: 0 10px 26px rgba(50,40,31,0.14); }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(15,139,127,0.7); background: rgba(15,139,127,0.08); box-shadow: 0 10px 26px rgba(10,40,36,0.14); }
 
     /* Badge Merktop */
     .merktop-badge {
@@ -160,68 +160,71 @@
 
     /* Nav */
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(50,40,31,0.1); }
+    #nav.scrolled { background: rgba(246,250,249,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(10,40,36,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
 
     /* Marco editorial de imagen */
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(50,40,31,0.2); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(138,111,77,0.14), inset 0 -60px 100px rgba(50,40,31,0.12); }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(10,40,36,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(15,139,127,0.14), inset 0 -60px 100px rgba(10,40,36,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
 
     /* Numeros del proceso */
     .step-num {
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(180deg, #a8907a, #5b473a);
+      background: linear-gradient(180deg, #4db6a8, #0b4a44);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     /* Estrellas */
-    .stars { color: #8a6f4d; letter-spacing: 2px; text-shadow: 0 0 14px rgba(138,111,77,0.3); }
+    .stars { color: #0f8b7f; letter-spacing: 2px; text-shadow: 0 0 14px rgba(15,139,127,0.3); }
 
-    /* Banda oscura espresso (CTA final + footer) */
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(0.2) contrast(0.98) brightness(1.02); }
+
+    /* Banda oscura verde-azulado (CTA final + footer) */
     .dark-band {
-      --ink: #f5f0e8;
-      --ink-60: rgba(245,240,232,0.65);
-      --ink-40: rgba(245,240,232,0.45);
+      --ink: #eafbf8;
+      --ink-60: rgba(234,251,248,0.65);
+      --ink-40: rgba(234,251,248,0.45);
       --surface: rgba(255,255,255,0.05);
-      --accent-ghost: rgba(234,214,183,0.16);
+      --accent-ghost: rgba(157,224,210,0.16);
       color: var(--ink);
     }
     .dark-band .text-shine {
-      background-image: linear-gradient(110deg, #e8cfa6 0%, #f8ecd6 30%, #c4ad93 52%, #e8cfa6 75%, #f3e3c2 100%);
+      background-image: linear-gradient(110deg, #9de0d2 0%, #eafbf8 30%, #6fc2b0 52%, #9de0d2 75%, #cdeee5 100%);
     }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,166,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(168,144,122,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(157,224,210,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(79,182,168,0.14) 0%, transparent 70%); opacity: 1; }
     .dark-band .btn-3d {
-      background: linear-gradient(180deg, #faf3e6 0%, #e8d9bf 48%, #c9b393 100%);
-      color: #32281f;
+      background: linear-gradient(180deg, #eafbf8 0%, #cdeee5 48%, #9fd6c7 100%);
+      color: #0f2420;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.55),
-        inset 0 -2px 5px rgba(120,90,50,0.35),
-        0 5px 0 #8a7358,
+        inset 0 -2px 5px rgba(20,70,62,0.35),
+        0 5px 0 #6a9c92,
         0 12px 24px rgba(0,0,0,0.45);
     }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,166,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,166,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,166,0.7); background: rgba(232,207,166,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e8cfa6; text-shadow: 0 0 14px rgba(232,207,166,0.4); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(20,70,62,0.35), 0 7px 0 #6a9c92, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(157,224,210,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(20,70,62,0.4), 0 1px 0 #6a9c92, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(157,224,210,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(157,224,210,0.7); background: rgba(157,224,210,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #9de0d2; text-shadow: 0 0 14px rgba(157,224,210,0.4); }
 
     /* Boton flotante de llamada */
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60;
       width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 100%);
-      box-shadow: 0 6px 0 #4a3a26, 0 14px 30px rgba(50,40,31,0.35);
+      background: linear-gradient(180deg, #4db6a8 0%, #0f8b7f 100%);
+      box-shadow: 0 6px 0 #074842, 0 14px 30px rgba(10,40,36,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a3a26, 0 20px 40px rgba(50,40,31,0.4), 0 0 34px rgba(138,111,77,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a3a26, 0 6px 14px rgba(50,40,31,0.3); }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #074842, 0 20px 40px rgba(10,40,36,0.4), 0 0 34px rgba(15,139,127,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #074842, 0 6px 14px rgba(10,40,36,0.3); }
 
     /* ============ Motion v2 (nivel $100k) ============ */
 
@@ -239,7 +242,7 @@
       width: 64px; height: 64px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
-      border: 1px solid rgba(138,111,77,0.35); background: rgba(138,111,77,0.08);
+      border: 1px solid rgba(15,139,127,0.35); background: rgba(15,139,127,0.08);
       animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
     }
     .pre-word {
@@ -255,7 +258,7 @@
     /* 2. Barra de progreso de scroll */
     #scroll-progress {
       position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
-      background: linear-gradient(90deg, #6d5539 0%, #8a6f4d 45%, #c9ab7f 100%);
+      background: linear-gradient(90deg, #0b655d 0%, #0f8b7f 45%, #7fd4c5 100%);
       transform: scaleX(0); transform-origin: left center; will-change: transform;
       pointer-events: none;
     }
@@ -287,7 +290,7 @@
     @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
     .carousel-dot {
       width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
-      background: rgba(50,40,31,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+      background: rgba(31,51,47,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
     }
     .carousel-dot.active { width: 24px; background: var(--accent-deep); }
 
@@ -311,7 +314,7 @@
     .cursor-glow {
       position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
       border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
-      background: radial-gradient(circle, rgba(232,207,166,0.14) 0%, rgba(138,111,77,0.08) 42%, transparent 70%);
+      background: radial-gradient(circle, rgba(157,224,210,0.14) 0%, rgba(15,139,127,0.08) 42%, transparent 70%);
       transition: opacity 0.5s ease; will-change: transform;
     }
     .cursor-glow.on { opacity: 1; }
@@ -325,7 +328,7 @@
       transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
     }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(138,111,77,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(15,139,127,0.5); transform: translateY(-3px); }
 
 
     /* ============ Motion v3 (premium+) ============ */
@@ -364,7 +367,7 @@
     .foot-mark {
       position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
       font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
-      color: transparent; -webkit-text-stroke: 1px rgba(232,207,166,0.09); pointer-events: none; user-select: none;
+      color: transparent; -webkit-text-stroke: 1px rgba(157,224,210,0.09); pointer-events: none; user-select: none;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -397,8 +400,8 @@
 
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
-    <span class="pre-mono">O</span>
-    <span class="pre-word">Outside&amp;In Handyman</span>
+    <span class="pre-mono">S</span>
+    <span class="pre-word">Sandy's Spotless Cleaning</span>
     <span class="pre-line"></span>
   </div>
 
@@ -409,19 +412,19 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(138,111,77,0.35)] bg-[rgba(138,111,77,0.1)] text-[color:var(--accent-deep)]">O</span>
-        <span class="font-display text-xl tracking-[0.1em] uppercase">Outside&amp;In <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Handyman</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(15,139,127,0.35)] bg-[rgba(15,139,127,0.1)] text-[color:var(--accent-deep)]">S</span>
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Sandy's <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Spotless Cleaning</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
         <a class="nav-link" href="#about" data-es="Nosotros" data-en="About">About</a>
         <a class="nav-link" href="#services" data-es="Servicios" data-en="Services">Services</a>
-        <a class="nav-link" href="#gallery" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#results" data-es="Resultados" data-en="Results">Results</a>
         <a class="nav-link" href="#reviews" data-es="Opiniones" data-en="Reviews">Reviews</a>
         <a class="nav-link" href="#contact" data-es="Contacto" data-en="Contact">Contact</a>
       </nav>
       <div class="flex items-center gap-3">
         <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma / Change language">ES</button>
-        <a href="tel:+12763456220" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <a href="tel:+19546080904" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span data-es="Llamar ahora" data-en="Call now">Call now</span>
         </a>
@@ -436,10 +439,10 @@
       <nav class="flex flex-col p-4 text-sm">
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#about" data-es="Nosotros" data-en="About">About</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#services" data-es="Servicios" data-en="Services">Services</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#gallery" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#results" data-es="Resultados" data-en="Results">Results</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#reviews" data-es="Opiniones" data-en="Reviews">Reviews</a>
         <a class="py-3 px-3" href="#contact" data-es="Contacto" data-en="Contact">Contact</a>
-        <a href="tel:+12763456220" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a href="tel:+19546080904" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
       </nav>
     </div>
   </header>
