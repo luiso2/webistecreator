@@ -163,6 +163,7 @@
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
+    #langToggle { min-height: 38px; min-width: 44px; }
 
     /* Marco editorial de imagen */
     .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
@@ -791,43 +792,42 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Desconecta por completo.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu pausa te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Escríbenos por WhatsApp y asegura tu Ritual Imperial Mizu. Cupos limitados cada semana: la experiencia es uno a uno.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Reparado bien, sin sorpresas." data-en="Fixed right, no surprises.">Fixed right, no surprises.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu auto te está" data-en="Your car is">Your car is</span> <span class="text-shine" data-es="esperando" data-en="waiting on you">waiting on you</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama a Dan Kays Auto Repair para contarnos qué le pasa a tu auto. Revisamos el problema y te damos un precio claro antes de empezar." data-en="Call Dan Kays Auto Repair and tell us what is going on with your car. We will check the problem and give you a clear price before we start.">Call Dan Kays Auto Repair and tell us what is going on with your car. We will check the problem and give you a clear price before we start.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar por WhatsApp</a>
-        <a href="tel:+17863887821" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="tel:+13523713888" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Llamar: (352) 371-3888" data-en="Call: (352) 371-3888">Call: (352) 371-3888</span></a>
+        <a href="#location" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Cómo llegar" data-en="Get directions">Get directions</span></a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0e0c0a]">
-    <span class="foot-mark" aria-hidden="true">Mizū</span>
+  <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0b0e13]">
+    <span class="foot-mark" aria-hidden="true">Kays</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.png" alt="Logo Mizū" class="w-9 h-9 rounded-full ring-1 ring-[rgba(234,205,164,0.3)]" />
-          <span class="font-display text-lg">Mizū Head Spa Miami</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(93,143,209,0.35)] bg-[rgba(93,143,209,0.1)] text-[color:var(--accent-mid)]">K</span>
+          <span class="font-display text-lg">Dan Kays Auto Repair</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">A Sensorial Ritual of Elevated Relaxation. Boutique scalp, skin &amp; hair wellness studio.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Servicio completo de reparación de autos en Gainesville, FL desde el año 2000. Taller miembro de la Automotive Service Association." data-en="Complete auto repair service in Gainesville, FL since 2000. A member shop of the Automotive Service Association.">Complete auto repair service in Gainesville, FL since 2000. A member shop of the Automotive Service Association.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-        <p><a href="tel:+17863887821" class="hover:text-[color:var(--accent-deep)]">(786) 388-7821</a></p>
-        <p>Lun a Sáb · 10 AM a 7 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>1124 SE 4th St, Gainesville, FL 32601</p>
+        <p><a href="tel:+13523713888" class="hover:text-[color:var(--accent-deep)]">(352) 371-3888</a></p>
+        <p data-es="Lun a Vie · 7:30 AM a 3:30 PM" data-en="Mon to Fri · 7:30 AM to 3:30 PM">Mon to Fri · 7:30 AM to 3:30 PM</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @mizuheadspamiami</a></p>
-        <p><a href="https://www.tiktok.com/@mizu.head.spa.mia" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">TikTok · @mizu.head.spa.mia</a></p>
-        <p><a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">WhatsApp directo</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Más" data-en="More">More</p>
+        <p><span data-es="4.8 de 5 · 112 reseñas verificadas en Google" data-en="4.8 of 5 · 112 verified Google reviews">4.8 of 5 · 112 verified Google reviews</span></p>
+        <p data-es="Miembro ASA · Cajón de llaves fuera de horario" data-en="ASA member · After-hours key drop box">ASA member · After-hours key drop box</p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Mizū Head Spa Miami. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Dan Kays Auto Repair. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">All rights reserved.</span></p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -836,9 +836,9 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- Llamada flotante -->
+  <a href="tel:+13523713888" class="wa-float" aria-label="Call Dan Kays Auto Repair">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d1117" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 
   <!-- BACK TO TOP -->
@@ -851,6 +851,20 @@
   <script>
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Multilenguaje: el idioma primario del negocio gana; la preferencia se guarda por site.
+    const siteLanguageKey = `siteforge:lang:${location.pathname.split('/').filter(Boolean)[0] || 'home'}`;
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      try { localStorage.setItem(siteLanguageKey, l); } catch (e) {}
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let storedLang = null;
+    try { storedLang = localStorage.getItem(siteLanguageKey); } catch (e) {}
+    let lang = storedLang || document.documentElement.lang;
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
     const preloader = document.getElementById('preloader');
