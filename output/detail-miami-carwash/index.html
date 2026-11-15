@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#0a0c10" />
+  <title>Detail Miami · Mobile Luxury &amp; Exotic Auto Detailing in Miami, FL</title>
+  <meta name="description" content="Detail Miami: mobile detailing for luxury and exotic cars across Miami, Miami-Dade and Broward County. 4.9 stars, 58 Google reviews. Call or text (786) 512-8450." />
+  <meta property="og:title" content="Detail Miami · Mobile Luxury &amp; Exotic Auto Detailing" />
+  <meta property="og:description" content="4.9 stars on Google. Mobile detailing for luxury and exotic vehicles, anywhere in Miami." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/gmaps-1.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-1.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Detail Miami",
+    "description": "Mobile auto detailing company based in Miami, FL specializing in luxury and exotic vehicles: exterior foam wash, interior detailing and paint care, by appointment across Miami-Dade and Broward County.",
+    "areaServed": [
+      { "@type": "City", "name": "Miami" },
+      { "@type": "AdministrativeArea", "name": "Miami-Dade County" },
+      { "@type": "AdministrativeArea", "name": "Broward County" }
+    ],
+    "telephone": "+1-786-512-8450",
+    "image": "assets/raw/gmaps-1.jpg",
+    "priceRange": "$$",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "58", "bestRating": "5" }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <noscript><style>#preloader{display:none}.reveal,.img-reveal{opacity:1;transform:none;clip-path:none}.img-reveal img{transform:none}</style></noscript>
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0c10;
+      --bg-2: #10131a;
+      --surface: rgba(255,255,255,0.04);
+      --ink: #eef2f7;
+      --ink-60: rgba(238,242,247,0.62);
+      --ink-40: rgba(238,242,247,0.42);
+      --accent-deep: #8fc6f2;
+      --accent-mid: #5f93bd;
+      --accent-soft: #15202b;
+      --accent-ghost: rgba(143,198,242,0.16);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass oscuro, frio */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border: 1px solid var(--accent-ghost);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(255,255,255,0.065);
+      border-color: rgba(143,198,242,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.5), 0 0 40px rgba(143,198,242,0.08);
+    }
+
+    /* Sheen chrome/ice sobre texto */
+    .text-shine {
+      background: linear-gradient(110deg, #8fc6f2 0%, #eaf6ff 30%, #5f93bd 52%, #8fc6f2 75%, #bfe2fb 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(143,198,242,0.18) 0%, transparent 70%); top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(190,210,225,0.13) 0%, transparent 70%); bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(143,198,242,0.11) 0%, transparent 70%); top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D chrome */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #eaf6ff 0%, #8fc6f2 48%, #5f93bd 100%);
+      color: #0b1620; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(30,60,80,0.4),
+        0 5px 0 #355b78,
+        0 12px 24px rgba(0,0,0,0.5);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(30,60,80,0.4), 0 7px 0 #355b78, 0 18px 34px rgba(0,0,0,0.6), 0 0 40px rgba(143,198,242,0.2); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(30,60,80,0.45), 0 1px 0 #355b78, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(143,198,242,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(143,198,242,0.7); background: rgba(143,198,242,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(14,16,20,0.92) 0%, rgba(9,11,14,0.9) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(10,12,16,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(143,198,242,0.12), inset 0 -80px 120px rgba(5,7,10,0.4); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros de pasos */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #eaf6ff, #5f93bd);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #8fc6f2; letter-spacing: 2px; text-shadow: 0 0 14px rgba(143,198,242,0.4); }
+
+    /* WhatsApp flotante */
+    .wa-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #2ee06e 0%, #1fb457 100%);
+      box-shadow: 0 6px 0 #12713a, 0 14px 30px rgba(0,0,0,0.5);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .wa-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #12713a, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(46,224,110,0.35); }
+    .wa-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #12713a, 0 6px 14px rgba(0,0,0,0.45); }
+
+    /* ===== Motion v2 (nivel $100k) ===== */
+
+    #preloader {
+      position: fixed; inset: 0; z-index: 120; background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    .preloader-mono {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.75rem, 8vw, 4.25rem); line-height: 1.15;
+      background: linear-gradient(110deg, #8fc6f2 0%, #eaf6ff 45%, #5f93bd 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      clip-path: inset(0 0 100% 0);
+      animation: preReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.08s forwards;
+    }
+    .preloader-word {
+      margin-top: 0.7rem; font-size: 0.62rem; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--ink-40); opacity: 0; transform: translateY(8px);
+      animation: preFade 0.7s ease 0.4s forwards;
+    }
+    .preloader-line {
+      display: block; width: 74px; height: 1px; margin: 1.15rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--accent-deep), transparent);
+      transform: scaleX(0);
+      animation: preLine 0.85s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+    }
+    @keyframes preReveal { to { clip-path: inset(0 0 0% 0); } }
+    @keyframes preFade { to { opacity: 1; transform: translateY(0); } }
+    @keyframes preLine { to { transform: scaleX(1); } }
+
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; width: 100%; height: 2px; z-index: 110;
+      background: linear-gradient(90deg, #5f93bd 0%, #8fc6f2 55%, #eaf6ff 100%);
+      transform: scaleX(0); transform-origin: left center;
+      pointer-events: none; will-change: transform;
+    }
+
+    [data-parallax] { will-change: transform, translate; }
+
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); will-change: clip-path; }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { transition: filter 0.9s ease, transform 1.25s cubic-bezier(0.22,1,0.36,1); transition-delay: inherit; }
+    .img-reveal:not(.in) img { transform: scale(1.06); }
+
+    .marquee { overflow: hidden; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-seg { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-item { padding: 0 1.6rem; }
+    .marquee-sep { color: var(--accent-deep); font-size: 0.75em; opacity: 0.85; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+
+    .carousel-viewport { overflow: hidden; touch-action: pan-y; cursor: grab; }
+    .carousel-viewport:active { cursor: grabbing; }
+    .carousel-track {
+      position: relative; display: flex; gap: 20px;
+      transition: transform 0.7s cubic-bezier(0.22,1,0.36,1);
+      will-change: transform; user-select: none; -webkit-user-select: none;
+    }
+    .carousel-slide { flex: 0 0 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 calc(50% - 10px); } }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(238,242,247,0.22); transition: background 0.3s ease, width 0.3s ease; }
+    .carousel-dot:hover { background: rgba(143,198,242,0.55); }
+    .carousel-dot.active { width: 26px; background: linear-gradient(90deg, #5f93bd, #8fc6f2); }
+
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition-property: box-shadow; will-change: transform; }
+    }
+
+    [data-tilt] { position: relative; }
+    .tilt-glare {
+      position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+      opacity: 0; transition: opacity 0.45s ease;
+      background: radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), rgba(143,198,242,0.14), transparent 65%);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      [data-tilt] { will-change: transform; }
+      [data-tilt].tilting { transition: background 0.35s ease, border-color 0.35s ease, transform 0.16s ease-out, box-shadow 0.35s ease; }
+      [data-tilt]:hover .tilt-glare { opacity: 1; }
+    }
+
+    .cursor-glow {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      opacity: 0; transition: opacity 0.5s ease;
+      background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 40%), rgba(143,198,242,0.1), transparent 65%);
+    }
+
+    .back-to-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-60); opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { color: var(--ink); border-color: rgba(143,198,242,0.5); }
+
+
+    /* ============ Motion v3 (premium+) ============ */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #f3f8fc;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px var(--accent-ghost); pointer-events: none; user-select: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot, .marquee-track, .preloader-mono, .preloader-word, .preloader-line { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { transform: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      .carousel-track, .back-to-top, #scroll-progress, #preloader, .tilt-glare, .cursor-glow { transition: none !important; }
+      [data-parallax] { translate: none !important; will-change: auto !important; }
+      .preloader-mono { clip-path: none !important; }
+      .preloader-word { opacity: 1 !important; transform: none !important; }
+      .preloader-line { transform: scaleX(1) !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+  <style id="ultra">
+    /* ==== CAPA ULTRA: premium + ultraresponsive ==== */
+    html { -webkit-text-size-adjust: 100%; }
+    h1.split { font-size: clamp(2.55rem, 1.15rem + 6.6vw, 4.7rem) !important; line-height: 1.05 !important; }
+    section h2.font-display { font-size: clamp(1.95rem, 1.05rem + 3.6vw, 3.1rem) !important; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .min-h-screen { min-height: 100svh; }
+    .wa-float { bottom: max(1.4rem, env(safe-area-inset-bottom)); right: max(1.4rem, env(safe-area-inset-right)); }
+    .back-to-top { bottom: max(1.4rem, env(safe-area-inset-bottom)); left: max(1.4rem, env(safe-area-inset-left)); }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    @media (hover: none) {
+      .btn-3d, .btn-ghost { min-height: 44px; }
+      #langToggle { min-height: 38px; min-width: 44px; }
+    }
+    @media (max-width: 640px) {
+      .py-24 { padding-top: 4.4rem !important; padding-bottom: 4.4rem !important; }
+      .py-28 { padding-top: 5.2rem !important; padding-bottom: 5.2rem !important; }
+      .mb-16 { margin-bottom: 2.6rem !important; }
+      .gap-12 { gap: 2rem !important; }
+    }
+    @media (max-width: 380px) {
+      .gap-4 { gap: 0.65rem !important; }
+      .px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
+    }
+    @media (max-height: 520px) {
+      .min-h-screen { min-height: auto; }
+    }
+    ::selection { background: var(--accent-deep); color: var(--bg); }
+    :focus-visible { outline: 2px solid var(--accent-mid); outline-offset: 3px; border-radius: 4px; }
+    @supports (scrollbar-width: thin) {
+      html { scrollbar-width: thin; scrollbar-color: var(--accent-ghost) transparent; }
+    }
+    .font-display { font-feature-settings: "liga", "kern"; }
+    body { overscroll-behavior-x: none; }
+    img, video, iframe { max-width: 100%; }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <div class="text-center px-6">
+      <p class="preloader-mono">DM</p>
+      <p class="preloader-word">Detail Miami</p>
+      <span class="preloader-line"></span>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/raw/gmaps-1.jpg" alt="Detail Miami" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(143,198,242,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Detail <span class="text-[color:var(--accent-deep)]">Miami</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#zona" data-es="Zona de servicio" data-en="Service area">Service area</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Change language">ES</button>
+        <a href="tel:+17865128450" class="btn-3d magnetic rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span data-es="Llamar ahora" data-en="Call now">Call now</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Open menu">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#zona" data-es="Zona de servicio" data-en="Service area">Service area</a>
+        <a href="tel:+17865128450" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.08"></div><div class="orb orb-c" data-parallax="0.18"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Miami, FL · Detailing móvil de lujo y exóticos" data-en="Miami, FL · Mobile Luxury &amp; Exotic Detailing">Miami, FL · Mobile Luxury &amp; Exotic Detailing</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Vamos hasta ti." data-en="We come to you.">We come to you.</p>
+        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
+          <span data-es="Autos de alta gama," data-en="High-end cars,">High-end cars,</span><br /><span data-es="cuidados como " data-en="cared for the way ">cared for the way </span><span class="text-shine" data-es="se lo merecen" data-en="they deserve">they deserve</span>
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Detail Miami es un equipo de detailing móvil que llega hasta ti en Miami, Miami-Dade y Broward County. Dos operadores especializados en vehículos de lujo y exóticos, desde el lavado exterior hasta el cuidado completo del interior." data-en="Detail Miami is a mobile detailing team that comes to you anywhere in Miami, Miami-Dade and Broward County. Run by two operators who specialize in luxury and exotic vehicles, from foam wash to full interior care.">Detail Miami is a mobile detailing team that comes to you anywhere in Miami, Miami-Dade and Broward County. Run by two operators who specialize in luxury and exotic vehicles, from foam wash to full interior care.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.9 · 58 reseñas en Google" data-en="4.9 · 58 reviews on Google">4.9 · 58 reviews on Google</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="tel:+17865128450" class="btn-3d magnetic rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar ahora" data-en="Call now">Call now</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/17865128450" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="reveal flex flex-wrap gap-x-5 gap-y-2 mt-5 text-[11px] uppercase tracking-wide text-[color:var(--ink-40)]" style="transition-delay:420ms">
+          <span data-es="Fotos reales del trabajo" data-en="Real work photos">Real work photos</span>
+          <span data-es="Precio por cotización" data-en="Quote-based pricing">Quote-based pricing</span>
+          <span data-es="Servicio móvil" data-en="Mobile service">Mobile service</span>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto">
+          <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:320ms" data-parallax="-0.06">
+            <img src="assets/raw/gmaps-1.jpg" alt="Ferrari covered in foam during a hand wash by Detail Miami" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Línea directa" data-en="Direct line">Direct line</p>
+            <p class="font-display text-lg">(786) 512-8450</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Miami, FL · vamos hasta ti" data-en="Miami, FL · we come to you">Miami, FL · we come to you</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Calificación en Google" data-en="Google rating">Google rating</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span data-count="58">58</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas verificadas" data-en="Verified reviews">Verified reviews</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span class="text-shine" data-es="Lujo y exóticos" data-en="Luxury &amp; Exotic">Luxury &amp; Exotic</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Especialidad" data-en="Specialty">Specialty</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl" data-es="Miami · Broward" data-en="Miami · Broward">Miami · Broward</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de servicio" data-en="Service area">Service area</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE EDITORIAL -->
+  <div class="marquee border-b border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+      </div>
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA / SOBRE EL EQUIPO -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/gmaps-6.jpg" alt="Interior detailing of a Bugatti Chiron by Detail Miami, blue leather seats and steering wheel" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/gmaps-5.jpg" alt="Detail Miami on site detailing a Ferrari and a McLaren P1" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Sobre el equipo" data-en="About the team">About the team</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Dos operadores," data-en="Two operators,">Two operators,</span> <span class="text-shine" data-es="cero atajos" data-en="zero shortcuts">zero shortcuts</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Detail Miami es un negocio móvil atendido por dos operadores que cubren Miami, Miami-Dade y Broward County. El enfoque es deliberadamente angosto: vehículos de lujo y exóticos, tratados con el mismo cuidado cada vez." data-en="Detail Miami is run by two operators covering Miami, Miami-Dade and Broward County. The focus is narrow on purpose: luxury and exotic vehicles, treated with the same care every single time.">Detail Miami is run by two operators covering Miami, Miami-Dade and Broward County. The focus is narrow on purpose: luxury and exotic vehicles, treated with the same care every single time.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Los clientes notan la consistencia: Christopher Portugal lleva más de 8 años con el equipo lavando su auto, y Mark Kreindel dice lo mismo desde hace años. Ese tipo de clientela que vuelve es la reseña más honesta." data-en="Clients notice the consistency: Christopher Portugal has had his car washed by the team for over eight years, and Mark Kreindel says the same, for years. That kind of repeat business is the honest review.">Clients notice the consistency: Christopher Portugal has had his car washed by the team for over eight years, and Mark Kreindel says the same, for years. That kind of repeat business is the honest review.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Calificación" data-en="Rating">Rating</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="58">58</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine" data-es="Móvil" data-en="Mobile">Mobile</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Vamos hasta ti" data-en="We come to you">We come to you</p></div>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+            <img src="assets/raw/gmaps-9.jpg" alt="The Detail Miami team foam-washing two Rolls-Royce vehicles" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(143,198,242,0.3)]" loading="lazy" />
+            <span class="text-sm font-light" data-es="El equipo · en pleno trabajo" data-en="The team · mid-wash">The team · mid-wash</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO TRABAJAMOS -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Así trabajamos" data-en="How it works">How it works</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Simple," data-en="Simple,">Simple,</span> <span class="text-shine" data-es="de principio a fin" data-en="start to finish">start to finish</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Llamas o escribes" data-en="You call or text">You call or text</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Nos cuentas qué vehículo es y qué necesita." data-en="Tell us about the vehicle and what it needs.">Tell us about the vehicle and what it needs.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cotización clara" data-en="A clear quote">A clear quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te damos un precio antes de agendar, sin sorpresas." data-en="We give you a price before scheduling, no surprises.">We give you a price before scheduling, no surprises.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Vamos hasta ti" data-en="We come to you">We come to you</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="En Miami, Miami-Dade o Broward, el servicio es móvil." data-en="Anywhere in Miami, Miami-Dade or Broward, the service is mobile.">Anywhere in Miami, Miami-Dade or Broward, the service is mobile.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms" data-tilt>
+          <span class="tilt-glare" aria-hidden="true"></span>
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Revisas el resultado" data-en="You check the result">You check the result</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Miras el trabajo terminado antes de que nos vayamos." data-en="You look over the finished work before we leave.">You look over the finished work before we leave.</p>
+        </div>
+      </div>
+
+      <!-- Card de especialidad -->
+      <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal" data-tilt>
+        <span class="tilt-glare" aria-hidden="true"></span>
+        <div class="lg:col-span-2 zoomable relative min-h-[320px]">
+          <img src="assets/raw/gmaps-1.jpg" alt="Ferrari being hand washed with foam by Detail Miami in an indoor garage" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="lg:col-span-3 p-8 sm:p-12">
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-4" data-es="Especialidad" data-en="Specialty">Specialty</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3"><span data-es="Lujo y " data-en="Luxury &amp; ">Luxury &amp; </span><span class="text-shine" data-es="exóticos" data-en="exotic">exotic</span></h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7" data-es="Eric Bartos lo resume bien en su reseña: tiene vehículos de alta gama y nunca queda decepcionado. Ferrari, Lamborghini, McLaren, Bugatti, Rolls-Royce: el equipo trabaja con el mismo cuidado en cada uno." data-en="Eric Bartos put it best in his review: he has some very high-end vehicles and is never disappointed. Ferrari, Lamborghini, McLaren, Bugatti, Rolls-Royce: the team brings the same care to every one.">Eric Bartos put it best in his review: he has some very high-end vehicles and is never disappointed. Ferrari, Lamborghini, McLaren, Bugatti, Rolls-Royce: the team brings the same care to every one.</p>
+          <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
+            <div><p class="font-display text-3xl text-shine" data-es="Cotización" data-en="Quote-based">Quote-based</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Precio" data-en="Pricing">Pricing</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl" data-es="Móvil" data-en="Mobile">Mobile</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Servicio" data-en="Service">Service</p></div>
+            <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
+            <div><p class="font-display text-3xl">4.9</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="en Google" data-en="on Google">on Google</p></div>
+          </div>
+          <a href="tel:+17865128450" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Pedir cotización" data-en="Ask for a quote">Ask for a quote</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="detail">detail</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según el vehículo y lo que necesita. Llama o escribe y te damos un precio claro antes de empezar." data-en="Every job is quoted based on the vehicle and what it needs. Call or text and we will give you a clear price before we start.">Every job is quoted based on the vehicle and what it needs. Call or text and we will give you a clear price before we start.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(143,198,242,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.4);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Especialidad" data-en="Specialty">Specialty</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Lujo y exóticos" data-en="Luxury &amp; Exotic Detailing">Luxury &amp; Exotic Detailing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El trabajo por el que se conoce al equipo: los exóticos y los vehículos de lujo reciben el tiempo y el cuidado extra que pide su acabado." data-en="The work the team is known for: supercars and luxury vehicles get the extra time and care their finish needs.">The work the team is known for: supercars and luxury vehicles get the extra time and care their finish needs.</p>
+          <div class="mt-auto">
+            <a href="tel:+17865128450" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Cotizar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Exterior" data-en="Exterior">Exterior</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Lavado y detailing exterior" data-en="Foam Wash &amp; Exterior Detail">Foam Wash &amp; Exterior Detail</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Lavado exterior completo aplicado a mano, tal como se ve en el propio trabajo del equipo." data-en="A full exterior wash and detail, hand-applied, the way it shows in the team's own work.">A full exterior wash and detail, hand-applied, the way it shows in the team's own work.</p>
+          <div class="mt-auto">
+            <a href="tel:+17865128450" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Cotizar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Interior" data-en="Interior">Interior</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Detailing de interior" data-en="Interior Detailing">Interior Detailing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Interior limpiado y cuidado para que combine con el exterior, hasta las costuras y la tapicería." data-en="Interior cleaned and cared for to match the exterior, down to the stitching and trim.">Interior cleaned and cared for to match the exterior, down to the stitching and trim.</p>
+          <div class="mt-auto">
+            <a href="tel:+17865128450" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Cotizar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cuidado" data-en="Care">Care</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Encerado y cuidado de pintura" data-en="Wax &amp; Paint Care">Wax &amp; Paint Care</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Encerado y cuidado de pintura para proteger el acabado entre un detailing y otro." data-en="Wax and paint care to protect the finish between details.">Wax and paint care to protect the finish between details.</p>
+          <div class="mt-auto">
+            <a href="tel:+17865128450" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Cotizar" data-en="Ask about it">Ask about it</a>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves tu tipo de vehículo? Llama igual, seguro lo cubrimos." data-en="Do not see your vehicle type listed? Call anyway, we likely cover it.">Do not see your vehicle type listed? Call anyway, we likely cover it.</span></p>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <div>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="finished work">finished work</span></h2>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Detail+Miami+car+wash+Miami+FL" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          Google Maps
+        </a>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Ferrari F8" data-en="Ferrari F8">Ferrari F8</span><img src="assets/raw/gmaps-4.jpg" alt="Ferrari F8 finished and parked under a hotel portico in Miami" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Lamborghini Revuelto" data-en="Lamborghini Revuelto">Lamborghini Revuelto</span><img src="assets/raw/gmaps-2.jpg" alt="Lamborghini Revuelto with scissor door open after detailing" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Bugatti Chiron" data-en="Bugatti Chiron">Bugatti Chiron</span><img src="assets/raw/gmaps-3.jpg" alt="Bugatti Chiron finished and parked after detailing" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="McLaren P1" data-en="McLaren P1">McLaren P1</span><img src="assets/raw/gmaps-7.jpg" alt="Green McLaren P1 with doors up after detailing" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Lamborghini Urus" data-en="Lamborghini Urus">Lamborghini Urus</span><img src="assets/raw/gmaps-8.jpg" alt="Yellow Lamborghini Urus finished and parked in Miami" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE EDITORIAL -->
+  <div class="marquee border-t border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+      </div>
+      <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Exotic Cars</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Mobile Service</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Foam Wash</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Interior Detailing</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Miami, FL</span><span class="marquee-sep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones reales" data-en="Real reviews">Real reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What clients">What clients</span> <span class="text-shine" data-es="los clientes" data-en="are saying">are saying</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="58 reseñas en Google, calificación 4.9 de 5." data-en="58 reviews on Google, rated 4.9 out of 5.">58 reviews on Google, rated 4.9 out of 5.</span></p>
+      </div>
+      <div id="reviews-carousel" class="reveal" style="transition-delay:120ms">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"5 Stars all the way! I have some very high end vehicles and I am never disappointed when I get them back."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Eric Bartos</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"One of the best car washes i recieved! Both operators of the company are great people as well."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Paul Kovalenko</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I recently had my vehicle detailed at Detail Miami Car Wash, and I couldn't be happier with the results."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Alejandro Elias Siwady</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Best car wash in town! They've been washing my car for over 8 years, and the quality is always outstanding."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Christopher Portugal</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"These guys are the best! DetailMiami has been doing my car for years."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Mark Kreindel</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="carousel-dots flex justify-center gap-2.5 mt-8"></div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Detail+Miami+car+wash+Miami+FL" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 58 reseñas en Google" data-en="Read all 58 reviews on Google">Read all 58 reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONA DE SERVICIO (variante adaptada: sin direccion fija ni mapa, negocio movil) -->
+  <section id="zona" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">06</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Zona de servicio" data-en="Service area">Service area</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="No tenemos local," data-en="No shop,">No shop,</span> <span class="text-shine" data-es="vamos hasta ti" data-en="we come to you">we come to you</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dónde trabajamos" data-en="Where we work">Where we work</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Detail Miami es 100% móvil: cubrimos Miami, Miami-Dade County y Broward County. Llegamos hasta tu casa, oficina o valet." data-en="Detail Miami is 100% mobile: we cover Miami, Miami-Dade County and Broward County. We come to your home, office or valet.">Detail Miami is 100% mobile: we cover Miami, Miami-Dade County and Broward County. We come to your home, office or valet.</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a sábado: 9:00 AM a 7:00 PM" data-en="Monday to Saturday: 9:00 AM to 7:00 PM">Monday to Saturday: 9:00 AM to 7:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Domingo: cerrado" data-en="Sunday: closed">Sunday: closed</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Booking">Booking</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Llamada o WhatsApp:" data-en="Call or WhatsApp:">Call or WhatsApp:</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(143,198,242,0.4)]" href="tel:+17865128450">(786) 512-8450</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame zoomable reveal img-reveal min-h-[380px]" style="transition-delay:180ms">
+        <span class="tile-cap" data-es="El equipo en movimiento" data-en="The team on the move">The team on the move</span>
+        <img src="assets/raw/gmaps-9.jpg" alt="Detail Miami's two operators foam-washing a pair of Rolls-Royce vehicles" class="blur-up w-full h-full object-cover" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cursor-glow-zone relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, var(--bg-2) 0%, #06070a 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Vamos hasta ti." data-en="We come to you.">We come to you.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu auto merece" data-en="Your car deserves">Your car deserves</span> <span class="text-shine" data-es="este cuidado" data-en="this kind of care">this kind of care</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama o escribe por WhatsApp y cuéntanos qué vehículo necesitas que cuidemos. Te damos un precio claro antes de agendar." data-en="Call or text on WhatsApp and tell us about the vehicle you need taken care of. We will give you a clear price before scheduling.">Call or text on WhatsApp and tell us about the vehicle you need taken care of. We will give you a clear price before scheduling.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="tel:+17865128450" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a href="https://wa.me/17865128450" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#06070a]">
+    <span class="foot-mark" aria-hidden="true">Detail Miami</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/raw/gmaps-1.jpg" alt="Detail Miami" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(143,198,242,0.35)]" loading="lazy" />
+          <span class="font-display text-lg">Detail Miami</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Detailing móvil para vehículos de lujo y exóticos en Miami, FL. Vamos hasta ti." data-en="Mobile detailing for luxury and exotic vehicles in Miami, FL. We come to you.">Mobile detailing for luxury and exotic vehicles in Miami, FL. We come to you.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p data-es="Servicio móvil · sin local fijo" data-en="Mobile service · no fixed shop">Mobile service · no fixed shop</p>
+        <p><a href="tel:+17865128450" class="hover:text-[color:var(--accent-deep)]">(786) 512-8450</a></p>
+        <p data-es="Lun a Sáb · 9 AM a 7 PM" data-en="Mon to Sat · 9 AM to 7 PM">Mon to Sat · 9 AM to 7 PM</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Zona de servicio" data-en="Service area">Service area</p>
+        <p data-es="Miami, FL" data-en="Miami, FL">Miami, FL</p>
+        <p data-es="Miami-Dade County" data-en="Miami-Dade County">Miami-Dade County</p>
+        <p data-es="Broward County" data-en="Broward County">Broward County</p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Detail Miami.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/17865128450" target="_blank" rel="noopener" class="wa-float" aria-label="Message on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <button id="backToTop" type="button" class="back-to-top glass" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // El idioma primario del negocio gana; la preferencia se guarda por site.
+    const siteLanguageKey = `siteforge:lang:${location.pathname.split('/').filter(Boolean)[0] || 'home'}`;
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      localStorage.setItem(siteLanguageKey, l);
+      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = localStorage.getItem(siteLanguageKey) || document.documentElement.lang;
+    applyLang(lang === 'es' ? 'es' : 'en');
+    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    const hidePreloader = () => {
+      if (!preloader || preloader.classList.contains('done')) return;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 700);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      const maxWait = setTimeout(hidePreloader, 1200);
+      const onLoaded = () => {
+        clearTimeout(maxWait);
+        setTimeout(hidePreloader, Math.min(500, Math.max(0, 1200 - performance.now())));
+      };
+      if (document.readyState === 'complete') onLoaded();
+      else window.addEventListener('load', onLoaded, { once: true });
+    }
+
+    // 2, 3, 11: un solo listener de scroll con rAF (nav, progreso, back-to-top, parallax)
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backToTop = document.getElementById('backToTop');
+    const parallaxLayers = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'))
+      .map(el => ({ el, factor: parseFloat(el.dataset.parallax) || 0 }));
+    let viewportH = window.innerHeight;
+    let scrollTicking = false;
+
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - viewportH;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(y / maxScroll, 1).toFixed(4) : 0) + ')';
+      backToTop.classList.toggle('visible', y > viewportH * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < viewportH) {
+        const p = y / viewportH;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (y < viewportH * 1.6) {
+        parallaxLayers.forEach(layer => { layer.el.style.translate = '0 ' + (y * layer.factor).toFixed(1) + 'px'; });
+      }
+    };
+    const requestScrollFrame = () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    };
+    window.addEventListener('scroll', requestScrollFrame, { passive: true });
+    window.addEventListener('resize', () => { viewportH = window.innerHeight; requestScrollFrame(); }, { passive: true });
+    onScrollFrame();
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // 4. Reveals: texto (.reveal) e imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (respetan decimales: 4.9 anima 0.0 a 4.9)
+    const counters = document.querySelectorAll('[data-count]');
+    if (!reducedMotion && counters.length) {
+      const decimalsOf = el => (el.dataset.count.split('.')[1] || '').length;
+      counters.forEach(el => { el.textContent = (0).toFixed(decimalsOf(el)); });
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          counterIO.unobserve(entry.target);
+          const el = entry.target;
+          const target = parseFloat(el.dataset.count);
+          const decimals = decimalsOf(el);
+          const duration = 1500;
+          const start = performance.now();
+          const tick = now => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = (target * eased).toFixed(decimals);
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(el => counterIO.observe(el));
+    }
+
+    // v3: split-text del hero
+    document.querySelectorAll('.split').forEach(el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      io.observe(el);
+    });
+
+    // v3: cursor ring (solo desktop)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    const carousel = document.getElementById('reviews-carousel');
+    if (carousel) {
+      const viewport = carousel.querySelector('.carousel-viewport');
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = carousel.querySelector('.carousel-dots');
+      const twoUp = window.matchMedia('(min-width: 640px)');
+      let index = 0, offset = 0, dots = [];
+      let autoplayTimer = null, resumeTimer = null;
+
+      const maxIndex = () => slides.length - (twoUp.matches ? 2 : 1);
+      const goTo = (i, instant) => {
+        index = Math.max(0, Math.min(i, maxIndex()));
+        offset = slides[index].offsetLeft;
+        if (instant) track.style.transition = 'none';
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
+        if (instant) requestAnimationFrame(() => { track.style.transition = ''; });
+        dots.forEach((dot, di) => dot.classList.toggle('active', di === index));
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        dots = [];
+        for (let i = 0; i <= maxIndex(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+          dot.addEventListener('click', () => { stopAutoplay(); goTo(i); scheduleResume(); });
+          dotsWrap.appendChild(dot);
+          dots.push(dot);
+        }
+      };
+      const next = () => goTo(index >= maxIndex() ? 0 : index + 1);
+      const stopAutoplay = () => { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; } };
+      const startAutoplay = () => { if (reducedMotion) return; stopAutoplay(); autoplayTimer = setInterval(next, 5000); };
+      const scheduleResume = () => { clearTimeout(resumeTimer); resumeTimer = setTimeout(startAutoplay, 9000); };
+
+      let dragging = false, dragStartX = 0, dragDelta = 0, dragBase = 0;
+      viewport.addEventListener('pointerdown', e => {
+        dragging = true; dragStartX = e.clientX; dragDelta = 0; dragBase = offset;
+        stopAutoplay();
+        track.style.transition = 'none';
+        viewport.setPointerCapture(e.pointerId);
+      });
+      viewport.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        dragDelta = e.clientX - dragStartX;
+        let target = dragBase - dragDelta;
+        const maxOffset = slides[maxIndex()].offsetLeft;
+        if (target < 0) target *= 0.35;
+        else if (target > maxOffset) target = maxOffset + (target - maxOffset) * 0.35;
+        track.style.transform = 'translateX(' + (-target) + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        track.style.transition = '';
+        if (Math.abs(dragDelta) > 48) goTo(index + (dragDelta < 0 ? 1 : -1));
+        else goTo(index);
+        scheduleResume();
+      };
+      viewport.addEventListener('pointerup', endDrag);
+      viewport.addEventListener('pointercancel', endDrag);
+      if (finePointer) {
+        viewport.addEventListener('mouseenter', stopAutoplay);
+        viewport.addEventListener('mouseleave', () => { if (!dragging) scheduleResume(); });
+      }
+      twoUp.addEventListener('change', () => { buildDots(); goTo(index, true); });
+      window.addEventListener('resize', () => goTo(index, true), { passive: true });
+
+      buildDots();
+      goTo(0, true);
+      startAutoplay();
+    }
+
+    // 8, 9, 10: efectos de puntero, solo (hover: hover) and (pointer: fine) y sin reduced motion
+    if (finePointer && !reducedMotion) {
+
+      // 8. Botones magneticos (max 6px, easing y spring back)
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        let targetX = 0, targetY = 0, curX = 0, curY = 0, rafId = null, hovering = false;
+        const animate = () => {
+          curX += (targetX - curX) * 0.18;
+          curY += (targetY - curY) * 0.18;
+          btn.style.transform = 'translate(' + curX.toFixed(2) + 'px, ' + curY.toFixed(2) + 'px)';
+          if (hovering || Math.abs(curX) + Math.abs(curY) > 0.15) rafId = requestAnimationFrame(animate);
+          else { btn.style.transform = ''; curX = curY = 0; rafId = null; }
+        };
+        btn.addEventListener('mousemove', e => {
+          const r = btn.getBoundingClientRect();
+          targetX = Math.max(-6, Math.min(6, (e.clientX - (r.left + r.width / 2)) * 0.12));
+          targetY = Math.max(-6, Math.min(6, (e.clientY - (r.top + r.height / 2)) * 0.3));
+          hovering = true;
+          if (!rafId) rafId = requestAnimationFrame(animate);
+        });
+        btn.addEventListener('mouseleave', () => {
+          targetX = 0; targetY = 0; hovering = false;
+          if (!rafId) rafId = requestAnimationFrame(animate);
+        });
+      });
+
+      // 9. Tilt 3D sutil + glare en cards glass
+      document.querySelectorAll('[data-tilt]').forEach(card => {
+        const glare = card.querySelector('.tilt-glare');
+        let rafId = null, lastEvent = null;
+        card.addEventListener('mouseenter', () => card.classList.add('tilting'));
+        card.addEventListener('mousemove', e => {
+          lastEvent = e;
+          if (rafId) return;
+          rafId = requestAnimationFrame(() => {
+            rafId = null;
+            const r = card.getBoundingClientRect();
+            const px = (lastEvent.clientX - r.left) / r.width;
+            const py = (lastEvent.clientY - r.top) / r.height;
+            card.style.transform = 'perspective(800px) rotateX(' + ((0.5 - py) * 6).toFixed(2) + 'deg) rotateY(' + ((px - 0.5) * 6).toFixed(2) + 'deg) translateY(-4px)';
+            if (glare) {
+              glare.style.setProperty('--tx', (px * 100).toFixed(1) + '%');
+              glare.style.setProperty('--ty', (py * 100).toFixed(1) + '%');
+            }
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('tilting');
+          card.style.transform = '';
+        });
+      });
+
+      // 10. Cursor glow en la banda oscura final
+      document.querySelectorAll('.cursor-glow-zone').forEach(zone => {
+        const glow = zone.querySelector('.cursor-glow');
+        if (!glow) return;
+        zone.addEventListener('mousemove', e => {
+          const r = zone.getBoundingClientRect();
+          glow.style.setProperty('--gx', (e.clientX - r.left).toFixed(0) + 'px');
+          glow.style.setProperty('--gy', (e.clientY - r.top).toFixed(0) + 'px');
+          glow.style.opacity = '1';
+        });
+        zone.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+      });
+    }
+  </script>
+</body>
+</html>
