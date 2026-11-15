@@ -1,0 +1,111 @@
+{
+  "slug": "harmony-med-spa-doral",
+  "name": "Harmony Med Spa",
+  "alt_names_seen": ["Harmony Medical Spa (Fresha legal/listing name)", "Harmony Beauty Med Spa (gold wall logo inside the location)"],
+  "niche": "med spa / aesthetics (laser hair removal, permanent makeup, skin care)",
+  "city": "Doral, FL",
+  "street_address": "4005 NW 114th Ave, Unit 12, Doral, FL 33178",
+  "shares_location_with": "TCM Acupuncture Doral (confirmed via Google Maps 'Located in:' field)",
+  "phone": "(305) 878-9195",
+  "phone_e164": "+13058789195",
+  "email": null,
+  "email_search_performed": [
+    "Fresha JSON-LD and __NEXT_DATA__ payload (no email field anywhere in the business, location, or review data)",
+    "Instagram bio/external_url: blocked (see instagram_access note below)",
+    "Facebook page (facebook.com/profile.php?id=100092314461554) and mbasic.facebook.com: both show only Facebook's login wall to an unauthenticated fetch, no About/contact data retrievable",
+    "Google Business Profile public panel (via live Playwright scrape): no email shown, only phone + 'website' link to Instagram"
+  ],
+  "has_own_site": false,
+  "own_site_checked_domains": [
+    "harmonymedspa.com (resolves, but is a GoDaddy 'domain for sale' parked page, not a real site)",
+    "harmonymedicalspa.com (resolves, but is an unrelated 'Harmony Medical Spa' business in Gastonia, NC - different business, same generic name)",
+    "harmonymedspa.net (resolves, but is an unrelated 'Harmony Med Spa' business in Omaha, NE - different business, same generic name)",
+    "harmonymedicalspa.net, harmonybeautymed.com, harmonybeautyspa.com, harmonymedspadoral.com, harmonymedicalspadoral.com (all NXDOMAIN / no response)"
+  ],
+  "own_site_check_result": "CONFIRMED no own website. The only 3 live domains that matched a name guess all belong to unrelated businesses in other US cities (med spa is an extremely common name pattern). Google Business Profile's own 'website' field points to https://www.instagram.com/harmonybeautymed (confirmed live via Playwright scrape of the Google Maps panel, not just the Instagram-bio-check heuristic), which is the strongest possible confirmation that Instagram is the only link they have on file.",
+  "instagram": "@harmonybeautymed",
+  "instagram_url": "https://www.instagram.com/harmonybeautymed/",
+  "instagram_access": "Could not read the Instagram profile page directly: the web_profile_info API endpoint, a direct page fetch, and a real headless Chromium (Playwright) navigation were all redirected to Instagram's login wall from this session's datacenter IP (classic anti-bot gate, not specific to this business). Several third-party IG mirror/viewer sites were also tried via WebFetch and were blocked or returned bot-verification pages. The handle itself, and the fact that it is the ONLY external link on the Google Business Profile, is independently confirmed through Fresha's sameAs field and the live Google Maps scrape, so this does not change the has_own_site conclusion, but the literal bio text/external_url inside Instagram itself could not be read this session.",
+  "facebook_url": "https://www.facebook.com/profile.php?id=100092314461554",
+  "booking_platform": "Fresha",
+  "booking_url": "https://www.fresha.com/a/harmony-medical-spa-doral-4005-northwest-114th-avenue-oj6h5uah",
+  "rating_google": 4.9,
+  "review_count_google": 33,
+  "review_count_google_source": "Live Playwright scrape of the Google Maps business panel (place_id ChIJeezaZm2_2YgRi71Xt9isbQ4) on 2026-11-15, reading the rendered aria-label for stars/reviews directly off the page. This RECONFIRMS and CORRECTS the brief's approximate figure of ~134-162 reviews, which was not a Google number (it appears to have been conflated with Fresha's review count, see below).",
+  "rating_fresha": 5.0,
+  "review_count_fresha": 187,
+  "review_count_fresha_source": "Fresha's own JSON-LD (aggregateRating) and __NEXT_DATA__ payload for the business page, fetched 2026-11-15.",
+  "hours": {
+    "monday_saturday": "10:00 AM - 6:00 PM",
+    "sunday": "Closed",
+    "source": "Confirmed on BOTH Google Maps (live Playwright scrape) and Fresha (JSON-LD openingHoursSpecification + __NEXT_DATA__ workingTime) independently, exact match."
+  },
+  "language": "en",
+  "language_evidence": "Fresha's own business description and all 3 bookable service names besides the Spanish-named promos are in English; of the 11 total verbatim reviews collected (5 Google + 6 Fresha), 9 are in English and 2 in Spanish. Doral has a large Spanish-speaking market and 2 real Spanish reviews are used verbatim on the site, but the weight of evidence (business copy + majority of reviews) points to English as the primary language, matching the business's own Google-rating English reviews. Site is fully bilingual (EN default / ES toggle) per pipeline requirement regardless.",
+  "services_source": "Fresha business page JSON-LD (schema.org hasOfferCatalog) AND the page's embedded __NEXT_DATA__ React payload (location.services), cross-checked, fetched 2026-11-15. This is the full bookable menu as published; Fresha's own location.serviceCount field says 4 but only 3 distinct bookable service items are exposed across both payloads (2 categories).",
+  "services": [
+    {
+      "category": "Laser Hair Removal",
+      "name": "Promoción Flash \"Depilación láser bikini + axilas (6 sesiones)\"",
+      "name_en_literal": "Flash Promo \"Laser hair removal, bikini + underarms (6 sessions)\"",
+      "duration": "30 minutes (total package)",
+      "price": "from $287",
+      "fresha_offer_id": "s:22972362"
+    },
+    {
+      "category": "Permanent Makeup",
+      "name": "Micropigmentación de labios",
+      "name_en_literal": "Lip micropigmentation (lip blush)",
+      "duration": "2 hours",
+      "price": "from $350",
+      "fresha_offer_id": "s:21446252"
+    },
+    {
+      "category": "Permanent Makeup",
+      "name": "Micropigmentación de cejas",
+      "name_en_literal": "Eyebrow micropigmentation (microblading/powder brows)",
+      "duration": "1 hour",
+      "price": "from $350",
+      "fresha_offer_id": "s:6104828"
+    }
+  ],
+  "services_also_mentioned_not_priced": {
+    "source": "Fresha business description field + real client reviews (reviewSummary.summary field generated from actual review text by Fresha, and individual review service-context lines)",
+    "items": ["Facials", "Anti-aging treatments", "Body contouring", "IV vitamin therapy", "Lip flip", "General skin care"],
+    "handling": "Shown on the site as a 4th 'Also at Harmony' services card with NO price (true to source), pointing to the Fresha page for current pricing/availability. No price was invented for these."
+  },
+  "reviews_used_on_site": [
+    { "name": "M Tobon", "rating": 5, "quote": "Great experience with my laser hair removal treatments. The spa is clean and welcoming, and the staff is professional, knowledgeable, and attentive. Treatments are quick, comfortable, and effective. Highly recommend!", "source": "Google (live Maps scrape)" },
+    { "name": "Amy Nguyen", "rating": 5, "quote": "Amazing experience! My skin feels great and the staff was very kind and caring. Highly recommend and would come again.", "source": "Google (live Maps scrape)" },
+    { "name": "Marianne Padrón", "rating": 5, "quote": "Place was super clean and pretty. Everyone was super friendly. The spa is honestly full circle. They also have ALOT of services. HIGHLY recommend!", "source": "Google (live Maps scrape)" },
+    { "name": "Maria Carolina", "rating": 5, "quote": "Great service, everyone is very friendly. Thank you to Daniela for an amazing facial.", "source": "Google (live Maps scrape)" },
+    { "name": "Maria Valentina V", "rating": 5, "quote": "La mejor atención, los mejores precios! 100% recomendado", "source": "Fresha (JSON-LD review array)" }
+  ],
+  "additional_reviews_found_not_used": [
+    "Grisel Macias (Google, 5 stars): truncated by Google's UI with a trailing ellipsis mid-sentence ('...My skin feels fabulous. I will be …'); not used verbatim since the full sentence could not be confirmed.",
+    "Barbara L, Jaime B, Imelda C, Barbra I, Eliana R (Fresha, 5 stars each): shorter/duplicate-themed quotes, kept in reserve."
+  ],
+  "google_place_id": "ChIJeezaZm2_2YgRi71Xt9isbQ4",
+  "google_maps_url": "https://www.google.com/maps/place/Harmony+Med+Spa/data=!4m7!3m6!1s0x88d9bf6d66daec79:0xe6dacd8b757bd8b!8m2!3d25.8106203!4d-80.3806941!16s%2Fg%2F11v5y7j7vt",
+  "geo": { "lat": 25.8106203, "lng": -80.3806941 },
+  "photos": {
+    "count_used": 9,
+    "count_downloaded": 11,
+    "source": "7 photos from the Google Maps business photo gallery (via a live Playwright script cycling the photo viewer) + 4 photos from the Fresha venue gallery (venue-gallery-large images in the page's __NEXT_DATA__), all downloaded with curl (Chrome UA), verified with PIL, resized to max 1000px wide at quality 82. 2 near-duplicate frames (a second copy of the reception shot, a second copy of the gold-mirror treatment room) were downloaded but discarded/unused to avoid repetition.",
+    "files_used": [
+      { "file": "assets/raw/gmaps-1.jpg", "used_as": "hero + og:image", "description": "Reception desk with the gold 'Harmony Beauty Med Spa' wall logo" },
+      { "file": "assets/raw/gmaps-5.jpg", "used_as": "experience section", "description": "Facial/skin treatment room with professional equipment" },
+      { "file": "assets/raw/fresha-4.jpg", "used_as": "experience section", "description": "Harmony Beauty-branded needle-free serum bottles (product shot)" },
+      { "file": "assets/raw/gmaps-6.jpg", "used_as": "gallery (wide tile)", "description": "Laser/body contouring treatment room with framed line-art" },
+      { "file": "assets/raw/gmaps-7.jpg", "used_as": "gallery", "description": "Treatment chair with round gold mirror" },
+      { "file": "assets/raw/gmaps-4.jpg", "used_as": "gallery", "description": "IV therapy lounge recliners" },
+      { "file": "assets/raw/fresha-1.jpg", "used_as": "gallery", "description": "Facial equipment room, alternate angle" },
+      { "file": "assets/raw/fresha-2.jpg", "used_as": "gallery", "description": "Relaxation lounge recliners, alternate angle" },
+      { "file": "assets/raw/gmaps-3.jpg", "used_as": "gallery", "description": "Quiet decor corner (pampas grass, side table)" }
+    ],
+    "curation_notes": "All photos are empty-room/interior/product shots. No people, no mid-procedure shots, no closed eyes, no visible needles, no screenshots or overlaid text of any kind, consistent with the strict visual curation rule."
+  },
+  "template_base": "templates/light/index.html (Amani light exemplar), palette tokens shifted to a warmer gold/taupe to match the business's own beige-and-gold-mirror interior and gold 'Harmony Beauty' script logo",
+  "build_notes": "Full build (not the adapted/degraded variant): real priced booking menu from Fresha, real Google reviews, real address/hours, bilingual EN/ES. The template's 4-person 'team' row was intentionally NOT reused since Fresha lists only one generic provider ('HARMONY') with no confirmed individual staff names; replaced with a truthful 'Specialties' chip row (Laser Hair Removal / Permanent Makeup / Skin Care / IV Therapy) sourced from Fresha's own knowsAbout + description fields instead of inventing a team roster.",
+  "existing_other_build_note": "output/harmony-med-spa (no -doral suffix) already existed in this repo from an earlier, much thinner research pass (no Fresha menu, no verified Google reviews, generic 'maps_site' build). It was left untouched; this new, fully-researched build uses the harmony-med-spa-doral slug per the task brief's suggestion to avoid overwriting/colliding with it. A future cleanup pass may want to deprecate the older one."
+}
