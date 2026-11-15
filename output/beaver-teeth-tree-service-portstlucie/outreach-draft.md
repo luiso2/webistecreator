@@ -19,4 +19,4 @@ Merktop
 
 ## dm_message (version corta, panel DM/WhatsApp)
 
-Hi! This is Michael with Merktop. I saw Beaver Teeth LLC has a 4.8 rating from 71 Google reviews and noticed no website linked anywhere. Built you a free sample site with your real tree removal and trimming work: https://siteforge-demos.odd-forest-9504.workers.dev/beaver-teeth-tree-service-portstlucie/ Does not touch how you run jobs today. Like it? I put it on your own domain, no cost. If not, I take it down, no hard feelings. Michael Vargas, Merktop.
+Hi! This is Michael with Merktop. Saw Beaver Teeth LLC has a 4.8 rating from 71 Google reviews and no website linked anywhere. Built you a free sample site with your real tree work: https://siteforge-demos.odd-forest-9504.workers.dev/beaver-teeth-tree-service-portstlucie/ Does not touch how you run jobs today. Like it? I put it on your own domain, no cost. If not, I take it down, no hard feelings. Michael Vargas, Merktop.
