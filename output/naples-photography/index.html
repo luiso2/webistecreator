@@ -375,20 +375,21 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/logo.png" alt="Logo Mizū Head Spa Miami" class="w-10 h-10 rounded-full ring-1 ring-[rgba(216,179,122,0.3)]" />
-        <span class="font-display text-xl tracking-wide">Mizū <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Head Spa</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(216,179,122,0.35)] bg-[rgba(216,179,122,0.1)] text-[color:var(--accent-deep)]">N</span>
+        <span class="font-display text-xl tracking-wide">Naples <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Photography</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-8 text-sm font-light">
-        <a class="nav-link" href="#ritual">El Ritual</a>
-        <a class="nav-link" href="#experiencia">La Experiencia</a>
-        <a class="nav-link" href="#galeria">Galería</a>
-        <a class="nav-link" href="#opiniones">Opiniones</a>
-        <a class="nav-link" href="#ubicacion">Ubicación</a>
+        <a class="nav-link" href="#services" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#experience" data-es="La Experiencia" data-en="Experience">Experience</a>
+        <a class="nav-link" href="#gallery" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#reviews" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#location" data-es="Ubicación" data-en="Location">Location</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Reservar
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma / Change language">ES</button>
+        <a href="tel:+12396451360" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="Llamar" data-en="Call">Call</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -399,12 +400,12 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Ritual</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
-        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar por WhatsApp</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#services" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experience" data-es="La Experiencia" data-en="Experience">Experience</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#gallery" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#reviews" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#location" data-es="Ubicación" data-en="Location">Location</a>
+        <a href="tel:+12396451360" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
       </nav>
     </div>
   </header>
@@ -414,38 +415,36 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.08"></div><div class="orb orb-c" data-parallax="0.18"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-6">Hialeah · Miami · Boutique Scalp, Skin &amp; Hair Wellness</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">El estrés se queda en la puerta.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-6" data-es="Naples, Florida · Fotografía de Retratos y Lifestyle" data-en="Naples, Florida · Portrait &amp; Lifestyle Photography">Naples, Florida · Portrait &amp; Lifestyle Photography</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tu historia, en luz real." data-en="Your story, in real light.">Your story, in real light.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          Un ritual <span class="text-shine">sensorial</span><br />de relajación elevada
+          Real moments, <span class="text-shine">beautifully</span> captured
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
-          Head spa japonés en el corazón de Hialeah. 90 minutos donde el agua, el vapor terapéutico y la aromaterapia trabajan juntos para renovar tu cuero cabelludo desde la raíz.
-        </p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Naples Photography es un estudio local detrás de algunas de las sesiones familiares, de maternidad y de compromiso más queridas de Naples, en la playa, en un jardín o donde tu historia suceda." data-en="Naples Photography is the local studio behind some of Naples' most loved family, maternity and engagement sessions, on the beach, in a garden, or wherever your story happens to unfold.">Naples Photography is the local studio behind some of Naples' most loved family, maternity and engagement sessions, on the beach, in a garden, or wherever your story happens to unfold.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]">5.0 · 102 reseñas en Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 16 reseñas en Google" data-en="5.0 · 16 reviews on Google">5.0 · 16 reviews on Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar por WhatsApp
+          <a href="tel:+12396451360" class="btn-3d magnetic rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar para reservar" data-en="Call to Book">Call to Book</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="tel:+17863887821" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (786) 388-7821
+          <a href="sms:+12396451360" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-es="Enviar mensaje · (239) 645-1360" data-en="Text us · (239) 645-1360">Text us · (239) 645-1360</span>
           </a>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm mx-auto lg:ml-auto">
           <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:320ms" data-parallax="-0.06">
-            <img src="assets/raw/hero-1.jpg" alt="Clienta bajo el waterfall halo dorado del head spa Mizū, con flores de loto" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/couple-formal-beach-walk.jpg" alt="Couple walking hand in hand on a Naples beach at sunset, a signature Naples Photography portrait" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-mid)] mb-1">Ritual insignia</p>
-            <p class="font-display text-lg">Ritual Imperial Mizu</p>
-            <p class="text-sm text-[color:var(--ink-60)]">90 minutos · $189</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-mid)] mb-1" data-es="Sesión insignia" data-en="Signature session">Signature session</p>
+            <p class="font-display text-lg" data-es="Sesión Golden Hour" data-en="The Golden Hour Session">The Golden Hour Session</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Playas de Naples · Se cotiza" data-en="Naples beaches · Custom quote">Naples beaches · Custom quote</p>
           </div>
         </div>
       </div>
@@ -455,10 +454,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="102">102</span> reseñas en Google</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Se habla<span class="text-shine"> español</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Atención bilingüe</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span data-count="90">90</span> <span class="text-shine">min</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Ritual Imperial · $189</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Hialeah</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">429 Hialeah Dr, Ste 7</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Calificación en Google" data-en="Rating on Google">Rating on Google</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span data-count="16">16</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas 5 estrellas" data-en="5-star reviews">5-star reviews</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">By <span class="text-shine">Appt.</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Horario flexible" data-en="Flexible scheduling">Flexible scheduling</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Naples, FL</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Estudio local" data-en="Local studio">Local studio</p></div>
     </div>
   </section>
 
@@ -466,94 +465,90 @@
   <div class="marquee border-b border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
       </div>
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
       </div>
     </div>
   </div>
 
   <!-- LA EXPERIENCIA -->
-  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+  <section id="experience" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">01</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/card-photo.jpg" alt="Letrero retroiluminado de Mizū Head Spa Miami con el logo de loto" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/family-portrait-beach-group.jpg" alt="Family of six laughing together on a Naples beach at sunset" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/space-3.jpg" alt="Interior del estudio: sillón de spa negro con arco dorado y paneles botánicos retroiluminados" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/mother-newborn-sunset.jpg" alt="Mother holding her newborn baby on the beach at sunset" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">La experiencia</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un santuario japonés<br /><span class="text-shine">en el corazón de Hialeah</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
-          Mizū es un estudio boutique de bienestar para cuero cabelludo, piel y cabello. Cada visita es un viaje sensorial: basin negro lacado con arco de agua dorado, flores de loto, antifaz de jade, toallas calientes y una carta de aceites de aromaterapia que eliges al llegar.
-        </p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
-          La atención es personal y sin prisa. Por eso las 102 reseñas del estudio comparten la misma palabra: <em class="font-script text-[color:var(--accent-deep)]">relajación</em>.
-        </p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="La experiencia" data-en="The experience">The experience</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms" data-es="Fotografía personal,<br />en el corazón de <span class=&quot;text-shine&quot;>Naples</span>" data-en="Personal photography,<br />right here in <span class=&quot;text-shine&quot;>Naples</span>">Personal photography,<br />right here in <span class="text-shine">Naples</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Naples Photography trabaja con familias, parejas y recien nacidos en sesiones sobre locación: playas al atardecer, jardines y los rincones favoritos de Naples. Cada sesión se planea alrededor de tu ambiente, tu musica y tu ritmo." data-en="Naples Photography works with families, couples and newborns in on-location sessions: sunset beaches, gardens and favorite corners of Naples. Every session is planned around your mood, your music and your pace.">Naples Photography works with families, couples and newborns in on-location sessions: sunset beaches, gardens and favorite corners of Naples. Every session is planned around your mood, your music and your pace.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Las reseñas de Google mencionan una y otra vez la misma paciencia: tiempo extra con niños, con familiares con necesidades especiales, y con cualquiera que necesite sentirse comodo frente a la camara. Eso es <em class=&quot;font-script text-[color:var(--accent-deep)]&quot;>atención real</em>." data-en="The Google reviews mention the same patience again and again: extra time with kids, with family members who need a little more comfort in front of the camera, and with anyone who needs a moment to relax. That is <em class=&quot;font-script text-[color:var(--accent-deep)]&quot;>real attention</em>.">The Google reviews mention the same patience again and again: extra time with kids, with family members who need a little more comfort in front of the camera, and with anyone who needs a moment to relax. That is <em class="font-script text-[color:var(--accent-deep)]">real attention</em>.</p>
         <div class="reveal grid grid-cols-3 gap-4" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+3.6K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">90'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">De ritual</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Google" data-en="Google">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">16</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Atención personal" data-en="Personal attention">Personal attention</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EL RITUAL PASO A PASO -->
-  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <!-- SERVICIOS -->
+  <section id="services" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">90 minutos para <span class="text-shine">reiniciarte</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Cómo funciona una sesión" data-en="How a session works">How a session works</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Fácil de reservar, <span class=&quot;text-shine&quot;>sin presión</span>" data-en="Simple to book, <span class=&quot;text-shine&quot;>never rushed</span>">Simple to book, <span class="text-shine">never rushed</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Diagnóstico capilar</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Comenzamos entendiendo lo que tu cuero cabelludo realmente necesita, para personalizar cada paso del ritual.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Hablemos" data-en="Let's talk">Let's talk</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Una llamada o mensaje rápido para platicar tu idea, el mejor horario y el lugar que más te gusta en Naples." data-en="A quick call or text to talk through your vision, the best time of day and the Naples spot you love most.">A quick call or text to talk through your vision, the best time of day and the Naples spot you love most.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Limpieza profunda</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Detox del cuero cabelludo con vapor terapéutico y el arco de agua del waterfall halo sobre el basin.</p>
+          <h3 class="font-display text-xl mb-3" data-es="En locación" data-en="On location">On location</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Playas de Naples a la hora dorada, un jardín o el lugar que tenga sentido para tu familia." data-en="Naples beaches at golden hour, a garden, or wherever makes sense for your family.">Naples beaches at golden hour, a garden, or wherever makes sense for your family.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Masaje envolvente</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal extendido con aromaterapia: tú eliges el aceite esencial que acompaña tu sesión.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Con calma, sin prisas" data-en="Guided, not rushed">Guided, not rushed</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Musica, direccion suave y tiempo extra para que cada persona, incluidos los niños, se sienta comoda frente a la camara." data-en="Music, gentle direction and extra time so every person, kids included, feels comfortable in front of the camera.">Music, gentle direction and extra time so every person, kids included, feels comfortable in front of the camera.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Nutrición desde la raíz</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Nutrientes que revitalizan el cabello desde la raíz, con antifaz de jade y toallas calientes para cerrar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tus fotos, listas" data-en="Your photos, ready">Your photos, ready</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Recibes tus imagenes favoritas, editadas y listas para guardar y compartir." data-en="You receive your favorite images, edited and ready to keep and share.">You receive your favorite images, edited and ready to keep and share.</p>
         </div>
       </div>
 
@@ -561,49 +556,69 @@
       <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal" data-tilt>
         <span class="tilt-glare" aria-hidden="true"></span>
         <div class="lg:col-span-2 zoomable relative min-h-[320px]">
-          <img src="assets/raw/treatment-5.jpg" alt="Clienta recostada en el basin negro bajo el halo de agua con luz ambiental" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/couple-engagement-splash-sunset.jpg" alt="Couple playfully splashing water at sunset during an engagement session in Naples" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="lg:col-span-3 p-8 sm:p-12">
-          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-4">Servicio insignia</p>
-          <h3 class="font-display text-3xl sm:text-4xl mb-3">Ritual Imperial <span class="text-shine">Mizu</span></h3>
-          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7">La experiencia completa de head spa japonés: diagnóstico, limpieza profunda, masaje envolvente, aromaterapia, vapor terapéutico y nutrición desde la raíz.</p>
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-4" data-es="Sesión insignia" data-en="Signature session">Signature session</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3" data-es="Sesión <span class=&quot;text-shine&quot;>Golden Hour</span>" data-en="The <span class=&quot;text-shine&quot;>Golden Hour</span> Session">The <span class="text-shine">Golden Hour</span> Session</h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7" data-es="Familias, parejas, maternidad, recien nacidos y compromisos sobre la arena de Naples a la hora en que la luz es mas suave. Cada sesión se planea alrededor de tu familia, tu horario y tu historia." data-en="Family, couple, maternity, newborn and engagement sessions on Naples sand, timed for the softest light of the day. Every session is built around your family, your schedule and your story.">Family, couple, maternity, newborn and engagement sessions on Naples sand, timed for the softest light of the day. Every session is built around your family, your schedule and your story.</p>
           <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
-            <div><p class="font-display text-3xl text-shine">$189</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Precio</p></div>
+            <div><p class="font-display text-3xl text-shine" data-es="Se cotiza" data-en="Custom">Custom</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Precio" data-en="Price">Price</p></div>
             <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
-            <div><p class="font-display text-3xl">90 min</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Duración</p></div>
+            <div><p class="font-display text-3xl" data-es="Con cita" data-en="By appt.">By appt.</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Horario" data-en="Schedule">Schedule</p></div>
             <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
-            <div><p class="font-display text-3xl">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Atención personal</p></div>
+            <div><p class="font-display text-3xl">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="Atención personal" data-en="Personal attention">Personal attention</p></div>
           </div>
-          <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar mi ritual
+          <a href="tel:+12396451360" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar para cotizar" data-en="Call for Your Quote">Call for Your Quote</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass rounded-2xl p-6 text-center">
+          <h4 class="font-display text-lg mb-2" data-es="Retratos familiares" data-en="Family Portraits">Family Portraits</h4>
+          <p class="text-xs text-[color:var(--ink-40)] font-light" data-es="Se cotiza, escríbenos" data-en="Custom quote, just ask">Custom quote, just ask</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <h4 class="font-display text-lg mb-2" data-es="Maternidad y recién nacidos" data-en="Maternity &amp; Newborn">Maternity &amp; Newborn</h4>
+          <p class="text-xs text-[color:var(--ink-40)] font-light" data-es="Se cotiza, escríbenos" data-en="Custom quote, just ask">Custom quote, just ask</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <h4 class="font-display text-lg mb-2" data-es="Compromisos y parejas" data-en="Engagements &amp; Couples">Engagements &amp; Couples</h4>
+          <p class="text-xs text-[color:var(--ink-40)] font-light" data-es="Se cotiza, escríbenos" data-en="Custom quote, just ask">Custom quote, just ask</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center">
+          <h4 class="font-display text-lg mb-2" data-es="Ocasiones especiales" data-en="Special Occasions">Special Occasions</h4>
+          <p class="text-xs text-[color:var(--ink-40)] font-light" data-es="Se cotiza, escríbenos" data-en="Custom quote, just ask">Custom quote, just ask</p>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Naples Photography no publica una lista de precios fija: cada sesión se cotiza segun el tipo de sesión, la ubicación y el tiempo necesario." data-en="Naples Photography does not publish a fixed price list: every session is quoted based on the type of shoot, the location and the time involved.">Naples Photography does not publish a fixed price list: every session is quoted based on the type of shoot, the location and the time involved.</p>
     </div>
   </section>
 
   <!-- GALERIA -->
-  <section id="galeria" class="relative py-24 sm:py-32 grain">
+  <section id="gallery" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">estudio</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Momentos reales, <span class=&quot;text-shine&quot;>luz real</span>" data-en="Real moments, <span class=&quot;text-shine&quot;>real light</span>">Real moments, <span class="text-shine">real light</span></h2>
         </div>
-        <a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @mizuheadspamiami
+        <a href="tel:+12396451360" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="(239) 645-1360" data-en="(239) 645-1360">(239) 645-1360</span>
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">El halo de agua</span><img src="assets/raw/treatment-5.jpg" alt="Sesión de head spa bajo el halo de agua" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">Ritual Imperial</span><img src="assets/raw/treatment-4.jpg" alt="Momento del Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Resultado: cabello brillante frente al logo Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">El ritual</span><img src="assets/raw/treatment-3.jpg" alt="Detalle del ritual de head spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La experiencia</span><img src="assets/raw/testimonial-1.jpg" alt="Clienta durante su experiencia en Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">Ritual Imperial Mizu</span><img src="assets/raw/treatment-1.jpg" alt="Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Luz de atardecer en Naples" data-en="Naples sunset light">Naples sunset light</span><img src="assets/raw/beach-sunset-scene.jpg" alt="Dramatic sunset over a Naples beach pier" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Parejas" data-en="Couples">Couples</span><img src="assets/raw/couple-portrait-sunset-rocks.jpg" alt="Couple kissing on the rocks at sunset during a portrait session" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Compromisos" data-en="Engagements">Engagements</span><img src="assets/raw/proposal-garden.jpg" alt="A surprise proposal captured in a garden setting" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Familias" data-en="Families">Families</span><img src="assets/raw/family-running-beach.jpg" alt="Family of seven running through the waves on a Naples beach" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Retratos" data-en="Portraits">Portraits</span><img src="assets/raw/couple-portrait-forest.jpg" alt="Close couple portrait in a natural, wooded setting" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Sesiones insignia" data-en="Signature sessions">Signature sessions</span><img src="assets/raw/couple-formal-beach-walk.jpg" alt="Elegant couple walking the beach at sunset, dressed up for a portrait session" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -612,111 +627,106 @@
   <div class="marquee border-t border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
       </div>
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Portrait Sessions</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Family Photography</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Golden Hour</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Engagements</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Naples, Florida</span><span class="marquee-sep">✦</span>
       </div>
     </div>
   </div>
 
   <!-- OPINIONES -->
-  <section id="opiniones" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <section id="reviews" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">04</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 102 reseñas verificadas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Lo que dicen <span class=&quot;text-shine&quot;>nuestros clientes</span>" data-en="What our <span class=&quot;text-shine&quot;>clients say</span>">What our <span class="text-shine">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 16 reseñas verificadas en Google" data-en="5.0 of 5 · 16 verified reviews on Google">5.0 of 5 · 16 verified reviews on Google</span></p>
       </div>
       <div id="reviews-carousel" class="reveal" style="transition-delay:120ms">
         <div class="carousel-viewport">
           <div class="carousel-track">
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Best mother's day gift ever. Alain was very welcoming and sweet. The massage was extremely relaxing, he knew exactly what he was doing. The spa location is very centric and luxurious. I haven't felt more relaxed. I recommend 10/10."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Jennifer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10! Juan did an amazing job with our maternity pictures! From the music through the photoshoot, flexibility &amp; how absolutely stunning the pictures came out. (Not to mention this is our second time booking with him.) Would recommend every time!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Diana Salinas</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I honestly loved my experience here. The place feels so warm and inviting, and the attention I received was just amazing. And I have to mention the coffee... it was incredible! I'm definitely coming back!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Gabriela</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Absolutely LOVED our experience with Juan! This past week we went to Naples for vacation and our waitress at Tommy Bahama's just so happened to recommend Juan when I asked if she knew anyone local that did photography. Not only was he quick..."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Brittany Napier</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"From the moment I walked in, the atmosphere was incredibly relaxing and welcoming. Alain took amazing care of me, and I left feeling completely pampered and refreshed. Highly recommend!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Yadira</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
-            </figure>
-            <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
-              <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Wow!! I cannot remember the last time I was this relaxed. Alain was amazing. Perfect attention to every detail, and so knowledgeable about caring for your hair."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Andrea</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Juan was amazing! He found us a great location and we loved how the photos turned out. We have an autistic son who is sometimes difficult to photograph... Juan took extra time to capture him in his element where he felt most comfortable and was able to get some fun pictures!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Andy Walser</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
           </div>
         </div>
         <div class="carousel-dots flex justify-center gap-2.5 mt-8"></div>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 102 reseñas en Google</a>
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJhbR_7efj2ogR-rHFZbDndlo" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 16 reseñas en Google" data-en="Read all 16 reviews on Google">Read all 16 reviews on Google</a>
       </div>
     </div>
   </section>
 
   <!-- UBICACION -->
-  <section id="ubicacion" class="relative py-24 sm:py-32 grain">
+  <section id="location" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Visítanos" data-en="Find us">Find us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms" data-es="Naples es nuestro <span class=&quot;text-shine&quot;>escenario</span>" data-en="Naples is our <span class=&quot;text-shine&quot;>backdrop</span>">Naples is our <span class="text-shine">backdrop</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(216,179,122,0.4)]" href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Address</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">4420 Botanical Pl Cir #105, Naples, FL 34112</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(216,179,122,0.4)]" href="https://www.google.com/maps/place/?q=place_id:ChIJhbR_7efj2ogR-rHFZbDndlo" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Get directions</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Sábado: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: cerrado</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sesiones solo con cita previa" data-en="Sessions by appointment only">Sessions by appointment only</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Llama o envía un mensaje para ver disponibilidad" data-en="Call or text to check availability">Call or text to check availability</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">WhatsApp y llamadas: <a class="text-[color:var(--accent-deep)]" href="tel:+17863887821">(786) 388-7821</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Se habla español e inglés.</p>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Booking">Booking</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Llamadas y mensajes de texto: " data-en="Calls and texts: ">Calls and texts: </span><a class="text-[color:var(--accent-deep)]" href="tel:+12396451360">(239) 645-1360</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Respuesta personal, sin bots." data-en="A real, personal reply, no bots.">A real, personal reply, no bots.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Mizū Head Spa Miami, 429 Hialeah Dr Ste 7, Hialeah FL"
-          src="https://www.google.com/maps?q=Mizu+Head+Spa+Miami,+429+Hialeah+Dr+Ste+7,+Hialeah,+FL+33010&output=embed"
+        <iframe title="Map: Naples Photography, 4420 Botanical Pl Cir #105, Naples FL"
+          src="https://www.google.com/maps?q=Naples+Photography,+4420+Botanical+Pl+Cir+%23105,+Naples,+FL+34112&output=embed"
           class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
@@ -727,43 +737,43 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Desconecta por completo.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu pausa te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Escríbenos por WhatsApp y asegura tu Ritual Imperial Mizu. Cupos limitados cada semana: la experiencia es uno a uno.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="No dejes tu historia sin contar." data-en="Don't let your story go untold.">Don't let your story go untold.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms" data-es="Tu sesión te está <span class=&quot;text-shine&quot;>esperando</span>" data-en="Your session is <span class=&quot;text-shine&quot;>waiting</span>">Your session is <span class="text-shine">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama o envía un mensaje para contarnos tu idea y reservar tu fecha. Cupos limitados cada semana: la atención es uno a uno." data-en="Call or text to tell us your idea and lock in your date. Spots are limited every week, because the attention is always one on one.">Call or text to tell us your idea and lock in your date. Spots are limited every week, because the attention is always one on one.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar por WhatsApp</a>
-        <a href="tel:+17863887821" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="tel:+12396451360" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
+        <a href="sms:+12396451360" class="btn-ghost rounded-full px-10 py-4 text-sm"><span data-es="Enviar mensaje" data-en="Send a text">Send a text</span></a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0e0c0a]">
-    <span class="foot-mark" aria-hidden="true">Mizū</span>
+    <span class="foot-mark" aria-hidden="true">Naples</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.png" alt="Logo Mizū" class="w-9 h-9 rounded-full ring-1 ring-[rgba(216,179,122,0.3)]" />
-          <span class="font-display text-lg">Mizū Head Spa Miami</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(216,179,122,0.3)] bg-[rgba(216,179,122,0.08)] text-[color:var(--accent-deep)]">N</span>
+          <span class="font-display text-lg">Naples Photography</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">A Sensorial Ritual of Elevated Relaxation. Boutique scalp, skin &amp; hair wellness studio.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Fotografía de retratos y estilo de vida en Naples, Florida. Familias, maternidad, recién nacidos y compromisos." data-en="Portrait and lifestyle photography in Naples, Florida. Families, maternity, newborns and engagements.">Portrait and lifestyle photography in Naples, Florida. Families, maternity, newborns and engagements.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-        <p><a href="tel:+17863887821" class="hover:text-[color:var(--accent-deep)]">(786) 388-7821</a></p>
-        <p>Lun a Sáb · 10 AM a 7 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p>4420 Botanical Pl Cir #105, Naples, FL 34112</p>
+        <p><a href="tel:+12396451360" class="hover:text-[color:var(--accent-deep)]">(239) 645-1360</a></p>
+        <p data-es="Sesiones con cita previa" data-en="By appointment">By appointment</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @mizuheadspamiami</a></p>
-        <p><a href="https://www.tiktok.com/@mizu.head.spa.mia" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">TikTok · @mizu.head.spa.mia</a></p>
-        <p><a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">WhatsApp directo</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Reservar" data-en="Book">Book</p>
+        <p><a href="tel:+12396451360" class="hover:text-[color:var(--accent-deep)]"><span data-es="Llamar: " data-en="Call: ">Call: </span>(239) 645-1360</a></p>
+        <p><a href="sms:+12396451360" class="hover:text-[color:var(--accent-deep)]" data-es="Enviar un mensaje de texto" data-en="Send a text message">Send a text message</a></p>
+        <p><a href="https://www.google.com/maps/place/?q=place_id:ChIJhbR_7efj2ogR-rHFZbDndlo" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]" data-es="Ver en Google" data-en="View on Google">View on Google</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Mizū Head Spa Miami. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]" data-es="© 2026 Naples Photography. Todos los derechos reservados." data-en="© 2026 Naples Photography. All rights reserved.">© 2026 Naples Photography. All rights reserved.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -772,9 +782,9 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- Llamada flotante -->
+  <a href="tel:+12396451360" class="call-float" aria-label="Call Naples Photography">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 
   <!-- BACK TO TOP -->
