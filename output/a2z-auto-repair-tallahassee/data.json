@@ -1,0 +1,82 @@
+{
+  "slug": "a2z-auto-repair-tallahassee",
+  "name": "A2Z Auto Repair",
+  "niche": "auto repair shop / mechanic",
+  "city": "Tallahassee, FL",
+  "street_address": "1010 W Tharpe St, Tallahassee, FL 32303",
+  "phone": "(850) 765-7997",
+  "phone_e164": "+18507657997",
+  "email": null,
+  "has_own_site": false,
+  "own_site_checked_domains": [
+    "a2zautorepair.com (resolves, but is a parked GoDaddy domain-for-sale landing page, not an active business site: confirmed by fetching it directly, it redirects to a GoDaddy /lander parking page)",
+    "a2z-autorepair.com (no DNS / unreachable)",
+    "a2zautorepairtallahassee.com (no DNS / unreachable)",
+    "a2zautorepairfl.com (no DNS / unreachable)"
+  ],
+  "own_site_check_result": "No active website for this business. The closest domain match, a2zautorepair.com, loads a GoDaddy parking-lander page (window.location.href = '/lander', parking-lander JS bundle), confirming it is an unused/for-sale domain, not A2Z's site. Web search for the exact business name + address surfaces only third-party directories (MapQuest/Yelp aggregator, Roadtrippers, AutoTechIQ, Superpages) and no owned website or Facebook/Instagram page. Confirmed: no own website.",
+  "rating": 4.9,
+  "review_count": 595,
+  "rating_source": "Verified directly on Google Maps by the requester before this task (Google Business Profile shows no 'Website' button). Independently corroborated during build: the live Google Maps embed rendered in the finished site shows 'A2Z Auto Repair ... 4.9 (595)' at this exact address, screenshotted during QA.",
+  "secondary_listings": {
+    "yelp": { "rating": 4.5, "review_count": "15-18 (varies slightly by aggregator snapshot)", "source": "MapQuest aggregator page pulling Yelp data (phoenix.aws.mapquest.com/us/florida/a2z-auto-repair-426246024)" }
+  },
+  "hours": {
+    "monday_friday": "9:00 AM - 6:00 PM",
+    "saturday": "9:00 AM - 2:00 PM",
+    "sunday": "closed",
+    "source": "Consistent across Roadtrippers and AutoTechIQ third-party listing pages for this exact business/address; no official Google Business Profile hours page was directly reachable, so these third-party-reported hours are used and flagged as best-available rather than owner-confirmed."
+  },
+  "language": "en",
+  "instagram": null,
+  "facebook": null,
+  "booking_page": null,
+  "google_maps_url": "https://www.google.com/maps/place/A2Z+Auto+Repair/data=!4m7!3m6!1s0x88ecf51a39f8edff:0x20a61c441e1c5bf3!8m2!3d30.4639978!4d-84.2999061!16s%2Fg%2F11j8hyszq8!19sChIJ_-34ORr17IgR81scHkQcpiA",
+  "coordinates": { "lat": 30.4639978, "lng": -84.2999061 },
+  "review_samples": [
+    { "name": "Jon D.", "quote": "I live 1300 miles away from A2Z Auto Repair, and they take care of my daughter and her car like family.", "source": "Yelp (via MapQuest aggregator listing)" },
+    { "name": "Jordan O.", "quote": "Real honest, genuine, helpful, and hardworking individuals. They solved my mechanical problems in a jiffy.", "source": "Yelp (via MapQuest aggregator listing)" },
+    { "name": "Aaron B.", "quote": "Easily the best mechanic shop in Tallahassee. Don't take my vehicles anywhere else and haven't for years.", "source": "Yelp (via MapQuest aggregator listing, excerpt may be truncated at ~125 characters by the aggregator)" },
+    { "name": "Hannah G.", "quote": "I've taken my car here twice. Each time they've been straight to the point about the issues I was having.", "source": "Yelp (via MapQuest aggregator listing)" }
+  ],
+  "review_note": "The site's headline rating badge (4.9 / 595 reviews) is Google, per the task brief and the live Google Maps embed. The verbatim quotes used in the testimonials carousel come from Yelp (a smaller, separate review pool of roughly 15-18 reviews at ~4.5 stars) because Google's own review text is not accessible through available tools (JS-rendered, not scrapable). This is disclosed here for transparency; a negative Yelp review (from 'Andre J.', accusing the owners of dishonest pricing) was found and deliberately excluded as unrepresentative and to keep testimonials positive and real.",
+  "services_source": "Compiled from third-party listing pages (Roadtrippers, AutoTechIQ, MapQuest/Yelp aggregator) that mirror the business's own published Google Business Profile service list, plus direct evidence from real shop photos (European engine/transmission teardown work on BMW, Mercedes-Benz and Maserati, OBD/key programming equipment). No price list is published anywhere, so the site uses a 'call for a quote' model throughout.",
+  "services": {
+    "maintenance": ["Oil changes (incl. full synthetic)", "Scheduled maintenance"],
+    "brakes": ["Brake inspection", "Pad and rotor replacement"],
+    "ac": ["A/C diagnostics and repair"],
+    "diagnostics": ["Check engine light / engine diagnostics", "Professional scan-tool diagnostics (European & domestic)"],
+    "suspension_tires": ["Suspension and steering work", "Wheel alignments", "Tire service"],
+    "major_work": ["Transmission and engine work (evidenced directly by shop photos: engine pulls/rebuilds on a BMW 4-Series, a Maserati Ghibli and a Nissan-platform vehicle)"]
+  },
+  "florida_verification": {
+    "result": "CONFIRMED",
+    "evidence": [
+      "Address 1010 W Tharpe St, Tallahassee, FL 32303 confirmed across MapQuest, Roadtrippers and AutoTechIQ listings, and visible directly in the Google Maps embed rendered on the built site.",
+      "Area code (850) is a Tallahassee/Florida Panhandle number.",
+      "Live Google Maps embed screenshot taken during QA shows 'A2Z Auto Repair, 1010 W Tharpe St, Tallahassee, FL 32303, USA, 4.9 (595)' pinned at this address."
+    ]
+  },
+  "photos": {
+    "count_downloaded": 9,
+    "count_used_on_site": 7,
+    "source": "Google Business Profile photo gallery (lh3.googleusercontent.com gps-cs-s URLs), originally fetched by an earlier research pass on 2026-11-14 and copied into this build; the same signed URLs had expired by the time of this task's own re-fetch attempt, so the already-downloaded files were reused and verified with `file`/`identify` rather than re-downloaded. Resized not needed: all were already <=1600px wide; used as-is (web-reasonable sizes, largest ~650KB).",
+    "files_used": [
+      { "file": "assets/raw/gmaps-1.jpg", "description": "Interior service bay: a white and a blue BMW 4-Series on two-post lifts, hoods open. Used as hero image and large gallery tile." },
+      { "file": "assets/raw/gmaps-9.jpg", "description": "Shop exterior on W Tharpe St: white building with yellow-trimmed bay doors, a Nissan Altima, Mercedes-Benz S550 and Jeep Grand Cherokee parked outside. Used in About section and gallery." },
+      { "file": "assets/raw/gmaps-3.jpg", "description": "Technician's bench with an Autel diagnostic/key-programming tablet mid-task on a Mercedes-Benz. Used in About section." },
+      { "file": "assets/raw/gmaps-7.jpg", "description": "Engine hoisted out of a Maserati Ghibli for service. Used as the featured 'Full-Service Capability' image and in gallery." },
+      { "file": "assets/raw/gmaps-4.jpg", "description": "Black BMW 5-Series with engine partially removed on an engine hoist. Used in gallery." },
+      { "file": "assets/raw/gmaps-8.jpg", "description": "Engine and transmission assembly on a stand, mid-rebuild. Used in gallery." },
+      { "file": "assets/raw/gmaps-2.jpg", "description": "Stripped-down engine bay/front clip during a repair. Used in gallery." }
+    ],
+    "files_downloaded_not_used": [
+      { "file": "assets/raw/gmaps-5.jpg", "reason": "Close-up underside shot of exhaust piping/heat wrap; visually unappealing (clutter, low light), discarded per gallery curation rule." },
+      { "file": "assets/raw/gmaps-6.jpg", "reason": "Extreme close-up of a fuel pump assembly with peeling foam padding; cluttered and not representative, discarded per gallery curation rule." }
+    ],
+    "redownload_attempt": "Attempted to fetch 7 additional photo URLs listed in an earlier automated capture (output/a2z-auto-repair/data.json) to reach a larger pool; all 7 signed lh3.googleusercontent.com URLs had expired (returned HTML/404 instead of image bytes), so the build proceeded with the 9 already-downloaded, still-valid files (7 used + 2 discarded for quality)."
+  },
+  "template_base": "templates/dark/index.html (Mizu dark industrial example), adapted",
+  "build_variant": "Adapted variant per PIPELINE.md Fase 3 point 5: no exact pricing (call for a quote throughout), phone-based CTA everywhere WhatsApp would normally go (no WhatsApp/SMS channel found), real street address with a live Google Maps embed (address is published, unlike the handyman reference case), 4 real review testimonials (sourced from Yelp, disclosed above) instead of priced service reviews.",
+  "notes": "Primary differentiator used in copy: real photo evidence shows the shop servicing both everyday domestic vehicles (Nissan, Jeep) and European/luxury vehicles (BMW, Mercedes-Benz, Maserati) with dealer-level diagnostic and key-programming equipment, which is an authentic, unusually strong trust signal for a small independent shop. No email or social media profile (Instagram/Facebook) was found after a deep search (web search, BBB, Giftly, site variants); outreach channel is phone/SMS only."
+}
