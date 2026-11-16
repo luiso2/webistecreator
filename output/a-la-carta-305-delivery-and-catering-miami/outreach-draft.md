@@ -1,4 +1,4 @@
-# Outreach draft — A La Carta 305 – Delivery & Catering Miami
+# Outreach draft: A La Carta 305 – Delivery & Catering Miami
 
 **Channel:** No public email found; send via WhatsApp/phone call to +1 305-799-2935 (outreach: pending_manual).
 
