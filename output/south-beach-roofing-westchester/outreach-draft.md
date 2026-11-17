@@ -1,4 +1,4 @@
-# Outreach draft — South Beach Roofing (Westchester / Miami, FL)
+# Outreach draft - South Beach Roofing (Westchester / Miami, FL)
 
 **Channel**: no public email found. Phone +1 786-401-8993 is the only public contact channel on Google Maps.
 **Status**: outreach = pending_manual (no email to send through Resend; needs a call or a Google Maps message from a human).
@@ -27,10 +27,10 @@ Hi South Beach Roofing, I found you on Google (4.8 stars, 39 reviews) in Westche
 (396 characters)
 
 ## Email search attempted (deep search, no result)
-- WebSearch "South Beach Roofing" Miami FL email contact — no verified email, only unrelated Miami roofers and directory/aggregator pages.
-- WebSearch "South Beach Roofing" Miami Facebook OR Instagram — no official Facebook or Instagram page found for this business name.
-- WebFetch https://southbeachroofing.com — parked domain for sale ("SouthBeachRoofing.com for sale"), not the business's site, no contact info.
-- WebSearch "South Beach Roofing" "7444 SW 48th" Miami — no match; only unrelated roofers at different addresses.
+- WebSearch "South Beach Roofing" Miami FL email contact , no verified email, only unrelated Miami roofers and directory/aggregator pages.
+- WebSearch "South Beach Roofing" Miami Facebook OR Instagram , no official Facebook or Instagram page found for this business name.
+- WebFetch https://southbeachroofing.com , parked domain for sale ("SouthBeachRoofing.com for sale"), not the business's site, no contact info.
+- WebSearch "South Beach Roofing" "7444 SW 48th" Miami , no match; only unrelated roofers at different addresses.
 - Conclusion: email = null. No public email, Facebook/Instagram page, or working own domain found after a reasonable search. Do not invent one.
 
 ## Notes

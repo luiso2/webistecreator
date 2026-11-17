@@ -1,4 +1,4 @@
-# Outreach draft — Essential Roofing Corp (Westchester, Miami, FL)
+# Outreach draft - Essential Roofing Corp (Westchester, Miami, FL)
 
 **Channel**: no public email found. Phone +1 786-802-2223 is the only public contact channel on Google Maps.
 **Status**: outreach = pending_manual (no email to send through Resend; needs a call or a Google Maps message from a human).

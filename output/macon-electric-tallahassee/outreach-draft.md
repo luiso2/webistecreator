@@ -1,4 +1,4 @@
-# Outreach draft — Macon Electric LLC (Tallahassee, FL)
+# Outreach draft - Macon Electric LLC (Tallahassee, FL)
 
 **Channel**: no public email found. Phone +1 850-510-0943 is the only public contact channel on Google Maps.
 **Status**: outreach = pending_manual (no email to send through Resend; needs a call or a Google Maps/HomeAdvisor message from a human).

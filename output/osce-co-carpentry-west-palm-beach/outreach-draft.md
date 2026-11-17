@@ -1,4 +1,4 @@
-# Outreach draft — Osce & Co. Carpentry (West Palm Beach, FL)
+# Outreach draft - Osce & Co. Carpentry (West Palm Beach, FL)
 
 **Channel**: no public email found. Phone +1 561-232-0264 is the only public contact channel on Google Maps.
 **Status**: outreach = pending_manual (no email to send through Resend; needs a call or a Google Maps message from a human).
