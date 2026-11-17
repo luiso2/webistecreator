@@ -537,12 +537,12 @@
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-4.jpg" alt="Trabajo de Las Olas Tattoo Shop en Fort Lauderdale, FL" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-5.jpg" alt="Trabajo de Las Olas Tattoo Shop en Fort Lauderdale, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-6.jpg" alt="Trabajo de Las Olas Tattoo Shop en Fort Lauderdale, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-7.jpg" alt="Trabajo de Las Olas Tattoo Shop en Fort Lauderdale, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-8.jpg" alt="Trabajo de Las Olas Tattoo Shop en Fort Lauderdale, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-9.jpg" alt="Trabajo de Las Olas Tattoo Shop en Fort Lauderdale, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Realismo" data-en="Realism">Realism</span><img src="assets/raw/gmaps-9.jpg" alt="Tatuaje de realismo de un astronauta hecho en Las Olas Tattoo Shop" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Manga a color" data-en="Color sleeve">Color sleeve</span><img src="assets/raw/gmaps-2.jpg" alt="Manga de búho a color tatuada en Las Olas Tattoo Shop" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Vida salvaje" data-en="Wildlife piece">Wildlife piece</span><img src="assets/raw/gmaps-3.jpg" alt="Tatuaje de lobo y vida salvaje hecho en Las Olas Tattoo Shop" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Estilo tradicional" data-en="Traditional style">Traditional style</span><img src="assets/raw/gmaps-7.jpg" alt="Caimán estilo tradicional americano tatuado en Las Olas Tattoo Shop" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Lineart" data-en="Fine lineart">Fine lineart</span><img src="assets/raw/gmaps-4.jpg" alt="Caimán en lineart fino tatuado en Las Olas Tattoo Shop" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Fine line" data-en="Fine line">Fine line</span><img src="assets/raw/gmaps-6.jpg" alt="Cruz y versículo en fine line tatuado en Las Olas Tattoo Shop" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -697,14 +697,15 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    // El idioma primario del negocio gana; la preferencia se guarda por site.
+    const siteLanguageKey = `siteforge:lang:${location.pathname.split('/').filter(Boolean)[0] || 'home'}`;
     const applyLang = l => {
       document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
       document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
+      localStorage.setItem(siteLanguageKey, l);
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    let lang = localStorage.getItem(siteLanguageKey) || document.documentElement.lang;
     applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
