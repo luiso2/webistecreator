@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 /* Research completo de UNA ficha de Google Maps a partir de su URL (de maps_discover.py).
-   Uso: node scripts/_research_place.js "<maps_url>" */
+   Uso: node scripts/_research_place.js "<maps_url>"
+
+   v2 (2026-11-18): fix de fotos. El boton "N Photos" abre un LIGHTBOX de una sola foto
+   (modo panoramico !3m8!1e2...), no el grid: el codigo viejo scrolleaba el body y solo
+   encontraba las 2 imagenes que ya estaban en el DOM (hero + 1 thumbnail), SIEMPRE las
+   mismas sin importar el negocio. El fix usa el boton "Next photo" del lightbox para
+   recorrer la galeria real. Tambien dedupea reviews por data-review-id (antes se repetia
+   el primer nodo) y expande "See more" antes de leer el texto para no cortar la cita. */
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
@@ -62,51 +69,46 @@ async function main() {
     const hoursAria = await page.evaluate(() => Array.from(document.querySelectorAll('[aria-label*="Copy open hours" i], [aria-label*="Copy closed hours" i]')).map(e => e.getAttribute('aria-label').replace(/, Copy (open|closed) hours/i, '')));
     out.hours = hoursAria;
 
-    // PHOTOS: abrir la galeria completa (boton "N photos" o la foto hero), scrollear el panel interno
-    let opened = false;
-    const photoLinkHandle = await page.evaluateHandle(() => {
-      const candidates = Array.from(document.querySelectorAll('button, a'));
-      return candidates.find(e => /photos?/i.test(e.textContent || '') && (e.textContent || '').match(/\d/));
-    });
-    if (photoLinkHandle && (await photoLinkHandle.asElement())) {
-      await photoLinkHandle.asElement().click().catch(() => {});
-      opened = true;
-    } else {
-      const photoBtn = await page.$('button[aria-label*="Photo of" i]') || await page.$('div[jsaction*="heroHeaderImage"] img');
-      if (photoBtn) { await photoBtn.click().catch(() => {}); opened = true; }
-    }
-    await page.waitForTimeout(1800);
-    for (let i = 0; i < 14; i++) {
-      await page.mouse.wheel(0, 2200);
-      await page.waitForTimeout(300);
-    }
-    const imgs = await page.$$eval('img', els => els.map(e => e.src).filter(s => s && s.includes('googleusercontent')));
-    const seen = new Set();
-    for (const u of imgs) {
-      const base = u.split('=')[0];
-      if (seen.has(base)) continue;
-      seen.add(base);
-      out.photos.push(base + '=w1600-h1200-k-no');
+    // FOTOS: abrir el boton "N Photos" (lightbox de 1 foto), recorrer con "Next photo".
+    const photoBtn = await page.locator('button:has-text("Photos")').first();
+    if (await photoBtn.count()) {
+      await photoBtn.click({ force: true }).catch(() => {});
+      await page.waitForTimeout(2200);
+      const nextBtn = page.locator('button[aria-label*="Next" i]').first();
+      const seen = new Set();
+      for (let i = 0; i < 24; i++) {
+        const imgs = await page.$$eval('img', els => els.map(e => e.src).filter(s => s && s.includes('googleusercontent')));
+        for (const u of imgs) { const base = u.split('=')[0]; if (!seen.has(base)) { seen.add(base); out.photos.push(base + '=w1600-h1200-k-no'); } }
+        if (await nextBtn.count()) { await nextBtn.click({ force: true }).catch(() => {}); await page.waitForTimeout(550); } else break;
+      }
+      // volver a la URL original (goBack puede quedar atrapado en el historial del lightbox)
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
+      await page.waitForTimeout(1500);
     }
 
-    // volver atras si entramos a la galeria, para llegar a la pestana de Reviews
-    await page.goBack({ waitUntil: 'domcontentloaded' }).catch(() => {});
-    await page.waitForTimeout(1200);
     const reviewsTab = await page.$('button[role="tab"][aria-label*="Reviews" i]');
     if (reviewsTab) {
       await reviewsTab.click().catch(() => {});
       await page.waitForTimeout(1800);
-      for (let i = 0; i < 8; i++) { await page.mouse.wheel(0, 1700); await page.waitForTimeout(450); }
+      for (let i = 0; i < 16; i++) { await page.mouse.wheel(0, 1700); await page.waitForTimeout(500); }
+      await page.evaluate(() => {
+        document.querySelectorAll('button[aria-label="See more"], button.w8nwRe').forEach(b => { try { b.click(); } catch (e) {} });
+      });
+      await page.waitForTimeout(800);
       out.reviewSamples = await page.evaluate(() => {
         const nodes = Array.from(document.querySelectorAll('div[data-review-id]'));
-        return nodes.slice(0, 15).map(n => {
+        const byId = new Map();
+        for (const n of nodes) {
+          const id = n.getAttribute('data-review-id');
+          if (byId.has(id)) continue;
           const author = n.querySelector('button[aria-label]')?.getAttribute('aria-label') || null;
           const allSpans = Array.from(n.querySelectorAll('span'));
-          const text = allSpans.map(s => s.textContent).filter(t => t && t.length > 25).sort((a,b)=>b.length-a.length)[0] || null;
+          const text = allSpans.map(s => s.textContent).filter(t => t && t.length > 25).sort((a, b) => b.length - a.length)[0] || null;
           const starEl = n.querySelector('span[role="img"][aria-label*="star" i]');
           const stars = starEl ? starEl.getAttribute('aria-label') : null;
-          return { author, text, stars };
-        }).filter(r => r.text);
+          if (text) byId.set(id, { author, text, stars });
+        }
+        return Array.from(byId.values()).slice(0, 20);
       });
     }
   } catch (e) {
