@@ -1,4 +1,4 @@
-Hi Jose,
+Hi,
 
 I came across Miami Cleanings on Google while looking at cleaning services in North Miami Beach, and your rating stood out: 4.9 stars across 18 reviews is excellent. I also noticed you don't have a website yet, so I went ahead and put together a free sample site for you, using your real reviews and real photos of your work:
 
