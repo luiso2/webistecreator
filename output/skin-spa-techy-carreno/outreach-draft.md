@@ -1,4 +1,4 @@
-# Outreach draft — Skin Spa by Techy Carreno
+# Outreach draft: Skin Spa by Techy Carreno
 
 Channel: no public email found. Send as Facebook page message or SMS/call to (305) 450-4714.
 Language: English (all Google reviews found are in English).

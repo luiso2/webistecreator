@@ -1,4 +1,4 @@
-# Outreach draft — Massage and Skin Care Solutions
+# Outreach draft: Massage and Skin Care Solutions
 
 Channel: no public email or social profile found. Send by SMS/call to (727) 485-3737.
 Language: English (all Google reviews found are in English).

@@ -1,4 +1,4 @@
-# Outreach draft — Medspa Bella
+# Outreach draft: Medspa Bella
 
 Channel: no public email found, Square booking site is offline (404). Send by SMS/call to (650) 438-9449.
 Language: English (all Google reviews found are in English).
