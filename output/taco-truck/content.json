@@ -1,15 +1,17 @@
 {
  "slug": "taco-truck",
- "base": "dark-v2",
+ "base": "light-v2",
  "lang": "en",
- "cta_url": "tel:+2393620652",
+ "cta_url": "tel:+12393620652",
  "cta_icono": "telefono",
- "cta_label": {
-  "es": "Llamar ahora",
-  "en": "Call now"
- },
- "ig_url": "https://www.google.com/maps/place/Taco+Truck/data=!4m7!3m6!1s0x88db69a034de7457:0x6a6080960d065237!8m2!3d26.6678224!4d-81.828793!16s%2Fg%2F11pd0w98ww!19sChIJV3TeNKBp24gRN1IGDZaAYGo?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1",
- "ig_handle": "Google Maps",
+ "cta_label": { "es": "Llamar para ordenar", "en": "Call to order" },
+ "ig_url": "https://www.google.com/maps/place/Taco+Truck/data=!4m7!3m6!1s0x88db69a034de7457:0x6a6080960d065237!8m2!3d26.6678224!4d-81.828793!16s%2Fg%2F11pd0w98ww",
+ "ig_handle": "Fort Myers, FL",
+ "social_label": "Google Maps",
+ "social_cta": { "es": "Ver en Google Maps", "en": "See on Google Maps" },
+
+ "paleta": { "hue": 14, "sat_mult": 1.1, "light_mult": 1.0 },
+
  "brand": {
   "name": "Taco Truck",
   "nav_a": "Taco",
@@ -18,508 +20,235 @@
   "footmark": "Taco Truck",
   "logo": "assets/raw/gmaps-1.jpg"
  },
+
  "head": {
-  "title": "Taco Truck · Fort Myers, FL",
-  "description": "Taco Truck: servicios locales en Fort Myers, FL. Información, fotos y contacto verificados en Google Maps.",
+  "title": "Taco Truck · Fort Myers, FL Street Tacos | 4.7 Stars on Google",
+  "description": "Taco Truck in Fort Myers, FL: street tacos from $2, tortas, quesadillas and fresh agua fresca. 4.7 stars, 124 Google reviews. Call (239) 362-0652.",
   "og_title": "Taco Truck · Fort Myers, FL",
-  "og_description": "Taco Truck en Fort Myers, FL. Fotos públicas y contacto directo.",
+  "og_description": "Street tacos from $2 at the Eastgate Shopping Center. 4.7 stars, 124 reviews on Google.",
   "og_image": "assets/raw/gmaps-1.jpg",
   "icon": "assets/raw/gmaps-1.jpg"
  },
+
  "jsonld": {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "FoodEstablishment",
   "name": "Taco Truck",
-  "description": "Taco Truck, negocio local en Fort Myers, FL.",
-  "address": {
-   "@type": "PostalAddress",
-   "streetAddress": "Eastgate Shopping Center @ Palm Beach, Fort Myers, FL 33916",
-   "addressLocality": "Fort Myers",
-   "addressRegion": "FL"
-  },
-  "telephone": "(239) 362-0652",
+  "servesCuisine": "Mexican",
+  "description": "Food truck serving street tacos, tortas, quesadillas and fresh agua fresca at the Eastgate Shopping Center in Fort Myers, FL.",
+  "address": { "@type": "PostalAddress", "streetAddress": "Eastgate Shopping Center, Palm Beach Blvd", "addressLocality": "Fort Myers", "addressRegion": "FL", "postalCode": "33916", "addressCountry": "US" },
+  "telephone": "+1-239-362-0652",
   "image": "assets/raw/gmaps-1.jpg",
-  "sameAs": [
-   "https://www.google.com/maps/place/Taco+Truck/data=!4m7!3m6!1s0x88db69a034de7457:0x6a6080960d065237!8m2!3d26.6678224!4d-81.828793!16s%2Fg%2F11pd0w98ww!19sChIJV3TeNKBp24gRN1IGDZaAYGo?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1"
-  ]
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "124" },
+  "hasMap": "https://www.google.com/maps/place/Taco+Truck/data=!4m7!3m6!1s0x88db69a034de7457:0x6a6080960d065237!8m2!3d26.6678224!4d-81.828793!16s%2Fg%2F11pd0w98ww"
  },
+
  "nav": {
-  "experiencia": {
-   "es": "Nosotros",
-   "en": "About us"
-  },
-  "metodo": {
-   "es": "Proceso",
-   "en": "Process"
-  },
-  "opiniones": {
-   "es": "Por qué elegirnos",
-   "en": "Why choose us"
-  },
-  "ubicacion": {
-   "es": "Contacto",
-   "en": "Contact"
-  }
+  "experiencia": { "es": "Nosotros", "en": "About us" },
+  "metodo": { "es": "Cómo pedir", "en": "How to order" },
+  "opiniones": { "es": "Opiniones", "en": "Reviews" },
+  "ubicacion": { "es": "Ubicación", "en": "Location" }
  },
+
  "hero": {
-  "eyebrow": {
-   "es": "Fort Myers, FL · Servicios",
-   "en": "Fort Myers, FL · Services"
-  },
-  "script": {
-   "es": "Trabajo real, trato directo.",
-   "en": "Real work, direct service."
-  },
-  "h1_a": {
-   "es": "Tu proyecto,",
-   "en": "Your project,"
-  },
-  "h1_b": {
-   "es": "en manos de ",
-   "en": "handled by "
-  },
-  "h1_shine": {
-   "es": "Taco",
-   "en": "Taco"
-  },
+  "eyebrow": { "es": "Fort Myers, FL · Food Truck de tacos", "en": "Fort Myers, FL · Taco food truck" },
+  "script": { "es": "Tacos de a dos dólares, sabor de verdad.", "en": "Two-dollar tacos, real flavor." },
+  "h1_a": { "es": "Tacos callejeros,", "en": "Street tacos," },
+  "h1_b": { "es": "hechos al ", "en": "made to " },
+  "h1_shine": { "es": "momento", "en": "order" },
   "parrafo": {
-   "es": "Taco Truck atiende a clientes en Fort Myers, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente.",
-   "en": "Taco Truck serves customers in Fort Myers, FL. Check the public listing, see real photos and contact the business directly."
+   "es": "Food truck en el Eastgate Shopping Center sobre Palm Beach Blvd: tacos de asada, al pastor, pollo, chorizo y lengua, tortas y quesadillas, con agua fresca de piña recién hecha.",
+   "en": "A food truck at the Eastgate Shopping Center on Palm Beach Blvd: asada, al pastor, chicken, chorizo and tongue tacos, tortas and quesadillas, with fresh pineapple agua fresca."
   },
-  "senal_icono": "mapa",
-  "senal": {
-   "es": "Ficha pública en Google Maps",
-   "en": "Public Google Maps listing"
-  },
+  "rating": { "es": "4.7 · 124 reseñas en Google", "en": "4.7 · 124 reviews on Google" },
   "imagen": "gmaps-1.jpg",
-  "imagen_alt": "Trabajo de Taco Truck en Fort Myers, FL",
+  "imagen_alt": "Taco Truck exterior with red picnic tables in Fort Myers, FL",
   "tarjeta": {
-   "tag": {
-    "es": "Atención directa",
-    "en": "Direct line"
-   },
+   "tag": { "es": "Llámanos", "en": "Call us" },
    "destacado": "(239) 362-0652",
-   "pie": {
-    "es": "Fort Myers, FL",
-    "en": "Fort Myers, FL"
-   }
+   "pie": { "es": "Eastgate, Fort Myers", "en": "Eastgate, Fort Myers" }
   }
  },
+
  "strip": [
-  {
-   "valor": "Servicios",
-   "etiqueta": {
-    "es": "El oficio",
-    "en": "The trade"
-   }
-  },
-  {
-   "valor": "Fort Myers",
-   "etiqueta": {
-    "es": "Zona de trabajo",
-    "en": "Service area"
-   }
-  },
-  {
-   "valor": "1:1",
-   "etiqueta": {
-    "es": "Trato directo",
-    "en": "Direct contact"
-   }
-  },
-  {
-   "valor": "1:1",
-   "etiqueta": {
-    "es": "Trato directo",
-    "en": "Direct contact"
-   }
-  }
+  { "valor": "4.7", "count": "4.7", "etiqueta": { "es": "Calificación en Google", "en": "Google rating" } },
+  { "valor": "124", "count": "124", "etiqueta": { "es": "Reseñas en Google", "en": "Google reviews" } },
+  { "valor": "$2", "etiqueta": { "es": "Tacos desde", "en": "Tacos from" } },
+  { "valor": "Eastgate", "etiqueta": { "es": "Fort Myers, FL", "en": "Fort Myers, FL" } }
  ],
- "marquee": [
-  "Servicio local",
-  "Calidad",
-  "Trato directo",
-  "Presupuesto claro",
-  "Fort Myers",
-  "Confianza"
- ],
+
+ "marquee": ["Tacos", "Tortas", "Quesadillas", "Agua Fresca", "Food Truck", "Fort Myers, FL"],
+
  "nosotros": {
-  "eyebrow": {
-   "es": "Nosotros",
-   "en": "About us"
-  },
-  "h2_a": {
-   "es": "Un equipo,",
-   "en": "One team,"
-  },
-  "h2_shine": {
-   "es": "un solo responsable",
-   "en": "one accountable crew"
-  },
+  "eyebrow": { "es": "Nosotros", "en": "About us" },
+  "h2_a": { "es": "Tacos de barrio,", "en": "Neighborhood tacos," },
+  "h2_shine": { "es": "hechos a mano", "en": "made by hand" },
   "parrafo_1": {
-   "es": "Taco Truck es un negocio local de Fort Myers, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios.",
-   "en": "Taco Truck is a local Fort Myers, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen."
+   "es": "Este food truck opera en el Eastgate Shopping Center sobre Palm Beach Blvd, en Fort Myers. Tacos de asada, al pastor, pollo, chorizo y lengua, servidos en tortilla de maíz con cebolla y cilantro.",
+   "en": "This food truck operates at the Eastgate Shopping Center on Palm Beach Blvd in Fort Myers. Asada, al pastor, chicken, chorizo and tongue tacos, served on corn tortillas with onion and cilantro."
   },
   "parrafo_2": {
-   "es": "La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles.",
-   "en": "The public Google Maps listing collects the available photos and contact information."
+   "es": "También preparan tortas, quesadillas y aguas frescas de fruta natural, como la de piña que varios clientes piden junto con sus tacos.",
+   "en": "They also make tortas, quesadillas and fresh fruit aguas frescas, like the pineapple one several customers order alongside their tacos."
   },
-  "imagen_1": "gmaps-2.jpg",
-  "imagen_1_alt": "Trabajo de Taco Truck",
+  "imagen_1": "gmaps-6.jpg",
+  "imagen_1_alt": "Fruit stand with pineapples and aguas frescas next to Taco Truck",
   "imagen_2": "gmaps-3.jpg",
-  "imagen_2_alt": "Trabajo de Taco Truck en Fort Myers, FL",
+  "imagen_2_alt": "Fresh pineapple agua fresca at Taco Truck",
   "stats": [
-   {
-    "valor": "1:1",
-    "etiqueta": {
-     "es": "Trato directo",
-     "en": "Direct contact"
-    }
-   },
-   {
-    "valor": "Fort Myers",
-    "etiqueta": {
-     "es": "Zona",
-     "en": "Area"
-    }
-   }
+   { "valor": "4.7", "count": "4.7", "etiqueta": { "es": "Calificación", "en": "Rating" } },
+   { "valor": "124", "count": "124", "etiqueta": { "es": "Reseñas", "en": "Reviews" } },
+   { "valor": "$2", "etiqueta": { "es": "Tacos desde", "en": "Tacos from" } }
   ],
   "avatar": "gmaps-1.jpg",
-  "avatar_alt": "Logo de Taco Truck",
-  "avatar_pie": {
-   "es": "Fort Myers, FL",
-   "en": "Fort Myers, FL"
-  }
+  "avatar_alt": "Taco Truck exterior in Fort Myers",
+  "avatar_pie": { "es": "Eastgate, Fort Myers", "en": "Eastgate, Fort Myers" }
  },
+
  "proceso": {
-  "eyebrow": {
-   "es": "Tu proyecto, paso a paso",
-   "en": "Your project, step by step"
-  },
-  "h2_a": {
-   "es": "Así trabajamos",
-   "en": "How we work"
-  },
-  "h2_shine": {
-   "es": "contigo",
-   "en": "with you"
-  },
+  "eyebrow": { "es": "Cómo pedir", "en": "How to order" },
+  "h2_a": { "es": "Así se pide", "en": "How it works" },
+  "h2_shine": { "es": "aquí", "en": "here" },
   "pasos": [
    {
-    "titulo": {
-     "es": "Escríbenos",
-     "en": "Get in touch"
-    },
-    "texto": {
-     "es": "Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte.",
-     "en": "Tell us what you need; a photo of the space or the problem is enough to point you right."
-    }
+    "titulo": { "es": "Encuéntranos", "en": "Find us" },
+    "texto": { "es": "Estamos en el Eastgate Shopping Center, sobre Palm Beach Blvd en Fort Myers. Abrimos todos los días de 10:30 AM a medianoche.", "en": "We're at the Eastgate Shopping Center on Palm Beach Blvd in Fort Myers. Open every day from 10:30 AM to midnight." }
    },
    {
-    "titulo": {
-     "es": "Presupuesto claro",
-     "en": "Clear quote"
-    },
-    "texto": {
-     "es": "Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica.",
-     "en": "We tell you what the job takes and what it costs before starting, no fine print."
-    }
+    "titulo": { "es": "Elige tus tacos", "en": "Choose your tacos" },
+    "texto": { "es": "Asada, al pastor, pollo, chorizo o lengua. También tortas y quesadillas.", "en": "Asada, al pastor, chicken, chorizo or tongue. Tortas and quesadillas too." }
    },
    {
-    "titulo": {
-     "es": "El trabajo",
-     "en": "The job"
-    },
-    "texto": {
-     "es": "Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed.",
-     "en": "We arrive with everything needed and execute with the care you see on our feed."
-    }
+    "titulo": { "es": "Se preparan al momento", "en": "Made to order" },
+    "texto": { "es": "Cada orden se hace al momento, con cebolla, cilantro y tu salsa favorita.", "en": "Every order is made fresh, with onion, cilantro and your favorite salsa." }
    },
    {
-    "titulo": {
-     "es": "Entrega",
-     "en": "Handover"
-    },
-    "texto": {
-     "es": "Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima.",
-     "en": "We walk the result together and leave the area clean. And you keep our number for next time."
-    }
+    "titulo": { "es": "Siéntate a disfrutar", "en": "Sit down and enjoy" },
+    "texto": { "es": "Hay mesas afuera del truck. Pide también un agua fresca de piña para acompañar.", "en": "There are picnic tables outside the truck. Grab a pineapple agua fresca to go with it." }
    }
   ]
  },
+
  "servicios": {
-  "h2_a": {
-   "es": "Lo que",
-   "en": "What we"
-  },
-  "h2_shine": {
-   "es": "hacemos",
-   "en": "do"
-  },
+  "h2_a": { "es": "Lo que", "en": "What we" },
+  "h2_shine": { "es": "servimos", "en": "serve" },
   "nota": {
-   "es": "Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso.",
-   "en": "Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached."
+   "es": "Precios tomados del propio menú del food truck; pueden variar según el día.",
+   "en": "Prices taken from the food truck's own posted menu; they may vary day to day."
   },
-  "cta": {
-   "es": "Consultar",
-   "en": "Ask about it"
-  },
+  "cta": { "es": "Llamar", "en": "Call" },
   "cards": [
    {
-    "tag": {
-     "es": "El oficio",
-     "en": "The craft"
-    },
-    "titulo": {
-     "es": "Nuestro trabajo",
-     "en": "What we do"
-    },
-    "texto": {
-     "es": "Lo que publicamos en Google Maps es lo que hacemos: mira el feed y júzganos por ahí.",
-     "en": "What we post on Google Maps is what we do: check the feed and judge us by it."
-    }
+    "tag": { "es": "Lo más pedido", "en": "Most popular" },
+    "titulo": { "es": "Tacos", "en": "Tacos" },
+    "texto": { "es": "Asada, barbacoa, al pastor, pollo o chorizo, en tortilla de maíz.", "en": "Asada, barbacoa, al pastor, chicken or chorizo, on a corn tortilla." },
+    "precio": "$2"
    },
    {
-    "tag": {
-     "es": "Trato",
-     "en": "Service"
-    },
-    "titulo": {
-     "es": "Atención directa",
-     "en": "Direct service"
-    },
-    "texto": {
-     "es": "Hablas con quien hace el trabajo, no con una central: acuerdos claros y sin intermediarios.",
-     "en": "You talk to the person doing the work, not a call center: clear agreements, no middlemen."
-    }
+    "tag": { "es": "Para los aventureros", "en": "For the adventurous" },
+    "titulo": { "es": "Tacos de lengua", "en": "Tongue tacos" },
+    "texto": { "es": "Beef tongue, para quien busca algo distinto al menú clásico.", "en": "Beef tongue, for anyone after something beyond the classic menu." },
+    "precio": "$4"
    },
    {
-    "tag": {
-     "es": "Presupuesto",
-     "en": "Quotes"
-    },
-    "titulo": {
-     "es": "Cotización sin compromiso",
-     "en": "No-strings quotes"
-    },
-    "texto": {
-     "es": "Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar.",
-     "en": "Tell us what you need and we tell you what it takes and what it costs before starting."
-    }
+    "tag": { "es": "Para compartir", "en": "To share" },
+    "titulo": { "es": "Tortas", "en": "Tortas" },
+    "texto": { "es": "Asada, barbacoa, al pastor, pollo, chorizo o lengua, en pan grande.", "en": "Asada, barbacoa, al pastor, chicken, chorizo or tongue, on a large roll." },
+    "precio": "$10"
    },
    {
-    "tag": {
-     "es": "Cercanía",
-     "en": "Local"
-    },
-    "titulo": {
-     "es": "Negocio local",
-     "en": "Local business"
-    },
-    "texto": {
-     "es": "De tu misma zona: llegamos rápido y respondemos después de entregar.",
-     "en": "From your own area: quick to arrive and still answering after handover."
-    }
+    "tag": { "es": "Clásicas", "en": "Classics" },
+    "titulo": { "es": "Quesadillas", "en": "Quesadillas" },
+    "texto": { "es": "Con queso derretido y la proteína que elijas.", "en": "With melted cheese and the protein of your choice." },
+    "precio": "$6"
    }
   ],
   "pie": {
-   "es": "¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte.",
-   "en": "Do not see exactly what you need? Message us and we will confirm whether we can help."
+   "es": "Extras: queso fresco $1, crema o aguacate $0.50.",
+   "en": "Extra toppings: queso fresco $1, sour cream or avocado $0.50."
   }
  },
+
  "galeria": {
-  "h2_a": {
-   "es": "Trabajos",
-   "en": "Real"
-  },
-  "h2_shine": {
-   "es": "reales",
-   "en": "work"
-  },
+  "h2_a": { "es": "Lo que", "en": "What's" },
+  "h2_shine": { "es": "se sirve", "en": "on the plate" },
   "tiles": [
-   {
-    "img": "gmaps-4.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de Taco Truck en Fort Myers, FL"
-   },
-   {
-    "img": "gmaps-5.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de Taco Truck en Fort Myers, FL"
-   },
-   {
-    "img": "gmaps-6.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de Taco Truck en Fort Myers, FL"
-   },
-   {
-    "img": "gmaps-7.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de Taco Truck en Fort Myers, FL"
-   },
-   {
-    "img": "gmaps-8.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de Taco Truck en Fort Myers, FL"
-   },
-   {
-    "img": "gmaps-9.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de Taco Truck en Fort Myers, FL"
-   }
+   { "img": "gmaps-1.jpg", "caption": { "es": "El food truck", "en": "The food truck" }, "alt": "Taco Truck exterior with picnic tables" },
+   { "img": "gmaps-2.jpg", "caption": { "es": "Tacos de asada", "en": "Asada tacos" }, "alt": "Asada tacos with cucumber at Taco Truck" },
+   { "img": "gmaps-5.jpg", "caption": { "es": "Cebolla asada", "en": "Grilled onion" }, "alt": "Tacos with grilled onion and jalapeño at Taco Truck" },
+   { "img": "gmaps-7.jpg", "caption": { "es": "Quesadilla", "en": "Quesadilla" }, "alt": "Quesadilla with cucumber at Taco Truck" },
+   { "img": "gmaps-8.jpg", "caption": { "es": "Tacos surtidos", "en": "Assorted tacos" }, "alt": "Assorted tacos with guacamole at Taco Truck" },
+   { "img": "gmaps-6.jpg", "caption": { "es": "Aguas frescas", "en": "Fresh aguas frescas" }, "alt": "Fruit stand with aguas frescas next to Taco Truck" }
   ]
  },
+
  "social_proof": {
-  "modo": "razones",
-  "eyebrow": {
-   "es": "Por qué elegirnos",
-   "en": "Why choose us"
-  },
-  "h2_a": {
-   "es": "Tres razones",
-   "en": "Three reasons"
-  },
-  "h2_shine": {
-   "es": "para escribirnos",
-   "en": "to message us"
-  },
+  "modo": "testimonios",
+  "eyebrow": { "es": "Opiniones", "en": "Reviews" },
+  "h2_a": { "es": "Lo que dicen", "en": "What" },
+  "h2_shine": { "es": "de nosotros", "en": "people say" },
   "subtitulo": {
-   "es": "No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha.",
-   "en": "We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing."
+   "es": "4.7 de calificación con 124 reseñas en Google.",
+   "en": "4.7 rating from 124 reviews on Google."
   },
-  "cta": {
-   "es": "Ver ficha y fotos en Google Maps",
-   "en": "See listing and photos on Google Maps"
-  },
+  "cta": { "es": "Ver todas las reseñas en Google", "en": "See all reviews on Google" },
+  "cta_url": "https://www.google.com/maps/place/Taco+Truck/data=!4m7!3m6!1s0x88db69a034de7457:0x6a6080960d065237!8m2!3d26.6678224!4d-81.828793!16s%2Fg%2F11pd0w98ww",
   "items": [
-   {
-    "icono": "escudo",
-    "titulo": {
-     "es": "Trabajo a la vista",
-     "en": "Work out in the open"
-    },
-    "texto": {
-     "es": "Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores.",
-     "en": "We post what we do. We do not ask for blind trust: look at how the previous jobs turned out."
-    }
-   },
-   {
-    "icono": "telefono",
-    "titulo": {
-     "es": "El que responde es el que llega",
-     "en": "Who answers is who shows up"
-    },
-    "texto": {
-     "es": "Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo.",
-     "en": "You talk to the crew, agree with the crew, and the crew does the work."
-    }
-   },
-   {
-    "icono": "whatsapp",
-    "titulo": {
-     "es": "Presupuesto antes de empezar",
-     "en": "Quote before we start"
-    },
-    "texto": {
-     "es": "Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra.",
-     "en": "You know what it takes and what it costs before the first hammer swing. No mid-job surprises."
-    }
-   }
+   { "quote": "Excellent tacos. Ordered 4 different types and all were great. Agua Fresca delicious. Love the grilled jalapeños", "autor": "S J", "fuente": "Google" },
+   { "quote": "I have only good things to say about this taco truck. Pork and chicken tacos are a dollar. You can get yourself 5 tacos and an aqua fresca for $10. You can't beat that. I'm not ashamed to admit that I eat here at least once a week and everytime the tacos are perfect. Ditch Taco Bell and instead support your local community.", "autor": "Amy", "fuente": "Google" },
+   { "quote": "Food is amazing. $2 tacos and $6 quesadillas. Good vibes too, will definitely keep going here!", "autor": "Bollens", "fuente": "Google" }
   ]
  },
+
  "contacto": {
-  "eyebrow": {
-   "es": "Contacto",
-   "en": "Contact"
-  },
-  "h2_a": {
-   "es": "Visítanos desde",
-   "en": "Reach us from"
-  },
+  "eyebrow": { "es": "Contacto", "en": "Contact" },
+  "h2_a": { "es": "Visítanos en", "en": "Visit us in" },
   "h2_shine": "Fort Myers",
-  "imagen": "gmaps-2.jpg",
-  "imagen_alt": "Trabajo de Taco Truck",
   "cards": [
    {
     "icono": "telefono",
-    "titulo": {
-     "es": "Teléfono",
-     "en": "Phone"
-    },
-    "texto": {
-     "es": "La vía más rápida para consultar disponibilidad.",
-     "en": "The fastest way to ask about availability."
-    },
-    "url": "tel:+2393620652",
+    "titulo": { "es": "Teléfono", "en": "Phone" },
+    "texto": { "es": "Llama para confirmar el horario del día.", "en": "Call to confirm today's hours." },
+    "url": "tel:+12393620652",
     "enlace": "(239) 362-0652"
    },
    {
     "icono": "mapa",
-    "titulo": {
-     "es": "Google Maps",
-     "en": "Google Maps"
-    },
-    "texto": {
-     "es": "Dirección pública: Eastgate Shopping Center @ Palm Beach, Fort Myers, FL 33916.",
-     "en": "Public address: Eastgate Shopping Center @ Palm Beach, Fort Myers, FL 33916."
-    },
-    "url": "https://www.google.com/maps/place/Taco+Truck/data=!4m7!3m6!1s0x88db69a034de7457:0x6a6080960d065237!8m2!3d26.6678224!4d-81.828793!16s%2Fg%2F11pd0w98ww!19sChIJV3TeNKBp24gRN1IGDZaAYGo?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1",
-    "enlace": "Eastgate Shopping Center @ Palm Beach, Fort Myers, FL 33916"
+    "titulo": { "es": "Dirección", "en": "Address" },
+    "texto": { "es": "Eastgate Shopping Center, sobre Palm Beach Blvd. Abrimos todos los días.", "en": "Eastgate Shopping Center, on Palm Beach Blvd. Open every day." },
+    "url": "https://www.google.com/maps?q=26.6678224,-81.828793",
+    "enlace": "Eastgate Shopping Center, Fort Myers, FL"
+   },
+   {
+    "icono": "mapa",
+    "titulo": { "es": "Google Maps", "en": "Google Maps" },
+    "texto": { "es": "Mira fotos, horarios y las 124 reseñas reales.", "en": "See photos, hours and all 124 real reviews." },
+    "url": "https://www.google.com/maps/place/Taco+Truck/data=!4m7!3m6!1s0x88db69a034de7457:0x6a6080960d065237!8m2!3d26.6678224!4d-81.828793!16s%2Fg%2F11pd0w98ww",
+    "enlace": "Google Maps"
    }
-  ]
- },
- "cta_final": {
-  "script": {
-   "es": "Trabajo real, trato directo.",
-   "en": "Real work, direct service."
-  },
-  "h2_a": {
-   "es": "Tu proyecto",
-   "en": "Your project"
-  },
-  "h2_shine": {
-   "es": "empieza con un mensaje",
-   "en": "starts with a message"
-  },
-  "parrafo": {
-   "es": "Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso.",
-   "en": "Tell us what you need and we reply with ideas and a quote, no strings attached."
+  ],
+  "mapa": {
+   "titulo": "Taco Truck",
+   "src": "https://www.google.com/maps?q=26.6678224,-81.828793&output=embed"
   }
  },
+
+ "cta_final": {
+  "script": { "es": "Tacos de a dos dólares, sabor de verdad.", "en": "Two-dollar tacos, real flavor." },
+  "h2_a": { "es": "Tu taco", "en": "Your taco" },
+  "h2_shine": { "es": "te está esperando", "en": "is waiting" },
+  "parrafo": {
+   "es": "Pasa por el Eastgate Shopping Center sobre Palm Beach Blvd, o llama al (239) 362-0652.",
+   "en": "Stop by the Eastgate Shopping Center on Palm Beach Blvd, or call (239) 362-0652."
+  }
+ },
+
  "footer": {
   "descripcion": {
-   "es": "Taco Truck en Fort Myers, FL. Información pública y contacto directo.",
-   "en": "Taco Truck in Fort Myers, FL. Public information and direct contact."
+   "es": "Food truck de tacos en Fort Myers, FL.",
+   "en": "Taco food truck in Fort Myers, FL."
   },
-  "linea_contacto": "Eastgate Shopping Center @ Palm Beach, Fort Myers, FL 33916",
-  "enlace_contacto": {
-   "es": "Teléfono · (239) 362-0652",
-   "en": "Phone · (239) 362-0652"
-  },
-  "social_extra": []
- },
- "social_label": "Google Maps",
- "social_cta": {
-  "es": "Ver ficha en Google Maps",
-  "en": "See listing on Google Maps"
- },
- "dm_message": "Hi Taco Truck — I found Taco Truck while looking for services in Fort Myers, FL. I could not find a dedicated website linked from your public profile, so I put together a clean page using your public photos and contact details:\n\nhttps://siteforge-demos.odd-forest-9504.workers.dev/taco-truck/\n\nIt gives a new customer one clear place to see your work and call or message you. No login and no change to your current booking flow — just take a look.\n\nWould you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.\n\n— José Michael from Merktop"
+  "linea_contacto": "Eastgate Shopping Center, Palm Beach Blvd, Fort Myers, FL 33916",
+  "enlace_contacto": { "es": "Teléfono · (239) 362-0652", "en": "Phone · (239) 362-0652" }
+ }
 }
