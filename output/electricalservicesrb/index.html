@@ -38,10 +38,10 @@
       --ink: #f4ead8;
       --ink-60: rgba(244,234,216,0.62);
       --ink-40: rgba(244,234,216,0.42);
-      --accent-deep: #eacda4;
-      --accent-mid: #c2ab90;
-      --accent-soft: #b2a293;
-      --accent-ghost: rgba(234,205,164,0.14);
+      --accent-deep: #ecd8a2;
+      --accent-mid: #c3b58f;
+      --accent-soft: #b3aa92;
+      --accent-ghost: rgba(236,216,162,0.14);
     }
     html, body { background: var(--bg); }
     body {
@@ -66,14 +66,14 @@
     }
     .glass-hover:hover {
       background: rgba(255,255,255,0.055);
-      border-color: rgba(234,205,164,0.3);
+      border-color: rgba(236,216,162,0.3);
       transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.45), 0 0 40px rgba(234,205,164,0.06);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.45), 0 0 40px rgba(236,216,162,0.06);
     }
 
     /* Sheen champagne sobre texto */
     .text-shine {
-      background: linear-gradient(110deg, #eacda4 0%, #fdf3dd 30%, #c2ab90 52%, #eacda4 75%, #fdeec9 100%);
+      background: linear-gradient(110deg, #ecd8a2 0%, #fef5dc 30%, #c3b58f 52%, #ecd8a2 75%, #fef0c8 100%);
       background-size: 200% auto;
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -88,9 +88,9 @@
       0%, 100% { transform: translate3d(0,0,0) scale(1); }
       50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
     }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(234,205,164,0.16) 0%, transparent 70%); top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(178,162,147,0.14) 0%, transparent 70%); bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(234,205,164,0.10) 0%, transparent 70%); top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(236,216,162,0.16) 0%, transparent 70%); top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(179,170,146,0.14) 0%, transparent 70%); bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(236,216,162,0.10) 0%, transparent 70%); top: 38%; left: 52%; animation-delay: -11s; }
 
     /* Grain editorial */
     .grain::after {
@@ -109,17 +109,17 @@
     /* Boton 3D champagne */
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #fdf3dd 0%, #eacda4 48%, #c2ab90 100%);
-      color: #241c12; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #fef5dc 0%, #ecd8a2 48%, #c3b58f 100%);
+      color: #241f12; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.55),
-        inset 0 -2px 5px rgba(120,90,50,0.35),
-        0 5px 0 #8a7358,
+        inset 0 -2px 5px rgba(122,102,48,0.35),
+        0 5px 0 #8b7d57,
         0 12px 24px rgba(0,0,0,0.45);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(234,205,164,0.18); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(122,102,48,0.35), 0 7px 0 #8b7d57, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(236,216,162,0.18); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(122,102,48,0.4), 0 1px 0 #8b7d57, 0 4px 10px rgba(0,0,0,0.4); }
     .btn-3d::after {
       content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
@@ -129,10 +129,10 @@
 
     /* Boton ghost */
     .btn-ghost {
-      border: 1px solid rgba(234,205,164,0.35); color: var(--ink);
+      border: 1px solid rgba(236,216,162,0.35); color: var(--ink);
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(234,205,164,0.7); background: rgba(234,205,164,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(236,216,162,0.7); background: rgba(236,216,162,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
 
     /* Badge Merktop */
     .merktop-badge {
@@ -157,24 +157,24 @@
 
     /* Marco editorial de imagen */
     .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.55); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(234,205,164,0.12), inset 0 -80px 120px rgba(20,17,14,0.35); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(236,216,162,0.12), inset 0 -80px 120px rgba(20,17,14,0.35); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
 
     /* Numeros del ritual */
     .step-num {
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(180deg, #fdf3dd, #c2ab90);
+      background: linear-gradient(180deg, #fef5dc, #c3b58f);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     /* Estrellas */
-    .stars { color: #eacda4; letter-spacing: 2px; text-shadow: 0 0 14px rgba(234,205,164,0.4); }
+    .stars { color: #ecd8a2; letter-spacing: 2px; text-shadow: 0 0 14px rgba(236,216,162,0.4); }
 
     /* Mapa elegante */
     .map-frame iframe { filter: grayscale(1) contrast(0.92) brightness(0.9); }
 
-    /* WhatsApp flotante */
+    /* Boton flotante de llamada */
     .wa-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60;
       width: 56px; height: 56px; border-radius: 9999px;
@@ -198,7 +198,7 @@
     .preloader-mono {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.75rem, 8vw, 4.25rem); line-height: 1.15;
-      background: linear-gradient(110deg, #eacda4 0%, #fdf3dd 45%, #c2ab90 100%);
+      background: linear-gradient(110deg, #ecd8a2 0%, #fef5dc 45%, #c3b58f 100%);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
       clip-path: inset(0 0 100% 0);
       animation: preReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.08s forwards;
@@ -221,7 +221,7 @@
     /* 2. Barra de progreso de scroll */
     #scroll-progress {
       position: fixed; top: 0; left: 0; width: 100%; height: 2px; z-index: 110;
-      background: linear-gradient(90deg, #c2ab90 0%, #eacda4 55%, #fdf3dd 100%);
+      background: linear-gradient(90deg, #c3b58f 0%, #ecd8a2 55%, #fef5dc 100%);
       transform: scaleX(0); transform-origin: left center;
       pointer-events: none; will-change: transform;
     }
@@ -255,8 +255,8 @@
     .carousel-slide { flex: 0 0 100%; }
     @media (min-width: 640px) { .carousel-slide { flex: 0 0 calc(50% - 10px); } }
     .carousel-dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(244,234,216,0.22); transition: background 0.3s ease, width 0.3s ease; }
-    .carousel-dot:hover { background: rgba(234,205,164,0.55); }
-    .carousel-dot.active { width: 26px; background: linear-gradient(90deg, #c2ab90, #eacda4); }
+    .carousel-dot:hover { background: rgba(236,216,162,0.55); }
+    .carousel-dot.active { width: 26px; background: linear-gradient(90deg, #c3b58f, #ecd8a2); }
 
     /* 8. Boton magnetico (solo desktop) */
     @media (hover: hover) and (pointer: fine) {
@@ -268,7 +268,7 @@
     .tilt-glare {
       position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
       opacity: 0; transition: opacity 0.45s ease;
-      background: radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), rgba(234,205,164,0.12), transparent 65%);
+      background: radial-gradient(340px circle at var(--tx, 50%) var(--ty, 50%), rgba(236,216,162,0.12), transparent 65%);
     }
     @media (hover: hover) and (pointer: fine) {
       [data-tilt] { will-change: transform; }
@@ -280,10 +280,10 @@
     .cursor-glow {
       position: absolute; inset: 0; z-index: 2; pointer-events: none;
       opacity: 0; transition: opacity 0.5s ease;
-      background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 40%), rgba(234,205,164,0.09), transparent 65%);
+      background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 40%), rgba(236,216,162,0.09), transparent 65%);
     }
 
-    /* 11. Back to top (abajo-izquierda; el FAB de WhatsApp vive abajo-derecha) */
+    /* 11. Back to top (abajo-izquierda; el FAB de llamada vive abajo-derecha) */
     .back-to-top {
       position: fixed; left: 18px; bottom: 18px; z-index: 60;
       width: 48px; height: 48px; border-radius: 9999px;
@@ -292,7 +292,7 @@
       transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease, border-color 0.25s ease, color 0.25s ease;
     }
     .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-to-top:hover { color: var(--ink); border-color: rgba(234,205,164,0.5); }
+    .back-to-top:hover { color: var(--ink); border-color: rgba(236,216,162,0.5); }
 
 
     /* ============ Motion v3 (premium+) ============ */
@@ -355,8 +355,8 @@
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <div class="text-center px-6">
-      <p class="preloader-mono">Mizū</p>
-      <p class="preloader-word">Head Spa · Miami</p>
+      <p class="preloader-mono">RB</p>
+      <p class="preloader-word">Electrical Services</p>
       <span class="preloader-line"></span>
     </div>
   </div>
@@ -368,7 +368,7 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(234,205,164,0.3)] bg-[rgba(234,205,164,0.1)] text-[color:var(--accent-deep)]">RB</span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(236,216,162,0.3)] bg-[rgba(236,216,162,0.1)] text-[color:var(--accent-deep)]">RB</span>
         <span class="font-display text-xl tracking-wide">Electrical <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1" data-es="Services RB" data-en="Services RB">Services RB</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-8 text-sm font-light">
@@ -447,10 +447,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="102">102</span> reseñas en Google</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Se habla<span class="text-shine"> español</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Atención bilingüe</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span data-count="90">90</span> <span class="text-shine">min</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Ritual Imperial · $189</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Hialeah</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">429 Hialeah Dr, Ste 7</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="18">18</span> <span data-es="resenas en Google" data-en="reviews on Google">reviews on Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Licensed <span class="text-shine">&amp; Insured</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Electricista certificado" data-en="Certified electrician">Certified electrician</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">On <span class="text-shine">Time</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Siempre, segun resenas" data-en="Every time, per reviews">Every time, per reviews</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Sunny Isles</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Beach, FL" data-en="Beach, FL">Beach, FL</p></div>
     </div>
   </section>
 
@@ -458,28 +458,28 @@
   <div class="marquee border-b border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
       </div>
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
       </div>
     </div>
   </div>
@@ -490,25 +490,21 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/card-photo.jpg" alt="Letrero retroiluminado de Mizū Head Spa Miami con el logo de loto" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-10.jpg" alt="Custom sculptural coral-shaped chandelier installed in a Miami condo lobby" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/space-3.jpg" alt="Interior del estudio: sillón de spa negro con arco dorado y paneles botánicos retroiluminados" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-3.jpg" alt="Electrical panel with breakers wired cleanly inside a commercial building" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">La experiencia</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un santuario japonés<br /><span class="text-shine">en el corazón de Hialeah</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
-          Mizū es un estudio boutique de bienestar para cuero cabelludo, piel y cabello. Cada visita es un viaje sensorial: basin negro lacado con arco de agua dorado, flores de loto, antifaz de jade, toallas calientes y una carta de aceites de aromaterapia que eliges al llegar.
-        </p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
-          La atención es personal y sin prisa. Por eso las 102 reseñas del estudio comparten la misma palabra: <em class="font-script text-[color:var(--accent-deep)]">relajación</em>.
-        </p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Nuestro trabajo" data-en="Our work">Our work</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Electricidad fina" data-en="Fine electrical work">Fine electrical work</span><br /><span class="text-shine" data-es="para hogares y condominios" data-en="for homes and condos">for homes and condos</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Electrical Services RB hace de todo un poco: reparacion de tomacorrientes, paneles de breakers, cableado nuevo y la instalacion de piezas de iluminacion de diseño en edificios de lujo de Sunny Isles Beach y Miami." data-en="Electrical Services RB covers it all: outlet repairs, breaker panels, new wiring, and installing designer light fixtures in luxury buildings across Sunny Isles Beach and Miami.">Electrical Services RB covers it all: outlet repairs, breaker panels, new wiring, and installing designer light fixtures in luxury buildings across Sunny Isles Beach and Miami.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Los clientes repiten lo mismo en Google: llegan a tiempo, trabajan rapido y el precio es justo." data-en="Customers keep saying the same thing on Google: shows up on time, works fast and the pricing is fair.">Customers keep saying the same thing on Google: shows up on time, works fast and the pricing is <em class="font-script text-[color:var(--accent-deep)]">fair</em>.</p>
         <div class="reveal grid grid-cols-3 gap-4" style="transition-delay:300ms">
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+3.6K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">90'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">De ritual</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">18</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="resenas" data-en="reviews">reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="trato directo" data-en="direct contact">direct contact</p></div>
         </div>
       </div>
     </div>
@@ -519,55 +515,55 @@
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">90 minutos para <span class="text-shine">reiniciarte</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Como trabajamos" data-en="How we work">How we work</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="De la llamada a la luz" data-en="From the call to the">From the call to the</span> <span class="text-shine" data-es="encendida" data-en="final switch">final switch</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Diagnóstico capilar</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Comenzamos entendiendo lo que tu cuero cabelludo realmente necesita, para personalizar cada paso del ritual.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Nos cuentas el problema" data-en="You tell us the issue">You tell us the issue</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llamas o escribes por Instagram y nos cuentas que necesitas: un tomacorriente, un panel, una lampara nueva." data-en="Call or message us on Instagram and tell us what you need: an outlet, a panel, a new fixture.">Call or message us on Instagram and tell us what you need: an outlet, a panel, a new fixture.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Limpieza profunda</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Detox del cuero cabelludo con vapor terapéutico y el arco de agua del waterfall halo sobre el basin.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Llegamos a la hora acordada" data-en="We arrive on time">We arrive on time</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Las resenas lo repiten: Alberto llega puntual y evalua el problema en el sitio antes de dar un precio justo." data-en="The reviews say it over and over: Alberto arrives promptly and assesses the issue on site before giving you a fair price.">The reviews say it over and over: Alberto arrives promptly and assesses the issue on site before giving you a fair price.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Masaje envolvente</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal extendido con aromaterapia: tú eliges el aceite esencial que acompaña tu sesión.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Trabajo limpio y rapido" data-en="Clean, fast work">Clean, fast work</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Desde el rough-in detras de la pared hasta la instalacion final de la pieza de iluminacion, sin dejar desorden." data-en="From the rough-in behind the wall to the final fixture install, without leaving a mess behind.">From the rough-in behind the wall to the final fixture install, without leaving a mess behind.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms" data-tilt>
           <span class="tilt-glare" aria-hidden="true"></span>
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Nutrición desde la raíz</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Nutrientes que revitalizan el cabello desde la raíz, con antifaz de jade y toallas calientes para cerrar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Lo probamos contigo" data-en="We test it with you">We test it with you</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Encendemos todo junto a ti antes de irnos, para que veas el resultado funcionando de verdad." data-en="We switch everything on together before we leave, so you see the result actually working.">We switch everything on together before we leave, so you see the result actually working.</p>
         </div>
       </div>
 
-      <!-- Card del servicio insignia -->
+      <!-- Card de especialidad destacada -->
       <div class="mt-16 glass rounded-[2rem] overflow-hidden grid lg:grid-cols-5 reveal" data-tilt>
         <span class="tilt-glare" aria-hidden="true"></span>
         <div class="lg:col-span-2 zoomable relative min-h-[320px]">
-          <img src="assets/raw/treatment-5.jpg" alt="Clienta recostada en el basin negro bajo el halo de agua con luz ambiental" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-9.jpg" alt="Modern sculptural pendant chandelier with glass tubes installed in a condo lobby" class="blur-up absolute inset-0 w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="lg:col-span-3 p-8 sm:p-12">
-          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-4">Servicio insignia</p>
-          <h3 class="font-display text-3xl sm:text-4xl mb-3">Ritual Imperial <span class="text-shine">Mizu</span></h3>
-          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7">La experiencia completa de head spa japonés: diagnóstico, limpieza profunda, masaje envolvente, aromaterapia, vapor terapéutico y nutrición desde la raíz.</p>
+          <p class="text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-4" data-es="Especialidad" data-en="Specialty">Specialty</p>
+          <h3 class="font-display text-3xl sm:text-4xl mb-3"><span data-es="Iluminacion" data-en="Designer">Designer</span> <span class="text-shine" data-es="de diseño" data-en="lighting">lighting</span></h3>
+          <p class="text-[color:var(--ink-60)] font-light leading-relaxed mb-7" data-es="Instalamos piezas de iluminacion decorativas y a medida en lobbies, salas y terrazas de edificios de lujo de Miami, con el cableado correcto detras de cada una." data-en="We install custom and decorative light fixtures in lobbies, living rooms and terraces of Miami luxury buildings, with the right wiring behind every one.">We install custom and decorative light fixtures in lobbies, living rooms and terraces of Miami luxury buildings, with the right wiring behind every one.</p>
           <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8">
-            <div><p class="font-display text-3xl text-shine">$189</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Precio</p></div>
+            <div><p class="font-display text-3xl text-shine" data-es="Se cotiza" data-en="Quoted">Quoted</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="por el trabajo" data-en="per job">per job</p></div>
             <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
-            <div><p class="font-display text-3xl">90 min</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Duración</p></div>
+            <div><p class="font-display text-3xl">5.0</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="en Google" data-en="on Google">on Google</p></div>
             <div class="h-10 w-px bg-[color:var(--accent-ghost)] hidden sm:block"></div>
-            <div><p class="font-display text-3xl">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide">Atención personal</p></div>
+            <div><p class="font-display text-3xl">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide" data-es="trato directo" data-en="direct contact">direct contact</p></div>
           </div>
-          <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar mi ritual
+          <a href="tel:+17866570008" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Pide tu cotizacion" data-en="Get your free quote">Get your free quote</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
@@ -581,21 +577,21 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">estudio</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Galeria" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="jobs">jobs</span></h2>
         </div>
-        <a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.instagram.com/electrical.servicesrb" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @mizuheadspamiami
+          @electrical.servicesrb
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">El halo de agua</span><img src="assets/raw/treatment-5.jpg" alt="Sesión de head spa bajo el halo de agua" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">Ritual Imperial</span><img src="assets/raw/treatment-4.jpg" alt="Momento del Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Resultado: cabello brillante frente al logo Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">El ritual</span><img src="assets/raw/treatment-3.jpg" alt="Detalle del ritual de head spa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La experiencia</span><img src="assets/raw/testimonial-1.jpg" alt="Clienta durante su experiencia en Mizū" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">Ritual Imperial Mizu</span><img src="assets/raw/treatment-1.jpg" alt="Ritual Imperial Mizu" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Lampara escultural" data-en="Sculptural chandelier">Sculptural chandelier</span><img src="assets/raw/gmaps-10.jpg" alt="Coral-shaped sculptural chandelier lit up in a condo lobby ceiling" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Instalacion en techo alto" data-en="High ceiling install">High ceiling install</span><img src="assets/raw/gmaps-7.jpg" alt="Custom pendant light fixture installed on a ladder in a high ceiling room" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Iluminacion exterior" data-en="Outdoor lighting">Outdoor lighting</span><img src="assets/raw/gmaps-11.jpg" alt="Rooftop landscape lighting bollards with the Miami skyline in the background" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Panel electrico" data-en="Electrical panel">Electrical panel</span><img src="assets/raw/gmaps-3.jpg" alt="Clean breaker panel wiring inside a commercial building" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Rough-in de cableado" data-en="Wiring rough-in">Wiring rough-in</span><img src="assets/raw/gmaps-1.jpg" alt="Electrical conduit and junction boxes rough-in before drywall" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Sala de estar" data-en="Living room install">Living room install</span><img src="assets/raw/gmaps-5.jpg" alt="Decorative circular ceiling light fixture installed above a living room sofa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -604,28 +600,28 @@
   <div class="marquee border-t border-[color:var(--accent-ghost)] py-7 sm:py-8" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
       </div>
       <div class="marquee-seg font-script text-2xl sm:text-3xl text-[color:var(--ink-60)]">
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Head Spa Japonés</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Aromaterapia</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Vapor Terapéutico</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Masaje Craneal</span><span class="marquee-sep">✦</span>
-        <span class="marquee-item">Ritual Imperial</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Custom Lighting</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Panel Upgrades</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Rewiring</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Luxury Condos</span><span class="marquee-sep">✦</span>
+        <span class="marquee-item">Sunny Isles Beach</span><span class="marquee-sep">✦</span>
       </div>
     </div>
   </div>
@@ -635,39 +631,39 @@
     <span class="sec-num" aria-hidden="true">04</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;5.0 de 5 · 102 reseñas verificadas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="nuestros clientes" data-en="customers say">customers say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 18 resenas verificadas en Google" data-en="5.0 of 5 · 18 verified Google reviews">5.0 of 5 · 18 verified Google reviews</span></p>
       </div>
       <div id="reviews-carousel" class="reveal" style="transition-delay:120ms">
         <div class="carousel-viewport">
           <div class="carousel-track">
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Best mother's day gift ever. Alain was very welcoming and sweet. The massage was extremely relaxing, he knew exactly what he was doing. The spa location is very centric and luxurious. I haven't felt more relaxed. I recommend 10/10."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Jennifer</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Alberto arrived promptly at the scheduled time, assessed the issue efficiently, and quickly implemented the necessary repairs. His professionalism and expertise were evident throughout the process."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Sabrina O.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I honestly loved my experience here. The place feels so warm and inviting, and the attention I received was just amazing. And I have to mention the coffee... it was incredible! I'm definitely coming back!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Gabriela</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Highly knowledgeable electrician with fair pricing. Finally someone who shows up on time and get the job done."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Monica Flores</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"From the moment I walked in, the atmosphere was incredibly relaxing and welcoming. Alain took amazing care of me, and I left feeling completely pampered and refreshed. Highly recommend!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Yadira</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I was extremely happy with the work. They repaired several electrical outlets in my house and also installed a light fixture in the bathroom. Everything turned out great, and I'm very pleased."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Cristina Aguilera</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
             <figure class="carousel-slide glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Wow!! I cannot remember the last time I was this relaxed. Alain was amazing. Perfect attention to every detail, and so knowledgeable about caring for your hair."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Andrea</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Excellent service, has already done two jobs in the apartment, arrives on time, works quickly and professionally."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Alejandro Agredo</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
           </div>
         </div>
         <div class="carousel-dots flex justify-center gap-2.5 mt-8"></div>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 102 reseñas en Google</a>
+        <a href="https://www.google.com/maps/place/Electrical+Services+RB.+LLC/data=!4m7!3m6!1s0x88d9ad000de95bd5:0x39161cead541a483!8m2!3d25.9428992!4d-80.1233602" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2"><span data-es="Leer las 18 resenas en Google" data-en="Read all 18 reviews on Google">Read all 18 reviews on Google</span></a>
       </div>
     </div>
   </section>
@@ -677,39 +673,37 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-mid)] mb-5" data-es="Zona de servicio" data-en="Service area">Service area</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Trabajamos cerca de" data-en="We work close to">We work close to</span> <span class="text-shine">you</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(234,205,164,0.4)]" href="https://www.google.com/maps/place/?q=place_id:ChIJ7VQr8u2x2YgR1MqA6Gs_ZRU" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Zona de servicio" data-en="Service area">Service area</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sunny Isles Beach, FL 33160" data-en="Sunny Isles Beach, FL 33160">Sunny Isles Beach, FL 33160</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Tambien North Miami Beach y alrededores" data-en="Also North Miami Beach and nearby">Also North Miami Beach and nearby</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22Z"/><path d="m9 12 2 2 4-4"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Sábado: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: cerrado</p>
+              <p class="font-medium mb-1" data-es="Licencia y seguro" data-en="Licensed &amp; insured">Licensed &amp; insured</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Electricista certificado en Florida" data-en="Certified electrician in Florida">Certified electrician in Florida</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Trabajos residenciales y de condominio" data-en="Residential and condo work">Residential and condo work</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">WhatsApp y llamadas: <a class="text-[color:var(--accent-deep)]" href="tel:+17863887821">(786) 388-7821</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Se habla español e inglés.</p>
+              <p class="font-medium mb-1" data-es="Contacto" data-en="Contact">Contact</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Llamadas:" data-en="Calls:">Calls:</span> <a class="text-[color:var(--accent-deep)]" href="tel:+17866570008">(786) 657-0008</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Instagram:" data-en="Instagram:">Instagram:</span> <a class="text-[color:var(--accent-deep)]" href="https://www.instagram.com/electrical.servicesrb" target="_blank" rel="noopener">@electrical.servicesrb</a></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Mizū Head Spa Miami, 429 Hialeah Dr Ste 7, Hialeah FL"
-          src="https://www.google.com/maps?q=Mizu+Head+Spa+Miami,+429+Hialeah+Dr+Ste+7,+Hialeah,+FL+33010&output=embed"
-          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <img src="assets/raw/gmaps-6.jpg" alt="Electrical Services RB wiring work inside an electrical panel enclosure" class="blur-up w-full h-full object-cover" loading="lazy" />
       </div>
     </div>
   </section>
@@ -719,43 +713,41 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5">Desconecta por completo.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms">Tu pausa te está <span class="text-shine">esperando</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms">Escríbenos por WhatsApp y asegura tu Ritual Imperial Mizu. Cupos limitados cada semana: la experiencia es uno a uno.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Electricidad fina, hecha a tiempo." data-en="Fine electrical work, done on time.">Fine electrical work, done on time.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu cotizacion te esta" data-en="Your free quote is">Your free quote is</span> <span class="text-shine" data-es="esperando" data-en="waiting">waiting</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama o escribenos por Instagram y cuentanos que necesitas. Respondemos directo, sin intermediarios." data-en="Call or message us on Instagram and tell us what you need. We answer directly, no middlemen.">Call or message us on Instagram and tell us what you need. We answer directly, no middlemen.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2">Reservar por WhatsApp</a>
-        <a href="tel:+17863887821" class="btn-ghost rounded-full px-10 py-4 text-sm">Llamar ahora</a>
+        <a href="tel:+17866570008" class="btn-3d magnetic rounded-full px-10 py-4 text-sm inline-flex items-center gap-2"><span data-es="Llamar ahora" data-en="Call now">Call now</span></a>
+        <a href="https://www.instagram.com/electrical.servicesrb" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm">@electrical.servicesrb</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0e0c0a]">
-    <span class="foot-mark" aria-hidden="true">Mizū</span>
+    <span class="foot-mark" aria-hidden="true">RB</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/logo.png" alt="Logo Mizū" class="w-9 h-9 rounded-full ring-1 ring-[rgba(234,205,164,0.3)]" />
-          <span class="font-display text-lg">Mizū Head Spa Miami</span>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(236,216,162,0.3)] bg-[rgba(236,216,162,0.08)] text-[color:var(--accent-deep)]">RB</span>
+          <span class="font-display text-lg">Electrical Services RB</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed">A Sensorial Ritual of Elevated Relaxation. Boutique scalp, skin &amp; hair wellness studio.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Electricista residencial y de condominios en Sunny Isles Beach y North Miami Beach." data-en="Residential and condo electrician in Sunny Isles Beach and North Miami Beach.">Residential and condo electrician in Sunny Isles Beach and North Miami Beach.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Contacto</p>
-        <p>429 Hialeah Dr Ste 7, Hialeah, FL 33010</p>
-        <p><a href="tel:+17863887821" class="hover:text-[color:var(--accent-deep)]">(786) 388-7821</a></p>
-        <p>Lun a Sáb · 10 AM a 7 PM</p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contact</p>
+        <p data-es="Sunny Isles Beach, FL" data-en="Sunny Isles Beach, FL">Sunny Isles Beach, FL</p>
+        <p><a href="tel:+17866570008" class="hover:text-[color:var(--accent-deep)]">(786) 657-0008</a></p>
+        <p data-es="Respondemos rapido" data-en="We respond fast">We respond fast</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3">Síguenos</p>
-        <p><a href="https://www.instagram.com/mizuheadspamiami" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @mizuheadspamiami</a></p>
-        <p><a href="https://www.tiktok.com/@mizu.head.spa.mia" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">TikTok · @mizu.head.spa.mia</a></p>
-        <p><a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">WhatsApp directo</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Siguenos" data-en="Follow us">Follow us</p>
+        <p><a href="https://www.instagram.com/electrical.servicesrb" target="_blank" rel="noopener" class="hover:text-[color:var(--accent-deep)]">Instagram · @electrical.servicesrb</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Mizū Head Spa Miami. Todos los derechos reservados.</p>
+        <p class="text-xs text-[color:var(--ink-40)]" data-es="© 2026 Electrical Services RB. Todos los derechos reservados." data-en="© 2026 Electrical Services RB. All rights reserved.">© 2026 Electrical Services RB. All rights reserved.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -764,9 +756,9 @@
     </div>
   </footer>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/17863887821" target="_blank" rel="noopener" class="wa-float" aria-label="Reservar por WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- Boton flotante de llamada -->
+  <a href="tel:+17866570008" class="wa-float" aria-label="Call Electrical Services RB">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 
   <!-- BACK TO TOP -->
@@ -779,6 +771,20 @@
   <script>
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    const siteLanguageKey = 'siteforge:lang:electricalservicesrb';
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
+      document.documentElement.lang = l;
+      try { localStorage.setItem(siteLanguageKey, l); } catch (e) {}
+      const btn = document.getElementById('langToggle');
+      if (btn) btn.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let lang = 'en';
+    try { lang = localStorage.getItem(siteLanguageKey) || document.documentElement.lang || 'en'; } catch (e) { lang = document.documentElement.lang || 'en'; }
+    applyLang(lang === 'es' ? 'es' : 'en');
+    const langToggleBtn = document.getElementById('langToggle');
+    if (langToggleBtn) langToggleBtn.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
     // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
     const preloader = document.getElementById('preloader');
