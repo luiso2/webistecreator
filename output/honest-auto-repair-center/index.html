@@ -3,36 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0f0b07" />
-  <title>Honest auto repair center · Pembroke Pines, FL</title>
-  <meta name="description" content="Honest auto repair center: servicios locales en Pembroke Pines, FL. Información, fotos y contacto verificados en Google Maps." />
-  <meta property="og:title" content="Honest auto repair center · Pembroke Pines, FL" />
-  <meta property="og:description" content="Honest auto repair center en Pembroke Pines, FL. Fotos públicas y contacto directo." />
+  <meta name="theme-color" content="#070c0f" />
+  <title>Honest Auto Repair Center · Auto Repair in Miramar, FL | 4.6 on Google</title>
+  <meta name="description" content="Honest Auto Repair Center serves Miramar, FL with brakes, oil changes, tune-ups, alignments and A/C repair for domestic and import vehicles. Rated 4.6 on Google with 162 reviews. Call +1 954-251-3285." />
+  <meta property="og:title" content="Honest Auto Repair Center · Auto Repair, Miramar FL" />
+  <meta property="og:description" content="Brakes, oil changes, tune-ups, alignments and A/C repair for all makes in Miramar. Rated 4.6 on Google with 162 reviews. Call +1 954-251-3285." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/raw/gmaps-1.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-1.jpg" />
+  <meta property="og:image" content="assets/raw/bk-8.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/bk-2.jpg" />
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Honest auto repair center",
-  "description": "Honest auto repair center, negocio local en Pembroke Pines, FL.",
+  "@type": "AutoRepair",
+  "name": "Honest Auto Repair Center",
+  "description": "Independent auto repair shop in Miramar, FL, doing brakes, oil changes, tune-ups, alignments and A/C repair on domestic and import vehicles.",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Miramar"
+    }
+  ],
+  "telephone": "+1-954-251-3285",
+  "image": "assets/raw/bk-8.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "1825 SW 101st Ave, Miramar, FL 33025",
-    "addressLocality": "Pembroke Pines",
-    "addressRegion": "FL"
+    "streetAddress": "1825 SW 101st Ave",
+    "addressLocality": "Miramar",
+    "addressRegion": "FL",
+    "postalCode": "33025",
+    "addressCountry": "US"
   },
-  "telephone": "(954) 251-3285",
-  "image": "assets/raw/gmaps-1.jpg",
-  "sameAs": [
-    "https://www.google.com/maps/place/Honest+auto+repair+center/data=!4m7!3m6!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l!19sChIJn2BdL_-l2YgRhqDavKNa51M?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1"
-  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.6",
-    "reviewCount": "160"
-  }
+    "reviewCount": "162"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l"
+  ]
 }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,16 +64,16 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0f0b07;
-      --bg-2: #171207;
+      --bg: #070c0f;
+      --bg-2: #070f17;
       --surface: rgba(255,255,255,0.045);
-      --ink: #f5efe3;
-      --ink-60: rgba(245,239,227,0.62);
-      --ink-40: rgba(245,239,227,0.42);
-      --accent-deep: #d4a84b;
-      --accent-mid: #b8934a;
-      --accent-soft: #241c0e;
-      --accent-ghost: rgba(212,168,75,0.16);
+      --ink: #e3ecf5;
+      --ink-60: rgba(227,236,245,0.62);
+      --ink-40: rgba(227,236,245,0.42);
+      --accent-deep: #4b8fd4;
+      --accent-mid: #4a83b8;
+      --accent-soft: #0e1a24;
+      --accent-ghost: rgba(75,143,212,0.16);
     }
     html, body { background: var(--bg); }
     body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -59,10 +81,10 @@
     .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(212,168,75,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(212,168,75,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,75,0.08); }
+    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(75,143,212,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
+    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(75,143,212,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(75,143,212,0.08); }
     .text-shine {
-      background: linear-gradient(110deg, #d4a84b 0%, #f0dc9e 30%, #9a7431 52%, #d4a84b 75%, #e5c374 100%);
+      background: linear-gradient(110deg, #4b8fd4 0%, #9ec1f0 30%, #316a9a 52%, #4b8fd4 75%, #74aae5 100%);
       background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
       animation: shimmer 12s linear infinite;
     }
@@ -70,9 +92,9 @@
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
     @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,168,75,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(122,90,30,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(180,140,60,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(75,143,212,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(30,78,122,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(60,121,180,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
     .grain::after {
       content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
@@ -84,17 +106,17 @@
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 48%, #96742c 100%);
-      color: #1c1408; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #76aee8 0%, #4a8ac9 48%, #2c6196 100%);
+      color: #08141c; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(80,58,18,0.4), 0 5px 0 #6b5222, 0 12px 24px rgba(0,0,0,0.5);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(18,51,80,0.4), 0 5px 0 #22486b, 0 12px 24px rgba(0,0,0,0.5);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(80,58,18,0.4), 0 7px 0 #6b5222, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,168,75,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(80,58,18,0.45), 0 1px 0 #6b5222, 0 4px 10px rgba(0,0,0,0.45); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(18,51,80,0.4), 0 7px 0 #22486b, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(75,143,212,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(18,51,80,0.45), 0 1px 0 #22486b, 0 4px 10px rgba(0,0,0,0.45); }
     .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
     .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(212,168,75,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,168,75,0.7); background: rgba(212,168,75,0.08); box-shadow: 0 10px 26px rgba(54,42,38,0.14); }
+    .btn-ghost { border: 1px solid rgba(75,143,212,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(75,143,212,0.7); background: rgba(75,143,212,0.08); box-shadow: 0 10px 26px rgba(38,53,54,0.14); }
     .merktop-badge {
       display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
       border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
@@ -105,41 +127,41 @@
     .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
     @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    #nav.scrolled { background: rgba(7,12,15,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
     .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,168,75,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(75,143,212,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5c374, #9a7431); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #d4a84b; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,168,75,0.45); }
+    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #74aae5, #316a9a); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stars { color: #4b8fd4; letter-spacing: 2px; text-shadow: 0 0 14px rgba(75,143,212,0.45); }
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
     .dark-band {
-      --ink: #f5efe3; --ink-60: rgba(245,239,227,0.65); --ink-40: rgba(245,239,227,0.45);
-      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,210,160,0.16); color: var(--ink);
+      --ink: #e3ecf5; --ink-60: rgba(227,236,245,0.65); --ink-40: rgba(227,236,245,0.45);
+      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(160,195,232,0.16); color: var(--ink);
     }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8cf96 0%, #f8eed3 30%, #bfa060 52%, #e8cf96 75%, #f0dcae 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,150,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #faf1dc 0%, #ecd9a8 48%, #c9ab6b 100%); color: #1c1408; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(110,85,35,0.35), 0 5px 0 #8a744a, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,85,35,0.35), 0 7px 0 #8a744a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,150,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,85,35,0.4), 0 1px 0 #8a744a, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,150,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
+    .dark-band .text-shine { background-image: linear-gradient(110deg, #96bee8 0%, #d3e4f8 30%, #6090bf 52%, #96bee8 75%, #aecef0 100%); }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(150,190,232,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(128,185,185,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d { background: linear-gradient(180deg, #dceafa 0%, #a8c7ec 48%, #6b9ac9 100%); color: #08141c; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(35,73,110,0.35), 0 5px 0 #4a6b8a, 0 12px 24px rgba(0,0,0,0.45); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(35,73,110,0.35), 0 7px 0 #4a6b8a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(150,190,232,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(35,73,110,0.4), 0 1px 0 #4a6b8a, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(150,190,232,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(150,190,232,0.7); background: rgba(150,190,232,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #abdce9; text-shadow: 0 0 14px rgba(150,190,232,0.4); }
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
-      box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
+      background: linear-gradient(180deg, #76aee8 0%, #4a8ac9 100%);
+      box-shadow: 0 6px 0 #22486b, 0 14px 30px rgba(0,0,0,0.5);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float-label { color: #1c1408; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
+    .book-float-label { color: #08141c; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #22486b, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(75,143,212,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #22486b, 0 6px 14px rgba(0,0,0,0.4); }
     .hero-proof { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; color: var(--ink-40); font-size: 0.72rem; letter-spacing: 0.02em; }
     .hero-proof span { display: inline-flex; align-items: center; gap: 0.35rem; }
     .hero-proof span::before { content: '✓'; color: var(--accent-deep); font-weight: 700; }
@@ -155,13 +177,13 @@
     }
     #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
     @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(212,168,75,0.35); background: rgba(212,168,75,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(75,143,212,0.35); background: rgba(75,143,212,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
     .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
     .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
     @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
     @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
     @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #96742c 0%, #d4a84b 45%, #f0dc9e 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #2c6196 0%, #4b8fd4 45%, #9ec1f0 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
     .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
     .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
     .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
@@ -180,11 +202,11 @@
       .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
       .tilt:hover::before { opacity: 1; }
     }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,207,150,0.14) 0%, rgba(212,168,75,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(150,190,232,0.14) 0%, rgba(75,143,212,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
     .cursor-glow.on { opacity: 1; }
     .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(212,168,75,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(75,143,212,0.5); transform: translateY(-3px); }
 
     /* ============ Motion v3 (premium+) ============ */
     .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
@@ -193,7 +215,7 @@
     .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
     .frame .tile-cap {
       position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf6ea;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #eaf2fb;
       background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
       opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
     }
@@ -202,7 +224,7 @@
     .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
     .cursor-ring.on { opacity: 0.75; }
     .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,207,150,0.09); pointer-events: none; user-select: none; }
+    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(150,190,232,0.09); pointer-events: none; user-select: none; }
 
     @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
@@ -290,7 +312,7 @@
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <span class="pre-mono">HA</span>
-    <span class="pre-word">Honest auto repair center</span>
+    <span class="pre-word">Honest Auto Repair Center</span>
     <span class="pre-line"></span>
   </div>
 
@@ -301,20 +323,20 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/gmaps-1.jpg" alt="Honest auto repair center" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
-        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Honest auto <span class="text-[color:var(--accent-deep)]">repair center</span></span>
+        <img src="assets/raw/bk-2.jpg" alt="Honest Auto Repair Center" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(75,143,212,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Honest <span class="text-[color:var(--accent-deep)]">Auto Repair</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
         <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
         <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
         <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="nav-link" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
         <a class="nav-link" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
       </nav>
       <div class="flex items-center gap-3">
         <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
-        <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <span data-es="Llamar ahora" data-en="Call now">Call now</span>
         </a>
@@ -331,9 +353,9 @@
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
         <a class="py-3 px-3" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
-        <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
       </nav>
     </div>
   </header>
@@ -343,24 +365,24 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Pembroke Pines, FL · Servicios" data-en="Pembroke Pines, FL · Services">Pembroke Pines, FL · Services</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Miramar, FL · Taller mecanico" data-en="Miramar, FL · Auto repair shop">Miramar, FL · Auto repair shop</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tu carro, en manos honestas." data-en="Your car, in honest hands.">Your car, in honest hands.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          <span data-es="Tu proyecto," data-en="Your project,">Your project,</span><br /><span data-es="en manos de " data-en="handled by ">handled by </span><span class="text-shine" data-es="Honest auto" data-en="Honest auto">Honest auto</span>
+          <span data-es="Reparacion de autos," data-en="Auto repair,">Auto repair,</span><br /><span data-es="hecha de forma " data-en="done the ">done the </span><span class="text-shine" data-es="honesta" data-en="honest way">honest way</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Honest auto repair center atiende a clientes en Pembroke Pines, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente." data-en="Honest auto repair center serves customers in Pembroke Pines, FL. Check the public listing, see real photos and contact the business directly.">Honest auto repair center serves customers in Pembroke Pines, FL. Check the public listing, see real photos and contact the business directly.</p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Frenos, cambios de aceite, afinaciones, alineacion y reparacion de aire acondicionado para todas las marcas, hechos por tecnicos certificados ASE en Miramar. Calificacion 4.6 en Google con 162 reseñas, donde los clientes repiten lo mismo: honestos, directos y rapidos." data-en="Brakes, oil changes, tune-ups, alignments and A/C repair for domestic and import vehicles, done by ASE certified technicians in Miramar. Rated 4.6 on Google across 162 reviews, with customers calling out the same thing: honest, upfront and quick.">Brakes, oil changes, tune-ups, alignments and A/C repair for domestic and import vehicles, done by ASE certified technicians in Miramar. Rated 4.6 on Google across 162 reviews, with customers calling out the same thing: honest, upfront and quick.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.6 · 160 reseñas en Google" data-en="4.6 · 160 reviews on Google">4.6 · 160 reviews on Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.6 · 162 reseñas en Google" data-en="4.6 · 162 reviews on Google">4.6 · 162 reviews on Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <span data-es="Llamar ahora" data-en="Call now">Call now</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.google.com/maps/place/Honest+auto+repair+center/data=!4m7!3m6!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l!19sChIJn2BdL_-l2YgRhqDavKNa51M?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            Google Maps
+            Honest Auto Repair Center
           </a>
         </div>
         <div class="reveal hero-proof mt-5" style="transition-delay:420ms" aria-label="Lo que encontrará el cliente">
@@ -372,12 +394,12 @@
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/gmaps-1.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/bk-8.jpg" alt="Honest Auto Repair Center shop front with service bays open, Miramar FL" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
-            <p class="font-display text-lg">(954) 251-3285</p>
-            <p class="text-sm text-[color:var(--ink-60)]" data-es="Pembroke Pines, FL" data-en="Pembroke Pines, FL">Pembroke Pines, FL</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atencion directa" data-en="Direct line">Direct line</p>
+            <p class="font-display text-lg">+1 (954) 251-3285</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Miramar, FL" data-en="Miramar, FL">Miramar, FL</p>
           </div>
         </div>
       </div>
@@ -387,10 +409,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Calificación en Google" data-en="Google rating">Google rating</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="160">160</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas en Google" data-en="Google reviews">Google reviews</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Calificacion en Google" data-en="Google rating">Google rating</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="162">162</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas en Google" data-en="Google reviews">Google reviews</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">A/C Specialist</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Nuestra especialidad" data-en="Our specialty">Our specialty</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Miramar, FL</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de trabajo" data-en="Service area">Service area</p></div>
     </div>
   </section>
 
@@ -398,20 +420,20 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Pembroke Pines</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Auto Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">A/C Specialist</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Oil Change</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Alignment</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miramar, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Pembroke Pines</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Auto Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">A/C Specialist</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Oil Change</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Alignment</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miramar, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -422,25 +444,26 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Honest auto repair center" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/bk-4.jpg" alt="Technician working underneath a vehicle on the lift at Honest Auto Repair Center" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/gmaps-3.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/bk-11.jpg" alt="Wheel alignment equipment inside Honest Auto Repair Center" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo," data-en="One team,">One team,</span><br /><span class="text-shine" data-es="un solo responsable" data-en="one accountable crew">one accountable crew</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Honest auto repair center es un negocio local de Pembroke Pines, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios." data-en="Honest auto repair center is a local Pembroke Pines, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.">Honest auto repair center is a local Pembroke Pines, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles." data-en="The public Google Maps listing collects the available photos and contact information.">The public Google Maps listing collects the available photos and contact information.</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Honestos," data-en="Honest,">Honest,</span><br /><span class="text-shine" data-es="tal como dice el nombre" data-en="exactly as the name says">exactly as the name says</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Honest Auto Repair Center es un taller certificado ASE en Miramar, FL, que trabaja con marcas nacionales e importadas por igual: Ford, Chevrolet, Toyota, Honda, Nissan, Kia, Hyundai, Lexus, Volkswagen, y tambien marcas europeas como Mercedes-Benz, BMW y Audi." data-en="Honest Auto Repair Center is an ASE certified shop in Miramar, FL, working on domestic and import vehicles alike: Ford, Chevrolet, Toyota, Honda, Nissan, Kia, Hyundai, Lexus, Volkswagen, and European makes like Mercedes-Benz, BMW and Audi.">Honest Auto Repair Center is an ASE certified shop in Miramar, FL, working on domestic and import vehicles alike: Ford, Chevrolet, Toyota, Honda, Nissan, Kia, Hyundai, Lexus, Volkswagen, and European makes like Mercedes-Benz, BMW and Audi.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Los clientes repiten lo mismo en Google: el equipo, incluyendo a Sean y Reed, explica que necesita tu carro antes de tocarlo y te devuelve el carro rapido. De ahi sale la calificacion de 4.6 con 162 reseñas." data-en="Customers keep saying the same thing on Google: the team, including Sean and Reed, explains what your car actually needs before touching it and gets you back on the road quickly. That is where the 4.6 rating across 162 reviews comes from.">Customers keep saying the same thing on Google: the team, including Sean and Reed, explains what your car actually needs before touching it and gets you back on the road quickly. That is where the 4.6 rating across 162 reviews comes from.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">Pembroke Pines</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Zona" data-en="Area">Area</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Calificacion en Google" data-en="Google rating">Google rating</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="162">162</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">ASE</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Tecnicos certificados" data-en="Certified technicians">Certified technicians</p></div>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/gmaps-1.jpg" alt="Logo de Honest auto repair center" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
-            <span class="text-sm font-light">Honest auto repair center · <span class="text-[color:var(--ink-40)]" data-es="Pembroke Pines, FL" data-en="Pembroke Pines, FL">Pembroke Pines, FL</span></span>
+            <img src="assets/raw/bk-6.jpg" alt="Team member at Honest Auto Repair Center next to a customer's vehicle" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(75,143,212,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Honest Auto Repair Center · <span class="text-[color:var(--ink-40)]" data-es="Miramar, FL" data-en="Miramar, FL">Miramar, FL</span></span>
           </div>
         </div>
       </div>
@@ -452,29 +475,29 @@
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu carro, paso a paso" data-en="Your car, step by step">Your car, step by step</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Asi trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Get in touch">Get in touch</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte." data-en="Tell us what you need; a photo of the space or the problem is enough to point you right.">Tell us what you need; a photo of the space or the problem is enough to point you right.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Nos llamas" data-en="Give us a call">Give us a call</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Nos cuentas que sintomas tiene tu carro. Sin formularios ni apps de reserva, solo una linea directa al taller." data-en="Tell us what symptoms your car is showing. No forms, no booking app, just a direct line to the shop.">Tell us what symptoms your car is showing. No forms, no booking app, just a direct line to the shop.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto claro" data-en="Clear quote">Clear quote</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica." data-en="We tell you what the job takes and what it costs before starting, no fine print.">We tell you what the job takes and what it costs before starting, no fine print.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Diagnostico" data-en="Diagnostic">Diagnostic</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos el carro en persona y te explicamos exactamente que necesita y por que, antes de empezar cualquier trabajo." data-en="We look at the vehicle in person and walk you through exactly what it needs and why, before any work starts.">We look at the vehicle in person and walk you through exactly what it needs and why, before any work starts.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3" data-es="El trabajo" data-en="The job">The job</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed." data-en="We arrive with everything needed and execute with the care you see on our feed.">We arrive with everything needed and execute with the care you see on our feed.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Precio honesto" data-en="Honest quote">Honest quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te damos un precio claro para la reparacion, tal como dice el nombre del taller: sin sorpresas una vez el carro ya esta en el elevador." data-en="You get a clear price for the repair, matching the shop's name: no surprises once the car is already on the lift.">You get a clear price for the repair, matching the shop's name: no surprises once the car is already on the lift.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3" data-es="Entrega" data-en="Handover">Handover</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima." data-en="We walk the result together and leave the area clean. And you keep our number for next time.">We walk the result together and leave the area clean. And you keep our number for next time.</p>
+          <h3 class="font-display text-xl mb-3" data-es="De vuelta en la carretera" data-en="Back on the road">Back on the road</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Tecnicos certificados ASE hacen el trabajo y te devuelven el carro, con el mismo tiempo de respuesta rapido que mencionan los clientes en Google." data-en="ASE certified technicians do the work and hand the car back, with the same quick turnaround customers mention on Google.">ASE certified technicians do the work and hand the car back, with the same quick turnaround customers mention on Google.</p>
         </div>
       </div>
     </div>
@@ -487,43 +510,43 @@
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
         <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso." data-en="Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.">Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.</p>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada reparacion se cotiza despues de revisar tu carro en persona. Llamanos y te damos el detalle sin compromiso." data-en="Every repair is quoted after we take a look at your vehicle in person. Call the shop and we will walk you through it, no strings attached.">Every repair is quoted after we take a look at your vehicle in person. Call the shop and we will walk you through it, no strings attached.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="El oficio" data-en="The craft">The craft</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Nuestro trabajo" data-en="What we do">What we do</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Lo que publicamos en Google Maps es lo que hacemos: mira el feed y júzganos por ahí." data-en="What we post on Google Maps is what we do: check the feed and judge us by it.">What we post on Google Maps is what we do: check the feed and judge us by it.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(75,143,212,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Nuestra especialidad" data-en="Our specialty">Our specialty</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Reparacion y diagnostico de A/C" data-en="A/C repair & diagnostics">A/C repair & diagnostics</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Recarga de freon, instalacion y reparacion de aire acondicionado, y trabajo en bomba de combustible: la especialidad detras del letrero 'A.C. Specialist' en la fachada." data-en="Freon refills, A/C installation and repair, and fuel pump work, the specialty behind the 'A.C. Specialist' sign out front.">Freon refills, A/C installation and repair, and fuel pump work, the specialty behind the 'A.C. Specialist' sign out front.</p>
           <div class="mt-auto">
-            <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Trato" data-en="Service">Service</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Atención directa" data-en="Direct service">Direct service</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Hablas con quien hace el trabajo, no con una central: acuerdos claros y sin intermediarios." data-en="You talk to the person doing the work, not a call center: clear agreements, no middlemen.">You talk to the person doing the work, not a call center: clear agreements, no middlemen.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo mas pedido" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Frenos, aceite y afinaciones" data-en="Brakes, oil changes & tune-ups">Brakes, oil changes & tune-ups</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Servicio de frenos, cambios de aceite, afinaciones y trabajo electrico para que tu carro de uso diario siga siendo confiable." data-en="Brake service, oil changes, tune-ups and electrical work for daily drivers that need to stay reliable.">Brake service, oil changes, tune-ups and electrical work for daily drivers that need to stay reliable.</p>
           <div class="mt-auto">
-            <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Presupuesto" data-en="Quotes">Quotes</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Cotización sin compromiso" data-en="No-strings quotes">No-strings quotes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar." data-en="Tell us what you need and we tell you what it takes and what it costs before starting.">Tell us what you need and we tell you what it takes and what it costs before starting.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Llantas y alineacion" data-en="Tires & alignment">Tires & alignment</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Llantas, suspension y alineacion" data-en="Tires, suspension & alignment">Tires, suspension & alignment</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Servicio de llantas, trabajo de suspension y alineacion de ruedas en el propio equipo Hunter del taller." data-en="Tire service, suspension work and wheel alignment on the shop's own Hunter alignment rack.">Tire service, suspension work and wheel alignment on the shop's own Hunter alignment rack.</p>
           <div class="mt-auto">
-            <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cercanía" data-en="Local">Local</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Negocio local" data-en="Local business">Local business</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="De tu misma zona: llegamos rápido y respondemos después de entregar." data-en="From your own area: quick to arrive and still answering after handover.">From your own area: quick to arrive and still answering after handover.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Todas las marcas" data-en="All makes">All makes</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Vehiculos nacionales e importados" data-en="Domestic & import vehicles">Domestic & import vehicles</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Ford, Chevrolet, Toyota, Honda, Nissan, Kia, Hyundai, Lexus, Volkswagen, y marcas europeas como Mercedes-Benz, BMW y Audi." data-en="Ford, Chevrolet, Toyota, Honda, Nissan, Kia, Hyundai, Lexus, Volkswagen and European makes like Mercedes-Benz, BMW and Audi.">Ford, Chevrolet, Toyota, Honda, Nissan, Kia, Hyundai, Lexus, Volkswagen and European makes like Mercedes-Benz, BMW and Audi.</p>
           <div class="mt-auto">
-            <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte." data-en="Do not see exactly what you need? Message us and we will confirm whether we can help.">Do not see exactly what you need? Message us and we will confirm whether we can help.</span></p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves tu problema en la lista? Llama igual: la mayoria de los trabajos aqui empiezan con un diagnostico rapido por telefono." data-en="Do not see your issue listed? Call anyway: most repairs here start with a quick diagnostic over the phone.">Do not see your issue listed? Call anyway: most repairs here start with a quick diagnostic over the phone.</span></p>
     </div>
   </section>
 
@@ -534,20 +557,20 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="work">work</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="work">work</span></h2>
         </div>
-        <a href="https://www.google.com/maps/place/Honest+auto+repair+center/data=!4m7!3m6!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l!19sChIJn2BdL_-l2YgRhqDavKNa51M?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          Google Maps
+          Honest Auto Repair Center
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-4.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-5.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-6.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-7.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-8.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-9.jpg" alt="Trabajo de Honest auto repair center en Pembroke Pines, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Nuestro taller" data-en="Our shop">Our shop</span><img src="assets/raw/bk-8.jpg" alt="Honest Auto Repair Center shop front in Miramar, FL" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Abiertos" data-en="Open for business">Open for business</span><img src="assets/raw/bk-2.jpg" alt="Honest Auto Repair Center storefront with a vehicle on the lift inside" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Bahias de servicio" data-en="Service bays">Service bays</span><img src="assets/raw/bk-3.jpg" alt="Service bay doors at Honest Auto Repair Center listing brakes, oil change, tune up and air conditioning" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="En el elevador" data-en="On the lift">On the lift</span><img src="assets/raw/bk-9.jpg" alt="Red SUV lifted for service at Honest Auto Repair Center" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Bajo el capo" data-en="Under the hood">Under the hood</span><img src="assets/raw/bk-5.jpg" alt="Engine bay open for service at Honest Auto Repair Center" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Piezas de calidad" data-en="Quality parts">Quality parts</span><img src="assets/raw/bk-10.jpg" alt="New engine ready for installation at Honest Auto Repair Center" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -556,52 +579,52 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Pembroke Pines</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Auto Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">A/C Specialist</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Oil Change</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Alignment</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miramar, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Pembroke Pines</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Auto Repair</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">A/C Specialist</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Brakes</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Oil Change</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Alignment</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miramar, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
 
-  <!-- PRUEBA SOCIAL (razones) -->
+  <!-- PRUEBA SOCIAL (testimonios) -->
   <section id="opiniones" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">to message us</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha." data-en="We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.">We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What our">What our</span> <span class="text-shine" data-es="nuestros clientes" data-en="customers say">customers say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="Reseñas reales de clientes en Miramar, tomadas de nuestra ficha de Google." data-en="Real reviews from customers in Miramar, taken from our Google listing.">Real reviews from customers in Miramar, taken from our Google listing.</span></p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-8 reveal">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Trabajo a la vista" data-en="Work out in the open">Work out in the open</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores." data-en="We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.">We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="El que responde es el que llega" data-en="Who answers is who shows up">Who answers is who shows up</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo." data-en="You talk to the crew, agree with the crew, and the crew does the work.">You talk to the crew, agree with the crew, and the crew does the work.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto antes de empezar" data-en="Quote before we start">Quote before we start</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra." data-en="You know what it takes and what it costs before the first hammer swing. No mid-job surprises.">You know what it takes and what it costs before the first hammer swing. No mid-job surprises.</p>
-        </div>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"My experience at Honest Auto Repair Center was outstanding! Sean and his staff were professional, friendly, and incredibly helpful from start to finish."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Melissa Peltrau</span> <span class="text-[color:var(--ink-40)]">· Google review</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I stopped by Honest Auto Repair today to have my Honda's underbody splash guard secured after I had accidentally hit a median a few days prior. Met Reed who carefully explained to me the exact additional part I need for my vehicle's underbody to keep everything protected. Great Service!"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Mohammad Adil Shah</span> <span class="text-[color:var(--ink-40)]">· Google review</span></figcaption>
+        </figure>
+        <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
+          <p class="stars text-sm mb-4">★★★★★</p>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Customer service excellent and quick with the service of my car. I will definitely return."</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Luis Rodriguez</span> <span class="text-[color:var(--ink-40)]">· Google review</span></figcaption>
+        </figure>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Honest+auto+repair+center/data=!4m7!3m6!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l!19sChIJn2BdL_-l2YgRhqDavKNa51M?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver ficha y fotos en Google Maps" data-en="See listing and photos on Google Maps">See listing and photos on Google Maps</a>
+        <a href="https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver mas reseñas en Google" data-en="See more reviews on Google">See more reviews on Google</a>
       </div>
     </div>
   </section>
@@ -612,82 +635,90 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos desde" data-en="Reach us from">Reach us from</span> <span class="text-shine">Pembroke Pines</span></h2>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visitanos en" data-en="Visit us in">Visit us in</span> <span class="text-shine">Miramar</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para consultar disponibilidad." data-en="The fastest way to ask about availability.">The fastest way to ask about availability.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="tel:+9542513285">(954) 251-3285</a>
+              <p class="font-medium mb-1" data-es="Telefono" data-en="Phone">Phone</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La via mas rapida. Cuentanos que le pasa a tu carro y te damos el detalle." data-en="The fastest way. Tell us what is going on with your car and we will come back with the details.">The fastest way. Tell us what is going on with your car and we will come back with the details.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,143,212,0.4)]" href="tel:+19542513285">+1 (954) 251-3285</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Abierto de lunes a viernes. Sabado y domingo cerrado." data-en="Open Monday through Friday. Closed Saturday and Sunday.">Open Monday through Friday. Closed Saturday and Sunday.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,143,212,0.4)]" href="https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l" target="_blank" rel="noopener">Mon-Fri, 8 AM to 6 PM</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Google Maps" data-en="Google Maps">Google Maps</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Dirección pública: 1825 SW 101st Ave, Miramar, FL 33025." data-en="Public address: 1825 SW 101st Ave, Miramar, FL 33025.">Public address: 1825 SW 101st Ave, Miramar, FL 33025.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.google.com/maps/place/Honest+auto+repair+center/data=!4m7!3m6!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l!19sChIJn2BdL_-l2YgRhqDavKNa51M?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">1825 SW 101st Ave, Miramar, FL 33025</a>
+              <p class="font-medium mb-1" data-es="Reseñas en Google" data-en="Google reviews">Google reviews</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Mira nuestra ficha publica: calificacion, reseñas y direccion del taller." data-en="Check our public listing: rating, reviews and the shop's address.">Check our public listing: rating, reviews and the shop's address.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(75,143,212,0.4)]" href="https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l" target="_blank" rel="noopener">4.6 · 162 reseñas en Google</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="frame zoomable img-reveal min-h-[380px] h-full max-h-[560px] lg:max-h-none" style="transition-delay:180ms">
-        <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Honest auto repair center" class="blur-up w-full h-full object-cover" loading="lazy" />
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa de Honest Auto Repair Center en Miramar" src="https://www.google.com/maps?q=1825+SW+101st+Ave%2C+Miramar%2C+FL+33025&output=embed" class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #191307 0%, #100c05 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #071019 0%, #050b10 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="empieza con un mensaje" data-en="starts with a message">starts with a message</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso." data-en="Tell us what you need and we reply with ideas and a quote, no strings attached.">Tell us what you need and we reply with ideas and a quote, no strings attached.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Tu carro, en manos honestas." data-en="Your car, in honest hands.">Your car, in honest hands.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu carro" data-en="Your car">Your car</span> <span class="text-shine" data-es="merece un trabajo honesto" data-en="deserves honest work">deserves honest work</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama al taller y cuentanos que le pasa a tu carro. Te explicamos la reparacion y el precio antes de empezar." data-en="Call the shop and tell us what is going on with your car. We will walk you through the fix and the price before anything starts.">Call the shop and tell us what is going on with your car. We will walk you through the fix and the price before anything starts.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="tel:+9542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
-        <a href="https://www.google.com/maps/place/Honest+auto+repair+center/data=!4m7!3m6!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l!19sChIJn2BdL_-l2YgRhqDavKNa51M?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">See listing on Google Maps</a>
+        <a href="tel:+19542513285" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a href="https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver reseñas en Google" data-en="See our Google reviews">See our Google reviews</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
-    <span class="foot-mark" aria-hidden="true">Honest auto repair center</span>
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#05090c]">
+    <span class="foot-mark" aria-hidden="true">Honest Auto Repair Center</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/gmaps-1.jpg" alt="Honest auto repair center" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
-          <span class="font-display text-lg tracking-[0.1em] uppercase">Honest auto repair center</span>
+          <img src="assets/raw/bk-2.jpg" alt="Honest Auto Repair Center" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(150,190,232,0.35)]" loading="lazy" />
+          <span class="font-display text-lg tracking-[0.1em] uppercase">Honest Auto Repair Center</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Honest auto repair center en Pembroke Pines, FL. Información pública y contacto directo." data-en="Honest auto repair center in Pembroke Pines, FL. Public information and direct contact.">Honest auto repair center in Pembroke Pines, FL. Public information and direct contact.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Reparacion de autos, servicio de A/C, frenos, alineacion y afinaciones para todas las marcas en Miramar, FL. Honestos de nombre, honestos de trabajo." data-en="Auto repair, A/C service, brakes, alignments and tune-ups for all makes in Miramar, FL. Honest by name, honest by work.">Auto repair, A/C service, brakes, alignments and tune-ups for all makes in Miramar, FL. Honest by name, honest by work.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>1825 SW 101st Ave, Miramar, FL 33025</p>
-        <p><a href="tel:+9542513285" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Teléfono · (954) 251-3285" data-en="Phone · (954) 251-3285">Phone · (954) 251-3285</a></p>
+        <p><a href="tel:+19542513285" target="_blank" rel="noopener" class="hover:text-[#abdce9]" data-es="Telefono · +1 (954) 251-3285" data-en="Phone · +1 (954) 251-3285">Phone · +1 (954) 251-3285</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.google.com/maps/place/Honest+auto+repair+center/data=!4m7!3m6!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l!19sChIJn2BdL_-l2YgRhqDavKNa51M?authuser=0&hl=en&g_ep=EgoyMDI2MDgxOS4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Google Maps · Google Maps</a></p>
+        <p><a href="https://www.google.com/maps/place/Honest+auto+repair+center/@25.9918835,-80.2787827,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9a5ff2f5d609f:0x53e75aa3bcdaa086!8m2!3d25.9918835!4d-80.2787827!16s%2Fg%2F11c6t_444l" target="_blank" rel="noopener" class="hover:text-[#abdce9]">Google Reviews · Honest Auto Repair Center</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Honest auto repair center.</p>
+        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Honest Auto Repair Center.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
-          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+          <span class="text-xs text-[#e2ebf4]">Powered by <span class="font-semibold">Merktop</span></span>
         </a>
       </div>
     </div>
   </footer>
 
   <!-- Boton flotante de reserva -->
-  <a href="tel:+9542513285" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+  <a href="tel:+19542513285" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#08141c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
     <span class="book-float-label" data-es="Llamar ahora" data-en="Call now">Call now</span>
   </a>
 
@@ -702,14 +733,15 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    // El idioma primario del negocio gana; la preferencia se guarda por site.
+    const siteLanguageKey = `siteforge:lang:${location.pathname.split('/').filter(Boolean)[0] || 'home'}`;
     const applyLang = l => {
       document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
       document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
+      localStorage.setItem(siteLanguageKey, l);
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    let lang = localStorage.getItem(siteLanguageKey) || document.documentElement.lang;
     applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
