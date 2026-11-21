@@ -1,34 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <meta name="theme-color" content="#0f0b07" />
-  <title>Doral Bakery Cafeteria · Doral, FL</title>
-  <meta name="description" content="Doral Bakery Cafeteria: servicios locales en Doral, FL. Información, fotos y contacto verificados en Google Maps." />
-  <meta property="og:title" content="Doral Bakery Cafeteria · Doral, FL" />
-  <meta property="og:description" content="Doral Bakery Cafeteria en Doral, FL. Fotos públicas y contacto directo." />
+  <meta name="theme-color" content="#efe2c8" />
+  <title>Doral Bakery Cafeteria · Panadería y Cafetería Cubana en Doral, FL</title>
+  <meta name="description" content="Doral Bakery Cafeteria: panadería y cafetería cubana tradicional en Doral, FL. Empanadas, pan cubano, pastelitos, cafecito y platos del día. 4.6 en Google, 90 reseñas. Llama o pide en línea." />
+  <meta property="og:title" content="Doral Bakery Cafeteria · Panadería y Cafetería Cubana en Doral, FL" />
+  <meta property="og:description" content="Empanadas, pan cubano, pastelitos y platos cubanos del día. 4.6 en Google, 90 reseñas. Llama o pide en línea." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/raw/gmaps-1.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-1.jpg" />
+  <meta property="og:image" content="assets/raw/gmaps-3.jpg" />
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Doral Bakery Cafeteria",
-  "description": "Doral Bakery Cafeteria, negocio local en Doral, FL.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "2737 NW 79th Ave, Doral, FL 33122",
-    "addressLocality": "Doral",
-    "addressRegion": "FL"
-  },
-  "telephone": "(305) 392-9900",
-  "image": "assets/raw/gmaps-1.jpg",
-  "sameAs": [
-    "https://www.google.com/maps/place/Doral+Bakery+Cafeteria/data=!4m7!3m6!1s0x88d9b9770febbacd:0x5d57f61be3d4cae2!8m2!3d25.7989747!4d-80.3246291!16s%2Fg%2F11c2pnrpcf!19sChIJzbrrD3e52YgR4srU4xv2V10?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1"
-  ]
-}
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Doral Bakery Cafeteria",
+    "description": "Panadería y cafetería cubana tradicional de barrio en Doral, FL. Empanadas, pan cubano, pastelitos, café cubano y platos del día.",
+    "telephone": "+1-305-392-9900",
+    "priceRange": "$",
+    "servesCuisine": "Cuban",
+    "image": "assets/raw/gmaps-3.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2737 NW 79th Ave",
+      "addressLocality": "Doral",
+      "addressRegion": "FL",
+      "postalCode": "33122",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:30", "closes": "16:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "14:00" }
+    ],
+    "sameAs": [
+      "https://www.google.com/maps/search/Doral%20Bakery%20Cafeteria%2C%202737%20NW%2079th%20Ave%2C%20Doral%2C%20FL%2033122"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "90", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Menú de Doral Bakery Cafeteria",
+      "itemListElement": [
+        { "@type": "Offer", "price": "2.40", "priceCurrency": "USD", "itemOffered": { "@type": "MenuItem", "name": "Empanada Horneada (espinaca)" } },
+        { "@type": "Offer", "price": "5.75", "priceCurrency": "USD", "itemOffered": { "@type": "MenuItem", "name": "Sandwich Cubano" } },
+        { "@type": "Offer", "price": "8.25", "priceCurrency": "USD", "itemOffered": { "@type": "MenuItem", "name": "Ropa Vieja (especial del lunes)" } },
+        { "@type": "Offer", "price": "1.50", "priceCurrency": "USD", "itemOffered": { "@type": "MenuItem", "name": "Cortadito" } }
+      ]
+    }
+  }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,131 +54,234 @@
   <script src="assets/tailwind.js"></script>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0f0b07;
-      --bg-2: #171207;
-      --surface: rgba(255,255,255,0.045);
-      --ink: #f5efe3;
-      --ink-60: rgba(245,239,227,0.62);
-      --ink-40: rgba(245,239,227,0.42);
-      --accent-deep: #d4a84b;
-      --accent-mid: #b8934a;
-      --accent-soft: #241c0e;
-      --accent-ghost: rgba(212,168,75,0.16);
+      color-scheme: light;
+      --bg: #f8f1e1;
+      --bg-2: #efe2c8;
+      --surface: rgba(255,250,240,0.72);
+      --ink: #3b2a1a;
+      --ink-60: rgba(59,42,26,0.62);
+      --ink-40: rgba(59,42,26,0.42);
+      --accent-deep: #a85a2e;
+      --accent-mid: #c98a3e;
+      --accent-soft: #efe2c8;
+      --accent-ghost: rgba(168,90,46,0.16);
     }
     html, body { background: var(--bg); }
-    body { font-family: 'Poppins', system-ui, sans-serif; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
     .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
     .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
     h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
     section { scroll-margin-top: 88px; }
-    .glass { background: var(--surface); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border: 1px solid rgba(212,168,75,0.16); transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.08); border-color: rgba(212,168,75,0.32); transform: translateY(-4px); box-shadow: 0 18px 42px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,75,0.08); }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(168,90,46,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,247,241,0.88);
+      border-color: rgba(168,90,46,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(59,42,26,0.14), 0 0 40px rgba(168,90,46,0.08);
+    }
+
+    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
     .text-shine {
-      background: linear-gradient(110deg, #d4a84b 0%, #f0dc9e 30%, #9a7431 52%, #d4a84b 75%, #e5c374 100%);
-      background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      background: linear-gradient(110deg, #a85a2e 0%, #d9a24a 30%, #6b3a18 52%, #a85a2e 75%, #e0ad5a 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
       animation: shimmer 12s linear infinite;
     }
     @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs taupe/crema sobre base clara */
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
-    @keyframes breathe { 0%, 100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(2%, -3%, 0) scale(1.08); } }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, rgba(212,168,75,0.2) 0%, transparent 70%); opacity: 1; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, rgba(122,90,30,0.28) 0%, transparent 70%); opacity: 1; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, rgba(180,140,60,0.18) 0%, transparent 70%); opacity: 1; top: 38%; left: 52%; animation-delay: -11s; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e8cfa0 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #d9a65c 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #e3bb7a 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
     .grain::after {
       content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
     }
-    .btn-ghost:active, .book-float:active { transform: scale(0.97); }
-    .reveal { opacity: 0; transform: translateY(34px) scale(0.985); filter: blur(5px); transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1), filter 0.9s cubic-bezier(0.23,1,0.32,1); }
-    .reveal.in { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
     img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D mocha */
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 48%, #96742c 100%);
-      color: #1c1408; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #c98a3e 0%, #a85a2e 48%, #7a4420 100%);
+      color: #f8f1e1; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 5px rgba(80,58,18,0.4), 0 5px 0 #6b5222, 0 12px 24px rgba(0,0,0,0.5);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(70,40,20,0.4),
+        0 5px 0 #5c3115,
+        0 12px 24px rgba(59,42,26,0.28);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(80,58,18,0.4), 0 7px 0 #6b5222, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(212,168,75,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(80,58,18,0.45), 0 1px 0 #6b5222, 0 4px 10px rgba(0,0,0,0.45); }
-    .btn-3d::after { content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.85s ease; }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(70,40,20,0.4), 0 7px 0 #5c3115, 0 18px 34px rgba(59,42,26,0.32), 0 0 40px rgba(168,90,46,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(70,40,20,0.45), 0 1px 0 #5c3115, 0 4px 10px rgba(59,42,26,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
     .btn-3d:hover::after { left: 150%; }
-    .btn-ghost { border: 1px solid rgba(212,168,75,0.35); color: var(--ink); transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(212,168,75,0.7); background: rgba(212,168,75,0.08); box-shadow: 0 10px 26px rgba(54,42,38,0.14); }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(168,90,46,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(168,90,46,0.7); background: rgba(168,90,46,0.08); box-shadow: 0 10px 26px rgba(59,42,26,0.14); }
+
+    /* Badge Merktop */
     .merktop-badge {
-      display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
-      border: 1px solid rgba(212,168,75,0.45); background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
       box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
     .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
     .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
     @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(15,11,7,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(59,42,26,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(212,168,75,0.16), inset 0 -60px 100px rgba(0,0,0,0.35); }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(59,42,26,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(168,90,46,0.14), inset 0 -60px 100px rgba(59,42,26,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
-    .step-num { font-family: 'Playfair Display', serif; background: linear-gradient(180deg, #e5c374, #9a7431); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stars { color: #d4a84b; letter-spacing: 2px; text-shadow: 0 0 14px rgba(212,168,75,0.45); }
-    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
-    .dark-band {
-      --ink: #f5efe3; --ink-60: rgba(245,239,227,0.65); --ink-40: rgba(245,239,227,0.45);
-      --surface: rgba(255,255,255,0.05); --accent-ghost: rgba(232,210,160,0.16); color: var(--ink);
-    }
-    .dark-band .text-shine { background-image: linear-gradient(110deg, #e8cf96 0%, #f8eed3 30%, #bfa060 52%, #e8cf96 75%, #f0dcae 100%); }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,150,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(185,138,128,0.14) 0%, transparent 70%); opacity: 1; }
-    .dark-band .btn-3d { background: linear-gradient(180deg, #faf1dc 0%, #ecd9a8 48%, #c9ab6b 100%); color: #1c1408; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 5px rgba(110,85,35,0.35), 0 5px 0 #8a744a, 0 12px 24px rgba(0,0,0,0.45); }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(110,85,35,0.35), 0 7px 0 #8a744a, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,150,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(110,85,35,0.4), 0 1px 0 #8a744a, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,150,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,150,0.7); background: rgba(232,207,150,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e9c3ab; text-shadow: 0 0 14px rgba(232,207,150,0.4); }
-    .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #e8c476 0%, #c9a04a 100%);
-      box-shadow: 0 6px 0 #6b5222, 0 14px 30px rgba(0,0,0,0.5);
-      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
-    }
-    .book-float-label { color: #1c1408; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #6b5222, 0 20px 40px rgba(0,0,0,0.55), 0 0 34px rgba(212,168,75,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #6b5222, 0 6px 14px rgba(0,0,0,0.4); }
-    .hero-proof { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; color: var(--ink-40); font-size: 0.72rem; letter-spacing: 0.02em; }
-    .hero-proof span { display: inline-flex; align-items: center; gap: 0.35rem; }
-    .hero-proof span::before { content: '✓'; color: var(--accent-deep); font-weight: 700; }
-    @media (max-width: 640px) {
-      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
-      .book-float-label { font-size: 0.8rem; }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #c98a3e, #6b3a18);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
-    /* ============ Motion v2 ============ */
+    /* Estrellas */
+    .stars { color: #a85a2e; letter-spacing: 2px; text-shadow: 0 0 14px rgba(168,90,46,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f8f1e1;
+      --ink-60: rgba(245,240,232,0.65);
+      --ink-40: rgba(245,240,232,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,214,183,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #f0cf8e 0%, #fbe7c0 30%, #d9a65c 52%, #f0cf8e 75%, #f3e3c2 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(240,207,142,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(196,138,62,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #fbe7c0 0%, #e3bb7a 48%, #c98a3e 100%);
+      color: #2b1c10;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(140,70,30,0.35),
+        0 5px 0 #8a5a2e,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(140,70,30,0.35), 0 7px 0 #8a5a2e, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(240,207,142,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(140,70,30,0.4), 0 1px 0 #8a5a2e, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(240,207,142,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(240,207,142,0.7); background: rgba(240,207,142,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #f0cf8e; text-shadow: 0 0 14px rgba(240,207,142,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #c98a3e 0%, #a85a2e 100%);
+      box-shadow: 0 6px 0 #5c3115, 0 14px 30px rgba(59,42,26,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5c3115, 0 20px 40px rgba(59,42,26,0.4), 0 0 34px rgba(168,90,46,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5c3115, 0 6px 14px rgba(59,42,26,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
     #preloader {
-      position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
-      background: var(--bg); transition: opacity 0.65s ease, visibility 0.65s ease; animation: preAuto 0.65s ease 1.25s forwards;
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
     }
     #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
     @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
-    .pre-mono { width: 64px; height: 64px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-deep); border: 1px solid rgba(212,168,75,0.35); background: rgba(212,168,75,0.08); animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both; }
-    .pre-word { font-family: 'Playfair Display', serif; font-size: 0.95rem; letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink); animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
+      border: 1px solid rgba(168,90,46,0.35); background: rgba(168,90,46,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
     .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
     @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
     @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
     @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-    #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90; background: linear-gradient(90deg, #96742c 0%, #d4a84b 45%, #f0dc9e 100%); transform: scaleX(0); transform-origin: left center; will-change: transform; pointer-events: none; }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #7a4420 0%, #a85a2e 45%, #c9ab7f 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala */
     .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
     .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
     .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
     .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
     .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
     .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
     .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -169,39 +290,107 @@
     .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
     .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
     .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 7. Carrusel de testimonios */
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(59,42,26,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    /* 8. Boton magnetico (offset via translate, spring back) */
     @media (hover: hover) and (pointer: fine) {
       .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare (cards de servicios) */
+    @media (hover: hover) and (pointer: fine) {
       .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
-      .tilt::before { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%); opacity: 0; transition: opacity 0.35s ease; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
       .tilt:hover::before { opacity: 1; }
     }
-    .cursor-glow { position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px; border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(232,207,150,0.14) 0%, rgba(212,168,75,0.08) 42%, transparent 70%); transition: opacity 0.5s ease; will-change: transform; }
+
+    /* 10. Cursor glow calido en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(240,207,142,0.14) 0%, rgba(168,90,46,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
     .cursor-glow.on { opacity: 1; }
-    .back-top { position: fixed; left: 18px; bottom: 18px; z-index: 60; width: 48px; height: 48px; border-radius: 9999px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--accent-deep); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease; }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de reservas vive abajo-derecha) */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
     .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-top.show:hover { border-color: rgba(212,168,75,0.5); transform: translateY(-3px); }
+    .back-top.show:hover { border-color: rgba(168,90,46,0.5); transform: translateY(-3px); }
+
 
     /* ============ Motion v3 (premium+) ============ */
+    /* Split-text del hero: cada palabra sube en cascada */
     .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
     .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
     .split.in .split-word > span { transform: translateY(0); }
-    .sec-num { position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none; font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost); }
+
+    /* Numeral editorial gigante por seccion */
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    /* Captions de galeria al hover */
     .frame .tile-cap {
       position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #fbf6ea;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.66) 100%);
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf6ee;
+      background: linear-gradient(180deg, transparent 0%, rgba(30,22,14,0.62) 100%);
       opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
     }
     .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
     @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
-    .cursor-ring { position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform; }
+
+    /* Cursor custom: anillo que sigue al puntero (solo desktop) */
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
     .cursor-ring.on { opacity: 0.75; }
     .cursor-ring.big { scale: 1.7; opacity: 0.45; }
-    .foot-mark { position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px rgba(232,207,150,0.09); pointer-events: none; user-select: none; }
+
+    /* Marca de agua tipografica del footer */
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(240,207,142,0.09); pointer-events: none; user-select: none;
+    }
 
     @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
       .text-shine, .orb, .merktop-dot { animation: none !important; }
-      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
       img.blur-up { filter: none !important; transform: none !important; }
       html { scroll-behavior: auto; }
       #preloader { display: none !important; }
@@ -209,75 +398,14 @@
       .marquee-track { animation: none !important; }
       .img-reveal { clip-path: none !important; transition: none !important; }
       .img-reveal img { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
       .magnetic { translate: none !important; }
       .tilt { transform: none !important; }
       .tilt::before { display: none !important; }
       .cursor-glow { display: none !important; }
       .back-top { transition: none !important; transform: none !important; }
       [data-parallax] { translate: none !important; }
-      .split-word > span { transform: none !important; transition: none !important; }
-      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .cursor-ring { display: none !important; }
-      #heroInner { opacity: 1 !important; transform: none !important; }
     }
-  </style>
-  <style id="ultra">
-    /* ==== CAPA ULTRA: premium + ultraresponsive (2026-08-12) ====
-       Bloque APARTE a proposito: derive.py ancla sobre el <style> principal y el body, asi
-       que esta capa se puede evolucionar sin romper la derivacion. Todo es color-agnostico
-       (lee las variables de la marca) y los builds la heredan al copiar el esqueleto. */
-
-    /* Tipografia FLUIDA: el titular escala con el viewport en vez de saltar entre
-       breakpoints. En un iPhone SE ya no desborda y en un monitor grande llena sin pixelar. */
-    html { -webkit-text-size-adjust: 100%; }
-    h1.split { font-size: clamp(2.55rem, 1.15rem + 6.6vw, 4.7rem) !important; line-height: 1.05 !important; }
-    section h2.font-display { font-size: clamp(1.95rem, 1.05rem + 3.6vw, 3.1rem) !important; }
-    h1, h2, h3 { text-wrap: balance; }
-    p { text-wrap: pretty; }
-
-    /* 100svh: en movil el hero media contra la barra del navegador y saltaba al hacer
-       scroll cuando esta se oculta. svh usa el viewport chico estable. */
-    .min-h-screen { min-height: 100svh; }
-
-    /* Safe areas (iPhone con notch/isla): nada queda pegado ni cortado por el borde fisico */
-    .book-float { bottom: max(1.4rem, env(safe-area-inset-bottom)); right: max(1.4rem, env(safe-area-inset-right)); }
-    .back-top { bottom: max(1.4rem, env(safe-area-inset-bottom)); left: max(1.4rem, env(safe-area-inset-left)); }
-
-    /* Touch: objetivos de 44px minimo (guia de Apple) y sin flash azul al tocar */
-    a, button { -webkit-tap-highlight-color: transparent; }
-    @media (hover: none) {
-      .btn-3d, .btn-ghost { min-height: 44px; }
-      #langToggle { min-height: 38px; min-width: 44px; }
-    }
-
-    /* Respiro movil: en pantallas chicas las secciones pierden aire muerto sin apretarse */
-    @media (max-width: 640px) {
-      .py-24 { padding-top: 4.4rem !important; padding-bottom: 4.4rem !important; }
-      .py-28 { padding-top: 5.2rem !important; padding-bottom: 5.2rem !important; }
-      .mb-16 { margin-bottom: 2.6rem !important; }
-      .gap-12 { gap: 2rem !important; }
-    }
-    @media (max-width: 380px) {
-      .gap-4 { gap: 0.65rem !important; }
-      .px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
-    }
-    /* Telefono en horizontal: el hero no se aplasta intentando caber en 400px de alto */
-    @media (max-height: 520px) {
-      .min-h-screen { min-height: auto; }
-    }
-
-    /* Acabados premium color-agnosticos: seleccion de texto con la marca, focus visible
-       para teclado, scrollbar discreta del color del acento */
-    ::selection { background: var(--accent-deep); color: var(--bg); }
-    :focus-visible { outline: 2px solid var(--accent-mid); outline-offset: 3px; border-radius: 4px; }
-    @supports (scrollbar-width: thin) {
-      html { scrollbar-width: thin; scrollbar-color: var(--accent-ghost) transparent; }
-    }
-    .font-display { font-feature-settings: "liga", "kern"; }
-    body { overscroll-behavior-x: none; }
-
-    /* Las imagenes nunca provocan scroll horizontal aunque una venga con tamano raro */
-    img, video, iframe { max-width: 100%; }
   </style>
 </head>
 <body>
@@ -285,7 +413,7 @@
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <span class="pre-mono">DB</span>
-    <span class="pre-word">Doral Bakery Cafeteria</span>
+    <span class="pre-word">Doral Bakery</span>
     <span class="pre-line"></span>
   </div>
 
@@ -296,22 +424,22 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/gmaps-1.jpg" alt="Doral Bakery Cafeteria" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.35)]" />
-        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Doral <span class="text-[color:var(--accent-deep)]">Bakery Cafeteria</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(168,90,46,0.35)] bg-[rgba(168,90,46,0.1)] text-[color:var(--accent-deep)]">DB</span>
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Doral <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Bakery</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
-        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
-        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="nav-link" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
-        <a class="nav-link" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
+        <a class="nav-link" data-es="Nosotros" data-en="About us" href="#experiencia">Nosotros</a>
+        <a class="nav-link" data-es="Cómo trabajamos" data-en="How we work" href="#ritual">Cómo trabajamos</a>
+        <a class="nav-link" data-es="Menú" data-en="Menu" href="#servicios">Menú</a>
+        <a class="nav-link" data-es="Galería" data-en="Gallery" href="#galeria">Galería</a>
+        <a class="nav-link" data-es="Opiniones" data-en="Reviews" href="#opiniones">Opiniones</a>
+        <a class="nav-link" data-es="Ubicación" data-en="Location" href="#ubicacion">Ubicación</a>
       </nav>
       <div class="flex items-center gap-3">
-        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Cambiar idioma">EN</button>
-        <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <span data-es="Llamar ahora" data-en="Call now">Call now</span>
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Switch language">EN</button>
+        <a href="tel:+13053929900" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="Llamar ahora" data-en="Call now">Llamar ahora</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -322,13 +450,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</a>
-        <a class="py-3 px-3" href="#ubicacion" data-es="Contacto" data-en="Contact">Contact</a>
-        <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Nosotros" data-en="About us" href="#experiencia">Nosotros</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Cómo trabajamos" data-en="How we work" href="#ritual">Cómo trabajamos</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Menú" data-en="Menu" href="#servicios">Menú</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Galería" data-en="Gallery" href="#galeria">Galería</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Opiniones" data-en="Reviews" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" data-es="Ubicación" data-en="Location" href="#ubicacion">Ubicación</a>
+        <a href="tel:+13053929900" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call now">Llamar ahora</a>
       </nav>
     </div>
   </header>
@@ -336,43 +464,38 @@
   <!-- HERO -->
   <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
-    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Doral, FL · Servicios" data-en="Doral, FL · Services">Doral, FL · Services</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
-        <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          <span data-es="Tu proyecto," data-en="Your project,">Your project,</span><br /><span data-es="en manos de " data-en="handled by ">handled by </span><span class="text-shine" data-es="Doral" data-en="Doral">Doral</span>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Doral, FL · Panadería y Cafetería Cubana" data-en="Doral, FL · Cuban Bakery &amp; Cafeteria">Doral, FL · Panadería y Cafetería Cubana</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Más de 40 años horneando en el barrio." data-en="Baking for this neighborhood for 40+ years.">Más de 40 años horneando en el barrio.</p>
+        <h1 id="heroH1" class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" data-es="Sabor de barrio,&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;hecho en casa&lt;/span&gt;" data-en="Neighborhood flavor,&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;made from scratch&lt;/span&gt;">
+          Sabor de barrio,<br /><span class="text-shine">hecho en casa</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Doral Bakery Cafeteria atiende a clientes en Doral, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente." data-en="Doral Bakery Cafeteria serves customers in Doral, FL. Check the public listing, see real photos and contact the business directly.">Doral Bakery Cafeteria serves customers in Doral, FL. Check the public listing, see real photos and contact the business directly.</p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Panadería y cafetería cubana tradicional en Doral: empanadas horneadas, pan cubano recién salido, pastelitos, cafecito colado y platos criollos del día. Para llevar, para comer aquí, o para pedir en línea." data-en="Traditional Cuban bakery and cafeteria in Doral: baked empanadas, fresh Cuban bread, pastelitos, strong Cuban coffee and daily Cuban classics. For takeout, to eat in, or to order online.">Panadería y cafetería cubana tradicional en Doral: empanadas horneadas, pan cubano recién salido, pastelitos, cafecito colado y platos criollos del día. Para llevar, para comer aquí, o para pedir en línea.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
-          <svg class="text-[color:var(--accent-deep)]" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span class="text-sm text-[color:var(--ink-60)]" data-es="Ficha pública en Google Maps" data-en="Public Google Maps listing">Public Google Maps listing</span>
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.6 · 90 reseñas en Google" data-en="4.6 · 90 reviews on Google">4.6 · 90 reseñas en Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            <span data-es="Llamar ahora" data-en="Call now">Call now</span>
+          <a href="tel:+13053929900" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Llamar ahora" data-en="Call now">Llamar ahora</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.google.com/maps/place/Doral+Bakery+Cafeteria/data=!4m7!3m6!1s0x88d9b9770febbacd:0x5d57f61be3d4cae2!8m2!3d25.7989747!4d-80.3246291!16s%2Fg%2F11c2pnrpcf!19sChIJzbrrD3e52YgR4srU4xv2V10?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            Google Maps
+          <a href="http://doralbakery.iposeats.net/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span data-es="Pedir en línea" data-en="Order online">Pedir en línea</span>
           </a>
-        </div>
-        <div class="reveal hero-proof mt-5" style="transition-delay:420ms" aria-label="Lo que encontrará el cliente">
-          <span data-es="Fotos reales" data-en="Real work">Fotos reales</span>
-          <span data-es="Servicios claros" data-en="Clear services">Servicios claros</span>
-          <span data-es="Contacto directo" data-en="Direct contact">Contacto directo</span>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
-        <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/gmaps-1.jpg" alt="Trabajo de Doral Bakery Cafeteria en Doral, FL" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/gmaps-4.jpg" alt="Empanada de espinaca y cafe con leche de Doral Bakery Cafeteria" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
-            <p class="font-display text-lg">(305) 392-9900</p>
-            <p class="text-sm text-[color:var(--ink-60)]" data-es="Doral, FL" data-en="Doral, FL">Doral, FL</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Pieza insignia" data-en="Signature item">Pieza insignia</p>
+            <p class="font-display text-lg" data-es="Empanada de espinaca" data-en="Spinach empanada">Empanada de espinaca</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Horneada · $2.40" data-en="Baked · $2.40">Horneada · $2.40</p>
           </div>
         </div>
       </div>
@@ -382,10 +505,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl">Servicios</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="El oficio" data-en="The trade">The trade</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Doral</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de trabajo" data-en="Service area">Service area</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">1:1</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="90">90</span> <span data-es="reseñas en Google" data-en="reviews on Google">reseñas en Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">+40 <span class="text-shine" data-es="años" data-en="years">años</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Tradición de barrio" data-en="Neighborhood tradition">Tradición de barrio</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span data-es="Se habla" data-en="We speak">Se habla</span> <span class="text-shine">Español</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Y English también" data-en="And English too">Y English también</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Doral</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">2737 NW 79th Ave, FL</p></div>
     </div>
   </section>
 
@@ -393,20 +516,18 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Doral</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Empanadas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pan Cubano</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Café con Leche</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Platos del Día</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doral, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Doral</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Empanadas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pan Cubano</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Café con Leche</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Platos del Día</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doral, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -417,59 +538,64 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Doral Bakery Cafeteria" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-3.jpg" alt="Vitrinas de pastelería y mostrador de Doral Bakery Cafeteria" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/gmaps-3.jpg" alt="Trabajo de Doral Bakery Cafeteria en Doral, FL" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-1.jpg" alt="Fachada de Doral Bakery and Café con letrero amarillo BAKERY" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo," data-en="One team,">One team,</span><br /><span class="text-shine" data-es="un solo responsable" data-en="one accountable crew">one accountable crew</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Doral Bakery Cafeteria es un negocio local de Doral, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios." data-en="Doral Bakery Cafeteria is a local Doral, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.">Doral Bakery Cafeteria is a local Doral, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles." data-en="The public Google Maps listing collects the available photos and contact information.">The public Google Maps listing collects the available photos and contact information.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">Nosotros</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms" data-es="Una panadería de barrio&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;en el corazón de Doral&lt;/span&gt;" data-en="A neighborhood bakery&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;in the heart of Doral&lt;/span&gt;">Una panadería de barrio<br /><span class="text-shine">en el corazón de Doral</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Doral Bakery Cafeteria es la panadería y cafetería cubana de siempre: vitrinas llenas de empanadas, pastelitos y pan cubano recién horneado, cafecito colado en la caja y un plato criollo distinto cada día de la semana. Sin pretensiones, sin aires de boutique: comida de verdad, a precio de barrio." data-en="Doral Bakery Cafeteria is the neighborhood's longtime Cuban bakery and cafeteria: display cases full of empanadas, pastelitos and fresh Cuban bread, strong coffee at the register and a different Cuban dish every day of the week. No pretense, no boutique look: real food at a neighborhood price.">Doral Bakery Cafeteria es la panadería y cafetería cubana de siempre: vitrinas llenas de empanadas, pastelitos y pan cubano recién horneado, cafecito colado en la caja y un plato criollo distinto cada día de la semana. Sin pretensiones, sin aires de boutique: comida de verdad, a precio de barrio.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Según cuentan los clientes de siempre, llevamos más de 40 años horneando en este rincón de Doral. Por algo las reseñas de Google repiten siempre la misma idea: &lt;em class=&quot;font-script text-[color:var(--accent-deep)]&quot;&gt;te hacen sentir en familia&lt;/em&gt;." data-en="Longtime customers say this bakery has been baking in this corner of Doral for over 40 years. That is probably why the Google reviews keep repeating the same thing: &lt;em class=&quot;font-script text-[color:var(--accent-deep)]&quot;&gt;they make you feel like family&lt;/em&gt;.">Según cuentan los clientes de siempre, llevamos más de 40 años horneando en este rincón de Doral. Por algo las reseñas de Google repiten siempre la misma idea: <em class="font-script text-[color:var(--accent-deep)]">te hacen sentir en familia</em>.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">1:1</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trato directo" data-en="Direct contact">Direct contact</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">Doral</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Zona" data-en="Area">Area</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">90</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reseñas</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">6:30</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="AM abrimos" data-en="AM we open">AM abrimos</p></div>
         </div>
-        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/gmaps-1.jpg" alt="Logo de Doral Bakery Cafeteria" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(212,168,75,0.3)]" loading="lazy" />
-            <span class="text-sm font-light">Doral Bakery Cafeteria · <span class="text-[color:var(--ink-40)]" data-es="Doral, FL" data-en="Doral, FL">Doral, FL</span></span>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="Cada día, un clásico distinto" data-en="A different classic every day">Cada día, un clásico distinto</p>
+          <div class="flex flex-wrap gap-2.5">
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Lunes: Ropa Vieja" data-en="Monday: Ropa Vieja">Lunes: Ropa Vieja</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Martes: Fricasé de Pollo" data-en="Tuesday: Chicken Fricasé">Martes: Fricasé de Pollo</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Miércoles: Vaca Frita" data-en="Wednesday: Vaca Frita">Miércoles: Vaca Frita</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Jueves: Carne con Papas" data-en="Thursday: Beef &amp; Potatoes">Jueves: Carne con Papas</span>
+            <span class="glass glass-hover rounded-full px-4 py-2 text-sm font-light" data-es="Viernes: Masas de Puerco" data-en="Friday: Fried Pork">Viernes: Masas de Puerco</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EL METODO -->
-  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <!-- EL RITUAL PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Cómo trabajamos" data-en="How we work">Cómo trabajamos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Un día en &lt;span class=&quot;text-shine&quot;&gt;Doral Bakery&lt;/span&gt;" data-en="A day at &lt;span class=&quot;text-shine&quot;&gt;Doral Bakery&lt;/span&gt;">Un día en <span class="text-shine">Doral Bakery</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3" data-es="Escríbenos" data-en="Get in touch">Get in touch</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte." data-en="Tell us what you need; a photo of the space or the problem is enough to point you right.">Tell us what you need; a photo of the space or the problem is enough to point you right.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Horneamos desde las 6:30am" data-en="Baking since 6:30am">Horneamos desde las 6:30am</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Pan cubano, empanadas y pastelitos salen frescos del horno antes de que abramos la puerta." data-en="Cuban bread, empanadas and pastelitos come out of the oven fresh before we even open the door.">Pan cubano, empanadas y pastelitos salen frescos del horno antes de que abramos la puerta.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto claro" data-en="Clear quote">Clear quote</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica." data-en="We tell you what the job takes and what it costs before starting, no fine print.">We tell you what the job takes and what it costs before starting, no fine print.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Vitrina siempre llena" data-en="Display case always full">Vitrina siempre llena</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Croquetas, tequeños, pastelitos de guayaba y queso: se repone toda la mañana para que nunca falte nada." data-en="Croquetas, tequeños, guava and cheese pastelitos: restocked all morning so nothing ever runs out.">Croquetas, tequeños, pastelitos de guayaba y queso: se repone toda la mañana para que nunca falte nada.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3" data-es="El trabajo" data-en="The job">The job</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed." data-en="We arrive with everything needed and execute with the care you see on our feed.">We arrive with everything needed and execute with the care you see on our feed.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cocina cubana del día" data-en="Today's Cuban kitchen">Cocina cubana del día</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="A la hora del almuerzo sale el especial del día: ropa vieja, vaca frita, fricasé de pollo, con arroz y moros." data-en="At lunchtime the daily special comes out: ropa vieja, vaca frita, chicken fricasé, with rice and black beans.">A la hora del almuerzo sale el especial del día: ropa vieja, vaca frita, fricasé de pollo, con arroz y moros.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3" data-es="Entrega" data-en="Handover">Handover</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima." data-en="We walk the result together and leave the area clean. And you keep our number for next time.">We walk the result together and leave the area clean. And you keep our number for next time.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Para llevar o pedir online" data-en="Takeout or order online">Para llevar o pedir online</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Comes en el local, te lo llevas, o pides por nuestra página de pedidos en línea. Tú eliges." data-en="Eat in, take it with you, or order through our online ordering page. Your call.">Comes en el local, te lo llevas, o pides por nuestra página de pedidos en línea. Tú eliges.</p>
         </div>
       </div>
     </div>
@@ -480,45 +606,104 @@
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso." data-en="Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.">Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Menú" data-en="Menu">Menú</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo más" data-en="Customer">Lo más</span> <span class="text-shine" data-es="pedido" data-en="favorites">pedido</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios reales tomados de nuestra página de pedidos en línea. Pueden variar; confirma por teléfono." data-en="Real prices from our online ordering page. They can vary; confirm by phone.">Precios reales tomados de nuestra página de pedidos en línea. Pueden variar; confirma por teléfono.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(212,168,75,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="El oficio" data-en="The craft">The craft</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Nuestro trabajo" data-en="What we do">What we do</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Lo que publicamos en Google Maps es lo que hacemos: mira el feed y júzganos por ahí." data-en="What we post on Google Maps is what we do: check the feed and judge us by it.">What we post on Google Maps is what we do: check the feed and judge us by it.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(168,90,46,0.4); box-shadow: 0 18px 50px rgba(59,42,26,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo más pedido" data-en="Most ordered">Lo más pedido</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Empanada de Espinaca" data-en="Spinach Empanada">Empanada de Espinaca</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Empanada horneada rellena de espinaca, la favorita de nuestros clientes recurrentes junto al cafecito." data-en="Baked empanada filled with spinach, our regulars' favorite alongside a cafecito.">Empanada horneada rellena de espinaca, la favorita de nuestros clientes recurrentes junto al cafecito.</p>
           <div class="mt-auto">
-            <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$2.40</p>
+            </div>
+            <a href="tel:+13053929900" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Ordenar" data-en="Order">Ordenar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Trato" data-en="Service">Service</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Atención directa" data-en="Direct service">Direct service</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Hablas con quien hace el trabajo, no con una central: acuerdos claros y sin intermediarios." data-en="You talk to the person doing the work, not a call center: clear agreements, no middlemen.">You talk to the person doing the work, not a call center: clear agreements, no middlemen.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Sandwiches" data-en="Sandwiches">Sandwiches</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Sandwich Cubano</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El clásico de siempre: pierna, jamón, queso suizo, mostaza y pepinillos prensados en pan cubano." data-en="The classic: roast pork, ham, Swiss cheese, mustard and pickles pressed in Cuban bread.">El clásico de siempre: pierna, jamón, queso suizo, mostaza y pepinillos prensados en pan cubano.</p>
           <div class="mt-auto">
-            <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$5.75</p>
+            </div>
+            <a href="tel:+13053929900" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Ordenar" data-en="Order">Ordenar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Presupuesto" data-en="Quotes">Quotes</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Cotización sin compromiso" data-en="No-strings quotes">No-strings quotes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar." data-en="Tell us what you need and we tell you what it takes and what it costs before starting.">Tell us what you need and we tell you what it takes and what it costs before starting.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Especial del lunes" data-en="Monday special">Especial del lunes</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Ropa Vieja</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="El plato criollo del lunes, con arroz blanco y moros. Cada día de la semana tiene su propio especial." data-en="Monday's Cuban classic, served with white rice and black beans. Every weekday has its own special.">El plato criollo del lunes, con arroz blanco y moros. Cada día de la semana tiene su propio especial.</p>
           <div class="mt-auto">
-            <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$8.25</p>
+            </div>
+            <a href="tel:+13053929900" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Ordenar" data-en="Order">Ordenar</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Cercanía" data-en="Local">Local</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Negocio local" data-en="Local business">Local business</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="De tu misma zona: llegamos rápido y respondemos después de entregar." data-en="From your own area: quick to arrive and still answering after handover.">From your own area: quick to arrive and still answering after handover.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Bebidas" data-en="Drinks">Bebidas</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Cortadito</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Café cubano colado, cortado con un poco de leche espumada. El acompañante de toda la vitrina." data-en="Cuban espresso cut with a splash of steamed milk. The companion to everything in the display case.">Café cubano colado, cortado con un poco de leche espumada. El acompañante de toda la vitrina.</p>
           <div class="mt-auto">
-            <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$1.50</p>
+            </div>
+            <a href="tel:+13053929900" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Ordenar" data-en="Order">Ordenar</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte." data-en="Do not see exactly what you need? Message us and we will confirm whether we can help.">Do not see exactly what you need? Message us and we will confirm whether we can help.</span></p>
+
+      <div class="mt-14">
+        <p class="reveal text-center text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-8" data-es="Menú completo" data-en="Full menu">Menú completo</p>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="glass rounded-3xl p-7 reveal">
+            <h3 class="font-display text-lg mb-4" data-es="Desayuno" data-en="Breakfast">Desayuno</h3>
+            <div class="space-y-1.5 text-sm">
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Especial de desayuno c/ papas" data-en="Breakfast special w/ fries">Especial de desayuno c/ papas</span><span class="font-medium">$5.75</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Pan con tortilla" data-en="Bread with tortilla">Pan con tortilla</span><span class="font-medium">$5.25</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light">Ham, Cheese &amp; Eggs Croissant</span><span class="font-medium">$4.75</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Tostada con jamón y queso" data-en="Ham &amp; cheese toast">Tostada con jamón y queso</span><span class="font-medium">$3.75</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Tostada con mantequilla" data-en="Buttered toast">Tostada con mantequilla</span><span class="font-medium">$1.75</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:90ms">
+            <h3 class="font-display text-lg mb-4" data-es="Pasteles y bocaditos" data-en="Pastries &amp; snacks">Pasteles y bocaditos</h3>
+            <div class="space-y-1.5 text-sm">
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Empanadas horneadas o fritas" data-en="Baked or fried empanadas">Empanadas horneadas o fritas</span><span class="font-medium">$2.40</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Pan cubano" data-en="Cuban bread">Pan cubano</span><span class="font-medium">$2.00</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Papas rellenas" data-en="Stuffed potato balls">Papas rellenas</span><span class="font-medium">$1.75</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light">Tequeños</span><span class="font-medium">$1.50</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Croquetas" data-en="Croquettes">Croquetas</span><span class="font-medium">$0.95 – $1.45</span></div>
+            </div>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:150ms">
+            <h3 class="font-display text-lg mb-4" data-es="Especiales del día" data-en="Daily specials">Especiales del día</h3>
+            <div class="space-y-1.5 text-sm">
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Lunes: Ropa Vieja" data-en="Monday: Ropa Vieja">Lunes: Ropa Vieja</span><span class="font-medium">$8.25</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Martes: Fricasé de Pollo" data-en="Tuesday: Chicken Fricasé">Martes: Fricasé de Pollo</span><span class="font-medium">$8.25</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Miércoles: Vaca Frita" data-en="Wednesday: Vaca Frita">Miércoles: Vaca Frita</span><span class="font-medium">$8.25</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Jueves: Carne con Papas" data-en="Thursday: Beef &amp; Potatoes">Jueves: Carne con Papas</span><span class="font-medium">$8.25</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Viernes: Masas de Puerco Fritas" data-en="Friday: Fried Pork">Viernes: Masas de Puerco Fritas</span><span class="font-medium">$8.25</span></div>
+            </div>
+            <p class="text-xs text-[color:var(--ink-40)] font-light mt-4" data-es="Incluye arroz blanco y moros. También hay bistec, pechuga de pollo, tilapia y chuleta ahumada cada día." data-en="Served with white rice and black beans. Steak, chicken breast, tilapia and smoked pork chop are also available daily.">Incluye arroz blanco y moros. También hay bistec, pechuga de pollo, tilapia y chuleta ahumada cada día.</p>
+          </div>
+          <div class="glass rounded-3xl p-7 reveal" style="transition-delay:210ms">
+            <h3 class="font-display text-lg mb-4" data-es="Postres y bebidas" data-en="Desserts &amp; drinks">Postres y bebidas</h3>
+            <div class="space-y-1.5 text-sm">
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light">Flan</span><span class="font-medium">$2.00</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light">Tres Leches</span><span class="font-medium">$2.25</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light">Cheesecake</span><span class="font-medium">$2.25</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light">Colada</span><span class="font-medium">$2.00</span></div>
+              <div class="flex justify-between"><span class="text-[color:var(--ink-60)] font-light" data-es="Jugo de naranja natural" data-en="Fresh orange juice">Jugo de naranja natural</span><span class="font-medium">$4.75</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="El menú completo también incluye ensaladas, sandwiches variados y bandejas para fiestas. Llámanos y te contamos todo lo que tenemos." data-en="The full menu also includes salads, more sandwiches and party trays. Call us and we will walk you through everything we have.">El menú completo también incluye ensaladas, sandwiches variados y bandejas para fiestas. Llámanos y te contamos todo lo que tenemos.</p>
     </div>
   </section>
 
@@ -529,19 +714,20 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="work">work</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que sale de" data-en="What comes out of">Lo que sale de</span> <span class="text-shine" data-es="nuestra vitrina" data-en="our display case">nuestra vitrina</span></h2>
         </div>
-        <a href="https://www.google.com/maps/place/Doral+Bakery+Cafeteria/data=!4m7!3m6!1s0x88d9b9770febbacd:0x5d57f61be3d4cae2!8m2!3d25.7989747!4d-80.3246291!16s%2Fg%2F11c2pnrpcf!19sChIJzbrrD3e52YgR4srU4xv2V10?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          Google Maps
+        <a href="https://www.google.com/maps/search/Doral%20Bakery%20Cafeteria%2C%202737%20NW%2079th%20Ave%2C%20Doral%2C%20FL%2033122" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-es="Ver en Google Maps" data-en="View on Google Maps">Ver en Google Maps</span>
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-4.jpg" alt="Trabajo de Doral Bakery Cafeteria en Doral, FL" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-5.jpg" alt="Trabajo de Doral Bakery Cafeteria en Doral, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-6.jpg" alt="Trabajo de Doral Bakery Cafeteria en Doral, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Doral Bakery Cafeteria en Doral, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Servicios" data-en="Services">Services</span><img src="assets/raw/gmaps-3.jpg" alt="Trabajo de Doral Bakery Cafeteria en Doral, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Nuestra vitrina de siempre" data-en="Our display case">Nuestra vitrina de siempre</span><img src="assets/raw/gmaps-3.jpg" alt="Mostrador y vitrinas de pasteleria de Doral Bakery Cafeteria con cajas de reposteria" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Fachada de Doral Bakery" data-en="Doral Bakery storefront">Fachada de Doral Bakery</span><img src="assets/raw/gmaps-1.jpg" alt="Fachada de Doral Bakery and Cafe con letrero amarillo BAKERY" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Empanada de espinaca" data-en="Spinach empanada">Empanada de espinaca</span><img src="assets/raw/gmaps-4.jpg" alt="Empanada de espinaca horneada y cafe con leche en cesta roja" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Cafecito y empanada" data-en="Cafecito and empanada">Cafecito y empanada</span><img src="assets/raw/gmaps-2.jpg" alt="Empanada horneada y cafecito cubano en vasito de espuma" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Letrero de barrio" data-en="Neighborhood sign">Letrero de barrio</span><img src="assets/raw/gmaps-5.jpg" alt="Detalle del letrero BAKERY y vitrina con letrero de sandwiches" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Doral, de día" data-en="Doral, by day">Doral, de día</span><img src="assets/raw/gmaps-6.jpg" alt="Fachada completa de Doral Bakery Cafeteria en un dia soleado" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -550,52 +736,73 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Doral</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Empanadas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pan Cubano</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Café con Leche</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Platos del Día</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doral, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">Servicio local</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Calidad</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Trato directo</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Presupuesto claro</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Doral</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Confianza</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Empanadas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Pan Cubano</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Café con Leche</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Platos del Día</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Doral, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
 
-  <!-- PRUEBA SOCIAL (razones) -->
+  <!-- OPINIONES -->
   <section id="opiniones" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Por qué elegirnos" data-en="Why choose us">Why choose us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Tres razones" data-en="Three reasons">Three reasons</span> <span class="text-shine" data-es="para escribirnos" data-en="to message us">to message us</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha." data-en="We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.">We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What">Lo que dicen</span> <span class="text-shine" data-es="nuestros clientes" data-en="our customers say">nuestros clientes</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.6 de 5 · 90 reseñas en Google" data-en="4.6 of 5 · 90 reviews on Google">4.6 de 5 · 90 reseñas en Google</span></p>
       </div>
-      <div class="grid sm:grid-cols-3 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-8 reveal">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Trabajo a la vista" data-en="Work out in the open">Work out in the open</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores." data-en="We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.">We post what we do. We do not ask for blind trust: look at how the previous jobs turned out.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="El que responde es el que llega" data-en="Who answers is who shows up">Who answers is who shows up</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo." data-en="You talk to the crew, agree with the crew, and the crew does the work.">You talk to the crew, agree with the crew, and the crew does the work.</p>
-        </div>
-        <div class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
-          <svg class="text-[color:var(--accent-deep)] mb-5" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
-          <h3 class="font-display text-xl mb-3" data-es="Presupuesto antes de empezar" data-en="Quote before we start">Quote before we start</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra." data-en="You know what it takes and what it costs before the first hammer swing. No mid-job surprises.">You know what it takes and what it costs before the first hammer swing. No mid-job surprises.</p>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"They make you feel like family! Wonderful food, great service and great prices!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jackie C.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Good food, great service, kind staff, good prices, clean place."</blockquote>
+              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I have visited this place the three times I've visited Florida. Delicious every time! I always get the spinach empanada and a cafe con leche."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Ana G.</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great Latin Cafe with exceptional service and homemade delicious foods."</blockquote>
+              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Coffee just the way I like it and good beef empanada, pretty decent size."</blockquote>
+              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+            </figure>
+          </div>
         </div>
       </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Doral+Bakery+Cafeteria/data=!4m7!3m6!1s0x88d9b9770febbacd:0x5d57f61be3d4cae2!8m2!3d25.7989747!4d-80.3246291!16s%2Fg%2F11c2pnrpcf!19sChIJzbrrD3e52YgR4srU4xv2V10?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver ficha y fotos en Google Maps" data-en="See listing and photos on Google Maps">See listing and photos on Google Maps</a>
+        <a href="https://www.google.com/maps/search/Doral%20Bakery%20Cafeteria%2C%202737%20NW%2079th%20Ave%2C%20Doral%2C%20FL%2033122" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 90 reseñas en Google" data-en="Read all 90 reviews on Google">Leer las 90 reseñas en Google</a>
       </div>
     </div>
   </section>
@@ -605,72 +812,85 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Contacto" data-en="Contact">Contact</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Visítanos desde" data-en="Reach us from">Reach us from</span> <span class="text-shine">Doral</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Tu cafecito queda" data-en="Your cafecito is">Tu cafecito queda</span> <span class="text-shine" data-es="cerca" data-en="close by">cerca</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para consultar disponibilidad." data-en="The fastest way to ask about availability.">The fastest way to ask about availability.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="tel:+3053929900">(305) 392-9900</a>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">2737 NW 79th Ave, Doral, FL 33122</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(168,90,46,0.4)]" href="https://www.google.com/maps/search/Doral%20Bakery%20Cafeteria%2C%202737%20NW%2079th%20Ave%2C%20Doral%2C%20FL%2033122" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Google Maps" data-en="Google Maps">Google Maps</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Dirección pública: 2737 NW 79th Ave, Doral, FL 33122." data-en="Public address: 2737 NW 79th Ave, Doral, FL 33122.">Public address: 2737 NW 79th Ave, Doral, FL 33122.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(212,168,75,0.4)]" href="https://www.google.com/maps/place/Doral+Bakery+Cafeteria/data=!4m7!3m6!1s0x88d9b9770febbacd:0x5d57f61be3d4cae2!8m2!3d25.7989747!4d-80.3246291!16s%2Fg%2F11c2pnrpcf!19sChIJzbrrD3e52YgR4srU4xv2V10?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener">2737 NW 79th Ave, Doral, FL 33122</a>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a Viernes: 6:30 AM a 4:00 PM" data-en="Monday to Friday: 6:30 AM to 4:00 PM">Lunes a Viernes: 6:30 AM a 4:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sábado: 7:00 AM a 2:00 PM" data-en="Saturday: 7:00 AM to 2:00 PM">Sábado: 7:00 AM a 2:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Domingo: cerrado" data-en="Sunday: closed">Domingo: cerrado</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Pedidos" data-en="Orders">Pedidos</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="En línea" data-en="Online">En línea</span>: <a class="text-[color:var(--accent-deep)]" href="http://doralbakery.iposeats.net/" target="_blank" rel="noopener">doralbakery.iposeats.net</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono" data-en="Phone">Teléfono</span>: <a class="text-[color:var(--accent-deep)]" href="tel:+13053929900">(305) 392-9900</a></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="frame zoomable img-reveal min-h-[380px] h-full max-h-[560px] lg:max-h-none" style="transition-delay:180ms">
-        <img src="assets/raw/gmaps-2.jpg" alt="Trabajo de Doral Bakery Cafeteria" class="blur-up w-full h-full object-cover" loading="lazy" />
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: Doral Bakery Cafeteria, 2737 NW 79th Ave, Doral FL"
+          src="https://www.google.com/maps?q=Doral+Bakery+Cafeteria,+2737+NW+79th+Ave,+Doral,+FL+33122&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- CTA FINAL -->
-  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #191307 0%, #100c05 100%);">
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #2b1c10 0%, #1f140a 100%);">
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo real, trato directo." data-en="Real work, direct service.">Real work, direct service.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="empieza con un mensaje" data-en="starts with a message">starts with a message</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso." data-en="Tell us what you need and we reply with ideas and a quote, no strings attached.">Tell us what you need and we reply with ideas and a quote, no strings attached.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Pan caliente, café colado." data-en="Hot bread, strong coffee.">Pan caliente, café colado.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu pedido te está" data-en="Your order is">Tu pedido te está</span> <span class="text-shine" data-es="esperando" data-en="waiting">esperando</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Llama y lo tenemos listo para cuando llegues, o pide en línea desde donde estés. Empanadas, pan cubano y el especial del día, como siempre." data-en="Call and we will have it ready when you arrive, or order online from wherever you are. Empanadas, Cuban bread and the daily special, as always.">Llama y lo tenemos listo para cuando llegues, o pide en línea desde donde estés. Empanadas, pan cubano y el especial del día, como siempre.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
-        <a href="tel:+3053929900" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
-        <a href="https://www.google.com/maps/place/Doral+Bakery+Cafeteria/data=!4m7!3m6!1s0x88d9b9770febbacd:0x5d57f61be3d4cae2!8m2!3d25.7989747!4d-80.3246291!16s%2Fg%2F11c2pnrpcf!19sChIJzbrrD3e52YgR4srU4xv2V10?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">See listing on Google Maps</a>
+        <a href="tel:+13053929900" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Llamar ahora</a>
+        <a href="http://doralbakery.iposeats.net/" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Pedir en línea" data-en="Order online">Pedir en línea</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#0c0905]">
-    <span class="foot-mark" aria-hidden="true">Doral Bakery Cafeteria</span>
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#1f140a]">
+    <span class="foot-mark" aria-hidden="true">Doral Bakery</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/gmaps-1.jpg" alt="Doral Bakery Cafeteria" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(232,207,150,0.35)]" loading="lazy" />
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-base ring-1 ring-[rgba(240,207,142,0.35)] bg-[rgba(240,207,142,0.08)] text-[#f0cf8e]">DB</span>
           <span class="font-display text-lg tracking-[0.1em] uppercase">Doral Bakery Cafeteria</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Doral Bakery Cafeteria en Doral, FL. Información pública y contacto directo." data-en="Doral Bakery Cafeteria in Doral, FL. Public information and direct contact.">Doral Bakery Cafeteria in Doral, FL. Public information and direct contact.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Panadería y cafetería cubana tradicional de Doral. Empanadas, pan cubano, pastelitos y platos criollos del día." data-en="Doral's traditional Cuban bakery and cafeteria. Empanadas, Cuban bread, pastelitos and daily Cuban dishes.">Panadería y cafetería cubana tradicional de Doral. Empanadas, pan cubano, pastelitos y platos criollos del día.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>2737 NW 79th Ave, Doral, FL 33122</p>
-        <p><a href="tel:+3053929900" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]" data-es="Teléfono · (305) 392-9900" data-en="Phone · (305) 392-9900">Phone · (305) 392-9900</a></p>
+        <p><a href="tel:+13053929900" class="hover:text-[#f0cf8e]">(305) 392-9900</a></p>
+        <p data-es="Lun a Vie 6:30 AM a 4 PM · Sáb 7 AM a 2 PM · Dom cerrado" data-en="Mon to Fri 6:30 AM to 4 PM · Sat 7 AM to 2 PM · Sun closed">Lun a Vie 6:30 AM a 4 PM · Sáb 7 AM a 2 PM · Dom cerrado</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
-        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.google.com/maps/place/Doral+Bakery+Cafeteria/data=!4m7!3m6!1s0x88d9b9770febbacd:0x5d57f61be3d4cae2!8m2!3d25.7989747!4d-80.3246291!16s%2Fg%2F11c2pnrpcf!19sChIJzbrrD3e52YgR4srU4xv2V10?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Google Maps · Google Maps</a></p>
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Pedidos" data-en="Orders">Pedidos</p>
+        <p><a href="http://doralbakery.iposeats.net/" target="_blank" rel="noopener" class="hover:text-[#f0cf8e]" data-es="Pedir en línea · iPosEats" data-en="Order online · iPosEats">Pedir en línea · iPosEats</a></p>
+        <p><a href="https://www.google.com/maps/search/Doral%20Bakery%20Cafeteria%2C%202737%20NW%2079th%20Ave%2C%20Doral%2C%20FL%2033122" target="_blank" rel="noopener" class="hover:text-[#f0cf8e]" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">Ver ficha en Google Maps</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
       <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-[color:var(--ink-40)]">© 2026 Doral Bakery Cafeteria.</p>
+        <p class="text-xs text-[color:var(--ink-40)]" data-es="© 2026 Doral Bakery Cafeteria. Todos los derechos reservados." data-en="© 2026 Doral Bakery Cafeteria. All rights reserved.">© 2026 Doral Bakery Cafeteria. Todos los derechos reservados.</p>
         <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
           <span class="merktop-dot"></span>
           <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
@@ -679,15 +899,14 @@
     </div>
   </footer>
 
-  <!-- Boton flotante de reserva -->
-  <a href="tel:+3053929900" target="_blank" rel="noopener" class="book-float" aria-label="Call now">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1c1408" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-    <span class="book-float-label" data-es="Llamar ahora" data-en="Call now">Call now</span>
+  <!-- Boton flotante de llamada -->
+  <a href="tel:+13053929900" class="book-float" aria-label="Llamar a Doral Bakery Cafeteria">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f8f1e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
 
   <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
 
-  <!-- Volver arriba -->
+  <!-- Volver arriba (abajo-izquierda) -->
   <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
   </button>
@@ -696,18 +915,7 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
-    const applyLang = l => {
-      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
-      document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
-      document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
-    };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
-    applyLang(lang === 'es' ? 'es' : 'en');
-    document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
-
-    // Preloader
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
     const preloader = document.getElementById('preloader');
     let preloaderHidden = false;
     const hidePreloader = () => {
@@ -716,8 +924,9 @@
       preloader.classList.add('done');
       setTimeout(() => preloader.remove(), 750);
     };
-    if (reducedMotion) { hidePreloader(); }
-    else {
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
       if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
       else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
       setTimeout(hidePreloader, 1200);
@@ -729,7 +938,7 @@
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    // Scroll rAF: nav + progreso + parallax + back-to-top + fade del hero
+    // Nav + 2. barra de progreso + 3. parallax + 11. back-to-top: UN solo listener de scroll con rAF
     const nav = document.getElementById('nav');
     const progressBar = document.getElementById('scroll-progress');
     const backTop = document.getElementById('backTop');
@@ -761,10 +970,10 @@
 
     backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
 
-    // Reveals
+    // 4. Reveals editoriales: texto (.reveal) + imagenes con clip-path (.img-reveal)
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
     const revealEls = document.querySelectorAll('.reveal, .img-reveal');
     revealEls.forEach(el => io.observe(el));
     // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
@@ -785,8 +994,113 @@
     checkVisibleFallback();
     setTimeout(checkVisibleFallback, 400);
 
-    // v3: split-text del hero
-    document.querySelectorAll('.split').forEach(el => {
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (decimales respetados)
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la reseña ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+
+    // v3: split-text del hero (reutilizable: se vuelve a correr tras el toggle de idioma)
+    const applySplit = el => {
       const nodes = Array.from(el.childNodes);
       el.textContent = '';
       let idx = 0;
@@ -807,38 +1121,32 @@
           el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
         }
       });
-      io.observe(el);
-    });
+      if (el.classList.contains('in')) {
+        requestAnimationFrame(() => el.querySelectorAll('.split-word > span').forEach(s => { s.style.transition = 'none'; s.getBoundingClientRect(); s.style.transform = 'translateY(0)'; s.style.transition = ''; }));
+      }
+    };
+    document.querySelectorAll('.split').forEach(el => { applySplit(el); io.observe(el); });
 
-    // Blur-up
-    document.querySelectorAll('img.blur-up').forEach(img => {
-      if (img.complete && img.naturalWidth) img.classList.add('loaded');
-      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
-    });
+    // Multilenguaje: data-es / data-en en cada nodo traducible (DESIGN.md)
+    const langToggleBtn = document.getElementById('langToggle');
+    const translatable = document.querySelectorAll('[data-es][data-en]');
+    const applyLang = l => {
+      translatable.forEach(el => {
+        const html = el.dataset[l];
+        if (html == null) return;
+        el.innerHTML = html;
+        if (el.classList.contains('split')) applySplit(el);
+      });
+      document.documentElement.lang = l;
+      try { localStorage.setItem('lang', l); } catch (e) {}
+      if (langToggleBtn) langToggleBtn.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let initialLang = 'es';
+    try { initialLang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2); } catch (e) { initialLang = (navigator.language || 'es').slice(0, 2); }
+    applyLang(initialLang === 'en' ? 'en' : 'es');
+    if (langToggleBtn) langToggleBtn.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
-    // Contadores
-    if (!reducedMotion) {
-      const animateCount = (el) => {
-        const target = parseFloat(el.dataset.count);
-        const decimals = parseInt(el.dataset.decimals || '0', 10);
-        const duration = 1400;
-        const start = performance.now();
-        const tick = (now) => {
-          const p = Math.min(1, (now - start) / duration);
-          const eased = 1 - Math.pow(1 - p, 3);
-          const v = target * eased;
-          el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString('en-US');
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      };
-      const counterIO = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
-      }, { threshold: 0.6 });
-      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
-    }
-
-    // v3: cursor ring (solo desktop)
+    // v3: cursor ring (solo desktop, lerp con rAF)
     const ring = document.getElementById('cursorRing');
     if (ring && finePointer && !reducedMotion) {
       let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
@@ -859,7 +1167,7 @@
       });
     }
 
-    // Botones magneticos. Solo desktop.
+    // 8. Botones magneticos (max 6px, spring back). Solo desktop.
     if (finePointer && !reducedMotion) {
       document.querySelectorAll('.btn-3d').forEach(btn => {
         btn.classList.add('magnetic');
@@ -873,7 +1181,7 @@
       });
     }
 
-    // Tilt 3D en cards de servicios. Solo desktop.
+    // 9. Tilt 3D sutil en cards de servicios (max 3deg + glare). Solo desktop.
     if (finePointer && !reducedMotion) {
       document.querySelectorAll('#servicios .glass-hover').forEach(card => {
         card.addEventListener('mouseenter', () => card.classList.add('tilt'));
@@ -891,7 +1199,7 @@
       });
     }
 
-    // Cursor glow en la banda oscura final. Solo desktop.
+    // 10. Cursor glow calido en la banda oscura final. Solo desktop.
     const ctaBand = document.getElementById('cta-final');
     const ctaGlow = document.getElementById('ctaGlow');
     if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
