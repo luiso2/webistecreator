@@ -1,4 +1,4 @@
-# Outreach draft — Braulio Pressure Cleaning & More (braulio-pressure-cleaning)
+# Outreach draft: Braulio Pressure Cleaning & More (braulio-pressure-cleaning)
 
 Language: English (business primary language, based on reviews and trailer signage)
 Angle: has_own_site = false -> "I built you a sample site"
