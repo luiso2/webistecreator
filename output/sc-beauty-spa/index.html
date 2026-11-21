@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#f1e0e5" />
+  <title>SC Beauty Spa · Facial &amp; Estética en Orlando, FL | 5.0 en Fresha</title>
+  <meta name="description" content="SC Beauty Spa, estudio de estética facial en Southwest Orlando, FL. Limpiezas faciales, microagujas, IPL, PRP y tratamientos personalizados con Susana Cardozo. 5.0 en Fresha con 10 reseñas." />
+  <meta property="og:title" content="SC Beauty Spa · Estética Facial en Orlando, FL" />
+  <meta property="og:description" content="Facial profundo, microagujas, IPL y PRP con Susana Cardozo. 5.0 en Fresha. Reserva tu cita online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/raw/scb-facial-treatment.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "SC Beauty Spa",
+    "description": "Estudio de estética facial de Susana Cardozo en Southwest Orlando, FL. Limpiezas faciales, microagujas, IPL, PRP y tratamientos personalizados de piel.",
+    "telephone": "+1-407-360-3215",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7901 Kingspointe Parkway",
+      "addressLocality": "Orlando",
+      "addressRegion": "FL",
+      "postalCode": "32819",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "15:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/susana.beautyspa/",
+      "https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7"
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "10", "bestRating": "5" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Tratamientos faciales y corporales",
+      "itemListElement": [
+        { "@type": "Offer", "price": "140", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Hydrafacial Deluxe", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "120", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Facial Profundo con Microagujas", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "150", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Limpieza Facial con PRP", "serviceType": "Facial" } },
+        { "@type": "Offer", "price": "100", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Tratamiento Capilar con Exosomas", "serviceType": "Hair Treatment" } }
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="assets/tailwind.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f0ec;
+      --bg-2: #f1e0e5;
+      --surface: rgba(250,247,241,0.7);
+      --ink: #3a2630;
+      --ink-60: rgba(58,38,48,0.62);
+      --ink-40: rgba(58,38,48,0.42);
+      --accent-deep: #8a4f68;
+      --accent-mid: #b6788f;
+      --accent-soft: #f1e0e5;
+      --accent-ghost: rgba(138,79,104,0.14);
+    }
+    html, body { background: var(--bg); }
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-display { font-family: 'Playfair Display', serif; letter-spacing: -0.015em; }
+    .font-script  { font-family: 'Playfair Display', serif; font-style: italic; }
+    h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }
+    section { scroll-margin-top: 88px; }
+
+    /* Glass crema calido */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(138,79,104,0.16);
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .glass-hover:hover {
+      background: rgba(250,247,241,0.88);
+      border-color: rgba(138,79,104,0.32);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(58,38,48,0.14), 0 0 40px rgba(138,79,104,0.08);
+    }
+
+    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
+    .text-shine {
+      background: linear-gradient(110deg, #8a4f68 0%, #c08aa0 30%, #5a3347 52%, #8a4f68 75%, #b67a95 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 12s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* Orbs taupe/crema sobre base clara */
+    .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
+    @keyframes breathe {
+      0%, 100% { transform: translate3d(0,0,0) scale(1); }
+      50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
+    }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #ecd4de 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #c98fa6 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #dcb3c4 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+
+    /* Grain editorial */
+    .grain::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.05; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+    }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(42px); transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* Blur-up */
+    img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
+    img.blur-up.loaded { filter: blur(0); transform: scale(1); }
+
+    /* Boton 3D mocha */
+    .btn-3d {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(180deg, #b6788f 0%, #8a4f68 48%, #5c3348 100%);
+      color: #f7f0ec; border: none; font-weight: 600;
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.3),
+        inset 0 -2px 5px rgba(60,45,28,0.4),
+        0 5px 0 #4a2a3a,
+        0 12px 24px rgba(58,38,48,0.28);
+    }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,45,28,0.4), 0 7px 0 #4a2a3a, 0 18px 34px rgba(58,38,48,0.32), 0 0 40px rgba(138,79,104,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,45,28,0.45), 0 1px 0 #4a2a3a, 0 4px 10px rgba(58,38,48,0.25); }
+    .btn-3d::after {
+      content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg); transition: left 0.85s ease;
+    }
+    .btn-3d:hover::after { left: 150%; }
+
+    /* Boton ghost */
+    .btn-ghost {
+      border: 1px solid rgba(138,79,104,0.35); color: var(--ink);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(138,79,104,0.7); background: rgba(138,79,104,0.08); box-shadow: 0 10px 26px rgba(58,38,48,0.14); }
+
+    /* Badge Merktop */
+    .merktop-badge {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.55rem 1rem 0.55rem 0.85rem; border-radius: 9999px;
+      border: 1px solid rgba(212,168,75,0.45);
+      background: linear-gradient(135deg, rgba(36,28,20,0.94) 0%, rgba(27,21,14,0.92) 100%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 28px rgba(212,168,75,0.14);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .merktop-badge:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(244,238,226,0.55); box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 36px rgba(212,168,75,0.32); }
+    .merktop-dot { width: 6px; height: 6px; border-radius: 50%; background: #D4A84B; box-shadow: 0 0 10px rgba(212,168,75,0.85); animation: mkPulse 2.4s ease-in-out infinite; }
+    @keyframes mkPulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: 0.65; transform: scale(0.85);} }
+
+    /* Nav */
+    #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
+    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(58,38,48,0.1); }
+    .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Marco editorial de imagen */
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(58,38,48,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(138,79,104,0.14), inset 0 -60px 100px rgba(58,38,48,0.12); }
+    .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    .zoomable:hover img { transform: scale(1.05); }
+
+    /* Numeros del ritual */
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(180deg, #b6788f, #5a3347);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Estrellas */
+    .stars { color: #8a4f68; letter-spacing: 2px; text-shadow: 0 0 14px rgba(138,79,104,0.3); }
+
+    /* Mapa elegante */
+    .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
+
+    /* Banda oscura espresso (CTA final + footer) */
+    .dark-band {
+      --ink: #f7f0ec;
+      --ink-60: rgba(245,240,232,0.65);
+      --ink-40: rgba(245,240,232,0.45);
+      --surface: rgba(255,255,255,0.05);
+      --accent-ghost: rgba(234,214,183,0.16);
+      color: var(--ink);
+    }
+    .dark-band .text-shine {
+      background-image: linear-gradient(110deg, #e8b8cb 0%, #f8dce6 30%, #c98fa6 52%, #e8b8cb 75%, #f3d0de 100%);
+    }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,184,203,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(182,120,143,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .btn-3d {
+      background: linear-gradient(180deg, #faf3e6 0%, #e8d9bf 48%, #c498ab 100%);
+      color: #3a2630;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -2px 5px rgba(120,90,50,0.35),
+        0 5px 0 #73475c,
+        0 12px 24px rgba(0,0,0,0.45);
+    }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #73475c, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,184,203,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #73475c, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(232,184,203,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(232,184,203,0.7); background: rgba(232,184,203,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #e8b8cb; text-shadow: 0 0 14px rgba(232,184,203,0.4); }
+
+    /* Boton flotante de reserva */
+    .book-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 56px; height: 56px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(180deg, #b6788f 0%, #8a4f68 100%);
+      box-shadow: 0 6px 0 #4a2a3a, 0 14px 30px rgba(58,38,48,0.35);
+      transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
+    }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a2a3a, 0 20px 40px rgba(58,38,48,0.4), 0 0 34px rgba(138,79,104,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a2a3a, 0 6px 14px rgba(58,38,48,0.3); }
+
+    /* ============ Motion v2 (nivel $100k) ============ */
+
+    /* 1. Preloader de marca */
+    #preloader {
+      position: fixed; inset: 0; z-index: 100;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      background: var(--bg);
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+      animation: preAuto 0.65s ease 1.25s forwards;
+    }
+    #preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+    @keyframes preAuto { to { opacity: 0; visibility: hidden; } }
+    .pre-mono {
+      width: 64px; height: 64px; border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--accent-deep);
+      border: 1px solid rgba(138,79,104,0.35); background: rgba(138,79,104,0.08);
+      animation: preMono 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .pre-word {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      letter-spacing: 0.45em; text-indent: 0.45em; text-transform: uppercase; color: var(--ink);
+      animation: preWord 1s cubic-bezier(0.22,1,0.36,1) 0.15s both;
+    }
+    .pre-line { width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-mid), transparent); animation: preLine 1s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    @keyframes preMono { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+    @keyframes preWord { from { opacity: 0; transform: translateY(14px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: translateY(0); clip-path: inset(0 0 -20% 0); } }
+    @keyframes preLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 2. Barra de progreso de scroll */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
+      background: linear-gradient(90deg, #5c3348 0%, #8a4f68 45%, #d79fb8 100%);
+      transform: scaleX(0); transform-origin: left center; will-change: transform;
+      pointer-events: none;
+    }
+
+    /* 4. Reveal editorial de imagenes: clip-path + escala */
+    .img-reveal { clip-path: inset(0 0 100% 0); transition: clip-path 1.15s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in { clip-path: inset(-120px -120px -120px -120px); }
+    .img-reveal img { scale: 1.06; transition: filter 0.9s ease, transform 0.8s cubic-bezier(0.22,1,0.36,1), scale 1.3s cubic-bezier(0.22,1,0.36,1); }
+    .img-reveal.in img { scale: 1; }
+
+    /* 6. Marquee infinito */
+    .marquee { position: relative; overflow: hidden; padding: 1.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marqueeMove 40s linear infinite; will-change: transform; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-reverse .marquee-track { animation-direction: reverse; }
+    @keyframes marqueeMove { to { transform: translateX(-50%); } }
+    .marquee-seq { display: flex; align-items: center; white-space: nowrap; }
+    .marquee-word { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.35rem, 3vw, 1.9rem); color: var(--ink-60); padding: 0 1.6rem; }
+    .marquee-star { color: var(--accent-mid); font-size: 0.85rem; }
+
+    /* 7. Carrusel de testimonios */
+    .carousel { overflow: hidden; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; margin: 0 -0.625rem; }
+    .carousel.dragging { cursor: grabbing; }
+    .carousel.dragging .carousel-slide { pointer-events: none; }
+    .carousel-track { display: flex; align-items: stretch; transition: transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    .carousel.dragging .carousel-track { transition: none; }
+    .carousel-slide { flex: 0 0 100%; padding: 0 0.625rem; }
+    .carousel-slide > figure { height: 100%; }
+    @media (min-width: 640px) { .carousel-slide { flex: 0 0 50%; } }
+    .carousel-dot {
+      width: 8px; height: 8px; border-radius: 9999px; border: none; padding: 0; cursor: pointer;
+      background: rgba(58,38,48,0.18); transition: background 0.3s ease, width 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .carousel-dot.active { width: 24px; background: var(--accent-deep); }
+
+    /* 8. Boton magnetico (offset via translate, spring back) */
+    @media (hover: hover) and (pointer: fine) {
+      .magnetic { transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1), translate 0.45s cubic-bezier(0.34,1.56,0.64,1); }
+    }
+
+    /* 9. Tilt 3D sutil con glare (cards de servicios) */
+    @media (hover: hover) and (pointer: fine) {
+      .tilt { position: relative; transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.18s ease-out; }
+      .tilt::before {
+        content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; pointer-events: none;
+        background: radial-gradient(420px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25) 0%, transparent 62%);
+        opacity: 0; transition: opacity 0.35s ease;
+      }
+      .tilt:hover::before { opacity: 1; }
+    }
+
+    /* 10. Cursor glow calido en la banda oscura final */
+    .cursor-glow {
+      position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
+      border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
+      background: radial-gradient(circle, rgba(232,184,203,0.14) 0%, rgba(138,79,104,0.08) 42%, transparent 70%);
+      transition: opacity 0.5s ease; will-change: transform;
+    }
+    .cursor-glow.on { opacity: 1; }
+
+    /* 11. Back to top (abajo-izquierda; el FAB de reservas vive abajo-derecha) */
+    .back-top {
+      position: fixed; left: 18px; bottom: 18px; z-index: 60;
+      width: 48px; height: 48px; border-radius: 9999px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; color: var(--accent-deep);
+      opacity: 0; visibility: hidden; transform: translateY(14px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, background 0.3s ease;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top.show:hover { border-color: rgba(138,79,104,0.5); transform: translateY(-3px); }
+
+
+    /* ============ Motion v3 (premium+) ============ */
+    /* Split-text del hero: cada palabra sube en cascada */
+    .split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+    .split-word > span { display: inline-block; transform: translateY(115%); transition: transform 0.95s cubic-bezier(0.22,1,0.36,1); }
+    .split.in .split-word > span { transform: translateY(0); }
+
+    /* Numeral editorial gigante por seccion */
+    .sec-num {
+      position: absolute; top: 0.6rem; right: 1rem; z-index: 0; pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(5.5rem, 14vw, 10rem); line-height: 1;
+      color: transparent; -webkit-text-stroke: 1.5px var(--accent-ghost);
+    }
+
+    /* Captions de galeria al hover */
+    .frame .tile-cap {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 1.6rem 1.1rem 0.95rem;
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: #faf6ee;
+      background: linear-gradient(180deg, transparent 0%, rgba(30,22,14,0.62) 100%);
+      opacity: 0; transform: translateY(12px); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .frame:hover .tile-cap { opacity: 1; transform: translateY(0); }
+    @media (hover: none) { .frame .tile-cap { opacity: 1; transform: none; padding-top: 2.2rem; } }
+
+    /* Cursor custom: anillo que sigue al puntero (solo desktop) */
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; z-index: 95; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+      border: 1.5px solid var(--accent-mid); border-radius: 9999px; pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease, scale 0.3s cubic-bezier(0.22,1,0.36,1); will-change: transform;
+    }
+    .cursor-ring.on { opacity: 0.75; }
+    .cursor-ring.big { scale: 1.7; opacity: 0.45; }
+
+    /* Marca de agua tipografica del footer */
+    .foot-mark {
+      position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
+      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(232,184,203,0.09); pointer-events: none; user-select: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .split-word > span { transform: none !important; transition: none !important; }
+      .frame .tile-cap { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .cursor-ring { display: none !important; }
+      #heroInner { opacity: 1 !important; transform: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .text-shine, .orb, .merktop-dot { animation: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      img.blur-up { filter: none !important; transform: none !important; }
+      html { scroll-behavior: auto; }
+      #preloader { display: none !important; }
+      #scroll-progress { display: none !important; }
+      .marquee-track { animation: none !important; }
+      .img-reveal { clip-path: none !important; transition: none !important; }
+      .img-reveal img { scale: none !important; transition: none !important; }
+      .carousel-track { transition: none !important; }
+      .magnetic { translate: none !important; }
+      .tilt { transform: none !important; }
+      .tilt::before { display: none !important; }
+      .cursor-glow { display: none !important; }
+      .back-top { transition: none !important; transform: none !important; }
+      [data-parallax] { translate: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER DE MARCA -->
+  <div id="preloader" aria-hidden="true">
+    <span class="pre-mono">S</span>
+    <span class="pre-word">SC Beauty Spa</span>
+    <span class="pre-line"></span>
+  </div>
+
+  <!-- BARRA DE PROGRESO DE SCROLL -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(138,79,104,0.35)] bg-[rgba(138,79,104,0.1)] text-[color:var(--accent-deep)]">S</span>
+        <span class="font-display text-xl tracking-[0.14em] uppercase">SC <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Beauty Spa</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-light">
+        <a class="nav-link" data-es="Experiencia" data-en="About" href="#experiencia">Experiencia</a>
+        <a class="nav-link" data-es="Tu Cita" data-en="Your Visit" href="#ritual">Tu Cita</a>
+        <a class="nav-link" data-es="Servicios" data-en="Services" href="#servicios">Servicios</a>
+        <a class="nav-link" data-es="Opiniones" data-en="Reviews" href="#opiniones">Opiniones</a>
+        <a class="nav-link" data-es="Ubicación" data-en="Location" href="#ubicacion">Ubicación</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Switch language">EN</button>
+        <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+        </a>
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-6 h-px bg-[color:var(--ink)]"></span>
+          <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
+      <nav class="flex flex-col p-4 text-sm">
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Experiencia" data-en="About" href="#experiencia">Experiencia</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Tu Cita" data-en="Your Visit" href="#ritual">Tu Cita</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Servicios" data-en="Services" href="#servicios">Servicios</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" data-es="Opiniones" data-en="Reviews" href="#opiniones">Opiniones</a>
+        <a class="py-3 px-3" data-es="Ubicación" data-en="Location" href="#ubicacion">Ubicación</a>
+        <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="relative min-h-screen flex items-center grain overflow-hidden pt-28 pb-16">
+    <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
+    <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
+      <div class="lg:col-span-7">
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Southwest Orlando, FL · Estética Facial" data-en="Southwest Orlando, FL · Facial Esthetics">Southwest Orlando, FL · Estética Facial</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Una mirada profunda, consciente y amorosa." data-en="A deep, mindful and caring approach.">Una mirada profunda, consciente y amorosa.</p>
+        <h1 id="heroH1" class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7" data-es="Piel sana,&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;cuidada&lt;/span&gt; con intención" data-en="Healthy skin,&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;cared for&lt;/span&gt; with intention">
+          Piel sana,<br /><span class="text-shine">cuidada</span> con intención
+        </h1>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="SC Beauty Spa es el estudio de Susana Cardozo en Southwest Orlando: limpiezas faciales profundas, microagujas, IPL, PRP y tratamientos personalizados según lo que tu piel necesita." data-en="SC Beauty Spa is Susana Cardozo's studio in Southwest Orlando: deep facial cleansing, microneedling, IPL, PRP and treatments tailored to what your skin needs.">SC Beauty Spa es el estudio de Susana Cardozo en Southwest Orlando: limpiezas faciales profundas, microagujas, IPL, PRP y tratamientos personalizados según lo que tu piel necesita.</p>
+        <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
+          <span class="stars text-lg" aria-hidden="true">★★★★★</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="5.0 · 10 reseñas en Fresha" data-en="5.0 · 10 reviews on Fresha">5.0 · 10 reseñas en Fresha</span>
+        </div>
+        <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
+          <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Reservar cita" data-en="Book now">Reservar cita</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+14073603215" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (407) 360-3215
+          </a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
+        <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
+          <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
+            <img src="assets/raw/scb-facial-treatment.jpg" alt="Susana Cardozo aplicando un tratamiento facial a una clienta en SC Beauty Spa" class="blur-up w-full h-full object-cover" />
+          </div>
+          <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Servicio insignia" data-en="Signature service">Servicio insignia</p>
+            <p class="font-display text-lg">Hydrafacial Deluxe</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="60 minutos · $140" data-en="60 minutes · $140">60 minutos · $140</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP DE CONFIANZA -->
+  <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="10">10</span> <span data-es="reseñas en Fresha" data-en="reviews on Fresha">reseñas en Fresha</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl" data-es="Se habla &lt;span class=&quot;text-shine&quot;&gt;español&lt;/span&gt;" data-en="&lt;span class=&quot;text-shine&quot;&gt;English&lt;/span&gt; spoken too">Se habla <span class="text-shine">español</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Y también inglés" data-en="And Spanish too">Y también inglés</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Hydrafacial <span class="text-shine">Deluxe</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Desde $60 · 30 min" data-en="From $60 · 30 min">Desde $60 · 30 min</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Dr. Phillips</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Southwest Orlando, FL" data-en="Southwest Orlando, FL">Southwest Orlando, FL</p></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-seq">
+        <span class="marquee-word">Hydrafacial Deluxe</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Microagujas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">PRP Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Exosomas Capilares</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Orlando, FL</span><span class="marquee-star">✦</span>
+      </div>
+      <div class="marquee-seq">
+        <span class="marquee-word">Hydrafacial Deluxe</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Microagujas</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">PRP Facial</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Exosomas Capilares</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Orlando, FL</span><span class="marquee-star">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA EXPERIENCIA -->
+  <section id="experiencia" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">01</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="frame zoomable aspect-[3/4] img-reveal">
+          <img src="assets/raw/scb-facial-treatment.jpg" alt="Susana Cardozo realizando un tratamiento facial en su cabina de SC Beauty Spa, Orlando" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
+          <img src="assets/raw/scb-facial-closeup.jpg" alt="Detalle de tratamiento facial con mascarilla en SC Beauty Spa" class="blur-up w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="La experiencia" data-en="The experience">La experiencia</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms" data-es="Un estudio íntimo&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;en Southwest Orlando&lt;/span&gt;" data-en="An intimate studio&lt;br /&gt;&lt;span class=&quot;text-shine&quot;&gt;in Southwest Orlando&lt;/span&gt;">Un estudio íntimo<br /><span class="text-shine">en Southwest Orlando</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="SC Beauty Spa es el estudio de Susana Cardozo, esteticista bilingüe en Kingspointe Parkway. Cada cita empieza con un diagnóstico real de tu piel antes de elegir el tratamiento: limpieza profunda, peeling, microagujas, IPL o PRP." data-en="SC Beauty Spa is Susana Cardozo's studio on Kingspointe Parkway, a bilingual esthetician. Every visit starts with a real skin diagnosis before choosing the treatment: deep cleansing, peeling, microneedling, IPL or PRP.">SC Beauty Spa es el estudio de Susana Cardozo, esteticista bilingüe en Kingspointe Parkway. Cada cita empieza con un diagnóstico real de tu piel antes de elegir el tratamiento: limpieza profunda, peeling, microagujas, IPL o PRP.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Sus clientas lo repiten en cada reseña: manos suaves, atención cuidadosa y resultados que se notan. En sus propias palabras: &lt;em class=&quot;font-script text-[color:var(--accent-deep)]&quot;&gt;una mirada profunda, consciente y amorosa&lt;/em&gt;." data-en="Her clients repeat it in every review: gentle hands, careful attention and results you can see. In her own words: &lt;em class=&quot;font-script text-[color:var(--accent-deep)]&quot;&gt;a deep, mindful and caring approach&lt;/em&gt;.">Sus clientas lo repiten en cada reseña: manos suaves, atención cuidadosa y resultados que se notan. En sus propias palabras: <em class="font-script text-[color:var(--accent-deep)]">una mirada profunda, consciente y amorosa</em>.</p>
+        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="5.0" data-decimals="1">5.0</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Fresha</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="140" data-decimals="0">140</span>+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Citas realizadas" data-en="Appointments done">Citas realizadas</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">23</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Servicios en el menú" data-en="Services on the menu">Servicios en el menú</p></div>
+        </div>
+        <div class="reveal" style="transition-delay:360ms">
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="Tu esteticista" data-en="Your esthetician">Tu esteticista</p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
+              <img src="assets/raw/scb-brand-portrait.jpg" alt="Susana Cardozo, esteticista y propietaria de SC Beauty Spa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,79,104,0.3)]" loading="lazy" />
+              <span class="text-sm font-light">Susana Cardozo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL RITUAL PASO A PASO -->
+  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">02</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu cita, paso a paso" data-en="Your visit, step by step">Tu cita, paso a paso</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Así funciona &lt;span class=&quot;text-shine&quot;&gt;cada tratamiento&lt;/span&gt;" data-en="How every &lt;span class=&quot;text-shine&quot;&gt;treatment&lt;/span&gt; works">Así funciona <span class="text-shine">cada tratamiento</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="glass glass-hover rounded-3xl p-7 reveal">
+          <p class="step-num text-5xl mb-5">01</p>
+          <h3 class="font-display text-xl mb-3" data-es="Diagnóstico de piel" data-en="Skin diagnosis">Diagnóstico de piel</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Susana revisa tu piel y conversa contigo antes de elegir el tratamiento correcto para lo que necesitas hoy." data-en="Susana examines your skin and talks with you before choosing the right treatment for what you need today.">Susana revisa tu piel y conversa contigo antes de elegir el tratamiento correcto para lo que necesitas hoy.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
+          <p class="step-num text-5xl mb-5">02</p>
+          <h3 class="font-display text-xl mb-3" data-es="Limpieza profunda" data-en="Deep cleansing">Limpieza profunda</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Doble limpieza y exfoliación para preparar la piel, incluyendo extracciones cuando hacen falta." data-en="Double cleanse and exfoliation to prep the skin, including extractions when needed.">Doble limpieza y exfoliación para preparar la piel, incluyendo extracciones cuando hacen falta.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
+          <p class="step-num text-5xl mb-5">03</p>
+          <h3 class="font-display text-xl mb-3" data-es="Tratamiento personalizado" data-en="Personalized treatment">Tratamiento personalizado</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Peeling, microagujas, IPL, PRP o exosomas: el tratamiento específico que elegiste para tu cita." data-en="Peeling, microneedling, IPL, PRP or exosomes: the specific treatment you booked for your visit.">Peeling, microagujas, IPL, PRP o exosomas: el tratamiento específico que elegiste para tu cita.</p>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
+          <p class="step-num text-5xl mb-5">04</p>
+          <h3 class="font-display text-xl mb-3" data-es="Hidratación y cierre" data-en="Hydration & aftercare">Hidratación y cierre</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Mascarilla final, hidratación con SPF y recomendaciones claras para cuidar tu piel en casa." data-en="Final mask, SPF hydration and clear aftercare recommendations to care for your skin at home.">Mascarilla final, hidratación con SPF y recomendaciones claras para cuidar tu piel en casa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">03</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Elige tu &lt;span class=&quot;text-shine&quot;&gt;tratamiento&lt;/span&gt;" data-en="Choose your &lt;span class=&quot;text-shine&quot;&gt;treatment&lt;/span&gt;">Elige tu <span class="text-shine">tratamiento</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Precios y duraciones publicados por SC Beauty Spa en Fresha. Reserva online con confirmación inmediata." data-en="Prices and durations as published by SC Beauty Spa on Fresha. Book online with instant confirmation.">Precios y duraciones publicados por SC Beauty Spa en Fresha. Reserva online con confirmación inmediata.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Facial" data-en="Facial">Facial</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Hydrafacial Deluxe</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Limpieza profunda, exfoliación e hidratación en un solo tratamiento, con tecnología Hydrafacial." data-en="Deep cleansing, exfoliation and hydration in one treatment, using Hydrafacial technology.">Limpieza profunda, exfoliación e hidratación en un solo tratamiento, con tecnología Hydrafacial.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$140</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(138,79,104,0.4); box-shadow: 0 18px 50px rgba(58,38,48,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Facial · Más pedido" data-en="Facial · Most requested">Facial · Más pedido</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Facial Profundo con Microagujas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Microneedling que estimula colágeno y elastina para mejorar textura, marcas de acné y firmeza de la piel." data-en="Microneedling that stimulates collagen and elastin to improve texture, acne marks and skin firmness.">Microneedling que estimula colágeno y elastina para mejorar textura, marcas de acné y firmeza de la piel.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$120</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Facial avanzado" data-en="Advanced facial">Facial avanzado</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Limpieza Facial con PRP</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Plasma rico en plaquetas combinado con limpieza facial profunda para regeneración y luminosidad de la piel." data-en="Platelet-rich plasma combined with deep facial cleansing for skin regeneration and radiance.">Plasma rico en plaquetas combinado con limpieza facial profunda para regeneración y luminosidad de la piel.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$150</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+            </div>
+            <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Tratamiento capilar" data-en="Hair treatment">Tratamiento capilar</p>
+          <h3 class="font-display text-2xl leading-snug mb-3">Tratamiento Capilar con Exosomas</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Exosomas aplicados al cuero cabelludo para fortalecer y estimular el crecimiento capilar." data-en="Exosomes applied to the scalp to strengthen hair and stimulate growth.">Exosomas aplicados al cuero cabelludo para fortalecer y estimular el crecimiento capilar.</p>
+          <div class="mt-auto">
+            <div class="flex items-baseline gap-3 mb-5">
+              <p class="font-display text-3xl text-shine">$100</p>
+              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+            </div>
+            <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Reservar" data-en="Book">Reservar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 gap-6">
+        <div class="glass rounded-3xl p-7 reveal">
+          <h3 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="Faciales" data-en="Facials">Faciales</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between gap-3"><span data-es="Limpieza Facial Profunda" data-en="Deep Facial Cleansing">Limpieza Facial Profunda</span><span class="text-[color:var(--ink-40)] shrink-0">$100 · 60 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Limpieza + Peeling para Hiperpigmentación" data-en="Cleansing + Hyperpigmentation Peel">Limpieza + Peeling Hiperpigmentación</span><span class="text-[color:var(--ink-40)] shrink-0">$75 · 60 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Facial Profundo + Dermaplaning" data-en="Deep Facial + Dermaplaning">Facial Profundo + Dermaplaning</span><span class="text-[color:var(--ink-40)] shrink-0">$125 · 90 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Facial Profundo para Acné + Luz LED" data-en="Deep Acne Facial + LED Light">Facial Profundo para Acné + Luz LED</span><span class="text-[color:var(--ink-40)] shrink-0">$130 · 90 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Facial Oxigenante con O2 Lift" data-en="Oxygenating O2 Lift Facial">Facial Oxigenante con O2 Lift</span><span class="text-[color:var(--ink-40)] shrink-0">$100 · 60 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Facial para Caballeros" data-en="Men's Facial">Facial para Caballeros</span><span class="text-[color:var(--ink-40)] shrink-0">$120 · 90 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Remoción de Verrugas con Plasma Pen" data-en="Wart Removal with Plasma Pen">Remoción de Verrugas (Plasma Pen)</span><span class="text-[color:var(--ink-40)] shrink-0">$50 · 20 min</span></div>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-7 reveal" style="transition-delay:90ms">
+          <h3 class="font-display text-lg mb-4 text-[color:var(--accent-deep)]" data-es="IPL, cuerpo y más" data-en="IPL, body & more">IPL, cuerpo y más</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between gap-3"><span data-es="IPL para Hiperpigmentación" data-en="IPL for Hyperpigmentation">IPL Hiperpigmentación</span><span class="text-[color:var(--ink-40)] shrink-0">$60 · 30 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="IPL para Rejuvenecimiento" data-en="IPL Rejuvenation">IPL Rejuvenecimiento</span><span class="text-[color:var(--ink-40)] shrink-0">$60 · 30 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Limpieza de Espalda" data-en="Back Cleansing Treatment">Limpieza de Espalda</span><span class="text-[color:var(--ink-40)] shrink-0">$180 · 100 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Booty Glow (Exfoliación de Glúteos)" data-en="Booty Glow (Exfoliation)">Booty Glow (Exfoliación)</span><span class="text-[color:var(--ink-40)] shrink-0">$95 · 60 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Blanqueamiento Íntimo (3 sesiones)" data-en="Intimate Whitening (3 sessions)">Blanqueamiento Íntimo (3 ses.)</span><span class="text-[color:var(--ink-40)] shrink-0">$299</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Brow Lamination" data-en="Brow Lamination">Brow Lamination</span><span class="text-[color:var(--ink-40)] shrink-0">$70 · 60 min</span></div>
+            <div class="flex justify-between gap-3"><span data-es="Programas de 3 sesiones (Melasma, Age Reset, Clear Skin)" data-en="3-session programs (Melasma, Age Reset, Clear Skin)">Programas de 3 sesiones</span><span class="text-[color:var(--ink-40)] shrink-0">$259</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Menú completo con 23 servicios disponible al reservar en Fresha." data-en="Full 23-service menu available when you book on Fresha.">Menú completo con 23 servicios disponible al reservar en Fresha.</p>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section id="opiniones" class="relative py-24 sm:py-32 grain">
+    <span class="sec-num" aria-hidden="true">04</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Opiniones</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms" data-es="Lo que dicen &lt;span class=&quot;text-shine&quot;&gt;sus clientas&lt;/span&gt;" data-en="What &lt;span class=&quot;text-shine&quot;&gt;her clients&lt;/span&gt; say">Lo que dicen <span class="text-shine">sus clientas</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="5.0 de 5 · 10 reseñas en Fresha" data-en="5.0 of 5 · 10 reviews on Fresha">5.0 de 5 · 10 reseñas en Fresha</span></p>
+      </div>
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Absolutely loved my experience! The micro needling facial was done so professionally and with so much care. Susana is incredibly sweet, knowledgeable, and made the whole appointment relaxing and enjoyable."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Daina R.</span> <span class="text-[color:var(--ink-40)]">· Fresha</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mejor servicio y absolutamente MEJORES RESULTADOS, 100% recomendado este spa. Mi piel ha dado un giro inexplicable, sufrí por muchos años de acné y marcas en mi piel pero ahora puedo estar cómoda con mi piel."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Maria C.</span> <span class="text-[color:var(--ink-40)]">· Fresha</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Me hice un facial para caballeros y me gustó mucho, me quitó todas mis espinillas y sin dolor. La recomiendo 100%."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Miguel</span> <span class="text-[color:var(--ink-40)]">· Fresha</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Excelente Servicio, mi piel quedó limpia y me relajé. Las manos de Susana son muy suaves, la recomiendo 100%."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Wilver</span> <span class="text-[color:var(--ink-40)]">· Fresha</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
+      <div class="text-center mt-10 reveal">
+        <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 10 reseñas en Fresha" data-en="Read all 10 reviews on Fresha">Leer las 10 reseñas en Fresha</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACION -->
+  <section id="ubicacion" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+    <span class="sec-num" aria-hidden="true">05</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
+      <div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Visítanos" data-en="Visit us">Visítanos</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms" data-es="Tu cita queda &lt;span class=&quot;text-shine&quot;&gt;cerca&lt;/span&gt;" data-en="Your appointment is &lt;span class=&quot;text-shine&quot;&gt;close by&lt;/span&gt;">Tu cita queda <span class="text-shine">cerca</span></h2>
+        <div class="space-y-4">
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Dirección" data-en="Address">Dirección</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">7901 Kingspointe Parkway, Orlando, FL 32819</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(138,79,104,0.4)]" href="https://www.google.com/maps?q=7901+Kingspointe+Parkway,+Orlando,+FL+32819" target="_blank" rel="noopener" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Horario</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a Viernes: 10:00 AM a 7:00 PM" data-en="Monday to Friday: 10:00 AM to 7:00 PM">Lunes a Viernes: 10:00 AM a 7:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Sábado: 10:00 AM a 3:00 PM" data-en="Saturday: 10:00 AM to 3:00 PM">Sábado: 10:00 AM a 3:00 PM</p>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="Reservas" data-en="Bookings">Reservas</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener">Fresha</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light"><span data-es="Teléfono" data-en="Phone">Teléfono</span>: <a class="text-[color:var(--accent-deep)]" href="tel:+14073603215">(407) 360-3215</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
+        <iframe title="Mapa: SC Beauty Spa, 7901 Kingspointe Parkway, Orlando FL"
+          src="https://www.google.com/maps?q=7901+Kingspointe+Parkway,+Orlando,+FL+32819&output=embed"
+          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" class="dark-band relative py-28 sm:py-36 overflow-hidden grain border-t border-[color:var(--accent-ghost)]" style="background: linear-gradient(180deg, #241420 0%, #1b1018 100%);">
+    <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
+    <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Una mirada profunda, consciente y amorosa." data-en="A deep, mindful and caring approach.">Una mirada profunda, consciente y amorosa.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms" data-es="Tu piel te lo &lt;span class=&quot;text-shine&quot;&gt;va a agradecer&lt;/span&gt;" data-en="Your skin will &lt;span class=&quot;text-shine&quot;&gt;thank you&lt;/span&gt;">Tu piel te lo <span class="text-shine">va a agradecer</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Reserva tu cita online en segundos. Elige el tratamiento, el día y la hora, y deja el resto en manos de Susana." data-en="Book your appointment online in seconds. Choose the treatment, day and time, and leave the rest to Susana.">Reserva tu cita online en segundos. Elige el tratamiento, el día y la hora, y deja el resto en manos de Susana.</p>
+      <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
+        <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Reservar cita" data-en="Book now">Reservar cita</a>
+        <a href="tel:+14073603215" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Llamar ahora" data-en="Call now">Llamar ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#140d12]">
+    <span class="foot-mark" aria-hidden="true">SC Beauty</span>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded-full flex items-center justify-center font-display text-lg ring-1 ring-[rgba(232,184,203,0.35)] bg-[rgba(232,184,203,0.08)] text-[#e8b8cb]">S</span>
+          <span class="font-display text-lg tracking-[0.12em] uppercase">SC Beauty Spa</span>
+        </div>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Estudio de estética facial en Southwest Orlando, FL. Limpiezas faciales, microagujas, IPL y PRP con Susana Cardozo." data-en="Facial esthetics studio in Southwest Orlando, FL. Facial cleansing, microneedling, IPL and PRP with Susana Cardozo.">Estudio de estética facial en Southwest Orlando, FL. Limpiezas faciales, microagujas, IPL y PRP con Susana Cardozo.</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
+        <p>7901 Kingspointe Parkway, Orlando, FL 32819</p>
+        <p><a href="tel:+14073603215" class="hover:text-[#e8b8cb]">(407) 360-3215</a></p>
+        <p data-es="Lun a Vie 10 AM a 7 PM · Sáb 10 AM a 3 PM" data-en="Mon to Fri 10 AM to 7 PM · Sat 10 AM to 3 PM">Lun a Vie 10 AM a 7 PM · Sáb 10 AM a 3 PM</p>
+      </div>
+      <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
+        <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow us">Síguenos</p>
+        <p><a href="https://www.instagram.com/susana.beautyspa/" target="_blank" rel="noopener" class="hover:text-[#e8b8cb]">Instagram · @susana.beautyspa</a></p>
+        <p><a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="hover:text-[#e8b8cb]" data-es="Reservas online · Fresha" data-en="Online booking · Fresha">Reservas online · Fresha</a></p>
+      </div>
+    </div>
+    <div class="border-t border-[color:var(--accent-ghost)]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs text-[color:var(--ink-40)]" data-es="© 2026 SC Beauty Spa. Todos los derechos reservados." data-en="© 2026 SC Beauty Spa. All rights reserved.">© 2026 SC Beauty Spa. Todos los derechos reservados.</p>
+        <a href="https://merktop.com" target="_blank" rel="noopener" class="merktop-badge">
+          <span class="merktop-dot"></span>
+          <span class="text-xs text-[#f4eee2]">Powered by <span class="font-semibold">Merktop</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante de reserva -->
+  <a href="https://www.fresha.com/a/sc-beauty-spa-orlando-7901-kingspointe-parkway-ir74ins7/booking" target="_blank" rel="noopener" class="book-float" aria-label="Reservar cita online">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f7f0ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+  </a>
+
+  <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Volver arriba (abajo-izquierda) -->
+  <button id="backTop" class="back-top glass" type="button" aria-label="Volver arriba">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // 1. Preloader de marca (max 1.2s, no bloquea si la pagina ya cargo)
+    const preloader = document.getElementById('preloader');
+    let preloaderHidden = false;
+    const hidePreloader = () => {
+      if (preloaderHidden || !preloader) return;
+      preloaderHidden = true;
+      preloader.classList.add('done');
+      setTimeout(() => preloader.remove(), 750);
+    };
+    if (reducedMotion) {
+      hidePreloader();
+    } else {
+      if (document.readyState === 'complete') setTimeout(hidePreloader, 500);
+      else window.addEventListener('load', () => setTimeout(hidePreloader, 350));
+      setTimeout(hidePreloader, 1200);
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Nav + 2. barra de progreso + 3. parallax + 11. back-to-top: UN solo listener de scroll con rAF
+    const nav = document.getElementById('nav');
+    const progressBar = document.getElementById('scroll-progress');
+    const backTop = document.getElementById('backTop');
+    const parallaxEls = reducedMotion ? [] : Array.from(document.querySelectorAll('[data-parallax]'));
+    let scrollTicking = false;
+    const onScrollFrame = () => {
+      scrollTicking = false;
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 24);
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.transform = 'scaleX(' + (maxScroll > 0 ? Math.min(1, y / maxScroll) : 0) + ')';
+      backTop.classList.toggle('show', y > window.innerHeight * 2);
+      const heroInner = document.getElementById('heroInner');
+      if (heroInner && !reducedMotion && y < window.innerHeight) {
+        const p = y / window.innerHeight;
+        heroInner.style.opacity = String(Math.max(0, 1 - p * 1.15));
+        heroInner.style.transform = 'translateY(' + (p * 46).toFixed(1) + 'px)';
+      }
+      if (parallaxEls.length && y < window.innerHeight * 1.7) {
+        for (const el of parallaxEls) {
+          el.style.translate = '0 ' + (y * parseFloat(el.dataset.parallax)).toFixed(1) + 'px';
+        }
+      }
+    };
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    onScrollFrame();
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));
+
+    // 4. Reveals editoriales: texto (.reveal) + imagenes con clip-path (.img-reveal)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+    const revealEls = document.querySelectorAll('.reveal, .img-reveal');
+    revealEls.forEach(el => io.observe(el));
+    // Fallback obligatorio: un elemento con clip-path que lo recorta al 100% tiene caja
+    // pintada de altura 0, y varios motores le calculan intersectionRatio 0. El observer
+    // de arriba entonces NUNCA lo revela (medido: .reveal 49/50 in, .img-reveal 0/10) y
+    // el hero y la galeria se quedan en blanco. getBoundingClientRect mide la caja de
+    // layout, que si existe, asi que rompe el circulo.
+    const checkVisibleFallback = () => {
+      revealEls.forEach(el => {
+        if (el.classList.contains('in')) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('scroll', checkVisibleFallback, { passive: true });
+    window.addEventListener('resize', checkVisibleFallback, { passive: true });
+    window.addEventListener('load', checkVisibleFallback);
+    checkVisibleFallback();
+    setTimeout(checkVisibleFallback, 400);
+
+    // Blur-up images
+    document.querySelectorAll('img.blur-up').forEach(img => {
+      if (img.complete && img.naturalWidth) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+    });
+
+    // 5. Contadores animados (decimales respetados)
+    if (!reducedMotion) {
+      const animateCount = (el) => {
+        const target = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+      const counterIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); counterIO.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    }
+
+    // 7. Carrusel de testimonios: drag/swipe + autoplay 5s + dots
+    const carousel = document.getElementById('reviewsCarousel');
+    if (carousel) {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const dotsWrap = document.getElementById('reviewDots');
+      let page = 0;
+      let autoTimer = null;
+      const perView = () => (window.innerWidth >= 640 ? 2 : 1);
+      const pageCount = () => Math.max(1, slides.length - perView() + 1);
+      const slideWidth = () => carousel.clientWidth / perView();
+      const updateDots = () => {
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === page));
+      };
+      const render = () => {
+        track.style.transform = 'translateX(' + (-page * slideWidth()) + 'px)';
+        updateDots();
+      };
+      const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < pageCount(); i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'carousel-dot';
+          dot.setAttribute('aria-label', 'Ir a la reseña ' + (i + 1));
+          dot.addEventListener('click', () => { page = i; render(); restartAuto(); });
+          dotsWrap.appendChild(dot);
+        }
+        updateDots();
+      };
+      const next = () => { page = (page + 1) % pageCount(); render(); };
+      const stopAuto = () => { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+      const restartAuto = () => { stopAuto(); if (!reducedMotion) autoTimer = setInterval(next, 5000); };
+
+      let dragging = false, startX = 0, baseX = 0, movedX = 0;
+      carousel.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        movedX = 0;
+        startX = e.clientX;
+        baseX = -page * slideWidth();
+        carousel.classList.add('dragging');
+        carousel.setPointerCapture(e.pointerId);
+        stopAuto();
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        movedX = e.clientX - startX;
+        const minX = -(pageCount() - 1) * slideWidth();
+        let x = baseX + movedX;
+        if (x > 0) x = x * 0.3;
+        if (x < minX) x = minX + (x - minX) * 0.3;
+        track.style.transform = 'translateX(' + x + 'px)';
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove('dragging');
+        if (Math.abs(movedX) > 48) {
+          page = Math.max(0, Math.min(pageCount() - 1, page + (movedX < 0 ? 1 : -1)));
+        }
+        render();
+        restartAuto();
+      };
+      carousel.addEventListener('pointerup', endDrag);
+      carousel.addEventListener('pointercancel', endDrag);
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', () => { if (!dragging) restartAuto(); });
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => { page = Math.min(page, pageCount() - 1); buildDots(); render(); }, 150);
+      });
+      buildDots();
+      render();
+      restartAuto();
+    }
+
+
+    // v3: split-text del hero (palabra por palabra, respeta spans internos) + reaplicable tras cambio de idioma
+    const applySplit = el => {
+      const nodes = Array.from(el.childNodes);
+      el.textContent = '';
+      let idx = 0;
+      const wrapWord = (content, cls) => {
+        const w = document.createElement('span'); w.className = 'split-word';
+        const inner = document.createElement('span');
+        if (typeof content === 'string') inner.textContent = content; else inner.appendChild(content);
+        if (cls) inner.className = cls;
+        inner.style.transitionDelay = (120 + idx * 90) + 'ms'; idx++;
+        w.appendChild(inner); return w;
+      };
+      nodes.forEach(n => {
+        if (n.nodeType === 3) {
+          n.textContent.split(/\s+/).filter(Boolean).forEach(word => { el.appendChild(wrapWord(word)); el.appendChild(document.createTextNode(' ')); });
+        } else if (n.tagName === 'BR') {
+          el.appendChild(n);
+        } else {
+          el.appendChild(wrapWord(n)); el.appendChild(document.createTextNode(' '));
+        }
+      });
+      if (el.classList.contains('in')) {
+        requestAnimationFrame(() => el.querySelectorAll('.split-word > span').forEach(s => { s.style.transition = 'none'; s.getBoundingClientRect(); s.style.transform = 'translateY(0)'; s.style.transition = ''; }));
+      }
+    };
+    document.querySelectorAll('.split').forEach(el => { applySplit(el); io.observe(el); });
+
+    // Multilenguaje ES/EN
+    const langToggleBtn = document.getElementById('langToggle');
+    const translatable = document.querySelectorAll('[data-es][data-en]');
+    const applyLang = l => {
+      translatable.forEach(el => {
+        const html = el.dataset[l];
+        if (html == null) return;
+        el.innerHTML = html;
+        if (el.classList.contains('split')) applySplit(el);
+      });
+      document.documentElement.lang = l;
+      try { localStorage.setItem('lang', l); } catch (e) {}
+      if (langToggleBtn) langToggleBtn.textContent = l === 'es' ? 'EN' : 'ES';
+    };
+    let initialLang = 'es';
+    try { initialLang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2); } catch (e) { initialLang = (navigator.language || 'es').slice(0, 2); }
+    applyLang(initialLang === 'en' ? 'en' : 'es');
+    if (langToggleBtn) langToggleBtn.addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+
+    // v3: cursor ring (solo desktop, lerp con rAF)
+    const ring = document.getElementById('cursorRing');
+    if (ring && finePointer && !reducedMotion) {
+      let cx = -100, cy = -100, tx = -100, ty = -100, ringOn = false;
+      window.addEventListener('pointermove', (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!ringOn) { ringOn = true; ring.classList.add('on'); }
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { ringOn = false; ring.classList.remove('on'); });
+      const lerp = () => {
+        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+        ring.style.transform = 'translate(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px)';
+        requestAnimationFrame(lerp);
+      };
+      requestAnimationFrame(lerp);
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('big'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('big'));
+      });
+    }
+
+    // 8. Botones magneticos (max 6px, spring back). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('.btn-3d').forEach(btn => {
+        btn.classList.add('magnetic');
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const mx = Math.max(-6, Math.min(6, ((e.clientX - r.left) / r.width - 0.5) * 12));
+          const my = Math.max(-6, Math.min(6, ((e.clientY - r.top) / r.height - 0.5) * 12));
+          btn.style.translate = mx.toFixed(1) + 'px ' + my.toFixed(1) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.translate = '0px 0px'; });
+      });
+    }
+
+    // 9. Tilt 3D sutil en cards de servicios (max 3deg + glare). Solo desktop.
+    if (finePointer && !reducedMotion) {
+      document.querySelectorAll('#servicios .glass-hover').forEach(card => {
+        card.addEventListener('mouseenter', () => card.classList.add('tilt'));
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          const rx = ((0.5 - py) * 6).toFixed(2);
+          const ry = ((px - 0.5) * 6).toFixed(2);
+          card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-4px)';
+          card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // 10. Cursor glow calido en la banda oscura final. Solo desktop.
+    const ctaBand = document.getElementById('cta-final');
+    const ctaGlow = document.getElementById('ctaGlow');
+    if (ctaBand && ctaGlow && finePointer && !reducedMotion) {
+      ctaBand.addEventListener('mousemove', (e) => {
+        const r = ctaBand.getBoundingClientRect();
+        ctaGlow.style.transform = 'translate(' + (e.clientX - r.left) + 'px, ' + (e.clientY - r.top) + 'px)';
+        ctaGlow.classList.add('on');
+      });
+      ctaBand.addEventListener('mouseleave', () => ctaGlow.classList.remove('on'));
+    }
+  </script>
+</body>
+</html>
