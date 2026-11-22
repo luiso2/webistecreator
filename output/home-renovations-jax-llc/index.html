@@ -26,7 +26,8 @@
   "telephone": "(904) 566-1941",
   "image": "assets/raw/gmaps-1.jpg",
   "sameAs": [
-    "https://www.google.com/maps/place/HOME+RENOVATIONS+JAX+LLC/data=!4m7!3m6!1s0x88e5b7250d59f5fb:0xb5adb8656761274a!8m2!3d30.4790208!4d-81.6472528!16s%2Fg%2F11mv_7z0fn!19sChIJ-_VZDSW35YgRSidhZ2W4rbU?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1"
+    "https://www.google.com/maps/place/HOME+RENOVATIONS+JAX+LLC/data=!4m7!3m6!1s0x88e5b7250d59f5fb:0xb5adb8656761274a!8m2!3d30.4790208!4d-81.6472528!16s%2Fg%2F11mv_7z0fn!19sChIJ-_VZDSW35YgRSidhZ2W4rbU?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1",
+    "https://www.instagram.com/homerenovationsjax/"
   ]
 }
   </script>
@@ -666,6 +667,7 @@
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
+        <p><a href="https://www.instagram.com/homerenovationsjax/" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Instagram · @homerenovationsjax</a></p>
         <p><a href="https://www.google.com/maps/place/HOME+RENOVATIONS+JAX+LLC/data=!4m7!3m6!1s0x88e5b7250d59f5fb:0xb5adb8656761274a!8m2!3d30.4790208!4d-81.6472528!16s%2Fg%2F11mv_7z0fn!19sChIJ-_VZDSW35YgRSidhZ2W4rbU?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNC4wIJJjKgBIAVAD&rclk=1" target="_blank" rel="noopener" class="hover:text-[#e9c3ab]">Google Maps · Google Maps</a></p>
       </div>
     </div>
@@ -697,14 +699,16 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    // Multilenguaje: data-es/data-en + toggle + clave de idioma aislada por sitio (siteforge:lang:<slug>)
+    const LANG_STORAGE_KEY = 'siteforge:lang:home-renovations-jax-llc';
     const applyLang = l => {
       document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
       document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
+      try { localStorage.setItem(LANG_STORAGE_KEY, l); } catch (e) {}
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    let lang = 'en';
+    try { lang = localStorage.getItem(LANG_STORAGE_KEY) || 'en'; } catch (e) {}
     applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 

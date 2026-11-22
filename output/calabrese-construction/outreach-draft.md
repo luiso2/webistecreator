@@ -21,3 +21,7 @@ If you like it, I can help you move it to your own domain. If it is not useful t
 Best,
 Michael Vargas
 Merktop
+
+---
+
+DM_MESSAGE: Hi! Found Calabrese Construction on Google, 5.0 stars with 26 reviews, great work on roofing repairs. I built you a sample website with your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/calabrese-construction/ No pressure, it doesn't change anything you're doing now. Like it? I can put it on your own domain. Not for you? No hard feelings. Michael Vargas / Merktop

@@ -702,14 +702,16 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // Multilenguaje: data-es/data-en + toggle + localStorage + navigator.language
+    // Multilenguaje: data-es/data-en + toggle + clave de idioma aislada por sitio (siteforge:lang:<slug>)
+    const LANG_STORAGE_KEY = 'siteforge:lang:us-latino-handyman-services';
     const applyLang = l => {
       document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
       document.documentElement.lang = l;
-      localStorage.setItem('lang', l);
+      try { localStorage.setItem(LANG_STORAGE_KEY, l); } catch (e) {}
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
-    let lang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    let lang = 'en';
+    try { lang = localStorage.getItem(LANG_STORAGE_KEY) || 'en'; } catch (e) {}
     applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 

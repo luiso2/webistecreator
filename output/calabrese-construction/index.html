@@ -774,7 +774,7 @@
       localStorage.setItem(siteLanguageKey, l);
       document.getElementById('langToggle').textContent = l === 'es' ? 'EN' : 'ES';
     };
-    let lang = localStorage.getItem(siteLanguageKey) || (navigator.language || 'en').slice(0,2);
+    let lang = localStorage.getItem(siteLanguageKey) || 'en';
     applyLang(lang === 'es' ? 'es' : 'en');
     document.getElementById('langToggle').addEventListener('click', () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
 
