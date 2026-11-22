@@ -1,2 +1,2 @@
 // Generado por npm run build:styles. Cambia con cada contenido de Tailwind.
-export const SHARED_STYLE_REV = '0e1c1b81e0f444cb';
+export const SHARED_STYLE_REV = '755c9afe54bdf942';
