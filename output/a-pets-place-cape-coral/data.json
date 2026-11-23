@@ -1,0 +1,131 @@
+{
+  "slug": "a-pets-place-cape-coral",
+  "name": "A Pets Place",
+  "niche": "pet grooming / peluqueria canina",
+  "language": "en",
+  "language_note": "All verbatim reviews found (Facebook via Birdeye, Google via live Maps scrape) are in English. No Spanish content found anywhere for this business. Default language set to en.",
+  "address": "1316 SW 4th Terrace #103, Cape Coral, FL 33991, United States",
+  "phone": "+1 239-339-3555",
+  "phone_display": "(239) 339-3555",
+  "rating": "4.8",
+  "review_count_total_birdeye": "57",
+  "review_count_google_birdeye": "36",
+  "review_count_facebook_birdeye": "21",
+  "review_count_google_live_maps_recheck": "34",
+  "review_count_note": "Task brief specifies 4.8 stars / 57 reviews (36 Google + 21 Facebook) per the Birdeye aggregation profile (reviews.birdeye.com/a-pets-place-149249016440793), independently confirmed by a second directory (dogdog.org/pet-groomer/a-pets-place-cape-coral, same address/phone). A live Playwright pull of the Google Maps listing itself on 2026-11-23 showed 4.8 stars / 34 reviews (Google-only count, which naturally drifts over time and differs slightly from Birdeye's cached aggregation). Site copy uses the Birdeye combined total (4.8 / 57) as instructed, since it is corroborated by two independent sources and matches the task brief.",
+  "hours": {
+    "source": "Google Maps live listing (Playwright scrape of the exact place URL below, 2026-11-23), consistent with dogdog.org directory listing",
+    "mon": "Closed",
+    "tue": "9:00 AM - 4:00 PM",
+    "wed": "9:00 AM - 4:00 PM",
+    "thu": "9:00 AM - 4:00 PM",
+    "fri": "9:00 AM - 4:00 PM",
+    "sat": "9:00 AM - 3:00 PM",
+    "sun": "Closed",
+    "note": "An earlier Birdeye-page WebFetch summary showed conflicting hours (Mon-Wed 9-6); discarded in favor of the two sources that agree (live Google Maps + dogdog.org)."
+  },
+  "has_own_site": false,
+  "website_check": {
+    "domains_tried_no_dns": ["apetsplace.com", "www.apetsplace.com", "apetsplacecapecoral.com", "apets-place.com"],
+    "websearch": "No official website found; WebSearch explicitly returned 'I didn't find an official website for A Pets Place in Cape Coral'.",
+    "google_maps_live": "Maps listing shows an 'Add website' button (no website on file for this business), confirming has_own_site=false independently of the DNS checks.",
+    "conclusion": "No functional own website found anywhere. has_own_site = false."
+  },
+  "facebook": "https://www.facebook.com/APetsPlace/",
+  "facebook_note": "URL confirmed via multiple independent directory listings (dogdog.org, Birdeye). Could not read page content: facebook.com returns a hard login wall to both WebFetch and curl (even with a Chrome User-Agent), no og:meta content exposed. Used Birdeye's Facebook-sourced review feed and the live Google Maps listing as substitutes for photos/reviews.",
+  "instagram": null,
+  "instagram_note": "No Instagram account found via WebSearch for this business.",
+  "email": null,
+  "email_search_note": "No public email found after: Birdeye listing full HTML (only profiles@birdeye.com, which is Birdeye's own support address), dogdog.org directory page, Google Maps 'Contact us' panel, and multiple WebSearch queries combining the business name, address and 'email/contact'. Facebook About/Page-info section (the most likely source) was not reachable due to the login wall. Registered null, not fabricated.",
+  "groomer_name_from_reviews": "Dana. Named by first name across more than a dozen independent reviews spanning roughly 2015-2023 (e.g. 'Dana has been our choice of grooming for 8 years', 'I love Dana - have been going to her for over 16 years', 'Dana is amazing...15 years'). One review ('the owner and her assistant were friendly') implies a two-person shop; not asserting Dana's ownership title since that specific fact is not independently confirmed, so the site refers to her as the salon's longtime groomer, not explicitly 'the owner'.",
+  "maps_url": "https://www.google.com/maps/place/A+Pets+Place/@26.6428684,-82.0017418,17z/data=!3m1!4b1!4m6!3m5!1s0x88db4660a5198269:0x35c8c15b7919b161!8m2!3d26.6428684!4d-82.0017418!16s%2Fg%2F11b6bq_7q7",
+  "google_maps_confirmed": {
+    "name": "A Pets Place",
+    "address": "1316 SW 4th Terrace #103, Cape Coral, FL 33991, United States",
+    "phone": "+1 239-339-3555",
+    "category": "Pet groomer",
+    "no_website_button": "Maps shows 'Add website' (no website on file).",
+    "service_mentions": ["quiet atmosphere, mentioned in 3 reviews", "friendly staff, mentioned in 7 reviews", "job, mentioned in 3 reviews"]
+  },
+  "services_known": {
+    "source": "Consistently listed across directory aggregations (dogdog.org) that pull from the business's own Google Business service list; cross-checked against what reviewers describe receiving.",
+    "list": [
+      "Dog grooming: full-service bathing and haircuts/styling",
+      "Cat grooming",
+      "Nail trimming",
+      "Ear cleaning",
+      "De-shedding treatment",
+      "Teeth cleaning",
+      "Flea and tick treatment",
+      "Cage-free, one-pet-at-a-time environment (repeatedly confirmed independently in reviews: 'no cages', 'she doesn't kennel the dogs, only has one there at a time', 'calm environment')"
+    ]
+  },
+  "pricing_published": false,
+  "pricing_note": "No price list found anywhere public (no booking platform, no menu PDF, Facebook page blocked, no official site). One directory describes pricing only as 'affordable/competitive', not usable as real numbers. Built with the adapted variant per FORGE-BRIEF 0.b: service cards with no price shown, plus a 'every pet is quoted by size/breed, call us' note. Nothing invented.",
+  "photos": {
+    "source": "Google Maps business photo gallery for the exact place URL above, scraped live via a Playwright script (full Chrome binary + proxy TLS flags, same technique as scripts/gmaps_detail.js / maps_research.py) because Facebook itself is login-walled and Google Maps requires JS rendering that plain curl/WebFetch cannot execute.",
+    "total_downloaded": 8,
+    "duplicates_removed": 1,
+    "usable_curated_good": 5,
+    "curated_files_used": ["gmaps-1.jpg", "gmaps-2.jpg", "gmaps-3.jpg", "gmaps-7.jpg", "gmaps-8.jpg"],
+    "rejected_files": {
+      "gmaps-5.jpg": "soft focus / blurry outdoor patio shot, not usable per visual curation rule",
+      "gmaps-6.jpg": "very dark/grainy low-light indoor shot, not usable per visual curation rule"
+    },
+    "curation_notes": "Every photo viewed individually before selecting (no filename-only picking). Kept: two crisp portraits of a freshly groomed Shih Tzu with a clean trim and ribbon (same grooming session, two angles), one happy well-groomed Bichon, one photo of two groomed Shih Tzus together at a client's home, and one real inside-the-salon photo showing the cage-free resting area (a groomed dog with a bandana resting calmly on a towel next to a kennel/crate on the salon's tile floor), which independently corroborates the many reviews describing a cage-free, calm environment. No selfies, no staff portraits used as tiles, no screenshots, no text overlays."
+  },
+  "reviews_verbatim": [
+    {
+      "author": "Michael Cullen",
+      "source": "Facebook (via Birdeye's review feed)",
+      "age": "9 years ago",
+      "text": "A pets place is the only place we trust to take care of our Saint Bernard Buda. They do an awesome job. I wouldn't hesitate to recommend them to anyone."
+    },
+    {
+      "author": "Vera Conner",
+      "source": "Facebook (via Birdeye's review feed)",
+      "age": "10 years ago",
+      "text": "I love Dana - have been going to her for over 16 years and I have followed her everywhere. She does an awesome job even when the dogs are aggressive - she knows how to handle. She has done my collie/husky mix and both of my American Bulldogs - they all love her - great job!!!"
+    },
+    {
+      "author": "Laurie Guminski",
+      "source": "Facebook (via Birdeye's review feed)",
+      "age": "8 years ago",
+      "text": "Dana is amazing. She always gets me in quickly and does an amazing job. I've been having my pets groomed for over 15 years and she is by far my favorite groomer. I will never take my fur babies anywhere else."
+    },
+    {
+      "author": "Nancy Vigeant",
+      "source": "Facebook (via Birdeye's review feed)",
+      "age": "11 years ago",
+      "text": "Very clean place and our dog had the best grooming ever. She is definitely our new groomer! I highly recommend giving this place a try!"
+    },
+    {
+      "author": "Rob James III",
+      "source": "Google (live Maps listing)",
+      "age": "recent, Local Guide, 46 reviews",
+      "stars": "5 stars",
+      "text": "Dana has been our choice of grooming for 8 years at least. I cannot say enough good things about her and her work. Both our dogs that she has groomed loved going to see her and the quality of work is second to none. But the best part is she doesn't kennel the dogs she only has one there at a time."
+    }
+  ],
+  "additional_reviews_seen_not_used": [
+    "Danny Scott (FB): Best Groomer in town. My Miniature Schnauzer has never looked better. Fast Friendly Service.",
+    "Brenda Christensen (FB): no cages - you can tell she truly cares...",
+    "Darlene Fletcher (FB): She was really matted. Ready for pick up very quickly, best haircut ever.",
+    "Donna Klavon Niebauer (FB): Her shop exhibits a calm environment that our dog picked up on.",
+    "Stacey Green-Danku (Google, 5 stars, truncated by Maps UI): first visit with an 11 year old Bichon, Dana asked about preferences...",
+    "Dorothy Vice (Google, 5 stars, truncated): the owner and her assistant were friendly and did an outstanding job on my two dogs...",
+    "Ashley Garrett (Google, 5 stars, truncated): Friendly staff, pays attention to detail. My dog always comes in smiling!"
+  ],
+  "brand_vibe": "No logo found (no own site, Facebook blocked). Base chosen: light, warm, friendly terracotta/peach (hue shift ~28 deg) appropriate for a calm, cage-free pet grooming salon; not previously used in SKELETONS-V2 palette history (coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark).",
+  "research_degradado": false,
+  "research_degradado_note": "Research was NOT degraded: minimum of 5 real, visually-curated, good-quality photos obtained directly from the business's own Google Maps listing, plus 5 real verbatim reviews with names, plus confirmed phone/address/hours/Facebook URL.",
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/a-pets-place-cape-coral/",
+  "dm_message": "Hi! I came across A Pets Place on Google (4.8 stars, 57 reviews) and noticed you don't have a website, so I put together a free sample site for you: https://siteforge-demos.odd-forest-9504.workers.dev/a-pets-place-cape-coral/ It doesn't touch your current booking or operations at all. If you like it, happy to put it on your own domain; if not, no pressure, I'll just take it down. Let me know what you think!",
+  "sources": [
+    "https://reviews.birdeye.com/a-pets-place-149249016440793 (pages 1-3: business info, rating/review breakdown, Facebook-sourced reviews verbatim)",
+    "https://www.dogdog.org/pet-groomer/a-pets-place-cape-coral (address, phone, hours, services list)",
+    "Live Google Maps place page (Playwright scrape of the exact place URL above, 2026-11-23): name, address, phone, hours, 'Add website' button, photo gallery, Google review snippets",
+    "DNS/curl checks on 4 domain variants (none resolve)",
+    "WebSearch queries for official website, Instagram, email, prices (all came back empty/not found)"
+  ]
+}
