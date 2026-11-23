@@ -1,0 +1,56 @@
+{
+  "slug": "jordan-roofing-jacksonville",
+  "name": "Jordan Roofing, LLC",
+  "niche": "residential roofing (inspection, installation, repair, storm damage, shingle/metal/commercial)",
+  "city": "Jacksonville, FL",
+  "language": "en",
+  "phone": "+1 904-652-8103",
+  "phone_display": "(904) 652-8103",
+  "rating": "5.0",
+  "review_count_google": "43",
+  "google_business_url": "https://business.google.com/v/_/AKsrIN1VFpSjf2W-qJhrGRxAKPKup50EsZ9luhtQAiV9m58VmvY8-bSziY6H/3b87/_",
+  "service_areas_requested": ["Hilliard", "Baldwin", "Macclenny", "Neptune Beach", "Atlantic Beach", "Jacksonville Beach", "Jacksonville"],
+
+  "status": "failed",
+  "failed_reason": "has_own_site = true. Jordan Roofing, LLC already has a fully functional, multi-section website on its OWN domain (not a platform subdomain): https://jordanroofingjax.com (HTTP 200, 151,880 bytes, title \"Jordan Roofing, LLC - Jacksonville, FL\"). This is NOT the 'Jordan Roofing, Inc.' HomeAdvisor entity mentioned as a possible decoy in the brief; it is confirmed to be THIS exact business by an exact match on phone number (904) 652-8103 appearing multiple times in the page HTML (tel link + footer text, formats '(904) 652-8103' and '9046528103'), city Jacksonville FL (ZIP 32221), and a service-area list that includes Jacksonville Beach, Atlantic Beach and Neptune Beach, the same beach towns listed in the task's service-area list. Per PIPELINE.md Fase 1 point 2 / FORGE-BRIEF section 1 ('CHECK CRITICO DE WEBSITE PROPIO') and the task's hard limit ('si descubres que SI tiene website propio, marca el resultado como failed en vez de forzar un build degradado'), this disqualifies the business from the 'no website' cold-outreach SiteForge build. STOPPING before Phase 2/3/5 as instructed; no index.html, no outreach-draft.md, and no photo download were produced for this slug.",
+
+  "has_own_site": true,
+  "own_site_evidence": {
+    "url": "https://jordanroofingjax.com",
+    "http_status": 200,
+    "page_title": "Jordan Roofing, LLC - Jacksonville, FL",
+    "phone_matches_in_html": ["(904) 652-8103", "9046528103"],
+    "email_found_on_site": "jordanroofingllc@gmail.com",
+    "footer_copyright": "© 2026 American Marketing & Publishing, L.L.C. (template/CMS vendor; domain itself is the business's own, not a vendor subdomain)",
+    "address_on_site": "Jacksonville, FL 32221 (no street address published)",
+    "service_area_on_site": "Jacksonville, FL and Northeast Florida: Riverside, Avondale, Ortega, Mandarin, San Marco, Arlington, Northside, Westside, Southside, Baymeadows, Jacksonville Beach, Atlantic Beach, Neptune Beach",
+    "services_on_site": ["Roof repair", "Roof replacement", "New roof installation", "Storm damage repair", "Shingle roofing", "Metal roofing", "Commercial roofing", "Professional lawn care", "Pressure washing", "Financing (0% interest for qualified customers)", "Works with insurance companies on claims"],
+    "certifications_on_site": ["Licensed", "Bonded", "Insured", "Certified Crane Operator"],
+    "site_structure": "Multi-section marketing site with nav (Home, About, Services, Types of Roofing we Offer PDF, Financing, Gallery, FAQ, Testimonials, News, Contact), footer with hours, legal links (Terms of Use, Privacy Policy, Text-Only Site Version), and a chat widget. Several linked sections (Gallery, FAQ, Testimonials, News) appeared thin/empty in the fetch, but the site itself is live, on its own domain, and unambiguously belongs to this exact business by phone match.",
+    "social_links_on_site": {
+      "facebook": "facebook.com/JordanRoofingFL (handle as shown in site navigation, not independently re-verified by this session)",
+      "yelp": "yelp listing slug jordan-roofing-jacksonville (as shown in site navigation)",
+      "instagram": "instagram.com/jordanroofingllc (handle as shown in site navigation, not independently re-verified by this session)"
+    },
+    "verification_method": "WebFetch of https://jordanroofingjax.com, cross-checked with a direct curl download of the same URL (HTTP 200, 151,880 bytes) and a grep for the phone number pattern '904' in the raw HTML, which returned 5 matches in the two formats above."
+  },
+
+  "domain_checks": {
+    "jordanroofingjax.com": "200 OK - THIS IS the business's own site (see own_site_evidence)",
+    "jordanroofingllc.com": "no response / no DNS (connection unreachable)",
+    "jordanroofing.com": "no response / no DNS (connection unreachable)",
+    "jordanroofingjacksonville.com": "no response / no DNS (connection unreachable)",
+    "jordan-roofing.com": "no response / no DNS (connection unreachable)",
+    "jordanroofingfl.com": "no response / no DNS (connection unreachable)",
+    "jordanroofingllc.net": "no response / no DNS (connection unreachable)"
+  },
+
+  "other_entity_note": "WebSearch also surfaced a HomeAdvisor listing for 'Jordan Roofing, Inc.' (4.8 rating, different legal suffix) and other unrelated roofing companies (CJ2 Roofing, Endless Summer Roofing, Universal Roof & Contracting, StormForce of Jacksonville, etc.) in the same market. Those were NOT used for any data in this file; the own_site_evidence above is specific to 'Jordan Roofing, LLC' at (904) 652-8103, matched by exact phone number, not by name alone.",
+
+  "notes": "No further research (photos, reviews verbatim, email deep search, social profile verification) was performed beyond what was needed to confirm has_own_site=true, per the task instruction to stop immediately upon finding a real own domain rather than continuing into Phase 2/3. The Google Business rating/review count (5.0 / 43 reviews) and service-area list provided in the task were taken as given and recorded above, not independently re-scraped, since the build was halted before that was needed.",
+  "sources": [
+    "https://jordanroofingjax.com (own domain, fetched and curled directly, phone match confirmed)",
+    "WebSearch: \"Jordan Roofing\" Jacksonville Florida (904) 652-8103",
+    "Task-provided Google Business URL (not independently re-opened in this session)"
+  ]
+}
