@@ -134,14 +134,19 @@
     .dark-band .btn-ghost:hover { border-color: rgba(241,203,189,0.7); background: rgba(241,203,189,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
     .dark-band .stars { color: #f1cbbd; text-shadow: 0 0 14px rgba(241,203,189,0.4); }
     .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       background: linear-gradient(180deg, #c69078 0%, #a26348 100%);
       box-shadow: 0 6px 0 #5d2e20, 0 14px 30px rgba(51,37,34,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
+    .book-float-label { color: #fff; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
     .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5d2e20, 0 20px 40px rgba(51,37,34,0.4), 0 0 34px rgba(162,99,72,0.35); }
     .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5d2e20, 0 6px 14px rgba(51,37,34,0.3); }
+    @media (max-width: 640px) {
+      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
+      .book-float-label { font-size: 0.8rem; }
+    }
 
     /* ============ Motion v2 ============ */
     #preloader {
@@ -533,9 +538,9 @@
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Tacos de carne" data-en="Beef tacos">Beef tacos</span><img src="assets/raw/img-1.jpg" alt="Street tacos with onion, cilantro and cucumber from Mr Taco USA" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Sopes" data-en="Sopes">Sopes</span><img src="assets/raw/img-4.png" alt="Sopes topped with cheese, salsa and lettuce from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Hot dogs" data-en="Hot dogs">Hot dogs</span><img src="assets/raw/img-5.png" alt="Mexican-style hot dogs with mustard, mayo and salsa from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Tacos de birria" data-en="Birria tacos">Birria tacos</span><img src="assets/raw/img-6.png" alt="Birria tacos with consomme, lime and cucumber from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Sopes" data-en="Sopes">Sopes</span><img src="assets/raw/img-4.jpg" alt="Sopes topped with cheese, salsa and lettuce from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Hot dogs" data-en="Hot dogs">Hot dogs</span><img src="assets/raw/img-5.jpg" alt="Mexican-style hot dogs with mustard, mayo and salsa from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Tacos de birria" data-en="Birria tacos">Birria tacos</span><img src="assets/raw/img-6.jpg" alt="Birria tacos with consomme, lime and cucumber from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
         <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Tacos frescos" data-en="Fresh tacos">Fresh tacos</span><img src="assets/raw/img-7.jpg" alt="Close up of beef tacos with cilantro from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
         <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Tostadas cargadas" data-en="Loaded tostadas">Loaded tostadas</span><img src="assets/raw/img-8.jpg" alt="Loaded tostadas with cheese, potato and lettuce from Mr Taco USA" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>

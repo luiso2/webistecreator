@@ -133,14 +133,19 @@
     .dark-band .btn-ghost:hover { border-color: rgba(240,190,217,0.7); background: rgba(240,190,217,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
     .dark-band .stars { color: #f0bed9; text-shadow: 0 0 14px rgba(240,190,217,0.4); }
     .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       background: linear-gradient(180deg, #c47a9f 0%, #a04a75 100%);
       box-shadow: 0 6px 0 #5c2142, 0 14px 30px rgba(51,34,45,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
+    .book-float-label { color: #fff; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
     .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #5c2142, 0 20px 40px rgba(51,34,45,0.4), 0 0 34px rgba(160,74,117,0.35); }
     .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #5c2142, 0 6px 14px rgba(51,34,45,0.3); }
+    @media (max-width: 640px) {
+      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
+      .book-float-label { font-size: 0.8rem; }
+    }
 
     /* ============ Motion v2 ============ */
     #preloader {
