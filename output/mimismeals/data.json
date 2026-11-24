@@ -1,0 +1,89 @@
+{
+  "slug": "mimismeals",
+  "name": "Mimi's Meals",
+  "niche": "food truck / Cuban and Latin American cuisine",
+  "niche_note": "Google Maps lists the category as 'Latin American restaurant', but the business is confirmed to be a physical food truck/trailer (red trailer with a service window), not a sit-down restaurant. Confirmed via: (1) the gmaps_detail.js rawSnippet explicitly shows the Google category pill 'Latin American restaurant' with no separate food-truck tag, but the review summary's 'serviceMentions' lists 'food truck, mentioned in 7 reviews' as the single most common phrase; (2) multiple verbatim reviews say 'Food was super delicious for being a food truck!!' (Jorge Diez) and 'Highly recommend this food truck!' (Begonia); (3) the real menu-board photo (gmaps-7.jpg) shows a trailer-mounted sandwich board, not a storefront. Built as the adapted variant for a food truck (no online booking system, order via WhatsApp/phone/walk-up).",
+  "city": "Okeechobee, FL",
+  "address": "1416 FL-70, Okeechobee, FL 34974, United States",
+  "address_source": "Google Business Profile (gmaps_detail.js). The task brief's original search was filed under 'Lakeland' but the actual Maps coordinates (27.2435334, -80.8149989) and the Business Profile both resolve to Okeechobee, FL, confirmed before any content was written. The site frames this as the truck's regular parking spot (picnic tables and a trash can are visible next to it in the real photos), not a roaming truck, so a Google Maps embed was used for the location section.",
+  "phone": "+13053437354",
+  "phone_display": "(305) 343-7354",
+  "phone_source": "Google Business Profile (gmaps_detail.js), matches the WhatsApp number printed on the real menu-board photo ((305) 343-7354 next to a WhatsApp icon).",
+  "language": "en",
+  "language_source": "The business's own materials are all in English: the physical menu board (all item names, descriptions and section headers are in English), and the verbatim Google reviews quoted on the site are all in English despite the Cuban/Latin menu. No Spanish-language captions, menu text or reviews were found anywhere in research, so the site was built EN-default (bilingual toggle still implemented per DESIGN.md, with ES as the secondary language) rather than defaulting to Spanish as initially assumed in the brief.",
+  "has_own_site": false,
+  "has_own_site_evidence": "Google Business Profile's 'website' field pointed to https://usmapid.org/details/mimi-s-meals-ChIJpwL, which redirects (curl -I, HTTP 301) to https://usmapinformation.com/details/mimi-s-meals-ChIJpwL: a generic third-party US business-directory aggregator (Cloudflare-hosted listing mirror), not a website owned or built by the business, equivalent in kind to a Yellow Pages or MapQuest listing. Confirmed no real domain exists: curl to mimismeals.com, mimismealsokeechobee.com, mimismealsfoodtruck.com, mimismealscuban.com, mimismeals.net and mimismealsfl.com all failed with no public DNS record (agent-proxy reported 'connect_unreachable' / no route for every variant). WebSearch for '\"Mimi's Meals\" Okeechobee Florida food truck instagram facebook' and '\"Mimi's Meals\" Okeechobee website' returned no matching business page at all (only unrelated similarly-named businesses in other cities/states).",
+  "social_media": {
+    "instagram_handle": "@mimis_meal",
+    "instagram_url": "https://www.instagram.com/mimis_meal/",
+    "facebook_name": "Mimis Meals",
+    "facebook_url": null,
+    "evidence": "Instagram handle and Facebook page name read directly off the real menu-board photo (gmaps-7.jpg, zoomed/cropped for verification): WhatsApp (305) 343-7354, Instagram @mimis_meal, Facebook icon + 'MIMIS MEALS', email mimismeal41@gmail.com. No Facebook URL was found or guessed (WebSearch returned nothing for the business), so no Facebook link is published on the site; only the name is mentioned in the footer as text."
+  },
+  "email": "mimismeal41@gmail.com",
+  "email_source": "Printed directly on the business's own menu-board sign (zoomed photo verification, gmaps-7.jpg), next to an envelope icon: 'MIMISMEAL41@GMAIL.COM'.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Mimi%27s+Meals/data=!4m7!3m6!1s0x88dc1f0046ef02a7:0x48164cf8b10d2906!8m2!3d27.2435334!4d-80.8149989!16s%2Fg%2F11v_4xvw95!19sChIJpwLvRgAf3IgRBikNsfhMFkg",
+    "rating": 5.0,
+    "review_count": 47,
+    "category": "Latin American restaurant",
+    "hours": [
+      "Monday, 10 AM to 8 PM",
+      "Tuesday, 10 AM to 8 PM",
+      "Wednesday, 10 AM to 8 PM",
+      "Thursday, 10 AM to 8 PM",
+      "Friday, 10 AM to 8 PM",
+      "Saturday, Closed",
+      "Sunday, Closed"
+    ],
+    "hours_note": "gmaps_detail.js also returned seasonal annotations ('Thursday (Thanksgiving)', 'Friday (Black Friday)', 'Hours might differ') tied to the current date; these were dropped from the site and only the recurring Mon-Fri 10am-8pm / Sat-Sun closed pattern was published, since that is the real fixed weekly schedule."
+  },
+  "menu": {
+    "source": "Real, zoomed/cropped photo verification of the business's own menu-board sign (gmaps-7.jpg, output/mimismeals/assets/raw/). Every price on the site is either printed in stock text on the board or clearly legible in the owner's own handwritten overlay (photographed and cropped at 250-300% to confirm each digit before use). No price was invented; items whose handwritten price was blurred/overlapping/unreadable (Mimi's Fries protein add-ons, Fried Rice bowls, Shakes, Chicken/Ham&Cheese sandwiches) were left off the priced menu and only mentioned descriptively with 'ask at the truck for today's prices'.",
+    "confirmed_items": [
+      { "name": "Homemade Burger", "price": "$13", "note": "Burger blend, caramelized onions, mushrooms, bacon, American and blue cheese, fried egg, chimichurri mayo and spicy mayo. Fries included. Printed price, fully legible." },
+      { "name": "Empanadas (beef, chicken, ham & cheese, or guava & cheese)", "price": "$3 each", "note": "Handwritten overlay, clearly legible '3.00' repeated for all 4 flavors. Mushroom empanada is marked 'NO' (not currently offered) and was excluded." },
+      { "name": "Picanha Steak Sandwich", "price": "$15", "note": "Cuban bread, romaine, red onion, chimichurri mayo, melted cheese, fries included. Handwritten overlay: two stacked prices ('15.00' above '13.00') sit beside 'PICANHA (BRAZILIAN STEAK)-$' above 'CUBAN STYLE SANDWICH-$' in that same vertical order, so $15 was assigned to Picanha and (unused on site) $13 to the plain Cuban sandwich." },
+      { "name": "Salad", "price": "$3", "note": "Sides section, printed handwritten price, fully legible." },
+      { "name": "Provenzal French Fries", "price": "$3", "note": "Sides section, fully legible." },
+      { "name": "Truffle Fries", "price": "$4", "note": "Sides section, fully legible." },
+      { "name": "Mimi's Fries (side, plain)", "price": "$7", "note": "Sides section, fully legible. NOTE: this is distinct from the larger loaded 'Mimi's Fries' entree (mozzarella, blue cheese, mushrooms, truffle oil, tomato, onion, celery, cilantro, chimichurri and spicy mayo, with a protein add-on) whose own base/extra prices were illegible handwriting and were NOT published." },
+      { "name": "Cuban Coffee", "price": "$1", "note": "Printed on a yellow starburst sticker, fully legible. Not featured as a menu card but confirmed real." }
+    ],
+    "unpriced_but_confirmed_on_menu": [
+      "Fried Rice bowls (Cuban pork, chicken, shrimp, or picanha; pork ham, scrambled eggs, tomato, onion, celery, cilantro, spicy mayo)",
+      "Sandwiches: Chicken, Ham & Cheese, Cuban Style",
+      "Mango shake, Mamey shake, Cuban Malteada"
+    ]
+  },
+  "reviews_verbatim": [
+    { "name": "Jorge Diez", "stars": 5, "text": "Food was super delicious for being a food truck!! Definitely surprised me!! I'm from Miami traveling here for work and was missing some cuban home cooked food and boy did this place deliver and they were super courteous and nice. Great personality behind that kitchen!! Recommending to everyone!!", "source": "Google" },
+    { "name": "Begonia", "stars": 5, "text": "Highly recommend this food truck! The owners are incredibly friendly and the food is absolutely delicious. Great food and great service, I'll definitely be coming back!", "source": "Google", "note": "Original review used an em-dash ('service—I'll'); replaced with a comma to comply with the pipeline's zero em-dash rule. No words were added, removed or changed." },
+    { "name": "Ed's RV Solutions", "stars": 5, "text": "Stopped by on our way through the area. Got the chicken sandwich with fries and Cuban sandwich. Both were delicious, definitely recommend!", "source": "Google" }
+  ],
+  "reviews_note": "A 4th review (Sean St John, 5 stars, 'First experience here, and I will definitely return. I tried the \"Mimi's Fries\". ...') was excluded because Google's own scrape truncated it mid-sentence with an ellipsis (the review itself is longer and was cut off by the 'More' link); using it would have meant displaying an incomplete quote.",
+  "gallery": [
+    { "file": "hero-burger.jpg", "note": "Hero image: the Homemade Burger with a fried egg, bacon, melted cheese and seasoned fries, real photo from Google Maps, no people/faces visible." },
+    { "file": "about-truck.jpg", "note": "About section: the real red trailer/food truck with the Mimi's Meals logo on the service window, the menu board sign, and picnic tables, confirms this is a genuine truck parked at a fixed spot." },
+    { "file": "about-picanha-rice.jpg", "note": "About section: picanha steak over fried rice with chimichurri and a dipping sauce, shot inside a car (customer photo), appetizing and on-menu." },
+    { "file": "gallery-wide-fries.jpg", "note": "Gallery wide tile (16:9 crop of a real photo): close-up of picanha steak over Mimi's loaded fries with mozzarella, blue cheese and herbs." },
+    { "file": "gallery-sandwiches.jpg", "note": "Gallery tile: two picanha steak sandwiches on toasted bread with fries, ready to serve." },
+    { "file": "gallery-chicken-plate.jpg", "note": "Gallery tile: crispy seasoned chicken thigh over rice and beans with sweet fried plantains." },
+    { "file": "gallery-cuban-sandwich.jpg", "note": "Gallery tile (cropped from the original photo to remove a customer's arm/watch visible in the background): a classic pressed Cuban sandwich with fries." },
+    { "file": "logo.jpg", "note": "Nav/footer/favicon avatar: cropped from the real menu-board photo, the business's own circular 'Mimi' face logo and wordmark." }
+  ],
+  "photo_curation_note": "9 real photos were retrieved from Google Maps via gmaps_photocycle.js; gmaps-2.jpg was an exact MD5 duplicate of gmaps-1.jpg and was discarded, leaving 8 unique photos. All 8 were visually inspected one by one with the Read tool before use: 7 are genuine food/truck shots used across hero, about and gallery (no selfies, no closed-eyes mid-bite shots, no caption/text overlays baked into the image); the 8th (the menu-board sign) was used only as a cropped source for the logo and for zoomed price verification, and was deliberately NOT used as a displayed gallery tile since it is a text-heavy photographed sign rather than a food/place/truck shot. One gallery photo (the Cuban sandwich) was cropped to remove a customer's arm and smartwatch that were visible in the background of the original shot.",
+  "brand_vibe": "Built on templates/dark-v2, repainted from the original gold palette to a chili-red / burnt-orange palette (#c0392b deep, #e2572c mid, on a near-black warm-brown base #140d0a), matching the real red-and-black branding of the business's own food truck trailer and menu-board sign.",
+  "variant_adaptations": [
+    "No online booking system: the CTA everywhere (nav, hero, floating button, CTA final, location section) points to a WhatsApp deep link (wa.me) with a pre-filled order message, plus a tel: link and the real menu's own WhatsApp/phone number, per the food-truck adapted variant in PIPELINE.md Fase 3.5.",
+    "'El Metodo' section rewritten from a 4-step salon appointment flow into a 4-step food-truck ordering flow (message or call, pick your meal, we cook it fresh, pull up and eat).",
+    "Services/menu grid rebuilt with only confirmed real prices (Homemade Burger $13, Empanadas $3, Picanha Steak Sandwich $15, Sides list $3-$7); a text note below the grid honestly states that fried rice bowls, additional sandwiches and shakes exist on the menu but asks customers to check the truck for today's prices, instead of inventing numbers.",
+    "Gallery grid reduced from the skeleton's 6 tiles to 4 (1 wide + 3 regular) to match the number of genuinely distinct, high-quality real photos available, per PIPELINE.md's 'fewer good photos beats padding with bad ones' rule.",
+    "Location section keeps the Google Maps embed (not a photo-only fallback) because this is a trailer parked at one fixed, signed address with picnic seating, not a mobile/roaming service."
+  ],
+  "dm_message": "Hi! I built Mimi's Meals a free sample website after seeing your 5.0 stars (47 reviews) on Google. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/mimismeals/ It does not touch your current listing or operations. Happy to put it on your own domain, or take it down if it's not for you, no pressure either way. Michael, Merktop.",
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/mimismeals/",
+  "status": "staging",
+  "outreach": "pending_manual",
+  "gate_result": "GATE OK"
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "bestiesunlimited",
+  "name": "Besties Unlimited",
+  "niche": "catering / eventos (event venue, private party space with in-house catering)",
+  "niche_note": "Google Business category is 'Event venue'. Reviews and photos confirm it is a private party/event room for rent (birthdays, celebrations) that also handles catering in-house for events (one review: 'They even handled the catering, and the wings and Philly cheesesteak were hands down my favorites'). No independently-run restaurant or storefront menu found, so the site frames it honestly as a venue rental with in-house catering available, not a standalone caterer with a published menu.",
+  "city": "Riviera Beach, FL",
+  "address": "1533 Blue Heron Blvd, Riviera Beach, FL 33404, United States",
+  "address_source": "Google Business Profile (gmaps_detail.js), located inside the Blue Heron Apartments plaza. Confirmed on the embedded Google Maps iframe in the built site (pin shows 'Besties Unlimited' at this exact address).",
+  "phone": "+1 561-822-6505",
+  "phone_display": "(561) 822-6505",
+  "phone_source": "Google Business Profile (gmaps_detail.js), matches the phone number given in the task brief.",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "gmaps_detail.js on the exact Maps URL returned website: null (Maps shows 'Add website', no website on file). bestiesunlimited.com resolves (HTTP 200) but is confirmed as a GoDaddy/Wix-style PARKING PAGE: the page is a single-line HTML stub that does `window.onload = () => location.href = '/lander'`, which lands on generic parking-page content with zero business information, per the coordinating session's prior verification. Checked 4 domain variants (bestiesunlimitedevents.com, bestiesunlimitedwpb.com, bestiesunlimitedvenue.com, bestiesunlimitedllc.com): none resolve via DNS (no real registered site). WebSearch for 'Besties Unlimited Riviera Beach event venue website' and 'Besties Unlimited Riviera Beach Blue Heron Blvd website' found no real business website anywhere, only third-party aggregator listings (Atly) and unrelated local businesses. Conclusion: has_own_site = false, the bestiesunlimited.com parking domain does not count as a real website.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "WebSearch 'site:instagram.com bestiesunlimited riviera beach' and 'Besties Unlimited Riviera Beach party venue catering' returned no matching Instagram or Facebook page for this business, only unrelated results (travel blogs, other venues, general Riviera Beach directories). No social handle found on the Google Business Profile or anywhere public."
+  },
+  "email": null,
+  "email_search_note": "No public email found. Checked: Google Business Profile (no email field, only phone), the bestiesunlimited.com parking page (zero real content), WebSearch for Instagram/Facebook pages (none found to check a bio/About section), and the Atly aggregator listing (no email listed, only a 'Call' button with no number shown). Phone is the only real public contact channel for this business.",
+  "google_maps": {
+    "profile_url": "https://www.google.com/maps/place/Besties+Unlimited/data=!4m7!3m6!1s0x88d8d57995b9c0f3:0xe9b0ee64626dbc79!8m2!3d26.7813233!4d-80.0790183!16s%2Fg%2F11xy_gvj1d!19sChIJ88C5lXnV2IgRebxtYmTusOk",
+    "rating": 5.0,
+    "review_count": 10,
+    "category": "Event venue",
+    "hours": [
+      "Monday, 9 AM to 6 PM",
+      "Tuesday, 9 AM to 6 PM",
+      "Wednesday, 9 AM to 6 PM",
+      "Thursday, 9 AM to 6 PM",
+      "Friday, 9 AM to 6 PM",
+      "Saturday, Closed",
+      "Sunday, Closed"
+    ],
+    "hours_note": "gmaps_detail.js showed Thursday/Friday with holiday labels ('Thanksgiving', 'Black Friday') since the scrape ran during that week, both still listed as 9 AM-6 PM; the site presents the underlying regular schedule (Mon-Fri 9-6, closed weekends).",
+    "located_in": "Blue Heron Apartments plaza (shown on Maps as 'Located in: Blue Heron Apartments'), noted on the site only as a 'Good to know' detail, not a claim about the business itself."
+  },
+  "services": {
+    "source": "Google Business category ('Event venue'), Google review text, and the Atly.com third-party aggregator listing for this exact business and address.",
+    "capacity_source_note": "The 'up to 200 guests' capacity and 'on-site parking fills up fast' and 'private events need 2+ weeks notice' details come from the Atly.com public directory listing for this business (fetched via WebFetch), cross-checked against the Google review pattern (multiple reviewers mention 'spacious venue' and parties/birthdays). Not independently confirmed with the business directly, but it is the best public source available and is presented on the site as-is, not invented.",
+    "list": [
+      "Private event/party room rental (birthdays, showers, celebrations), up to ~200 guests",
+      "In-house catering available (per review: handled catering, wings and Philly cheesesteak specifically praised)",
+      "Full room styling/decor: balloon installs, neon signage, themed backdrops, chiavari chairs, table linens (evidenced directly by the business's own Google photos showing different theme setups: gold/black birthday room, navy/white elegant setup, teal/black/silver 'Cousins Weekend 2025' theme)",
+      "On-site parking",
+      "Private bookings require 2+ weeks advance notice (per Atly listing)"
+    ],
+    "pricing_published": false,
+    "pricing_note": "No price list found anywhere public. Site uses the adapted variant: 'every event is quoted' + call to action to call for a quote, nothing invented."
+  },
+  "reviews_verbatim": [
+    {"name": "Dee Jay", "stars": 5, "text": "I recently attended a birthday party at this venue, and let me tell you! The space was impressive. Spacious throughout, spotless, and beautifully maintained. They even handled the catering, and the wings and Philly cheesesteak were hands-down my favorites. I will definitely book my next event here!", "source": "Google"},
+    {"name": "Robert Pittman", "stars": 5, "text": "I went to a birthday party and the place was amazing. I truly recommend Besties Unlimited if you want a nice and spacious venue.", "source": "Google"},
+    {"name": "Keera Adams", "stars": 5, "text": "Besties Unlimited is a perfect destination for hosting any and all occasions.", "source": "Google"}
+  ],
+  "reviews_note": "Pulled via scripts/gmaps_reviews.js on the exact Maps URL (8 requested, returned 4 unique after de-duping repeated entries: Dee Jay, Robert Pittman, Davah K Ellis Diaz Shehu, Keera Adams). The Davah K. review was left off the site itself because the review text itself misspells the business name ('Betsy's & Limited') and is truncated with an ellipsis in the Maps scrape, so the 3 clean, complete quotes were used (matches the skeleton's 3-review grid).",
+  "gallery": [
+    {"file": "hero-party-room.jpg", "note": "Hero + gallery wide tile: the event room fully styled in black/gold for a birthday (balloon garlands, 'Happy Birthday' neon sign and backdrop, gold chiavari chairs, round tables), the most on-brand real photo (matches the window decal's black/green/gold palette). Landscape orientation, used as hero and reused as the gallery's 16:9 wide tile."},
+    {"file": "gallery-elegant-setup.jpg", "note": "Gallery: a different real event setup in the same room styled navy/white, with white chair covers, navy tablecloths, and a 'Grad Dance' poster visible, showing the room's versatility for different event themes."},
+    {"file": "gallery-dessert-tower.jpg", "note": "Gallery: a tiered red-velvet cheesecake-cup dessert tower with lit candles, direct visual evidence of the in-house catering/dessert service mentioned in reviews."},
+    {"file": "gallery-cousins-weekend.jpg", "note": "Gallery: a third real event, teal/black/silver themed setup with custom balloon garlands and a 'Cousins Weekend 2025' backdrop, further showing the custom decor/theme-styling service."},
+    {"file": "about-birthday-celebration.jpg", "note": "About/experience section: two guests celebrating at a birthday party (one wearing a 'Birthday Queen' sash) with a catering buffet visibly set up in the background. Used as ambiance in the experience section (not the main gallery grid) per the pipeline's guidance on posed/guest photos, since real guests' faces are visible."},
+    {"file": "about-event-setup.jpg", "note": "About/experience section: a staff member in black rolling out a red carpet entrance ahead of an event, showing the venue's own setup/event-prep work."},
+    {"file": "logo-window-decal.jpg", "note": "Used as the nav/footer logo crop: the business's own storefront window decal reading 'besties unlimited' in black/green script with a gold wave accent, the real source of the site's color palette."}
+  ],
+  "photo_curation_note": "8 photos listed on the Google Business Profile; scripts/gmaps_photocycle.js returned 8 URLs, 2 of which were byte-identical duplicates (confirmed via md5sum), leaving 7 unique real photos. All 7 were visually inspected one by one with the Read tool before use. All 7 were used somewhere on the site (hero/gallery/about/logo); none were discarded, since every one was a genuine, usable shot of the real space, events, food or branding (no selfies used as gallery tiles, no screenshots, no blurry/cluttered shots).",
+  "brand_vibe": "Built on templates/dark-v2, repainted from the original warm-gold palette to a kelly/forest-green family (deep #1f8e3a-range greens, see index.html --accent-deep/--accent-mid) derived by hue-shifting every token in the skeleton (same colorsys hue-rotation method used for cek-caterers-boca-raton), matching the real black/green/gold branding seen on the business's own storefront window decal (logo-window-decal.jpg). Chosen green hue (128 degrees) deliberately distinct from the already-used 'esmeralda' (#2f7d5a, hue ~153) and 'teal acero' (#4fb8b8, hue ~180) palettes per SKELETONS-V2.md. Base stayed near-black (matches the real matte-black interior walls seen in every photo); the gold Merktop badge was protected and untouched.",
+  "dm_message": "Hi! I built Besties Unlimited a free sample website after seeing your perfect 5.0 stars (10 reviews) on Google. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/bestiesunlimited/ It does not affect your current listing or operations. Happy to put it on your own domain, or take it down if it is not for you, no pressure either way. Michael, Merktop.",
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/bestiesunlimited/",
+  "status": "staging",
+  "outreach": "pending_manual",
+  "gate_result": "GATE OK"
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "caninodogllc",
+  "name": "Canino Dog",
+  "legal_name": "CANINO DOG LLC",
+  "google_business_name": "CANINO DOG LLC. Mobile pet grooming",
+  "niche": "peluqueria canina / pet grooming movil (mobile dog grooming, no fixed storefront)",
+  "city": "Pembroke Pines, FL",
+  "address": null,
+  "address_note": "Google Business Profile itself returns no address field (confirms a true mobile/service-area business). Third-party directory mirrors (groom-scout.vercel.app, atly.com) list a base address of 13250 SW 4th Ct, Pembroke Pines, FL 33027, but this is not published on Google and is very likely a private garage/mailing address, not a public storefront. Per PIPELINE Fase 3.5 (mobile business, variante adaptada), this address was NOT used anywhere on the site; the Location section was replaced with a Service Area section and a real photo of the van instead of a map.",
+  "phone": "+17543148614",
+  "phone_display": "(754) 314-8614",
+  "phone_source": "Google Business Profile via gmaps_detail.js, matches the task brief exactly and also matches the phone number partially visible printed on the real van wrap (\"754-31...\").",
+  "owner_name": "Edgar",
+  "owner_name_source": "Named directly by 3 of 5 independent Google reviewers (Gigi De La Rosa, Alexandra Powers, barbara galizia all refer to him by name as the groomer). Not published on the Google Business Profile itself, but strongly and repeatedly corroborated in verbatim reviews, so used on-site as the groomer's name (no photo of him is used, only text references).",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "1) Google Business Profile shows 'Add website' (no website field) per gmaps_detail.js. 2) curl tested 7 domain guesses (caninodogllc.com, caninodog.com, caninodogmobilegrooming.com, caninodoggrooming.com, caninopetgrooming.com, caninomobilegrooming.com, caninodogllc.net): all returned HTTP 000 (no connection). 3) IMPORTANT finding: the real estate decal on the business's own van (visible in a Google Maps photo, gmaps-3.jpg) prints the URL 'caninodog.com'. This was investigated deeply: getent hosts caninodog.com returns nothing, curl (http and https, with and without www) returns HTTP 000, and WebFetch independently fails with 'getaddrinfo EAI_AGAIN caninodog.com' (DNS resolution failure). The agent network proxy explicitly confirmed 'the host is allowed for this session, but the egress proxy could not connect to it... the name has no public DNS record or the host is down'. Conclusion: this domain was likely printed on the van wrap at some point but is not currently registered/live; there is no reachable website today. 4) WebSearch for '\"CANINO DOG LLC\" Pembroke Pines pet grooming website' and a second query for instagram/facebook found only third-party directory mirrors (mapquest, groom-scout, atly, bark.com, Google's own auto-generated 'business.google.com/v/mobile-dog-grooming/...' placeholder landing pages, which are Google-hosted, not an owned domain) and zero owned/functioning website. has_own_site = false confirmed.",
+  "social_media": {
+    "instagram_handle": "caninodoggroming",
+    "instagram_url": "https://www.instagram.com/caninodoggroming/",
+    "instagram_evidence": "Found via visual curation of the business's own Google Maps photos: one uploaded photo (gmaps-5.jpg, excluded from the site gallery as a screenshot with UI chrome) is a phone screenshot of the Instagram app's 'Publicaciones' (Posts) tab, with the profile header reading 'caninodoggroming' and showing their own grooming photos as the feed content. This is strong direct evidence of the real handle (the business itself uploaded a screenshot of its own account to its own Google listing). Could NOT be independently re-verified live: both a direct curl to the Instagram private API (blocked by this session's tool-use policy) and two separate WebFetch attempts to instagram.com/caninodoggroming/ returned HTTP 429 (Instagram's bot-blocking), and a WebSearch for the handle returned no indexed results (expected, Instagram content is not well indexed by general web search). Used on-site with this uncertainty disclosed; worst case if the handle is stale is a dead Instagram link, not a factual error about the business.",
+    "facebook": null,
+    "facebook_evidence": "No Facebook page found in any search."
+  },
+  "email": null,
+  "email_search_note": "Deep search performed per PIPELINE Fase 1.7: (1) Google Business Profile has no email field. (2) WebSearch for the business name plus Pembroke Pines plus 'instagram facebook' surfaced no linktree/bio page to open (only directory mirrors). (3) The Instagram account found (@caninodoggroming) could not be opened live (429 blocked) to check its bio/external link. (4) No Facebook About page found. (5) No owned website to pull a contact address from (see has_own_site_evidence). No public email found after exhausting the listed sources; this is normal for a solo mobile pet-grooming operator, consistent with PIPELINE's own note that mobile/home-service trades rarely publish email. The phone number is the real, working outreach channel here.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/CANINO+DOG+LLC.+Mobile+pet+grooming/data=!4m7!3m6!1s0x88d9a74d6a35f737:0xf7cbd446a0117fe9!8m2!3d26.1339185!4d-80.3257785!16s%2Fg%2F11vknljq7g!19sChIJN_c1ak2n2YgR6X8RoEbUy_c",
+    "rating": 4.9,
+    "review_count": 83,
+    "category": "Pet groomer",
+    "hours": [
+      "Monday, 8 AM to 6 PM",
+      "Tuesday, 8 AM to 6 PM",
+      "Wednesday, 8 AM to 6 PM",
+      "Thursday, 8 AM to 6 PM",
+      "Friday, 8 AM to 6 PM",
+      "Saturday, 9 AM to 6 PM",
+      "Sunday, Closed"
+    ],
+    "attributes_seen_not_used_onsite": "Google's panel also showed 'Identifies as Latino-owned' as a self-reported business attribute. Not used in on-site copy to keep the page focused on service/trust signals, but recorded here as a real, verified detail in case useful for outreach tone.",
+    "review_tags_seen": [
+      "mobile grooming, mentioned in 8 reviews",
+      "shih tzu grooming, mentioned in 3 reviews",
+      "less stressed dogs, mentioned in 3 reviews",
+      "dog wash, mentioned in 3 reviews",
+      "patient groomer, mentioned in 3 reviews",
+      "flexible scheduling, mentioned in 3 reviews",
+      "punctuality, mentioned in 7 reviews",
+      "quick responses, mentioned in 2 reviews",
+      "loving grooming, mentioned in 3 reviews",
+      "fresh look, mentioned in 2 reviews"
+    ]
+  },
+  "services": {
+    "source": "No price list published anywhere (Google Business has no menu/pricing; no website; directory mirror groom-scout.vercel.app explicitly says 'Contact for pricing'). Service list derived strictly from Google's own review-tag summary (service_mentions above) and from what is visibly performed in the business's own real Google Maps photos (bath, breed haircut, grooming table with nail-trim tools visible in gmaps-8.jpg). Site uses the adapted 'Call for pricing' variant throughout, with the real phone number as every CTA, per PIPELINE Fase 3.5.",
+    "list": [
+      "Mobile bath and breed-appropriate haircut, performed inside the fully equipped van at the client's home",
+      "Nail trim and finishing touches (nail grinder tool visible in the business's own van photos)",
+      "Gentle, patient handling for anxious, senior and difficult dogs (the single most repeated theme across reviews)",
+      "Flexible, punctual scheduling (punctuality mentioned in 7 of the sampled reviews)"
+    ]
+  },
+  "reviews_verbatim": [
+    {"name": "Nicole", "stars": 5, "text": "We adore this groomer! My shih tzu looks amazing every time. We also call him for my other two dogs. Love the convenience of a mobile groomer and the dogs are less stressed than when going to a traditional salon. Highly recommend Canino mobile grooming!", "source": "Google", "used_onsite": false, "note": "Complete, clean quote; not used on-site only to keep the review grid to 3 cards matching the template, kept here as additional real evidence."},
+    {"name": "Gigi De La Rosa", "stars": 5, "text": "The best of the best. Reliable and efficient groomer. Edgar has been taking care of my girls for years and I couldn’t be happier. He takes care of them like his own. Gives the best haircuts. My girls always come out looking and smelling great.", "source": "Google", "used_onsite": true},
+    {"name": "Alexandra Powers", "stars": 5, "text": "Edgar is absolutely amazing! He is truly incredible with my dogs and always goes above and beyond. You can immediately tell he’s a genuine animal lover—he treats every dog with so much care, patience, and kindness. My pups always come back …", "source": "Google", "used_onsite": false, "note": "Google truncated this review with a trailing ellipsis in the scraped view, and the visible text contains an em-dash, which the pipeline's gate forbids anywhere in the built HTML. Not used on-site for that reason; kept here verbatim exactly as scraped for the record."},
+    {"name": "barbara galizia", "stars": 5, "text": "Edgar from Canino Dog is incredible! My dog has anxiety and usually gets nervous during grooming, but Edgar’s calm and gentle approach completely put her at ease. She looked beautiful, smelled amazing, and came home relaxed and happy. You …", "source": "Google", "used_onsite": true, "note": "Used on-site trimmed to the last complete sentence ('...came home relaxed and happy.'), dropping Google's own trailing truncation mark and the incomplete clause after it ('You …'). No words were altered, only the incomplete tail was omitted."},
+    {"name": "Janet Nieman", "stars": 5, "text": "I’m so happy with the service at Canino Dog! They’re reliable, professional, and truly care about the dogs. My pups always come back looking amazing and well-groomed. Highly recommend to anyone looking for a trustworthy grooming service.", "source": "Google", "used_onsite": true}
+  ],
+  "gallery": [
+    {"file": "hero-maltese-groom.jpg", "note": "Hero (3:4 crop of gmaps-8.jpg): freshly groomed bichon/maltese-type dog on the grooming table inside the van, real 'CaninoDog Pet Grooming' neon sign visible behind it. Also used as og:image."},
+    {"file": "about-sheepdog-table.jpg", "note": "Experience section photo 1 (gmaps-4.jpg, used at its native 3:4 ratio): sheepdog mix with a purple bandana, freshly groomed on the table inside the van."},
+    {"file": "about-van-interior.jpg", "note": "Experience section photo 2 (3:4 crop of gmaps-3.jpg, side/door region): the van's open side door showing the interior grooming table and the neon sign, with the exterior dog-collage wrap visible."},
+    {"file": "logo.jpg", "note": "Nav/footer/avatar crop (tight face crop of the same dog in hero-maltese-groom.jpg, gmaps-8.jpg). Used as a circular brand mascot avatar, not presented as a photo of the owner."},
+    {"file": "gallery-01-poodle-couch.jpg", "note": "Gallery wide tile, 16:9 (gmaps-1.jpg, native ratio, no crop needed): freshly groomed red toy poodle standing proudly on the couch at a client's home."},
+    {"file": "gallery-02-schnauzer-bow.jpg", "note": "Gallery tile (3:4 crop of gmaps-9.jpg): schnauzer puppy with a pink flower collar against a floral backdrop, post-groom."},
+    {"file": "gallery-03-birthday-cupcake.jpg", "note": "Gallery tile (3:4 crop of gmaps-6.jpg): freshly groomed white dog wearing a birthday crown in front of a small cupcake, at a client's home."},
+    {"file": "gallery-04-two-shihtzus.jpg", "note": "Gallery tile (3:4 crop of gmaps-7.jpg): two freshly groomed small dogs walking together on tile floor at a client's home."},
+    {"file": "gallery-05-van-front.jpg", "note": "Gallery tile and Service Area section photo (3:4 crop of gmaps-3.jpg, front-cab region): the van's front/side, showing the real 'caninodog.com' text, paw-print graphics and the open interior through the door. Reused once in the Service Area section in place of the map embed, since this is a mobile business with no public storefront."}
+  ],
+  "photo_curation_note": "gmaps_photocycle.js returned 9 candidate photo URLs from the business's full Google Maps photo set. All 9 were downloaded and individually viewed with the Read tool (not chosen by filename). gmaps-2.jpg was an exact byte-for-byte duplicate of gmaps-1.jpg and was discarded. gmaps-5.jpg was a phone screenshot of the business's own Instagram app (visible status bar, app icons and 'Publicaciones' UI chrome) and was excluded from the gallery per the no-screenshots-with-UI-text rule, but was kept as research evidence for the real Instagram handle. The remaining 7 genuine photos (gmaps-1, 3, 4, 6, 7, 8, 9) all show real dogs groomed by this business or the real van, good lighting, eyes open, no mid-procedure or irritated-skin shots, no owner selfies as gallery tiles; all 7 were used (2 of them, gmaps-3 and gmaps-8, were each cropped twice into visually distinct regions to cover hero/about/gallery/service-area/logo needs, since only 7 clean source photos were available).",
+  "brand_vibe": "Built on templates/light-v2, repainted from the original plum-pink palette to a lagoon-teal and aqua palette (#0e8f93 / #3dbdc2 on a warm cream base), directly derived from the business's own real branding: the van wrap is bright turquoise/teal with white paw-print and bubble graphics, and the interior neon sign reads 'CaninoDog Pet Grooming' in the same teal. This palette is distinct from every palette already listed in DESIGN.md (coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark) and from the orange+teal palette already used for the unrelated a-labor-of-love-dog-grooming-kendall build (same broad niche, different business, different city).",
+  "build_method": "Anchored transformation script (Python, rep()/rep_all() with assert-before-replace, plus 2 whole-block regex replacements for the services grid and gallery grid) over templates/light-v2/index.html per templates/SKELETONS-V2.md, in scripts/build_caninodogllc.py. index.html was never written from scratch; the script starts from a fresh copy of the pristine template each run.",
+  "variant_notes": "Mobile business with no public storefront (Google itself has no address field): Services section uses the adapted 'Call for pricing' variant (no invented prices), and the Location section was renamed 'Service Area' with the map iframe removed and replaced by a real photo of the van, per PIPELINE Fase 3.5.",
+  "dm_message": "Hi! I built Canino Dog a free sample website after seeing your 4.9 stars (83 reviews) on Google. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/caninodogllc/ It does not affect your current listing or operations. Happy to put it on your own domain, or take it down if it is not for you, no pressure either way. Michael, Merktop.",
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/caninodogllc/",
+  "status": "staging",
+  "outreach": "pending_manual",
+  "gate_result": "GATE OK: caninodogllc (en) -- python3 scripts/gate.py caninodogllc --lang en --forbid \"Lash Bloom,Yesi,West Palm,Cresthaven,519855,lashbloom,Booksy,booksy.com\"",
+  "manual_qa_note": "em-dash count = 0, no <details>/accordions, JSON-LD parses, no assets/raw/ or template leftovers, no localhost/templates/ refs. Rendered full-page with headless Chromium at 1400px and 390px: no horizontal overflow (scrollWidth == clientWidth == 390 on mobile). Three gallery/service-area images initially reported 'broken' (naturalWidth 0) in an automated check; root-caused to native loading=\"lazy\" not firing under the headless test harness's scripted scroll (confirmed by removing the lazy attribute programmatically, after which all 12 images decoded correctly) -- a known automation artifact already documented for the pristine template itself, not a real defect in this build or its files."
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "heatoffthestreetcatering",
+  "name": "Heat off the Street Catering",
+  "niche": "catering / eventos",
+  "city": "Palm Beach County, FL (service area, no fixed address; phone area code 561 / West Palm Beach)",
+  "address": null,
+  "address_source": "Google Business Profile (gmaps_detail.js) returns no address field at all for this listing, only phone, hours and photos ('Add missing information' / no street address shown). The place is a mobile, chef-led catering business with no walk-in storefront, so the site frames Palm Beach County as a service area (map embed centered on West Palm Beach, not a fake street address) instead of a specific location.",
+  "maps_pin_warning": "The Maps place pin's coordinates (3d=28.1624604, 4d=-81.6153504, given in the task) resolve to the Four Corners/Clermont area near Orlando, about 150 miles from Palm Beach County. This appears to be a stale or mis-set pin on the Google Business Profile (common for mobile businesses with no fixed address), NOT the real service area. The real location was confirmed independently from two Google reviews that name the market directly: Tuff Love's review says 'the best catering service in palm beach county', and the phone number's 561 area code is the West Palm Beach / Palm Beach County area code. The site was built around the confirmed real area (Palm Beach County, FL), not the Maps pin coordinates.",
+  "phone": "+15613458345",
+  "phone_display": "(561) 345-8345",
+  "phone_source": "Google Business Profile via gmaps_detail.js, matches the phone number given in the task.",
+  "hours_source": "Google Business Profile via gmaps_detail.js lists 'Open 24 hours' every day of the week. Taken literally this would be misleading for a catering business, so the site renders it honestly as 'By appointment, every day of the week' rather than implying calls are answered at any hour.",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "1) Google Business Profile via gmaps_detail.js shows website: null and the raw page snippet literally shows the 'Add website' prompt Google shows for listings with no website field. 2) curl -I on heatoffthestreetcatering.com, heatoffthestreet.com and heatoffthestreetcatering.net all returned 502 (no real host behind those names, not just a connectivity fluke, since the same check against a working unrelated domain in this session resolved fine). 3) WebSearch for \"Heat off the Street Catering\" Florida, plus site:facebook.com and site:instagram.com for the exact name, returned no matching business page at all. 4) curl on tastebudscatering.com DOES resolve (HTTP 200), but WebFetch of that page shows it is a DIFFERENT, unrelated company: 'Tastebuds Fine Catering, South Florida Catering Since 1995', based in Fort Lauderdale, phone 954-584-3663, no mention of Chef Patrick. This is coincidental name overlap, not this business's site (see rebrand_note below for why the name overlap exists).",
+  "rebrand_note": "Several of this business's own Google reviews refer to the company by a different name: Tuff Love's review opens with 'Taste Buds Catering is the best catering service in palm beach county...', and the owner's reply to Jess Lynn's review begins 'Jess Lynn thank you so much for giving Tastebuds Catering a chance to ca...' (reply text cut off in gmaps_detail.js's snippet). All reviews are attached to the SAME Google Place ID / same phone number / same Chef Patrick as 'Heat off the Street Catering'. This strongly suggests the business was previously listed on Google as 'Taste Buds Catering' and was later renamed to 'Heat off the Street Catering' on the same profile, carrying its old reviews over. It is unrelated to the Fort Lauderdale 'Tastebuds Fine Catering' company that owns tastebudscatering.com (different phone, different city, founded 1995, no Chef Patrick mentioned). Review quotes are kept verbatim as found, including the ones that mention the old name, per the pipeline rule to never edit review text.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "WebSearch for \"Heat off the Street Catering\" instagram facebook, plus site:facebook.com \"Heat off the Street\" and site:instagram.com \"Heat off the Street\", returned no matching business page in any of the three searches. No handle is printed anywhere on the Google Business Profile or in the review text."
+  },
+  "email": null,
+  "email_search_note": "No public email found. Checked: Google Business Profile (no email field, no website to pull a contact address from), WebSearch for an Instagram/Facebook page (none found, so no bio/About page to check either). Phone is the only real, verified contact channel for this business.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Heat+off+the+Street+Catering/data=!4m7!3m6!1s0x8aa7c3f70133a573:0xa1a46960ce520e95!8m2!3d28.1624604!4d-81.6153504!16s%2Fg%2F11rnxy__dr!19sChIJc6UzAffDp4oRlQ5SzmBppKE",
+    "rating": 5.0,
+    "review_count": 17,
+    "category": "Caterer",
+    "hours": [
+      "Monday, Open 24 hours",
+      "Tuesday, Open 24 hours",
+      "Wednesday, Open 24 hours",
+      "Thursday, Open 24 hours",
+      "Friday, Open 24 hours",
+      "Saturday, Open 24 hours",
+      "Sunday, Open 24 hours"
+    ]
+  },
+  "services": {
+    "source": "No public menu or prices exist anywhere (no website, no social profile). Service categories below are inferred ONLY from: (a) the actual real photos retrieved from this Google listing (plated dinners, brunch spreads, passed hors d'oeuvre spoons, tacos, grilled entrees), and (b) explicit event types named in real Google reviews (office party, a 'function' catered for a reviewer's sister). No prices or specific menu item names are invented anywhere on the site; the adapted variant uses 'every event is quoted' plus a real phone call-to-action instead.",
+    "list": [
+      "Office Party & Function Catering",
+      "Wedding & Private Event Catering",
+      "Brunch & Passed Hors d'Oeuvres",
+      "Plated Entrees & Dinners"
+    ],
+    "chef": "Chef Patrick (reviews also refer to him as 'Chef Pat'), named directly in 5 of the 5 verbatim reviews retrieved."
+  },
+  "reviews_verbatim": [
+    {"name": "Jess Lynn", "stars": 5, "text": "Chef Patrick and his staff were amazingly professional and the food was out of this world delicious. Made our office party a huge success and cannot wait to book again for our next event.", "source": "Google"},
+    {"name": "Giovanny Rivera", "stars": 5, "text": "Chef Pat was just marvelous, Food was fantastic – no disappointments. Presentation was just perfect as always. Food Quality just as good and to finish with awesome Customer service.", "source": "Google"},
+    {"name": "Rackell Charlton", "stars": 5, "text": "Oh my gosh awesome service ,awesome personality !Food was awesome chef Pat did a function for my sister and wow it was awesome the food, excellent presentation and very tasty . I'm positive we'll be doing functions with him again !", "source": "Google"},
+    {"name": "Cheryl Bray", "stars": 5, "text": "I was looking for authenticity, and I can honestly say that MY taste buds were extremely satisfied. There is no comparison to the quality of food, or the exemplary service that I received. Put this on your to so list and treat yourself!!!! Excellent!!", "source": "Google"},
+    {"name": "Tuff Love", "stars": 5, "text": "Taste Buds Catering is the best catering service in palm beach county reasonable professionalism Perfect timing, and communication Was so outstanding, And the food was tasty fresh hot seasoned and took My guest's soul! Rating this catering ...", "source": "Google", "note": "Kept verbatim including the old business name 'Taste Buds Catering': see rebrand_note. This review is also the source used to confirm the real service area is Palm Beach County."}
+  ],
+  "gallery": [
+    {"file": "assets/hero-lamb-chops.jpg", "note": "Hero + nav/footer logo + favicon + og:image: grilled lamb chops plated with chimichurri drizzle, fine-dining presentation. No face visible, genuine plated dish."},
+    {"file": "assets/about-fish-tacos.jpg", "note": "Experiencia section: blackened fish tacos with chipotle crema, avocado and cilantro."},
+    {"file": "assets/about-grilled-chicken.jpg", "note": "Experiencia section: grilled chicken breast plated with carrots and broccoli."},
+    {"file": "assets/gallery-blackened-fish-salad.jpg", "note": "Gallery wide tile: blackened fish filet over a fresh salad with a beet rose garnish."},
+    {"file": "assets/gallery-brulee-spoons.jpg", "note": "Gallery: rows of passed hors d'oeuvre spoons with brulee banana, berries and oatmeal, a butler-passed catering presentation."},
+    {"file": "assets/gallery-breakfast-sandwich.jpg", "note": "Gallery: brunch sandwich with egg, mushrooms, caramelized onion and cheddar."},
+    {"file": "assets/gallery-waffles-berries.jpg", "note": "Gallery: brunch waffles topped with whipped cream, bananas and strawberries."}
+  ],
+  "photo_curation_note": "8 photo URLs were retrieved from Google Maps via gmaps_photocycle.js (run twice, once with 24 steps and once with 50 steps; both runs converged on the same 8 unique URLs, confirming this is the full set reachable this way). The first two URLs were an exact duplicate (identical file size on download), leaving 7 unique photos. All 7 were inspected visually with the Read tool: all show real, finished, well-lit plated food with no faces, no selfies, no mid-procedure or unappetizing shots, and no text/caption overlays baked into the image. All 7 were used (hero x1, about x2, gallery x4); none were discarded as low quality, so none needed to be backfilled with weaker photos. Each was resized to max 1000px and re-encoded at ~82% quality before use, per the performance rule.",
+  "brand_vibe": "Built on templates/dark-v2 (Pure Artistry skeleton), repainted from the original gold palette to a new 'ember' red-orange palette (hue ~16 degrees, not reused from any prior palette in SKELETONS-V2.md) on a near-black base, chosen to literally match the business name 'Heat' and the warm, fire-grilled look of the real food photos (grill marks, blackened seasoning, brulee torch work).",
+  "dm_message": "Hi! I built Heat off the Street Catering a free sample website after seeing your perfect 5.0 rating (17 reviews) on Google. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/heatoffthestreetcatering/ It does not affect your current listing or bookings. Happy to put it on your own domain, or take it down if it's not for you, no pressure. Michael, Merktop.",
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/heatoffthestreetcatering/",
+  "thumb": "https://siteforge-demos.odd-forest-9504.workers.dev/heatoffthestreetcatering/assets/hero-lamb-chops.jpg",
+  "status": "staging",
+  "outreach": "pending_manual",
+  "gate_result": "GATE OK"
+}
