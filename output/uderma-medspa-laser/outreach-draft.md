@@ -1,6 +1,6 @@
-# Outreach draft — Uderma Medspa & Laser
+# Outreach draft - Uderma Medspa & Laser
 
-**Status: unsendable — no public email found.** Checked the Square booking page
+**Status: unsendable - no public email found.** Checked the Square booking page
 (https://uderma.square.site/) for a mailto link; none found. No other public contact
 channel besides phone and the Square booking widget. Outreach must go by phone/DM
 once a human approves it; this file is a draft only, nothing was sent.

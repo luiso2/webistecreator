@@ -1,9 +1,9 @@
-# Outreach draft — Blue Lagoon Tampa
+# Outreach draft - Blue Lagoon Tampa
 
 Status: UNSENDABLE as email (no public email found anywhere: no website, no Instagram/Facebook
 linked from the Google Maps listing, no business email surfaced in research). Outreach must be
 manual: phone call or any channel the business owner opens themselves. Angle: "les construi un
-website de muestra" (has_own_site: false — the only registered domain, bluelagoontampa.com, is
+website de muestra" (has_own_site: false - the only registered domain, bluelagoontampa.com, is
 parked on Wix with no site connected; it does not count as a real website).
 
 ## Email draft (kept on file for if a public email ever surfaces; DO NOT send, no address to send to)

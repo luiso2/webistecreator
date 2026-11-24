@@ -1,4 +1,4 @@
-# Outreach draft — Effect Medspa & Lifestyle Practice
+# Outreach draft - Effect Medspa & Lifestyle Practice
 
 Status: **pending_manual**. No public email was found for this business (not on Google Maps,
 no own website, no Instagram bio to check). The email draft below is kept for reference only
@@ -6,7 +6,7 @@ no own website, no Instagram bio to check). The email draft below is kept for re
 channel for now is a phone call or walk-in, using the `dm_message` at the bottom for a text/DM
 if a channel ever opens up.
 
-## Email draft (unsendable — no public email on file)
+## Email draft (unsendable - no public email on file)
 
 **To:** (none found)
 **From:** Michael Vargas <michael@go.merktop.com>
