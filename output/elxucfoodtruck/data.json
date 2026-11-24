@@ -1,0 +1,57 @@
+{
+  "slug": "elxucfoodtruck",
+  "name": "El Xuc",
+  "niche": "food truck / cocina latina (Salvadoran)",
+  "city": "Doral, FL",
+  "address": "7070 NW 84th Ave, Doral, FL 33166",
+  "address_source": "Google Business Profile, re-confirmed live via gmaps_detail.js during build.",
+  "phone": "+17862036204",
+  "phone_display": "(786) 203-6204",
+  "phone_source": "Google Business Profile, re-confirmed live via gmaps_detail.js.",
+  "language": "en",
+  "language_evidence": "All verbatim Google reviews pulled (Dean Brite, Patricia V, Sadaf Omar, julia cuenca) are in English, despite the Salvadoran cuisine and the truck's own printed menu mixing Spanish dish names with English translations.",
+  "has_own_site": false,
+  "has_own_site_evidence": "Google Business Profile 'website' field returns null (confirmed with a fresh gmaps_detail.js read). WebSearch for \"El Xuc\" food truck Doral Miami instagram found no owned website, only a DoorDash listing (page-service.doordash.com/en-GB/store/el-xuc-foodtruck-30990504) describing it as family-run. curl checks on elxuc.com and elxucfoodtruck.com both failed (connect_unreachable / no public DNS record, confirmed via the environment's agent-proxy error output). DoorDash is a delivery marketplace, not an owned website, so has_own_site stays false.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "The truck's own printed menu (photographed twice, assets/raw/gmaps-7.jpg and gmaps-10.jpg) shows Instagram and Facebook icons with a partially cropped-off handle starting 'elxuc...' next to a QR code, but the exact handle is not legible in either photo. WebSearch for the exact handle came up empty (no direct hit). Rather than guess a handle, it is left null; nothing was fabricated."
+  },
+  "email": null,
+  "email_search_note": "No email found. Checked: Google Business Profile (no email field), DoorDash listing (no contact email shown, only in-app ordering), WebSearch for a dedicated website or Facebook/Instagram page (none found). Food trucks of this size typically do not publish an email; phone is the real contact channel.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/El+XUC+food+truck/data=!4m7!3m6!1s0x88d9c1c0013e852b:0xe21bc922ec919f52!8m2!3d25.8379635!4d-80.3342863!16s%2Fg%2F11tgdfddz9!19sChIJK4U-AcDB2YgRUp-R7CLJG-I",
+    "rating": 5.0,
+    "review_count": 66,
+    "category": "Salvadoran restaurant",
+    "hours": "Tue-Wed 6-10pm, Thu 6-11pm, Fri-Sat 6pm-12am, Sun 6pm-12am (per live Google Business Profile; presented on-site simply as 'open nightly from 6 PM' since exact nightly hours can shift with a mobile truck)."
+  },
+  "services_source": "Two photos of the truck's own printed menu board (assets/raw/gmaps-7.jpg and gmaps-10.jpg), taken by a customer and uploaded to Google Maps. All item names and prices on the site are transcribed exactly as printed: Pupusas $4.00 (Crazy Pupusa $13.95), Picadera El Gordito $24.95, Carne Asada $15.50, Costillas de cerdo (Pork Ribs) $19.99, Empanadas de platano (2) $5.95, Yuca frita o hervida con chicharrones $11.95, Pastelitos Salvadorenos (2) $6.00, Orden de chicharrones fritos $10.00, Pescado frito $24.95, Pechuga a la plancha $14.00, Tacos Fritos $10.00, Tostones rellenos (3) $12.95, Enchiladas Salvadorenas (3) $8.95, El Xuc Salad $12.95, Baleadas hondurenas (sencilla $6.00, con huevo $6.50, con bistec $7.50, super $9.00), Fresca El Xuc $5.00, sodas $3.00. A horchata/morro-seed drink is on the menu with its price partially cut off in the photo, so the site says 'ask for price' rather than guessing a number.",
+  "reviews_verbatim": [
+    {"name": "Dean Brite", "rating": 5, "text": "Fantastic pupusa, baleada and plantain empanadas! They also make everything from scratch which is amazing. Will recommend to anyone!"},
+    {"name": "Patricia V", "rating": 5, "text": "The best pupusa place I’ve found in Miami by far! All of the ingredients tasted so fresh and it felt homemade, just like the ones in El Salvador. Plus the service was great, they were so friendly and kind. This will definitely be our go to place!"},
+    {"name": "julia cuenca", "rating": 5, "text": "Most authentic pupusas you can find in Miami. Came with my family and got a great meal. Natalia was sweet and gave us great recommendations. The area is great and you can brings kids here. The open atmosphere is best at night."},
+    {"name": "Sadaf Omar", "rating": 5, "text": "I stopped by and was starving and I knew by looking at it I had to try it. Never have tried Salvadoran food and this was absolutely amazing and truly authentic. Everything was hot, fresh and incredibly flavorful. I'm definitely coming back here, if you're considering on trying it out, try it asap!!!"}
+  ],
+  "gallery": [
+    {"file": "hero-pupusa-plate.jpg", "source": "gmaps-1.jpg (gmaps-2.jpg was a byte-identical duplicate, not used)", "note": "Pupusa plate with the truck's own printed menu board visible in the background. Used as hero and reused once in the gallery."},
+    {"file": "gallery-fried-sampler.jpg", "source": "gmaps-6.jpg", "note": "Fried sampler plate with pico de gallo and lime, on the truck's own red-check paper. Used as the wide gallery tile."},
+    {"file": "gallery-chicharron-bowl.jpg", "source": "gmaps-5.jpg", "note": "Oval cast-iron sampler with pupusas, chicharron, cheese and pico de gallo."},
+    {"file": "gallery-dessert-empanadas.jpg", "source": "gmaps-9.jpg", "note": "Sweet plantain empanadas with powdered sugar and an El Salvador flag pick, on the truck's own picnic table."},
+    {"file": "gallery-sampler-platter.jpg", "source": "gmaps-4.jpg", "note": "Picadera el gordito platter (grilled beef, fried cheese, mini pupusas, nachos). Used in the experience section and reused once in the gallery."},
+    {"file": "gallery-grilled-meats.jpg", "source": "gmaps-8.jpg", "note": "Grilled steak, pork rinds and sausage plate with pico de gallo and fried cheese. Used in the experience section and reused once in the gallery."},
+    {"file": "logo.jpg", "source": "cropped from gmaps-10.jpg", "note": "Square crop of the truck's own printed logo (flame icon, 'EL XUC', El Salvador flag) used as the nav/footer avatar and favicon."}
+  ],
+  "curation_rejected": [
+    {"file": "gmaps-2.jpg", "reason": "Byte-identical duplicate of gmaps-1.jpg"},
+    {"file": "gmaps-3.jpg", "reason": "A customer's child is clearly visible in the background; excluded from the gallery per the no-bystander-faces rule (kept in assets/raw as research evidence only)"},
+    {"file": "gmaps-7.jpg", "reason": "Menu board photo, used only as a pricing/menu source, not as a gallery tile"},
+    {"file": "gmaps-10.jpg", "reason": "Menu board photo (full logo), used only as the pricing/menu source and the logo crop, not as a gallery tile"}
+  ],
+  "brand_vibe": "Deep navy-black base with a flame-orange/burnt-orange accent, derived directly from the truck's own printed logo (blue card, white flame icon, El Salvador flag) and the warm, candid night-market photos of the food itself.",
+  "template_base": "templates/dark-v2",
+  "dm_message": "Hi! I built El Xuc a free sample website after seeing your 5.0 stars (66 reviews) on Google for your pupusas. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/elxucfoodtruck/ It does not affect your current listing or operations. Happy to put it on your own domain, or take it down if it is not for you, no pressure either way. Michael, Merktop.",
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/elxucfoodtruck/",
+  "status": "staging",
+  "gate_result": "GATE OK (en)"
+}

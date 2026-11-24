@@ -1,0 +1,33 @@
+{
+  "slug": "atomroofrepairpinecrest",
+  "name": "Atom Roof Repair Pinecrest",
+  "niche": "roofing / techos",
+  "city": "Pinecrest/Kendall, FL",
+  "address": null,
+  "address_source": "Google Business Profile shows no public address (service-area roofing business, no storefront).",
+  "phone": "+17869835844",
+  "phone_display": "(786) 983-5844",
+  "phone_source": "Google Business Profile (confirmed live via node scripts/gmaps_detail.js on the exact Maps URL given in the task).",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "Google Business Profile shows 'Add website' (no website on file). WebSearch for \"Atom Roof Repair\" Pinecrest/Miami (combined with facebook, instagram, homeadvisor, angi, thumbtack, yelp, bbb.org, and the exact phone number) returned zero matches for this business under any channel. The only similarly-named company found, 'Atom Builders, Inc.', is a confirmed unrelated company based in Southern California (reviews reference a Santa Ana, CA job) and was not used for any data.",
+  "social_media": {"facebook": null, "instagram": null, "evidence": "No Facebook or Instagram profile found for this exact business name after WebSearch; see has_own_site_evidence."},
+  "email": null,
+  "email_search_note": "No public email found. The business has no presence anywhere outside its Google Business Profile (no website, no social media, no directory listing on HomeAdvisor/Angi/Thumbtack/Yelp/BBB), so there was no secondary channel to search for a contact email.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Atom+Roof+Repair+Pinecrest/data=!4m7!3m6!1s0x88c7154aeee26ecd:0xf91999e127d6b64e!8m2!3d25.5584269!4d-80.468195!16s%2Fg%2F11vy3qvndx!19sChIJzW7i7koVx4gRTrbWJ-GZGfk",
+    "rating": 5.0,
+    "review_count": 29,
+    "category": "Roofing contractor",
+    "hours": "Open 24 hours, every day (per live GBP status)"
+  },
+  "reviews_verbatim": [
+    {"author": "Kevin Serrano", "stars": 5, "text": "We are happy with the roof repair service that we received from Atom Roof Repair. They stopped a leak we had in our garage roof and did not rush to finish the job. They left the property clean and worked quietly. Very professional roofing company"},
+    {"author": "Juan David Alvarez", "stars": 5, "text": "Great service from this roof repair company. They took care of a leak in our master bedroom and gave us an estimate to replace our roof. Professional and affordable company"},
+    {"author": "Asly Lopez", "stars": 5, "text": "Mark and the crew at Atom Roof Repair Pinecrest were fantastic from start to finish. They showed up on time, inspected everything thoroughly, and repaired multiple leaks that another company couldn’t fix. The roof looks brand new and hasn’t leaked since. Highly recommend for anyone in the Pinecrest area needing reliable roofing experts."}
+  ],
+  "status": "failed",
+  "fail_reason": "Only 3 unique real photos exist for this business anywhere online (Google Business Profile itself states '3 Photos'; the 4th URL returned by the photo scraper was a byte-identical duplicate of photo 1). FORGE-BRIEF.md section 0.b sets a hard minimum of 5 real, own photos before a site can be built; below that it must be marked failed rather than padded with duplicates or unrelated imagery. Research was NOT degraded (full Playwright gmaps_detail.js + gmaps_reviews.js + gmaps_photocycle.js run directly against the live listing, not a Railway/API fallback), and an exhaustive WebSearch across Facebook, Instagram, HomeAdvisor, Angi, Thumbtack, Yelp and BBB plus the exact phone number found zero secondary presence to rescue more photos from. The business otherwise easily clears every other bar (5.0 rating, 29 reviews, verified no own website, real phone, 3 strong verbatim reviews naming the owner 'Mark'), so this is a good candidate to revisit if the owner is ever reached directly and can supply more photos.",
+  "research_degradado": false,
+  "notes": "Discovery done by the orchestrator (Google Maps search for 'roofing contractor in Kendall, FL'); this fork ran fresh research directly (gmaps_detail.js, gmaps_reviews.js x10, gmaps_photocycle.js x25) plus WebSearch due diligence for website/social/photos. No data invented. Do not reprocess this slug in a future run without new photo evidence."
+}

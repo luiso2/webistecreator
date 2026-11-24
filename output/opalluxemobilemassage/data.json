@@ -1,0 +1,52 @@
+{
+  "slug": "opalluxemobilemassage",
+  "name": "OPAL LUXE Mobile Massage",
+  "niche": "massage / bodywork studio",
+  "city": "Fort Lauderdale, FL (service area)",
+  "address": null,
+  "address_source": "No street address published on the Google Business Profile (mobile/incall service, service-area business). Map pin resolves to a general Fort Lauderdale-area coordinate, not a storefront.",
+  "phone": "+15614855756",
+  "phone_display": "(561) 485-5756",
+  "phone_source": "Google Business Profile (confirmed live via scripts/gmaps_detail.js on the task mapsUrl)",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "Google Business Profile authority link (a[data-item-id=authority]) is empty: no Website field. WebSearch '\"OPAL LUXE\" mobile massage instagram facebook' and '\"Opal Luxe\" massage \"561-485-5756\" OR \"Fort Lauderdale\" OR \"Deerfield Beach\"' returned zero matches for this business name or phone number anywhere on the web (no own domain, no directory profile with a linked site, no MassageBook/Fresha/Thumbtack listing).",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "Same WebSearch passes above found no Facebook or Instagram account for this business name or phone number. No linktree/booking-platform profile found either."
+  },
+  "email": null,
+  "email_search_note": "No social media profile exists to check for a bio link or About-section email. No Facebook/Instagram/booking-platform presence found at all after two targeted WebSearch passes (business name, and business name + phone + area). Google Business Profile itself exposes no email field. Phone is the only verified contact channel.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/OPAL+LUXE+Mobile+Massage/data=!4m7!3m6!1s0xa039763932876bbd:0x82adbdb6d78937c0!8m2!3d26.290434!4d-80.2406686!16s%2Fg%2F11vyrvr_hq!19sChIJvWuHMjl2OaARwDeJ17a9rYI?authuser=0&hl=en",
+    "rating": 4.8,
+    "review_count": 21,
+    "category": null,
+    "hours": "9 AM to 9 PM daily (per GMB)"
+  },
+  "reviews_verbatim": [
+    {"author": "Daniel DeTommaso", "stars": 5, "text": "Adriana did an exceptional job with my massage. The hot stones was a great touch and her techniques are top notch. Would recommend to anyone looking for a great massage!!!"},
+    {"author": "Kenneth", "stars": 5, "text": "Adriana did a great mobile massage on my back at my home. She has a very sweet personality and she was very professional. I would definitely use her service again in the future."},
+    {"author": "Paul Greco", "stars": 5, "text": "Adriana did a great massage and has a warm personality. She helped get rid of the pain in my back. Will book again. Anyone looking for a mobile massage please contact this lovely lady. 11 stars."},
+    {"author": "Salvatore LaRosa", "stars": 5, "text": "Great mobile massage at my home, and coffee eye mask were great. Very sweet lady. Will book Adriana again when I’m in town."},
+    {"author": "Jason Williams", "stars": 5, "text": "I had an excellent experience with this mobile massage service. The therapist arrived on time, was professional, courteous, and well-prepared. The massage was both therapeutic and deeply relaxing, with great attention to the areas that … (truncated by Google)."}
+  ],
+  "reviews_source": "scripts/gmaps_reviews.js against the task mapsUrl, deduplicated (Google returned each quote twice).",
+  "photos": {
+    "source": "scripts/gmaps_photocycle.js against the task mapsUrl, 8 raw URLs returned, all downloaded with curl + Chrome UA into assets/raw/ and verified with `file` (all decode: 6 real JPEG/PNG, no 0-byte files) and visually inspected one by one with the Read tool.",
+    "inventory": [
+      {"file": "gmaps-1.jpg / gmaps-2.jpg (identical duplicate)", "desc": "Close-up selfie of a woman in a black scrub top embroidered 'Massage Therapist', neutral indoor background with a plant.", "verdict": "Plausibly the real therapist (consistent face/branding with gmaps-7/8), but a face selfie, usable only as a small avatar per curation rules, never a gallery tile."},
+      {"file": "gmaps-4.jpg", "desc": "Same-looking woman in blue scrubs embroidered 'Massage Therapy', standing next to a massage table set up in a high-rise condo living room with a Miami/Intracoastal skyline view.", "verdict": "The only candidate 'work' photo plausibly tied to this specific business (consistent face/branding)."},
+      {"file": "gmaps-5.jpg", "desc": "Product photo of 4 bottles labeled 'Mion Artisan Soap - Massage Oil', an unrelated third-party supplier's product photography, mionartisansoap.com printed on the label.", "verdict": "REJECTED: generic third-party product stock photo, not the business's own photo, text/branding of another company baked into the image."},
+      {"file": "gmaps-6.jpg", "desc": "A massage being performed on a man's bare back in an ornate mansion room with a chandelier and french doors, by a therapist whose face/build does NOT match the woman in gmaps-1/4/7/8.", "verdict": "REJECTED: different person entirely, almost certainly a generic/stock 'luxury mobile massage' marketing image not of this business, per the rule that photos of other people/accounts do not count."},
+      {"file": "gmaps-7.jpg / gmaps-8.jpg (identical duplicate)", "desc": "Close-up selfie of the same woman as gmaps-1/2, black scrub embroidered 'Massage Therapist', candles and rolled towels in the background.", "verdict": "Same as gmaps-1/2: plausible real therapist selfie, avatar-only, not a gallery tile, and a duplicate of an already-counted image."}
+    ],
+    "count_real_work_photos": 1,
+    "curation_note": "After removing exact duplicates (1=2, 7=8), a third-party product stock photo (5), and a photo of a visibly different person in a different setting (6), only ONE real, own, work-context photo remains (gmaps-4) plus two duplicate face-selfies usable only as a small avatar. That is far below the FORGE-BRIEF 0.b hard minimum of 5 real, own photos (stock images and photos of other accounts/people explicitly do not count toward that minimum)."
+  },
+  "status": "failed",
+  "fail_reason": "Minimo de fotos NO cumplido tras curaduria visual estricta. De las 8 fotos de la ficha de Google (via gmaps_photocycle.js, research no degradado), 2 son duplicados exactos de una selfie de la terapeuta (uso valido solo como avatar pequeno, nunca como tile de galeria), 1 es una foto de producto de un proveedor externo no relacionado (Mion Artisan Soap), y 1 muestra a una persona visiblemente distinta en otro entorno (mansion con candelabro), que no corresponde a la misma terapeuta de las demas fotos: estas 2 ultimas son fotos de stock/de otra cuenta y NO cuentan segun la regla dura. Queda 1 sola foto de trabajo real verificable (gmaps-4). Sin Instagram ni Facebook propios encontrados (2 busquedas web dirigidas, cero resultados) para rescatar mas fotos reales. Por debajo del minimo duro de 5 fotos reales y propias de FORGE-BRIEF seccion 0.b.",
+  "research_degradado": false,
+  "notes": "Has_own_site=false y canal de contacto (telefono) confirmados; 5 resenas verbatim reales obtenidas con nombre de la terapeuta (Adriana). El unico bloqueo es la curaduria de imagenes: no se fabrico ningun dato para llenar el hueco. No se construyo index.html ni se escribio outreach-draft.md para este negocio."
+}

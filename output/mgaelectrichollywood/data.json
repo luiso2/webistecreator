@@ -1,0 +1,14 @@
+{
+  "slug": "mgaelectrichollywood",
+  "name": "MGA Electric Inc.",
+  "niche": "electricista",
+  "city": "Hollywood, FL",
+  "address": "2538 Taylor St, Hollywood, FL 33020, United States",
+  "phone": "+1 305-914-6060",
+  "status": "discarded",
+  "fail_reason": "Tiene website propio (roto): el Google Business Profile lista el texto 'mgaelectricsinchollywood.com' directamente debajo de la direccion (fuera del boton Website estructurado, que SI muestra 'Add website'). curl -I sobre https://mgaelectricsinchollywood.com devuelve HTTP 502 Bad Gateway (via el proxy del entorno; la conexion directa sin proxy da timeout/HTTP 000, consistente con un backend real que no responde, no con un dominio sin DNS). Un 502 implica que existe un servidor/backend configurado detras del dominio, no un simple parking page o dominio sin apuntar. Por la regla de FORGE-BRIEF 0.b 'Website propio roto': esto NO es 'no tienen website', es 'su web no esta cargando'. Por la regla dura del brief de la corrida (paso 2: 'con website propio se DESCARTA sin gastar cupo'), este negocio se descarta sin construir, para no gastar el cupo diario de 20 en un negocio que ya tiene un dominio propio registrado (aunque este caido). No se hizo build de index.html.",
+  "has_own_site": true,
+  "has_own_site_evidence": "GMB listing text shows 'mgaelectricsinchollywood.com' as a line item alongside phone/address (business-submitted domain), separate from the structured Website button (which still shows 'Add website', likely because the domain is not currently resolving so Google has not promoted it to the clickable Website field). curl -I https://mgaelectricsinchollywood.com -> HTTP/1.1 502 Bad Gateway (via proxy). Direct (no-proxy) curl to https/http both timeout (HTTP 000), consistent with a real but currently-down backend rather than an unregistered domain.",
+  "recommendation_to_orchestrator": "Replace this slot with a backup candidate to preserve the daily_count quota; do not count as built. If useful for a future run with a different angle ('su web actual no esta cargando, aqui tienes una alternativa lista'), this business could be revisited outside today's require_no_website=true discovery quota.",
+  "research_degradado": false
+}

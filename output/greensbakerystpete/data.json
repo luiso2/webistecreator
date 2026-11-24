@@ -1,0 +1,61 @@
+{
+  "slug": "greensbakerystpete",
+  "name": "Green's Bakery & Sandwich Shop",
+  "niche": "reposteria / bakery boutique",
+  "city": "St. Petersburg, FL",
+  "address": "3065 18th Ave S, St. Petersburg, FL 33712, United States",
+  "address_source": "Google Business Profile (Maps place card)",
+  "phone": "+17273232089",
+  "phone_display": "(727) 323-2089",
+  "phone_source": "Google Business Profile",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "Google Business Profile shows no website field (raw page snippet includes 'Add website' and 'Claim this business', confirmed live via scripts/gmaps_detail.js). Domain checks: greensbakery.com redirects to an unrelated brand (greensbabka.com, a different babka bakery, not this business); greensbakerystpete.com, greensbakeryandsandwichshop.com and greensbakerysandwichshop.com all return 502/no live site. WebSearch for \"Green's Bakery\" \"St Petersburg\" / 18th Ave S turned up no official website, Facebook or Instagram for this specific business (closest unrelated hits were other St. Pete bakeries like Uhuru Food and Pies).",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "WebSearch for \"Green's Bakery\" St Petersburg plus email/facebook/instagram returned no matching profile for this business. No social links on the Google Business Profile."
+  },
+  "email": null,
+  "email_search_note": "No public email found. Checked: Google Business Profile (no email field, no website to pull a contact page from), WebSearch for the business name plus the street address (no Facebook/Instagram/website surfaced), domain guesses (none resolve to this business). Consistent with a small cash-only, one-day-a-week operation with no online presence beyond its Google listing.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Green%27s+Bakery+%26+Sandwich+Shop/data=!4m7!3m6!1s0x88c2e26a3020b787:0x36c2bb1d5a265800!8m2!3d27.7522134!4d-82.674663!16s%2Fg%2F1tk63xmn!19sChIJh7cgMGriwogRAFgmWh27wjY",
+    "rating": 4.9,
+    "review_count": 49,
+    "category": "Bakery",
+    "hours_note": "Live Google hours (captured during Thanksgiving week) show the business closed Mon/Tue/Wed/Fri/Sat/Sun and open only Thursday 12:30-6 PM; that specific time window is flagged by Google as holiday-adjusted so it is NOT used as a general claim on the site. What IS used, and is corroborated independently: 'Thursday only' is explicitly called out by name in 8 separate Google review snippets (serviceMentions from gmaps_detail.js), and review text repeats it ('They are only open Thursdays'). Exact normal weekly open/close times were not confirmed from a non-holiday source, so the site states 'Thursdays only' without inventing specific hours, and tells visitors to call ahead."
+  },
+  "payment_note": "Cash only: called out by name in 3 separate Google review snippets ('cash only, mentioned in 3 reviews') and consistent with the lack of any online ordering/payment presence.",
+  "services": {
+    "soul_food_plates": ["Neck bones with lima beans and cabbage", "Beef stew with carrots and green beans", "Cornbread (served as a side)"],
+    "bakery_case": ["Sweet potato pie", "Pumpkin pie", "Peach cobbler", "Pound cake / fruit cake", "Cinnamon rolls", "Glazed donuts and twists"],
+    "sandwiches": ["Hot deli-style subs (turkey seen in research photo) with lettuce, pickles and mustard"],
+    "pricing_note": "No prices published online anywhere (no website, no menu board photo close enough to read numbers). Reviews describe prices only qualitatively ('such reasonable prices'). Site does not display any invented price and instead directs visitors to call ahead, per the adapted-variant rule in FORGE-BRIEF 0.b."
+  },
+  "reviews_verbatim_google": [
+    {"name": "Alicia S.", "stars": 5, "text": "The food here is EXCELLENT. They are only open Thursdays, so plan your order and be ready to wait. Patience will lead you to the best donuts and lunch of your life. Greens Bakery, y'all are such a gem. Please keep being you, we need this amazing southern comfort food in our lives. It is second to none."},
+    {"name": "Jim Dell", "stars": 5, "text": "Once you take the food home, you'll never wonder why the line is so long outside of greens bakery we just picked up a beef stew and there's not a better place in Tampa Bay to see that quality of food and such reasonable prices. I wish the … (review truncated by Google)"},
+    {"name": "Adrienne DC", "stars": 5, "text": "Had the most delicious and huge meal at this grab and go shop. It is a small shop. Had the neck bones with Lima beans and cabbage. All was very tasty. It also came with 2 squares of tasty cornbread. There was enough food for 3 people. … (review truncated by Google)"},
+    {"name": "Leroy STALEY", "stars": 5, "text": "This was my first time eating there food.. I was very impressed with the taste of the Soulfood."},
+    {"name": "Greg Green", "stars": 5, "text": "My fist time eating there and everyone was polite and the food was amazing"}
+  ],
+  "research_tooling": "node scripts/gmaps_detail.js, node scripts/gmaps_reviews.js, node scripts/gmaps_photocycle.js against the Google Maps place URL above (NODE_PATH=/opt/node-tools/node_modules).",
+  "gallery": [
+    {"file": "assets/hero-display-case.jpg", "source": "gmaps-1.jpg (Google Business photo)", "note": "Wide shot of the full bakery display case (donuts, twists, pies, cakes). Used as hero + wide gallery tile, matches review descriptions of the case."},
+    {"file": "assets/gallery-soulfood-plate.jpg", "source": "gmaps-3.jpg", "note": "To-go plate of neck bones, cabbage and lima beans. Matches Adrienne DC's review verbatim."},
+    {"file": "assets/gallery-cakes-pies.jpg", "source": "gmaps-4.jpg", "note": "Close shot of the cakes/pies shelf (pound cake, pumpkin pie, peach cobbler, bread)."},
+    {"file": "assets/gallery-beefstew.jpg", "source": "gmaps-5.jpg", "note": "To-go container of beef stew with carrots and green beans. Matches Jim Dell's review."},
+    {"file": "assets/gallery-pie-slices.jpg", "source": "gmaps-6.jpg", "note": "Pie slices packed to go."}
+  ],
+  "gallery_rejected": [
+    {"file": "gmaps-2.jpg", "reason": "exact duplicate of gmaps-1.jpg"},
+    {"file": "gmaps-7.jpg", "reason": "blurry extreme macro of a half-eaten sandwich, not appetizing enough for gallery use"},
+    {"file": "gmaps-8.jpg", "reason": "hand with nail polish holding a melted-looking cobbler container, messy background, borderline POV/selfie-style shot"}
+  ],
+  "brand_vibe": "Warm caramel/amber on cream (light-v2 base). Accent deep #b5651d, mid #d99a4e, bg #fbf3e4, bg-2 #f3e3c4, ink #3a2a18. Chosen to read as a warm, appetizing bakery palette distinct from the lash-studio plum-pink original.",
+  "template_base": "templates/light-v2/index.html",
+  "dm_message": "Hi! I built Green's Bakery & Sandwich Shop a free sample website after seeing your 4.9 stars (49 reviews) on Google. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/greensbakerystpete/ It does not affect your current listing or operations. Happy to put it on your own domain, or take it down if it is not for you, no pressure either way. Michael, Merktop.",
+  "outreach": "pending_manual",
+  "status": "staging",
+  "fail_reason": null
+}

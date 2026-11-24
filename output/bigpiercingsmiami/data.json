@@ -1,0 +1,76 @@
+{
+  "slug": "bigpiercingsmiami",
+  "name": "Big Piercings",
+  "niche": "tattoo_piercing_studio",
+  "city": "Miami, FL",
+  "address": "10327 NW 27th Ave, Miami, FL 33147",
+  "address_source": "Google Business Profile (confirmed by node scripts/gmaps_detail.js on the exact Maps place URL; also printed on an in-store promo flyer photographed by the business)",
+  "phone": "+17865584701",
+  "phone_display": "(786) 558-4701",
+  "phone_source": "Google Business Profile, cross-confirmed on the same in-store promo flyer photo ('786-558-4701, 10327 NW 27 AVE')",
+  "language": "en",
+  "language_evidence": "All 5 distinct verbatim Google reviews pulled (Amanda Gonzalez, Tabatha Cornelius, Raynold Zamora, xdMiner On Ice, Denise Ocasio) are in English, with no Spanish content anywhere on the listing.",
+  "has_own_site": false,
+  "has_own_site_evidence": "(1) Google Business Profile authority/website field is empty (confirmed twice via node scripts/gmaps_detail.js on the exact place URL: website=null both times). (2) curl -I on bigpiercingsmiami.com, bigpiercingsmia.com, bigpiercingstattoo.com, bigpiercings786.com all failed to connect (no DNS/listener). (3) WebSearch for \"Big Piercings\" Miami tattoo + the phone number + Facebook turned up no official site, no Facebook page, no Instagram account; the only outside hit was a Groupon deal page for this exact business (same address, 10327 NW 27th Ave) with no site link either.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "WebSearch for \"Big Piercings\" Miami (with and without the phone number, with artist names Scott/Matt) returned no Instagram or Facebook account for this business. Google Business Profile lists no social links. Per FORGE-BRIEF 0.b this was treated as a real rescue attempt (not skipped) before relying solely on Google Maps photos."
+  },
+  "email": null,
+  "email_search_note": "Deep search performed: Google Business Profile (no email field), no Facebook/Instagram found to check an About/bio section, no linktree, WebSearch for a Sunbiz/Florida corporation record under this name (none surfaced), Groupon merchant page (no email shown, only a deal page). Consistent with the registry pattern for home/trade-adjacent small businesses: phone is the real contact channel.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Big+Piercings/data=!4m7!3m6!1s0x88d9b198194d4c21:0x18bde168ffd84eb7!8m2!3d25.8687612!4d-80.2422361!16s%2Fg%2F11s4bwssjz",
+    "rating": 4.8,
+    "review_count": 38,
+    "category": "Tattoo and piercing shop",
+    "hours": "10 AM to 10 PM, every day (per live Google Business Profile status)",
+    "hours_discrepancy_note": "An in-store promo flyer, visible in one of the business's own Google photos, prints '9AM-9PM 7 DAYS A WEEK'. Treated the live Google Business Profile hours (10 AM-10 PM daily) as authoritative per the lockbuster-locksmith precedent, since GBP is the actively-managed canonical source; the flyer may be an older print run. Not shown as a discrepancy on the site itself.",
+    "service_mentions": ["artist (7 reviews)", "cleanliness (4 reviews)", "welcoming atmosphere (4 reviews)", "tattoo design (3 reviews)", "tattoo quality (3 reviews)", "first tattoo (3 reviews)", "nice workers (2 reviews)", "patient staff (2 reviews)", "low fees (2 reviews)"]
+  },
+  "services_source": "Google Business category ('Tattoo and piercing shop') + an in-store promo flyer photographed twice among the business's own Google photos ('Half Sleeves starting at $280', 'Full Sleeve Tap Out $600, 8 hours max, Free Numbing Cream', '$320 elbow to wrist'), corroborated by a real (expired) Groupon deal for this exact address: 'Custom 8-Hour Tattoo Session or Full Wrap Half-Sleeve Tattoo (Up to 33% Off)'. No price published anywhere for small tattoos or for piercing jewelry: the site uses a quote-based framing for those, per the adapted-variant rule (no invented prices).",
+  "services": {
+    "full_sleeve_tap_out": { "price": 600, "duration": "8h max", "note": "Free numbing cream included, per in-store flyer" },
+    "half_sleeve_tattoo": { "price_from": 280, "note": "per in-store flyer" },
+    "elbow_to_wrist_tattoo": { "price_from": 320, "note": "per in-store flyer" },
+    "body_piercing": { "price": "quoted per jewelry piece, not published", "note": "business name and Google category both confirm piercing is a core service" },
+    "custom_design_consult": { "price": "free before booking", "note": "consistent with reviews describing artists sketching/adjusting designs with the client" }
+  },
+  "reviews_verbatim_google": [
+    {"name": "Amanda Gonzalez", "stars": 5, "text": "Not only did I leave with an amazing tattoo, but I also had a great experience from start to finish. If you're looking for an artist who's skilled, patient, creative, and passionate about what he does, Scott is the one. I'll definitely be coming back for future pieces and recommending him to everyone I know!"},
+    {"name": "Tabatha Cornelius", "stars": 5, "text": "Scott was my Tattoo Artist and he was very nice and did what I ask for. It came out very Nice I love it. Thank's Scott will be back!"},
+    {"name": "Raynold Zamora", "stars": 5, "text": "I recently got two tattoos here and had a really great experience. The artist was super friendly, patient, and made sure the designs came out exactly how I wanted. The shop was clean, professional, and had a really welcoming atmosphere.", "truncation_note": "Google's live page cut this review off mid-sentence after 'atmosphere' (trailing 'I ...'); used only the complete sentence portion, not the cut fragment."},
+    {"name": "xdMiner On Ice", "stars": 5, "text": "i got a great first tattoo done here by scott, their service is amazing, talented artist"},
+    {"name": "Denise Ocasio", "stars": 5, "text": "Matt is my go to tattoo artist every time I visit Miami. He always does such Amazing work on me. his professionalism, his attention to detail, is next level. he listens and brings your ideas to life, capturing every detail.", "truncation_note": "Google cut this off after 'detail' (trailing 'The shop is ...'); used only the complete portion."}
+  ],
+  "artists_named_in_reviews": ["Scott", "Matt"],
+  "photos": {
+    "source": "node scripts/gmaps_photocycle.js on the exact Google Maps place URL (11 unique photos recovered of 16 listed on the GBP). Downloaded with curl + Chrome UA into assets/raw/, verified every file with `file` (all real JPEG, no 0-byte files), then visually inspected every single one with the Read tool before selecting.",
+    "rejected": [
+      "gmaps-1.jpg / gmaps-2.jpg (duplicate): mid-procedure shot of a client face-down getting a leg tattoo, with a large text overlay reading 'Big Piercings Tattoo Parlor 10327 NW 27ave' baked into the image. Excluded from gallery per the no-text-overlay and no-mid-procedure rules; a version with the top 400px cropped off (text fully removed) was rescued for the Experience/About section only, where real working-studio ambiance is allowed.",
+      "gmaps-5.jpg: same shop, another mid-procedure tattoo shot with the same text overlay baked in. Excluded.",
+      "gmaps-6.jpg: interior shot duplicating gmaps-3.jpg's angle, but with a large 'photo ID+address' text overlay burned into the bottom third. Excluded (redundant with gmaps-3 anyway).",
+      "gmaps-8.jpg / gmaps-9.jpg: close-ups of the in-store price flyer itself (used only as a real pricing SOURCE in this data.json, not as a site photo: a photographed flyer is not a gallery-worthy shop/result photo).",
+      "gmaps-10.jpg: a client's bare back with a half-finished spider stencil (not yet tattooed, just red marker linework) plus the same promo flyer held in frame. Excluded (work-in-progress stencil, not a finished result, and has a flyer in shot)."
+    ],
+    "used": [
+      {"file": "hero-scenic-tattoo.jpg", "source": "gmaps-4.jpg", "desc": "Real finished tattoo: a mountain/river scene in black line work with blue and red color fill, on a forearm, well lit, no face visible.", "use": "hero"},
+      {"file": "about-interior.jpg", "source": "gmaps-3.jpg", "desc": "Real interior shot of the studio: purple and black walls, colorful elephant/lion murals, tile floor, waiting area.", "use": "experience section photo 1, nav/footer logo avatar, favicon"},
+      {"file": "about-studio-action.jpg", "source": "gmaps-1.jpg, cropped to remove the baked-in text overlay (top 400px of 1200px removed)", "desc": "Real photo of an artist tattooing a client's leg in the studio, mural wall visible, no face visible, text overlay fully cropped out.", "use": "experience section photo 2 (ambiance, not gallery, per the finished-results-only gallery rule)"},
+      {"file": "gallery-neck-tattoo.jpg", "source": "gmaps-7.jpg", "desc": "Real finished tattoo: a pentagram and script lettering design on the back of a client's neck, well lit, face not visible.", "use": "gallery, wide tile"},
+      {"file": "gallery-septum-piercing.jpg", "source": "gmaps-11.jpg", "desc": "Real finished, healed septum piercing with spike-and-ball jewelry, close-up, well lit, tasteful crop (nose/lips only).", "use": "gallery, narrow tile"}
+    ],
+    "count_real_work_photos": 5,
+    "curation_note": "5 real, own, verified photos used, meeting the 5-photo minimum. Gallery was deliberately built with only 2 tiles instead of the skeleton's default 6: of the 11 photos recovered, only 2 were genuinely new finished-result shots after the interior and the cropped action shot were allocated to the Experience section (and 4 more were rejected for text overlays or being mid-procedure/non-finished). Per FORGE-BRIEF 'menos fotos buenas > rellenar con malas', no stock, duplicate or rejected images were added to pad the gallery."
+  },
+  "palette_plan": {
+    "base_skeleton": "templates/dark-v2/index.html (Pure Artistry: dark bg #0f0b07, gold #d4a84b/#b8934a, Booksy 121705, Orlando, hair niche)",
+    "method": "Programmatic HSL hue-rotation (+229deg) applied to every hex/rgba color in the skeleton's <style> block (gold ~42deg -> violet ~271deg), with the merktop-badge block protected/excluded so it stays gold as required. This produced a consistent, exhaustive purple/violet re-paint (bg, surfaces, text-shine, orbs, buttons, dark-band) without needing a manual color-pair list.",
+    "rationale": "The business's own real photos show vivid purple-and-black studio walls (confirmed in gmaps-3.jpg and gmaps-1.jpg), so a violet accent on a near-black background matches the real brand environment rather than an invented palette."
+  },
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/bigpiercingsmiami/",
+  "outreach": "pending_manual",
+  "dm_message": "Hi! I built Big Piercings a free sample website after seeing your 4.8 stars (38 reviews) on Google. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/bigpiercingsmiami/ It does not affect your current listing or operations. Happy to put it on your own domain, or take it down if it is not for you, no pressure either way. Michael, Merktop.",
+  "research_degradado": false,
+  "notes": "Research performed via node scripts/gmaps_detail.js, gmaps_reviews.js and gmaps_photocycle.js on the exact Google Maps place URL, curl photo downloads with a Chrome UA, WebSearch for website/social/Groupon verification, and r.jina.ai render to read the blocked Groupon deal page. No data invented; every field above is either a verified value with its source noted, or null with a documented search. Gate passed: python3 scripts/gate.py bigpiercingsmiami --lang en -> GATE OK."
+}

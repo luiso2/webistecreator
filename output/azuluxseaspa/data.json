@@ -1,0 +1,55 @@
+{
+  "slug": "azuluxseaspa",
+  "name": "AzuLux Sea Spa, Inc (Mobile Massage)",
+  "niche": "massage / bodywork studio",
+  "city": "Miami Beach, FL",
+  "status": "failed",
+  "fail_reason": "Below the hard minimum of 5 real, non-stock, non-flyer photos (FORGE-BRIEF 0.b / Puerta de calidad). Exhaustive research performed (see notes), but every image found is either a 2010s-era marketing flyer/graphic with text overlays and stock-style photography, or an unrelated therapist's professional headshot. No Instagram, no Facebook, no usable gallery/work photos exist for this specific business listing. Not a research_degradado case: Google Maps photo cycle, WebSearch, Birdeye, MassageBook and HealthProfs were all checked directly.",
+  "address": "7330 Ocean Ter, Miami Beach, FL 33141, United States (Saint Tropez Ocean Front Condominium per GBP - likely the incall/home-base address of a MOBILE massage team, not a public storefront)",
+  "address_source": "Google Business Profile, cross-confirmed by Birdeye listing (7330 Ocean Terrace, Miami Beach, FL 33141)",
+  "phone": "+1 786-624-0794",
+  "phone_display": "(786) 624-0794",
+  "phone_source": "Google Business Profile, matches the phone printed on the business's own promotional flyer image (gmaps-7.jpg) next to LeticiaD@azulux.com",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "The business's OWN promotional flyer (gmaps-7.jpg, a photo on their own Google Business listing) prints the email LeticiaD@azulux.com and references www.azulux.com, and the Birdeye listing explicitly lists Website: https://azulux.com/ as their site. Checked azulux.com directly: curl -I and curl -L both return HTTP 200, but the page is a client-side JS redirect to /lander, which loads GoDaddy's parking-lander infrastructure (img1.wsimg.com/parking-lander, window._trfd.push({ap:'parking'})). This confirms azulux.com is an EXPIRED/LAPSED domain now squatted by a domain parking service, not a live business website. So: no functioning own website exists today, but they clearly had one in the past under this exact domain. This is a strong 'your old website expired, here's a fresh one' outreach angle for whenever usable photos are found.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "WebSearch '\"AzuLux Sea Spa\" Miami Beach massage instagram facebook' and '\"AzuLux\" Miami massage Leticia Diana' returned no Facebook or Instagram profile for this business. Only directory/review listings surfaced (Birdeye, MassageBook therapist profile, HealthProfs therapist profile, Airbnb Experiences for an unrelated 'Leticia' massage listing not clearly tied to this business)."
+  },
+  "email": "LeticiaD@azulux.com",
+  "email_source": "Visible as plain text printed on the business's own promotional flyer image, downloaded directly from their Google Business Profile photo gallery (output/azuluxseaspa/assets/raw/gmaps-7.jpg), alongside the same phone number used throughout this research. NOT used for outreach in this run per task rules (no contact with businesses), but logged here as a verified real contact.",
+  "google_business": {
+    "profile_url_note": "Public Google Maps place link used for this research (no business.google.com vanity URL surfaced): https://www.google.com/maps/place/AzuLux+Sea+Spa,+Inc+%28Mobile+Massage%29/@25.8591251,-80.1203349",
+    "rating": 5.0,
+    "review_count": 18,
+    "category": "Massage therapist",
+    "hours": "9 AM to 9 PM, every day",
+    "service_mentions": ["lymphatic massage, mentioned in 3 reviews", "proper massage, mentioned in 3 reviews", "promptness, mentioned in 2 reviews", "masseuse, mentioned in 2 reviews"]
+  },
+  "team_note": "Reviews name at least 3 practicing therapists for AzuLux: Leticia (Diana), Natalia, and Omar, consistently across multiple 5-star reviews describing in-home/in-condo couples and individual massages in Miami Beach.",
+  "leticia_separate_practice_note": "A HealthProfs listing for 'Leticia M Diana' (license MA49617, 20 years practicing, also an acupuncturist with FL license AP4677) lists AzuLux Sea Spa as her PRIMARY location but also lists a second, separate location ('The Sifre Center', 4014 Chase Avenue, Miami Beach) with her own $195/session acupuncture pricing. That pricing and that second location belong to Leticia's individual acupuncture practice, NOT to AzuLux Sea Spa's mobile massage service reviewed on Google -- deliberately NOT used as AzuLux pricing to avoid misattributing one practitioner's separate rates to the whole team-based business.",
+  "services_source": "Reviews only (no published menu/prices anywhere found): 1-hour massage (solo and couples), lymphatic massage, deep tissue massage, in-home/in-condo service across Miami Beach. No prices published by the business on any source checked (Google, Birdeye, MassageBook, HealthProfs only shows Leticia's unrelated acupuncture rate). Per the adapted-variant rule this would have been 'se cotiza, escribenos' framing with NO invented price list, had photos allowed a build.",
+  "reviews_verbatim_google": [
+    {"author": "Zachary Korik", "stars": 5, "text": "My wife and I found AzuLux Sea Spa in home massage service online as we were interested in massage therapy. The initial communication with Leticia was smooth and we arranged an appointment with Leticia for my wife and Natalia for myself for ..."},
+    {"author": "Jake DeBerg", "stars": 5, "text": "Wow! Such a great massage. We did the 1 hr massage. They, Natalia and Omar, showed up on time to our Condo on Miami Beach, and gave my wife and I the best message in Miami. I have had a lot massages and I would rate this in the top. Professional and courteous. 5 stars...."},
+    {"author": "Mia John", "stars": 5, "text": "I was in desperate need of a same day lymphatic massage 2 days after surgery and these kind ladies squeezed me in and made room for me even though they were completely booked! I called other local places and they all told me sorry, they ..."},
+    {"author": "Alexandra Luna", "stars": 5, "text": "Leticia Diana💜 is amazing & very knowledgeable! She did my lympathic massage today she was so professional. I am so thankful to have found her after having a horrible experience somewhere else. I explained to her my situation she listened ..."},
+    {"author": "Jamie Crowshaw", "stars": 5, "text": "My wife and I both had a Masage from Natalia and Omar and they were both amazing and professional! ..."}
+  ],
+  "photos": {
+    "source": "node scripts/gmaps_photocycle.js against the exact Google Maps place URL in the task brief: all 7 photos the business has on its Google Business Profile were retrieved (matches the GBP's own 'See photos / 7 Photos' count), downloaded with curl + Chrome UA into output/azuluxseaspa/assets/raw/gmaps-1..7.jpg, verified with `file` (all real, >0 byte JPEG/PNG), then visually inspected one by one with the Read tool.",
+    "visual_inspection_result": [
+      "gmaps-1.jpg / gmaps-2.jpg (duplicates, different source URLs but identical 1080x608 PNG): a composite marketing graphic, palm-tree/hammock stock-style background collage with a Hippocrates quote overlaid in large text and the AzuLux logo. REJECTED: caption/quote text overlay, composite stock collage, not a real unstaged photo of the business.",
+      "gmaps-3.jpg: a woman reclining on a beach towel next to spa oils/brush/rolled towel, palm trees behind her, small 'www.azulux.com' watermark bottom-right. REJECTED: staged/stock-style brand photoshoot aesthetic (identical visual style to the flyer graphics, clearly produced for marketing rather than documenting real client sessions), watermark present, cannot confirm it depicts this business's actual premises or a real client/session.",
+      "gmaps-4.jpg: a 3-panel 'Escape / Relax / Unwind' marketing graphic with stock photography (a sailboat sunset, hot stones on a generic back, a starfish in shallow water) plus the AzuLux logo. REJECTED: stock imagery + text captions, not real work photos.",
+      "gmaps-5.jpg: just the AzuLux Sea Spa wordmark/logo on a plain background, no photo content. REJECTED: logo graphic, not a gallery photo (kept only as a possible tiny brand mark reference, not used).",
+      "gmaps-6.jpg: a blurred, low-resolution massage photo (bottle + partial back) with the AzuLux logo and 'www.azulux.com' watermark burned in. REJECTED: text/watermark overlay baked into the image, poor resolution/blur.",
+      "gmaps-7.jpg: a holiday gift-certificate promotional flyer collage (5 small grayscale thumbnail photos of a hand massage/stone therapy across the top and bottom, a 'Stress-FREE Christmas Shopping' headline, the same staged beach photo as gmaps-3 reused, NCTM and AMTA certification badges, and the contact block 'LeticiaD@azulux.com / 786-624-0794'). REJECTED as a gallery photo (it is a promotional flyer full of marketing text), but KEPT AS A DATA SOURCE for the verified email/phone and the real NCTM/AMTA professional credentials."
+    ],
+    "count_real_work_photos": 0,
+    "curation_note": "0 of 7 available photos qualify for a premium gallery per the no-text-overlay / no-stock-photo rule. All are 2010s-style promotional flyers or staged brand photography, not real documentation of the team's actual work or premises. This is below the FORGE-BRIEF minimum of 5 real, own, non-stock photos required to build. No Instagram or Facebook account exists to source alternative real photos from (confirmed by WebSearch). HealthProfs has one professional headshot of therapist Leticia M Diana, but that is a personal headshot for her separate acupuncture practice, not AzuLux Sea Spa documentation, and a single headshot would not clear the 5-photo minimum regardless."
+  },
+  "notes": "Research performed via: node scripts/gmaps_detail.js, gmaps_reviews.js and gmaps_photocycle.js against the exact Google Maps place URL given in the task brief; curl domain probes on azulux.com (confirmed expired/parked, not live); WebSearch for social media and for the practitioners by name; WebFetch/curl on the Birdeye, MassageBook and HealthProfs listings that WebSearch surfaced. No data invented. Marked failed solely on the photo-minimum rule; every other dimension of this business (real reviews, real phone, real former domain, real named therapists, real credentials) was fully verifiable and documented above for a future attempt if better photos ever surface (e.g. if the business posts to a new Instagram, or if Leticia provides work photos directly)."
+}

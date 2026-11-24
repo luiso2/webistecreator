@@ -1,0 +1,67 @@
+{
+  "slug": "saborescentroamericano",
+  "name": "Sabores Centro Americano",
+  "name_discrepancy_note": "Google Business Profile lists the name as 'Sabores Centro Americano' (singular). The truck's own exterior wrap reads 'Sabores Centro Americanos' (plural, with a trailing s). The Google listing name is used everywhere on the site per the rule of using the exact name as published on the business's primary Google Maps profile.",
+  "niche": "food truck / cocina latina (Salvadoran and Honduran)",
+  "city": "Miami, FL (Little Havana area)",
+  "address": "201 NW 22nd Ave, Miami, FL 33125",
+  "address_source": "Google Business Profile (gmaps_detail.js on the Maps place URL). This is a food truck; the address is the spot published on its own Google listing, treated as its regular/primary location (consistent, recurring evening hours Wed-Sun support that reading), not a formal storefront.",
+  "phone": "+17867204424",
+  "phone_display": "(786) 720-4424",
+  "phone_source": "Google Business Profile, cross-verified against the truck's own exterior wrap signage (visible in assets/raw/gmaps-8.jpg, which prints '786-720-4424' and 'Catering' directly on the vehicle). Two independent sources agree.",
+  "language": "en",
+  "language_evidence": "All 5 distinct verbatim Google reviews pulled via gmaps_reviews.js are written in English (Mia Barreira, Ste, Darma Andino, Andrew S, K Perez), despite the business serving Salvadoran/Honduran food in a majority-Spanish-speaking neighborhood (Little Havana). Per PIPELINE rule (detect from reviews, not assumptions), language is set to en; the site is still fully bilingual es/en.",
+  "has_own_site": false,
+  "has_own_site_evidence": "(1) Google Business Profile authority link (gmaps_detail.js) returned website: null. (2) curl -I on saborescentroamericano.com, saborescentroamericanos.com, saborescentroamericanomiami.com, saborescentroamericanofoodtruck.com: all failed DNS/connect (agent-proxy connect_unreachable, no public DNS record). (3) WebSearch for the business name plus 'instagram facebook' and site:instagram.com returned no matching social profile or website, only unrelated Miami food-truck roundups and two unrelated same-named restaurant directory stubs (novacircle.com, forkgrade.com) at different addresses. (4) novacircle.com menu subpage returned 404 when fetched, so no further menu data was available from it.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "Deep search performed: WebSearch '\"Sabores Centro Americano\" food truck Miami instagram facebook' and WebSearch '\"saborescentroamericanos\" OR \"sabores centro americanos\" miami site:instagram.com'. No Instagram or Facebook account found for this specific truck. The truck's own wrap has no visible @handle, only a QR code (not decodable from a photo) and the phone number."
+  },
+  "email": null,
+  "email_search_note": "No public email found after a deep search: no website to pull a domain from, no social profile with a bio/link to check, Google Business Profile does not expose an email field for this listing. Contact channel is phone (call/text) only, which the dm_message and outreach draft reflect.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Sabores+Centro+Americano/@25.7755869,-80.2307532,17z",
+    "rating": 4.7,
+    "review_count": 32,
+    "hours": "Closed Monday and Tuesday. Wednesday 6PM-12AM, Thursday 6PM-12AM, Friday 6PM-1AM, Saturday 6PM-1AM, Sunday 6PM-12AM."
+  },
+  "menu_source": "No priced menu published anywhere online (no website, no delivery app page found). Dish names used on the site come only from two real sources: (1) verbatim Google reviews naming specific items, (2) the truck's own exterior wrap photography showing plated dishes. No prices are shown on the site; the services section explicitly states the menu and prices are posted at the truck when ordering, per the adapted-variant rule (FORGE-BRIEF 0.b): never invent a price.",
+  "menu_items_verified": {
+    "pupusas": "Named in 3 of 5 reviews ('Best pupusas i've ever tasted', 'BEST PUPUSAS IN MIAMI', 'Ordered baleadas and pupusas'). Visible in assets/raw/gmaps-4.jpg and gmaps-5.jpg truck signage photo.",
+    "baleadas": "Named in review by K. Perez ('Ordered baleadas and pupusas... baleadas were huge and the carne was very tender').",
+    "birria_quesadilla_and_birria_pupusa_tacos": "Named in review by Andrew S. ('We ordered a birria quesadilla and birria pupusa tacos').",
+    "catering": "The word 'Catering' plus the same phone number is printed directly on the truck's exterior wrap (assets/raw/gmaps-8.jpg)."
+  },
+  "reviews_verbatim_google": [
+    { "name": "Mia Barreira", "stars": 5, "text": "Best pupusas i've ever tasted. Excellent service and they're quick to give you your food. would 100% come back again and again." },
+    { "name": "Ste", "stars": 5, "text": "PERFECT PLACE TO BE OUT WITH FRIENDS AND FAMILY BEST PUPUSAS IN MIAMI AND THE ONLY PUPUSAS ILL EVER HAVE IN MY LIFE" },
+    { "name": "Darma Andino", "stars": 5, "text": "The food is amazing and the staff are incredible. Have been ordering from them for a while since the NW 20th street location and I have no complaint." },
+    { "name": "Andrew S", "stars": 5, "text": "We ordered a birria quesadilla and birria pupusa tacos. Excellent flavor, generous portions, friendly staff. Great roadside find." },
+    { "name": "K Perez", "stars": 5, "text": "Ordered baleadas and pupusas for take out and all I can say is that this is my new go to weekend spot! So good! The baleadas were huge and the carne was very tender and flavorful. Our friend had the chicken pups as and he loved them too! Will be back for other items to try." }
+  ],
+  "reviews_used_on_site": ["Mia Barreira", "Andrew S", "K Perez"],
+  "photo_source": "Google Maps business photos via gmaps_photocycle.js on the Maps place URL (9 photos pulled, 1 exact duplicate removed, 8 unique). Verified with `file` (all valid JPEG, none 0 bytes) and visually reviewed one by one via the Read tool before selection.",
+  "photo_curation": {
+    "used": [
+      "gmaps-4.jpg: pupusas + fresh horchata-style drink + Jarritos soda on an outdoor table, checkered paper, vibrant and appetizing. Used as hero.",
+      "gmaps-8.jpg: full daytime exterior shot of the branded truck (El Salvador flag, dish photos, phone number, Catering text, QR code). Used in 'Who we are'.",
+      "gmaps-9.jpg: three griddled quesadillas, close and appetizing. Used in 'Who we are'.",
+      "gmaps-1.jpg: multiple takeout trays of fried rolled tacos with curtido, large group/catering-style order. Used as the wide gallery tile.",
+      "gmaps-5.jpg: plated tacos with pico de gallo and a dipping sauce. Used in gallery.",
+      "gmaps-3.jpg: three fresh drinks (horchata, mango agua fresca, a creamy drink) with the truck's menu board blurred in the background. Used in gallery.",
+      "logo.jpg: a square crop of the truck's own 'Sabores Centro Americanos' wordmark/logo artwork taken from gmaps-8.jpg, used as the small circular brand mark in nav/footer (no separate logo file exists anywhere online)."
+    ],
+    "rejected": [
+      "gmaps-2.jpg: exact byte-for-byte duplicate of gmaps-1.jpg (same md5), removed.",
+      "gmaps-6.jpg: raw uncooked chorizo/sausage links in tamal husks on a prep tray; not a finished, appetizing plated dish, reads as back-of-house prep. Excluded from gallery per the 'no process shots' rule.",
+      "gmaps-7.jpg: truck exterior at night, image rotated 90 degrees from camera orientation, busy background (an unrelated billboard ad, parking lot). Excluded in favor of the cleaner daytime gmaps-8.jpg shot of the same truck."
+    ],
+    "gallery_note": "Only 6 of the 8 unique photos were genuinely usable (no selfies/process shots among them, which is good, but there also was not enough volume for the full 1-wide + 5-tile gallery the skeleton ships with). Per FORGE-BRIEF 0.b/Fase 3.2 ('menos fotos buenas > rellenar con malas'), the gallery grid was reduced to 1 wide tile + 2 tiles (3 real photos) instead of padding it with the raw-chorizo or rotated-night shots just to fill 6 slots."
+  },
+  "jsonld_type": "FoodEstablishment",
+  "brand_vibe": "Vivid turquoise/teal and white (El Salvador flag colors + the truck's own light-blue wrap), bright and tropical, daytime energy. Base: light-v2 skeleton, hue-shifted to teal (hue 192deg) via scripts/palette_shift.py from the lashbloom reference pink.",
+  "adapted_variant_notes": "No booking platform exists (this is a parked food truck, not an appointment-based business). All Booksy CTAs were replaced with tel:+17867204424 click-to-call. All Instagram CTAs were replaced with a link to the Google Maps listing (no verified IG/FB account exists). The 'El Metodo' 4-step section was reframed from an appointment flow to 'How it works' (find the truck, choose your dish, cooked to order, enjoy or book catering). The services/menu cards show real dish names with no invented prices, per the adapted-variant rule. The owner/artist bio chip was reframed as a plain brand chip (no owner name is known or needed).",
+  "dm_message": "Hi! I came across Sabores Centro Americano (4.7 stars, 32 reviews on Google, your pupusas get called the best in Miami) and built a free sample website for the truck: https://siteforge-demos.odd-forest-9504.workers.dev/saborescentroamericano/ It does not touch your current listing or operations. Happy to put it on your own domain, or take it down if it is not for you. Michael, Merktop.",
+  "status": "staging"
+}

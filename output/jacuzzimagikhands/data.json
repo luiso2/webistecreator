@@ -1,0 +1,47 @@
+{
+  "slug": "jacuzzimagikhands",
+  "name": "Jacuzzi and Magik Hands",
+  "niche": "massage / bodywork studio",
+  "city": "Hollywood, FL",
+  "address": "2218 McClellan St, Hollywood, FL 33020, United States",
+  "address_source": "Google Business Profile",
+  "phone": "+17868597862",
+  "phone_display": "(786) 859-7862",
+  "phone_source": "Google Business Profile",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "Google Business Profile shows 'Add website' (no website field). WebSearch for \"Jacuzzi and Magik Hands\" Hollywood FL website/instagram/facebook/email returned no matching official site or social profile. A possibly-related MassageBook listing (massagebook.com/therapists/magic-hands-msg) surfaced in search under a slightly different spelling (\"Magic hands\" vs \"Magik Hands\") in the same zip 33020 with a mention of a 60-min session at $100, but could not be confirmed as the same business (page is a JS app shell, no server-rendered address/name matched on fetch) so it was NOT used as a data source.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "No Facebook or Instagram profile found for this exact business name via WebSearch. The only close name matches (Magic Hands Massage Spa, Plantation FL; Healing massage by Magic Hands, Airbnb Services, Plantation FL) are confirmed to be a DIFFERENT business in a different city, not used."
+  },
+  "email": null,
+  "email_search_note": "No public email found. Checked: Google Business Profile (no email field), WebSearch for business name + email/contact (no result), WebSearch for Facebook/Instagram (no matching profile to check an About section on). The unconfirmed MassageBook listing was not opened for contact details since the business identity could not be verified first.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Jacuzzi+and+Magik+Hands/data=!4m7!3m6!1s0x88d9abfa121858cf:0x792b5b5e3464001b!8m2!3d26.041342!4d-80.152158!16s%2Fg%2F11r3p54n39!19sChIJz1gYEvqr2YgRGwBkNF5bK3k",
+    "rating": 5.0,
+    "review_count": 25,
+    "category": "Massage therapist",
+    "hours": ["Monday-Sunday, 9 AM to 8 PM"],
+    "photos_available_on_listing": "12 Photos (per GMB page text), but gmaps_photocycle.js only surfaced 5 image URLs, of which 2 were byte-identical duplicates (so 4 unique files)."
+  },
+  "status": "failed",
+  "fail_reason": "Insufficient real, usable photos (minimum bar per FORGE-BRIEF 0.b / PIPELINE Fase 3 is 5 good real photos). Of the 4 unique photos recovered from the Google Business listing via gmaps_photocycle.js: (1) and (2) are near-duplicate wide shots of the treatment room/jacuzzi setup (genuinely usable ambiance photos, but only count as ~1 distinct usable image), (3) is a private/personal photo of a woman in a bikini unrelated to a massage/jacuzzi service presentation (old 2005 Canon PowerShot EXIF metadata, clearly not a business work photo, PROHIBITED per visual curation rules), and (4) is a casual selfie/portrait of the apparent owner (per curation rules, a selfie/owner portrait is never usable as a gallery tile, only as a small avatar). That leaves at most 1-2 genuinely usable ambiance photos and zero additional real service/result photos. No Instagram or Facebook profile could be found via WebSearch to rescue with more photos (checked per FORGE-BRIEF 0.b rescue rule before failing). Research was NOT degraded (full Playwright gmaps_detail.js, gmaps_reviews.js and gmaps_photocycle.js ran successfully and returned real, complete data); the business itself simply does not have enough usable public photos. Not rebuilt from fewer/inappropriate images per the hard rule 'never fabricate or pad with bad photos.'",
+  "reviews_verbatim": [
+    {"author": "Daniel Gielchinsky", "stars": 5, "text": "Excellent massage and fantastic jacuzzi. Will return."},
+    {"author": "Phelipe san juan", "stars": 5, "text": "The whole experience was absolutely wonderful. She was very welcoming and helpful. She was able to relieve the tension on my muscles expertly. I will definitely be going back next time I’m in the area."},
+    {"author": "Alfredo Ruiz", "stars": 5, "text": "Therapist used natural olive oil, hands gliding like waves-kneading every knot from my shoulders to toes. It felt like floating in pure bliss, all stress melting away in about an hour. Utterly divine!"},
+    {"author": "Gym Life Brandon", "stars": 5, "text": "Excellent, wonderful soothing. If I could give it more than five stars, I would!!"},
+    {"author": "Ronnie Santarone", "stars": 5, "text": "She’s great at what she does!"}
+  ],
+  "photo_curation_notes": [
+    {"file": "assets/raw/gmaps-1.jpg (= gmaps-2.jpg, byte-identical)", "verdict": "usable ambiance shot (jacuzzi + massage table + room), but owner is visible in-frame (fully clothed, not a portrait) - borderline, would need cropping"},
+    {"file": "assets/raw/gmaps-3.jpg", "verdict": "usable ambiance shot, same room, no person - best of the 4"},
+    {"file": "assets/raw/gmaps-4.jpg", "verdict": "REJECTED - private/personal bikini photo, unrelated to the business, 2005 EXIF metadata, must never appear on the site"},
+    {"file": "assets/raw/gmaps-5.jpg", "verdict": "REJECTED for gallery - casual selfie/portrait of the owner, not a gallery-appropriate shot (could only be a small avatar, not enough on its own)"}
+  ],
+  "no_site_built": true,
+  "no_site_build_note": "index.html was NOT built. Per pipeline rules, a failed business does not get a demo site; building one here would require padding the gallery with an inappropriate personal photo and a selfie, which is explicitly prohibited.",
+  "outreach": "not_applicable_failed"
+}

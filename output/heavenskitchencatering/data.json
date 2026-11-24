@@ -1,0 +1,71 @@
+{
+  "slug": "heavenskitchencatering",
+  "name": "Heaven's Kitchen",
+  "niche": "catering / eventos (soul food plate-lunch / food truck hybrid)",
+  "city": "Fort Lauderdale, FL",
+  "address": "945 W Sunrise Blvd, Fort Lauderdale, FL 33311",
+  "address_source": "Google Business Profile (re-fetched live via scripts/gmaps_detail.js). Note: one 1-star Google review (Christopher-Anthony: Stewart Family) claims the address led to no visible restaurant and that the phone did not work for them; however a live Google Maps embed test for this exact address resolves correctly to a specific point near NW 10th Terrace / W Sunrise Blvd, and 4 other reviewers describe normal phone/pickup interactions (one names staff member 'Misha' taking orders). Treated as a real but likely informal/plate-lunch pickup operation (consistent with 'food truck' being mentioned in 5 of 24 reviews) rather than a classic walk-in sit-down restaurant: site language is deliberately hedged toward 'call ahead to confirm' rather than an unconditional 'come visit us' invite.",
+  "phone": "+19546555690",
+  "phone_display": "(954) 655-5690",
+  "phone_source": "Google Business Profile, cross-checked by re-querying scripts/gmaps_detail.js live (consistent both times).",
+  "language": "en",
+  "has_own_site": false,
+  "has_own_site_evidence": "Google Business Profile itself shows 'Add website' (no website on file). WebSearch '\"Heaven's Kitchen\" Fort Lauderdale soul food website OR facebook OR instagram' returned zero matches for this specific business (only unrelated Fort Lauderdale soul food spots: Betty's Soul Food, Just Spoons Soul, My Brother's Soulfood). curl -I on 3 guessed domains (heavenskitchenflorida.com, heavenskitchenfl.com, heavenskitchensoulfood.com) all failed to resolve/connect.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "No verifiable Facebook or Instagram profile found for this exact business via WebSearch. Google Business Profile lists no social links."
+  },
+  "email": null,
+  "email_search_note": "No public email found. Checked: Google Business Profile (no email field), WebSearch for an official website/social (none found, see has_own_site_evidence), no linktree/booking page exists to check. Consistent with a small plate-lunch/food-truck style operation with phone as the only public contact channel.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/Heaven%27s+Kitchen/data=!4m7!3m6!1s0x88d901eed3366edd:0x404a44910aedbf4!8m2!3d26.1369355!4d-80.155636!16s%2Fg%2F11pcbbjfy1",
+    "rating": 4.7,
+    "review_count": 24,
+    "category": "Restaurant (soul food / BBQ plate lunch, food-truck style per reviews)",
+    "hours": "Closed Sun-Thu. Friday 4-9 PM, Saturday 4-9 PM (per live Google Business Profile hours).",
+    "service_mentions_source": "Google 'mentioned in reviews' chips (real aggregated data, not invented): collard greens (5 reviews), banana pudding (3), ribs (8), mac and cheese (5), cornbread (2), food truck (5), soul food (2), rib tips (2), portions (2), cleanliness (2)."
+  },
+  "services_source": "No published menu or prices anywhere (no website, no booking page). Dish names and descriptions derived ONLY from what is visible in the business's own real Google Business photos (ribs, fried fish and fries, a griddle-pressed ham/turkey/cheese sandwich, rice and beans, fried wings, mac and cheese, collard greens, cornbread, banana pudding cups) and from real review mentions. No prices are shown anywhere on the site; copy uses 'call or text to confirm what is available' framing per the adapted-variant rule (never invented price list).",
+  "services": {
+    "signature": ["Rib plate (BBQ ribs with real glaze, mentioned in 8 of 24 Google reviews)"],
+    "mains": ["Fried fish and crinkle-cut fries", "Fried chicken", "Cuban-style Monte Cristo sandwich (ham, turkey, cheese, griddle-pressed) with fries"],
+    "sides": ["Mac and cheese", "Collard greens (mentioned in 5 reviews)", "Rice and beans", "Cornbread"],
+    "dessert": ["Banana pudding (mentioned in 3 reviews)"]
+  },
+  "pricing_note": "No prices published anywhere (no website, no menu board visible in any available photo). Site never shows a price; CTA is always 'call or text to confirm availability', per the adapted-variant rule.",
+  "reviews_verbatim_google": [
+    {"name": "John Kinder", "stars": 5, "text": "Great food the conch fitters are huge and taste amazing. The ribs are so tender and fall of the bone. Mac n cheese is good and greens are spot on not overly salty like some food trucks. I highly recommend this spot. Oh and the corn bread outstanding", "used_on_site": true, "note": "Used verbatim including the source's own spelling/grammar; only light punctuation added for the on-site blockquote (period after 'fritters'->kept original wording 'fitters' as scraped), no content changed."},
+    {"name": "Key Star", "stars": 5, "text": "I love soul food and I grew up eating REAL soul food. This place is by far one of the best food trucks/restaurants that serves some REAL soul food. Their ribs were VERY TENDER ! mac&cheese and collard greens were also very good ‼️ I love …", "used_on_site": true, "note": "Google's own UI truncates review text with an ellipsis after a certain length; used the complete, un-truncated portion of the sentence (everything before the dangling 'I love …') verbatim, normalized the emoji to '!!' for safe cross-browser rendering. No wording changed or added."},
+    {"name": "Joseph Rudowicz", "stars": 5, "text": "This place is literally Heaven sent. Misha was so kind taking my order and her recommendation was on point. The rib tips were fall off the bone tender, charred to perfection, and SO MEATY. Their special sauce on the rib tips was also …", "used_on_site": true, "note": "Same Google truncation; used the complete sentences before the dangling 'also …', no wording changed."},
+    {"name": "S Fletcher", "stars": 5, "text": "Found this place in a group and I haven’t went anywhere else for BBQ. First time I got Ribs dinner, went back and got chicken dinner.", "used_on_site": false, "note": "Also truncated by Google's UI; not used on-site since the recoverable portion was shorter/less complete than the other 3 quotes, but is a real 5-star review confirming repeat business."},
+    {"name": "Christopher-Anthony: Stewart Family", "stars": 1, "text": "phone number does not work. came all the way from south beach and directions suck. no location and was supposed to be a surprise dinner to go while heading back up north passing this address for a restaurant that was not there. sad that …", "used_on_site": false, "note": "Negative outlier review, not used as a testimonial. Documented above in address_source for transparency; informed the site's cautious 'call ahead' framing instead of an unconditional walk-in invite."}
+  ],
+  "photos": {
+    "source": "Google Business Profile photo album, extracted via scripts/gmaps_photocycle.js (8 photos total). Downloaded with curl + Chrome UA into assets/raw/, verified every file with `file` (all real JPEG, 116KB-310KB), then visually inspected every single one with the Read tool before selecting. Two of the 8 were exact duplicates of each other (same combo plate shot); only one was kept.",
+    "rejected": [
+      "One duplicate of the hero combo-plate photo (byte-identical framing/crop to the one used as hero) - excluded as a repeat, not a distinct photo."
+    ],
+    "used": [
+      {"file": "hero-rib-plate.jpg", "desc": "Real styrofoam takeout plate: BBQ ribs and chicken, mac and cheese, collard greens and cornbread. Used as hero image and nav/footer logo-mark crop source.", "use": "hero + logo-mark"},
+      {"file": "about-ribs-closeup.jpg", "desc": "Real close-up of glazed BBQ ribs and rib tips in foil.", "use": "about/experience"},
+      {"file": "about-monte-cristo.jpg", "desc": "Real griddle-pressed ham/turkey/cheese sandwich, cut open, with fries and a condiment cup.", "use": "about/experience"},
+      {"file": "gallery-rice-beans-wings.jpg", "desc": "Real plate of seasoned rice, red beans and fried wings with cornbread, black takeout tray.", "use": "gallery (wide tile)"},
+      {"file": "gallery-fried-fish.jpg", "desc": "Real cornmeal-crusted fried fish fillet with crinkle-cut fries and a lemon wedge.", "use": "gallery"},
+      {"file": "gallery-mac-collards.jpg", "desc": "Real mac and cheese and collard greens plate with a wrapped fried item, styrofoam container.", "use": "gallery"},
+      {"file": "gallery-banana-pudding.jpg", "desc": "Real stacked banana pudding cups, homemade-style, visible layers.", "use": "gallery"}
+    ],
+    "count_real_work_photos": 7,
+    "curation_note": "7 distinct real, own, verified food photos used (hero 1, about 2, gallery 4) out of 8 total GBP photos (1 was a duplicate, excluded). No stock, no selfies, no mid-process shots, no text/caption overlays. Gallery uses 1 wide + 3 narrow tiles instead of the skeleton's default 1 wide + 5 narrow, since only 4 non-reused photos remained after allocating hero/about: per the rule 'menos fotos buenas > rellenar con malas', no filler was added. No owner/staff portrait photo was available or used anywhere (small nav/footer logo-mark is a cropped food photo, not a face)."
+  },
+  "palette_plan": {
+    "base_skeleton": "templates/dark-v2/index.html (Pure Artistry: dark bg #0f0b07, gold #d4a84b/#b8934a, Booksy 121705, Orlando, hair niche)",
+    "target_hue_deg": 18,
+    "rationale": "Burnt-orange/rust (~18deg, accent-deep #cc5a28 / accent-mid #a8562f) chosen to match the real BBQ-glaze and fried-food color palette visible in the actual photos, and to stay clearly distinct from every palette already used per templates/SKELETONS-V2.md (coral fairy ~350deg, caramelo #a86a2e ~33deg, esmeralda ~150deg, teal acero ~180deg, violeta dark ~260deg, rosa dark, gold dark/original ~38deg, and the security-red ~0deg used on lockbuster-locksmith). The merktop badge stays gold (protected, unaffected by this palette swap) per the hard rule."
+  },
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/heavenskitchencatering/",
+  "outreach": "pending_manual",
+  "dm_message": "Hi! I built Heaven's Kitchen a free sample website after seeing your 4.7 stars (24 reviews) on Google for your ribs and soul food. Check it out: https://siteforge-demos.odd-forest-9504.workers.dev/heavenskitchencatering/ It does not affect your current listing or operations. Happy to put it on your own domain, or take it down if it is not for you, no pressure either way. Michael, Merktop.",
+  "research_degradado": false,
+  "notes": "Research performed via scripts/gmaps_detail.js, scripts/gmaps_reviews.js and scripts/gmaps_photocycle.js (all re-run live against the given Google Maps URL), plus WebSearch for website/social verification and curl domain probes. No data invented anywhere: every service/dish name comes from a real photo or a real review mention, no prices are shown, the address is used but the copy is deliberately hedged ('call ahead') given one negative review about the location, and the 3 testimonials used are verbatim (trimmed only where Google's own UI truncates the text mid-sentence with an ellipsis, never reworded)."
+}

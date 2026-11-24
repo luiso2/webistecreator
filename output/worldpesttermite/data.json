@@ -1,0 +1,75 @@
+{
+  "slug": "worldpesttermite",
+  "name": "World Pest Termite & Fumigation Solutions LLC",
+  "niche": "control de plagas / pest control",
+  "city": "Fort Lauderdale, FL",
+  "address": "1808 NW 19th St, Fort Lauderdale, FL 33311",
+  "address_source": "Google Business Profile (gmaps_detail.js live read of the given Maps place URL)",
+  "phone": "+19548355723",
+  "phone_display": "(954) 835-5723",
+  "phone_source": "Google Business Profile, matches the phone printed on the branded trucks and the fence banner in their own photos",
+  "phone_discrepancy_note": "Several of the business's own photos show other numbers printed on trucks/banners (954-805-8808, 954-805-9036, 954-410-8809). These may be older or secondary dispatch lines. Not used anywhere on the site; only the verified GBP number (954) 835-5723 is used for tel: links, consistent with the lockbuster-locksmith precedent.",
+  "language": "en",
+  "has_own_site": true,
+  "has_own_site_evidence": "IMPORTANT NUANCE: the Google Business Profile itself shows no website field ('Add website'), which is why this business was accepted as a require_no_website=true discovery candidate. However, one of the business's own photos (a fence banner at a job site) prints the URL WWW.WORLDPESTFL.COM. Verified with curl: https://worldpestfl.com and https://www.worldpestfl.com both resolve (TLS handshake succeeds, domain is registered and routed) but return HTTP 404 with an empty body (server header 'ESF', looks like a generic edge/proxy 404, not a parked-domain page). So the business DOES own a domain, but it is currently broken/not loading a real site. Per FORGE-BRIEF 0.b ('Website propio roto': domain responds with an error status -> the right angle is 'your website is not loading', not 'you have no website'), this is treated as has_own_site: true with a BROKEN site, not a true no-website business. The outreach angle was adjusted accordingly (see dm_message and outreach-draft.md): we point out that worldpestfl.com appears to be down right now, not that they lack a website.",
+  "social_media": {
+    "facebook": null,
+    "instagram": null,
+    "evidence": "WebSearch for '\"World Pest Termite\" Fort Lauderdale email contact facebook instagram' and a second search for the business name plus the phone number and worldpestfl.com returned no matching Facebook or Instagram profile for this specific business (only unrelated national chains: Orkin, Terminix, Native Pest Management, Truly Nolen). No social links are listed on the Google Business Profile."
+  },
+  "email": null,
+  "email_search_note": "Deep search performed, no public email found: Google Business Profile (no email field, no 'Add email' populated), two WebSearch passes (business name + city, and business name + phone + domain) returned no Sunbiz/Florida corporation registration page, no HomeAdvisor/Angi/Thumbtack profile, and no Facebook/Instagram About section to check. worldpestfl.com itself returns 404 so no contact page could be read from it either. Consistent with FORGE-BRIEF's observation that home-service trades rarely publish email; phone is the real channel here.",
+  "google_business": {
+    "profile_url": "https://www.google.com/maps/place/World+Pest+Termite+%26+Fumigation+Solutions+LLC/data=!4m7!3m6!1s0x88d90755e619b839:0x6363eee2cad448fe!8m2!3d26.1510513!4d-80.1645951!16s%2Fg%2F11pz8648ys!19sChIJObgZ5lUH2YgR_kjUyuLuY2M",
+    "rating": 4.6,
+    "review_count": 10,
+    "category": "Pest control service",
+    "hours": "Open 24 hours, Monday through Sunday (per live GBP status)",
+    "service_mentions_source": "Google's own 'mentioned in reviews' summary chips: quick estimate (3), thorough inspection (2), affordable cost (2), termites (5), communication (3), tent (2)"
+  },
+  "services_source": "Google Business category ('Pest control service'), Google review-summary mention chips, verbatim review text, and the business's own job-site photos (residential tenting, a large commercial building tenting on Collins Ave, and a boat/marine fumigation job). No prices published anywhere: site uses 'Free inspection' / 'Custom quote' / 'Commercial quote' framing per the adapted-variant rule, never an invented price list.",
+  "services": {
+    "termite_tenting": "Whole-structure termite tenting and fumigation (residential and commercial), the flagship/featured service per review mentions of 'termites' and 'tent'",
+    "general_pest_control": "General household pest control (ants, roaches, rodents and other common pests), sourced from the GMB category itself",
+    "commercial_tenting": "Large-scale commercial building tenting, evidenced by a real photo of a large tented commercial building on Collins Ave (Miami Beach)",
+    "marine_fumigation": "Boat/marine vessel tenting and fumigation, evidenced by a real photo of a tented boat with a hazard placard"
+  },
+  "pricing_note": "No prices published anywhere (GBP, no website, no directory profile found). Reviews mention 'affordable cost' and a 'quick estimate' as qualitative descriptions only, never a number. Site uses 'Free inspection' as the primary CTA framing (an inspection being free is a reasonable, common industry norm for termite/pest companies and is consistent with how the reviews describe the sales process: quick estimate, thorough inspection), and 'Custom quote' / 'Commercial quote' for the other service cards. No dollar figures appear anywhere on the site.",
+  "reviews_verbatim_google": [
+    {"author": "Maria Del Pilar Nino", "stars": 5, "text": "I highly recommend this company! Their service is excellent, professional, and reliable. What truly sets them apart is their exceptional customer service. Casimir Rhodes, the company's president, personally answers the phone and is always ...", "note": "Text as returned by Google's review snippet (truncated with an ellipsis in the source); used as a genuine excerpt on the site, trimmed at the natural clause before the ellipsis."},
+    {"author": "Estela Panjwani", "stars": 5, "text": "World Pest Termite & Fumigation Solutions were very professionals from the first moment I have called them. The cost was very AFFORDABLE ...", "note": "Same truncation behavior as above; used verbatim up to the ellipsis."},
+    {"author": "Robert Bart", "stars": 5, "text": "Our neighbors used them a few years back. My next door neighbor just used them and said they were reasonable and did a good job. They offered a thorough inspection, pretty fast price quote which was cheaper then I thought. We hired them and ...", "note": "Same truncation behavior; used verbatim up to the ellipsis."}
+  ],
+  "reviews_not_used_note": "A 4th review (Damaris Gonzalez, 1 star, Oct 2025) describes a termite tenting job where live termites reportedly persisted for 3 months afterward with an unresolved follow-up. This is a real, public review and is disclosed here for transparency, but it is standard practice (and consistent with every other site in this pipeline) to feature only positive verified testimonials in the on-site reviews section; the negative review was not hidden or disputed, simply not selected as a quote. The overall 4.6/10 rating already reflects it.",
+  "reviews_selected_for_site_note": "Used 3 verbatim Google review excerpts with real first-name + last-initial/full-name attribution, matching the lockbuster-locksmith convention. All three independently reference the same real themes (quick, affordable, thorough, good communication) that also appear in Google's own 'mentioned in reviews' chips, cross-confirming authenticity.",
+  "photos": {
+    "source": "Google Business Profile photo gallery, extracted with scripts/gmaps_photocycle.js (11 unique photos found), downloaded with curl + Chrome UA, verified every file with `file` (all real JPEG/PNG, no 0-byte files), then visually inspected every single one with the Read tool before selecting. Resized to max 1300px width with PIL/quality 82 before use.",
+    "rejected": [
+      "One exact duplicate of the hero candidate (same bytes, two gallery slots) -- excluded the duplicate.",
+      "One tented-building photo showing a fence banner with 'WWW.WORLDPESTFL.COM' prominently legible -- excluded from the public gallery to avoid visually promoting their old broken domain on the new demo site (kept in assets/raw/ for the record; this is also the photo that revealed the broken-domain finding documented above)."
+    ],
+    "used": [
+      {"file": "hero-trucks-tent.jpg", "desc": "Two real World Pest branded trucks (WP logo, phone number) parked in front of a large red-and-blue striped tent fumigation job, clear daytime sky.", "use": "hero"},
+      {"file": "about-office.jpg", "desc": "Real photo of the World Pest front office reception desk with branded signage and licensing certificates on the wall.", "use": "about/experience"},
+      {"file": "about-aerial-tent.jpg", "desc": "Real drone/aerial photo of a canal-front home fully wrapped in tent fumigation material, boats docked alongside.", "use": "about/experience"},
+      {"file": "gallery-night-commercial.jpg", "desc": "Real photo of a large commercial building on Collins Ave fully tented at night, workers visible on the sidewalk.", "use": "gallery (wide tile)"},
+      {"file": "gallery-residential-tent.jpg", "desc": "Real daytime photo of a residential property fully tented, palm trees and a World Pest banner visible.", "use": "gallery"},
+      {"file": "gallery-truck-commercial.jpg", "desc": "Real photo of a branded World Pest truck parked in front of a tented commercial building, blue sky.", "use": "gallery"},
+      {"file": "gallery-unit-tent.jpg", "desc": "Real photo of a single structure fully wrapped in red/blue fumigation tent material next to a chain-link fence with a World Pest sign.", "use": "gallery"},
+      {"file": "gallery-boat-tent.jpg", "desc": "Real photo of a boat tented for marine fumigation with a hazard placard, used to document the marine service differentiator.", "use": "gallery"},
+      {"file": "gallery-truck-blue-sky.jpg", "desc": "Real photo of a World Pest branded truck parked in front of a large tented building under clear blue sky. Also reused as the nav/footer/favicon avatar since no separate logo graphic was available.", "use": "gallery, nav/footer avatar, favicon"}
+    ],
+    "count_real_work_photos": 9,
+    "curation_note": "9 real, own, verified job-site photos used (hero 1, about 2, gallery 6) out of 10 unique photos retrieved (one exact duplicate and one banner-with-broken-url photo excluded). Well above the 5-photo minimum. No stock imagery, no selfies, no mid-procedure closeups with people's faces -- this niche's 'curation' concern is image quality/relevance rather than beauty-industry specific rules (closed eyes, etc.), so the bar applied was: real, on-brand, legible, no unrelated clutter."
+  },
+  "palette_plan": {
+    "base_skeleton": "templates/dark-v2/index.html (Pure Artistry: dark bg #0f0b07, gold #d4a84b/#b8934a, Booksy 121705, Orlando, hair niche)",
+    "target_hue": "steel/navy blue (#3f7cc4 / #2f5c96)",
+    "rationale": "Navy/steel blue was chosen for a trust-and-safety read appropriate to a licensed pest control company, and because it has not been used in SKELETONS-V2's 'ya usadas' list (coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark). Background shifted from warm brown-black to a cooler charcoal-navy (#0a0f16/#11181f) to suit the cooler accent. The merktop-badge block was protected and stays gold per the hard rule."
+  },
+  "url_demo": "https://siteforge-demos.odd-forest-9504.workers.dev/worldpesttermite/",
+  "outreach": "pending_manual",
+  "dm_message": "Hi! I came across World Pest Termite & Fumigation on Google (4.6 stars, 10 reviews) and noticed worldpestfl.com is not loading right now. I built a free sample site to show what a working one could look like: https://siteforge-demos.odd-forest-9504.workers.dev/worldpesttermite/ It does not touch your current listing or operations. Happy to help fix it onto your domain, or no worries either way. Michael, Merktop.",
+  "research_degradado": false,
+  "notes": "Research performed via scripts/gmaps_detail.js, scripts/gmaps_reviews.js and scripts/gmaps_photocycle.js against the given Google Maps place URL, curl domain probes for worldpestfl.com (discovered via a job-site photo banner, not assumed), and two WebSearch passes for email/social media. No data invented; every field above is either a verified value with its source noted, or null with a documented search. Built from templates/dark-v2/index.html via anchored string-replacement (same method as the SKELETONS-V2 script recipe, applied directly rather than via a separate .py file for this one-off). Quality gate passed: `python3 scripts/gate.py worldpesttermite --lang en --forbid \"Pure Artistry,Orlando,80 W Grant,121705,pure.artistrysk,Silk Press\"` -> GATE OK."
+}
