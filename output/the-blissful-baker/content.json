@@ -1,525 +1,236 @@
 {
  "slug": "the-blissful-baker",
- "base": "dark-v2",
+ "base": "light-v2",
  "lang": "en",
- "cta_url": "tel:+7723537475",
+ "paleta": { "hue": 350, "sat_mult": 0.88, "light_mult": 1.0 },
+
+ "cta_url": "tel:+17723537475",
  "cta_icono": "telefono",
- "cta_label": {
-  "es": "Llamar ahora",
-  "en": "Call now"
- },
- "ig_url": "https://www.google.com/maps/place/The+Blissful+Baker/data=!4m7!3m6!1s0x42f485400cb57eaf:0xefd37f70cff50a00!8m2!3d27.2732739!4d-80.3120589!16s%2Fg%2F11vzvt9cbj!19sChIJr361DECF9EIRAAr1z3B_0-8?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1",
+ "cta_label": { "es": "Llámanos", "en": "Call us" },
+ "ig_url": "https://www.google.com/maps/place/The+Blissful+Baker/data=!4m7!3m6!1s0x42f485400cb57eaf:0xefd37f70cff50a00!8m2!3d27.2732739!4d-80.3120589!16s%2Fg%2F11vzvt9cbj!19sChIJr361DECF9EIRAAr1z3B_0-8?authuser=0&hl=en",
  "ig_handle": "Google Maps",
+ "social_cta": { "es": "Ver reseñas en Google Maps", "en": "See reviews on Google Maps" },
+ "social_label": "Google Maps",
+
  "brand": {
   "name": "The Blissful Baker",
-  "nav_a": "The",
-  "nav_b": "Blissful Baker",
-  "mono": "TB",
+  "nav_a": "The Blissful",
+  "nav_b": "Baker",
+  "mono": "BB",
   "footmark": "The Blissful Baker",
   "logo": "assets/raw/gmaps-1.jpg"
  },
+
  "head": {
-  "title": "The Blissful Baker · Port St. Lucie, FL",
-  "description": "The Blissful Baker: servicios locales en Port St. Lucie, FL. Información, fotos y contacto verificados en Google Maps.",
+  "title": "The Blissful Baker · Custom Cakes in Port St. Lucie, FL | 5.0 on Google",
+  "description": "The Blissful Baker, Port St. Lucie FL: custom celebration and wedding cakes, cupcakes, dessert tables and pies, hand made to order. 5.0 rating across 133 Google reviews. Call (772) 353-7475.",
   "og_title": "The Blissful Baker · Port St. Lucie, FL",
-  "og_description": "The Blissful Baker en Port St. Lucie, FL. Fotos públicas y contacto directo.",
+  "og_description": "Custom celebration cakes, cupcakes and dessert tables, hand made to order. 5.0 on Google with 133 reviews.",
   "og_image": "assets/raw/gmaps-1.jpg",
   "icon": "assets/raw/gmaps-1.jpg"
  },
+
  "jsonld": {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "Bakery",
   "name": "The Blissful Baker",
-  "description": "The Blissful Baker, negocio local en Port St. Lucie, FL.",
-  "address": {
-   "@type": "PostalAddress",
-   "streetAddress": "2337 SE Holland St, Port St. Lucie, FL 34952",
-   "addressLocality": "Port St. Lucie",
-   "addressRegion": "FL"
-  },
-  "telephone": "(772) 353-7475",
+  "description": "Home bakery in Port St. Lucie, FL specialized in custom celebration cakes, wedding cakes, cupcakes, dessert tables and hand laced pies, made to order.",
+  "areaServed": { "@type": "City", "name": "Port St. Lucie" },
+  "address": { "@type": "PostalAddress", "streetAddress": "2337 SE Holland St", "addressLocality": "Port St. Lucie", "addressRegion": "FL", "postalCode": "34952", "addressCountry": "US" },
+  "telephone": "+1-772-353-7475",
   "image": "assets/raw/gmaps-1.jpg",
-  "sameAs": [
-   "https://www.google.com/maps/place/The+Blissful+Baker/data=!4m7!3m6!1s0x42f485400cb57eaf:0xefd37f70cff50a00!8m2!3d27.2732739!4d-80.3120589!16s%2Fg%2F11vzvt9cbj!19sChIJr361DECF9EIRAAr1z3B_0-8?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1"
-  ]
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "133", "bestRating": "5" }
  },
- "nav": {
-  "experiencia": {
-   "es": "Nosotros",
-   "en": "About us"
-  },
-  "metodo": {
-   "es": "Proceso",
-   "en": "Process"
-  },
-  "opiniones": {
-   "es": "Por qué elegirnos",
-   "en": "Why choose us"
-  },
-  "ubicacion": {
-   "es": "Contacto",
-   "en": "Contact"
-  }
- },
+
  "hero": {
-  "eyebrow": {
-   "es": "Port St. Lucie, FL · Servicios",
-   "en": "Port St. Lucie, FL · Services"
-  },
-  "script": {
-   "es": "Trabajo real, trato directo.",
-   "en": "Real work, direct service."
-  },
-  "h1_a": {
-   "es": "Tu proyecto,",
-   "en": "Your project,"
-  },
-  "h1_b": {
-   "es": "en manos de ",
-   "en": "handled by "
-  },
-  "h1_shine": {
-   "es": "The",
-   "en": "The"
-  },
+  "eyebrow": { "es": "Port St. Lucie, FL · Repostería a medida", "en": "Port St. Lucie, FL · Custom Bakery" },
+  "script": { "es": "Pasteles hechos para celebrar.", "en": "Cakes made for celebrating." },
+  "h1_a": { "es": "Pasteles y postres a medida,", "en": "Custom cakes and desserts," },
+  "h1_b": { "es": "horneados para tu ", "en": "baked for your " },
+  "h1_shine": { "es": "celebración", "en": "celebration" },
   "parrafo": {
-   "es": "The Blissful Baker atiende a clientes en Port St. Lucie, FL. Consulta la ficha pública, mira las fotos reales y contacta directamente.",
-   "en": "The Blissful Baker serves customers in Port St. Lucie, FL. Check the public listing, see real photos and contact the business directly."
+   "es": "The Blissful Baker diseña pasteles de cumpleaños, bodas, cupcakes, mesas de postres y pies a medida desde Port St. Lucie. Cada pedido se hornea y decora a mano según tu idea, foto o boceto, incluyendo opciones sin gluten y sin lácteos.",
+   "en": "The Blissful Baker designs custom birthday cakes, wedding cakes, cupcakes, dessert tables and pies out of Port St. Lucie. Every order is baked and hand decorated to match your idea, photo or sketch, with gluten-free and dairy-free options available."
   },
-  "senal_icono": "mapa",
-  "senal": {
-   "es": "Ficha pública en Google Maps",
-   "en": "Public Google Maps listing"
-  },
+  "rating": { "es": "5.0 · 133 reseñas en Google", "en": "5.0 · 133 reviews on Google" },
   "imagen": "gmaps-1.jpg",
-  "imagen_alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL",
+  "imagen_alt": "Custom chocolate drip birthday cake topped with mini liquor bottle and candy by The Blissful Baker",
   "tarjeta": {
-   "tag": {
-    "es": "Atención directa",
-    "en": "Direct line"
-   },
+   "tag": { "es": "Línea directa", "en": "Direct line" },
    "destacado": "(772) 353-7475",
-   "pie": {
-    "es": "Port St. Lucie, FL",
-    "en": "Port St. Lucie, FL"
-   }
+   "pie": { "es": "Port St. Lucie, FL", "en": "Port St. Lucie, FL" }
   }
  },
+
  "strip": [
-  {
-   "valor": "Servicios",
-   "etiqueta": {
-    "es": "El oficio",
-    "en": "The trade"
-   }
-  },
-  {
-   "valor": "Port St. Lucie",
-   "etiqueta": {
-    "es": "Zona de trabajo",
-    "en": "Service area"
-   }
-  },
-  {
-   "valor": "1:1",
-   "etiqueta": {
-    "es": "Trato directo",
-    "en": "Direct contact"
-   }
-  },
-  {
-   "valor": "1:1",
-   "etiqueta": {
-    "es": "Trato directo",
-    "en": "Direct contact"
-   }
-  }
+  { "valor": "5.0", "count": "5.0", "etiqueta": { "es": "Calificación en Google", "en": "Rating on Google" } },
+  { "valor": "133", "count": "133", "etiqueta": { "es": "Reseñas", "en": "Reviews" } },
+  { "valor": "A medida", "etiqueta": { "es": "Cada pastel", "en": "Every cake" } },
+  { "valor": "Port St. Lucie", "etiqueta": { "es": "Base de operaciones", "en": "Home base" } }
  ],
- "marquee": [
-  "Servicio local",
-  "Calidad",
-  "Trato directo",
-  "Presupuesto claro",
-  "Port St. Lucie",
-  "Confianza"
- ],
+
+ "marquee": ["Custom Cakes", "Wedding Cakes", "Cupcakes", "Dessert Tables", "Pies", "5.0 on Google"],
+
  "nosotros": {
-  "eyebrow": {
-   "es": "Nosotros",
-   "en": "About us"
-  },
-  "h2_a": {
-   "es": "Un equipo,",
-   "en": "One team,"
-  },
-  "h2_shine": {
-   "es": "un solo responsable",
-   "en": "one accountable crew"
-  },
+  "eyebrow": { "es": "Nosotros", "en": "About us" },
+  "h2_a": { "es": "Un pastel,", "en": "One cake," },
+  "h2_shine": { "es": "hecho a tu idea", "en": "made to your idea" },
   "parrafo_1": {
-   "es": "The Blissful Baker es un negocio local de Port St. Lucie, FL. El que responde el mensaje es el mismo que llega a hacer el trabajo: sin centrales telefónicas ni intermediarios.",
-   "en": "The Blissful Baker is a local Port St. Lucie, FL business. Whoever answers your message is who shows up to do the work: no call centers, no middlemen."
+   "es": "The Blissful Baker es una repostería de Port St. Lucie donde Mary hornea y decora cada pedido ella misma: pasteles de cumpleaños, bodas, baby showers y cupcakes, trabajando a partir de una foto, un boceto o incluso un diseño hecho en Canva.",
+   "en": "The Blissful Baker is a Port St. Lucie bakery where Mary bakes and decorates every order herself: birthday cakes, wedding cakes, baby showers and cupcakes, working from a photo, a sketch or even a design mocked up in Canva."
   },
   "parrafo_2": {
-   "es": "La ficha pública de Google Maps reúne las fotos y la información de contacto disponibles.",
-   "en": "The public Google Maps listing collects the available photos and contact information."
+   "es": "Sus reseñas en Google destacan lo mismo una y otra vez: responde rápido, se adapta a alergias e intolerancias (sin gluten, sin lácteos) y el pastel final luce exactamente como se acordó.",
+   "en": "Her Google reviewers say the same thing again and again: she replies fast, accommodates allergies and intolerances (gluten-free, dairy-free), and the finished cake looks exactly like what was agreed."
   },
-  "imagen_1": "gmaps-2.jpg",
-  "imagen_1_alt": "Trabajo de The Blissful Baker",
-  "imagen_2": "gmaps-3.jpg",
-  "imagen_2_alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL",
+  "imagen_1": "gmaps-9.jpg",
+  "imagen_1_alt": "Two tier beach themed 60th birthday cake with sugar seashells by The Blissful Baker",
+  "imagen_2": "gmaps-4.jpg",
+  "imagen_2_alt": "White buttercream cake with hand piped pink and cream roses by The Blissful Baker",
   "stats": [
-   {
-    "valor": "1:1",
-    "etiqueta": {
-     "es": "Trato directo",
-     "en": "Direct contact"
-    }
-   },
-   {
-    "valor": "Port St. Lucie",
-    "etiqueta": {
-     "es": "Zona",
-     "en": "Area"
-    }
-   }
+   { "valor": "5.0", "count": "5.0", "etiqueta": { "es": "Calificación", "en": "Rating" } },
+   { "valor": "133", "count": "133", "etiqueta": { "es": "Reseñas", "en": "Reviews" } },
+   { "valor": "1:1", "etiqueta": { "es": "Trato directo", "en": "Direct contact" } }
   ],
   "avatar": "gmaps-1.jpg",
-  "avatar_alt": "Logo de The Blissful Baker",
-  "avatar_pie": {
-   "es": "Port St. Lucie, FL",
-   "en": "Port St. Lucie, FL"
-  }
+  "avatar_alt": "Signature cake by The Blissful Baker",
+  "avatar_nombre": "Mary",
+  "avatar_pie": { "es": "Pastelera", "en": "Baker" }
  },
+
  "proceso": {
-  "eyebrow": {
-   "es": "Tu proyecto, paso a paso",
-   "en": "Your project, step by step"
-  },
-  "h2_a": {
-   "es": "Así trabajamos",
-   "en": "How we work"
-  },
-  "h2_shine": {
-   "es": "contigo",
-   "en": "with you"
-  },
+  "eyebrow": { "es": "Tu pedido, paso a paso", "en": "Your order, step by step" },
+  "h2_a": { "es": "Así trabajamos", "en": "How we work" },
+  "h2_shine": { "es": "contigo", "en": "with you" },
   "pasos": [
    {
-    "titulo": {
-     "es": "Escríbenos",
-     "en": "Get in touch"
-    },
-    "texto": {
-     "es": "Cuéntanos qué necesitas; con una foto del espacio o del problema ya podemos orientarte.",
-     "en": "Tell us what you need; a photo of the space or the problem is enough to point you right."
-    }
+    "titulo": { "es": "Escríbenos o llama", "en": "Message or call" },
+    "texto": { "es": "Cuéntanos la fecha, la ocasión y tu idea. Una foto, un boceto o un diseño en Canva ya es suficiente para empezar.", "en": "Tell us the date, the occasion and your idea. A photo, a sketch or even a Canva design is enough to get started." }
    },
    {
-    "titulo": {
-     "es": "Presupuesto claro",
-     "en": "Clear quote"
-    },
-    "texto": {
-     "es": "Te decimos qué lleva el trabajo y cuánto cuesta antes de empezar, sin letra chica.",
-     "en": "We tell you what the job takes and what it costs before starting, no fine print."
-    }
+    "titulo": { "es": "Diseño y cotización", "en": "Design & quote" },
+    "texto": { "es": "Mary revisa el diseño, los sabores y cualquier alergia (sin gluten, sin lácteos disponible) y te da el precio antes de hornear nada.", "en": "Mary reviews the design, the flavors and any allergies (gluten-free, dairy-free available) and quotes the job before anything gets baked." }
    },
    {
-    "titulo": {
-     "es": "El trabajo",
-     "en": "The job"
-    },
-    "texto": {
-     "es": "Llegamos con todo lo necesario y lo ejecutamos con el cuidado que se ve en nuestro feed.",
-     "en": "We arrive with everything needed and execute with the care you see on our feed."
-    }
+    "titulo": { "es": "Horneado y decorado a mano", "en": "Baked & decorated by hand" },
+    "texto": { "es": "Cada pastel se hornea y decora siguiendo el diseño acordado, capa por capa y flor por flor.", "en": "Every cake is baked and hand decorated following the agreed design, layer by layer and flower by flower." }
    },
    {
-    "titulo": {
-     "es": "Entrega",
-     "en": "Handover"
-    },
-    "texto": {
-     "es": "Revisamos juntos el resultado y dejamos el área limpia. Y guardas nuestro número para la próxima.",
-     "en": "We walk the result together and leave the area clean. And you keep our number for next time."
-    }
+    "titulo": { "es": "Entrega lista para tu evento", "en": "Pickup, ready for your event" },
+    "texto": { "es": "Recoges tu pedido listo para la celebración, exactamente como lo acordamos.", "en": "You pick up your order ready for the celebration, exactly as agreed." }
    }
   ]
  },
+
  "servicios": {
-  "h2_a": {
-   "es": "Lo que",
-   "en": "What we"
-  },
-  "h2_shine": {
-   "es": "hacemos",
-   "en": "do"
-  },
+  "h2_a": { "es": "Lo que", "en": "What we" },
+  "h2_shine": { "es": "horneamos", "en": "bake" },
   "nota": {
-   "es": "Cada trabajo se cotiza según lo que necesite. Escríbenos y te damos el detalle sin compromiso.",
-   "en": "Every job is quoted on what it needs. Message us and we will walk you through it, no strings attached."
+   "es": "Cada pastel se cotiza según su diseño, tamaño y sabores. Escríbenos o llama y Mary te da el detalle sin compromiso.",
+   "en": "Every cake is quoted on its own design, size and flavors. Message or call us and Mary will walk you through it, no strings attached."
   },
-  "cta": {
-   "es": "Consultar",
-   "en": "Ask about it"
-  },
+  "cta": { "es": "Consultar", "en": "Ask about it" },
   "cards": [
    {
-    "tag": {
-     "es": "El oficio",
-     "en": "The craft"
-    },
-    "titulo": {
-     "es": "Nuestro trabajo",
-     "en": "What we do"
-    },
-    "texto": {
-     "es": "Lo que publicamos en Google Maps es lo que hacemos: mira el feed y júzganos por ahí.",
-     "en": "What we post on Google Maps is what we do: check the feed and judge us by it."
-    }
+    "tag": { "es": "Más pedido", "en": "Most requested" },
+    "titulo": { "es": "Pasteles de cumpleaños y celebración", "en": "Custom celebration cakes" },
+    "texto": { "es": "Cumpleaños, aniversarios y ocasiones especiales, decorados a mano a partir de tu foto o idea, con opciones sin gluten y sin lácteos.", "en": "Birthdays, anniversaries and milestone celebrations, hand decorated from your photo or idea, with gluten-free and dairy-free options." }
    },
    {
-    "tag": {
-     "es": "Trato",
-     "en": "Service"
-    },
-    "titulo": {
-     "es": "Atención directa",
-     "en": "Direct service"
-    },
-    "texto": {
-     "es": "Hablas con quien hace el trabajo, no con una central: acuerdos claros y sin intermediarios.",
-     "en": "You talk to the person doing the work, not a call center: clear agreements, no middlemen."
-    }
+    "tag": { "es": "Para el gran día", "en": "For the big day" },
+    "titulo": { "es": "Pasteles de boda y de varios pisos", "en": "Wedding & tiered cakes" },
+    "texto": { "es": "Pasteles de varios pisos con flores de buttercream hechas a mano, a juego con tus colores y tu tema.", "en": "Multi-tier cakes with hand piped buttercream florals, matched to your colors and theme." }
    },
    {
-    "tag": {
-     "es": "Presupuesto",
-     "en": "Quotes"
-    },
-    "titulo": {
-     "es": "Cotización sin compromiso",
-     "en": "No-strings quotes"
-    },
-    "texto": {
-     "es": "Cuéntanos qué necesitas y te decimos qué lleva y cuánto cuesta antes de empezar.",
-     "en": "Tell us what you need and we tell you what it takes and what it costs before starting."
-    }
+    "tag": { "es": "Para toda la mesa", "en": "For the whole table" },
+    "titulo": { "es": "Cupcakes y mesas de postres", "en": "Cupcakes & dessert tables" },
+    "texto": { "es": "Cupcakes a juego, flores de buttercream hechas a mano y toppers personalizados para cualquier celebración.", "en": "Matching cupcakes, hand piped buttercream flowers and custom toppers for any celebration." }
    },
    {
-    "tag": {
-     "es": "Cercanía",
-     "en": "Local"
-    },
-    "titulo": {
-     "es": "Negocio local",
-     "en": "Local business"
-    },
-    "texto": {
-     "es": "De tu misma zona: llegamos rápido y respondemos después de entregar.",
-     "en": "From your own area: quick to arrive and still answering after handover."
-    }
+    "tag": { "es": "Más allá del pastel", "en": "Beyond cakes" },
+    "titulo": { "es": "Pies y postres especiales", "en": "Pies & specialty desserts" },
+    "texto": { "es": "Pies con enrejado hecho a mano y otras especialidades horneadas, a pedido.", "en": "Hand laced lattice pies and other baked specialties, made to order." }
    }
   ],
   "pie": {
-   "es": "¿No ves exactamente lo que necesitas? Escríbenos y te confirmamos si podemos ayudarte.",
-   "en": "Do not see exactly what you need? Message us and we will confirm whether we can help."
+   "es": "¿No ves exactamente lo que buscas? Escríbenos igual, Mary lo cotiza.",
+   "en": "Do not see exactly what you need? Message us anyway, Mary will quote it."
   }
  },
+
  "galeria": {
-  "h2_a": {
-   "es": "Trabajos",
-   "en": "Real"
-  },
-  "h2_shine": {
-   "es": "reales",
-   "en": "work"
-  },
+  "h2_a": { "es": "Pasteles", "en": "Real" },
+  "h2_shine": { "es": "reales", "en": "cakes" },
   "tiles": [
-   {
-    "img": "gmaps-4.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL"
-   },
-   {
-    "img": "gmaps-5.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL"
-   },
-   {
-    "img": "gmaps-6.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL"
-   },
-   {
-    "img": "gmaps-7.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL"
-   },
-   {
-    "img": "gmaps-8.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL"
-   },
-   {
-    "img": "gmaps-9.jpg",
-    "caption": {
-     "es": "Servicios",
-     "en": "Services"
-    },
-    "alt": "Trabajo de The Blissful Baker en Port St. Lucie, FL"
-   }
+   { "img": "gmaps-1.jpg", "caption": { "es": "Diseño insignia", "en": "Signature design" }, "alt": "Custom chocolate drip birthday cake topped with mini liquor bottle and candy by The Blissful Baker" },
+   { "img": "gmaps-2.jpg", "caption": { "es": "Flores a mano", "en": "Hand piped florals" }, "alt": "Two tier white buttercream cake with pink and cream roses and a pearl rosary by The Blissful Baker" },
+   { "img": "gmaps-3.jpg", "caption": { "es": "Pie enrejado", "en": "Hand laced pie" }, "alt": "Apple pie with a hand laced lattice crust and pastry roses by The Blissful Baker" },
+   { "img": "gmaps-6.jpg", "caption": { "es": "Personalizado", "en": "Personalized" }, "alt": "Golf course themed birthday cake with a custom name by The Blissful Baker" },
+   { "img": "gmaps-7.jpg", "caption": { "es": "Cupcakes", "en": "Cupcakes" }, "alt": "Box of custom football themed birthday cupcakes by The Blissful Baker" },
+   { "img": "gmaps-8.jpg", "caption": { "es": "Flores de buttercream", "en": "Buttercream blooms" }, "alt": "Four cupcakes topped with hand piped buttercream flowers by The Blissful Baker" }
   ]
  },
+
  "social_proof": {
-  "modo": "razones",
-  "eyebrow": {
-   "es": "Por qué elegirnos",
-   "en": "Why choose us"
-  },
-  "h2_a": {
-   "es": "Tres razones",
-   "en": "Three reasons"
-  },
-  "h2_shine": {
-   "es": "para escribirnos",
-   "en": "to message us"
-  },
+  "modo": "testimonios",
+  "eyebrow": { "es": "Opiniones", "en": "Reviews" },
+  "h2_a": { "es": "Lo que dicen", "en": "What" },
+  "h2_shine": { "es": "en Google", "en": "Google says" },
   "subtitulo": {
-   "es": "No publicamos reseñas que no podamos respaldar. Estas razones se basan en el oficio y la información visible en la ficha.",
-   "en": "We do not publish reviews we cannot back up. These reasons use the trade and information visible on the listing."
+   "es": "Reseñas reales de clientes en Google.",
+   "en": "Real customer reviews on Google."
   },
-  "cta": {
-   "es": "Ver ficha y fotos en Google Maps",
-   "en": "See listing and photos on Google Maps"
-  },
+  "cta": { "es": "Ver reseñas en Google Maps", "en": "See reviews on Google Maps" },
+  "cta_url": "https://www.google.com/maps/place/The+Blissful+Baker/data=!4m7!3m6!1s0x42f485400cb57eaf:0xefd37f70cff50a00!8m2!3d27.2732739!4d-80.3120589!16s%2Fg%2F11vzvt9cbj!19sChIJr361DECF9EIRAAr1z3B_0-8?authuser=0&hl=en",
   "items": [
-   {
-    "icono": "escudo",
-    "titulo": {
-     "es": "Trabajo a la vista",
-     "en": "Work out in the open"
-    },
-    "texto": {
-     "es": "Publicamos lo que hacemos. No te pedimos confianza ciega: mira cómo quedaron los anteriores.",
-     "en": "We post what we do. We do not ask for blind trust: look at how the previous jobs turned out."
-    }
-   },
-   {
-    "icono": "telefono",
-    "titulo": {
-     "es": "El que responde es el que llega",
-     "en": "Who answers is who shows up"
-    },
-    "texto": {
-     "es": "Hablas directo con el equipo, acuerdas con el equipo, y el equipo hace el trabajo.",
-     "en": "You talk to the crew, agree with the crew, and the crew does the work."
-    }
-   },
-   {
-    "icono": "whatsapp",
-    "titulo": {
-     "es": "Presupuesto antes de empezar",
-     "en": "Quote before we start"
-    },
-    "texto": {
-     "es": "Sabes qué lleva y cuánto cuesta antes del primer martillazo. Sin sorpresas a mitad de obra.",
-     "en": "You know what it takes and what it costs before the first hammer swing. No mid-job surprises."
-    }
-   }
+   { "quote": "I ordered my daughter's 18th birthday cake from The Blissful Baker and I cannot recommend her enough! The cake was absolutely beautiful, turquoise, white, and gold cheetah print. It was the star of her yacht party, and it tasted just as amazing as it looked. Moist, flavorful, and everyone kept asking where it came from.", "autor": "Morgan Swift", "fuente": "Google" },
+   { "quote": "Mary is amazing! She's kind, responds super fast, and the best part, her cakes are so delicious! They're moist, sweet but not overly sweet, and the fillings are just the perfect proportion. She baked our wedding cake, which we received so many compliments on, and then our baby shower cake.", "autor": "Gabriella Bemis", "fuente": "Google" },
+   { "quote": "The cakes she made for our anniversary celebration were so beautiful and delicious, one was for friends who needed gluten-free and dairy-free. Mary was phenomenal to work with, she was so responsive, accommodating, creative, prompt...", "autor": "Larry and Rhonda Jones", "fuente": "Google" }
   ]
  },
+
  "contacto": {
-  "eyebrow": {
-   "es": "Contacto",
-   "en": "Contact"
-  },
-  "h2_a": {
-   "es": "Visítanos desde",
-   "en": "Reach us from"
-  },
+  "eyebrow": { "es": "Contacto", "en": "Contact" },
+  "h2_a": { "es": "Escríbenos desde", "en": "Reach us from" },
   "h2_shine": "Port St. Lucie",
-  "imagen": "gmaps-2.jpg",
-  "imagen_alt": "Trabajo de The Blissful Baker",
+  "mapa": {
+   "titulo": "The Blissful Baker",
+   "src": "https://www.google.com/maps?q=2337+SE+Holland+St%2C+Port+St.+Lucie%2C+FL+34952&output=embed"
+  },
   "cards": [
    {
     "icono": "telefono",
-    "titulo": {
-     "es": "Teléfono",
-     "en": "Phone"
-    },
-    "texto": {
-     "es": "La vía más rápida para consultar disponibilidad.",
-     "en": "The fastest way to ask about availability."
-    },
-    "url": "tel:+7723537475",
+    "titulo": { "es": "Teléfono", "en": "Phone" },
+    "texto": { "es": "Llama o envía un mensaje de texto con tu fecha y tu idea.", "en": "Call or send a text with your date and your idea." },
+    "url": "tel:+17723537475",
     "enlace": "(772) 353-7475"
    },
    {
-    "icono": "mapa",
-    "titulo": {
-     "es": "Google Maps",
-     "en": "Google Maps"
-    },
-    "texto": {
-     "es": "Dirección pública: 2337 SE Holland St, Port St. Lucie, FL 34952.",
-     "en": "Public address: 2337 SE Holland St, Port St. Lucie, FL 34952."
-    },
-    "url": "https://www.google.com/maps/place/The+Blissful+Baker/data=!4m7!3m6!1s0x42f485400cb57eaf:0xefd37f70cff50a00!8m2!3d27.2732739!4d-80.3120589!16s%2Fg%2F11vzvt9cbj!19sChIJr361DECF9EIRAAr1z3B_0-8?authuser=0&hl=en&g_ep=EgoyMDI2MDgyNi4wIJJjKgBIAVAD&rclk=1",
-    "enlace": "2337 SE Holland St, Port St. Lucie, FL 34952"
+    "icono": "escudo",
+    "titulo": { "es": "Reseñas", "en": "Reviews" },
+    "texto": { "es": "Lee las reseñas reales de clientes en Google antes de escribirnos.", "en": "Read real customer reviews on Google before you reach out." },
+    "url": "https://www.google.com/maps/place/The+Blissful+Baker/data=!4m7!3m6!1s0x42f485400cb57eaf:0xefd37f70cff50a00!8m2!3d27.2732739!4d-80.3120589!16s%2Fg%2F11vzvt9cbj!19sChIJr361DECF9EIRAAr1z3B_0-8?authuser=0&hl=en",
+    "enlace": "Google Maps"
    }
   ]
  },
+
  "cta_final": {
-  "script": {
-   "es": "Trabajo real, trato directo.",
-   "en": "Real work, direct service."
-  },
-  "h2_a": {
-   "es": "Tu proyecto",
-   "en": "Your project"
-  },
-  "h2_shine": {
-   "es": "empieza con un mensaje",
-   "en": "starts with a message"
-  },
+  "script": { "es": "Pasteles hechos para celebrar.", "en": "Cakes made for celebrating." },
+  "h2_a": { "es": "Tu pastel", "en": "Your cake" },
+  "h2_shine": { "es": "empieza con un mensaje", "en": "starts with a message" },
   "parrafo": {
-   "es": "Cuéntanos qué necesitas y te respondemos con ideas y presupuesto, sin compromiso.",
-   "en": "Tell us what you need and we reply with ideas and a quote, no strings attached."
+   "es": "Una llamada y empezamos: cuéntanos tu fecha y tu idea. Te respondemos con el detalle y el precio, sin compromiso.",
+   "en": "One call and we start: tell us your date and your idea. We will come back with the details and the price, no strings attached."
   }
  },
+
  "footer": {
   "descripcion": {
-   "es": "The Blissful Baker en Port St. Lucie, FL. Información pública y contacto directo.",
-   "en": "The Blissful Baker in Port St. Lucie, FL. Public information and direct contact."
+   "es": "Pasteles de cumpleaños, bodas, cupcakes y pies a medida en Port St. Lucie, FL.",
+   "en": "Custom birthday cakes, wedding cakes, cupcakes and pies in Port St. Lucie, FL."
   },
   "linea_contacto": "2337 SE Holland St, Port St. Lucie, FL 34952",
-  "enlace_contacto": {
-   "es": "Teléfono · (772) 353-7475",
-   "en": "Phone · (772) 353-7475"
-  },
-  "social_extra": []
- },
- "social_label": "Google Maps",
- "social_cta": {
-  "es": "Ver ficha en Google Maps",
-  "en": "See listing on Google Maps"
- },
- "dm_message": "Hi The Blissful Baker — I found The Blissful Baker while looking for services in Port St. Lucie, FL. I could not find a dedicated website linked from your public profile, so I put together a clean page using your public photos and contact details:\n\nhttps://siteforge-demos.odd-forest-9504.workers.dev/the-blissful-baker/\n\nIt gives a new customer one clear place to see your work and call or message you. No login and no change to your current booking flow — just take a look.\n\nWould you like me to tailor the colors and domain for you? If it is not useful, reply “no” and I will not follow up.\n\n— José Michael from Merktop"
+  "enlace_contacto": { "es": "Teléfono · (772) 353-7475", "en": "Phone · (772) 353-7475" }
+ }
 }
