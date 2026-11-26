@@ -35,16 +35,16 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #f5f0e8;
-      --bg-2: #ece3d4;
-      --surface: rgba(250,247,241,0.7);
-      --ink: #32281f;
-      --ink-60: rgba(50,40,31,0.62);
-      --ink-40: rgba(50,40,31,0.42);
-      --accent-deep: #8a6f4d;
-      --accent-mid: #a8907a;
-      --accent-soft: #ece3d4;
-      --accent-ghost: rgba(138,111,77,0.14);
+      --bg: #f8f6f1;
+      --bg-2: #e9ede2;
+      --surface: rgba(250,250,245,0.7);
+      --ink: #2e3228;
+      --ink-60: rgba(46,50,40,0.62);
+      --ink-40: rgba(46,50,40,0.42);
+      --accent-deep: #5f7355;
+      --accent-mid: #8fa07e;
+      --accent-soft: #e9ede2;
+      --accent-ghost: rgba(95,115,85,0.16);
     }
     html, body { background: var(--bg); }
     body {
@@ -64,19 +64,19 @@
       background: var(--surface);
       backdrop-filter: blur(16px) saturate(150%);
       -webkit-backdrop-filter: blur(16px) saturate(150%);
-      border: 1px solid rgba(138,111,77,0.16);
+      border: 1px solid rgba(95,115,85,0.16);
       transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
     }
     .glass-hover:hover {
-      background: rgba(250,247,241,0.88);
-      border-color: rgba(138,111,77,0.32);
+      background: rgba(250,250,245,0.88);
+      border-color: rgba(95,115,85,0.32);
       transform: translateY(-4px);
-      box-shadow: 0 18px 42px rgba(50,40,31,0.14), 0 0 40px rgba(138,111,77,0.08);
+      box-shadow: 0 18px 42px rgba(46,50,40,0.14), 0 0 40px rgba(95,115,85,0.08);
     }
 
-    /* Sheen mocha sobre texto (tonos profundos, legible en crema) */
+    /* Sheen sage sobre texto (tonos profundos, legible en crema) */
     .text-shine {
-      background: linear-gradient(110deg, #8a6f4d 0%, #b0916a 30%, #5b473a 52%, #8a6f4d 75%, #a8845a 100%);
+      background: linear-gradient(110deg, #5f7355 0%, #8fa07e 30%, #37432e 52%, #5f7355 75%, #7a9166 100%);
       background-size: 200% auto;
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -84,16 +84,16 @@
     }
     @keyframes shimmer { to { background-position: 200% center; } }
 
-    /* Orbs taupe/crema sobre base clara */
+    /* Orbs sage/crema sobre base clara */
     .glow-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
     .orb { position: absolute; border-radius: 50%; filter: blur(110px); animation: breathe 16s ease-in-out infinite; will-change: transform; }
     @keyframes breathe {
       0%, 100% { transform: translate3d(0,0,0) scale(1); }
       50% { transform: translate3d(2%, -3%, 0) scale(1.08); }
     }
-    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #e2d4bd 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
-    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #c4ad93 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
-    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #d3c1a6 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
+    .orb-a { width: 560px; height: 560px; background: radial-gradient(circle, #d3ddc6 0%, transparent 70%); opacity: 0.8; top: -12%; left: -10%; }
+    .orb-b { width: 620px; height: 620px; background: radial-gradient(circle, #aebf9b 0%, transparent 70%); opacity: 0.6; bottom: -22%; right: -14%; animation-delay: -7s; }
+    .orb-c { width: 380px; height: 380px; background: radial-gradient(circle, #c3d2b2 0%, transparent 70%); opacity: 0.5; top: 38%; left: 52%; animation-delay: -11s; }
 
     /* Grain editorial */
     .grain::after {
@@ -109,20 +109,20 @@
     img.blur-up { filter: blur(18px); transform: scale(1.03); transition: filter 0.9s ease, transform 0.9s ease; }
     img.blur-up.loaded { filter: blur(0); transform: scale(1); }
 
-    /* Boton 3D mocha */
+    /* Boton 3D sage */
     .btn-3d {
       position: relative; overflow: hidden; isolation: isolate;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 48%, #6d5539 100%);
-      color: #f5f0e8; border: none; font-weight: 600;
+      background: linear-gradient(180deg, #8fa07e 0%, #5f7355 48%, #3a4631 100%);
+      color: #f8f6f1; border: none; font-weight: 600;
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s cubic-bezier(0.22,1,0.36,1);
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.3),
-        inset 0 -2px 5px rgba(60,45,28,0.4),
-        0 5px 0 #4a3a26,
-        0 12px 24px rgba(50,40,31,0.28);
+        inset 0 -2px 5px rgba(30,40,22,0.4),
+        0 5px 0 #2a331f,
+        0 12px 24px rgba(46,50,40,0.28);
     }
-    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(60,45,28,0.4), 0 7px 0 #4a3a26, 0 18px 34px rgba(50,40,31,0.32), 0 0 40px rgba(138,111,77,0.25); }
-    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(60,45,28,0.45), 0 1px 0 #4a3a26, 0 4px 10px rgba(50,40,31,0.25); }
+    .btn-3d:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), inset 0 -2px 5px rgba(30,40,22,0.4), 0 7px 0 #2a331f, 0 18px 34px rgba(46,50,40,0.32), 0 0 40px rgba(95,115,85,0.25); }
+    .btn-3d:active { transform: translateY(4px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 3px rgba(30,40,22,0.45), 0 1px 0 #2a331f, 0 4px 10px rgba(46,50,40,0.25); }
     .btn-3d::after {
       content: ''; position: absolute; top: 0; left: -120%; width: 55%; height: 100%; z-index: -1;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
@@ -132,10 +132,10 @@
 
     /* Boton ghost */
     .btn-ghost {
-      border: 1px solid rgba(138,111,77,0.35); color: var(--ink);
+      border: 1px solid rgba(95,115,85,0.35); color: var(--ink);
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(138,111,77,0.7); background: rgba(138,111,77,0.08); box-shadow: 0 10px 26px rgba(50,40,31,0.14); }
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(95,115,85,0.7); background: rgba(95,115,85,0.08); box-shadow: 0 10px 26px rgba(46,50,40,0.14); }
 
     /* Badge Merktop */
     .merktop-badge {
@@ -152,71 +152,71 @@
 
     /* Nav */
     #nav { transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; border-bottom: 1px solid transparent; }
-    #nav.scrolled { background: rgba(245,240,232,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(50,40,31,0.1); }
+    #nav.scrolled { background: rgba(248,246,241,0.85); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); border-color: var(--accent-ghost); box-shadow: 0 10px 30px rgba(46,50,40,0.1); }
     .nav-link { position: relative; color: var(--ink-60); transition: color 0.25s ease; }
     .nav-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--accent-deep); transition: width 0.3s cubic-bezier(0.22,1,0.36,1); }
     .nav-link:hover { color: var(--ink); }
     .nav-link:hover::after { width: 100%; }
 
     /* Marco editorial de imagen */
-    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(50,40,31,0.2); }
-    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(138,111,77,0.14), inset 0 -60px 100px rgba(50,40,31,0.12); }
+    .frame { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--accent-ghost); box-shadow: 0 30px 80px rgba(46,50,40,0.2); }
+    .frame::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(95,115,85,0.14), inset 0 -60px 100px rgba(46,50,40,0.12); }
     .zoomable img { transition: transform 0.8s cubic-bezier(0.22,1,0.36,1); }
     .zoomable:hover img { transform: scale(1.05); }
 
-    /* Numeros del ritual */
+    /* Numeros del metodo */
     .step-num {
       font-family: 'Playfair Display', serif;
-      background: linear-gradient(180deg, #a8907a, #5b473a);
+      background: linear-gradient(180deg, #8fa07e, #37432e);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     /* Estrellas */
-    .stars { color: #8a6f4d; letter-spacing: 2px; text-shadow: 0 0 14px rgba(138,111,77,0.3); }
+    .stars { color: #5f7355; letter-spacing: 2px; text-shadow: 0 0 14px rgba(95,115,85,0.3); }
 
     /* Mapa elegante */
     .map-frame iframe { filter: grayscale(1) contrast(0.95) brightness(1); }
 
-    /* Banda oscura espresso (CTA final + footer) */
+    /* Banda oscura forest (CTA final + footer) */
     .dark-band {
-      --ink: #f5f0e8;
-      --ink-60: rgba(245,240,232,0.65);
-      --ink-40: rgba(245,240,232,0.45);
+      --ink: #f2f5ec;
+      --ink-60: rgba(242,245,236,0.65);
+      --ink-40: rgba(242,245,236,0.45);
       --surface: rgba(255,255,255,0.05);
-      --accent-ghost: rgba(234,214,183,0.16);
+      --accent-ghost: rgba(175,196,157,0.2);
       color: var(--ink);
     }
     .dark-band .text-shine {
-      background-image: linear-gradient(110deg, #e8cfa6 0%, #f8ecd6 30%, #c4ad93 52%, #e8cfa6 75%, #f3e3c2 100%);
+      background-image: linear-gradient(110deg, #cfe0c2 0%, #eef6e6 30%, #aebf9b 52%, #cfe0c2 75%, #dcebcd 100%);
     }
-    .dark-band .orb-a { background: radial-gradient(circle, rgba(232,207,166,0.16) 0%, transparent 70%); opacity: 1; }
-    .dark-band .orb-b { background: radial-gradient(circle, rgba(168,144,122,0.14) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-a { background: radial-gradient(circle, rgba(207,224,194,0.16) 0%, transparent 70%); opacity: 1; }
+    .dark-band .orb-b { background: radial-gradient(circle, rgba(143,160,126,0.16) 0%, transparent 70%); opacity: 1; }
     .dark-band .btn-3d {
-      background: linear-gradient(180deg, #faf3e6 0%, #e8d9bf 48%, #c9b393 100%);
-      color: #32281f;
+      background: linear-gradient(180deg, #f1f7eb 0%, #d7e6c7 48%, #a9c091 100%);
+      color: #2e3228;
       box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.55),
-        inset 0 -2px 5px rgba(120,90,50,0.35),
-        0 5px 0 #8a7358,
+        inset 0 -2px 5px rgba(45,70,30,0.35),
+        0 5px 0 #6f8560,
         0 12px 24px rgba(0,0,0,0.45);
     }
-    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(120,90,50,0.35), 0 7px 0 #8a7358, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(232,207,166,0.18); }
-    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(120,90,50,0.4), 0 1px 0 #8a7358, 0 4px 10px rgba(0,0,0,0.4); }
-    .dark-band .btn-ghost { border-color: rgba(232,207,166,0.35); color: var(--ink); }
-    .dark-band .btn-ghost:hover { border-color: rgba(232,207,166,0.7); background: rgba(232,207,166,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
-    .dark-band .stars { color: #e8cfa6; text-shadow: 0 0 14px rgba(232,207,166,0.4); }
+    .dark-band .btn-3d:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 5px rgba(45,70,30,0.35), 0 7px 0 #6f8560, 0 18px 34px rgba(0,0,0,0.55), 0 0 40px rgba(207,224,194,0.18); }
+    .dark-band .btn-3d:active { box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 3px rgba(45,70,30,0.4), 0 1px 0 #6f8560, 0 4px 10px rgba(0,0,0,0.4); }
+    .dark-band .btn-ghost { border-color: rgba(207,224,194,0.35); color: var(--ink); }
+    .dark-band .btn-ghost:hover { border-color: rgba(207,224,194,0.7); background: rgba(207,224,194,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
+    .dark-band .stars { color: #cfe0c2; text-shadow: 0 0 14px rgba(207,224,194,0.4); }
 
-    /* Boton flotante de reserva */
+    /* Boton flotante de cotizacion */
     .book-float {
       position: fixed; right: 18px; bottom: 18px; z-index: 60;
       width: 56px; height: 56px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(180deg, #a8907a 0%, #8a6f4d 100%);
-      box-shadow: 0 6px 0 #4a3a26, 0 14px 30px rgba(50,40,31,0.35);
+      background: linear-gradient(180deg, #8fa07e 0%, #5f7355 100%);
+      box-shadow: 0 6px 0 #2a331f, 0 14px 30px rgba(46,50,40,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
-    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #4a3a26, 0 20px 40px rgba(50,40,31,0.4), 0 0 34px rgba(138,111,77,0.35); }
-    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #4a3a26, 0 6px 14px rgba(50,40,31,0.3); }
+    .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #2a331f, 0 20px 40px rgba(46,50,40,0.4), 0 0 34px rgba(95,115,85,0.35); }
+    .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #2a331f, 0 6px 14px rgba(46,50,40,0.3); }
 
     /* ============ Motion v2 (nivel $100k) ============ */
 
@@ -250,7 +250,7 @@
     /* 2. Barra de progreso de scroll */
     #scroll-progress {
       position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 90;
-      background: linear-gradient(90deg, #6d5539 0%, #8a6f4d 45%, #c9ab7f 100%);
+      background: linear-gradient(90deg, #3a4631 0%, #5f7355 45%, #a9c091 100%);
       transform: scaleX(0); transform-origin: left center; will-change: transform;
       pointer-events: none;
     }
@@ -306,7 +306,7 @@
     .cursor-glow {
       position: absolute; top: 0; left: 0; width: 560px; height: 560px; margin: -280px 0 0 -280px;
       border-radius: 9999px; pointer-events: none; z-index: 1; opacity: 0;
-      background: radial-gradient(circle, rgba(232,207,166,0.14) 0%, rgba(138,111,77,0.08) 42%, transparent 70%);
+      background: radial-gradient(circle, rgba(207,224,194,0.14) 0%, rgba(95,115,85,0.08) 42%, transparent 70%);
       transition: opacity 0.5s ease; will-change: transform;
     }
     .cursor-glow.on { opacity: 1; }
@@ -358,8 +358,8 @@
     /* Marca de agua tipografica del footer */
     .foot-mark {
       position: absolute; left: 0; right: 0; bottom: -0.22em; z-index: 0; text-align: center;
-      font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 17vw, 13rem); line-height: 1; white-space: nowrap;
-      color: transparent; -webkit-text-stroke: 1px rgba(232,207,166,0.09); pointer-events: none; user-select: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(4rem, 15vw, 11rem); line-height: 1; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(207,224,194,0.09); pointer-events: none; user-select: none;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -392,8 +392,8 @@
 
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
-    <span class="pre-mono">A</span>
-    <span class="pre-word">Amani HeadSpa</span>
+    <span class="pre-mono">C</span>
+    <span class="pre-word">Carlos Lawn Services</span>
     <span class="pre-line"></span>
   </div>
 
@@ -404,21 +404,22 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(138,111,77,0.35)] bg-[rgba(138,111,77,0.1)] text-[color:var(--accent-deep)]">A</span>
-        <span class="font-display text-xl tracking-[0.14em] uppercase">Amani <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">HeadSpa</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(95,115,85,0.35)] bg-[rgba(95,115,85,0.1)] text-[color:var(--accent-deep)]">C</span>
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Carlos <span class="text-[color:var(--accent-deep)]">Lawn</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia">La Experiencia</a>
-        <a class="nav-link" href="#ritual">El Ritual</a>
-        <a class="nav-link" href="#servicios">Servicios</a>
-        <a class="nav-link" href="#galeria">Galería</a>
-        <a class="nav-link" href="#opiniones">Opiniones</a>
-        <a class="nav-link" href="#ubicacion">Ubicación</a>
+        <a class="nav-link" href="#experiencia" data-es="Nuestra Historia" data-en="Our Story">Our Story</a>
+        <a class="nav-link" href="#metodo" data-es="Cómo Trabajamos" data-en="How We Work">How We Work</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Zona de Servicio" data-en="Service Area">Service Area</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Switch language">ES</button>
+        <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Reservar cita
+          <span data-es="Cotización Gratis" data-en="Free Quote">Free Quote</span>
         </a>
         <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
@@ -429,13 +430,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Ritual</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
-        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nuestra Historia" data-en="Our Story">Our Story</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Cómo Trabajamos" data-en="How We Work">How We Work</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Gallery</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Zona de Servicio" data-en="Service Area">Service Area</a>
+        <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Cotización Gratis" data-en="Free Quote">Free Quote</a>
       </nav>
     </div>
   </header>
@@ -445,38 +446,36 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Flagami · Miami's Holistic Head Spa</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">The Unwinding empieza aquí.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Kissimmee, FL · Cuidado de Césped" data-en="Kissimmee, FL · Lawn Care">Kissimmee, FL · Lawn Care</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Tu césped, cortado a tiempo, cada vez." data-en="Your lawn, cut on time, every time.">Your lawn, cut on time, every time.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          Suelta el estrés,<br /><span class="text-shine">renueva</span> cuerpo y mente
+          <span data-es="Cuidado de césped" data-en="Lawn care your">Lawn care your</span><br /><span data-es="en el que puedes " data-en="Kissimmee yard can ">Kissimmee yard can </span><span class="text-shine" data-es="confiar" data-en="rely on">rely on</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
-          Rituales de bienestar holístico en Flagami: limpieza profunda del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y terapia de piedras calientes. Para ti, o en pareja.
-        </p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Carlos y su equipo cuidan céspedes en Kissimmee, Orlando y St. Cloud: corte, orillado, recorte de arbustos, mulch y limpieza de patio, cada trabajo cotizado según el tamaño de tu propiedad." data-en="Carlos and his crew take care of lawns across Kissimmee, Orlando and St. Cloud: mowing, edging, bush trimming, mulch and yard cleanup, every job quoted to the size of your property.">Carlos and his crew take care of lawns across Kissimmee, Orlando and St. Cloud: mowing, edging, bush trimming, mulch and yard cleanup, every job quoted to the size of your property.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]">4.9 · 73 reseñas en Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.7 · 19 reseñas en GreenPal" data-en="4.7 · 19 reviews on GreenPal">4.7 · 19 reviews on GreenPal</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar cita
+          <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Cotización Gratis" data-en="Get a Free Quote">Get a Free Quote</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="tel:+13057906977" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (305) 790-6977
+          <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+            <span data-es="Ver en GreenPal" data-en="See on GreenPal">See on GreenPal</span>
           </a>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/hero-1.jpg" alt="Aplicación de mascarilla facial con brocha durante un ritual en Amani HeadSpa" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/hero-lawn-driveway.jpg" alt="Freshly mowed front lawn and driveway serviced by Carlos Lawn Services in Kissimmee, FL" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Ritual insignia</p>
-            <p class="font-display text-lg">The Unwinding | 90min</p>
-            <p class="text-sm text-[color:var(--ink-60)]">90 minutos · $185</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Cotización" data-en="Quote">Quote</p>
+            <p class="font-display text-lg" data-es="Estimado gratis" data-en="Free Estimate">Free Estimate</p>
+            <p class="text-sm text-[color:var(--ink-60)]">Kissimmee, FL</p>
           </div>
         </div>
       </div>
@@ -486,10 +485,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="73">73</span> reseñas en Google</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Rituales <span class="text-shine">en pareja</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Sesiones para dos</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">The <span class="text-shine">Unwinding</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Desde $130 · 60 min</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Flagami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">752 Flagami Blvd, Miami</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.7" data-decimals="1">4.7</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="19">19</span> <span data-es="reseñas en GreenPal" data-en="reviews on GreenPal">reviews on GreenPal</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Mowing <span class="text-shine">&amp;</span> Cleanup</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Servicio recurrente" data-en="Recurring service">Recurring service</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">2025</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Fundado en" data-en="Founded in">Founded in</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Kissimmee</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de servicio" data-en="Service area">Orlando &amp; St. Cloud, FL</p></div>
     </div>
   </section>
 
@@ -497,18 +496,20 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lawn Mowing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Edging</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bush Trimming</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Mulch</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Yard Cleanup</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Lawn Mowing</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Edging</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bush Trimming</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Mulch</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Yard Cleanup</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kissimmee, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -519,79 +520,58 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/space-1.jpg" alt="Interior de Amani HeadSpa: paredes crema con nichos en arco, repisas de roble y camilla con textil acanalado" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gallery-wide-lush-lawn.jpg" alt="Wide, deep-green lawn freshly mowed in front of a Kissimmee home" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/space-2.jpg" alt="Logo AMANI en serif dorado sobre pared crema, bajo lámpara escultural de yeso" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gallery-paver-driveway.jpg" alt="Brick paver driveway beside a freshly mowed lawn bordered by mature trees" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un refugio holístico<br /><span class="text-shine">en pleno Flagami</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
-          Amani es el head spa holístico de Miami: un espacio de calma cálida con paredes crema, arcos suaves, madera clara y luz tenue, pensado para que el tiempo se detenga. Cada ritual combina limpieza del cuero cabelludo, exfoliación, masaje terapéutico y mascarillas personalizadas.
-        </p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
-          Puedes vivirlo en solitario o compartirlo: las sesiones para dos son una de las experiencias más pedidas. Sales como lo promete su propio ritual: <em class="font-script text-[color:var(--accent-deep)]">refreshed, balanced, renewed</em>.
-        </p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nuestra historia" data-en="Our story">Our story</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un servicio local" data-en="A local crew">A local crew</span><br /><span class="text-shine" data-es="que cuida tu propiedad" data-en="that treats your property right">that treats your property right</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Carlos Lawn Services atiende céspedes en Kissimmee, Orlando y St. Cloud. Carlos se dedica al paisajismo porque disfruta ayudar a las personas a mantener sus propiedades limpias, cuidadas y hermosas." data-en="Carlos Lawn Services takes care of lawns across Kissimmee, Orlando and St. Cloud. Carlos got into this business because he enjoys helping people keep their properties looking clean, well maintained, and beautiful.">Carlos Lawn Services takes care of lawns across Kissimmee, Orlando and St. Cloud. Carlos got into this business because he enjoys helping people keep their properties looking clean, well maintained, and beautiful.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="El resultado: 4.7 de calificación en 19 reseñas verificadas en GreenPal, clientes recurrentes en Kissimmee y un servicio que presta atención al detalle, llega a tiempo y comunica con claridad en cada trabajo." data-en="The result: a 4.7 rating across 19 verified reviews on GreenPal, repeat clients across Kissimmee, and a crew that pays attention to detail, shows up on time, and communicates clearly on every job.">The result: a 4.7 rating across 19 verified reviews on GreenPal, repeat clients across Kissimmee, and a crew that pays attention to detail, shows up on time, and communicates clearly on every job.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+<span data-count="3.9" data-decimals="1">3.9</span>K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">60-90'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">De ritual</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.7" data-decimals="1">4.7</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">GreenPal</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="19">19</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">2025</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Fundado" data-en="Founded">Founded</p></div>
         </div>
         <div class="reveal" style="transition-delay:360ms">
-          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">El equipo</p>
-          <div class="flex flex-wrap gap-4">
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-1.jpg" alt="Nilda Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nilda Estevez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-2.jpg" alt="Mireia Fenoy, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Mireia Fenoy</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-3.jpg" alt="Maria Gutierrez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Maria Gutierrez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-4.jpg" alt="Nildy Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nildy Estevez</span>
-            </div>
-          </div>
+          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4" data-es="Lo que dice Carlos" data-en="In Carlos's words">In Carlos's words</p>
+          <p class="text-sm text-[color:var(--ink-60)] font-light italic leading-relaxed" data-es="&quot;Lo que distingue mi trabajo es que presto atención al detalle, llego a tiempo, comunico con claridad y dejo cada trabajo limpio y profesional.&quot;" data-en="&quot;My work stands out because I pay attention to detail, show up on time, communicate clearly, and make sure every job is done clean and professionally.&quot;">"My work stands out because I pay attention to detail, show up on time, communicate clearly, and make sure every job is done clean and professionally."</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EL RITUAL PASO A PASO -->
-  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <!-- EL METODO -->
+  <section id="metodo" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Así se vive <span class="text-shine">The Unwinding</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Cómo trabajamos" data-en="How it works">How it works</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Simple, de principio" data-en="Simple, start">Simple, start</span> <span class="text-shine" data-es="a fin" data-en="to finish">to finish</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Limpieza y exfoliación</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">El ritual abre con una limpieza calmante y exfoliación del cuero cabelludo que estimula la circulación y cuida la salud capilar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cotización Gratis" data-en="Request a Free Quote">Request a Free Quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Escribe a través de GreenPal y cuéntanos el tamaño de tu propiedad. La mayoría recibe una cotización el mismo día." data-en="Reach out through GreenPal and tell us the size of your property. Most requests get a quote the same day.">Reach out through GreenPal and tell us the size of your property. Most requests get a quote the same day.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Masaje terapéutico</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal terapéutico, extendido al escote, que libera la tensión acumulada y te lleva a una relajación profunda.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Coordina tu Visita" data-en="Schedule Your Visit">Schedule Your Visit</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Sin mínimo de trabajo: coordinamos el día que te convenga, con servicio disponible todo el año." data-en="No minimum job size: we coordinate a day that works for you, with service available year round.">No minimum job size: we coordinate a day that works for you, with service available year round.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Mascarilla y piedras calientes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Mascarilla capilar personalizada que nutre y restaura, mientras la terapia de piedras calientes relaja brazos y manos.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Corte y Detalle" data-en="Mowing & Detail Work">Mowing & Detail Work</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Corte, orillado, recorte de arbustos y soplado de restos en calles y entradas, dejando la propiedad lista." data-en="Mowing, edging, bush trimming and blowing off clippings from driveways and walkways, leaving the property clean.">Mowing, edging, bush trimming and blowing off clippings from driveways and walkways, leaving the property clean.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Cierre renovador</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Shampoo personalizado, masaje ligero de hombros y desenredado suave. Sales fresca, en equilibrio y renovada.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Servicio Continuo" data-en="Ongoing, No Commitment">Ongoing, No Commitment</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Tú controlas el calendario: pide extras como recorte o mulch cuando los necesites, sin contrato largo." data-en="You control the schedule: ask for extras like trimming or mulch whenever you need them, with no long-term contract.">You control the schedule: ask for extras like trimming or mulch whenever you need them, with no long-term contract.</p>
         </div>
       </div>
     </div>
@@ -602,61 +582,45 @@
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">ritual</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Amani HeadSpa. Reserva online con confirmación inmediata.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada propiedad es distinta: el precio se cotiza según el tamaño y lo que necesites, sin sorpresas." data-en="Every property is different: pricing is quoted based on size and what you need, no surprises.">Every property is different: pricing is quoted based on size and what you need, no surprises.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding | 60 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Limpieza y exfoliación del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y piedras calientes en brazos y manos.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo más pedido" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Corte y Orillado" data-en="Lawn Mowing &amp; Edging">Lawn Mowing &amp; Edging</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Corte a la altura ideal, orillado y recorte de bordes, con soplado de restos en calles y entradas en cada visita." data-en="Mowing at the ideal height, clean edging and line trimming, with clippings blown off driveways and walkways on every visit.">Mowing at the ideal height, clean edging and line trimming, with clippings blown off driveways and walkways on every visit.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$130</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
-            </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Get a quote">Get a quote</a>
           </div>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(138,111,77,0.4); box-shadow: 0 18px 50px rgba(50,40,31,0.14);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial · Ritual insignia</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding| 90min</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El ritual completo de head spa más un facial rejuvenecedor: limpieza profunda, mascarilla nutritiva, masaje facial e hidratación con SPF.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(95,115,85,0.4); box-shadow: 0 18px 50px rgba(46,50,40,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Reseñas lo confirman" data-en="Reviews confirm it">Reviews confirm it</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Limpieza de Patio" data-en="Yard Cleanup &amp; Debris Removal">Yard Cleanup &amp; Debris Removal</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Limpieza de patio y recogida de restos vegetales, para propiedades que necesitan un repaso a fondo." data-en="Yard cleanup and yard debris removal, for properties that need a deeper pass front and back.">Yard cleanup and yard debris removal, for properties that need a deeper pass front and back.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$185</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
-            </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Get a quote">Get a quote</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Feet</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding + Feet | 80 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Todos los beneficios del ritual de 60 minutos, más un tratamiento revitalizante de pies con exfoliación y masaje humectante profundo.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Detalle" data-en="Detail work">Detail work</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Recorte de Arbustos" data-en="Bush Trimming">Bush Trimming</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Recorte de arbustos y setos junto a bordes y cercas, con soplado de superficies duras para dejar todo prolijo." data-en="Bush and hedge trimming along edges and fences, with hard surfaces blown clean so nothing is left scattered.">Bush and hedge trimming along edges and fences, with hard surfaces blown clean so nothing is left scattered.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$160</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">80 min</p>
-            </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Get a quote">Get a quote</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Signature Facial</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial personalizado según tu tipo de piel y tus necesidades, enfocado en mejorar la salud y apariencia general de tu rostro.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Flexible" data-en="Flexible">Flexible</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Mulch y Recurrente" data-en="Mulch &amp; Recurring Service">Mulch &amp; Recurring Service</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación de mulch y servicio recurrente sin contrato largo: tú controlas el calendario." data-en="Mulch installation and recurring service with no long contract: you control the schedule.">Mulch installation and recurring service with no long contract: you control the schedule.</p>
           <div class="mt-auto">
-            <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$140</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
-            </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Pedir cotización" data-en="Get a quote">Get a quote</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Al reservar se solicita un depósito de $50 a $60 según el servicio.</p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Cada trabajo se cotiza según el tamaño de tu propiedad. Escríbenos por GreenPal." data-en="Every job is quoted based on the size of your property. Reach out through GreenPal.">Every job is quoted based on the size of your property. Reach out through GreenPal.</span></p>
     </div>
   </section>
 
@@ -666,21 +630,24 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">spa</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Céspedes" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="yards">yards</span></h2>
         </div>
-        <a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @amaniheadspa
+        <a href="https://www.yourgreenpal.com/pro/carlos-lawn-services-2" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+          <span data-es="Ver en GreenPal" data-en="See on GreenPal">See on GreenPal</span>
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">The Unwinding · 90 min</span><img src="assets/raw/service-unwinding-90.jpg" alt="Mascarilla facial aplicada durante The Unwinding de 90 minutos, con luz ambiental tenue" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">The Unwinding + Feet</span><img src="assets/raw/service-unwinding-feet.jpg" alt="Masaje de pies a la luz de las velas, en tonos ámbar cálidos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Logotipo AMANI en relieve dorado sobre pared crema del estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">Signature Facial</span><img src="assets/raw/service-signature-facial.jpg" alt="Tratamiento con rodillo facial dorado durante el Signature Facial" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La sala de rituales</span><img src="assets/raw/space-1.jpg" alt="Sala de tratamientos con nichos en arco, repisas de madera clara y cortina taupe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">El ritual</span><img src="assets/raw/hero-1.jpg" alt="Detalle de un ritual facial en Amani HeadSpa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Corte y orillado" data-en="Mowing &amp; edging">Mowing &amp; edging</span><img src="assets/raw/hero-lawn-driveway.jpg" alt="Freshly mowed lawn with a white SUV in the driveway, Kissimmee, FL" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Entrada despejada" data-en="Driveway cleared">Driveway cleared</span><img src="assets/raw/gallery-palm-driveway.jpg" alt="Garage home with a young palm tree and freshly edged lawn" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Entrada con sombra" data-en="Shaded driveway">Shaded driveway</span><img src="assets/raw/gallery-shaded-driveway-cars.jpg" alt="Palm-shaded driveway with neatly trimmed lawn edges" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Césped frondoso" data-en="Lush lawn">Lush lawn</span><img src="assets/raw/gallery-brick-house-lawn.jpg" alt="Brick-accented home with lush, evenly cut green lawn" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Entrada de adoquines" data-en="Paver driveway">Paver driveway</span><img src="assets/raw/gallery-paver-driveway.jpg" alt="Home with a brick paver driveway and freshly mowed lawn" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Entrada larga" data-en="Long driveway">Long driveway</span><img src="assets/raw/gallery-long-driveway-trimmed.jpg" alt="Long concrete driveway beside a neatly trimmed lawn" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Garaje y césped" data-en="Garage &amp; lawn">Garage &amp; lawn</span><img src="assets/raw/gallery-neat-garage-lawn.jpg" alt="White garage home with tightly edged, uniform green grass" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:240ms"><span class="tile-cap" data-es="Porche y palma" data-en="Porch &amp; palm">Porch &amp; palm</span><img src="assets/raw/gallery-porch-palm-lawn.jpg" alt="Covered front porch home with a palm tree and freshly cut lawn" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:330ms"><span class="tile-cap" data-es="Bordes prolijos" data-en="Crisp edging">Crisp edging</span><img src="assets/raw/gallery-brown-garage-trimmed.jpg" alt="Brown garage door home with crisp lawn edges along the driveway" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
