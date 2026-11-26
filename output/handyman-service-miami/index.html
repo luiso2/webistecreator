@@ -400,7 +400,7 @@
   <!-- PRELOADER DE MARCA -->
   <div id="preloader" aria-hidden="true">
     <span class="pre-mono">A</span>
-    <span class="pre-word">Amani HeadSpa</span>
+    <span class="pre-word">Handyman Service</span>
     <span class="pre-line"></span>
   </div>
 
@@ -411,23 +411,24 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(138,111,77,0.35)] bg-[rgba(138,111,77,0.1)] text-[color:var(--accent-deep)]">A</span>
-        <span class="font-display text-xl tracking-[0.14em] uppercase">Amani <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">HeadSpa</span></span>
+        <span class="w-10 h-10 rounded-full flex items-center justify-center font-display text-xl ring-1 ring-[rgba(168,99,46,0.35)] bg-[rgba(168,99,46,0.1)] text-[color:var(--accent-deep)]">H</span>
+        <span class="font-display text-xl tracking-[0.1em] uppercase">Handyman <span class="text-[color:var(--ink-60)] text-sm font-sans font-light tracking-[0.2em] uppercase ml-1">Service</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
-        <a class="nav-link" href="#experiencia">La Experiencia</a>
-        <a class="nav-link" href="#ritual">El Ritual</a>
-        <a class="nav-link" href="#servicios">Servicios</a>
-        <a class="nav-link" href="#galeria">Galería</a>
-        <a class="nav-link" href="#opiniones">Opiniones</a>
-        <a class="nav-link" href="#ubicacion">Ubicación</a>
+        <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="nav-link" href="#proceso" data-es="Cómo Trabajamos" data-en="How It Works">How It Works</a>
+        <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="nav-link" href="#galeria" data-es="Galería" data-en="Our Work">Our Work</a>
+        <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="nav-link" href="#ubicacion" data-es="Zona de Servicio" data-en="Service Area">Service Area</a>
       </nav>
       <div class="flex items-center gap-3">
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Reservar cita
+        <button id="langToggle" class="btn-ghost rounded-full px-3 py-1.5 text-xs" aria-label="Change language">ES</button>
+        <a href="tel:+13054844393" class="btn-3d rounded-full px-5 py-2.5 text-sm hidden sm:inline-flex items-center gap-2">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="Llamar ahora" data-en="Call Now">Call Now</span>
         </a>
-        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Abrir menú">
+        <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="Open menu">
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
           <span class="w-6 h-px bg-[color:var(--ink)]"></span>
           <span class="w-4 h-px bg-[color:var(--accent-deep)] self-end mr-2"></span>
@@ -436,13 +437,13 @@
     </div>
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia">La Experiencia</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#ritual">El Ritual</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios">Servicios</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria">Galería</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones">Opiniones</a>
-        <a class="py-3 px-3" href="#ubicacion">Ubicación</a>
-        <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2">Reservar cita</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About">About</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#proceso" data-es="Cómo Trabajamos" data-en="How It Works">How It Works</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Services</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Our Work">Our Work</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
+        <a class="py-3 px-3" href="#ubicacion" data-es="Zona de Servicio" data-en="Service Area">Service Area</a>
+        <a href="tel:+13054844393" class="btn-3d rounded-full px-5 py-3 text-sm text-center mt-2" data-es="Llamar ahora" data-en="Call Now">Call Now</a>
       </nav>
     </div>
   </header>
@@ -452,38 +453,36 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full" style="will-change:auto">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6">Flagami · Miami's Holistic Head Spa</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms">The Unwinding empieza aquí.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Miami, FL · Handyman y Remodelación" data-en="Miami, FL · Handyman &amp; Remodeling">Miami, FL · Handyman &amp; Remodeling</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Se hace bien, de una vez." data-en="Done right, the first time.">Done right, the first time.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          Suelta el estrés,<br /><span class="text-shine">renueva</span> cuerpo y mente
+          <span data-es="Tu casa," data-en="Your home,">Your home,</span> <span class="text-shine" data-es="bien hecha" data-en="done right">done right</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
-          Rituales de bienestar holístico en Flagami: limpieza profunda del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y terapia de piedras calientes. Para ti, o en pareja.
-        </p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Remodelación de cocinas y baños, carpintería a medida, pintura, pisos, puertas y lavado a presión en Miami y Miami Beach. Trabajo limpio, puntual y con buenos precios." data-en="Kitchen and bathroom remodeling, custom carpentry, painting, flooring, doors and pressure washing across Miami and Miami Beach. Clean work, on time, at a fair price.">Kitchen and bathroom remodeling, custom carpentry, painting, flooring, doors and pressure washing across Miami and Miami Beach. Clean work, on time, at a fair price.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]">4.9 · 73 reseñas en Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.6 · 18 reseñas en Google" data-en="4.6 · 18 reviews on Google">4.6 · 18 reviews on Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
-          <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
-            Reservar cita
+          <a href="tel:+13054844393" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+            <span data-es="Pedir cotización" data-en="Get a Free Quote">Get a Free Quote</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="tel:+13057906977" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="tel:+13054844393" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (305) 790-6977
+            (305) 484-4393
           </a>
         </div>
       </div>
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/hero-1.jpg" alt="Aplicación de mascarilla facial con brocha durante un ritual en Amani HeadSpa" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/gmaps-8.jpg" alt="Finished kitchen remodel with white shaker cabinets, stainless appliances and tile backsplash" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
-            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1">Ritual insignia</p>
-            <p class="font-display text-lg">The Unwinding | 90min</p>
-            <p class="text-sm text-[color:var(--ink-60)]">90 minutos · $185</p>
+            <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Lo más pedido" data-en="Most requested">Most requested</p>
+            <p class="font-display text-lg" data-es="Remodelación de Cocina" data-en="Kitchen Remodeling">Kitchen Remodeling</p>
+            <p class="text-sm text-[color:var(--ink-60)]" data-es="Se cotiza, escríbenos" data-en="Free quote, call us">Free quote, call us</p>
           </div>
         </div>
       </div>
@@ -493,10 +492,10 @@
   <!-- STRIP DE CONFIANZA -->
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="73">73</span> reseñas en Google</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl">Rituales <span class="text-shine">en pareja</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Sesiones para dos</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">The <span class="text-shine">Unwinding</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">Desde $130 · 60 min</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Flagami</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1">752 Flagami Blvd, Miami</p></div>
+      <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1"><span data-count="18">18</span> <span data-es="reseñas en Google" data-en="reviews on Google">reviews on Google</span></p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl"><span data-es="Se habla" data-en="We speak">We speak</span> <span class="text-shine" data-es="español" data-en="Spanish">Spanish</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Negocio latino" data-en="Latino-owned business">Latino-owned business</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl"><span class="text-shine" data-es="Cocinas y Baños" data-en="Kitchens &amp; Baths">Kitchens &amp; Baths</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Servicio insignia" data-en="Signature service">Signature service</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl" data-es="Miami y Miami Beach" data-en="Miami &amp; Miami Beach">Miami &amp; Miami Beach</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de servicio" data-en="Service area">Service area</p></div>
     </div>
   </section>
 
@@ -504,101 +503,76 @@
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Carpentry</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Flooring</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Carpentry</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Flooring</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
 
-  <!-- LA EXPERIENCIA -->
+  <!-- NOSOTROS -->
   <section id="experiencia" class="relative py-24 sm:py-32 grain">
     <span class="sec-num" aria-hidden="true">01</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/space-1.jpg" alt="Interior de Amani HeadSpa: paredes crema con nichos en arco, repisas de roble y camilla con textil acanalado" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-7.jpg" alt="Handyman laying ceramic floor tile during an installation job" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/space-2.jpg" alt="Logo AMANI en serif dorado sobre pared crema, bajo lámpara escultural de yeso" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-4.jpg" alt="Finished powder room with pedestal sink, framed mirror and new vanity light" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">La experiencia</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms">Un refugio holístico<br /><span class="text-shine">en pleno Flagami</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms">
-          Amani es el head spa holístico de Miami: un espacio de calma cálida con paredes crema, arcos suaves, madera clara y luz tenue, pensado para que el tiempo se detenga. Cada ritual combina limpieza del cuero cabelludo, exfoliación, masaje terapéutico y mascarillas personalizadas.
-        </p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms">
-          Puedes vivirlo en solitario o compartirlo: las sesiones para dos son una de las experiencias más pedidas. Sales como lo promete su propio ritual: <em class="font-script text-[color:var(--accent-deep)]">refreshed, balanced, renewed</em>.
-        </p>
-        <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.9" data-decimals="1">4.9</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">+<span data-count="3.9" data-decimals="1">3.9</span>K</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Instagram</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">60-90'</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">De ritual</p></div>
-        </div>
-        <div class="reveal" style="transition-delay:360ms">
-          <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-4">El equipo</p>
-          <div class="flex flex-wrap gap-4">
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-1.jpg" alt="Nilda Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nilda Estevez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-2.jpg" alt="Mireia Fenoy, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Mireia Fenoy</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-3.jpg" alt="Maria Gutierrez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Maria Gutierrez</span>
-            </div>
-            <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-              <img src="assets/raw/team-4.jpg" alt="Nildy Estevez, especialista de Amani HeadSpa" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(138,111,77,0.3)]" loading="lazy" />
-              <span class="text-sm font-light">Nildy Estevez</span>
-            </div>
-          </div>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About Us">About Us</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un equipo que" data-en="A crew that">A crew that</span> <span class="text-shine" data-es="hace el trabajo bien" data-en="gets it right">gets it right</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Handyman Service es un equipo de remodelación y oficios del hogar que atiende Miami y Miami Beach: demolición y reconstrucción de baños, instalación de pisos y puertas, carpintería a medida, pintura y lavado a presión. Llegamos a tiempo, dejamos el área limpia y cotizamos claro antes de empezar." data-en="Handyman Service is a remodeling and home repair crew serving Miami and Miami Beach: bathroom demo and rebuilds, flooring and door installation, custom carpentry, painting and pressure washing. We show up on time, leave the area clean, and quote clearly before we start.">Handyman Service is a remodeling and home repair crew serving Miami and Miami Beach: bathroom demo and rebuilds, flooring and door installation, custom carpentry, painting and pressure washing. We show up on time, leave the area clean, and quote clearly before we start.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Clientes reales lo describen como un equipo confiable y organizado, con atención al detalle en cada trabajo, desde un clóset a medida hasta una remodelación completa de cocina." data-en="Real clients describe the crew as reliable and organized, with attention to detail on every job, from a custom-built closet piece to a full kitchen remodel.">Real clients describe the crew as reliable and organized, with attention to detail on every job, from a custom-built closet piece to a full kitchen remodel.</p>
+        <div class="reveal grid grid-cols-3 gap-4" style="transition-delay:300ms">
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.6" data-decimals="1">4.6</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1">Google</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="18">18</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine" data-es="A domicilio" data-en="On-Site">On-Site</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Trabajamos en tu casa" data-en="We come to you">We come to you</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EL RITUAL PASO A PASO -->
-  <section id="ritual" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
+  <!-- COMO TRABAJAMOS -->
+  <section id="proceso" class="relative py-24 sm:py-32 bg-[color:var(--bg-2)] border-y border-[color:var(--accent-ghost)] grain">
     <span class="sec-num" aria-hidden="true">02</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">El ritual, paso a paso</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Así se vive <span class="text-shine">The Unwinding</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Cómo trabajamos" data-en="How We Work">How We Work</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="De la llamada a" data-en="From your call to">From your call to</span> <span class="text-shine" data-es="tu proyecto listo" data-en="the finished job">the finished job</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
-          <h3 class="font-display text-xl mb-3">Limpieza y exfoliación</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">El ritual abre con una limpieza calmante y exfoliación del cuero cabelludo que estimula la circulación y cuida la salud capilar.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Llamas y cuentas el proyecto" data-en="Call and tell us the job">Call and tell us the job</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Nos llamas o nos escribes, describes lo que necesitas y, si hace falta, pasamos a verlo en persona." data-en="Call or text us, describe what you need, and if it helps, we stop by in person to take a look.">Call or text us, describe what you need, and if it helps, we stop by in person to take a look.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
-          <h3 class="font-display text-xl mb-3">Masaje terapéutico</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Masaje craneal terapéutico, extendido al escote, que libera la tensión acumulada y te lleva a una relajación profunda.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Cotización clara" data-en="Clear, upfront quote">Clear, upfront quote</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Te damos un precio claro antes de empezar, sin sorpresas ni cargos ocultos." data-en="We give you a straightforward price before any work starts, no surprises and no hidden fees.">We give you a straightforward price before any work starts, no surprises and no hidden fees.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
-          <h3 class="font-display text-xl mb-3">Mascarilla y piedras calientes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Mascarilla capilar personalizada que nutre y restaura, mientras la terapia de piedras calientes relaja brazos y manos.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Trabajo limpio y puntual" data-en="Clean, on-time work">Clean, on-time work</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Llegamos a la hora acordada, protegemos tu espacio y dejamos el área limpia al terminar cada día." data-en="We show up at the agreed time, protect your space, and leave the area clean at the end of each day.">We show up at the agreed time, protect your space, and leave the area clean at the end of each day.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
-          <h3 class="font-display text-xl mb-3">Cierre renovador</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed">Shampoo personalizado, masaje ligero de hombros y desenredado suave. Sales fresca, en equilibrio y renovada.</p>
+          <h3 class="font-display text-xl mb-3" data-es="Entrega y revisión final" data-en="Walkthrough and wrap-up">Walkthrough and wrap-up</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Revisamos el trabajo juntos antes de darlo por terminado, para que quedes conforme con el resultado." data-en="We walk through the finished work together before calling the job done, so you are happy with the result.">We walk through the finished work together before calling the job done, so you are happy with the result.</p>
         </div>
       </div>
     </div>
@@ -609,61 +583,57 @@
     <span class="sec-num" aria-hidden="true">03</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Servicios</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Elige tu <span class="text-shine">ritual</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms">Precios y duraciones publicados por Amani HeadSpa. Reserva online con confirmación inmediata.</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Services</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada proyecto es distinto, así que cotizamos según el trabajo. Llama y cuéntanos qué necesitas." data-en="Every job is different, so pricing is quoted per project. Call and tell us what you need.">Every job is different, so pricing is quoted per project. Call and tell us what you need.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding | 60 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Limpieza y exfoliación del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y piedras calientes en brazos y manos.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(168,99,46,0.4); box-shadow: 0 18px 50px rgba(51,40,33,0.14);">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Más pedido" data-en="Most requested">Most requested</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Remodelación de Cocina y Baño" data-en="Kitchen &amp; Bathroom Remodeling">Kitchen &amp; Bathroom Remodeling</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Demolición, instalación de piso, azulejo, gabinetes y accesorios. Incluye proyectos completos desde cero y renovaciones parciales." data-en="Demo, tile and flooring install, cabinets and fixtures. Covers full gut remodels as well as partial renovations.">Demo, tile and flooring install, cabinets and fixtures. Covers full gut remodels as well as partial renovations.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$130</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-lg text-shine" data-es="Se cotiza" data-en="Get a quote">Get a quote</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="tel:+13054844393" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
           </div>
         </div>
-        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms; border-color: rgba(138,111,77,0.4); box-shadow: 0 18px 50px rgba(50,40,31,0.14);">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Facial · Ritual insignia</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding| 90min</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">El ritual completo de head spa más un facial rejuvenecedor: limpieza profunda, mascarilla nutritiva, masaje facial e hidratación con SPF.</p>
+        <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="A medida" data-en="Custom-built">Custom-built</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Carpintería y Gabinetes a Medida" data-en="Custom Carpentry &amp; Built-Ins">Custom Carpentry &amp; Built-Ins</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Clósets, repisas y piezas a medida, con acabado fino y atención al detalle en cada corte." data-en="Closets, shelving and one-off built pieces, with a fine finish and attention to detail on every cut.">Closets, shelving and one-off built pieces, with a fine finish and attention to detail on every cut.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$185</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">90 min</p>
+              <p class="font-display text-lg text-shine" data-es="Se cotiza" data-en="Get a quote">Get a quote</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="tel:+13054844393" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Head Spa + Feet</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">The Unwinding + Feet | 80 minutes</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Todos los beneficios del ritual de 60 minutos, más un tratamiento revitalizante de pies con exfoliación y masaje humectante profundo.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Interior y exterior" data-en="Interior &amp; exterior">Interior &amp; exterior</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Pintura y Puertas" data-en="Painting &amp; Doors">Painting &amp; Doors</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Pintura interior y exterior, e instalación de puertas interiores y exteriores con marco y herrajes." data-en="Interior and exterior painting, plus interior and exterior door installation with frame and hardware.">Interior and exterior painting, plus interior and exterior door installation with frame and hardware.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$160</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">80 min</p>
+              <p class="font-display text-lg text-shine" data-es="Se cotiza" data-en="Get a quote">Get a quote</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="tel:+13054844393" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3">Facial</p>
-          <h3 class="font-display text-2xl leading-snug mb-3">Signature Facial</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6">Facial personalizado según tu tipo de piel y tus necesidades, enfocado en mejorar la salud y apariencia general de tu rostro.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Mantenimiento" data-en="Upkeep">Upkeep</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Pisos y Lavado a Presión" data-en="Flooring &amp; Pressure Washing">Flooring &amp; Pressure Washing</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación de piso de cerámica, y lavado a presión de azulejo, techo y exteriores." data-en="Ceramic tile flooring installation, plus pressure washing for tile, roofs and exteriors.">Ceramic tile flooring installation, plus pressure washing for tile, roofs and exteriors.</p>
           <div class="mt-auto">
             <div class="flex items-baseline gap-3 mb-5">
-              <p class="font-display text-3xl text-shine">$140</p>
-              <p class="text-xs text-[color:var(--ink-40)] uppercase tracking-wide">60 min</p>
+              <p class="font-display text-lg text-shine" data-es="Se cotiza" data-en="Get a quote">Get a quote</p>
             </div>
-            <a href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center">Reservar</a>
+            <a href="tel:+13054844393" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Llamar" data-en="Call">Call</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8">Al reservar se solicita un depósito de $50 a $60 según el servicio.</p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8" data-es="Sin lista de precios fija: cada trabajo se cotiza según el alcance. Llama al (305) 484-4393 para una cotización gratis." data-en="No fixed price list: every job is quoted based on scope. Call (305) 484-4393 for a free quote.">No fixed price list: every job is quoted based on scope. Call (305) 484-4393 for a free quote.</p>
     </div>
   </section>
 
@@ -673,21 +643,24 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
-          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Dentro del <span class="text-shine">spa</span></h2>
+          <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Gallery</p>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Nuestro" data-en="Our">Our</span> <span class="text-shine" data-es="trabajo" data-en="work">work</span></h2>
         </div>
-        <a href="https://www.instagram.com/amaniheadspa/" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-          @amaniheadspa
+        <a href="tel:+13054844393" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-es="(305) 484-4393" data-en="(305) 484-4393">(305) 484-4393</span>
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap">The Unwinding · 90 min</span><img src="assets/raw/service-unwinding-90.jpg" alt="Mascarilla facial aplicada durante The Unwinding de 90 minutos, con luz ambiental tenue" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap">The Unwinding + Feet</span><img src="assets/raw/service-unwinding-feet.jpg" alt="Masaje de pies a la luz de las velas, en tonos ámbar cálidos" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap">El estudio</span><img src="assets/raw/space-2.jpg" alt="Logotipo AMANI en relieve dorado sobre pared crema del estudio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap">Signature Facial</span><img src="assets/raw/service-signature-facial.jpg" alt="Tratamiento con rodillo facial dorado durante el Signature Facial" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap">La sala de rituales</span><img src="assets/raw/space-1.jpg" alt="Sala de tratamientos con nichos en arco, repisas de madera clara y cortina taupe" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap">El ritual</span><img src="assets/raw/hero-1.jpg" alt="Detalle de un ritual facial en Amani HeadSpa" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Remodelación de cocina" data-en="Kitchen remodel">Kitchen remodel</span><img src="assets/raw/gmaps-8.jpg" alt="Finished kitchen remodel with white shaker cabinets, stainless appliances and tile backsplash" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Baño terminado" data-en="Finished bathroom">Finished bathroom</span><img src="assets/raw/gmaps-11.jpg" alt="Finished shower with pebble-tile floor and marble-look wall tile" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:180ms"><span class="tile-cap" data-es="Instalación de piso" data-en="Tile installation">Tile installation</span><img src="assets/raw/gmaps-7.jpg" alt="Handyman laying ceramic floor tile during an installation job" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-[-2.5rem] img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Instalación de puerta" data-en="Door installation">Door installation</span><img src="assets/raw/gmaps-3.jpg" alt="New white French double door installed in a garage or utility opening" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Tocador terminado" data-en="Finished powder room">Finished powder room</span><img src="assets/raw/gmaps-4.jpg" alt="Finished powder room with pedestal sink, framed mirror and new vanity light" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Ducha con vidrio" data-en="Glass shower install">Glass shower install</span><img src="assets/raw/gmaps-10.jpg" alt="Glass-enclosed shower door installation opening to a patio" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:240ms"><span class="tile-cap" data-es="Demolición y reconstrucción" data-en="Demo &amp; rebuild">Demo &amp; rebuild</span><img src="assets/raw/gmaps-1.jpg" alt="Bathroom demolition and rough-in with exposed studs, plumbing and subfloor" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:270ms"><span class="tile-cap" data-es="Reparación de deck" data-en="Deck repair">Deck repair</span><img src="assets/raw/gmaps-5.jpg" alt="Deck or crawlspace subfloor repair with new pressure-treated framing" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Puerta interior" data-en="Interior door">Interior door</span><img src="assets/raw/gmaps-6.jpg" alt="New white 6-panel interior door installed and trimmed" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -696,18 +669,18 @@
   <div class="marquee marquee-reverse" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Carpentry</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Flooring</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
-        <span class="marquee-word">The Unwinding</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Rituales en Pareja</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Piedras Calientes</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Head Spa Holístico</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Flagami, Miami</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Kitchen Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Bathroom Remodeling</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Custom Carpentry</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Painting &amp; Flooring</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Miami, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -717,45 +690,52 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Opiniones</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms">Lo que dicen <span class="text-shine">nuestros clientes</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;4.9 de 5 · 73 reseñas en Google</p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What">What</span> <span class="text-shine" data-es="nuestros clientes" data-en="clients say">clients say</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="4.6 de 5 · 18 reseñas en Google" data-en="4.6 out of 5 · 18 reviews on Google">4.6 out of 5 · 18 reviews on Google</span></p>
       </div>
-      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+      <div id="reviewsCarousel" class="carousel reveal" aria-roledescription="carousel" aria-label="Client reviews">
         <div class="carousel-track">
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Mireia &amp; Maria were incredible! This was my first head spa experience. I wanted to get my pregnant friend a gift/something we could do together. It was great they offer a service for two. I did a ton of research on head spas all over..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Olivia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great people to work with! They were professional, friendly, reliable, and did a great job. Communication was easy, the work was completed carefully, and I was very happy with the overall experience. I would definitely recommend them to others!"</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Duplicee David</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This was our first time at a head spa and it was amazing. It was so relaxing. We did a couples 90 minute session and we had a great experience here. Maria and Nildy were very good! Thank you!!"</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Thalia</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I couldn't be happier with my custom Thin Blue Line challenge coin holder. The attention to detail, the quality of the woodwork, and the overall finish are top-tier. The coins fit perfectly, and it looks incredible on the wall. Highly recommend."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Kassandra Torrens</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I just got home from a scalp and hand massage with Maria and I'm the most relaxed I've been in weeks! The experience felt stress free and relaxing from the moment I walked in; once you're there, you're transported away from the city around..."</blockquote>
-              <figcaption class="text-sm"><span class="font-medium">Ruby</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"Great handyman in Miami. Good quality work, reliable and professional. Prices are reasonable. Pressure washing tile and roof. Awesome job."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Idayme Vazquez</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
           </div>
           <div class="carousel-slide">
             <figure class="glass glass-hover rounded-3xl p-8">
               <p class="stars text-sm mb-4">★★★★★</p>
-              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"10/10 experience, I left feeling completely refreshed and can't wait to go back!"</blockquote>
-              <figcaption class="text-sm"><span class="text-[color:var(--ink-40)]">Reseña en Google</span></figcaption>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"My special thanks to Mr. Julian for the wonderful job done at my home. The extra work and time was worthwhile. Mr. Julian did my flooring and interior painting. I truly recommend him, very respectful, our handyman from now on."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Nelly Parra</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-slide">
+            <figure class="glass glass-hover rounded-3xl p-8">
+              <p class="stars text-sm mb-4">★★★★★</p>
+              <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"The best handyman service in Miami area, this guy can do it all. Great painter and beautiful work. Very organized and detailed oriented, I would definitely recommend his service."</blockquote>
+              <figcaption class="text-sm"><span class="font-medium">Jorge Alberto Juarez</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
             </figure>
           </div>
         </div>
       </div>
       <div id="reviewDots" class="flex items-center justify-center gap-2.5 mt-8"></div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2">Leer las 73 reseñas en Google</a>
+        <a href="https://www.google.com/maps/place/Handyman+Service/data=!4m7!3m6!1s0x88d9b944a3d7ab85:0xc9136807b18f8a4a!8m2!3d25.6481695!4d-80.320053!16s%2Fg%2F11tcxk418p!19sChIJhavXo0S52YgRSoqPsQdoE8k" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Leer las 18 reseñas en Google" data-en="Read all 18 reviews on Google">Read all 18 reviews on Google</a>
       </div>
     </div>
   </section>
@@ -765,40 +745,36 @@
     <span class="sec-num" aria-hidden="true">06</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-stretch">
       <div>
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5">Visítanos</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms">Tu pausa queda <span class="text-shine">cerca</span></h2>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Zona de servicio" data-en="Service Area">Service Area</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-9" style="transition-delay:80ms"><span data-es="Trabajamos en" data-en="We work across">We work across</span> <span class="text-shine">Miami &amp; Miami Beach</span></h2>
         <div class="space-y-4">
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             <div>
-              <p class="font-medium mb-1">Dirección</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">752 Flagami Blvd, Miami, FL 33144</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(138,111,77,0.4)]" href="https://www.google.com/maps/place/Amani+HeadSpa/@25.7629928,-80.3165977,17z/data=!3m1!4b1!4m6!3m5!1s0x88d9b9e5643c2807:0xbec5dea2b1e5c153!8m2!3d25.7629928!4d-80.3165977!16s%2Fg%2F11x6b88jdf" target="_blank" rel="noopener">Cómo llegar</a>
+              <p class="font-medium mb-1" data-es="Dónde trabajamos" data-en="Where we work">Where we work</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Negocio móvil, sin local físico: vamos directo a tu casa en Miami, Miami Beach y Miami-Dade." data-en="A mobile crew with no storefront: we come straight to your home across Miami, Miami Beach and Miami-Dade County.">A mobile crew with no storefront: we come straight to your home across Miami, Miami Beach and Miami-Dade County.</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <div>
-              <p class="font-medium mb-1">Horario</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Lunes a Viernes: 10:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Sábado: 8:00 AM a 7:00 PM</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Domingo: 8:00 AM a 5:00 PM</p>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a Sábado: 8:00 AM a 8:00 PM" data-en="Monday to Saturday: 8:00 AM to 8:00 PM">Monday to Saturday: 8:00 AM to 8:00 PM</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Domingo: cerrado" data-en="Sunday: closed">Sunday: closed</p>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
-              <p class="font-medium mb-1">Reservas</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Online: <a class="text-[color:var(--accent-deep)]" href="https://amaniheadspa.glossgenius.com" target="_blank" rel="noopener">amaniheadspa.glossgenius.com</a></p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light">Teléfono: <a class="text-[color:var(--accent-deep)]" href="tel:+13057906977">(305) 790-6977</a></p>
+              <p class="font-medium mb-1" data-es="Cotizaciones" data-en="Quotes">Quotes</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Teléfono: " data-en="Phone: "><a class="text-[color:var(--accent-deep)]" href="tel:+13054844393">(305) 484-4393</a></p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Cotización gratis por llamada" data-en="Free quote by phone">Free quote by phone</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Mapa: Amani HeadSpa, 752 Flagami Blvd, Miami FL"
-          src="https://www.google.com/maps?q=Amani+HeadSpa,+752+Flagami+Blvd,+Miami,+FL+33144&output=embed"
-          class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="frame zoomable reveal min-h-[380px] aspect-[4/5] lg:aspect-auto" style="transition-delay:180ms">
+        <img src="assets/raw/gmaps-9.jpg" alt="Break room kitchenette remodel with new white cabinetry and countertops, a recent project in Miami" class="blur-up w-full h-full object-cover" loading="lazy" />
       </div>
     </div>
   </section>
