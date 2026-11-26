@@ -4,19 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="theme-color" content="#f0ebf5" />
-  <title>Joe's Plumbing & Tile Service · Plumber in Cape Coral, FL</title>
-  <meta name="description" content="Joe's Plumbing & Tile Service: 4.5 rating across 23 reviews on Google. Family owned since 1993, serving Cape Coral, Lee, Charlotte and Collier County. Call (239) 540-2676." />
+  <title>Joe's Plumbing &amp; Tile Service · Plumber in Cape Coral, FL | 4.5 on Google</title>
+  <meta name="description" content="Joe's Plumbing & Tile Service: licensed plumbing repairs, water heaters, and bathroom & kitchen remodeling with tile work in Cape Coral, FL. 4.5 rating, 24 reviews on Google. Call (239) 540-2676." />
   <meta property="og:title" content="Joe's Plumbing & Tile Service · Cape Coral, FL" />
-  <meta property="og:description" content="4.5 on Google, 23 reviews. Family owned plumbing and tile contractor in Cape Coral, FL." />
+  <meta property="og:description" content="Licensed plumbing repairs, water heaters, remodeling and tile work. 4.5 rating on Google, family run." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/raw/gmaps-3.jpg" />
-  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-4.jpg" />
+  <meta property="og:image" content="assets/raw/gmaps-4.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/raw/gmaps-1.jpg" />
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
   "@type": "Plumber",
   "name": "Joe's Plumbing & Tile Service, LLC",
-  "description": "Family owned plumbing and tile contractor serving Cape Coral, Lee, Charlotte and Collier County, FL since 1993: repairs, repipe, remodels and tile installation.",
+  "description": "Licensed, family-run plumbing contractor in Cape Coral, FL: repairs, water heaters, repipe, and bathroom and kitchen remodeling with tile installation.",
+  "areaServed": {
+    "@type": "City",
+    "name": "Cape Coral"
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "3720 SW 7th Ave",
@@ -26,28 +30,15 @@
     "addressCountry": "US"
   },
   "telephone": "+1-239-540-2676",
-  "image": "assets/raw/gmaps-3.jpg",
+  "image": "assets/raw/gmaps-4.jpg",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.5",
-    "reviewCount": "23"
+    "reviewCount": "24",
+    "bestRating": "5"
   },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:00",
-      "closes": "17:00"
-    }
-  ],
   "sameAs": [
-    "https://www.google.com/maps/search/?api=1&query=Joes+Plumbing+Service+Llc+3720+SW+7th+Ave+Cape+Coral+FL+33914"
+    "https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8"
   ]
 }
   </script>
@@ -147,14 +138,19 @@
     .dark-band .btn-ghost:hover { border-color: rgba(194,219,236,0.7); background: rgba(194,219,236,0.08); box-shadow: 0 10px 26px rgba(0,0,0,0.4); }
     .dark-band .stars { color: #c2dbec; text-shadow: 0 0 14px rgba(194,219,236,0.4); }
     .book-float {
-      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 9999px;
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; min-width: 56px; height: 56px; padding: 0 18px; gap: 9px; border-radius: 9999px;
       display: flex; align-items: center; justify-content: center;
       background: linear-gradient(180deg, #81a3bd 0%, #527a98 100%);
       box-shadow: 0 6px 0 #264557, 0 14px 30px rgba(36,45,49,0.35);
       transition: transform 0.16s cubic-bezier(0.22,1,0.36,1), box-shadow 0.16s ease;
     }
+    .book-float-label { color: #fff; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; }
     .book-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 0 #264557, 0 20px 40px rgba(36,45,49,0.4), 0 0 34px rgba(82,122,152,0.35); }
     .book-float:active { transform: translateY(3px); box-shadow: 0 2px 0 #264557, 0 6px 14px rgba(36,45,49,0.3); }
+    @media (max-width: 640px) {
+      .book-float { right: 12px; left: 12px; bottom: 12px; height: 50px; padding: 0 16px; }
+      .book-float-label { font-size: 0.8rem; }
+    }
 
     /* ============ Motion v2 ============ */
     #preloader {
@@ -309,12 +305,12 @@
   <header id="nav" class="fixed top-0 inset-x-0 z-50">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="assets/raw/gmaps-4.jpg" alt="Joe's Plumbing & Tile Service" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(152,87,200,0.35)]" />
-        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Joe's Plumbing <span class="text-[color:var(--accent-deep)]">& Tile</span></span>
+        <img src="assets/raw/gmaps-1.jpg" alt="Joe's Plumbing & Tile Service" class="w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(152,87,200,0.35)]" />
+        <span class="font-display text-base sm:text-xl tracking-[0.04em] sm:tracking-[0.1em] uppercase whitespace-nowrap">Joe's Plumbing <span class="text-[color:var(--accent-deep)]">&amp; Tile</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-light">
         <a class="nav-link" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="nav-link" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="nav-link" href="#metodo" data-es="Cómo trabajamos" data-en="How we work">How we work</a>
         <a class="nav-link" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
         <a class="nav-link" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
@@ -336,7 +332,7 @@
     <div id="mobileMenu" class="md:hidden hidden glass mx-4 mt-1 rounded-2xl overflow-hidden">
       <nav class="flex flex-col p-4 text-sm">
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#experiencia" data-es="Nosotros" data-en="About us">About us</a>
-        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Proceso" data-en="Process">Process</a>
+        <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#metodo" data-es="Cómo trabajamos" data-en="How we work">How we work</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a>
         <a class="py-3 px-3 border-b border-[color:var(--accent-ghost)]" href="#opiniones" data-es="Opiniones" data-en="Reviews">Reviews</a>
@@ -351,22 +347,22 @@
     <div class="glow-bg"><div class="orb orb-a" data-parallax="0.14"></div><div class="orb orb-b" data-parallax="0.09"></div><div class="orb orb-c" data-parallax="0.2"></div></div>
     <div id="heroInner" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center w-full">
       <div class="lg:col-span-7">
-        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Cape Coral, FL · Plomería y azulejo" data-en="Cape Coral, FL · Plumbing & Tile">Cape Coral, FL · Plumbing & Tile</p>
-        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="De familia, desde 1993." data-en="Family owned, since 1993.">Family owned, since 1993.</p>
+        <p class="reveal text-xs sm:text-sm tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-6" data-es="Cape Coral, FL · Plomería y remodelación" data-en="Cape Coral, FL · Plumbing &amp; remodeling">Cape Coral, FL · Plumbing &amp; remodeling</p>
+        <p class="reveal font-script text-xl sm:text-2xl text-[color:var(--ink-60)] mb-4" style="transition-delay:80ms" data-es="Trabajo de familia, hecho bien." data-en="Family-run work, done right.">Family-run work, done right.</p>
         <h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          <span data-es="Plomería que no te" data-en="Plumbing that won't">Plumbing that won't</span><br /><span data-es="deja esperando, con " data-en="leave you waiting, by ">leave you waiting, by </span><span class="text-shine" data-es="Joe's Plumbing" data-en="Joe's Plumbing">Joe's Plumbing</span>
+          <span data-es="Plomería y remodelación" data-en="Plumbing and remodeling">Plumbing and remodeling</span><br /><span data-es="hechas " data-en="done ">done </span><span class="text-shine" data-es="bien a la primera" data-en="right the first time">right the first time</span>
         </h1>
-        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Joe's Plumbing & Tile Service atiende Cape Coral y los condados de Lee, Charlotte y Collier desde 1993: reparaciones, repipe, remodelaciones de baño y cocina e instalación de azulejo. Rating 4.5 en Google con 23 reseñas." data-en="Joe's Plumbing & Tile Service has served Cape Coral and Lee, Charlotte and Collier County since 1993: repairs, repipe, bathroom and kitchen remodels and tile installation. 4.5 rating on Google across 23 reviews.">Joe's Plumbing & Tile Service has served Cape Coral and Lee, Charlotte and Collier County since 1993: repairs, repipe, bathroom and kitchen remodels and tile installation. 4.5 rating on Google across 23 reviews.</p>
+        <p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms" data-es="Joe's Plumbing & Tile Service es un negocio familiar con licencia en Cape Coral, FL. Hoy Jackie, la hija de Joe, dirige el equipo que atiende desde reparaciones de plomería y calentadores de agua hasta remodelaciones completas de baño y cocina con instalación de azulejo." data-en="Joe's Plumbing & Tile Service is a licensed, family-run business in Cape Coral, FL. Today Jackie, Joe's daughter, runs the team that handles everything from plumbing repairs and water heaters to full bathroom and kitchen remodels with tile installation.">Joe's Plumbing & Tile Service is a licensed, family-run business in Cape Coral, FL. Today Jackie, Joe's daughter, runs the team that handles everything from plumbing repairs and water heaters to full bathroom and kitchen remodels with tile installation.</p>
         <div class="reveal flex items-center gap-3 mb-9" style="transition-delay:300ms">
           <span class="stars text-lg" aria-hidden="true">★★★★★</span>
-          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.5 · 23 reseñas en Google" data-en="4.5 · 23 reviews on Google">4.5 · 23 reviews on Google</span>
+          <span class="text-sm text-[color:var(--ink-60)]" data-es="4.5 · 24 reseñas en Google" data-en="4.5 · 24 reviews on Google">4.5 · 24 reviews on Google</span>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <a href="tel:+12395402676" target="_blank" rel="noopener" class="btn-3d rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <span data-es="Llamar ahora" data-en="Call now">Call now</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Joes+Plumbing+Service+Llc+3720+SW+7th+Ave+Cape+Coral+FL+33914" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
+          <a href="https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8" target="_blank" rel="noopener" class="btn-ghost rounded-full px-8 py-4 text-sm inline-flex items-center gap-2">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Google Maps
           </a>
@@ -375,7 +371,7 @@
       <div class="lg:col-span-5 reveal" style="transition-delay:280ms">
         <div class="relative max-w-sm lg:max-w-md mx-auto lg:ml-auto" data-parallax="0.06">
           <div class="frame zoomable img-reveal aspect-[3/4]" style="transition-delay:240ms">
-            <img src="assets/raw/gmaps-3.jpg" alt="Freestanding bathtub remodel finished by Joe's Plumbing & Tile Service in Cape Coral, FL" class="blur-up w-full h-full object-cover" />
+            <img src="assets/raw/gmaps-4.jpg" alt="Finished freestanding bathtub remodel with blue shiplap accent wall by Joe's Plumbing & Tile Service in Cape Coral, FL" class="blur-up w-full h-full object-cover" />
           </div>
           <div class="glass rounded-2xl px-5 py-4 absolute -bottom-6 -left-4 sm:-left-10">
             <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-1" data-es="Atención directa" data-en="Direct line">Direct line</p>
@@ -391,9 +387,9 @@
   <section class="relative border-y border-[color:var(--accent-ghost)] bg-[color:var(--bg-2)]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
       <div class="reveal"><p class="font-display text-2xl text-shine"><span data-count="4.5" data-decimals="1">4.5</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Rating en Google" data-en="Google rating">Google rating</p></div>
-      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="23">23</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
-      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">1993</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Negocio familiar desde" data-en="Family owned since">Family owned since</p></div>
-      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Lun-Vie</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="8am a 5pm" data-en="8am to 5pm">8am to 5pm</p></div>
+      <div class="reveal" style="transition-delay:90ms"><p class="font-display text-2xl text-shine"><span data-count="24">24</span></p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Reseñas verificadas" data-en="Verified reviews">Verified reviews</p></div>
+      <div class="reveal" style="transition-delay:180ms"><p class="font-display text-2xl">Plomería &amp; Azulejo</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Especialidad" data-en="Specialty">Specialty</p></div>
+      <div class="reveal" style="transition-delay:270ms"><p class="font-display text-2xl">Cape Coral, FL</p><p class="text-xs text-[color:var(--ink-40)] tracking-wide uppercase mt-1" data-es="Zona de servicio" data-en="Service area">Service area</p></div>
     </div>
   </section>
 
@@ -402,19 +398,19 @@
     <div class="marquee-track">
       <div class="marquee-seq">
         <span class="marquee-word">Plumbing Repairs</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Water Heaters</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Bathroom Remodel</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Kitchen Remodel</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Remodeling</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Tile Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
         <span class="marquee-word">Plumbing Repairs</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Water Heaters</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Bathroom Remodel</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Kitchen Remodel</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Remodeling</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Tile Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -425,25 +421,26 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
       <div class="grid grid-cols-2 gap-5">
         <div class="frame zoomable aspect-[3/4] img-reveal">
-          <img src="assets/raw/gmaps-6.jpg" alt="Finished tiled walk-in shower installed by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-3.jpg" alt="Joe's Plumbing & Tile Service crew installing a freestanding tub against a blue shiplap accent wall" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
         <div class="frame zoomable aspect-[3/4] mt-10 img-reveal" style="transition-delay:140ms">
-          <img src="assets/raw/gmaps-2.jpg" alt="Joe's Plumbing & Tile Service crew installing a freestanding tub" class="blur-up w-full h-full object-cover" loading="lazy" />
+          <img src="assets/raw/gmaps-6.jpg" alt="Finished kitchen remodel with white cabinets and a navy island by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div>
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Nosotros" data-en="About us">About us</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un negocio familiar," data-en="A family business,">A family business,</span><br /><span class="text-shine" data-es="desde 1993" data-en="since 1993">since 1993</span></h2>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Joe's Plumbing & Tile Service, LLC es una empresa familiar con licencia e historia en el suroeste de Florida, atendiendo Cape Coral y los condados de Lee, Charlotte y Collier desde 1993. Hoy Jackie, la hija de Joe, dirige la operación junto a un equipo de técnicos con años de experiencia en campo." data-en="Joe's Plumbing & Tile Service, LLC is a licensed family business with a long history in Southwest Florida, serving Cape Coral and Lee, Charlotte and Collier County since 1993. Today Jackie, Joe's daughter, runs the operation alongside a team of technicians with years of hands on experience.">Joe's Plumbing & Tile Service, LLC is a licensed family business with a long history in Southwest Florida, serving Cape Coral and Lee, Charlotte and Collier County since 1993. Today Jackie, Joe's daughter, runs the operation alongside a team of technicians with years of hands on experience.</p>
-        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Sus clientes repiten lo mismo en Google: respuesta rápida, técnicos puntuales y educados, y trabajo terminado bien a la primera, desde una fuga bajo el fregadero hasta una remodelación completa de baño." data-en="Customers keep saying the same thing on Google: a quick response, punctual and polite technicians, and work finished right the first time, from a leak under the sink to a full bathroom remodel.">Customers keep saying the same thing on Google: a quick response, punctual and polite technicians, and work finished right the first time, from a leak under the sink to a full bathroom remodel.</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight mb-7" style="transition-delay:80ms"><span data-es="Un negocio familiar," data-en="A family business,">A family business,</span><br /><span class="text-shine" data-es="con licencia" data-en="licensed and local">licensed and local</span></h2>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-5" style="transition-delay:160ms" data-es="Joe's Plumbing & Tile Service, LLC es un negocio familiar con licencia (CFC 1425649) en Cape Coral, FL. Hoy Jackie, la hija de Joe, dirige el equipo de técnicos que hace desde reparaciones de plomería hasta remodelaciones completas con azulejo." data-en="Joe's Plumbing & Tile Service, LLC is a licensed (CFC 1425649) family business in Cape Coral, FL. Today Jackie, Joe's daughter, runs the team of technicians handling everything from plumbing repairs to full remodels with tile work.">Joe's Plumbing & Tile Service, LLC is a licensed (CFC 1425649) family business in Cape Coral, FL. Today Jackie, Joe's daughter, runs the team of technicians handling everything from plumbing repairs to full remodels with tile work.</p>
+        <p class="reveal text-[color:var(--ink-60)] font-light leading-relaxed mb-9" style="transition-delay:220ms" data-es="Sus clientes repiten lo mismo en Google: respuesta rápida, técnicos educados y un trabajo razonable en precio, desde una fuga bajo el fregadero hasta una remodelación de baño completa." data-en="Customers keep saying the same thing on Google: a quick response, polite technicians and fair pricing, from a leak under the sink to a full bathroom remodel.">Customers keep saying the same thing on Google: a quick response, polite technicians and fair pricing, from a leak under the sink to a full bathroom remodel.</p>
         <div class="reveal grid grid-cols-3 gap-4 mb-9" style="transition-delay:300ms">
           <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="4.5" data-decimals="1">4.5</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Rating" data-en="Rating">Rating</p></div>
-          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">30+</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Años en el suroeste de FL" data-en="Years in SW Florida">Years in SW Florida</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine"><span data-count="24">24</span></p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Reseñas" data-en="Reviews">Reviews</p></div>
+          <div class="glass glass-hover rounded-2xl p-4 text-center"><p class="font-display text-xl text-shine">CFC 1425649</p><p class="text-[11px] text-[color:var(--ink-40)] uppercase tracking-wide mt-1" data-es="Licencia" data-en="License">License</p></div>
         </div>
         <div class="reveal flex flex-wrap gap-4" style="transition-delay:360ms">
           <div class="flex items-center gap-3 glass glass-hover rounded-full pr-5 pl-1.5 py-1.5">
-            <img src="assets/raw/gmaps-4.jpg" alt="Joe's Plumbing & Tile Service company van, licensed and insured, CFC 1425649" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(152,87,200,0.3)]" loading="lazy" />
-            <span class="text-sm font-light">Joe's Plumbing & Tile · <span class="text-[color:var(--ink-40)]" data-es="Cape Coral, FL" data-en="Cape Coral, FL">Cape Coral, FL</span></span>
+            <img src="assets/raw/gmaps-1.jpg" alt="Joe's Plumbing & Tile Service company van, licensed and insured, license CFC 1425649" class="blur-up w-10 h-10 rounded-full object-cover ring-1 ring-[rgba(152,87,200,0.3)]" loading="lazy" />
+            <span class="text-sm font-light">Joe's Plumbing &amp; Tile · <span class="text-[color:var(--ink-40)]" data-es="Cape Coral, FL" data-en="Cape Coral, FL">Cape Coral, FL</span></span>
           </div>
         </div>
       </div>
@@ -456,23 +453,23 @@
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Tu proyecto, paso a paso" data-en="Your project, step by step">Your project, step by step</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así trabajamos" data-en="How we work">How we work</span> <span class="text-shine" data-es="contigo" data-en="with you">with you</span></h2>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Así se trabaja" data-en="How it works">How it works</span> <span class="text-shine" data-es="aquí" data-en="here">here</span></h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="glass glass-hover rounded-3xl p-7 reveal">
           <p class="step-num text-5xl mb-5">01</p>
           <h3 class="font-display text-xl mb-3" data-es="Llamas o escribes" data-en="You call or text">You call or text</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Nos cuentas el problema o el proyecto: fuga, repipe, remodelación de baño o cocina, o azulejo nuevo." data-en="Tell us the problem or the project: a leak, a repipe, a bathroom or kitchen remodel, or new tile.">Tell us the problem or the project: a leak, a repipe, a bathroom or kitchen remodel, or new tile.</p>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Nos cuentas el problema: una fuga, un calentador de agua, o un proyecto de remodelación." data-en="Tell us the problem: a leak, a water heater, or a remodeling project.">Tell us the problem: a leak, a water heater, or a remodeling project.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:110ms">
           <p class="step-num text-5xl mb-5">02</p>
           <h3 class="font-display text-xl mb-3" data-es="Visita y presupuesto" data-en="Visit and estimate">Visit and estimate</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Un técnico revisa el trabajo en sitio y te da un precio claro antes de empezar." data-en="A technician checks the job on site and gives you a clear price before starting.">A technician checks the job on site and gives you a clear price before starting.</p>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Un técnico revisa el trabajo y te da un precio claro antes de empezar." data-en="A technician checks the job and gives you a clear price before starting.">A technician checks the job and gives you a clear price before starting.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:220ms">
           <p class="step-num text-5xl mb-5">03</p>
           <h3 class="font-display text-xl mb-3" data-es="Se hace el trabajo" data-en="The work gets done">The work gets done</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Técnicos puntuales y educados, con limpieza al terminar. Igual si es una reparación de una hora o una remodelación completa." data-en="Punctual, polite technicians, with clean up when they are done. Same whether it is a one hour repair or a full remodel.">Punctual, polite technicians, with clean up when they are done. Same whether it is a one hour repair or a full remodel.</p>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed" data-es="Técnicos educados que resuelven el trabajo con cuidado, con limpieza al terminar." data-en="Polite technicians who handle the work with care, with clean up when they are done.">Polite technicians who handle the work with care, with clean up when they are done.</p>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 reveal" style="transition-delay:330ms">
           <p class="step-num text-5xl mb-5">04</p>
@@ -490,43 +487,43 @@
       <div class="text-center max-w-2xl mx-auto mb-16">
         <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Servicios" data-en="Services">Servicios</p>
         <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que" data-en="What we">What we</span> <span class="text-shine" data-es="hacemos" data-en="do">do</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza segun el alcance. Llama y te damos un precio claro antes de empezar." data-en="Every job is quoted to its own scope. Call and we will give you a clear price before starting.">Every job is quoted to its own scope. Call and we will give you a clear price before starting.</p>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)] font-light" style="transition-delay:160ms" data-es="Cada trabajo se cotiza según el alcance. Llama y te damos un precio claro antes de empezar." data-en="Every job is quoted based on the scope of work. Call and we will give you a clear price before starting.">Every job is quoted based on the scope of work. Call and we will give you a clear price before starting.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="border-color: rgba(152,87,200,0.4); box-shadow: 0 18px 50px rgba(0,0,0,0.35);">
           <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Lo más pedido" data-en="Most requested">Most requested</p>
           <h3 class="font-display text-2xl leading-snug mb-3" data-es="Reparaciones de plomería" data-en="Plumbing repairs">Plumbing repairs</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Fugas, fregaderos, calentadores de agua y cualquier reparación de plomería residencial." data-en="Leaks, sinks, water heaters and any residential plumbing repair.">Leaks, sinks, water heaters and any residential plumbing repair.</p>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Fugas, drenajes tapados, fregaderos y reparación de griferías, hechas por un equipo familiar con licencia." data-en="Leaks, clogged drains, sinks and fixture repairs, handled by a licensed, family-run team.">Leaks, clogged drains, sinks and fixture repairs, handled by a licensed, family-run team.</p>
           <div class="mt-auto">
             <a href="tel:+12395402676" target="_blank" rel="noopener" class="btn-3d rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:110ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Tuberías" data-en="Piping">Piping</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Repipe" data-en="Repipe">Repipe</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Reemplazo completo de tuberías viejas por sistemas nuevos y confiables." data-en="Full replacement of old piping with new, reliable systems.">Full replacement of old piping with new, reliable systems.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Calentadores" data-en="Water heaters">Water heaters</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Calentadores de agua" data-en="Water heater repair &amp; installation">Water heater repair &amp; installation</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Instalación y reparación de calentadores de agua, un trabajo que sus clientes mencionan una y otra vez en Google." data-en="Installation and repair of water heaters, a job clients mention again and again in their Google reviews.">Installation and repair of water heaters, a job clients mention again and again in their Google reviews.</p>
           <div class="mt-auto">
             <a href="tel:+12395402676" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:220ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Remodelación" data-en="Remodel">Remodel</p>
-          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Baños y cocinas" data-en="Bathroom & kitchen remodels">Bathroom & kitchen remodels</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Desde una tina nueva hasta una remodelación completa de baño o cocina, incluyendo gabinetes y encimeras." data-en="From a new tub to a full bathroom or kitchen remodel, including cabinets and countertops.">From a new tub to a full bathroom or kitchen remodel, including cabinets and countertops.</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Remodelación" data-en="Remodeling">Remodeling</p>
+          <h3 class="font-display text-2xl leading-snug mb-3" data-es="Baños y cocinas" data-en="Bathroom &amp; kitchen remodels">Bathroom &amp; kitchen remodels</h3>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Remodelaciones completas como la tina independiente y la cocina que ves en nuestras fotos, de la plomería al acabado." data-en="Full remodels like the freestanding tub and kitchen work you see in our photos, from the rough plumbing to the finished room.">Full remodels like the freestanding tub and kitchen work you see in our photos, from the rough plumbing to the finished room.</p>
           <div class="mt-auto">
             <a href="tel:+12395402676" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
         <div class="glass glass-hover rounded-3xl p-7 flex flex-col reveal" style="transition-delay:330ms">
-          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Acabados" data-en="Finishes">Finishes</p>
+          <p class="text-[11px] tracking-[0.25em] uppercase text-[color:var(--accent-deep)] mb-3" data-es="Acabados" data-en="Tile">Tile</p>
           <h3 class="font-display text-2xl leading-snug mb-3" data-es="Instalación de azulejo" data-en="Tile installation">Tile installation</h3>
-          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Duchas, pisos y paredes en azulejo, con acabado limpio y a nivel." data-en="Showers, floors and walls in tile, finished clean and level.">Showers, floors and walls in tile, finished clean and level.</p>
+          <p class="text-sm text-[color:var(--ink-60)] font-light leading-relaxed mb-6" data-es="Duchas, pisos y paredes en azulejo, terminados limpios y a nivel, solos o como parte de una remodelación." data-en="Showers, floors and walls finished in tile, clean and level, on their own or as part of a remodel.">Showers, floors and walls finished in tile, clean and level, on their own or as part of a remodel.</p>
           <div class="mt-auto">
             <a href="tel:+12395402676" target="_blank" rel="noopener" class="btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2 w-full justify-center" data-es="Consultar" data-en="Ask about it">Ask about it</a>
           </div>
         </div>
       </div>
-      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Licencia CFC 1425649. Licenciados y asegurados." data-en="License CFC 1425649. Licensed and insured.">License CFC 1425649. Licensed and insured.</span></p>
+      <p class="reveal text-center text-xs text-[color:var(--ink-40)] font-light mt-8"><span data-es="Licencia CFC 1425649. Con licencia y asegurados." data-en="License CFC 1425649. Licensed and insured.">License CFC 1425649. Licensed and insured.</span></p>
     </div>
   </section>
 
@@ -537,17 +534,20 @@
       <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
         <div>
           <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Galería" data-en="Gallery">Galería</p>
-          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajos" data-en="Real">Real</span> <span class="text-shine" data-es="reales" data-en="work">work</span></h2>
+          <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Trabajo" data-en="Real">Real</span> <span class="text-shine" data-es="real" data-en="finished work">finished work</span></h2>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Joes+Plumbing+Service+Llc+3720+SW+7th+Ave+Cape+Coral+FL+33914" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
+        <a href="https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8" target="_blank" rel="noopener" class="reveal btn-ghost rounded-full px-6 py-3 text-sm inline-flex items-center gap-2" style="transition-delay:160ms">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
           Google Maps
         </a>
       </div>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Acabado de ducha" data-en="Shower finish">Shower finish</span><img src="assets/raw/gmaps-7.jpg" alt="Finished shower fixture and tile niche by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Remodelación de cocina" data-en="Kitchen remodel">Kitchen remodel</span><img src="assets/raw/gmaps-5.jpg" alt="Remodeled kitchen with new cabinets and countertops by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
-        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Licenciados y asegurados" data-en="Licensed and insured">Licensed and insured</span><img src="assets/raw/gmaps-1.jpg" alt="Joe's Plumbing & Tile Service company van with license number CFC 1425649" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable col-span-2 aspect-[16/9] img-reveal"><span class="tile-cap" data-es="Ducha terminada" data-en="Finished shower">Finished shower</span><img src="assets/raw/gmaps-8.jpg" alt="Finished shower with rainfall head and pebble tile niche by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:90ms"><span class="tile-cap" data-es="Instalación de azulejo" data-en="Tile installation">Tile installation</span><img src="assets/raw/gmaps-7.jpg" alt="Shower tile installation in progress with pebble mosaic floor by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:150ms"><span class="tile-cap" data-es="Remodelación de cocina" data-en="Kitchen remodel">Kitchen remodel</span><img src="assets/raw/gmaps-6.jpg" alt="Finished kitchen remodel with white cabinets and a navy island by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:120ms"><span class="tile-cap" data-es="Licenciados y asegurados" data-en="Licensed and insured">Licensed and insured</span><img src="assets/raw/gmaps-5.jpg" alt="Joe's Plumbing & Tile Service company van with license number CFC 1425649" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] img-reveal" style="transition-delay:210ms"><span class="tile-cap" data-es="Baño terminado" data-en="Bathroom finish">Bathroom finish</span><img src="assets/raw/gmaps-4.jpg" alt="Finished freestanding bathtub remodel with blue shiplap accent wall by Joe's Plumbing & Tile Service" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
+        <div class="frame zoomable aspect-[3/4] lg:mt-10 img-reveal" style="transition-delay:300ms"><span class="tile-cap" data-es="Equipo en obra" data-en="Team at work">Team at work</span><img src="assets/raw/gmaps-3.jpg" alt="Joe's Plumbing & Tile Service crew installing a freestanding tub" class="blur-up w-full h-full object-cover" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -557,19 +557,19 @@
     <div class="marquee-track">
       <div class="marquee-seq">
         <span class="marquee-word">Plumbing Repairs</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Water Heaters</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Bathroom Remodel</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Kitchen Remodel</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Remodeling</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Tile Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
       </div>
       <div class="marquee-seq">
         <span class="marquee-word">Plumbing Repairs</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Water Heaters</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Bathroom Remodel</span><span class="marquee-star">✦</span>
-        <span class="marquee-word">Kitchen Remodel</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Repipe</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Remodeling</span><span class="marquee-star">✦</span>
         <span class="marquee-word">Tile Installation</span><span class="marquee-star">✦</span>
+        <span class="marquee-word">Cape Coral, FL</span><span class="marquee-star">✦</span>
       </div>
     </div>
   </div>
@@ -579,9 +579,9 @@
     <span class="sec-num" aria-hidden="true">05</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones" data-en="Reviews">Reviews</p>
-        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What">What</span> <span class="text-shine" data-es="sus clientes" data-en="clients say">clients say</span></h2>
-        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="Reseñas reales de Google, verbatim." data-en="Real Google reviews, verbatim.">Real Google reviews, verbatim.</span></p>
+        <p class="reveal text-xs tracking-[0.35em] uppercase text-[color:var(--accent-deep)] mb-5" data-es="Opiniones reales" data-en="Real reviews">Real reviews</p>
+        <h2 class="reveal font-display text-4xl sm:text-5xl leading-tight" style="transition-delay:80ms"><span data-es="Lo que dicen" data-en="What clients">What clients</span> <span class="text-shine" data-es="los clientes" data-en="are saying">are saying</span></h2>
+        <p class="reveal mt-5 text-sm text-[color:var(--ink-60)]" style="transition-delay:160ms"><span class="stars">★★★★★</span> &nbsp;<span data-es="24 reseñas en Google, calificación 4.5 de 5." data-en="24 reviews on Google, rated 4.5 out of 5.">24 reviews on Google, rated 4.5 out of 5.</span></p>
       </div>
       <div class="grid sm:grid-cols-3 gap-5 items-stretch">
         <figure class="glass glass-hover rounded-3xl p-8 reveal">
@@ -591,17 +591,17 @@
         </figure>
         <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:110ms">
           <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"We have had Joe's Plumbing out to our home a few times over the past year. First with a kitchen remodel, they installed a new sink and disposal. They do excellent work and are on time. Their work is quick and professional."</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Lori Crippen</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This is one of the most professional and genuinely caring companies I've worked with. Their pricing is reasonable, and their team has a wealth of knowledge, they've been incredibly helpful every step of the way. I was referred to them and …"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">Patricia Cain</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
         </figure>
         <figure class="glass glass-hover rounded-3xl p-8 reveal" style="transition-delay:220ms">
           <p class="stars text-sm mb-4">★★★★★</p>
-          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"This is one of the most professional and genuinely caring companies I've worked with. Their pricing is reasonable, and their team has a wealth of knowledge."</blockquote>
-          <figcaption class="text-sm"><span class="font-medium">Patricia Cain</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
+          <blockquote class="text-[color:var(--ink-60)] font-light leading-relaxed mb-5">"I have nothing but positive things to say about Joe's Plumbing! Jackie, Joe's daughter, is now running the show and she was incredibly responsive, returning our calls quickly and getting a team out the same day. The technicians were polite, …"</blockquote>
+          <figcaption class="text-sm"><span class="font-medium">DF</span> <span class="text-[color:var(--ink-40)]">· Google</span></figcaption>
         </figure>
       </div>
       <div class="text-center mt-10 reveal">
-        <a href="https://www.google.com/maps/search/?api=1&query=Joes+Plumbing+Service+Llc+3720+SW+7th+Ave+Cape+Coral+FL+33914" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver todas las reseñas en Google" data-en="See all reviews on Google">See all reviews on Google</a>
+        <a href="https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8" target="_blank" rel="noopener" class="btn-ghost rounded-full px-7 py-3.5 text-sm inline-flex items-center gap-2" data-es="Ver en Google Maps" data-en="See reviews on Google">See reviews on Google</a>
       </div>
     </div>
   </section>
@@ -617,23 +617,31 @@
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:140ms">
             <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Teléfono" data-en="Phone">Phone</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La vía más rápida para consultar tu proyecto o reportar una fuga." data-en="The fastest way to ask about your project or report a leak.">The fastest way to ask about your project or report a leak.</p>
+              <p class="font-medium mb-1" data-es="Llamada directa" data-en="Direct call">Direct call</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="La forma más rápida de contarnos tu problema y recibir tu presupuesto." data-en="The fastest way to tell us your problem and get your estimate.">The fastest way to tell us your problem and get your estimate.</p>
               <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(152,87,200,0.4)]" href="tel:+12395402676">(239) 540-2676</a>
             </div>
           </div>
           <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:200ms">
-            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             <div>
-              <p class="font-medium mb-1" data-es="Zona de trabajo" data-en="Service area">Service area</p>
-              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Cape Coral y los condados de Lee, Charlotte y Collier. Lunes a viernes, 8am a 5pm." data-en="Cape Coral and Lee, Charlotte and Collier County. Monday to Friday, 8am to 5pm.">Cape Coral and Lee, Charlotte and Collier County. Monday to Friday, 8am to 5pm.</p>
-              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(152,87,200,0.4)]" href="https://www.google.com/maps/search/?api=1&query=Joes+Plumbing+Service+Llc+3720+SW+7th+Ave+Cape+Coral+FL+33914" target="_blank" rel="noopener">Ver ficha en Google</a>
+              <p class="font-medium mb-1" data-es="Horario" data-en="Hours">Hours</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="Lunes a viernes, 8am a 5pm. Cerrado sábado y domingo." data-en="Monday to Friday, 8am to 5pm. Closed Saturday and Sunday.">Monday to Friday, 8am to 5pm. Closed Saturday and Sunday.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(152,87,200,0.4)]" href="https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8" target="_blank" rel="noopener">Mon-Fri, 8am to 5pm</a>
+            </div>
+          </div>
+          <div class="glass glass-hover rounded-2xl p-6 flex items-start gap-4 reveal" style="transition-delay:260ms">
+            <svg class="mt-1 shrink-0 text-[color:var(--accent-deep)]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.2 8 10 4.6-.8 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <div>
+              <p class="font-medium mb-1" data-es="4.5 en Google" data-en="4.5 on Google">4.5 on Google</p>
+              <p class="text-sm text-[color:var(--ink-60)] font-light" data-es="24 reseñas verificadas de clientes reales." data-en="24 verified reviews from real clients.">24 verified reviews from real clients.</p>
+              <a class="text-sm text-[color:var(--accent-deep)] underline underline-offset-4 decoration-[rgba(152,87,200,0.4)]" href="https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8" target="_blank" rel="noopener">Read reviews on Google</a>
             </div>
           </div>
         </div>
       </div>
       <div class="frame map-frame reveal min-h-[380px]" style="transition-delay:180ms">
-        <iframe title="Joe's Plumbing & Tile Service" src="https://www.google.com/maps?q=3720+SW+7th+Ave%2C+Cape+Coral%2C+FL+33914&output=embed" class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <iframe title="Joe's Plumbing & Tile Service, Cape Coral FL" src="https://www.google.com/maps?q=3720+SW+7th+Ave%2C+Cape+Coral%2C+FL+33914&output=embed" class="w-full h-full min-h-[380px]" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -643,35 +651,35 @@
     <div class="glow-bg"><div class="orb orb-a" style="opacity:0.7"></div><div class="orb orb-b" style="opacity:0.7"></div></div>
     <div id="ctaGlow" class="cursor-glow" aria-hidden="true"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
-      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="De familia, desde 1993." data-en="Family owned, since 1993.">Family owned, since 1993.</p>
-      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu proyecto" data-en="Your project">Your project</span> <span class="text-shine" data-es="empieza con una llamada" data-en="starts with a call">starts with a call</span></h2>
-      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesitas y te damos un precio claro antes de empezar." data-en="Tell us what you need and we will give you a clear price before starting.">Tell us what you need and we will give you a clear price before starting.</p>
+      <p class="reveal font-script text-2xl text-[color:var(--ink-60)] mb-5" data-es="Trabajo de familia, hecho bien." data-en="Family-run work, done right.">Family-run work, done right.</p>
+      <h2 class="reveal font-display text-4xl sm:text-6xl leading-tight mb-8" style="transition-delay:100ms"><span data-es="Tu próximo proyecto" data-en="Your next project">Your next project</span> <span class="text-shine" data-es="empieza con una llamada" data-en="starts with one call">starts with one call</span></h2>
+      <p class="reveal text-[color:var(--ink-60)] font-light mb-10 max-w-xl mx-auto" style="transition-delay:180ms" data-es="Cuéntanos qué necesita tu casa. Te damos un precio claro antes de empezar cualquier trabajo." data-en="Tell us what your home needs. We will give you a clear price before any work starts.">Tell us what your home needs. We will give you a clear price before any work starts.</p>
       <div class="reveal flex flex-wrap justify-center gap-4" style="transition-delay:260ms">
         <a href="tel:+12395402676" target="_blank" rel="noopener" class="btn-3d rounded-full px-10 py-4 text-sm inline-flex items-center gap-2" data-es="Llamar ahora" data-en="Call now">Call now</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Joes+Plumbing+Service+Llc+3720+SW+7th+Ave+Cape+Coral+FL+33914" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver ficha en Google Maps" data-en="See listing on Google Maps">See listing on Google Maps</a>
+        <a href="https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8" target="_blank" rel="noopener" class="btn-ghost rounded-full px-10 py-4 text-sm" data-es="Ver en Google Maps" data-en="See us on Google Maps">See us on Google Maps</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="dark-band relative overflow-hidden border-t border-[color:var(--accent-ghost)] bg-[#10171b]">
-    <span class="foot-mark" aria-hidden="true">Joe's Plumbing & Tile</span>
+    <span class="foot-mark" aria-hidden="true">Joe's Plumbing &amp; Tile</span>
     <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-3 gap-10">
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/raw/gmaps-4.jpg" alt="Joe's Plumbing & Tile Service" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(197,157,225,0.35)]" loading="lazy" />
+          <img src="assets/raw/gmaps-1.jpg" alt="Joe's Plumbing & Tile Service" class="w-9 h-9 rounded-full object-cover ring-1 ring-[rgba(197,157,225,0.35)]" loading="lazy" />
           <span class="font-display text-lg tracking-[0.1em] uppercase">Joe's Plumbing & Tile Service</span>
         </div>
-        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Joe's Plumbing & Tile Service en Cape Coral, FL. 4.5 en Google, 23 reseñas." data-en="Joe's Plumbing & Tile Service in Cape Coral, FL. 4.5 on Google, 23 reviews.">Joe's Plumbing & Tile Service in Cape Coral, FL. 4.5 on Google, 23 reviews.</p>
+        <p class="text-sm text-[color:var(--ink-40)] font-light leading-relaxed" data-es="Plomería con licencia, remodelación de baños y cocinas, e instalación de azulejo en Cape Coral, FL." data-en="Licensed plumbing, bathroom and kitchen remodeling, and tile installation in Cape Coral, FL.">Licensed plumbing, bathroom and kitchen remodeling, and tile installation in Cape Coral, FL.</p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Contacto" data-en="Contact">Contacto</p>
         <p>3720 SW 7th Ave, Cape Coral, FL 33914</p>
-        <p><a href="tel:+12395402676" target="_blank" rel="noopener" class="hover:text-[#c2dbec]" data-es="Teléfono · (239) 540-2676" data-en="Phone · (239) 540-2676">Phone · (239) 540-2676</a></p>
+        <p><a href="tel:+12395402676" target="_blank" rel="noopener" class="hover:text-[#c2dbec]" data-es="Llamada directa · (239) 540-2676" data-en="Direct call · (239) 540-2676">Direct call · (239) 540-2676</a></p>
       </div>
       <div class="text-sm font-light text-[color:var(--ink-60)] space-y-2">
         <p class="text-xs tracking-[0.3em] uppercase text-[color:var(--ink-40)] mb-3" data-es="Síguenos" data-en="Follow">Síguenos</p>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Joes+Plumbing+Service+Llc+3720+SW+7th+Ave+Cape+Coral+FL+33914" target="_blank" rel="noopener" class="hover:text-[#c2dbec]">Google Maps · Google Maps</a></p>
+        <p><a href="https://www.google.com/maps/place/Joes+Plumbing+Service+Llc/data=!4m7!3m6!1s0x88db477a63b70001:0xf689a259016b9c7!8m2!3d26.5820683!4d-81.9891435!16s%2Fg%2F11h7v7qxk0!19sChIJAQC3Y3pH24gRx7kWkCWaaA8" target="_blank" rel="noopener" class="hover:text-[#c2dbec]">Google Maps · Google Maps</a></p>
       </div>
     </div>
     <div class="border-t border-[color:var(--accent-ghost)]">
