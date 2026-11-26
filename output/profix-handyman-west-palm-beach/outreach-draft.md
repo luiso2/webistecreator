@@ -1,36 +1,53 @@
-# Outreach draft: Profix Handyman
+# Outreach draft: Profix Handyman LLC (West Palm Beach, FL)
 
-- Slug: profix-handyman-west-palm-beach
-- City: West Palm Beach, FL
-- Niche: handyman / remodelacion
-- Rating: 5.0 (23 reviews on Google)
-- Phone: (561) 574-3520
-- Address: not published
-- Email: none found (deep search: no own domain, no public Facebook/Instagram page, no booking platform; business has no published email)
-- IG: none found (no Instagram presence located)
-- has_own_site: false (verified via Google Maps listing detail and general web search, no domain found)
-- Demo: https://siteforge-demos.odd-forest-9504.workers.dev/profix-handyman-west-palm-beach/
-- Language: en
+Status: **pending_manual** (no public email found after web search; Facebook/Instagram
+could not be located either). Outreach channel is phone only: (561) 574-3520.
 
-## Email draft (no public email found, this draft is for reference only / future manual contact)
+Angle: `has_own_site: false` -> "we built you a free sample website".
 
-Subject: A free sample website for Profix Handyman
+## Email (not sent, no public email on file)
 
-Hi, this is Michael with Merktop.
+No public email address was found for this business (not on Google Maps, no
+Facebook/Instagram page located, no owner-site contact). Subject/body are left
+null in the registry; if a phone call surfaces an email later, use the template
+below.
 
-I found Profix Handyman on Google, 5.0 stars from 23 reviews. I put together a free sample website using your real rating, reviews and photos so you can see what it would look like:
+**Subject (if an email is found later):**
+A free sample website for Profix Handyman
 
-https://siteforge-demos.odd-forest-9504.workers.dev/profix-handyman-west-palm-beach/
+**Body (if an email is found later):**
 
-It does not change how customers reach you today, your phone stays exactly the same. If you like it, I can put it on your own domain, no strings attached. If not, no problem at all.
+Hi,
+
+My name is Michael Vargas, I work with Merktop. I came across Profix Handyman
+on Google, you are at 5.0 stars with 23 reviews, really strong work.
+
+I put together a free sample website for your business to see what it could
+look like: https://siteforge-demos.odd-forest-9504.workers.dev/profix-handyman-west-palm-beach/
+
+It does not touch your Google listing or anything you already have running,
+it is just a demo. If you like it, I am happy to hand over the domain so you
+can use it. If it is not for you, no problem, I will take it down, no
+pressure either way.
+
+Let me know what you think.
 
 Michael Vargas
 Merktop
 
-## dm_message (SMS / call script, since no email or IG DM channel exists)
+## dm_message (phone opener / call script, English, 416 chars)
 
-Hi, this is Michael from Merktop. I found Profix Handyman on Google (5.0 stars, 23 reviews) while looking for handyman services in West Palm Beach, FL. I noticed you don't have a dedicated website, so I put together a free sample using your real photos and reviews: https://siteforge-demos.odd-forest-9504.workers.dev/profix-handyman-west-palm-beach/ It does not touch anything you have running today. If you like it, I can put it on your own domain. If not, just reply and I will take it down, no pressure either way.
+Hi, this is Michael with Merktop. Found Profix Handyman on Google, 5.0 stars
+with 23 reviews, great work. I built a free sample website to show what it
+could look like: https://siteforge-demos.odd-forest-9504.workers.dev/profix-handyman-west-palm-beach/.
+It does not touch your Google listing. If you like it I can hand over the
+domain, if not I will take it down, no pressure either way. Let me know what
+you think!
 
-## Outreach channel note
+## Notes
 
-No public email and no Instagram found for this business. The only contact channel is phone (561) 574-3520 (call or text). The panel's WhatsApp/DM buttons do not apply here; manual contact would be by phone call or SMS text to that number.
+- No em-dash used anywhere above.
+- Never contact the business automatically: this file is a draft only, awaiting
+  human approval per PIPELINE.md Fase 5.
+- Suggested next step for a human: call (561) 574-3520 and read the dm_message
+  as an opener, or text/WhatsApp it if the owner's number takes texts.
