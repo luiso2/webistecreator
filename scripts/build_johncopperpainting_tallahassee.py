@@ -216,7 +216,7 @@ rep('''<h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1
           Suelta el estrés,<br /><span class="text-shine">renueva</span> cuerpo y mente
         </h1>''',
     '''<h1 class="split font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-7">
-          Precision paint,<br />finishes that <span class="text-shine">last</span>
+          <span data-es="Pintura precisa," data-en="Precision paint,">Precision paint,</span><br /><span data-es="acabados que " data-en="finishes that ">finishes that </span><span class="text-shine" data-es="perduran" data-en="last">last</span>
         </h1>''')
 rep('''<p class="reveal max-w-xl text-[color:var(--ink-60)] font-light leading-relaxed mb-8" style="transition-delay:240ms">
           Rituales de bienestar holístico en Flagami: limpieza profunda del cuero cabelludo, masaje terapéutico, mascarilla capilar personalizada y terapia de piedras calientes. Para ti, o en pareja.
