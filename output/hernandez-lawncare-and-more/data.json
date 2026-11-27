@@ -1,0 +1,53 @@
+{
+  "slug": "hernandez-lawncare-and-more",
+  "name": "Hernandez Lawncare And More, LLC",
+  "city": "Cape Coral, FL",
+  "niche": "landscaping / lawn care",
+  "source": "Google Maps (listing has no website button, only a Facebook link)",
+  "maps_url": "https://www.google.com/maps/place/Hernandez+Lawncare+And+More,LLC/data=!4m7!3m6!1s0x4b28f61a4666786d:0xa04f040acd6a70b1!8m2!3d26.5179635!4d-81.934511!16s%2Fg%2F11rjkqhtjh!19sChIJbXhmRhr2KEsRsXBqzQoET6A?authuser=0&hl=en",
+  "rating": 4.8,
+  "review_count": 76,
+  "phone": "+1 239-822-5177",
+  "address": null,
+  "address_note": "No public address on the Google Business listing; this is normal for a mobile residential lawn care operation. Adapted variant used per PIPELINE.md Fase 3.5: map section replaced with a real completed-job photo and a service-area description instead of an address/map embed.",
+  "has_own_site": false,
+  "own_site_check": "Tested domain variants (hernandezlawncare.com - SSL/DNS error, no site; hernandezlawncareandmore.com - resolves but is a DIFFERENT company, 'Hernandez Lawn Care and More' serving Jacksonville, North Carolina, phone 910-333-5337, unrelated to this Cape Coral FL business verified by phone area code and service area; hernandezlawncarefl.com - no DNS). WebSearch for the business name plus city found no owned domain. Facebook page (https://www.facebook.com/profile.php?id=100072032842064) is the only public link on the Google listing; Facebook does not count as an own website per PIPELINE.md.",
+  "email": null,
+  "email_search": "Checked Facebook profile page (blocked public scraping, no About text retrievable), WebSearch for business name + city (no public email found). No email published anywhere found.",
+  "instagram": null,
+  "facebook": "https://www.facebook.com/profile.php?id=100072032842064",
+  "hours": [
+    "Monday to Sunday, 7 AM to 6 PM (per Google Business hours)"
+  ],
+  "language": "en",
+  "language_note": "All Google reviews found are in English; business operates in an English-speaking South Florida market.",
+  "brand_vibe": "Light, natural daylight palette: deep forest green + warm cream, reflecting real lawn/landscaping photography (manicured lawns, palm trimming, topiary).",
+  "services_found": [
+    "Lawn mowing and maintenance (confirmed via photos of manicured lawns)",
+    "Landscaping / garden design and planting (confirmed via garden bed photo and review from Paul Dworianyn mentioning a landscaping project with Julio)",
+    "Palm and tree trimming (confirmed via photo of active palm trimming job)",
+    "Hedge / topiary shaping (confirmed via photo of shaped topiary bushes)"
+  ],
+  "pricing": "Not published anywhere (no booking platform, no price list). Adapted variant: site shows \"Pricing by quote\" instead of fabricated prices, per PIPELINE.md Fase 3.5.",
+  "reviews_used": [
+    { "author": "Johnny Natal", "stars": 5, "text": "This company gets the job done! After my old lawn guy sold his business to another owner who would find ways to add hidden additional charges each month I was in need of finding someone to maintain my property. My property has man bushes …" },
+    { "author": "Donald Bischoff", "stars": 5, "text": "Hernandez Lawncare is the best. They are on time, very neat, and overall a quality lawn service. I would recommend to anyone." },
+    { "author": "Paul Dworianyn", "stars": 5, "text": "I recently hired Julio for a landscaping project, and I couldn’t be happier with the results! From the very beginning, Julio took the time to listen to what I envisioned for my yard. Not only did he incorporate some of the plants I already …" },
+    { "author": "Jeff Gratz", "stars": 5, "text": "Working with company two years and happy. They are solid.We receive a quality job, timely with hard working caring staff! No problem discussing any issues or things we need done" }
+  ],
+  "reviews_note": "One 1-star review (Rick Cline, missed appointment) exists on the listing and is reflected honestly in the aggregate rating/review_count shown on the site (4.8 of 76), but was not selected as a testimonial quote, consistent with standard practice of curating representative positive quotes while keeping the real aggregate rating visible.",
+  "photos_source": "7 Google Maps listing photos downloaded via scripts/_gmaps_photos.py, all verified real and relevant after visual contact-sheet review (manicured lawns, garden bed, palm trimming in progress, tropical landscaping, backyard lawn, topiary). No selfies or portraits found or used.",
+  "build": {
+    "base_template": "templates/light/index.html (copied and edited, not written from scratch)",
+    "palette": "custom (forest green / cream), tokens follow DESIGN.md structure",
+    "adapted_sections": [
+      "Ritual 4 pasos -> 'How We Work' (generic, realistic lawn-care service process, no specific fabricated claims about this business)",
+      "Servicios -> 4 real service categories with 'Pricing by quote' CTA instead of fixed prices",
+      "Ubicacion/mapa -> omitted map (no public address); replaced with real completed-job photo + service area description"
+    ],
+    "bilingual": "data-es/data-en on all translatable nodes except the hero H1 (split-word animation owns its DOM, consistent with the ejemplar's own pattern). Default language en with toggle to es.",
+    "gate_checks": "em-dash count 0, no <details>, DOCTYPE/html closed, JSON-LD valid, all image paths exist, design-system markers present (text-shine/orb/glass/btn-3d/reveal/Playfair/merktop-badge/data-es/split-word/sec-num/tile-cap/cursor-ring/foot-mark/heroInner), assets/tailwind.js copied locally."
+  },
+  "status": "staging",
+  "fecha": "2026-11-27"
+}
