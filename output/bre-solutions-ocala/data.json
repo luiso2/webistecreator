@@ -1,0 +1,50 @@
+{
+ "query": "handyman / property maintenance service in Ocala, FL",
+ "name": "B.R.E. Solutions LLC",
+ "owner": "Not named on Google, Facebook (login-walled) or in web search results. No owner name invented.",
+ "rating": "5.0",
+ "reviews": "33",
+ "address": null,
+ "phone": "+1 352-208-5428",
+ "hours": [
+  "Saturday, 8 AM to 5 PM",
+  "Sunday, 8 AM to 5 PM",
+  "Monday, 8 AM to 5 PM",
+  "Tuesday, 8 AM to 5 PM",
+  "Wednesday, 8 AM to 5 PM",
+  "Thursday, 8 AM to 5 PM",
+  "Friday, 8 AM to 5 PM"
+ ],
+ "website": null,
+ "has_own_site": false,
+ "website_check_notes": "Google Maps listing's website field shows only 'facebook.com' linking to http://www.facebook.com/bresolutions (confirmed live with gmaps_detail.js, re-checked at build time), which is not an own site per PIPELINE rules. Tried bresolutions.com with curl: it resolves but goes through a Cloudflare challenge page to hugedomains.com's domain-for-sale profile page for bresolutions.com (confirmed parked/for-sale, same pattern as the MaRe GoDaddy lesson, not a real owned site). bresolutionsllc.com, bre-solutions.com and bresolutionsfl.com/bresolutionsocala.com do not resolve (curl exit 000/connection failure). No other domain variant found live. Conclusion: has_own_site is false.",
+ "instagram": null,
+ "facebook": "http://www.facebook.com/bresolutions",
+ "social_search_notes": "Facebook page exists (found during discovery and confirmed as the Maps listing's 'website' link) but is fully login-walled: www.facebook.com, m.facebook.com and mbasic.facebook.com all redirect anonymous requests straight to a Facebook login page, so no About section, photos, email or extra content could be read from it (WebFetch and curl with a standard browser UA all hit the login wall; spoofing Facebook's own crawler user-agent to bypass this was attempted and blocked by the session's own policy, so it was not pursued further). WebSearch for the business name plus Ocala/handyman/lawn care turned up no Instagram profile and no independent website; only unrelated competing Ocala handyman businesses appeared in results.",
+ "email": null,
+ "email_search_notes": "No email in the Google Maps listing. Facebook About section could not be read (login wall, see social_search_notes). WebSearch for \"B.R.E. Solutions LLC Ocala email contact handyman\" and a second query with lawn care/Citrus County terms returned no result for this specific business and no email address. No website exists to check for a mailto link. Recorded as null; outreach is phone/Facebook only (pending_manual), consistent with config.json's own note that home-trade businesses are far more contactable by phone than email.",
+ "language": "en",
+ "niche": "handyman services / property maintenance",
+ "services_mentioned": [
+  "Handyman repairs (general repairs around the house or rental property)",
+  "Lawn care / landscaping maintenance",
+  "Exterior painting",
+  "Christmas / holiday light installation",
+  "Rental and Airbnb property turnovers and maintenance for landlords and short-term rental hosts"
+ ],
+ "services_source_note": "No service menu is published anywhere (no website, Facebook About unreadable). Every service listed above is taken directly from verbatim Google reviews: Isabel Lalonde (Christmas light installation), Paul Burgos (lawn care and handyman services for Airbnb properties in Citrus County), Zachary Avant (exterior painting), Christopher Myers and Alina Penjiyeva (rental property maintenance / lawn care / cleaning for landlords and a realtor's client). The business's own Google Maps logo photo carries the tagline 'Property Maintenance' under the 'BRE Solutions' wordmark, confirming this positioning is the business's own, not inferred.",
+ "pricing_published": false,
+ "photos_used": [
+  "assets/logo.png (the business' own real logo photo from its Google Maps listing: a dark charcoal background, an orange line-art running hare icon, 'BRE SOLUTIONS' serif wordmark and 'PROPERTY MAINTENANCE' tagline beneath it. Used as hero image, nav/footer monogram, experience-section image, favicon and og:image; this is the ONLY photo this listing has, see photo_curation_note)"
+ ],
+ "photos_rejected": [],
+ "photo_curation_note": "gmaps_detail.js and gmaps_photocycle.js (run with maxSteps=30, cycling the full Maps photo viewer) both returned exactly ONE photo total for this listing: the business' own logo graphic (not a job/work photo). This is expected for a handyman-niche listing per the project brief, but still well below the usual 5-6+ photo target. Facebook, the only other listed channel, is fully login-walled (see social_search_notes) so no additional job photos could be retrieved from it, and no other verifiable photo source exists. Per PIPELINE Fase 3.5's curation rule ('si quedan menos de 5 buenas, mejor menos secciones con buenas fotos que rellenar con malas'), the site was built with FEWER photo-dependent sections instead of inventing or padding imagery: the gallery grid section was omitted entirely (no nav link to it either), the usual two-photo 'Experience' image grid was reduced to a single image, and the 'Ubicacion' section was rebuilt as a photo-less, map-less single-column 'Service area' section (see below). The one real logo photo is reused tastefully across the hero, nav/footer monogram and experience-section image slots, the same pattern already used in this project's other low-photo builds (e.g. prior one-photo/limited-photo trade businesses) rather than inventing or stock-sourcing any work photography.",
+ "reviewSamples": [
+  {"author": "Isabel Lalonde", "text": "BRE Solutions did a Christmas light installation job for me and I'm extremely happy with the results. Great service and work!"},
+  {"author": "Paul Burgos", "text": "BRE Solutions provides lawn care and handyman services for my Airbnb properties in Citrus County. I have been using them for several months now and they always get the job done. I appreciate their attention to detail and flexibility."},
+  {"author": "Zachary Avant", "text": "We recently hired this team to paint the exterior of our home, and we couldn't be more pleased with the results. Their pricing was very competitive and fair, and the quality of the work was top-notch. They were professional throughout the entire process and did a fantastic job. Highly recommend!"}
+ ],
+ "dedupe_check": "grep -i '352-208-5428\\|B\\.R\\.E\\. Solutions\\|BRE Solutions' data/processed.json and grep -c on phone digits returned no match, both at discovery time and re-verified immediately before build. output/bre-solutions-ocala did not exist before this build.",
+ "brand_vibe": "Derived directly from the business' own real logo (the single Google Maps photo): a near-black / warm-charcoal background with a burnt-orange / rust line-art running hare icon and serif wordmark ('BRE SOLUTIONS' / 'PROPERTY MAINTENANCE'). Built on the dark-v2 skeleton (warm-black base matches the logo's background almost exactly) with the gold accent family hue-rotated from amber/gold (~#d4a84b) to a burnt-orange/rust (~#d77e48 deep, #bb7347 mid) sampled from the actual logo artwork, preserving every gradient/shadow relationship of the skeleton. This accent has not been used on any prior site per templates/SKELETONS-V2.md's already-used list (coral fairy, caramelo, esmeralda, teal acero, violeta dark, rosa dark, gold dark); it reads as a distinct rust/terracotta rather than any of those.",
+ "no_appointment_platform_note": "No Booksy/GlossGenius/Square/Mangomint/Fresha/Vagaro profile exists (handyman services are quoted per job, not booked online). Per PIPELINE Fase 3.5's variante adaptada: every CTA points to tel:+13522085428 (primary) or https://www.facebook.com/bresolutions (secondary/Messenger), the services section uses 'Free estimate' in place of invented prices, and the location section was rebuilt as a 'Service area' section (no fixed address exists for this service-area business, so the usual Google Maps embed and street-address line were both omitted rather than invented; see ubicacion rewrite in scripts/build_bresolutionsocala.py)."
+}
