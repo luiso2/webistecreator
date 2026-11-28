@@ -1,0 +1,76 @@
+{
+  "slug": "mrwoodcustomfloors",
+  "name": "Mr. Wood Custom Floors, Inc",
+  "niche": "flooring contractor / tile & wood floor installation",
+  "city": "North Miami, FL",
+  "address": {
+    "line1": "1925 NE 150th St",
+    "locality": "Miami",
+    "region": "FL",
+    "postal_code": "33181",
+    "country": "US",
+    "source": "Google Maps Business Profile (gmaps_detail.js), address button on the listing: '1925 NE 150th St, Miami, FL 33181, United States'. Zip 33181 is the North Miami / North Miami Beach border area."
+  },
+  "phone": "+13057587505",
+  "phone_display": "(305) 758-7505",
+  "phone_source": "Google Maps Business Profile, phone button.",
+  "email": null,
+  "email_search_log": [
+    { "source": "Google Maps listing", "method": "gmaps_detail.js scrape of the full business panel.", "result": "No email field or mailto link present on the Google Business Profile." },
+    { "source": "Web search for the business name + email/instagram/facebook", "method": "WebSearch query \"Mr. Wood Custom Floors\" Miami instagram OR facebook OR email", "result": "No verifiable social profile or email surfaced. Only third-party aggregator listings (Birdeye, HomeAdvisor, Angi, Houzz, prospeo.io lead-gen page) were found, none of which are the business's own first-party channel. Not used as a source of contact details." }
+  ],
+  "email_note": "No public email found after checking the Google Business Profile and a web search for the business's own social channels. Recorded as null per pipeline rule.",
+  "has_own_site": false,
+  "website_check": {
+    "domains_tested": [
+      { "domain": "mrwoodfloors.com", "result": "Resolves (HTTP 302) but redirects straight to an Afternic 'domain for sale' parking page (https://www.afternic.com/forsale/MRWOODFLOORS.COM). Confirmed parked, not an active business site." },
+      { "domain": "mrwoodcustomfloors.com", "result": "No DNS / connection failed, domain not registered or not resolving." },
+      { "domain": "mrwoodcustomfloors.net", "result": "No DNS / connection failed, domain not registered or not resolving." }
+    ],
+    "google_listing": "Google Business Profile shows an 'Add website' prompt (website field is empty), confirming Google has no website on file for this business either.",
+    "conclusion": "has_own_site = false. The only plausible owned domain (mrwoodfloors.com) is parked for sale with zero content, and Google's own listing has no website on file."
+  },
+  "instagram": null,
+  "facebook": null,
+  "rating": 4.7,
+  "review_count": 15,
+  "rating_source": "Google Maps Business Profile (gmaps_detail.js): rating 4.7, 15 reviews, category 'Wood floor installation service'.",
+  "hours": {
+    "monday_friday": "8:00 AM - 4:30 PM",
+    "saturday_sunday": "Closed",
+    "source": "Google Maps Business Profile hours block."
+  },
+  "owner": "Andres",
+  "owner_source": "Mentioned by name in at least 3 separate Google reviews (Robert DINH, Stefano, Alexander Delmas) as the owner who personally handles jobs and follow-up.",
+  "team_notes": "One review (Robert DINH) also names an assistant, Valentina, described as ensuring efficient and thorough service.",
+  "services": [
+    { "name": "Hardwood floor installation", "source": "Reviews describe new wood floor installs (Alexander Delmas: 'install new wood floors in my bedroom'); Google category is 'Wood floor installation service'." },
+    { "name": "Floor refinishing / sanding / repair", "source": "Reviews describe refinishing existing floors, including after water damage (Milton Hoare, Jennifer Bennett, Alexander Delmas)." },
+    { "name": "Marble, mosaic and tile work", "source": "Observed directly in the business's own uploaded Google Maps photos: a marble/mosaic entry staircase, a hexagon-tile shower, and penny-tile bathroom floors, alongside the hardwood jobs. Framed on the site as part of the crew's range, not as a separately priced/named Booksy-style menu item, since no price list is published anywhere." }
+  ],
+  "no_price_list": "No services menu or price list is published anywhere (no website, no Google Business menu section). Site uses the adapted variant: 'priced on request' + call-for-quote CTA throughout, per pipeline rule.",
+  "reviews_used": [
+    { "author": "Jennifer Bennett", "stars": 5, "text": "mr. wood was recommended to us by two different family members who have recently refinished their floors. Our floors look amazing, the team got everything done in a tight time frame without sacrificing their amazing quality! We highly recommend!" },
+    { "author": "Stefano", "stars": 5, "text": "I have contracted Mr. Wood numerous times now. Every time a professional job and if there were ever complains from my clients, Andres the owner always came back with his crew and rectified the issues. Highly recommend!" },
+    { "author": "Alexander Delmas", "stars": 5, "text": "Andres was great to work with. He gave me a very fair price to refurbish my current wood floors as well as install new wood floors in my bedroom. The work came out excellent! I highly recommend this company!" }
+  ],
+  "reviews_source": "scripts/gmaps_reviews.js scrape of the Google Maps reviews tab for this listing.",
+  "photos_used": {
+    "source": "scripts/gmaps_photocycle.js photo-viewer cycle on the Google Maps listing, 11 photos retrieved, all verified as real completed flooring/tile jobs (grand staircase, rooftop deck, hospitality lounge, kitchen, condo living rooms, hallway, bathroom mosaic tile) via visual review with the Read tool before selection. Downloaded with curl (Chrome UA), verified with `file` as real JPEGs >15KB, resized to max 1000px wide.",
+    "hero": "gmaps-1.jpg (curved staircase with wood treads and marble inlay floor)",
+    "about": ["gmaps-9.jpg (terracotta tile hospitality lounge)", "gmaps-5.jpg (engineered oak living room floor)"],
+    "gallery": ["gmaps-10.jpg", "gmaps-4.jpg", "gmaps-6.jpg", "gmaps-8.jpg", "gmaps-11.jpg", "gmaps-3.jpg"],
+    "unused": ["gmaps-2.jpg (exact duplicate of gmaps-1.jpg)", "gmaps-7.jpg (not used, kept in raw/ for reference)"]
+  },
+  "language": "en",
+  "language_source": "All public reviews and the Google Business Profile are in English; no Spanish-language customer-facing content was found anywhere for this business. Default site language set to English per DESIGN.md guidance for the Florida flooring/contractor niche absent evidence of a Hispanic-market default.",
+  "dedupe_check": "Searched data/processed.json for 'Mr. Wood', 'mrwood' and the phone number (305) 758-7505: no existing entry found before this build.",
+  "build_base": "templates/light-v2/index.html (lashbloom skeleton), derived via anchored Python transformation scripts per templates/SKELETONS-V2.md.",
+  "palette": {
+    "name": "warm walnut / oak (new, not previously used)",
+    "bg": "#f8f3ea",
+    "accent_deep": "#8a5a32",
+    "accent_mid": "#b9814f"
+  },
+  "variant": "adapted (no booking platform; CTA is phone call; no fixed prices, priced on request)"
+}

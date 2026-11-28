@@ -1,0 +1,68 @@
+{
+  "slug": "marblemasterfloor",
+  "name": "Marble Master Floor",
+  "niche": "flooring contractor / tile & marble installation",
+  "city": "Miami-Dade County, FL (service area business, no public storefront; discovered searching tile installation in North Miami, FL)",
+  "address": null,
+  "address_note": "Service-area business: Google Maps does not publish a street address for this listing (no 'Address:' button on the business panel, only phone and category). This is common for flooring/tile crews that work on-site rather than from a storefront. Not invented; omitted per pipeline rule. Location section on the site describes coverage area instead of a street address, and uses a real jobsite photo in place of a map embed.",
+  "phone": "+17868149795",
+  "phone_display": "(786) 814-9795",
+  "phone_source": "Google Maps Business Profile, phone button.",
+  "email": null,
+  "email_search_log": [
+    { "source": "Google Maps listing", "method": "gmaps_detail.js scrape of the full business panel.", "result": "No email field or mailto link present on the Google Business Profile." },
+    { "source": "Web search for the business name + email/instagram/facebook", "method": "WebSearch query \"Marble Master Floor\" Miami instagram OR facebook OR email", "result": "No listing under this exact business name was found with a usable email or verified social handle. Results surfaced similarly-named but different Miami marble/tile businesses (RP Floor Solutions, Marble Surface Care, Miami Marble Kings, etc.), none of which match this business's phone number or Google place id, so none were used." }
+  ],
+  "email_note": "No public email found after checking the Google Business Profile and a web search. Recorded as null per pipeline rule.",
+  "has_own_site": false,
+  "website_check": {
+    "domains_tested": [
+      { "domain": "marblemasterfloor.com", "result": "No DNS / connection failed, domain not registered or not resolving." },
+      { "domain": "themarblemasterfloor.com", "result": "No DNS / connection failed, domain not registered or not resolving." },
+      { "domain": "marblemasterfloorllc.com", "result": "No DNS / connection failed, domain not registered or not resolving." }
+    ],
+    "google_listing": "Google Business Profile shows an 'Add website' prompt (website field is empty).",
+    "conclusion": "has_own_site = false. None of the obvious domain variants resolve, and Google's own listing has no website on file."
+  },
+  "instagram": null,
+  "facebook": null,
+  "rating": 5.0,
+  "review_count": 13,
+  "rating_source": "Google Maps Business Profile (gmaps_detail.js): rating 5.0, 13 reviews, category 'Tile contractor'.",
+  "hours": null,
+  "hours_note": "Not published on the Google Business Profile (no hours block returned). Omitted per pipeline rule rather than invented.",
+  "owner": null,
+  "owner_note": "Reviews describe the business as 'a family business' (Ashley Luna review) but no individual owner name is given anywhere public, so none is used on the site.",
+  "services": [
+    { "name": "Marble & mosaic floors", "source": "Observed directly in the business's own Google Maps photos: a marble foyer with a mosaic medallion, a gold-fixture marble bathroom vanity, and a worker hand-setting mosaic tile around a stone garden fountain." },
+    { "name": "Tile installation (bathrooms/kitchens)", "source": "Google category is 'Tile contractor'; photos show hexagon mosaic shower tile, penny-tile shower work, and a remodeled bathroom with tile and granite counters." },
+    { "name": "Hardwood floor remodeling", "source": "Review from Alexandra Leon: 'From having plain white floors, to these beautiful aesthetic wood floors, I fell in love with it.'" },
+    { "name": "Outdoor stone work (fountains, patios, pool decks)", "source": "Google Maps photos show the crew installing checkered marble tile on a pool deck and mosaic stonework on a garden fountain surround." }
+  ],
+  "no_price_list": "No services menu or price list is published anywhere (no website, no Google Business menu section). Site uses the adapted variant: 'priced on request' + call-for-quote CTA throughout, per pipeline rule.",
+  "reviews_used": [
+    { "author": "Ashley Luna", "stars": 5, "text": "This team remodeled our house floors and did an amazing job I like the fact that it was a family business and when they give you a time frame they deliver 100% recommend them. I wish the best definitely will tell others about this!" },
+    { "author": "Alexandra Leon", "stars": 5, "text": "Everything from top to bottom was perfect! The employees were extremely proficient and skilled in remaking my floors. From having plain white floors, to these beautiful aesthetic wood floors, I fell in love with it. Thank you for the great work!" },
+    { "author": "Crystal Aquino", "stars": 5, "text": "Great customer service and wonderful work! I recommend their services to everyone!" }
+  ],
+  "reviews_source": "scripts/gmaps_reviews.js scrape of the Google Maps reviews tab for this listing. Two additional real reviews not used on the site: E G ('amazing job on my new kitchen floor') and Ismael Tuiran ('Superbly craftsmanship very professional').",
+  "photos_used": {
+    "source": "scripts/gmaps_photocycle.js photo-viewer cycle on the Google Maps listing, 11 photos retrieved. Each photo was visually reviewed with the Read tool before selection; two were excluded from the gallery as not meeting the quality bar: a stock-looking two-photo composite with no visible connection to a real jobsite, and a demolition/debris shot. Downloaded with curl (Chrome UA), verified with `file` as real JPEGs >15KB, resized to max 1000px wide.",
+    "hero": "gmaps-11.jpg (marble medallion foyer floor)",
+    "about": ["gmaps-3.jpg (crew hand-setting mosaic tile at a stone garden fountain)", "gmaps-5.jpg (gold-fixture marble bathroom vanity)"],
+    "gallery": ["gmaps-4.jpg (pool deck checkered marble tile installation, crew at work)", "gmaps-1.jpg (hexagon mosaic shower)", "gmaps-6.jpg (remodeled bathroom)", "gmaps-8.jpg (freestanding tub on marble floor)", "gmaps-10.jpg (penny-tile shower)"],
+    "excluded_for_quality": ["gmaps-7.jpg (stock-looking generic bathroom composite image, not a verifiable real jobsite photo)", "gmaps-9.jpg (demolition/debris shot, not a finished result)"],
+    "unused": ["gmaps-2.jpg (exact duplicate of gmaps-1.jpg)"]
+  },
+  "language": "en",
+  "language_source": "All public reviews and the Google Business Profile are in English; no Spanish-language customer-facing content was found anywhere for this business. Default site language set to English per DESIGN.md guidance for the Florida flooring/contractor niche absent evidence of a Hispanic-market default.",
+  "dedupe_check": "Searched data/processed.json for 'Marble Master', 'marblemasterfloor' and the phone number (786) 814-9795: no existing entry found before this build.",
+  "build_base": "templates/dark-v2/index.html (pureartistry skeleton), derived via anchored Python transformation scripts per templates/SKELETONS-V2.md.",
+  "palette": {
+    "name": "copper / terracotta on charcoal (new, not previously used)",
+    "bg": "#15100c",
+    "accent_deep": "#b56a42",
+    "accent_mid": "#d89566"
+  },
+  "variant": "adapted (no booking platform; CTA is phone call; no fixed prices, priced on request; no street address, service-area coverage blurb + real jobsite photo instead of a map embed)"
+}
