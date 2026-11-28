@@ -794,26 +794,20 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-    // Bilingue EN/ES: idioma principal = ingles (EN)
+    // El idioma primario del negocio gana; la preferencia se guarda por site.
+    const siteLanguageKey = `siteforge:lang:${location.pathname.split('/').filter(Boolean)[0] || 'home'}`;
     const langToggle = document.getElementById('langToggle');
     const langToggleMobile = document.getElementById('langToggleMobile');
-    const applyLang = (l) => {
-      document.querySelectorAll('[data-es]').forEach((el) => {
-        el.textContent = el.dataset[l] || el.dataset.en;
-      });
+    const applyLang = l => {
+      document.querySelectorAll('[data-es]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.es; });
       document.documentElement.lang = l;
-      try { localStorage.setItem('lang', l); } catch (e) {}
-      if (langToggle) langToggle.textContent = l === 'en' ? 'ES' : 'EN';
-      if (langToggleMobile) langToggleMobile.textContent = l === 'en' ? 'Español' : 'English';
+      localStorage.setItem(siteLanguageKey, l);
+      if (langToggle) langToggle.textContent = l === 'es' ? 'EN' : 'ES';
+      if (langToggleMobile) langToggleMobile.textContent = l === 'es' ? 'English' : 'Español';
     };
-    let initialLang = 'en';
-    try {
-      const stored = localStorage.getItem('lang');
-      if (stored === 'es' || stored === 'en') initialLang = stored;
-      else if ((navigator.language || 'en').slice(0, 2) === 'es') initialLang = 'es';
-    } catch (e) {}
-    applyLang(initialLang);
-    const toggleLang = () => applyLang(document.documentElement.lang === 'en' ? 'es' : 'en');
+    let lang = localStorage.getItem(siteLanguageKey) || document.documentElement.lang;
+    applyLang(lang === 'es' ? 'es' : 'en');
+    const toggleLang = () => applyLang(document.documentElement.lang === 'es' ? 'en' : 'es');
     if (langToggle) langToggle.addEventListener('click', toggleLang);
     if (langToggleMobile) langToggleMobile.addEventListener('click', toggleLang);
 
